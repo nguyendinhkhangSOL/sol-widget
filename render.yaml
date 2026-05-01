@@ -1,0 +1,48 @@
+# ──────────────────────────────────────────────────────────────────────────
+#  Render.com — cấu hình Web Service tự động.
+#  Khi connect GitHub repo lên Render, nó sẽ đọc file này và tạo service.
+#  Tham khảo: https://render.com/docs/blueprint-spec
+# ──────────────────────────────────────────────────────────────────────────
+
+services:
+  - type: web
+    name: sol-backend
+    runtime: node
+    plan: free                  # Free tier — đổi sang 'starter' ($7/tháng) khi go-live
+    region: singapore           # gần VN nhất, latency thấp tới Supabase Singapore
+    rootDir: backend
+    buildCommand: npm ci && npx prisma generate && npx prisma migrate deploy && npm run build
+    startCommand: node dist/index.js
+    healthCheckPath: /healthz
+    autoDeploy: true            # tự deploy khi push lên main branch
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000             # Render gán PORT này, app phải listen
+      - key: DATABASE_URL
+        sync: false              # phải nhập tay trên Render dashboard (lấy từ Supabase)
+      - key: JWT_SECRET
+        generateValue: true      # Render tự sinh chuỗi ngẫu nhiên
+      - key: JWT_EXPIRES_IN
+        value: 30d
+      - key: OTP_DEV_MODE
+        value: "true"
+      - key: OTP_TTL_MINUTES
+        value: "5"
+      - key: PUBLIC_ORIGIN
+        value: https://sol-backend.onrender.com
+      - key: CORS_ORIGINS
+        value: https://bothuocla.sol.vn,https://claude-4b270.web.app,https://claude-4b270.firebaseapp.com
+      - key: ENABLE_AI
+        value: "true"
+      - key: ENABLE_SCHEDULER
+        value: "true"
+      # AI key/model có thể nhập qua /admin/ai (DB), không cần ở đây.
+      # Nếu muốn cho lần đầu boot có sẵn:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: CLAUDE_MODEL_PRIMARY
+        value: claude-haiku-4-5-20251001
+      - key: CLAUDE_MODEL_ESCALATED
+        value: claude-sonnet-4-6

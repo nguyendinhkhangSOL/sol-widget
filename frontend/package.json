@@ -1,0 +1,30 @@
+{
+  "name": "sol-widget-frontend",
+  "version": "0.1.0",
+  "description": "SOL Companion Widget — React SDK + embed script",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:embed": "vite build --mode embed",
+    "build:embed:dashboard": "vite build --mode embed && node -e \"require('fs').copyFileSync('dist/sol-widget.js','../dashboard/public/sol-widget.js');console.log('✓ Copied sol-widget.js → dashboard/public/')\"",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@sentry/react": "^8.42.0",
+    "clsx": "^2.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "socket.io-client": "^4.8.1",
+    "zustand": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
+}

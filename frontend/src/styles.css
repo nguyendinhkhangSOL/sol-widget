@@ -1,0 +1,274 @@
+/* ──────────────────────────────────────────────────────────────────────
+   SOL — global styles (widget).
+   PHẢI ĐỒNG BỘ với dashboard/src/styles.css. Khi đổi gì ở đây phải copy
+   sang dashboard (chừa khu @media print riêng cho dashboard).
+
+   Nguyên tắc:
+   • Be Vietnam Pro — load từ Google Fonts (preconnect để giảm latency).
+   • Base 17px / line-height 1.6 — giảm mỏi mắt cho tuổi 45+.
+   • CSS custom properties cho color tokens — đồng bộ với Tailwind config.
+   • Component utilities (.sol-btn, .sol-card, .sol-input...) qua @layer components.
+   • Widget root cô lập — tránh đụng style của trang chủ host.
+   ────────────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens (đồng bộ với tailwind.config.js) ──────────────────── */
+:root {
+  --sol-green: #3AA06B;
+  --sol-green-ink: #1F6B43;
+  --sol-green-soft: #E5F1EA;
+  --sol-orange: #E8812E;
+  --sol-orange-ink: #A95A14;
+  --sol-orange-soft: #FBEBDA;
+  --sol-blue: #3A7CA5;
+  --sol-blue-ink: #225573;
+  --sol-blue-soft: #E2EDF4;
+  --sol-red: #C04331;
+  --sol-red-ink: #8B2D1F;
+  --sol-red-soft: #F5DDD9;
+
+  --sol-bg: #F7F4EF;
+  --sol-soft: #EEE9E0;
+  --sol-paper: #FFFFFF;
+  --sol-line: #E5DFD3;
+  --sol-line-strong: #CFC8B9;
+
+  --sol-ink: #2C2A27;
+  --sol-ink-2: #5A5650;
+  --sol-ink-3: #8A857C;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-size: 17px;        /* base 17px — mặc định trình duyệt là 16, hơi nhỏ với tuổi 45+ */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html, body, #root {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--sol-bg);
+    color: var(--sol-ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    color: var(--sol-ink);
+    line-height: 1.3;
+  }
+
+  hr {
+    border-color: var(--sol-line);
+  }
+
+  input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  ::selection {
+    background-color: var(--sol-green-soft);
+    color: var(--sol-green-ink);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--sol-green);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ── Component utilities ────────────────────────────────────────────── */
+@layer components {
+
+  /* CARDS ───────────────────────────────────────────────────────────── */
+  .sol-card {
+    @apply bg-sol-paper border border-sol-line rounded-2xl shadow-card;
+  }
+  .sol-card-padded {
+    @apply sol-card p-5 md:p-6;
+  }
+  .sol-card-soft {
+    @apply bg-sol-soft border border-sol-line rounded-2xl;
+  }
+
+  /* BUTTONS ─────────────────────────────────────────────────────────── */
+  .sol-btn {
+    @apply inline-flex items-center justify-center gap-2
+           min-h-tap px-5 rounded-lg
+           text-body font-semibold
+           transition select-none
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .sol-btn-lg {
+    @apply min-h-[56px] px-6 text-body-lg;
+  }
+  .sol-btn-sm {
+    @apply min-h-[40px] px-4 text-meta;
+  }
+
+  .sol-btn-primary {
+    @apply sol-btn bg-sol-green text-white
+           hover:bg-sol-green-ink active:bg-sol-green-ink
+           focus-visible:ring-sol-green;
+  }
+  .sol-btn-secondary {
+    @apply sol-btn bg-sol-paper text-sol-ink border border-sol-line-strong
+           hover:bg-sol-soft active:bg-sol-soft
+           focus-visible:ring-sol-ink;
+  }
+  .sol-btn-ghost {
+    @apply sol-btn bg-transparent text-sol-ink-2
+           hover:bg-sol-soft hover:text-sol-ink
+           focus-visible:ring-sol-ink;
+  }
+  .sol-btn-danger {
+    @apply sol-btn bg-sol-red text-white
+           hover:bg-sol-red-ink active:bg-sol-red-ink
+           focus-visible:ring-sol-red;
+  }
+  .sol-btn-warning {
+    @apply sol-btn bg-sol-orange text-white
+           hover:bg-sol-orange-ink active:bg-sol-orange-ink
+           focus-visible:ring-sol-orange;
+  }
+
+  /* INPUTS ──────────────────────────────────────────────────────────── */
+  .sol-input {
+    @apply w-full min-h-tap px-4 py-2.5
+           bg-sol-paper border border-sol-line-strong rounded-lg
+           text-body text-sol-ink
+           placeholder:text-sol-ink-3
+           transition
+           focus:outline-none focus:border-sol-green focus:ring-2 focus:ring-sol-green/20
+           disabled:opacity-60 disabled:bg-sol-soft;
+  }
+  .sol-textarea {
+    @apply sol-input min-h-[120px] py-3 leading-relaxed resize-y;
+  }
+  .sol-select {
+    @apply sol-input pr-10 appearance-none cursor-pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7l5 5 5-5' stroke='%235A5650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+  }
+
+  /* FIELD WRAPPER ───────────────────────────────────────────────────── */
+  .sol-field-label {
+    @apply block text-meta text-sol-ink-2 mb-1.5 uppercase tracking-wide;
+    letter-spacing: 0.04em;
+  }
+  .sol-field-help {
+    @apply text-meta text-sol-ink-2 mt-1.5 leading-snug;
+  }
+  .sol-field-error {
+    @apply text-meta text-sol-red mt-1.5;
+  }
+
+  /* BADGES & CHIPS ──────────────────────────────────────────────────── */
+  .sol-badge {
+    @apply inline-flex items-center gap-1
+           px-2.5 py-1 rounded-full
+           text-meta font-semibold
+           bg-sol-soft text-sol-ink-2;
+  }
+  .sol-badge-green   { @apply sol-badge bg-sol-green-soft text-sol-green-ink; }
+  .sol-badge-orange  { @apply sol-badge bg-sol-orange-soft text-sol-orange-ink; }
+  .sol-badge-blue    { @apply sol-badge bg-sol-blue-soft text-sol-blue-ink; }
+  .sol-badge-red     { @apply sol-badge bg-sol-red-soft text-sol-red-ink; }
+
+  .sol-chip {
+    @apply inline-flex items-center gap-2
+           min-h-tap px-4 py-2 rounded-full
+           text-body font-medium
+           bg-sol-paper text-sol-ink border border-sol-line-strong
+           hover:bg-sol-green-soft hover:border-sol-green hover:text-sol-green-ink
+           transition cursor-pointer
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-sol-green;
+  }
+
+  /* ALERTS / CALLOUTS ──────────────────────────────────────────────── */
+  .sol-alert {
+    @apply rounded-2xl border p-4 md:p-5;
+  }
+  .sol-alert-info    { @apply sol-alert bg-sol-blue-soft border-sol-blue/20 text-sol-blue-ink; }
+  .sol-alert-success { @apply sol-alert bg-sol-green-soft border-sol-green/20 text-sol-green-ink; }
+  .sol-alert-warn    { @apply sol-alert bg-sol-orange-soft border-sol-orange/20 text-sol-orange-ink; }
+  .sol-alert-danger  { @apply sol-alert bg-sol-red-soft border-sol-red/20 text-sol-red-ink; }
+
+  /* DIVIDERS ──────────────────────────────────────────────────────── */
+  .sol-divider {
+    @apply h-px bg-sol-line my-4;
+  }
+
+  /* PROSE — văn bản dài */
+  .sol-prose {
+    @apply text-body text-sol-ink leading-[1.7] max-w-prose;
+  }
+  .sol-prose p + p { @apply mt-4; }
+  .sol-prose h2    { @apply text-h2 mt-8 mb-3; }
+  .sol-prose h3    { @apply text-h3 mt-6 mb-2; }
+  .sol-prose ul    { @apply pl-6 list-disc space-y-2 my-3; }
+  .sol-prose ol    { @apply pl-6 list-decimal space-y-2 my-3; }
+  .sol-prose a     { @apply text-sol-blue-ink underline underline-offset-2 hover:text-sol-blue; }
+  .sol-prose strong { @apply font-semibold text-sol-ink; }
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   WIDGET ROOT — riêng cho phiên bản chèn vào trang ngoài.
+   Cô lập style để host page không phá layout.
+   ────────────────────────────────────────────────────────────────── */
+.sol-widget-root,
+.sol-widget-root * {
+  box-sizing: border-box;
+}
+
+.sol-widget-root {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2147483000;
+  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--sol-ink);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Mobile: nâng bubble lên cao hơn để không trùng với bottom nav của host
+   (vd dashboard SOL có bottom nav cao ~64px cho mobile). Khi expanded thì
+   full-screen takeover, không cần bottom offset. */
+@media (max-width: 640px) {
+  .sol-widget-root {
+    bottom: 80px; /* tránh đè lên bottom nav host */
+    right: 16px;
+  }
+  .sol-widget-root.expanded {
+    inset: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+/* ── Custom scrollbar ─────────────────────────────────────────────── */
+.sol-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.sol-scroll::-webkit-scrollbar-thumb {
+  background: var(--sol-line-strong);
+  border-radius: 4px;
+}
+.sol-scroll::-webkit-scrollbar-thumb:hover { background: var(--sol-ink-3); }
+.sol-scroll::-webkit-scrollbar-track { background: transparent; }

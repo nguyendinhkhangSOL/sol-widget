@@ -1,0 +1,11 @@
+{
+  "name": "sol-widget-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SOL — bothuocla.sol.vn — root monorepo (frontend + dashboard + backend)",
+  "scripts": {
+    "build:firebase": "powershell -ExecutionPolicy Bypass -File scripts/build-firebase.ps1",
+    "deploy:firebase": "npm run build:firebase && firebase deploy --only hosting",
+    "preview:firebase": "firebase serve --only hosting"
+  }
+}
