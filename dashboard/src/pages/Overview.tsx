@@ -138,7 +138,13 @@ export function Overview() {
             todayMood={todayCheckin?.mood}
             checkinStreak={user?.checkinStreak ?? 0}
             longestStreak={user?.longestStreak ?? 0}
-            onCheckin={() => navigate('/journey')}
+            onCheckin={() => {
+              // Mở widget thẳng vào CheckinFlow (1-click action thay vì
+              // điều hướng /journey rồi user phải tìm nút khác).
+              const w = (window as any).SOLWidget;
+              if (w?.openView) w.openView('checkin');
+              else navigate('/journey');
+            }}
             layout="wide"
           />
 

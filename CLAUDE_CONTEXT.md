@@ -240,3 +240,46 @@ Khi Khang share file này với Claude session mới:
 - *Có architecture decision mới*
 - *Pending list thay đổi*
 - *Trước khi backup/migrate machine*
+
+---
+
+## SESSION 2026-05-02 (delta)
+
+Tiếp tục từ session trước. Các thay đổi quan trọng:
+
+### Code fixes
+- **Bottom nav dashboard**: chuyển từ `lg:hidden` (1024px) sang JS-based `useIsMobile(768)` — nav KHÔNG render trong DOM khi desktop, không thể đè content. `pb-24` mobile, `pb-0` desktop.
+- **Sidebar dashboard**: `hidden md:flex md:w-56 lg:w-64` — hiện từ tablet (≥768px) thay vì chỉ desktop ≥1024px.
+- **Settings save bug**: input `type="date"` xuất `YYYY-MM-DD` → backend Zod yêu cầu ISO datetime → fix convert `new Date(quitDate).toISOString()` trước khi gửi.
+- **userMerge.ts UNIQUE constraint bug**: khi bind phone, anon user và existing user cùng có deviceUid → P2002 conflict. Fix: DELETE anon TRƯỚC khi update existing.deviceUid.
+- **CORS_ORIGINS**: thêm `http://localhost:5174` cho dashboard dev.
+- **Embed widget vào dashboard**: `EmbeddedWidget` component inject `<script src="/sol-widget.js">` vào Layout. Vite build mode `embed` với plugin inline CSS + define `process.env.NODE_ENV`. Output single `sol-widget.js` (343kB gzip 101kB).
+- **Build script**: `npm run build:embed:dashboard` build + auto copy sang `dashboard/public/`.
+
+### UX fixes
+- **Widget bubble icon**: đổi từ "moon shape" sang "no smoking" SVG — vòng tròn trắng + viền đỏ + cigarette đen + slash đỏ + 2 sợi khói xám phía phải (đầu cháy).
+- **Widget tab tên**: đổi "Lịch 30 ngày" → "Hành trình" (cùng tên dashboard, không trùng nhưng dùng context phân biệt: widget = quick view, dashboard = full).
+- **Click ngày trong Hành trình**: modal slide-up có CTA "✅ Check-in 30 giây" nếu là ngày hôm nay + chưa check-in. 1-click vào CheckinFlow.
+- **4 entry points Check-in trong widget** (sau khi user kêu không tìm thấy):
+  1. Button "✓ Check-in" pill trắng-trên-xanh ở header (luôn hiện mọi tab)
+  2. Banner cam to ở đầu Trang chính (chỉ khi chưa check-in hôm nay)
+  3. Tile "✅ Check-in 30s" trong action grid Trang chính
+  4. CTA trong modal Hành trình > ngày hôm nay
+- **Dashboard Check-in entry**: nút cam "✅ Check-in hôm nay" ngay đầu sidebar nav. Click → `window.SOLWidget.openView('checkin')` mở widget panel thẳng vào CheckinFlow.
+
+### React Router
+- Add `future={{ v7_startTransition: true, v7_relativeSplatPath: true }}` để dọn 2 console warnings.
+
+### Pre-Q-Day demo dashboard (kept)
+- Khi user chưa đặt Q-Day, Overview render `RealtimeDashboard` với fake `quitDate = 7 ngày trước` + DEMO ribbon. CTA "Bắt đầu chuẩn bị Q-Day" cuối page.
+
+### Pending từ session này
+- Khang chưa setup Zalo OAuth (cần verify domain bothuocla.sol.vn — em đã tạm bỏ qua, dùng sol.vn root).
+- Marketing landing sol.vn — chưa build (Khang quyết định sau).
+- Test thực user 45+ Việt — cần làm sau khi launch beta.
+
+### Lưu ý quan trọng
+- Khang đã push toàn bộ code lên GitHub: `https://github.com/nguyendinhkhangSOL/sol-widget`
+- Có scripts `backup.bat` (Windows) + `restore.bat` để backup DB + .env định kỳ.
+- Khi rebuild widget, dùng `npm run build:embed:dashboard` (không phải `build:embed` thường) để auto copy sang dashboard.
+

@@ -151,6 +151,11 @@ export function JourneyView() {
         <DayDetail
           day={openDay}
           checkin={byDay.get(openDay)}
+          isToday={openDay === dayNumber}
+          onCheckinClick={() => {
+            setOpenDay(null);
+            useStore.getState().setView('checkin');
+          }}
           onClose={() => setOpenDay(null)}
         />
       )}
@@ -272,10 +277,14 @@ function MilestoneList({ dayNumber }: { dayNumber: number }) {
 function DayDetail({
   day,
   checkin,
+  isToday,
+  onCheckinClick,
   onClose,
 }: {
   day: number;
   checkin?: CheckinRow;
+  isToday: boolean;
+  onCheckinClick: () => void;
   onClose: () => void;
 }) {
   const [dayContent, setDayContent] = useState<any>(null);
@@ -293,7 +302,14 @@ function DayDetail({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="sticky top-0 bg-white px-4 py-3 border-b border-black/5 flex items-center justify-between">
-          <div className="font-semibold text-sol-ink">Ngày {day}</div>
+          <div className="font-semibold text-sol-ink">
+            Ngày {day}
+            {isToday && (
+              <span className="ml-2 text-[10px] uppercase font-bold text-sol-green bg-sol-green/10 px-1.5 py-0.5 rounded">
+                Hôm nay
+              </span>
+            )}
+          </div>
           <button onClick={onClose} className="text-sol-ink/50 hover:text-sol-ink">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -301,6 +317,25 @@ function DayDetail({
           </button>
         </div>
         <div className="p-4 space-y-3 text-sm">
+          {/* CTA Check-in — chỉ hiện khi là ngày hôm nay + chưa check-in.
+              Tiết kiệm cho user 2 step (đóng modal → HomeView → Check-in). */}
+          {isToday && !checkin && (
+            <div className="bg-sol-orange/10 rounded-xl p-3 border border-sol-orange/30">
+              <div className="text-sol-orange-ink font-semibold text-sm mb-1">
+                ⚠️ Bạn chưa check-in hôm nay
+              </div>
+              <p className="text-xs text-sol-ink/70 mb-2.5 leading-relaxed">
+                30 giây để giữ chuỗi và Sol biết bạn ổn.
+              </p>
+              <button
+                onClick={onCheckinClick}
+                className="w-full py-2.5 rounded-lg bg-sol-orange text-white font-semibold text-sm hover:opacity-90 transition"
+              >
+                ✅ Check-in 30 giây →
+              </button>
+            </div>
+          )}
+
           {checkin ? (
             <>
               <Row label="Có hút?" val={checkin.smoked ? 'Có' : 'Không'} tone={checkin.smoked ? 'red' : 'green'} />

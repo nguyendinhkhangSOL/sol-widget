@@ -11,6 +11,12 @@ interface SOLWidgetAPI {
   init: (opts?: { apiBase?: string; socketBase?: string; token?: string; autoOpen?: boolean }) => void;
   open: () => void;
   close: () => void;
+  /**
+   * Mở panel widget + chuyển ngay vào view chỉ định (vd 'checkin', 'chat',
+   * 'journey'). Dashboard có thể call để 1-click vào CheckinFlow:
+   *   window.SOLWidget?.openView('checkin')
+   */
+  openView: (view: string) => void;
   setToken: (token: string) => void;
   logout: () => void;
 }
@@ -48,6 +54,12 @@ const api: SOLWidgetAPI = {
   },
   close() {
     useStore.getState().setExpanded(false);
+  },
+  openView(view: string) {
+    const store = useStore.getState();
+    store.setExpanded(true);
+    // setView nhận type WidgetView — caller phải pass đúng tên view.
+    (store.setView as any)(view);
   },
   setToken(token: string) {
     localStorage.setItem('sol_token', token);

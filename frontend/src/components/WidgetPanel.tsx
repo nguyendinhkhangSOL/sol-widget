@@ -104,6 +104,24 @@ function Header({ dayNumber, onClose }: { dayNumber: number; onClose: () => void
         </div>
       </div>
       <div className="flex items-center gap-1">
+        {/* Check-in — button có label text rõ ràng, nổi bật trên header xanh.
+            Luôn hiện ở mọi tab (Trang chính / Trò chuyện / Hành trình). */}
+        <button
+          onClick={() => useStore.getState().setView('checkin')}
+          className="px-2.5 py-1 rounded-full bg-white/20 hover:bg-white/30 text-white text-[11px] font-semibold flex items-center gap-1 transition"
+          aria-label="Check-in 30 giây"
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M5 12.5l4.5 4.5L19 7"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span>Check-in</span>
+        </button>
         {/* Voice Khang — moved from footer tab to header (UX v2) */}
         <HeaderIconButton label="Voice Khang" onClick={() => useStore.getState().setView('voice')}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -207,11 +225,11 @@ function FooterNav({
       hasDot: unreadCount > 0,
     },
     {
-      // Đổi label "Hành trình" → "Lịch 30 ngày" để tránh trùng với
-      // bottom nav dashboard (cũng có "Hành trình" → /journey route).
-      // Widget tab này focus calendar 30 ngày + bài tập theo ngày.
+      // Cùng tên "Hành trình" với dashboard tab — UX nhất quán.
+      // Phân biệt qua context: widget = quick view trong panel chat,
+      // dashboard /journey = full page với chart + workbook + print.
       key: 'journey',
-      label: 'Lịch 30 ngày',
+      label: 'Hành trình',
       icon: <IconMap />,
       matches: ['journey', 'exercise'],
     },

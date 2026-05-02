@@ -238,9 +238,17 @@ export function Settings() {
         return;
       }
 
+      // Convert quitDate format: input type="date" → "YYYY-MM-DD"
+      // Backend cần ISO datetime đầy đủ. Empty → null.
+      let quitDateIso: string | null = null;
+      if (quitDate && quitDate.trim()) {
+        const d = new Date(quitDate);
+        if (!isNaN(d.getTime())) quitDateIso = d.toISOString();
+      }
+
       await api.patchMe({
         name,
-        quitDate,
+        quitDate: quitDateIso,
         pronouns: finalPronoun,
         assistantName: finalAssistant,
         settings: nextSettings,

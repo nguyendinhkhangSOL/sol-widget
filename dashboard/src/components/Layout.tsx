@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { useStore } from '../state/store';
@@ -6,6 +6,36 @@ import { TIER_COLOR, TIER_LABEL, hasFeature } from '../lib/featureGates';
 import type { UserTier } from '../types';
 import { EmbeddedWidget } from './EmbeddedWidget';
 import { api } from '../services/api';
+
+/**
+ * Hook detect viewport mobile vs desktop. Dùng matchMedia — listen resize
+ * + initial state đồng bộ với SSR-friendly fallback.
+ *
+ * Tại sao dùng JS thay vì pure CSS `md:hidden`:
+ *   - Nếu Tailwind cache không refresh (Vite JIT bug edge case), CSS rule
+ *     không generate → nav vẫn render. Cách JS đảm bảo nav KHÔNG render
+ *     trong DOM khi desktop → 100% không có chuyện đè content.
+ */
+function useIsMobile(breakpoint = 768): boolean {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.innerWidth < breakpoint;
+  });
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    const handler = (e: MediaQueryListEvent | MediaQueryList) =>
+      setIsMobile('matches' in e ? e.matches : false);
+    handler(mq);
+    if (mq.addEventListener) {
+      mq.addEventListener('change', handler);
+      return () => mq.removeEventListener('change', handler);
+    }
+    // Safari < 14 fallback
+    mq.addListener(handler as any);
+    return () => mq.removeListener(handler as any);
+  }, [breakpoint]);
+  return isMobile;
+}
 
 //
 // Layout — sidebar + content + mobile bottom nav.
@@ -17,6 +47,7 @@ export function Layout() {
   const user = useStore((s) => s.user);
   const logout = useStore((s) => s.logout);
   const nav = useNavigate();
+  const isMobile = useIsMobile(); // < 768px → mobile (bottom nav), >= 768px → desktop (sidebar)
 
   // Sidebar gate theo tier. FREE chỉ thấy Tổng quan + Phân tích cơ bản +
   // Cài đặt + Pricing. Càng nâng tier, càng mở thêm.
@@ -82,7 +113,7 @@ export function Layout() {
   return (
     <div className="min-h-screen flex print:block bg-sol-bg">
       {/* ── Sidebar (desktop) ──────────────────────────────────────────── */}
-      <aside className="hidden lg:flex lg:w-64 flex-col border-r border-sol-line bg-sol-paper print:hidden">
+      <aside className="hidden md:flex md:w-56 lg:w-64 flex-col border-r border-sol-line bg-sol-paper print:hidden">
         {/* Brand */}
         <div className="p-5 flex items-center gap-3 border-b border-sol-line">
           <div className="h-10 w-10 rounded-full bg-sol-green text-white flex items-center justify-center font-bold text-body">
@@ -93,6 +124,24 @@ export function Layout() {
             <div className="text-meta text-sol-ink-3 truncate">bothuocla.sol.vn</div>
           </div>
         </div>
+
+        {/* Quick action — Check-in hôm nay (chỉ user đã đặt Q-Day mới hiện).
+            Mở widget thẳng vào CheckinFlow — 1 click thay vì 3 step. */}
+        {user?.quitDate && (
+          <div className="px-3 pt-3">
+            <button
+              type="button"
+              onClick={() => {
+                const w = (window as any).SOLWidget;
+                if (w?.openView) w.openView('checkin');
+              }}
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-sol-orange text-white font-semibold text-meta hover:opacity-90 transition shadow-sm"
+            >
+              <span>✅</span>
+              <span>Check-in hôm nay</span>
+            </button>
+          </div>
+        )}
 
         {/* Main nav — chỉ menu user */}
         <nav className="flex-1 px-3 py-4 space-y-1">
@@ -175,13 +224,21 @@ export function Layout() {
       </aside>
 
       {/* ── Main ───────────────────────────────────────────────────────── */}
-      <main className="flex-1 min-w-0 pb-20 lg:pb-0">
+      {/* Mobile: pb-24 (~96px) = đủ cover bottom nav (~70px) + buffer 26px.
+          Desktop: pb-0 (không có nav). JS-based để chắc Tailwind không cache. */}
+      <main className={clsx('flex-1 min-w-0', isMobile ? 'pb-24' : 'pb-0')}>
         <Outlet />
       </main>
 
 
-      {/* ── Mobile bottom nav — chỉ 4 mục core, các mục khác trong /settings */}
-      <nav className="lg:hidden fixed bottom-0 inset-x-0 bg-sol-paper/95 backdrop-blur border-t border-sol-line flex z-20 print:hidden">
+      {/* ── Mobile bottom nav — JS conditional render (KHÔNG render trong DOM
+          khi desktop). Tablet+ (>=768px) dùng sidebar, nav không tồn tại để
+          đè. pb safe-area-inset-bottom để tránh notch iPhone đè. */}
+      {isMobile && (
+      <nav
+        className="fixed bottom-0 inset-x-0 bg-sol-paper/95 backdrop-blur border-t border-sol-line flex z-20 print:hidden"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom, 0)' }}
+      >
         {mobileLinks.map((l) => (
           <NavLink
             key={l.to}
@@ -199,6 +256,7 @@ export function Layout() {
           </NavLink>
         ))}
       </nav>
+      )}
 
       {/* Embedded chat widget — bubble góc dưới phải mọi trang dashboard.
           Cùng pattern với khi widget cắm ở partner site. JWT + deviceUid

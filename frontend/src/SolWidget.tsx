@@ -130,23 +130,26 @@ export function SolWidget({ apiBase, socketBase, initialOpen }: SolWidgetProps) 
   // Socket connection (only when authed)
   useSocket(socketBase ?? apiBase ?? 'http://localhost:4000');
 
-  // Loading state — đang chờ anon-create hoặc bootstrap user
-  const isLoading = !token || !user;
+  // Debug log — track state để Khang/dev xem trong Console khi click bubble
+  if (typeof window !== 'undefined') {
+    (window as any).__sol_widget_state = {
+      token: !!token,
+      user: !!user,
+      expanded,
+      authError,
+    };
+  }
 
   return (
-    <div className="sol-widget-root">
+    <div className={`sol-widget-root${expanded ? ' expanded' : ''}`}>
       {authError && expanded && (
         <div className="absolute bottom-20 right-4 max-w-[300px] p-3 rounded-xl bg-sol-red text-white text-meta shadow-lg">
           {authError}
         </div>
       )}
-      {isLoading ? (
-        <WidgetBubble />
-      ) : expanded ? (
-        <WidgetPanel />
-      ) : (
-        <WidgetBubble />
-      )}
+      {/* expanded thì luôn mở Panel — không gate theo isLoading.
+          Panel tự handle loading state (vd: hiện "Đang kết nối..." nếu chưa auth). */}
+      {expanded ? <WidgetPanel /> : <WidgetBubble />}
       {/* Layer 3: Recovery code modal — hiện sau khi user vừa bind Zalo lần đầu */}
       {postBindRecoveryCode && (
         <RecoveryCodeModal

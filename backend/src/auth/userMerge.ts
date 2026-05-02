@@ -110,12 +110,20 @@ export async function mergeOrUpgrade({
     // 2. UserState là 1-1, xoá của anon (existing đã có)
     await tx.userState.deleteMany({ where: { userId: anonUserId } });
 
-    // 3. Merge counters: cộng dồn
+    // 3. Đọc data 2 user trước khi update
     const [anon, existing] = await Promise.all([
       tx.user.findUnique({ where: { id: anonUserId } }),
       tx.user.findUnique({ where: { id: existingUserId } }),
     ]);
 
+    // 4. Lưu lại deviceUid của anon, rồi DELETE anon TRƯỚC update existing.
+    //    Lý do: deviceUid là UNIQUE field. Nếu update existing với deviceUid
+    //    của anon trong khi anon vẫn còn → UNIQUE constraint conflict (P2002).
+    //    Phải xoá anon trước để giải phóng UNIQUE.
+    const anonDeviceUid = anon?.deviceUid ?? null;
+    await tx.user.delete({ where: { id: anonUserId } });
+
+    // 5. Update existing với data merged
     if (anon && existing) {
       await tx.user.update({
         where: { id: existingUserId },
@@ -128,16 +136,14 @@ export async function mergeOrUpgrade({
           quitDate: existing.quitDate ?? anon.quitDate,
           // Update name/picture nếu có data mới từ Zalo
           ...(name && !existing.name ? { name } : {}),
-          // deviceUid: chuyển sang device mới (anon's deviceUid)
-          deviceUid: anon.deviceUid ?? existing.deviceUid,
+          // deviceUid: anon đã xoá nên không còn UNIQUE conflict.
+          // Prefer anon's (user đang dùng device đó) hơn existing's (có thể stale).
+          deviceUid: anonDeviceUid ?? existing.deviceUid,
           // Đảm bảo flag không ẩn danh
           isAnonymous: false,
         },
       });
     }
-
-    // 4. Xoá anon user
-    await tx.user.delete({ where: { id: anonUserId } });
   });
 
   logger.info({ anonUserId, existingUserId }, 'Anon user merged into existing');

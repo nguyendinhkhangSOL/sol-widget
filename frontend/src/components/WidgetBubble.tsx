@@ -22,21 +22,38 @@ export function WidgetBubble() {
         isCrisis ? 'bg-sol-red animate-pulse' : 'bg-sol-green'
       )}
     >
-      {/* No-smoking mark — biểu tượng cấm thuốc lá rõ nghĩa cho user 45+
-          Việt. Trên nền xanh lá, icon trắng: vòng tròn ban + điếu thuốc
-          + khói + gạch chéo. */}
+      {/* No-smoking mark — biểu tượng cấm thuốc lá rõ nghĩa cho user 45+ Việt:
+          - Bubble: nền xanh lá (sol-green)
+          - Vòng tròn ban: nền TRẮNG, viền ĐỎ
+          - Điếu thuốc: ĐEN
+          - Gạch chéo cấm: ĐỎ */}
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        {/* Outer ban ring */}
-        <circle cx="12" cy="12" r="9.5" stroke="white" strokeWidth="1.8" opacity="0.95" />
-        {/* Cigarette body */}
-        <rect x="6" y="11" width="7.5" height="2" fill="white" rx="0.4" />
-        {/* Filter (slightly transparent để phân biệt với body) */}
-        <rect x="13.7" y="11" width="2.5" height="2" fill="white" opacity="0.6" rx="0.3" />
-        {/* Smoke wisps */}
-        <path d="M7.5 9.5 Q8 8 7 6.5" stroke="white" strokeWidth="0.95" strokeLinecap="round" fill="none" opacity="0.55" />
-        <path d="M10 9.5 Q10.5 8 9.5 6.5" stroke="white" strokeWidth="0.95" strokeLinecap="round" fill="none" opacity="0.55" />
-        {/* Diagonal slash — đủ dày để nổi trên cigarette */}
-        <line x1="5.7" y1="5.7" x2="18.3" y2="18.3" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
+        {/* Vòng tròn nền trắng + viền đỏ — to hơn (r 9.5) cho dễ nhìn */}
+        <circle cx="12" cy="12" r="9.5" fill="white" stroke="#E53935" strokeWidth="2" />
+        {/* Filter — bên TRÁI (đầu hút), to hơn */}
+        <rect x="6.5" y="10.5" width="3" height="3" fill="#1A1A1A" opacity="0.55" rx="0.4" />
+        {/* Body điếu thuốc — bên PHẢI, đen đậm, to hơn */}
+        <rect x="9.5" y="10.5" width="8" height="3" fill="#1A1A1A" rx="0.5" />
+        {/* Khói thuốc — bốc từ đầu CHÁY (phải), uốn S-shape lên cao.
+            Vẽ TRƯỚC slash để slash đè lên trên. */}
+        <path
+          d="M15.5 10 Q16 8.5 15 7 Q14.5 5.5 15.5 4"
+          stroke="#666"
+          strokeWidth="1"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.7"
+        />
+        <path
+          d="M17.5 10 Q18 8.5 17 7 Q16.5 5.5 17.5 4"
+          stroke="#666"
+          strokeWidth="1"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.55"
+        />
+        {/* Gạch chéo đỏ — kéo dài thêm để cover toàn bộ ban circle */}
+        <line x1="5.5" y1="5.5" x2="18.5" y2="18.5" stroke="#E53935" strokeWidth="2.6" strokeLinecap="round" />
       </svg>
 
       {unread > 0 && (

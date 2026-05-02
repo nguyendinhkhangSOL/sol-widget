@@ -269,8 +269,41 @@ function InJourneyCards({
   const d = user.dayNumber ?? Math.max(1, daysSober(user.quitDate) + 1);
   const capped = Math.min(30, d);
 
+  // Check user đã check-in hôm nay chưa (so sánh ISO date với today).
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const lastCheckin = user.lastCheckinDate
+    ? new Date(user.lastCheckinDate).toISOString().slice(0, 10)
+    : null;
+  const checkedInToday = lastCheckin === todayIso;
+
   return (
     <section className="space-y-3">
+      {/* Banner Check-in CTA — nổi bật, chỉ hiện khi user chưa check-in hôm nay.
+          Đây là action quan trọng nhất hằng ngày, đặt lên đầu Trang chính. */}
+      {!checkedInToday && (
+        <button
+          onClick={() => onOpenView('checkin')}
+          className="w-full rounded-2xl p-4 flex items-center gap-3 text-left text-white shadow-md active:scale-[0.99] transition"
+          style={{ background: 'linear-gradient(135deg, #E8812E, #F57C00)' }}
+        >
+          <div className="h-11 w-11 rounded-xl bg-white/25 border border-white/30 flex items-center justify-center text-2xl flex-shrink-0">
+            ✅
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] uppercase opacity-85 font-bold tracking-wide">
+              Hôm nay · 30 giây
+            </div>
+            <div className="text-sm font-bold mt-0.5 leading-tight">
+              Check-in hôm nay
+            </div>
+            <div className="text-[11px] opacity-85 mt-0.5">
+              Giữ chuỗi, giữ refund · Sol biết bạn ổn
+            </div>
+          </div>
+          <div className="text-white/80 text-xl flex-shrink-0">→</div>
+        </button>
+      )}
+
       {/* Bài tập hôm nay */}
       <button
         onClick={() => onOpenView('exercise')}

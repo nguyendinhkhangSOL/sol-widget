@@ -35,7 +35,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </div>
       )}
     >
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter
+        basename={import.meta.env.BASE_URL}
+        // Opt-in v7 future flags để dọn 2 warning trong Console
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
         <App />
       </BrowserRouter>
     </ErrorBoundary>
