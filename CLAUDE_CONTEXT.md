@@ -283,3 +283,26 @@ Tiếp tục từ session trước. Các thay đổi quan trọng:
 - Có scripts `backup.bat` (Windows) + `restore.bat` để backup DB + .env định kỳ.
 - Khi rebuild widget, dùng `npm run build:embed:dashboard` (không phải `build:embed` thường) để auto copy sang dashboard.
 
+### 🐛 Bug đang investigate (mai làm tiếp)
+
+**Triệu chứng**: Dashboard và widget hiển thị state khác nhau cùng lúc:
+- Dashboard `/journey`: ngày 1, 2 cam (đã check-in có hút), ngày 3 xanh (đã check-in sạch). Click ngày 3 → "Check-in ngày 3" có data đầy đủ.
+- Widget panel "Hành trình" (cùng browser, cùng tab): grid hiển thị 1, 2, 3 đỏ-cam (looks like missed, có line-through). Stats "Check-in 0/4 · Ngày sạch 0/1" — như chưa check-in lần nào.
+
+**Có thể nguyên nhân**:
+1. Widget và dashboard 2 React app riêng → mỗi cái có Zustand store riêng cho user/checkins. Cùng JWT (localStorage) nhưng KHÔNG share user object.
+2. Widget mount lúc đầu (anon user) → fetch checkins về (rỗng). Sau đó dashboard login phone → token đổi → widget không re-fetch.
+3. Hoặc backend `/checkins` trả ít data hơn `/checkins/today` — em đã merge cả 2 nhưng có thể chưa đủ.
+
+**Đã làm hôm nay**:
+- ✅ JourneyView re-fetch khi `user.lastCheckinDate` đổi (useEffect deps)
+- ✅ JourneyView fetch cả `/checkins` history + `/checkins/today` để merge
+- ✅ CheckinFlow sau submit → refresh user (api.getMe + setUser) → trigger JourneyView re-fetch
+
+**Cần làm mai** (nếu vẫn bug):
+1. Debug Console: `localStorage.getItem('sol_token')` ở widget vs dashboard — cùng token?
+2. Network tab: widget request `/checkins` vs dashboard request `/checkins` — cùng response?
+3. Có thể cần wire window storage event listener để widget detect token change từ dashboard
+4. Hoặc force widget reload khi user login phone từ dashboard (page reload)
+5. Long-term: dùng pub-sub event (custom events trên window) để dashboard ↔ widget share state changes
+

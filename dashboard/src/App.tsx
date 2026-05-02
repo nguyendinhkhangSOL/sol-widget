@@ -12,6 +12,7 @@ import { History } from './pages/History';
 import { Analytics } from './pages/Analytics';
 import { Settings } from './pages/Settings';
 import { Workbook } from './pages/Workbook';
+import { Chat } from './pages/Chat';
 import { Pricing } from './pages/Pricing';
 import { Refund } from './pages/Refund';
 import { Reports } from './pages/Reports';
@@ -43,6 +44,10 @@ export function App() {
 
   // Layer 3: nếu Zalo callback redirect kèm `?recovery=...` → hiện modal force save
   const [postBindRecoveryCode, setPostBindRecoveryCode] = useState<string | null>(null);
+
+  // ROLLBACK 2026-05-02: bỏ widget embed khỏi dashboard. Architecture mới
+  // sẽ có Chat page riêng (`/chat`) trong dashboard, không cần sync events.
+  // Widget chỉ dùng cho partner sites + sol.vn (bên ngoài).
 
   // ─── Bootstrap auth — UX v2 anonymous-first ───────────────────────
   // 3 đường:
@@ -113,6 +118,7 @@ export function App() {
       <Route path="/login" element={<Login />} />
       <Route element={<Layout />}>
         <Route path="/" element={<Overview />} />
+        <Route path="/chat" element={<Chat />} />
         <Route path="/journey" element={<Journey />} />
         <Route path="/journey/:day" element={<Journey />} />
         <Route path="/workbook" element={<Workbook />} />

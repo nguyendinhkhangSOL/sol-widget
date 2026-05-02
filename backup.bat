@@ -38,16 +38,31 @@ REM ─── 1. Database dump ───
 echo.
 echo [1/4] Dumping PostgreSQL database "%DB_NAME%"...
 if "%PGPASSWORD%"=="" (
-    echo   ⚠️  PGPASSWORD chưa set. pg_dump sẽ hỏi password tương tác.
-    echo      Set sẵn để chạy unattended:  set PGPASSWORD=your_password
-)
-pg_dump -U %DB_USER% -h %DB_HOST% -p %DB_PORT% -Fc %DB_NAME% > "%BACKUP_DIR%\sol_db.dump"
-if errorlevel 1 (
-    echo   ❌ pg_dump thất bại. Kiểm tra postgres có chạy + user/pass đúng?
+    echo   ❌ PGPASSWORD chưa set! Backup KHÔNG thể chạy unattended.
+    echo      Chạy: set PGPASSWORD=your_password
+    echo      Hoặc PowerShell: $env:PGPASSWORD = "your_password"
     pause
     exit /b 1
 )
-echo   ✓ DB dumped to %BACKUP_DIR%\sol_db.dump
+pg_dump -U %DB_USER% -h %DB_HOST% -p %DB_PORT% -Fc %DB_NAME% > "%BACKUP_DIR%\sol_db.dump"
+if errorlevel 1 (
+    echo   ❌ pg_dump thất bại. Kiểm tra:
+    echo      - Postgres service có chạy không?
+    echo      - Password đúng không?
+    echo      - User postgres có quyền access DB sol không?
+    pause
+    exit /b 1
+)
+REM Verify file không rỗng (pg_dump có thể trả 0 nhưng tạo file 0 bytes)
+for %%I in ("%BACKUP_DIR%\sol_db.dump") do set DUMP_SIZE=%%~zI
+if "%DUMP_SIZE%"=="0" (
+    echo   ❌ File sol_db.dump là 0 bytes — pg_dump fail silent!
+    echo      Thử chạy thủ công để xem lỗi gì:
+    echo        pg_dump -U %DB_USER% -h %DB_HOST% -Fc %DB_NAME% ^> test.dump
+    pause
+    exit /b 1
+)
+echo   ✓ DB dumped to %BACKUP_DIR%\sol_db.dump (%DUMP_SIZE% bytes)
 
 REM ─── 2. Copy .env files ───
 echo.

@@ -19,6 +19,7 @@ import { WidgetBubble } from './components/WidgetBubble';
 import { WidgetPanel } from './components/WidgetPanel';
 import { RecoveryCodeModal } from './components/RecoveryCodeModal';
 import { getOrCreateDeviceUid, getOriginDomain } from './lib/deviceUid';
+import { onSync } from './lib/syncBus';
 
 interface SolWidgetProps {
   apiBase?: string;
@@ -129,6 +130,24 @@ export function SolWidget({ apiBase, socketBase, initialOpen }: SolWidgetProps) 
 
   // Socket connection (only when authed)
   useSocket(socketBase ?? apiBase ?? 'http://localhost:4000');
+
+  // Listen sync events từ dashboard (cùng tab) — khi dashboard login phone /
+  // bind Zalo, widget re-bootstrap để dùng JWT mới + user data mới.
+  useEffect(() => {
+    const off1 = onSync('sol:token-changed', () => {
+      const newToken = localStorage.getItem('sol_token');
+      if (newToken && newToken !== token) {
+        init(newToken);
+      }
+    });
+    const off2 = onSync('sol:user-changed', async () => {
+      try {
+        const me = await api.getMe();
+        setUser(me);
+      } catch {}
+    });
+    return () => { off1(); off2(); };
+  }, [token, init, setUser]);
 
   // Debug log — track state để Khang/dev xem trong Console khi click bubble
   if (typeof window !== 'undefined') {

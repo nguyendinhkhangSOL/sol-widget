@@ -4,8 +4,6 @@ import clsx from 'clsx';
 import { useStore } from '../state/store';
 import { TIER_COLOR, TIER_LABEL, hasFeature } from '../lib/featureGates';
 import type { UserTier } from '../types';
-import { EmbeddedWidget } from './EmbeddedWidget';
-import { api } from '../services/api';
 
 /**
  * Hook detect viewport mobile vs desktop. Dùng matchMedia — listen resize
@@ -55,12 +53,15 @@ export function Layout() {
   const links = useMemo(() => {
     const base: { to: string; label: string; icon: string }[] = [
       { to: '/', label: 'Tổng quan', icon: '🏠' },
+      { to: '/chat', label: 'Trò chuyện', icon: '💬' },
+      // Hành trình luôn hiện — FREE user thấy demo + calendar 30 ngày,
+      // paid user thấy data thật. UI consistency > tier gating.
+      { to: '/journey', label: 'Hành trình', icon: '🗺️' },
     ];
     if (hasFeature(eff, 'workbook.write') || hasFeature(eff, 'workbook.read.full') || hasFeature(eff, 'workbook.read.week1_2')) {
-      base.push({ to: '/journey', label: 'Hành trình', icon: '🗺️' });
       base.push({ to: '/workbook', label: 'Sổ tay', icon: '📖' });
     } else {
-      // FREE: vẫn thấy nhưng đặt label "Sổ tay (mẫu)"
+      // FREE: label "Sổ tay (mẫu)" để rõ là demo
       base.push({ to: '/workbook', label: 'Sổ tay (mẫu)', icon: '📖' });
     }
     base.push({ to: '/analytics', label: 'Phân tích', icon: '📊' });
@@ -85,20 +86,14 @@ export function Layout() {
   // không bị rối với 7 icon nhỏ. Các mục advanced (Voice, Báo cáo, Phân tích,
   // Hoàn tiền) truy cập qua /settings hoặc link trong page Tổng quan.
   const mobileLinks = useMemo(() => {
-    const out = [{ to: '/', label: 'Tổng quan', icon: '🏠' }];
-    if (
-      hasFeature(eff, 'workbook.write') ||
-      hasFeature(eff, 'workbook.read.full') ||
-      hasFeature(eff, 'workbook.read.week1_2')
-    ) {
-      out.push({ to: '/journey', label: 'Hành trình', icon: '🗺️' });
-      out.push({ to: '/workbook', label: 'Sổ tay', icon: '📖' });
-    } else {
-      out.push({ to: '/workbook', label: 'Sổ tay', icon: '📖' });
-    }
-    out.push({ to: '/settings', label: 'Cài đặt', icon: '⚙️' });
-    return out;
-  }, [eff]);
+    // Mobile bottom nav 4 mục core. Hành trình luôn hiện (FREE thấy demo).
+    return [
+      { to: '/', label: 'Tổng quan', icon: '🏠' },
+      { to: '/chat', label: 'Trò chuyện', icon: '💬' },
+      { to: '/journey', label: 'Hành trình', icon: '🗺️' },
+      { to: '/settings', label: 'Cài đặt', icon: '⚙️' },
+    ];
+  }, []);
 
   const tierColor = TIER_COLOR[eff];
   const tierState = user?.tierState;
@@ -125,25 +120,8 @@ export function Layout() {
           </div>
         </div>
 
-        {/* Quick action — Check-in hôm nay (chỉ user đã đặt Q-Day mới hiện).
-            Mở widget thẳng vào CheckinFlow — 1 click thay vì 3 step. */}
-        {user?.quitDate && (
-          <div className="px-3 pt-3">
-            <button
-              type="button"
-              onClick={() => {
-                const w = (window as any).SOLWidget;
-                if (w?.openView) w.openView('checkin');
-              }}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-sol-orange text-white font-semibold text-meta hover:opacity-90 transition shadow-sm"
-            >
-              <span>✅</span>
-              <span>Check-in hôm nay</span>
-            </button>
-          </div>
-        )}
-
-        {/* Main nav — chỉ menu user */}
+        {/* Main nav — chỉ menu user.
+            Check-in giờ là entry trong nav (link sang /chat hoặc /journey). */}
         <nav className="flex-1 px-3 py-4 space-y-1">
           {links.map((l) => (
             <NavLink
@@ -258,10 +236,10 @@ export function Layout() {
       </nav>
       )}
 
-      {/* Embedded chat widget — bubble góc dưới phải mọi trang dashboard.
-          Cùng pattern với khi widget cắm ở partner site. JWT + deviceUid
-          chia sẻ qua localStorage → user authed seamless. */}
-      <EmbeddedWidget apiBase={api.baseUrl} />
+      {/* ROLLBACK 2026-05-02: bỏ widget embed khỏi dashboard.
+          Architecture mới: dashboard có /chat page riêng (page-level chat
+          render trong main area, giống Hành trình/Sổ tay).
+          Widget chỉ dùng cho partner sites + sol.vn. */}
     </div>
   );
 }

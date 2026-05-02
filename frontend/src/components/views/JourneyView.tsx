@@ -24,22 +24,39 @@ export function JourneyView() {
   const [loading, setLoading] = useState(true);
   const [openDay, setOpenDay] = useState<number | null>(null);
 
+  // Re-fetch khi user.lastCheckinDate đổi (sau khi user submit check-in từ
+  // tab khác → JourneyView tự refresh, không stale data).
   useEffect(() => {
     Promise.all([api.getRoadmap(), api.getMessages(1).catch(() => null)])
       .then(async ([rm]) => {
         setRoadmap(rm.days ?? []);
-        // fetch checkin history
+        // Fetch song song: history + today (today riêng để source-of-truth
+        // cho hôm nay — tránh trường hợp /checkins history sót do timezone).
         try {
-          const res = await fetch(
-            `${(api as any).baseUrl ?? ''}/checkins`,
-            { headers: { Authorization: `Bearer ${localStorage.getItem('sol_token')}` } }
-          );
-          const data = await res.json();
-          setCheckins(data.checkins ?? []);
+          const baseUrl = (api as any).baseUrl ?? '';
+          const headers = {
+            Authorization: `Bearer ${localStorage.getItem('sol_token')}`,
+          };
+          const [historyRes, todayRes] = await Promise.all([
+            fetch(`${baseUrl}/checkins`, { headers }),
+            fetch(`${baseUrl}/checkins/today`, { headers }),
+          ]);
+          const history = await historyRes.json();
+          const today = await todayRes.json();
+
+          let merged: CheckinRow[] = history.checkins ?? [];
+          // Nếu today có checkin nhưng không có trong history → add vào
+          if (today.checkin) {
+            const existsInHistory = merged.some(
+              (c) => c.dayNumber === today.checkin.dayNumber,
+            );
+            if (!existsInHistory) merged = [...merged, today.checkin];
+          }
+          setCheckins(merged);
         } catch {}
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [user?.lastCheckinDate]);
 
   const byDay = useMemo(() => {
     const m = new Map<number, CheckinRow>();

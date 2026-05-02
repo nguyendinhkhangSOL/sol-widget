@@ -24,6 +24,11 @@ usersRouter.get('/me', async (req: AuthedRequest, res) => {
   return res.json({
     id: user.id,
     name: user.name,
+    // Identity fields — FE dùng để biết user đã liên kết chưa
+    phone: user.phone,
+    email: user.email,
+    zaloUserId: user.zaloUserId,
+    isAnonymous: user.isAnonymous,
     pronouns: user.pronouns,
     assistantName: user.assistantName,
     ftndScore: user.ftndScore,

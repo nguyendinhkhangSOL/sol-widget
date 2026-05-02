@@ -61,6 +61,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 export const api = {
   baseUrl: BASE_URL,
 
+  // Generic request helper — cho page Chat tùy ý gọi /messages, /messages/...
+  request,
+
   // Anonymous-first: tạo user ẩn danh từ deviceUid (FE generate UUID lưu localStorage).
   anonymous: (deviceUid: string, originDomain?: string) =>
     request<{ token: string; userId: string; isAnonymous: boolean }>(

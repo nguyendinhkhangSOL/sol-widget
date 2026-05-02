@@ -12,6 +12,7 @@
 import { useEffect, useState } from 'react';
 import { useStore } from '../../state/store';
 import { api } from '../../services/api';
+import { emitSync } from '../../lib/syncBus';
 
 export function CheckinFlow() {
   const setView = useStore((s) => s.setView);
@@ -46,6 +47,16 @@ export function CheckinFlow() {
         note: note.trim() || undefined,
         isSickDay,
       });
+      // Refresh user → user.lastCheckinDate update → JourneyView watch
+      // và tự re-fetch checkins. Đồng bộ widget state khắp các view.
+      try {
+        const me = await api.getMe();
+        useStore.getState().setUser(me);
+      } catch {}
+      // Emit sync event → dashboard (nếu widget embed trong dashboard)
+      // listen và re-fetch checkins/user → grid Hành trình dashboard update.
+      emitSync('sol:checkin');
+      emitSync('sol:user-changed');
       setSubmitted(true);
     } catch (err) {
       console.warn(err);
