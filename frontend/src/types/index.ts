@@ -74,7 +74,7 @@ export interface User {
   effectiveTier?: UserTier;
   /** Trạng thái tier (computed) — refund eligibility, days left… */
   tierState?: TierState;
-  /** Cohort key vd "2026-04". NULL nếu chưa đặt Q-Day. */
+  /** Đội key vd "2026-04". NULL nếu chưa đặt Q-Day. */
   cohortKey?: string | null;
   /** Danh sách feature key user được phép truy cập (computed). */
   features?: string[];

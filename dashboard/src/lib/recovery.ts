@@ -76,7 +76,7 @@ const PHASES: PhaseDef[] = [
       key: 'hold48',
       label: '48h Cầm cự',
       sub: 'Dopamine đang tái cân bằng',
-      color: '#E8812E',
+      color: '#B8860B',
       bg: 'rgba(232,129,46,.2)',
       emoji: '🟠',
     },

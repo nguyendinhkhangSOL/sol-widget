@@ -44,7 +44,7 @@ export const FAQ_PROMPTS: Prompt[] = [
     send:
       'Tôi đang muốn hút chỉ 1 điếu — cho bản thân nghỉ một chút. ' +
       'Có thật sự nguy hiểm không, và tại sao?',
-    accent: '#C04331',
+    accent: '#C62828',
     weight: 5,
   },
   {
@@ -107,7 +107,7 @@ export const SOS_PROMPTS: Prompt[] = [
     icon: '🆘',
     label: 'Tôi đang thèm nặng — SOS 90 giây',
     view: 'crisis',
-    accent: '#C04331',
+    accent: '#C62828',
     weight: 10,
   },
   {
@@ -240,7 +240,7 @@ export const PRE_JOURNEY_PROMPTS: Prompt[] = [
     label: 'Giúp tôi tìm lý do đủ mạnh để bỏ',
     send:
       'Tôi muốn bỏ nhưng chưa có động lực thật rõ. Hỏi tôi vài câu để giúp tôi tìm ra 3 lý do đủ mạnh.',
-    accent: '#E8812E',
+    accent: '#B8860B',
     weight: 8,
   },
   {

@@ -3,7 +3,7 @@
 // 6 khu theo spec:
 //   1. Hôm nay cần Khang (top user risk)
 //   2. Số liệu live (active, doanh thu, conversion)
-//   3. Cohort tracking (link tới /admin/cohorts)
+//   3. Đội Sol tracking (link tới /admin/cohorts)
 //   4. Refund queue (link tới /admin/refunds)
 //   5. Content cần duyệt (placeholder, future)
 //   6. Inbox riêng (placeholder, future)
@@ -65,7 +65,7 @@ export function AdminHome() {
             </div>
             {data.needsAttention.length === 0 ? (
               <div className="text-meta text-sol-ink-2 py-4">
-                Không có ai đang đỏ. Cohort đang ổn — chúc mừng!
+                Không có ai đang đỏ. Đội Sol đang ổn — chúc mừng!
               </div>
             ) : (
               <ul className="divide-y divide-sol-line">
@@ -140,7 +140,7 @@ export function AdminHome() {
               ))}
             </div>
             <Link to="/admin/cohorts" className="sol-btn-secondary sol-btn-sm mt-3 inline-flex">
-              Cohort theo tháng ›
+              Đội Sol theo tháng ›
             </Link>
           </section>
 

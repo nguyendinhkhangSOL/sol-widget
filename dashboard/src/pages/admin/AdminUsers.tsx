@@ -96,7 +96,7 @@ export function AdminUsers() {
               <th className="text-left px-4 py-3">Tier</th>
               <th className="text-right px-4 py-3">Risk</th>
               <th className="text-right px-4 py-3">Streak</th>
-              <th className="text-left px-4 py-3">Cohort</th>
+              <th className="text-left px-4 py-3">Đội</th>
               <th className="text-left px-4 py-3">Hết hạn</th>
               <th className="text-right px-4 py-3"></th>
             </tr>

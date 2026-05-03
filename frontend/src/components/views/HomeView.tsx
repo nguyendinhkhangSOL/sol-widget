@@ -284,7 +284,7 @@ function InJourneyCards({
         <button
           onClick={() => onOpenView('checkin')}
           className="w-full rounded-2xl p-4 flex items-center gap-3 text-left text-white shadow-md active:scale-[0.99] transition"
-          style={{ background: 'linear-gradient(135deg, #E8812E, #F57C00)' }}
+          style={{ background: 'linear-gradient(135deg, #B8860B, #F57C00)' }}
         >
           <div className="h-11 w-11 rounded-xl bg-white/25 border border-white/30 flex items-center justify-center text-2xl flex-shrink-0">
             ✅
@@ -387,7 +387,7 @@ function PreJourneyCards({
       <button
         onClick={() => onChip(PRE_JOURNEY_PROMPTS.find((p) => p.id === 'pre-set-date')!)}
         className="w-full rounded-2xl p-4 flex items-start gap-3 text-left shadow-sm active:scale-[0.99] transition text-white"
-        style={{ background: 'linear-gradient(135deg, #E8812E, #F57C00)' }}
+        style={{ background: 'linear-gradient(135deg, #B8860B, #F57C00)' }}
       >
         <div className="h-10 w-10 rounded-xl bg-white/20 border border-white/25 flex items-center justify-center text-lg shrink-0">
           📅
@@ -478,7 +478,7 @@ function SosRow({ onChip }: { onChip: (p: Prompt) => void }) {
             key={p.id}
             onClick={() => onChip(p)}
             className="rounded-xl p-2.5 text-white text-left flex flex-col items-start active:scale-[0.97] transition"
-            style={{ background: p.accent ?? '#C04331' }}
+            style={{ background: p.accent ?? '#C62828' }}
           >
             <div className="text-lg leading-none">{p.icon}</div>
             <div className="text-[11px] font-semibold leading-tight mt-1">

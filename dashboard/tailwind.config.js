@@ -15,25 +15,35 @@ export default {
     extend: {
       colors: {
         // Brand — không đổi vì đã in vào tài liệu, mockup, in ấn workbook
-        'sol-green': '#3AA06B',
-        'sol-green-ink': '#1F6B43',  // chữ xanh đậm (contrast AAA trên nền kem)
-        'sol-green-soft': '#E5F1EA',
-        'sol-orange': '#E8812E',
-        'sol-orange-ink': '#A95A14',
-        'sol-orange-soft': '#FBEBDA',
+        'sol-green': '#B25C2C',
+        'sol-green-ink': '#6B3318',  // chữ xanh đậm (contrast AAA trên nền kem)
+        'sol-green-soft': '#F4DDC8',
+        'sol-orange': '#B8860B',
+        'sol-orange-ink': '#6B5008',
+        'sol-orange-soft': '#F0E2B8',
         'sol-blue': '#3A7CA5',
         'sol-blue-ink': '#225573',
         'sol-blue-soft': '#E2EDF4',
-        'sol-red': '#C04331',
-        'sol-red-ink': '#8B2D1F',
+        'sol-red': '#C62828',
+        'sol-red-ink': '#8B0000',
         'sol-red-soft': '#F5DDD9',
+        // Earth — foundation/structural (footer, sidebar dark, voice section bg)
+        'sol-earth': '#5C3A1E',
+        'sol-earth-ink': '#3A2410',
+        'sol-earth-soft': '#E8DCCA',
+
+        // Wine — power CTA (paid upgrade, important emphasis), khác sol-red (SOS)
+        'sol-wine': '#8B2D2D',
+        'sol-wine-ink': '#5C1A1A',
+        'sol-wine-soft': '#F0DADA',
+
 
         // Neutrals
-        'sol-bg': '#F7F4EF',         // nền chính — giấy ấm, ít phản chiếu blue light
-        'sol-soft': '#EEE9E0',        // nền phụ — sidebar, divider band
+        'sol-bg': '#FBF7F0',         // nền chính — giấy ấm, ít phản chiếu blue light
+        'sol-soft': '#F0E5D0',        // nền phụ — sidebar, divider band
         'sol-paper': '#FFFFFF',       // card, input — vẫn dùng trắng cho card để có contrast với nền
-        'sol-line': '#E5DFD3',        // border tinh tế
-        'sol-line-strong': '#CFC8B9', // border đậm hơn
+        'sol-line': '#D4C7A8',        // border tinh tế
+        'sol-line-strong': '#A8957A', // border đậm hơn
 
         // Text — fixed alpha, không dùng /40 /50 nữa để contrast nhất quán
         'sol-ink': '#2C2A27',         // chữ chính, contrast 14:1 trên sol-bg

@@ -808,16 +808,56 @@ adminRouter.get('/wiki/stats', async (_req, res) => {
   const wpAdminUrl = process.env.WP_ADMIN_URL ?? 'https://sol.vn/wp-admin';
   const wpFrontUrl = process.env.WP_FRONT_URL ?? 'https://sol.vn/wiki';
 
-  // Mock: top bài (placeholder cho đến khi có GSC integration)
+  // Đọc danh sách bài thực từ folder wiki-skeletons/. Khi GSC/GA4 tích hợp,
+  // trả thêm field views7d/conv thật. Hiện tại views/conv = 0 vì chưa publish.
+  const fs = await import('node:fs/promises');
+  const path = await import('node:path');
+
+  // wiki-skeletons nằm ở repo root. Backend chạy từ ./backend nên cwd = backend/,
+  // wiki-skeletons = ../wiki-skeletons. Dùng process.cwd() cho ESM-safe.
+  const wikiBase = path.resolve(process.cwd(), '..', 'wiki-skeletons');
+
+  type Post = { title: string; slug: string; phase?: string; group: string; views7d: number; conv: number };
+  const posts: Post[] = [];
+
+  async function scanFolder(folderPath: string, group: string) {
+    try {
+      const files = await fs.readdir(folderPath);
+      for (const f of files) {
+        if (!f.endsWith('.md') || f.startsWith('000_INDEX')) continue;
+        const full = path.join(folderPath, f);
+        const content = await fs.readFile(full, 'utf-8');
+        // Parse frontmatter đơn giản (không dùng gray-matter dep)
+        const fmMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
+        if (!fmMatch) continue;
+        const fm = fmMatch[1];
+        const titleMatch = fm.match(/^title:\s*"?(.+?)"?\s*$/m);
+        const slugMatch = fm.match(/^slug:\s*"?(.+?)"?\s*$/m);
+        const phaseMatch = fm.match(/^phase:\s*"?(.+?)"?\s*$/m);
+        if (!titleMatch || !slugMatch) continue;
+        posts.push({
+          title: titleMatch[1].trim(),
+          slug: slugMatch[1].trim(),
+          phase: phaseMatch?.[1]?.trim(),
+          group,
+          views7d: 0,
+          conv: 0,
+        });
+      }
+    } catch {
+      // folder không tồn tại — skip
+    }
+  }
+
+  await scanFolder(wikiBase, 'Timeline (14 mốc)');
+  await scanFolder(path.join(wikiBase, 'chips'), 'Chip — triệu chứng/tâm lý/trigger');
+
   res.json({
     wpAdminUrl,
     wpFrontUrl,
-    integrationStatus: 'mock',
-    topPosts: [
-      { title: 'Cách cai thuốc lá tự nhiên hiệu quả', slug: 'cach-cai-thuoc-la-tu-nhien', views7d: 0, conv: 0 },
-      { title: 'Ngày đầu cai thuốc thèm khủng khiếp', slug: 'ngay-dau-cai-thuoc', views7d: 0, conv: 0 },
-      { title: 'Cai thuốc lá 30 ngày có khó không', slug: 'cai-thuoc-30-ngay', views7d: 0, conv: 0 },
-    ],
-    note: 'Dữ liệu mock — tích hợp Google Search Console + GA4 để có số thật. Cấu hình endpoint env: WP_ADMIN_URL, WP_FRONT_URL.',
+    integrationStatus: 'local-skeleton',
+    totalArticles: posts.length,
+    topPosts: posts,
+    note: `${posts.length} bài skeleton trong wiki-skeletons/. Khang biên tập + publish lên WordPress sol.vn → tích hợp GSC/GA4 để có views/conv thật.`,
   });
 });

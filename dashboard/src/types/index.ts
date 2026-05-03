@@ -146,7 +146,7 @@ export interface QDayChecklistConfig {
   items: Array<Omit<QDayChecklistItem, 'checkedAt'>>;
 }
 
-/* ────────────────────────── COHORT ─────────────────────────────── */
+/* ─────────────────── ĐOÀN SOL (technical: Cohort) ──────────────── */
 
 export interface Cohort {
   key: string;
@@ -191,7 +191,7 @@ export interface User {
   effectiveTier?: UserTier;
   /** Trạng thái tier (computed) — refund eligibility, days left… */
   tierState?: TierState;
-  /** Cohort key vd "2026-04". NULL nếu chưa đặt Q-Day. */
+  /** Đội key vd "2026-04". NULL nếu chưa đặt Q-Day. */
   cohortKey?: string | null;
   /** Danh sách feature key. */
   features?: string[];

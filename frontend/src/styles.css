@@ -19,24 +19,34 @@
 
 /* ── Design tokens (đồng bộ với tailwind.config.js) ──────────────────── */
 :root {
-  --sol-green: #3AA06B;
-  --sol-green-ink: #1F6B43;
-  --sol-green-soft: #E5F1EA;
-  --sol-orange: #E8812E;
-  --sol-orange-ink: #A95A14;
-  --sol-orange-soft: #FBEBDA;
+  --sol-green: #B25C2C;
+  --sol-green-ink: #6B3318;
+  --sol-green-soft: #F4DDC8;
+  --sol-orange: #B8860B;
+  --sol-orange-ink: #6B5008;
+  --sol-orange-soft: #F0E2B8;
   --sol-blue: #3A7CA5;
   --sol-blue-ink: #225573;
   --sol-blue-soft: #E2EDF4;
-  --sol-red: #C04331;
-  --sol-red-ink: #8B2D1F;
+  --sol-red: #C62828;
+  --sol-red-ink: #8B0000;
   --sol-red-soft: #F5DDD9;
 
-  --sol-bg: #F7F4EF;
-  --sol-soft: #EEE9E0;
+  /* Earth — foundation/structural */
+  --sol-earth: #5C3A1E;
+  --sol-earth-ink: #3A2410;
+  --sol-earth-soft: #E8DCCA;
+
+  /* Wine — power CTA, khác sol-red (SOS) */
+  --sol-wine: #8B2D2D;
+  --sol-wine-ink: #5C1A1A;
+  --sol-wine-soft: #F0DADA;
+
+  --sol-bg: #FBF7F0;
+  --sol-soft: #F0E5D0;
   --sol-paper: #FFFFFF;
-  --sol-line: #E5DFD3;
-  --sol-line-strong: #CFC8B9;
+  --sol-line: #D4C7A8;
+  --sol-line-strong: #A8957A;
 
   --sol-ink: #2C2A27;
   --sol-ink-2: #5A5650;

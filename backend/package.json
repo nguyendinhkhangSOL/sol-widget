@@ -1,7 +1,7 @@
 {
   "name": "sol-widget-backend",
   "version": "0.1.0",
-  "description": "SOL Companion Widget — backend (Express + Socket.IO + Prisma + Claude)",
+  "description": "Đi Cùng Sol — backend (Express + Socket.IO + Prisma + Claude API)",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -40,7 +40,7 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
+    "@types/express": "^4.17.25",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.9.0",
     "@types/node-cron": "^3.0.11",
@@ -52,4 +52,3 @@
     "typescript": "^5.6.3",
     "vitest": "^2.1.8"
   }
-}

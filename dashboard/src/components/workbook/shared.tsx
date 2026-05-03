@@ -6,11 +6,11 @@ import { ReactNode } from 'react';
 export type AccentColor = 'orange' | 'green' | 'blue' | 'purple' | 'red';
 
 const ACCENT: Record<AccentColor, { bar: string; text: string; bg: string; badge: string }> = {
-  orange: { bar: '#E8812E', text: '#E8812E', bg: '#FFF4EA', badge: '#E8812E' },
-  green:  { bar: '#3AA06B', text: '#2E7D32', bg: '#E8F5E9', badge: '#3AA06B' },
+  orange: { bar: '#B8860B', text: '#B8860B', bg: '#FFF4EA', badge: '#B8860B' },
+  green:  { bar: '#B25C2C', text: '#2E7D32', bg: '#E8F5E9', badge: '#B25C2C' },
   blue:   { bar: '#3A7CA5', text: '#1565C0', bg: '#E3F2FD', badge: '#3A7CA5' },
   purple: { bar: '#7B1FA2', text: '#6A1B9A', bg: '#F3E5F5', badge: '#7B1FA2' },
-  red:    { bar: '#C04331', text: '#B71C1C', bg: '#FFEBEE', badge: '#C62828' },
+  red:    { bar: '#C62828', text: '#B71C1C', bg: '#FFEBEE', badge: '#C62828' },
 };
 
 export function SectionCard({

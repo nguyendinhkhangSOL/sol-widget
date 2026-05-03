@@ -1,7 +1,7 @@
 {
   "name": "sol-widget-frontend",
   "version": "0.1.0",
-  "description": "SOL Companion Widget — React SDK + embed script",
+  "description": "Đi Cùng Sol — frontend widget (React SDK + embed) cho bothuocla.sol.vn",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

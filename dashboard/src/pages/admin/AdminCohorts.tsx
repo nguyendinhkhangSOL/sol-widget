@@ -1,5 +1,5 @@
 // dashboard/src/pages/admin/AdminCohorts.tsx
-// Cohort theo tháng — bao nhiêu user đặt Q-Day trong tháng đó, đang ở tier
+// Đội Sol theo tháng — bao nhiêu user đặt Q-Day trong tháng đó, đang ở tier
 // nào, retention.
 
 import { useEffect, useState } from 'react';
@@ -20,14 +20,14 @@ export function AdminCohorts() {
   return (
     <div className="space-y-4">
       <p className="text-meta text-sol-ink-2">
-        Cohort tự tạo khi user đầu tiên trong tháng đặt Q-Day. Theo dõi
+        Đội Sol tự tạo khi user đầu tiên trong tháng đặt Q-Day. Theo dõi
         retention để biết tháng nào hiệu quả.
       </p>
 
       {loading && <div className="text-sol-ink-2">Đang tải…</div>}
       {!loading && items.length === 0 && (
         <div className="sol-card p-6 text-center text-sol-ink-3">
-          Chưa có cohort nào — chưa có user nào đặt Q-Day.
+          Chưa có Đội Sol nào — chưa có user nào đặt Q-Day.
         </div>
       )}
 
@@ -35,7 +35,7 @@ export function AdminCohorts() {
         <table className="min-w-full text-meta">
           <thead className="bg-sol-paper text-[11px] uppercase text-sol-ink-3 tracking-wider">
             <tr>
-              <th className="text-left px-4 py-3">Cohort</th>
+              <th className="text-left px-4 py-3">Đội Sol</th>
               <th className="text-right">Tổng</th>
               <th className="text-right">Đã trả phí</th>
               <th className="text-right">Alumni</th>

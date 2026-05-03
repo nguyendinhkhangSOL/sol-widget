@@ -24,7 +24,7 @@ export function WhySection() {
           { key: 'why4', label: 'Lý do số 4', ph: 'Ví dụ: Tôi muốn chứng minh mình làm được…', val: data.why4 },
         ].map((f) => (
           <div key={f.key} className="rounded-xl p-3 bg-sol-bg/60 border border-black/5">
-            <FieldLabel color="#E8812E">{f.label}</FieldLabel>
+            <FieldLabel color="#B8860B">{f.label}</FieldLabel>
             <TextArea
               value={f.val}
               placeholder={f.ph}
@@ -56,7 +56,7 @@ export function PledgeSection() {
         className="rounded-2xl p-6 text-center"
         style={{
           background: 'linear-gradient(135deg, #FFF4EA 0%, #FEE0C4 100%)',
-          border: '2px dashed #E8812E',
+          border: '2px dashed #B8860B',
         }}
       >
         <p className="text-[15px] md:text-base leading-[1.9] font-medium text-sol-ink">
@@ -335,7 +335,7 @@ export function RelapsePlanSection() {
             </div>
             <div className="flex-1 space-y-2">
               <div>
-                <FieldLabel color="#C04331">TRIGGER</FieldLabel>
+                <FieldLabel color="#C62828">TRIGGER</FieldLabel>
                 <TextInput
                   value={data[t.tKey] as string}
                   onChange={(e) => set(t.tKey as any, e.target.value)}
@@ -343,7 +343,7 @@ export function RelapsePlanSection() {
                 />
               </div>
               <div>
-                <FieldLabel color="#3AA06B">KẾ HOẠCH ĐỐI PHÓ</FieldLabel>
+                <FieldLabel color="#B25C2C">KẾ HOẠCH ĐỐI PHÓ</FieldLabel>
                 <TextInput
                   value={data[t.pKey] as string}
                   onChange={(e) => set(t.pKey as any, e.target.value)}
@@ -372,10 +372,10 @@ export function ResourcesSection() {
   const cards = [
     { tag: '📚 Sol Wiki', title: 'Thư viện kiến thức cai thuốc', desc: 'Giải thích khoa học, cơ chế nghiện, tác hại, phương pháp — tất cả có nguồn tham khảo', href: 'https://sol.vn/wiki', color: '#3A7CA5' },
     { tag: '📖 Ebook Sol', title: 'Bỏ Thuốc, Thở Lại', desc: '19 chương hướng dẫn đầy đủ — miễn phí 6 chương đầu', href: 'https://bothuocla.sol.vn/ebook', color: '#C17E2A' },
-    { tag: '📊 Dashboard', title: 'Theo dõi tiến độ real-time', desc: 'Từ Giờ G: tiền tiết kiệm, phổi phục hồi, ngày không thuốc, tim mạch', href: 'https://bothuocla.sol.vn/dashboard', color: '#3AA06B' },
+    { tag: '📊 Dashboard', title: 'Theo dõi tiến độ real-time', desc: 'Từ Giờ G: tiền tiết kiệm, phổi phục hồi, ngày không thuốc, tim mạch', href: 'https://bothuocla.sol.vn/dashboard', color: '#B25C2C' },
     { tag: '🤖 AI Mentor 1-1', title: 'Đồng hành cá nhân hóa 24/7', desc: 'Tổng hợp từ kinh nghiệm thực chiến — sẵn sàng lúc 2 giờ sáng', href: 'https://bothuocla.sol.vn/ai-mentor', color: '#7B1FA2' },
     { tag: '👥 Cộng đồng Sol', title: 'Bạn không đi một mình', desc: 'Kết nối với những người cùng hành trình — chia sẻ, hỗ trợ, ăn mừng cùng nhau', href: 'https://bothuocla.sol.vn/community', color: '#00838F' },
-    { tag: '🌐 bothuocla.sol.vn', title: 'Trang chủ Sol Bỏ Thuốc', desc: 'Điểm khởi đầu của toàn bộ hành trình — tạo tài khoản miễn phí', href: 'https://bothuocla.sol.vn', color: '#E8812E' },
+    { tag: '🌐 bothuocla.sol.vn', title: 'Đi Cùng Sol — bỏ thuốc lá', desc: 'Trang chủ Đi Cùng Sol — vào miễn phí, không cần đăng ký', href: 'https://bothuocla.sol.vn', color: '#B8860B' },
   ];
   return (
     <SectionCard accent="blue" icon="🔗" title="Hệ Sinh Thái Sol — Tài Nguyên Của Bạn" subtitle="Workbook này là 1 phần của hệ thống — kết hợp đầy đủ để tối đa hiệu quả">

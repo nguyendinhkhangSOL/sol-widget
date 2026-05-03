@@ -3,15 +3,17 @@
 // Chat page riêng cho dashboard — render chat trong main area giống các
 // page khác (Hành trình, Sổ tay).
 //
-// Phase 1 (deployed 2026-05-03):
+// Phase 1 (2026-05-03):
 //   1. SuggestedChips — 8-12 chip ranked theo day×hour×mood (chipRanking.ts)
-//   2. Chip click → instant Q&A (NO AI call → no quota use)
-//   3. Wiki link CTA trong câu trả lời chip → marketing loop sang sol.vn
-//   4. Composer autocomplete — gõ matching chip → suggestion bar Tab to accept
+//   2. Chip click → instant Q&A (NO AI call)
+//   3. Wiki link CTA → marketing loop sang sol.vn
+//   4. Composer autocomplete + Tab to accept
 //   5. Fallback chip "Câu của tôi không có ở đây"
 //
-// Trade-off Phase 1: chip Q&A là CLIENT-ONLY (không POST /messages). Sau
-// reload sẽ mất. Phase 2 sẽ thêm metadata.cannedReplyId vào /messages.
+// Phase 2A (2026-05-03 cont.):
+//   - Chip Q&A persist DB qua POST /messages với metadata.cannedReplyId
+//   - Backend skip AI + quota cho path canned
+//   - Optimistic UI giữ nguyên (instant), background POST đồng bộ DB
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useStore } from '../state/store';
@@ -33,8 +35,19 @@ interface Message {
   type: string;
   content: string;
   createdAt: string;
+  /** Client-side enrichment cho chip vừa click (trước khi persist). */
   wikiUrl?: string;
   wikiLabel?: string;
+  /** Metadata từ DB khi load history — chứa cannedReplyId, wikiUrl, wikiLabel. */
+  metadata?: any;
+}
+
+/** Lấy wiki link từ msg, ưu tiên top-level (client) → metadata (DB history). */
+function getWikiLink(msg: Message): { url: string; label: string } | null {
+  const url = msg.wikiUrl ?? msg.metadata?.wikiUrl;
+  if (!url) return null;
+  const label = msg.wikiLabel ?? msg.metadata?.wikiLabel ?? 'Đọc chi tiết trên sol.vn';
+  return { url, label };
 }
 
 export function Chat() {
@@ -75,28 +88,70 @@ export function Chat() {
     return result?.chip ?? null;
   }, [draft, chipsReady]);
 
+  /**
+   * Phase 2A — Chip click flow:
+   *   1. Optimistic render Q&A (instant, không chờ network)
+   *   2. Background POST /messages với metadata.cannedReplyId/cannedAnswer
+   *   3. Backend skip AI + quota → persist Q&A vào DB
+   *   4. Replace optimistic với persisted (giữ id ổn định cho future ops)
+   */
   function handleChipClick(chip: QuickReply) {
     if (!chip.reusable) markUsed(chip.id);
     const now = new Date().toISOString();
-    const userMsg: Message = {
-      id: `chip-u-${Date.now()}`,
+    const tmpUserId = `chip-u-${Date.now()}`;
+    const tmpBotId = `chip-b-${Date.now() + 1}`;
+    const answer = resolveAnswer(chip, user);
+
+    const optimisticUser: Message = {
+      id: tmpUserId,
       role: 'USER',
-      type: 'CHAT',
+      type: 'CHIP_REPLY',
       content: chip.label,
       createdAt: now,
     };
-    const botMsg: Message = {
-      id: `chip-b-${Date.now() + 1}`,
+    const optimisticBot: Message = {
+      id: tmpBotId,
       role: 'ASSISTANT',
-      type: 'CHAT',
-      content: resolveAnswer(chip, user),
+      type: 'CHIP_REPLY',
+      content: answer,
       createdAt: now,
       wikiUrl: chip.wikiUrl ?? undefined,
       wikiLabel: chip.wikiLabel ?? undefined,
     };
-    setMessages((prev) => [...prev, userMsg, botMsg]);
+    setMessages((prev) => [...prev, optimisticUser, optimisticBot]);
     setChipVersion((v) => v + 1);
     setDraft('');
+
+    // Background persist — không await, không block UI
+    api
+      .request<{ userMessage: Message; outbound: Message[] }>('/messages', {
+        method: 'POST',
+        body: JSON.stringify({
+          content: chip.label,
+          metadata: {
+            cannedReplyId: chip.id,
+            cannedAnswer: answer,
+            wikiUrl: chip.wikiUrl ?? null,
+            wikiLabel: chip.wikiLabel ?? null,
+          },
+        }),
+      })
+      .then((res) => {
+        // Replace optimistic với persisted (id ổn định từ DB)
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === tmpUserId
+              ? res.userMessage
+              : m.id === tmpBotId
+              ? res.outbound[0] ?? m
+              : m,
+          ),
+        );
+      })
+      .catch(() => {
+        // Silent fail — user vẫn thấy Q&A optimistic. Sau reload có thể mất
+        // tin này nhưng UX không bị break.
+      });
   }
 
   function handleFallbackClick() {
@@ -268,6 +323,7 @@ export function Chat() {
 function Bubble({ msg }: { msg: Message }) {
   const isUser = msg.role === 'USER';
   const isSystem = msg.role === 'SYSTEM';
+  const wiki = !isUser ? getWikiLink(msg) : null;
 
   if (isSystem) {
     return (
@@ -288,15 +344,15 @@ function Bubble({ msg }: { msg: Message }) {
         }
       >
         {msg.content}
-        {!isUser && msg.wikiUrl && (
+        {wiki && (
           <a
-            href={msg.wikiUrl}
+            href={wiki.url}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center gap-1.5 text-meta text-sol-green font-medium hover:underline"
           >
             <span aria-hidden>📖</span>
-            <span>{msg.wikiLabel || 'Đọc chi tiết trên sol.vn'}</span>
+            <span>{wiki.label}</span>
             <span aria-hidden>→</span>
           </a>
         )}

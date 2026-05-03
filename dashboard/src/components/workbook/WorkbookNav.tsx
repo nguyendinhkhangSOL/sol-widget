@@ -54,7 +54,7 @@ export function WorkbookNav() {
             className="h-full transition-all"
             style={{
               width: `${pct}%`,
-              background: 'linear-gradient(90deg, #E8812E, #3AA06B)',
+              background: 'linear-gradient(90deg, #B8860B, #B25C2C)',
             }}
           />
         </div>
@@ -110,7 +110,7 @@ function SaveIndicator({ status }: { status: 'idle' | 'saving' | 'saved' }) {
     <div className="hidden md:flex items-center gap-1 text-[10px] text-sol-ink/50 shrink-0">
       <span
         className="h-1.5 w-1.5 rounded-full"
-        style={{ background: saving ? '#F57C00' : '#3AA06B' }}
+        style={{ background: saving ? '#F57C00' : '#B25C2C' }}
       />
       {saving ? 'Đang lưu…' : 'Đã lưu'}
     </div>

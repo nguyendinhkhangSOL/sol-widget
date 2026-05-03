@@ -744,7 +744,7 @@ export function Settings() {
                 value={cigsPerDay}
                 onChange={(e) => setCigsPerDay(Number(e.target.value))}
                 className="flex-1"
-                style={{ accentColor: '#3AA06B' }}
+                style={{ accentColor: '#B25C2C' }}
               />
               <div className="w-20 text-right">
                 <input

@@ -25,7 +25,7 @@ export function AdminLayout() {
     { to: '/admin/users', label: 'Người dùng', icon: '👥' },
     { to: '/admin/refunds', label: 'Hoàn tiền', icon: '💰' },
     { to: '/admin/voice', label: 'Voice Khang', icon: '🎙️' },
-    { to: '/admin/cohorts', label: 'Cohort', icon: '🗓️' },
+    { to: '/admin/cohorts', label: 'Đội Sol', icon: '🗓️' },
     { to: '/admin/analytics', label: 'Phân tích', icon: '📈' },
     { to: '/admin/wiki', label: 'Wiki', icon: '📰' },
     { to: '/admin/ai', label: 'Kết nối AI', icon: '🧠' },

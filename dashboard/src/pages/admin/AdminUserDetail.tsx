@@ -85,7 +85,7 @@ export function AdminUserDetail() {
           </span>
           <div className="text-meta text-sol-ink-3 mt-1">
             Risk {u.riskScore}/100
-            {u.cohortKey && ` · Cohort ${u.cohortKey}`}
+            {u.cohortKey && ` · Đội ${u.cohortKey}`}
           </div>
         </div>
       </div>

@@ -245,12 +245,12 @@ function TrendChart({ checkins, days }: { checkins: CheckinRow[]; days: number }
       {/* baseline */}
       <line x1={pad} x2={width - pad} y1={height / 2} y2={height / 2} stroke="#00000010" strokeDasharray="2 3" />
       <path d={toPath(moodPts)} fill="none" stroke="#3A7CA5" strokeWidth="1.8" strokeLinejoin="round" />
-      <path d={toPath(cravPts)} fill="none" stroke="#C04331" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d={toPath(cravPts)} fill="none" stroke="#C62828" strokeWidth="1.8" strokeLinejoin="round" />
       {moodPts.map(([x, y], i) => (
         <circle key={`m${i}`} cx={x} cy={y} r="1.8" fill="#3A7CA5" />
       ))}
       {cravPts.map(([x, y], i) => (
-        <circle key={`c${i}`} cx={x} cy={y} r="1.8" fill="#C04331" />
+        <circle key={`c${i}`} cx={x} cy={y} r="1.8" fill="#C62828" />
       ))}
     </svg>
   );

@@ -69,7 +69,7 @@ const SLUG_RE = /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
 // Bảng emoji được duyệt — chọn từ đây để tránh tình trạng copy emoji "lạ"
 // từ nguồn khác (ZWJ, biến thể skin tone, font Apple vs Windows render khác).
-// Nhóm theo ngữ cảnh app cai thuốc.
+// Nhóm theo ngữ cảnh Đi Cùng Sol — bỏ thuốc lá.
 const ICON_PRESETS: { group: string; items: string[] }[] = [
   {
     group: 'Cảm xúc / tình huống',
