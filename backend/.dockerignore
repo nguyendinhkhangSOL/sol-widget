@@ -1,0 +1,33 @@
+# Loại trừ khỏi Docker build context — tránh đè node_modules host (Windows
+# binaries) lên container (Alpine Linux). Cũng giảm size build context.
+
+node_modules
+dist
+.env
+.env.local
+.env.*.local
+
+# Prisma client đã generate trên host (Windows binaries) — phải để container tự generate
+node_modules/.prisma
+node_modules/@prisma/client
+
+# Git + IDE
+.git
+.gitignore
+.vscode
+.idea
+*.swp
+
+# Logs / OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Tests / coverage
+coverage
+.nyc_output
+
+# Docker meta
+Dockerfile
+.dockerignore
+docker-compose*.yml

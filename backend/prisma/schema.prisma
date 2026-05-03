@@ -2,7 +2,11 @@
 // PostgreSQL via Prisma
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  // "native" = host khi dev local (Windows). "linux-musl-openssl-3.0.x" =
+  // node:20-alpine container. Có cả 2 → image build trên Windows vẫn chạy
+  // được trên Linux Alpine.
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {

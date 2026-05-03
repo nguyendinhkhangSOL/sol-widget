@@ -123,6 +123,24 @@ export const api = {
   patchMe: (body: Partial<User>) =>
     request<{ ok: boolean }>('/users/me', { method: 'PATCH', body: JSON.stringify(body) }),
 
+  // Canned quick-replies (chip chat) — public endpoint cho dashboard.
+  // Trả ALL chip enabled. Dashboard tự rank/filter (xem lib/chipRanking.ts).
+  getCannedReplies: () =>
+    request<{
+      items: Array<{
+        id: string;
+        icon: string;
+        label: string;
+        answer: string;
+        wikiUrl?: string | null;
+        wikiLabel?: string | null;
+        reusable: boolean;
+        triggers?: string[];
+        priority?: number;
+        minScore?: number;
+      }>;
+    }>("/content/canned-replies"),
+
   getCheckins: (limit = 60) =>
     request<{ checkins: CheckIn[] }>(`/checkins?limit=${limit}`),
 
