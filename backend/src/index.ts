@@ -16,6 +16,7 @@ import { initSentry, sentryErrorHandler, captureError } from './utils/sentry';
 initSentry();
 import { authRouter } from './auth/routes';
 import { usersRouter } from './users/routes';
+import { notificationPrefsRouter } from './users/notificationPrefs';
 import { messagesRouter } from './messages/routes';
 import { checkinsRouter } from './checkins/routes';
 import { exercisesRouter } from './exercises/routes';
@@ -54,6 +55,7 @@ app.get('/healthz', (_, res) => res.json({ ok: true, now: new Date().toISOString
 
 app.use('/auth', authLimiter, authRouter);
 app.use('/users', usersRouter);
+app.use('/users/me/notification-prefs', notificationPrefsRouter);
 app.use('/messages', messageLimiter, messagesRouter);
 app.use('/checkins', checkinsRouter);
 app.use('/exercises', exercisesRouter);

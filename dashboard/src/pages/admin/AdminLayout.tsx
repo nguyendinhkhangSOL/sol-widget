@@ -31,6 +31,7 @@ export function AdminLayout() {
     { to: '/admin/ai', label: 'Kết nối AI', icon: '🧠' },
     { to: '/admin/canned-replies', label: 'Câu trả lời sẵn', icon: '💬' },
     { to: '/admin/q-day-checklist', label: 'Checklist Q-Day', icon: '✅' },
+    { to: '/admin/content', label: 'Biên tập tin nhắn', icon: '✍️' },
     { to: '/admin/content-audit', label: 'Content audit', icon: '🔍' },
   ];
 

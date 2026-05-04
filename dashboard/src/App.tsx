@@ -32,6 +32,7 @@ import { AdminAnalytics } from './pages/admin/AdminAnalytics';
 import { AdminWiki } from './pages/admin/AdminWiki';
 import { AdminQDayChecklist } from './pages/admin/AdminQDayChecklist';
 import { AdminContentAudit } from './pages/admin/AdminContentAudit';
+import { AdminContent } from './pages/admin/AdminContent';
 
 export function App() {
   const user = useStore((s) => s.user);
@@ -143,6 +144,7 @@ export function App() {
           <Route path="ai" element={<AdminAI />} />
           <Route path="canned-replies" element={<AdminCannedReplies />} />
           <Route path="q-day-checklist" element={<AdminQDayChecklist />} />
+          <Route path="content" element={<AdminContent />} />
           <Route path="content-audit" element={<AdminContentAudit />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />

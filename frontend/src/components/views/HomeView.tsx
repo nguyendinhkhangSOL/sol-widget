@@ -32,6 +32,7 @@ import {
   FAQ_PROMPTS,
   type Prompt,
 } from '../../lib/promptBank';
+import { EnablePushBanner } from '../EnablePushBanner';
 
 export function HomeView() {
   const user = useStore((s) => s.user);
@@ -118,6 +119,9 @@ export function HomeView() {
       {/* ══════════════ TẦNG TRÊN — Gương soi thành công ══════════════ */}
       <div className="flex-1 min-h-0 overflow-y-auto px-4 pt-4 pb-2 space-y-3">
         <HeroStrip user={user} hero={hero} money={money} />
+
+        {/* Push enable nudge — chỉ hiện sau D+1 và khi permission='default' */}
+        <EnablePushBanner />
 
         {/* ══════════════ TẦNG GIỮA — Actionable Cards ══════════════ */}
         {hasJourney ? (

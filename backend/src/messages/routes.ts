@@ -51,14 +51,15 @@ async function handleCannedReply(
     return res.status(400).json({ error: 'missing_canned_fields' });
   }
 
-  // Persist user message (chip label) — type CHIP_REPLY để admin filter.
+  // Persist user message (chip label) — type CHAT, distinguish chip qua
+  // metadata.cannedReplyId + isCannedReply (enum chưa có CHIP_REPLY value).
   const userMsg = await prisma.message.create({
     data: {
       userId,
       role: 'USER',
-      type: 'CHIP_REPLY',
+      type: 'CHAT',
       content: body.content,
-      metadata: { cannedReplyId },
+      metadata: { cannedReplyId, isCannedReply: true },
     },
   });
 
@@ -67,10 +68,11 @@ async function handleCannedReply(
     data: {
       userId,
       role: 'ASSISTANT',
-      type: 'CHIP_REPLY',
+      type: 'CHAT',
       content: cannedAnswer,
       metadata: {
         cannedReplyId,
+        isCannedReply: true,
         wikiUrl: md.wikiUrl ?? null,
         wikiLabel: md.wikiLabel ?? null,
       },
@@ -163,6 +165,7 @@ messagesRouter.get('/', async (req: AuthedRequest, res) => {
 messagesRouter.post('/read', async (req: AuthedRequest, res) => {
   const ids = Array.isArray(req.body?.ids) ? req.body.ids.map(String) : [];
   if (ids.length === 0) return res.json({ ok: true, updated: 0 });
+
 
   const updated = await prisma.message.updateMany({
     where: { userId: req.userId!, id: { in: ids }, readAt: null },

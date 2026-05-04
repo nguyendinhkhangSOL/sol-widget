@@ -20,10 +20,21 @@ import {
   type QDayChecklistConfig,
 } from '../tiers/qDayChecklist';
 import { runContentAudit } from './audit/contentAudit';
+import { contentRouter } from './content/routes';
 
 export const adminRouter = Router();
 
 adminRouter.use(authMiddleware, adminMiddleware);
+
+// /admin/content/audit — content audit (runContentAudit), MUST be before content router mount
+// because content router has GET /:id which would match "/audit" as if id="audit".
+adminRouter.get('/content/audit', async (_req, res) => {
+  const report = await runContentAudit();
+  res.json(report);
+});
+
+// Mount content management routes — /admin/content/*
+adminRouter.use('/content', contentRouter);
 
 /* ─── DASHBOARD STATS ─────────────────────────────────────── */
 
@@ -798,11 +809,6 @@ adminRouter.put('/q-day-checklist', async (req: AuthedRequest, res) => {
    Quét toàn bộ content động (canned replies, voice, content items,
    q-day-checklist) → trả findings về typo / broken wiki / empty / duplicate.
    ────────────────────────────────────────────────────────────────── */
-
-adminRouter.get('/content/audit', async (_req, res) => {
-  const report = await runContentAudit();
-  res.json(report);
-});
 
 adminRouter.get('/wiki/stats', async (_req, res) => {
   const wpAdminUrl = process.env.WP_ADMIN_URL ?? 'https://sol.vn/wp-admin';

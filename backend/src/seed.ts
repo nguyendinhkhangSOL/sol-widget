@@ -105,10 +105,11 @@ async function main() {
   for (const it of items) {
     await prisma.contentItem.upsert({
       where: {
-        dayNumber_module_exerciseKey: {
+        dayNumber_module_exerciseKey_voice: {
           dayNumber: it.dayNumber,
           module: it.module as any,
           exerciseKey: it.exerciseKey ?? '',
+          voice: 'SOL_DONG_HANH' as any,
         },
       },
       create: {

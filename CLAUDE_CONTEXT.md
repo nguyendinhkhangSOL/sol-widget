@@ -913,3 +913,363 @@ Mỗi chip cuối bài giờ có 4 block:
 - Git commit toàn bộ thay đổi hôm nay
 - Push lên GitHub repo private
 - Quan trọng: 27 chip MD đã có brand block là **value lớn nhất** cần lưu
+
+---
+
+## SESSION 2026-05-04 (delta 12 — Push Notification Analysis + ContentItem Seed)
+
+### Phân tích push system hiện có
+- ✅ **Backend ~85% hoàn thiện** — multi-channel (IN_WIDGET/WEB_PUSH/EMAIL/SMS), 7 cron jobs, personalize 5 lớp (per-day × per-user × per-time × per-pattern × per-preference), quiet hours + calm mode, auto-cleanup dead subs
+- ✅ **Frontend ~90%** — service worker `sol-sw.js`, `webpush.ts` với register/permission/subscribe full flow, SettingsView toggle
+- ⚠️ **5 gaps cần fill**: ContentItem data, default channels (push không gửi mặc định), 4 cron handler (STREAK_MILESTONE/MISSED_DAY/REENGAGEMENT/FOUNDER_WEEKLY), email/sms sender, frontend banner proactive
+- ⚠️ **CRITICAL bug**: `enqueueDailyContent` không set `channels: ['IN_WIDGET', 'WEB_PUSH']` mặc định → push không gửi
+
+### 12 cải thiện (em đề xuất)
+**A. Business model (4):**
+- A1 Tier-aware push (paid voice Khang Day 1/3/7)
+- A2 Conversion-driven (Day 7 → "nâng Trọn Vẹn?")
+- A3 Streak protection (22:30)
+- A4 Đại Sứ flywheel (Day 30 → invite)
+
+**B. Benchmarks (3):**
+- B1 Money saved counter (mỗi mốc)
+- B2 Social proof (Đội Sol cohort updates)
+- B3 Streak gamification
+
+**C. Việt 45+ culture (5):**
+- C1 Push 7:30 / 12:30 / 19:00 (sau bữa cơm — cao điểm thèm Việt)
+- C2 Tết special (5 ngày trước Tết: kế hoạch từ chối)
+- C3 Family motivation (Day 14 vợ con)
+- C4 Cancer fear (Day 30 phổi sửa thứ 30 năm phá)
+- C5 Cộng đồng (cựu chiến binh / bạn nhậu)
+
+### Files đã build hôm nay
+
+`backend/src/seed/contentItems.ts` (41KB, 127 items):
+- 30 MORNING_GOAL (7h)
+- 30 SCIENCE_TIP (10h)
+- 7 PHENOMENA_ALERT (Day 1, 2, 3, 4, 7, 14, 30)
+- 30 EXERCISE (16:30)
+- 30 NIGHT_STORY (21:30)
+
+Voice: "Người Anh Đi Trước" — {pronouns}, {name}, {assistantName}, {greet} placeholders.
+Science: cite NHS/CDC/WHO/Hughes/Cosgrove/Lally/Brody/Doll-Hill/Krut/Marlatt.
+Wiki: link sol.vn/{slug}/ cho mỗi item.
+
+`backend/src/seed/runContentItems.ts` — runner upsert 127 vào DB:
+```bash
+cd backend
+npx tsx src/seed/runContentItems.ts
+```
+
+### Deferred (Khang chọn ưu tiên session sau)
+- ❌ Fix default channels bug (30 phút — quan trọng nhất)
+- ❌ Code 4 cron handler thiếu (3-4h dev)
+- ❌ Email/SMS sender (10-15h Y2)
+- ❌ Frontend banner proactive (1-2h)
+- ❌ Test end-to-end push thực tế
+
+### Khang sẽ edit
+Khang xem 127 items trong `backend/src/seed/contentItems.ts` và chỉnh:
+- Voice cá nhân hơn (story riêng)
+- Cite chính xác source khoa học
+- Bổ sung items đặc biệt (Tết, Quốc khánh)
+- Thêm STREAK_MILESTONE / MISSED_DAY templates
+
+---
+
+## Delta 11 — Push Pipeline Fix + Test Verified (2026-05-04)
+
+### Tóm tắt phiên
+
+Sau khi seed 127 ContentItem (delta 10) — em build test pipeline (`testPushPipeline.ts`) để verify e2e. Test EXPOSE 3 BUG CRITICAL trong codebase production mà nếu không test thì cron sẽ silently fail / crash:
+
+#### Bug #1 — `NotificationType` enum thiếu `NIGHT_STORY`
+
+- **Triệu chứng**: cron 21:30 NIGHT_STORY → `prisma.notification.create({ type: 'NIGHT_STORY' })` → throw `Invalid value for argument 'type'`.
+- **Impact**: Cron silently fail mỗi đêm 21:30 → user không nhận night story.
+- **Fix**: thêm `NIGHT_STORY` vào enum trong `schema.prisma`. DB đã có sẵn (do phiên trước), chỉ cần `prisma generate`.
+
+#### Bug #2 — `ContentModule` mismatch giữa `EXERCISE` vs `EXERCISE_REMINDER`
+
+- **Triệu chứng**: `enqueueDailyContent('EXERCISE_REMINDER')` → `findMany({ module: 'EXERCISE_REMINDER' })` → 0 result vì ContentModule chỉ có `EXERCISE`. Cron 16:30 silently không bắn — ContentItem có nhưng query không match.
+- **Impact**: User không nhận daily exercise notification, ContentItem EXERCISE bị orphan.
+- **Fix**: Tách 2 type:
+  - `ContentModuleParam` (dùng query ContentItem): 5 giá trị `MORNING_GOAL | SCIENCE_TIP | PHENOMENA_ALERT | EXERCISE | NIGHT_STORY`
+  - `NotificationType` (output): `EXERCISE_REMINDER` (rename) + 11 giá trị khác
+  - Map function `moduleToNotifType()` chuyển đổi.
+  - Cron `enqueueDailyContent('EXERCISE_REMINDER')` → `enqueueDailyContent('EXERCISE')`.
+
+#### Bug #3 — `deliverDueNotifications` không map `NIGHT_STORY` → MessageType
+
+- **Triệu chứng**: Even nếu Notification tạo thành công, khi deliver, switch case rơi vào `'SYSTEM_NOTICE'` default → message log hiện sai type → UI không render kiểu night story (không có icon đêm, không CTA "Đọc tiếp").
+- **Fix**: Thêm case `n.type === 'NIGHT_STORY' ? 'NIGHT_STORY'` vào switch chain.
+
+### File modified
+
+- `backend/prisma/schema.prisma` — add `NIGHT_STORY` vào `NotificationType` enum
+- `backend/src/scheduler/worker.ts` — 5 fix: type tách + moduleToNotifType + cron schedule + deliver mapping + channels default
+- `backend/src/seed/createTestUser.ts` — script tạo test user Day 2
+- `backend/src/seed/testPushPipeline.ts` — script verify pipeline (import personalize thật)
+- `backend/src/seed/resetContentItems.ts` — script wipe + re-seed clean
+
+### Workflow test pipeline (lưu lại để dùng cho user tương lai)
+
+```bash
+cd backend
+docker compose up -d db                           # bật Postgres
+npx tsx src/seed/resetContentItems.ts            # wipe ContentItem cũ
+npx tsx src/seed/runContentItems.ts               # seed 127 row clean
+npx tsx src/seed/createTestUser.ts                # tạo test@sol.vn Day 2
+npx tsx src/seed/testPushPipeline.ts              # verify direct enqueue
+```
+
+Output kỳ vọng cuối: 4 Notification (MORNING_GOAL + SCIENCE_TIP + NIGHT_STORY + STREAK_MILESTONE) với channels đúng + personalize đúng (`{pronouns}` → `anh`).
+
+### Lessons learned
+
+- **Test e2e BẮT BUỘC trước deploy**: 3 bug critical em vừa fix sẽ silently crash cron production nếu không test. Cron error chỉ log → không alert → mất 1-2 tuần mới phát hiện qua "tại sao retention thấp".
+- **Tách concern enum**: ContentModule (nội dung) vs NotificationType (delivery) phải tách rõ — đừng share enum giữa 2 layer.
+- **Personalize function real source**: dùng `utils/personalize.ts` luôn — đừng duplicate trong test/seed scripts → bug subtle khó debug.
+- **PowerShell escape**: `\"` không work → dùng backtick `` ` `` hoặc viết file `.ts` riêng.
+- **DB drift handling**: khi `prisma db push` báo "constraint already exists", dùng raw SQL `ALTER TYPE` thay vì force-reset → preserve data.
+
+### Outstanding bugs (queue cho phiên sau)
+
+- [ ] CONFIRMED không có thêm bug từ test này
+- [ ] Verify chain: Notification → deliverDueNotifications → Message → Socket emit → Widget UI render (chưa test, cần frontend chạy + push subscription)
+- [ ] Test `enqueueStreakMilestones` với milestone Day 7/14/30 (cần ngày-skip-test, chưa làm)
+
+---
+
+## Delta 12 — Level 3 Personalization + Messaging Playbook (2026-05-04)
+
+### Tóm tắt phiên
+
+Sau khi anh hỏi "biên tập tin nhắn ở đâu? lên kịch bản thế nào? cá nhân hóa thế nào?" — em làm 3 việc parallel:
+
+1. **Code Level 3 personalize** — thêm placeholder `{topReason}`, `{reasonsList}`, `{topTrigger}` để replay user's own words (Allen Carr + Smoke Free pattern, +30-40% compliance).
+2. **Inject 5 chỗ strategic** trong `contentItems.ts` — Day 1 (opening hook), Day 7 (tuần đầu celebrate), Day 14 (bước ngoặt), Day 21 (anchor reminder), Day 30 (full reflection).
+3. **Soạn MESSAGING_PLAYBOOK.md** (384 dòng) — kim chỉ nam biên tập tin nhắn cho Khang.
+
+### File modified
+
+- `backend/src/utils/personalize.ts` — thêm `quitReasons`, `topTriggers` vào `PersonalizationCtx`. 3 placeholder mới: `{topReason}`, `{reasonsList}`, `{topTrigger}` với fallback `'lý do của anh'` / `''` / `'tình huống khó của anh'`.
+- `backend/src/scheduler/worker.ts` — pass `quitReasons` + `topTriggers` vào pCtx ở 7 chỗ (5 enqueue + 2 helper).
+- `backend/src/seed/contentItems.ts` — inject `{topReason}` 5 chỗ:
+  - Day 1 MORNING: "Lý do {pronouns} bắt đầu: {topReason}. Lúc khó nhất, nhớ câu này."
+  - Day 7 NIGHT: "{topReason} — 1 tuần rồi vẫn còn đó."
+  - Day 14 MORNING: "{topReason} — 14 ngày rồi {pronouns} vẫn giữ."
+  - Day 21 NIGHT: "21 ngày rồi — {topReason} vẫn ở đó, {pronouns} vẫn ở đây."
+  - Day 30 NIGHT: "{topReason} — lý do {pronouns} bắt đầu, hôm nay vẫn còn nguyên."
+- `backend/src/seed/createTestUser.ts` — set `quitReasons: ['vì cu Tí', 'ho buổi sáng', 'vợ nhăn']`, `topTriggers: ['nhậu', 'cà phê sáng', 'sau bữa cơm']`, `assistantName: 'Sol Phó tướng'`.
+- `backend/src/seed/setTestUserDay.ts` MỚI — đổi test user về Day N để test content khác ngày.
+- `backend/src/seed/inspectTestUser.ts` MỚI — debug print user fields (xem `quitReasons` đã set hay chưa).
+- `backend/src/seed/testPushPipeline.ts` — thêm `quitReasons` + `topTriggers` vào pCtx ở 3 chỗ (BUG mới: script test em duplicate, không follow worker.ts).
+- `docs/MESSAGING_PLAYBOOK.md` MỚI — 9 phần: Voice (Khang Sol vs Sol Đồng hành), Variable cheat sheet, Slot template, 30-day emotional arc, Anti-pattern, Edit + test workflow, Quality checklist, Pattern thư viện, Khi nào cần em review.
+
+### Test verified e2e
+
+Day 30 NIGHT_STORY render đúng:
+> "anh đã hoàn thành. Phổi 30%, tim chậm hơn, não tái cấu trúc. **vì cu Tí** — lý do anh bắt đầu, hôm nay vẫn còn nguyên. Đêm nay ngủ với một con người mới."
+
+Day 7 NIGHT_STORY:
+> "168 giờ sạch. anh đã làm điều 9/10 người không. **vì cu Tí** — 1 tuần rồi vẫn còn đó. Ngủ ngon — mai sang chương mới."
+
+### Workflow đầy đủ test với data đa dạng
+
+```bash
+cd backend
+npx tsx src/seed/runContentItems.ts             # seed 127 (idempotent)
+npx tsx src/seed/createTestUser.ts              # tạo/update test user với quitReasons
+npx tsx src/seed/inspectTestUser.ts             # verify quitReasons có trong DB
+npx tsx src/seed/setTestUserDay.ts 7            # đổi Day
+npx tsx src/seed/testPushPipeline.ts            # render preview
+npx tsx src/seed/setTestUserDay.ts 30           # test ngày khác
+npx tsx src/seed/testPushPipeline.ts
+```
+
+### Lessons learned (4)
+
+1. **Khi sửa `PersonalizationCtx`, phải update TẤT CẢ chỗ tạo pCtx**: worker.ts (7 chỗ), testPushPipeline.ts (3 chỗ), nếu có chỗ mới quên — placeholder fallback silently → bug khó nhận biết. **Best practice**: tạo helper function `buildPCtx(user)` trong utils, mọi nơi dùng — single source of truth.
+
+2. **Test pipeline cũng phải đồng bộ với production code**. Em duplicate signature pCtx trong testPushPipeline.ts, sau đó quên update khi extend → bug giả phát hiện qua test (`{topReason}` fallback `"lý do của anh"`). Nếu Khang chỉ test rồi deploy, sẽ không catch ra. → Phiên sau em sẽ refactor: testPushPipeline import worker functions trực tiếp thay vì copy logic.
+
+3. **`{topReason}` cần warning nếu user `quitReasons=[]`**. Hiện fallback là `"lý do của anh"` — nghe ngộ. Nên thay bằng skip nguyên đoạn nếu rỗng (vd: nếu `quitReasons[]` thiếu → bỏ luôn câu chứa `{topReason}` thay vì hiển thị fallback). → TODO phiên sau: dùng conditional template syntax `{{if topReason}}{topReason} — ...{{/if}}`.
+
+4. **Onboarding bắt buộc khai `quitReasons` 1-3 lý do trước khi enable push**. Không có `quitReasons` → Level 3 không có effect → mất 30-40% compliance boost. UI: thêm vào `ProfileSetupWizard` hoặc inline trong SettingsView, BEFORE EnablePushBanner appear.
+
+### Outstanding cho phiên sau
+
+- [ ] Refactor `buildPCtx(user)` helper trong utils, dùng chung worker + test
+- [ ] Conditional template syntax `{{if topReason}}...{{/if}}` trong personalize.ts
+- [ ] UI flow: ép user khai `quitReasons` (1-3 lý do) ở onboarding hoặc EnablePushBanner CTA
+- [ ] Test các Day strategic khác: 1, 14, 21 (em đã verify Day 7 + Day 30)
+- [ ] Append `{topReason}` vào worker.ts STREAK_MILESTONES Day 30 hardcoded body (hiện chỉ ContentItem dùng)
+
+---
+
+## Delta 13 — AdminContent Phase 1 + Smart Scheduler Phase 5 (2026-05-04, ngày dài)
+
+### Tóm tắt
+
+Phiên dài nhất từ trước tới nay. Em build từ 0 lên 2 hệ thống lớn:
+1. **AdminContent UI** — Khang biên tập 127+ ContentItem qua dashboard (CRUD đầy đủ + revision history + preview personalize + lint anti-pattern theo MESSAGING_PLAYBOOK)
+2. **Smart Notification Schedule** — user opt-in vào bảng điều khiển: dailyMax 1-5, khung giờ active/quiet, weekend reduce, 6 moments cá nhân (cà phê sáng, trà đá trưa, sau cơm, nhậu, trước ngủ). Worker.ts có `smartSchedulerSweep()` mỗi 15 phút match content theo moment user.
+
+### Schema migration
+
+3 enum + 1 model + 2 column:
+```prisma
+enum ContentVoice { KHANG_SOL, SOL_DONG_HANH }      // Phase 1
+enum Moment { COFFEE_MORNING, TEA_AFTERNOON, POST_LUNCH, POST_DINNER, PRE_SOCIAL_DRINK, PRE_BEDTIME, GENERIC }  // Phase 5
+
+model ContentItem {
+  voice: ContentVoice  @default(SOL_DONG_HANH)       // Phase 1
+  priority: Int         @default(100)                 // Phase 1
+  targetRules: Json?                                  // Phase 1 (UI Phase 2)
+  variantGroup: String?                               // Phase 3 reserved
+  weight: Int           @default(1)                   // Phase 3 reserved
+  moment: Moment?                                     // Phase 5
+  lastEditedBy: String?                               // Phase 1
+  revisions: ContentItemRevision[]                    // Phase 1
+  @@unique([dayNumber, module, exerciseKey, voice])   // changed from old [dayNumber, module, exerciseKey]
+}
+
+model ContentItemRevision {                           // Phase 1 NEW
+  versionNum, title, body, voice, targetRules, priority, editedBy, editedAt, changeNote
+  @@index([contentItemId, versionNum])
+}
+
+model User {
+  notificationPrefs Json @default("{}")              // Phase 5
+}
+```
+
+DB drift recovery: dùng raw SQL `manual_migration_admin_content.sql` + `manual_migration_phase5.sql` thay vì `prisma db push` (vì existing constraint conflict).
+
+### File NEW
+
+**Backend (~900 dòng new code)**:
+- `backend/src/admin/content/linter.ts` — anti-pattern check theo MESSAGING_PLAYBOOK (từ TA blacklist, câu >20 từ, exclamation dồn, emoji nhiều)
+- `backend/src/admin/content/service.ts` — CRUD + revision tracking + preview engine
+- `backend/src/admin/content/routes.ts` — 8 endpoint: GET list/get, POST create/preview/lint/restore, PATCH update, DELETE
+- `backend/src/users/notificationPrefs.ts` — helper functions (isInQuietHours, isInActiveWindow, detectCurrentMoment, effectiveDailyMax) + Express router
+- `backend/prisma/manual_migration_admin_content.sql` — Phase 1 migration
+- `backend/prisma/manual_migration_phase5.sql` — Phase 5 migration
+- `backend/src/seed/syncContentVoice.ts` — set 6 KHANG_SOL items theo voice arc
+- `backend/src/seed/cleanOrphanContent.ts` — xoá row dư khỏi ContentItem
+- `backend/src/seed/createTestUser.ts` — tạo test@sol.vn với quitReasons, topTriggers
+- `backend/src/seed/setTestUserDay.ts` — đổi quitDate test user về Day N
+- `backend/src/seed/inspectTestUser.ts` — debug print user fields
+- `backend/src/seed/testPushPipeline.ts` — verify pipeline e2e
+
+**Frontend (~600 dòng new code)**:
+- `frontend/src/components/NotificationPrefsPanel.tsx` (~210 dòng) — user control bảng điều khiển: slider dailyMax, time picker active/quiet, weekend reduce, 6 moment checkboxes
+- `frontend/src/components/EnablePushBanner.tsx` (~138 dòng) — banner D+1 nhắc bật push
+
+**Dashboard (~860 dòng new code)**:
+- `dashboard/src/pages/admin/AdminContent.tsx` (~860 dòng) — 3-zone layout: filter sidebar + list panel + edit + preview + revision + create modal + delete
+
+**Docs (~1400 dòng new)**:
+- `docs/ADMIN_CONTENT_DESIGN.md` (806 dòng) — design Phase 1-6
+- `docs/MESSAGING_PLAYBOOK.md` (384 dòng) — voice + variable + slot + arc + anti-pattern + workflow
+- `INFRASTRUCTURE.md` (529 dòng) — VPS + Firebase deployment runbook
+- `MARKETING_ZERO_BUDGET.md` (322 dòng) — FB + Zalo strategy
+
+### File modified
+
+- `backend/prisma/schema.prisma` — 3 enum + 1 model + 5 column mới
+- `backend/src/scheduler/worker.ts` — thêm `userHasSmartPrefs`, `smartSchedulerSweep` (~150 dòng), cron `*/15 * * * *`. Total 12 cron jobs.
+- `backend/src/admin/routes.ts` — mount contentRouter
+- `backend/src/utils/personalize.ts` — Level 3 placeholder ({topReason}, {reasonsList}, {topTrigger})
+- `backend/src/seed/contentItems.ts` — full rewrite 127 items theo MESSAGING_PLAYBOOK voice arc 7 giai đoạn
+- `backend/src/seed/runContentItems.ts`, `seed.ts` — fix composite key
+- `backend/src/index.ts` — mount notificationPrefsRouter
+- `dashboard/src/services/api.ts` — 7 admin content methods + types
+- `dashboard/src/App.tsx`, `dashboard/src/pages/admin/AdminLayout.tsx` — route + sidebar link
+- `frontend/src/services/api.ts` — getNotificationPrefs, updateNotificationPrefs
+- `frontend/src/components/views/SettingsView.tsx` — section "🔔 Bảng điều khiển tin nhắn"
+- `frontend/src/components/views/HomeView.tsx` — wire EnablePushBanner
+
+### Bug critical phát hiện + fix
+
+1. **NotificationType enum thiếu NIGHT_STORY** → cron 21:30 crash. Fix: ALTER TYPE ADD VALUE.
+2. **enqueueDailyContent('EXERCISE_REMINDER') vs ContentModule.EXERCISE** → query 0 result, cron silent fail. Fix: tách `ContentModuleParam` (5 giá trị) + `moduleToNotifType()` map.
+3. **deliverDueNotifications không map NIGHT_STORY → MessageType** → fall vào SYSTEM_NOTICE. Fix: thêm case.
+4. **enqueueDailyContent thiếu WEB_PUSH default channels** → user opt push không nhận. Fix: morning/night/science = ['IN_WIDGET', 'WEB_PUSH'].
+5. **testPushPipeline.ts duplicate personalize đơn giản** → {pronouns} không thay. Fix: import `realPersonalize` từ utils.
+6. **package.json mất dấu `}` cuối** (golden rule lần 3) → ERR_INVALID_PACKAGE_CONFIG khi npx tsx. Fix: append `}`.
+7. **api.ts truncate giữa Edit nhiều lần** (golden rule lần 4-6) → mất 60+ dòng types. Fix: restore git + apply lại bằng python script.
+
+### Workflow quan trọng
+
+**Khang edit content** (qua dashboard `/admin/content`):
+1. Click filter → list 127 item
+2. Click 1 item → edit form bên phải
+3. Sửa title/body/voice/priority/moment/published
+4. Live preview với mock user (Khang, anh, "vì cu Tí" reasons)
+5. Lint warnings hiện ngay nếu vi phạm playbook
+6. Save → tự tạo ContentItemRevision v1 (audit log)
+7. Restore from any revision
+
+**Khang create new content** (modal "+ Tạo tin nhắn mới"):
+1. Click button → modal mở
+2. Chọn day, module, voice (auto-fill pushTime theo module)
+3. Title + body + priority + moment
+4. Click Tạo → modal đóng + auto-select item mới
+
+**User config bảng điều khiển** (Settings widget tab "🔔 Bảng điều khiển tin nhắn"):
+1. Slider dailyMax 1-5
+2. Time picker active/quiet
+3. Checkbox weekend reduce
+4. 6 moment checkboxes — mỗi cái có time picker riêng
+5. Auto-save mỗi thay đổi
+6. Worker `smartSchedulerSweep` chạy mỗi 15 phút match content theo moment
+
+### Lessons learned (5)
+
+1. **Docker Desktop hay treo trên Windows** — restart không phải lúc nào cũng cứu, có lúc phải restart Windows. Plan B: chỉ Docker DB, code local `npm run dev` cho hot reload + tránh rebuild Docker liên tục.
+
+2. **Edit/Write tool ăn 6KB+ file** (golden rule lặp lại 5 lần phiên này) — luôn dùng `bash heredoc` cho file lớn, hoặc Python script + `cp`. Đặc biệt với api.ts, schema.prisma, contentItems.ts > 500 dòng.
+
+3. **DB drift Prisma** — `prisma db push` báo "constraint already exists" thường, dùng raw SQL `ALTER TABLE IF NOT EXISTS` thay vì force-reset (mất data).
+
+4. **Schema mới → restart backend Docker** để Prisma client trong container biết enum mới. Nếu chỉ generate trên host Windows, container vẫn dùng client cũ.
+
+5. **PowerShell escape ` `$` ` và `\"`** — chạy interactive psql thay vì inline `-c` cho SQL phức tạp. Hoặc viết file `.ts` riêng dùng Prisma client thay vì pipe SQL.
+
+### Backup nhắc nhở (RULE từ giờ)
+
+Mỗi cuối phiên CODE LỚN (rewrite >100 dòng, schema migration, hoặc trước rebuild Docker):
+```bash
+cd D:\BOTHUOCLA\sol-widget
+docker exec sol-widget-db-1 pg_dump -U sol -d sol --no-owner --no-acl > backups\sol-YYYY-MM-DD.sql
+powershell Compress-Archive -Path backups\sol-YYYY-MM-DD.sql -DestinationPath backups\sol-YYYY-MM-DD.zip -Force
+del backups\sol-YYYY-MM-DD.sql
+```
+
+→ Khi Docker chết / DB drift / human error → restore 1 lệnh.
+
+### TODO phiên sau
+
+- [ ] **Phase 5c** — Admin `/admin/notifications` dashboard (cần data 7 ngày để build)
+- [ ] **Phase 6** — Smart anti-spam (counter consecutiveUnopened)
+- [ ] **POST /admin/content schema add moment field** — hiện workaround qua PATCH sau create
+- [ ] **Test Phase 5 e2e** — set test user vào COFFEE_MORNING 07:30 → đợi 15 phút → verify Notification có row mới với metadata.moment='COFFEE_MORNING'
+- [ ] **Onboarding step 4** — UI khai báo moments (skip-able) lúc lần đầu setup
+- [ ] **VAPID keys** — generate qua `npx web-push generate-vapid-keys`, paste .env, restart → push thật
+- [ ] **Ghi chú Khang biên tập tay** — voice "cá nhân" cho 5 ngày quan trọng (Day 1, 3, 7, 14, 30) — em chỉ làm first draft, Khang phải replace với stories thật
+
+### KPI cuối phiên
+
+- 127 ContentItem trong DB, 6 KHANG_SOL voice + 121 SOL_DONG_HANH (theo arc)
+- 12 cron jobs active (11 fix + 1 smart sweep)
+- 8 admin content endpoint
+- TS clean cả 3 (backend, frontend, dashboard) trên Windows
+- Bug critical fixed: 7
+- File NEW: 18
+- File modified: 13
+- Total lines new code: ~3000+
+- Docs new: ~1400 dòng
+

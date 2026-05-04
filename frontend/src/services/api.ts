@@ -128,6 +128,16 @@ export const api = {
   patchMe: (body: Partial<User>) =>
     request<{ ok: boolean }>('/users/me', { method: 'PATCH', body: JSON.stringify(body) }),
 
+  // ─── Notification preferences (Phase 5) ────────────────────────────────
+  getNotificationPrefs: () =>
+    request<NotificationPrefs>('/users/me/notification-prefs'),
+
+  updateNotificationPrefs: (patch: Partial<NotificationPrefs>) =>
+    request<NotificationPrefs>('/users/me/notification-prefs', {
+      method: 'PATCH',
+      body: JSON.stringify(patch),
+    }),
+
   // ─── Messages ───────────────────────────────────────────────────────────
   getMessages: (limit = 50) =>
     request<{ messages: Message[] }>(`/messages?limit=${limit}`),
@@ -238,3 +248,23 @@ export const api = {
       body: JSON.stringify({ itemId }),
     }),
 };
+
+
+// ─── NotificationPrefs type (Phase 5) ──────────────────────────────────
+export interface NotificationPrefs {
+  dailyMax?: number;
+  activeStart?: string;
+  activeEnd?: string;
+  quietStart?: string;
+  quietEnd?: string;
+  weekendReduce?: boolean;
+  moments?: {
+    coffeeMorning?: string | null;
+    teaAfternoon?: string | null;
+    postLunch?: string | null;
+    postDinner?: string | null;
+    preSocialDrink?: string | null;
+    preBedtime?: string | null;
+  };
+  consecutiveUnopened?: number;
+}

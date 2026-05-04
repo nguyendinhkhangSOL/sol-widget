@@ -9,6 +9,7 @@ import { BindPhoneModal } from '../BindPhoneModal';
 import { RecoverView } from '../RecoverView';
 import type { WidgetMode } from '../../types';
 import { buildPreviewSamples } from '../../lib/preview';
+import { NotificationPrefsPanel } from '../NotificationPrefsPanel';
 
 // Phải khớp với AuthGate.tsx + dashboard
 const PRONOUN_PRESETS = ['anh', 'chị', 'em'] as const;
@@ -662,6 +663,10 @@ export function SettingsView() {
         >
           {savingCost ? 'Đang lưu…' : 'Lưu'}
         </button>
+      </Section>
+
+      <Section title="Bảng điều khiển tin nhắn" icon="🔔" hint="Cường độ · giờ nhận · thói quen ngày" defaultOpen>
+        <NotificationPrefsPanel />
       </Section>
 
       <Section title="Thông báo đẩy (Push)" icon="📲" hint="Bật/tắt thông báo trình duyệt">

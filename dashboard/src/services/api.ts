@@ -414,7 +414,152 @@ export const api = {
       summary: { high: number; medium: number; low: number };
       byType: Record<string, number>;
     }>('/admin/content/audit'),
+
+  /* ───── Admin — Content management (Phase 1 + Phase 5) ───────── */
+  adminContentList: (params: {
+    module?: string;
+    dayNumber?: number;
+    voice?: 'KHANG_SOL' | 'SOL_DONG_HANH';
+    search?: string;
+    published?: 'all' | 'true' | 'false';
+    hasTargeting?: 'all' | 'yes' | 'no';
+  } = {}) => {
+    const qs = new URLSearchParams();
+    if (params.module) qs.set('module', params.module);
+    if (params.dayNumber !== undefined) qs.set('dayNumber', String(params.dayNumber));
+    if (params.voice) qs.set('voice', params.voice);
+    if (params.search) qs.set('search', params.search);
+    if (params.published) qs.set('published', params.published);
+    if (params.hasTargeting) qs.set('hasTargeting', params.hasTargeting);
+    return request<{ items: ContentItem[]; total: number }>(`/admin/content?${qs.toString()}`);
+  },
+
+  adminContentGet: (id: string) =>
+    request<ContentItem>(`/admin/content/${id}`),
+
+  adminContentCreate: (body: {
+    dayNumber: number;
+    module: ContentItem['module'];
+    title: string;
+    body: string;
+    voice?: 'KHANG_SOL' | 'SOL_DONG_HANH';
+    priority?: number;
+    targetRules?: any;
+    wikiUrl?: string;
+    pushTime?: string;
+    exerciseKey?: string;
+    published?: boolean;
+  }) =>
+    request<ContentItem>('/admin/content', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
+
+  adminContentDelete: (id: string) =>
+    request<{ ok: boolean }>(`/admin/content/${id}`, { method: 'DELETE' }),
+
+  adminContentUpdate: (id: string, patch: ContentItemUpdate) =>
+    request<ContentItem>(`/admin/content/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(patch),
+    }),
+
+  adminContentRevisions: (id: string) =>
+    request<{ revisions: ContentItemRevision[] }>(`/admin/content/${id}/revisions`),
+
+  adminContentRestore: (id: string, versionNum: number) =>
+    request<ContentItem>(`/admin/content/${id}/restore/${versionNum}`, { method: 'POST' }),
+
+  adminContentPreview: (body: {
+    title?: string;
+    body: string;
+    voice?: 'KHANG_SOL' | 'SOL_DONG_HANH';
+    dayNumber?: number;
+    mockUser?: {
+      name?: string;
+      pronouns?: string;
+      assistantName?: string;
+      quitReasons?: string[];
+      topTriggers?: string[];
+      age?: number;
+      gender?: 'male' | 'female';
+      region?: 'north' | 'central' | 'south';
+    };
+  }) =>
+    request<{
+      renderedTitle: string;
+      renderedBody: string;
+      titleWarnings: LintWarning[];
+      bodyWarnings: LintWarning[];
+      mockUser: any;
+      dayNumber: number;
+    }>('/admin/content/preview', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
 };
+
+// ─── Admin content types (Phase 1 + 5) ───────────────────────────────────
+export type MomentEnum =
+  | 'COFFEE_MORNING'
+  | 'TEA_AFTERNOON'
+  | 'POST_LUNCH'
+  | 'POST_DINNER'
+  | 'PRE_SOCIAL_DRINK'
+  | 'PRE_BEDTIME'
+  | 'GENERIC';
+
+export interface ContentItem {
+  id: string;
+  dayNumber: number;
+  module: 'MORNING_GOAL' | 'SCIENCE_TIP' | 'PHENOMENA_ALERT' | 'EXERCISE' | 'NIGHT_STORY';
+  title: string;
+  body: string;
+  voice: 'KHANG_SOL' | 'SOL_DONG_HANH';
+  priority: number;
+  targetRules: any | null;
+  published: boolean;
+  wikiUrl: string | null;
+  pushTime: string | null;
+  exerciseKey: string | null;
+  moment: MomentEnum | null;
+  lastEditedBy: string | null;
+  updatedAt: string;
+  revisionCount?: number;
+}
+
+export interface ContentItemUpdate {
+  title?: string;
+  body?: string;
+  voice?: 'KHANG_SOL' | 'SOL_DONG_HANH';
+  priority?: number;
+  targetRules?: any;
+  published?: boolean;
+  wikiUrl?: string | null;
+  moment?: MomentEnum | null;
+  changeNote?: string;
+}
+
+export interface ContentItemRevision {
+  id: string;
+  contentItemId: string;
+  versionNum: number;
+  title: string;
+  body: string;
+  voice: 'KHANG_SOL' | 'SOL_DONG_HANH';
+  targetRules: any | null;
+  priority: number;
+  editedBy: string;
+  editedAt: string;
+  changeNote: string | null;
+}
+
+export interface LintWarning {
+  severity: 'high' | 'medium' | 'low';
+  message: string;
+  excerpt?: string;
+}
+
 
 export interface AdminUserListItem {
   id: string;

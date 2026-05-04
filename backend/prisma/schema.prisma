@@ -93,6 +93,13 @@ model User {
 
   // Settings (JSON for flexibility)
   settings      Json     @default("{}")
+
+  // ── PHASE 5 — Smart Notification Schedule ──────────────────────────
+  // shape: { dailyMax, activeStart/End, quietStart/End, weekendReduce,
+  //          moments: { coffeeMorning?, teaAfternoon?, postLunch?, postDinner?,
+  //                     preSocialDrink?, preBedtime? },
+  //          consecutiveUnopened (Phase 6) }
+  notificationPrefs Json @default("{}")
   // settings shape:
   // {
   //   quietHoursStart: "22:00",
@@ -254,6 +261,21 @@ model Message {
 // ─────────────────────────── CONTENT CATALOG ─────────────────────────────
 // Content is seeded by founder and edited in admin; widget just consumes
 
+enum Moment {
+  COFFEE_MORNING       // user uống cà phê
+  TEA_AFTERNOON        // trà đá / nghỉ trưa
+  POST_LUNCH           // sau bữa cơm trưa
+  POST_DINNER          // sau bữa cơm tối
+  PRE_SOCIAL_DRINK     // chuẩn bị nhậu / tiệc
+  PRE_BEDTIME          // trước khi ngủ
+  GENERIC              // không gắn moment, fallback default
+}
+
+enum ContentVoice {
+  KHANG_SOL          // Giọng Khang Sol — ký tên, cá nhân ("— Khang Sol")
+  SOL_DONG_HANH      // Giọng Sol Đồng hành — assistant tự xưng "mình"
+}
+
 enum ContentModule {
   MORNING_GOAL
   SCIENCE_TIP
@@ -278,11 +300,54 @@ model ContentItem {
   pushTime   String?       // "HH:mm" format, e.g. "07:00"
   published  Boolean       @default(true)
 
+  // ── PHASE 1 — Voice + priority + targeting ──────────────────────────
+  voice      ContentVoice  @default(SOL_DONG_HANH)
+  priority   Int           @default(100)  // Cao = thắng khi nhiều item match. 1000=CRITICAL bypass targeting.
+
+  // PHASE 2 — Targeting rules (UI active sau MVP launch).
+  // Shape: { ageMin?, ageMax?, yearsSmokedMin?, yearsSmokedMax?,
+  //          ftndMin?, ftndMax?, gender?, region?, interests?, cigaretteType? }
+  targetRules Json?
+
+  // PHASE 3 — A/B test (UI sau).
+  variantGroup String?
+  weight       Int          @default(1)
+
+  // PHASE 5 — Smart scheduler moment tagging
+  moment       Moment?      // null = GENERIC fallback
+
+  // ── Audit ───────────────────────────────────────────────────────────
+  lastEditedBy String?      // userId của Khang/admin
+
+  revisions    ContentItemRevision[]
+
   createdAt  DateTime      @default(now())
   updatedAt  DateTime      @updatedAt
 
-  @@unique([dayNumber, module, exerciseKey])
-  @@index([dayNumber, module])
+  @@unique([dayNumber, module, exerciseKey, voice])
+  @@index([dayNumber, module, published])
+}
+
+// ContentItemRevision — full version history
+model ContentItemRevision {
+  id            String      @id @default(cuid())
+  contentItemId String
+  contentItem   ContentItem @relation(fields: [contentItemId], references: [id], onDelete: Cascade)
+
+  // Snapshot tại thời điểm revision
+  versionNum    Int          // 1, 2, 3... (incremental per item)
+  title         String
+  body          String       @db.Text
+  voice         ContentVoice
+  targetRules   Json?
+  priority      Int
+
+  // Metadata
+  editedBy      String       // userId Khang/admin
+  editedAt      DateTime     @default(now())
+  changeNote    String?      // Khang ghi chú "đổi voice cho mềm hơn"
+
+  @@index([contentItemId, versionNum])
 }
 
 // ─────────────────────────── CANNED REPLIES ─────────────────────────────
@@ -358,7 +423,8 @@ enum NotificationType {
   MORNING_GOAL
   SCIENCE_TIP
   PHENOMENA_ALERT
-  EXERCISE_REMINDER
+  EXERCISE_REMINDER       // mapping: ContentModule.EXERCISE
+  NIGHT_STORY             // ADDED 2026-05-04 — fix worker.ts cron 21:30 crash
   EVENING_CHECKIN
   CRISIS_PREP
   STREAK_MILESTONE

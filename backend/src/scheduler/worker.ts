@@ -1,20 +1,29 @@
 // backend/src/scheduler/worker.ts
 // Cron jobs:
 //  - every minute: flush due Notification rows
-//  - 20:00 local: enqueue evening check-in prompts for all active users
-//  - 07:00 local: enqueue morning_goal content
-//  - user-specific "crisis_prep" based on risky hours
+//  - 07:00 morning_goal, 10:00 science_tip, 14:00 phenomena, 16:30 exercise,
+//    20:00 evening_checkin, 21:30 night_story
+//  - 07:30 streak_milestone, 19:00 missed_day, 10:30 re-engagement,
+//    Fri 18:00 founder_weekly
+//  - every 30 min: crisis_prep cho user có riskyHours
 //
 // Run separately: `pnpm worker` or docker compose service.
 
 import cron from 'node-cron';
 import { prisma } from '../db';
-import { computeDayNumber, isSameLocalDay } from '../utils/dayNumber';
+import { computeDayNumber } from '../utils/dayNumber';
 import { sendWebPush } from '../notifications/webpush';
 import { emitToUser } from '../socket/emitter';
 import { logger } from '../utils/logger';
 import { config } from '../config';
 import { personalize, buildGreeting } from '../utils/personalize';
+import {
+  mergeWithDefaults,
+  isInQuietHours,
+  isInActiveWindow,
+  detectCurrentMoment,
+  effectiveDailyMax,
+} from '../users/notificationPrefs';
 
 // Respect quiet hours stored in user settings.
 function isWithinQuietHours(settings: any): boolean {
@@ -84,6 +93,8 @@ async function deliverDueNotifications() {
             ? 'PHENOMENA_ALERT'
             : n.type === 'EXERCISE_REMINDER'
             ? 'EXERCISE_CARD'
+            : n.type === 'NIGHT_STORY'
+            ? 'NIGHT_STORY'
             : n.type === 'STREAK_MILESTONE'
             ? 'STREAK_MILESTONE'
             : 'SYSTEM_NOTICE',
@@ -117,10 +128,32 @@ async function deliverDueNotifications() {
 }
 
 // ─── enqueue daily content for all users ──────────────────────────────────
-async function enqueueDailyContent(module: 'MORNING_GOAL' | 'SCIENCE_TIP' | 'PHENOMENA_ALERT' | 'EXERCISE_REMINDER' | 'NIGHT_STORY') {
-  const users = await prisma.user.findMany({ where: { quitDate: { not: null } } });
+// Map ContentModule → NotificationType.
+// ContentModule có 5 giá trị (matching ContentItem.module).
+// NotificationType có thêm EXERCISE_REMINDER (rename của EXERCISE), NIGHT_STORY mới.
+type ContentModuleParam = 'MORNING_GOAL' | 'SCIENCE_TIP' | 'PHENOMENA_ALERT' | 'EXERCISE' | 'NIGHT_STORY';
+
+function moduleToNotifType(m: ContentModuleParam): 'MORNING_GOAL' | 'SCIENCE_TIP' | 'PHENOMENA_ALERT' | 'EXERCISE_REMINDER' | 'NIGHT_STORY' {
+  if (m === 'EXERCISE') return 'EXERCISE_REMINDER';
+  return m;
+}
+
+// User opt-in smart scheduler khi đã set dailyMax (qua /users/me/notification-prefs).
+// Worker fix-cron skip user opt-in để tránh duplicate.
+function userHasSmartPrefs(user: any): boolean {
+  const prefs = user.notificationPrefs as any;
+  return !!prefs?.dailyMax;
+}
+
+async function enqueueDailyContent(module: ContentModuleParam) {
+  const users = await prisma.user.findMany({
+    where: { quitDate: { not: null } },
+  });
 
   for (const user of users) {
+    // Skip user đã opt-in smart scheduler — họ nhận qua smartSchedulerSweep
+    if (userHasSmartPrefs(user)) continue;
+
     const day = computeDayNumber(user.quitDate);
     const items = await prisma.contentItem.findMany({
       where: { dayNumber: day, module: module as any, published: true },
@@ -133,10 +166,11 @@ async function enqueueDailyContent(module: 'MORNING_GOAL' | 'SCIENCE_TIP' | 'PHE
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
+    const notifType = moduleToNotifType(module);
     const existing = await prisma.notification.findFirst({
       where: {
         userId: user.id,
-        type: module as any,
+        type: notifType,
         scheduledAt: { gte: today, lt: tomorrow },
       },
     });
@@ -149,6 +183,9 @@ async function enqueueDailyContent(module: 'MORNING_GOAL' | 'SCIENCE_TIP' | 'PHE
       name: user.name,
       pronouns: user.pronouns,
       assistantName: user.assistantName,
+      // LEVEL 3 — pass story personalization vars
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
     };
     let title = personalize(item.title, pCtx);
     let body = personalize(item.body, pCtx);
@@ -164,19 +201,70 @@ async function enqueueDailyContent(module: 'MORNING_GOAL' | 'SCIENCE_TIP' | 'PHE
     await prisma.notification.create({
       data: {
         userId: user.id,
-        type: module as any,
+        type: notifType,
         title,
         body,
         wikiUrl: item.wikiUrl,
         ctaLabel: item.wikiUrl ? 'Đọc sâu' : null,
         ctaAction: item.wikiUrl ?? null,
-        channels: ['IN_WIDGET'],
+        // FIX: thiếu WEB_PUSH → user enable push không nhận được. Phenomena/exercise
+        // chỉ in-widget vì không quá khẩn; morning_goal + night_story + science_tip
+        // phải push để chạm user khi họ chưa mở widget.
+        channels:
+          module === 'MORNING_GOAL' || module === 'NIGHT_STORY' || module === 'SCIENCE_TIP'
+            ? ['IN_WIDGET', 'WEB_PUSH']
+            : ['IN_WIDGET'],
         scheduledAt: new Date(),
         metadata: { dayNumber: day, module },
       },
     });
   }
 }
+
+// ─── 30 EVENING_CHECKIN variants — slot 20:00 voice arc theo ngày ─────────
+// Mỗi entry là body cho check-in prompt ngày tương ứng. {pronoun}, {topReason}…
+// được thay tự động qua personalize(). {day} thay bằng dayNumber.
+const EVENING_CHECKIN_PROMPTS: Record<string, string> = {
+  // Khởi động
+  '1': `Ngày {day} — đêm đầu sạch. 30 giây check-in: hôm nay thèm mạnh nhất lúc nào?`,
+  '2': `Ngày {day} — đỉnh thèm hôm nay thế nào {pronoun}? 30 giây để mình biết.`,
+  // Đỉnh sóng
+  '3': `Ngày {day} — bức tường đã qua. {pronoun} ổn không? 30 giây check.`,
+  '4': `Ngày {day} — đêm qua ngủ ổn không? 30 giây — mình điều chỉnh nội dung mai cho hợp.`,
+  '5': `Ngày {day} — cuối tuần đầu. Cảm xúc hôm nay: 1 (khó) tới 5 (ổn)?`,
+  // Bức tường
+  '6': `Ngày {day} — gần 1 tuần. Mai check-in xong mình kể tin vui Day 7.`,
+  '7': `Ngày {day} — 168 giờ. Tự hào tới đâu trên 1-10?`,
+  '8': `Ngày {day} — tuần 2 đầu. Trận khó hôm nay là gì?`,
+  '9': `Ngày {day} — đếm cơn thèm hôm nay được không?`,
+  '10': `Ngày {day} — 1/3 chặng. Người thân có nhận thấy thay đổi không?`,
+  // Bước ngoặt
+  '11': `Ngày {day} — tim chậm hơn rồi. {pronoun} thấy khác chưa?`,
+  '12': `Ngày {day} — tay ấm hơn? Da đỡ xám? 30 giây.`,
+  '13': `Ngày {day} — mai 2 tuần. Tối nay 30 giây thôi.`,
+  '14': `Ngày {day} — RECEPTOR GIẢM 40%. Cảm giác hôm nay 1-10?`,
+  // Tự tin giả
+  '15': `Ngày {day} — nửa chặng. Hôm nay có lúc nào "thử 1 điếu" lướt qua không?`,
+  '16': `Ngày {day} — tăng cân chút? Tâm trạng vẫn ổn chứ?`,
+  '17': `Ngày {day} — hôm nay có nhậu/tiệc không? Vượt qua không?`,
+  '18': `Ngày {day} — đêm qua mơ hút? Tỉnh dậy ổn không?`,
+  '19': `Ngày {day} — ho có đỡ không? 30 giây check.`,
+  '20': `Ngày {day} — lo âu tự nhiên không? 30 giây.`,
+  '21': `Ngày {day} — 3 tuần. Thói quen mới đã thấy chưa?`,
+  // Nội hóa
+  '22': `Ngày {day} — hôm nay {pronoun} có nói "tôi không hút thuốc" lần nào chưa?`,
+  '23': `Ngày {day} — ai rủ hôm nay không? {pronoun} từ chối thế nào?`,
+  '24': `Ngày {day} — tiền tiết kiệm tới đâu? Kế hoạch dùng?`,
+  '25': `Ngày {day} — hơi thở dài hơn? Leo cầu thang khác?`,
+  '26': `Ngày {day} — bữa cơm có ngon hơn không?`,
+  '27': `Ngày {day} — sắp 30. Plan Day 30 chưa?`,
+  '28': `Ngày {day} — 2 đêm nữa. Phòng vệ vẫn giữ chứ?`,
+  // Cột mốc
+  '29': `Ngày {day} — đêm cuối trước cột mốc. Cảm xúc 1-10?`,
+  '30': `Ngày {day} — KỶ LỤC. Nhìn lại 30 ngày — tự hào nhất điều gì?`,
+  // Fallback cho Day 31+
+  'default': `Ngày {day} — 30 giây thôi {pronoun} ơi. Mình chờ {pronoun}.`,
+};
 
 async function enqueueEveningCheckin() {
   const users = await prisma.user.findMany({ where: { quitDate: { not: null } } });
@@ -206,16 +294,18 @@ async function enqueueEveningCheckin() {
       name: user.name,
       pronouns: user.pronouns,
       assistantName: user.assistantName,
+      // LEVEL 3 — pass story personalization vars
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
     };
+    const checkInBody = personalize(EVENING_CHECKIN_PROMPTS[day] ?? EVENING_CHECKIN_PROMPTS.default, pCtx)
+      .replace(/\{day\}/g, String(day));
     await prisma.notification.create({
       data: {
         userId: user.id,
         type: 'EVENING_CHECKIN',
         title: buildGreeting('evening', pCtx),
-        body:
-          user.pronouns === 'bạn'
-            ? `Ngày ${day} — 30 giây thôi nhé. Mình chờ bạn.`
-            : `Ngày ${day} — 30 giây thôi ${user.pronouns} ơi. Mình chờ ${user.pronouns}.`,
+        body: checkInBody,
         ctaLabel: 'Bắt đầu check-in',
         ctaAction: 'open_checkin',
         channels: ['IN_WIDGET', 'WEB_PUSH'],
@@ -242,6 +332,9 @@ async function enqueueCrisisPrep() {
       name: user.name,
       pronouns: user.pronouns,
       assistantName: user.assistantName,
+      // LEVEL 3 — pass story personalization vars
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
     };
     await prisma.notification.create({
       data: {
@@ -262,7 +355,420 @@ async function enqueueCrisisPrep() {
   }
 }
 
+// ─── Streak milestone — celebrate ngày 1/3/7/14/30/60/90 ──────────────────
+const STREAK_MILESTONES: Record<number, { title: string; body: string; emoji: string }> = {
+  1: {
+    emoji: '🌱',
+    title: '1 ngày — viên đá đầu tiên',
+    body: 'Khó nhất là 24h đầu, {pronoun} đã qua. Cơ thể bắt đầu thải nicotin. Mai sẽ dễ hơn.',
+  },
+  3: {
+    emoji: '💪',
+    title: '3 ngày — đỉnh sóng đã qua',
+    body: 'Nicotin gần như sạch khỏi cơ thể {pronoun}. Cơn thèm từ giờ giảm dần. {pronoun} làm được rồi.',
+  },
+  7: {
+    emoji: '🌿',
+    title: '1 tuần — đáng kinh ngạc',
+    body: 'Khứu giác và vị giác của {pronoun} đang phục hồi. Tuần đầu xong là phần lớn người không bao giờ hút lại.',
+  },
+  14: {
+    emoji: '☀️',
+    title: '2 tuần — bước ngoặt',
+    body: 'Tuần hoàn máu của {pronoun} cải thiện rõ. Leo cầu thang đỡ thở dốc rồi đúng không?',
+  },
+  30: {
+    emoji: '🎉',
+    title: '1 tháng — kỷ lục',
+    body: '30 ngày sạch thuốc. {pronoun} đã tiết kiệm khoảng 750.000đ và gần lại với cuộc sống không khói. Tự hào.',
+  },
+  60: {
+    emoji: '🔥',
+    title: '2 tháng — đường mới đã thông',
+    body: 'Phổi của {pronoun} đang tự làm sạch. Đến 9 tháng nữa nó sẽ trở lại 90% chức năng. {pronoun} đang viết lại câu chuyện cơ thể.',
+  },
+  90: {
+    emoji: '🌟',
+    title: '3 tháng — thành thói quen mới',
+    body: '90 ngày là cột mốc não bộ ổn định. Từ giờ cuộc sống không thuốc là mặc định, không phải nỗ lực.',
+  },
+};
+
+async function enqueueStreakMilestones() {
+  const users = await prisma.user.findMany({ where: { quitDate: { not: null } } });
+  for (const user of users) {
+    const day = computeDayNumber(user.quitDate);
+    const ms = STREAK_MILESTONES[day];
+    if (!ms) continue;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const existing = await prisma.notification.findFirst({
+      where: {
+        userId: user.id,
+        type: 'STREAK_MILESTONE',
+        scheduledAt: { gte: today, lt: tomorrow },
+      },
+    });
+    if (existing) continue;
+
+    const pCtx = {
+      name: user.name,
+      pronouns: user.pronouns,
+      assistantName: user.assistantName,
+      // LEVEL 3 — pass story personalization vars
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
+    };
+
+    await prisma.notification.create({
+      data: {
+        userId: user.id,
+        type: 'STREAK_MILESTONE',
+        title: `${ms.emoji} ${ms.title}`,
+        body: personalize(ms.body, pCtx),
+        ctaLabel: 'Xem hành trình',
+        ctaAction: 'open_progress',
+        channels: ['IN_WIDGET', 'WEB_PUSH'],
+        scheduledAt: new Date(),
+        metadata: { dayNumber: day, milestone: day },
+      },
+    });
+  }
+}
+
+// ─── Missed-day — user vắng check-in 24h ──────────────────────────────────
+async function enqueueMissedDay() {
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  yesterday.setHours(0, 0, 0, 0);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const users = await prisma.user.findMany({ where: { quitDate: { not: null } } });
+
+  for (const user of users) {
+    // Skip nếu user mới (chưa từng check-in) — sẽ là re-engagement chứ không phải missed
+    const totalCheckins = await prisma.checkIn.count({ where: { userId: user.id } });
+    if (totalCheckins === 0) continue;
+
+    // Skip nếu hôm qua user CÓ check-in
+    const yesterdayCi = await prisma.checkIn.findUnique({
+      where: { userId_date: { userId: user.id, date: yesterday } },
+    });
+    if (yesterdayCi) continue;
+
+    // Skip nếu hôm nay đã check-in (có thể user check-in sớm)
+    const todayCi = await prisma.checkIn.findUnique({
+      where: { userId_date: { userId: user.id, date: today } },
+    });
+    if (todayCi) continue;
+
+    // Idempotent — không bắn lại trong ngày
+    const existing = await prisma.notification.findFirst({
+      where: {
+        userId: user.id,
+        type: 'MISSED_DAY',
+        scheduledAt: { gte: today, lt: tomorrow },
+      },
+    });
+    if (existing) continue;
+
+    const day = computeDayNumber(user.quitDate);
+    const pCtx = {
+      name: user.name,
+      pronouns: user.pronouns,
+      assistantName: user.assistantName,
+      // LEVEL 3 — pass story personalization vars
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
+    };
+
+    await prisma.notification.create({
+      data: {
+        userId: user.id,
+        type: 'MISSED_DAY',
+        title: `Hôm qua mình không thấy ${user.pronouns}`,
+        body: personalize(
+          'Lỡ một ngày không phải thất bại. Hôm nay quay lại là tiếp tục — mình vẫn ở đây cho {pronoun}. 30 giây check-in thôi.',
+          pCtx,
+        ),
+        ctaLabel: 'Check-in hôm nay',
+        ctaAction: 'open_checkin',
+        channels: ['IN_WIDGET', 'WEB_PUSH'],
+        scheduledAt: new Date(),
+        metadata: { dayNumber: day, missedDate: yesterday.toISOString() },
+      },
+    });
+  }
+}
+
+// ─── Re-engagement — user vắng 7+ ngày, nhẹ nhàng kéo lại ──────────────────
+async function enqueueReengagement() {
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+  const users = await prisma.user.findMany({ where: { quitDate: { not: null } } });
+
+  for (const user of users) {
+    // Tìm hoạt động cuối — message cuối hoặc check-in cuối
+    const lastMsg = await prisma.message.findFirst({
+      where: { userId: user.id, role: 'USER' },
+      orderBy: { createdAt: 'desc' },
+      select: { createdAt: true },
+    });
+    const lastCi = await prisma.checkIn.findFirst({
+      where: { userId: user.id },
+      orderBy: { createdAt: 'desc' },
+      select: { createdAt: true },
+    });
+
+    const lastActivity =
+      lastMsg && lastCi
+        ? lastMsg.createdAt > lastCi.createdAt
+          ? lastMsg.createdAt
+          : lastCi.createdAt
+        : lastMsg?.createdAt ?? lastCi?.createdAt;
+
+    if (!lastActivity) continue;
+    if (lastActivity > sevenDaysAgo) continue;
+
+    // Tránh spam — chỉ bắn 1 lần mỗi 7 ngày
+    const recentReengagement = await prisma.notification.findFirst({
+      where: {
+        userId: user.id,
+        type: 'REENGAGEMENT',
+        scheduledAt: { gte: sevenDaysAgo },
+      },
+    });
+    if (recentReengagement) continue;
+
+    const day = computeDayNumber(user.quitDate);
+    const pCtx = {
+      name: user.name,
+      pronouns: user.pronouns,
+      assistantName: user.assistantName,
+      // LEVEL 3 — pass story personalization vars
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
+    };
+
+    await prisma.notification.create({
+      data: {
+        userId: user.id,
+        type: 'REENGAGEMENT',
+        title: `${user.pronouns ?? 'Bạn'} ơi, mình nhớ ${user.pronouns ?? 'bạn'}`,
+        body: personalize(
+          'Hành trình của {pronoun} không có deadline. Nếu hôm nay là ngày {pronoun} muốn quay lại — mình ở đây, không phán xét. Kể mình nghe {pronoun} đang thế nào.',
+          pCtx,
+        ),
+        ctaLabel: 'Mở chat',
+        ctaAction: 'open_chat',
+        channels: ['IN_WIDGET', 'WEB_PUSH'],
+        scheduledAt: new Date(),
+        metadata: { dayNumber: day, daysSinceLastActivity: Math.floor((Date.now() - lastActivity.getTime()) / 86400000) },
+      },
+    });
+  }
+}
+
+// ─── Founder weekly — Khang note thứ 6 18:00 cho tất cả user active ───────
+const FOUNDER_WEEKLY_NOTES: { title: string; body: string }[] = [
+  {
+    title: 'Thư thứ Sáu — Khang Sol',
+    body: 'Tuần này {pronoun} thế nào? Tuần này mình muốn nhắc {pronoun} một câu mình tự nhủ mỗi sáng: "Hôm nay không phải hôm qua — mình có thể chọn lại." {pronoun} cũng vậy nhé. — Khang Sol',
+  },
+  {
+    title: 'Thư thứ Sáu — Khang Sol',
+    body: 'Tuần này có điều gì khiến {pronoun} thấy khó không? Mình muốn nghe — kể mình một câu thôi cũng được. Mình đọc hết. — Khang Sol',
+  },
+  {
+    title: 'Thư thứ Sáu — Khang Sol',
+    body: 'Mình đang viết bài về phenomena tuần thứ 4 — nhiều người báo "tự nhiên buồn không lý do". Bình thường — não đang điều chỉnh dopamine. Cuối tuần đọc nhé, mình gửi link ở widget. — Khang Sol',
+  },
+  {
+    title: 'Thư thứ Sáu — Khang Sol',
+    body: 'Tuần này mình đọc lại Allen Carr. Một câu hay: "Bỏ thuốc không phải mất gì — là tìm lại." {pronoun} đang tìm lại điều gì? — Khang Sol',
+  },
+];
+
+async function enqueueFounderWeekly() {
+  const users = await prisma.user.findMany({ where: { quitDate: { not: null } } });
+
+  // Chọn note theo tuần trong năm — xoay vòng qua 4 note
+  const weekNum = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 1).getTime()) / (7 * 86400000));
+  const note = FOUNDER_WEEKLY_NOTES[weekNum % FOUNDER_WEEKLY_NOTES.length];
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  for (const user of users) {
+    // Idempotent — 1 note/tuần/user
+    const existing = await prisma.notification.findFirst({
+      where: {
+        userId: user.id,
+        type: 'FOUNDER_WEEKLY',
+        scheduledAt: { gte: today, lt: tomorrow },
+      },
+    });
+    if (existing) continue;
+
+    const pCtx = {
+      name: user.name,
+      pronouns: user.pronouns,
+      assistantName: user.assistantName,
+      // LEVEL 3 — pass story personalization vars
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
+    };
+
+    await prisma.notification.create({
+      data: {
+        userId: user.id,
+        type: 'FOUNDER_WEEKLY',
+        title: note.title,
+        body: personalize(note.body, pCtx),
+        ctaLabel: 'Đọc tiếp',
+        ctaAction: 'open_chat',
+        channels: ['IN_WIDGET', 'WEB_PUSH'],
+        scheduledAt: new Date(),
+        metadata: { weekNum, noteIndex: weekNum % FOUNDER_WEEKLY_NOTES.length },
+      },
+    });
+  }
+}
+
 // ─── Boot ──────────────────────────────────────────────────────────────────
+
+// ─── SMART SCHEDULER (Phase 5) — replace fix-cron cho user opt-in ────────
+// Chạy mỗi 15 phút, quét tất cả user có notificationPrefs.dailyMax set.
+// Match content với current moment (±15 phút) hoặc GENERIC fallback.
+// Apply quietHours, activeWindow, dailyMax, weekendReduce.
+async function smartSchedulerSweep() {
+  const now = new Date();
+  const users = await prisma.user.findMany({
+    where: { quitDate: { not: null } },
+  });
+
+  for (const user of users) {
+    if (!userHasSmartPrefs(user)) continue;
+
+    const prefs = mergeWithDefaults(user.notificationPrefs as any);
+
+    // Skip nếu trong quiet hours
+    if (isInQuietHours(now, prefs)) continue;
+    // Skip nếu ngoài active window
+    if (!isInActiveWindow(now, prefs)) continue;
+
+    // Đếm tin gửi hôm nay
+    const today = new Date(now);
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const sentToday = await prisma.notification.count({
+      where: {
+        userId: user.id,
+        scheduledAt: { gte: today, lt: tomorrow },
+        status: { in: ['SCHEDULED', 'SENT', 'DELIVERED', 'READ'] },
+      },
+    });
+
+    const cap = effectiveDailyMax(prefs, now);
+    if (sentToday >= cap) continue;
+
+    // Detect current moment
+    const currentMoment = detectCurrentMoment(now, prefs.moments);
+    const day = computeDayNumber(user.quitDate);
+
+    // Tìm content match: moment match HOẶC moment null (GENERIC fallback)
+    const candidates = await prisma.contentItem.findMany({
+      where: {
+        dayNumber: day,
+        published: true,
+        OR: [
+          { moment: currentMoment as any },
+          { moment: null },
+        ],
+      },
+      orderBy: { priority: 'desc' },
+    });
+
+    if (candidates.length === 0) continue;
+
+    // Filter: chưa gửi hôm nay (theo unique [dayNumber + module])
+    const sentTypes = await prisma.notification.findMany({
+      where: {
+        userId: user.id,
+        scheduledAt: { gte: today, lt: tomorrow },
+      },
+      select: { metadata: true, type: true },
+    });
+    const sentDayModules = new Set(
+      sentTypes.map((n: any) => `${n.metadata?.dayNumber}::${n.metadata?.module}`),
+    );
+
+    const fresh = candidates.filter((c) => !sentDayModules.has(`${day}::${c.module}`));
+    if (fresh.length === 0) continue;
+
+    // Prioritize moment-matched > GENERIC fallback
+    fresh.sort((a, b) => {
+      const am = a.moment === currentMoment ? 1 : 0;
+      const bm = b.moment === currentMoment ? 1 : 0;
+      if (am !== bm) return bm - am;
+      return b.priority - a.priority;
+    });
+
+    const item = fresh[0];
+
+    // Personalize + enqueue (giống enqueueDailyContent)
+    const pCtx = {
+      name: user.name,
+      pronouns: user.pronouns,
+      assistantName: user.assistantName,
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
+    };
+    let title = personalize(item.title, pCtx);
+    let body = personalize(item.body, pCtx);
+
+    if (item.module === 'MORNING_GOAL' && !item.body.includes('{greet}') && !/^chào/i.test(body)) {
+      body = `${buildGreeting('morning', pCtx)}\n${body}`;
+    } else if (item.module === 'NIGHT_STORY' && !item.body.includes('{greet}') && !/^khuya/i.test(body)) {
+      body = `${buildGreeting('night', pCtx)}\n${body}`;
+    }
+
+    const notifType = moduleToNotifType(item.module as ContentModuleParam);
+
+    await prisma.notification.create({
+      data: {
+        userId: user.id,
+        type: notifType as any,
+        title,
+        body,
+        wikiUrl: item.wikiUrl,
+        ctaLabel: item.wikiUrl ? 'Đọc sâu' : null,
+        ctaAction: item.wikiUrl ?? null,
+        channels:
+          item.module === 'MORNING_GOAL' || item.module === 'NIGHT_STORY' || item.module === 'SCIENCE_TIP'
+            ? ['IN_WIDGET', 'WEB_PUSH']
+            : ['IN_WIDGET'],
+        scheduledAt: new Date(),
+        metadata: { dayNumber: day, module: item.module, moment: currentMoment, smart: true },
+      },
+    });
+
+    logger.debug({ userId: user.id, day, module: item.module, moment: currentMoment, sentToday: sentToday + 1, cap }, 'smart_scheduler enqueued');
+  }
+}
 
 export function startScheduler() {
   if (!config.features.scheduler) {
@@ -275,14 +781,29 @@ export function startScheduler() {
     deliverDueNotifications().catch((e) => logger.error({ err: e }, 'deliverDueNotifications failed'));
   });
 
+  // Every 15 min — Smart scheduler sweep (Phase 5) cho user opt-in
+  cron.schedule('*/15 * * * *', () => {
+    smartSchedulerSweep().catch((e) => logger.error({ err: e }, 'smartSchedulerSweep failed'));
+  });
+
   // 07:00 Asia/Ho_Chi_Minh — morning goal
   cron.schedule('0 7 * * *', () => {
     enqueueDailyContent('MORNING_GOAL').catch((e) => logger.error({ err: e }, 'morning goal enqueue failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
+  // 07:30 — streak milestone
+  cron.schedule('30 7 * * *', () => {
+    enqueueStreakMilestones().catch((e) => logger.error({ err: e }, 'streak milestone enqueue failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
   // 10:00 — science tip
   cron.schedule('0 10 * * *', () => {
     enqueueDailyContent('SCIENCE_TIP').catch((e) => logger.error({ err: e }, 'science tip enqueue failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // 10:30 — re-engagement (user vắng 7+ ngày)
+  cron.schedule('30 10 * * *', () => {
+    enqueueReengagement().catch((e) => logger.error({ err: e }, 're-engagement enqueue failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
   // 14:00 — phenomena alert (only on days that have one)
@@ -292,7 +813,17 @@ export function startScheduler() {
 
   // 16:30 — exercise reminder
   cron.schedule('30 16 * * *', () => {
-    enqueueDailyContent('EXERCISE_REMINDER').catch((e) => logger.error({ err: e }, 'exercise reminder enqueue failed'));
+    enqueueDailyContent('EXERCISE').catch((e) => logger.error({ err: e }, 'exercise reminder enqueue failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // 18:00 thứ Sáu — Founder weekly note (chỉ thứ 6)
+  cron.schedule('0 18 * * 5', () => {
+    enqueueFounderWeekly().catch((e) => logger.error({ err: e }, 'founder weekly enqueue failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // 19:00 — missed-day (user hôm qua không check-in)
+  cron.schedule('0 19 * * *', () => {
+    enqueueMissedDay().catch((e) => logger.error({ err: e }, 'missed-day enqueue failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
   // 20:00 — evening check-in (web push + widget)
@@ -310,5 +841,5 @@ export function startScheduler() {
     enqueueCrisisPrep().catch((e) => logger.error({ err: e }, 'crisis prep enqueue failed'));
   });
 
-  logger.info('Scheduler started — 7 cron jobs active');
+  logger.info('Scheduler started — 12 cron jobs active');
 }
