@@ -1273,3 +1273,109 @@ del backups\sol-YYYY-MM-DD.sql
 - Total lines new code: ~3000+
 - Docs new: ~1400 dòng
 
+
+---
+
+## Delta 14 — PIVOT 3-Stage Behavior Journey (2026-05-04 cuối ngày)
+
+### Điều quan trọng nhất
+
+**SOL không phải chương trình 30 ngày cố định nữa**. Sau khi R&D phân tích lại quá trình cai thực tế ở VN 45+, đã chốt:
+
+**SOL là hệ điều hành hành vi 3 giai đoạn (7·21·7)**:
+- Stage 1 — Nhận thức (7 ngày): user vẫn hút bình thường, observe + log + soft intervention
+- Stage 2 — Hành động (21 ngày): tapering FIXED+ADAPTIVE (-30%/-60%/≤2/ngày)
+- Stage 3 — Giải phóng (7 ngày): ổn định ≤2 hoặc 0
+
+→ Adaptive total, không fixed timeline.
+
+### Khác biệt với Allen Carr cold turkey
+
+70% người 45+ Việt không cold turkey thành công. Tapering + gating phù hợp văn hoá hơn.
+
+### File mới
+
+- `docs/STAGE_JOURNEY_DESIGN.md` (816 dòng) — full spec dev-ready: schema, API contract, event tracking, content migration plan, pricing, roadmap Phase 7-13
+
+### Schema impact (Phase 7 sẽ build)
+
+Models mới:
+- `CigaretteLog` — log mỗi điếu user hút (timestamp, trigger, context)
+- `DailyProgress` — đếm điếu vs target + relapse flag mỗi ngày
+- `StageTransition` — track mỗi lần user qua gate
+- `BypassQuiz` — quiz để skip Stage 1
+- `Event` — 12 event type cho analytics
+
+Enum mới: JourneyStage (5 giá trị), TriggerCategory, RelapseFlag
+
+User extend: currentStage, stageStartedAt, stageProgress, baseline*
+
+ContentItem extend: stage (replace dayNumber 1-30 semantics), weekInStage
+
+### Pricing chốt
+
+- **Free** — Stage 1 only (acquisition)
+- **Khởi Động 89k 1-time** — Stage 1+2 (28 ngày, conversion entry)
+- **Trọn Vẹn 149k/tháng** — All 3 stages + AI + cohort + multi-vertical (retention)
+- **Đại Sứ** — free sau success (loyalty)
+
+Free preview Stage 2-3: KHÔNG full content, chỉ 1 locked screen demo.
+
+### Brand chốt mới
+
+- ✅ "Đi Cùng Sol — 3 Giai đoạn thay đổi hành vi (7·21·7)"
+- ✅ "Nhận thức · Hành động · Giải phóng"
+- ❌ KHÔNG dùng "30 ngày" / "Day 1-30" nữa
+
+### Migration risk
+
+127 ContentItem hiện tại dùng dayNumber 1-30 → cần re-tag theo stage:
+- Day 1-7 → Stage 1
+- Day 8-28 → Stage 2 Week 1/2/3
+- Day 29-30 → Stage 3 partial (cần viết thêm 5 ngày Stage 3)
+
+Existing user `test@sol.vn` Day 14 → migrate Stage 2 Week 1.
+
+### Roadmap 7 phase mới (Phase 7-13)
+
+| Phase | Scope | Time |
+|-------|-------|------|
+| Phase 7 | Schema migration + core API | 4-5h |
+| Phase 8 | Worker logic update | 3-4h |
+| Phase 9 | Frontend widget (CigaretteLogger, TaperingTarget, Onboarding quiz) | 4-5h |
+| Phase 10 | Admin dashboard /admin/journey + content filter stage | 3-4h |
+| Phase 11 | Content rewrite (Khang time) | 8-12h |
+| Phase 12 | Pricing tier migration | 2-3h |
+| Phase 13 | Event tracking + analytics | 3-4h |
+
+Total ~25-30h em build chia 5-7 phiên + ~10h Khang content.
+
+### Outstanding NGAY
+
+- [ ] Anh chạy lệnh backup DB + git commit (đã guide)
+- [ ] Phiên sau anh approve checklist 7 điểm trong STAGE_JOURNEY_DESIGN.md Section 16
+- [ ] Em execute Phase 7 (schema + core API) phiên sau
+
+
+### Update 2 (cuối phiên 2026-05-04) — Widget Architecture pivot
+
+R&D gửi tiếp tư vấn architecture pattern: **state-based dynamic dashboard** thay multi-view route-based. Triết lý:
+
+> **"Sol không phải web/app có nhiều màn hình. Sol là một màn hình thay đổi theo hành vi người dùng."**
+
+Append vào `STAGE_JOURNEY_DESIGN.md` Section 18 (300 dòng new) — full spec:
+
+- AppShell + Dashboard resolver theo `userLevel`
+- 4 dashboard variants: FreeDashboard, AwarenessDashboard (SOL_7), ActionDashboard (SOL_21), FreedomDashboard (SOL_35)
+- Mapping `currentStage` (DB) → `UserLevel` (UI)
+- Behavior score formula (0-100, input cho auto-adjust)
+- 11 shared components (ProgressBar, StreakCard, TriggerList, InsightCard, DelayTracker, CravingMeter, StabilityScore, BeforeAfter, PatternChart, ComparisonChart, CigaretteLogger)
+- UnifiedComposer (always-on chat input) + ContextualSheet (modal slide-up)
+- Mockup ASCII của 4 dashboard variant
+
+**Scope Phase 9 tăng**: 4-5h → 10h (chia 2 phiên).
+
+**Refactor impact**: 7+ existing view (HomeView, JourneyView, etc.) → deprecate hoặc convert thành section. Soft launch qua feature flag `USE_NEW_DASHBOARD` cho 5 user pre-sell test trước.
+
+**Task list bổ sung**: #57 — Phase 9 state-based widget dashboard.
+
