@@ -1112,3 +1112,318 @@ User hiện tại đang ở "30-day model" có HomeView/ChatView. Migration:
 
 Không sidebar, không tab, không bottom nav phức tạp. User mở widget mỗi sáng → thấy đúng nơi họ đang ở. Đây là khác biệt 5 năm với mọi cessation app khác.
 
+
+---
+
+## 19. PRICING FINAL — 10k/ngày + Bundle + Refund Pro-rata (chốt 2026-05-04)
+
+### 19.1 Triết lý chốt
+
+Khang: "Việt Nam chỉ thanh toán 1 lần thôi, không có thói quen sub hàng tháng. Mức giá đều 10.000/ngày cho toàn bộ lộ trình 7+21+7 và free trải nghiệm sau khi hoàn thành thêm 18 ngày bảo trì."
+
+### 19.2 Pricing structure FINAL
+
+| Option | Giá | Mô tả | Khi nào dùng |
+|--------|-----|-------|--------------|
+| **Free Trial** | 0đ | 3 ngày Stage 1 đầu — đủ aha moment | Acquisition |
+| **Stage 1 Pay** | 70.000đ | Day 4-7 Stage 1 (4 ngày × 10k) | Free trial → conversion |
+| **Stage 2 Pay** | 210.000đ | 21 ngày Stage 2 × 10k | Sau gate 1→2 |
+| **Stage 3 Pay** | 70.000đ | 7 ngày Stage 3 × 10k | Sau gate 2→3 |
+| **Trọn Gói** | **299.000đ** | All 3 stages + maintenance 25 ngày BONUS — tiết kiệm 51k (15%) | Upsell sau Day 3 |
+| **Maintenance** | FREE | 25 ngày sau Stage 3 | Auto unlock |
+| **Đại Sứ** | FREE forever | Sau Day 60 | Loyalty |
+
+**Total Trọn Gói**: 299k → 60 ngày = **4.983đ/ngày effective rate** (đã cộng bonus 25 ngày).
+
+### 19.3 Refund policy — Pro-rata bất kỳ lúc nào
+
+```typescript
+function computeRefund(payment: Payment, daysUsed: number): number {
+  // Per-stage payment refund
+  const dailyRate = payment.amount / payment.totalDaysInStage;
+  return Math.max(0, payment.amount - (daysUsed * dailyRate));
+}
+
+// Vd:
+// Trọn Gói 299k Day 1, hủy Day 15
+//   → refund = 299k - (15 × (299k/60)) = 224.3k
+
+// Stage 2 210k Day 8, hủy Day 14
+//   → refund = 210k - (7 × 10k) = 140k
+
+// Stage 1 70k Day 4, hủy Day 6
+//   → refund = 70k - (3 × 10k) = 40k
+```
+
+**Trigger**: button "Tạm dừng & hoàn tiền" hiển thị mọi nơi trong widget.
+
+**Backend automation**: auto-compute refund + tạo RefundRequest → Khang approve qua admin → MoMo/VietQR transfer (manual phase 1, auto phase 2).
+
+**Edge case maintenance**: Maintenance Day 36-60 không tính vào refund (đó là bonus free).
+
+### 19.4 Schema Payment update
+
+```prisma
+model PaymentLog {
+  // ... existing fields
+  
+  // PHASE 7 — Stage-aware payment
+  paidStage         JourneyStage?  // STAGE_1 / STAGE_2 / STAGE_3 / TRỌN_GÓI
+  totalDaysInStage  Int?            // 4 (S1 pay) / 21 (S2) / 7 (S3) / 60 (Trọn Gói)
+  amount            Int             // VND
+  
+  // Refund computation
+  refundedAmount    Int    @default(0)  // partial refund possible
+  refundedAt        DateTime?
+  refundReason      String?
+}
+```
+
+### 19.5 UX flow theo từng tier
+
+#### Free Trial 3 ngày
+- Day 1: Onboarding + baseline question + first cigarette log
+- Day 2: Insight teaser ("Anh đã hút X điếu — pattern đang hình thành")
+- Day 3 evening: paywall soft "Tiếp tục 4 ngày Stage 1 — 70k" + insight bonus preview
+
+#### Stage 1 Paid (Day 4-7)
+- Lock-in: "Anh đã đi 3 ngày, tiếp tục để hoàn thành insight 7 ngày"
+- Soft intervention từ Day 5
+- Day 7 evening: full insight report (PDF) + paywall Stage 2 + Trọn Gói upsell
+
+#### Stage 2 Paid (Day 8-28, 21 ngày tapering)
+- Day target hiển thị TO trên dashboard
+- Adjust target nếu user struggling
+- Week 1/2/3 voice arc khác nhau
+- Day 28 evening: gate Stage 3
+
+#### Stage 3 Paid (Day 29-35, 7 ngày stabilize)
+- Streak counter big
+- Identity exercise Day 30, 32, 34
+- Day 35: celebration screen + maintenance unlock + Đại Sứ teaser
+
+#### Maintenance FREE (Day 36-60, 18 ngày bonus)
+- Dashboard giảm intensity: 1 tin/ngày
+- Weekly check-in (Sunday only)
+- Day 60: "Đại Sứ unlocked vĩnh viễn"
+
+#### Đại Sứ FREE forever (Day 61+)
+- Mentor mode: trả lời user mới qua chat
+- Bonus content per quý
+- Referral 89k cashback per successful referral
+- Bonus vertical (rượu, sleep) — defer 6 tháng
+
+### 19.6 Conversion math với pricing mới
+
+**Funnel ước tính** (giả định 100 user signup):
+
+```
+100 Free Trial signup
+  ↓ 30% chuyển Day 4 (cần aha moment đủ mạnh)
+30 Stage 1 Paid (70k)  → 2.1tr revenue
+  ↓ 50% pass gate + pay Stage 2
+15 Stage 2 Paid (210k) → 3.15tr revenue
+  ↓ 70% pass gate + pay Stage 3 (đã invest, hoàn tất)
+10 Stage 3 Paid (70k) → 700k revenue
+
+Hoặc bundle:
+30 user pass Day 3 → 40% chọn Trọn Gói 299k (skip per-stage hassle)
+12 Trọn Gói (299k) → 3.6tr revenue
+```
+
+**Total revenue per 100 signup**: ~6-7tr (per-stage) hoặc ~6-7tr (mix bundle).
+
+→ **Need ~150 Free Trial signup/tháng để MRR 10tr**. Marketing zero-budget với content + WOM khả thi sau 3-4 tháng.
+
+### 19.7 Risk + mitigation
+
+**Risk 1**: User pay Stage 1 70k → refund 70k Day 4 (chưa qua) = 70k loss + processing cost. → Mitigation: refund "trừ daysUsed × 10k" — Day 4 refund chỉ 60k (đã dùng 1 ngày).
+
+**Risk 2**: Stage 2 210k jump quá lớn từ 70k Stage 1. → Mitigation: Trọn Gói 299k sau Stage 1 = chỉ thêm 229k cho 28 ngày tiếp. Hoặc split Stage 2 thành 3 × 70k mỗi tuần (giảm friction).
+
+**Risk 3**: Refund abuse — user pay 299k → refund Day 5 = 274k. → Mitigation: refund > 50% original chỉ allowed nếu lý do hợp lý (input field bắt buộc, Khang review).
+
+**Risk 4**: Bundle 299k giảm 51k = mất margin. → Mitigation: Bundle pricing bonus = 25 ngày maintenance + community access = perceived value cao.
+
+
+---
+
+## 20. PRICING + STAGE STRUCTURE FINAL (chốt 2026-05-04 lần cuối)
+
+### 20.1 Triết lý chốt cuối
+
+Khang: "Đã có free rồi và tất cả các gói nhẹ nhàng không ép. Có thể trì hoãn lên chặng nên không cần discount khẩn cấp. Thiết kế đúng là gói 7, 14, 21 tổng 42 ngày."
+
+→ **Đơn giản hoá**: 3 gói rõ ràng + 3 combo + free trial + maintenance bonus.
+
+### 20.2 Stage structure RESTRUCTURED (7-14-21)
+
+| Stage | Số ngày | Period (Day) | Mục tiêu |
+|-------|---------|---------------|----------|
+| 1 — Nhận thức | **7** | Day 1-7 | Quan sát + baseline + soft intervention từ Day 5 |
+| 2 — Hành động | **14** | Day 8-21 | Tapering -50% Week 1, ≤2 điếu Week 2 |
+| 3 — Ổn định | **21** | Day 22-42 | Giải phóng (7d) + Identity shift (7d) + Relapse prevention (7d) |
+
+**Total paid experience**: 42 ngày.
+
+### 20.3 Pricing structure FINAL
+
+#### Per-stage:
+- **Gói 1** (7 ngày Nhận thức): **70.000đ** (10k/ngày)
+- **Gói 2** (14 ngày Hành động): **140.000đ** (10k/ngày)
+- **Gói 3** (21 ngày Ổn định): **210.000đ** (10k/ngày)
+- Sum riêng lẻ: 420k
+
+#### Combo discounts:
+- **Combo 1+2** (21 ngày): 189k (-10%, save 21k → 9.000đ/ngày)
+- **Combo 2+3** (35 ngày): 280k (-20%, save 70k → 8.000đ/ngày)
+- **Combo Trọn Gói 1+2+3** (42 ngày): **294k** (-30%, save 126k → **7.000đ/ngày**)
+
+#### Free + Bonus:
+- **Free Trial 3 ngày** (Day 1-3 Stage 1) — trải nghiệm trước pay
+- **Maintenance bonus 18 ngày** (Day 43-60) — free sau Stage 3
+- **Đại Sứ FREE forever** (Day 61+)
+
+#### Total experience nếu Trọn Gói:
+```
+42 (paid) + 18 (maintenance) = 60 ngày tròn 2 tháng
+Effective rate: 294k / 60 = 4.900đ/ngày
+```
+
+### 20.4 Tapering plan Stage 2 mới (14 ngày, 2 weeks)
+
+```typescript
+function computeWeeklyTarget(week: 1|2, baseline: Baseline): number {
+  const reduction = { 1: 0.5, 2: 1.0 }[week]; // -50% → ≤2
+  if (week === 2) return Math.min(2, Math.max(0, baseline.avgCigarettesPerDay * (1 - reduction)));
+  return Math.round(baseline.avgCigarettesPerDay * (1 - reduction));
+}
+```
+
+Vd baseline 10 điếu/ngày:
+- Week 1 (Day 8-14): target 5 điếu/ngày
+- Week 2 (Day 15-21): target ≤ 2 điếu/ngày
+
+### 20.5 Stage 3 mới (21 ngày, 3 weeks)
+
+| Week | Period | Mục tiêu |
+|------|--------|----------|
+| 1 — Giải phóng | Day 22-28 | 7 ngày ≤ 1 điếu/ngày, build streak |
+| 2 — Identity shift | Day 29-35 | 7 ngày "tôi đang sống không cần thuốc", group cohort |
+| 3 — Relapse prevention | Day 36-42 | 7 ngày scenario coping, plan B test, graduation |
+
+### 20.6 Schema PaymentLog refined
+
+```prisma
+enum PaymentTier {
+  GOI_1_AWARENESS         // 7d × 10k = 70k
+  GOI_2_ACTION             // 14d × 10k = 140k
+  GOI_3_STABILIZE          // 21d × 10k = 210k
+  COMBO_1_2                 // 189k (10% off)
+  COMBO_2_3                 // 280k (20% off)
+  COMBO_TRON_GOI            // 294k (30% off)
+}
+
+model PaymentLog {
+  // ... existing
+  
+  tier              PaymentTier
+  baseAmount        Int          // pre-discount: 70/140/210/420
+  finalAmount       Int          // post-discount: same | 189 | 280 | 294
+  discountPercent   Int          // 0 | 10 | 20 | 30
+  totalDaysCovered  Int          // 7 | 14 | 21 | 21 | 35 | 42
+  refundedAmount    Int          @default(0)
+}
+```
+
+### 20.7 Refund pro-rata mới
+
+```typescript
+function computeRefund(payment: PaymentLog, daysUsedInPaid: number): number {
+  const dailyRate = payment.finalAmount / payment.totalDaysCovered;
+  return Math.max(0, payment.finalAmount - (daysUsedInPaid * dailyRate));
+}
+
+// Vd 1: Trọn Gói 294k Day 1, hủy Day 21 (đã dùng 21 paid days)
+//   → refund = 294k - (21 × (294k/42)) = 294k - 147k = 147k
+
+// Vd 2: Combo 2+3 280k Day 8 (Stage 2 Day 1), hủy Day 22 (đã dùng 14)
+//   → refund = 280k - (14 × (280k/35)) = 280k - 112k = 168k
+
+// Vd 3: Gói 1 70k Day 4, hủy Day 6
+//   → refund = 70k - (3 × 10k) = 40k
+```
+
+### 20.8 UX flow per gói
+
+#### Free Trial 3 ngày
+- Onboarding + log điếu Day 1
+- Insight teaser Day 2-3
+- Day 3 evening: paywall menu chọn Gói 1 / Combo 1+2 / Trọn Gói
+
+#### Gói 1 (Day 4-7, sau Day 3 trial)
+- Continue Stage 1 với insight đầy đủ
+- Day 7: gate + offer Gói 2 / Combo 2+3 / continue free Day 8 với basic content?
+
+**Câu hỏi UX**: Day 8+ user chưa pay Gói 2, nhưng đã pay Gói 1 → app ở trạng thái nào?
+- A. Lock toàn bộ, force pay Gói 2 hoặc bỏ
+- B. Allow stay in Stage 1 mode (continued logging) — không có Stage 2 content
+- C. Show upgrade reminder mỗi ngày, app vẫn dùng được nhưng giảm intensity
+
+→ Em đề xuất **B** (anh nói "có thể trì hoãn lên chặng") — app KHÔNG ép, user tự quyết khi nào pay tiếp.
+
+#### Gói 2 (14 ngày)
+- Daily target dashboard
+- Tapering 2 weeks
+- Day 21 evening: gate + offer Gói 3
+
+#### Gói 3 (21 ngày)
+- Streak counter
+- Identity exercises
+- Day 42 evening: graduation + maintenance unlock
+
+#### Maintenance 18 ngày (Day 43-60) — FREE
+- Weekly check-in
+- Đại Sứ teaser
+
+#### Đại Sứ FREE forever (Day 61+)
+
+### 20.9 Conversion funnel với pricing mới
+
+**Giả định 100 Free Trial signup**:
+
+```
+100 Free Trial (3 ngày)
+  ↓ 30% pay Gói 1 hoặc upper combo
+    ↓ 18 pay Gói 1 (70k) = 1.26tr
+    ↓ 8 pay Combo 1+2 (189k) = 1.51tr
+    ↓ 4 pay Trọn Gói 294k = 1.18tr
+  
+30 user paying total: ~3.95tr revenue/100 signup
+
+Of these:
+  - 18 Gói 1 → 50% upgrade Gói 2 hoặc Combo 2+3 = 9 user
+    - 6 pay Gói 2 (140k) = 840k
+    - 3 pay Combo 2+3 (280k) = 840k
+  - All in Stage 2 (8+4+9 = 21) → 70% pass + Stage 3 = 15 user
+    - Of which 11 already paid (Combo 1+2 hoặc Trọn Gói)
+    - 4 pay Gói 3 (210k) = 840k
+  
+Total revenue per 100 signup: ~6.5tr (mix per-stage + combos)
+Average revenue per paying user: ~217k
+Conversion rate: 30% (Free → Paid Gói 1)
+Bundle attach rate: 12/30 = 40% (chọn combo thay per-stage)
+```
+
+→ Cần 150-200 Free Trial signup/tháng để MRR 10tr.
+
+### 20.10 Risk + mitigation FINAL
+
+| Risk | Mitigation |
+|------|------------|
+| User pay Gói 1 70k → không upgrade Gói 2 → cash flow thấp | Combo 1+2 189k giảm 10% incentive — convert lúc Day 7 |
+| User trì hoãn lâu giữa stages (vd 2 tuần Stage 1) | App allow trì hoãn, không expire — trust building |
+| Refund abuse | Max 80% refund first 7 ngày, sau đó pro-rata 100% |
+| Combo Trọn Gói 30% off mất margin | Bonus 25 ngày maintenance + lifetime Đại Sứ → perceived value cao |
+| Stage 2 14 ngày aggressive tapering (-50% Week 1) | Adaptive — user có thể adjust target ±20%, fail policy không restart |
+

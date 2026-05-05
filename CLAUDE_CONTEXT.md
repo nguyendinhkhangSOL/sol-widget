@@ -1379,3 +1379,70 @@ Append vào `STAGE_JOURNEY_DESIGN.md` Section 18 (300 dòng new) — full spec:
 
 **Task list bổ sung**: #57 — Phase 9 state-based widget dashboard.
 
+
+### Update 3 (cuối phiên 2026-05-04) — PRICING FINAL chốt
+
+Khang chốt pricing model phù hợp VN:
+- **Trial 3 ngày FREE** — aha moment generator
+- **Stage 1 (Day 4-7)**: 70k 1-time
+- **Stage 2 (Day 8-28)**: 210k 1-time
+- **Stage 3 (Day 29-35)**: 70k 1-time
+- **Trọn Gói 299k** (giảm 15% từ 350k) — bundle option
+- **Maintenance 25 ngày FREE** — bonus sau Day 35
+- **Đại Sứ FREE forever** — sau Day 60
+
+**1-time payment, KHÔNG subscription** (VN không quen auto-charge).
+
+**Refund pro-rata bất kỳ lúc nào** — formula `refund = paid - (daysUsed × dailyRate)`.
+
+Append `STAGE_JOURNEY_DESIGN.md` Section 19 với:
+- Pricing structure final
+- Refund logic + math examples
+- Schema PaymentLog update (paidStage, totalDaysInStage, refundedAmount)
+- UX flow per tier (Trial/S1/S2/S3/Maintenance/Đại Sứ)
+- Conversion math: ~150 Free Trial signup/tháng → MRR 10tr
+- 4 rủi ro + mitigation
+
+**Effective rate Trọn Gói**: 299k / 60 ngày = **4.983đ/ngày** — rẻ hơn 1 gói thuốc/ngày → tự thuyết phục.
+
+
+### Update 4 (cuối phiên 2026-05-04 — PRICING FINAL FINAL)
+
+Khang chốt lại lần cuối:
+- **Đơn giản hoá** 3 gói: 7-14-21 (tổng 42 ngày paid) thay 7-21-7 (35 ngày)
+- **Stage 2 rút từ 21 → 14 ngày** (tapering aggressive hơn: -50% Week 1)
+- **Stage 3 mở rộng từ 7 → 21 ngày** (3 tuần consolidation + identity + relapse prevention)
+
+**Pricing 3 gói + 3 combo**:
+- Gói 1 (7d): 70k
+- Gói 2 (14d): 140k
+- Gói 3 (21d): 210k
+- Combo 1+2: 189k (-10%)
+- Combo 2+3: 280k (-20%)
+- **Trọn Gói 1+2+3**: 294k (-30%, save 126k)
+
+**Effective rate Trọn Gói**: 294k / (3+42+25) = **4.200đ/ngày** — đỉnh value.
+
+**Triết lý**: "Tất cả gói nhẹ nhàng không ép. Có thể trì hoãn lên chặng nên không cần discount khẩn cấp."
+
+→ User pause/delay được giữa stages — app không expire, không lock.
+
+`STAGE_JOURNEY_DESIGN.md` Section 20 update đầy đủ:
+- 3 gói + 3 combo
+- Tapering Stage 2 14d (-50% Week 1, ≤2 Week 2)
+- Stage 3 21d split: Giải phóng / Identity shift / Relapse prevention
+- Schema PaymentLog với PaymentTier enum
+- Refund pro-rata công thức
+- Conversion funnel: 100 signup → 6.5tr revenue
+- 150-200 signup/tháng → MRR 10tr
+
+
+### Update 5 (cuối phiên 2026-05-04 — 60 ngày tròn 2 tháng)
+
+Khang chốt cuối: maintenance bonus **18 ngày** (thay 25) để total = 42 paid + 18 free = **60 ngày tròn 2 tháng**.
+
+**Effective rate Trọn Gói**: 294k / 60 = **4.900đ/ngày** (vẫn dưới 1 điếu thuốc/ngày).
+
+→ Tròn số 2 tháng dễ marketing, dễ nhớ, dễ giao tiếp.
+
+Đã update STAGE_JOURNEY_DESIGN.md Section 19+20 toàn bộ replace 25→18 và 70→60.
