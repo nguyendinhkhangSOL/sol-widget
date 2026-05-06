@@ -78,6 +78,33 @@ export const api = {
   // Trả URL Zalo authorize cho FE redirect. Yêu cầu auth (anon JWT đã có).
   zaloInit: () => request<{ url: string }>('/auth/zalo/init'),
 
+  // ─── Email magic link auth (Phase B pivot 2026-05-06) ───────────────
+  // POST /auth/email/request — gửi link đăng nhập tới email user nhập
+  requestEmailLink: (email: string) =>
+    request<{ ok: boolean; message: string }>('/auth/email/request', {
+      method: 'POST',
+      body: JSON.stringify({ email }),
+    }),
+
+  // GET /auth/email/verify?token=XXX — không dùng request wrapper vì cần
+  // call từ /auth/email page mà có thể không có anon JWT yet. Dùng fetch trực tiếp.
+  verifyEmailToken: async (token: string) => {
+    const res = await fetch(`${config.baseUrl}/auth/email/verify?token=${encodeURIComponent(token)}`);
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      let body: any = text;
+      try { body = JSON.parse(text); } catch { /* keep text */ }
+      throw new ApiError(res.status, body, `API ${res.status}`);
+    }
+    return (await res.json()) as {
+      ok: boolean;
+      token: string;
+      userId: string;
+      mergedFromUserId: string | null;
+      message: string;
+    };
+  },
+
   // Bind phone vào anon user hiện tại (yêu cầu đã anon login).
   // Gửi OTP → DEV mode log ra console backend, prod gửi SMS thật.
   bindPhoneRequest: (phone: string) =>
@@ -247,8 +274,71 @@ export const api = {
       method: 'POST',
       body: JSON.stringify({ itemId }),
     }),
-};
 
+  // ─── Journey Dashboard (Phase A) ───────────────────────────────────────
+  getJourneyDashboard: () =>
+    request<any>('/journey/dashboard'),
+
+  logCigarette: (body: {
+    trigger?: 'STRESS' | 'EATING' | 'IDLE' | 'SOCIAL' | 'OTHER';
+    context?: string;
+    delayedMin?: number;
+    skipped?: boolean;
+  }) =>
+    request<any>('/journey/cigarette', { method: 'POST', body: JSON.stringify(body) }),
+
+  exitJourney: (reason?: string) =>
+    request<{ ok: boolean; journal: any; message: string }>('/journey/exit', {
+      method: 'POST',
+      body: JSON.stringify({ reason }),
+    }),
+
+  resumeJourney: () =>
+    request<{ ok: boolean; message: string }>('/journey/resume', { method: 'POST' }),
+
+  getJourneyJournals: () =>
+    request<{ journals: any[] }>('/journey/journals'),
+
+  // ─── Journey Phase B (88-day, Q-Day ceremony) ──────────────────────────
+  // POST /journey/qday-confirm — user bấm "Tôi cam kết" Day 28+
+  qdayConfirm: () =>
+    request<{ ok: boolean; qDayConfirmedAt: string; message: string }>(
+      '/journey/qday-confirm',
+      { method: 'POST' },
+    ),
+
+  // POST /journey/onboarding/baseline — Day 1 wizard: cigsBaseline + pricePerCig
+  submitOnboardingBaseline: (body: { cigsBaseline: number; pricePerCig: number }) =>
+    request<{
+      ok: boolean;
+      user: {
+        id: string;
+        cigsBaseline: number;
+        pricePerCig: number;
+        onboardingCompletedAt: string;
+        quitDate: string;
+        pronouns: string;
+      };
+      message: string;
+    }>('/journey/onboarding/baseline', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
+
+  // GET /journey/money-breakdown — daily cigs + cumulative cho biểu đồ Analytics
+  getMoneyBreakdown: () =>
+    request<{
+      days: Array<{
+        day: number;
+        cigs: number;
+        avoided: number;
+        moneyDelta: number;
+        cumulative: number;
+      }>;
+      baseline: number;
+      pricePerCig: number;
+    }>('/journey/money-breakdown'),
+};
 
 // ─── NotificationPrefs type (Phase 5) ──────────────────────────────────
 export interface NotificationPrefs {

@@ -32,6 +32,7 @@ export interface User {
   id: string;
   name: string;
   phone?: string;
+  email?: string;
   /** Cách Sol gọi user: "anh" | "chị" | "em" | "bạn" | tuỳ chỉnh ("Ngài"…). Free string ≤ 8 ký tự. */
   pronouns: string;
   /** Tên trợ lý AI: "Sol Trợ lý" | "Sol Phó tướng" | "Sol Đồng hành" | tuỳ chỉnh. ≤ 24 ký tự. */

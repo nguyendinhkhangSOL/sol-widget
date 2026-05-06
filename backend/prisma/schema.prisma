@@ -100,6 +100,24 @@ model User {
   //                     preSocialDrink?, preBedtime? },
   //          consecutiveUnopened (Phase 6) }
   notificationPrefs Json @default("{}")
+
+  // ── PHASE A — Continuous journey tracking ──────────────────────────
+  // Stage derived from quitDate (computeStageFromDay). Không cần enum cứng.
+  exitedAt        DateTime?       // null = đang đi, set = đã exit
+  exitReason      String?
+
+  // ── PHASE B — 88-day journey (NHAN_THUC + HANH_DONG + GIAI_PHONG + TAI_THIET)
+  // Q-Day = Day 28. User PHẢI bấm xác nhận để bật đồng hồ countdown ở Phase 3.
+  // NULL = chưa cam kết (Phase 3 vẫn render nhưng đồng hồ không chạy).
+  qDayConfirmedAt  DateTime?
+  // User khai báo Day 1 onboarding wizard. Dùng để tính money saved cumulative.
+  cigsBaseline     Int      @default(20)   // Số điếu/ngày user thường hút trước khi vào Sol
+  pricePerCig      Int      @default(1250) // Giá mỗi điếu (VND). Default 25k/pack 20.
+  // Khi user hoàn thành onboarding wizard. NULL = vẫn cần wizard.
+  onboardingCompletedAt DateTime?
+
+  cigaretteLogs   CigaretteLog[]
+  progressJournals ProgressJournal[]
   // settings shape:
   // {
   //   quietHoursStart: "22:00",
@@ -256,6 +274,57 @@ model Message {
   createdAt   DateTime    @default(now())
 
   @@index([userId, createdAt])
+}
+
+// ─────────────────────────── JOURNEY TRACKING ───────────────────────────
+// Continuous journey 60 ngày: Nhận thức 7d → Giảm lệ thuộc 14d → Bỏ hẳn 21d → Duy trì 18d
+// Stage được DERIVE từ dayInJourney (không lưu enum cứng):
+//   day 1-7   → NHAN_THUC (Nhận thức)
+//   day 8-21  → GIAM_LE_THUOC (Giảm lệ thuộc)
+//   day 22-42 → BO_HAN (Bỏ hẳn)
+//   day 43-60 → DUY_TRI (Duy trì)
+//   day 61+   → DAI_SU (Đại Sứ vĩnh viễn, FREE forever)
+
+model CigaretteLog {
+  id            String           @id @default(cuid())
+  userId        String
+  user          User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  smokedAt      DateTime         @default(now())
+  trigger       String?           // 'STRESS' | 'EATING' | 'IDLE' | 'SOCIAL' | 'OTHER'
+  context       String?           // optional free text
+  delayedMin    Int?              // user delay X phút trước khi hút (positive)
+  skipped       Boolean          @default(false)  // user định hút nhưng skip — VICTORY
+
+  @@index([userId, smokedAt])
+}
+
+// Snapshot khi user exit — món quà trả lại user
+// User có thể có nhiều ProgressJournal nếu resume + exit nhiều lần
+model ProgressJournal {
+  id              String       @id @default(cuid())
+  userId          String
+  user            User         @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // Snapshot data
+  daysJourneyed   Int
+  cigsLogged      Int          @default(0)
+  cigsSkipped     Int          @default(0)
+  moneySaved      Int          @default(0)        // VND
+  topTriggers     Json?         // { stress: 38, eating: 27, ... }
+  emotionalArc    Json?         // [{ day, mood, note }]
+  letterToSelf    String?       // nếu user viết Day 1 cho future self
+  bodyMilestonesUnlocked  Json?  // [1,3,7,14,30,...] day numbers
+  paidAmount      Int          @default(0)        // tổng tiền đã trả
+  refundedAmount  Int          @default(0)        // tổng đã hoàn
+
+  // Generated artifacts
+  pdfUrl          String?       // link PDF download
+
+  exitReason      String?       // user input
+  exitedAt        DateTime     @default(now())
+
+  @@index([userId, exitedAt])
 }
 
 // ─────────────────────────── CONTENT CATALOG ─────────────────────────────
@@ -523,6 +592,26 @@ model OtpCode {
   createdAt  DateTime @default(now())
 
   @@index([phone, createdAt])
+}
+
+// Email magic link auth (2026-05-06 — pivot từ Zalo OAuth tạm thời).
+// User nhập email → backend tạo token 32-char hex random → email link
+// "https://bothuocla.sol.vn/auth/email?token=XXX". Click → verify → MERGE
+// anon hiện tại vào user gốc (nếu email đã có) hoặc bind email vào anon.
+//
+// Token 1-shot: consumedAt set khi verify thành công, không reuse.
+// Expire 1 giờ — đủ cho user check mail + click link.
+// Idempotent: cùng email request nhiều lần → tạo nhiều token, không crash.
+model EmailVerificationToken {
+  token       String    @id
+  email       String
+  fromUserId  String?
+  expiresAt   DateTime
+  consumedAt  DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@index([email, createdAt])
+  @@index([expiresAt])
 }
 
 // ──────────────────────── APP SETTINGS (ADMIN) ───────────────────────────

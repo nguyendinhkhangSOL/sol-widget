@@ -19,7 +19,10 @@ contentRouter.get('/day/today', async (req: AuthedRequest, res) => {
 
 contentRouter.get('/day/:day', async (req: AuthedRequest, res) => {
   const day = parseInt(req.params.day, 10);
-  if (!(day >= 1 && day <= 30)) return res.status(400).json({ error: 'invalid_day' });
+  // Phase A: dayNumber 1-30 (Workbook 30 ngày → Phase B mapping cho GIAI_PHONG).
+  // Phase B: 101-107 (NHAN_THUC), 108-128 (HANH_DONG), 159-188 (TAI_THIET).
+  // Cho phép range 1-200 để cover cả 2 hệ + dư cho future content.
+  if (!(day >= 1 && day <= 200)) return res.status(400).json({ error: 'invalid_day' });
   return serveDay(day, req.userId!, res);
 });
 

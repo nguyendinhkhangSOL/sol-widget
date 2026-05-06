@@ -13,7 +13,8 @@ export function WidgetBubble() {
 
   return (
     <button
-      aria-label="Mở SOL Companion"
+      aria-label="Sol — Trợ lý AI cai thuốc lá miễn phí"
+      title="Sol — Trợ lý AI cai thuốc lá miễn phí"
       onClick={() => setExpanded(true)}
       className={clsx(
         'relative h-14 w-14 rounded-full shadow-widget transition-transform',

@@ -14,7 +14,6 @@ import { api, ApiError } from '../../services/api';
 import { MessageBubble } from './MessageBubble';
 import type { Message, TierMe } from '../../types';
 import {
-  pickQuickReplies,
   resolveAnswer,
   markUsed,
   refreshQuickReplies,
@@ -22,6 +21,7 @@ import {
   type QuickReply,
 } from '../../lib/quickReplies';
 import { matchUserMessage } from '../../lib/intentMatcher';
+import { rankChips } from '../../lib/chipRanking';
 
 export function ChatView() {
   const messages = useStore((s) => s.messages);
@@ -199,27 +199,68 @@ export function ChatView() {
   }
 
   /* ─── Quick-reply chips ─────────────────────────────────────── */
-  // Chỉ hiện khi user CHƯA gửi/bấm gì — sau lần đầu thì biến mất gọn
-  // để không che view chat.
+  // 3 layer chip UX (port từ dashboard chipRanking):
+  //   Layer 1 — Empty state grid 8 chip (userMsgCount = 0)
+  //   Layer 2 — Inline autocomplete khi user gõ ≥ 2 ký tự (Tab để chọn)
+  //   Layer 3 — Sticky compact bar 6 chip pill (sau message đầu)
   const userMsgCount = useMemo(
     () => messages.filter((m) => m.role === 'USER').length,
     [messages]
   );
   const showChips = userMsgCount === 0 && !sending;
+  const allChips = useMemo(() => getAllChips(), [chipTick]);
+
+  // Empty state grid 8 — 'cap1' = chỉ 1 chip CRITICAL ở cuối (escape hatch
+  // không lặp 6 lần "khẩn cấp" gây anxiety).
   const chips = useMemo(
-    () => (showChips ? pickQuickReplies(user, 8) : []),
-    [showChips, user, chipTick]
+    () => (showChips ? rankChips(allChips, user, { maxN: 8, criticalMode: 'cap1' }) : []),
+    [showChips, user, allChips, chipTick]
   );
 
+  // Compact bar (sau message đầu) — 'exclude' CRITICAL hoàn toàn. User đã trong
+  // flow chat thường, không cần spam chip alert. Crisis vẫn accessible qua
+  // header SOS button hoặc gõ "sos" → intent matcher catch.
+  const compactChips = useMemo(
+    () =>
+      userMsgCount > 0 && !sending
+        ? rankChips(allChips, user, { maxN: 6, criticalMode: 'exclude' })
+        : [],
+    [userMsgCount, sending, user, allChips, chipTick]
+  );
+
+  // Inline autocomplete suggestion — match user draft với canned trigger
+  const autocompleteSuggestion = useMemo(() => {
+    if (draft.trim().length < 2) return null;
+    const matched = matchUserMessage(draft, allChips);
+    if (!matched || matched.score < 0.5) return null;
+    return matched.chip;
+  }, [draft, allChips]);
+
   const empty = messages.length === 0;
+
+  // PATH B (2026-05-06): Detect anonymous (chưa onboard hành trình) → copy
+  // greeting top-of-funnel + footer CTA mở dashboard. RELAXED: chỉ check
+  // !quitDate vì user cũ pre-migration không có onboardingCompletedAt.
+  const isAnonymous = !user?.quitDate;
 
   return (
     <div className="h-full flex flex-col">
       <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-3 py-3 space-y-2">
         {empty && (
-          <div className="px-2 pt-4 pb-2 text-center text-sol-ink-3 text-meta">
-            Kể SOL nghe bạn đang thế nào — hoặc bấm 1 câu hỏi quen thuộc bên dưới.
-          </div>
+          isAnonymous ? (
+            <div className="px-3 pt-4 pb-2 text-center">
+              <div className="text-3xl mb-2" aria-hidden="true">🌅</div>
+              <div className="text-h3 text-sol-ink font-semibold mb-1">Sol — Trợ lý cai thuốc lá</div>
+              <div className="text-meta text-sol-ink-2 leading-relaxed">
+                Hỏi mình bất kỳ câu gì về cai thuốc.<br />
+                Miễn phí, tiếng Việt, nhanh.
+              </div>
+            </div>
+          ) : (
+            <div className="px-2 pt-4 pb-2 text-center text-sol-ink-3 text-meta">
+              Kể SOL nghe bạn đang thế nào — hoặc bấm 1 câu hỏi quen thuộc bên dưới.
+            </div>
+          )
         )}
         {messages.map((m) => (
           <MessageBubble key={m.id} message={m} />
@@ -256,6 +297,52 @@ export function ChatView() {
               </button>
             ))}
           </div>
+        </div>
+      )}
+
+      {/* ─── Layer 3: Sticky compact bar 6 chip pill (sau message đầu) ─── */}
+      {compactChips.length > 0 && (
+        <div className="px-3 pt-2 pb-1.5 border-t border-sol-line bg-sol-paper/70 backdrop-blur overflow-x-auto scrollbar-thin">
+          <div className="flex gap-1.5 whitespace-nowrap">
+            {compactChips.map((chip) => (
+              <button
+                key={chip.id}
+                type="button"
+                onClick={() => handleChip(chip)}
+                className="
+                  shrink-0 inline-flex items-center gap-1 min-h-[34px] px-3 py-1
+                  rounded-full border border-sol-line bg-white
+                  text-meta text-sol-ink-2 hover:bg-sol-green-soft hover:border-sol-green
+                  active:scale-[.98] transition
+                "
+              >
+                <span className="text-base leading-none">{chip.icon}</span>
+                <span>{chip.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ─── Layer 2: Inline autocomplete suggestion ──────────────────── */}
+      {autocompleteSuggestion && draft.trim().length >= 2 && (
+        <div className="px-3 py-2 border-t border-sol-orange/20 bg-sol-orange-soft/30">
+          <button
+            type="button"
+            onClick={() => {
+              const chip = autocompleteSuggestion;
+              setDraft('');
+              handleChip(chip);
+            }}
+            className="w-full flex items-center gap-2 text-left text-meta text-sol-earth-ink active:scale-[.99]"
+          >
+            <span className="text-sol-orange font-semibold">💡 Sol gợi ý:</span>
+            <span className="text-base">{autocompleteSuggestion.icon}</span>
+            <span className="font-medium truncate flex-1">{autocompleteSuggestion.label}</span>
+            <span className="text-[10px] text-sol-ink-3 uppercase tracking-wide font-bold shrink-0">
+              Tab để chọn
+            </span>
+          </button>
         </div>
       )}
 
@@ -309,6 +396,14 @@ export function ChatView() {
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               onKeyDown={(e) => {
+                if (e.key === 'Tab' && autocompleteSuggestion) {
+                  // Tab để pick autocomplete suggestion
+                  e.preventDefault();
+                  const chip = autocompleteSuggestion;
+                  setDraft('');
+                  handleChip(chip);
+                  return;
+                }
                 if (e.key === 'Enter' && !e.shiftKey) {
                   e.preventDefault();
                   send();
@@ -329,8 +424,40 @@ export function ChatView() {
           </div>
         )}
       </div>
+
+      {/* PATH B — CTA mở dashboard đầy đủ cho user anonymous */}
+      {isAnonymous && (
+        <a
+          href={getDashboardUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block px-3 py-2.5 border-t border-sol-orange/30 bg-sol-orange-soft/40 hover:bg-sol-orange-soft transition text-center"
+        >
+          <div className="text-meta font-semibold text-sol-earth-ink">
+            ✨ Bắt đầu hành trình 88 ngày miễn phí 7 ngày
+          </div>
+          <div className="text-[11px] text-sol-orange-ink mt-0.5">
+            Mở app đầy đủ tại bothuocla.sol.vn →
+          </div>
+        </a>
+      )}
     </div>
   );
+}
+
+/**
+ * Trả URL dashboard chính. Nếu widget đang chạy trong dashboard (origin
+ * trùng) thì link cùng origin hiện tại — đỡ flickering. Nếu widget embed
+ * trên partner site → link production bothuocla.sol.vn.
+ */
+function getDashboardUrl(): string {
+  if (typeof window === 'undefined') return 'https://bothuocla.sol.vn';
+  const origin = window.location.origin;
+  // Heuristic: nếu đã ở bothuocla domain hoặc localhost dashboard (5174)
+  if (origin.includes('bothuocla') || origin.includes(':5174')) {
+    return origin;
+  }
+  return 'https://bothuocla.sol.vn';
 }
 
 function Dot({ delay = '0ms' }: { delay?: string }) {

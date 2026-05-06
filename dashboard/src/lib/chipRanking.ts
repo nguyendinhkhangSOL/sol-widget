@@ -97,11 +97,16 @@ export interface RankedChip extends QuickReply {
 export function rankChips(
   chips: QuickReply[],
   user: User | null,
-  options: { maxN?: number; now?: Date } = {},
+  options: {
+    maxN?: number;
+    now?: Date;
+    criticalMode?: 'mix' | 'exclude' | 'cap1';
+  } = {},
 ): RankedChip[] {
   const maxN = options.maxN ?? 10;
   const now = options.now ?? new Date();
   const hour = now.getHours();
+  const criticalMode = options.criticalMode ?? 'mix';
 
   const ctx: RankContext = {
     daysSober: user?.quitDate ? daysSober(user.quitDate) : 0,
@@ -113,11 +118,23 @@ export function rankChips(
 
   const used = new Set(getUsedIds());
 
-  const ranked = chips
-    .filter((chip) => chip.reusable || !used.has(chip.id))
-    .map((chip) => ({ ...chip, _score: scoreChip(chip, ctx) }))
-    .sort((a, b) => b._score - a._score)
-    .slice(0, maxN);
+  const isCritical = (c: QuickReply) => {
+    if ((c.priority ?? 100) >= 1000) return true;
+    const haystack = `${c.id.toLowerCase()} ${c.label.toLowerCase()}`;
+    return CRITICAL_KEYWORDS.test(haystack);
+  };
 
-  return ranked;
+  let pool = chips
+    .filter((chip) => chip.reusable || !used.has(chip.id))
+    .map((chip) => ({ ...chip, _score: scoreChip(chip, ctx) }));
+
+  if (criticalMode === 'exclude') {
+    pool = pool.filter((c) => !isCritical(c));
+  } else if (criticalMode === 'cap1') {
+    const critical = pool.filter(isCritical).slice(0, 1);
+    const normal = pool.filter((c) => !isCritical(c));
+    pool = [...normal, ...critical];
+  }
+
+  return pool.sort((a, b) => b._score - a._score).slice(0, maxN);
 }

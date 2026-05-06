@@ -1,15 +1,17 @@
-// Sổ Tay 30 Ngày Bỏ Thuốc — modular theo tuần.
+// dashboard/src/pages/Workbook.tsx
+// PHASE B — Sổ tay theo 4 phase tiến hoá hành vi.
 //
-// UX v2 (cắt scroll fatigue cho user 45+ Việt):
-//   - Default chỉ hiển thị tuần hiện tại (auto-detect từ quitDate)
-//   - Tabs: Chuẩn bị · Tuần 1 · Tuần 2 · Tuần 3 · Tuần 4 · Sau 30 ngày
-//   - In/print → render TOÀN BỘ (giữ trải nghiệm "cuốn sách 30 ngày")
-//   - URL ?tab=week-2 — sharable + back/forward router work
+// Tab structure mới:
+//   prep      — Chuẩn bị (Pre-Q-Day, giữ nguyên section cũ)
+//   phase-1   — 🌱 Nhận Thức (Day 1-7) — placeholder, content đang biên soạn
+//   phase-2   — 🔥 Hành Động (Day 8-28) — placeholder
+//   phase-3   — 🚭 Giải Phóng (Day 29-58) — render 4 tuần workbook cũ liền mạch
+//   phase-4   — 🌟 Tái Thiết (Day 59-88) — render Post30Section
 //
-// Tích hợp dữ liệu từ check-in widget ngoài (auto-fill DayCard) + sync lên backend
-// để AI Mentor có thể đọc & cá nhân hóa từ các trường "Lý do", "Trigger", reflections…
+// Auto-detect tab theo stage (từ /journey/dashboard payload).
+// Print mode `?print=1` render TOÀN BỘ giữ trải nghiệm "cuốn sách 88 ngày".
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useStore } from '../state/store';
 import { useWorkbook } from '../state/workbookStore';
@@ -28,30 +30,25 @@ import {
 } from '../components/workbook/PrepSections';
 import { WeekSection } from '../components/workbook/WeekSection';
 import { Post30Section } from '../components/workbook/Post30Section';
+import type { Stage, DashboardData } from '../components/views/phaseB/types';
 
-type WorkbookTab = 'prep' | 'week-1' | 'week-2' | 'week-3' | 'week-4' | 'post';
+type WorkbookTab = 'prep' | 'phase-1' | 'phase-2' | 'phase-3' | 'phase-4';
 
-const TABS: { id: WorkbookTab; label: string; short: string; range?: string }[] = [
-  { id: 'prep', label: 'Chuẩn bị', short: 'Chuẩn bị', range: 'Trước Q-Day' },
-  { id: 'week-1', label: 'Tuần 1', short: 'T1', range: 'Ngày 1–7' },
-  { id: 'week-2', label: 'Tuần 2', short: 'T2', range: 'Ngày 8–14' },
-  { id: 'week-3', label: 'Tuần 3', short: 'T3', range: 'Ngày 15–21' },
-  { id: 'week-4', label: 'Tuần 4', short: 'T4', range: 'Ngày 22–30' },
-  { id: 'post', label: 'Sau 30 ngày', short: '30+', range: 'Đại sứ' },
+const TABS: { id: WorkbookTab; label: string; emoji: string; range: string; color: string }[] = [
+  { id: 'prep',     label: 'Chuẩn bị',    emoji: '📋', range: 'Trước Q-Day',  color: '#5C5650' },
+  { id: 'phase-1',  label: 'Nhận Thức',  emoji: '🌱', range: 'Ngày 1–7',     color: '#B25C2C' },
+  { id: 'phase-2',  label: 'Hành Động',  emoji: '🔥', range: 'Ngày 8–28',    color: '#B8860B' },
+  { id: 'phase-3',  label: 'Giải Phóng', emoji: '🚭', range: 'Ngày 29–58',   color: '#3A7CA5' },
+  { id: 'phase-4',  label: 'Tái Thiết',  emoji: '🌟', range: 'Ngày 59–88',   color: '#5C3A1E' },
 ];
 
-/** Auto-detect tab nào nên mở mặc định dựa trên quitDate. */
-function autoDetectTab(quitDate: string | null | undefined): WorkbookTab {
-  if (!quitDate) return 'prep';
-  const start = new Date(quitDate).getTime();
-  if (isNaN(start)) return 'prep';
-  const diffDays = Math.floor((Date.now() - start) / 86400000);
-  if (diffDays < 0) return 'prep';
-  if (diffDays < 7) return 'week-1';
-  if (diffDays < 14) return 'week-2';
-  if (diffDays < 21) return 'week-3';
-  if (diffDays < 30) return 'week-4';
-  return 'post';
+function tabFromStage(stage: Stage | null, dayInJourney: number): WorkbookTab {
+  if (!stage || dayInJourney <= 0) return 'prep';
+  if (stage === 'NHAN_THUC') return 'phase-1';
+  if (stage === 'HANH_DONG') return 'phase-2';
+  if (stage === 'GIAI_PHONG') return 'phase-3';
+  if (stage === 'TAI_THIET') return 'phase-4';
+  return 'phase-4'; // DAI_SU vẫn xem Phase 4 maintenance
 }
 
 export function Workbook() {
@@ -61,7 +58,12 @@ export function Workbook() {
   const importJSON = useWorkbook((s) => s.importJSON);
   const [params, setParams] = useSearchParams();
 
-  // ─── Bootstrap from backend (settings.workbook) on first load ────
+  const [phaseData, setPhaseData] = useState<DashboardData | null>(null);
+  useEffect(() => {
+    api.getJourneyDashboard().then(setPhaseData).catch(() => setPhaseData(null));
+  }, [user?.quitDate, user?.qDayConfirmedAt]);
+
+  // Bootstrap workbook from backend
   const hydratedRef = useRef(false);
   useEffect(() => {
     if (hydratedRef.current || !user) return;
@@ -83,7 +85,7 @@ export function Workbook() {
     hydratedRef.current = true;
   }, [user, importJSON]);
 
-  // ─── Debounced upload to backend ────────────────────────────────
+  // Debounced upload
   const uploadTimer = useRef<number | null>(null);
   useEffect(() => {
     if (!hydratedRef.current || !user) return;
@@ -102,8 +104,11 @@ export function Workbook() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.updatedAt]);
 
-  // ─── Tab logic ───────────────────────────────────────────────────
-  const auto = useMemo(() => autoDetectTab(user?.quitDate), [user?.quitDate]);
+  // Tab logic
+  const auto = useMemo<WorkbookTab>(
+    () => tabFromStage(phaseData?.journey?.stage ?? null, phaseData?.journey?.dayInJourney ?? 0),
+    [phaseData?.journey?.stage, phaseData?.journey?.dayInJourney],
+  );
   const tabParam = params.get('tab') as WorkbookTab | null;
   const printMode = params.get('print') === '1';
   const activeTab: WorkbookTab =
@@ -117,11 +122,16 @@ export function Workbook() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // WorkbookNav (anchor links T1-T4 + Sau 30N) chỉ phù hợp tab prep + phase-3
+  // (= 30 ngày Workbook cũ). Tab Phase 1/2/4 placeholder không có anchor sections.
+  const showLegacyNav = activeTab === 'prep' || activeTab === 'phase-3';
+  const showLegacyHero = activeTab === 'prep' || activeTab === 'phase-3';
+
   return (
     <div className="wb-root bg-sol-bg min-h-screen">
-      <WorkbookNav />
+      {showLegacyNav && <WorkbookNav />}
 
-      {/* Tab bar — KHÔNG hiện khi print mode để giữ "cuốn sách" liền mạch */}
+      {/* Tab bar */}
       {!printMode && (
         <div className="sticky top-0 z-10 bg-sol-bg/95 backdrop-blur border-b border-sol-line print:hidden">
           <div className="max-w-5xl mx-auto px-2 py-2 flex gap-1 overflow-x-auto scrollbar-thin">
@@ -135,12 +145,14 @@ export function Workbook() {
                   className={
                     'shrink-0 min-h-tap px-3 py-2 rounded-lg text-meta font-medium transition flex flex-col items-start ' +
                     (isActive
-                      ? 'bg-sol-green text-white'
+                      ? 'text-white shadow-card'
                       : 'bg-sol-paper text-sol-ink-2 hover:bg-sol-soft border border-sol-line')
                   }
+                  style={isActive ? { backgroundColor: t.color } : undefined}
                 >
                   <span className="flex items-center gap-1.5">
-                    {t.label}
+                    <span aria-hidden="true">{t.emoji}</span>
+                    <span>{t.label}</span>
                     {isCurrent && (
                       <span
                         className={
@@ -158,7 +170,6 @@ export function Workbook() {
                 </button>
               );
             })}
-            {/* In/print full book */}
             <button
               onClick={() => {
                 const next = new URLSearchParams(params);
@@ -168,7 +179,7 @@ export function Workbook() {
                 setTimeout(() => window.print(), 100);
               }}
               className="shrink-0 min-h-tap px-3 py-2 rounded-lg text-meta font-medium bg-sol-paper border border-sol-line text-sol-ink-2 hover:bg-sol-soft flex flex-col items-start"
-              title="In toàn bộ sổ tay 30 ngày"
+              title="In toàn bộ sổ tay 88 ngày"
             >
               <span>🖨️ In sách</span>
               <span className="text-[10px] text-sol-ink-3">Toàn bộ</span>
@@ -178,8 +189,8 @@ export function Workbook() {
       )}
 
       <div className="max-w-5xl mx-auto p-4 lg:p-6 pb-24 lg:pb-10 space-y-6 print:p-0 print:space-y-4">
-        {/* PRINT MODE — render TOÀN BỘ */}
         {printMode ? (
+          // PRINT MODE — render TOÀN BỘ 88 ngày
           <>
             <WorkbookHero />
             <PreQuitSection />
@@ -190,6 +201,8 @@ export function Workbook() {
             <CravingLogSection />
             <RelapsePlanSection />
             <ResourcesSection />
+            <PhasePlaceholder phase="phase-1" stage="NHAN_THUC" />
+            <PhasePlaceholder phase="phase-2" stage="HANH_DONG" />
             <WeekSection week={1} />
             <WeekSection week={2} />
             <WeekSection week={3} />
@@ -198,7 +211,6 @@ export function Workbook() {
           </>
         ) : (
           <>
-            {/* Hero luôn hiện ở mọi tab — context cho user */}
             <WorkbookHero />
 
             {activeTab === 'prep' && (
@@ -213,27 +225,97 @@ export function Workbook() {
                 <ResourcesSection />
               </>
             )}
-            {activeTab === 'week-1' && <WeekSection week={1} />}
-            {activeTab === 'week-2' && <WeekSection week={2} />}
-            {activeTab === 'week-3' && <WeekSection week={3} />}
-            {activeTab === 'week-4' && <WeekSection week={4} />}
-            {activeTab === 'post' && <Post30Section />}
+            {activeTab === 'phase-1' && <PhasePlaceholder phase="phase-1" stage="NHAN_THUC" />}
+            {activeTab === 'phase-2' && <PhasePlaceholder phase="phase-2" stage="HANH_DONG" />}
+            {activeTab === 'phase-3' && (
+              <>
+                <Phase3Hero />
+                <WeekSection week={1} />
+                <WeekSection week={2} />
+                <WeekSection week={3} />
+                <WeekSection week={4} />
+              </>
+            )}
+            {activeTab === 'phase-4' && (
+              <>
+                <PhasePlaceholder phase="phase-4" stage="TAI_THIET" />
+                <Post30Section />
+              </>
+            )}
 
-            {/* Nav xuống/lên giữa các tuần */}
             <TabNavFooter activeTab={activeTab} setTab={setTab} />
           </>
         )}
 
-        {/* Print footer */}
         <footer className="text-center text-xs text-sol-ink/50 pt-6 print:pt-10">
           <div className="font-bold text-sol-orange text-sm">
             SOL · Sống Lại · Làm Lại Tốt Hơn
           </div>
           bothuocla.sol.vn · sol.vn
           <div className="mt-1 text-[11px]">
-            Sổ tay này thuộc về bạn — hành trình này cũng vậy.
+            Sổ tay 88 ngày này thuộc về bạn — hành trình này cũng vậy.
           </div>
         </footer>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Phase 3 Hero — intro 30 ngày ───────────────────────────────────────── */
+function Phase3Hero() {
+  return (
+    <div className="bg-sol-blue-soft/40 border border-sol-blue/20 rounded-2xl p-6 mb-2">
+      <div className="flex items-baseline gap-3 mb-2">
+        <span className="text-3xl" aria-hidden="true">🚭</span>
+        <h2 className="text-h1 text-sol-blue-ink font-bold">Giai đoạn Giải Phóng</h2>
+      </div>
+      <p className="text-body text-sol-ink leading-relaxed">
+        Đây là 30 ngày sau Q-Day — đồng hồ tự do của bạn đang chạy.
+        Sổ tay được biên soạn theo từng tuần (T1–T4) để bạn ghi lại hành trình bỏ hẳn.
+      </p>
+    </div>
+  );
+}
+
+/* ─── Placeholder cho Phase 1, 2, 4 (content đang biên soạn) ─────────────── */
+function PhasePlaceholder({ phase, stage }: { phase: WorkbookTab; stage: Stage }) {
+  const meta = TABS.find((t) => t.id === phase)!;
+  const description: Record<Stage, string> = {
+    NHAN_THUC: 'Tuần đầu — Sol gợi ý 7 prompt quan sát hành vi: ghi từng điếu, map trigger, viết phản chiếu mỗi tối. Không có mục tiêu, chỉ quan sát.',
+    HANH_DONG: '21 ngày phá vòng lặp — prompt mỗi ngày về delay craving, swap habit, viết Plan B cho từng trigger. Tuần 3 chuẩn bị Q-Day.',
+    GIAI_PHONG: '',
+    TAI_THIET: '10 prompt maintenance — identity rebuild, anti-relapse cảnh báo, lập gia đình/con cái như anchor dài hạn.',
+    DAI_SU: '',
+  };
+
+  return (
+    <div
+      className="rounded-2xl p-8 border-2 border-dashed"
+      style={{
+        backgroundColor: meta.color + '0F',
+        borderColor: meta.color + '60',
+      }}
+    >
+      <div className="flex items-baseline gap-3 mb-3">
+        <span className="text-4xl" aria-hidden="true">{meta.emoji}</span>
+        <h2 className="text-h1 font-bold" style={{ color: meta.color }}>
+          {meta.label}
+        </h2>
+        <span className="text-meta text-sol-ink-3">{meta.range}</span>
+      </div>
+      <p className="text-body text-sol-ink leading-relaxed mb-4">
+        {description[stage]}
+      </p>
+      <div className="bg-sol-paper border border-sol-line rounded-xl p-5">
+        <div className="flex items-baseline gap-2 mb-2">
+          <span className="text-xl">📝</span>
+          <strong className="text-sol-ink">Sol đang biên soạn</strong>
+        </div>
+        <p className="text-meta text-sol-ink-2 leading-relaxed">
+          Khang đang viết <strong>38 bài content Phase B</strong> (Phase 1: 7 bài, Phase 2: 21 bài, Phase 4: 10 bài).
+          Khi sẵn sàng, prompt từng ngày sẽ xuất hiện ở đây — auto-fill từ check-in,
+          sync lên backend để AI Mentor cá nhân hoá phản chiếu.
+        </p>
       </div>
     </div>
   );
@@ -260,7 +342,7 @@ function TabNavFooter({
           className="flex-1 min-h-tap rounded-xl border border-sol-line bg-sol-paper px-4 py-2.5 text-left hover:border-sol-green/40 transition"
         >
           <div className="text-[10px] uppercase text-sol-ink-3 font-semibold">← Trước</div>
-          <div className="text-meta font-semibold text-sol-ink">{prev.label}</div>
+          <div className="text-meta font-semibold text-sol-ink">{prev.emoji} {prev.label}</div>
         </button>
       ) : (
         <div className="flex-1" />
@@ -271,7 +353,7 @@ function TabNavFooter({
           className="flex-1 min-h-tap rounded-xl border border-sol-green/30 bg-sol-green-soft px-4 py-2.5 text-right hover:border-sol-green/60 transition"
         >
           <div className="text-[10px] uppercase text-sol-green-ink font-semibold">Tiếp →</div>
-          <div className="text-meta font-semibold text-sol-ink">{next.label}</div>
+          <div className="text-meta font-semibold text-sol-ink">{next.emoji} {next.label}</div>
         </button>
       ) : (
         <div className="flex-1" />

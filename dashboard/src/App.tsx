@@ -6,6 +6,7 @@ import { getOrCreateDeviceUid, getOriginDomain } from './lib/deviceUid';
 import { RecoveryCodeModal } from './components/RecoveryCodeModal';
 import { Layout } from './components/Layout';
 import { Login } from './pages/Login';
+import { AuthEmailCallback } from './pages/AuthEmailCallback';
 import { Overview } from './pages/Overview';
 import { Journey } from './pages/Journey';
 import { History } from './pages/History';
@@ -117,6 +118,8 @@ export function App() {
       )}
     <Routes>
       <Route path="/login" element={<Login />} />
+      {/* Auth callback page — KHÔNG wrap Layout (full-screen verifying view) */}
+      <Route path="/auth/email" element={<AuthEmailCallback />} />
       <Route element={<Layout />}>
         <Route path="/" element={<Overview />} />
         <Route path="/chat" element={<Chat />} />

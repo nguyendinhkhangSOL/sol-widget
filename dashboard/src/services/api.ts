@@ -77,6 +77,30 @@ export const api = {
   // Trả URL Zalo OAuth để FE redirect.
   zaloInit: () => request<{ url: string }>('/auth/zalo/init'),
 
+  // ─── Email magic link auth (2026-05-06) ─────────────────────────────
+  requestEmailLink: (email: string) =>
+    request<{ ok: boolean; message: string }>('/auth/email/request', {
+      method: 'POST',
+      body: JSON.stringify({ email }),
+    }),
+
+  verifyEmailToken: async (token: string) => {
+    const res = await fetch(`${BASE_URL}/auth/email/verify?token=${encodeURIComponent(token)}`);
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      let body: any = text;
+      try { body = JSON.parse(text); } catch { /* keep text */ }
+      throw new ApiError(res.status, body, `API ${res.status}`);
+    }
+    return (await res.json()) as {
+      ok: boolean;
+      token: string;
+      userId: string;
+      mergedFromUserId: string | null;
+      message: string;
+    };
+  },
+
   // Bind phone vào anon user hiện tại
   bindPhoneRequest: (phone: string) =>
     request<{ ok: boolean; expiresInSec: number }>('/auth/bind-phone/request', {
@@ -497,6 +521,57 @@ export const api = {
       method: 'POST',
       body: JSON.stringify(body),
     }),
+
+  // ─── Journey Phase B (88-day) ───────────────────────────────────────────
+  getJourneyDashboard: () =>
+    request<any>('/journey/dashboard'),
+
+  qdayConfirm: () =>
+    request<{ ok: boolean; qDayConfirmedAt: string; message: string }>(
+      '/journey/qday-confirm',
+      { method: 'POST' },
+    ),
+
+  submitOnboardingBaseline: (body: { cigsBaseline: number; pricePerCig: number }) =>
+    request<{
+      ok: boolean;
+      user: {
+        id: string;
+        cigsBaseline: number;
+        pricePerCig: number;
+        onboardingCompletedAt: string;
+        quitDate: string;
+        pronouns: string;
+      };
+      message: string;
+    }>('/journey/onboarding/baseline', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
+
+  getMoneyBreakdown: () =>
+    request<{
+      days: Array<{ day: number; cigs: number; avoided: number; moneyDelta: number; cumulative: number }>;
+      baseline: number;
+      pricePerCig: number;
+    }>('/journey/money-breakdown'),
+
+  logCigarette: (body: {
+    trigger?: 'STRESS' | 'EATING' | 'IDLE' | 'SOCIAL' | 'OTHER';
+    context?: string;
+    delayedMin?: number;
+    skipped?: boolean;
+  }) =>
+    request<any>('/journey/cigarette', { method: 'POST', body: JSON.stringify(body) }),
+
+  exitJourney: (reason?: string) =>
+    request<{ ok: boolean; journal: any; message: string }>('/journey/exit', {
+      method: 'POST',
+      body: JSON.stringify({ reason }),
+    }),
+
+  resumeJourney: () =>
+    request<{ ok: boolean; message: string }>('/journey/resume', { method: 'POST' }),
 };
 
 // ─── Admin content types (Phase 1 + 5) ───────────────────────────────────

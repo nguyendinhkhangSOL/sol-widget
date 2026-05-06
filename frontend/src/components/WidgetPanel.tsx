@@ -13,6 +13,7 @@ import { InboxView } from './views/InboxView';
 import { HomeView } from './views/HomeView';
 import { SettingsView } from './views/SettingsView';
 import { JourneyView } from './views/JourneyView';
+import { JourneyDashboard } from './views/JourneyDashboard';
 import { PaywallView } from './views/PaywallView';
 import { RefundView } from './views/RefundView';
 import { VoiceInboxView } from './views/VoiceInboxView';
@@ -32,17 +33,24 @@ export function WidgetPanel() {
   const markAllRead = useStore((s) => s.markAllRead);
   const unreadCount = useStore((s) => s.unreadCount);
 
+  // PATH B (2026-05-06): Widget = top-of-funnel cho user mới + quick-ask cho
+  // user đã biết. Detect "anonymous" = chưa có hành trình.
+  //
+  // RELAXED LOGIC: chỉ check !quitDate (KHÔNG check onboardingCompletedAt).
+  // Lý do: user cũ pre-migration Phase B có quitDate nhưng onboardingCompletedAt
+  // = NULL → bị mis-classify anonymous. Nguyên tắc: có quitDate = đang journey.
+  const isAnonymous = !user?.quitDate;
+
   const dayNumber = useMemo(() => {
     if (!user?.quitDate) return 0;
     const start = new Date(user.quitDate);
     const diff = Math.floor((Date.now() - start.getTime()) / (1000 * 60 * 60 * 24));
-    return Math.max(1, Math.min(30, diff + 1));
+    return Math.max(1, Math.min(88, diff + 1));
   }, [user?.quitDate]);
 
   // Mark all read when opened
   useEffect(() => {
     markAllRead();
-    // best-effort server call
     api.getMessages(50).then((r) => {
       const unreadIds = r.messages.filter((m) => m.role === 'ASSISTANT' && !m.readAt).map((m) => m.id);
       if (unreadIds.length) api.markRead(unreadIds).catch(() => {});
@@ -53,6 +61,18 @@ export function WidgetPanel() {
   useEffect(() => {
     if (state === 'CRISIS_MODE' && view !== 'crisis') setView('crisis');
   }, [state, view, setView]);
+
+  // PATH B: User anonymous lần đầu mở widget → mặc định vào tab Trò chuyện.
+  // User đã onboard → giữ greeting (HomeView Phase B router).
+  const initRouteRef = useMemo(() => ({ done: false }), []);
+  useEffect(() => {
+    if (initRouteRef.done) return;
+    if (user === null) return; // chưa load xong
+    if (isAnonymous && view === 'greeting') {
+      setView('chat');
+    }
+    initRouteRef.done = true;
+  }, [user, isAnonymous, view, setView, initRouteRef]);
 
   const isCrisis = state === 'CRISIS_MODE';
 
@@ -67,16 +87,16 @@ export function WidgetPanel() {
         isCrisis && 'ring-2 ring-sol-red'
       )}
     >
-      <Header dayNumber={dayNumber} onClose={() => setExpanded(false)} />
+      <Header dayNumber={dayNumber} isAnonymous={isAnonymous} onClose={() => setExpanded(false)} />
       <div className="flex-1 min-h-0 overflow-hidden">
-        <ViewRouter view={view} />
+        <ViewRouter view={view} isAnonymous={isAnonymous} />
       </div>
-      {!isCrisis && <FooterNav current={view} onChange={setView} unreadCount={unreadCount} />}
+      {!isCrisis && <FooterNav current={view} onChange={setView} unreadCount={unreadCount} isAnonymous={isAnonymous} />}
     </div>
   );
 }
 
-function Header({ dayNumber, onClose }: { dayNumber: number; onClose: () => void }) {
+function Header({ dayNumber, isAnonymous, onClose }: { dayNumber: number; isAnonymous: boolean; onClose: () => void }) {
   const user = useStore((s) => s.user);
   const streak = user?.checkinStreak ?? 0;
   const state = useStore((s) => s.state);
@@ -95,33 +115,43 @@ function Header({ dayNumber, onClose }: { dayNumber: number; onClose: () => void
         </div>
         <div className="min-w-0">
           <div className="text-body font-semibold truncate leading-tight">
-            {isCrisis ? 'Đang ở bên bạn' : `Ngày ${dayNumber}/30`}
+            {isCrisis
+              ? 'Đang ở bên bạn'
+              : isAnonymous
+              ? 'Sol — Trợ lý AI'
+              : `Ngày ${dayNumber} / 88`}
           </div>
           <div className="text-meta opacity-90 truncate flex items-center gap-1.5">
-            <span>Chuỗi {streak} ngày</span>
-            {!isCrisis && <TierBadge />}
+            {isAnonymous ? (
+              <span>Cai thuốc lá miễn phí</span>
+            ) : (
+              <span>Chuỗi {streak} ngày</span>
+            )}
+            {!isCrisis && !isAnonymous && <TierBadge />}
           </div>
         </div>
       </div>
       <div className="flex items-center gap-1">
-        {/* Check-in — button có label text rõ ràng, nổi bật trên header xanh.
-            Luôn hiện ở mọi tab (Trang chính / Trò chuyện / Hành trình). */}
-        <button
-          onClick={() => useStore.getState().setView('checkin')}
-          className="px-2.5 py-1 rounded-full bg-white/20 hover:bg-white/30 text-white text-[11px] font-semibold flex items-center gap-1 transition"
-          aria-label="Check-in 30 giây"
-        >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M5 12.5l4.5 4.5L19 7"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span>Check-in</span>
-        </button>
+        {/* Check-in — chỉ hiện khi user đã onboard (có hành trình). User mới
+            chỉ thấy chat — focus chính là conversation, không quick-action. */}
+        {!isAnonymous && (
+          <button
+            onClick={() => useStore.getState().setView('checkin')}
+            className="px-2.5 py-1 rounded-full bg-white/20 hover:bg-white/30 text-white text-[11px] font-semibold flex items-center gap-1 transition"
+            aria-label="Check-in 30 giây"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M5 12.5l4.5 4.5L19 7"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span>Check-in</span>
+          </button>
+        )}
         {/* Voice Khang — moved from footer tab to header (UX v2) */}
         <HeaderIconButton label="Voice Khang" onClick={() => useStore.getState().setView('voice')}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -150,10 +180,12 @@ function Header({ dayNumber, onClose }: { dayNumber: number; onClose: () => void
   );
 }
 
-function ViewRouter({ view }: { view: WidgetView }) {
+function ViewRouter({ view, isAnonymous }: { view: WidgetView; isAnonymous: boolean }) {
   switch (view) {
     case 'greeting':
-      return <HomeView />;
+      // PATH B: User anonymous mà bằng cách nào đó vào greeting → render ChatView
+      // (HomeView Phase B yêu cầu user.quitDate để compute phase). Defensive guard.
+      return isAnonymous ? <ChatView /> : <HomeView />;
     case 'chat':
       return <ChatView />;
     case 'checkin':
@@ -165,7 +197,7 @@ function ViewRouter({ view }: { view: WidgetView }) {
     case 'inbox':
       return <InboxView />;
     case 'journey':
-      return <JourneyView />;
+      return isAnonymous ? <ChatView /> : <JourneyDashboard />;
     case 'settings':
       return <SettingsView />;
     case 'paywall':
@@ -175,7 +207,7 @@ function ViewRouter({ view }: { view: WidgetView }) {
     case 'voice':
       return <VoiceInboxView />;
     default:
-      return <HomeView />;
+      return isAnonymous ? <ChatView /> : <HomeView />;
   }
 }
 
@@ -199,41 +231,53 @@ function FooterNav({
   current,
   onChange,
   unreadCount,
+  isAnonymous,
 }: {
   current: WidgetView;
   onChange: (v: WidgetView) => void;
   unreadCount: number;
+  isAnonymous: boolean;
 }) {
+  // PATH B: User anonymous chỉ thấy tab Trò chuyện — không có hành trình thì
+  // Trang chính / Hành trình KHÔNG có data render. Single-focus on chat.
+  // User đã onboard → 3 tab full Phase B.
   const tabs: {
     key: WidgetView;
     label: string;
     icon: React.ReactNode;
     matches: WidgetView[];
     hasDot?: boolean;
-  }[] = [
-    {
-      key: 'greeting',
-      label: 'Trang chính',
-      icon: <IconHome />,
-      matches: ['greeting'],
-    },
-    {
-      key: 'chat',
-      label: 'Trò chuyện',
-      icon: <IconChat />,
-      matches: ['chat', 'inbox', 'voice'],
-      hasDot: unreadCount > 0,
-    },
-    {
-      // Cùng tên "Hành trình" với dashboard tab — UX nhất quán.
-      // Phân biệt qua context: widget = quick view trong panel chat,
-      // dashboard /journey = full page với chart + workbook + print.
-      key: 'journey',
-      label: 'Hành trình',
-      icon: <IconMap />,
-      matches: ['journey', 'exercise'],
-    },
-  ];
+  }[] = isAnonymous
+    ? [
+        {
+          key: 'chat',
+          label: 'Trò chuyện với Sol',
+          icon: <IconChat />,
+          matches: ['chat', 'inbox', 'voice', 'greeting', 'journey'],
+          hasDot: unreadCount > 0,
+        },
+      ]
+    : [
+        {
+          key: 'greeting',
+          label: 'Trang chính',
+          icon: <IconHome />,
+          matches: ['greeting'],
+        },
+        {
+          key: 'chat',
+          label: 'Trò chuyện',
+          icon: <IconChat />,
+          matches: ['chat', 'inbox', 'voice'],
+          hasDot: unreadCount > 0,
+        },
+        {
+          key: 'journey',
+          label: 'Hành trình',
+          icon: <IconMap />,
+          matches: ['journey', 'exercise'],
+        },
+      ];
 
   return (
     <div className="flex border-t border-sol-line bg-sol-paper/80 backdrop-blur">

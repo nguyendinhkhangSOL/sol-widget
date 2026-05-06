@@ -76,9 +76,18 @@ export function Chat() {
     scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [messages.length, sending]);
 
+  // Empty state grid 10 chip — 'cap1' (1 critical fallback ở cuối, 9 chip thường)
   const rankedChips: RankedChip[] = useMemo(() => {
     if (!chipsReady) return [];
-    return rankChips(getAllChips(), user, { maxN: 10 });
+    return rankChips(getAllChips(), user, { maxN: 10, criticalMode: 'cap1' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chipsReady, user, chipVersion]);
+
+  // Sticky compact bar 6 chip (sau message đầu) — 'exclude' critical hoàn toàn,
+  // crisis accessible qua intent matcher khi user gõ tự do.
+  const compactChips: RankedChip[] = useMemo(() => {
+    if (!chipsReady) return [];
+    return rankChips(getAllChips(), user, { maxN: 6, criticalMode: 'exclude' });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chipsReady, user, chipVersion]);
 
@@ -248,10 +257,10 @@ export function Chat() {
         )}
       </div>
 
-      {messages.length > 0 && rankedChips.length > 0 && (
+      {messages.length > 0 && compactChips.length > 0 && (
         <div className="mt-3">
           <SuggestedChips
-            chips={rankedChips.slice(0, 6)}
+            chips={compactChips}
             onChipClick={handleChipClick}
             onFallbackClick={handleFallbackClick}
             compact

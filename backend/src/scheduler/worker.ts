@@ -646,7 +646,102 @@ async function enqueueFounderWeekly() {
   }
 }
 
-// ─── Boot ──────────────────────────────────────────────────────────────────
+// ─── Q-DAY PUSH SCHEDULER (Phase B) ───────────────────────────────────────
+// Day 26 T-2  — sáng 7h "Còn 2 ngày là Q-Day"
+// Day 27 T-1  — tối 21h Khang Sol message "Mai anh quyết"
+// Day 28 Q-DAY — sáng 7h "Hôm nay là Q-Day. Bấm vào để bắt đầu."
+//
+// Query users matching dayInJourney = 26/27/28 AND qDayConfirmedAt IS NULL.
+// Idempotent: 1 notif/ngày/user/phase. CTA → open_overview để hiện ceremony.
+
+type QDayPhase = 'T_MINUS_2' | 'T_MINUS_1_EVENING' | 'Q_DAY';
+
+const Q_DAY_TARGETS: Record<QDayPhase, { dayInJourney: number; title: string; body: string; ctaLabel: string }> = {
+  T_MINUS_2: {
+    dayInJourney: 26,
+    title: '🎯 Còn 2 ngày là Q-Day',
+    body: 'Còn 2 ngày là Q-Day — ngày {pronoun} cam kết bỏ hẳn. {pronoun} đang chuẩn bị thế nào? Tối nay viết 3 lý do {pronoun} muốn bỏ — để mai đọc lại. — Sol Đồng hành',
+    ctaLabel: 'Mở chuẩn bị',
+  },
+  T_MINUS_1_EVENING: {
+    dayInJourney: 27,
+    title: '🌅 Đêm nay là đêm cuối Phase Hành Động',
+    body: 'Mình là Khang. Mai {pronoun} chỉ cần xác nhận. {pronoun} đã chuẩn bị 4 tuần — Sol đã đo nhịp, Đội Sol đã sẵn sàng. Tối nay ngồi yên 10 phút, đọc lại 3 lý do. Mai bấm "Tôi cam kết" — đồng hồ tự do của {pronoun} bắt đầu. Mình ở đó. — Khang Sol',
+    ctaLabel: 'Đọc lại lý do',
+  },
+  Q_DAY: {
+    dayInJourney: 28,
+    title: '🌅 Hôm nay là Q-Day',
+    body: 'Hôm nay là Q-Day của {pronoun}. Bấm vào để vào Tổng quan — bấm "Tôi cam kết — bật đồng hồ tự do". Đội Sol sẽ thấy: "Một đồng đội vừa Q-Day". 24 giờ tới là 24 giờ khó nhất sinh học — Sol bên {pronoun}. — Khang Sol',
+    ctaLabel: 'Cam kết Q-Day',
+  },
+};
+
+async function enqueueQDayPushes(phase: QDayPhase) {
+  const target = Q_DAY_TARGETS[phase];
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  // Lấy tất cả user có quitDate, chưa exit, chưa confirm Q-Day, không phải DAI_SU.
+  const users = await prisma.user.findMany({
+    where: {
+      quitDate: { not: null },
+      qDayConfirmedAt: null,
+      exitedAt: null,
+    },
+  });
+
+  let enqueued = 0;
+  for (const user of users) {
+    const day = computeDayNumber(user.quitDate);
+    if (day !== target.dayInJourney) continue;
+
+    // Idempotent — không bắn 2 lần cùng phase trong cùng ngày
+    const existing = await prisma.notification.findFirst({
+      where: {
+        userId: user.id,
+        type: 'CUSTOM',
+        scheduledAt: { gte: today, lt: tomorrow },
+        metadata: { path: ['qDayPhase'], equals: phase } as any,
+      },
+    });
+    if (existing) continue;
+
+    const pCtx = {
+      name: user.name,
+      pronouns: user.pronouns,
+      assistantName: user.assistantName,
+      quitReasons: user.quitReasons,
+      topTriggers: user.topTriggers,
+    };
+
+    await prisma.notification.create({
+      data: {
+        userId: user.id,
+        type: 'CUSTOM',
+        title: personalize(target.title, pCtx),
+        body: personalize(target.body, pCtx),
+        ctaLabel: target.ctaLabel,
+        ctaAction: 'open_overview',
+        // Q-Day push CRITICAL — luôn cả IN_WIDGET + WEB_PUSH (skip quietHours
+        // không apply trong deliverDueNotifications cho CUSTOM type? Em check
+        // logic — CUSTOM chỉ bị suppress nếu match isCrisis=false + quietHours.
+        // Q-Day push SHOULD respect quiet hours của user — nếu user set 22-7h
+        // quiet thì 7h sáng vừa hết quiet → OK gửi.)
+        channels: ['IN_WIDGET', 'WEB_PUSH'],
+        scheduledAt: new Date(),
+        metadata: { qDayPhase: phase, dayInJourney: day },
+      },
+    });
+    enqueued++;
+  }
+
+  if (enqueued > 0) {
+    logger.info({ phase, enqueued }, 'Q-Day push enqueued');
+  }
+}
 
 // ─── SMART SCHEDULER (Phase 5) — replace fix-cron cho user opt-in ────────
 // Chạy mỗi 15 phút, quét tất cả user có notificationPrefs.dailyMax set.
@@ -836,10 +931,27 @@ export function startScheduler() {
     enqueueDailyContent('NIGHT_STORY').catch((e) => logger.error({ err: e }, 'night story enqueue failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
+  // ─── PHASE B — Q-Day push schedule ──────────────────────────────────
+  // Day 26 sáng 7h — T-2 reminder
+  cron.schedule('0 7 * * *', () => {
+    enqueueQDayPushes('T_MINUS_2').catch((e) => logger.error({ err: e }, 'Q-Day T-2 enqueue failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // Day 27 tối 21h — T-1 evening Khang Sol message
+  cron.schedule('0 21 * * *', () => {
+    enqueueQDayPushes('T_MINUS_1_EVENING').catch((e) => logger.error({ err: e }, 'Q-Day T-1 enqueue failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // Day 28 sáng 7h — Q-Day morning
+  cron.schedule('5 7 * * *', () => {
+    // 7:05 (sau MORNING_GOAL 7:00 5 phút) để không trùng cùng giây
+    enqueueQDayPushes('Q_DAY').catch((e) => logger.error({ err: e }, 'Q-Day enqueue failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
   // Every 30 min — crisis prep for users whose pattern matches
   cron.schedule('0,30 * * * *', () => {
     enqueueCrisisPrep().catch((e) => logger.error({ err: e }, 'crisis prep enqueue failed'));
   });
 
-  logger.info('Scheduler started — 12 cron jobs active');
+  logger.info('Scheduler started — 15 cron jobs active');
 }

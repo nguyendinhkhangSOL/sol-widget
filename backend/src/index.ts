@@ -15,8 +15,10 @@ import { initSentry, sentryErrorHandler, captureError } from './utils/sentry';
 // Init Sentry SỚM NHẤT — phải trước khi app/socket bắt đầu listen.
 initSentry();
 import { authRouter } from './auth/routes';
+import { emailAuthRouter } from './auth/email/routes';
 import { usersRouter } from './users/routes';
 import { notificationPrefsRouter } from './users/notificationPrefs';
+import { journeyRouter } from './journey/routes';
 import { messagesRouter } from './messages/routes';
 import { checkinsRouter } from './checkins/routes';
 import { exercisesRouter } from './exercises/routes';
@@ -54,8 +56,10 @@ const messageLimiter = rateLimit({ windowMs: 60 * 1000, max: 60 });
 app.get('/healthz', (_, res) => res.json({ ok: true, now: new Date().toISOString() }));
 
 app.use('/auth', authLimiter, authRouter);
+app.use('/auth/email', authLimiter, emailAuthRouter);
 app.use('/users', usersRouter);
 app.use('/users/me/notification-prefs', notificationPrefsRouter);
+app.use('/journey', journeyRouter);
 app.use('/messages', messageLimiter, messagesRouter);
 app.use('/checkins', checkinsRouter);
 app.use('/exercises', exercisesRouter);

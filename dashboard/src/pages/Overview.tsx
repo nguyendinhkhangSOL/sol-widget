@@ -1,158 +1,218 @@
-import { useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useStore } from '../state/store';
-import { RealtimeDashboard } from '../components/realtime/RealtimeDashboard';
-import { DEFAULT_CIGS_PER_DAY, DEFAULT_PRICE_PER_CIG } from '../lib/recovery';
+// dashboard/src/pages/Overview.tsx
+// PHASE B ROUTER — landing page Tổng Quan của dashboard.
+// Pattern giống widget JourneyDashboard.tsx: load /journey/dashboard,
+// switch theo stage, overlay onboarding + Q-Day ceremony.
 
-// Demo dashboard cho user chưa đặt Q-Day — fake quitDate = 7 ngày trước.
-// Giữ ổn định trong 1 phiên, ngày 7 đủ ra "1 tuần sạch" + milestones nhiều
-// + tiền tiết kiệm có số ấn tượng để CTA mạnh hơn.
-const DEMO_DAY_NUMBER = 7;
-const DEMO_QUIT_DATE_ISO = new Date(
-  Date.now() - DEMO_DAY_NUMBER * 24 * 60 * 60 * 1000,
-).toISOString();
+import { useEffect, useState } from 'react';
+import { api, ApiError } from '../services/api';
+import { OnboardingWizard } from '../components/views/phaseB/OnboardingWizard';
+import { QDayCeremony } from '../components/views/phaseB/QDayCeremony';
+import { PhaseBar } from '../components/views/phaseB/PhaseBar';
+import { PhaseObserver } from '../components/views/phaseB/PhaseObserver';
+import { PhaseAction } from '../components/views/phaseB/PhaseAction';
+import { PhaseLiberation } from '../components/views/phaseB/PhaseLiberation';
+import { PhaseRebuild } from '../components/views/phaseB/PhaseRebuild';
+import { PhaseAmbassador } from '../components/views/phaseB/PhaseAmbassador';
+import { ExitModal } from '../components/views/phaseB/_shared';
+import { DashboardData } from '../components/views/phaseB/types';
 
 export function Overview() {
-  const user = useStore((s) => s.user);
-  const checkins = useStore((s) => s.checkins);
-  const loading = useStore((s) => s.loading);
-  const navigate = useNavigate();
+  const [data, setData] = useState<DashboardData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [showExit, setShowExit] = useState(false);
 
-  const dayNumber = useMemo(() => {
-    if (!user?.quitDate) return 1;
-    const diff = Math.floor((Date.now() - new Date(user.quitDate).getTime()) / 86400000);
-    return Math.max(1, Math.min(30, diff + 1));
-  }, [user?.quitDate]);
+  async function reload() {
+    setLoading(true);
+    setError(null);
+    try {
+      const r = await api.getJourneyDashboard() as DashboardData;
+      setData(r);
+    } catch (e) {
+      console.error('Failed to load journey dashboard', e);
+      if (e instanceof ApiError) {
+        const detail = e.body?.message || e.body?.error || JSON.stringify(e.body).slice(0, 200);
+        setError(`API ${e.status}: ${detail}`);
+      } else if (e instanceof Error) {
+        setError(`Lỗi mạng: ${e.message}`);
+      } else {
+        setError('Lỗi không xác định khi tải hành trình.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  }
+  useEffect(() => { reload(); }, []);
 
-  const todayCheckin = checkins.find((c) => c.dayNumber === dayNumber);
-  const refundEligible = user?.refundEligible ?? true;
-  const displayName = user?.name ?? 'bạn';
-  const cigsPerDay = user?.settings?.cigsPerDay ?? DEFAULT_CIGS_PER_DAY;
-  const pricePerCig = user?.settings?.pricePerCig ?? DEFAULT_PRICE_PER_CIG;
-  const phaseLanguage = user?.settings?.phaseLanguage ?? 'dramatic';
+  // Loading state
+  if (loading && !data) {
+    return (
+      <div className="w-full max-w-[1100px] mx-auto p-8 flex items-center justify-center min-h-[60vh]">
+        <div className="text-center">
+          <div className="text-4xl mb-3 animate-pulse">🌅</div>
+          <div className="text-body text-sol-ink-3">Sol đang khởi động hành trình…</div>
+        </div>
+      </div>
+    );
+  }
 
-  const hasQDay = !!user?.quitDate;
-  // Đang bootstrap (chưa có user) → render skeleton, KHÔNG flash banner cam.
-  // Tránh hiệu ứng "banner xuất hiện rồi bị đồng hồ che mất" khi user đã có quitDate.
-  const isBootstrapping = loading && !user;
+  // Error state
+  if (error && !data) {
+    return (
+      <div className="w-full max-w-[1100px] mx-auto p-8 flex items-center justify-center min-h-[60vh]">
+        <div className="max-w-lg text-center">
+          <div className="text-5xl mb-4">⚠️</div>
+          <h2 className="text-h1 text-sol-ink mb-3">Sol chưa kết nối được</h2>
+          <p className="text-body text-sol-ink-2 mb-3 leading-relaxed">{error}</p>
+          <p className="text-meta text-sol-ink-3 mb-5 italic">
+            Có thể backend chưa apply migration Phase B hoặc chưa rebuild image.
+            Kiểm tra terminal nơi chạy backend.
+          </p>
+          <button
+            onClick={reload}
+            className="min-h-tap px-6 py-3 rounded-xl bg-sol-green text-white font-semibold text-body"
+          >
+            Thử lại
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!data) return null;
+
+  // ─── ONBOARDING OVERLAY ─────────────────────────────────────────────────
+  if (!data.user.onboardingCompletedAt) {
+    return (
+      <OnboardingWizard
+        pronouns={data.user.pronouns}
+        onCompleted={() => reload()}
+      />
+    );
+  }
+
+  // ─── Q-DAY CEREMONY OVERLAY ─────────────────────────────────────────────
+  if (data.qDay.needsConfirmation) {
+    return (
+      <QDayCeremony
+        pronouns={data.user.pronouns}
+        isPastQDay={data.qDay.isPostQDay}
+        onConfirmed={() => reload()}
+      />
+    );
+  }
+
+  // ─── EXITED STATE ───────────────────────────────────────────────────────
+  if (data.user.exitedAt) {
+    return <ExitedState pronouns={data.user.pronouns} onResume={reload} />;
+  }
+
+  // ─── PHASE ROUTER ───────────────────────────────────────────────────────
+  const sharedProps = {
+    data,
+    onReload: reload,
+    onShowExit: () => setShowExit(true),
+  };
+
+  let phaseView;
+  switch (data.journey.stage) {
+    case 'NHAN_THUC':
+      phaseView = <PhaseObserver {...sharedProps} />;
+      break;
+    case 'HANH_DONG':
+      phaseView = <PhaseAction {...sharedProps} />;
+      break;
+    case 'GIAI_PHONG':
+      phaseView = <PhaseLiberation {...sharedProps} />;
+      break;
+    case 'TAI_THIET':
+      phaseView = <PhaseRebuild {...sharedProps} />;
+      break;
+    case 'DAI_SU':
+      phaseView = <PhaseAmbassador {...sharedProps} />;
+      break;
+    default:
+      phaseView = <PhaseObserver {...sharedProps} />;
+  }
+
+  const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
   return (
-    <div className="w-full max-w-[1100px] mx-auto p-4 lg:p-6 pb-24 lg:pb-6 space-y-5">
+    <div className="w-full max-w-[1100px] mx-auto p-4 lg:p-6 pb-24 lg:pb-8 space-y-6">
+      {/* Greeting header */}
       <header className="px-1">
-        <div className="text-meta text-sol-ink-3">Xin chào</div>
-        <h1 className="text-h1 text-sol-ink">
-          {user?.pronouns ? user.pronouns + ' ' : ''}
-          {displayName}
+        <div className="text-meta text-sol-ink-3 uppercase tracking-wide font-semibold">Xin chào</div>
+        <h1 className="text-h1 text-sol-ink mt-1">
+          {cap(data.user.pronouns)} {data.user.name}
         </h1>
       </header>
 
-      {isBootstrapping ? (
-        <div className="rounded-2xl border border-sol-line bg-sol-paper p-8 text-center text-sol-ink-3 text-meta">
-          Đang tải dữ liệu của bạn…
-        </div>
-      ) : !hasQDay ? (
-        // ─── PRE-Q-DAY: banner CTA + DEMO dashboard ─────────────────────
-        // Để user lần đầu thấy ngay "phần thưởng" — đồng hồ chạy thật,
-        // milestones, tiền tiết kiệm với số demo. Gắn ribbon DEMO rõ ràng
-        // để không nhầm là dữ liệu của họ.
-        <>
-          <div
-            className="rounded-2xl p-6 border-2 border-dashed"
-            style={{ background: '#fff7ed', borderColor: '#fdba74' }}
-          >
-            <div className="flex items-start gap-4 flex-wrap">
-              <div className="text-4xl leading-none">🚦</div>
-              <div className="flex-1 min-w-[240px]">
-                <div className="text-h3 font-bold text-sol-ink">
-                  Bạn chưa đặt Q-Day
-                </div>
-                <p className="text-body text-sol-ink-2 mt-1 leading-relaxed">
-                  Cai thuốc là quyết định lớn — không phải cú nhấn nút.
-                  Trước khi đồng hồ chạy thật, hãy hoàn thành{' '}
-                  <strong>2 mục bắt buộc</strong> trong checklist chuẩn bị
-                  (~5 phút).
-                </p>
-                <Link
-                  to="/q-day-checklist"
-                  className="inline-flex items-center gap-2 mt-4 px-5 py-3 rounded-xl bg-sol-orange text-white font-bold shadow-sm hover:shadow-md transition"
-                >
-                  Bắt đầu chuẩn bị →
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* PhaseBar 4 viên ngọc */}
+      <PhaseBar
+        stage={data.journey.stage}
+        progressInStage={data.journey.progressInStage}
+        dayInStage={data.journey.dayInStage}
+        totalInStage={data.journey.totalInStage}
+      />
 
-          {/* DEMO ribbon + dashboard demo */}
-          <div className="relative">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-30 px-4 py-1.5 rounded-full bg-sol-orange text-white text-meta font-bold shadow-md whitespace-nowrap flex items-center gap-1.5">
-              <span>🎬</span>
-              <span>BẢN DEMO — đặt Q-Day để biến đồng hồ này thành của bạn</span>
-            </div>
-            <RealtimeDashboard
-              quitDate={DEMO_QUIT_DATE_ISO}
-              userName={displayName}
-              cigsPerDay={cigsPerDay}
-              pricePerCig={pricePerCig}
-              yearsSmoked={user?.yearsSmoked}
-              phaseLanguage={phaseLanguage}
-              refundEligible={true}
-              dayNumber={DEMO_DAY_NUMBER}
-              hasTodayCheckin={true}
-              todayCraving={3}
-              todayMood={4}
-              checkinStreak={DEMO_DAY_NUMBER}
-              longestStreak={DEMO_DAY_NUMBER}
-              onCheckin={() => navigate('/q-day-checklist')}
-              layout="wide"
-            />
-          </div>
+      {/* Phase view */}
+      {phaseView}
 
-          {/* CTA cuối — nhắc lại sau khi user xem demo xong */}
-          <div className="rounded-xl border border-sol-orange/40 bg-sol-orange/5 p-4 text-center">
-            <div className="text-body text-sol-ink-2 mb-3">
-              Thích những gì bạn thấy ở trên? Đây sẽ là dữ liệu thật của
-              bạn sau khi kích hoạt Q-Day.
-            </div>
-            <Link
-              to="/q-day-checklist"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-sol-orange text-white font-bold shadow-sm hover:shadow-md transition"
-            >
-              🚀 Bắt đầu chuẩn bị Q-Day →
-            </Link>
-          </div>
-        </>
-      ) : (
-        <>
-          {/* REALTIME HERO — đồng hồ, hồi phục cơ thể, identity, glory, SOS, alerts */}
-          <RealtimeDashboard
-            quitDate={user?.quitDate}
-            userName={displayName}
-            cigsPerDay={cigsPerDay}
-            pricePerCig={pricePerCig}
-            yearsSmoked={user?.yearsSmoked}
-            phaseLanguage={phaseLanguage}
-            refundEligible={refundEligible}
-            dayNumber={dayNumber}
-            hasTodayCheckin={!!todayCheckin}
-            todayCraving={todayCheckin?.cravingIntensity}
-            todayMood={todayCheckin?.mood}
-            checkinStreak={user?.checkinStreak ?? 0}
-            longestStreak={user?.longestStreak ?? 0}
-            onCheckin={() => navigate('/chat')}
-            layout="wide"
-          />
-
-          {/* Footnote — link sang trang nguồn lâm sàng */}
-          <div className="text-meta text-sol-ink-3 text-center px-2 leading-relaxed">
-            Các con số trên dựa trên WHO / NHS / CDC / Surgeon General Report —{' '}
-            <Link to="/science" className="text-sol-blue underline">
-              📚 xem tham khảo nghiên cứu
-            </Link>
-            .
-          </div>
-        </>
+      {showExit && (
+        <ExitModal
+          pronouns={data.user.pronouns}
+          dayInJourney={data.journey.dayInJourney}
+          onClose={() => setShowExit(false)}
+          onExited={reload}
+        />
       )}
     </div>
   );
 }
 
+/* ─── EXITED STATE ─────────────────────────────────────────────────────── */
+function ExitedState({ pronouns, onResume }: { pronouns: string; onResume: () => void }) {
+  const [resuming, setResuming] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function resume() {
+    setResuming(true);
+    setError(null);
+    try {
+      await api.resumeJourney();
+      onResume();
+    } catch (e) {
+      setError(e instanceof ApiError ? `Lỗi ${e.status}` : 'Không kết nối được Sol.');
+    } finally {
+      setResuming(false);
+    }
+  }
+
+  return (
+    <div className="w-full max-w-[800px] mx-auto p-8 text-center min-h-[60vh] flex flex-col items-center justify-center">
+      <div className="text-7xl mb-5">📔</div>
+      <h2 className="text-display text-sol-ink font-bold mb-3">Hồ sơ của {pronouns} đã lưu</h2>
+      <p className="text-body-lg text-sol-ink-2 mb-8 max-w-lg leading-relaxed">
+        Cảm ơn {pronouns} đã đi cùng Sol. Bản nhật ký tiến bộ đã được tạo.
+        Khi nào sẵn sàng quay lại, Sol vẫn nhớ tất cả.
+      </p>
+
+      {error && <div className="text-meta text-sol-red mb-3">{error}</div>}
+
+      <button
+        onClick={resume}
+        disabled={resuming}
+        className="min-h-tap px-8 py-4 rounded-xl bg-sol-green text-white font-semibold text-body-lg shadow-card hover:brightness-110 disabled:opacity-50"
+      >
+        {resuming ? 'Đang khởi động lại…' : 'Tiếp tục hành trình'}
+      </button>
+
+      <button
+        onClick={() => alert('Tính năng tải PDF đang phát triển')}
+        className="mt-4 text-body text-sol-ink-2 underline hover:text-sol-ink"
+      >
+        Tải hồ sơ PDF
+      </button>
+    </div>
+  );
+}

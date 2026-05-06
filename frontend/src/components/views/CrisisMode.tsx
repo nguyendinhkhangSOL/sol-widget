@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '../../state/store';
 import { api } from '../../services/api';
+import { QuitlineButton } from '../QuitlineButton';
 
 type Phase = 'intro' | 'breathe' | 'body' | 'choose' | 'resolved';
 
@@ -105,6 +106,15 @@ export function CrisisMode() {
         >
           Tôi chỉ muốn nhắn SOL
         </button>
+
+        {/* Quitline escalation — gọi nhanh tổng đài cai thuốc nếu user
+            cần human support, không chỉ self-help breathing. */}
+        <div className="mt-4 pt-4 border-t border-sol-red/20">
+          <div className="text-meta text-sol-ink-2 text-center mb-2">
+            Cần nói chuyện với người thật?
+          </div>
+          <QuitlineButton size="compact" tone="urgent" />
+        </div>
       </div>
     );
   }

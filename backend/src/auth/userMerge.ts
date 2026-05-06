@@ -33,6 +33,7 @@ export async function mergeOrUpgrade({
   existingUserId,
   phone,
   zaloUserId,
+  email,
   name,
   pictureUrl,
 }: {
@@ -40,6 +41,7 @@ export async function mergeOrUpgrade({
   existingUserId: string | null;
   phone?: string | null;
   zaloUserId?: string | null;
+  email?: string | null;
   name?: string | null;
   pictureUrl?: string | null;
 }): Promise<MergeResult> {
@@ -48,6 +50,7 @@ export async function mergeOrUpgrade({
     const updateData: any = { isAnonymous: false };
     if (phone) updateData.phone = phone;
     if (zaloUserId) updateData.zaloUserId = zaloUserId;
+    if (email) updateData.email = email;
     if (name) updateData.name = name;
     // pictureUrl chưa có field — bỏ qua
 
@@ -56,7 +59,7 @@ export async function mergeOrUpgrade({
       data: updateData,
     });
 
-    logger.info({ anonUserId, phone, zaloUserId }, 'Anon user upgraded');
+    logger.info({ anonUserId, phone, zaloUserId, email }, 'Anon user upgraded');
     return { targetUserId: anonUserId, mergedFromUserId: null };
   }
 

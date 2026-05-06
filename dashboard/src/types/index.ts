@@ -165,6 +165,7 @@ export interface Cohort {
 export interface User {
   id: string;
   phone: string;
+  email?: string;
   name?: string;
   /** Cách Sol gọi user — "anh" | "chị" | "em" | "bạn" | tuỳ chỉnh ("Ngài"…). Free string ≤ 8 ký tự. */
   pronouns?: string;

@@ -3,9 +3,11 @@ import { useStore } from '../state/store';
 import { api } from '../services/api';
 import { BindPhoneModal } from '../components/BindPhoneModal';
 import { RecoverView } from '../components/RecoverView';
+import { EmailBindModal } from '../components/EmailBindModal';
 import type { WidgetMode } from '../types';
 import { DEFAULT_CIGS_PER_DAY, DEFAULT_PRICE_PER_CIG, formatVndFull } from '../lib/recovery';
 import { buildPreviewSamples } from '../lib/preview';
+import { QuitlineButton } from '../components/QuitlineButton';
 
 // Presets giá hay gặp ở VN — tap để chọn nhanh
 const PRICE_PRESETS: Array<{ label: string; price: number }> = [
@@ -52,6 +54,7 @@ export function Settings() {
   const [name, setName] = useState(user?.name ?? '');
   const [quitDate, setQuitDate] = useState(user?.quitDate ?? '');
   const [showBindPhone, setShowBindPhone] = useState(false);
+  const [showBindEmail, setShowBindEmail] = useState(false);
   const [showRecover, setShowRecover] = useState(false);
 
   // Cách xưng hô (Q1)
@@ -293,9 +296,13 @@ export function Settings() {
             </div>
             <div className="min-w-0">
               <div className="font-semibold text-sol-ink truncate">{user?.name ?? '—'}</div>
-              {user?.phone ? (
+              {user?.email && (
+                <div className="text-meta text-sol-ink-2 truncate">📧 {user.email}</div>
+              )}
+              {user?.phone && (
                 <div className="text-meta text-sol-ink-2 font-mono">📱 {user.phone}</div>
-              ) : (
+              )}
+              {!user?.email && !user?.phone && (
                 <div className="text-meta text-sol-ink-3 italic">
                   Chưa liên kết — chỉ dùng được trên thiết bị này
                 </div>
@@ -316,34 +323,23 @@ export function Settings() {
           )}
         </div>
 
-        {/* Liên kết identity — chỉ hiện cho user ẩn danh */}
-        {!user?.phone && (
+        {/* Liên kết identity — chỉ hiện cho user ẩn danh (chưa có phone/email) */}
+        {!user?.phone && !user?.email && (
           <div className="space-y-2 mb-4">
+            {/* Email — primary path (2026-05-06 pivot — Zalo/SĐT defer) */}
             <button
               type="button"
-              onClick={async () => {
-                try {
-                  const { url } = await api.zaloInit();
-                  window.location.href = url;
-                } catch {
-                  alert('Liên kết Zalo chưa khả dụng. Khang đang setup. Thử SĐT.');
-                }
-              }}
-              className="w-full py-2.5 rounded-xl bg-[#0068FF] text-white font-semibold text-body flex items-center justify-center gap-2 hover:opacity-90 transition"
+              onClick={() => setShowBindEmail(true)}
+              className="w-full py-2.5 rounded-xl bg-sol-green text-white font-semibold text-body flex items-center justify-center gap-2 hover:brightness-110 transition"
             >
-              <span>💬</span>
-              <span>Liên kết Zalo (khuyến nghị)</span>
+              <span>📧</span>
+              <span>Liên kết qua Email (khuyến nghị)</span>
             </button>
-            <button
-              type="button"
-              onClick={() => setShowBindPhone(true)}
-              className="w-full py-2.5 rounded-xl border border-sol-line bg-white text-sol-ink font-medium text-body flex items-center justify-center gap-2 hover:border-sol-green/40 transition"
-            >
-              <span>📱</span>
-              <span>Liên kết SĐT (nếu không có Zalo)</span>
-            </button>
+
+            {/* Zalo + SĐT DEFERRED — UI ẩn, code giữ nguyên cho future unhide */}
+
             <p className="text-meta text-sol-ink-3 leading-relaxed text-center px-2">
-              Liên kết để bảo vệ hành trình nếu mất máy.
+              Liên kết để bảo vệ hành trình nếu mất máy. Bấm link 1 lần là đồng bộ — không cần mật khẩu.
             </p>
             {/* Layer 3 entry — user đã có mã khôi phục có thể recover ngay */}
             <button
@@ -858,6 +854,20 @@ export function Settings() {
         </div>
       </Section>
 
+      <Section title="Cần giúp đỡ" icon="🆘" hint="Tổng đài chuyên gia · Hotline cấp cứu">
+        <div className="space-y-4 max-w-md">
+          <p className="text-body text-sol-ink-2 leading-relaxed">
+            Sol là AI — không thay thế chuyên gia. Khi cần nói chuyện với người
+            thật về cai thuốc, sức khoẻ, hoặc tâm lý:
+          </p>
+          <QuitlineButton size="large" tone="calm" />
+          <div className="text-meta text-sol-ink-3 italic">
+            Hotline cấp cứu y tế: <strong className="text-sol-red">115</strong> ·
+            Hotline tâm lý Ngày Mai: <strong className="text-sol-blue">1900 599 958</strong>
+          </div>
+        </div>
+      </Section>
+
       <div className="flex items-center gap-3">
         <button
           onClick={save}
@@ -871,6 +881,9 @@ export function Settings() {
 
       {showBindPhone && (
         <BindPhoneModal onClose={() => setShowBindPhone(false)} />
+      )}
+      {showBindEmail && (
+        <EmailBindModal onClose={() => setShowBindEmail(false)} />
       )}
       {showRecover && <RecoverView onClose={() => setShowRecover(false)} />}
     </div>

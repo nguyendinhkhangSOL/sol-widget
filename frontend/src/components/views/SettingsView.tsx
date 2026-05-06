@@ -7,9 +7,16 @@ import { api } from '../../services/api';
 import { subscribeToPush, requestPushPermission } from '../../services/webpush';
 import { BindPhoneModal } from '../BindPhoneModal';
 import { RecoverView } from '../RecoverView';
+import { EmailBindModal } from '../EmailBindModal';
 import type { WidgetMode } from '../../types';
 import { buildPreviewSamples } from '../../lib/preview';
 import { NotificationPrefsPanel } from '../NotificationPrefsPanel';
+import { QuitlineButton } from '../QuitlineButton';
+
+/** Wrapper compact dùng riêng trong Settings — render QuitlineButton calm tone. */
+function SettingsQuitline() {
+  return <QuitlineButton size="compact" tone="calm" />;
+}
 
 // Phải khớp với AuthGate.tsx + dashboard
 const PRONOUN_PRESETS = ['anh', 'chị', 'em'] as const;
@@ -55,6 +62,7 @@ export function SettingsView() {
   const [saving, setSaving] = useState(false);
   const [savingCost, setSavingCost] = useState(false);
   const [showBindPhone, setShowBindPhone] = useState(false);
+  const [showBindEmail, setShowBindEmail] = useState(false);
   const [showRecover, setShowRecover] = useState(false);
 
   // Cách xưng hô — Q1
@@ -699,11 +707,17 @@ export function SettingsView() {
               <div className="text-sm font-semibold text-sol-ink truncate">
                 {user?.name ?? '—'}
               </div>
+              {user?.email ? (
+                <div className="text-[11px] text-sol-ink/70 mt-0.5 truncate">
+                  📧 {user.email}
+                </div>
+              ) : null}
               {user?.phone ? (
                 <div className="text-[11px] text-sol-ink/70 font-mono mt-0.5">
                   📱 {user.phone}
                 </div>
-              ) : (
+              ) : null}
+              {!user?.email && !user?.phone && (
                 <div className="text-[11px] text-sol-ink/55 mt-0.5">
                   Tài khoản chưa liên kết — hành trình chỉ ở thiết bị này
                 </div>
@@ -712,33 +726,32 @@ export function SettingsView() {
           </div>
         </div>
 
-        {/* Liên kết identity — chỉ hiện cho user ẩn danh (chưa có phone) */}
-        {!user?.phone && (
+        {/* Liên kết identity — chỉ hiện cho user ẩn danh (chưa có phone/email) */}
+        {!user?.phone && !user?.email && (
           <div className="space-y-2 mb-2">
+            {/* Email — primary path (2026-05-06 pivot — Zalo/SĐT defer) */}
             <button
-              onClick={async () => {
-                try {
-                  const { url } = await api.zaloInit();
-                  window.location.href = url;
-                } catch (err: any) {
-                  alert('Liên kết Zalo chưa khả dụng. Khang đang setup. Thử SĐT.');
-                }
-              }}
-              className="w-full py-2 rounded-lg bg-[#0068FF] text-white text-sm font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition"
+              onClick={() => setShowBindEmail(true)}
+              className="w-full py-2.5 rounded-lg bg-sol-green text-white text-sm font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition"
             >
-              <span>💬</span>
-              <span>Liên kết Zalo (khuyến nghị)</span>
+              <span>📧</span>
+              <span>Liên kết qua Email (khuyến nghị)</span>
             </button>
+
+            {/* Zalo + SĐT — DEFERRED (giữ code, UI ẩn). Sau có budget unhide.
+                Lý do hide: Zalo cần verify domain + APP_SECRET pending; SĐT
+                cần Stringee/eSMS account + cost. Email magic link đủ MVP. */}
+            {/*
             <button
-              onClick={() => setShowBindPhone(true)}
-              className="w-full py-2 rounded-lg border border-sol-line bg-white text-sol-ink text-sm font-medium flex items-center justify-center gap-2 hover:border-sol-green/40 transition"
-            >
-              <span>📱</span>
-              <span>Liên kết SĐT (nếu không có Zalo)</span>
-            </button>
+              onClick={async () => { ... }}
+              className="..."
+            >Liên kết Zalo</button>
+            <button onClick={() => setShowBindPhone(true)}>Liên kết SĐT</button>
+            */}
+
             <p className="text-[10px] text-sol-ink/45 leading-relaxed text-center">
               Liên kết để bảo vệ hành trình nếu mất máy. Sol không
-              spam — chỉ recovery + voice Khang.
+              spam — chỉ link đăng nhập + recovery.
             </p>
             {/* Layer 3 entry — user mất Zalo + SĐT có thể recover ngay từ đây */}
             <button
@@ -758,10 +771,27 @@ export function SettingsView() {
         </button>
       </Section>
 
+      <Section title="Cần giúp đỡ" icon="🆘" hint="Tổng đài chuyên gia · Hotline cấp cứu">
+        <div className="space-y-3">
+          <p className="text-meta text-sol-ink-2 leading-relaxed">
+            Sol là AI — không thay thế chuyên gia. Khi cần nói chuyện với người
+            thật về cai thuốc, sức khoẻ, hoặc tâm lý:
+          </p>
+          <SettingsQuitline />
+          <div className="text-[11px] text-sol-ink-3 italic px-1">
+            Hotline cấp cứu y tế: <strong className="text-sol-red">115</strong> ·
+            Hotline tâm lý Ngày Mai: <strong className="text-sol-blue">1900 599 958</strong>
+          </div>
+        </div>
+      </Section>
+
       <div className="text-[10px] text-center text-sol-ink/40 pt-2">SOL Companion · bothuocla.sol.vn</div>
 
       {showBindPhone && (
         <BindPhoneModal onClose={() => setShowBindPhone(false)} />
+      )}
+      {showBindEmail && (
+        <EmailBindModal onClose={() => setShowBindEmail(false)} />
       )}
       {showRecover && <RecoverView onClose={() => setShowRecover(false)} />}
     </div>
