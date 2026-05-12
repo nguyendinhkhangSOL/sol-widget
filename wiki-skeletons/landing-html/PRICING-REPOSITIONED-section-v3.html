@@ -1,0 +1,216 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  PRICING REPOSITIONED — Replace bảng giá section trong landing
+  Insight Khang (11-05-2026):
+  • Giọng Khang KHÔNG xuất hiện trong bảng giá bullet
+  • Khang đi cùng là CONSTANT, không phải variable theo gói
+  • Khác biệt 3 gói: THỜI LƯỢNG + CÔNG CỤ + CỘNG ĐỒNG + DỊCH VỤ — không phải giọng nói
+  • Tagline "Khang đi cùng anh xuyên suốt" LẶP ở cả 3 gói
+
+  PASTE: Replace section 4 PRICING trong 05-sol-homepage-LEAN-v2.html
+         hoặc replace section 6 trong 05-sol-homepage.html gốc
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-price { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; }
+.sol-price h2 { margin: 0; }
+
+.sol-price-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  max-width: 1000px; margin: 0 auto;
+}
+
+.sol-price-card {
+  background: white; padding: 26px 22px; border-radius: 14px;
+  display: flex; flex-direction: column; position: relative;
+  border: 1px solid #E8DFC8;
+}
+.sol-price-card-recommended {
+  border: 2px solid #B25C2C;
+  box-shadow: 0 6px 20px rgba(178,92,44,0.18);
+}
+.sol-price-card-recommended::before {
+  content: "KHUYẾN NGHỊ";
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: #B25C2C; color: white;
+  padding: 5px 14px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+}
+
+.sol-price-companion-tag {
+  background: #FFF4EA; border-radius: 8px;
+  padding: 10px 12px; margin: 14px 0 14px;
+  font-size: 12.5px; color: #5C3A1E;
+  font-weight: 500; line-height: 1.5;
+  border-left: 3px solid #B8860B;
+}
+
+@media (max-width: 880px) {
+  .sol-price-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .sol-price section { padding-left: 16px !important; padding-right: 16px !important; }
+}
+</style>
+
+<section class="sol-price" style="padding: 56px 24px; max-width: 1000px; margin: 0 auto;">
+
+  <h2 style="color: #5C3A1E; text-align: center; font-size: 28px; line-height: 1.2; margin: 0 0 14px; font-weight: 700;">
+    3 gói — anh chọn theo sẵn sàng
+  </h2>
+  <p style="text-align: center; color: #5A5650; font-size: 15px; margin: 0 0 8px; line-height: 1.6;">
+    Khác biệt 3 gói: <strong>thời lượng đồng hành</strong> + <strong>công cụ Sol hỗ trợ</strong> + <strong>cộng đồng</strong> + <strong>service level</strong>.
+  </p>
+  <p style="text-align: center; color: #B8860B; font-size: 14px; margin: 0 0 36px; font-style: italic;">
+    Mình đi cùng anh xuyên suốt — không tính theo gói.
+  </p>
+
+  <div class="sol-price-grid">
+
+    <!-- SOL KHÁM PHÁ -->
+    <div class="sol-price-card">
+      <div style="font-size: 12px; color: #B25C2C; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">
+        Sol NHẬN DIỆN
+      </div>
+      <div style="font-size: 34px; font-weight: 700; color: #5C3A1E; margin: 8px 0 2px;">
+        Miễn phí
+      </div>
+      <div style="font-size: 13px; color: #8A857C; margin-bottom: 6px;">
+        7 ngày · không cần SĐT
+      </div>
+
+      <p style="font-size: 14.5px; color: #5C3A1E; font-weight: 600; margin: 10px 0 0; line-height: 1.5;">
+        7 ngày để anh hiểu mình hút lúc nào, vì sao.
+      </p>
+
+      <!-- KHANG ĐI CÙNG TAG -->
+      <div class="sol-price-companion-tag">
+        🤝 <strong>Mình đi cùng anh xuyên suốt</strong> — xuất hiện kịp thời khi anh thèm
+      </div>
+
+      <ul style="margin: 4px 0 16px; padding-left: 18px; font-size: 13.5px; line-height: 1.75; color: #2C2A27; flex: 1;">
+        <li>7 ngày quan sát mình — KHÔNG bắt bỏ ngay</li>
+        <li>Báo cáo Ngày 3 + Ngày 7 (bản đồ cơn thèm 24h + top 5 tình huống kích thích)</li>
+        <li>4 nhóm cách đối diện cơn thèm</li>
+        <li>Trợ lý AI 5 tin/ngày</li>
+        <li>Đọc Khoảng Lặng anh em khác</li>
+      </ul>
+
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=pricing&utm_campaign=khampha_repos" style="display: block; text-align: center; background: transparent; color: #B25C2C; border: 1px solid #B25C2C; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+        Bắt đầu miễn phí →
+      </a>
+      <p style="font-size: 11.5px; color: #8A857C; text-align: center; margin: 10px 0 0; font-style: italic;">
+        Cho anh chưa quyết bỏ. Chỉ muốn nhìn lại mình.
+      </p>
+    </div>
+
+    <!-- SOL BỨT PHÁ -->
+    <div class="sol-price-card">
+      <div style="font-size: 12px; color: #B8860B; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">
+        Sol KIỂM SOÁT
+      </div>
+      <div style="font-size: 34px; font-weight: 700; color: #5C3A1E; margin: 8px 0 2px;">
+        99.000<span style="font-size: 16px; color: #8A857C; font-weight: 400;">đ</span>
+      </div>
+      <div style="font-size: 13px; color: #8A857C; margin-bottom: 6px;">
+        14 ngày · trả 1 lần
+      </div>
+
+      <p style="font-size: 14.5px; color: #5C3A1E; font-weight: 600; margin: 10px 0 0; line-height: 1.5;">
+        14 ngày để giảm tần suất hút + xây Plan B.
+      </p>
+
+      <!-- KHANG ĐI CÙNG TAG -->
+      <div class="sol-price-companion-tag">
+        🤝 <strong>Mình đi cùng anh xuyên suốt</strong> — xuất hiện kịp thời khi anh thèm
+      </div>
+
+      <ul style="margin: 4px 0 16px; padding-left: 18px; font-size: 13.5px; line-height: 1.75; color: #2C2A27; flex: 1;">
+        <li>Tất cả Sol NHẬN DIỆN +</li>
+        <li>Kế hoạch Dự phòng viết tay cho 5 tình huống kích thích của anh</li>
+        <li>Hồ sơ PDF anh giữ vĩnh viễn</li>
+        <li>Báo cáo Ngày 14 + Chỉ Số Hiểu Mình</li>
+        <li>Trợ lý AI 30 tin/ngày</li>
+        <li>Đợi 90 giây + 4 nhóm cách đầy đủ</li>
+        <li>Hoàn tiền Ngày 21 không hỏi</li>
+      </ul>
+
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=pricing&utm_campaign=butpha_repos" style="display: block; text-align: center; background: #B8860B; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+        Thử Sol KIỂM SOÁT →
+      </a>
+      <p style="font-size: 11.5px; color: #8A857C; text-align: center; margin: 10px 0 0; font-style: italic;">
+        Bằng 3 bao thuốc anh hút trong tuần.
+      </p>
+    </div>
+
+    <!-- SOL ĐI CÙNG -->
+    <div class="sol-price-card sol-price-card-recommended">
+      <div style="font-size: 12px; color: #5C3A1E; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">
+        Sol LÀM CHỦ
+      </div>
+      <div style="font-size: 34px; font-weight: 700; color: #5C3A1E; margin: 8px 0 2px;">
+        199.000<span style="font-size: 16px; color: #8A857C; font-weight: 400;">đ</span>
+      </div>
+      <div style="font-size: 11px; color: #B25C2C; margin-bottom: 4px;">
+        Trả 1 lần · KHÔNG lặp lại tháng sau
+      </div>
+      <div style="font-size: 11px; color: #8A857C; margin-bottom: 6px;">
+        30 ngày kể từ Ngày Q → Ngày 52 nhận Cuốn Nhật Ký
+      </div>
+
+      <p style="font-size: 14.5px; color: #5C3A1E; font-weight: 600; margin: 10px 0 0; line-height: 1.5;">
+        Ngày Q (Ngày 22) → cai hẳn 30 ngày → Ngày 52 Người Tự Do.
+      </p>
+
+      <!-- KHANG ĐI CÙNG TAG -->
+      <div class="sol-price-companion-tag">
+        🤝 <strong>Mình đi cùng anh xuyên suốt</strong> — xuất hiện kịp thời khi anh thèm
+      </div>
+
+      <ul style="margin: 4px 0 16px; padding-left: 18px; font-size: 13.5px; line-height: 1.75; color: #2C2A27; flex: 1;">
+        <li>Tất cả Sol KIỂM SOÁT +</li>
+        <li>Ngày bỏ chính thức (Ngày Q) anh chọn</li>
+        <li>Báo cáo Ngày 30 + Ngày 60 milestone</li>
+        <li>Đại Sảnh Sol — gặp anh em đang đi cùng mình (Sprint 2)</li>
+        <li>Trợ lý AI không giới hạn</li>
+        <li>Anh hỏi mình ẩn danh — mình trả lời cá nhân</li>
+        <li>Sau 90 ngày Tự do → Đại Sứ Sol (miễn phí mãi)</li>
+        <li>Hoàn tiền pro-rated Day 15+</li>
+      </ul>
+
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=pricing&utm_campaign=dicung_repos" style="display: block; text-align: center; background: #B25C2C; color: white; padding: 13px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px;">
+        Sol đi cùng anh →
+      </a>
+      <p style="font-size: 11.5px; color: #8A857C; text-align: center; margin: 10px 0 0; font-style: italic;">
+        Cho anh đã quyết. Cần đồng hành dài.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- COMMON GUARANTEES -->
+  <div style="max-width: 880px; margin: 32px auto 0; padding: 22px 26px; background: #FFF4EA; border-radius: 12px; border: 1px solid #E8DFC8;">
+    <p style="font-size: 12px; color: #5C3A1E; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 12px;">
+      Sol cam kết cả 3 gói
+    </p>
+    <ul style="margin: 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.85; color: #2C2A27;">
+      <li style="padding-left: 26px; position: relative;"><span style="position: absolute; left: 0; color: #B25C2C; font-weight: 700;">✓</span> <strong>Hoàn tiền 100%</strong> nếu anh không thấy giá trị — Khang chuyển khoản tay 7 ngày làm việc</li>
+      <li style="padding-left: 26px; position: relative;"><span style="position: absolute; left: 0; color: #B25C2C; font-weight: 700;">✓</span> <strong>Mình đi cùng anh xuyên suốt</strong> — KHÔNG bán giọng theo gói, KHÔNG ban phát giọng nói</li>
+      <li style="padding-left: 26px; position: relative;"><span style="position: absolute; left: 0; color: #B25C2C; font-weight: 700;">✓</span> Sol <strong>KHÔNG tự rút tiền</strong> — mỗi tháng anh chủ động chuyển</li>
+      <li style="padding-left: 26px; position: relative;"><span style="position: absolute; left: 0; color: #5C3A1E; font-weight: 700;">⚠</span> Sol <strong>KHÔNG hứa anh bỏ thuốc 100%.</strong> Sol giúp anh hiểu mình + có công cụ tự cai khi anh lỡ</li>
+      <li style="padding-left: 26px; position: relative;"><span style="position: absolute; left: 0; color: #5C3A1E; font-weight: 700;">ℹ</span> <strong>Sol là dự án cá nhân của Khang Sol</strong> — Khang KHÔNG phải bác sĩ. Không phải sản phẩm y tế</li>
+    </ul>
+  </div>
+
+  <!-- LINK TO PRICING DETAIL -->
+  <p style="text-align: center; margin-top: 24px;">
+    <a href="/gia" style="color: #5C3A1E; font-weight: 600; font-size: 15px; border-bottom: 1px solid #5C3A1E; padding-bottom: 2px;">
+      Xem chi tiết 3 gói + 10 câu hỏi giá →
+    </a>
+  </p>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+  END PRICING-REPOSITIONED section
+═══════════════════════════════════════════════════════════════════════════ -->

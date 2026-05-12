@@ -1,0 +1,416 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  HOMEPAGE LEAN v2 — sol.vn/  (~300 dòng)
+  Replace landing 05-sol-homepage.html cũ 886 dòng.
+
+  Design principles (CRO cho 45+ Việt):
+  • Mobile-first, font 17px+, sticky CTA bottom
+  • 7 sections only (vs 14 cũ)
+  • Time-to-pricing ≤ 2 màn hình
+  • 1 CTA chính (sticky) + 1 final CTA
+  • Trust signal trên fold (5 năm sạch + refund)
+  • Progressive disclosure — link sang /gia, /khang-sol, /sol-la-gi, /cau-hoi
+  • Pricing compact 3 cards + link /gia full
+
+  HƯỚNG DẪN PUBLISH:
+  1. WordPress Admin → Pages → Add New
+  2. Title: "LÀM CHỦ Sol" (homepage)
+  3. Slug: sol-home-lean (test trước, sau swap homepage)
+  4. Parent: (none)
+  5. Template: "Sol Landing — Full HTML"
+  6. Content: Custom HTML block → paste TOÀN BỘ (sau </comment>)
+  7. Publish + test trên mobile real device
+  8. Settings → Reading → "Homepage displays static page" → chọn page này
+
+  SAU KHI PUBLISH 6 PAGE CON (/gia, /khang-sol, /sol-la-gi, /cau-hoi, /pilot, /wiki):
+  Verify mọi link internal trỏ đúng.
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+/* ─── Reset + Base ──────────────────────────────────────────── */
+.sol-lean { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; }
+.sol-lean h1, .sol-lean h2, .sol-lean h3 { margin: 0; }
+.sol-lean a { text-decoration: none; }
+
+/* ─── Responsive grid utilities ────────────────────────────── */
+.sol-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.sol-grid-3-pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.sol-grid-3-faq { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+@media (max-width: 880px) {
+  .sol-grid-3, .sol-grid-3-pricing { grid-template-columns: 1fr !important; gap: 12px !important; }
+}
+
+/* ─── Sticky bottom CTA mobile ────────────────────────────── */
+.sol-sticky-cta {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: white; border-top: 1px solid #E8DFC8;
+  padding: 12px 16px; z-index: 9999;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+}
+.sol-sticky-cta a {
+  display: block; background: #B25C2C; color: white;
+  text-align: center; padding: 14px 20px; border-radius: 8px;
+  font-size: 16px; font-weight: 700;
+}
+@media (max-width: 880px) {
+  .sol-sticky-cta { display: block; }
+  body { padding-bottom: 80px; }
+}
+
+/* ─── Hero mobile responsive ──────────────────────────────── */
+@media (max-width: 640px) {
+  .sol-lean-hero { padding: 60px 20px 50px !important; }
+  .sol-lean-h1 { font-size: 30px !important; line-height: 1.18 !important; }
+  .sol-lean-sub { font-size: 17px !important; }
+  .sol-lean-cred { font-size: 13px !important; }
+  .sol-lean-cta { padding: 16px 28px !important; font-size: 16px !important; }
+}
+@media (max-width: 380px) {
+  .sol-lean-h1 { font-size: 26px !important; }
+}
+
+/* ─── Section padding mobile ──────────────────────────────── */
+@media (max-width: 640px) {
+  .sol-lean section { padding-left: 16px !important; padding-right: 16px !important; }
+  .sol-lean h2 { font-size: 22px !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LÀM CHỦ Sol",
+  "alternateName": "Sol bothuocla Caithuocla",
+  "url": "https://sol.vn",
+  "logo": "https://sol.vn/Icon_2.png",
+  "description": "LÀM CHỦ Sol — app cai thuốc lá tiếng Việt cho người Việt 45+. Hợp dụng 5 phương pháp đã chứng minh khoa học.",
+  "founder": {
+    "@type": "Person",
+    "name": "Khang Sol",
+    "jobTitle": "Founder dự án LÀM CHỦ Sol",
+    "url": "https://sol.vn/khang-sol",
+    "description": "Khang Sol — founder dự án LÀM CHỦ Sol. 30 năm hút thuốc, hơn 5 năm sạch."
+  },
+  "areaServed": { "@type": "Country", "name": "Vietnam" }
+}
+</script>
+
+<div class="sol-lean">
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  1. HERO
+  ═══════════════════════════════════════════════════════════════════ -->
+<section class="sol-lean-hero" style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 88px 24px 72px; background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 55%, #B8860B 100%); color: white; text-align: center;">
+
+  <div style="display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; margin-bottom: 24px;">
+    <span style="font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600;">KHANG SOL · 30 NĂM HÚT — HƠN 5 NĂM SẠCH</span>
+  </div>
+
+  <h1 class="sol-lean-h1" style="font-size: 44px; line-height: 1.15; font-weight: 700; margin: 0 0 20px; color: white; max-width: 720px; margin-left: auto; margin-right: auto; letter-spacing: -0.5px;">
+    "Tôi đi rồi.<br>Anh không phải đi một mình."
+  </h1>
+
+  <p class="sol-lean-sub" style="font-size: 19px; opacity: 0.96; max-width: 600px; margin: 0 auto 28px; line-height: 1.55; font-weight: 500;">
+    App cai thuốc lá <strong>tiếng Việt</strong> đầu tiên cho người Việt <strong>45+</strong>.
+  </p>
+
+  <!-- Audio Khang Day 0 placeholder -->
+  <div style="display: inline-flex; align-items: center; gap: 14px; padding: 14px 22px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; margin-bottom: 28px; cursor: pointer;" onclick="document.getElementById('sol-day0-audio').play()">
+    <span style="font-size: 24px;">🎧</span>
+    <div style="text-align: left;">
+      <div style="font-size: 15px; font-weight: 600;">Nghe Khang chào — 60 giây</div>
+      <div style="font-size: 12px; opacity: 0.85;">Voice Day 0 · Không cần đăng ký</div>
+    </div>
+    <audio id="sol-day0-audio" preload="none" style="display: none;">
+      <source src="https://bothuocla.sol.vn/audio/khang-day-0-welcome.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <br>
+
+  <a class="sol-lean-cta" href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=homepage&utm_campaign=hero_lean" style="display: inline-block; background: white; color: #5C3A1E; padding: 18px 40px; border-radius: 999px; font-weight: 700; text-decoration: none; font-size: 17px; box-shadow: 0 4px 24px rgba(0,0,0,0.18);">
+    🌱 Thử 7 ngày — miễn phí
+  </a>
+
+  <p class="sol-lean-cred" style="margin-top: 18px; font-size: 14px; opacity: 0.92; line-height: 1.6;">
+    ✓ Không cần SĐT  ·  ✓ Không cam kết  ·  ✓ Hoàn tiền Day 21 không hỏi
+  </p>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  2. ANH NHẬN ĐƯỢC 3 ĐIỀU
+  ═══════════════════════════════════════════════════════════════════ -->
+<section style="padding: 56px 24px; max-width: 1000px; margin: 0 auto;">
+
+  <h2 style="color: #5C3A1E; text-align: center; font-size: 26px; margin: 0 0 14px;">
+    Anh nhận được 3 điều
+  </h2>
+  <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.6; max-width: 580px; margin: 0 auto 32px;">
+    Trong 7 ngày NHẬN DIỆN miễn phí — không cần SĐT.
+  </p>
+
+  <div class="sol-grid-3">
+
+    <div style="background: white; padding: 28px 22px; border-radius: 12px; border: 1px solid #E8DFC8; text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 12px;">📊</div>
+      <h3 style="font-size: 17px; color: #5C3A1E; margin: 0 0 10px;">Báo cáo cá nhân Day 7</h3>
+      <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+        Anh hút lúc nào (heatmap 24h), top 5 trigger, giờ tổn thương nhất.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 28px 22px; border-radius: 12px; border: 1px solid #E8DFC8; text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 12px;">🛠</div>
+      <h3 style="font-size: 17px; color: #5C3A1E; margin: 0 0 10px;">9 công cụ khi thèm</h3>
+      <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+        Đợi 90s · uống nước · đi bộ · voice Khang · chip nhanh · wiki · chat · workbook · đọc Khoảng Lặng.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 28px 22px; border-radius: 12px; border: 1px solid #E8DFC8; text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 12px;">🎧</div>
+      <h3 style="font-size: 17px; color: #5C3A1E; margin: 0 0 10px;">Voice Khang đi cùng</h3>
+      <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+        15 voice em — phát đúng khoảnh khắc khó. Em đã đi qua 30 năm hút.
+      </p>
+    </div>
+
+  </div>
+
+  <p style="text-align: center; margin-top: 28px;">
+    <a href="/sol-la-gi" style="color: #B25C2C; font-weight: 600; font-size: 15px; border-bottom: 1px solid #B25C2C; padding-bottom: 2px;">Xem chi tiết Sol làm gì →</a>
+  </p>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  3. KHANG'S STORY (60 giây rút gọn)
+  ═══════════════════════════════════════════════════════════════════ -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: #FFF8F2;">
+  <div style="max-width: 720px; margin: 0 auto;">
+
+    <h2 style="color: #5C3A1E; text-align: center; font-size: 26px; margin: 0 0 24px;">
+      Em làm Sol cho ai như tôi
+    </h2>
+
+    <div style="background: white; padding: 28px 32px; border-radius: 12px; border-left: 4px solid #B25C2C; box-shadow: 0 2px 12px rgba(92,58,30,0.08);">
+      <p style="font-size: 16px; line-height: 1.75; color: #2C2A27; margin: 0 0 12px;">
+        "Tôi hút từ 15 tuổi — 30 năm liên tục. <strong>Bỏ 4 lần đều thất bại</strong> trong 30 ngày.
+      </p>
+      <p style="font-size: 16px; line-height: 1.75; color: #2C2A27; margin: 0 0 12px;">
+        Lần thứ 5, ngày <strong>22-12-2020 âm lịch</strong> — cận Tết Tân Sửu — không có nghi lễ gì đặc biệt, tự nhiên có khoảnh khắc tôi quyết bỏ. Đến nay hơn 5 năm sạch.
+      </p>
+      <p style="font-size: 16px; line-height: 1.75; color: #2C2A27; margin: 0 0 16px;">
+        Sau khi bỏ được, tôi nhận ra: 4 lần thất bại trước không phải vì tôi yếu — mà vì không có ai đi cùng, không có cấu trúc, không có công cụ.
+      </p>
+      <p style="font-size: 16px; line-height: 1.75; color: #5C3A1E; margin: 0; font-style: italic; font-weight: 500;">
+        Sol là thứ tôi ước có lúc đó. Tôi làm Sol cho anh em Việt 45+ — những người như tôi."
+      </p>
+      <p style="margin-top: 16px; text-align: right; font-size: 14px; color: #5A5650; font-style: italic;">
+        — Khang Sol, Founder
+      </p>
+    </div>
+
+    <p style="text-align: center; margin-top: 24px;">
+      <a href="/khang-sol" style="color: #B25C2C; font-weight: 600; font-size: 15px; border-bottom: 1px solid #B25C2C; padding-bottom: 2px;">Đọc câu chuyện đầy đủ →</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  4. PRICING COMPACT 3 CARDS
+  ═══════════════════════════════════════════════════════════════════ -->
+<section style="padding: 56px 24px; max-width: 1000px; margin: 0 auto;">
+
+  <h2 style="color: #5C3A1E; text-align: center; font-size: 26px; margin: 0 0 14px;">
+    3 gói — anh chọn theo sẵn sàng
+  </h2>
+  <p style="text-align: center; color: #5A5650; font-size: 14px; margin: 0 0 28px;">
+    Hoàn tiền Day 21 không hỏi · Huỷ 1 chạm · Không tự rút tiền
+  </p>
+
+  <div class="sol-grid-3-pricing">
+
+    <!-- KHÁM PHÁ -->
+    <div style="background: white; padding: 22px 18px; border-radius: 12px; border: 1px solid #E8DFC8; display: flex; flex-direction: column;">
+      <div style="font-size: 12px; color: #B25C2C; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Sol NHẬN DIỆN</div>
+      <div style="font-size: 30px; font-weight: 700; color: #5C3A1E; margin: 6px 0 2px;">Miễn phí</div>
+      <div style="font-size: 12px; color: #8A857C; margin-bottom: 14px;">7 ngày · không cần SĐT</div>
+      <ul style="margin: 0 0 14px; padding-left: 16px; font-size: 13px; line-height: 1.65; color: #2C2A27; flex: 1;">
+        <li>Báo cáo Day 3 + Day 7</li>
+        <li>2 voice Khang chào</li>
+        <li>9 công cụ khi thèm</li>
+        <li>Trợ lý AI 5 tin/ngày</li>
+      </ul>
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=pricing&utm_campaign=khampha_lean" style="display: block; text-align: center; background: transparent; color: #B25C2C; border: 1px solid #B25C2C; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">Bắt đầu miễn phí →</a>
+    </div>
+
+    <!-- BỨT PHÁ -->
+    <div style="background: white; padding: 22px 18px; border-radius: 12px; border: 1px solid #E8DFC8; display: flex; flex-direction: column;">
+      <div style="font-size: 12px; color: #B8860B; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Sol KIỂM SOÁT</div>
+      <div style="font-size: 30px; font-weight: 700; color: #5C3A1E; margin: 6px 0 2px;">99k</div>
+      <div style="font-size: 12px; color: #8A857C; margin-bottom: 14px;">14 ngày · trả 1 lần</div>
+      <ul style="margin: 0 0 14px; padding-left: 16px; font-size: 13px; line-height: 1.65; color: #2C2A27; flex: 1;">
+        <li>Tất cả NHẬN DIỆN +</li>
+        <li>Đợi 90 giây có voice</li>
+        <li>5 voice Khang khó nhất</li>
+        <li>Kế Hoạch B 5 trigger</li>
+        <li>Trợ lý AI 30 tin/ngày</li>
+      </ul>
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=pricing&utm_campaign=butpha_lean" style="display: block; text-align: center; background: #B8860B; color: white; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">Thử KIỂM SOÁT →</a>
+    </div>
+
+    <!-- ĐI CÙNG -->
+    <div style="background: white; padding: 22px 18px; border-radius: 12px; border: 2px solid #B25C2C; position: relative; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(178,92,44,0.18);">
+      <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #B25C2C; color: white; padding: 4px 12px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 1px;">KHUYẾN NGHỊ</div>
+      <div style="font-size: 12px; color: #5C3A1E; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Sol LÀM CHỦ</div>
+      <div style="font-size: 30px; font-weight: 700; color: #5C3A1E; margin: 6px 0 2px;">99k<span style="font-size: 14px; color: #8A857C; font-weight: 400;">/tháng</span></div>
+      <div style="font-size: 11px; color: #B25C2C; margin-bottom: 14px;">Chuyển khoản tay · Huỷ 1 chạm</div>
+      <ul style="margin: 0 0 14px; padding-left: 16px; font-size: 13px; line-height: 1.65; color: #2C2A27; flex: 1;">
+        <li>Tất cả KIỂM SOÁT +</li>
+        <li>Ngày bỏ chính thức</li>
+        <li>30 ngày sạch liên tiếp</li>
+        <li>Voice Khang hàng tháng</li>
+        <li>AI không giới hạn</li>
+        <li>Sau 90 ngày → Đại Sứ</li>
+      </ul>
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=pricing&utm_campaign=dicung_lean" style="display: block; text-align: center; background: #B25C2C; color: white; padding: 11px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px;">Sol đi cùng anh →</a>
+    </div>
+
+  </div>
+
+  <p style="text-align: center; margin-top: 28px;">
+    <a href="/gia" style="color: #5C3A1E; font-weight: 600; font-size: 15px; border-bottom: 1px solid #5C3A1E; padding-bottom: 2px;">Xem chi tiết 3 gói + 10 câu hỏi giá →</a>
+  </p>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  5. SOCIAL PROOF (placeholder cho pilot Q2/2026)
+  ═══════════════════════════════════════════════════════════════════ -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 48px 24px; background: #FFF4EA;">
+  <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+
+    <div style="display: inline-block; padding: 5px 14px; background: #B25C2C; color: white; border-radius: 999px; font-size: 11px; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 16px;">PILOT Q2/2026</div>
+
+    <h2 style="color: #5C3A1E; font-size: 24px; margin: 0 0 16px;">
+      30 anh em pilot đầu tiên
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.7; color: #2C2A27; margin: 0 0 20px;">
+      Sol đang tuyển <strong>30 anh em Việt 45+</strong> đi cùng em trong 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) để có data thật trước khi mở rộng.
+    </p>
+
+    <p style="font-size: 14px; line-height: 1.6; color: #5A5650; margin: 0 0 24px; font-style: italic;">
+      Pilot nhận MIỄN PHÍ toàn bộ Sol KIỂM SOÁT + 1 tháng Sol LÀM CHỦ (giá thật 178k) · Em hỗ trợ Zalo trực tiếp 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) · Báo cáo công bố Q3/2026.
+    </p>
+
+    <a href="/pilot" style="display: inline-block; background: #5C3A1E; color: white; padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none;">Đăng ký pilot 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) →</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  6. 3 CÂU HỎI THƯỜNG GẶP NHẤT
+  ═══════════════════════════════════════════════════════════════════ -->
+<section style="padding: 56px 24px; max-width: 760px; margin: 0 auto;">
+
+  <h2 style="color: #5C3A1E; text-align: center; font-size: 26px; margin: 0 0 28px;">
+    3 câu hỏi anh thường nghĩ
+  </h2>
+
+  <div class="sol-grid-3-faq">
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer; list-style: none;">
+        Sol khác Champix / NRT thế nào?
+      </summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">
+        Champix/NRT can thiệp SINH HỌC (cắt cravings). Sol can thiệp HÀNH VI + nhận thức.
+        Hai cái BỔ SUNG nhau — Cochrane 2021 chứng minh combo &gt; đơn lẻ.
+        <a href="/cau-hoi#champix" style="color: #B25C2C;">Xem chi tiết →</a>
+      </p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer; list-style: none;">
+        199k trả 1 lần đắt không?
+      </summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">
+        Anh hút 1 gói/ngày × 30k = 900k/tháng. 99k = 1/9. Hoặc: 99k = 4 bao thuốc anh hút trong 1 tuần.
+        <a href="/gia" style="color: #B25C2C;">Xem chi tiết giá →</a>
+      </p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer; list-style: none;">
+        Lỡ 1 điếu có bị reset đếm ngày?
+      </summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">
+        KHÔNG. Sol thiết kế lapse-friendly. Voice "Mình tiếp tục được" + chat đồng hành tự động.
+        <a href="/cau-hoi#lapse" style="color: #B25C2C;">Xem chi tiết →</a>
+      </p>
+    </details>
+
+  </div>
+
+  <p style="text-align: center; margin-top: 24px;">
+    <a href="/cau-hoi" style="color: #5C3A1E; font-weight: 600; font-size: 15px; border-bottom: 1px solid #5C3A1E; padding-bottom: 2px;">Xem 20 câu hỏi anh em thường ném đá em →</a>
+  </p>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  7. FINAL CTA
+  ═══════════════════════════════════════════════════════════════════ -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 64px 24px; background: linear-gradient(135deg, #5C3A1E 0%, #2C2A27 100%); color: white; text-align: center;">
+  <div style="max-width: 640px; margin: 0 auto;">
+
+    <h2 style="font-size: 28px; line-height: 1.25; margin: 0 0 18px; color: white; font-weight: 700;">
+      Anh đã thử bỏ. Anh hiểu cảm giác.
+    </h2>
+
+    <p style="font-size: 17px; line-height: 1.6; opacity: 0.92; margin: 0 0 28px;">
+      7 ngày NHẬN DIỆN miễn phí · Không cần SĐT · Không cam kết tiếp.
+    </p>
+
+    <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=homepage&utm_campaign=final_cta_lean" style="display: inline-block; background: white; color: #5C3A1E; padding: 18px 44px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none; box-shadow: 0 4px 24px rgba(0,0,0,0.18);">
+      🌱 Bắt đầu 7 ngày Sol NHẬN DIỆN →
+    </a>
+
+    <p style="margin-top: 24px; font-size: 12px; opacity: 0.75; line-height: 1.6; font-style: italic;">
+      Khang KHÔNG phải bác sĩ. Sol là dự án cá nhân của Khang, không phải sản phẩm y tế.<br>
+      Sol KHÔNG hứa cai trọn đời — Sol hứa <strong>năng lực tự cai</strong> khi anh lỡ.
+    </p>
+  </div>
+</section>
+
+</div><!-- /.sol-lean -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  STICKY CTA BOTTOM (chỉ hiện trên mobile)
+  ═══════════════════════════════════════════════════════════════════ -->
+<div class="sol-sticky-cta">
+  <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=sticky&utm_campaign=mobile_bottom">🌱 Thử 7 ngày — miễn phí</a>
+</div>
+
+
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  ĐÃ XONG HOMEPAGE LEAN v2
+
+  Tổng dòng: ~340 dòng (vs v1 886 dòng — giảm 62%)
+  Section: 7 (vs v1 14 — giảm 50%)
+  Time-to-pricing: 2 màn hình mobile (vs v1 6 màn hình)
+  CTA chính: 1 sticky bottom + 1 final (vs v1 5+)
+
+  Footer được handle bởi mu-plugin sol-global-footer.php (đã cài WP).
+═══════════════════════════════════════════════════════════════════════════
+-->

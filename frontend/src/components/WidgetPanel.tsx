@@ -119,7 +119,7 @@ function Header({ dayNumber, isAnonymous, onClose }: { dayNumber: number; isAnon
               ? 'Đang ở bên bạn'
               : isAnonymous
               ? 'Sol — Trợ lý AI'
-              : `Ngày ${dayNumber} / 88`}
+              : `Ngày ${dayNumber}`}
           </div>
           <div className="text-meta opacity-90 truncate flex items-center gap-1.5">
             {isAnonymous ? (

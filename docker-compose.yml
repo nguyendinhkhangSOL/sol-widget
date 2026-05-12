@@ -31,6 +31,10 @@ services:
     environment:
       DATABASE_URL: postgres://sol:sol_dev_pwd@db:5432/sol
       PORT: '4000'
+      # FIX (Sol v3): set locale UTF-8 để Node.js parse string tiếng Việt
+      # đúng. Mặc định container Linux có LANG=C → strip multi-byte chars.
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
     ports:
       - '4000:4000'
 
@@ -55,8 +59,14 @@ services:
       - backend
     environment:
       VITE_API_BASE: http://localhost:4000
+      # CI=true để Vite skip stdin keyboard shortcuts handler.
+      # Combined với redirect stdin null trong Dockerfile CMD → Vite không exit.
+      CI: 'true'
     ports:
       - '5174:5174'
+    # Phòng khi CI=true chưa đủ, allocate pseudo-TTY.
+    tty: true
+    stdin_open: true
 
 volumes:
   sol_pgdata:

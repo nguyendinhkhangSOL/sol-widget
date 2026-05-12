@@ -54,6 +54,10 @@ export function Layout() {
     const base: { to: string; label: string; icon: string }[] = [
       { to: '/', label: 'Tổng quan', icon: '🏠' },
       { to: '/chat', label: 'Trò chuyện', icon: '💬' },
+      // Silent Companionship 3 tab chính — pivot 2026-05-08
+      { to: '/doc', label: 'Đọc', icon: '📖' },
+      { to: '/nghe', label: 'Nghe Khang', icon: '🎧' },
+      { to: '/hoi', label: 'Hỏi Khang', icon: '💭' },
       // Hành trình luôn hiện — FREE user thấy demo + calendar 30 ngày,
       // paid user thấy data thật. UI consistency > tier gating.
       { to: '/journey', label: 'Hành trình', icon: '🗺️' },
@@ -172,21 +176,20 @@ export function Layout() {
           </NavLink>
 
           {user?.isAdmin && (
-            <NavLink
-              to="/admin"
-              className={({ isActive }) =>
-                clsx(
-                  'flex items-center gap-2 px-3 py-2 rounded-lg text-meta font-medium transition',
-                  isActive
-                    ? 'bg-sol-ink text-white'
-                    : 'bg-sol-soft text-sol-ink-2 hover:bg-sol-line'
-                )
+            <a
+              href={
+                typeof window !== 'undefined' && window.location.hostname === 'localhost'
+                  ? 'http://localhost:5176'
+                  : 'https://admin.sol.vn'
               }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-meta font-medium transition bg-sol-soft text-sol-ink-2 hover:bg-sol-line"
             >
               <span>🔧</span>
               <span>Admin console</span>
-              <span className="ml-auto text-sol-ink-3 text-[11px] uppercase tracking-wide">founder</span>
-            </NavLink>
+              <span className="ml-auto text-sol-ink-3 text-[11px] uppercase tracking-wide">↗ admin.sol.vn</span>
+            </a>
           )}
 
           <button

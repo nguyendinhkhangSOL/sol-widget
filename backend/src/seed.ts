@@ -529,7 +529,7 @@ async function main() {
       icon: '💰',
       sortOrder: 630,
       answer:
-        'Gói Đồng hành 199k được hoàn tiền theo tỷ lệ ngày còn lại — từ Ngày 15 trở đi. Vào Cài đặt → Hoàn tiền → ghi lý do (không bắt buộc) → gửi yêu cầu. Khang đọc trong 24h và chuyển tiền về MoMo/TK. Gói Khởi động 99k không hoàn (gói nhỏ, ngắn).',
+        'Sol v3 — Gói Làm Chủ 199k được hoàn tiền theo tỷ lệ ngày còn lại từ Ngày 14 trở đi (pro-rated). Gói Kiểm Soát 99k được hoàn 100% nếu sau 14 ngày anh đi đủ lộ trình mà không giảm được tần suất hút. Vào Cài đặt → Hoàn tiền → ghi lý do (không bắt buộc) → gửi yêu cầu. Khang đọc trong 24h và chuyển tiền về MoMo/TK.',
       wikiUrl: '',
       wikiLabel: '',
     },
@@ -539,7 +539,7 @@ async function main() {
       icon: '✉️',
       sortOrder: 640,
       answer:
-        'Khang đọc tin nhắn của user trả phí mỗi ngày. Nhắn câu chuyện của bạn ở đây — Khang sẽ reply trong 24h cho khách Đồng hành, 48h cho Khởi động. Nếu khẩn cấp y tế (đau ngực, khạc máu, ý nghĩ tự hại) — gọi 115 hoặc hotline tâm lý 1800 1567 trước.',
+        'Khang đọc tin nhắn của user trả phí mỗi ngày. Nhắn câu chuyện của anh ở đây — Khang sẽ reply trong 24h cho khách Làm Chủ, 48h cho Kiểm Soát. Nếu khẩn cấp y tế (đau ngực, khạc máu, ý nghĩ tự hại) — gọi 115 hoặc hotline tâm lý 1800 1567 trước.',
       wikiUrl: '',
       wikiLabel: '',
     },
@@ -549,7 +549,7 @@ async function main() {
       icon: '🎙️',
       sortOrder: 650,
       answer:
-        'Voice Khang gửi vào những ngày khó nhất: Ngày 1 (chào mừng), Ngày 3 (đỉnh withdrawal), Ngày 7 (tuần đầu hoàn tất). Gói Đồng hành có thêm Ngày 14, 21, 30 + thư cuối. Vào mục "Voice Khang" trong dashboard để nghe lại bất cứ lúc nào.',
+        'Voice Khang gửi vào những ngày khó nhất: Ngày 1 (chào mừng), Ngày 3 (đỉnh withdrawal), Ngày 7 (kết Nhận Diện). Gói Làm Chủ có thêm Ngày 14, 22 (Q-Day), 30, 51 + thư cuối Day 52. Vào mục "Voice Khang" trong dashboard để nghe lại bất cứ lúc nào.',
       wikiUrl: '',
       wikiLabel: '',
     },

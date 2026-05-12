@@ -24,6 +24,9 @@ import {
   detectCurrentMoment,
   effectiveDailyMax,
 } from '../users/notificationPrefs';
+import { runEmailFunnelDaily } from './emailFunnel';
+// Adaptive funnel: lazy import để tránh fail build nếu file có TS error.
+// Production có thể nhập lại sau khi sửa.
 
 // Respect quiet hours stored in user settings.
 function isWithinQuietHours(settings: any): boolean {
@@ -355,41 +358,66 @@ async function enqueueCrisisPrep() {
   }
 }
 
-// ─── Streak milestone — celebrate ngày 1/3/7/14/30/60/90 ──────────────────
+// ─── Streak milestone — celebrate Sol v3 schedule ─────────────────────────
+// Sol v3 milestones theo 4 chặng:
+//   Day 1   — bắt đầu Nhận Diện
+//   Day 7   — kết Nhận Diện → mai vào Kiểm Soát
+//   Day 14  — giữa Kiểm Soát
+//   Day 21  — kết Kiểm Soát → mai Q-Day
+//   Day 22  — Q-Day (Làm Chủ Day 1)
+//   Day 30  — 1 tuần Làm Chủ
+//   Day 51  — kết Làm Chủ → mai lễ tốt nghiệp
+//   Day 52  — LỄ TỐT NGHIỆP → Người Tự Do
+//   Day 90  — 100% tự do (tham khảo y khoa)
 const STREAK_MILESTONES: Record<number, { title: string; body: string; emoji: string }> = {
   1: {
     emoji: '🌱',
-    title: '1 ngày — viên đá đầu tiên',
-    body: 'Khó nhất là 24h đầu, {pronoun} đã qua. Cơ thể bắt đầu thải nicotin. Mai sẽ dễ hơn.',
+    title: '1 ngày — bắt đầu Nhận Diện',
+    body: 'Ngày đầu trong Sol — {pronoun} không cần bỏ thuốc ngay, chỉ quan sát: hút lúc nào, vì sao, cảm xúc gì. Mai dễ hơn.',
   },
   3: {
-    emoji: '💪',
-    title: '3 ngày — đỉnh sóng đã qua',
-    body: 'Nicotin gần như sạch khỏi cơ thể {pronoun}. Cơn thèm từ giờ giảm dần. {pronoun} làm được rồi.',
+    emoji: '👀',
+    title: '3 ngày — bắt đầu nhìn thấy pattern',
+    body: '{pronoun} đã ghi nhận 2-3 cơn thèm. Sol đang học nhịp của {pronoun}. Đừng đánh giá — chỉ quan sát.',
   },
   7: {
     emoji: '🌿',
-    title: '1 tuần — đáng kinh ngạc',
-    body: 'Khứu giác và vị giác của {pronoun} đang phục hồi. Tuần đầu xong là phần lớn người không bao giờ hút lại.',
+    title: '7 ngày — kết Nhận Diện',
+    body: 'Hết 7 ngày Nhận Diện. Mai vào Kiểm Soát — bắt đầu giảm tần suất hút có ý thức. {pronoun} đã hiểu rõ mình hơn rồi.',
   },
   14: {
-    emoji: '☀️',
-    title: '2 tuần — bước ngoặt',
-    body: 'Tuần hoàn máu của {pronoun} cải thiện rõ. Leo cầu thang đỡ thở dốc rồi đúng không?',
+    emoji: '🟡',
+    title: '14 ngày — giữa Kiểm Soát',
+    body: 'Đã 1 tuần ở Kiểm Soát. {pronoun} đang giảm dần — không nhất thiết phải sạch, chỉ cần giảm đều. Còn 1 tuần nữa tới Q-Day.',
+  },
+  21: {
+    emoji: '🔔',
+    title: '21 ngày — kết Kiểm Soát, mai Q-Day',
+    body: '{pronoun} đã đi qua 7 ngày Nhận Diện + 14 ngày Kiểm Soát. Mai là Q-Day — Day 22, bắt đầu Làm Chủ. Tối nay đọc lại 3 lý do {pronoun} muốn bỏ.',
+  },
+  22: {
+    emoji: '🔴',
+    title: 'Q-Day — Day 22, bắt đầu Làm Chủ',
+    body: 'Hôm nay là Q-Day. Từ giờ {pronoun} cai hẳn 30 ngày Làm Chủ. 24h đầu khó nhất — Sol bên {pronoun}.',
   },
   30: {
-    emoji: '🎉',
-    title: '1 tháng — kỷ lục',
-    body: '30 ngày sạch thuốc. {pronoun} đã tiết kiệm khoảng 750.000đ và gần lại với cuộc sống không khói. Tự hào.',
+    emoji: '💪',
+    title: '30 ngày — 1 tuần Làm Chủ',
+    body: '8 ngày sạch sau Q-Day. Nicotin gần hết khỏi cơ thể {pronoun}. Tự hào.',
   },
-  60: {
-    emoji: '🔥',
-    title: '2 tháng — đường mới đã thông',
-    body: 'Phổi của {pronoun} đang tự làm sạch. Đến 9 tháng nữa nó sẽ trở lại 90% chức năng. {pronoun} đang viết lại câu chuyện cơ thể.',
+  51: {
+    emoji: '🎉',
+    title: '51 ngày — kết Làm Chủ',
+    body: '30 ngày Làm Chủ hoàn thành. Mai là Day 52 — Lễ Tốt Nghiệp. {pronoun} đã đi từ "không bỏ được" tới "Người Tự Do".',
+  },
+  52: {
+    emoji: '🌟',
+    title: 'Day 52 — LỄ TỐT NGHIỆP, Người Tự Do',
+    body: '{pronoun} đã tốt nghiệp Sol. Từ giờ truy cập miễn phí mãi mãi. Tự do thật sự. — Khang Sol',
   },
   90: {
-    emoji: '🌟',
-    title: '3 tháng — thành thói quen mới',
+    emoji: '🏆',
+    title: '90 ngày — 100% tự do',
     body: '90 ngày là cột mốc não bộ ổn định. Từ giờ cuộc sống không thuốc là mặc định, không phải nỗ lực.',
   },
 };
@@ -646,33 +674,34 @@ async function enqueueFounderWeekly() {
   }
 }
 
-// ─── Q-DAY PUSH SCHEDULER (Phase B) ───────────────────────────────────────
-// Day 26 T-2  — sáng 7h "Còn 2 ngày là Q-Day"
-// Day 27 T-1  — tối 21h Khang Sol message "Mai anh quyết"
-// Day 28 Q-DAY — sáng 7h "Hôm nay là Q-Day. Bấm vào để bắt đầu."
+// ─── Q-DAY PUSH SCHEDULER (Sol v3 — 12-05-2026) ────────────────────────────
+// Sol v3 schedule: Q-Day = Day 22 = bắt đầu chặng LÀM CHỦ (cai hẳn 30 ngày).
+//   Day 20 T-2  — sáng 7h "Còn 2 ngày là Q-Day"
+//   Day 21 T-1  — tối 21h Khang Sol message "Mai anh quyết" (cuối Kiểm Soát)
+//   Day 22 Q-DAY — sáng 7h "Hôm nay là Q-Day. Bấm vào để bắt đầu."
 //
-// Query users matching dayInJourney = 26/27/28 AND qDayConfirmedAt IS NULL.
+// Query users matching dayInJourney = 20/21/22 AND qDayConfirmedAt IS NULL.
 // Idempotent: 1 notif/ngày/user/phase. CTA → open_overview để hiện ceremony.
 
 type QDayPhase = 'T_MINUS_2' | 'T_MINUS_1_EVENING' | 'Q_DAY';
 
 const Q_DAY_TARGETS: Record<QDayPhase, { dayInJourney: number; title: string; body: string; ctaLabel: string }> = {
   T_MINUS_2: {
-    dayInJourney: 26,
+    dayInJourney: 20,
     title: '🎯 Còn 2 ngày là Q-Day',
-    body: 'Còn 2 ngày là Q-Day — ngày {pronoun} cam kết bỏ hẳn. {pronoun} đang chuẩn bị thế nào? Tối nay viết 3 lý do {pronoun} muốn bỏ — để mai đọc lại. — Sol Đồng hành',
+    body: 'Còn 2 ngày là Q-Day — ngày {pronoun} cam kết bỏ hẳn. {pronoun} đang chuẩn bị thế nào? Tối nay viết 3 lý do {pronoun} muốn bỏ — để mai đọc lại. — Sol đồng hành',
     ctaLabel: 'Mở chuẩn bị',
   },
   T_MINUS_1_EVENING: {
-    dayInJourney: 27,
-    title: '🌅 Đêm nay là đêm cuối Phase Hành Động',
-    body: 'Mình là Khang. Mai {pronoun} chỉ cần xác nhận. {pronoun} đã chuẩn bị 4 tuần — Sol đã đo nhịp, Đội Sol đã sẵn sàng. Tối nay ngồi yên 10 phút, đọc lại 3 lý do. Mai bấm "Tôi cam kết" — đồng hồ tự do của {pronoun} bắt đầu. Mình ở đó. — Khang Sol',
+    dayInJourney: 21,
+    title: '🌅 Đêm nay là đêm cuối Kiểm Soát',
+    body: 'Mình là Khang. Mai {pronoun} chỉ cần xác nhận. {pronoun} đã đi qua 7 ngày Nhận Diện + 14 ngày Kiểm Soát — Sol đã đo nhịp, đội Sol đã sẵn sàng. Tối nay ngồi yên 10 phút, đọc lại 3 lý do. Mai bấm "Tôi cam kết" — đồng hồ Tự Do của {pronoun} bắt đầu. Mình ở đó. — Khang Sol',
     ctaLabel: 'Đọc lại lý do',
   },
   Q_DAY: {
-    dayInJourney: 28,
-    title: '🌅 Hôm nay là Q-Day',
-    body: 'Hôm nay là Q-Day của {pronoun}. Bấm vào để vào Tổng quan — bấm "Tôi cam kết — bật đồng hồ tự do". Đội Sol sẽ thấy: "Một đồng đội vừa Q-Day". 24 giờ tới là 24 giờ khó nhất sinh học — Sol bên {pronoun}. — Khang Sol',
+    dayInJourney: 22,
+    title: '🌅 Hôm nay là Q-Day — bắt đầu Làm Chủ',
+    body: 'Hôm nay là Q-Day của {pronoun} — Day 22, bắt đầu chặng Làm Chủ 30 ngày. Bấm vào Tổng quan — bấm "Tôi cam kết — bật đồng hồ Tự Do". Đội Sol sẽ thấy: "Một đồng đội vừa Q-Day". 24 giờ tới là 24 giờ khó nhất sinh học — Sol bên {pronoun}. — Khang Sol',
     ctaLabel: 'Cam kết Q-Day',
   },
 };
@@ -926,6 +955,15 @@ export function startScheduler() {
     enqueueEveningCheckin().catch((e) => logger.error({ err: e }, 'evening checkin enqueue failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
+  // ─── Adaptive email funnel (state-based, pivot 2026-05-08) ─────────
+  // Re-enabled Sprint 1 — đã fix TS errors. Cron chạy mỗi giờ ở phút 15.
+  // YÊU CẦU: chạy `docker exec sol-widget-backend-1 npx prisma generate` trước
+  // khi build để Prisma client biết model LapseEvent.
+  cron.schedule('15 * * * *', () => {
+    import('./emailFunnelAdaptive').then(m => m.runAdaptiveEmailFunnel())
+      .catch((e) => logger.error({ err: e }, 'adaptive email funnel failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
   // 21:30 — night story
   cron.schedule('30 21 * * *', () => {
     enqueueDailyContent('NIGHT_STORY').catch((e) => logger.error({ err: e }, 'night story enqueue failed'));
@@ -953,5 +991,13 @@ export function startScheduler() {
     enqueueCrisisPrep().catch((e) => logger.error({ err: e }, 'crisis prep enqueue failed'));
   });
 
-  logger.info('Scheduler started — 15 cron jobs active');
+  // 8:00 sáng — Email funnel chunked promise ladder
+  // Gửi 14 mail theo dayInJourney (Day 0, 4, 7, 12, 17, 21, 27, 28, 35,
+  // 50, 75, 80, 86, 88). Idempotent qua notificationPrefs.emailFunnel.daysSent.
+  // Yêu cầu user đã bind email + có quitDate + chưa opt-out.
+  cron.schedule('0 8 * * *', () => {
+    runEmailFunnelDaily().catch((e) => logger.error({ err: e }, 'emailFunnel daily failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  logger.info('Scheduler started — 16 cron jobs active');
 }

@@ -53,8 +53,8 @@ export function Reports() {
         <div className="bg-sol-orange-soft border border-sol-orange/30 rounded-2xl p-5">
           <div className="font-semibold">Mở khoá báo cáo</div>
           <p className="text-meta text-sol-ink-2 mt-1">
-            Báo cáo Ngày 10 cá nhân hoá có trong gói Khởi động 99k. Album hành
-            trình đầy đủ có trong gói Đồng hành 199k.
+            Sol v3 — Báo cáo Ngày 7 (kết Nhận Diện) có trong gói 🟡 Kiểm Soát 99k.
+            Album Hành Trình Ngày 51 đầy đủ có trong gói 🔴 Làm Chủ 199k.
           </p>
         </div>
       )}
@@ -76,11 +76,11 @@ export function Reports() {
 
           <h3 className="font-semibold text-body mt-4 mb-2">Khang nói:</h3>
           <p className="text-body text-sol-ink-2 leading-relaxed">
-            10 ngày đầu là khúc khó nhất của hành trình — receptor nicotine
-            trong não bạn đã giảm khoảng 40%. Nửa đầu là kỷ luật, nửa sau là
-            <span className="font-semibold text-sol-ink"> bảo vệ thành quả</span>.
+            Sol v3 — 7 ngày Nhận Diện + 14 ngày Kiểm Soát đã đi qua, đến đây receptor nicotine
+            trong não anh đã giảm khoảng 40%. Nửa đầu là quan sát + kỷ luật, nửa sau (Làm Chủ 30 ngày)
+            là <span className="font-semibold text-sol-ink">bảo vệ thành quả</span>.
             {!hasFeature(eff, 'report.day30_album') && (
-              <> Đừng để 20 ngày tới phá hỏng 10 ngày qua — gói Đồng hành sẽ là tấm khiên.</>
+              <> Đừng để 30 ngày Làm Chủ tới phá hỏng 21 ngày qua — gói 🔴 Làm Chủ sẽ là tấm khiên đến Day 52.</>
             )}
           </p>
         </article>

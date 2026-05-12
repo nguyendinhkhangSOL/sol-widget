@@ -20,20 +20,13 @@ import { Reports } from './pages/Reports';
 import { VoiceInbox } from './pages/VoiceInbox';
 import { Science } from './pages/Science';
 import { QDayChecklist } from './pages/QDayChecklist';
-import { AdminLayout } from './pages/admin/AdminLayout';
-import { AdminHome } from './pages/admin/AdminHome';
-import { AdminAI } from './pages/admin/AdminAI';
-import { AdminCannedReplies } from './pages/admin/AdminCannedReplies';
-import { AdminUsers } from './pages/admin/AdminUsers';
-import { AdminUserDetail } from './pages/admin/AdminUserDetail';
-import { AdminRefunds } from './pages/admin/AdminRefunds';
-import { AdminVoice } from './pages/admin/AdminVoice';
-import { AdminCohorts } from './pages/admin/AdminCohorts';
-import { AdminAnalytics } from './pages/admin/AdminAnalytics';
-import { AdminWiki } from './pages/admin/AdminWiki';
-import { AdminQDayChecklist } from './pages/admin/AdminQDayChecklist';
-import { AdminContentAudit } from './pages/admin/AdminContentAudit';
-import { AdminContent } from './pages/admin/AdminContent';
+// Silent Companionship channels (pivot 2026-05-08)
+import { KhoangLang } from './pages/KhoangLang';
+import { NgheKhang } from './pages/NgheKhang';
+import { HoiKhang } from './pages/HoiKhang';
+
+// Admin đã tách sang admin.sol.vn (admin/ project riêng) — 2026-05-06
+// Bundle dashboard giảm ~35% sau khi remove admin imports.
 
 export function App() {
   const user = useStore((s) => s.user);
@@ -78,6 +71,27 @@ export function App() {
         bootstrap().catch(() => {});
         return;
       }
+    }
+
+    // 1.5. Cross-domain JWT transfer từ sol.vn (widget chat marketing)
+    // User chat với Sol Widget trên sol.vn → có anon JWT origin sol.vn.
+    // Click CTA sang bothuocla.sol.vn → page template forward
+    // ?sol_token=...&sol_device_uid=... qua URL.
+    // Bothuocla ingest JWT → giữ chat history cross-domain.
+    const transferToken = url.searchParams.get('sol_token');
+    const transferUid = url.searchParams.get('sol_device_uid');
+    if (transferToken && !isAuthed()) {
+      setToken(transferToken);
+      if (transferUid) {
+        try {
+          localStorage.setItem('sol_device_uid', transferUid);
+        } catch {}
+      }
+      url.searchParams.delete('sol_token');
+      url.searchParams.delete('sol_device_uid');
+      window.history.replaceState({}, '', url.toString());
+      if (!user) bootstrap().catch(() => {});
+      return;
     }
 
     // 2. Existing token?
@@ -135,24 +149,39 @@ export function App() {
         <Route path="/voice" element={<VoiceInbox />} />
         <Route path="/science" element={<Science />} />
         <Route path="/q-day-checklist" element={<QDayChecklist />} />
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminHome />} />
-          <Route path="users" element={<AdminUsers />} />
-          <Route path="users/:id" element={<AdminUserDetail />} />
-          <Route path="refunds" element={<AdminRefunds />} />
-          <Route path="voice" element={<AdminVoice />} />
-          <Route path="cohorts" element={<AdminCohorts />} />
-          <Route path="analytics" element={<AdminAnalytics />} />
-          <Route path="wiki" element={<AdminWiki />} />
-          <Route path="ai" element={<AdminAI />} />
-          <Route path="canned-replies" element={<AdminCannedReplies />} />
-          <Route path="q-day-checklist" element={<AdminQDayChecklist />} />
-          <Route path="content" element={<AdminContent />} />
-          <Route path="content-audit" element={<AdminContentAudit />} />
-        </Route>
+        {/* Silent Companionship — 3 tab chính */}
+        <Route path="/doc" element={<KhoangLang />} />
+        <Route path="/nghe" element={<NgheKhang />} />
+        <Route path="/hoi" element={<HoiKhang />} />
+        {/* /admin/* đã tách sang admin.sol.vn — redirect external */}
+        <Route path="/admin/*" element={<AdminRedirect />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
     </>
+  );
+}
+
+/**
+ * /admin/* legacy URL → redirect sang admin.sol.vn
+ * (admin code đã tách sang project riêng từ 2026-05-06)
+ */
+function AdminRedirect() {
+  useEffect(() => {
+    const target = 'https://admin.sol.vn';
+    // Dev: localhost không reachable, redirect localhost:5176
+    const dev = typeof window !== 'undefined' && window.location.hostname === 'localhost';
+    window.location.href = dev ? 'http://localhost:5176' : target;
+  }, []);
+  return (
+    <div className="min-h-screen flex items-center justify-center p-8 text-center">
+      <div>
+        <div className="text-3xl mb-3">🔐</div>
+        <p className="text-body text-sol-ink-2">Đang chuyển hướng tới admin console…</p>
+        <p className="text-meta text-sol-ink-3 mt-2">
+          Admin đã tách sang <code>admin.sol.vn</code>
+        </p>
+      </div>
+    </div>
   );
 }

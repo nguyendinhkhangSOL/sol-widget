@@ -1,5 +1,10 @@
 // dashboard/src/pages/Pricing.tsx
-// Trang upgrade dashboard. Hiển thị 3 cột FREE / KHOI_DONG / DONG_HANH.
+// Sol v3 (12-05-2026) — Trang upgrade dashboard hiển thị 4 chặng tiến hoá:
+//   🌱 Nhận Diện   (FREE 7d)        — quan sát mình hút lúc nào
+//   🟡 Kiểm Soát   (KHOI_DONG 14d)  — 99k, giảm tần suất
+//   🔴 Làm Chủ     (DONG_HANH 30d)  — 199k, Q-Day Day 22, cai hẳn 30 ngày
+//   🌟 Người Tự Do (ALUMNI forever) — miễn phí mãi, Day 52+
+// Tổng phí: 99k + 199k = 298.000đ = đúng 1 tháng tiền thuốc (10k/ngày).
 // User click "Chọn gói" → checkout mock → reload user.
 
 import { useEffect, useState } from 'react';
@@ -7,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { api, ApiError } from '../services/api';
 import { useStore } from '../state/store';
 import type { TierCatalog, TierCatalogItem, UserTier } from '../types';
-import { TIER_COLOR, TIER_LABEL, formatVnd } from '../lib/featureGates';
+import { TIER_COLOR, TIER_LABEL, TIER_EMOJI, formatVnd } from '../lib/featureGates';
 
 export function Pricing() {
   const user = useStore((s) => s.user);
@@ -47,22 +52,32 @@ export function Pricing() {
     return <div className="p-8 text-sol-ink-2">Đang tải bảng giá…</div>;
   }
 
+  // Sol v3: Tính tổng phí từ catalog (99k Kiểm Soát + 199k Làm Chủ = 298k)
+  const totalPaid =
+    (catalog as any).schedule?.totalPaidVnd ??
+    (catalog.tiers.find((t) => t.id === 'KHOI_DONG')?.priceVnd ?? 0) +
+    (catalog.tiers.find((t) => t.id === 'DONG_HANH')?.priceVnd ?? 0);
+
   return (
     <div className="p-6 lg:p-10 max-w-6xl mx-auto pb-24 lg:pb-12">
       <div className="text-center mb-8">
         <div className="text-meta uppercase tracking-wider text-sol-ink-3 font-semibold">
-          Gói đồng hành
+          Sol v3 — 4 chặng tiến hoá
         </div>
         <h1 className="text-2xl lg:text-3xl font-bold text-sol-ink mt-1">
-          Khang sẽ ở bên bạn
+          Khang đi cùng anh 51 ngày
         </h1>
-        <p className="text-body text-sol-ink-2 mt-2 max-w-xl mx-auto">
-          10 ngày đầu là khó nhất — cũng là lúc bạn cần đồng đội nhất.
-          Hoàn tiền nếu bỏ cuộc từ Ngày 15 (gói Đồng hành).
+        <p className="text-body text-sol-ink-2 mt-2 max-w-2xl mx-auto">
+          7 ngày Nhận Diện (miễn phí) → 14 ngày Kiểm Soát (99k) → 30 ngày Làm Chủ (199k, Q-Day Day 22) → Day 52 Lễ Tốt Nghiệp, Người Tự Do miễn phí mãi.
+          <br />
+          <strong className="text-sol-ink">
+            Tổng {formatVnd(totalPaid)} = đúng 1 tháng tiền thuốc anh đang đốt.
+          </strong>
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* Sol v3: 4 tiers nên dùng grid 2x2 trên mobile, 4 cột trên desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {catalog.tiers.map((t) => (
           <TierCard
             key={t.id}
@@ -118,8 +133,9 @@ function TierCard({
       }}
     >
       <div className="flex items-baseline justify-between">
-        <div className="font-bold text-body" style={{ color: color.bg }}>
-          {TIER_LABEL[t.id]}
+        <div className="font-bold text-body flex items-center gap-1.5" style={{ color: color.bg }}>
+          <span>{TIER_EMOJI[t.id]}</span>
+          <span>{TIER_LABEL[t.id]}</span>
         </div>
         {isCurrent && (
           <span
@@ -129,7 +145,19 @@ function TierCard({
             Đang dùng
           </span>
         )}
+        {(t as any).recommended && !isCurrent && (
+          <span
+            className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-sol-red-soft text-sol-red-ink"
+          >
+            Khuyến nghị
+          </span>
+        )}
       </div>
+
+      {/* Sol v3: tagline mô tả ngắn dưới tên chặng */}
+      {(t as any).tagline && (
+        <div className="text-meta text-sol-ink-3 mt-0.5">{(t as any).tagline}</div>
+      )}
 
       <div className="mt-3 mb-1">
         <span className="text-3xl font-black tabular-nums" style={{ color: color.bg }}>
@@ -137,6 +165,9 @@ function TierCard({
         </span>
         {t.durationDays !== null && t.durationDays > 0 && (
           <span className="text-meta text-sol-ink-3 ml-1">/ {t.durationDays} ngày</span>
+        )}
+        {(t as any).forever && (
+          <span className="text-meta text-sol-ink-3 ml-1">/ mãi mãi</span>
         )}
       </div>
 

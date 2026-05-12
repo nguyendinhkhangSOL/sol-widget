@@ -5,7 +5,7 @@ import { prisma } from '../db';
 import { authMiddleware, type AuthedRequest } from '../auth/middleware';
 import { computeDayNumber } from '../utils/dayNumber';
 import { computeTierState, effectiveTier, featuresFor } from '../tiers/featureGates';
-import { assertChecklistComplete } from '../tiers/qDayChecklist';
+// assertChecklistComplete removed — Q-Day flexible pivot 2026-05-08
 
 export const usersRouter = Router();
 usersRouter.use(authMiddleware);
@@ -85,21 +85,35 @@ usersRouter.patch('/me', async (req: AuthedRequest, res) => {
   const existing = await prisma.user.findUnique({ where: { id: req.userId! } });
   if (!existing) return res.status(404).json({ error: 'user_not_found' });
 
-  // Gate Q-Day: chỉ cho set quitDate mới khi đã tick xong checklist.
-  // Cho phép set quitDate = null (reset) hoặc giữ nguyên giá trị cũ mà không gate.
+  // ─── Q-DAY FLEXIBLE (pivot 2026-05-08) ─────────────────────────────
+  // User có quyền chọn Q-Day bất kỳ ngày nào, đổi bất kỳ lúc nào, reset
+  // bất kỳ lúc nào. KHÔNG gate bằng checklist nữa. Match tagline "Đi cùng
+  // Sol — Bỏ thuốc lá khi nào anh quyết".
+  //
+  // Validation duy nhất: ngày trong tương lai (không cho set Q-Day quá khứ
+  // ngẫu nhiên). Cho phép từ hôm nay → 6 tháng sau.
   const isSettingNewQDay =
     parsed.data.quitDate !== undefined &&
     parsed.data.quitDate !== null &&
     (!existing.quitDate || new Date(parsed.data.quitDate).getTime() !== existing.quitDate.getTime());
 
-  if (isSettingNewQDay) {
-    try {
-      await assertChecklistComplete(req.userId!, 'FREE');
-    } catch (err: any) {
-      if (err?.statusCode === 412 && err?.payload) {
-        return res.status(412).json(err.payload);
-      }
-      throw err;
+  if (isSettingNewQDay && parsed.data.quitDate) {
+    const newQDay = new Date(parsed.data.quitDate);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const sixMonthsFromNow = new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000);
+
+    if (newQDay < today) {
+      return res.status(400).json({
+        error: 'q_day_in_past',
+        message: 'Q-Day phải là ngày từ hôm nay trở đi.',
+      });
+    }
+    if (newQDay > sixMonthsFromNow) {
+      return res.status(400).json({
+        error: 'q_day_too_far',
+        message: 'Q-Day xa nhất 6 tháng từ hôm nay.',
+      });
     }
   }
 

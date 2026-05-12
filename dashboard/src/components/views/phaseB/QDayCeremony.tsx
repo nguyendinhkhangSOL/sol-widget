@@ -1,5 +1,5 @@
 // dashboard/src/components/views/phaseB/QDayCeremony.tsx
-// Q-Day Day 28 ceremony — DASHBOARD desktop variant.
+// Ngày bỏ Day 28 ceremony — DASHBOARD desktop variant.
 // Full screen overlay với layout rộng, font lớn cho desktop.
 
 import { useState } from 'react';
@@ -48,14 +48,14 @@ export function QDayCeremony({
           {/* Headline */}
           {!isPastQDay ? (
             <>
-              <h1 className="text-display font-bold mb-3 text-white" style={{ fontSize: '48px' }}>Hôm nay là Q-Day</h1>
+              <h1 className="text-display font-bold mb-3 text-white" style={{ fontSize: '48px' }}>Hôm nay là Ngày bỏ</h1>
               <p className="text-body-lg text-white opacity-90 mb-10">Ngày {pronouns} quyết tâm bỏ hẳn</p>
             </>
           ) : (
             <>
               <h1 className="text-display font-bold mb-3 text-white">Sol vẫn đợi {pronouns}</h1>
               <p className="text-body-lg text-white opacity-90 mb-10">
-                Q-Day không phải deadline — đây là cam kết với chính {pronouns}.
+                Ngày bỏ không phải deadline — đây là cam kết với chính {pronouns}.
                 Khi nào sẵn sàng, Sol bên cạnh.
               </p>
             </>
@@ -106,7 +106,7 @@ export function QDayCeremony({
           <p className="text-meta text-white/60 mt-8 italic leading-relaxed">
             Khi {pronouns} bấm cam kết, Sol bắt đầu đếm thời gian không hút.
             <br />
-            Đội Sol sẽ được thông báo: "{pronouns === 'bạn' ? 'Một đồng đội' : 'A' + pronouns.slice(1)} vừa Q-Day."
+            Đội Sol sẽ được thông báo: "{pronouns === 'bạn' ? 'Một đồng đội' : 'A' + pronouns.slice(1)} vừa Ngày bỏ."
           </p>
         </div>
       </div>

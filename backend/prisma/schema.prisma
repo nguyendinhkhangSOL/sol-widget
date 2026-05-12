@@ -14,19 +14,45 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// ─────────────────────────── PRICING TIERS ────────────────────────────
+// ─────────────────────────── PRICING TIERS (Sol v3 — 12-05-2026) ──────
 //
-// SOL có 4 mức gói (theo thoả thuận với founder Khang):
+// Sol v3: 4 chặng tiến hoá, total 51 ngày + Day 52 lễ tốt nghiệp.
+// Enum values GIỮ NGUYÊN (FREE/KHOI_DONG/DONG_HANH/ALUMNI) để không break
+// existing user data. Display labels v3 đã update trong code.
 //
-//   FREE        — quan sát, 5 tin/ngày, sổ tay mẫu T1, 3 bài tập, 1 voice
-//                 chào mừng, đọc cộng đồng. Mục tiêu: tin tưởng + đặt Q-Day.
-//   KHOI_DONG   — 99k / 10 ngày đầu sau Q-Day. Chat không giới hạn, sổ tay
-//                 T1+T2, 12 bài tập, 3 voice (D1/3/7), báo cáo Ngày 10.
-//                 KHÔNG hoàn tiền (gói nhỏ, ngắn).
-//   DONG_HANH   — 199k / 30 ngày + 30 ngày bảo trì = 60 ngày. Đầy đủ tính
-//                 năng. Hoàn tiền theo tỷ lệ ngày còn lại từ Ngày 15.
-//   ALUMNI      — sau khi hoàn thành 30+30 ngày. Vĩnh viễn. Chỉ giữ asset
-//                 (album, huy hiệu, đọc cộng đồng).
+//   FREE       → "Nhận Diện" — 7 ngày miễn phí (Day 1-7)
+//                  Quan sát mình hút lúc nào, vì sao. Không cần SĐT.
+//                  Chat AI 30 tin/ngày, 14 wiki body timeline, voice
+//                  giới thiệu Day 1 + Day 7, báo cáo Day 7.
+//                  Không cam kết, không bám.
+//
+//   KHOI_DONG  → "Kiểm Soát" — 99.000đ trả 1 lần, 14 ngày (Day 8-21)
+//                  Giảm tần suất hút có ý thức. Kỹ thuật thở 4-2-6,
+//                  9 công cụ phân tâm, voice Khang Khẩn cấp Day 3/7/14/Lapse,
+//                  Sổ Hành Trình Pre-Q + T1 (12 bài), Plan B 5 trigger,
+//                  báo cáo Day 14 + Day 21.
+//                  Refund conditional ≥80% metric (không hỏi nếu đủ).
+//
+//   DONG_HANH  → "Làm Chủ" — 199.000đ trả 1 lần, 30 ngày (Day 22-51)
+//                  Q-Day Day 22 — cai hẳn 30 ngày. Crisis Mode 24/7,
+//                  AI chat unlimited, 6 voice Khang milestone (D0/D3/D7/D14/D21/D30),
+//                  Sổ Hành Trình T2-T4 + Sau 30 ngày (26 bài), báo cáo Day 30 + 51,
+//                  Body milestone tracking.
+//                  Day 52 LỄ TỐT NGHIỆP: nhận Cuốn Nhật Ký Hành Trình PDF
+//                  50-80 trang (kỷ vật vĩnh viễn).
+//                  Refund Day 15+ pro-rated: (30-daysUsed)/30 × 199k.
+//
+//   ALUMNI     → "Người Tự Do" — forever miễn phí (Day 52+)
+//                  KHÔNG phải gói Sol bán — là trạng thái khách đạt được.
+//                  Tài khoản app vẫn login, đọc lại nhật ký, Đại Sảnh Sol,
+//                  Đại Sứ Sol referral (commission 25%, optional).
+//                  Sol KHÔNG bám, KHÔNG thu thêm.
+//
+// Schedule total: 7 + 14 + 30 = 51 ngày Sol-active + Day 52 ceremonial
+// Total paid: 99k + 199k = 298.000đ = đúng 1 tháng tiền thuốc trung bình
+//             (10.000đ/ngày × 30 = 300.000đ)
+//
+// Detail: docs/SOL_BLUEPRINT_FINAL_v3.docx + landing v3 LIVE on sol.vn
 enum UserTier {
   FREE
   KHOI_DONG
@@ -138,14 +164,26 @@ model User {
   // ── PRICING TIER (xem enum UserTier) ────────────────────────────────
   tier              UserTier @default(FREE)
   // Khi user mua gói (lần upgrade gần nhất). NULL nếu chưa mua bao giờ.
+  // FREE tier: tierStartedAt = registered_at; KHOI_DONG/DONG_HANH: từ
+  // ngày charge thành công 99k/199k.
   tierStartedAt     DateTime?
-  // Hết hạn gói chính (KHOI_DONG: +10 ngày, DONG_HANH: +30 ngày). Sau
-  // ngày này, nếu DONG_HANH thì rơi vào maintenance window.
+  // Hết hạn gói chính theo Sol v3:
+  //   FREE      → tierStartedAt + 7 ngày  (Day 1-7 NHẬN DIỆN)
+  //   KHOI_DONG → tierStartedAt + 14 ngày (Day 8-21 KIỂM SOÁT)
+  //   DONG_HANH → tierStartedAt + 30 ngày (Day 22-51 LÀM CHỦ, Q-Day = Day 22)
+  // Khi tierExpiresAt < NOW → auto-downgrade về ALUMNI (NGƯỜI TỰ DO).
+  // Schedule total: 7+14+30 = 51 ngày Sol-active + Day 52 lễ tốt nghiệp.
   tierExpiresAt     DateTime?
-  // Chỉ áp dụng cho DONG_HANH: 30 ngày bảo trì sau tierExpiresAt
-  // (tổng 60 ngày trải nghiệm). Khi qua mốc này → ALUMNI.
+  // DEPRECATED (Sol v3): maintenance window concept không còn sử dụng.
+  // Sol v3 không có period bảo trì sau DONG_HANH — Day 52+ → NGƯỜI TỰ DO
+  // tự động miễn phí mãi. Column giữ trong schema để không break existing
+  // data, nhưng logic mới KHÔNG check field này.
   maintenanceUntil  DateTime?
-  // Tracker daily quota cho FREE tier (5 tin/ngày).
+  // Tracker daily quota:
+  //   FREE      → 30 tin/ngày (Sol v3 đã nâng từ 5 lên 30 để khách thử kỹ)
+  //   KHOI_DONG → 30 tin/ngày
+  //   DONG_HANH → unlimited (chat AI không giới hạn)
+  //   ALUMNI    → 5 tin/ngày (chỉ support, không content mới)
   dailyMessageCount Int      @default(0)
   dailyMessageDate  DateTime? @db.Date
 
@@ -174,6 +212,22 @@ model User {
   payments      PaymentLog[]
   refunds       RefundRequest[]
   voiceDeliveries VoiceDelivery[]
+
+  // ── Silent Companionship (pivot 2026-05-08) ─────────────────────────
+  confessions          Confession[]            @relation("ConfessionAuthor")
+  confessionReactions  ConfessionReaction[]    @relation("ConfessionReactor")
+  confessionReads      ConfessionRead[]        @relation("ConfessionReader")
+  khangQuestions       KhangQuestion[]         @relation("KhangQuestionAuthor")
+  khangQuestionUpvotes KhangQuestionUpvote[]   @relation("KhangQuestionUpvoter")
+  khangVoiceListens    KhangVoiceListen[]      @relation("KhangVoiceListener")
+  khangVoiceReactions  KhangVoiceReaction[]    @relation("KhangVoiceReactor")
+  crisisTimerLogs      CrisisTimerLog[]        @relation("CrisisTimerUser")
+  lapseEvents          LapseEvent[]            @relation("LapseUser")
+  // ── ZALO OA (Sol v3 12-05-2026) ──────────────────────────────────────
+  zaloOAUser           ZaloOAUser?             @relation("ZaloOAUserUser")
+  znsLogs              ZNSLog[]                @relation("ZNSLogUser")
+  messagingPolicies    MessagingPolicy[]       @relation("MessagingPolicyUser")
+  messagingProfile     UserMessagingProfile?   @relation("UserMessagingProfileUser")
 
   @@index([phone])
   @@index([deviceUid])
@@ -782,4 +836,424 @@ model Cohort {
 
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+}
+
+// ────────────────────────────────────────────────────────────────────────
+// SILENT COMPANIONSHIP (pivot 2026-05-08)
+// 4 channels mới — drop community truyền thống vì đàn ông VN 45+ ngại lộ
+// mặt. Reference: docs/SILENT_COMPANIONSHIP_2026-05-08.md
+// ────────────────────────────────────────────────────────────────────────
+
+// ─── KHOẢNG LẶNG — anonymous confessions feed ───────────────────────────
+// User submit confession ngắn ANONYMOUS (không avatar, không tên).
+// User khác chỉ react 👍 / 🙏 / "Tôi cũng vậy" — KHÔNG comment chéo.
+// Sol/admin curate (xóa toxic, không edit nội dung).
+// Đây là "radio thư" — khác hoàn toàn social community.
+model Confession {
+  id          String   @id @default(cuid())
+  // User submitter (không hiển thị public, chỉ admin thấy)
+  authorId    String
+  author      User     @relation("ConfessionAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  // Content text (50-300 chữ recommend)
+  content     String   @db.Text
+  // Status: PENDING (chờ duyệt) / PUBLISHED / REJECTED (toxic)
+  status      ConfessionStatus @default(PUBLISHED)
+  // Optional: Khang/admin pin lên top
+  pinnedAt    DateTime?
+  // Counters cached (update khi react/read)
+  readCount   Int      @default(0)
+  reactCount  Int      @default(0)
+  // Tag tự động bằng AI (optional): "lapse" | "milestone" | "trigger" | "family"
+  autoTag     String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  reactions   ConfessionReaction[]
+  reads       ConfessionRead[]
+
+  @@index([status, createdAt])
+  @@index([authorId])
+}
+
+enum ConfessionStatus {
+  PENDING
+  PUBLISHED
+  REJECTED
+}
+
+model ConfessionReaction {
+  id           String   @id @default(cuid())
+  confessionId String
+  confession   Confession @relation(fields: [confessionId], references: [id], onDelete: Cascade)
+  userId       String
+  user         User     @relation("ConfessionReactor", fields: [userId], references: [id], onDelete: Cascade)
+  // Type: 1 (👍) | 2 (🙏) | 3 ("Tôi cũng vậy") | 4 ("Đang cố") | 5 ("Nghe lúc 2h sáng")
+  reactionType Int
+
+  createdAt    DateTime @default(now())
+
+  @@unique([confessionId, userId, reactionType])
+  @@index([userId])
+}
+
+model ConfessionRead {
+  id           String   @id @default(cuid())
+  confessionId String
+  confession   Confession @relation(fields: [confessionId], references: [id], onDelete: Cascade)
+  userId       String
+  user         User     @relation("ConfessionReader", fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt    DateTime @default(now())
+
+  @@unique([confessionId, userId])
+}
+
+// ─── HỎI KHANG — anonymous mailbox + voice reply broadcast ──────────────
+// User submit câu hỏi ANONYMOUS → Khang curate 1-2 lần/tuần → voice reply
+// public broadcast cho tất cả nghe. Anonymous IN + Public OUT = đặc trưng VN 45+.
+model KhangQuestion {
+  id          String   @id @default(cuid())
+  // User submitter
+  authorId    String
+  author      User     @relation("KhangQuestionAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  // Question text
+  content     String   @db.Text
+  // Status: PENDING / SELECTED / ANSWERED / ARCHIVED
+  status      KhangQuestionStatus @default(PENDING)
+  // Khi nào Khang select trả lời
+  selectedAt  DateTime?
+  // Voice reply ID (sau khi Khang answer)
+  voiceReplyId String?
+  voiceReply  KhangVoice? @relation(fields: [voiceReplyId], references: [id])
+  // Vote 👍 từ user khác (signal cho Khang biết câu nào nên ưu tiên)
+  upvoteCount Int      @default(0)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  upvotes     KhangQuestionUpvote[]
+
+  @@index([status, createdAt])
+  @@index([authorId])
+}
+
+enum KhangQuestionStatus {
+  PENDING    // chờ Khang đọc
+  SELECTED   // Khang đã pick để trả lời
+  ANSWERED   // có voice reply
+  ARCHIVED   // không trả lời (có thể duplicate)
+}
+
+model KhangQuestionUpvote {
+  id          String   @id @default(cuid())
+  questionId  String
+  question    KhangQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User     @relation("KhangQuestionUpvoter", fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+
+  @@unique([questionId, userId])
+}
+
+// ─── KHANG VOICE LIBRARY ─────────────────────────────────────────────────
+// Voice clips Khang post — broadcast cho tất cả user nghe.
+// Filter by chủ đề: "Q-Day" | "lapse" | "đi nhậu" | "vợ con" | "đêm khuya"
+model KhangVoice {
+  id          String   @id @default(cuid())
+  // Title hiển thị
+  title       String
+  // Mô tả ngắn (preview text)
+  description String?  @db.Text
+  // URL audio file (MP3) — placeholder OK ban đầu
+  audioUrl    String
+  // Duration giây (cho UI hiển thị "3 phút", "8 phút")
+  durationSec Int
+  // Chủ đề: "Q-Day" | "lapse" | "đi nhậu" | "vợ con" | "đêm khuya" | "milestone" | "psychoeducation" | "general"
+  topic       String
+  // Tier tối thiểu để nghe: FREE (Sol Khám Phá), KHOI_DONG (Sol Start), DONG_HANH (Sol Control)
+  minTier     UserTier @default(FREE)
+  // Trigger auto-play: "onboard" (Day 0) | "lapse" (after lapse log) | "qday" (Q-Day morning) | NULL (manual)
+  autoPlayTrigger String?
+  // Nếu là voice reply Hỏi Khang → ref tới KhangQuestion
+  isQuestionReply Boolean @default(false)
+  // Pin lên top (Khang feature voice quan trọng)
+  pinnedAt    DateTime?
+  // Counters cached
+  listenCount Int      @default(0)
+  reactCount  Int      @default(0)
+  // Status: DRAFT (Khang đang upload) | PUBLISHED | ARCHIVED
+  status      KhangVoiceStatus @default(PUBLISHED)
+  // Khang notes nội bộ (không show user)
+  internalNotes String? @db.Text
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  questionReplies KhangQuestion[]
+  listens     KhangVoiceListen[]
+  reactions   KhangVoiceReaction[]
+
+  @@index([status, topic, createdAt])
+  @@index([autoPlayTrigger])
+}
+
+enum KhangVoiceStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model KhangVoiceListen {
+  id          String   @id @default(cuid())
+  voiceId     String
+  voice       KhangVoice @relation(fields: [voiceId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User     @relation("KhangVoiceListener", fields: [userId], references: [id], onDelete: Cascade)
+  // % completed (0-100): 100 = nghe hết, 50 = bỏ giữa
+  completionPct Int    @default(0)
+  // Context: "auto" (auto-play) | "manual" (user click) | "push" (từ notification)
+  context     String   @default("manual")
+
+  createdAt   DateTime @default(now())
+
+  @@index([userId, voiceId])
+  @@index([voiceId, createdAt])
+}
+
+model KhangVoiceReaction {
+  id          String   @id @default(cuid())
+  voiceId     String
+  voice       KhangVoice @relation(fields: [voiceId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User     @relation("KhangVoiceReactor", fields: [userId], references: [id], onDelete: Cascade)
+  // 1 (👍) | 2 (🙏)
+  reactionType Int
+
+  createdAt   DateTime @default(now())
+
+  @@unique([voiceId, userId])
+}
+
+// ─── CRISIS TIMER LOG ────────────────────────────────────────────────────
+// User bấm "Tôi đang thèm" → app start 90s timer + voice Khang play.
+// Sau timer: anh hút hay không? → outcome data quý cho Sol.
+model CrisisTimerLog {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation("CrisisTimerUser", fields: [userId], references: [id], onDelete: Cascade)
+  // Thời điểm crave bắt đầu (khi user click button)
+  startedAt     DateTime @default(now())
+  // Thời điểm user mark "đã qua" hoặc "vẫn hút"
+  endedAt       DateTime?
+  // Thời gian delay được (giây). Nếu không hút sau 90s → 90+. Có thể >> 90 nếu user delay lâu.
+  delayDurationSec Int?
+  // Outcome: "delayed_no_smoke" (vượt qua) | "smoked_after" (sau timer vẫn hút) | "abandoned" (không mark gì)
+  outcome       String?
+  // Trigger context user khai (optional): "stress" | "social" | "habit" | "boredom" | "after_meal"
+  triggerContext String?
+  // Notes user viết sau timer (optional)
+  notes         String?
+
+  @@index([userId, startedAt])
+  @@index([outcome])
+}
+
+// ─── ANONYMOUS STATS CACHE ───────────────────────────────────────────────
+// Aggregated stats cho "Tuần này trong Sol" widget. Update bởi cron 1h/lần.
+// User KHÔNG thấy ai là ai — chỉ thấy số liệu tổng.
+model AnonymousStatsCache {
+  id              String   @id @default(cuid())
+  // Period: "this_week" | "this_month" | "today"
+  period          String
+  // Stats aggregated
+  totalActiveUsers      Int @default(0)
+  lateNightOpens        Int @default(0)  // mở sau 22h-2h
+  lapseLogs             Int @default(0)  // log "đã hút" trong period
+  recoveryWithin24h     Int @default(0)  // quay lại trong 24h sau lapse
+  delayOver10min        Int @default(0)  // crisis timer >10 phút
+  voiceListens          Int @default(0)  // total voice listened
+  topVoiceId            String?           // voice nghe nhiều nhất
+  topVoiceListenCount   Int @default(0)
+  controlScoreAvg       Float @default(0) // average Control Score
+  qDaysSet              Int @default(0)   // user đặt Q-Day trong period
+  thirtyDayCleanCount   Int @default(0)   // user đạt 30 ngày sạch
+
+  computedAt      DateTime @default(now())
+
+  @@unique([period])
+}
+
+// ─── LAPSE-FRIENDLY LOG ──────────────────────────────────────────────────
+// Khi user log "đã hút" — KHÔNG reset streak. Chỉ ghi nhận để Sol learn.
+// Khác CigaretteLog (daily count) — đây là LAPSE event sau Q-Day.
+model LapseEvent {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation("LapseUser", fields: [userId], references: [id], onDelete: Cascade)
+  // Thời điểm anh hút lại
+  lapsedAt      DateTime @default(now())
+  // Số điếu trong lapse (1, 2, 3, 5, 7...)
+  cigaretteCount Int     @default(1)
+  // Context: "social_drinking" | "stress" | "funeral" | "wedding" | "alone_late_night" | "other"
+  context       String?
+  // Anh viết gì khi log lapse (optional, sau khi voice "không phải fail" play)
+  reflection    String?  @db.Text
+  // Khi nào anh quay lại Sol (mở app) sau lapse
+  recoveredAt   DateTime?
+  // Voice Khang lapse-friendly đã play chưa
+  voicePlayed   Boolean  @default(false)
+
+  createdAt     DateTime @default(now())
+
+  @@index([userId, lapsedAt])
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// ZALO OA — Sol v3 (12-05-2026)
+// ═══════════════════════════════════════════════════════════════════════
+// 5 models cho Zalo OA integration:
+// - ZaloOAUser: follower OA, có thể link với User Sol
+// - ZNSLog: log mỗi tin ZNS đã gửi
+// - ZaloTemplate: 17 template Sol quản lý qua Admin
+// - MessagingPolicy: 3 layers Global/Cohort/User policy
+// - UserMessagingProfile: per-user behavior + cohort
+
+model ZaloOAUser {
+  id           String    @id @default(cuid())
+  // Link với User Sol nếu đã merge (qua Zalo Login OAuth). NULL nếu chỉ follow OA chưa đăng ký Sol.
+  userId       String?   @unique
+  user         User?     @relation("ZaloOAUserUser", fields: [userId], references: [id], onDelete: SetNull)
+  // ID user trên Zalo (zaloUserId của OA scope, KHÁC với zaloId của Login scope)
+  zaloUserId   String    @unique
+  // OA Sol = 3049397094672064963
+  oaId         String
+  displayName  String?
+  avatarUrl    String?
+  followedAt   DateTime  @default(now())
+  blockedAt    DateTime?
+  optedOut     Boolean   @default(false)
+  lastChatAt   DateTime?
+  totalMsgIn   Int       @default(0)  // tin user gửi vào OA
+  totalMsgOut  Int       @default(0)  // tin Sol reply
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([oaId])
+  @@index([lastChatAt])
+}
+
+model ZNSLog {
+  id           String    @id @default(cuid())
+  userId       String
+  user         User      @relation("ZNSLogUser", fields: [userId], references: [id], onDelete: Cascade)
+  templateCode String    // SOL_WELCOME, SOL_Q_DAY_MORNING, ...
+  zaloTemplateId String? // ID Zalo của template (sau khi approved)
+  params       Json      // {name, day, streak, ...}
+  costVnd      Int       @default(0)  // chi phí ZNS thực tế (Zalo trả về sau)
+  // Status: SENT / DELIVERED / OPENED / CLICKED / FAILED / EXPIRED
+  status       String    @default("SENT")
+  sentAt       DateTime  @default(now())
+  deliveredAt  DateTime?
+  openedAt     DateTime?
+  clickedAt    DateTime?
+  errorCode    String?
+  errorMessage String?
+  // A/B test variant nếu có (vd "A" hoặc "B")
+  experimentId String?
+  variant      String?
+
+  @@index([userId, sentAt])
+  @@index([templateCode])
+  @@index([status])
+}
+
+model ZaloTemplate {
+  id              String    @id @default(cuid())
+  // Code dùng trong backend (vd SOL_WELCOME, SOL_Q_DAY_MORNING). UNIQUE.
+  code            String    @unique
+  // Tên hiển thị trong Zalo Manager cho Khang dễ tra (vd "Sol — Chào mừng Day 1")
+  zaloManagerName String
+  // ID Zalo trả về sau khi submit approved. NULL nếu chưa submit.
+  zaloTemplateId  String?   @unique
+  // Tag: 1 (Transactional), 2 (Customer Care), 3 (Promotion). Sol dùng Tag 2.
+  tag             String    @default("2")
+  // Tiêu đề tin (max ~65 ký tự)
+  title           String
+  // Body tin (max ~330 ký tự cho body, total title+body 400)
+  body            String    @db.Text
+  // CTA buttons JSON: [{label, type: 'OPEN_URL'|'MAKE_PHONE_CALL'|'OPEN_ZALO_CHAT', value}]
+  ctaButtons      Json      @default("[]")
+  // Tham số động dùng trong template: ["name", "day", "streak"]
+  params          String[]  @default([])
+  // Số ký tự total (tính tự động)
+  charCount       Int       @default(0)
+  // Status: DRAFT / PENDING / APPROVED / REJECTED / ARCHIVED
+  status          String    @default("DRAFT")
+  rejectReason    String?
+  // Dual-version pair: nếu là voice template thì link với text fallback template
+  voiceTemplateCode String? // (nếu template này là TEXT fallback)
+  textFallbackCode  String? // (nếu template này là VOICE primary)
+  // Audit
+  createdBy       String?   // admin userId
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  submittedAt     DateTime?
+  approvedAt      DateTime?
+  archivedAt      DateTime?
+
+  @@index([status])
+  @@index([tag])
+}
+
+model MessagingPolicy {
+  id            String    @id @default(cuid())
+  // Scope: GLOBAL (default cho tất cả) / COHORT (theo nhóm) / USER (per-user override)
+  scope         String    @default("GLOBAL")
+  // Nếu scope=COHORT: LIGHT / MODERATE / HEAVY
+  cohortKey     String?
+  // Nếu scope=USER: link tới User
+  userId        String?
+  user          User?     @relation("MessagingPolicyUser", fields: [userId], references: [id], onDelete: Cascade)
+  // Intensity preset: LIGHT / MEDIUM / HEAVY / CUSTOM
+  intensity     String    @default("MEDIUM")
+  // Per-template config JSON. Vd:
+  // { "SOL_DAILY_CHECKIN": { enabled: true, sendHour: 20, dayRange: [1,52], maxPerDay: 1 } }
+  config        Json      @default("{}")
+  enabled       Boolean   @default(true)
+  createdBy     String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@unique([scope, cohortKey, userId])
+  @@index([scope])
+}
+
+model UserMessagingProfile {
+  userId          String    @id
+  user            User      @relation("UserMessagingProfileUser", fields: [userId], references: [id], onDelete: Cascade)
+  // Auto-assigned từ FTND score onboarding: LIGHT (0-3) / MODERATE (4-6) / HEAVY (7-10)
+  cohortKey       String    @default("MODERATE")
+  ftndScore       Int?
+  // Boost mode: push extra 14 ngày
+  boostMode       Boolean   @default(false)
+  boostUntil      DateTime?
+  // Mute mode: pause toàn bộ ZNS N ngày
+  muteUntil       DateTime?
+  // Crisis threshold (1-10) — override cohort default
+  crisisThreshold Int?
+  // Engagement metric (auto-updated)
+  engagementScore Float     @default(0)
+  totalSent       Int       @default(0)
+  totalOpened     Int       @default(0)
+  totalClicked    Int       @default(0)
+  totalBlocked    Int       @default(0)
+  lastInteractAt  DateTime?
+  // Notes admin (Khang ghi chú)
+  notes           String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([cohortKey])
 }

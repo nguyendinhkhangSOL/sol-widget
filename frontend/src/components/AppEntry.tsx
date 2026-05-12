@@ -13,14 +13,14 @@ import { TIER_COLOR, TIER_LABEL } from '../lib/featureGates';
 import type { UserTier } from '../types';
 
 interface AppEntryProps {
-  /** URL dashboard, default lấy từ env VITE_DASHBOARD_URL hoặc localhost:5174 */
+  /** URL dashboard, default lấy từ env VITE_DASHBOARD_URL hoặc localhost:5175 (Vite local) */
   dashboardUrl?: string;
   /** URL marketing site, default sol.vn */
   marketingUrl?: string;
 }
 
 export function AppEntry({
-  dashboardUrl = import.meta.env?.VITE_DASHBOARD_URL ?? 'http://localhost:5174',
+  dashboardUrl = import.meta.env?.VITE_DASHBOARD_URL ?? 'http://localhost:5175',
   marketingUrl = import.meta.env?.VITE_MARKETING_URL ?? 'https://sol.vn',
 }: AppEntryProps) {
   const token = useStore((s) => s.token);

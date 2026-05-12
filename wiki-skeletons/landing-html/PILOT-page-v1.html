@@ -1,0 +1,435 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  PILOT PAGE — sol.vn/pilot
+  Vai trò: Recruit 30 anh em pilot 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) (Q2/2026)
+  KPI: Form submission ≥30 anh em đăng ký
+
+  Cấu trúc:
+    1. Hero — "Tuyển 30 anh em pilot 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp)"
+    2. Pilot nhận được gì (4 benefits)
+    3. Anh em làm gì đổi lại (4 commitments)
+    4. Profile anh em pilot Sol tìm
+    5. Form đăng ký (Google Form embed placeholder)
+    6. FAQ pilot
+    7. Final CTA
+
+  Backend form options:
+    - Google Form (free, easiest)
+    - Tally.so / Typeform (đẹp hơn)
+    - Custom backend (Khang code sau)
+
+  Publish: slug = pilot, Template Sol Default
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-pilot { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; }
+.sol-pilot h1, .sol-pilot h2, .sol-pilot h3 { margin: 0; }
+
+.sol-pilot-benefit-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+}
+.sol-pilot-profile-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+
+.sol-pilot-form {
+  background: white; border: 2px solid #B25C2C; border-radius: 14px;
+  padding: 32px 28px; max-width: 560px; margin: 0 auto;
+  box-shadow: 0 6px 24px rgba(178,92,44,0.12);
+}
+.sol-pilot-form input,
+.sol-pilot-form select,
+.sol-pilot-form textarea {
+  width: 100%; padding: 12px 14px; font-size: 15px;
+  border: 1px solid #E8DFC8; border-radius: 8px;
+  margin-bottom: 14px; font-family: inherit;
+  box-sizing: border-box;
+}
+.sol-pilot-form input:focus,
+.sol-pilot-form select:focus,
+.sol-pilot-form textarea:focus {
+  outline: none; border-color: #B25C2C;
+}
+.sol-pilot-form label {
+  display: block; font-size: 14px; font-weight: 600;
+  color: #5C3A1E; margin-bottom: 6px;
+}
+.sol-pilot-form button {
+  width: 100%; padding: 14px; font-size: 16px; font-weight: 700;
+  background: #B25C2C; color: white; border: none;
+  border-radius: 999px; cursor: pointer; font-family: inherit;
+  transition: background 0.2s;
+}
+.sol-pilot-form button:hover { background: #5C3A1E; }
+
+@media (max-width: 720px) {
+  .sol-pilot-benefit-grid,
+  .sol-pilot-profile-grid { grid-template-columns: 1fr !important; }
+  .sol-pilot section { padding-left: 16px !important; padding-right: 16px !important; }
+}
+</style>
+
+<div class="sol-pilot">
+
+<!-- HERO -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 72px 24px 48px; background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; text-align: center;">
+
+  <div style="display: inline-block; padding: 6px 16px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; margin-bottom: 20px;">
+    <span style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">PILOT Q2/2026 · TUYỂN 30 NGƯỜI</span>
+  </div>
+
+  <h1 style="font-size: 38px; color: white; line-height: 1.2; margin: 0 0 18px; font-weight: 700; max-width: 760px; margin-left: auto; margin-right: auto;">
+    Đi cùng em trong 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) đầu tiên của Sol
+  </h1>
+
+  <p style="font-size: 18px; line-height: 1.65; opacity: 0.96; max-width: 640px; margin: 0 auto 20px;">
+    Em tuyển <strong>30 anh em Việt 45+</strong> đi cùng em từ Day 0 đến Day 52. Anh nhận MIỄN PHÍ toàn bộ Sol KIỂM SOÁT + 1 tháng Sol LÀM CHỦ (giá thật 178k). Đổi lại: anh giúp em có data thật trước khi mở rộng.
+  </p>
+
+  <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px;">
+    <a href="#form" style="display: inline-block; background: white; color: #5C3A1E; padding: 16px 36px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.18);">
+      📝 Đăng ký pilot ngay →
+    </a>
+  </div>
+
+  <p style="margin-top: 14px; font-size: 13px; opacity: 0.85;">
+    Còn lại: ~ chỗ · Đóng đăng ký khi đủ 30 anh em
+  </p>
+</section>
+
+
+<!-- BENEFITS -->
+<section style="padding: 56px 24px; max-width: 1000px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 28px; margin: 0 0 12px;">
+    Anh nhận được gì khi pilot
+  </h2>
+  <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.6; margin: 0 0 32px;">
+    Đây là 4 thứ pilot có mà khách thường không có:
+  </p>
+
+  <div class="sol-pilot-benefit-grid">
+
+    <div style="background: white; padding: 26px 24px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 36px; margin-bottom: 10px;">💰</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">MIỄN PHÍ 298k giá thật</h3>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0;">
+        Toàn bộ Sol KIỂM SOÁT 14 ngày (99k) + Sol LÀM CHỦ 30 ngày (199k) = <strong>298k giá thật</strong>. Anh không trả 1 đồng nào suốt 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) pilot.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 26px 24px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 36px; margin-bottom: 10px;">🤝</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">Em hỗ trợ Zalo trực tiếp</h3>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0;">
+        52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) em hỗ trợ qua Zalo cá nhân — KHÔNG phải AI. Anh nhắn em lúc nào em trả lời lúc đó (giờ thức 7h-23h, tối đa 4h).
+      </p>
+    </div>
+
+    <div style="background: white; padding: 26px 24px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 36px; margin-bottom: 10px;">📊</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">Báo cáo cá nhân chi tiết</h3>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0;">
+        Day 7, Day 30, Day 60 — báo cáo riêng cho anh: heatmap thèm 24h, top trigger, reduction trend, body milestones. Anh nhận PDF export.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 26px 24px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 36px; margin-bottom: 10px;">⭐</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">Đại Sứ Sol đầu tiên</h3>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0;">
+        Sau 90 ngày sạch (nếu anh đạt) → tự động Đại Sứ Sol đầu tiên: dùng Sol MIỄN PHÍ mãi + commission 25% mỗi anh em mới mua qua mã của anh (~25k/tháng/người).
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- COMMITMENT -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: #FFF8F2;">
+  <div style="max-width: 880px; margin: 0 auto;">
+
+    <h2 style="text-align: center; color: #5C3A1E; font-size: 28px; margin: 0 0 12px;">
+      Đổi lại — anh giúp em
+    </h2>
+    <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.6; margin: 0 0 32px;">
+      Em không xin từ thiện. Em cần 4 thứ rất cụ thể:
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr; gap: 14px;">
+
+      <div style="background: white; padding: 22px 26px; border-radius: 12px; border-left: 4px solid #B25C2C;">
+        <h3 style="font-size: 17px; color: #5C3A1E; margin: 0 0 8px;">1. Check-in daily 30 giây</h3>
+        <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0;">
+          Mỗi tối anh mở app → bấm "Hôm nay có hút không" + slider thèm + mood + 1 note ngắn. <strong>30 giây.</strong> Sol cần dữ liệu đều đặn để dashboard hoạt động.
+        </p>
+      </div>
+
+      <div style="background: white; padding: 22px 26px; border-radius: 12px; border-left: 4px solid #B25C2C;">
+        <h3 style="font-size: 17px; color: #5C3A1E; margin: 0 0 8px;">2. Dùng công cụ khi thèm (không giấu)</h3>
+        <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0;">
+          Khi anh thèm — thử 1 trong 9 công cụ Sol (Đợi 90s, chip, đi bộ, voice...). Anh không phải dùng tất cả — chỉ chọn cái hợp. Quan trọng: <strong>không giấu khi anh lỡ hút</strong>. Sol cần biết để học từ anh.
+        </p>
+      </div>
+
+      <div style="background: white; padding: 22px 26px; border-radius: 12px; border-left: 4px solid #B25C2C;">
+        <h3 style="font-size: 17px; color: #5C3A1E; margin: 0 0 8px;">3. Phỏng vấn 30-45 phút cuối kỳ</h3>
+        <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0;">
+          Day 52 (sau pilot) — em gọi anh qua Zalo video hoặc gặp trực tiếp (nếu cùng tỉnh), nói chuyện 30-45 phút: anh thấy Sol gì hay, gì dở, công cụ nào dùng, công cụ nào không. <strong>Em record với sự đồng ý của anh</strong> để viết case study.
+        </p>
+      </div>
+
+      <div style="background: white; padding: 22px 26px; border-radius: 12px; border-left: 4px solid #B25C2C;">
+        <h3 style="font-size: 17px; color: #5C3A1E; margin: 0 0 8px;">4. Cho phép dùng story (ẩn danh) làm case study</h3>
+        <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0;">
+          Em viết 5 case study từ pilot (chọn 5 anh em điển hình). <strong>Ẩn danh 100%</strong> — chỉ dùng "Anh A, 50 tuổi, văn phòng" + data đã anonymize. Anh có quyền veto trước khi public.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PROFILE -->
+<section style="padding: 56px 24px; max-width: 1000px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 28px; margin: 0 0 12px;">
+    Em tìm anh em như thế nào?
+  </h2>
+  <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.6; margin: 0 0 32px;">
+    Em không tuyển ai cũng nhận. Sol pilot cần 3 profile sau (anh thuộc 1 trong 3 là OK):
+  </p>
+
+  <div class="sol-pilot-profile-grid">
+
+    <div style="background: white; padding: 24px 22px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 36px; margin-bottom: 10px; text-align: center;">👔</div>
+      <h3 style="font-size: 16px; color: #5C3A1E; margin: 0 0 10px; text-align: center;">Anh em VĂN PHÒNG</h3>
+      <ul style="font-size: 13px; color: #2C2A27; line-height: 1.7; margin: 0; padding-left: 18px;">
+        <li>45-55 tuổi</li>
+        <li>Hút ≥20 năm</li>
+        <li>Đã thử bỏ ≥2 lần thất bại</li>
+        <li>Có smartphone + Zalo dùng được</li>
+        <li>Sống Hà Nội/HCM (ưu tiên)</li>
+      </ul>
+    </div>
+
+    <div style="background: white; padding: 24px 22px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 36px; margin-bottom: 10px; text-align: center;">🏪</div>
+      <h3 style="font-size: 16px; color: #5C3A1E; margin: 0 0 10px; text-align: center;">Anh em KINH DOANH</h3>
+      <ul style="font-size: 13px; color: #2C2A27; line-height: 1.7; margin: 0; padding-left: 18px;">
+        <li>50-60 tuổi</li>
+        <li>Tự kinh doanh / lái taxi / xe ôm</li>
+        <li>Hút ≥25 năm</li>
+        <li>Đã có cháu nội/ngoại</li>
+        <li>Sẵn sàng học app mới</li>
+      </ul>
+    </div>
+
+    <div style="background: white; padding: 24px 22px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 36px; margin-bottom: 10px; text-align: center;">🔧</div>
+      <h3 style="font-size: 16px; color: #5C3A1E; margin: 0 0 10px; text-align: center;">Anh em LAO ĐỘNG TỰ DO</h3>
+      <ul style="font-size: 13px; color: #2C2A27; line-height: 1.7; margin: 0; padding-left: 18px;">
+        <li>45-55 tuổi</li>
+        <li>Thợ xây/cơ khí/shipper/grab</li>
+        <li>Hút ≥20 năm</li>
+        <li>Con đang học cấp 3 / đại học</li>
+        <li>Có lý do tài chính cụ thể để bỏ</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 28px; padding: 20px 24px; background: #FFF4EA; border-radius: 10px; border-left: 4px solid #B8860B; max-width: 760px; margin-left: auto; margin-right: auto;">
+    <p style="font-size: 14.5px; line-height: 1.7; color: #5C3A1E; margin: 0;">
+      <strong>Em ưu tiên anh em quen biết Khang Sol cá nhân</strong> (qua Zalo / FB) để pilot có chất lượng cao. Nếu anh chưa quen em, anh điền form — em xem từng người và sẽ liên hệ trong 48h.
+    </p>
+  </div>
+</section>
+
+
+<!-- FORM -->
+<section id="form" style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: #FFF8F2;">
+  <div style="max-width: 880px; margin: 0 auto;">
+
+    <h2 style="text-align: center; color: #5C3A1E; font-size: 28px; margin: 0 0 12px;">
+      Đăng ký pilot 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp)
+    </h2>
+    <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.6; margin: 0 0 32px;">
+      Form 7 câu, mất 3 phút. Em liên hệ anh qua Zalo trong 48h.
+    </p>
+
+    <form class="sol-pilot-form" id="pilot-form" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
+
+      <label for="name">Anh xưng hô như thế nào? (tên hoặc nickname)</label>
+      <input type="text" id="name" name="entry.NAME_FIELD" placeholder="Ví dụ: Anh Tuấn / Anh Bình" required>
+
+      <label for="age">Tuổi của anh</label>
+      <select id="age" name="entry.AGE_FIELD" required>
+        <option value="">— Chọn —</option>
+        <option value="45-49">45-49</option>
+        <option value="50-54">50-54</option>
+        <option value="55-59">55-59</option>
+        <option value="60+">60 trở lên</option>
+      </select>
+
+      <label for="hut-bao-lau">Anh hút thuốc bao lâu rồi?</label>
+      <select id="hut-bao-lau" name="entry.SMOKING_DURATION_FIELD" required>
+        <option value="">— Chọn —</option>
+        <option value="20-25-nam">20-25 năm</option>
+        <option value="25-30-nam">25-30 năm</option>
+        <option value="30-35-nam">30-35 năm</option>
+        <option value="35+">35 năm trở lên</option>
+      </select>
+
+      <label for="thu-bo">Đã thử bỏ bao nhiêu lần?</label>
+      <select id="thu-bo" name="entry.ATTEMPTS_FIELD" required>
+        <option value="">— Chọn —</option>
+        <option value="1">1 lần</option>
+        <option value="2-3">2-3 lần</option>
+        <option value="4-5">4-5 lần</option>
+        <option value="6+">6 lần trở lên</option>
+        <option value="0">Chưa thử bao giờ</option>
+      </select>
+
+      <label for="zalo">Số điện thoại Zalo của anh</label>
+      <input type="tel" id="zalo" name="entry.PHONE_FIELD" placeholder="0xxx xxx xxx" required>
+
+      <label for="lý-do">Lý do anh muốn cai thuốc (ngắn, 1-2 câu)</label>
+      <textarea id="lý-do" name="entry.REASON_FIELD" rows="3" placeholder="Ví dụ: 'Vì cháu nội từ chối tôi bế khi tôi hôi thuốc' hoặc 'Đi khám sức khoẻ tăng huyết áp'" required></textarea>
+
+      <label for="khang-biet">Anh biết em từ đâu?</label>
+      <select id="khang-biet" name="entry.SOURCE_FIELD" required>
+        <option value="">— Chọn —</option>
+        <option value="quen-biet">Quen biết Khang cá nhân</option>
+        <option value="ban-gioi-thieu">Bạn bè giới thiệu</option>
+        <option value="facebook">Facebook (post hoặc ad)</option>
+        <option value="google-search">Google search "cai thuốc lá"</option>
+        <option value="zalo-oa">Zalo OA Sol Official-VINET</option>
+        <option value="khac">Khác</option>
+      </select>
+
+      <div style="padding: 14px 16px; background: #FFF4EA; border-radius: 8px; margin-bottom: 16px; font-size: 13px; color: #5C3A1E; line-height: 1.6;">
+        ☐ Em đồng ý cho phép Sol dùng data ẩn danh của em làm case study (anh có thể tick sau khi điền — không bắt buộc lúc đăng ký).
+      </div>
+
+      <button type="submit">📝 Gửi đăng ký pilot →</button>
+
+      <p style="font-size: 12px; color: #8A857C; line-height: 1.5; margin: 12px 0 0; text-align: center; font-style: italic;">
+        Em sẽ liên hệ anh qua Zalo trong 48h. Nếu pilot đã đủ 30 người, em add anh vào waitlist cho pilot batch 2 (Q3/2026).
+      </p>
+    </form>
+
+    <p style="text-align: center; color: #5A5650; font-size: 13px; margin: 20px auto 0; max-width: 560px;">
+      <strong>Lưu ý kỹ thuật:</strong> Form này dùng Google Forms backend. Khang cần thay <code>YOUR_FORM_ID</code> + 7 field ID thực tế (xem hướng dẫn trong comment đầu file).
+    </p>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section style="padding: 56px 24px; max-width: 760px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 26px; margin: 0 0 28px;">
+    7 câu hỏi pilot thường gặp
+  </h2>
+
+  <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+    <summary style="font-size: 15.5px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Pilot có bị ép cai không?</summary>
+    <p style="font-size: 14px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">KHÔNG. Pilot là TEST sản phẩm — không phải boot camp. Anh có thể đến Day 30 mà chưa hết hút — em vẫn dùng data anh để học. Sol KHÔNG kỳ vọng 100% cai — kỳ vọng anh thử công cụ và cho feedback.</p>
+  </details>
+
+  <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+    <summary style="font-size: 15.5px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Nếu em không hợp Sol giữa chừng, có thể bỏ không?</summary>
+    <p style="font-size: 14px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">CÓ. Anh chỉ cần Zalo em "anh dừng pilot". Không tra hỏi. Anh giữ những gì đã có trong app.</p>
+  </details>
+
+  <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+    <summary style="font-size: 15.5px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Sau 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) pilot, em phải trả tiền tiếp không?</summary>
+    <p style="font-size: 14px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">KHÔNG. Hết 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) pilot — anh có quyền dừng hoàn toàn, không trả 1 đồng. Hoặc anh muốn tiếp Sol LÀM CHỦ tháng 2, anh trả 199k trả 1 lần như khách thường. Anh quyết.</p>
+  </details>
+
+  <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+    <summary style="font-size: 15.5px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Pilot có cam kết Đại Sứ không?</summary>
+    <p style="font-size: 14px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">CÓ — NẾU anh đạt 90 ngày sạch trong/sau pilot. Đại Sứ là OPTION, không bắt buộc. Anh thấy Sol có ích, muốn giới thiệu anh em khác → đăng ký Đại Sứ → nhận commission 25%. Không có MLM, không tầng dưới, không phí tham gia.</p>
+  </details>
+
+  <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+    <summary style="font-size: 15.5px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Phỏng vấn cuối kỳ — có public ra ngoài không?</summary>
+    <p style="font-size: 14px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">KHÔNG có file video/audio nào public. Em chỉ trích quote text (đã anonymize) cho case study + 5 testimonial ngắn. Anh có quyền VETO trước khi public — nếu anh không muốn quote nào, em không dùng.</p>
+  </details>
+
+  <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+    <summary style="font-size: 15.5px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Em sẽ check-in với anh thường xuyên thế nào?</summary>
+    <p style="font-size: 14px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Em Zalo anh: <strong>Day 1, Day 3, Day 7, Day 14, Day 30, Day 60, Day 52</strong> — 7 lần trong 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp). Mỗi lần 1-2 câu hỏi. Khi anh thèm khủng hoặc lỡ điếu, anh Zalo em — em trả lời trong 4h.</p>
+  </details>
+
+  <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+    <summary style="font-size: 15.5px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Pilot mở bao giờ? Đăng ký khi nào?</summary>
+    <p style="font-size: 14px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Pilot dự kiến khởi động <strong>Q2/2026</strong> (tháng 5-7). Form đăng ký mở từ NGAY → đóng khi đủ 30 anh em. Em chọn theo profile (xem section trên) — không phải first-come-first-served thuần. Em ưu tiên 3 profile cân đối + chất lượng cao.</p>
+  </details>
+
+</section>
+
+
+<!-- FINAL CTA -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: linear-gradient(135deg, #5C3A1E 0%, #2C2A27 100%); color: white; text-align: center;">
+  <div style="max-width: 640px; margin: 0 auto;">
+
+    <h2 style="font-size: 26px; line-height: 1.3; margin: 0 0 16px; color: white; font-weight: 700;">
+      Anh sẵn sàng đi cùng em 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp)?
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.65; opacity: 0.92; margin: 0 0 28px;">
+      30 chỗ pilot — em chọn cân đối 3 profile. Anh điền form, em xem và liên hệ trong 48h.
+    </p>
+
+    <a href="#form" style="display: inline-block; background: white; color: #5C3A1E; padding: 18px 44px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none; box-shadow: 0 4px 24px rgba(0,0,0,0.18);">
+      📝 Lên đăng ký pilot →
+    </a>
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 13px; opacity: 0.7;">
+      <p style="margin: 0 0 6px;">Còn chần chừ? Đọc thêm:</p>
+      <p style="margin: 0;">
+        <a href="/khang-sol" style="color: #B8860B; text-decoration: underline;">Câu chuyện Khang</a>
+        &nbsp; · &nbsp;
+        <a href="/sol-la-gi" style="color: #B8860B; text-decoration: underline;">Sol làm gì</a>
+        &nbsp; · &nbsp;
+        <a href="/cau-hoi" style="color: #B8860B; text-decoration: underline;">20 câu thường hỏi</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.sol-pilot -->
+
+
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  HƯỚNG DẪN SETUP GOOGLE FORM BACKEND (15 phút Khang làm):
+
+  1. Tạo Google Form mới ở forms.google.com
+  2. Thêm 7 câu hỏi (copy y nguyên 7 label trong form HTML):
+     - Anh xưng hô như thế nào? (Short answer)
+     - Tuổi của anh (Multiple choice: 45-49 / 50-54 / 55-59 / 60+)
+     - Anh hút thuốc bao lâu rồi? (Multiple choice)
+     - Đã thử bỏ bao nhiêu lần? (Multiple choice)
+     - Số điện thoại Zalo (Short answer)
+     - Lý do anh muốn cai (Paragraph)
+     - Anh biết em từ đâu? (Multiple choice)
+  3. Get form URL: gửi form → Get pre-filled link → copy URL
+     Form action URL: bỏ "/viewform" → thay bằng "/formResponse"
+  4. Inspect HTML form Google Forms → tìm name="entry.XXXXX" của 7 field
+  5. Sửa trong file PILOT-page-v1.html:
+     - <form action="..."> → URL formResponse thật
+     - 7 entry.XXXXX_FIELD → entry.thực tế từ Google Form
+  6. Test submit → xem response trong Google Forms Responses tab
+  7. Setup Google Sheet linked với Form → có dashboard 30 anh em pilot
+
+  Tip: dùng Tally.so (free, đẹp hơn) thay Google Forms nếu Khang muốn UX tốt hơn.
+═══════════════════════════════════════════════════════════════════════════
+-->

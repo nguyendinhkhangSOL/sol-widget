@@ -68,9 +68,9 @@ export const DEFAULT_CHECKLIST: QDayChecklistConfig = {
     {
       id: 'paid_starter',
       icon: '💳',
-      label: 'Đã thanh toán gói Khởi động 99k',
+      label: 'Đã thanh toán gói Kiểm Soát 99k',
       description:
-        'Gói trả phí có hiệu lực sau khi thanh toán. Chỉ áp dụng nếu bạn chọn gói Khởi động hoặc Đồng hành.',
+        'Gói Kiểm Soát (14 ngày) có hiệu lực sau khi thanh toán. Áp dụng khi anh chọn gói Kiểm Soát hoặc Làm Chủ (gồm cả Kiểm Soát).',
       onlyForTier: 'KHOI_DONG',
       required: true,
     },

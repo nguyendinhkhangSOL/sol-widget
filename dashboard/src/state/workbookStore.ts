@@ -47,6 +47,16 @@ export interface WorkbookWeekReflection {
   reward?: string;
 }
 
+export interface WorkbookIdentity {
+  q1: string; // "Tôi là ai khi không có thuốc lá trong tay?"
+  q2: string; // "Người không hút làm gì khi stress?"
+  q3: string; // "5 năm tới tôi muốn được biết là người gì?"
+  q4: string; // "Vợ/con tôi muốn tôi trở thành người gì?"
+  q5: string; // "Câu nào tôi muốn người khác nói về tôi?"
+  q6: string; // "Một người không hút bữa nhậu thế nào?"
+  q7: string; // "Đến cuối đời, di sản tôi để lại là gì?"
+}
+
 export interface WorkbookData {
   // Header
   userName: string;
@@ -61,6 +71,10 @@ export interface WorkbookData {
   why3: string;
   why4: string;
   roleModel: string;
+
+  // Section "Bản Thân" — Identity reframe (Allen Carr-inspired)
+  // 7 prompts user trả lời trước Q-Day, replay khi craving Phase 3-4
+  identity: WorkbookIdentity;
 
   // Section 2 — Pledge
   pledgeSig: string;
@@ -114,6 +128,7 @@ function emptyData(): WorkbookData {
     preCheck: {},
     why1: '', why2: '', why3: '', why4: '',
     roleModel: '',
+    identity: { q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '' },
     pledgeSig: '', pledgeDate: '',
     network: [
       { name: '', relation: '', contact: '', role: '' },
@@ -146,7 +161,14 @@ function loadFromStorage(): WorkbookData {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return emptyData();
     const parsed = JSON.parse(raw) as Partial<WorkbookData>;
-    return { ...emptyData(), ...parsed };
+    const base = emptyData();
+    return {
+      ...base,
+      ...parsed,
+      // Defensive merge cho nested object — schema cũ chưa có identity,
+      // hoặc identity có thể null/partial → merge vào base
+      identity: { ...base.identity, ...(parsed.identity ?? {}) },
+    };
   } catch {
     return emptyData();
   }
@@ -289,7 +311,12 @@ export const useWorkbook = create<WorkbookStore>((set, get) => ({
   importJSON: (json) => {
     try {
       const parsed = JSON.parse(json) as Partial<WorkbookData>;
-      const data = { ...emptyData(), ...parsed };
+      const base = emptyData();
+      const data = {
+        ...base,
+        ...parsed,
+        identity: { ...base.identity, ...(parsed.identity ?? {}) },
+      };
       commit(data, set);
       return true;
     } catch {

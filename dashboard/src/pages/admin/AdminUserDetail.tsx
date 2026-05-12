@@ -142,12 +142,12 @@ export function AdminUserDetail() {
           <h3 className="text-h3 mb-3">Hành động</h3>
           <div className="space-y-2">
             <ActionBtn
-              label="Tặng gói Khởi động"
+              label="🟡 Tặng gói Kiểm Soát (14d/99k)"
               onClick={() => patch({ comp: 'KHOI_DONG' }, 'comp_kd')}
               busy={busy === 'comp_kd'}
             />
             <ActionBtn
-              label="Tặng gói Đồng hành"
+              label="🔴 Tặng gói Làm Chủ (30d/199k)"
               onClick={() => patch({ comp: 'DONG_HANH' }, 'comp_dh')}
               busy={busy === 'comp_dh'}
             />

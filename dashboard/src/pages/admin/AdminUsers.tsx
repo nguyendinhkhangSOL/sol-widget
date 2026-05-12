@@ -56,10 +56,10 @@ export function AdminUsers() {
           <label className="text-meta text-sol-ink-3 font-semibold uppercase tracking-wider">Tier</label>
           <select value={tier} onChange={(e) => setTier(e.target.value)} className="block mt-1 px-3 py-2 rounded-xl border border-sol-line text-body">
             <option value="">Tất cả</option>
-            <option value="FREE">Free</option>
-            <option value="KHOI_DONG">Khởi động</option>
-            <option value="DONG_HANH">Đồng hành</option>
-            <option value="ALUMNI">Alumni</option>
+            <option value="FREE">🌱 Nhận Diện</option>
+            <option value="KHOI_DONG">🟡 Kiểm Soát</option>
+            <option value="DONG_HANH">🔴 Làm Chủ</option>
+            <option value="ALUMNI">🌟 Người Tự Do</option>
           </select>
         </div>
         <div>

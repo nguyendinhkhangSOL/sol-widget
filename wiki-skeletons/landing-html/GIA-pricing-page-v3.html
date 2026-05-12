@@ -1,0 +1,238 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  PRICING DETAIL PAGE — sol.vn/gia  (~400 dòng)
+
+  Vai trò: Trang dành cho khách đã có ý định mua, cần so sánh chi tiết
+  + đọc 10 câu hỏi giá trước khi quyết.
+
+  KPI: Visit /gia → click "Bắt đầu Sol KIỂM SOÁT/LÀM CHỦ" ≥15%
+
+  HƯỚNG DẪN PUBLISH:
+  1. WordPress Admin → Pages → Add New
+  2. Title: "Giá Sol — 3 gói cho anh chọn"
+  3. Slug: gia
+  4. Parent: (none)
+  5. Template: "Sol Default — Page Standard"
+  6. Content: Custom HTML block → paste TOÀN BỘ (sau </comment>)
+  7. Publish + check link từ landing chính
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-gia { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; }
+.sol-gia h1, .sol-gia h2, .sol-gia h3 { margin: 0; }
+
+/* Comparison table responsive */
+.sol-gia-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.sol-gia-table th, .sol-gia-table td {
+  padding: 12px 14px; text-align: left;
+  border-bottom: 1px solid #E8DFC8;
+  vertical-align: top;
+}
+.sol-gia-table th { background: #5C3A1E; color: white; font-weight: 600; }
+.sol-gia-table tr:nth-child(even) { background: #FAF4EC; }
+.sol-gia-feature-col { width: 30%; font-weight: 600; color: #5C3A1E; }
+.sol-gia-check { color: #2E7D32; font-weight: 700; font-size: 16px; }
+.sol-gia-cross { color: #C62828; font-weight: 700; }
+
+/* Mobile: scroll table */
+@media (max-width: 720px) {
+  .sol-gia-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sol-gia-table { min-width: 640px; }
+}
+
+@media (max-width: 640px) {
+  .sol-gia section { padding-left: 16px !important; padding-right: 16px !important; }
+}
+</style>
+
+<div class="sol-gia">
+
+<!-- HERO -->
+<section style="padding: 56px 24px 32px; max-width: 880px; margin: 0 auto; text-align: center;">
+  <p style="font-size: 13px; color: #B25C2C; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin: 0 0 12px;">GIÁ SOL</p>
+  <h1 style="font-size: 36px; color: #5C3A1E; line-height: 1.2; margin: 0 0 16px; font-weight: 700;">
+    3 gói — anh chọn theo sẵn sàng
+  </h1>
+  <p style="font-size: 17px; color: #5A5650; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+    NHẬN DIỆN 7 ngày MIỄN PHÍ trước — không cần SĐT. Hết 7 ngày anh quyết tiếp hay dừng.
+    <strong>Hoàn tiền Ngày 21 không hỏi</strong> nếu anh không thấy giảm số điếu.
+  </p>
+</section>
+
+<!-- 3 PRICING CARDS -->
+<section style="padding: 24px; max-width: 1100px; margin: 0 auto;">
+
+  <div class="sol-grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
+
+    <div style="background: white; padding: 28px 24px; border-radius: 14px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 13px; color: #B25C2C; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Sol NHẬN DIỆN</div>
+      <div style="font-size: 36px; font-weight: 700; color: #5C3A1E; margin: 8px 0 4px;">Miễn phí</div>
+      <div style="font-size: 13px; color: #8A857C; margin-bottom: 8px;">7 ngày · không cần SĐT</div>
+      <p style="font-size: 13px; color: #5A5650; font-style: italic; margin: 0 0 16px;">Cho anh chưa quyết bỏ. Chỉ muốn nhìn lại mình một lần.</p>
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=gia&utm_campaign=khampha" style="display: block; text-align: center; background: transparent; color: #B25C2C; border: 1px solid #B25C2C; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">Bắt đầu miễn phí →</a>
+    </div>
+
+    <div style="background: white; padding: 28px 24px; border-radius: 14px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 13px; color: #B8860B; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Sol KIỂM SOÁT</div>
+      <div style="font-size: 36px; font-weight: 700; color: #5C3A1E; margin: 8px 0 4px;">99.000<span style="font-size: 16px; color: #8A857C; font-weight: 400;">đ</span></div>
+      <div style="font-size: 13px; color: #8A857C; margin-bottom: 8px;">14 ngày · trả 1 lần</div>
+      <p style="font-size: 13px; color: #5A5650; font-style: italic; margin: 0 0 16px;">Cho anh muốn thử nhẹ. Bằng 3 bao thuốc anh đã hút trong tuần.</p>
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=gia&utm_campaign=butpha" style="display: block; text-align: center; background: #B8860B; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">Thử Sol KIỂM SOÁT →</a>
+    </div>
+
+    <div style="background: white; padding: 28px 24px; border-radius: 14px; border: 2px solid #B25C2C; position: relative; box-shadow: 0 4px 20px rgba(178,92,44,0.18);">
+      <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #B25C2C; color: white; padding: 5px 14px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 1px;">KHUYẾN NGHỊ</div>
+      <div style="font-size: 13px; color: #5C3A1E; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Sol LÀM CHỦ</div>
+      <div style="font-size: 36px; font-weight: 700; color: #5C3A1E; margin: 8px 0 4px;">199.000<span style="font-size: 16px; color: #8A857C; font-weight: 400;">đ</span></div>
+      <div style="font-size: 12px; color: #B25C2C; margin-bottom: 4px;">Chuyển khoản tay — KHÔNG tự rút</div>
+      <div style="font-size: 11px; color: #8A857C; margin-bottom: 8px;">30 ngày · trả 1 lần</div>
+      <p style="font-size: 13px; color: #5A5650; font-style: italic; margin: 0 0 16px;">Cho anh đã quyết. Cần đồng hành dài.</p>
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=gia&utm_campaign=dicung" style="display: block; text-align: center; background: #B25C2C; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px;">Sol đi cùng anh →</a>
+    </div>
+
+  </div>
+
+  <style>
+    @media (max-width: 880px) {
+      .sol-grid-3 { grid-template-columns: 1fr !important; gap: 14px !important; }
+    }
+  </style>
+</section>
+
+
+<!-- COMPARISON TABLE -->
+<section style="padding: 56px 24px; max-width: 1100px; margin: 0 auto;">
+  <h2 style="color: #5C3A1E; text-align: center; font-size: 26px; margin: 0 0 8px;">So sánh 3 gói chi tiết</h2>
+  <p style="text-align: center; color: #5A5650; font-size: 14px; margin: 0 0 32px;">Anh cuộn ngang trên điện thoại để xem đầy đủ</p>
+
+  <div class="sol-gia-table-wrap">
+    <table class="sol-gia-table">
+      <thead>
+        <tr>
+          <th class="sol-gia-feature-col">Tính năng</th>
+          <th>NHẬN DIỆN<br><span style="font-size: 11px; opacity: 0.7;">Miễn phí · 7 ngày</span></th>
+          <th>KIỂM SOÁT<br><span style="font-size: 11px; opacity: 0.7;">99k · 14 ngày</span></th>
+          <th>LÀM CHỦ<br><span style="font-size: 11px; opacity: 0.7;">199k trả 1 lần · 30 ngày</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="sol-gia-feature-col">Báo cáo Day 3</td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Báo cáo Ngày 7 đầy đủ</td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Báo cáo Ngày 14 đầy đủ + Hồ sơ PDF</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Báo cáo Ngày 30 + Ngày 60 milestone</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Đợi 90 giây (Đồng hồ Cơn thèm)</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓ có giọng nói</span></td><td><span class="sol-gia-check">✓ có giọng nói</span></td></tr>
+        <tr><td class="sol-gia-feature-col">9 công cụ menu khi thèm</td><td><span class="sol-gia-check">✓ basic 5</span></td><td><span class="sol-gia-check">✓ đầy đủ 9</span></td><td><span class="sol-gia-check">✓ đầy đủ 9</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Giọng Khang</td><td>2 đoạn giọng nói<br><span style="font-size: 11px; color: #8A857C;">Ngày 0 + Đợi 90s</span></td><td>5 đoạn giọng nói<br><span style="font-size: 11px; color: #8A857C;">+ Lỡ điếu, Ngày 7, Khẩn cấp</span></td><td>9 đoạn giọng nói<br><span style="font-size: 11px; color: #8A857C;">+ Ngày 14, 21, 30, milestone</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Voice mới hàng tháng</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓</span></td></tr>
+        <tr><td class="sol-gia-feature-col">43 Mảnh tin nhanh CBT tiếng Việt</td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Trợ lý AI tiếng Việt</td><td>5 tin/ngày</td><td>30 tin/ngày</td><td>Không giới hạn</td></tr>
+        <tr><td class="sol-gia-feature-col">Kế Hoạch B cho 5 tình huống kích thích riêng</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓ cập nhật</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Sổ Hành Trình 30 ngày 5 phần</td><td>Pre-Q + T1</td><td>T1-T2</td><td>T1-T4 + Sau 30 ngày</td></tr>
+        <tr><td class="sol-gia-feature-col">Dashboard 4 phase</td><td>Phase 1 Nhận Thức</td><td>Phase 1-2</td><td>Phase 1-4 full</td></tr>
+        <tr><td class="sol-gia-feature-col">"Chỉ Số Hiểu Mình" composite</td><td>Tính nội bộ</td><td>Hiển thị weekly</td><td>Hiển thị daily</td></tr>
+        <tr><td class="sol-gia-feature-col">41 Wiki articles tiếng Việt</td><td><span class="sol-gia-check">✓ đầy đủ</span></td><td><span class="sol-gia-check">✓ đầy đủ</span></td><td><span class="sol-gia-check">✓ đầy đủ</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Khoảng Lặng (confession ẩn danh anh em)</td><td>Đọc</td><td>Đọc + đăng</td><td>Đọc + đăng</td></tr>
+        <tr><td class="sol-gia-feature-col">Email funnel adaptive</td><td>3/7 tình huống</td><td>7/7 tình huống</td><td>7 tình huống + monthly retention</td></tr>
+        <tr><td class="sol-gia-feature-col">Ngày bỏ chính thức (Ngày Q)</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓ anh chọn ngày</span></td></tr>
+        <tr><td class="sol-gia-feature-col">KHÔNG reset đếm ngày khi lỡ</td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td><td><span class="sol-gia-check">✓</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Hỏi Khang ẩn danh → trả lời bằng giọng nói</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓ mỗi tháng</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Đại Sảnh Sol (community Sprint 2)</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓</span></td></tr>
+        <tr><td class="sol-gia-feature-col">Đại Sứ Sol (sau 90 ngày Tự do)</td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-cross">—</span></td><td><span class="sol-gia-check">✓ miễn phí mãi</span></td></tr>
+        <tr style="background: #FFF4EA;"><td class="sol-gia-feature-col" style="color: #B25C2C;">Hoàn tiền</td><td>—</td><td><strong>Ngày 21 không hỏi</strong></td><td><strong>Pro-rated Day 15+</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- COMMON GUARANTEES -->
+<section style="padding: 0 24px 48px; max-width: 880px; margin: 0 auto;">
+  <div style="padding: 26px 30px; background: #FFF4EA; border-radius: 12px; border: 1px solid #E8DFC8;">
+    <h3 style="font-size: 14px; color: #5C3A1E; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin: 0 0 16px;">Sol cam kết cả 3 gói</h3>
+    <ul style="margin: 0; padding: 0; list-style: none; font-size: 14.5px; line-height: 1.85; color: #2C2A27;">
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #B25C2C; font-weight: 700;">✓</span> <strong>Hoàn tiền 100%</strong> nếu anh không thấy giá trị. Không hỏi lý do. Khang chuyển khoản tay trong 7 ngày làm việc.</li>
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #B25C2C; font-weight: 700;">✓</span> Anh <strong>dừng bất kỳ lúc nào</strong>. Sol LÀM CHỦ — Trả 1 lần. Không lặp lại định kỳ, không auto-charge. Hết 30 ngày → tự động chuyển NGƯỜI TỰ DO FREE.</li>
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #B25C2C; font-weight: 700;">✓</span> <strong>Sol KHÔNG tự rút tiền lần 2.</strong> Mỗi tháng anh chủ động chuyển khoản — không có thẻ tín dụng lưu lại.</li>
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #B25C2C; font-weight: 700;">✓</span> <strong>Nâng gói sau</strong> — Sol cộng tiền anh đã đóng vào gói mới.</li>
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #5C3A1E; font-weight: 700;">⚠</span> <strong>Sol KHÔNG hứa anh bỏ thuốc 100%.</strong> Sol giúp anh hiểu mình + có công cụ để tự cai lại nhiều lần nếu cần.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- 10 CÂU HỎI GIÁ -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: #FFF8F2;">
+  <div style="max-width: 760px; margin: 0 auto;">
+
+    <h2 style="color: #5C3A1E; text-align: center; font-size: 26px; margin: 0 0 28px;">10 câu hỏi anh thường nghĩ về giá</h2>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q1: 99k với tôi vẫn đắt.</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Trung bình anh đốt 10k/ngày thuốc lá × 30 = 300k/tháng. **Tổng Sol 298k = đúng 1 tháng tiền thuốc**. Gói 2 99k = 10 ngày thuốc, Gói 3 199k = 20 ngày thuốc. Anh không thêm tiền — chuyển 1 tháng tiền thuốc thành 51 ngày Sol đi cùng + Cuốn Nhật Ký anh giữ mãi.</p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q2: Champix/NRT rẻ hơn không?</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Champix 4-5 triệu/12 tuần = ~400k/tháng. NRT 2-3 triệu/8-12 tuần = ~250-350k/tháng. Sol 99k (Gói 2) rẻ hơn cả hai. Và Sol có thể combo với 2 cái kia theo chỉ định BS.</p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q3: Sao KIỂM SOÁT 99k mà LÀM CHỦ 199k — giá tính thế nào?</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">KIỂM SOÁT 99k cho 14 ngày — gói khởi đầu để anh thử thực hành công cụ + viết Sổ Hành Trình + giảm tần suất hút. LÀM CHỦ 199k cho 30 ngày — Ngày Q (Ngày 22), Chế độ Khẩn cấp 24/7, 26 bài Sổ Hành Trình, Ngày 52 LỄ TỐT NGHIỆP nhận Cuốn Nhật Ký PDF 50-80 trang. Anh chỉ dùng KIỂM SOÁT nếu cảm thấy đủ — Sol không ép.</p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q4: Sao không free hoàn toàn?</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Sol NHẬN DIỆN 7 ngày là free. KIỂM SOÁT + LÀM CHỦ có phí vì: (1) server, AI API, giọng nói hosting tốn tiền thật; (2) Sol không nhận quảng cáo, không bán data — phải có user trả phí để bền vững; (3) 99k là giá hỗ trợ — không phải giá khai thác.</p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q5: Tự rút tiền hàng tháng không? Sợ bị trừ liên tục.</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">KHÔNG. Sol KHÔNG có thẻ tín dụng auto-charge. Mỗi tháng mình gửi email nhắc 3 ngày trước. Anh chuyển khoản nếu muốn tiếp. Không chuyển = không trừ. Trả 1 lần.</p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q6: Hoàn tiền thật không hay nói chơi?</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Hoàn tiền thật. Sol KIỂM SOÁT Ngày 21 không giảm → hoàn 100% — không hỏi lý do. Sol LÀM CHỦ Day 15+ refund pro-rated (30-daysUsed)/30 × 199k. Tính tự động. Mình chuyển khoản tay trong 7 ngày làm việc. Điều khoản có trong trang Điều Khoản Sử Dụng.</p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q7: Chuyển khoản thế nào?</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Sau khi anh đăng ký Sol KIỂM SOÁT/LÀM CHỦ trong ứng dụng bothuocla.sol.vn, hệ thống hiển thị QR code chuyển khoản Vietcombank/Techcombank/MB (tên TK: Khang Sol). Anh chuyển 99k (KIỂM SOÁT) hoặc 199k (LÀM CHỦ). Mình xác nhận thủ công trong 24h, sau đó kích hoạt gói.</p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q8: Nâng gói KIỂM SOÁT → LÀM CHỦ — phải trả thêm bao nhiêu?</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Sol cộng 99k anh đã đóng KIỂM SOÁT vào gói mới. LÀM CHỦ 199k trả 1 lần — anh chỉ cần trả thêm 100k (199k - 99k đã đóng). KHÔNG có tháng 2 vì là trả 1 lần, không subscription.</p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q9: Pilot 30 anh em — có phải trả gì không?</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Pilot 30 anh em đầu tiên (Q2/2026) nhận MIỄN PHÍ toàn bộ Sol KIỂM SOÁT + Sol LÀM CHỦ (giá thật 298k = 99k+199k). Đổi lại: anh điểm danh 30 giây/ngày + 30 phút phỏng vấn cuối 51 ngày + Ngày 52 lễ. <a href="/pilot" style="color: #B25C2C;">Đăng ký pilot →</a></p>
+    </details>
+
+    <details style="background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 16px 22px; margin-bottom: 10px;">
+      <summary style="font-size: 16px; font-weight: 600; color: #5C3A1E; cursor: pointer;">Q10: Sau 90 ngày Tự do — Đại Sứ Sol miễn phí mãi nghĩa là gì?</summary>
+      <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 12px 0 0;">Anh đạt 90 ngày Tự do liên tục trong Sol LÀM CHỦ → tự động chuyển trạng thái Đại Sứ Sol (Sprint 2 đang code). Đại Sứ: dùng Sol miễn phí mãi mãi + mã giảm giá 25% giới thiệu cho anh em khác (commission đến anh, không qua MLM). Mỗi anh em mới mua qua mã của anh → 25% (~25k Gói KIỂM SOÁT hoặc ~50k Gói LÀM CHỦ) chuyển cho anh mỗi lần anh em mới mua qua mã của anh.</p>
+    </details>
+
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section style="padding: 56px 24px; max-width: 760px; margin: 0 auto; text-align: center;">
+  <h2 style="color: #5C3A1E; font-size: 26px; margin: 0 0 16px;">Anh sẵn sàng?</h2>
+  <p style="font-size: 17px; color: #5A5650; line-height: 1.6; margin: 0 0 28px;">
+    7 ngày NHẬN DIỆN miễn phí — không cần SĐT, không cam kết tiếp.
+  </p>
+  <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=gia&utm_campaign=final_cta" style="display: inline-block; background: #B25C2C; color: white; padding: 18px 40px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none; box-shadow: 0 4px 20px rgba(178,92,44,0.25);">
+    🌱 Bắt đầu Sol NHẬN DIỆN →
+  </a>
+  <p style="margin-top: 24px; font-size: 12.5px; color: #8A857C; font-style: italic;">
+    Khang KHÔNG phải bác sĩ. Sol là dự án cá nhân của Khang, không phải sản phẩm y tế.
+  </p>
+</section>
+
+</div><!-- /.sol-gia -->

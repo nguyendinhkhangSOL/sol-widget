@@ -1,5 +1,11 @@
 // backend/src/payments/routes.ts
 //
+// Sol v3 (12-05-2026) — Pricing:
+//   KIỂM SOÁT (KHOI_DONG): 99.000đ × 14 ngày
+//   LÀM CHỦ   (DONG_HANH): 199.000đ × 30 ngày  ← UPDATED từ 99k
+//   Total: 99 + 199 = 298k = đúng 1 tháng tiền thuốc (10k/ngày × 30)
+//   Day 52+ → ALUMNI tự động miễn phí mãi (không còn maintenance window).
+//
 // Mock-mode hôm nay: tạo PaymentLog → "PAID" ngay → cập nhật User.tier.
 // Khi tích hợp MoMo/VietQR thật:
 //   1. POST /payments/checkout vẫn tạo PaymentLog status=PENDING
@@ -16,7 +22,7 @@ import { authMiddleware, type AuthedRequest } from '../auth/middleware';
 import {
   TIER_PRICE_VND,
   TIER_DURATION_DAYS,
-  MAINTENANCE_DAYS,
+  // MAINTENANCE_DAYS deprecated trong Sol v3 — không import nữa
 } from '../tiers/featureGates';
 import { assertChecklistComplete } from '../tiers/qDayChecklist';
 
@@ -119,8 +125,13 @@ paymentsRouter.get('/:id', async (req: AuthedRequest, res) => {
 /* ─────────── Helpers (export để admin cũng dùng) ─────────── */
 
 /**
- * Áp dụng upgrade tier vào user record. Cập nhật tierStartedAt, tierExpiresAt,
- * và (DONG_HANH) maintenanceUntil. Cũng set quitDate nếu lần đầu KHOI_DONG.
+ * Áp dụng upgrade tier vào user record. Cập nhật tierStartedAt, tierExpiresAt.
+ * Sol v3: KHÔNG còn set maintenanceUntil — hết DONG_HANH thì scheduler tự
+ * promote thành ALUMNI miễn phí mãi (Day 52+).
+ *
+ * Cũng set quitDate nếu lần đầu KHOI_DONG (Q-Day Day 22 trong Sol v3 = ngày
+ * bắt đầu LÀM CHỦ; ở đây quitDate là ngày bắt đầu Sol journey, không phải
+ * Q-Day Ceremony).
  */
 export async function applyTierUpgrade(
   userId: string,
@@ -139,9 +150,11 @@ export async function applyTierUpgrade(
   const updateData: any = {
     tier: targetTier,
     tierExpiresAt: expiresAt,
+    // Sol v3: maintenanceUntil không còn dùng — set null để stop logic check sai.
+    maintenanceUntil: null,
   };
 
-  // KHOI_DONG: set tierStartedAt = now, quitDate = now nếu chưa có
+  // KHOI_DONG (Kiểm Soát 14 ngày): set tierStartedAt = now, quitDate = now nếu chưa có
   if (targetTier === 'KHOI_DONG') {
     updateData.tierStartedAt = now;
     if (!user.quitDate) {
@@ -150,7 +163,7 @@ export async function applyTierUpgrade(
     }
   }
 
-  // DONG_HANH: giữ tierStartedAt cũ nếu là upgrade từ KHOI_DONG
+  // DONG_HANH (Làm Chủ 30 ngày): giữ tierStartedAt cũ nếu là upgrade từ KHOI_DONG
   if (targetTier === 'DONG_HANH') {
     if (user.tier === 'FREE') {
       // Trường hợp hiếm: mua thẳng DONG_HANH không qua KHOI_DONG
@@ -160,10 +173,7 @@ export async function applyTierUpgrade(
         updateData.cohortKey = cohortKeyOf(now);
       }
     }
-    // Maintenance window = 30 ngày sau khi gói chính hết
-    updateData.maintenanceUntil = new Date(
-      expiresAt.getTime() + MAINTENANCE_DAYS * 86_400_000,
-    );
+    // Sol v3: KHÔNG còn maintenance window — Day 52+ → ALUMNI tự động.
   }
 
   await prisma.user.update({

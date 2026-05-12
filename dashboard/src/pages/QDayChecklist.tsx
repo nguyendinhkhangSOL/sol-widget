@@ -6,7 +6,7 @@
 //
 // Sau khi đủ, user có 2 lựa chọn:
 //   - Đặt Q-Day ngay (FREE flow): gọi PATCH /users/me { quitDate }
-//   - Đi đến Pricing để mua Khởi động: nav('/pricing')
+//   - Đi đến Pricing để mua Kiểm Soát 99k: nav('/pricing')
 
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';

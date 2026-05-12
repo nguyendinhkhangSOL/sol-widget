@@ -98,7 +98,7 @@ export function PhaseLiberation({ data, onReload, onShowExit }: PhaseProps) {
         <div className="bg-gradient-to-r from-sol-wine to-sol-wine-ink text-white rounded-2xl p-7 shadow-card text-center">
           <div className="text-h1 font-bold mb-2">⏸️ Đồng hồ chưa bật</div>
           <p className="text-body opacity-90 leading-relaxed">
-            {data.user.pronouns} đã đến Phase Giải Phóng nhưng chưa cam kết Q-Day. Bấm cam kết để Sol bắt đầu đếm.
+            {data.user.pronouns} đã đến Phase Giải Phóng nhưng chưa cam kết Ngày bỏ. Bấm cam kết để Sol bắt đầu đếm.
           </p>
         </div>
       )}

@@ -46,7 +46,36 @@ function isValidEmail(email: string): boolean {
 // Nếu không có anon, caller cần signup deviceUid trước rồi gọi endpoint này.
 const requestSchema = z.object({
   email: z.string().email('Email không hợp lệ').max(254),
+  // Optional: caller chỉ định origin sẽ render link verify.
+  // Whitelist các origin Sol owns. Default APP_URL (.env).
+  // Vd admin.sol.vn login → redirectTo: 'http://localhost:5176' (dev)
+  //                                       hoặc 'https://admin.sol.vn' (prod)
+  redirectTo: z.string().url().max(255).optional(),
 });
+
+/** Whitelist các origin được phép redirect verify link. */
+const ALLOWED_REDIRECT_ORIGINS = new Set<string>([
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:5175',
+  'http://localhost:5176',
+  'http://127.0.0.1:5175',
+  'http://127.0.0.1:5176',
+  'https://bothuocla.sol.vn',
+  'https://admin.sol.vn',
+]);
+
+function pickRedirectOrigin(raw: string | undefined): string {
+  const fallback = process.env.APP_URL || 'https://bothuocla.sol.vn';
+  if (!raw) return fallback;
+  try {
+    const u = new URL(raw);
+    const origin = `${u.protocol}//${u.host}`;
+    return ALLOWED_REDIRECT_ORIGINS.has(origin) ? origin : fallback;
+  } catch {
+    return fallback;
+  }
+}
 
 emailAuthRouter.post('/request', authMiddleware, async (req: AuthedRequest, res) => {
   try {
@@ -95,10 +124,11 @@ emailAuthRouter.post('/request', authMiddleware, async (req: AuthedRequest, res)
       where: { id: fromUserId },
       select: { pronouns: true },
     });
-    const pronouns = user?.pronouns ?? 'bạn';
+    // Sol v3: default 'anh' thay 'bạn' — target user nam giới 30+
+    const pronouns = user?.pronouns ?? 'anh';
 
-    // Build magic link
-    const appUrl = process.env.APP_URL || 'https://bothuocla.sol.vn';
+    // Build magic link — caller có thể override origin (vd admin.sol.vn)
+    const appUrl = pickRedirectOrigin(parsed.data.redirectTo);
     const link = `${appUrl}/auth/email?token=${token}`;
 
     // Render + send

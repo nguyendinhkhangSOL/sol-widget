@@ -123,66 +123,111 @@ tiersRouter.post('/q-day-checklist/uncheck', async (req: AuthedRequest, res) => 
   res.json(state);
 });
 
+// ─────────────── TIER CATALOG (Sol v3 — 12-05-2026) ─────────────────────
+// 4 chặng tiến hoá: NHẬN DIỆN → KIỂM SOÁT → LÀM CHỦ → NGƯỜI TỰ DO
+// Tổng: 7 + 14 + 30 = 51 ngày Sol-active + Day 52 lễ tốt nghiệp
+// Tổng phí: 99k (Kiểm Soát) + 199k (Làm Chủ) = 298.000đ = đúng 1 tháng tiền thuốc
 tiersRouter.get('/catalog', (_req, res) => {
   res.json({
     tiers: [
       {
         id: 'FREE',
-        label: 'Miễn phí',
-        priceVnd: TIER_PRICE_VND.FREE,
-        durationDays: null,
+        label: 'Nhận Diện',
+        emoji: '🌱',
+        tagline: 'Quan sát mình hút lúc nào, vì sao',
+        priceVnd: TIER_PRICE_VND.FREE,                    // 0
+        durationDays: TIER_DURATION_DAYS.FREE,            // 7
+        refundable: false,
         bullets: [
-          'Quan sát SOL — đặt Q-Day khi sẵn sàng',
-          `Tuần đầu ${FREE_FIRST_WEEK_QUOTA} tin AI/ngày, sau đó ${FREE_DAILY_MESSAGE_QUOTA}/ngày`,
-          'Sổ tay mẫu Tuần 1 (chỉ xem)',
+          'Quan sát: hút lúc nào, ở đâu, vì sao',
+          `Chat AI Sol ${FREE_DAILY_MESSAGE_QUOTA} tin/ngày`,
+          'Sổ tay mẫu Tuần 1 (chỉ đọc)',
           '3 bài tập vượt cơn thèm cơ bản',
-          '1 voice message Khang chào mừng',
+          '1 voice Khang chào mừng',
           'Đọc tường cộng đồng',
+          'Không cần bỏ thuốc — chỉ quan sát',
         ],
+        callout: '7 ngày miễn phí — không cần thẻ.',
       },
       {
         id: 'KHOI_DONG',
-        label: 'Khởi động — 10 ngày đầu',
-        priceVnd: TIER_PRICE_VND.KHOI_DONG,
-        durationDays: TIER_DURATION_DAYS.KHOI_DONG,
-        refundable: false,
+        label: 'Kiểm Soát',
+        emoji: '🟡',
+        tagline: 'Giảm tần suất hút có ý thức',
+        priceVnd: TIER_PRICE_VND.KHOI_DONG,               // 99.000
+        durationDays: TIER_DURATION_DAYS.KHOI_DONG,       // 14
+        refundable: true,
+        refundType: 'conditional',                        // Day 21 nếu ≥80% metric mà không giảm
         bullets: [
-          'Chat không giới hạn với Sol',
-          'Sổ tay đầy đủ Tuần 1 + Tuần 2',
+          'Chat Sol không giới hạn',
+          'Sổ Hành Trình đầy đủ Tuần 1 + Tuần 2 (14 bài)',
           '12 bài tập theo từng ngày',
           '3 voice Khang (Ngày 1, 3, 7)',
-          'Báo cáo Ngày 10 cá nhân hoá (PDF)',
-          '3 nhắc nhở/ngày + nhắc theo trigger',
-          'Khang được alert khi bạn khủng hoảng',
+          'Báo cáo Ngày 7 cá nhân hoá (PDF)',
+          'Nhắc nhở thông minh 3 lần/ngày',
+          'Plan B trigger (≥3 trigger)',
+          'Khang được alert khi anh khủng hoảng',
         ],
-        callout: '10 ngày khó nhất. Đừng để chỉ một mình.',
+        callout: '14 ngày — giảm 30% số điếu hoặc hoàn 99k.',
       },
       {
         id: 'DONG_HANH',
-        label: 'Đồng hành & Bảo trì — 60 ngày',
-        priceVnd: TIER_PRICE_VND.DONG_HANH,
-        durationDays: TIER_DURATION_DAYS.DONG_HANH + MAINTENANCE_DAYS,
+        label: 'Làm Chủ',
+        emoji: '🔴',
+        tagline: 'Cai hẳn 30 ngày — Q-Day Day 22',
+        priceVnd: TIER_PRICE_VND.DONG_HANH,               // 199.000
+        durationDays: TIER_DURATION_DAYS.DONG_HANH,       // 30
         refundable: true,
+        refundType: 'prorated',                           // (30-daysUsed)/30 × 199k
         refundFromDay: REFUND_MIN_DAY,
+        qDayDay: 22,                                      // Day 22 = Q-Day Ceremony
+        recommended: true,
         bullets: [
-          'Toàn bộ tính năng Khởi động',
-          'Sổ tay 4 tuần đầy đủ + ghi chú duy trì',
+          'Toàn bộ Kiểm Soát + memory dài hạn 30+ ngày',
+          'Sổ Hành Trình 4 tuần đầy đủ (26 bài)',
           '24 bài tập + 8 bài duy trì',
           '6 voice Khang + thư cuối Ngày 30',
-          'Báo cáo Ngày 30 + Album hành trình (PDF cao cấp)',
-          `30 ngày bảo trì sau cai (${MAINTENANCE_DAILY_MESSAGE_QUOTA} tin/ngày)`,
+          'Báo cáo Ngày 21 + Album hành trình Ngày 51 (PDF cao cấp)',
+          'Q-Day Ceremony Day 22 — cam kết cai',
           'Khang ưu tiên + voice gọi lại khi khủng hoảng',
-          `Hoàn tiền theo tỷ lệ ngày còn lại từ Ngày ${REFUND_MIN_DAY}`,
-          'Huy hiệu Alumni vĩnh viễn + cộng đồng cohort',
+          'Huy hiệu cohort vĩnh viễn',
+          `Hoàn tiền tỷ lệ ngày còn lại từ Ngày ${REFUND_MIN_DAY}`,
         ],
-        callout: 'Khang giữ lời — hoàn tiền nếu bạn cần dừng.',
+        callout: 'KHUYẾN NGHỊ — Khang đi cùng đến Day 51.',
+      },
+      {
+        id: 'ALUMNI',
+        label: 'Người Tự Do',
+        emoji: '🌟',
+        tagline: 'Day 52+ · Miễn phí mãi mãi',
+        priceVnd: TIER_PRICE_VND.ALUMNI,                  // 0
+        durationDays: null,                               // forever
+        refundable: false,
+        forever: true,
+        bullets: [
+          'Truy cập Sổ Hành Trình đầy đủ',
+          'Đọc & viết cộng đồng cohort',
+          'Huy hiệu Người Tự Do vĩnh viễn',
+          'Lễ tốt nghiệp Day 52 — chứng nhận từ Khang',
+          'Export PDF lịch sử check-in',
+          `${MAINTENANCE_DAILY_MESSAGE_QUOTA} tin Sol/ngày (support)`,
+          'Đại Sứ Sol (tuỳ chọn) — giúp người mới',
+        ],
+        callout: 'Tự do thật sự. Miễn phí. Mãi mãi.',
       },
     ],
+    schedule: {
+      totalDaysSolActive: 51,                             // 7+14+30
+      qDayDay: 22,                                        // Day 22 = bắt đầu Làm Chủ
+      graduationDay: 52,                                  // Day 52 lễ tốt nghiệp
+      totalPaidVnd: TIER_PRICE_VND.KHOI_DONG + TIER_PRICE_VND.DONG_HANH,  // 298.000
+    },
     note: {
       freeDailyQuota: FREE_DAILY_MESSAGE_QUOTA,
-      maintenanceDailyQuota: MAINTENANCE_DAILY_MESSAGE_QUOTA,
-      maintenanceDays: MAINTENANCE_DAYS,
+      alumniDailyQuota: MAINTENANCE_DAILY_MESSAGE_QUOTA,
       refundMinDay: REFUND_MIN_DAY,
+      // Sol v3: maintenance window đã DEPRECATE (Day 52+ = ALUMNI forever)
+      maintenanceDays: MAINTENANCE_DAYS,
     },
   });
 });

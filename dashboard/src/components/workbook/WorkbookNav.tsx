@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useWorkbook, daysComplete } from '../../state/workbookStore';
 
-const PILLS: Array<{ id: string; label: string; kind?: 'prep' | 'post' }> = [
+const PILLS: Array<{ id: string; label: string; kind?: 'prep' | 'post' | 'identity' }> = [
   { id: 'wbx-section-prep',     label: '🗓 Chuẩn Bị', kind: 'prep' },
   { id: 'wbx-section-why',      label: '1 · Lý Do' },
   { id: 'wbx-section-pledge',   label: '2 · Cam Kết' },
   { id: 'wbx-section-network',  label: '3 · Hỗ Trợ' },
   { id: 'wbx-section-money',    label: '4 · Tiết Kiệm' },
   { id: 'wbx-section-craving',  label: '5 · Cơn Thèm' },
+  { id: 'wbx-section-identity', label: '🪞 Bản Thân', kind: 'identity' },
   { id: 'wbx-week-1',           label: 'T1' },
   { id: 'wbx-week-2',           label: 'T2' },
   { id: 'wbx-week-3',           label: 'T3' },
@@ -72,6 +73,8 @@ export function WorkbookNav() {
             cls =
               p.kind === 'prep'
                 ? 'bg-purple-600 text-white border-purple-600'
+                : p.kind === 'identity'
+                ? 'bg-purple-700 text-white border-purple-700'
                 : p.kind === 'post'
                 ? 'bg-sol-green text-white border-sol-green'
                 : 'bg-sol-orange text-white border-sol-orange';
@@ -79,6 +82,8 @@ export function WorkbookNav() {
             cls =
               p.kind === 'prep'
                 ? 'bg-purple-50 text-purple-700 border-purple-200 hover:bg-purple-100'
+                : p.kind === 'identity'
+                ? 'bg-purple-100 text-purple-800 border-purple-300 hover:bg-purple-200'
                 : p.kind === 'post'
                 ? 'bg-sol-green/10 text-sol-green border-sol-green/30 hover:bg-sol-green/20'
                 : 'bg-white text-sol-ink/70 border-black/10 hover:bg-sol-bg';

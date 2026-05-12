@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Sol — Bộ Điều Khiển Nhắn Tin (Admin Mockup v1.5)</title>
+<style>
+  :root {
+    --sol-orange: #B25C2C;
+    --sol-orange-soft: #FFF4EA;
+    --sol-green: #2E7D32;
+    --sol-green-soft: #E8F5E9;
+    --sol-gold: #B8860B;
+    --sol-gold-soft: #FFF8E1;
+    --sol-red: #C62828;
+    --sol-red-soft: #FFEBEE;
+    --sol-brown: #5C3A1E;
+    --sol-paper: #FBF7F0;
+    --sol-soft: #F5F0E8;
+    --sol-line: #D4C7A8;
+    --sol-ink: #2C2A27;
+    --sol-ink-2: #5A5650;
+    --sol-ink-3: #8A857C;
+    --sol-blue: #0068FF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Be Vietnam Pro', -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: var(--sol-paper);
+    color: var(--sol-ink);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  .topbar {
+    background: var(--sol-brown);
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .topbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .topbar .brand-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .topbar .brand-text { font-size: 12px; opacity: 0.85; text-transform: uppercase; letter-spacing: 1px; }
+  .topbar .brand-name { font-size: 16px; font-weight: 700; }
+  .topbar .user { font-size: 13px; opacity: 0.9; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 26px;
+    color: var(--sol-orange);
+    margin: 0 0 8px;
+  }
+  h2 {
+    font-size: 18px;
+    color: var(--sol-brown);
+    margin: 24px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--sol-line);
+  }
+  h3 {
+    font-size: 15px;
+    color: var(--sol-ink);
+    margin: 16px 0 8px;
+  }
+  .subtitle {
+    color: var(--sol-ink-2);
+    margin: 0 0 24px;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid var(--sol-line);
+    margin-bottom: 20px;
+  }
+  .tab {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--sol-ink-2);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    font-family: inherit;
+  }
+  .tab.active {
+    color: var(--sol-orange);
+    border-bottom-color: var(--sol-orange);
+  }
+  .tab:hover { color: var(--sol-ink); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Stat cards */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    background: white;
+    border: 1px solid var(--sol-line);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--sol-ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+  .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--sol-orange);
+    margin-top: 4px;
+  }
+  .stat-sub { font-size: 11px; color: var(--sol-ink-2); margin-top: 2px; }
+
+  /* Intensity slider */
+  .intensity-box {
+    background: white;
+    border: 1px solid var(--sol-line);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .intensity-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .intensity-card {
+    border: 2px solid var(--sol-line);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .intensity-card.active {
+    border-color: var(--sol-orange);
+    background: var(--sol-orange-soft);
+  }
+  .intensity-emoji { font-size: 26px; }
+  .intensity-name { font-weight: 700; font-size: 14px; margin-top: 4px; }
+  .intensity-desc { font-size: 11px; color: var(--sol-ink-2); margin-top: 4px; }
+  .intensity-count { font-size: 11px; color: var(--sol-ink-3); margin-top: 6px; }
+
+  /* Template list */
+  .template-list {
+    background: white;
+    border: 1px solid var(--sol-line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .template-row {
+    display: grid;
+    grid-template-columns: 30px 1fr 90px 80px 100px 80px;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--sol-soft);
+    font-size: 13px;
+  }
+  .template-row:last-child { border-bottom: none; }
+  .template-row.header {
+    background: var(--sol-soft);
+    font-weight: 700;
+    color: var(--sol-ink-2);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .toggle {
+    width: 36px;
+    height: 20px;
+    background: var(--sol-line);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  .toggle::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all 0.15s;
+  }
+  .toggle.on { background: var(--sol-green); }
+  .toggle.on::after { left: 18px; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-tag2 { background: var(--sol-green-soft); color: var(--sol-green); }
+  .badge-paused { background: var(--sol-gold-soft); color: var(--sol-gold); }
+  .badge-enabled { background: var(--sol-green-soft); color: var(--sol-green); }
+  .badge-warning { background: var(--sol-red-soft); color: var(--sol-red); }
+
+  /* Cohort cards */
+  .cohort-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .cohort-card {
+    background: white;
+    border: 1px solid var(--sol-line);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .cohort-card.light { border-top: 4px solid var(--sol-green); }
+  .cohort-card.moderate { border-top: 4px solid var(--sol-gold); }
+  .cohort-card.heavy { border-top: 4px solid var(--sol-red); }
+  .cohort-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .cohort-name { font-weight: 700; font-size: 16px; }
+  .cohort-count {
+    background: var(--sol-soft);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .cohort-criteria {
+    font-size: 12px;
+    color: var(--sol-ink-2);
+    margin-bottom: 12px;
+    padding: 8px;
+    background: var(--sol-soft);
+    border-radius: 6px;
+  }
+  .cohort-rule {
+    font-size: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--sol-soft);
+  }
+  .cohort-rule:last-child { border-bottom: none; }
+  .cohort-rule .key { color: var(--sol-ink-3); }
+
+  /* User table */
+  .user-table {
+    background: white;
+    border: 1px solid var(--sol-line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .user-table table { width: 100%; border-collapse: collapse; }
+  .user-table th, .user-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--sol-soft);
+    font-size: 13px;
+  }
+  .user-table th {
+    background: var(--sol-soft);
+    color: var(--sol-ink-2);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .user-table tr:hover { background: var(--sol-paper); cursor: pointer; }
+  .ftnd-bar {
+    display: inline-block;
+    width: 60px;
+    height: 6px;
+    background: var(--sol-line);
+    border-radius: 3px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  .ftnd-bar-fill { height: 100%; background: var(--sol-red); }
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .pill-light { background: var(--sol-green-soft); color: var(--sol-green); }
+  .pill-moderate { background: var(--sol-gold-soft); color: var(--sol-gold); }
+  .pill-heavy { background: var(--sol-red-soft); color: var(--sol-red); }
+
+  /* User detail panel */
+  .user-detail {
+    background: white;
+    border: 1px solid var(--sol-line);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .user-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--sol-line);
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .form-field { display: flex; flex-direction: column; }
+  .form-field label {
+    font-size: 11px;
+    color: var(--sol-ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .form-field input, .form-field select {
+    padding: 8px 10px;
+    border: 1px solid var(--sol-line);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+  }
+
+  /* A/B card */
+  .ab-card {
+    background: white;
+    border: 1px solid var(--sol-line);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  .ab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .ab-title { font-weight: 700; font-size: 15px; }
+  .ab-status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .ab-status.running { background: var(--sol-green-soft); color: var(--sol-green); }
+  .ab-status.concluded { background: var(--sol-orange-soft); color: var(--sol-orange); }
+  .ab-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .ab-variant {
+    padding: 12px;
+    border: 1px solid var(--sol-line);
+    border-radius: 8px;
+  }
+  .ab-variant.winner {
+    border-color: var(--sol-green);
+    background: var(--sol-green-soft);
+  }
+  .ab-variant-name { font-weight: 700; margin-bottom: 4px; }
+  .ab-variant-config { font-size: 12px; color: var(--sol-ink-2); }
+  .ab-metric { margin-top: 8px; font-size: 16px; font-weight: 700; color: var(--sol-orange); }
+  .ab-sample { font-size: 11px; color: var(--sol-ink-3); }
+
+  .btn {
+    background: var(--sol-orange);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-secondary {
+    background: white;
+    color: var(--sol-orange);
+    border: 1px solid var(--sol-orange);
+  }
+
+  .footer-note {
+    margin-top: 32px;
+    padding: 14px;
+    background: var(--sol-soft);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--sol-ink-2);
+    border-left: 4px solid var(--sol-orange);
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-icon">S</div>
+    <div>
+      <div class="brand-text">Admin Console</div>
+      <div class="brand-name">SOL — Quản trị</div>
+    </div>
+  </div>
+  <div class="user">khang@sol.vn · Đăng xuất</div>
+</div>
+
+<div class="container">
+
+<h1>💬 Bộ Điều Khiển Nhắn Tin</h1>
+<p class="subtitle">Điều chỉnh tần suất + cường độ tin push Zalo OA động — toàn cohort, mỗi nhóm, từng user.</p>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('global')">⚙️ Global</button>
+  <button class="tab" onclick="showTab('cohort')">👥 Cohort</button>
+  <button class="tab" onclick="showTab('user')">👤 Per-user</button>
+  <button class="tab" onclick="showTab('ab')">🧪 A/B Test</button>
+  <button class="tab" onclick="showTab('reports')">📊 Reports</button>
+</div>
+
+<!-- ─── TAB GLOBAL ───────────────────────────────────────── -->
+<div id="tab-global" class="tab-content active">
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-label">Tin gửi 24h</div>
+      <div class="stat-value">234</div>
+      <div class="stat-sub">Cap: 300 (78%)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">User active</div>
+      <div class="stat-value">39</div>
+      <div class="stat-sub">L 5 · M 22 · H 12</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Open rate 7d</div>
+      <div class="stat-value">78%</div>
+      <div class="stat-sub">Benchmark 75%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Chi phí tháng</div>
+      <div class="stat-value">210k</div>
+      <div class="stat-sub">ZNS: 840 tin</div>
+    </div>
+  </div>
+
+  <div class="intensity-box">
+    <h3 style="margin-top:0;">Cường độ tổng quát (Global default)</h3>
+    <p style="color:var(--sol-ink-2);font-size:13px;margin:0 0 8px;">Mức nền — sẽ bị override theo Cohort + User policy. Anh có thể chỉnh slider rồi bấm Save để apply runtime.</p>
+    <div class="intensity-options">
+      <div class="intensity-card">
+        <div class="intensity-emoji">🟢</div>
+        <div class="intensity-name">Nhẹ</div>
+        <div class="intensity-desc">Min push, chỉ critical</div>
+        <div class="intensity-count">~15 tin / user / 52 ngày</div>
+      </div>
+      <div class="intensity-card active">
+        <div class="intensity-emoji">🟡</div>
+        <div class="intensity-name">Vừa</div>
+        <div class="intensity-desc">Default Sol v3</div>
+        <div class="intensity-count">~30 tin / user / 52 ngày</div>
+      </div>
+      <div class="intensity-card">
+        <div class="intensity-emoji">🔴</div>
+        <div class="intensity-name">Mạnh</div>
+        <div class="intensity-desc">Daily + multiple/day</div>
+        <div class="intensity-count">~50 tin / user / 52 ngày</div>
+      </div>
+      <div class="intensity-card">
+        <div class="intensity-emoji">⚙️</div>
+        <div class="intensity-name">Tuỳ chỉnh</div>
+        <div class="intensity-desc">Khang config tay</div>
+        <div class="intensity-count">Variable</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Per-template Status</h2>
+  <div class="template-list">
+    <div class="template-row header">
+      <span></span>
+      <span>Template</span>
+      <span>Tag</span>
+      <span>Sent today</span>
+      <span>Status Zalo</span>
+      <span></span>
+    </div>
+    <div class="template-row">
+      <div class="toggle on"></div>
+      <div>
+        <strong>SOL_WELCOME</strong><br>
+        <span style="color:var(--sol-ink-3);font-size:11px;">Day 1 chào mừng</span>
+      </div>
+      <span class="badge badge-tag2">Tag 2</span>
+      <span>3</span>
+      <span class="badge badge-enabled">Approved</span>
+      <span>⚙️</span>
+    </div>
+    <div class="template-row">
+      <div class="toggle on"></div>
+      <div>
+        <strong>SOL_DAILY_CHECKIN</strong><br>
+        <span style="color:var(--sol-ink-3);font-size:11px;">20:00 nhắc check-in</span>
+      </div>
+      <span class="badge badge-tag2">Tag 2</span>
+      <span>32</span>
+      <span class="badge badge-enabled">Approved</span>
+      <span>⚙️</span>
+    </div>
+    <div class="template-row">
+      <div class="toggle on"></div>
+      <div>
+        <strong>SOL_VOICE_RELEASE</strong><br>
+        <span style="color:var(--sol-ink-3);font-size:11px;">Voice Khang cột mốc</span>
+      </div>
+      <span class="badge badge-tag2">Tag 2</span>
+      <span>0</span>
+      <span class="badge badge-warning">Voice 404</span>
+      <span>⚙️</span>
+    </div>
+    <div class="template-row">
+      <div class="toggle on"></div>
+      <div>
+        <strong>SOL_Q_DAY_MORNING</strong><br>
+        <span style="color:var(--sol-ink-3);font-size:11px;">Day 22 sáng 7h</span>
+      </div>
+      <span class="badge badge-tag2">Tag 2</span>
+      <span>1</span>
+      <span class="badge badge-enabled">Approved</span>
+      <span>⚙️</span>
+    </div>
+    <div class="template-row">
+      <div class="toggle on"></div>
+      <div>
+        <strong>SOL_T_MINUS_2</strong><br>
+        <span style="color:var(--sol-ink-3);font-size:11px;">Day 20 còn 2 ngày</span>
+      </div>
+      <span class="badge badge-tag2">Tag 2</span>
+      <span>2</span>
+      <span class="badge badge-enabled">Approved</span>
+      <span>⚙️</span>
+    </div>
+    <div class="template-row">
+      <div class="toggle on"></div>
+      <div>
+        <strong>SOL_CRISIS_DETECT</strong><br>
+        <span style="color:var(--sol-ink-3);font-size:11px;">Ad-hoc moment khó</span>
+      </div>
+      <span class="badge badge-tag2">Tag 2</span>
+      <span>4</span>
+      <span class="badge badge-enabled">Approved</span>
+      <span>⚙️</span>
+    </div>
+    <div class="template-row">
+      <div class="toggle"></div>
+      <div>
+        <strong>SOL_LAPSE_RECOVERY</strong><br>
+        <span style="color:var(--sol-ink-3);font-size:11px;">User vắng 7+ ngày</span>
+      </div>
+      <span class="badge badge-tag2">Tag 2</span>
+      <span>0</span>
+      <span class="badge badge-paused">Draft</span>
+      <span>⚙️</span>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;text-align:right;">
+    <button class="btn btn-secondary">Reset về Default</button>
+    <button class="btn" style="margin-left:8px;">💾 Save & Apply Runtime</button>
+  </div>
+</div>
+
+<!-- ─── TAB COHORT ───────────────────────────────────────── -->
+<div id="tab-cohort" class="tab-content">
+
+  <h3 style="margin-top:0;">Phân nhóm tự động theo FTND Score (Fagerström)</h3>
+  <p style="color:var(--sol-ink-2);font-size:13px;">User được auto-assign cohort khi onboarding. Mỗi cohort có rule push riêng — override Global.</p>
+
+  <div class="cohort-grid">
+    <div class="cohort-card light">
+      <div class="cohort-header">
+        <div class="cohort-name">🟢 Light</div>
+        <div class="cohort-count">5 user</div>
+      </div>
+      <div class="cohort-criteria">FTND 0-3 · Hút &lt; 10 điếu/ngày</div>
+      <div class="cohort-rule"><span class="key">SOL_DAILY_CHECKIN:</span> Skip — weekly chỉ 1 lần</div>
+      <div class="cohort-rule"><span class="key">SOL_VOICE_RELEASE:</span> Chỉ Day 1, 22, 52 (3 voice)</div>
+      <div class="cohort-rule"><span class="key">SOL_T_MINUS_2:</span> Skip (đủ Day 22 push)</div>
+      <div class="cohort-rule"><span class="key">Crisis threshold:</span> 8/10</div>
+      <div class="cohort-rule"><span class="key">Cường độ:</span> 🟢 Nhẹ</div>
+    </div>
+
+    <div class="cohort-card moderate">
+      <div class="cohort-header">
+        <div class="cohort-name">🟡 Moderate</div>
+        <div class="cohort-count">22 user</div>
+      </div>
+      <div class="cohort-criteria">FTND 4-6 · 10-20 điếu/ngày</div>
+      <div class="cohort-rule"><span class="key">SOL_DAILY_CHECKIN:</span> 1 tin/ngày tối 20:00</div>
+      <div class="cohort-rule"><span class="key">SOL_VOICE_RELEASE:</span> Day 1, 3, 7, 14, 22, 30, 51</div>
+      <div class="cohort-rule"><span class="key">SOL_T_MINUS_2:</span> Day 20 sáng 7h</div>
+      <div class="cohort-rule"><span class="key">Crisis threshold:</span> 7/10</div>
+      <div class="cohort-rule"><span class="key">Cường độ:</span> 🟡 Vừa (default)</div>
+    </div>
+
+    <div class="cohort-card heavy">
+      <div class="cohort-header">
+        <div class="cohort-name">🔴 Heavy</div>
+        <div class="cohort-count">12 user</div>
+      </div>
+      <div class="cohort-criteria">FTND 7-10 · &gt;20 điếu/ngày</div>
+      <div class="cohort-rule"><span class="key">SOL_DAILY_CHECKIN:</span> 2 tin/ngày (8h + 20h)</div>
+      <div class="cohort-rule"><span class="key">SOL_VOICE_RELEASE:</span> + Day 5, 10, 17 (10 voice total)</div>
+      <div class="cohort-rule"><span class="key">SOL_T_MINUS_2:</span> Bắt đầu Day 18 (sớm 2 ngày)</div>
+      <div class="cohort-rule"><span class="key">Crisis threshold:</span> 6/10 — escalate Khang nhanh</div>
+      <div class="cohort-rule"><span class="key">Cường độ:</span> 🔴 Mạnh</div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;text-align:right;">
+    <button class="btn btn-secondary">+ Tạo Cohort tuỳ chỉnh</button>
+    <button class="btn" style="margin-left:8px;">💾 Save Cohort Rules</button>
+  </div>
+</div>
+
+<!-- ─── TAB USER ────────────────────────────────────────── -->
+<div id="tab-user" class="tab-content">
+
+  <h3 style="margin-top:0;">Override per-user (cho pilot users)</h3>
+  <p style="color:var(--sol-ink-2);font-size:13px;">Tìm 1 user cụ thể, chỉnh rule push cho riêng người đó. Hữu ích cho pilot 30 anh em đầu — Khang quan sát + tinh chỉnh.</p>
+
+  <div style="margin-bottom:12px;">
+    <input type="text" placeholder="🔍 Tìm user theo tên, SĐT, email..." style="width:100%;padding:10px;border:1px solid var(--sol-line);border-radius:6px;font-family:inherit;font-size:13px;">
+  </div>
+
+  <div class="user-table">
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>FTND</th>
+          <th>Cohort</th>
+          <th>Day</th>
+          <th>Engagement</th>
+          <th>Override</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Nguyễn Văn A</strong><br><span style="font-size:11px;color:var(--sol-ink-3);">0901234567</span></td>
+          <td><span class="ftnd-bar"><span class="ftnd-bar-fill" style="width:80%;"></span></span>8</td>
+          <td><span class="pill pill-heavy">Heavy</span></td>
+          <td>18</td>
+          <td>92%</td>
+          <td>—</td>
+          <td>Pilot batch 1</td>
+        </tr>
+        <tr>
+          <td><strong>Trần Văn B</strong><br><span style="font-size:11px;color:var(--sol-ink-3);">0912345678</span></td>
+          <td><span class="ftnd-bar"><span class="ftnd-bar-fill" style="width:50%;"></span></span>5</td>
+          <td><span class="pill pill-moderate">Moderate</span></td>
+          <td>22</td>
+          <td>78%</td>
+          <td>Boost ON</td>
+          <td>Vừa Q-Day, cần push thêm</td>
+        </tr>
+        <tr>
+          <td><strong>Lê Văn C</strong><br><span style="font-size:11px;color:var(--sol-ink-3);">0987654321</span></td>
+          <td><span class="ftnd-bar"><span class="ftnd-bar-fill" style="width:30%;"></span></span>3</td>
+          <td><span class="pill pill-light">Light</span></td>
+          <td>7</td>
+          <td>45%</td>
+          <td>Mute 5d</td>
+          <td>Đi công tác — xin tạm dừng</td>
+        </tr>
+        <tr style="background:var(--sol-orange-soft);">
+          <td><strong>Phạm Văn D</strong><br><span style="font-size:11px;color:var(--sol-ink-3);">0911111111</span></td>
+          <td><span class="ftnd-bar"><span class="ftnd-bar-fill" style="width:90%;"></span></span>9</td>
+          <td><span class="pill pill-heavy">Heavy</span></td>
+          <td>3</td>
+          <td>—</td>
+          <td>Đã chọn</td>
+          <td>Click để chỉnh</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="user-detail">
+    <div class="user-detail-header">
+      <div>
+        <strong style="font-size:16px;">Phạm Văn D</strong><br>
+        <span style="color:var(--sol-ink-2);font-size:12px;">SĐT 0911111111 · FTND 9 · Heavy · Day 3 Nhận Diện · Last check-in 6 giờ trước</span>
+      </div>
+      <button class="btn btn-secondary">Xem lịch sử tin</button>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Cường độ user này</label>
+        <select>
+          <option>🔴 Mạnh (theo Cohort Heavy)</option>
+          <option>🟡 Vừa</option>
+          <option>🟢 Nhẹ</option>
+          <option>⚙️ Tuỳ chỉnh</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Boost mode</label>
+        <select>
+          <option>Off</option>
+          <option selected>On — push extra 14 ngày</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Mute until</label>
+        <input type="date" value="">
+      </div>
+      <div class="form-field">
+        <label>Crisis threshold (cho user này)</label>
+        <input type="number" value="5" min="1" max="10">
+      </div>
+    </div>
+
+    <h3 style="margin-top:20px;">Per-template override</h3>
+    <div class="template-list" style="margin-bottom:12px;">
+      <div class="template-row" style="grid-template-columns:30px 1fr 200px 80px;">
+        <div class="toggle"></div>
+        <div><strong>SOL_DAILY_CHECKIN</strong></div>
+        <div><select style="width:100%;padding:4px;border:1px solid var(--sol-line);border-radius:4px;font-size:12px;"><option>Default cohort</option><option selected>Disable cho user này</option></select></div>
+        <span class="badge badge-paused">Disabled</span>
+      </div>
+      <div class="template-row" style="grid-template-columns:30px 1fr 200px 80px;">
+        <div class="toggle on"></div>
+        <div><strong>SOL_VOICE_RELEASE</strong></div>
+        <div><select style="width:100%;padding:4px;border:1px solid var(--sol-line);border-radius:4px;font-size:12px;"><option>Default cohort</option><option selected>+ Day 12 extra voice</option></select></div>
+        <span class="badge badge-enabled">Boost</span>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label>Notes</label>
+      <input type="text" value="Anh D nghiện nặng, mới đăng ký, cần Khang theo dõi sát">
+    </div>
+
+    <div style="margin-top:16px;text-align:right;">
+      <button class="btn btn-secondary">Reset về Cohort default</button>
+      <button class="btn" style="margin-left:8px;">💾 Save Override</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TAB A/B ────────────────────────────────────────── -->
+<div id="tab-ab" class="tab-content">
+
+  <h3 style="margin-top:0;">A/B Testing — thử nghiệm chiến lược push</h3>
+  <p style="color:var(--sol-ink-2);font-size:13px;">Chạy experiment trên user thật để tìm chiến lược tối ưu. Sol auto-assign user vào variant + track metric.</p>
+
+  <div style="margin-bottom:16px;text-align:right;">
+    <button class="btn">+ Tạo Experiment mới</button>
+  </div>
+
+  <div class="ab-card">
+    <div class="ab-header">
+      <div>
+        <div class="ab-title">Q-Day Push Timing</div>
+        <div style="font-size:12px;color:var(--sol-ink-3);">Bắt đầu 08-05-2026 · 14 ngày · 30 user</div>
+      </div>
+      <span class="ab-status running">🟢 Đang chạy</span>
+    </div>
+    <div class="ab-variants">
+      <div class="ab-variant">
+        <div class="ab-variant-name">Variant A (control)</div>
+        <div class="ab-variant-config">SOL_Q_DAY_MORNING gửi lúc 7:00</div>
+        <div class="ab-metric">62%</div>
+        <div class="ab-sample">Commit rate · n=15</div>
+      </div>
+      <div class="ab-variant winner">
+        <div class="ab-variant-name">Variant B 🏆</div>
+        <div class="ab-variant-config">SOL_Q_DAY_MORNING gửi lúc 8:00</div>
+        <div class="ab-metric">78%</div>
+        <div class="ab-sample">Commit rate · n=15 · +16%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ab-card">
+    <div class="ab-header">
+      <div>
+        <div class="ab-title">Voice vs Text-only fallback</div>
+        <div style="font-size:12px;color:var(--sol-ink-3);">Đã kết thúc · 21 ngày · 50 user</div>
+      </div>
+      <span class="ab-status concluded">✓ Kết thúc</span>
+    </div>
+    <div class="ab-variants">
+      <div class="ab-variant winner">
+        <div class="ab-variant-name">Variant A 🏆</div>
+        <div class="ab-variant-config">SOL_VOICE_RELEASE có nút Nghe Khang</div>
+        <div class="ab-metric">82%</div>
+        <div class="ab-sample">Engagement · n=25 · +24%</div>
+      </div>
+      <div class="ab-variant">
+        <div class="ab-variant-name">Variant B</div>
+        <div class="ab-variant-config">SOL_VOICE_RELEASE_TEXT only (no voice)</div>
+        <div class="ab-metric">58%</div>
+        <div class="ab-sample">Engagement · n=25</div>
+      </div>
+    </div>
+    <p style="margin-top:10px;font-size:13px;color:var(--sol-ink-2);"><strong>Quyết định:</strong> Giữ voice as default, fallback text khi voice fail.</p>
+  </div>
+
+  <div class="ab-card">
+    <div class="ab-header">
+      <div>
+        <div class="ab-title">Cường độ Heavy cohort</div>
+        <div style="font-size:12px;color:var(--sol-ink-3);">Đang setup · chưa launch</div>
+      </div>
+      <span class="ab-status" style="background:var(--sol-soft);color:var(--sol-ink-2);">⚙️ Draft</span>
+    </div>
+    <div class="ab-variants">
+      <div class="ab-variant">
+        <div class="ab-variant-name">Variant A</div>
+        <div class="ab-variant-config">Daily check-in 1 lần/ngày</div>
+        <div class="ab-metric">—</div>
+        <div class="ab-sample">Chưa run</div>
+      </div>
+      <div class="ab-variant">
+        <div class="ab-variant-name">Variant B</div>
+        <div class="ab-variant-config">Daily check-in 2 lần (8h + 20h)</div>
+        <div class="ab-metric">—</div>
+        <div class="ab-sample">Chưa run</div>
+      </div>
+    </div>
+    <button class="btn" style="margin-top:10px;">▶ Launch</button>
+  </div>
+</div>
+
+<!-- ─── TAB REPORTS ──────────────────────────────────────── -->
+<div id="tab-reports" class="tab-content">
+
+  <h3 style="margin-top:0;">Báo cáo Hiệu quả Tin Nhắn</h3>
+  <p style="color:var(--sol-ink-2);font-size:13px;">Tổng quan engagement, chi phí, block rate — cập nhật mỗi giờ.</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-label">Total sent 7d</div>
+      <div class="stat-value">1,560</div>
+      <div class="stat-sub">avg 222/day</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Open rate</div>
+      <div class="stat-value">78%</div>
+      <div class="stat-sub">↑ 3% vs last week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Click rate (CTA)</div>
+      <div class="stat-value">22%</div>
+      <div class="stat-sub">benchmark 15%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Block rate</div>
+      <div class="stat-value" style="color:var(--sol-green);">1.2%</div>
+      <div class="stat-sub">safe &lt;5%</div>
+    </div>
+  </div>
+
+  <h3>Per-template performance</h3>
+  <div class="template-list">
+    <div class="template-row header" style="grid-template-columns:40px 1fr 80px 80px 80px 80px 80px;">
+      <span></span>
+      <span>Template</span>
+      <span>Sent</span>
+      <span>Opened</span>
+      <span>Clicked</span>
+      <span>Cost</span>
+      <span>Score</span>
+    </div>
+    <div class="template-row" style="grid-template-columns:40px 1fr 80px 80px 80px 80px 80px;">
+      <span>🎙</span>
+      <div><strong>SOL_VOICE_RELEASE</strong></div>
+      <span>156</span>
+      <span>88%</span>
+      <span>42%</span>
+      <span>39k</span>
+      <span style="color:var(--sol-green);font-weight:700;">A+</span>
+    </div>
+    <div class="template-row" style="grid-template-columns:40px 1fr 80px 80px 80px 80px 80px;">
+      <span>🌅</span>
+      <div><strong>SOL_Q_DAY_MORNING</strong></div>
+      <span>23</span>
+      <span>96%</span>
+      <span>78%</span>
+      <span>6k</span>
+      <span style="color:var(--sol-green);font-weight:700;">A+</span>
+    </div>
+    <div class="template-row" style="grid-template-columns:40px 1fr 80px 80px 80px 80px 80px;">
+      <span>📝</span>
+      <div><strong>SOL_DAILY_CHECKIN</strong></div>
+      <span>820</span>
+      <span>72%</span>
+      <span>34%</span>
+      <span>205k</span>
+      <span style="color:var(--sol-green);font-weight:700;">A</span>
+    </div>
+    <div class="template-row" style="grid-template-columns:40px 1fr 80px 80px 80px 80px 80px;">
+      <span>🆘</span>
+      <div><strong>SOL_CRISIS_DETECT</strong></div>
+      <span>34</span>
+      <span>98%</span>
+      <span>65%</span>
+      <span>9k</span>
+      <span style="color:var(--sol-green);font-weight:700;">A+</span>
+    </div>
+    <div class="template-row" style="grid-template-columns:40px 1fr 80px 80px 80px 80px 80px;">
+      <span>🦁</span>
+      <div><strong>SOL_LAPSE_RECOVERY</strong></div>
+      <span>5</span>
+      <span>40%</span>
+      <span>20%</span>
+      <span>1k</span>
+      <span style="color:var(--sol-gold);font-weight:700;">B</span>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px;">Chi phí ZNS 30 ngày qua</h3>
+  <div class="template-list">
+    <div class="template-row" style="grid-template-columns:1fr 200px;">
+      <div>Tổng chi phí tháng này</div>
+      <div style="font-weight:700;color:var(--sol-orange);">260,000đ</div>
+    </div>
+    <div class="template-row" style="grid-template-columns:1fr 200px;">
+      <div>Budget cap đang set</div>
+      <div>500,000đ (52% used)</div>
+    </div>
+    <div class="template-row" style="grid-template-columns:1fr 200px;">
+      <div>Avg cost / paid user</div>
+      <div>6,667đ / tháng</div>
+    </div>
+    <div class="template-row" style="grid-template-columns:1fr 200px;">
+      <div>Tổng paid user</div>
+      <div>39</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-note">
+  <strong>💡 Sol Messaging Control v1.5</strong> · Mockup design 12-05-2026 · Mục tiêu: cho phép Khang điều chỉnh chiến lược push động, không cần dev redeploy. Adaptive engine sẽ học từ engagement, tự gợi ý tăng/giảm cường độ cho mỗi cohort.
+</div>
+
+</div>
+
+<script>
+  function showTab(name) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('tab-' + name).classList.add('active');
+  }
+</script>
+
+</body>
+</html>

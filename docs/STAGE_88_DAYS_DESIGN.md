@@ -11,7 +11,7 @@
 
 > *"Sol không bán 7, 21, 30 ngày — Sol dẫn người dùng đi qua 3 giai đoạn thay đổi hành vi và 1 giai đoạn duy trì để đảm bảo sự chuyển đổi bền vững."*
 
-**Cấu trúc:** `7 + 21 + 30 + 30 = 88 ngày`
+**Cấu trúc:** `7 + 21 + 30 + 30 = 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp)`
 
 | # | Tên (UX) | Code | Day | Số ngày | Ý nghĩa |
 |---|---|---|---|---|---|
@@ -376,7 +376,7 @@ Admin toggle promo on/off trong `/admin/pricing` (chưa có UI, tạm hardcode).
 - Hiển thị "Ngày X / 88" trên header chính
 - Pricing nói "gói 28 ngày", "gói 58 ngày"
 - Progress bar 88 cells linear
-- Onboarding nói "anh cam kết 88 ngày"
+- Onboarding nói "anh cam kết 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp)"
 
 ### ✅ Khuyến khích
 
@@ -436,7 +436,7 @@ Admin toggle promo on/off trong `/admin/pricing` (chưa có UI, tạm hardcode).
 
 | Rủi ro | Khả năng | Mitigation |
 |---|---|---|
-| User thấy "88 ngày" sợ → bỏ ngay | Cao | UX rules giấu số ngày, marketing nói "4 lớp tiến hoá" |
+| User thấy "52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp)" sợ → bỏ ngay | Cao | UX rules giấu số ngày, marketing nói "4 lớp tiến hoá" |
 | Q-Day Day 28 user chưa sẵn → friction | Trung | Cho phép skip, nag nhẹ Day 29-35, không ép |
 | Money saved âm → user nản | Trung | Subtitle "đây là số thật", Sol message phản chiếu compassionate |
 | Phase 3 slip (relapse) → user xấu hổ | Cao | Slip modal compassion, không reset hoàn toàn, story update gentle |
@@ -474,7 +474,7 @@ Admin toggle promo on/off trong `/admin/pricing` (chưa có UI, tạm hardcode).
 4. **Tuần 4:** Onboard user thật, observe Phase 1
 5. **Tháng 2:** Thu thập data 7 ngày Phase 1 → tune content
 6. **Tháng 3:** User đầu tiên đến Q-Day (Day 28)
-7. **Tháng 4:** User đầu tiên đến Day 88 — TÁI THIẾT graduation
+7. **Tháng 4:** User đầu tiên đến Day 52 — TÁI THIẾT graduation
 
 ---
 

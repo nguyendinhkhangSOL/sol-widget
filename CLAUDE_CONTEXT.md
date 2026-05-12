@@ -6,6 +6,21 @@
 
 ---
 
+## 0. ⭐ LATEST CHECKPOINT — đọc trước
+
+**Trạng thái cuối**: 2026-05-10 — **Sprint 1 đã HOÀN TẤT 100%.**
+
+Đọc theo thứ tự ưu tiên:
+1. `docs/SESSION_CHECKPOINT_2026-05-10.md` — phiên gần nhất, có trạng thái cuối
+2. `docs/SPRINT_1_FINAL_REPORT.md` — báo cáo tổng kết Sprint 1 (27 task)
+3. `docs/CAN_KHANG_REVIEW.md` — việc Khang còn phải làm OFFLINE
+4. `docs/SESSION_CHECKPOINT_2026-05-09.md` — phiên trước (MVP code)
+5. `docs/SESSION_CHECKPOINT_2026-05-08.md` — phiên đầu (strategic)
+
+**Sprint 2 chưa start.** Trigger: pilot 30 anh em chạy đủ 88 ngày → có data thực.
+
+---
+
 ## 1. Founder + Tone
 
 - **Founder**: KHANG SOL (`nguyendinhkhang@gmail.com`) — gọi là "Khang" hoặc "anh Khang"

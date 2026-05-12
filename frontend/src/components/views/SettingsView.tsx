@@ -738,16 +738,25 @@ export function SettingsView() {
               <span>Liên kết qua Email (khuyến nghị)</span>
             </button>
 
-            {/* Zalo + SĐT — DEFERRED (giữ code, UI ẩn). Sau có budget unhide.
-                Lý do hide: Zalo cần verify domain + APP_SECRET pending; SĐT
-                cần Stringee/eSMS account + cost. Email magic link đủ MVP. */}
-            {/*
+            {/* Zalo Login OAuth — UNHIDE (Sol v3, 12-05-2026):
+                ZALO_APP_SECRET đã có trong .env. Callback URL đã khai báo. */}
             <button
-              onClick={async () => { ... }}
-              className="..."
-            >Liên kết Zalo</button>
-            <button onClick={() => setShowBindPhone(true)}>Liên kết SĐT</button>
-            */}
+              onClick={async () => {
+                try {
+                  const r = await api.zaloInit();
+                  window.location.href = r.url;
+                } catch (e: any) {
+                  alert('Không khởi tạo được Zalo login: ' + (e?.message ?? 'unknown'));
+                }
+              }}
+              className="w-full py-2.5 rounded-lg bg-[#0068FF] text-white text-sm font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition"
+            >
+              <span>💙</span>
+              <span>Liên kết qua Zalo</span>
+            </button>
+
+            {/* SĐT — DEFERRED. Cần Stringee/eSMS account + cost. */}
+            {/* <button onClick={() => setShowBindPhone(true)}>Liên kết SĐT</button> */}
 
             <p className="text-[10px] text-sol-ink/45 leading-relaxed text-center">
               Liên kết để bảo vệ hành trình nếu mất máy. Sol không

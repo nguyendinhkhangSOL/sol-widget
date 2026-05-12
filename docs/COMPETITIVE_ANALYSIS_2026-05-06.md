@@ -16,7 +16,7 @@ Sau khi phân tích 4 phương pháp cai thuốc nổi bật + Sol:
 | **Smoke Free** | Behavior change science-based | UCL backing + missions | Tech-savvy 25-50 EN |
 | **QuitNow** | Tracking + community forum | Multi-language + cộng đồng | Mass market global |
 | **quitSTART (CDC)** | Institutional 30-day program | Free + science chính thống | Teens & young adults US |
-| **Sol** | 88-day evolution 4 phase + founder voice | VN cultural fit + Q-Day ritual | VN nam 45+ |
+| **Sol** | 52-day evolution 4 phase + founder voice | VN cultural fit + Q-Day ritual | VN nam 45+ |
 
 **Sol có 4 differentiator mạnh** mà 4 đối thủ không có:
 1. **Founder voice Khang Sol** — niềm tin "có người thật đi cùng" mạnh hơn AI generic
@@ -80,7 +80,7 @@ Cigarette KHÔNG cho dopamine thật — nicotine chỉ giảm withdrawal mà ch
 
 ✅ **Identity reframe content** — Sol scattered, nên có 1 module riêng (~7 bài Day 15-21) chuyên về "tôi là người không hút" voice Allen Carr-inspired
 
-❌ **KHÔNG copy 1-shot model** — phá vỡ 88-day philosophy của Sol
+❌ **KHÔNG copy 1-shot model** — phá vỡ 52-day philosophy của Sol
 
 ---
 
@@ -242,7 +242,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 
 ❌ **KHÔNG copy institutional voice** — Sol mạnh ở founder personal voice.
 
-❌ **KHÔNG copy 30-day** — Sol đã có 88-day deeper.
+❌ **KHÔNG copy 30-day** — Sol đã có 52-day deeper.
 
 ---
 
@@ -252,7 +252,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 
 > *"Sol không bán 7, 21, 30 ngày — Sol dẫn người dùng đi qua 3 giai đoạn thay đổi hành vi và 1 giai đoạn duy trì."*
 
-**88 ngày tiến hoá hành vi 4 phase:** Awareness (NHẬN THỨC 7d) → Rewiring (HÀNH ĐỘNG 21d) → Stabilization (GIẢI PHÓNG 30d) → Maintenance (TÁI THIẾT 30d). Identity shift gradual không 1-shot.
+**52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) tiến hoá hành vi 4 phase:** Awareness (NHẬN THỨC 7d) → Rewiring (HÀNH ĐỘNG 21d) → Stabilization (GIẢI PHÓNG 30d) → Maintenance (TÁI THIẾT 30d). Identity shift gradual không 1-shot.
 
 ### Method
 
@@ -277,7 +277,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 - FREE: Phase 1 (7 ngày)
 - KHỞI ĐỘNG 280k (default) / 70k (Promo Khởi Chạy 100 user đầu): Phase 1+2 (28 ngày)
 - ĐỒNG HÀNH 580k / 140k Promo: Phase 1+2+3 (58 ngày)
-- TRỌN GÓI 880k / 210k Promo: Phase 1+2+3+4 (88 ngày)
+- TRỌN GÓI 880k / 210k Promo: Phase 1+2+3+4 (52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp))
 - ĐẠI SỨ: lifetime bonus cho TRỌN GÓI
 
 ### Audience
@@ -307,7 +307,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 7. **Không có quitline integration** — VN có 0888-008-866 (BV Bạch Mai)
 8. **Achievement badge thiếu** — Sol triết lý "honest" nhưng vẫn có thể có badge minimalist
 9. **AI coach reactive only** — chỉ phản hồi khi user gõ, không proactive suggest
-10. **Hồ sơ PDF Day 88 chưa làm** — promised but not delivered
+10. **Hồ sơ PDF Day 52 chưa làm** — promised but not delivered
 
 ---
 
@@ -317,7 +317,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 |---|:---:|:---:|:---:|:---:|:---:|
 | Phase-based program | ❌ | ❌ | ❌ | ❌ | ✅ 4 phase |
 | Q-Day ceremony | Last cig ritual | ❌ | User-set quit date | Pledge | ✅ Day 28 full-screen |
-| Daily content | Sách 1-time | ✅ | ❌ | ✅ 30 days | ✅ 114 bài 88 ngày |
+| Daily content | Sách 1-time | ✅ | ❌ | ✅ 30 days | ✅ 114 bài 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp) |
 | Voice (audio) | Audiobook | ❌ | ❌ | ❌ | ⏳ planned |
 | AI coach | ❌ | ✅ text | ❌ | ❌ | ✅ chat |
 | Cigarette tracking | ❌ | ✅ | ✅ | ✅ | ✅ + trigger |
@@ -419,7 +419,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 - Smoke Free có AI gợi tip context-aware khi user mở app
 - **Effort:** 2-3 ngày — wrap Haiku model với context user state
 
-**G9. Hồ sơ PDF Day 88**
+**G9. Hồ sơ PDF Day 52**
 - Promised in Phase 4 + content NIGHT_STORY Day 86
 - Hiện alert "sắp ra mắt"
 - **Effort:** 2 ngày — pdfkit + template + endpoint
@@ -456,7 +456,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 | 6 | **Quitline 0888-008-866 integration** | 6/10 | 0.5 ngày | ⭐⭐⭐⭐⭐ | DO QUICK |
 | 7 | **Badge minimalist 7 milestones** | 5/10 | 2 ngày | ⭐⭐⭐ | OPTIONAL |
 | 8 | **AI coach proactive Haiku** | 7/10 | 3 ngày | ⭐⭐⭐ | DO Q4 |
-| 9 | **Hồ sơ PDF Day 88** | 5/10 | 2 ngày | ⭐⭐⭐ | DO khi reach Day 88 |
+| 9 | **Hồ sơ PDF Day 52** | 5/10 | 2 ngày | ⭐⭐⭐ | DO khi reach Day 52 |
 | 10 | **Pledges replay at craving** | 6/10 | 1 ngày | ⭐⭐⭐⭐ | DO QUICK |
 
 ### 4 việc DO QUICK (effort ≤ 1 ngày, impact 6/10+):
@@ -506,7 +506,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 - Sol giữ "Đội Sol" controlled — pseudonym + opt-in chat 1-on-1
 
 ### KHÔNG copy Allen Carr 1-shot path
-- Lý do: phá vỡ 88-day evolution philosophy
+- Lý do: phá vỡ 52-day evolution philosophy
 - User Allen Carr fail thường thấy "I'm stupid", Sol triết lý "evolution không có ngày sai"
 
 ### KHÔNG copy Smoke Free AI generic English-style
@@ -552,7 +552,7 @@ Behavior change qua **CBT (Cognitive Behavioral Therapy) + missions**. Khoa họ
 
 ## 13. KẾT LUẬN
 
-Sol đang ở vị trí **feature-rich nhất** trong 5 phương pháp được phân tích. Triết lý 88-day phase-based + founder voice + Q-Day ritual + Đội Sol cohort là combo unique không đối thủ nào có.
+Sol đang ở vị trí **feature-rich nhất** trong 5 phương pháp được phân tích. Triết lý 52-day phase-based + founder voice + Q-Day ritual + Đội Sol cohort là combo unique không đối thủ nào có.
 
 **3 việc Khang nên làm ngay:**
 1. **Record voice Khang** — kích hoạt differentiator #1 (1 buổi studio)

@@ -3,6 +3,7 @@
 
 import { useMemo } from 'react';
 import { useWorkbook } from '../../state/workbookStore';
+import type { WorkbookIdentity } from '../../state/workbookStore';
 import { calcMoneySavings, fmtVndFull, CRAVING_SITUATIONS, CRAVING_RESULTS } from '../../lib/workbook';
 import { SectionCard, Callout, FieldLabel, TextInput, TextArea } from './shared';
 
@@ -311,7 +312,200 @@ export function CravingLogSection() {
   );
 }
 
-// ─── 6 · Kế Hoạch Tái Phát ─────────────────────────────────────────────
+// ─── 6 · Bản Thân — Identity reframe (Allen Carr-inspired) ─────────────
+// 7 prompts để user tự hỏi mình "Tôi là ai khi không hút" — không phải
+// "Tôi cố gắng bỏ thuốc". Identity shift = chuyển từ deprivation feeling
+// (cảm thấy thiếu) sang freedom feeling (cảm thấy thoát).
+//
+// Voice opening: Khang Sol cá nhân ("Mình tự hỏi mình câu này tối trước
+// Q-Day…") — không phải bác sĩ giảng. Đây là moat differentiator vs Allen
+// Carr (Allen mất 2006, voice generic) và Smoke Free (AI chỉ text English).
+//
+// Data flow: save vào WorkbookData.identity, sync lên User.settings.workbook
+// qua autosave có sẵn. Phase 3-4 craving replay sẽ pull từ đây + 3 lý do
+// (Việc 3 sắp tới).
+
+const IDENTITY_PROMPTS: Array<{
+  key: keyof WorkbookIdentity;
+  num: number;
+  label: string;
+  hint: string;
+  placeholder: string;
+}> = [
+  {
+    key: 'q1',
+    num: 1,
+    label: 'Tôi là ai khi không có thuốc lá trong tay?',
+    hint: 'Không phải "tôi đang cai" — mà "tôi vốn là". Hãy mô tả như một người không bao giờ hút.',
+    placeholder: 'Ví dụ: Tôi là người uống cà phê sáng đọc báo, người dắt cu Tí đi học buổi sáng không vội vàng tìm chỗ hút trộm…',
+  },
+  {
+    key: 'q2',
+    num: 2,
+    label: 'Người không hút làm gì khi stress?',
+    hint: 'Stress là 100% sẽ có. Người không hút vẫn xử lý được — họ làm gì?',
+    placeholder: 'Ví dụ: Đi bộ 10 phút, gọi vợ, viết ra giấy, hít sâu 4 nhịp, làm tách trà…',
+  },
+  {
+    key: 'q3',
+    num: 3,
+    label: '5 năm tới tôi muốn được biết là người gì?',
+    hint: 'Không nói về thuốc. Nói về phẩm chất bạn muốn người khác nhớ về mình.',
+    placeholder: 'Ví dụ: Người ông khoẻ chơi với cháu, người chồng còn ở bên vợ năm 60, người bạn được tin tưởng…',
+  },
+  {
+    key: 'q4',
+    num: 4,
+    label: 'Vợ/con tôi muốn tôi trở thành người gì?',
+    hint: 'Hỏi thẳng họ nếu được. Hoặc tưởng tượng họ ngồi cạnh bây giờ.',
+    placeholder: 'Ví dụ: Vợ muốn tôi không còn ho mỗi sáng, con muốn tôi ôm không có mùi khói, mẹ muốn tôi sống lâu hơn bố…',
+  },
+  {
+    key: 'q5',
+    num: 5,
+    label: 'Câu nào tôi muốn người khác nói về tôi?',
+    hint: 'Không phải lời đẹp xã giao. Là câu một người thân thiết nói thật về bạn.',
+    placeholder: 'Ví dụ: "Anh ấy nói được làm được", "Chú ấy thay đổi vì gia đình", "Bố tôi đã bỏ thuốc khi tôi 12 tuổi"…',
+  },
+  {
+    key: 'q6',
+    num: 6,
+    label: 'Một người không hút bữa nhậu thế nào?',
+    hint: 'Đây là tình huống khó nhất. Hình dung kỹ — không né.',
+    placeholder: 'Ví dụ: Vẫn ngồi cùng anh em, gọi nước trước, ra ngoài hít thở khi mọi người ra hút, về sớm không tiếc…',
+  },
+  {
+    key: 'q7',
+    num: 7,
+    label: 'Đến cuối đời, di sản tôi để lại là gì?',
+    hint: 'Câu nặng nhất. Để cuối cùng. Không cần trả lời ngay — viết rồi quay lại sau vài ngày.',
+    placeholder: 'Ví dụ: Một gia đình không có ai hút thuốc, một người con kể "bố tôi đã chọn lại", một bài học cho cu Tí về quyết định…',
+  },
+];
+
+export function IdentitySection() {
+  const data = useWorkbook((s) => s.data);
+  const set = useWorkbook((s) => s.set);
+  const identity = data.identity;
+  const filled = (Object.keys(identity) as Array<keyof typeof identity>).filter((k) => identity[k]?.trim().length).length;
+
+  function setField(key: keyof typeof identity, value: string) {
+    set('identity', { ...identity, [key]: value });
+  }
+
+  return (
+    <SectionCard
+      id="wbx-section-identity"
+      accent="purple"
+      icon="🪞"
+      title="Bản Thân — Tôi Là Ai Khi Không Hút"
+      subtitle="7 câu hỏi sâu để bạn nhận lại chính mình — không phải cai thuốc, mà là sống lại"
+    >
+      {/* Voice Khang opening — quote founder cá nhân */}
+      <div
+        className="rounded-xl p-4 mb-4"
+        style={{
+          background: 'linear-gradient(135deg, #F3E5F5 0%, #FFF4EA 100%)',
+          borderLeft: '4px solid #7B1FA2',
+        }}
+      >
+        <div className="flex items-baseline gap-2 mb-2">
+          <span className="text-base">💬</span>
+          <strong className="text-sol-ink text-sm">Khang Sol</strong>
+          <span className="text-[11px] text-sol-ink/60">— Người Đã Đi Qua</span>
+        </div>
+        <p className="text-[13.5px] leading-relaxed text-sol-ink italic">
+          “Mình hút 30 năm trước khi cai. Lần thứ 5 mình nhảy thẳng — không kế
+          hoạch. Mình đã may có moment đó. Nhưng mình biết không phải ai cũng
+          giống mình. Và không phải ai cũng giống nhau.<br /><br />
+          7 câu này không phải để có câu trả lời đúng — là để anh biết bản thân
+          không phải <em>đang cố bỏ thuốc</em>. Bản thân anh <em>vốn không phải
+          người hút</em>. Khi anh viết xong, anh sẽ hiểu mình khác trước.”
+        </p>
+      </div>
+
+      <Callout accent="purple" icon="🧠">
+        <strong>Allen Carr (1985)</strong> dạy: identity shift quan trọng hơn
+        will power. Não không bỏ thói quen được — não chỉ thay danh tính. Khi
+        bạn nói “tôi <strong>không phải</strong> người hút”, khác hẳn “tôi
+        <strong> đang cố </strong> không hút”.
+      </Callout>
+
+      <div className="text-[11px] text-sol-ink/60 mb-3 flex items-center gap-2">
+        <span className="font-semibold uppercase tracking-wider">Tiến độ</span>
+        <div className="flex-1 h-1.5 rounded-full bg-black/5 overflow-hidden">
+          <div
+            className="h-full transition-all"
+            style={{
+              width: `${(filled / 7) * 100}%`,
+              background: 'linear-gradient(90deg, #7B1FA2, #B8860B)',
+            }}
+          />
+        </div>
+        <span className="tabular-nums">{filled}/7</span>
+      </div>
+
+      <div className="space-y-3">
+        {IDENTITY_PROMPTS.map((p) => (
+          <div
+            key={p.key}
+            className="rounded-xl p-3 bg-sol-bg/60 border border-black/5"
+          >
+            <div className="flex items-start gap-2.5">
+              <div
+                className="shrink-0 h-7 w-7 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5"
+                style={{ background: '#7B1FA2' }}
+              >
+                {p.num}
+              </div>
+              <div className="flex-1 min-w-0">
+                <FieldLabel color="#7B1FA2">{p.label}</FieldLabel>
+                <p className="text-[11.5px] text-sol-ink/55 mb-1.5 leading-relaxed">
+                  {p.hint}
+                </p>
+                <TextArea
+                  value={identity[p.key]}
+                  placeholder={p.placeholder}
+                  onChange={(e) => setField(p.key, e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {filled === 7 && (
+        <div
+          className="mt-4 rounded-xl p-4 text-center"
+          style={{
+            background: 'linear-gradient(135deg, #F3E5F5, #E1BEE7)',
+            border: '1px dashed #7B1FA2',
+          }}
+        >
+          <div className="text-2xl mb-1">🎯</div>
+          <div className="text-sm font-bold text-sol-ink">
+            Đủ 7 câu — anh đã có bản đồ chính mình
+          </div>
+          <p className="text-[12px] text-sol-ink/70 mt-1 leading-relaxed">
+            Phase 3-4 sau Q-Day, khi cơn thèm mạnh, Sol sẽ đưa lại đây cho
+            anh đọc. Đây là kim chỉ nam khi não muốn quay đầu.
+          </p>
+        </div>
+      )}
+    </SectionCard>
+  );
+}
+
+// ─── NRTAdvisorySection REMOVED 2026-05-06 ────────────────────────────
+// Khang quyết định bỏ chi tiết Champix/Nicorette/Nicotinell:
+//   1. Không hợp brand "Người Đã Đi Qua" peer mentor — quá giống BS
+//   2. Giá thay đổi theo thị trường = maintenance burden
+//   3. Quitline 1800 6606 đã wire 5 chỗ khác (Crisis, SlipModal,
+//      Settings widget+dashboard, _shared) — user vẫn có entry point.
+// Nếu cần lại: dùng wiki sol.vn (link từ Settings) thay vì in-app section
+// — content centrally managed, dễ update giá khi thị trường đổi.
+
+// ─── 7 · Kế Hoạch Tái Phát ─────────────────────────────────────────────
 
 export function RelapsePlanSection() {
   const data = useWorkbook((s) => s.data);

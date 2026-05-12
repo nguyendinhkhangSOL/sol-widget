@@ -13,6 +13,11 @@ import { useEffect, useState } from 'react';
 import { useStore } from '../../state/store';
 import { api } from '../../services/api';
 import { emitSync } from '../../lib/syncBus';
+import { PledgesReplayModal } from '../PledgesReplayModal';
+
+// Ngưỡng craving để trigger Pledges replay modal — đồng bộ với
+// COMPETITIVE_ANALYSIS_2026-05-06.md (mức cravingIntensity ≥ 8 = "đang nguy")
+const PLEDGES_REPLAY_THRESHOLD = 8;
 
 export function CheckinFlow() {
   const setView = useStore((s) => s.setView);
@@ -25,6 +30,8 @@ export function CheckinFlow() {
   const [alreadyDone, setDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  // Pledges replay — show sau submit success nếu craving cao
+  const [showPledges, setShowPledges] = useState(false);
 
   useEffect(() => {
     api
@@ -57,12 +64,23 @@ export function CheckinFlow() {
       // listen và re-fetch checkins/user → grid Hành trình dashboard update.
       emitSync('sol:checkin');
       emitSync('sol:user-changed');
-      setSubmitted(true);
+      // Việc 3 — Pledges replay: nếu craving cao, show modal trước screen
+      // success. Modal close → setSubmitted(true). Bypass nếu craving thấp.
+      if (cravingIntensity >= PLEDGES_REPLAY_THRESHOLD) {
+        setShowPledges(true);
+      } else {
+        setSubmitted(true);
+      }
     } catch (err) {
       console.warn(err);
     } finally {
       setSubmitting(false);
     }
+  }
+
+  function closePledgesAndContinue() {
+    setShowPledges(false);
+    setSubmitted(true);
   }
 
   if (loading) return <Center>Đang tải…</Center>;
@@ -223,6 +241,16 @@ export function CheckinFlow() {
           </p>
         )}
       </div>
+
+      {/* Pledges replay — overlay khi craving ≥ 8 sau submit */}
+      {showPledges && (
+        <PledgesReplayModal
+          cravingIntensity={cravingIntensity}
+          smoked={smoked === true}
+          onClose={closePledgesAndContinue}
+          onOpenSettings={() => setView('settings')}
+        />
+      )}
     </div>
   );
 }

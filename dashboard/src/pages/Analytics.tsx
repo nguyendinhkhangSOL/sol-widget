@@ -215,21 +215,21 @@ function Phase2Analytics({ data }: { data: DashboardData }) {
         </div>
       </Card>
 
-      <Card title="🎯 Q-Day countdown" accent="#B8860B">
+      <Card title="🎯 Ngày bỏ countdown" accent="#B8860B">
         {data.qDay.daysUntilQDay > 0 ? (
           <div>
             <div className="text-display font-bold text-sol-orange-ink">
               {data.qDay.daysUntilQDay} ngày
             </div>
             <p className="text-body text-sol-ink-2 mt-2 leading-relaxed">
-              Còn {data.qDay.daysUntilQDay} ngày là Q-Day — ngày {data.user.pronouns} cam kết bỏ hẳn.
+              Còn {data.qDay.daysUntilQDay} ngày là Ngày bỏ — ngày {data.user.pronouns} cam kết bỏ hẳn.
               Tuần sau sẽ là tuần chuẩn bị tâm lý.
             </p>
           </div>
         ) : data.qDay.isQDay ? (
-          <p className="text-h2 text-sol-orange-ink font-bold">🌅 Hôm nay là Q-Day!</p>
+          <p className="text-h2 text-sol-orange-ink font-bold">🌅 Hôm nay là Ngày bỏ!</p>
         ) : (
-          <p className="text-body text-sol-ink-3 italic">Q-Day đã qua.</p>
+          <p className="text-body text-sol-ink-3 italic">Ngày bỏ đã qua.</p>
         )}
       </Card>
 
@@ -325,7 +325,7 @@ function Phase4Analytics({ data, checkins }: { data: DashboardData; checkins: an
 
   return (
     <div className="space-y-6">
-      <Card title="🔥 Streak 30 ngày" accent="#5C3A1E">
+      <Card title="🔥 Chuỗi ngày sạch 30 ngày" accent="#5C3A1E">
         <div className="grid grid-cols-10 gap-1.5">
           {streakDays.map((d, i) => {
             const status = !d.checkin
@@ -372,7 +372,7 @@ function Phase4Analytics({ data, checkins }: { data: DashboardData; checkins: an
         ) : (
           <>
             <div className="text-body text-sol-ink mb-3">
-              {data.cohort.length} đồng đội cùng tháng đặt Q-Day với {data.user.pronouns}.
+              {data.cohort.length} đồng đội cùng tháng đặt Ngày bỏ với {data.user.pronouns}.
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {data.cohort.map((c) => (

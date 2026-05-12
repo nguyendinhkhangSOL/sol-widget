@@ -13,44 +13,80 @@ import type { UserTier } from '@prisma/client';
 
 /* ─────────────────── PRICING ─────────────────────────────────────── */
 
+// ─────────────────── PRICING & SCHEDULE (Sol v3 — 12-05-2026) ─────────
+// 4 chặng: NHẬN DIỆN (7d FREE) → KIỂM SOÁT (14d 99k) → LÀM CHỦ (30d 199k)
+//          → NGƯỜI TỰ DO (forever FREE, Day 52+)
+// Schedule: 7+14+30 = 51 ngày Sol-active + Day 52 lễ tốt nghiệp
+// Total paid: 99k + 199k = 298.000đ = đúng 1 tháng tiền thuốc (10k/ngày × 30)
+
 export const TIER_PRICE_VND: Record<UserTier, number> = {
   FREE: 0,
-  KHOI_DONG: 99_000,
-  DONG_HANH: 199_000,
-  ALUMNI: 0,
+  KHOI_DONG: 99_000,    // Kiểm Soát 14 ngày
+  DONG_HANH: 199_000,   // Làm Chủ 30 ngày (UPDATED Sol v3)
+  ALUMNI: 0,            // Người Tự Do — forever miễn phí
 };
 
 export const TIER_DURATION_DAYS: Record<UserTier, number> = {
-  FREE: 0,
-  KHOI_DONG: 10,
-  DONG_HANH: 30, // + 30 ngày bảo trì
-  ALUMNI: 0,
+  FREE: 7,              // Nhận Diện 7 ngày (Day 1-7)
+  KHOI_DONG: 14,        // Kiểm Soát 14 ngày (Day 8-21) — UPDATED từ 10
+  DONG_HANH: 30,        // Làm Chủ 30 ngày (Day 22-51, Q-Day Day 22)
+  ALUMNI: 0,            // Người Tự Do — forever (no expiration)
 };
 
-/** Số ngày bảo trì sau khi tierExpiresAt đã qua (chỉ DONG_HANH). */
-export const MAINTENANCE_DAYS = 30;
-
-/** FREE: số tin nhắn AI tối đa trong 1 ngày (sau tuần đầu). */
-export const FREE_DAILY_MESSAGE_QUOTA = 5;
+/**
+ * DEPRECATED (Sol v3): Maintenance window concept không còn dùng.
+ * Sol v3: Day 52+ → ALUMNI tự động miễn phí mãi, không có period bảo trì.
+ * Constant giữ tạm để backward compat — set = 0.
+ */
+export const MAINTENANCE_DAYS = 0;
 
 /**
- * FREE: quota mở rộng cho tuần đầu (7 ngày sau Q-Day).
- * Lý do UX: tuần 1 là lúc cám dỗ + lo lắng cao nhất, user mới cần
- * trải nghiệm AI nhiều hơn 5 tin để hiểu giá trị + xây trust → quyết định mua.
- * Sau ngày 7, hạ về FREE_DAILY_MESSAGE_QUOTA = 5.
+ * FREE tier (Nhận Diện): số tin nhắn AI tối đa/ngày.
+ * Sol v3 đã nâng từ 5 → 30 để khách thử kỹ trong 7 ngày miễn phí.
  */
-export const FREE_FIRST_WEEK_QUOTA = 15;
+export const FREE_DAILY_MESSAGE_QUOTA = 30;
+
+/**
+ * FREE: quota tuần đầu — giữ nguyên cho compatibility.
+ * Sol v3: 7 ngày NHẬN DIỆN có quota 30 tin/ngày (đã merge với FREE_DAILY).
+ */
+export const FREE_FIRST_WEEK_QUOTA = 30;
 export const FREE_FIRST_WEEK_DAYS = 7;
 
-/** ALUMNI / DONG_HANH trong cửa sổ bảo trì: số tin/ngày. */
-export const MAINTENANCE_DAILY_MESSAGE_QUOTA = 10;
+/** ALUMNI (Người Tự Do): số tin/ngày — chỉ support, không content mới. */
+export const MAINTENANCE_DAILY_MESSAGE_QUOTA = 5;
 
-/** Hoàn tiền chỉ áp dụng từ ngày này trở đi. */
-export const REFUND_MIN_DAY = 15;
+// ─────────────────── REFUND POLICY (Sol v3) ───────────────────────────
+// KIỂM SOÁT (99k): Day 21 conditional refund nếu đi đủ lộ trình ≥80% metric
+//                  mà không thấy giảm số điếu → hoàn 100%.
+// LÀM CHỦ (199k): Day 14 trở đi pro-rated refund:
+//                  refund_vnd = (30 - daysUsed) / 30 × 199.000
 
-/** Hoàn tiền theo công thức: (FULL_DAYS - daysUsed) / 20 × 100_000. */
+/** Hoàn tiền chỉ áp dụng từ ngày này trở đi (cho DONG_HANH/Làm Chủ). */
+export const REFUND_MIN_DAY = 14;
+
+/** Pro-rated formula: (FULL_DAYS - daysUsed) / FULL_DAYS × REFUND_BASE_VND */
 export const REFUND_FULL_DAYS = 30;
-export const REFUND_BASE_VND = 100_000;
+export const REFUND_BASE_VND = 199_000;  // UPDATED: 100k → 199k (Sol v3)
+
+// ─────────────────── METRIC THRESHOLDS (Refund conditional) ───────────
+// KIỂM SOÁT refund nếu đạt ≥80% các metric sau:
+export const KHOI_DONG_METRIC_THRESHOLDS = {
+  min_checkin_days: 12,      // ≥12/14 ngày check-in
+  min_workbook_done: 10,     // ≥10/14 bài Sổ Hành Trình
+  min_plan_b_triggers: 3,    // ≥3/5 trigger Plan B viết
+  min_crisis_logs: 10,       // ≥10 lần dùng công cụ khi thèm
+  min_reduction_pct: 30,     // ≥30% giảm số điếu/ngày
+};
+
+// LÀM CHỦ refund nếu đạt ≥80% các metric sau:
+export const DONG_HANH_METRIC_THRESHOLDS = {
+  must_qday_commit: true,    // Bắt buộc Q-Day Ceremony Day 22
+  min_checkin_days: 24,      // ≥24/30 ngày check-in
+  min_workbook_done: 20,     // ≥20/26 bài Sổ Hành Trình
+  min_crisis_logs: 10,       // ≥10 lần Crisis Timer
+  min_clean_streak: 21,      // ≥21 ngày sạch liên tiếp
+};
 
 /* ───────────────── FEATURE KEYS ──────────────────────────────────── */
 

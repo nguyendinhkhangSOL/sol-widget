@@ -1,0 +1,496 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  SOL-LA-GI PAGE — sol.vn/sol-la-gi
+  Vai trò: Product deep dive — khách click "Xem chi tiết Sol làm gì" từ landing
+  KPI: Scroll depth ≥75% · Click /gia ≥35%
+
+  Cấu trúc:
+    1. Hero — 1 câu định vị
+    2. Sol = Hybrid 5 phương pháp (mapping table)
+    3. 9 công cụ menu khi thèm (grid 3×3)
+    4. 5 hệ thống nội dung Sol (127 + 43 + 41 + 15 + Workbook)
+    5. 1 ngày của anh với Sol (timeline)
+    6. Dashboard 4 phase + Chỉ Số Hiểu Mình
+    7. Cam kết Sol + CTA
+
+  Publish: slug = sol-la-gi, Template Sol Default
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-lagi { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; }
+.sol-lagi h1, .sol-lagi h2, .sol-lagi h3 { margin: 0; }
+
+.sol-lagi-method-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+}
+.sol-lagi-tool-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+}
+.sol-lagi-feature-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+}
+
+@media (max-width: 880px) {
+  .sol-lagi-method-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .sol-lagi-tool-grid { grid-template-columns: 1fr !important; }
+  .sol-lagi-feature-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+  .sol-lagi section { padding-left: 16px !important; padding-right: 16px !important; }
+  .sol-lagi h2 { font-size: 22px !important; }
+}
+</style>
+
+<div class="sol-lagi">
+
+<!-- HERO -->
+<section style="padding: 64px 24px 40px; max-width: 880px; margin: 0 auto; text-align: center;">
+
+  <p style="font-size: 13px; color: #B25C2C; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin: 0 0 14px;">SOL LÀ GÌ</p>
+
+  <h1 style="font-size: 36px; color: #5C3A1E; line-height: 1.2; margin: 0 0 18px; font-weight: 700;">
+    Sol không phát minh phương pháp mới.<br>Sol gộp 5 phương pháp đã chứng minh.
+  </h1>
+
+  <p style="font-size: 17px; color: #5A5650; line-height: 1.65; max-width: 640px; margin: 0 auto;">
+    Champix 14%, NRT 17%, Allen Carr 19%, app QuitNow ~10% — mỗi cái thiếu 1 mảnh.
+    Cochrane 2021 (n>250.000) chứng minh: <strong>KẾT HỢP nhiều phương pháp > đơn lẻ.</strong>
+    Sol là người đầu tiên gộp 5 mảnh vào 1 sản phẩm tiếng Việt cho 45+.
+  </p>
+</section>
+
+
+<!-- HYBRID 5 METHOD -->
+<section style="padding: 32px 24px 48px; max-width: 1000px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 26px; margin: 0 0 32px;">
+    5 phần Sol hợp dụng
+  </h2>
+
+  <div class="sol-lagi-method-grid" style="margin-bottom: 28px;">
+
+    <div style="background: white; padding: 22px 16px; border-radius: 10px; border-top: 4px solid #C62828; text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 8px;">💪</div>
+      <p style="font-size: 11px; color: #C62828; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 6px;">PHẦN 1</p>
+      <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 8px; line-height: 1.3;">Ý chí + Ngày bỏ</h3>
+      <p style="font-size: 12.5px; color: #5A5650; line-height: 1.55; margin: 0;">
+        Cold turkey + Q-Day. Anh tick cam kết, voice Khang Day 0.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 22px 16px; border-radius: 10px; border-top: 4px solid #B8860B; text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 8px;">🧠</div>
+      <p style="font-size: 11px; color: #B8860B; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 6px;">PHẦN 2</p>
+      <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 8px; line-height: 1.3;">Gỡ ảo tưởng nicotine</h3>
+      <p style="font-size: 12.5px; color: #5A5650; line-height: 1.55; margin: 0;">
+        Allen Carr spread — 30 SCIENCE_TIP + 14 wiki timeline.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 22px 16px; border-radius: 10px; border-top: 4px solid #2E7D32; text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 8px;">⏱</div>
+      <p style="font-size: 11px; color: #2E7D32; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 6px;">PHẦN 3</p>
+      <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 8px; line-height: 1.3;">Urge surfing CBT</h3>
+      <p style="font-size: 12.5px; color: #5A5650; line-height: 1.55; margin: 0;">
+        Đợi 90 giây 4-2-6 + 43 chips + 27 wiki tình huống.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 22px 16px; border-radius: 10px; border-top: 4px solid #1976D2; text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 8px;">📊</div>
+      <p style="font-size: 11px; color: #1976D2; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 6px;">PHẦN 4</p>
+      <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 8px; line-height: 1.3;">Tracking + tự tin</h3>
+      <p style="font-size: 12.5px; color: #5A5650; line-height: 1.55; margin: 0;">
+        Daily check-in + dashboard + Chỉ Số Hiểu Mình.
+      </p>
+    </div>
+
+    <div style="background: white; padding: 22px 16px; border-radius: 10px; border-top: 4px solid #6A1B9A; text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 8px;">🤝</div>
+      <p style="font-size: 11px; color: #6A1B9A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 6px;">PHẦN 5</p>
+      <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 8px; line-height: 1.3;">Khang đi cùng</h3>
+      <p style="font-size: 12.5px; color: #5A5650; line-height: 1.55; margin: 0;">
+        15 voice em + Khang story — peer mentor.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Sources box -->
+  <div style="background: white; padding: 22px 26px; border-radius: 12px; border: 1px solid #E8DFC8;">
+    <p style="font-size: 12px; color: #5C3A1E; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 12px;">Nguồn khoa học</p>
+    <p style="font-size: 13.5px; line-height: 1.8; color: #2C2A27; margin: 0;">
+      Bandura Self-Efficacy 1977 (Ý chí) · Frings 2020 RCT Allen Carr (Addiction Journal) ·
+      Bowen-Marlatt 2009 + Cochrane 2021 CBT (n&gt;250.000) ·
+      Gwaltney 2009 self-efficacy meta-analysis · Brody 2006 PET imaging.
+    </p>
+  </div>
+</section>
+
+
+<!-- 9 CÔNG CỤ -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: #FFF8F2;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+
+    <h2 style="text-align: center; color: #5C3A1E; font-size: 26px; margin: 0 0 12px;">
+      9 công cụ khi anh thèm
+    </h2>
+    <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.6; max-width: 640px; margin: 0 auto 32px;">
+      Mỗi tình huống thèm khác nhau — Sol cho anh 9 lựa chọn, anh chọn cái hợp.
+      App ghi lại — sau 1 tuần Sol biết anh hợp đi bộ hơn thở.
+    </p>
+
+    <div class="sol-lagi-tool-grid">
+
+      <div style="background: #FFF4EA; border-radius: 10px; padding: 18px; border-left: 4px solid #B25C2C;">
+        <p style="font-size: 11px; color: #B25C2C; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Thèm mạnh · có thời gian</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">⏱ Đợi 90 giây</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          Thở 4-2-6 × 6 vòng có voice em. Bowen-Marlatt 2009 urge surfing.
+        </p>
+      </div>
+
+      <div style="background: #F5F8FA; border-radius: 10px; padding: 18px; border-left: 4px solid #1A4D7A;">
+        <p style="font-size: 11px; color: #1A4D7A; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Trong họp</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">⚡ Chip "thèm thuốc"</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          Bấm — Sol trả lời 5s, 3 lựa chọn. Không tốn quota AI.
+        </p>
+      </div>
+
+      <div style="background: #E8F5E9; border-radius: 10px; padding: 18px; border-left: 4px solid #2E7D32;">
+        <p style="font-size: 11px; color: #2E7D32; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Có thể đi lấy nước</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">💧 Uống nước lạnh</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          1 ly + đếm 30s. Stimulus substitution.
+        </p>
+      </div>
+
+      <div style="background: #FFF8E1; border-radius: 10px; padding: 18px; border-left: 4px solid #B8860B;">
+        <p style="font-size: 11px; color: #B8860B; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Cần đổi không khí</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">🚶 Đi 200 bước</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          Đi 3-5 phút, không phone. Giảm cortisol 25-30% (Stanford).
+        </p>
+      </div>
+
+      <div style="background: #F3E5F5; border-radius: 10px; padding: 18px; border-left: 4px solid #6A1B9A;">
+        <p style="font-size: 11px; color: #6A1B9A; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Đêm khuya · cô đơn</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">🎧 Voice Khang</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          Nghe em — người đã đi qua 30 năm. Vicarious experience (Bandura).
+        </p>
+      </div>
+
+      <div style="background: #FFEBEE; border-radius: 10px; padding: 18px; border-left: 4px solid #C62828;">
+        <p style="font-size: 11px; color: #C62828; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Sau khi lỡ 1 điếu</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">💚 "Mình tiếp tục được"</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          Voice + chat. KHÔNG reset đếm ngày. Chống AVE (Marlatt 1985).
+        </p>
+      </div>
+
+      <div style="background: #E3F2FD; border-radius: 10px; padding: 18px; border-left: 4px solid #1976D2;">
+        <p style="font-size: 11px; color: #1976D2; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Cần nói chuyện</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">💬 Chat AI tiếng Việt</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          43+ chips + AI free-type. 24/7, không chờ máy.
+        </p>
+      </div>
+
+      <div style="background: #FFF3E0; border-radius: 10px; padding: 18px; border-left: 4px solid #E65100;">
+        <p style="font-size: 11px; color: #E65100; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Muốn hiểu vì sao</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">📚 Đọc wiki Sol</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          41 bài long-form, cite Brody, Hughes, Doll & Hill.
+        </p>
+      </div>
+
+      <div style="background: #EDE7F6; border-radius: 10px; padding: 18px; border-left: 4px solid #4527A0;">
+        <p style="font-size: 11px; color: #4527A0; font-weight: 700; text-transform: uppercase; margin: 0 0 6px;">Muốn ghi lại</p>
+        <h3 style="font-size: 15px; color: #5C3A1E; margin: 0 0 6px;">📓 Sổ tay Sol</h3>
+        <p style="font-size: 13px; color: #2C2A27; line-height: 1.55; margin: 0;">
+          Workbook 30 ngày, 5 tabs. Reflective journal CBT.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- 5 HỆ THỐNG NỘI DUNG -->
+<section style="padding: 56px 24px; max-width: 1000px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 26px; margin: 0 0 32px;">
+    5 hệ thống Sol cá nhân hoá cho anh
+  </h2>
+
+  <div class="sol-lagi-feature-grid">
+
+    <div style="background: white; padding: 24px 22px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 32px; margin-bottom: 8px;">📨</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">127 nội dung cá nhân hoá</h3>
+      <p style="font-size: 14px; color: #2C2A27; line-height: 1.65; margin: 0 0 10px;">
+        Mỗi ngày 5 nội dung khác nhau, mỗi cái vào giờ khác nhau:
+      </p>
+      <ul style="font-size: 13px; color: #5A5650; line-height: 1.7; margin: 0 0 10px 20px; padding: 0;">
+        <li><strong>07:00</strong> Mục tiêu hôm nay</li>
+        <li><strong>10:00</strong> 1 con số khoa học có nguồn</li>
+        <li><strong>16:30</strong> Bài tập 5-10 phút</li>
+        <li><strong>Adaptive</strong> Cảnh báo tình huống</li>
+        <li><strong>21:30</strong> Đóng ngày, tự hào nhỏ</li>
+      </ul>
+      <p style="font-size: 12px; color: #8A857C; font-style: italic; margin: 0;">
+        Template biến {topReason}, {topTrigger} — Sol replace tự động theo anh
+      </p>
+    </div>
+
+    <div style="background: white; padding: 24px 22px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 32px; margin-bottom: 8px;">💬</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">43+ câu trả lời tức thì</h3>
+      <p style="font-size: 14px; color: #2C2A27; line-height: 1.65; margin: 0 0 10px;">
+        Anh gõ "tôi đang thèm" — Sol trả lời NGAY, không chờ AI nghĩ. 43 câu hỏi pre-coded với CBT framework.
+      </p>
+      <p style="font-size: 13px; color: #5A5650; line-height: 1.6; margin: 0 0 10px;">
+        <strong>Ví dụ:</strong> "Tôi muốn bỏ cuộc", "Bao lâu hết thèm", "Hôm nay ngày mấy", "Sắp đi đám cưới"...
+      </p>
+      <p style="font-size: 12px; color: #8A857C; font-style: italic; margin: 0;">
+        Intent matcher tiếng Việt — normalize dấu, score match
+      </p>
+    </div>
+
+    <div style="background: white; padding: 24px 22px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 32px; margin-bottom: 8px;">📚</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">41 wiki article tiếng Việt</h3>
+      <p style="font-size: 14px; color: #2C2A27; line-height: 1.65; margin: 0 0 10px;">
+        Thư viện long-form 500-700 từ/bài, cite nguồn khoa học:
+      </p>
+      <ul style="font-size: 13px; color: #5A5650; line-height: 1.7; margin: 0 0 10px 20px; padding: 0;">
+        <li><strong>14 bài Body Timeline</strong> — 20 phút → 10 năm sau cai</li>
+        <li><strong>27 bài chip tình huống</strong> — đám giỗ, Tết, vợ giận...</li>
+      </ul>
+      <p style="font-size: 12px; color: #8A857C; font-style: italic; margin: 0;">
+        SEO Google — anh em Việt tìm "cai thuốc lá" → vào Sol
+      </p>
+    </div>
+
+    <div style="background: white; padding: 24px 22px; border-radius: 12px; border: 1px solid #E8DFC8;">
+      <div style="font-size: 32px; margin-bottom: 8px;">🎧</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">15 voice Khang Sol</h3>
+      <p style="font-size: 14px; color: #2C2A27; line-height: 1.65; margin: 0 0 10px;">
+        Em thu sẵn 15 voice — phát đúng khoảnh khắc khó:
+      </p>
+      <ul style="font-size: 13px; color: #5A5650; line-height: 1.7; margin: 0 0 10px 20px; padding: 0;">
+        <li>Day 0 chào · Day 3 đêm khó nhất · Day 7/14/21/30</li>
+        <li>Crisis "muốn bỏ cuộc" · "Đợi 90 giây"</li>
+        <li>"Mình tiếp tục được"</li>
+        <li>Milestone (100k saved, 10-day streak, pre-party)</li>
+      </ul>
+      <p style="font-size: 12px; color: #8A857C; font-style: italic; margin: 0;">
+        Vicarious experience — Bandura self-efficacy theory
+      </p>
+    </div>
+
+    <div style="background: white; padding: 24px 22px; border-radius: 12px; border: 1px solid #E8DFC8; grid-column: span 2;">
+      <div style="font-size: 32px; margin-bottom: 8px;">📓📊</div>
+      <h3 style="font-size: 18px; color: #5C3A1E; margin: 0 0 10px;">Sổ tay 30 ngày + Dashboard 4 phase</h3>
+      <div class="sol-lagi-feature-grid" style="margin-top: 12px;">
+        <div>
+          <p style="font-size: 13.5px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            <strong>Sổ tay (Workbook):</strong> 5 tabs reflective journal — Chuẩn bị (5 bài), T1-T4 (28 bài), Sau 30 ngày. Anh viết tay về cơn thèm, lý do, kế hoạch.
+          </p>
+        </div>
+        <div>
+          <p style="font-size: 13.5px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            <strong>Dashboard:</strong> heatmap 24h thèm + top 5 trigger + reduction trend + streak + savings + "Chỉ Số Hiểu Mình" composite. Đo tiến bộ thật.
+          </p>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #8A857C; font-style: italic; margin: 12px 0 0;">
+        Cơ sở: Hartmann-Boyce Cochrane 2021 (CBT) + Bandura mastery experience
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 1 NGÀY VỚI SOL -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: #FFF8F2;">
+  <div style="max-width: 760px; margin: 0 auto;">
+
+    <h2 style="text-align: center; color: #5C3A1E; font-size: 26px; margin: 0 0 12px;">
+      1 ngày của anh với Sol
+    </h2>
+    <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.6; margin: 0 0 32px;">
+      Anh A (50 tuổi, văn phòng) ở Ngày thứ 5. Tổng ~10 phút/ngày.
+    </p>
+
+    <!-- Timeline -->
+    <div style="position: relative; padding-left: 40px; border-left: 3px dashed #B8860B;">
+
+      <div style="position: relative; margin-bottom: 22px;">
+        <div style="position: absolute; left: -52px; top: 4px; width: 28px; height: 28px; background: #B8860B; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;">☀</div>
+        <div style="background: white; padding: 14px 18px; border-radius: 10px; border: 1px solid #E8DFC8;">
+          <div style="font-size: 12px; color: #B25C2C; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">07:00 — DẬY</div>
+          <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            Sol noti: <em>"Day 5 — vị giác bắt đầu về. Anh nhớ uống nước trước cà phê."</em>
+          </p>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-bottom: 22px;">
+        <div style="position: absolute; left: -52px; top: 4px; width: 28px; height: 28px; background: #1A4D7A; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;">📚</div>
+        <div style="background: white; padding: 14px 18px; border-radius: 10px; border: 1px solid #E8DFC8;">
+          <div style="font-size: 12px; color: #1A4D7A; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">10:00 — GIỜ NGHỈ</div>
+          <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            Sol gửi SCIENCE_TIP: <em>"Brody 2006: sau 14 ngày receptor não giảm 40%. Anh đã đi 5/14."</em>
+          </p>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-bottom: 22px;">
+        <div style="position: absolute; left: -52px; top: 4px; width: 28px; height: 28px; background: #C62828; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;">⚠</div>
+        <div style="background: #FFEBEE; padding: 14px 18px; border-radius: 10px; border: 1px solid #FFCDD2;">
+          <div style="font-size: 12px; color: #C62828; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">11:30 — THÈM TRONG HỌP</div>
+          <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            Sếp gọi gấp. Anh thèm điếu. Không đứng dậy được. Bấm chip <strong>"tôi đang thèm"</strong> → Sol trả lời 5s: 3 lựa chọn. Anh chọn gõ tay trên đùi.
+          </p>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-bottom: 22px;">
+        <div style="position: absolute; left: -52px; top: 4px; width: 28px; height: 28px; background: #2E7D32; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;">✓</div>
+        <div style="background: white; padding: 14px 18px; border-radius: 10px; border: 1px solid #E8DFC8;">
+          <div style="font-size: 12px; color: #2E7D32; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">14:00 — QUA CƠN</div>
+          <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            Cơn thèm tan. Sol log <strong>delayed_no_smoke</strong>. Counter tăng: <em>"Anh đã vượt 11/14 cơn thèm tuần này."</em>
+          </p>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-bottom: 22px;">
+        <div style="position: absolute; left: -52px; top: 4px; width: 28px; height: 28px; background: #B8860B; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;">🚶</div>
+        <div style="background: white; padding: 14px 18px; border-radius: 10px; border: 1px solid #E8DFC8;">
+          <div style="font-size: 12px; color: #B8860B; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">16:30 — BÀI TẬP</div>
+          <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            Sol nhắc: <em>"Bài Day 5: đi 10 phút ngoài trời."</em> Anh đi quanh toà nhà. Click ✓.
+          </p>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-bottom: 22px;">
+        <div style="position: absolute; left: -52px; top: 4px; width: 28px; height: 28px; background: #5C3A1E; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;">📊</div>
+        <div style="background: white; padding: 14px 18px; border-radius: 10px; border: 1px solid #E8DFC8;">
+          <div style="font-size: 12px; color: #5C3A1E; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">21:00 — CHECK-IN 30s</div>
+          <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            Bấm "Hôm nay không hút" + slider thèm 6/10 + mood "ổn" + note "Sếp gây áp lực". Báo cáo Day 7 sẽ có pattern này.
+          </p>
+        </div>
+      </div>
+
+      <div style="position: relative;">
+        <div style="position: absolute; left: -52px; top: 4px; width: 28px; height: 28px; background: #4527A0; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;">🌙</div>
+        <div style="background: white; padding: 14px 18px; border-radius: 10px; border: 1px solid #E8DFC8;">
+          <div style="font-size: 12px; color: #4527A0; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">21:30 — ĐÓNG NGÀY</div>
+          <p style="font-size: 14px; color: #2C2A27; line-height: 1.6; margin: 0;">
+            NIGHT_STORY: <em>"Day 5 sạch. Anh vượt 11/14 cơn. Đêm nay ngủ ngon."</em>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align: center; margin-top: 28px; color: #5C3A1E; font-size: 14px; font-style: italic;">
+      <strong>Tổng thời gian: ~10 phút.</strong> Sol KHÔNG đòi nhiều hơn. Anh sống bình thường — Sol chỉ là safety net khi cần.
+    </p>
+  </div>
+</section>
+
+
+<!-- DASHBOARD -->
+<section style="padding: 56px 24px; max-width: 880px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 26px; margin: 0 0 12px;">
+    Dashboard 4 phase + "Chỉ Số Hiểu Mình"
+  </h2>
+  <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.6; margin: 0 0 32px;">
+    Sol có tracking ngang Smoke Free / Quit Genius, nhưng <strong>phase-aware</strong> — metric khác nhau theo giai đoạn.
+  </p>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+    <thead>
+      <tr style="background: #5C3A1E; color: white;">
+        <th style="padding: 12px 14px; text-align: left;">Phase</th>
+        <th style="padding: 12px 14px; text-align: left;">Days</th>
+        <th style="padding: 12px 14px; text-align: left;">Metric chính</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background: #FAF4EC;">
+        <td style="padding: 12px 14px; font-weight: 600; color: #5C3A1E; border-bottom: 1px solid #E8DFC8;">1. Nhận Thức</td>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #E8DFC8;">1-7</td>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #E8DFC8;">Heatmap 24h thèm · Top 5 triggers · Trend cigs/day vs baseline</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px 14px; font-weight: 600; color: #5C3A1E; border-bottom: 1px solid #E8DFC8;">2. Hành Động</td>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #E8DFC8;">8-28</td>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #E8DFC8;">Reduction trend · Plan B success rate · Streak không hút</td>
+      </tr>
+      <tr style="background: #FAF4EC;">
+        <td style="padding: 12px 14px; font-weight: 600; color: #5C3A1E; border-bottom: 1px solid #E8DFC8;">3. Giải Phóng</td>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #E8DFC8;">29-58</td>
+        <td style="padding: 12px 14px; border-bottom: 1px solid #E8DFC8;">Body milestones (lung 30%, taste 80%, money saved) · Vitals</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px 14px; font-weight: 600; color: #5C3A1E;">4. Tái Thiết</td>
+        <td style="padding: 12px 14px;">59-88</td>
+        <td style="padding: 12px 14px;">30-day heatmap consistency · Identity confirmation · Cohort comparison</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Chỉ số -->
+  <div style="margin-top: 28px; padding: 24px 28px; background: #E8F5E9; border-left: 4px solid #2E7D32; border-radius: 0 12px 12px 0;">
+    <h3 style="font-size: 17px; color: #2E7D32; margin: 0 0 10px;">"Chỉ Số Hiểu Mình" — Composite Score</h3>
+    <p style="font-size: 14.5px; line-height: 1.7; color: #2C2A27; margin: 0 0 8px;">
+      <code style="background: white; padding: 4px 8px; border-radius: 4px; font-size: 13px;">(streak/30) × 0.3 + (reduction_vs_baseline) × 0.3 + (trigger_awareness) × 0.2 + (identity_shift) × 0.2</code>
+    </p>
+    <p style="font-size: 13.5px; line-height: 1.65; color: #5A5650; margin: 0; font-style: italic;">
+      Bandura self-efficacy operationalized — anh thấy 1 số duy nhất biểu thị "năng lực hiểu mình". Mỗi tuần tăng → mastery experience → tăng tự tin → giảm relapse (Gwaltney 2009 meta-analysis).
+    </p>
+  </div>
+</section>
+
+
+<!-- CAM KẾT + CTA -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 64px 24px; background: linear-gradient(135deg, #5C3A1E 0%, #2C2A27 100%); color: white; text-align: center;">
+  <div style="max-width: 640px; margin: 0 auto;">
+
+    <h2 style="font-size: 28px; line-height: 1.3; margin: 0 0 18px; color: white; font-weight: 700;">
+      Bây giờ anh đã biết Sol làm gì
+    </h2>
+
+    <p style="font-size: 17px; line-height: 1.65; opacity: 0.92; margin: 0 0 28px;">
+      7 ngày Khám Phá miễn phí · Không cần SĐT · Hoàn tiền Day 21 không hỏi.
+    </p>
+
+    <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=sol_la_gi&utm_campaign=final_cta" style="display: inline-block; background: white; color: #5C3A1E; padding: 18px 44px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none; box-shadow: 0 4px 24px rgba(0,0,0,0.18);">
+      🌱 Bắt đầu Sol Khám Phá →
+    </a>
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 13px; opacity: 0.7;">
+      <p style="margin: 0;">
+        <a href="/gia" style="color: #B8860B; text-decoration: underline;">Xem 3 gói giá</a>
+        &nbsp; · &nbsp;
+        <a href="/khang-sol" style="color: #B8860B; text-decoration: underline;">Câu chuyện Khang</a>
+        &nbsp; · &nbsp;
+        <a href="/cau-hoi" style="color: #B8860B; text-decoration: underline;">20 câu thường hỏi</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.sol-lagi -->

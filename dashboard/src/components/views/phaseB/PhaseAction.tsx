@@ -54,9 +54,9 @@ export function PhaseAction({ data, onReload, onShowExit }: PhaseProps) {
         <div className="bg-gradient-to-r from-sol-wine to-sol-wine-ink text-white rounded-2xl p-6 shadow-card">
           <div className="flex items-baseline justify-between flex-wrap gap-3">
             <div>
-              <div className="text-h1 font-bold">🎯 Còn {daysUntilQDay} ngày là Q-Day</div>
+              <div className="text-h1 font-bold">🎯 Còn {daysUntilQDay} ngày là Ngày bỏ</div>
               <p className="text-body opacity-90 mt-1 leading-relaxed">
-                Q-Day = ngày {data.user.pronouns} cam kết bỏ hẳn. Tối nay viết 3 lý do {data.user.pronouns} muốn bỏ — để mai đọc lại.
+                Ngày bỏ = ngày {data.user.pronouns} cam kết bỏ hẳn. Tối nay viết 3 lý do {data.user.pronouns} muốn bỏ — để mai đọc lại.
               </p>
             </div>
           </div>

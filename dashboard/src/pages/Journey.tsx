@@ -101,7 +101,7 @@ export function Journey() {
       <header className="px-1">
         <h1 className="text-display text-sol-ink font-bold">🗺️ Hành Trình Sol</h1>
         <p className="text-body text-sol-ink-2 mt-1">
-          88 ngày tiến hoá hành vi — 4 lớp. Click vào mỗi ngày để xem chi tiết.
+          4 chặng tiến hoá hành vi — Nhận Thức · Hành Động · Giải Phóng · Tái Thiết. Click vào mỗi ngày để xem chi tiết.
         </p>
       </header>
 
@@ -213,12 +213,12 @@ export function Journey() {
               })}
             </div>
 
-            {/* Q-Day marker cuối Phase 2 */}
+            {/* Ngày bỏ marker cuối Phase 2 */}
             {phase.key === 'HANH_DONG' && (
               <div className="mt-4 pt-4 border-t border-sol-line text-meta text-sol-ink-2 italic flex items-center gap-2">
                 <span className="text-xl">🌅</span>
                 <span>
-                  Day 28 = <strong>Q-Day</strong> — ngày {data.user.pronouns} cam kết bỏ hẳn.
+                  Day 28 = <strong>Ngày bỏ</strong> — ngày {data.user.pronouns} cam kết bỏ hẳn.
                   {qDayConfirmed && currentDay >= 28
                     ? ' ✓ Đã cam kết.'
                     : currentDay >= 28
@@ -237,10 +237,10 @@ export function Journey() {
           <div className="flex items-baseline gap-3 mb-2">
             <span className="text-4xl" aria-hidden="true">🦁</span>
             <h2 className="text-h2 font-semibold">Đại Sứ Sol</h2>
-            <span className="text-meta opacity-90">Ngày 89+ · vĩnh viễn</span>
+            <span className="text-meta opacity-90">Ngày 52+ · vĩnh viễn (Người Tự Do)</span>
           </div>
           <p className="text-body opacity-90">
-            {data.user.pronouns} đã graduate. Hành trình 88 ngày hoàn tất — giờ là lúc chia sẻ với người mới.
+            {data.user.pronouns} đã graduate. Hành trình 52 ngày hoàn tất — giờ là lúc chia sẻ với người mới.
           </p>
         </section>
       )}
@@ -321,7 +321,7 @@ function DayDetail({ day, stage }: { day: number; stage: Stage }) {
           <h2 className="text-h2 font-semibold mb-4">Nội dung ngày {day}</h2>
           {loading ? (
             <div className="text-body text-sol-ink-3 italic">Đang tải…</div>
-          ) : !isPhase3 && stage !== 'GIAI_PHONG' && (!content || !content.content) ? (
+          ) : !isPhase3 && (!content || !content.content) ? (
             <div className="bg-sol-blue-soft/40 border border-sol-blue/20 rounded-lg p-4 text-meta text-sol-blue-ink">
               📝 Phase {stage === 'NHAN_THUC' ? '1 Nhận Thức' : stage === 'HANH_DONG' ? '2 Hành Động' : '4 Tái Thiết'} — content đang được Khang biên soạn (38 bài Phase B). Tạm thời chưa có nội dung cho ngày này.
             </div>

@@ -195,8 +195,8 @@ export function AdminQDayChecklist() {
                     onChange={(e) => patchItem(idx, { onlyForTier: (e.target.value || undefined) as any })}
                   >
                     <option value="">Tất cả</option>
-                    <option value="KHOI_DONG">Khởi động</option>
-                    <option value="DONG_HANH">Đồng hành</option>
+                    <option value="KHOI_DONG">🟡 Kiểm Soát</option>
+                    <option value="DONG_HANH">🔴 Làm Chủ</option>
                   </select>
                 </Field>
               </div>

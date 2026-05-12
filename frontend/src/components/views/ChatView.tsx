@@ -434,7 +434,7 @@ export function ChatView() {
           className="block px-3 py-2.5 border-t border-sol-orange/30 bg-sol-orange-soft/40 hover:bg-sol-orange-soft transition text-center"
         >
           <div className="text-meta font-semibold text-sol-earth-ink">
-            ✨ Bắt đầu hành trình 88 ngày miễn phí 7 ngày
+            ✨ 7 ngày đầu miễn phí — quan sát kẻ thù không cam kết
           </div>
           <div className="text-[11px] text-sol-orange-ink mt-0.5">
             Mở app đầy đủ tại bothuocla.sol.vn →

@@ -51,13 +51,13 @@ export function Refund() {
             Hiện chưa thể yêu cầu hoàn tiền
           </div>
           <div className="text-meta text-sol-ink-2 mt-1">
-            {tier.tier !== 'DONG_HANH'
-              ? 'Hoàn tiền chỉ áp dụng cho gói Đồng hành 199k.'
-              : tier.daysIntoTier !== null && tier.daysIntoTier < 15
-                ? `15 ngày đầu chưa được hoàn (bạn đang Ngày ${tier.daysIntoTier}). Cùng cố thêm chút.`
-                : tier.inMaintenance
-                  ? 'Đã sang giai đoạn bảo trì — không hoàn tiền.'
-                  : 'Gói đã hết hạn.'}
+            {tier.tier === 'FREE' || tier.tier === 'ALUMNI'
+              ? 'Hoàn tiền áp dụng cho gói Kiểm Soát 99k (conditional Day 21) hoặc Làm Chủ 199k (pro-rated từ Day 14).'
+              : tier.tier === 'KHOI_DONG'
+                ? 'Gói Kiểm Soát: refund 99k nếu sau 14 ngày anh đi đủ lộ trình ≥80% metric mà không giảm số điếu. Vào Cài đặt → Hoàn tiền sau Day 14.'
+                : tier.daysIntoTier !== null && tier.daysIntoTier < 14
+                  ? `14 ngày đầu Làm Chủ chưa được hoàn (anh đang Ngày ${tier.daysIntoTier}). Cùng cố thêm chút.`
+                  : 'Gói đã hết hạn — Day 52+ anh đã là Người Tự Do miễn phí mãi.'}
           </div>
         </div>
       )}
@@ -90,7 +90,8 @@ export function Refund() {
         <div className="bg-white rounded-2xl p-5 border border-sol-line">
           <h2 className="font-bold text-body">Đây là số tiền hoàn về</h2>
           <p className="text-meta text-sol-ink-2 mt-1">
-            Công thức: (30 - {tier.daysIntoTier}) / 20 × 100.000đ
+            {/* Sol v3 pro-rated: (30 - daysUsed) / 30 × 199.000đ */}
+            Sol v3 — Pro-rated: (30 - {tier.daysIntoTier}) / 30 × 199.000đ
           </p>
           <div className="my-6 text-center">
             <div className="text-meta uppercase tracking-wider text-sol-ink-3 font-semibold">

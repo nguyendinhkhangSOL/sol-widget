@@ -64,10 +64,17 @@ export async function sendEmail({ to, subject, html, text }: SendEmailParams): P
       subject,
       text,
       html,
+      // FIX (Sol v3): force UTF-8 base64 encoding cho text/html parts.
+      // Lý do: 1 số SMTP relay (kể cả Zoho) strip accent tiếng Việt
+      // trong phần text/plain nếu encoding không explicit → "bạn" → "b???n".
+      // Base64 đảm bảo bytes nguyên vẹn end-to-end.
+      textEncoding: 'base64',
+      encoding: 'utf-8',
       // Headers cho deliverability + anti-abuse
       headers: {
         'X-Mailer': 'Sol-Companion',
         'List-Unsubscribe': '<mailto:khang@sol.vn?subject=unsubscribe>',
+        'Content-Type': 'text/html; charset=UTF-8',
       },
     });
 

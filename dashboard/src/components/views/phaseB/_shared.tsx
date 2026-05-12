@@ -208,7 +208,7 @@ export function MoneySavedCard({ moneySaved, cigsSkipped, streak }: MoneySavedCa
         <div className="text-meta text-sol-ink-3 mt-1 italic">{subtitle}</div>
       </div>
       <div className="text-right">
-        <div className="text-meta text-sol-ink-2 uppercase tracking-wide font-semibold">🔥 Streak</div>
+        <div className="text-meta text-sol-ink-2 uppercase tracking-wide font-semibold">🔥 Chuỗi ngày sạch</div>
         <div className="text-display font-bold text-sol-orange-ink mt-2">{streak}</div>
         <div className="text-meta text-sol-ink-3 mt-1">ngày check-in</div>
       </div>
@@ -236,7 +236,7 @@ export function BodyTimelineCard({
       <div className="bg-sol-paper border border-sol-line rounded-2xl p-6 shadow-card">
         <div className="text-h3 font-semibold text-sol-ink mb-2">🩺 Cơ thể sẽ sửa</div>
         <p className="text-body text-sol-ink-3 italic mb-4">
-          Sau Q-Day (cam kết bỏ hẳn), cơ thể bạn bắt đầu hồi phục theo timeline khoa học CDC/NHS:
+          Sau Ngày bỏ (cam kết bỏ hẳn), cơ thể bạn bắt đầu hồi phục theo timeline khoa học CDC/NHS:
         </p>
         {next && (
           <div className="flex items-start gap-3 opacity-60 p-3 bg-sol-bg rounded-xl">

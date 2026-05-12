@@ -1,5 +1,9 @@
 // frontend/src/components/QuitlineButton.tsx
-// Nút gọi tổng đài cai thuốc lá miễn phí — Bệnh viện Bạch Mai 0888-008-866.
+// Nút gọi tổng đài cai thuốc lá miễn phí — toll-free 1800 6606
+// (Quỹ PCTHTL Bộ Y tế tại khoa Hô hấp BV Bạch Mai, hoạt động 2015 →).
+// Verify nguồn chính thức: bachmai.gov.vn (2024-08-16: ~71.000 cuộc gọi
+// tư vấn, ~1.200 người/năm bỏ thuốc thành công). Hoạt động 8:00-22:00
+// mọi ngày kể cả T7/CN, trừ ngày lễ.
 //
 // Reuse trong: CrisisMode SOS, SlipModal Phase 3-4, SettingsView "Cần giúp đỡ".
 // Tự dùng tel: protocol → mở dialer trên mobile, prompt "Allow tel" trên desktop.
@@ -13,9 +17,9 @@ interface QuitlineButtonProps {
   className?: string;
 }
 
-const QUITLINE_NUMBER = '0888008866';
-const QUITLINE_DISPLAY = '0888 008 866';
-const QUITLINE_LABEL = 'Trung tâm cai thuốc — Bệnh viện Bạch Mai';
+const QUITLINE_NUMBER = '18006606';
+const QUITLINE_DISPLAY = '1800 6606';
+const QUITLINE_LABEL = 'Tổng đài tư vấn cai thuốc miễn phí — BV Bạch Mai';
 
 export function QuitlineButton({
   size = 'compact',

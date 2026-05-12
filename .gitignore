@@ -14,3 +14,30 @@ frontend/public/sol-widget.js
 backups/
 sol_backup_*.zip
 restore_temp/
+
+# DB backup SQL files — chứa data user thật, KHÔNG push
+*.sql
+!backend/prisma/**/*.sql       # giữ migration SQL trong prisma
+!backend/prisma/migrate_*.sql  # giữ migration scripts có chủ đích
+!backend/prisma/fix_*.sql      # giữ fix scripts có chủ đích
+
+# Env files cho mọi service (tránh leak ZALO_APP_SECRET, JWT_SECRET, SMTP_PASSWORD)
+backend/.env
+backend/.env.local
+backend/.env.*.local
+dashboard/.env
+admin/.env
+frontend/.env
+
+# Cowork mode outputs (local-only)
+outputs/
+*.tmp
+
+# Editor backup files
+*.bak
+*~
+
+# Office lock files (khi anh mở Word/Excel)
+.~lock.*#
+~$*.docx
+~$*.xlsx

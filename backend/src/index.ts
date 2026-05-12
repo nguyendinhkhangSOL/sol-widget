@@ -29,6 +29,15 @@ import { tiersRouter } from './tiers/routes';
 import { paymentsRouter } from './payments/routes';
 import { refundsRouter } from './refunds/routes';
 import { voiceRouter } from './voice/routes';
+// Silent Companionship channels (pivot 2026-05-08)
+import confessionsRouter from './confessions/routes';
+import khangQuestionsRouter from './khangQuestions/routes';
+import voicesRouter from './voices/routes';
+import lapseRouter from './lapse/routes';
+import crisisTimerRouter from './crisisTimer/routes';
+import statsRouter from './stats/routes';
+// Zalo OA — Sol v3 (12-05-2026): webhook + ZNS + admin endpoints
+import { zaloRouter } from './zalo/routes';
 import { registerSocketHandlers } from './socket/handlers';
 import { startScheduler } from './scheduler/worker';
 
@@ -50,7 +59,13 @@ app.use(
 app.use(express.json({ limit: '256kb' }));
 
 // Rate-limit auth and messaging.
-const authLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 20 });
+// Dev mode: relaxed cho test thoải mái. Prod: strict chống brute-force.
+const isDev = process.env.NODE_ENV !== 'production';
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: isDev ? 500 : 20, // Dev: 500/15p · Prod: 20/15p
+  skipSuccessfulRequests: isDev, // Dev: chỉ count fail; Prod: count tất
+});
 const messageLimiter = rateLimit({ windowMs: 60 * 1000, max: 60 });
 
 app.get('/healthz', (_, res) => res.json({ ok: true, now: new Date().toISOString() }));
@@ -69,6 +84,16 @@ app.use('/tiers', tiersRouter);
 app.use('/payments', paymentsRouter);
 app.use('/refunds', refundsRouter);
 app.use('/voice', voiceRouter);
+// Silent Companionship channels — 7 kênh thay group truyền thống
+app.use('/confessions', confessionsRouter);
+app.use('/khang-questions', khangQuestionsRouter);
+app.use('/voices', voicesRouter);
+app.use('/lapse', lapseRouter);
+app.use('/crisis-timer', crisisTimerRouter);
+app.use('/stats', statsRouter);
+// Zalo OA — webhook + admin endpoints. KHÔNG có authLimiter cho /webhook
+// (vì Zalo gọi thẳng, không có JWT). Signature verify trong handler.
+app.use('/api/zalo', zaloRouter);
 app.use('/admin', adminRouter);
 
 // Sentry error handler — capture vào Sentry trước khi log ra console.

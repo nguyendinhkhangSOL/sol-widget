@@ -7,9 +7,9 @@ interface QuitlineButtonProps {
   className?: string;
 }
 
-const QUITLINE_NUMBER = '0888008866';
-const QUITLINE_DISPLAY = '0888 008 866';
-const QUITLINE_LABEL = 'Trung tâm cai thuốc — Bệnh viện Bạch Mai';
+const QUITLINE_NUMBER = '18006606';
+const QUITLINE_DISPLAY = '1800 6606';
+const QUITLINE_LABEL = 'Tổng đài tư vấn cai thuốc miễn phí — BV Bạch Mai';
 
 export function QuitlineButton({
   size = 'compact',

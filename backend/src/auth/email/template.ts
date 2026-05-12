@@ -13,7 +13,9 @@ export interface MagicLinkTemplateParams {
 
 export function renderMagicLinkEmail({
   link,
-  pronouns = 'bạn',
+  // Sol v3: default 'anh' thay 'bạn' — vì 95% user Sol là nam giới 30+ xưng anh.
+  // Chỉ user explicit set pronouns khác (chị/em) mới override.
+  pronouns = 'anh',
   expiryMinutes = 60,
 }: MagicLinkTemplateParams): { subject: string; html: string; text: string } {
   const subject = 'Liên kết tài khoản Sol — bấm để đồng bộ';
@@ -33,7 +35,7 @@ Nếu ${pronouns} KHÔNG yêu cầu link này, bỏ qua email — tài khoản $
 bothuocla.sol.vn
 
 ---
-Sol — Bỏ thuốc lá 88 ngày · Đi cùng Khang
+Sol — Bỏ thuốc lá 52 ngày · Đi cùng Khang
 Email này được gửi tự động. Reply về khang@sol.vn nếu cần hỗ trợ.
 `;
 
@@ -55,7 +57,7 @@ Email này được gửi tự động. Reply về khang@sol.vn nếu cần hỗ
             <td style="background:#B25C2C;padding:28px 32px;text-align:center;">
               <div style="font-size:42px;line-height:1;margin-bottom:8px;">🌅</div>
               <h1 style="color:#FFFFFF;font-size:22px;font-weight:700;margin:0;letter-spacing:-0.01em;">
-                Sol — Bỏ thuốc lá 88 ngày
+                Sol — Bỏ thuốc lá 52 ngày
               </h1>
               <p style="color:rgba(255,255,255,0.9);font-size:14px;margin:6px 0 0;">
                 Liên kết tài khoản
@@ -116,7 +118,7 @@ Email này được gửi tự động. Reply về khang@sol.vn nếu cần hỗ
           <tr>
             <td style="background:#FBF7F0;padding:20px 32px;text-align:center;border-top:1px solid #D4C7A8;">
               <p style="font-size:12px;line-height:1.5;color:#8A857C;margin:0 0 6px;">
-                Sol — Bỏ thuốc lá 88 ngày · Đi cùng Khang
+                Sol — Bỏ thuốc lá 52 ngày · Đi cùng Khang
               </p>
               <p style="font-size:11px;line-height:1.5;color:#8A857C;margin:0;">
                 Email tự động · Reply về <a href="mailto:khang@sol.vn" style="color:#B25C2C;text-decoration:underline;">khang@sol.vn</a> nếu cần hỗ trợ

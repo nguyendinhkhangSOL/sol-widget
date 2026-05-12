@@ -25,6 +25,7 @@ import {
   NetworkSection,
   MoneySection,
   CravingLogSection,
+  IdentitySection,
   RelapsePlanSection,
   ResourcesSection,
 } from '../components/workbook/PrepSections';
@@ -60,8 +61,12 @@ export function Workbook() {
 
   const [phaseData, setPhaseData] = useState<DashboardData | null>(null);
   useEffect(() => {
+    // Re-fetch khi quitDate đổi. qDayConfirmedAt KHÔNG có trong User type
+    // dashboard (backend /me không trả) — dùng phaseData.qDay.qDayConfirmedAt
+    // từ /journey/dashboard payload thay thế. Nếu user confirm Q-Day, widget
+    // sẽ emit sol:user-changed → caller (Layout) re-fetch user.quitDate.
     api.getJourneyDashboard().then(setPhaseData).catch(() => setPhaseData(null));
-  }, [user?.quitDate, user?.qDayConfirmedAt]);
+  }, [user?.quitDate]);
 
   // Bootstrap workbook from backend
   const hydratedRef = useRef(false);
@@ -179,7 +184,7 @@ export function Workbook() {
                 setTimeout(() => window.print(), 100);
               }}
               className="shrink-0 min-h-tap px-3 py-2 rounded-lg text-meta font-medium bg-sol-paper border border-sol-line text-sol-ink-2 hover:bg-sol-soft flex flex-col items-start"
-              title="In toàn bộ sổ tay 88 ngày"
+              title="In toàn bộ sổ tay 4 chặng tiến hoá"
             >
               <span>🖨️ In sách</span>
               <span className="text-[10px] text-sol-ink-3">Toàn bộ</span>
@@ -190,7 +195,7 @@ export function Workbook() {
 
       <div className="max-w-5xl mx-auto p-4 lg:p-6 pb-24 lg:pb-10 space-y-6 print:p-0 print:space-y-4">
         {printMode ? (
-          // PRINT MODE — render TOÀN BỘ 88 ngày
+          // PRINT MODE — render TOÀN BỘ 4 chặng tiến hoá
           <>
             <WorkbookHero />
             <PreQuitSection />
@@ -199,6 +204,7 @@ export function Workbook() {
             <NetworkSection />
             <MoneySection />
             <CravingLogSection />
+            <IdentitySection />
             <RelapsePlanSection />
             <ResourcesSection />
             <PhasePlaceholder phase="phase-1" stage="NHAN_THUC" />
@@ -221,6 +227,7 @@ export function Workbook() {
                 <NetworkSection />
                 <MoneySection />
                 <CravingLogSection />
+                <IdentitySection />
                 <RelapsePlanSection />
                 <ResourcesSection />
               </>
@@ -253,7 +260,7 @@ export function Workbook() {
           </div>
           bothuocla.sol.vn · sol.vn
           <div className="mt-1 text-[11px]">
-            Sổ tay 88 ngày này thuộc về bạn — hành trình này cũng vậy.
+            Sổ tay 4 chặng tiến hoá này thuộc về bạn — hành trình cũng vậy.
           </div>
         </footer>
       </div>

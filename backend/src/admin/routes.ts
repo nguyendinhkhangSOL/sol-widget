@@ -21,10 +21,14 @@ import {
 } from '../tiers/qDayChecklist';
 import { runContentAudit } from './audit/contentAudit';
 import { contentRouter } from './content/routes';
+import { adminOriginGuard } from './originGuard';
 
 export const adminRouter = Router();
 
-adminRouter.use(authMiddleware, adminMiddleware);
+// Defense in depth: kiểm Origin header trước authMiddleware (giảm load DB
+// cho request từ origin không hợp lệ — tool curl/server-to-server bypass CORS).
+// Sau đó: authMiddleware (JWT) + adminMiddleware (require isAdmin).
+adminRouter.use(adminOriginGuard, authMiddleware, adminMiddleware);
 
 // /admin/content/audit — content audit (runContentAudit), MUST be before content router mount
 // because content router has GET /:id which would match "/audit" as if id="audit".
@@ -645,11 +649,12 @@ adminRouter.get('/analytics/funnel', async (_req, res) => {
 
   res.json({
     steps: [
-      { key: 'visit', label: 'Đăng ký FREE', count: totalUsers },
-      { key: 'q_day', label: 'Đặt Q-Day', count: qDaySet },
-      { key: 'khoi_dong', label: 'Mua Khởi động 99k', count: paidKhoiDong },
-      { key: 'dong_hanh', label: 'Mua Đồng hành 199k', count: paidDongHanh },
-      { key: 'alumni', label: 'Hoàn thành (Alumni)', count: completed },
+      // Sol v3 (12-05-2026): 4 chặng Nhận Diện → Kiểm Soát → Làm Chủ → Người Tự Do
+      { key: 'visit', label: '🌱 Nhận Diện (FREE 7 ngày)', count: totalUsers },
+      { key: 'q_day', label: '📍 Đã đặt Q-Day', count: qDaySet },
+      { key: 'khoi_dong', label: '🟡 Mua Kiểm Soát 99k', count: paidKhoiDong },
+      { key: 'dong_hanh', label: '🔴 Mua Làm Chủ 199k', count: paidDongHanh },
+      { key: 'alumni', label: '🌟 Người Tự Do (Day 52+)', count: completed },
     ],
   });
 });

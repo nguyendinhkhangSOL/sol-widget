@@ -15,6 +15,15 @@ import { PhaseRebuild } from '../components/views/phaseB/PhaseRebuild';
 import { PhaseAmbassador } from '../components/views/phaseB/PhaseAmbassador';
 import { ExitModal } from '../components/views/phaseB/_shared';
 import { DashboardData } from '../components/views/phaseB/types';
+// Silent Companionship widgets (pivot 2026-05-08)
+import {
+  ControlScoreWidget,
+  AnonymousStatsWidget,
+  QuickWinDay3Widget,
+  Day7ReportWidget,
+  Day14ReportWidget,
+  CrisisTriggerButton,
+} from '../components/SilentCompanionshipWidgets';
 
 export function Overview() {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -146,6 +155,24 @@ export function Overview() {
           {cap(data.user.pronouns)} {data.user.name}
         </h1>
       </header>
+
+      {/* Crisis trigger button — luôn ở top, accessibility cao nhất */}
+      <CrisisTriggerButton />
+
+      {/* Quick Win Day 3 báo cáo (chỉ hiện Day 3+) */}
+      <QuickWinDay3Widget />
+
+      {/* Day 7 full report (chỉ hiện Day 7+) */}
+      <Day7ReportWidget />
+
+      {/* Day 14 báo cáo Sol Start (chỉ hiện Sol Start tier + Day 14+) */}
+      <Day14ReportWidget />
+
+      {/* Control Score — chỉ số làm chủ */}
+      <ControlScoreWidget />
+
+      {/* Anonymous Stats — "Tuần này trong Sol" */}
+      <AnonymousStatsWidget />
 
       {/* PhaseBar 4 viên ngọc */}
       <PhaseBar

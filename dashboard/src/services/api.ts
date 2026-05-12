@@ -78,10 +78,14 @@ export const api = {
   zaloInit: () => request<{ url: string }>('/auth/zalo/init'),
 
   // ─── Email magic link auth (2026-05-06) ─────────────────────────────
-  requestEmailLink: (email: string) =>
+  // redirectTo (optional): URL origin caller muốn link verify trỏ về.
+  //   - Default (omit): backend dùng APP_URL trong .env (bothuocla.sol.vn)
+  //   - Admin login: pass window.location.origin (vd 'http://localhost:5176')
+  //   Backend whitelist các origin Sol owns; tránh open redirect.
+  requestEmailLink: (email: string, redirectTo?: string) =>
     request<{ ok: boolean; message: string }>('/auth/email/request', {
       method: 'POST',
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, redirectTo }),
     }),
 
   verifyEmailToken: async (token: string) => {
@@ -572,6 +576,245 @@ export const api = {
 
   resumeJourney: () =>
     request<{ ok: boolean; message: string }>('/journey/resume', { method: 'POST' }),
+
+  // ─── SILENT COMPANIONSHIP (pivot 2026-05-08) ─────────────────────────
+  // 6 channels mới thay group truyền thống. Reference docs/SILENT_COMPANIONSHIP.
+
+  // ── 1. KHOẢNG LẶNG (anonymous confessions feed) ──
+  confessionsList: (params?: { cursor?: string; sort?: 'recent' | 'popular' }) => {
+    const qs = new URLSearchParams();
+    if (params?.cursor) qs.set('cursor', params.cursor);
+    if (params?.sort) qs.set('sort', params.sort);
+    return request<{
+      items: Array<{
+        id: string;
+        content: string;
+        readCount: number;
+        reactCount: number;
+        pinnedAt: string | null;
+        createdAt: string;
+        autoTag: string | null;
+        myReactions: number[];
+        hasRead: boolean;
+      }>;
+      nextCursor: string | null;
+    }>(`/confessions?${qs}`);
+  },
+  confessionsCreate: (content: string) =>
+    request<{ confession: { id: string; content: string; createdAt: string } }>(
+      '/confessions',
+      { method: 'POST', body: JSON.stringify({ content }) },
+    ),
+  confessionsRead: (id: string) =>
+    request<{ ok: true }>(`/confessions/${id}/read`, { method: 'POST' }),
+  confessionsReact: (id: string, type: 1 | 2 | 3 | 4 | 5) =>
+    request<{ ok: true; toggled: 'on' | 'off' }>(`/confessions/${id}/react`, {
+      method: 'POST',
+      body: JSON.stringify({ type }),
+    }),
+  confessionsMine: () =>
+    request<{ items: any[] }>('/confessions/mine'),
+
+  // ── 2. HỎI KHANG (anonymous mailbox + voice replies) ──
+  khangQuestionSubmit: (content: string) =>
+    request<{ question: any }>('/khang-questions', {
+      method: 'POST',
+      body: JSON.stringify({ content }),
+    }),
+  khangVoiceReplies: (params?: { cursor?: string }) => {
+    const qs = new URLSearchParams();
+    if (params?.cursor) qs.set('cursor', params.cursor);
+    return request<{
+      items: Array<{
+        id: string;
+        title: string;
+        description: string | null;
+        audioUrl: string;
+        durationSec: number;
+        topic: string;
+        listenCount: number;
+        reactCount: number;
+        createdAt: string;
+        questionReplies: { id: string; content: string }[];
+      }>;
+      nextCursor: string | null;
+    }>(`/khang-questions/voice-replies?${qs}`);
+  },
+  khangQuestionsMine: () =>
+    request<{ items: any[] }>('/khang-questions/mine'),
+  khangQuestionUpvote: (id: string) =>
+    request<{ ok: true; toggled: 'on' | 'off' }>(`/khang-questions/${id}/upvote`, {
+      method: 'POST',
+    }),
+
+  // ── 3. KHANG VOICE LIBRARY ──
+  voicesList: (params?: { topic?: string; cursor?: string }) => {
+    const qs = new URLSearchParams();
+    if (params?.topic) qs.set('topic', params.topic);
+    if (params?.cursor) qs.set('cursor', params.cursor);
+    return request<{
+      items: Array<{
+        id: string;
+        title: string;
+        description: string | null;
+        audioUrl: string;
+        durationSec: number;
+        topic: string;
+        pinnedAt: string | null;
+        listenCount: number;
+        reactCount: number;
+        createdAt: string;
+        myCompletionPct: number;
+      }>;
+      nextCursor: string | null;
+    }>(`/voices?${qs}`);
+  },
+  voiceAutoPlay: (trigger: 'onboard' | 'lapse' | 'qday' | 'crisis_90s') =>
+    request<{ voice: { id: string; title: string; audioUrl: string; durationSec: number } }>(
+      `/voices/auto-play/${trigger}`,
+    ),
+  voiceListen: (id: string, completionPct: number, context: 'auto' | 'manual' | 'push' = 'manual') =>
+    request<{ ok: true }>(`/voices/${id}/listen`, {
+      method: 'POST',
+      body: JSON.stringify({ completionPct, context }),
+    }),
+  voiceReact: (id: string, type: 1 | 2) =>
+    request<{ ok: true; toggled: 'on' | 'off' }>(`/voices/${id}/react`, {
+      method: 'POST',
+      body: JSON.stringify({ type }),
+    }),
+
+  // ── 4. LAPSE-FRIENDLY ──
+  lapseLog: (data: {
+    cigaretteCount: number;
+    context?:
+      | 'social_drinking'
+      | 'stress'
+      | 'funeral'
+      | 'wedding'
+      | 'alone_late_night'
+      | 'after_meal'
+      | 'family_conflict'
+      | 'other';
+    reflection?: string;
+  }) =>
+    request<{
+      lapse: any;
+      voice: { id: string; title: string; audioUrl: string; durationSec: number } | null;
+      message: string;
+    }>('/lapse', { method: 'POST', body: JSON.stringify(data) }),
+  lapseRecover: (id: string) =>
+    request<{ lapse: any; alreadyRecovered?: boolean }>(`/lapse/${id}/recover`, {
+      method: 'POST',
+    }),
+  lapseReflect: (id: string, reflection: string) =>
+    request<{ lapse: any }>(`/lapse/${id}/reflect`, {
+      method: 'POST',
+      body: JSON.stringify({ reflection }),
+    }),
+  lapseList: () => request<{ items: any[] }>('/lapse'),
+  lapseStats: () =>
+    request<{
+      totalLapses: number;
+      avgRecoveryHours: number | null;
+      within24hCount: number;
+      within24hRate: number | null;
+    }>('/lapse/stats'),
+
+  // ── 5. CRISIS TIMER 90s ──
+  crisisStart: (
+    triggerContext?: 'stress' | 'social' | 'habit' | 'boredom' | 'after_meal' | 'unknown',
+  ) =>
+    request<{
+      timerId: string;
+      durationSec: number;
+      voice: { id: string; title: string; audioUrl: string; durationSec: number } | null;
+      message: string;
+    }>('/crisis-timer/start', {
+      method: 'POST',
+      body: JSON.stringify({ triggerContext: triggerContext ?? 'unknown' }),
+    }),
+  crisisEnd: (
+    id: string,
+    data: {
+      outcome: 'delayed_no_smoke' | 'smoked_after' | 'abandoned';
+      delayDurationSec?: number;
+      notes?: string;
+    },
+  ) =>
+    request<{ timer: any; message: string }>(`/crisis-timer/${id}/end`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
+  crisisStats: () =>
+    request<{
+      totalAttempts: number;
+      successCount: number;
+      successRate: number;
+      avgDelaySec: number;
+      maxDelaySec: number;
+    }>('/crisis-timer/stats'),
+
+  // ── 6. STATS / Quick Win / Control Score ──
+  statsFeed: () =>
+    request<{
+      period: string;
+      stats: {
+        totalActiveUsers: number;
+        lateNightOpens: number;
+        lapseLogs: number;
+        recoveryWithin24h: number;
+        delayOver10min: number;
+        voiceListens: number;
+        topVoiceListenCount: number;
+        qDaysSet: number;
+        thirtyDayCleanCount: number;
+      };
+      computedAt: string | null;
+    }>('/stats/feed'),
+  quickWinDay3: () =>
+    request<{
+      daysSinceJoin: number;
+      avgPerDay: number;
+      totalLogged: number;
+      topTriggers: { trigger: string; count: number; pct: number }[];
+      vulnerableHour: number | null;
+      vulnerableHourRange: string | null;
+      message: string;
+    }>('/stats/quick-win-day3'),
+  controlScore: () =>
+    request<{
+      totalScore: number;
+      level: string;
+      components: { hieuMinh: number; triHoan: number; quayLai: number };
+    }>('/stats/control-score'),
+
+  day7Report: () =>
+    request<{
+      daysSinceJoin: number;
+      avgPerDay: number;
+      totalLogged: number;
+      topTriggers: { trigger: string; count: number; pct: number }[];
+      topHours: { hour: number; count: number }[];
+      wikiRead: number;
+      voiceListened: number;
+      message: string;
+      nextStep: { title: string; description: string; ctaUrl: string };
+    }>('/stats/day7-report'),
+
+  day14Report: () =>
+    request<{
+      daysSinceTier: number;
+      baselineAvgPerDay: number;
+      currentAvgPerDay: number;
+      reductionPct: number;
+      avgDelaySec: number;
+      crisisAttempts: number;
+      habitsBroken: number;
+      lightDays: number;
+      message: string;
+      nextStep: { title: string; description: string; ctaUrl: string };
+    }>('/stats/day14-report'),
 };
 
 // ─── Admin content types (Phase 1 + 5) ───────────────────────────────────
