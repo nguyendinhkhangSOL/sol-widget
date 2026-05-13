@@ -8,10 +8,14 @@
 
 import { Router, raw } from 'express';
 import { handleZaloWebhook } from './webhook';
+import { zaloTemplateRouter } from './templateRoutes';
 import { prisma } from '../db';
 import { authMiddleware, type AuthedRequest } from '../auth/middleware';
 
 export const zaloRouter = Router();
+
+// Template CRUD (admin only) — mount trước webhook để tránh conflict path
+zaloRouter.use('/templates', zaloTemplateRouter);
 
 /**
  * Webhook endpoint — Zalo POST tới đây.

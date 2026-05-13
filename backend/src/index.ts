@@ -38,6 +38,7 @@ import crisisTimerRouter from './crisisTimer/routes';
 import statsRouter from './stats/routes';
 // Zalo OA — Sol v3 (12-05-2026): webhook + ZNS + admin endpoints
 import { zaloRouter } from './zalo/routes';
+import { messagingRouter } from './zalo/messagingRoutes';
 import { registerSocketHandlers } from './socket/handlers';
 import { startScheduler } from './scheduler/worker';
 
@@ -94,6 +95,7 @@ app.use('/stats', statsRouter);
 // Zalo OA — webhook + admin endpoints. KHÔNG có authLimiter cho /webhook
 // (vì Zalo gọi thẳng, không có JWT). Signature verify trong handler.
 app.use('/api/zalo', zaloRouter);
+app.use('/api/messaging', messagingRouter);
 app.use('/admin', adminRouter);
 
 // Sentry error handler — capture vào Sentry trước khi log ra console.

@@ -11,9 +11,10 @@
 //   5. Reports — engagement + cost
 //
 // Phase 1: UI thuần — data hardcoded để Khang xem flow.
-// Phase 2: wire backend API /api/messaging/*
+// Phase 2 (done): wire backend API /api/messaging/*
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { messagingApi, type MessagingIntensity, type MessagingStats } from '../services/api';
 
 type TabKey = 'global' | 'cohort' | 'user' | 'ab' | 'reports';
 
@@ -64,13 +65,53 @@ export function AdminMessaging() {
 
 /* ─── TAB GLOBAL ──────────────────────────────────────────────────────── */
 function TabGlobal() {
-  const [intensity, setIntensity] = useState<'LIGHT' | 'MEDIUM' | 'HEAVY' | 'CUSTOM'>('MEDIUM');
+  const [intensity, setIntensity] = useState<MessagingIntensity>('MEDIUM');
+  const [stats, setStats] = useState<MessagingStats | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [saveMsg, setSaveMsg] = useState<string | null>(null);
 
-  const stats = [
-    { label: 'Tin gửi 24h', value: '234', sub: 'Cap: 300 (78%)' },
-    { label: 'User active', value: '39', sub: 'L 5 · M 22 · H 12' },
-    { label: 'Open rate 7d', value: '78%', sub: 'Benchmark 75%' },
-    { label: 'Chi phí tháng', value: '210k', sub: 'ZNS: 840 tin' },
+  async function load() {
+    setLoading(true);
+    try {
+      const [global, statsData] = await Promise.all([
+        messagingApi.getGlobal(),
+        messagingApi.getStats(),
+      ]);
+      setIntensity(global.intensity);
+      setStats(statsData);
+    } catch (err) {
+      console.error('Load global policy failed', err);
+    } finally {
+      setLoading(false);
+    }
+  }
+  useEffect(() => { load(); }, []);
+
+  async function handleSave() {
+    setSaving(true);
+    setSaveMsg(null);
+    try {
+      await messagingApi.updateGlobal({ intensity, config: {}, enabled: true });
+      setSaveMsg('Đã lưu Global policy. Backend sẽ apply runtime.');
+      setTimeout(() => setSaveMsg(null), 3000);
+    } catch (err: any) {
+      setSaveMsg('Lỗi: ' + (err?.message ?? 'unknown'));
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  const statsDisplay = stats ? [
+    { label: 'Tin gửi 24h', value: String(stats.sent24h), sub: `Tổng 7d: ${stats.sent7d}` },
+    { label: 'User active', value: String((stats.cohorts.LIGHT + stats.cohorts.MODERATE + stats.cohorts.HEAVY) || 0), sub: `L ${stats.cohorts.LIGHT} · M ${stats.cohorts.MODERATE} · H ${stats.cohorts.HEAVY}` },
+    { label: 'Open rate 7d', value: `${stats.openRate}%`, sub: 'Benchmark 75%' },
+    { label: 'Chi phí 30d', value: `${(stats.cost30dVnd / 1000).toFixed(0)}k`, sub: `Block rate: ${stats.blockRate}%` },
+  ] : [
+    { label: 'Tin gửi 24h', value: '—', sub: 'Đang tải...' },
+    { label: 'User active', value: '—', sub: '—' },
+    { label: 'Open rate 7d', value: '—', sub: '—' },
+    { label: 'Chi phí tháng', value: '—', sub: '—' },
   ];
 
   const intensityOptions = [
@@ -94,7 +135,7 @@ function TabGlobal() {
     <div className="space-y-5">
       {/* Stat row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {stats.map((s) => (
+        {statsDisplay.map((s) => (
           <div key={s.label} className="sol-card p-4">
             <div className="text-[11px] uppercase tracking-wider font-semibold text-sol-ink-3">{s.label}</div>
             <div className="text-2xl font-bold text-sol-orange-ink mt-1">{s.value}</div>
@@ -165,9 +206,23 @@ function TabGlobal() {
         </div>
       </div>
 
+      {saveMsg && (
+        <div className={`rounded-xl p-3 text-meta ${
+          saveMsg.startsWith('Lỗi')
+            ? 'bg-sol-red-soft text-sol-red-ink border border-sol-red/30'
+            : 'bg-sol-green-soft text-sol-green-ink border border-sol-green/30'
+        }`}>
+          {saveMsg}
+        </div>
+      )}
+
       <div className="flex justify-end gap-2">
-        <button className="btn-secondary">Reset về Default</button>
-        <button className="btn-primary">💾 Save & Apply Runtime</button>
+        <button onClick={load} className="btn-secondary" disabled={loading || saving}>
+          ↻ Reload
+        </button>
+        <button onClick={handleSave} className="btn-primary" disabled={saving || loading}>
+          {saving ? 'Đang lưu…' : '💾 Save & Apply Runtime'}
+        </button>
       </div>
     </div>
   );

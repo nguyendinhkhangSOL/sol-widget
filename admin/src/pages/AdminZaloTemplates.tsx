@@ -1,88 +1,49 @@
 // admin/src/pages/AdminZaloTemplates.tsx
 //
-// Bộ biên tập Zalo ZNS template — Khang soạn template trong Admin Sol,
-// editor có:
+// Sol v3 (12-05-2026) — Phase 2: wire backend CRUD API.
+// Bộ biên tập Zalo ZNS template:
 //   - Counter 400 ký tự live
 //   - Lint từ ngữ cấm (3 cấp Critical/Warning/Info)
 //   - Preview render Zalo OA chat style
-//   - 1-click submit Zalo (sẽ wire API sau)
-//
-// Phase 1: full UI hardcoded data + lint hoạt động real-time.
+//   - Save draft / Submit Zalo qua API thật
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { lintZNSText, canSubmitTemplate, countChars, extractParams, type LintIssue } from '../lib/zaloLinter';
+import { zaloApi, type ZaloTemplate, type ZaloTemplateStatus } from '../services/api';
 
-type TemplateStatus = 'DRAFT' | 'PENDING' | 'APPROVED' | 'REJECTED' | 'ARCHIVED';
-
-interface Template {
+// Type editing — partial vì có thể chưa tồn tại trong DB (đang tạo mới)
+interface EditingTemplate {
+  isNew: boolean;
   code: string;
   zaloManagerName: string;
   tag: '1' | '2' | '3';
   title: string;
   body: string;
   ctaButtons: Array<{ label: string; type: string; value?: string }>;
-  status: TemplateStatus;
-  charCount: number;
 }
 
-// Hardcoded 12 templates Sol đã viết sẵn (Phase 1)
-const SEED_TEMPLATES: Template[] = [
-  {
-    code: 'SOL_WELCOME',
-    zaloManagerName: 'Sol — Chào mừng Day 1',
-    tag: '2',
-    title: 'Chào {name} — anh đã tham gia chương trình Sol!',
-    body: '7 ngày đầu là chặng Nhận Diện — anh chỉ cần quan sát.\nCoach cá nhân hoá đã sẵn sàng đồng hành.\n\n— Khang Sol',
-    ctaButtons: [
-      { label: 'Nghe voice chào mừng', type: 'OPEN_URL', value: 'https://bothuocla.sol.vn/voice/welcome' },
-      { label: 'Mở Sol', type: 'OPEN_URL', value: 'https://bothuocla.sol.vn' },
-    ],
-    status: 'APPROVED',
-    charCount: 210,
-  },
-  {
-    code: 'SOL_Q_DAY_MORNING',
-    zaloManagerName: 'Sol — Sáng cột mốc 22',
-    tag: '2',
-    title: 'Hôm nay là cột mốc Ngày 22 của {name}!',
-    body: 'Bắt đầu chặng 30 ngày tiếp theo. Anh đã chuẩn bị 3 tuần.\nSol đã sẵn sàng. Khang ở đó.',
-    ctaButtons: [
-      { label: 'Mở Sol — Cam kết', type: 'OPEN_URL', value: 'https://bothuocla.sol.vn/q-day' },
-      { label: 'Gọi Khang', type: 'MAKE_PHONE_CALL', value: '+84912727381' },
-    ],
-    status: 'APPROVED',
-    charCount: 230,
-  },
-  {
-    code: 'SOL_DAILY_CHECKIN',
-    zaloManagerName: 'Sol — Nhắc check-in tối',
-    tag: '2',
-    title: 'Anh ơi, 30 giây check-in tối nay.',
-    body: 'Hôm nay anh ở Ngày {day}, streak {streak} ngày.\nSol đợi anh ghi lại 1 dòng.',
-    ctaButtons: [
-      { label: 'Check-in 30s', type: 'OPEN_URL', value: 'https://bothuocla.sol.vn/checkin' },
-    ],
-    status: 'APPROVED',
-    charCount: 150,
-  },
-  {
-    code: 'SOL_CRISIS_DETECT',
-    zaloManagerName: 'Sol — Phát hiện moment khó',
-    tag: '2',
-    title: 'Mình thấy {name} đang ở moment khó.',
-    body: 'Đừng cố một mình. Bài tập 4-7-8 chỉ 4 phút.\nHoặc gọi Khang nếu cần.',
-    ctaButtons: [
-      { label: 'Mở bài tập', type: 'OPEN_URL', value: 'https://bothuocla.sol.vn/breathing' },
-      { label: 'Gọi Khang', type: 'MAKE_PHONE_CALL', value: '+84912727381' },
-    ],
-    status: 'APPROVED',
-    charCount: 170,
-  },
-];
-
 export function AdminZaloTemplates() {
-  const [templates] = useState<Template[]>(SEED_TEMPLATES);
-  const [editing, setEditing] = useState<Template | null>(null);
+  const [templates, setTemplates] = useState<ZaloTemplate[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [editing, setEditing] = useState<EditingTemplate | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  async function reload() {
+    setLoading(true);
+    setError(null);
+    try {
+      const r = await zaloApi.listTemplates();
+      setTemplates(r.items);
+    } catch (err: any) {
+      setError('Không tải được danh sách: ' + (err?.message ?? 'unknown'));
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    reload();
+  }, []);
 
   return (
     <div className="space-y-4">
@@ -95,45 +56,66 @@ export function AdminZaloTemplates() {
             Soạn template ZNS — auto check ký tự + lint từ cấm + preview style Zalo.
           </p>
         </div>
-        <button onClick={() => setEditing(blankTemplate())} className="btn-primary">
-          + Tạo template mới
-        </button>
+        {!editing && (
+          <button onClick={() => setEditing(blankTemplate())} className="btn-primary">
+            + Tạo template mới
+          </button>
+        )}
       </div>
+
+      {error && (
+        <div className="bg-sol-red-soft border border-sol-red/30 text-sol-red-ink rounded-xl p-3 text-meta">
+          {error}
+        </div>
+      )}
 
       {!editing && (
         <div className="sol-card overflow-hidden">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-sol-soft text-[11px] uppercase tracking-wider font-semibold text-sol-ink-2">
-                <th className="px-3 py-2 text-left">Tên</th>
-                <th className="px-3 py-2 text-left">Zalo Manager</th>
-                <th className="px-3 py-2 text-center">Tag</th>
-                <th className="px-3 py-2 text-right">Ký tự</th>
-                <th className="px-3 py-2 text-center">Status</th>
-                <th className="px-3 py-2"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {templates.map((t) => (
-                <tr key={t.code} className="border-b border-sol-soft hover:bg-sol-paper">
-                  <td className="px-3 py-2.5 font-semibold">{t.code}</td>
-                  <td className="px-3 py-2.5 text-meta text-sol-ink-2">{t.zaloManagerName}</td>
-                  <td className="px-3 py-2.5 text-center">
-                    <span className="inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold bg-sol-green-soft text-sol-green-ink">Tag {t.tag}</span>
-                  </td>
-                  <td className="px-3 py-2.5 text-right text-meta">{t.charCount}/400</td>
-                  <td className="px-3 py-2.5 text-center">
-                    <StatusBadge status={t.status} />
-                  </td>
-                  <td className="px-3 py-2.5 text-right">
-                    <button onClick={() => setEditing(t)} className="text-sol-orange-ink hover:underline text-meta">
-                      Sửa →
-                    </button>
-                  </td>
+          {loading && (
+            <div className="p-8 text-center text-meta text-sol-ink-2">Đang tải template...</div>
+          )}
+          {!loading && templates.length === 0 && (
+            <div className="p-8 text-center text-meta text-sol-ink-2">
+              Chưa có template nào. Bấm <strong>+ Tạo template mới</strong> để bắt đầu.
+            </div>
+          )}
+          {!loading && templates.length > 0 && (
+            <table className="w-full">
+              <thead>
+                <tr className="bg-sol-soft text-[11px] uppercase tracking-wider font-semibold text-sol-ink-2">
+                  <th className="px-3 py-2 text-left">Code</th>
+                  <th className="px-3 py-2 text-left">Zalo Manager</th>
+                  <th className="px-3 py-2 text-center">Tag</th>
+                  <th className="px-3 py-2 text-right">Ký tự</th>
+                  <th className="px-3 py-2 text-center">Status</th>
+                  <th className="px-3 py-2"></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {templates.map((t) => (
+                  <tr key={t.id} className="border-b border-sol-soft hover:bg-sol-paper">
+                    <td className="px-3 py-2.5 font-semibold">{t.code}</td>
+                    <td className="px-3 py-2.5 text-meta text-sol-ink-2">{t.zaloManagerName}</td>
+                    <td className="px-3 py-2.5 text-center">
+                      <span className="inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold bg-sol-green-soft text-sol-green-ink">Tag {t.tag}</span>
+                    </td>
+                    <td className="px-3 py-2.5 text-right text-meta">{t.charCount}/400</td>
+                    <td className="px-3 py-2.5 text-center">
+                      <StatusBadge status={t.status} />
+                    </td>
+                    <td className="px-3 py-2.5 text-right">
+                      <button
+                        onClick={() => setEditing(toEditing(t))}
+                        className="text-sol-orange-ink hover:underline text-meta"
+                      >
+                        Sửa →
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       )}
 
@@ -141,7 +123,10 @@ export function AdminZaloTemplates() {
         <TemplateEditor
           template={editing}
           onCancel={() => setEditing(null)}
-          onSave={() => setEditing(null)}
+          onSaved={() => {
+            setEditing(null);
+            reload();
+          }}
         />
       )}
     </div>
@@ -149,10 +134,10 @@ export function AdminZaloTemplates() {
 }
 
 /* ─── Template Editor ─────────────────────────────────────────────────── */
-function TemplateEditor({ template, onCancel, onSave }: {
-  template: Template;
+function TemplateEditor({ template, onCancel, onSaved }: {
+  template: EditingTemplate;
   onCancel: () => void;
-  onSave: () => void;
+  onSaved: () => void;
 }) {
   const [code, setCode] = useState(template.code);
   const [name, setName] = useState(template.zaloManagerName);
@@ -160,12 +145,88 @@ function TemplateEditor({ template, onCancel, onSave }: {
   const [title, setTitle] = useState(template.title);
   const [body, setBody] = useState(template.body);
   const [buttons, setButtons] = useState(template.ctaButtons);
+  const [saving, setSaving] = useState(false);
+  const [actionMsg, setActionMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   const fullText = useMemo(() => title + '\n' + body, [title, body]);
   const counts = useMemo(() => countChars(title, body), [title, body]);
   const issues = useMemo(() => lintZNSText(fullText), [fullText]);
   const params = useMemo(() => extractParams(fullText), [fullText]);
-  const canSubmit = useMemo(() => canSubmitTemplate(fullText) && counts.total <= 400, [fullText, counts]);
+  const canSubmit = useMemo(
+    () => canSubmitTemplate(fullText) && counts.total <= 400,
+    [fullText, counts]
+  );
+
+  async function handleSave(action: 'draft' | 'submit' | 'test') {
+    setSaving(true);
+    setActionMsg(null);
+
+    // Filter CTA buttons rỗng (label trống)
+    const cleanButtons = buttons.filter((b) => b.label.trim().length > 0);
+
+    // Client-side validate trước khi gọi API
+    if (!code.trim() || !/^SOL_[A-Z0-9_]+$/.test(code)) {
+      setActionMsg({ type: 'error', text: 'Code phải dạng SOL_XXX uppercase (vd SOL_WELCOME)' });
+      setSaving(false);
+      return;
+    }
+    if (name.trim().length < 10) {
+      setActionMsg({ type: 'error', text: 'Tên Zalo Manager phải ≥ 10 ký tự (Khang đọc cho dễ tra)' });
+      setSaving(false);
+      return;
+    }
+    if (title.trim().length === 0 || body.trim().length === 0) {
+      setActionMsg({ type: 'error', text: 'Title + Body không được để trống' });
+      setSaving(false);
+      return;
+    }
+
+    try {
+      // Bước 1: ensure template tồn tại trong DB
+      let templateCode = code;
+      if (template.isNew) {
+        await zaloApi.createTemplate({
+          code,
+          zaloManagerName: name,
+          tag,
+          title,
+          body,
+          ctaButtons: cleanButtons,
+        });
+      } else {
+        await zaloApi.updateTemplate(template.code, {
+          zaloManagerName: name,
+          tag,
+          title,
+          body,
+          ctaButtons: cleanButtons,
+        });
+        templateCode = template.code;
+      }
+
+      // Bước 2: action tiếp theo
+      if (action === 'submit') {
+        const r = await zaloApi.submitTemplate(templateCode);
+        setActionMsg({ type: 'success', text: r.message ?? 'Submit Zalo OK!' });
+      } else if (action === 'test') {
+        const r = await zaloApi.testSendTemplate(templateCode);
+        setActionMsg({ type: 'success', text: r.message });
+      } else {
+        setActionMsg({ type: 'success', text: 'Đã lưu draft.' });
+      }
+
+      if (action === 'draft' || action === 'submit') {
+        setTimeout(onSaved, 800);
+      }
+    } catch (err: any) {
+      setActionMsg({
+        type: 'error',
+        text: 'Lỗi: ' + (err?.body?.error ?? err?.message ?? 'unknown'),
+      });
+    } finally {
+      setSaving(false);
+    }
+  }
 
   return (
     <div className="grid lg:grid-cols-2 gap-4">
@@ -173,27 +234,47 @@ function TemplateEditor({ template, onCancel, onSave }: {
       <div className="space-y-3">
         <div className="sol-card p-5 space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-h3">Biên tập template</h3>
-            <button onClick={onCancel} className="text-sol-ink-3 hover:text-sol-ink text-meta">
+            <h3 className="text-h3">
+              {template.isNew ? 'Tạo template mới' : `Sửa: ${template.code}`}
+            </h3>
+            <button
+              onClick={onCancel}
+              className="text-sol-ink-3 hover:text-sol-ink text-meta"
+            >
               ← Quay lại
             </button>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="text-[11px] uppercase tracking-wider font-semibold text-sol-ink-3">Code (backend)</label>
-              <input value={code} onChange={(e) => setCode(e.target.value)} className="input-text mt-1" placeholder="SOL_WELCOME" />
+              <label className="text-[11px] uppercase tracking-wider font-semibold text-sol-ink-3">
+                Code (backend) {!template.isNew && <span className="text-sol-ink-3">— readonly</span>}
+              </label>
+              <input
+                value={code}
+                onChange={(e) => setCode(e.target.value.toUpperCase())}
+                disabled={!template.isNew}
+                className="input-text mt-1 bg-white border-2 border-sol-line focus:border-sol-orange focus:ring-1 focus:ring-sol-orange"
+                placeholder="SOL_WELCOME"
+              />
             </div>
             <div>
-              <label className="text-[11px] uppercase tracking-wider font-semibold text-sol-ink-3">Tên Zalo Manager</label>
-              <input value={name} onChange={(e) => setName(e.target.value)} className="input-text mt-1" placeholder="Sol — Chào mừng Day 1" />
+              <label className="text-[11px] uppercase tracking-wider font-semibold text-sol-ink-3">
+                Tên Zalo Manager
+              </label>
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="input-text mt-1 bg-white border-2 border-sol-line focus:border-sol-orange focus:ring-1 focus:ring-sol-orange"
+                placeholder="Sol — Chào mừng Day 1"
+              />
             </div>
           </div>
 
           <div>
             <label className="text-[11px] uppercase tracking-wider font-semibold text-sol-ink-3">Tag Zalo</label>
-            <select value={tag} onChange={(e) => setTag(e.target.value as any)} className="input-text mt-1">
-              <option value="1">Tag 1 — Transactional (OTP, biến động giao dịch)</option>
+            <select value={tag} onChange={(e) => setTag(e.target.value as any)} className="input-text mt-1 bg-white border-2 border-sol-line focus:border-sol-orange focus:ring-1 focus:ring-sol-orange">
+              <option value="1">Tag 1 — Transactional (OTP, giao dịch)</option>
               <option value="2">Tag 2 — Customer Care (Sol dùng)</option>
               <option value="3">Tag 3 — Promotion (cần giấy phép)</option>
             </select>
@@ -203,7 +284,7 @@ function TemplateEditor({ template, onCancel, onSave }: {
             <label className="text-[11px] uppercase tracking-wider font-semibold text-sol-ink-3">
               Title <span className="text-sol-ink-2">({counts.title} ký tự)</span>
             </label>
-            <input value={title} onChange={(e) => setTitle(e.target.value)} className="input-text mt-1" />
+            <input value={title} onChange={(e) => setTitle(e.target.value)} className="input-text mt-1 bg-white border-2 border-sol-line focus:border-sol-orange focus:ring-1 focus:ring-sol-orange" />
           </div>
 
           <div>
@@ -213,12 +294,12 @@ function TemplateEditor({ template, onCancel, onSave }: {
             <textarea
               value={body}
               onChange={(e) => setBody(e.target.value)}
-              rows={6}
-              className="input-text mt-1 font-mono text-meta"
+              rows={7}
+              className="mt-1 w-full px-3 py-2.5 rounded-xl border-2 border-sol-orange/40 bg-sol-paper focus:bg-white focus:border-sol-orange focus:ring-2 focus:ring-sol-orange/30 focus:outline-none font-mono text-body text-sol-ink resize-y"
+              placeholder="Body tin nhắn ZNS — nội dung chính. Có thể dùng tham số động {name}, {day}, {streak}..."
             />
           </div>
 
-          {/* Counter total */}
           <div className={`px-3 py-2 rounded-lg text-meta font-semibold ${
             counts.total > 400
               ? 'bg-sol-red-soft text-sol-red-ink'
@@ -231,10 +312,9 @@ function TemplateEditor({ template, onCancel, onSave }: {
             {counts.total > 380 && counts.total <= 400 && ' — sát giới hạn'}
           </div>
 
-          {/* Params detected */}
           {params.length > 0 && (
             <div className="text-meta text-sol-ink-2">
-              Tham số động detected: {params.map((p) => (
+              Tham số động: {params.map((p) => (
                 <code key={p} className="bg-sol-soft px-1 py-0.5 rounded mx-1 text-sol-orange-ink">{`{${p}}`}</code>
               ))}
             </div>
@@ -279,7 +359,7 @@ function TemplateEditor({ template, onCancel, onSave }: {
               ))}
               {buttons.length < 2 && (
                 <button
-                  onClick={() => setButtons([...buttons, { label: '', type: 'OPEN_URL', value: '' }])}
+                  onClick={() => setButtons([...buttons, { label: 'Mở Sol', type: 'OPEN_URL', value: 'https://bothuocla.sol.vn' }])}
                   className="text-sol-orange-ink hover:underline text-meta"
                 >
                   + Thêm nút CTA
@@ -305,15 +385,38 @@ function TemplateEditor({ template, onCancel, onSave }: {
           ))}
         </div>
 
+        {actionMsg && (
+          <div className={`rounded-xl p-3 text-meta ${
+            actionMsg.type === 'success'
+              ? 'bg-sol-green-soft text-sol-green-ink border border-sol-green/30'
+              : 'bg-sol-red-soft text-sol-red-ink border border-sol-red/30'
+          }`}>
+            {actionMsg.text}
+          </div>
+        )}
+
         <div className="flex justify-end gap-2">
-          <button onClick={onCancel} className="btn-secondary">Huỷ</button>
-          <button className="btn-secondary">Save draft</button>
-          <button className="btn-secondary">Test send tôi</button>
+          <button onClick={onCancel} className="btn-secondary" disabled={saving}>Huỷ</button>
           <button
-            onClick={onSave}
-            disabled={!canSubmit}
+            onClick={() => handleSave('draft')}
+            className="btn-secondary"
+            disabled={saving}
+          >
+            {saving ? 'Đang lưu…' : 'Save draft'}
+          </button>
+          <button
+            onClick={() => handleSave('test')}
+            className="btn-secondary"
+            disabled={saving || template.isNew}
+            title={template.isNew ? 'Save draft trước' : ''}
+          >
+            Test send tôi
+          </button>
+          <button
+            onClick={() => handleSave('submit')}
+            disabled={!canSubmit || saving}
             className={`btn-primary ${!canSubmit ? 'opacity-50 cursor-not-allowed' : ''}`}
-            title={!canSubmit ? 'Cần fix Critical issues trước khi submit' : ''}
+            title={!canSubmit ? 'Cần fix Critical issues + dưới 400 ký tự' : ''}
           >
             🚀 Submit Zalo
           </button>
@@ -393,7 +496,7 @@ function ZaloPreview({
               </div>
             )}
           </div>
-          <div className="text-[10px] text-sol-ink-3 mt-1">12:34 · ZNS Sol</div>
+          <div className="text-[10px] text-sol-ink-3 mt-1">ZNS Sol · just now</div>
         </div>
       </div>
     </div>
@@ -401,8 +504,8 @@ function ZaloPreview({
 }
 
 /* ─── Helpers ─────────────────────────────────────────────────────────── */
-function StatusBadge({ status }: { status: TemplateStatus }) {
-  const map: Record<TemplateStatus, { label: string; cls: string }> = {
+function StatusBadge({ status }: { status: ZaloTemplateStatus }) {
+  const map: Record<ZaloTemplateStatus, { label: string; cls: string }> = {
     DRAFT: { label: 'Draft', cls: 'bg-sol-soft text-sol-ink-2' },
     PENDING: { label: 'Đang chờ', cls: 'bg-sol-orange-soft text-sol-orange-ink' },
     APPROVED: { label: 'Approved', cls: 'bg-sol-green-soft text-sol-green-ink' },
@@ -416,15 +519,26 @@ function StatusBadge({ status }: { status: TemplateStatus }) {
   );
 }
 
-function blankTemplate(): Template {
+function blankTemplate(): EditingTemplate {
   return {
+    isNew: true,
     code: 'SOL_NEW',
     zaloManagerName: 'Sol — Template mới',
     tag: '2',
     title: '',
     body: '',
     ctaButtons: [],
-    status: 'DRAFT',
-    charCount: 0,
+  };
+}
+
+function toEditing(t: ZaloTemplate): EditingTemplate {
+  return {
+    isNew: false,
+    code: t.code,
+    zaloManagerName: t.zaloManagerName,
+    tag: t.tag,
+    title: t.title,
+    body: t.body,
+    ctaButtons: (t.ctaButtons as any) ?? [],
   };
 }

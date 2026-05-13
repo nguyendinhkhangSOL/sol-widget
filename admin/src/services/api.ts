@@ -699,3 +699,133 @@ export function setToken(t: string) {
 export function clearToken() {
   localStorage.removeItem('sol_token');
 }
+
+/* ────────────────────────── ZALO TEMPLATES ──────────────────────────── */
+// Sol v3 (12-05-2026) — CRUD ZNS template trong admin
+
+export type ZaloTemplateStatus = 'DRAFT' | 'PENDING' | 'APPROVED' | 'REJECTED' | 'ARCHIVED';
+
+export interface ZaloTemplate {
+  id: string;
+  code: string;
+  zaloManagerName: string;
+  zaloTemplateId: string | null;
+  tag: '1' | '2' | '3';
+  title: string;
+  body: string;
+  ctaButtons: Array<{ label: string; type: string; value?: string }>;
+  params: string[];
+  charCount: number;
+  status: ZaloTemplateStatus;
+  rejectReason: string | null;
+  voiceTemplateCode: string | null;
+  textFallbackCode: string | null;
+  createdAt: string;
+  updatedAt: string;
+  submittedAt: string | null;
+  approvedAt: string | null;
+}
+
+export const zaloApi = {
+  listTemplates: () => request<{ items: ZaloTemplate[] }>('/api/zalo/templates'),
+  getTemplate: (code: string) => request<ZaloTemplate>(`/api/zalo/templates/${encodeURIComponent(code)}`),
+  createTemplate: (data: Omit<ZaloTemplate, 'id' | 'charCount' | 'status' | 'rejectReason' | 'zaloTemplateId' | 'createdAt' | 'updatedAt' | 'submittedAt' | 'approvedAt'>) =>
+    request<ZaloTemplate>('/api/zalo/templates', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
+  updateTemplate: (code: string, data: Partial<ZaloTemplate>) =>
+    request<ZaloTemplate>(`/api/zalo/templates/${encodeURIComponent(code)}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    }),
+  archiveTemplate: (code: string) =>
+    request<ZaloTemplate>(`/api/zalo/templates/${encodeURIComponent(code)}`, {
+      method: 'DELETE',
+    }),
+  submitTemplate: (code: string) =>
+    request<{ status: ZaloTemplateStatus; message: string }>(
+      `/api/zalo/templates/${encodeURIComponent(code)}/submit`,
+      { method: 'POST', body: JSON.stringify({}) },
+    ),
+  testSendTemplate: (code: string) =>
+    request<{ ok: boolean; message: string }>(
+      `/api/zalo/templates/${encodeURIComponent(code)}/test`,
+      { method: 'POST', body: JSON.stringify({}) },
+    ),
+};
+
+/* ────────────────────────── MESSAGING CONTROL ───────────────────────── */
+
+export type MessagingIntensity = 'LIGHT' | 'MEDIUM' | 'HEAVY' | 'CUSTOM';
+export type CohortKey = 'LIGHT' | 'MODERATE' | 'HEAVY';
+
+export interface MessagingPolicy {
+  id?: string;
+  scope: 'GLOBAL' | 'COHORT' | 'USER';
+  cohortKey?: string | null;
+  userId?: string | null;
+  intensity: MessagingIntensity;
+  config: Record<string, any>;
+  enabled: boolean;
+  isDefault?: boolean;
+}
+
+export interface UserMessagingProfile {
+  userId: string;
+  cohortKey: CohortKey;
+  ftndScore: number | null;
+  boostMode: boolean;
+  boostUntil: string | null;
+  muteUntil: string | null;
+  crisisThreshold: number | null;
+  engagementScore: number;
+  totalSent: number;
+  totalOpened: number;
+  totalClicked: number;
+  totalBlocked: number;
+  notes: string | null;
+  isDefault?: boolean;
+}
+
+export interface MessagingStats {
+  sent24h: number;
+  sent7d: number;
+  opened7d: number;
+  clicked7d: number;
+  openRate: number;
+  clickRate: number;
+  cost30dVnd: number;
+  cohorts: { LIGHT: number; MODERATE: number; HEAVY: number };
+  totalFollowers: number;
+  blockRate: number;
+  perTemplate: Array<{ code: string; sent: number; cost: number }>;
+}
+
+export const messagingApi = {
+  getGlobal: () => request<MessagingPolicy>('/api/messaging/policy/global'),
+  updateGlobal: (data: Partial<MessagingPolicy>) =>
+    request<MessagingPolicy>('/api/messaging/policy/global', {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    }),
+  getCohort: (key: CohortKey) =>
+    request<MessagingPolicy>(`/api/messaging/policy/cohort/${key}`),
+  updateCohort: (key: CohortKey, data: Partial<MessagingPolicy>) =>
+    request<MessagingPolicy>(`/api/messaging/policy/cohort/${key}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    }),
+  getProfile: (userId: string) =>
+    request<UserMessagingProfile>(`/api/messaging/profile/${encodeURIComponent(userId)}`),
+  updateProfile: (userId: string, data: Partial<UserMessagingProfile>) =>
+    request<UserMessagingProfile>(`/api/messaging/profile/${encodeURIComponent(userId)}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    }),
+  getStats: () => request<MessagingStats>('/api/messaging/stats'),
+  searchUsers: (q?: string) =>
+    request<{ items: Array<{ id: string; name: string | null; phone: string | null; email: string | null; pronouns: string | null; tier: string | null; ftndScore: number | null; messagingProfile: UserMessagingProfile | null }> }>(
+      `/api/messaging/users${q ? '?q=' + encodeURIComponent(q) : ''}`,
+    ),
+};
