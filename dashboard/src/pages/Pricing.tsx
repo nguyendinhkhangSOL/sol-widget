@@ -13,6 +13,7 @@ import { api, ApiError } from '../services/api';
 import { useStore } from '../state/store';
 import type { TierCatalog, TierCatalogItem, UserTier } from '../types';
 import { TIER_COLOR, TIER_LABEL, TIER_EMOJI, formatVnd } from '../lib/featureGates';
+import { CohortPicker } from '../components/CohortPicker';
 
 export function Pricing() {
   const user = useStore((s) => s.user);
@@ -62,36 +63,49 @@ export function Pricing() {
     <div className="p-6 lg:p-10 max-w-6xl mx-auto pb-24 lg:pb-12">
       <div className="text-center mb-8">
         <div className="text-meta uppercase tracking-wider text-sol-ink-3 font-semibold">
-          Sol v3 — 4 chặng tiến hoá
+          Sol v4 — 3 lộ trình theo Mức Lệ Thuộc · 4 cách trả tiền
         </div>
         <h1 className="text-2xl lg:text-3xl font-bold text-sol-ink mt-1">
-          Khang đi cùng anh 51 ngày
+          Khang đi cùng anh 35 / 52 / 65 ngày
         </h1>
         <p className="text-body text-sol-ink-2 mt-2 max-w-2xl mx-auto">
-          7 ngày Nhận Diện (miễn phí) → 14 ngày Kiểm Soát (99k) → 30 ngày Làm Chủ (199k, Q-Day Day 22) → Day 52 Lễ Tốt Nghiệp, Người Tự Do miễn phí mãi.
+          Mỗi anh em mỗi mức lệ thuộc — Sol có lộ trình riêng cho từng người. Anh nhẹ thì 35 ngày,
+          anh nặng thì 65 ngày. Trả thử, trả tuần, trả cả gói, hay trả sau khi anh sạch — anh chọn.
           <br />
           <strong className="text-sol-ink">
-            Tổng {formatVnd(totalPaid)} = đúng 1 tháng tiền thuốc anh đang đốt.
+            Lộ trình Vừa (đa số anh em): Tổng {formatVnd(totalPaid)} = đúng 1 tháng tiền thuốc anh đang đốt.
           </strong>
         </p>
       </div>
 
-      {/* Sol v3: 4 tiers nên dùng grid 2x2 trên mobile, 4 cột trên desktop */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {catalog.tiers.map((t) => (
-          <TierCard
-            key={t.id}
-            t={t}
-            isCurrent={eff === t.id}
-            isLocked={t.id === 'ALUMNI'}
-            onBuy={
-              t.id === 'KHOI_DONG' || t.id === 'DONG_HANH'
-                ? () => buy(t.id as 'KHOI_DONG' | 'DONG_HANH')
-                : undefined
-            }
-            submitting={submittingTier === t.id}
-          />
-        ))}
+      {/* Sol v4 — 3 lộ trình cohort + 4 cách trả tiền */}
+      <div className="mb-8">
+        <CohortPicker
+          onPick={(cohort, pay) => {
+            // TODO Sol v4 (later): wire to /tiers/cohort + /payments/checkout (cohort + payMode)
+            console.log('[CohortPicker] picked', cohort, pay);
+            nav(`/q-day-checklist?target=KHOI_DONG&cohort=${cohort}&pay=${pay}`);
+          }}
+        />
+      </div>
+
+      {/* Sol v4: bỏ 4 TIER cards riêng lẻ để tránh Gap với cohort logic.
+          Chặng (Nhận Diện/Kiểm Soát/Làm Chủ) = giai đoạn TRONG lộ trình, không bán riêng.
+          Người tự do (ALUMNI) = sau khi hoàn thành lộ trình → tự động chuyển. */}
+
+      <div className="mt-8 rounded-2xl bg-sol-paper border border-sol-line p-5">
+        <div className="text-meta uppercase tracking-wider text-sol-ink-3 font-semibold mb-3">
+          Lộ trình của anh gồm 3 chặng + sau khi tốt nghiệp
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {catalog.tiers.map((t) => (
+            <StageBadge key={t.id} t={t} isCurrent={eff === t.id} />
+          ))}
+        </div>
+        <p className="mt-4 text-meta text-sol-ink-2 leading-snug">
+          💡 Đây là <strong>các chặng TRONG lộ trình</strong> anh đang đi — không phải gói riêng để mua.
+          Khi anh đăng ký lộ trình ở trên, Sol sẽ tự động đưa anh qua từng chặng đúng theo thời gian.
+        </p>
       </div>
 
       {error && (
@@ -101,9 +115,43 @@ export function Pricing() {
       )}
 
       <div className="mt-8 text-center text-meta text-sol-ink-3 max-w-md mx-auto">
-        💳 Thanh toán đang ở chế độ mock — khi triển khai MoMo/VietQR sẽ hiện QR thật.
-        Mọi giao dịch lưu trong PaymentLog để admin theo dõi.
+        💳 Thanh toán Sol v4 hỗ trợ 4 cách trả linh hoạt: Trả Thử / Trả Theo Tuần / Trả Một Lần / Trả Sau Khi Thành Công.
+        Anh huỷ lúc nào cũng được. Sol KHÔNG tự rút tiền tự động.
       </div>
+      {/* TODO Sol v4 — submittingTier + buy() chỉ dùng nếu user upgrade thủ công.
+          Flow mặc định mới: chọn cohort + payMode → /payments/checkout với payMode. */}
+      <span hidden>{submittingTier}</span>
+    </div>
+  );
+}
+
+// Sol v4 — Stage Badge cho 4 chặng (không phải gói bán riêng)
+function StageBadge({ t, isCurrent }: { t: TierCatalogItem; isCurrent: boolean }) {
+  const color = TIER_COLOR[t.id];
+  return (
+    <div
+      className="rounded-xl p-3 border bg-white text-center"
+      style={{
+        borderColor: isCurrent ? color.bg : '#e5e7eb',
+        borderWidth: isCurrent ? 2 : 1,
+        background: isCurrent ? color.light : 'white',
+      }}
+    >
+      <div className="text-base">{TIER_EMOJI[t.id]}</div>
+      <div className="text-meta font-bold mt-0.5" style={{ color: color.bg }}>
+        {TIER_LABEL[t.id]}
+      </div>
+      {t.durationDays !== null && t.durationDays > 0 && (
+        <div className="text-[11px] text-sol-ink-3 mt-1">{t.durationDays} ngày</div>
+      )}
+      {(t as any).forever && (
+        <div className="text-[11px] text-sol-ink-3 mt-1">mãi mãi</div>
+      )}
+      {isCurrent && (
+        <div className="text-[10px] font-bold uppercase tracking-wider mt-1" style={{ color: color.bg }}>
+          ✓ Anh đang ở đây
+        </div>
+      )}
     </div>
   );
 }

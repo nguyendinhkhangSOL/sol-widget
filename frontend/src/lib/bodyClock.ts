@@ -229,7 +229,7 @@ export function moneySaved(opts: {
 }): number {
   const days = daysSober(opts.quitDate);
   const cigs = opts.cigsPerDay ?? 15;
-  const price = opts.pricePerCig ?? 1500; // ~1,500đ / điếu gói trung bình VN
+  const price = opts.pricePerCig ?? 1000; // Sol v4 — 1.000đ/điếu = 20k/bao phổ thông VN
   return Math.max(0, days * cigs * price);
 }
 

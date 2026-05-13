@@ -57,7 +57,7 @@ export function SettingsView() {
   const [quietStart, setQuietStart] = useState<string>(user?.settings?.quietStart ?? '22:30');
   const [quietEnd, setQuietEnd] = useState<string>(user?.settings?.quietEnd ?? '06:30');
   const [cigsPerDay, setCigsPerDay] = useState<number>(user?.settings?.cigsPerDay ?? 15);
-  const [pricePerCig, setPricePerCig] = useState<number>(user?.settings?.pricePerCig ?? 1500);
+  const [pricePerCig, setPricePerCig] = useState<number>(user?.settings?.pricePerCig ?? 1000);
   const [pushStatus, setPushStatus] = useState<'unknown' | 'granted' | 'denied' | 'unsupported'>('unknown');
   const [saving, setSaving] = useState(false);
   const [savingCost, setSavingCost] = useState(false);

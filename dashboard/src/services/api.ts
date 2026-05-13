@@ -274,6 +274,21 @@ export const api = {
   getTierMe: () => request<TierMe>('/tiers/me'),
   getTierCatalog: () => request<TierCatalog>('/tiers/catalog'),
 
+  // Sol v4 — 3 lộ trình theo Mức Lệ Thuộc (FTND cohort)
+  getCohorts: () =>
+    request<import('../types').CohortsResponse>('/tiers/cohorts'),
+  assignCohort: (ftndScore: number, preferredQDay?: number) =>
+    request<{
+      cohort: import('../types').CohortKey;
+      cohortConfig: any;
+      qDayDay: number;
+      totalJourneyDays: number;
+      message: string;
+    }>('/tiers/cohort', {
+      method: 'POST',
+      body: JSON.stringify({ ftndScore, preferredQDay }),
+    }),
+
   checkout: (
     targetTier: Exclude<UserTier, 'FREE' | 'ALUMNI'>,
     provider: 'mock' | 'momo' | 'vietqr' | 'bank_transfer' = 'mock',

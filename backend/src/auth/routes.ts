@@ -111,7 +111,7 @@ authRouter.post('/verify-otp', async (req, res) => {
           mode: 'normal',
           // Mặc định hợp lý cho user VN — user sẽ tinh chỉnh ở Settings
           cigsPerDay: 15,
-          pricePerCig: 1500,
+          pricePerCig: 1000,
         },
         state: { create: { state: 'IDLE', stateData: {} } },
       },
@@ -170,7 +170,7 @@ authRouter.post('/anonymous', async (req, res) => {
         quietEnd: '06:30',
         mode: 'normal',
         cigsPerDay: 15,
-        pricePerCig: 1500,
+        pricePerCig: 1000,
       },
       state: { create: { state: 'IDLE', stateData: {} } },
     },

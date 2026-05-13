@@ -98,9 +98,9 @@ export function Login() {
             SOL
           </div>
           <div className="min-w-0">
-            <div className="text-h3 text-sol-ink">SOL Dashboard</div>
+            <div className="text-h3 text-sol-ink">Sol — Đi cùng anh bỏ thuốc lá</div>
             <div className="text-meta text-sol-ink-2 truncate">
-              Hành trình cai thuốc 30 ngày
+              Khang đi cùng anh 35 / 52 / 65 ngày — tuỳ Mức Lệ Thuộc
             </div>
           </div>
         </div>

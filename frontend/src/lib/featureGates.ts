@@ -20,12 +20,13 @@ export const TIER_LABEL: Record<UserTier, string> = {
   ALUMNI: 'Người Tự Do',
 };
 
-// Brand colors Sol v3 — đồng bộ với landing pages + dashboard
+// Brand colors Sol v4 (13-05-2026, Khang) — gradient theo hành trình:
+// Nâu (bắt đầu, gốc rễ) → Vàng (nỗ lực) → Cam đậm (cai hẳn) → XANH (tự do, sạch)
 export const TIER_COLOR: Record<UserTier, { bg: string; text: string; light: string }> = {
-  FREE:      { bg: '#2E7D32', text: '#ffffff', light: '#E8F5E9' },  // 🌱 Xanh — NHẬN DIỆN
-  KHOI_DONG: { bg: '#B8860B', text: '#ffffff', light: '#FFF8E1' },  // 🟡 Vàng — KIỂM SOÁT
-  DONG_HANH: { bg: '#B25C2C', text: '#ffffff', light: '#FFF4EA' },  // 🔴 Cam đậm — LÀM CHỦ (KHUYẾN NGHỊ)
-  ALUMNI:    { bg: '#5C3A1E', text: '#ffffff', light: '#F5F0E8' },  // 🌟 Nâu — NGƯỜI TỰ DO
+  FREE:      { bg: '#5C3A1E', text: '#ffffff', light: '#F5F0E8' },  // 🌱 Nâu — NHẬN DIỆN (gốc rễ, mở đầu)
+  KHOI_DONG: { bg: '#B8860B', text: '#ffffff', light: '#FFF8E1' },  // 🟡 Vàng — KIỂM SOÁT (nỗ lực)
+  DONG_HANH: { bg: '#B25C2C', text: '#ffffff', light: '#FFF4EA' },  // 🔴 Cam đậm — LÀM CHỦ (cai hẳn)
+  ALUMNI:    { bg: '#2E7D32', text: '#ffffff', light: '#E8F5E9' },  // 🌟 Xanh — NGƯỜI TỰ DO (sạch, tự do)
 };
 
 export const TIER_PRICE_VND: Record<UserTier, number> = {
@@ -44,11 +45,12 @@ export const TIER_DURATION_DAYS: Record<UserTier, number> = {
 };
 
 // Sol v3: Emoji cho mỗi chặng (consistent với landing pages)
+// Sol v4 — emoji match màu mới: 🌱 (mầm) → 🟡 → 🔴 → 🌿 (lá xanh tự do)
 export const TIER_EMOJI: Record<UserTier, string> = {
   FREE: '🌱',
   KHOI_DONG: '🟡',
   DONG_HANH: '🔴',
-  ALUMNI: '🌟',
+  ALUMNI: '🌿',    // lá xanh — sạch, tự do (đổi từ 🌟)
 };
 
 export type FeatureKey =

@@ -381,7 +381,7 @@ export function computeMoneySaved(
   dayInJourney: number,
   cigsLogged: number,
   baselineCigsPerDay = 20,
-  pricePerCig = 1250,
+  pricePerCig = 1000, // Sol v4 — 20k/bao phổ thông VN
 ): number {
   const expectedCigs = dayInJourney * baselineCigsPerDay;
   const cigsAvoided = Math.max(0, expectedCigs - cigsLogged);

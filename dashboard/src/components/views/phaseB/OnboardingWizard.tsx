@@ -14,10 +14,14 @@ export interface OnboardingWizardProps {
   }) => void;
 }
 
+// Sol v4 (13-05-2026, Khang) — giá thực tế VN nông thôn + thành thị, không để đắt quá:
+//   10k/bao 20 = 500đ/điếu  (Vinataba/Khánh Hội quê, thuốc cuốn)
+//   20k/bao 20 = 1.000đ/điếu (đầu lọc phổ thông — đa số anh em quê)
+//   30k/bao 20 = 1.500đ/điếu (thành thị, các loại đầu lọc thông dụng)
 const PRICE_PRESETS = [
-  { label: 'Rẻ ~25k/bao', value: 1250 },
-  { label: 'Phổ thông ~40k', value: 2000 },
-  { label: 'Premium ~60k+', value: 3000 },
+  { label: 'Quê ~10k/bao', value: 500 },
+  { label: 'Phổ thông ~20k', value: 1000 },
+  { label: 'Thành thị ~30k', value: 1500 },
 ];
 
 const CIG_PRESETS = [
@@ -29,7 +33,7 @@ const CIG_PRESETS = [
 
 export function OnboardingWizard({ pronouns = 'bạn', onCompleted }: OnboardingWizardProps) {
   const [cigsBaseline, setCigsBaseline] = useState<number>(20);
-  const [pricePerCig, setPricePerCig] = useState<number>(1250);
+  const [pricePerCig, setPricePerCig] = useState<number>(1000);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

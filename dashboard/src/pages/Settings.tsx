@@ -9,12 +9,14 @@ import { DEFAULT_CIGS_PER_DAY, DEFAULT_PRICE_PER_CIG, formatVndFull } from '../l
 import { buildPreviewSamples } from '../lib/preview';
 import { QuitlineButton } from '../components/QuitlineButton';
 
-// Presets giá hay gặp ở VN — tap để chọn nhanh
+// Sol v4 (13-05-2026, Khang) — 3 mức giá phổ biến, không để đắt quá:
+//   Quê 10k/bao = 500đ/điếu
+//   Phổ thông 20k/bao = 1.000đ/điếu (đa số)
+//   Thành thị 30k/bao = 1.500đ/điếu
 const PRICE_PRESETS: Array<{ label: string; price: number }> = [
-  { label: 'Nội rẻ', price: 1000 },
-  { label: 'Nội TB', price: 1500 },
-  { label: 'Nội cao', price: 2500 },
-  { label: 'Ngoại', price: 4000 },
+  { label: 'Quê ~10k', price: 500 },
+  { label: 'Phổ thông ~20k', price: 1000 },
+  { label: 'Thành thị ~30k', price: 1500 },
 ];
 
 // Onboarding presets — phải khớp với Login.tsx + AuthGate.tsx

@@ -18,6 +18,10 @@ import {
   MAINTENANCE_DAILY_MESSAGE_QUOTA,
   MAINTENANCE_DAYS,
   REFUND_MIN_DAY,
+  COHORT_DURATIONS,
+  cohortFromFTND,
+  durationForTier,
+  qDayForCohort,
   computeTierState,
   effectiveTier,
   featuresFor,
@@ -229,5 +233,84 @@ tiersRouter.get('/catalog', (_req, res) => {
       // Sol v3: maintenance window đã DEPRECATE (Day 52+ = ALUMNI forever)
       maintenanceDays: MAINTENANCE_DAYS,
     },
+  });
+});
+
+// ═══════════════════════════════════════════════════════════════════════
+// Sol v4 (13-05-2026) — 3 lộ trình theo Mức Lệ Thuộc (FTND cohort)
+// ═══════════════════════════════════════════════════════════════════════
+// GET /tiers/cohorts — trả về 3 lộ trình Light/Moderate/Heavy
+// FE dùng để hiển thị anh em chọn lộ trình phù hợp Mức Lệ Thuộc của mình.
+tiersRouter.get('/cohorts', (_req, res) => {
+  res.json({
+    cohorts: [
+      {
+        key: 'LIGHT',
+        label: 'Nhẹ',
+        emoji: '🟢',
+        ftndRange: '0-3',
+        ftndDescription: 'Hút < 10 điếu/ngày, dưới 5 năm',
+        ...COHORT_DURATIONS.LIGHT,
+        rationale: 'Mức Lệ Thuộc thấp → 21 ngày Làm Chủ là đủ. Cơ sở: Hughes 2004 — light smoker có thể quit 3-4 tuần.',
+        recommendedFor: 'Anh em mới hút hoặc hút ít, đã có ý định bỏ.',
+      },
+      {
+        key: 'MODERATE',
+        label: 'Vừa',
+        emoji: '🟡',
+        ftndRange: '4-6',
+        ftndDescription: 'Hút 10-20 điếu/ngày, 5-15 năm',
+        ...COHORT_DURATIONS.MODERATE,
+        rationale: 'Chuẩn nhất cho phần đông anh em — Sol v3 đã có nhiều case thành công.',
+        recommendedFor: 'Đa số anh em hút lâu nhưng chưa quá nặng.',
+      },
+      {
+        key: 'HEAVY',
+        label: 'Nặng',
+        emoji: '🔴',
+        ftndRange: '7-10',
+        ftndDescription: 'Hút > 20 điếu/ngày, > 15 năm',
+        ...COHORT_DURATIONS.HEAVY,
+        rationale: 'Lệ thuộc sâu → cần thêm 1 tuần Kiểm Soát + tuần đệm trước Quyết Định. Ngày Quyết Định linh hoạt 22-28 — anh em tự chọn.',
+        recommendedFor: 'Anh em hút >20 năm, >1 bao/ngày, đã thử cai trước.',
+      },
+    ],
+    // Mỗi cohort có pricing khác nhau (Sol v4 — Khang chốt)
+    pricing: {
+      LIGHT: { trial: 49_000, weekly: 25_000, full: 149_000, payAfter: 99_000 },     // Rẻ hơn vì lộ trình ngắn
+      MODERATE: { trial: 49_000, weekly: 30_000, full: 249_000, payAfter: 199_000 }, // Default Sol v4
+      HEAVY: { trial: 49_000, weekly: 35_000, full: 349_000, payAfter: 249_000 },    // Cao hơn vì lộ trình dài + risk
+    },
+  });
+});
+
+// POST /tiers/cohort — user khai FTND score → Sol auto-assign cohort
+const cohortAssignSchema = z.object({
+  ftndScore: z.number().int().min(0).max(10),
+  preferredQDay: z.number().int().min(15).max(35).optional(),
+});
+
+tiersRouter.post('/cohort', async (req: AuthedRequest, res) => {
+  const parsed = cohortAssignSchema.safeParse(req.body);
+  if (!parsed.success) {
+    return res.status(400).json({ error: 'invalid_body', details: parsed.error.format() });
+  }
+  const { ftndScore, preferredQDay } = parsed.data;
+  const cohort = cohortFromFTND(ftndScore);
+  const qDay = qDayForCohort(cohort, preferredQDay);
+
+  // Lưu vào UserMessagingProfile (Sol v4 đã có model)
+  await prisma.userMessagingProfile.upsert({
+    where: { userId: req.userId! },
+    update: { ftndScore, cohortKey: cohort },
+    create: { userId: req.userId!, ftndScore, cohortKey: cohort },
+  });
+
+  res.json({
+    cohort,
+    cohortConfig: COHORT_DURATIONS[cohort],
+    qDayDay: qDay,
+    totalJourneyDays: COHORT_DURATIONS[cohort].totalDays,
+    message: `Sol đã chọn lộ trình ${cohort === 'LIGHT' ? 'Nhẹ 35 ngày' : cohort === 'HEAVY' ? 'Nặng 65 ngày' : 'Vừa 52 ngày'} cho anh.`,
   });
 });

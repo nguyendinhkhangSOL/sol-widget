@@ -138,7 +138,7 @@ model User {
   qDayConfirmedAt  DateTime?
   // User khai báo Day 1 onboarding wizard. Dùng để tính money saved cumulative.
   cigsBaseline     Int      @default(20)   // Số điếu/ngày user thường hút trước khi vào Sol
-  pricePerCig      Int      @default(1250) // Giá mỗi điếu (VND). Default 25k/pack 20.
+  pricePerCig      Int      @default(1000) // Giá mỗi điếu (VND). Default 20k/bao 20 — Sol v4 phổ thông VN.
   // Khi user hoàn thành onboarding wizard. NULL = vẫn cần wizard.
   onboardingCompletedAt DateTime?
 

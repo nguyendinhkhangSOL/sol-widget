@@ -31,15 +31,15 @@ export function RefundView() {
   }
 
   if (!tier.canRequestRefund) {
-    // Sol v3: KIỂM SOÁT 99k = conditional refund Day 21+ · LÀM CHỦ 199k = pro-rated Day 14+
+    // Sol v4: refund mở khi anh ở chặng có trả phí + đủ điều kiện theo lộ trình
     const why =
       tier.tier === 'FREE' || tier.tier === 'ALUMNI'
-        ? 'Hoàn tiền áp dụng cho gói 🟡 Kiểm Soát 99k (conditional Day 21) hoặc 🔴 Làm Chủ 199k (pro-rated Day 14+).'
+        ? 'Hoàn tiền áp dụng khi anh đang trong lộ trình có trả phí. Anh hiện đang ở chặng miễn phí.'
         : tier.tier === 'KHOI_DONG'
-          ? 'Gói 🟡 Kiểm Soát: refund 99k nếu sau 14 ngày anh đi đủ lộ trình ≥80% metric mà không giảm số điếu.'
+          ? 'Anh đang ở chặng 🟡 Kiểm Soát — hoàn tiền sẽ mở sau khi đi đủ chặng này (≥80% metric, không giảm số điếu).'
           : tier.daysIntoTier !== null && tier.daysIntoTier < 14
-            ? `14 ngày đầu Làm Chủ chưa được hoàn (anh đang Ngày ${tier.daysIntoTier}). Cùng cố thêm chút.`
-            : 'Gói đã hết hạn — Day 52+ anh đã là 🌟 Người Tự Do miễn phí mãi.';
+            ? `14 ngày đầu chặng 🔴 Làm Chủ chưa được hoàn (anh đang Ngày ${tier.daysIntoTier} của chặng). Cùng cố thêm chút.`
+            : 'Lộ trình đã hết hạn — anh đã là 🌟 Người Tự Do miễn phí mãi.';
     return (
       <div className="h-full flex items-center justify-center p-6 text-center">
         <div>

@@ -99,7 +99,7 @@ journeyRouter.get('/dashboard', async (req: AuthedRequest, res) => {
 
   // ── MONEY SAVED — CUMULATIVE PER-DAY DELTA, ALLOW NEGATIVE ──────────────
   const baseline = user.cigsBaseline || 20;
-  const pricePerCig = user.pricePerCig || 1250;
+  const pricePerCig = user.pricePerCig || 1000;
   let moneySaved = 0;
   if (user.quitDate && dayInJourney > 0) {
     const dailyCigs = await getDailyCigsCount(user.id, user.quitDate, dayInJourney);
@@ -474,7 +474,7 @@ journeyRouter.post('/exit', async (req: AuthedRequest, res) => {
   let moneySaved = 0;
   if (user.quitDate && dayInJourney > 0) {
     const dailyCigs = await getDailyCigsCount(user.id, user.quitDate, dayInJourney);
-    moneySaved = computeMoneySavedCumulative(dailyCigs, user.cigsBaseline || 20, user.pricePerCig || 1250);
+    moneySaved = computeMoneySavedCumulative(dailyCigs, user.cigsBaseline || 20, user.pricePerCig || 1000);
   }
 
   // Compute paid total
@@ -553,7 +553,7 @@ journeyRouter.get('/money-breakdown', async (req: AuthedRequest, res) => {
   }
 
   const dailyCigs = await getDailyCigsCount(user.id, user.quitDate, dayInJourney);
-  const breakdown = computeDailyMoneySaved(dailyCigs, user.cigsBaseline || 20, user.pricePerCig || 1250);
+  const breakdown = computeDailyMoneySaved(dailyCigs, user.cigsBaseline || 20, user.pricePerCig || 1000);
 
   res.json({
     days: breakdown,

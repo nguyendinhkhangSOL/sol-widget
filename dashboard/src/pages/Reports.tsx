@@ -37,8 +37,13 @@ export function Reports() {
   const moodAvg =
     checkins.length === 0 ? 0 : checkins.reduce((s, c) => s + (c.mood ?? 3), 0) / checkins.length;
   const cigsPerDay = (user as any)?.settings?.cigsPerDay ?? 10;
-  const pricePerCig = (user as any)?.settings?.pricePerCig ?? 1500;
+  const pricePerCig = (user as any)?.settings?.pricePerCig ?? 1000; // Sol v4 — 20k/bao
   const moneySaved = cleanDays * cigsPerDay * pricePerCig;
+
+  // Sol v4 — anh's FTND score nếu có (từ onboarding). Cohort suy ra từ score.
+  const ftnd = (user as any)?.ftndScore as number | undefined;
+  const ftndCohort: 'LIGHT' | 'MODERATE' | 'HEAVY' | null =
+    ftnd == null ? null : ftnd <= 3 ? 'LIGHT' : ftnd <= 6 ? 'MODERATE' : 'HEAVY';
 
   return (
     <div className="p-6 lg:p-10 max-w-3xl mx-auto pb-24">
@@ -49,12 +54,57 @@ export function Reports() {
         </button>
       </div>
 
+      {/* Sol v4 — Mức Lệ Thuộc của anh (cohort reference) */}
+      <article className="mb-6 bg-white border border-sol-line rounded-2xl p-5 print:break-inside-avoid">
+        <div className="flex items-baseline justify-between mb-3">
+          <div className="text-meta uppercase tracking-wider text-sol-ink-3 font-semibold">
+            Mức Lệ Thuộc · Lộ trình của anh
+          </div>
+          {ftnd != null && (
+            <div className="text-meta text-sol-ink-2">
+              Điểm FTND: <strong className="text-sol-ink">{ftnd}/10</strong>
+            </div>
+          )}
+        </div>
+
+        <div className="grid grid-cols-3 gap-2">
+          <CohortMiniCard
+            color="#16A34A" bg="#F0FDF4" emoji="🟢" label="Nhẹ"
+            ftnd="0-3" days={35} isMine={ftndCohort === 'LIGHT'}
+          />
+          <CohortMiniCard
+            color="#D97706" bg="#FEF3C7" emoji="🟡" label="Vừa"
+            ftnd="4-6" days={52} isMine={ftndCohort === 'MODERATE'}
+          />
+          <CohortMiniCard
+            color="#DC2626" bg="#FEE2E2" emoji="🔴" label="Nặng"
+            ftnd="7-10" days={65} isMine={ftndCohort === 'HEAVY'}
+          />
+        </div>
+
+        {ftndCohort && (
+          <div className="mt-3 text-meta text-sol-ink-2 leading-snug">
+            Anh ở <strong className="text-sol-ink">Lộ trình {ftndCohort === 'LIGHT' ? 'Nhẹ' : ftndCohort === 'HEAVY' ? 'Nặng' : 'Vừa'}</strong>
+            {' '}— Sol đang cá nhân hoá nội dung, voice và tần suất nhắc theo mức lệ thuộc của anh.
+            Số liệu báo cáo bên dưới được tính theo lộ trình này.
+          </div>
+        )}
+        {!ftndCohort && (
+          <div className="mt-3 text-meta text-sol-ink-2 leading-snug">
+            Anh chưa làm bài test Mức Lệ Thuộc.{' '}
+            <a href="/pricing" className="text-sol-orange font-semibold underline">Làm test 6 câu (2 phút) →</a>
+          </div>
+        )}
+      </article>
+
       {!canDay10 && !canDay30 && (
         <div className="bg-sol-orange-soft border border-sol-orange/30 rounded-2xl p-5">
           <div className="font-semibold">Mở khoá báo cáo</div>
           <p className="text-meta text-sol-ink-2 mt-1">
-            Sol v3 — Báo cáo Ngày 7 (kết Nhận Diện) có trong gói 🟡 Kiểm Soát 99k.
-            Album Hành Trình Ngày 51 đầy đủ có trong gói 🔴 Làm Chủ 199k.
+            Báo cáo Ngày 7 (kết chặng Nhận Diện) có trong mọi lộ trình có trả phí.
+            Album Hành Trình đầy đủ có khi anh đi qua chặng Làm Chủ và Tốt Nghiệp.
+            <br />
+            <a href="/pricing" className="text-sol-orange font-semibold underline">Xem 3 lộ trình × 4 cách trả →</a>
           </p>
         </div>
       )}
@@ -118,6 +168,39 @@ function Stat({ label, value }: { label: string; value: string }) {
     <div className="bg-sol-paper rounded-xl p-3 text-center border border-sol-line">
       <div className="text-meta uppercase text-sol-ink-3 font-semibold">{label}</div>
       <div className="text-lg font-bold text-sol-ink mt-1 tabular-nums">{value}</div>
+    </div>
+  );
+}
+
+// Sol v4 — Mini card hiển thị 1 lộ trình trong bảng 3 Mức Lệ Thuộc
+function CohortMiniCard({
+  color, bg, emoji, label, ftnd, days, isMine,
+}: {
+  color: string; bg: string; emoji: string;
+  label: string; ftnd: string; days: number; isMine: boolean;
+}) {
+  return (
+    <div
+      className="rounded-xl p-3 text-center transition"
+      style={{
+        background: isMine ? bg : '#FAFAF8',
+        border: isMine ? `2px solid ${color}` : '1px solid #E8DFC8',
+        boxShadow: isMine ? `0 0 0 3px ${color}22` : undefined,
+      }}
+    >
+      <div className="text-base">{emoji}</div>
+      <div className="text-meta font-bold mt-0.5" style={{ color: isMine ? color : '#5C3A1E' }}>
+        {label}
+      </div>
+      <div className="text-[10px] text-sol-ink-3 mt-0.5">FTND {ftnd}</div>
+      <div className="text-lg font-bold text-sol-ink mt-1 tabular-nums">
+        {days}<span className="text-[10px] text-sol-ink-3 font-normal ml-0.5">ngày</span>
+      </div>
+      {isMine && (
+        <div className="mt-1 text-[10px] font-bold uppercase tracking-wider" style={{ color }}>
+          ✓ Của anh
+        </div>
+      )}
     </div>
   );
 }

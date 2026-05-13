@@ -392,7 +392,7 @@ export const DEFAULT_PRICE_PER_CIG = 1500; // VND — trung bình điếu thuố
 
 export interface SavingsInput {
   cigsPerDay: number;    // default 15
-  pricePerCig: number;   // VND, default 1500
+  pricePerCig: number;   // VND, default 1000 (Sol v4 — 20k/bao phổ thông VN)
 }
 
 export function calcSavings(

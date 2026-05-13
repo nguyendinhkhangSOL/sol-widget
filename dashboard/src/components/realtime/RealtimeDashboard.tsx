@@ -55,7 +55,7 @@ export function RealtimeDashboard({
   quitDate,
   userName,
   cigsPerDay = 15,
-  pricePerCig = 1500,
+  pricePerCig = 1000, // Sol v4 — 20k/bao phổ thông VN
   yearsSmoked,
   phaseLanguage = 'dramatic',
   refundEligible,

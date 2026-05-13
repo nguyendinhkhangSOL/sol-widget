@@ -25,7 +25,7 @@ async function main() {
         pushPrefs: { checkin: true, crisisPrep: true, milestone: true },
         // Thói quen hút thuốc — dùng để tính tiền tiết kiệm & tuổi thọ
         cigsPerDay: 20,      // 1 bao/ngày
-        pricePerCig: 1500,   // thuốc nội trung bình
+        pricePerCig: 1000,   // Sol v4 — 20k/bao phổ thông VN
       },
       state: { create: { state: 'IDLE', stateData: {} } },
     },

@@ -26,12 +26,80 @@ export const TIER_PRICE_VND: Record<UserTier, number> = {
   ALUMNI: 0,            // Người Tự Do — forever miễn phí
 };
 
+// Mặc định (Vừa / Moderate cohort) — giữ tương thích Sol v3
 export const TIER_DURATION_DAYS: Record<UserTier, number> = {
   FREE: 7,              // Nhận Diện 7 ngày (Day 1-7)
-  KHOI_DONG: 14,        // Kiểm Soát 14 ngày (Day 8-21) — UPDATED từ 10
+  KHOI_DONG: 14,        // Kiểm Soát 14 ngày (Day 8-21)
   DONG_HANH: 30,        // Làm Chủ 30 ngày (Day 22-51, Q-Day Day 22)
-  ALUMNI: 0,            // Người Tự Do — forever (no expiration)
+  ALUMNI: 0,            // Người Tự Do — forever
 };
+
+// ─── Sol v4 (13-05-2026): 3 lộ trình theo Mức Lệ Thuộc (FTND cohort) ───
+// Mục tiêu: anh em CAI THẬT, không phải đúng 52 ngày. Light cần ít hơn, Heavy cần nhiều hơn.
+//   Light  (FTND 0-3): 35 ngày = 7 Nhận Diện + 7 Kiểm Soát + 21 Làm Chủ. Q-Day Day 15
+//   Medium (FTND 4-6): 52 ngày = 7 + 14 + 30. Q-Day Day 22 (default Sol v3)
+//   Heavy  (FTND 7-10): 65 ngày = 7 + 21 + 30 + 7 buffer. Q-Day window Day 22-28
+// Cơ sở khoa học: Hughes 2004, FTND Heatherton 1991 — light smoker có thể quit 3-4 tuần,
+// heavy cần psychological readiness lâu hơn.
+
+export type CohortKey = 'LIGHT' | 'MODERATE' | 'HEAVY';
+
+export const COHORT_DURATIONS: Record<CohortKey, { FREE: number; KHOI_DONG: number; DONG_HANH: number; totalDays: number; qDayDay: number; qDayWindow?: [number, number] }> = {
+  LIGHT: {
+    FREE: 7,
+    KHOI_DONG: 7,           // Kiểm Soát rút ngắn 7 ngày (vs 14 default)
+    DONG_HANH: 21,          // Làm Chủ rút ngắn 21 ngày (vs 30)
+    totalDays: 35,          // 7 + 7 + 21
+    qDayDay: 15,            // Bắt đầu Làm Chủ Day 15
+  },
+  MODERATE: {
+    FREE: 7,
+    KHOI_DONG: 14,
+    DONG_HANH: 30,
+    totalDays: 52,
+    qDayDay: 22,
+  },
+  HEAVY: {
+    FREE: 7,
+    KHOI_DONG: 21,          // Kiểm Soát mở rộng 21 ngày (vs 14)
+    DONG_HANH: 30,          // Làm Chủ giữ nguyên 30
+    totalDays: 65,          // 7 + 21 + 30 + 7 buffer
+    qDayDay: 22,
+    qDayWindow: [22, 28],   // User self-select Q-Day trong window này
+  },
+};
+
+/**
+ * Tính FTND score → cohort. Dùng cho onboarding + dynamic schedule.
+ */
+export function cohortFromFTND(ftndScore: number): CohortKey {
+  if (ftndScore <= 3) return 'LIGHT';
+  if (ftndScore <= 6) return 'MODERATE';
+  return 'HEAVY';
+}
+
+/**
+ * Lấy duration theo tier + cohort của user. Dùng khi tính tierExpiresAt lúc upgrade.
+ * Nếu user chưa có cohort (FTND chưa khai) → fallback MODERATE.
+ */
+export function durationForTier(tier: UserTier, cohort?: CohortKey | null): number {
+  if (tier === 'FREE') return COHORT_DURATIONS[cohort ?? 'MODERATE'].FREE;
+  if (tier === 'KHOI_DONG') return COHORT_DURATIONS[cohort ?? 'MODERATE'].KHOI_DONG;
+  if (tier === 'DONG_HANH') return COHORT_DURATIONS[cohort ?? 'MODERATE'].DONG_HANH;
+  return 0; // ALUMNI
+}
+
+/**
+ * Q-Day day theo cohort. Heavy có window 22-28, user tự chọn.
+ */
+export function qDayForCohort(cohort: CohortKey, userPreferredDay?: number): number {
+  const config = COHORT_DURATIONS[cohort];
+  if (config.qDayWindow && userPreferredDay) {
+    const [min, max] = config.qDayWindow;
+    return Math.max(min, Math.min(max, userPreferredDay));
+  }
+  return config.qDayDay;
+}
 
 /**
  * DEPRECATED (Sol v3): Maintenance window concept không còn dùng.

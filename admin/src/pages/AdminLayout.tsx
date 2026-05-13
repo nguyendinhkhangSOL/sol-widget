@@ -1,17 +1,76 @@
 // admin/src/pages/AdminLayout.tsx
+// Sol v4 (13-05-2026, Khang) — Refactor: 14 menu flat → SIDEBAR 5 NHÓM
 //
-// Route guard + sub-navigation cho admin console.
-// Phiên bản admin riêng: route paths không còn prefix /admin/ vì admin.sol.vn
-// đã ở root. /admin/users → /users.
+// Lý do: Khang làm solo, nhìn 14 mục ngang choáng. Gom theo tần suất dùng:
+//   1. HÀNG NGÀY — Khang chạm mỗi sáng (Bảng điều khiển + Người dùng + Hoàn tiền)
+//   2. NHẮN TIN  — Zalo OA + canned (chạm hàng tuần)
+//   3. NỘI DUNG  — Content engine (chạm tuần/tháng)
+//   4. PHÂN TÍCH — Số liệu + audit (chạm tuần)
+//   5. HỆ THỐNG  — Cài đặt hiếm chạm
+//
+// Desktop: sidebar 240px fixed bên trái.
+// Mobile: drawer hamburger toggle.
 
+import { useState } from 'react';
 import { NavLink, Navigate, Outlet, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { useStore } from '../state/store';
+
+type MenuItem = { to: string; label: string; icon: string; end?: boolean };
+type MenuGroup = { title: string; subtitle: string; items: MenuItem[] };
+
+const MENU_GROUPS: MenuGroup[] = [
+  {
+    title: 'HÀNG NGÀY',
+    subtitle: '5 phút mỗi sáng',
+    items: [
+      { to: '/', label: 'Bảng điều khiển', icon: '📊', end: true },
+      { to: '/users', label: 'Người dùng', icon: '👥' },
+      { to: '/refunds', label: 'Hoàn tiền', icon: '💰' },
+    ],
+  },
+  {
+    title: 'NHẮN TIN',
+    subtitle: 'Zalo OA · Tin nhắn',
+    items: [
+      { to: '/messaging', label: 'Bộ ĐK nhắn tin', icon: '⚙️' },
+      { to: '/zalo-templates', label: 'Mẫu Zalo', icon: '📨' },
+      { to: '/canned-replies', label: 'Câu trả lời sẵn', icon: '💬' },
+    ],
+  },
+  {
+    title: 'NỘI DUNG',
+    subtitle: 'Content + Voice + Wiki',
+    items: [
+      { to: '/content', label: 'Biên tập tin', icon: '✍️' },
+      { to: '/voice', label: 'Voice Khang', icon: '🎙️' },
+      { to: '/wiki', label: 'Wiki', icon: '📰' },
+      { to: '/q-day-checklist', label: 'Checklist Q-Day', icon: '✅' },
+    ],
+  },
+  {
+    title: 'PHÂN TÍCH',
+    subtitle: 'Số liệu · Audit',
+    items: [
+      { to: '/analytics', label: 'Số liệu', icon: '📈' },
+      { to: '/content-audit', label: 'Kiểm tra nội dung', icon: '🔍' },
+      { to: '/cohorts', label: 'Đội Sol', icon: '🗓️' },
+    ],
+  },
+  {
+    title: 'HỆ THỐNG',
+    subtitle: 'Cài đặt',
+    items: [
+      { to: '/ai', label: 'Kết nối AI', icon: '🧠' },
+    ],
+  },
+];
 
 export function AdminLayout() {
   const user = useStore((s) => s.user);
   const logout = useStore((s) => s.logout);
   const navigate = useNavigate();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   // Đang load user info
   if (!user) {
@@ -38,84 +97,130 @@ export function AdminLayout() {
     navigate('/login', { replace: true });
   }
 
-  const links = [
-    { to: '/', label: 'Bảng điều khiển', icon: '📊', end: true },
-    { to: '/users', label: 'Người dùng', icon: '👥' },
-    { to: '/refunds', label: 'Hoàn tiền', icon: '💰' },
-    { to: '/voice', label: 'Voice Khang', icon: '🎙️' },
-    { to: '/cohorts', label: 'Đội Sol', icon: '🗓️' },
-    { to: '/analytics', label: 'Phân tích', icon: '📈' },
-    { to: '/wiki', label: 'Wiki', icon: '📰' },
-    { to: '/ai', label: 'Kết nối AI', icon: '🧠' },
-    { to: '/canned-replies', label: 'Câu trả lời sẵn', icon: '💬' },
-    { to: '/q-day-checklist', label: 'Checklist Q-Day', icon: '✅' },
-    { to: '/content', label: 'Biên tập tin nhắn', icon: '✍️' },
-    { to: '/content-audit', label: 'Content audit', icon: '🔍' },
-    // Zalo OA — Sol v3 (12-05-2026)
-    { to: '/messaging', label: 'Bộ ĐK Nhắn tin', icon: '💬' },
-    { to: '/zalo-templates', label: 'Zalo Templates', icon: '📨' },
-  ];
-
   return (
-    <div className="min-h-screen">
-      {/* Top bar — admin branding + logout */}
-      <header className="bg-sol-earth text-white">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8 py-3 flex items-center justify-between gap-3 flex-wrap">
-          <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-full bg-white/15 flex items-center justify-center font-bold">
+    <div className="min-h-screen flex bg-sol-bg">
+      {/* Mobile drawer overlay */}
+      {drawerOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-30 lg:hidden"
+          onClick={() => setDrawerOpen(false)}
+        />
+      )}
+
+      {/* ═══════════ SIDEBAR ═══════════ */}
+      <aside
+        className={clsx(
+          'fixed lg:sticky top-0 left-0 h-screen w-[260px] z-40 transition-transform',
+          'bg-white border-r border-sol-line flex flex-col',
+          'lg:translate-x-0',
+          drawerOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
+        )}
+      >
+        {/* Logo / Brand */}
+        <div className="px-5 py-4 border-b border-sol-line">
+          <div className="flex items-center gap-2.5">
+            <div className="h-9 w-9 rounded-full bg-sol-earth text-white flex items-center justify-center font-bold text-sm">
               S
             </div>
-            <div>
-              <div className="text-meta uppercase tracking-widest opacity-75">
-                Admin Console
+            <div className="flex-1 min-w-0">
+              <div className="text-meta uppercase tracking-wider text-sol-ink-3 font-semibold">
+                Admin
               </div>
-              <div className="text-body font-bold leading-tight">SOL — Quản trị</div>
+              <div className="text-body font-bold text-sol-ink leading-tight">
+                Sol Quản trị
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-3 text-meta">
-            <span className="opacity-90">
-              {user.name ?? user.email ?? user.phone ?? 'admin'}
-            </span>
+            {/* Close button mobile */}
             <button
-              type="button"
-              onClick={handleLogout}
-              className="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 transition text-meta font-semibold"
+              onClick={() => setDrawerOpen(false)}
+              className="lg:hidden text-sol-ink-3 text-xl px-2"
+              aria-label="Đóng menu"
             >
-              Đăng xuất
+              ✕
             </button>
           </div>
         </div>
-      </header>
 
-      {/* Sub-nav tabs */}
-      <nav className="bg-sol-paper border-b border-sol-line sticky top-0 z-20">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8 flex gap-1 overflow-x-auto">
-          {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.end}
-              className={({ isActive }) =>
-                clsx(
-                  'px-4 min-h-tap rounded-t-lg whitespace-nowrap flex items-center gap-2',
-                  'border-b-2 -mb-px text-meta font-medium transition',
-                  isActive
-                    ? 'border-sol-green text-sol-green-ink bg-sol-green-soft'
-                    : 'border-transparent text-sol-ink-2 hover:text-sol-ink hover:bg-sol-soft'
-                )
-              }
-            >
-              <span aria-hidden="true">{l.icon}</span>
-              {l.label}
-            </NavLink>
+        {/* Menu groups */}
+        <nav className="flex-1 overflow-y-auto py-3 px-3">
+          {MENU_GROUPS.map((group) => (
+            <div key={group.title} className="mb-4">
+              <div className="px-3 py-1.5">
+                <div className="text-[11px] uppercase tracking-wider font-bold text-sol-ink-3">
+                  {group.title}
+                </div>
+                <div className="text-[11px] text-sol-ink-3/70 mt-0.5">
+                  {group.subtitle}
+                </div>
+              </div>
+              <div className="space-y-0.5 mt-1">
+                {group.items.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    end={item.end}
+                    onClick={() => setDrawerOpen(false)}
+                    className={({ isActive }) =>
+                      clsx(
+                        'flex items-center gap-2.5 px-3 py-2 rounded-lg text-meta transition',
+                        isActive
+                          ? 'bg-sol-green-soft text-sol-green-ink font-semibold'
+                          : 'text-sol-ink-2 hover:bg-sol-paper hover:text-sol-ink',
+                      )
+                    }
+                  >
+                    <span aria-hidden="true" className="text-base w-5 text-center">
+                      {item.icon}
+                    </span>
+                    <span>{item.label}</span>
+                  </NavLink>
+                ))}
+              </div>
+            </div>
           ))}
-        </div>
-      </nav>
+        </nav>
 
-      {/* Page content */}
-      <main className="max-w-6xl mx-auto p-4 lg:p-8 pb-24 lg:pb-12">
-        <Outlet />
-      </main>
+        {/* User + Logout */}
+        <div className="px-3 py-3 border-t border-sol-line">
+          <div className="px-3 py-2 mb-1">
+            <div className="text-[11px] uppercase tracking-wider text-sol-ink-3 font-semibold">
+              Đang đăng nhập
+            </div>
+            <div className="text-meta font-medium text-sol-ink truncate">
+              {user.name ?? user.email ?? user.phone ?? 'admin'}
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-meta text-sol-ink-2 hover:bg-sol-paper hover:text-sol-red transition"
+          >
+            <span aria-hidden="true" className="text-base w-5 text-center">🚪</span>
+            <span>Đăng xuất</span>
+          </button>
+        </div>
+      </aside>
+
+      {/* ═══════════ MAIN CONTENT ═══════════ */}
+      <div className="flex-1 min-w-0 flex flex-col">
+        {/* Mobile top bar */}
+        <header className="lg:hidden bg-white border-b border-sol-line px-4 py-3 flex items-center justify-between sticky top-0 z-20">
+          <button
+            onClick={() => setDrawerOpen(true)}
+            className="text-2xl text-sol-ink"
+            aria-label="Mở menu"
+          >
+            ☰
+          </button>
+          <div className="text-body font-bold text-sol-ink">Sol Quản trị</div>
+          <div className="w-7" /> {/* Spacer để cân giữa */}
+        </header>
+
+        {/* Page content */}
+        <main className="flex-1 p-4 lg:p-8 pb-24 lg:pb-12 max-w-6xl mx-auto w-full">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }

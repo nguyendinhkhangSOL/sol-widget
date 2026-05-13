@@ -44,7 +44,7 @@ async function main() {
         quietEnd: '06:30',
         mode: 'normal',
         cigsPerDay: 15,
-        pricePerCig: 1500,
+        pricePerCig: 1000,
       },
     },
     create: {
@@ -68,7 +68,7 @@ async function main() {
         quietEnd: '06:30',
         mode: 'normal',
         cigsPerDay: 15,
-        pricePerCig: 1500,
+        pricePerCig: 1000,
       },
       state: { create: { state: 'IDLE', stateData: {} } },
     },

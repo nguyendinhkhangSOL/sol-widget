@@ -1,13 +1,14 @@
 // frontend/src/components/views/PaywallView.tsx
-// Paywall trong widget. Hiển thị 3 trang:
-//   T1: Khang's story  →  T2: bảng so sánh  →  T3: nút thanh toán.
-// Touchpoint chính:
-//   - FREE → Khởi động 99k (khi user đặt Q-Day, hoặc hết quota)
-//   - KHOI_DONG → Đồng hành 199k (sau Báo cáo Ngày 10)
+// Sol v4 (13-05-2026) — Paywall widget cho chặng tiếp theo trong lộ trình.
+// 3 trang: T1 Khang's story → T2 chặng tiếp + tính năng → T3 thanh toán.
 //
-// Logic chọn target tier:
-//   - effectiveTier === FREE  → KHOI_DONG
-//   - effectiveTier === KHOI_DONG → DONG_HANH
+// LƯU Ý: Sol v4 unified — paywall này CHỈ hỏi "mở chặng tiếp theo" trong lộ trình
+// của anh (KHOI_DONG hoặc DONG_HANH). Để chọn LỘ TRÌNH (Nhẹ/Vừa/Nặng) + 4 cách
+// trả tiền linh hoạt, user vào /pricing dashboard có CohortPicker đầy đủ.
+//
+// Logic mở chặng tiếp:
+//   - effectiveTier === FREE  → mở chặng Kiểm Soát
+//   - effectiveTier === KHOI_DONG → mở chặng Làm Chủ
 //   - khác → coi như đã ở trên đó, fall back về Home.
 
 import { useEffect, useState } from 'react';
@@ -112,12 +113,12 @@ export function PaywallView() {
       {step === 1 && targetItem && (
         <div className="flex-1 flex flex-col">
           <h2 className="text-base font-bold text-center mb-1">
-            Gói {targetItem.label}
+            Mở chặng {targetItem.label}
           </h2>
           <p className="text-xs text-sol-ink-2 text-center mb-3">
             {target === 'KHOI_DONG'
-              ? '10 ngày khó nhất. Đừng để chỉ một mình.'
-              : 'Khang giữ lời — hoàn tiền nếu bạn cần dừng.'}
+              ? 'Chặng giảm tần suất hút. Sol bên anh suốt chặng này.'
+              : 'Chặng bỏ thật + bảo vệ thành quả. Khang giữ lời — hoàn tiền nếu anh cần dừng.'}
           </p>
           <div
             className="flex-1 rounded-2xl border p-4"
@@ -175,8 +176,13 @@ export function PaywallView() {
           <div className="bg-white rounded-2xl border border-sol-line p-4 space-y-3">
             <div className="text-sm text-sol-ink-2">
               {target === 'KHOI_DONG'
-                ? 'Chưa bằng 1 tuần thuốc. Khang cam kết ở bên bạn 10 ngày.'
-                : 'Bạn đã đi 10 ngày. 50 ngày tiếp là tấm khiên bảo vệ thành quả.'}
+                ? 'Chưa bằng 1 tuần thuốc. Khang ở bên anh suốt chặng Kiểm Soát.'
+                : 'Anh đã đi qua chặng Kiểm Soát. Chặng Làm Chủ là tấm khiên bảo vệ thành quả.'}
+            </div>
+            <div className="text-meta text-sol-ink-3">
+              💡 Muốn linh hoạt hơn? Sol có <strong>3 lộ trình × 4 cách trả tiền</strong>{' '}
+              (Trả Thử / Trả Theo Tuần / Trả Một Lần / Trả Sau Khi Thành Công){' '}
+              — anh vào trang Giá xem.
             </div>
             <div className="text-meta text-sol-ink-3">
               Đợt thanh toán mock — không tính phí thật. Khi triển khai

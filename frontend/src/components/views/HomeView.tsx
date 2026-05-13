@@ -364,7 +364,7 @@ function InJourneyCards({
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-[13px] font-semibold text-sol-ink">
-            Hành trình 30 ngày
+            Hành trình của anh
           </div>
           <div className="text-[11px] text-sol-ink/55">
             Xem toàn bộ lộ trình · mốc đã qua · mốc sắp tới

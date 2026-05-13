@@ -75,6 +75,38 @@ export interface TierCatalog {
   };
 }
 
+/* ────────── Sol v4 — 3 lộ trình cohort theo Mức Lệ Thuộc ────────── */
+
+export type CohortKey = 'LIGHT' | 'MODERATE' | 'HEAVY';
+
+export interface CohortPlan {
+  key: CohortKey;
+  label: string;             // 'Nhẹ' | 'Vừa' | 'Nặng'
+  emoji: string;             // 🟢 🟡 🔴
+  ftndRange: string;         // '0-3'
+  ftndDescription: string;   // 'Hút < 10 điếu/ngày, dưới 5 năm'
+  FREE: number;              // 7
+  KHOI_DONG: number;         // 7 / 14 / 21
+  DONG_HANH: number;         // 21 / 30 / 30
+  totalDays: number;         // 35 / 52 / 65
+  qDayDay: number;           // 15 / 22 / 22
+  qDayWindow?: [number, number]; // Heavy: [22, 28]
+  rationale: string;
+  recommendedFor: string;
+}
+
+export interface CohortPricing {
+  trial: number;
+  weekly: number;
+  full: number;
+  payAfter: number;
+}
+
+export interface CohortsResponse {
+  cohorts: CohortPlan[];
+  pricing: Record<CohortKey, CohortPricing>;
+}
+
 export type PaymentStatus = 'PENDING' | 'PAID' | 'FAILED' | 'CANCELED' | 'REFUNDED';
 export type PaymentProvider = 'MOCK' | 'MOMO' | 'VIETQR' | 'BANK_TRANSFER';
 export type RefundStatus = 'REQUESTED' | 'APPROVED' | 'DENIED' | 'PROCESSED';
