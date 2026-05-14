@@ -12,6 +12,7 @@
     "prisma:studio": "prisma studio",
     "seed": "tsx src/seed.ts",
     "seed:triggers": "tsx src/scripts/seedTriggers.ts",
+    "wire:wiki": "tsx src/scripts/wireChipWikiUrls.ts",
     "worker": "tsx src/scheduler/worker.ts",
     "admin:grant": "tsx src/scripts/grantAdmin.ts grant",
     "admin:revoke": "tsx src/scripts/grantAdmin.ts revoke",

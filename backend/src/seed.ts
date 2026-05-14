@@ -3,6 +3,7 @@
 // Run: pnpm seed
 
 import { prisma } from './db';
+import { CHIP_WIKI_URLS } from './seed/chipWikiUrls';
 
 async function main() {
   // Demo user.
@@ -539,7 +540,7 @@ async function main() {
       icon: '✉️',
       sortOrder: 640,
       answer:
-        'Khang đọc tin nhắn của user trả phí mỗi ngày. Nhắn câu chuyện của anh ở đây — Khang sẽ reply trong 24h cho khách Làm Chủ, 48h cho Kiểm Soát. Nếu khẩn cấp y tế (đau ngực, khạc máu, ý nghĩ tự hại) — gọi 115 hoặc hotline tâm lý 1800 1567 trước.',
+        'Khang đọc tin nhắn của user trả phí mỗi ngày. Nhắn câu chuyện của anh ở đây — Khang sẽ reply trong 24h. Nếu khẩn cấp y tế (đau ngực, khạc máu, ý nghĩ tự hại) — gọi 115 hoặc đến khoa Tâm thần BV gần nhất trước.',
       wikiUrl: '',
       wikiLabel: '',
     },
@@ -584,13 +585,20 @@ async function main() {
       reusable: true,
       sortOrder: 730,
       answer:
-        'Khang ở đây với bạn ngay bây giờ. Cai thuốc đôi khi làm tệ hơn trầm cảm tiềm ẩn — không phải lỗi của bạn. GỌI hotline tâm lý 1800 1567 (miễn phí, 24/7). Hoặc gọi 1 người thân ngay bây giờ — không cần giải thích, chỉ cần "tôi đang khó". Bạn không một mình. Bạn quan trọng.',
+        'Khang ở đây với bạn ngay bây giờ. Cai thuốc đôi khi làm tệ hơn trầm cảm tiềm ẩn — không phải lỗi của bạn. GỌI 1 người thân ngay bây giờ — không cần giải thích, chỉ cần "tôi đang khó". Nếu không an toàn ở nhà — đến cấp cứu (115) hoặc khoa Tâm thần BV gần nhất. Bạn không một mình. Bạn quan trọng.',
       wikiUrl: '',
       wikiLabel: '',
     },
   ];
 
   for (const cr of cannedReplies) {
+    // Mapping wikiUrl tập trung trong chipWikiUrls.ts — ưu tiên hơn giá trị
+    // inline trong cannedReplies (nhiều URL inline đã outdated do permalink
+    // /wiki/<slug> đã được đổi sang /<slug> trên sol.vn).
+    const wikiMapping = CHIP_WIKI_URLS[cr.slug];
+    const finalWikiUrl = wikiMapping?.wikiUrl ?? cr.wikiUrl ?? null;
+    const finalWikiLabel = wikiMapping?.wikiLabel ?? cr.wikiLabel ?? null;
+
     await prisma.cannedReply.upsert({
       where: { slug: cr.slug },
       create: {
@@ -598,13 +606,14 @@ async function main() {
         label: cr.label,
         icon: cr.icon,
         answer: cr.answer,
-        wikiUrl: cr.wikiUrl ?? null,
-        wikiLabel: cr.wikiLabel ?? null,
+        wikiUrl: finalWikiUrl,
+        wikiLabel: finalWikiLabel,
         reusable: cr.reusable ?? false,
         sortOrder: cr.sortOrder,
       },
       // Khi seed lại — ưu tiên giữ chỉnh sửa của founder qua /admin.
       // Chỉ update khi bản DB chưa từng có (tức create), nên ở đây bỏ trống.
+      // Để update wikiUrl trên DB cũ → dùng `npm run wire:wiki`.
       update: {},
     });
   }

@@ -1,0 +1,3 @@
+# Tuần 1 batch — Nhóm 6 last-resort + Pillar 2B sức khoẻ
+# slug | cluster | title
+cai-thuoc-bao-nhieu-lan-moi-thanh-cong|C|Cai Thuốc Bao Nhiêu Lần Mới Thành Công? — Trung Bình 30+

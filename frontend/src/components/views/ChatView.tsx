@@ -94,11 +94,9 @@ export function ChatView() {
       const delay = 300 + Math.random() * 300;
       setTyping(true);
       setTimeout(() => {
-        let answerText = resolveAnswer(matched.chip, user);
-        if (matched.chip.wikiUrl) {
-          const linkLabel = matched.chip.wikiLabel || 'Đọc bài đầy đủ';
-          answerText += `\n\n📖 ${linkLabel}: ${matched.chip.wikiUrl}`;
-        }
+        // answer plain text — link wiki render bằng <a> button qua metadata.wikiUrl
+        // (xem MessageBubble.tsx). KHÔNG inline URL trong content nữa.
+        const answerText = resolveAnswer(matched.chip, user);
         addMessage({
           id: `bot-${matched.chip.id}-${now}`,
           role: 'ASSISTANT',
@@ -174,15 +172,9 @@ export function ChatView() {
       content: chip.label,
       createdAt: new Date().toISOString(),
     });
-    // 2. Assistant bubble — answer biên tập sẵn + (optional) link wiki
-    let answerText = resolveAnswer(chip, user);
-    if (chip.wikiUrl) {
-      const linkLabel = chip.wikiLabel || 'Xem thêm chi tiết';
-      // Markdown-style link để MessageBubble render — dù bubble không hỗ
-      // trợ markdown, chuỗi vẫn đọc được thẳng. Nếu có renderer nâng cấp
-      // sau, link tự động "live" được.
-      answerText += `\n\n🔗 ${linkLabel}: ${chip.wikiUrl}`;
-    }
+    // 2. Assistant bubble — answer thuần; link wiki render bằng <a> button qua
+    // metadata.wikiUrl trong MessageBubble (click được, không phải plain text).
+    const answerText = resolveAnswer(chip, user);
     addMessage({
       id: `qr-a-${chip.id}-${now}`,
       role: 'ASSISTANT',

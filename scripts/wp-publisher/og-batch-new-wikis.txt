@@ -1,0 +1,8 @@
+# slug | cluster | title
+# Cluster A = Khoa học (xanh), B = Phương pháp (cam), C = Câu chuyện/CRITICAL (đỏ)
+muon-bo-cuoc-cai-thuoc|B|Muốn Bỏ Cuộc Cai Thuốc — Vượt 60 Phút Tới
+mat-ngu-khi-cai-thuoc|A|Mất Ngủ Khi Cai Thuốc — Vì Sao Và Cách Giải
+cau-gat-khi-cai-thuoc|A|Cáu Gắt Khi Cai Thuốc — Kiểm Soát Cơn Nóng
+tao-bon-khi-cai|A|Táo Bón Khi Cai Thuốc — Cách Giải Tự Nhiên
+vape-co-an-toan-de-cai-thuoc|B|Vape Có An Toàn Để Cai Thuốc Không?
+thuc-don-cai-thuoc-khong-tang-can|B|Thực Đơn 30 Ngày Cai Thuốc Không Tăng Cân

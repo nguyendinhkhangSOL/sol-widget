@@ -18,12 +18,15 @@ export function MessageBubble({ message }: { message: Message }) {
   if (type === 'PHENOMENA_ALERT' || type === 'SCIENCE_TIP' || type === 'MORNING_GOAL' || type === 'NIGHT_STORY')
     return <RichCardMessage content={content} metadata={metadata} type={type} />;
 
-  // Default chat bubble
+  // Default chat bubble — bot reply có thể kèm wikiUrl (canned-reply / AI reply trỏ wiki)
+  const wikiUrl = metadata?.wikiUrl as string | undefined;
+  const wikiLabel = (metadata?.wikiLabel as string | undefined) || 'Đọc bài đầy đủ';
+
   return (
     <div className={clsx('flex', isUser ? 'justify-end' : 'justify-start')}>
       <div
         className={clsx(
-          'max-w-[85%] px-3 py-2 rounded-2xl text-sm whitespace-pre-wrap break-words',
+          'max-w-[85%] px-3 py-2 rounded-2xl text-sm break-words',
           isSystem
             ? 'bg-sol-ink/10 text-sol-ink/70 text-xs'
             : isUser
@@ -31,7 +34,17 @@ export function MessageBubble({ message }: { message: Message }) {
             : 'bg-white border border-black/5 text-sol-ink rounded-bl-sm'
         )}
       >
-        {content}
+        <div className="whitespace-pre-wrap">{content}</div>
+        {!isUser && wikiUrl && (
+          <a
+            href={wikiUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1 text-xs text-sol-blue underline hover:text-sol-green"
+          >
+            📖 {wikiLabel} →
+          </a>
+        )}
       </div>
     </div>
   );
