@@ -25,6 +25,11 @@ import {
   effectiveDailyMax,
 } from '../users/notificationPrefs';
 import { runEmailFunnelDaily } from './emailFunnel';
+import { fireDuePushes, expireStaleScheduledPushes } from '../zalo/scheduledPushFirer';
+import { recomputeAllActiveUsers } from '../zalo/journeyEngine';
+import { fireRandomTip } from '../zalo/randomTipFirer';
+import { firePrepReminders } from '../zalo/qdayPrepReminder';
+import { generateMilestoneMemoryBooks } from '../services/memoryBook';
 // Adaptive funnel: lazy import để tránh fail build nếu file có TS error.
 // Production có thể nhập lại sau khi sửa.
 
@@ -999,5 +1004,59 @@ export function startScheduler() {
     runEmailFunnelDaily().catch((e) => logger.error({ err: e }, 'emailFunnel daily failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
-  logger.info('Scheduler started — 16 cron jobs active');
+  // ── Phase 5: 51-Day Journey scheduler ─────────────────────────────────
+  // Fire pending ScheduledPush mỗi 5 phút (nhanh nhạy với preferredPushHour
+  // user chọn). Mỗi run query LIMIT 50 due-pending.
+  cron.schedule('*/5 * * * *', () => {
+    fireDuePushes().catch((e) => logger.error({ err: e }, 'fireDuePushes failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // Recompute currentJourneyDay cho user active (7:30 AM mỗi ngày)
+  cron.schedule('30 7 * * *', () => {
+    recomputeAllActiveUsers().catch((e) => logger.error({ err: e }, 'recomputeAllActiveUsers failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // Expire stale pending push (3 AM mỗi ngày — cleanup)
+  cron.schedule('0 3 * * *', () => {
+    expireStaleScheduledPushes().catch((e) => logger.error({ err: e }, 'expireStaleScheduledPushes failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // Sprint 2: Random tip high-craving hours (5 khung giờ VN: 7h30/10/13h30/16h30/21h)
+  cron.schedule('30 7 * * *', () => {
+    fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [sau-ca-phe] failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+  cron.schedule('0 10 * * *', () => {
+    fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [giai-lao] failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+  cron.schedule('30 13 * * *', () => {
+    fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [sau-com-trua] failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+  cron.schedule('30 16 * * *', () => {
+    fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [cuoi-gio-lam] failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+  cron.schedule('0 21 * * *', () => {
+    fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [toi-nhau] failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // Sprint 4: T-7 prep reminder cho user enrolled chưa confirm checklist (19:00)
+  cron.schedule('0 19 * * *', () => {
+    firePrepReminders().catch((e) => logger.error({ err: e }, 'firePrepReminders failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  // Phase 5 final: Memory Book generator cho user đạt mốc D30/60/90/180/365 (8:00 mỗi ngày)
+  cron.schedule('0 8 * * *', () => {
+    generateMilestoneMemoryBooks()
+      .then((r) => logger.info(r, 'Memory books generated'))
+      .catch((e) => logger.error({ err: e }, 'generateMilestoneMemoryBooks failed'));
+  }, { timezone: 'Asia/Ho_Chi_Minh' });
+
+  logger.info('Scheduler started — 26 cron jobs active (Phase 5 final enabled)');
 }
+
+// FIXED 2026-05-21: Đã xóa auto-start `startScheduler();` ở cuối file.
+// Trước đây gọi 2 lần: 1 lần ở đây + 1 lần trong index.ts line 133 → mỗi cron
+// chạy 2× → double ZNS spend + double AI cost. Nay chỉ index.ts gọi 1 lần.
+//
+// Nếu chạy worker riêng (separate process), dùng:
+//   tsx -e "import('./worker').then(m => m.startScheduler())"
+// hoặc thêm `if (require.main === module) startScheduler();` ở dưới.
