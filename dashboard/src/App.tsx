@@ -20,6 +20,8 @@ import { Reports } from './pages/Reports';
 import { VoiceInbox } from './pages/VoiceInbox';
 import { Science } from './pages/Science';
 import { QDayChecklist } from './pages/QDayChecklist';
+// Day 4 (2026-05-21): Test FTND thay thế OnboardingWizard cũ
+import { TestFtnd } from './pages/TestFtnd';
 // Silent Companionship channels (pivot 2026-05-08)
 import { KhoangLang } from './pages/KhoangLang';
 import { NgheKhang } from './pages/NgheKhang';
@@ -134,6 +136,8 @@ export function App() {
       <Route path="/login" element={<Login />} />
       {/* Auth callback page — KHÔNG wrap Layout (full-screen verifying view) */}
       <Route path="/auth/email" element={<AuthEmailCallback />} />
+      {/* Day 4: Test FTND — full-screen overlay cho user mới (no Layout sidebar) */}
+      <Route path="/test-ftnd" element={<TestFtnd />} />
       <Route element={<Layout />}>
         <Route path="/" element={<Overview />} />
         <Route path="/chat" element={<Chat />} />

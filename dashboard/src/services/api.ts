@@ -568,6 +568,38 @@ export const api = {
       body: JSON.stringify(body),
     }),
 
+  /**
+   * Day 4 (2026-05-21): Submit FTND test → backend tính cohort + lưu
+   * ftndScore + cohortKey (severity).
+   *
+   * Backwards-compat: gọi cùng endpoint /journey/onboarding/baseline với
+   * payload mở rộng (ftndScore + cohort + answers). Backend phải accept
+   * additional fields hoặc 1 endpoint mới /journey/onboarding/ftnd.
+   */
+  submitFtndOnboarding: (body: {
+    cigsBaseline: number;
+    pricePerCig: number;
+    ftndScore: number;
+    cohort: 'LIGHT' | 'MODERATE' | 'HEAVY';
+    answers: Array<{ q: number; a: number }>;
+  }) =>
+    request<{
+      ok: boolean;
+      user: {
+        id: string;
+        cigsBaseline: number;
+        pricePerCig: number;
+        ftndScore: number | null;
+        onboardingCompletedAt: string;
+        quitDate: string;
+        pronouns: string;
+      };
+      message: string;
+    }>('/journey/onboarding/ftnd', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
+
   getMoneyBreakdown: () =>
     request<{
       days: Array<{ day: number; cigs: number; avoided: number; moneyDelta: number; cumulative: number }>;

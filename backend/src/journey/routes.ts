@@ -400,6 +400,100 @@ journeyRouter.post('/onboarding/baseline', async (req: AuthedRequest, res) => {
   }
 });
 
+// ─── POST /journey/onboarding/ftnd — Day 4 (2026-05-21) ───────────────────
+// Test FTND replaces OnboardingWizard. Frontend đã tính cohort + score local,
+// backend recompute để defense-in-depth (KHÔNG trust client).
+//
+// Side effects: set ftndScore, cigsBaseline, pricePerCig, cohortKey severity
+// (lưu vào settings JSON vì User schema chưa có dedicated field),
+// onboardingCompletedAt, quitDate (nếu chưa có).
+const ftndOnboardingSchema = z.object({
+  cigsBaseline: z.number().int().min(1).max(60),
+  pricePerCig: z.number().int().min(100).max(50000),
+  ftndScore: z.number().int().min(0).max(10),
+  cohort: z.enum(['LIGHT', 'MODERATE', 'HEAVY']),
+  answers: z.array(z.object({
+    q: z.number().int().min(1).max(6),
+    a: z.number().int().min(0).max(3),
+  })).length(6),
+});
+
+/** Server-side recompute cohort từ answers — defense in depth */
+function recomputeCohortFromAnswers(answers: Array<{ q: number; a: number }>): { score: number; cohort: 'LIGHT' | 'MODERATE' | 'HEAVY' } {
+  const score = answers.reduce((sum, a) => sum + (typeof a.a === 'number' ? a.a : 0), 0);
+  const cohort = score <= 3 ? 'LIGHT' : score <= 6 ? 'MODERATE' : 'HEAVY';
+  return { score, cohort };
+}
+
+journeyRouter.post('/onboarding/ftnd', async (req: AuthedRequest, res) => {
+  try {
+    const parsed = ftndOnboardingSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ error: 'invalid_payload', detail: parsed.error.flatten() });
+    }
+
+    const { cigsBaseline, pricePerCig, answers } = parsed.data;
+    const clientCohort = parsed.data.cohort;
+    const clientScore = parsed.data.ftndScore;
+
+    // Server recompute để defense — nếu client tamper, dùng server result
+    const server = recomputeCohortFromAnswers(answers);
+    const finalScore = server.score;
+    const finalCohort = server.cohort;
+    const mismatch = server.score !== clientScore || server.cohort !== clientCohort;
+    if (mismatch) {
+      console.warn('[ftnd] client/server mismatch:', { client: { clientScore, clientCohort }, server });
+    }
+
+    const existing = await prisma.user.findUnique({
+      where: { id: req.userId! },
+      select: { quitDate: true, settings: true },
+    });
+
+    // Merge severity cohort vào settings JSON (User chưa có dedicated field)
+    const existingSettings = (existing?.settings as any) ?? {};
+    const newSettings = {
+      ...existingSettings,
+      severityCohort: finalCohort,
+      ftndAnswers: answers,
+      ftndCompletedAt: new Date().toISOString(),
+    };
+
+    const user = await prisma.user.update({
+      where: { id: req.userId! },
+      data: {
+        cigsBaseline,
+        pricePerCig,
+        ftndScore: finalScore,
+        settings: newSettings,
+        onboardingCompletedAt: new Date(),
+        ...(existing?.quitDate ? {} : { quitDate: new Date() }),
+      },
+      select: {
+        id: true,
+        cigsBaseline: true,
+        pricePerCig: true,
+        ftndScore: true,
+        onboardingCompletedAt: true,
+        quitDate: true,
+        pronouns: true,
+        settings: true,
+      },
+    });
+
+    res.json({
+      ok: true,
+      user,
+      cohort: finalCohort,
+      ftndScore: finalScore,
+      message: `Sol đã hiểu mức lệ thuộc của ${user.pronouns ?? 'bạn'}: ${finalCohort} (${finalScore}/10). Bắt đầu hành trình ${finalCohort === 'LIGHT' ? '35' : finalCohort === 'MODERATE' ? '52' : '65'} ngày.`,
+    });
+  } catch (e: any) {
+    console.error('[journey/onboarding/ftnd] error:', e);
+    return res.status(500).json({ error: 'ftnd_onboarding_error', message: e?.message, code: e?.code });
+  }
+});
+
 // ─── POST /journey/cigarette — log 1 điếu ─────────────────────────────────
 const logSchema = z.object({
   trigger: z.enum(['STRESS', 'EATING', 'IDLE', 'SOCIAL', 'OTHER']).optional(),

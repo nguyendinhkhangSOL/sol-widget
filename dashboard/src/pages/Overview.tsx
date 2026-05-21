@@ -4,8 +4,11 @@
 // switch theo stage, overlay onboarding + Q-Day ceremony.
 
 import { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import { api, ApiError } from '../services/api';
-import { OnboardingWizard } from '../components/views/phaseB/OnboardingWizard';
+// Day 4 (2026-05-21): OnboardingWizard cũ (cigsBaseline form) đã được thay
+// bằng Test FTND ở route /test-ftnd. Giữ import phòng fallback nếu cần.
+// import { OnboardingWizard } from '../components/views/phaseB/OnboardingWizard';
 import { QDayCeremony } from '../components/views/phaseB/QDayCeremony';
 import { PhaseBar } from '../components/views/phaseB/PhaseBar';
 import { PhaseObserver } from '../components/views/phaseB/PhaseObserver';
@@ -90,14 +93,11 @@ export function Overview() {
 
   if (!data) return null;
 
-  // ─── ONBOARDING OVERLAY ─────────────────────────────────────────────────
+  // ─── ONBOARDING REDIRECT (Day 4 — 2026-05-21) ───────────────────────────
+  // User mới chưa làm Test FTND → redirect /test-ftnd full-screen.
+  // FTND set onboardingCompletedAt sau khi user hoàn thành 6 câu + submit.
   if (!data.user.onboardingCompletedAt) {
-    return (
-      <OnboardingWizard
-        pronouns={data.user.pronouns}
-        onCompleted={() => reload()}
-      />
-    );
+    return <Navigate to="/test-ftnd" replace />;
   }
 
   // ─── Q-DAY CEREMONY OVERLAY ─────────────────────────────────────────────
