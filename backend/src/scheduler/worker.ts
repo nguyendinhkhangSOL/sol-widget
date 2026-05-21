@@ -1029,25 +1029,25 @@ export function startScheduler() {
     fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [giai-lao] failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
   cron.schedule('30 13 * * *', () => {
-    fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [sau-com-trua] failed'));
+    fireRandomTip().catch((e: unknown) => logger.error({ err: e }, 'fireRandomTip [sau-com-trua] failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
   cron.schedule('30 16 * * *', () => {
-    fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [cuoi-gio-lam] failed'));
+    fireRandomTip().catch((e: unknown) => logger.error({ err: e }, 'fireRandomTip [cuoi-gio-lam] failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
   cron.schedule('0 21 * * *', () => {
-    fireRandomTip().catch((e) => logger.error({ err: e }, 'fireRandomTip [toi-nhau] failed'));
+    fireRandomTip().catch((e: unknown) => logger.error({ err: e }, 'fireRandomTip [toi-nhau] failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
   // Sprint 4: T-7 prep reminder cho user enrolled chưa confirm checklist (19:00)
   cron.schedule('0 19 * * *', () => {
-    firePrepReminders().catch((e) => logger.error({ err: e }, 'firePrepReminders failed'));
+    firePrepReminders().catch((e: unknown) => logger.error({ err: e }, 'firePrepReminders failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
   // Phase 5 final: Memory Book generator cho user đạt mốc D30/60/90/180/365 (8:00 mỗi ngày)
   cron.schedule('0 8 * * *', () => {
     generateMilestoneMemoryBooks()
-      .then((r) => logger.info(r, 'Memory books generated'))
-      .catch((e) => logger.error({ err: e }, 'generateMilestoneMemoryBooks failed'));
+      .then((r: unknown) => logger.info(r as object, 'Memory books generated'))
+      .catch((e: unknown) => logger.error({ err: e }, 'generateMilestoneMemoryBooks failed'));
   }, { timezone: 'Asia/Ho_Chi_Minh' });
 
   logger.info('Scheduler started — 26 cron jobs active (Phase 5 final enabled)');
