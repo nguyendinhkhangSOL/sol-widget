@@ -31,6 +31,7 @@ import {
   userChecklistState,
   checkItem,
   uncheckItem,
+  confirmChecklistAndEnroll,
 } from './qDayChecklist';
 
 export const tiersRouter = Router();
@@ -127,6 +128,35 @@ tiersRouter.post('/q-day-checklist/uncheck', async (req: AuthedRequest, res) => 
   res.json(state);
 });
 
+// ─── Sprint 4: Confirm checklist → trigger Phase 5 enrollment ─────────────
+// POST /tiers/q-day-checklist/confirm-and-enroll
+//   body: { qDayDate?: ISO, journeyType?: 'full-51' | 'lam-quen' | ... }
+// Guard: assertChecklistComplete (3 required ticked) → enrollUser() → 52 ScheduledPush
+const confirmEnrollSchema = z.object({
+  qDayDate: z.string().datetime().optional(),
+  journeyType: z.enum(['lam-quen', 'giam-dan', 'q-day', 'full-51', 'maintenance']).optional(),
+});
+
+tiersRouter.post('/q-day-checklist/confirm-and-enroll', async (req: AuthedRequest, res) => {
+  const parsed = confirmEnrollSchema.safeParse(req.body ?? {});
+  if (!parsed.success) {
+    return res.status(400).json({ error: 'invalid_body', issues: parsed.error.issues });
+  }
+  try {
+    const result = await confirmChecklistAndEnroll({
+      userId: req.userId!,
+      qDayDate: parsed.data.qDayDate ? new Date(parsed.data.qDayDate) : undefined,
+      journeyType: parsed.data.journeyType,
+    });
+    return res.json(result);
+  } catch (err: any) {
+    if (err.statusCode === 412 && err.payload) {
+      return res.status(412).json(err.payload);
+    }
+    return res.status(500).json({ error: 'confirm_enroll_failed', message: err.message });
+  }
+});
+
 // ─────────────── TIER CATALOG (Sol v3 — 12-05-2026) ─────────────────────
 // 4 chặng tiến hoá: NHẬN DIỆN → KIỂM SOÁT → LÀM CHỦ → NGƯỜI TỰ DO
 // Tổng: 7 + 14 + 30 = 51 ngày Sol-active + Day 52 lễ tốt nghiệp
@@ -147,7 +177,7 @@ tiersRouter.get('/catalog', (_req, res) => {
           `Chat AI Sol ${FREE_DAILY_MESSAGE_QUOTA} tin/ngày`,
           'Sổ tay mẫu Tuần 1 (chỉ đọc)',
           '3 bài tập vượt cơn thèm cơ bản',
-          '1 voice Khang chào mừng',
+          '1 Voice của Khang chia sẻ chào mừng',
           'Đọc tường cộng đồng',
           'Không cần bỏ thuốc — chỉ quan sát',
         ],
@@ -166,7 +196,7 @@ tiersRouter.get('/catalog', (_req, res) => {
           'Chat Sol không giới hạn',
           'Sổ Hành Trình đầy đủ Tuần 1 + Tuần 2 (14 bài)',
           '12 bài tập theo từng ngày',
-          '3 voice Khang (Ngày 1, 3, 7)',
+          '3 Voice của Khang (Ngày 1, 3, 7)',
           'Báo cáo Ngày 7 cá nhân hoá (PDF)',
           'Nhắc nhở thông minh 3 lần/ngày',
           'Plan B trigger (≥3 trigger)',
@@ -190,10 +220,10 @@ tiersRouter.get('/catalog', (_req, res) => {
           'Toàn bộ Kiểm Soát + memory dài hạn 30+ ngày',
           'Sổ Hành Trình 4 tuần đầy đủ (26 bài)',
           '24 bài tập + 8 bài duy trì',
-          '6 voice Khang + thư cuối Ngày 30',
+          '6 Voice của Khang + thư cuối Ngày 30',
           'Báo cáo Ngày 21 + Album hành trình Ngày 51 (PDF cao cấp)',
           'Q-Day Ceremony Day 22 — cam kết cai',
-          'Khang ưu tiên + voice gọi lại khi khủng hoảng',
+          'Khang ưu tiên + Voice gọi lại khi khủng hoảng',
           'Huy hiệu cohort vĩnh viễn',
           `Hoàn tiền tỷ lệ ngày còn lại từ Ngày ${REFUND_MIN_DAY}`,
         ],

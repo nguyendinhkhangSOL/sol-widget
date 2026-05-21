@@ -3,13 +3,14 @@
  *
  * Run: node backup-db.cjs
  *
- * Output: D:\BOTHUOCLA\sol-backup-{timestamp}.json
+ * Output: C:\BOTHUOCLA\sol-widget\backups\sol-backup-{timestamp}.json
  *
- * Format: JSON với tất cả tables — dùng để restore qua Node.js script
- * (không phải SQL native, nhưng đủ để restore data nếu cần).
+ * Dùng $queryRawUnsafe để bypass Prisma type system → KHÔNG fail khi
+ * schema.prisma có column mới chưa migrate vào DB.
  *
  * Lưu ý: backup này KHÔNG bao gồm schema (CREATE TABLE), chỉ data.
- * Nếu cần full schema dump → dùng pg_dump hoặc pgAdmin.
+ * Nếu cần full schema dump → dùng pg_dump:
+ *   pg_dump $DATABASE_URL > backup.sql
  */
 
 const { PrismaClient } = require('@prisma/client');
@@ -18,62 +19,62 @@ const path = require('path');
 
 const prisma = new PrismaClient();
 
+const BACKUP_DIR = path.resolve(__dirname, '..', 'backups');
+
 async function backup() {
   console.log('Starting backup...');
+
+  // Tạo thư mục backup nếu chưa có
+  if (!fs.existsSync(BACKUP_DIR)) {
+    fs.mkdirSync(BACKUP_DIR, { recursive: true });
+    console.log(`  Tạo thư mục: ${BACKUP_DIR}`);
+  }
 
   const data = {
     backedUpAt: new Date().toISOString(),
     tables: {},
   };
 
-  // List all tables to dump (theo schema.prisma)
-  const tables = [
-    'user',
-    'checkIn',
-    'exerciseEntry',
-    'message',
-    'userState',
-    'cigaretteLog',
-    'progressJournal',
-    'contentItem',
-    'contentItemRevision',
-    'cannedReply',
-    'notification',
-    'pushSubscription',
-    'crisisEvent',
-    'otpCode',
-    'emailVerificationToken',
-    'appSetting',
-    'paymentLog',
-    'refundRequest',
-    'voiceMessage',
-    'voiceDelivery',
-    'cohort',
-  ];
+  // List tables thực tế từ information_schema — tự động phát hiện
+  const tablesResult = await prisma.$queryRawUnsafe(`
+    SELECT table_name FROM information_schema.tables
+    WHERE table_schema = 'public' AND table_type = 'BASE TABLE'
+    AND table_name NOT LIKE '_prisma%'
+    ORDER BY table_name
+  `);
+  const tables = tablesResult.map((r) => r.table_name);
+  console.log(`  Found ${tables.length} tables in public schema`);
 
-  for (const t of tables) {
+  for (const tableName of tables) {
     try {
-      // @ts-ignore — dynamic access
-      const records = await prisma[t].findMany();
-      data.tables[t] = records;
-      console.log(`  ✅ ${t}: ${records.length} rows`);
+      // Quote table name vì Prisma table name có thể có chữ hoa (vd "User")
+      const records = await prisma.$queryRawUnsafe(`SELECT * FROM "${tableName}"`);
+      data.tables[tableName] = records;
+      console.log(`  ✅ ${tableName}: ${records.length} rows`);
     } catch (err) {
-      console.warn(`  ⚠ ${t}: ${err.message}`);
-      data.tables[t] = [];
+      console.warn(`  ⚠ ${tableName}: ${err.message.slice(0, 100)}`);
+      data.tables[tableName] = [];
     }
   }
 
-  const filename = `D:\\BOTHUOCLA\\sol-backup-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
-  fs.writeFileSync(filename, JSON.stringify(data, null, 2), 'utf8');
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const filename = path.join(BACKUP_DIR, `sol-backup-${timestamp}.json`);
+
+  // Serialize với BigInt support
+  const json = JSON.stringify(data, (_, v) => (typeof v === 'bigint' ? v.toString() : v), 2);
+  fs.writeFileSync(filename, json, 'utf8');
 
   const fileSize = fs.statSync(filename).size;
   console.log(`\n✅ Backup saved: ${filename}`);
-  console.log(`   Size: ${(fileSize / 1024).toFixed(1)} KB`);
+  console.log(`   Size: ${(fileSize / 1024 / 1024).toFixed(2)} MB`);
+  console.log(`   Tables: ${Object.keys(data.tables).length}`);
+  console.log(`   Total rows: ${Object.values(data.tables).reduce((sum, t) => sum + t.length, 0)}`);
 
   await prisma.$disconnect();
 }
 
-backup().catch((err) => {
+backup().catch(async (err) => {
   console.error('Backup failed:', err);
+  await prisma.$disconnect();
   process.exit(1);
 });

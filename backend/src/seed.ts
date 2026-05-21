@@ -546,11 +546,11 @@ async function main() {
     },
     {
       slug: 'voice-khang',
-      label: 'Khi nào có voice Khang?',
+      label: 'Khi nào có Voice của Khang?',
       icon: '🎙️',
       sortOrder: 650,
       answer:
-        'Voice Khang gửi vào những ngày khó nhất: Ngày 1 (chào mừng), Ngày 3 (đỉnh withdrawal), Ngày 7 (kết Nhận Diện). Gói Làm Chủ có thêm Ngày 14, 22 (Q-Day), 30, 51 + thư cuối Day 52. Vào mục "Voice Khang" trong dashboard để nghe lại bất cứ lúc nào.',
+        'Voice của Khang gửi vào những ngày khó nhất: Ngày 1 (chào mừng), Ngày 3 (đỉnh triệu chứng cai), Ngày 7 (kết Nhận Diện). Gói Làm Chủ có thêm Ngày 14, 22 (Q-Day), 30, 51 + thư cuối Day 52. Vào mục "Voice" trong dashboard để nghe lại bất cứ lúc nào.',
       wikiUrl: '',
       wikiLabel: '',
     },

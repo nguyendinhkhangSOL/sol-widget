@@ -7,7 +7,7 @@
  *   1. User submit câu hỏi anonymous
  *   2. Khang đọc inbox 1-2 lần/tuần (admin UI)
  *   3. Khang pick 3-5 câu đáng quan tâm chung → SELECTED
- *   4. Khang trả lời qua Voice 5-10 phút broadcast (KhangVoice với isQuestionReply=true)
+ *   4. Khang voice reply 5-10 phút broadcast (KhangVoice với isQuestionReply=true)
  *   5. Tất cả user xem được voice replies trong tab "Hỏi"
  *
  * Reference: docs/SOL_CHANNELS_NO_GROUP_2026-05-08.md

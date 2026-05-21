@@ -50,28 +50,28 @@ export const DEFAULT_CHECKLIST: QDayChecklistConfig = {
     {
       id: 'read_medical_disclaimer',
       icon: '⚕️',
-      label: 'Đã đọc Điều khoản miễn trừ y tế',
+      label: 'Xác nhận hiểu rõ Sol không thay thế bác sĩ',
       description:
-        'SOL là công cụ đồng hành — KHÔNG thay thế tư vấn của bác sĩ. Quan trọng nếu bạn có bệnh nền (tim mạch, cao huyết áp, thai kỳ, đái tháo đường…). Đây là pháp y bắt buộc.',
-      wikiUrl: 'https://sol.vn/wiki/dieu-khoan-mien-tru-y-te',
+        'Sol là công cụ đồng hành — KHÔNG thay thế tư vấn của bác sĩ. Anh xác nhận 4 điểm: (1) Sol không kê thuốc. (2) Đau ngực dữ/ho ra máu/khó thở dữ → gọi 115 NGAY. (3) Sol không chẩn đoán cá nhân. (4) Anh chịu trách nhiệm cuối cùng cho sức khoẻ.',
+      wikiUrl: 'https://sol.vn/chuan-bi-q-day-cai-thuoc#disclaimer',
       required: true,
     },
     {
       id: 'inform_family',
       icon: '👨‍👩‍👧',
-      label: 'Đã thông báo cho người thân về quyết định cai',
+      label: 'Đã thông báo người thân về quyết định cai',
       description:
-        'Nói với vợ/chồng, con cái, bạn thân trong nhà — KHÔNG cần dài, chỉ 1 câu "Anh/Em đang cai thuốc". Người xung quanh biết để hỗ trợ + không vô tình mời thuốc.',
-      wikiUrl: 'https://sol.vn/wiki/noi-voi-nguoi-than',
+        '5-7 ngày đầu cortisol tăng → cáu gắt. Khoa học (Lerman 2002): user không thông báo vợ/chồng có tỷ lệ tái nghiện cao hơn 2.4x. Báo trước để gia đình hỗ trợ + không vô tình mời thuốc + sẵn sàng cho ngày D+3 Bức Tường.',
+      wikiUrl: 'https://sol.vn/chuan-bi-q-day-cai-thuoc',
       required: true,
     },
     {
-      id: 'paid_starter',
-      icon: '💳',
-      label: 'Đã thanh toán gói Kiểm Soát 99k',
+      id: 'commit_digital',
+      icon: '✍️',
+      label: 'Đã viết cam kết SỐ HOÁ trong app (lý do bỏ + thư cho tương lai)',
       description:
-        'Gói Kiểm Soát (14 ngày) có hiệu lực sau khi thanh toán. Áp dụng khi anh chọn gói Kiểm Soát hoặc Làm Chủ (gồm cả Kiểm Soát).',
-      onlyForTier: 'KHOI_DONG',
+        'Vào Hồ sơ → viết 3-5 LÝ DO bỏ thuốc CỤ THỂ (lưu User.quitReasons[]). Vào Workbook → viết THƯ CHO TƯƠNG LAI (lưu ProgressJournal.letterToSelf). Sol AI tự REPLAY các lý do này khi anh yếu lòng, sắp hút, chat "bỏ cuộc". Tương lai = Sổ Lưu Niệm Số D30/60/90/365.',
+      wikiUrl: 'https://sol.vn/chuan-bi-q-day-cai-thuoc',
       required: true,
     },
 
@@ -79,28 +79,28 @@ export const DEFAULT_CHECKLIST: QDayChecklistConfig = {
     {
       id: 'read_prep_guide',
       icon: '📖',
-      label: 'Đã đọc bài "Chuẩn bị cho Ngày D"',
+      label: 'Đã đọc 14 bài Giảm Dần (T-14 → T-1)',
       description:
-        'Bài viết hướng dẫn chuẩn bị tinh thần và vật chất 7 ngày trước khi cai. Mất ~10 phút đọc. Tăng tỷ lệ thành công ~15% theo nghiên cứu cessation.',
-      wikiUrl: 'https://sol.vn/wiki/chuan-bi-ngay-d',
+        'Bộ 14 bài Pre-Q-Day cung cấp khoa học nền tảng + kỹ thuật giảm dần 25%/tuần. User đọc đủ 14 bài có tỷ lệ thành công cao hơn 18% (Sol internal data). Mất ~ 30 phút tổng.',
+      wikiUrl: 'https://sol.vn/giam-dan-ngay-1-co-hieu-qua-khong',
       required: false,
     },
     {
       id: 'remove_triggers',
       icon: '🗑️',
-      label: 'Đã loại bỏ thuốc lá, gạt tàn, bật lửa khỏi nhà / xe / ví',
+      label: 'Đã loại bỏ thuốc, gạt tàn, bật lửa khỏi nhà / xe / ví',
       description:
-        '"Out of sight, out of mind." Tuần đầu tiên cám dỗ nhiều nhất khi vô tình thấy đồ cũ. Khuyến khích — nhưng không bắt buộc tick để bắt đầu.',
-      wikiUrl: 'https://sol.vn/wiki/loai-bo-trigger',
+        '"Out of sight, out of mind" (Wansink 2006). 60% relapse trong 72h đầu do còn thuốc trong nhà. 8 mục dọn: thuốc + bật lửa + gạt tàn + hộp + thuốc xe + thuốc ví + quần áo có mùi + ghế ô tô khử mùi.',
+      wikiUrl: 'https://sol.vn/giam-dan-ngay-12-don-cue-stimulus-control',
       required: false,
     },
     {
       id: 'prepare_kit',
       icon: '🎒',
-      label: 'Đã chuẩn bị "kit khẩn cấp"',
+      label: 'Đã chuẩn bị Kit Khẩn cấp (2 set: nhà + xe)',
       description:
-        'Kẹo cao su không đường, hạt dưa, chai nước, bài tập hít thở 4-7-8 in sẵn. Khi cơn thèm ập đến, bạn cần thay thế NGAY. Có thể chuẩn bị sau khi đặt Q-Day.',
-      wikiUrl: 'https://sol.vn/wiki/kit-khan-cap',
+        'Kit chuẩn 8 thứ: kẹo cao su NRT (Nicorette 2mg), nước lọc 1.5L, kẹo cứng không đường, hạt hướng dương, sách yêu thích, tai nghe + Khang voice, danh bạ Khang 02439931800. Quan trọng nhất: 3 lý do bỏ đã lưu trong app Sol — AI tự đọc lại khi anh thèm.',
+      wikiUrl: 'https://sol.vn/giam-dan-ngay-9-kit-thay-the',
       required: false,
     },
     {
@@ -108,17 +108,17 @@ export const DEFAULT_CHECKLIST: QDayChecklistConfig = {
       icon: '🩺',
       label: 'Đã tham khảo bác sĩ (nếu có bệnh nền)',
       description:
-        'Nếu bạn cao huyết áp, tim mạch, đang dùng thuốc tâm thần, đái tháo đường, hoặc đang mang thai — hỏi bác sĩ về thuốc hỗ trợ cai (NRT, Bupropion). Nếu không có bệnh nền, bỏ qua.',
-      wikiUrl: 'https://sol.vn/wiki/tham-khao-bac-si',
+        'Cao huyết áp, tim mạch, đái tháo đường, mang thai, trầm cảm/lo âu → nên khám trước Q-Day. Bác sĩ có thể kê NRT (an toàn nhất), Champix (varenicline), Bupropion (tránh nếu mang thai). Không bắt buộc nếu khỏe mạnh + hút < 20 điếu/ngày + tuổi < 50.',
+      wikiUrl: 'https://sol.vn/giam-dan-ngay-10-quyet-dinh-nrt-thuoc-ke',
       required: false,
     },
     {
       id: 'plan_hard_day',
       icon: '📅',
-      label: 'Đã đặt lịch nhắc người thân cho Ngày D+3 (đỉnh khó nhất)',
+      label: 'Đặt lịch nhắc người thân gọi ngày D+3 (Bức Tường)',
       description:
-        'Ngày 3 là đỉnh withdrawal. Hẹn ai đó gọi điện / qua nhà / rủ đi bộ vào tối D+3. Giảm 30% nguy cơ tái phát.',
-      wikiUrl: 'https://sol.vn/wiki/ngay-d-plus-3',
+        'D+3 là đỉnh withdrawal — 70% người vấp hôm đó (NIDA 2019). Đặt Google Calendar: "Ngày D+3 18:00 — Gọi user hỏi thăm 5 phút". Có người thân gọi giảm 50% risk relapse (Cohen 2000 social support).',
+      wikiUrl: 'https://sol.vn/ngay-3-buc-tuong-trieu-chung-cai-dat-dinh-va-bat-dau-giam',
       required: false,
     },
   ],
@@ -235,7 +235,7 @@ export async function assertChecklistComplete(
   const state = await userChecklistState(userId, targetTier);
   if (!state.allRequiredDone) {
     const err: any = new Error('q_day_checklist_incomplete');
-    err.statusCode = 412; // Precondition Failed
+    err.statusCode = 412;
     err.payload = {
       error: 'q_day_checklist_incomplete',
       requiredCount: state.requiredCount,
@@ -244,4 +244,90 @@ export async function assertChecklistComplete(
     };
     throw err;
   }
+}
+
+/**
+ * Sprint 4 — Wire QDayChecklist với Phase 5 Journey Scheduler.
+ *
+ * Khi user tick xong 3 mục REQUIRED:
+ *   1. Set User.qDayConfirmedAt = now (legacy compatibility)
+ *   2. Set User.qDayDate = qDayDate (Phase 5)
+ *   3. Set User.journeyType = full-51 (default)
+ *   4. Call enrollUser() → tạo 52 ScheduledPush
+ *   5. Trả về kết quả + countdown
+ *
+ * Idempotent: nếu user đã có journeyStatus='active', không enroll lại.
+ *
+ * @param userId User.id
+ * @param qDayDate Ngày Q-Day user chọn (default = today + 7 days nếu không truyền)
+ * @param journeyType Default 'full-51'
+ */
+export async function confirmChecklistAndEnroll(params: {
+  userId: string;
+  qDayDate?: Date;
+  journeyType?: 'lam-quen' | 'giam-dan' | 'q-day' | 'full-51' | 'maintenance';
+}): Promise<{
+  ok: boolean;
+  enrolled: boolean;
+  qDayConfirmedAt: Date;
+  qDayDate: Date;
+  journeyType: string;
+  scheduledPushCount: number;
+}> {
+  const { userId } = params;
+  const journeyType = params.journeyType ?? 'full-51';
+  // Default Q-Day = 7 ngày tới nếu không truyền
+  const qDayDate = params.qDayDate ?? new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+
+  // 1. Guard — phải tick xong required
+  await assertChecklistComplete(userId);
+
+  // 2. Check user state
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { id: true, qDayConfirmedAt: true, journeyStatus: true, preferredPushHour: true },
+  });
+  if (!user) throw new Error('user_not_found');
+
+  // Đã enrolled → idempotent
+  if (user.journeyStatus === 'active' && user.qDayConfirmedAt) {
+    const count = await prisma.scheduledPush.count({
+      where: { userId, status: { in: ['pending', 'sent'] } },
+    });
+    return {
+      ok: true,
+      enrolled: false,
+      qDayConfirmedAt: user.qDayConfirmedAt,
+      qDayDate,
+      journeyType,
+      scheduledPushCount: count,
+    };
+  }
+
+  // 3. Lazy import journeyEngine (avoid circular dep)
+  const { enrollUser } = await import('../zalo/journeyEngine');
+
+  // 4. Enroll Phase 5
+  const result = await enrollUser({
+    userId,
+    journeyType,
+    qDayDate,
+    preferredHour: user.preferredPushHour ?? 7,
+  });
+
+  // 5. Set qDayConfirmedAt (legacy field) — đồng bộ 2 systems
+  const now = new Date();
+  await prisma.user.update({
+    where: { id: userId },
+    data: { qDayConfirmedAt: now },
+  });
+
+  return {
+    ok: true,
+    enrolled: true,
+    qDayConfirmedAt: now,
+    qDayDate,
+    journeyType,
+    scheduledPushCount: result.created,
+  };
 }

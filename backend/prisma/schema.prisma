@@ -229,12 +229,45 @@ model User {
   messagingPolicies    MessagingPolicy[]       @relation("MessagingPolicyUser")
   messagingProfile     UserMessagingProfile?   @relation("UserMessagingProfileUser")
 
+  // ── Phase 5: 51-Day Journey (Sol v4 15-05-2026) ──────────────────────
+  // Loại lộ trình user đã chọn: 'lam-quen' (T-21→T-15, 7 ngày)
+  //                              'giam-dan' (T-14→T-1, 14 ngày)
+  //                              'q-day' (D1→D30, 30 ngày)
+  //                              'full-51' (T-21→D30, 51 ngày — recommended)
+  //                              'maintenance' (post-D30, 1 tin/tuần)
+  // NULL khi user chưa enroll journey.
+  journeyType          String?
+  // Q-Day milestone (ngày user cam kết cắt sạch). Backend tính ScheduledPush
+  // dựa trên qDayDate ± dayOffset.
+  qDayDate             DateTime?
+  // Ngày hiện tại trong journey (computed mỗi 7:00 AM bởi cron). Vd:
+  //   - currentJourneyDay = -14 → ngày T-14 (đang giảm dần)
+  //   - currentJourneyDay = 0  → Q-Day
+  //   - currentJourneyDay = 7  → ngày 7 sau Q-Day
+  currentJourneyDay    Int?
+  // Trạng thái journey: 'active' | 'paused' | 'graduated' | 'relapsed' | NULL
+  journeyStatus        String?
+  // Giờ user muốn nhận tin daily (0-23, mặc định 7 = 7AM). User chọn trong
+  // onboarding hoặc settings.
+  preferredPushHour    Int     @default(7)
+  // Timezone IANA (mặc định Asia/Ho_Chi_Minh). Cho phép user du lịch.
+  pushTimezone         String  @default("Asia/Ho_Chi_Minh")
+  // Lúc user enroll journey lần đầu (audit + analytics retention).
+  journeyEnrolledAt    DateTime?
+  // Khi user graduate (D30+) hoặc relapsed — để chuyển sang Maintenance.
+  journeyEndedAt       DateTime?
+
+  scheduledPushes      ScheduledPush[]         @relation("ScheduledPushUser")
+  sosAlerts            SOSAlert[]              @relation("SOSAlertUser")
+
   @@index([phone])
   @@index([deviceUid])
   @@index([zaloUserId])
   @@index([tier])
   @@index([cohortKey])
   @@index([riskScore])
+  @@index([journeyType, journeyStatus])
+  @@index([qDayDate])
 }
 
 // ───────────────────────────── CHECK-INS (PULSE) ─────────────────────────
@@ -1256,4 +1289,82 @@ model UserMessagingProfile {
   updatedAt       DateTime  @updatedAt
 
   @@index([cohortKey])
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// PHASE 5 — 51-Day Journey scheduler (Sol v4 15-05-2026)
+//
+// Khi user enroll journey qua Zalo OA Welcome flow, backend tạo 51 record
+// ScheduledPush (1/ngày). Cron 7:00 AM (hoặc giờ user chọn — preferredPushHour)
+// query record có scheduledAt <= now() & status='pending' rồi gửi ZNS.
+//
+// SOSAlert track riêng các sự kiện khẩn cấp (button click hoặc keyword match)
+// để Khang nhận push notification real-time + follow-up.
+// ─────────────────────────────────────────────────────────────────────
+
+model ScheduledPush {
+  id               String    @id @default(cuid())
+  userId           String
+  user             User      @relation("ScheduledPushUser", fields: [userId], references: [id], onDelete: Cascade)
+  // Offset so với Q-Day. -21 đến -1 = Pre-Q-Day. 0 = Q-Day. 1-30 = Q-Day series.
+  dayOffset        Int
+  // Loại lộ trình lúc enroll. Snapshot — không đổi khi user switch journey.
+  journeyType      String
+  // ZNS template code (vd SOL_DAILY_CHIP, SOL_MILESTONE_7D, SOL_MILESTONE_30D)
+  templateCode     String
+  // Slug bài wiki sẽ link tới (vd "ngay-5-them-an-so-tang-can")
+  wikiSlug         String?
+  // Params pre-computed để fill template: {name, day_label, chip_title, chip_body, cta_url}
+  templateParams   Json      @default("{}")
+  // Lúc cron sẽ fire — computed từ qDayDate + dayOffset + preferredPushHour
+  scheduledAt      DateTime
+  // Status: 'pending' | 'sending' | 'sent' | 'failed' | 'cancelled' | 'expired'
+  status           String    @default("pending")
+  // Sau khi gửi xong
+  sentAt           DateTime?
+  // Link với ZNSLog (1-1) sau khi gửi thành công
+  znsLogId         String?
+  // Error nếu fail
+  errorMessage     String?
+  errorCode        String?
+  retryCount       Int       @default(0)
+  // Audit
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@unique([userId, dayOffset, journeyType])
+  @@index([scheduledAt, status])
+  @@index([userId, status])
+  @@index([templateCode])
+}
+
+model SOSAlert {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation("SOSAlertUser", fields: [userId], references: [id], onDelete: Cascade)
+  // Trigger:
+  //   'button'       — user click [SOS] trong tin daily
+  //   'keyword'      — match CRISIS keyword (sap hut, ho ra mau, dau nguc...)
+  //   'no_reply_3d'  — user khong tuong tac >= 3 ngay
+  //   'admin_manual' — Khang tao thu cong
+  triggerType          String
+  matchedKeyword       String?
+  userMessage          String?
+  triggeredAt          DateTime  @default(now())
+  // 'pending' | 'auto_responded' | 'admin_responding' | 'resolved' | 'no_response_72h'
+  status               String    @default("pending")
+  autoResponseZnsLogId String?
+  respondedByAdminId   String?
+  respondedAt          DateTime?
+  responseMessage      String?   @db.Text
+  resolvedAt           DateTime?
+  resolutionNotes      String?   @db.Text
+  // 'critical' | 'high' | 'medium' | 'low'
+  severity             String    @default("medium")
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  @@index([userId, triggeredAt])
+  @@index([status, severity])
+  @@index([triggeredAt])
 }

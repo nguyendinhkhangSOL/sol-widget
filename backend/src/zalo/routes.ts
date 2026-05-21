@@ -9,6 +9,7 @@
 import { Router, raw } from 'express';
 import { handleZaloWebhook } from './webhook';
 import { zaloTemplateRouter } from './templateRoutes';
+import { journeyAdminRouter } from './journeyAdminRoutes';
 import { prisma } from '../db';
 import { authMiddleware, type AuthedRequest } from '../auth/middleware';
 
@@ -16,6 +17,9 @@ export const zaloRouter = Router();
 
 // Template CRUD (admin only) — mount trước webhook để tránh conflict path
 zaloRouter.use('/templates', zaloTemplateRouter);
+
+// Phase 5 — 51-Day Journey scheduler (admin only)
+zaloRouter.use('/journey', journeyAdminRouter);
 
 /**
  * Webhook endpoint — Zalo POST tới đây.

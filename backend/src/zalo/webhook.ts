@@ -16,6 +16,18 @@ import { logger } from '../utils/logger';
 import { verifyZaloSignature } from './signature';
 import { oaSendText, oaGetUserInfo } from './oaClient';
 import { routeUserMessage, generateAIReply } from './intentRouter';
+import {
+  buildWelcomeText,
+  buildWelcomeButtons,
+  handleJourneyChoice,
+  handleQDayPick,
+  handleCancelJourney,
+  isJourneyChoiceCommand,
+  isQDayPickCommand,
+  isStartCommand,
+  isCancelCommand,
+} from './welcomeFlow';
+import { triggerSos, isSosCommand, isVictoryCommand, handleVictory } from './sosHandler';
 
 const OA_ID = process.env.ZALO_OA_ID ?? '3049397094672064963';
 
@@ -131,6 +143,15 @@ async function upsertZaloOAUser(senderId: string, senderName?: string): Promise<
 
 /**
  * Xử lý event user_send_text.
+ *
+ * Order ưu tiên:
+ *   1. SOS keyword/command         → triggerSos (critical → 115)
+ *   2. /victory                    → handleVictory
+ *   3. /huy                        → handleCancelJourney
+ *   4. /lo-trinh-*                 → handleJourneyChoice
+ *   5. /q-day-* hoặc Q-Day reply  → handleQDayPick (nếu state = waiting_qday)
+ *   6. "bắt đầu" / "menu"          → resend welcome
+ *   7. Default                     → intentRouter (canned reply / AI / CRISIS)
  */
 async function handleUserText(senderId: string, text: string, senderName?: string): Promise<void> {
   const { userId } = await upsertZaloOAUser(senderId, senderName);
@@ -141,6 +162,56 @@ async function handleUserText(senderId: string, text: string, senderName?: strin
     data: { totalMsgIn: { increment: 1 } },
   });
 
+  const trimmed = text.trim();
+
+  // ─── Sprint 2: Command dispatch ─────────────────────────────────
+  if (isSosCommand(trimmed)) {
+    await triggerSos({
+      senderId,
+      senderName,
+      triggerType: 'button',
+      userMessage: text,
+    });
+    return;
+  }
+
+  if (isVictoryCommand(trimmed)) {
+    await handleVictory(senderId, senderName);
+    return;
+  }
+
+  if (isCancelCommand(trimmed)) {
+    await handleCancelJourney(senderId, senderName);
+    return;
+  }
+
+  if (isJourneyChoiceCommand(trimmed)) {
+    await handleJourneyChoice(senderId, trimmed, senderName);
+    return;
+  }
+
+  if (isStartCommand(trimmed)) {
+    // Resend welcome
+    await oaSendText({
+      recipientId: senderId,
+      text: buildWelcomeText(senderName),
+      buttons: buildWelcomeButtons() as any,
+    });
+    return;
+  }
+
+  // Check if user đang trong waiting_qday state
+  if (userId) {
+    const userState = await prisma.userState.findUnique({ where: { userId } });
+    const stateData = (userState?.stateData as any) ?? {};
+    if (stateData.flow === 'journey_choice' && stateData.step === 'waiting_qday') {
+      if (isQDayPickCommand(trimmed) || /\d{1,2}\/\d{1,2}/.test(trimmed)) {
+        await handleQDayPick(senderId, trimmed, senderName);
+        return;
+      }
+    }
+  }
+
   // Route intent
   const result = await routeUserMessage(text);
 
@@ -148,15 +219,15 @@ async function handleUserText(senderId: string, text: string, senderName?: strin
   let buttons: Array<{ title: string; type: string; payload?: any }> = [];
 
   if (result.type === 'CRISIS') {
-    logger.warn({ senderId, matchedKeyword: result.matchedKeyword, text }, 'CRISIS detected — alerting Khang');
-    replyText = 'Mình thấy anh đang ở moment khó. Đừng cố một mình.\n\n' +
-                'Hít vào 4 — giữ 2 — thở ra 6. Lặp 5 lần.\n\n' +
-                'Nếu cần Khang trực tiếp, bấm nút bên dưới.';
-    buttons = [
-      { title: 'Mở Plan B', type: 'oa.open.url', payload: { url: 'https://bothuocla.sol.vn/breathing' } },
-      { title: 'Gọi Khang', type: 'oa.open.phone', payload: { phone: '+84912727381' } },
-    ];
-    // TODO: Telegram alert Khang (em sẽ wire khi có Telegram bot token)
+    // Sprint 2: auto-trigger SOS alert + auto reply via sosHandler
+    await triggerSos({
+      senderId,
+      senderName,
+      triggerType: 'keyword',
+      matchedKeyword: result.matchedKeyword,
+      userMessage: text,
+    });
+    return; // sosHandler đã gửi reply
   } else if (result.type === 'CANNED') {
     replyText = result.reply;
     if (result.wikiUrl) {
@@ -204,24 +275,14 @@ async function handleUserText(senderId: string, text: string, senderName?: strin
 async function handleFollow(senderId: string, senderName?: string): Promise<void> {
   await upsertZaloOAUser(senderId, senderName);
 
-  // Gửi welcome message
-  const welcomeText =
-    `Chào ${senderName ?? 'anh'}!\n\n` +
-    'Mình là Khang Sol — anh đã follow OA Sol — đồng hành cai thuốc lá.\n\n' +
-    'Mình từng hút 30 năm (từ năm 15 tuổi), giờ đã 5 năm tự do.\n\n' +
-    '7 ngày đầu hoàn toàn miễn phí — anh không cần bỏ thuốc ngay. Chỉ cần quan sát.\n\n' +
-    'Gõ "bắt đầu" để mình hướng dẫn — hoặc mở Sol qua nút bên dưới.';
-
+  // Sprint 2: gửi welcome + 3 button journey choice
   await oaSendText({
     recipientId: senderId,
-    text: welcomeText,
-    buttons: [
-      { title: 'Mở Sol', type: 'oa.open.url', payload: { url: 'https://bothuocla.sol.vn' } },
-      { title: 'Hỏi Sol', type: 'oa.query.show', payload: 'bắt đầu' as any },
-    ],
+    text: buildWelcomeText(senderName),
+    buttons: buildWelcomeButtons() as any,
   });
 
-  logger.info({ senderId }, 'User followed OA Sol — welcome message sent');
+  logger.info({ senderId }, 'User followed OA Sol — welcome message sent with journey buttons');
 }
 
 async function handleUnfollow(senderId: string): Promise<void> {
