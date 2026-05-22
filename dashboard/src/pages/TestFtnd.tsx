@@ -49,12 +49,16 @@ export function TestFtnd() {
   const question = FTND_QUESTIONS[currentQ];
   const progress = ((currentQ + (answers.length > currentQ ? 1 : 0)) / totalQuestions) * 100;
 
-  // Nếu user đã có onboardingCompletedAt → không nên ở đây, redirect /
+  // Day 9 (2026-05-22) FIX: chỉ redirect / nếu user đã onboarding TỪ TRƯỚC
+  // (phase='questions', tức là vừa vào page). KHÔNG redirect khi đang
+  // 'submitting' / 'result' — vì bootstrap() refresh user sau submit sẽ
+  // set onboardingCompletedAt → useEffect trigger → cướp Result page khỏi user.
   useEffect(() => {
+    if (phase !== 'questions') return;
     if (user?.onboardingCompletedAt) {
       navigate('/', { replace: true });
     }
-  }, [user?.onboardingCompletedAt, navigate]);
+  }, [user?.onboardingCompletedAt, navigate, phase]);
 
   const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
   const pronouns = user?.pronouns ?? 'anh';
