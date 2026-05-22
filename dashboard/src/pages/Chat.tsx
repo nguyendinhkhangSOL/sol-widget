@@ -329,27 +329,106 @@ export function Chat() {
   );
 }
 
+// ─── Day 8 polish (2026-05-21) — Detect message source for avatar/label ───
+//
+// 4 loại bot response trong Sol:
+//   1. CHIP (canned)  — instant, không gọi AI. metadata.cannedReplyId set.
+//   2. Sol AI (Gemini) — async LLM. type=CHAT, role=ASSISTANT, no chip metadata.
+//   3. Khang Sol      — admin reply tay. metadata.adminReply=true hoặc senderUserId.
+//   4. Hệ thống       — error notes, system messages.
+type SenderKind = 'user' | 'chip' | 'ai' | 'admin' | 'system';
+
+function detectSender(msg: Message): SenderKind {
+  if (msg.role === 'USER') return 'user';
+  if (msg.role === 'SYSTEM') return 'system';
+  // ASSISTANT branch:
+  const meta = (msg.metadata ?? {}) as any;
+  if (meta.adminReply === true || meta.senderUserId || meta.fromAdmin) return 'admin';
+  if (msg.type === 'CHIP_REPLY' || meta.cannedReplyId || meta.cannedAnswer) return 'chip';
+  return 'ai';
+}
+
+const SENDER_META: Record<SenderKind, {
+  avatar: string;
+  label: string;
+  badgeClass: string;
+  bubbleClass: string;
+}> = {
+  user: {
+    avatar: '🙂',
+    label: 'Bạn',
+    badgeClass: 'bg-sol-green text-white',
+    bubbleClass: 'bg-sol-green text-white rounded-tr-sm',
+  },
+  ai: {
+    avatar: '🤖',
+    label: 'Sol AI',
+    badgeClass: 'bg-sol-blue-soft text-sol-blue-ink',
+    bubbleClass: 'bg-white border border-sol-blue/40 text-sol-ink rounded-tl-sm',
+  },
+  chip: {
+    avatar: '🧩',
+    label: 'Sol Chip',
+    badgeClass: 'bg-sol-orange-soft text-sol-orange-ink',
+    bubbleClass: 'bg-white border border-sol-orange/40 text-sol-ink rounded-tl-sm',
+  },
+  admin: {
+    avatar: '🌅',
+    label: 'Khang Sol',
+    badgeClass: 'bg-sol-earth-soft text-sol-earth-ink',
+    bubbleClass: 'bg-sol-earth-soft border border-sol-earth/50 text-sol-ink rounded-tl-sm',
+  },
+  system: {
+    avatar: '⚙️',
+    label: 'Hệ thống',
+    badgeClass: 'bg-sol-soft text-sol-ink-2',
+    bubbleClass: '',
+  },
+};
+
 function Bubble({ msg }: { msg: Message }) {
-  const isUser = msg.role === 'USER';
-  const isSystem = msg.role === 'SYSTEM';
+  const sender = detectSender(msg);
+  const meta = SENDER_META[sender];
+  const isUser = sender === 'user';
   const wiki = !isUser ? getWikiLink(msg) : null;
 
-  if (isSystem) {
+  // Timestamp HH:MM
+  const time = (() => {
+    try {
+      return new Date(msg.createdAt).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+    } catch {
+      return '';
+    }
+  })();
+
+  if (sender === 'system') {
     return (
-      <div className="text-center text-meta text-sol-ink-3 italic">
-        {msg.content}
+      <div className="text-center text-meta text-sol-ink-3 italic flex items-center justify-center gap-2">
+        <span aria-hidden>{meta.avatar}</span>
+        <span>{msg.content}</span>
       </div>
     );
   }
 
   return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
+    <div className={`flex flex-col ${isUser ? 'items-end' : 'items-start'} gap-1`}>
+      {/* Sender header — avatar + label + timestamp */}
+      <div className={`flex items-center gap-1.5 px-1 text-meta ${isUser ? 'flex-row-reverse' : ''}`}>
+        <span
+          className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-base ${meta.badgeClass}`}
+          aria-hidden
+        >
+          {meta.avatar}
+        </span>
+        <span className="font-semibold text-sol-ink">{meta.label}</span>
+        {time && <span className="text-sol-ink-3 text-[11px]">· {time}</span>}
+      </div>
+
+      {/* Message bubble */}
       <div
         className={
           'max-w-[75%] px-4 py-2.5 rounded-2xl text-body leading-relaxed whitespace-pre-wrap ' +
-          (isUser
-            ? 'bg-sol-green text-white rounded-tr-sm'
-            : 'bg-white border border-sol-line text-sol-ink rounded-tl-sm')
+          meta.bubbleClass
         }
       >
         {msg.content}
