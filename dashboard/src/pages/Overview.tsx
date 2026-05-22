@@ -93,9 +93,10 @@ export function Overview() {
 
   if (!data) return null;
 
-  // ─── ONBOARDING REDIRECT (Day 4 — 2026-05-21) ───────────────────────────
-  // User mới chưa làm Test FTND → redirect /test-ftnd full-screen.
-  // FTND set onboardingCompletedAt sau khi user hoàn thành 6 câu + submit.
+  // ─── ONBOARDING REDIRECT — fallback (Day 9 update) ──────────────────────
+  // App.tsx đã route /test-ftnd ngay từ entry nếu user chưa onboarding,
+  // nên về lý thuyết không vào tới đây. Giữ làm safety net cho edge case
+  // (user navigate trực tiếp / sau khi clear localStorage chẳng hạn).
   if (!data.user.onboardingCompletedAt) {
     return <Navigate to="/test-ftnd" replace />;
   }

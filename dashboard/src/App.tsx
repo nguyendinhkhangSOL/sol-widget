@@ -124,6 +124,34 @@ export function App() {
     })();
   }, [bootstrap, user, location.pathname, navigate]);
 
+  // ─── Day 9 (2026-05-22) — Entry route based on onboarding state ─────────
+  // Khi user load xong + đang ở root `/`:
+  //   - Chưa onboarding (no onboardingCompletedAt) → /test-ftnd
+  //   - Đã onboarding → giữ nguyên / (Overview render)
+  // Áp dụng cho cả root và các route public không trong auth flow.
+  useEffect(() => {
+    if (!user) return;
+    if (location.pathname !== '/') return;
+    if (user.onboardingCompletedAt) return;
+    navigate('/test-ftnd', { replace: true });
+  }, [user, location.pathname, navigate]);
+
+  // Day 9: Loading splash khi đang bootstrap anon user (tránh flash trắng).
+  // Chỉ show khi: chưa có user + đang ở route public (KHÔNG show ở /login,
+  // /auth/email vì các route đó tự handle loading state của mình).
+  const isBootstrapping = !user && !isAuthed() && !['/login', '/auth/email'].includes(location.pathname);
+  if (isBootstrapping) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-sol-bg p-6">
+        <div className="text-center">
+          <div className="text-5xl mb-4 animate-pulse" aria-hidden>🌅</div>
+          <p className="text-h3 font-semibold text-sol-ink">Đi Cùng Sol</p>
+          <p className="text-meta text-sol-ink-3 mt-1">Đang khởi động hành trình…</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       {postBindRecoveryCode && (

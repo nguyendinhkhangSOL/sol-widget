@@ -33,6 +33,12 @@ usersRouter.get('/me', async (req: AuthedRequest, res) => {
     assistantName: user.assistantName,
     ftndScore: user.ftndScore,
     quitDate: user.quitDate,
+    // Day 9 (2026-05-22): expose onboardingCompletedAt để FE App.tsx
+    // route ngay tới /test-ftnd nếu chưa onboarding (tránh phải gọi
+    // /journey/dashboard rồi mới biết redirect — flash Overview)
+    onboardingCompletedAt: user.onboardingCompletedAt,
+    cigsBaseline: user.cigsBaseline,
+    pricePerCig: user.pricePerCig,
     dayNumber,
     checkinStreak: user.checkinStreak,
     longestStreak: user.longestStreak,

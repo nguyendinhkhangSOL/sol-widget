@@ -227,6 +227,11 @@ export interface User {
   assistantName?: string;
   quitDate?: string;
   ftndScore?: number;
+  /** Day 9 (2026-05-22): Set sau khi user hoàn thành Test FTND.
+   *  App.tsx dùng để route ngay: chưa có → /test-ftnd, có rồi → / */
+  onboardingCompletedAt?: string | null;
+  cigsBaseline?: number;
+  pricePerCig?: number;
   checkinStreak: number;
   longestStreak: number;
   missedDaysInRow: number;
