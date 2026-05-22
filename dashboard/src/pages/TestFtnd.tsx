@@ -25,7 +25,15 @@ import {
 import { api, ApiError } from '../services/api';
 import { useStore } from '../state/store';
 
-type Phase = 'questions' | 'submitting' | 'result' | 'redirecting';
+// Day 9 (2026-05-22): Add 'intro' phase ở đầu — giải thích khoa học + mục đích
+// + privacy trước khi user click "Bắt đầu". Tận dụng không gian quảng cáo.
+type Phase = 'intro' | 'questions' | 'submitting' | 'result' | 'redirecting';
+
+/** Detect embed mode (?embed=1) — Khang đặt iframe vào sol.vn làm SEO funnel */
+function isEmbedMode(): boolean {
+  if (typeof window === 'undefined') return false;
+  return new URLSearchParams(window.location.search).get('embed') === '1';
+}
 
 interface ResultPayload {
   result: FtndResult;
@@ -40,7 +48,9 @@ export function TestFtnd() {
 
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<FtndAnswer[]>([]);
-  const [phase, setPhase] = useState<Phase>('questions');
+  // Day 9: default 'intro' để user đọc giải thích trước khi click "Bắt đầu"
+  const [phase, setPhase] = useState<Phase>('intro');
+  const embedMode = useMemo(() => isEmbedMode(), []);
   const [submitStep, setSubmitStep] = useState(0); // 0-3 cho animation submitting
   const [result, setResult] = useState<ResultPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -49,16 +59,17 @@ export function TestFtnd() {
   const question = FTND_QUESTIONS[currentQ];
   const progress = ((currentQ + (answers.length > currentQ ? 1 : 0)) / totalQuestions) * 100;
 
-  // Day 9 (2026-05-22) FIX: chỉ redirect / nếu user đã onboarding TỪ TRƯỚC
-  // (phase='questions', tức là vừa vào page). KHÔNG redirect khi đang
-  // 'submitting' / 'result' — vì bootstrap() refresh user sau submit sẽ
-  // set onboardingCompletedAt → useEffect trigger → cướp Result page khỏi user.
+  // Day 9 FIX: chỉ redirect / khi user đã onboarding TỪ TRƯỚC + đang ở
+  // intro/questions. KHÔNG redirect khi đang submitting/result (bootstrap()
+  // sau submit sẽ set onboardingCompletedAt → tránh cướp Result page).
+  // Embed mode: KHÔNG redirect (iframe sol.vn cần đứng yên).
   useEffect(() => {
-    if (phase !== 'questions') return;
+    if (embedMode) return;
+    if (phase !== 'intro' && phase !== 'questions') return;
     if (user?.onboardingCompletedAt) {
       navigate('/', { replace: true });
     }
-  }, [user?.onboardingCompletedAt, navigate, phase]);
+  }, [user?.onboardingCompletedAt, navigate, phase, embedMode]);
 
   const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
   const pronouns = user?.pronouns ?? 'anh';
@@ -139,7 +150,136 @@ export function TestFtnd() {
 
   function enterDashboard() {
     setPhase('redirecting');
+    // Day 9 (2026-05-22): Nếu embed mode (iframe trên sol.vn), thoát iframe
+    // + redirect parent window về bothuocla.sol.vn root (không phải nested
+    // navigate trong iframe).
+    if (embedMode && typeof window !== 'undefined') {
+      try {
+        window.top!.location.href = 'https://bothuocla.sol.vn/';
+        return;
+      } catch {
+        // Fallback nếu cross-origin block (đáng lẽ không xảy ra vì cùng sol.vn)
+        window.location.href = 'https://bothuocla.sol.vn/';
+        return;
+      }
+    }
     navigate('/', { replace: true });
+  }
+
+  // ─── PHASE: intro — giải thích khoa học + mục đích trước khi bắt đầu ──
+  // Day 9 (2026-05-22): tận dụng moment user vừa landing → bán giá trị
+  // "Sol cần test trước vì lộ trình mỗi mức nghiện khác nhau"
+  // + Privacy commitment + Nguồn khoa học (Fagerström 1991, WHO/CDC)
+  if (phase === 'intro') {
+    return (
+      <div className={embedMode ? 'min-h-screen bg-sol-bg' : 'fixed inset-0 z-40 bg-sol-bg overflow-y-auto'}>
+        <div className="max-w-2xl mx-auto p-4 sm:p-6 pb-16">
+          {/* Hero */}
+          <div className="text-center pt-8 mb-6">
+            <div className="text-6xl mb-3" aria-hidden="true">🌅</div>
+            <p className="text-meta text-sol-orange-ink uppercase tracking-wider mb-1 font-bold">
+              Test Mức Lệ Thuộc Nicotine
+            </p>
+            <h1 className="text-h1 font-bold text-sol-ink mb-2">
+              Sol cần hiểu {pronouns} trước
+            </h1>
+            <p className="text-body text-sol-ink-2">
+              6 câu hỏi · ~90 giây · Hoàn toàn miễn phí · KHÔNG cần SĐT
+            </p>
+          </div>
+
+          {/* Section 1: What is FTND? */}
+          <div className="sol-card-padded mb-5">
+            <h2 className="text-h3 font-semibold text-sol-ink mb-2">
+              🧪 Test này là gì?
+            </h2>
+            <p className="text-body text-sol-ink-2 mb-2">
+              <strong>FTND — Fagerström Test for Nicotine Dependence</strong> là
+              bộ test chuẩn quốc tế từ <strong>1991</strong>, được bác sĩ + nghiên cứu cai
+              thuốc dùng toàn cầu để đo mức "đói nicotine" sinh học.
+            </p>
+            <p className="text-body text-sol-ink-2">
+              Chia 3 mức: <span className="font-semibold text-sol-green-ink">NHẸ (0-3)</span>{' · '}
+              <span className="font-semibold text-sol-orange-ink">TRUNG BÌNH (4-6)</span>{' · '}
+              <span className="font-semibold text-sol-red-ink">NẶNG (7-10)</span>.
+            </p>
+          </div>
+
+          {/* Section 2: Why Sol needs test first */}
+          <div className="sol-card-padded mb-5 bg-sol-green-soft/40 border-l-4 border-sol-green">
+            <h2 className="text-h3 font-semibold text-sol-ink mb-2">
+              🎯 Tại sao Sol cần biết trước?
+            </h2>
+            <p className="text-body text-sol-ink-2 mb-3">
+              App cai thuốc khác thường áp dụng <strong>1 lộ trình cho tất cả</strong> — thất bại vì mỗi mức nghiện
+              cần thời gian + công cụ rất khác nhau.
+            </p>
+            <ul className="space-y-1.5 text-body text-sol-ink-2">
+              <li>🟢 <strong>NHẸ</strong>: 35 ngày — phá thói quen tâm lý là chính</li>
+              <li>🟡 <strong>TRUNG BÌNH</strong>: 52 ngày — cần combo công cụ + thời gian</li>
+              <li>🔴 <strong>NẶNG</strong>: 65 ngày — Q-Day muộn hơn + voice nhiều hơn</li>
+            </ul>
+            <p className="text-meta text-sol-ink-3 mt-3 italic">
+              Sol cá nhân hoá lộ trình cho {pronouns} ngay sau test.
+            </p>
+          </div>
+
+          {/* Section 3: Privacy commitment */}
+          <div className="sol-card-padded mb-5">
+            <h2 className="text-h3 font-semibold text-sol-ink mb-2">
+              🛡️ Quyền riêng tư của {pronouns}
+            </h2>
+            <ul className="space-y-1.5 text-body text-sol-ink-2">
+              <li>✓ KHÔNG cần điền SĐT / email để làm test</li>
+              <li>✓ Kết quả CHỈ lưu để Sol chọn lộ trình — KHÔNG share với ai</li>
+              <li>✓ KHÔNG bán dữ liệu cá nhân — chính sách rõ trên sol.vn</li>
+              <li>✓ Anh có thể xoá account bất kỳ lúc nào trong Cài đặt</li>
+            </ul>
+          </div>
+
+          {/* Section 4: Scientific source */}
+          <div className="sol-card-padded mb-6 bg-sol-soft">
+            <h2 className="text-h3 font-semibold text-sol-ink mb-2">
+              📚 Nguồn khoa học
+            </h2>
+            <p className="text-body text-sol-ink-2 mb-2">
+              Heatherton TF, Kozlowski LT, Frecker RC, Fagerström KO (1991).
+              "The Fagerström Test for Nicotine Dependence: a revision of the Fagerström Tolerance Questionnaire."
+              <em> Br J Addict.</em> 86(9): 1119–1127.
+            </p>
+            <p className="text-meta text-sol-ink-3">
+              Khuyến nghị bởi WHO, CDC, Bộ Y tế Việt Nam — dùng trong tất cả phòng khám cai thuốc.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={() => setPhase('questions')}
+            className="sol-btn-primary w-full min-h-tap text-body font-bold py-3 text-lg"
+          >
+            🚀 Bắt đầu test 6 câu (90 giây) →
+          </button>
+
+          <p className="text-meta text-sol-ink-3 text-center mt-3">
+            Test xong, Sol sẽ trả kết quả ngay + đề xuất lộ trình cá nhân hoá.
+          </p>
+
+          {/* Embed mode: link sol.vn */}
+          {embedMode && (
+            <p className="text-meta text-center mt-6 pt-4 border-t border-sol-line">
+              <a
+                href="https://sol.vn/khang-sol"
+                target="_top"
+                rel="noopener noreferrer"
+                className="text-sol-orange-ink hover:underline"
+              >
+                📖 Đọc thêm về Khang Sol trên sol.vn →
+              </a>
+            </p>
+          )}
+        </div>
+      </div>
+    );
   }
 
   // ─── PHASE: submitting — multi-step animation 2.8s ──────────────────────
