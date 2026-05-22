@@ -1,15 +1,15 @@
 // backend/src/auth/email/smtpClient.ts
 // SMTP client cho email magic link auth.
 //
-// Provider: Zoho Mail (smtp.zoho.com:465 SSL).
+// Provider hiện tại: Brevo (smtp-relay.brevo.com:587 STARTTLS).
 // Env vars cần (backend/.env):
-//   SMTP_HOST          smtp.zoho.com
-//   SMTP_PORT          465
-//   SMTP_SECURE        true (SSL/TLS direct, không STARTTLS)
-//   SMTP_USER          noreply@sol.vn (full email)
-//   SMTP_PASSWORD      app password Zoho (không phải password thật — tạo qua Zoho settings)
-//   EMAIL_FROM         "Sol <noreply@sol.vn>" hoặc just "noreply@sol.vn"
-//   EMAIL_REPLY_TO     khang@sol.vn (founder reply, optional)
+//   SMTP_HOST          smtp-relay.brevo.com
+//   SMTP_PORT          587
+//   SMTP_SECURE        false  (STARTTLS, KHÔNG SSL direct)
+//   SMTP_USER          <id>@smtp-brevo.com (login của Brevo, KHÔNG phải khang@sol.vn)
+//   SMTP_PASSWORD      SMTP key Brevo (32 chars)
+//   EMAIL_FROM         "Đi Cùng Sol <khang@sol.vn>"
+//   EMAIL_REPLY_TO     khang@sol.vn (optional)
 //   APP_URL            https://bothuocla.sol.vn (cho magic link CTA)
 
 import nodemailer, { Transporter } from 'nodemailer';
@@ -20,9 +20,9 @@ let transporter: Transporter | null = null;
 function getTransporter(): Transporter {
   if (transporter) return transporter;
 
-  const host = process.env.SMTP_HOST || 'smtp.zoho.com';
-  const port = parseInt(process.env.SMTP_PORT || '465', 10);
-  const secure = (process.env.SMTP_SECURE || 'true') === 'true';
+  const host = process.env.SMTP_HOST || 'smtp-relay.brevo.com';
+  const port = parseInt(process.env.SMTP_PORT || '587', 10);
+  const secure = (process.env.SMTP_SECURE || 'false') === 'true';
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASSWORD;
 
@@ -35,7 +35,7 @@ function getTransporter(): Transporter {
     port,
     secure,
     auth: user && pass ? { user, pass } : undefined,
-    // Zoho rate limit: 50 emails/connection. Reuse connection conservatively.
+    // Brevo free: 300 mail/ngày, rate limit nhẹ. Pool conservative.
     pool: true,
     maxConnections: 3,
     maxMessages: 50,
@@ -54,27 +54,32 @@ export interface SendEmailParams {
 export async function sendEmail({ to, subject, html, text }: SendEmailParams): Promise<{ ok: boolean; messageId?: string; error?: string }> {
   try {
     const t = getTransporter();
-    const from = process.env.EMAIL_FROM || 'Sol <noreply@sol.vn>';
+    const from = process.env.EMAIL_FROM || 'Đi Cùng Sol <khang@sol.vn>';
     const replyTo = process.env.EMAIL_REPLY_TO || undefined;
+
+    // FIX (Sol v5, 22-5-2026): gửi CHỈ html, KHÔNG có text part.
+    // Lý do: Brevo/nodemailer khi có cả text+html sinh multipart/alternative
+    // → bug Content-Type bị strip ở đâu đó → Gmail thấy raw base64.
+    // Single-part text/html = không multipart boundary nào → không lỗi parse.
+    // Trade-off: mất accessibility với text-only client (rất hiếm 2026).
+    //
+    // text param vẫn nhận để giữ API contract (caller pass thoải mái),
+    // nhưng KHÔNG forward vào sendMail.
+    void text;
 
     const info = await t.sendMail({
       from,
       to,
       replyTo,
       subject,
-      text,
       html,
-      // FIX (Sol v3): force UTF-8 base64 encoding cho text/html parts.
-      // Lý do: 1 số SMTP relay (kể cả Zoho) strip accent tiếng Việt
-      // trong phần text/plain nếu encoding không explicit → "bạn" → "b???n".
-      // Base64 đảm bảo bytes nguyên vẹn end-to-end.
-      textEncoding: 'base64',
-      encoding: 'utf-8',
-      // Headers cho deliverability + anti-abuse
+      // Quoted-printable: UTF-8 readable, ít edge case hơn base64.
+      textEncoding: 'quoted-printable',
+      // Headers cho deliverability + anti-abuse (KHÔNG set Content-Type —
+      // để nodemailer tự gen 'text/html; charset=utf-8').
       headers: {
         'X-Mailer': 'Sol-Companion',
         'List-Unsubscribe': '<mailto:khang@sol.vn?subject=unsubscribe>',
-        'Content-Type': 'text/html; charset=UTF-8',
       },
     });
 
