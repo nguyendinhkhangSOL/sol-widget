@@ -143,8 +143,12 @@ router.get('/quick-win-day3', authMiddleware, async (req: AuthedRequest, res) =>
   const daysSinceJoin = Math.floor((Date.now() - userJoinedAt.getTime()) / (24 * 60 * 60 * 1000));
 
   if (daysSinceJoin < 3) {
-    return res.status(400).json({
-      error: 'Báo cáo sẵn vào Day 3',
+    // Day 9 (2026-05-22): trả 200 với available:false thay vì 400
+    // — tránh browser DevTools spam console error đỏ cho user mới.
+    return res.json({
+      available: false,
+      reason: 'Báo cáo sẵn vào Day 3',
+      daysSinceJoin,
       readyAt: new Date(userJoinedAt.getTime() + 3 * 24 * 60 * 60 * 1000),
     });
   }
@@ -214,8 +218,9 @@ router.get('/day7-report', authMiddleware, async (req: AuthedRequest, res) => {
   );
 
   if (daysSinceJoin < 7) {
-    return res.status(400).json({
-      error: 'Báo cáo sẵn vào Day 7',
+    return res.json({
+      available: false,
+      reason: 'Báo cáo sẵn vào Day 7',
       readyAt: new Date(userJoinedAt.getTime() + 7 * 24 * 60 * 60 * 1000),
       daysSinceJoin,
     });
@@ -289,8 +294,11 @@ router.get('/day14-report', authMiddleware, async (req: AuthedRequest, res) => {
 
   // Cần Sol Start tier (KHOI_DONG) hoặc cao hơn
   if (user.tier === 'FREE') {
-    return res.status(403).json({
-      error: 'Báo cáo Day 14 chỉ cho Sol Start trở lên',
+    return res.json({
+      available: false,
+      reason: 'Báo cáo Day 14 chỉ cho Sol Start trở lên',
+      tier: user.tier,
+      requiresTier: 'KHOI_DONG',
     });
   }
 

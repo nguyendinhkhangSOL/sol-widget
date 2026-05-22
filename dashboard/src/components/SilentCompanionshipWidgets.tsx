@@ -190,9 +190,13 @@ export function QuickWinDay3Widget() {
   useEffect(() => {
     api
       .quickWinDay3()
-      .then(setData)
+      .then((d: any) => {
+        // Day 9 (2026-05-22): backend trả 200 + available:false thay vì 400
+        if (d && d.available === false) setUnavailable(true);
+        else setData(d);
+      })
       .catch((err: any) => {
-        if (err.status === 400) setUnavailable(true);
+        if (err.status === 400 || err.status === 403) setUnavailable(true);
       });
   }, []);
 
@@ -267,7 +271,10 @@ export function Day7ReportWidget() {
   useEffect(() => {
     api
       .day7Report()
-      .then(setData)
+      .then((d: any) => {
+        if (d && d.available === false) setUnavailable(true);
+        else setData(d);
+      })
       .catch((err: any) => {
         if (err.status === 400 || err.status === 403) setUnavailable(true);
       });
@@ -363,7 +370,10 @@ export function Day14ReportWidget() {
   useEffect(() => {
     api
       .day14Report()
-      .then(setData)
+      .then((d: any) => {
+        if (d && d.available === false) setUnavailable(true);
+        else setData(d);
+      })
       .catch((err: any) => {
         if (err.status === 400 || err.status === 403) setUnavailable(true);
       });
