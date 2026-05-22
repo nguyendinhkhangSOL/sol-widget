@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import { initSentry, ErrorBoundary } from './lib/sentry';
+import { ToastProvider } from './lib/toast';
 import './styles.css';
 
 // Init Sentry sớm nhất — phải trước React render.
@@ -43,7 +44,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           v7_relativeSplatPath: true,
         }}
       >
-        <App />
+        <ToastProvider>
+          <App />
+        </ToastProvider>
       </BrowserRouter>
     </ErrorBoundary>
   </React.StrictMode>

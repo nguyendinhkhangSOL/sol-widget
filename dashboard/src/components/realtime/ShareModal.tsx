@@ -1,4 +1,5 @@
 import { Phase, MILESTONES, calcSavings, formatVndFull, formatLifeAdded, IDENTITY } from '../../lib/recovery';
+import { useToast } from '../../lib/toast';
 
 interface Props {
   open: boolean;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function ShareModal({ open, onClose, hours, phase, userName }: Props) {
+  const toast = useToast();
   if (!open) return null;
 
   const days = Math.floor(hours / 24);
@@ -111,7 +113,7 @@ export function ShareModal({ open, onClose, hours, phase, userName }: Props) {
             📋 Sao chép text — dán vào bất kỳ đâu
           </button>
           <button
-            onClick={() => alert('Để chụp màn hình:\n\n• Windows: Win + Shift + S\n• Mac: Cmd + Shift + 4\n• iPhone: Nút nguồn + Tăng âm lượng\n• Android: Nút nguồn + Giảm âm lượng')}
+            onClick={() => toast.info('• Windows: Win + Shift + S\n• Mac: Cmd + Shift + 4\n• iPhone: Nút nguồn + Tăng âm lượng\n• Android: Nút nguồn + Giảm âm lượng', '📸 Hướng dẫn chụp màn hình')}
             className="w-full px-3 py-3 rounded-xl text-[13px] font-medium border"
             style={{ background: '#F2EEE8', borderColor: '#E8E2D8', color: '#5A4F42' }}
           >

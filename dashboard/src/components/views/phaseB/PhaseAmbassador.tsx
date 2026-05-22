@@ -6,6 +6,7 @@ import { PhaseProps } from './types';
 import {
   StoryCard, MoneySavedCard, CohortCard, BodyTimelineCard,
 } from './_shared';
+import { useToast } from '../../../lib/toast';
 
 const ACCENT = '#2C1810';
 
@@ -15,6 +16,7 @@ function computeDaysSince(qDayConfirmedAt: string): number {
 }
 
 export function PhaseAmbassador({ data, onShowExit }: PhaseProps) {
+  const toast = useToast();
   const [days, setDays] = useState<number>(() =>
     data.qDay.qDayConfirmedAt ? computeDaysSince(data.qDay.qDayConfirmedAt) : 0,
   );
@@ -77,13 +79,13 @@ export function PhaseAmbassador({ data, onShowExit }: PhaseProps) {
             </p>
             <div className="grid grid-cols-2 gap-3">
               <button
-                onClick={() => alert('Mời bạn — sắp ra mắt')}
+                onClick={() => toast.info('Tính năng đang phát triển — Sol sẽ thông báo khi sẵn sàng.', '🎁 Mời bạn vào Sol')}
                 className="min-h-tap py-3 rounded-xl bg-sol-earth text-white font-semibold"
               >
                 🎁 Mời bạn vào Sol
               </button>
               <button
-                onClick={() => alert('Tải hồ sơ — sắp ra mắt')}
+                onClick={() => toast.info('Tải hồ sơ PDF — sắp ra mắt.', '📔')}
                 className="min-h-tap py-3 rounded-xl bg-sol-paper border border-sol-line text-sol-ink"
               >
                 📔 Tải hồ sơ PDF

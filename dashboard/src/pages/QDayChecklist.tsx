@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { api, ApiError } from '../services/api';
 import { useStore } from '../state/store';
+import { useToast } from '../lib/toast';
 import type { QDayChecklistState, UserTier } from '../types';
 
 export function QDayChecklist() {
@@ -19,6 +20,7 @@ export function QDayChecklist() {
   const [params] = useSearchParams();
   const targetTier = (params.get('target') ?? 'FREE') as UserTier;
   const setUser = useStore((s) => s.setUser);
+  const toast = useToast();
 
   const [state, setState] = useState<QDayChecklistState | null>(null);
   const [loading, setLoading] = useState(true);
@@ -57,17 +59,39 @@ export function QDayChecklist() {
     setSubmitting(true);
     setError(null);
     try {
-      // Đặt quitDate = hôm nay (giờ hiện tại)
+      // Sprint 4: Wire với Phase 5 — confirm checklist + enroll journey
+      // Q-Day default = 7 ngày tới (user có 1 tuần đọc 14 bài Giảm Dần).
+      // Backend tự tạo 52 ScheduledPush + set qDayConfirmedAt + set quitDate.
+      const qDayDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+      const result = await (api as any).request('/api/tiers/q-day-checklist/confirm-and-enroll', {
+        method: 'POST',
+        body: JSON.stringify({
+          qDayDate: qDayDate.toISOString(),
+          journeyType: 'full-51',
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      // Legacy: cũng set quitDate cho user state hiển thị đúng
       await api.patchMe({ quitDate: new Date().toISOString() } as any);
       const me = await api.getMe();
       setUser(me as any);
+
+      // Hiện toast confirm trước khi điều hướng
+      if (result?.scheduledPushCount) {
+        toast.success(
+          `Q-Day: ${qDayDate.toLocaleDateString('vi-VN')}\nLộ trình: ${result.journeyType}\nSố tin daily đã schedule: ${result.scheduledPushCount}\n\nSol sẽ nhắc anh mỗi 7h sáng. Mai 7h sáng anh nhận tin đầu tiên.`,
+          '✓ Q-Day đã kích hoạt',
+        );
+      }
+
       nav('/');
     } catch (e: any) {
       if (e instanceof ApiError && e.status === 412) {
         setError('Vẫn còn mục bắt buộc chưa hoàn thành — kiểm tra lại nhé.');
         await load();
       } else {
-        setError(e?.body?.error ?? 'Không kích hoạt được');
+        setError(e?.body?.error ?? e?.message ?? 'Không kích hoạt được');
       }
     } finally {
       setSubmitting(false);

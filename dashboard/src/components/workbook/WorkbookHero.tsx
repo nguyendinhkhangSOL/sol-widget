@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useWorkbook } from '../../state/workbookStore';
 import { DAY_COLORS, phaseForDay } from '../../lib/workbook';
+import { useToast } from '../../lib/toast';
 
 export function WorkbookHero() {
   const data = useWorkbook((s) => s.data);
@@ -8,6 +9,7 @@ export function WorkbookHero() {
   const exportJSON = useWorkbook((s) => s.exportJSON);
   const importJSON = useWorkbook((s) => s.importJSON);
   const fileRef = useRef<HTMLInputElement>(null);
+  const toast = useToast();
 
   function handleExport() {
     const blob = new Blob([exportJSON()], { type: 'application/json' });
@@ -23,8 +25,8 @@ export function WorkbookHero() {
     if (!file) return;
     const text = await file.text();
     const ok = importJSON(text);
-    if (!ok) alert('File backup không hợp lệ.');
-    else alert('✓ Đã khôi phục dữ liệu.');
+    if (!ok) toast.error('File backup không hợp lệ.', '⚠️');
+    else toast.success('Đã khôi phục dữ liệu.', '✓');
   }
 
   return (

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useToast } from '../../lib/toast';
 
 export function SosCard() {
+  const toast = useToast();
   return (
     <>
       <div className="text-[11px] uppercase tracking-wider mb-2.5" style={{ color: 'rgba(255,255,255,.55)' }}>
@@ -28,7 +30,7 @@ export function SosCard() {
         </div>
 
         <div className="grid grid-cols-2 gap-1.5">
-          <SosButton icon="🎧" title="Thở 4-7-8" sub="Audio · 4 phút" onClick={() => alert('🎧 Thở 4-7-8\n\nHít vào: 4 giây\nNín thở: 7 giây\nThở ra: 8 giây\n\nLàm 3 lần — cơn thèm sẽ qua.')} />
+          <SosButton icon="🎧" title="Thở 4-7-8" sub="Audio · 4 phút" onClick={() => toast.crisis('Hít vào: 4 giây\nNín thở: 7 giây\nThở ra: 8 giây\n\nLàm 3 lần — cơn thèm sẽ qua.', '🎧 Thở 4-7-8')} />
           <Link to="/journey" className="block">
             <div className="rt-sos-opt cursor-pointer" style={sosOptStyle}>
               <span className="text-[17px] block mb-1">💬</span>
@@ -40,8 +42,8 @@ export function SosCard() {
               </small>
             </div>
           </Link>
-          <SosButton icon="🚶" title="Đứng dậy đi" sub="Cắt vòng lặp" onClick={() => alert('🚶 Đứng dậy ngay!\n\nĐi bộ 5 phút — ra ngoài nếu có thể.\nThay đổi không gian vật lý cắt đứt vòng lặp kích hoạt cơn thèm.')} />
-          <SosButton icon="👨‍👩‍👧" title="Nhớ lý do" sub="Nội lực sâu nhất" onClick={() => alert('💝 Nhớ lại lý do bạn bắt đầu\n\nKhoảnh khắc bạn đã chọn để thay đổi.\nĐây là nội lực thật sự của bạn.')} />
+          <SosButton icon="🚶" title="Đứng dậy đi" sub="Cắt vòng lặp" onClick={() => toast.crisis('Đi bộ 5 phút — ra ngoài nếu có thể.\nThay đổi không gian vật lý cắt đứt vòng lặp kích hoạt cơn thèm.', '🚶 Đứng dậy ngay!')} />
+          <SosButton icon="👨‍👩‍👧" title="Nhớ lý do" sub="Nội lực sâu nhất" onClick={() => toast.crisis('Khoảnh khắc bạn đã chọn để thay đổi.\nĐây là nội lực thật sự của bạn.', '💝 Nhớ lại lý do bạn bắt đầu')} />
         </div>
         <div className="text-center text-[11px] mt-2.5" style={{ color: 'rgba(255,255,255,.65)' }}>
           Hotline miễn phí: <b style={{ color: '#F5A090' }}>1800 599 920</b> · 24/7

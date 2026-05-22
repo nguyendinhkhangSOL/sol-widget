@@ -8,6 +8,7 @@ import {
   BodyTimelineCard, CigaretteLogger, SlipModal,
   getSeenSlipIds, markSlipSeen,
 } from './_shared';
+import { useToast } from '../../../lib/toast';
 
 const ACCENT = '#5C3A1E';
 const TOTAL_DAYS = 88;
@@ -28,6 +29,7 @@ function computeClock(qDayConfirmedAt: string): ClockState {
 }
 
 export function PhaseRebuild({ data, onReload, onShowExit }: PhaseProps) {
+  const toast = useToast();
   const [showLogger, setShowLogger] = useState(false);
   const [showSlip, setShowSlip] = useState(false);
   const [clock, setClock] = useState<ClockState>(() =>
@@ -121,7 +123,7 @@ export function PhaseRebuild({ data, onReload, onShowExit }: PhaseProps) {
               {cap(data.user.pronouns)} đã giữ vững. Hôm nay thử chia sẻ 1 câu với 1 đồng đội mới đang muốn cai?
             </p>
             <button
-              onClick={() => alert('Tính năng chia sẻ với đồng đội sắp ra mắt — Sol đang xây.')}
+              onClick={() => toast.info('Tính năng chia sẻ với đồng đội sắp ra mắt — Sol đang xây.', '🤝')}
               className="min-h-tap px-6 py-3 rounded-xl bg-sol-orange text-white font-semibold"
             >
               🤝 Tìm đồng đội mới

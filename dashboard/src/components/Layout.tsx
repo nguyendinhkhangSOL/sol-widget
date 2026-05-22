@@ -3,6 +3,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { useStore } from '../state/store';
 import { TIER_COLOR, TIER_LABEL, hasFeature } from '../lib/featureGates';
+import { CohortBadge, getSeverityCohort } from './CohortBadge';
 import type { UserTier } from '../types';
 
 /**
@@ -70,7 +71,7 @@ export function Layout() {
     }
     base.push({ to: '/analytics', label: 'Phân tích', icon: '📊' });
     if (hasFeature(eff, 'voice.day_1_3_7') || hasFeature(eff, 'voice.day_1_3_7_14_21_30_letter')) {
-      base.push({ to: '/voice', label: 'Voice Khang', icon: '🎙️' });
+      base.push({ to: '/voice', label: 'Voice của Khang', icon: '🎙️' });
     }
     if (hasFeature(eff, 'report.day10') || hasFeature(eff, 'report.day30_album')) {
       base.push({ to: '/reports', label: 'Báo cáo', icon: '📄' });
@@ -113,14 +114,15 @@ export function Layout() {
     <div className="min-h-screen flex print:block bg-sol-bg">
       {/* ── Sidebar (desktop) ──────────────────────────────────────────── */}
       <aside className="hidden md:flex md:w-56 lg:w-64 flex-col border-r border-sol-line bg-sol-paper print:hidden">
-        {/* Brand */}
+        {/* Brand — Day 6 (2026-05-21): "Dashboard / bothuocla.sol.vn" →
+            "Đi Cùng Sol / Khang Sol đi cùng" */}
         <div className="p-5 flex items-center gap-3 border-b border-sol-line">
           <div className="h-10 w-10 rounded-full bg-sol-green text-white flex items-center justify-center font-bold text-body">
-            SOL
+            🌅
           </div>
           <div className="min-w-0">
-            <div className="font-semibold text-body text-sol-ink">Dashboard</div>
-            <div className="text-meta text-sol-ink-3 truncate">bothuocla.sol.vn</div>
+            <div className="font-semibold text-body text-sol-ink">Đi Cùng Sol</div>
+            <div className="text-meta text-sol-ink-3 truncate">Khang đi cùng anh</div>
           </div>
         </div>
 
@@ -147,12 +149,20 @@ export function Layout() {
           ))}
         </nav>
 
-        {/* Footer — user info + tier + admin shortcut + logout */}
+        {/* Footer — user info + cohort + tier + admin shortcut + logout */}
         <div className="p-4 border-t border-sol-line space-y-3">
           <div className="text-meta">
             <div className="font-semibold text-sol-ink truncate">{user?.name}</div>
             <div className="text-sol-ink-3 truncate">{user?.phone}</div>
           </div>
+
+          {/* Day 6 (2026-05-21): Cohort severity badge từ FTND result */}
+          {(() => {
+            const cohort = getSeverityCohort(user);
+            return cohort ? (
+              <CohortBadge cohort={cohort} score={user?.ftndScore ?? null} withSubtitle />
+            ) : null;
+          })()}
 
           {/* Tier badge */}
           <NavLink
