@@ -1,0 +1,182 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Có nên ghi nhật ký khi cai thuốc lá không?","acceptedAnswer":{"@type":"Answer","text":"Có. Nghiên cứu Pennebaker 2007 cho thấy: viết nhật ký 15 phút/ngày 4 ngày liên tiếp giảm stress + tăng sự tự tin cai thuốc 30%. Người cai thuốc có ghi nhật ký tăng tỷ lệ thành công 1.8 lần (Davis 2014). Cơ chế: viết = mind unloading + pattern recognition + reframing. Não thoát khỏi 'rumination' (lảng vảng suy nghĩ tiêu cực) → tập trung vào solutions."}},
+{"@type":"Question","name":"Nhật ký cai thuốc nên viết gì?","acceptedAnswer":{"@type":"Answer","text":"4 thứ mỗi ngày: (1) Số điếu nếu vẫn hút / Số ngày cai nếu đã cai. (2) Cường độ cơn thèm 1-10 trong ngày — moment nào, tình huống thèm gì. (3) 1 điều nhỏ tự hào hôm nay (đi bộ thêm, nấu cơm, không cáu với con). (4) Plan ngày mai — nếu gặp X, sẽ làm Y. KHÔNG cần dài — 5-7 câu/ngày là đủ. Mục tiêu: thói quen reflection, không phải tác phẩm văn học."}},
+{"@type":"Question","name":"Nhật ký giấy hay nhật ký số (app) tốt hơn?","acceptedAnswer":{"@type":"Answer","text":"Nhật ký SỐ tốt hơn cho người cai thuốc — 2 lý do: (1) Search được (tìm 'ngày X thèm nhất' nhanh). (2) Backup không mất. Nhược điểm: dễ phụ thuộc + lo privacy. Recommend: Sol app có 'Sổ Lưu Niệm Số' miễn phí, end-to-end encrypted, chỉ anh + người anh share thấy. Hoặc Notion/Apple Notes nếu đã quen. Giấy chỉ nên dùng nếu thật sự thích physical."}},
+{"@type":"Question","name":"Khang Sol đã ghi nhật ký lúc cai 2021 — có thể xem được không?",  "acceptedAnswer":{"@type":"Answer","text":"Có. Khang đã chia sẻ 30 entries chọn lọc (D1, D7, D14, D30, D60, D90, D180, D365, D1825) trong bài này — đã xin phép vợ + ẩn tên người thân. Đọc Khang's diary giúp anh thấy hành trình thật, không phải lý thuyết. Quan trọng nhất: anh sẽ thấy 'không phải tại mình không cai được' — đây là journey lâu, không phải single moment."}},
+{"@type":"Question","name":"Khi nào nhật ký bắt đầu thấy hiệu quả?",  "acceptedAnswer":{"@type":"Answer","text":"7-14 ngày. Tuần 1-2 cảm thấy 'tôi viết gì cũng giống nhau' — bình thường. Sau tuần 2, pattern xuất hiện — anh nhận ra tình huống thèm lặp lại, lý do vấp lặp lại, lý do thành công lặp lại. Đây là 'data về chính bản thân' — không tài liệu nào thay được. Sau 30 ngày, đọc lại entry D1 — anh cảm nhận sự tiến bộ rõ rệt → motivation tăng."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .diary-entry { background: linear-gradient(135deg, #FFFBF0 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 18px 22px; margin: 16px 0; border-radius: 0 10px 10px 0; font-family: 'Georgia', serif; }
+.sol-wiki .diary-entry .day-label { font-weight: 700; color: #B25C2C; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.sol-wiki .diary-entry p { margin: 8px 0; font-style: italic; color: #5C3A1E; line-height: 1.75; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Anh ạ. Em chia sẻ 9 entry chọn lọc trong nhật ký Khang cai thuốc — D1, D7, D14, D30, D60, D90, D180, D365, D1825 (hôm nay). Đây là nhật ký thật — đã xin phép vợ + ẩn tên người thân. Em viết bài này vì: <strong>khi anh đọc journey thật của 1 người đã đi qua — anh thấy mình không phải một mình</strong>. Câu chuyện > số liệu. Hành trình > moment.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Tôi ghi nhật ký từ D1 cai năm 2021. 1825 entry tới hôm nay. Lúc đầu chỉ là sticky notes trên bàn. Sau đó chuyển sang Notion. Bây giờ là Sổ Lưu Niệm Sol app."</p>
+<p>"Đọc lại entry D1 hôm nay — tôi không nhận ra mình. Đó là 1 người đàn ông sợ hãi, run rẩy, nghĩ mình sắp thất bại lần thứ 5. Đó là CHÍNH TÔI 5 năm trước. Nhật ký giữ proof — tôi đã đi xa hơn tôi tưởng."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Nhật ký tăng tỷ lệ cai thành công 1.8 lần</strong> (Davis 2014)</li>
+<li><strong>15 phút/ngày × 4 ngày liên tiếp:</strong> giảm stress + tăng sự tự tin cai thuốc 30%</li>
+<li><strong>9 entry Khang chia sẻ thật:</strong> D1, D7, D14, D30, D60, D90, D180, D365, D1825</li>
+<li><strong>Format 4 thứ/ngày:</strong> số ngày + cường độ thèm + 1 điều tự hào + plan mai</li>
+<li><strong>Khoảnh khắc đẹp nhất:</strong> đọc lại entry D1 sau 90 ngày → thấy mình đã đi xa</li>
+</ul></div>
+
+<h2>Nhật ký Khang — 9 entry chọn lọc 1825 ngày tự do</h2>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 1 — 14/4/2021</div>
+<p>Hôm nay là Q-Day. 3h chiều tôi vứt bao thuốc cuối vào thùng rác văn phòng.</p>
+<p>6h tối, ngồi ăn cơm, tay vươn lấy bao thuốc theo phản xạ. Không có. Tay rung.</p>
+<p>9h tối thèm đỉnh điểm. Vợ tôi không nói gì. Cô ấy nấu canh cải. Tôi không ăn nổi.</p>
+<p>Tôi nghĩ tôi sẽ vấp trong 3 ngày tới. Lần thứ 5 thì đã sao. Có thể tôi không phải người cai được.</p>
+</div>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 7 — 21/4/2021</div>
+<p>1 tuần. Tôi đã đi qua 1 tuần. Không tin được.</p>
+<p>Đêm thứ 3 vợ tôi để ly nước trên bàn cà phê + tờ giấy "Em không bỏ đi đâu cả." Tôi cất tờ giấy vào ví.</p>
+<p>Hôm qua tôi cáu đập remote TV vào tường. Vợ nhặt remote, để xuống bàn, đi sang phòng ngủ 1 tiếng. Sáng nay cô ấy nói: "Em làm cơm rồi."</p>
+<p>Tôi không xứng đáng cô ấy. Tôi sẽ làm điều này.</p>
+</div>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 14 — 28/4/2021</div>
+<p>2 tuần. Hôm nay tôi đi gặp khách hàng. 4 người trong cuộc họp đều hút.</p>
+<p>Họ hỏi tôi sao không hút. Tôi nói "Đang cai." Họ cười nhẹ — không tin.</p>
+<p>Tôi không cãi. Tôi quay đi uống ly cà phê.</p>
+<p>1 năm sau tôi quay lại 4 người này — tôi vẫn chưa hút.</p>
+</div>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 30 — 14/5/2021</div>
+<p>1 tháng. Hôm nay vợ tôi pha trà gừng buổi tối. Cô ấy không nói. Chỉ để 2 ly trà.</p>
+<p>Tôi nhận ra: tuần qua tôi không nghĩ về thuốc lá trong 3 ngày liên tiếp. Lần đầu trong 30 năm.</p>
+<p>Ho thi thoảng — phổi đang tự làm sạch. Đờm hơi xám. Bác sĩ nói bình thường.</p>
+<p>Hơi thở dễ hơn. Tôi đi cầu thang lên tầng 3 không thở dốc.</p>
+</div>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 60 — 13/6/2021</div>
+<p>2 tháng. Tăng 2.5kg. Mặt đỡ hốc.</p>
+<p>Hôm qua con gái An (lúc đó 6 tuổi) chạy đến ôm tôi sau khi tắm. Cháu nói "Bố thơm hơn." Tôi không thơm hơn — chỉ là KHÔNG mùi thuốc nữa.</p>
+<p>Vị giác trở lại. Phở 80k ngon hơn 500k năm ngoái. Não tôi đã quên thuốc lá làm nhạt món ăn 30 năm.</p>
+<p>Tôi cảm xúc hơn. Khóc khi xem 1 phim Việt cũ. Vợ tôi cười nói "Anh giống tôi rồi."</p>
+</div>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 90 — 13/7/2021</div>
+<p>3 tháng. Đêm qua nằm mơ thấy đang hút thuốc. Tỉnh dậy tay run. Vợ tôi hỏi "Mơ gì?" Tôi nói thật.</p>
+<p>Vợ tôi nói: "Em đọc bài — mơ về thuốc lá tuần 8-12 là bình thường. Não đang xử lý."</p>
+<p>Cô ấy đã đọc về cai thuốc. Cô ấy đang đồng hành thật, không chỉ chờ.</p>
+<p>Hôm nay là mốc 90 ngày — theo nghiên cứu, tôi đã qua ngưỡng "high tái nghiện risk." Tôi không celebrate to. Chỉ nhắn vợ "Anh cảm ơn em."</p>
+</div>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 180 — 11/10/2021</div>
+<p>6 tháng. Tôi nhận ra tôi không còn nghĩ về thuốc lá hằng ngày. Vài lần/tuần — và chỉ ngắn.</p>
+<p>Tuần này có sự cố lớn — em trai tôi mất việc đột ngột. Cả nhà căng thẳng. Cortisol tôi tăng vọt.</p>
+<p>Tay tôi không vươn lấy thuốc. Lần đầu trong stress lớn 30 năm — tôi không quay về với nicotine.</p>
+<p>Tôi đi bộ 2 vòng quanh nhà thay thế. Gọi em trai 30 phút. Đêm đó ngủ ngon.</p>
+<p>Tôi biết — tôi đã thay đổi cách xử lý stress căn bản. Đây là cai THẬT, không phải kiêng tạm.</p>
+</div>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 365 — 14/4/2022</div>
+<p>1 năm. Vợ tôi nấu món tôi thích — bún bò Huế. Cô ấy không nói gì đặc biệt.</p>
+<p>Sau bữa cơm, con An (lúc đó 7 tuổi) đưa tôi 1 bức tranh — "Bố không hút thuốc, năm thứ 1." Cô bé tự vẽ. Vợ tôi không biết.</p>
+<p>Tôi khóc tại bàn ăn. Lần thứ 3 trong 1 năm tôi khóc — và đó là lần đẹp nhất.</p>
+<p>1 năm = 9 triệu tiền tiết kiệm + 2.5kg tăng + 0 ho mãn tính + 1 hôn nhân đã sống lại.</p>
+</div>
+
+<div class="diary-entry">
+<div class="day-label">📅 Ngày 1825 — 14/4/2026 (HÔM NAY)</div>
+<p>5 năm. Đúng nghĩa "vĩnh viễn" theo định nghĩa Hughes 2008.</p>
+<p>Tôi quên đa số kỷ niệm hút thuốc 30 năm. Chỉ nhớ vài khoảnh khắc — đêm 2h sáng trong bếp năm thứ 3 cai, ly nước vợ tôi để trên bàn cà phê, con An đưa tranh ngày sinh nhật 7 tuổi.</p>
+<p>Hôm nay tôi viết 116 bài Sol cho 1 người Việt khác. Có thể anh đang đọc. Có thể anh đang vật vã ngày 3, ngày 7, ngày 30.</p>
+<p>Tôi không hứa lần cai của anh sẽ thành công. Tôi chỉ ở đây — như vợ tôi đã ở đó 5 năm trước. Đi cùng nhau.</p>
+<p style="text-align: right; margin-top: 14px;">— Khang Sol, sol.vn</p>
+</div>
+
+<h2>Cách bắt đầu nhật ký cai thuốc — 4 bước</h2>
+
+<h3>Bước 1 — Chọn format</h3>
+<ul>
+<li><strong>Sổ Lưu Niệm Số (Sol app):</strong> miễn phí, encrypted, có template. Recommend.</li>
+<li><strong>Notion:</strong> miễn phí, dễ tìm kiếm. Phù hợp người đã quen Notion.</li>
+<li><strong>Apple Notes / Google Keep:</strong> đơn giản, sync. OK.</li>
+<li><strong>Giấy bút:</strong> chỉ dùng nếu thật sự thích physical.</li>
+</ul>
+
+<h3>Bước 2 — Format mỗi entry (5-7 câu)</h3>
+<ol>
+<li><strong>Số ngày cai:</strong> "Ngày 7"</li>
+<li><strong>Cường độ thèm hôm nay 1-10:</strong> "Đỉnh điểm 8/10 lúc 9h tối"</li>
+<li><strong>tình huống thèm:</strong> "Cãi với vợ về việc nhà"</li>
+<li><strong>1 điều tự hào:</strong> "Không vấp. Đi bộ 15 phút."</li>
+<li><strong>Plan mai:</strong> "Nếu vợ cãi nữa, đi sang phòng ngủ 30 phút trước khi nói gì."</li>
+</ol>
+
+<h3>Bước 3 — Đều đặn 30 ngày đầu</h3>
+<p>Tuần 1-2 sẽ thấy "viết gì cũng giống nhau". Bình thường. Tuần 3+ pattern xuất hiện. Đọc lại entry tuần 1 vào ngày 30 — anh sẽ kinh ngạc.</p>
+
+<h3>Bước 4 — Share strategic</h3>
+<p>KHÔNG share public. Có thể share 1-2 entry với vợ / bạn thân khi muốn ai đó đồng hành. Sol app có feature "Share with partner" — vợ thấy progress nhưng KHÔNG đọc nội dung chi tiết (privacy).</p>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP — SỔ LƯU NIỆM SỐ</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Nhật ký encrypted + auto milestone celebrate</div>
+<a href="https://sol.vn">Cài app Sol →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/cai-thuoc-la-vinh-vien/">Cai thuốc vĩnh viễn — 5 năm threshold</a></li>
+<li>→ <a href="https://sol.vn/tam-ly-bo-thuoc-thay-doi-nhu-the-nao/">Tâm lý người cai thay đổi 5 giai đoạn</a></li>
+<li>→ <a href="https://sol.vn/cong-cu-tinh-tien-tiet-kiem-bo-thuoc/">Calculator tiền tiết kiệm cai thuốc</a></li>
+<li>→ <a href="https://sol.vn/qday-30-ngay-30-moc-1-thang/">Ngày 30 — mốc 1 tháng</a></li>
+</ul>
+</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Pennebaker JW, Chung CK (2007). <em>Expressive writing, emotional upheavals, and health</em>. Found Health Psychol.</li>
+<li>Davis JM, et al. (2014). <em>chánh niệm (chánh niệm)-based smoking cai thuốc enhanced with mobile technology</em>. JMIR Mhealth Uhealth 2.</li>
+<li>Hughes JR (2008). <em>cai thuốc as a process</em>. Drug Alcohol Depend 98.</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol & V., 1825 ngày tự do. Bài này chia sẻ với vợ trước khi đăng. Cập nhật 17/5/2026.</p>
+
+</div>

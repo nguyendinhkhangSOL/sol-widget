@@ -1,0 +1,269 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Khoa học: Vì sao cơn thèm chỉ 90 giây?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nghiên cứu Hughes (Nicotine & Tobacco Research, 2007) chứng minh:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 cách vượt 90 giây — anh chọn 1 cái phù hợp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cách làm: Hít vào mũi 4 giây → giữ hơi 7 giây → thở ra miệng 8 giây. Lặp 4-5 chu kỳ = đúng 90-100 giây."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao đêm khuya thèm dữ dội hơn ban ngày?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đêm khuya (22h-2h sáng): cortisol về thấp nhất trong ngày → ý chí yếu nhất. Adenosine (chất gây buồn ngủ) cao → cảm giác \"lờ đờ + thèm 1 cái gì kích thích\". Não nhớ nicotine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu chuyện Khang — đêm Day 3 mình suýt fail là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Day 3 bỏ đột ngột (cold turkey) lần 5 (22-12-2020 âm lịch). 11h đêm. Vợ con đã ngủ. Mình ngồi máy tính, không tập trung được. Cơn thèm ập đến — dữ dội nhất trong 3 ngày."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quan trọng: KHÔNG có \"chỉ 1 điếu thôi\" là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trong cơn thèm đêm khuya, anh hay tự nói: \"Hút 1 điếu cho đỡ thèm rồi mai cai tiếp.\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thật. Hughes 2007 (Nicotine & Tobacco Research) đo trên 200 người đang cai: 90-180 giây mỗi cơn thèm. Đỉnh 30-60 giây. Sau 3 phút tan. Anh thử bài thở 4-7-8 ngay bây giờ — bấm đồng hồ 90 giây."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI B6 — Thèm Thuốc Đêm Khuya 90 Giây (P0, vol 900/tháng)
+  Focus keyword: "thèm thuốc lá"
+  Target intent: immediate-help — anh em đang thèm, cần giải pháp NGAY
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .urgent-box { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+.sol-wiki .urgent-box h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .quote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 20px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .countdown { background: #5C3A1E; color: white; border-radius: 12px; padding: 24px; text-align: center; margin: 20px 0; }
+.sol-wiki .countdown-num { font-size: 64px; font-weight: 900; line-height: 1; color: #FFD700; }
+.sol-wiki .countdown-label { font-size: 18px; margin-top: 8px; opacity: 0.95; }
+.sol-wiki .tool { background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 14px 18px; margin: 10px 0; }
+.sol-wiki .tool-num { display: inline-block; background: #B25C2C; color: white; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; font-weight: 700; font-size: 13px; margin-right: 8px; vertical-align: middle; }
+.sol-wiki .tool-title { display: inline-block; font-size: 15px; font-weight: 700; color: #5C3A1E; vertical-align: middle; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li { margin-bottom: 6px; }
+</style>
+
+<div class="sol-wiki">
+
+<div class="urgent-box">
+<h3>⚠️ Anh đang thèm thuốc NGAY BÂY GIỜ?</h3>
+<p style="margin: 0; font-size: 16px;"><strong>Đọc nhanh phần này trước</strong> — em cho anh 5 cách vượt 90 giây ở mục dưới. Quan trọng nhất: <strong>đợi 90 giây — cơn thèm tự tan</strong>. Anh không cần "đợi cả đêm" — chỉ 90 giây thôi.</p>
+</div>
+
+<p class="lead">
+Đêm khuya, đèn ngủ vàng, vợ con đã ngủ. Anh đã cai 7-14 ngày. Bỗng cơn thèm thuốc lá ập đến — dữ dội, dai dẳng, như có ai đó kéo anh ra ban công. Đây là <strong>moment 60% người cai tái phát</strong> (West & Brown 2013). Tin tốt: <strong>cơn thèm thuốc lá chỉ kéo dài 90-180 giây</strong> (Hughes 2007). Đợi qua được — não tự chuyển trạng thái. Bài này em chỉ 5 cách cụ thể để vượt 90 giây mà không hút.
+</p>
+
+<div class="countdown">
+<div class="countdown-num">90</div>
+<div class="countdown-label">GIÂY ĐỢI QUA — não anh sẽ tự reset</div>
+</div>
+
+<h2>Khoa học: Vì sao cơn thèm chỉ 90 giây?</h2>
+
+<p>Nghiên cứu Hughes (Nicotine & Tobacco Research, 2007) chứng minh:</p>
+
+<ul>
+<li>Cơn thèm thuốc lá <strong>peak ở 30-60 giây</strong> sau khi tín hiệu thèm (cà phê, bia, stress, đêm khuya)</li>
+<li>Sau 90-180 giây, cơn thèm tự suy yếu — kể cả KHÔNG hút</li>
+<li>Cơ chế: dopamine spike + cortisol → não chuyển trạng thái khác sau ~3 phút</li>
+<li>Receptor nicotinic không phải "kêu liên tục" — chu kỳ 60-90 giây</li>
+</ul>
+
+<div class="quote">
+Anh KHÔNG cần "đợi cả đêm". Cơn thèm thuốc là sóng — đến rồi đi. Mỗi sóng 90 giây. Đợi qua 1 sóng = thắng 1 lần. Đợi qua 5 sóng/đêm = anh không hút đêm đó.
+</div>
+
+<h2>5 cách vượt 90 giây — anh chọn 1 cái phù hợp</h2>
+
+<div class="tool">
+<span class="tool-num">1</span>
+<span class="tool-title">Bài thở 4-7-8 (đúng 90 giây)</span>
+<p style="margin: 8px 0 0;"><strong>Cách làm</strong>: Hít vào mũi 4 giây → giữ hơi 7 giây → thở ra miệng 8 giây. Lặp 4-5 chu kỳ = đúng 90-100 giây.</p>
+<p style="margin: 6px 0 0; font-size: 14px;"><strong>Vì sao hiệu quả</strong>: Kích hoạt parasympathetic nervous system → giảm cortisol → cơn thèm tan. Brown & Gerbarg 2005 (Harvard Health).</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #8A857C; font-style: italic;">→ Mình đã đếm Day 3 thèm 17 lần — bài thở 4-7-8 vượt 14/17 lần.</p>
+</div>
+
+<div class="tool">
+<span class="tool-num">2</span>
+<span class="tool-title">Đếm ngược + nhìn đồng hồ</span>
+<p style="margin: 8px 0 0;"><strong>Cách làm</strong>: Bật đồng hồ điện thoại. Đếm ngược từ 90 → 0. Không hút, không ăn vặt, không làm gì khác.</p>
+<p style="margin: 6px 0 0; font-size: 14px;"><strong>Vì sao hiệu quả</strong>: Tạo "endpoint" rõ ràng — não biết "đợi 90 giây thôi", không phải "đợi vô tận". Tâm lý dễ chịu đựng hơn.</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #8A857C; font-style: italic;">→ Tip Sol: app Đi Cùng Sol có "Đồng hồ Cơn Thèm" 90 giây built-in.</p>
+</div>
+
+<div class="tool">
+<span class="tool-num">3</span>
+<span class="tool-title">Uống nước lạnh + cầm đá</span>
+<p style="margin: 8px 0 0;"><strong>Cách làm</strong>: Đứng dậy đi xuống bếp, lấy 1 cốc nước lạnh. Uống chậm. Lấy 1 cục đá, cầm 30 giây trong tay.</p>
+<p style="margin: 6px 0 0; font-size: 14px;"><strong>Vì sao hiệu quả</strong>: Sốc nhiệt độ kích thích vagus nerve → giảm thèm tức thì. Bonus: di chuyển + đổi môi trường = phá vỡ tín hiệu thèm đêm khuya.</p>
+</div>
+
+<div class="tool">
+<span class="tool-num">4</span>
+<span class="tool-title">Đi bộ 5 phút quanh nhà</span>
+<p style="margin: 8px 0 0;"><strong>Cách làm</strong>: Đứng dậy ngay khi thèm. Đi vòng quanh nhà / ra ban công (KHÔNG hút) / xuống cầu thang 1 tầng rồi quay lên.</p>
+<p style="margin: 6px 0 0; font-size: 14px;"><strong>Vì sao hiệu quả</strong>: Vận động kích hoạt endorphin (dopamine tự nhiên) — thay thế dopamine từ nicotine. 5 phút đi bộ = vượt 1 cơn thèm.</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #8A857C; font-style: italic;">→ Đặc biệt phù hợp đêm khuya — không ai nhìn, tự do đi bộ pyjama.</p>
+</div>
+
+<div class="tool">
+<span class="tool-num">5</span>
+<span class="tool-title">Nghe voice "có người đã từng đêm đó"</span>
+<p style="margin: 8px 0 0;"><strong>Cách làm</strong>: Mở app Đi Cùng Sol → nghe Voice của Khang Sol "Đêm khuya thèm dữ dội" (90 giây). Khang đã hút Vinataba 30 năm, hiểu chính xác cảm giác đêm khuya.</p>
+<p style="margin: 6px 0 0; font-size: 14px;"><strong>Vì sao hiệu quả</strong>: Voice của người đã trải qua = identification + bớt cô đơn. Não cảm thấy "có người đi cùng" = giảm cortisol.</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #8A857C; font-style: italic;">→ Khoa học: Marlatt 1985 (tái nghiện Prevention) — sự ủng hộ từ xã hội quan trọng nhất trong moment of truth.</p>
+</div>
+
+<h2>Vì sao đêm khuya thèm dữ dội hơn ban ngày?</h2>
+
+<h3>1. Cortisol thấp + adenosine cao</h3>
+<p>Đêm khuya (22h-2h sáng): cortisol về thấp nhất trong ngày → ý chí yếu nhất. Adenosine (chất gây buồn ngủ) cao → cảm giác "lờ đờ + thèm 1 cái gì kích thích". Não nhớ nicotine.</p>
+
+<h3>2. tín hiệu thèm "yên tĩnh + thuốc" 30 năm</h3>
+<p>Nhiều anh em VN có thói quen: "trước khi ngủ, ra ban công hút 1 điếu cuối ngày". 30 năm tín hiệu thèm này wire vào não. Đến đêm — não tự phát tín hiệu "đến giờ rồi".</p>
+
+<h3>3. Cô đơn + suy nghĩ nhiều</h3>
+<p>Đêm khuya = vợ con ngủ, anh thức một mình. Tâm trạng buồn / lo / nhớ = tình huống thèm thèm. Đặc biệt anh em VN 45+ có nhiều áp lực (sự nghiệp, gia đình, sức khoẻ).</p>
+
+<h3>4. Mất ngủ Day 1-7 — thèm khi tỉnh dậy</h3>
+<p>Tuần đầu cai, mất ngủ phổ biến — tỉnh giấc 2-3 lần đêm. Mỗi lần tỉnh = thèm dữ dội (não đã quen nicotine cả đêm). Đây là moment dễ "ra ban công hút lén".</p>
+
+<h2>Câu chuyện Khang — đêm Day 3 mình suýt fail</h2>
+
+<p>Day 3 bỏ đột ngột lần 5 (22-12-2020 âm lịch). 11h đêm. Vợ con đã ngủ. Mình ngồi máy tính, không tập trung được. Cơn thèm ập đến — dữ dội nhất trong 3 ngày.</p>
+
+<p>Mình đứng dậy, ra ban công — như mọi đêm 30 năm qua. Tay đã giơ ra ô tủ lấy bao thuốc... (mình đã quên xoá bao cũ).</p>
+
+<p>Đột nhiên mình nhớ: 3 lý do mình viết Day 0. Mở điện thoại — đọc. Lý do số 1: <em>"Vì con gái nói 'bố hôi'."</em></p>
+
+<p>Khóc 1 chút. Đi xuống bếp, uống 2 cốc nước lạnh. Cầm 1 cục đá 30 giây. Thở 4-7-8, 5 chu kỳ.</p>
+
+<p>2 phút trôi qua. Cơn thèm đã tan. Mình quay lên giường — ngủ được.</p>
+
+<p>Đến nay 5 năm Tự do. Nếu đêm đó mình hút 1 điếu, có thể mình đã hút lại đến giờ.</p>
+
+<p><a href="https://sol.vn/khang-sol" style="color: #B25C2C; font-weight: 600;">Đọc câu chuyện đầy đủ →</a></p>
+
+<h2>Quan trọng: KHÔNG có "chỉ 1 điếu thôi"</h2>
+
+<p>Trong cơn thèm đêm khuya, anh hay tự nói: <em>"Hút 1 điếu cho đỡ thèm rồi mai cai tiếp."</em></p>
+
+<p>SAI HOÀN TOÀN. Brody 2006 (PET scan): <strong>1 điếu thuốc đủ saturated 88% receptor nicotinic não</strong>. Nghĩa là anh hút 1 điếu = reset toàn bộ tiến trình. Hôm sau anh sẽ hút 5 điếu. Tuần sau 20 điếu. Tháng sau lại 1 bao/ngày.</p>
+
+<p>Đêm Day 3 mình suýt fail — nếu hút 1 điếu đêm đó, sáng mai mình hút 3-5 điếu (não "đói" lại). Đến trưa hút như cũ. <strong>Không có "1 điếu thôi" — chỉ có "0 điếu" hoặc "20 điếu/ngày".</strong></p>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Khoa học: Vì sao cơn thèm chỉ 90 giây?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nghiên cứu Hughes (Nicotine & Tobacco Research, 2007) chứng minh:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 cách vượt 90 giây — anh chọn 1 cái phù hợp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cách làm: Hít vào mũi 4 giây → giữ hơi 7 giây → thở ra miệng 8 giây. Lặp 4-5 chu kỳ = đúng 90-100 giây.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Vì sao đêm khuya thèm dữ dội hơn ban ngày?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đêm khuya (22h-2h sáng): cortisol về thấp nhất trong ngày → ý chí yếu nhất. Adenosine (chất gây buồn ngủ) cao → cảm giác "lờ đờ + thèm 1 cái gì kích thích". Não nhớ nicotine.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu chuyện Khang — đêm Day 3 mình suýt fail là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Day 3 bỏ đột ngột lần 5 (22-12-2020 âm lịch). 11h đêm. Vợ con đã ngủ. Mình ngồi máy tính, không tập trung được. Cơn thèm ập đến — dữ dội nhất trong 3 ngày.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Quan trọng: KHÔNG có "chỉ 1 điếu thôi" là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Trong cơn thèm đêm khuya, anh hay tự nói: "Hút 1 điếu cho đỡ thèm rồi mai cai tiếp."</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">6. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Thật. Hughes 2007 (Nicotine & Tobacco Research) đo trên 200 người đang cai: 90-180 giây mỗi cơn thèm. Đỉnh 30-60 giây. Sau 3 phút tan. Anh thử bài thở 4-7-8 ngay bây giờ — bấm đồng hồ 90 giây.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL CÓ ĐỒNG HỒ CƠN THÈM</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">90 giây — Khang đợi anh</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol có Đồng Hồ Cơn Thèm built-in: 1 tap → đếm ngược 90 giây + Voice của Khang đang nói trong tai anh. Đêm khuya anh không cô đơn. App tiếng Việt cho anh em 45+.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=B6&utm_campaign=them-90s">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<h3>Tôi đang thèm dữ dội — chỉ 90 giây thật sao?</h3>
+<p>Thật. Hughes 2007 (Nicotine & Tobacco Research) đo trên 200 người đang cai: 90-180 giây mỗi cơn thèm. Đỉnh 30-60 giây. Sau 3 phút tan. Anh thử bài thở 4-7-8 ngay bây giờ — bấm đồng hồ 90 giây.</p>
+
+<h3>Đêm khuya thèm liên tục, không phải 1 cơn — sao đối phó?</h3>
+<p>Đó là vì tín hiệu thèm (môi trường) kích thích liên tục. Giải pháp: <strong>thay đổi môi trường</strong> — đi xuống bếp / phòng khác / pha trà. tín hiệu thèm mới → cơn thèm yếu. Hoặc đi ngủ sớm (22h thay 23h-24h) để tránh giờ peak thèm.</p>
+
+<h3>Có nên dùng kẹo cao su nicotine (NRT) ban đêm?</h3>
+<p>Có, nếu anh đang trong tuần đầu cai + thèm dữ dội. Kẹo nicotine 2mg/4mg giảm thèm 70% trong 15 phút. Mua tại Pharmacity, Long Châu. Lưu ý: không nhai &gt;6 viên/ngày, không &gt;3 tháng.</p>
+
+<h3>Mất ngủ tuần đầu cai có nên uống thuốc ngủ?</h3>
+<p>Tránh — gây lệ thuộc + giảm chất lượng giấc ngủ thực sự. Thay bằng: bài thở 4-7-8 trước khi ngủ, tắt màn hình 1 giờ trước, tắm nước ấm. Mất ngủ Day 1-7 sẽ tự hết.</p>
+
+<h3>Tôi đã hút 1 điếu đêm khuya — sáng mai làm gì?</h3>
+<p>KHÔNG nói "thôi hút luôn". vấp ≠ tái nghiện. Ghi vào sổ / app: "Tôi đã lỡ 1 điếu lúc X giờ vì Y lý do." Tha thứ bản thân. Tiếp tục Day Z. Hughes 2004: người cai thành công lỡ 3-5 lần trước khi sạch hẳn.</p>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/ngay-3-cai-thuoc-kho-nhat" style="color: #B25C2C;">Ngày 3 cai thuốc khó nhất</a> ·
+<a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C;">Cai thuốc lá tại nhà — 7 bước</a> ·
+<a href="https://sol.vn/cai-thuoc-khi-di-nhau" style="color: #B25C2C;">Cai thuốc khi đi nhậu</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Đi Cùng Sol</a>. Nguồn: Hughes 2007, Brody 2006, Marlatt 1985, Brown & Gerbarg 2005, West & Brown 2013.
+</p>
+
+<p style="font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px;">
+<strong>🚨 Khẩn cấp y tế</strong>: Nếu cơn thèm gây đau ngực dữ dội, khó thở nặng, ngất, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a>.
+</p>
+
+</div>

@@ -1,0 +1,294 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 1 — Vì sao thuốc lá ảnh hưởng khả năng sinh lý?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cương cứng phụ thuộc vào lượng máu đổ vào dương vật qua các động mạch nhỏ (đường kính 1-2mm). Thuốc lá tổn thương các mạch máu này qua 3 cơ chế:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 3 — 5 cải thiện cụ thể anh sẽ thấy là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lượng máu lên dương vật tăng 25-40% sau 3 tháng cai. Vợ/bạn tình thường nhận xét \"anh khác\" trước khi anh cảm nhận. Đây là cải thiện dễ nhận thấy nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 5 — Khi nào cần đi khám?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sau 6 tháng cai mà chưa thấy cải thiện sinh lý đáng kể, nên đi khám:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q: Tôi 55 tuổi, cai có còn cải thiện sinh lý không? A: CÓ. Nghiên cứu Harte 2012 (Wisconsin): nam 45-60 cai 6-12 tháng có cải thiện ED rõ rệt — kể cả người đã có ED nặng trước cai. Cai sớm = phục hồi nhiều hơn, nhưng không bao giờ \"quá muộn\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tham khảo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bài viết bởi Khang Sol — 50 tuổi nhưng cảm thấy như 40 sau 4 năm cai. Cập nhật 14-05-2026."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .timeline-box { background: white; border-left: 4px solid #16A34A; padding: 16px 20px; margin: 14px 0; border-radius: 0 12px 12px 0; }
+.sol-wiki .timeline-time { font-weight: 700; color: #15803D; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+.sol-wiki .stat-row { display: flex; gap: 14px; margin: 20px 0; }
+.sol-wiki .stat-mini { flex: 1; background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-radius: 12px; padding: 14px; text-align: center; }
+.sol-wiki .stat-mini-num { font-size: 22px; font-weight: 700; color: #B25C2C; }
+.sol-wiki .stat-mini-label { font-size: 12px; color: #5C3A1E; margin-top: 4px; }
+.sol-wiki .improvement-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
+.sol-wiki .improvement-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 16px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #FFF4EA; color: #5C3A1E; padding: 10px 12px; text-align: left; border-bottom: 2px solid #B25C2C; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+</style>
+<div class="sol-wiki">
+<p class="lead">Anh hút thuốc 20-30 năm và bắt đầu thấy <strong>khả năng sinh lý kém</strong> hơn trước — cương ít vững, ham muốn giảm, vợ nhận xét "anh khác rồi". Câu hỏi quan trọng: cai thuốc có giúp khôi phục không? Câu trả lời khoa học: <strong>CÓ — và nhanh hơn anh nghĩ</strong>. Phần lớn nam giới thấy cải thiện rõ trong <strong>2-12 tuần</strong> sau cai.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Thuốc lá là <strong>nguyên nhân #1 gây rối loạn cương dương (ED)</strong> mà nam giới có thể tự sửa<sup>[1]</sup></li>
+<li>Nam hút thuốc tăng nguy cơ ED gấp <strong>2x</strong> so với người chưa hút<sup>[2]</sup></li>
+<li>Sau cai: cải thiện bắt đầu <strong>2-4 tuần</strong>, rõ rệt sau <strong>3 tháng</strong>, gần tối đa sau <strong>6-12 tháng</strong></li>
+<li>Chất lượng tinh trùng cũng cải thiện (số lượng, hình dạng, di động) sau 3-6 tháng cai<sup>[3]</sup></li>
+<li>Cai sớm = phục hồi nhiều hơn. Người trên 60 tuổi cai vẫn có lợi rõ rệt</li>
+</ul>
+</div>
+
+<h2>Phần 1 — Vì sao thuốc lá ảnh hưởng khả năng sinh lý?</h2>
+
+<h3>Tổn thương mạch máu nhỏ (cốt lõi vấn đề)</h3>
+
+<p>Cương cứng phụ thuộc vào <strong>lượng máu đổ vào dương vật</strong> qua các động mạch nhỏ (đường kính 1-2mm). Thuốc lá tổn thương các mạch máu này qua 3 cơ chế<sup>[4]</sup>:</p>
+
+<ul>
+<li><strong>Nicotine co mạch tức thời</strong> — giảm lượng máu 30-40% trong 1-2 giờ sau hút</li>
+<li><strong>Tar + CO làm hỏng nội mạc động mạch</strong> — gây xơ vữa, mạch dày cứng dần</li>
+<li><strong>Giảm sản xuất Nitric Oxide (NO)</strong> — chất giãn mạch tự nhiên, cần thiết cho cương cứng</li>
+</ul>
+
+<p>Sau 20-30 năm hút, các mạch máu nhỏ trong dương vật bị tổn thương như "ống nước bị đóng cặn" — máu không lên đủ → cương yếu, khó duy trì.</p>
+
+<h3>Các tác động khác</h3>
+
+<ul>
+<li><strong>Giảm testosterone</strong> — người hút có testosterone thấp hơn ~5-15%<sup>[5]</sup></li>
+<li><strong>Tăng cortisol (stress)</strong> mãn tính → ức chế ham muốn</li>
+<li><strong>Mất ngủ + mệt mãn</strong> → mệt mỏi tâm lý</li>
+<li><strong>Tâm lý "tôi không còn trẻ"</strong> — phần trầm cảm nhẹ làm tệ hơn</li>
+</ul>
+
+<h2>Phần 2 — Timeline phục hồi sau cai</h2>
+
+<div class="timeline-box">
+<div class="timeline-time">24-72 giờ</div>
+<div>Nicotine sạch hoàn toàn. Mạch máu nhỏ ngừng co — lượng máu lên cương tăng ngay lập tức. Có thể cảm thấy khác biệt trong cảm giác.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">2-4 tuần</div>
+<div>Cương cứng bắt đầu vững hơn. Một số nam cảm thấy <strong>"như tuổi 35"</strong> trong 1-2 tháng đầu — do mạch máu nhỏ phục hồi đàn hồi.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">3 tháng</div>
+<div>Nội mạc động mạch tự sửa. Nitric Oxide sản xuất trở lại bình thường. <strong>ED giảm 50-60%</strong> ở người ED do thuốc lá.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">6 tháng</div>
+<div>Chất lượng tinh trùng cải thiện rõ — số lượng tăng, di động tốt hơn, DNA ít tổn thương<sup>[3]</sup>. Người muốn có con sau 45 tuổi: cai 6 tháng trước khi cố gắng có con.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">12 tháng</div>
+<div>Testosterone tăng lại 5-10%. Ham muốn cải thiện rõ. Phần lớn nam cảm thấy <strong>sinh lý tốt hơn 20-40%</strong> so với khi còn hút.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">2-5 năm</div>
+<div>Mạch máu lớn cũng phục hồi (nguy cơ tim mạch giảm). Sinh lý tổng thể tương đương người chưa hút bao giờ ở phần lớn nam.</div>
+</div>
+
+<h2>Phần 3 — 5 cải thiện cụ thể anh sẽ thấy</h2>
+
+<div class="improvement-card">
+<h4>1. Cương vững hơn + duy trì lâu hơn</h4>
+<p>Lượng máu lên dương vật tăng 25-40% sau 3 tháng cai. Vợ/bạn tình thường nhận xét "anh khác" trước khi anh cảm nhận. Đây là cải thiện <strong>dễ nhận thấy nhất</strong>.</p>
+</div>
+
+<div class="improvement-card">
+<h4>2. Ham muốn tự nhiên cao hơn</h4>
+<p>Testosterone tăng + cortisol giảm + ngủ tốt hơn → ham muốn quay lại. Người 50+ thường thấy ham muốn ở mức 35-40 tuổi.</p>
+</div>
+
+<div class="improvement-card">
+<h4>3. Cảm giác sắc nét hơn</h4>
+<p>Thần kinh ngoại biên phục hồi sau khi không còn nicotine làm tê. Cảm giác da, cảm giác cương, đỉnh điểm — tất cả tăng độ rõ.</p>
+</div>
+
+<div class="improvement-card">
+<h4>4. Năng lượng + thể lực</h4>
+<p>Phổi sạch + tim khỏe + máu giàu oxy hơn = năng lượng cả ngày + thể lực ban đêm. Nhiều nam báo "không còn mệt sau".</p>
+</div>
+
+<div class="improvement-card">
+<h4>5. Tâm lý tự tin</h4>
+<p>Bỏ được "cảm giác đang phá hoại sức khoẻ" + tự hào "anh đang cai" → tự tin tổng thể tăng. Tâm lý này quan trọng cho sinh lý ngang vật lý.</p>
+</div>
+
+<h2>Phần 4 — Yếu tố tăng tốc phục hồi</h2>
+
+<div class="stat-row">
+<div class="stat-mini">
+<div class="stat-mini-num">30 phút</div>
+<div class="stat-mini-label">Tập thể dục/ngày — tăng NO</div>
+</div>
+<div class="stat-mini">
+<div class="stat-mini-num">7-8h</div>
+<div class="stat-mini-label">Ngủ — testosterone đỉnh đêm</div>
+</div>
+<div class="stat-mini">
+<div class="stat-mini-num">2L</div>
+<div class="stat-mini-label">Nước/ngày — lưu thông tốt</div>
+</div>
+</div>
+
+<h3>5 cách đẩy nhanh phục hồi</h3>
+
+<ol>
+<li><strong>Đi bộ nhanh 30 phút/ngày</strong> — tăng sản xuất Nitric Oxide tự nhiên, mạch máu mềm lại nhanh hơn</li>
+<li><strong>Ngủ đủ 7-8 tiếng</strong> — testosterone sản xuất chủ yếu lúc ngủ sâu. Thiếu ngủ = testosterone giảm 15-30%<sup>[6]</sup></li>
+<li><strong>Ăn nhiều cá béo + rau xanh + hạt</strong> — omega-3, kẽm, magie hỗ trợ mạch máu + hormone</li>
+<li><strong>Giảm rượu bia</strong> tuần 1-3 cai — rượu hạ testosterone và làm tệ ED. Nên giảm 50% so với trước</li>
+<li><strong>Tránh stress cao</strong> 4 tuần đầu — cortisol cao là kẻ thù #1 của ham muốn. Tạm dừng dự án căng nếu có thể</li>
+</ol>
+
+<h3>KHÔNG nên</h3>
+
+<ul>
+<li>❌ <strong>Thuốc cường dương Viagra/Cialis tùy tiện</strong> — chỉ dùng theo bác sĩ. Tự uống có thể che lấp dấu hiệu bệnh tim tiềm ẩn</li>
+<li>❌ <strong>"Bài thuốc đông y tăng cường" online</strong> — phần lớn không rõ thành phần, có thể gây hại</li>
+<li>❌ <strong>Áp lực bản thân phải "trở lại ngay"</strong> — phục hồi cần 3-6 tháng, ép = stress = ngược</li>
+<li>❌ <strong>Hút lại "vì sinh lý chưa hồi"</strong> — đây là bẫy. Sinh lý chỉ phục hồi với điều kiện CAI HẲN</li>
+</ul>
+
+<h2>Phần 5 — Khi nào cần đi khám?</h2>
+
+<p>Sau 6 tháng cai mà <strong>chưa thấy cải thiện sinh lý đáng kể</strong>, nên đi khám:</p>
+
+<ul>
+<li>Có thể có nguyên nhân khác (tiểu đường, huyết áp, mạch vành tiềm ẩn)</li>
+<li>Tổn thương mạch máu đã ở mức cấu trúc — cần thuốc hỗ trợ (PDE5 inhibitor: Sildenafil/Tadalafil)</li>
+<li>Testosterone thấp bệnh lý — có thể cần xét nghiệm + bổ sung</li>
+<li>Tâm lý kéo dài — depression/anxiety âm thầm</li>
+</ul>
+
+<p>Bác sĩ chuyên khoa nam học (Andrologist) hoặc tiết niệu (Urologist) là người khám đúng chuyên môn. Đừng ngại — đây là vấn đề y khoa thông thường, không có gì xấu hổ.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>"Tuổi 45, sau 25 năm hút Vinataba, tôi bắt đầu cảm thấy 'khác'. Không phải hết khả năng — chỉ là 'không vững như xưa'. Tôi giấu vợ, nghĩ đó là 'tuổi tác'. Đến lần thứ 4 cai năm 2018, sau 2 tháng cai (rồi hút lại), tôi nhận ra <strong>tôi đã thấy khác trong 2 tháng đó</strong>."</p>
+<p>"Lần 5 cai năm 2020 — tôi cai thật. Khoảng tuần 6-8, vợ tôi không nói gì nhưng nhìn khác. Tháng 3-4 sau cai, mọi thứ rõ rệt: cương vững hơn, năng lượng cao hơn, ham muốn về như tuổi 38. Tôi 50 mà cảm thấy như 40."</p>
+<p>"Bác sĩ tôi nói: 'thuốc lá là nguyên nhân lớn của ED tuổi 40-60 mà nam giới Việt thường nghĩ là tuổi tác. <strong>Cai thuốc = thuốc cường dương rẻ nhất, hiệu quả nhất, không tác dụng phụ</strong>.'"</p>
+<p>"Nếu anh đang cảm thấy sinh lý kém và đổ lỗi cho tuổi — anh có thể đang nhầm. Hãy cai thuốc 3-6 tháng rồi tự đánh giá. <strong>Đây là 1 trong những lý do giữ nhiều người trong cuộc khi cai khó nhất</strong> — và là lý do thật."</p>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<p><strong>Q: Tôi 55 tuổi, cai có còn cải thiện sinh lý không?</strong><br>
+A: CÓ. Nghiên cứu Harte 2012 (Wisconsin)<sup>[2]</sup>: nam 45-60 cai 6-12 tháng có cải thiện ED rõ rệt — kể cả người đã có ED nặng trước cai. Cai sớm = phục hồi nhiều hơn, nhưng không bao giờ "quá muộn".</p>
+
+<p><strong>Q: Tôi đã thử Viagra — có nên uống tiếp khi đang cai?</strong><br>
+A: Có thể. Viagra/Cialis an toàn với người cai thuốc — thậm chí <strong>hiệu quả hơn</strong> vì mạch máu đang phục hồi. Nhưng nên giảm liều dần khi cai 3-6 tháng, để dùng đủ — não/cơ thể tự phục hồi không phụ thuộc thuốc.</p>
+
+<p><strong>Q: Vợ tôi cũng hút — cai chung có khác không?</strong><br>
+A: TỐT HƠN rất nhiều. Khói thuốc thụ động cũng ảnh hưởng sinh lý nữ (khô âm đạo, ham muốn giảm). Cả hai cai → mạch máu cả hai phục hồi → tăng "sức bền" cặp đôi rõ rệt sau 6 tháng.</p>
+
+<p><strong>Q: Hút thuốc có ảnh hưởng kích thước không?</strong><br>
+A: KHÔNG về kích thước cấu trúc. Nhưng KHI cương, máu lên đầy đủ hay không ảnh hưởng cảm nhận "kích thước lúc cương". Cai giúp cương "tròn đầy" hơn — chứ không thay đổi kích thước nguyên thuỷ.</p>
+
+<p><strong>Q: Tôi muốn có con sau cai — bao lâu thì tinh trùng "sạch"?</strong><br>
+A: Tinh trùng đời mới sinh ra mỗi <strong>74 ngày</strong>. Cai 3-6 tháng = tinh trùng đã không tiếp xúc nicotine. Khuyến nghị: cai 6 tháng trước khi cố có con. Vợ cũng tránh khói thuốc thụ động trong thai kỳ.</p>
+
+<p><strong>Q: Cai thuốc có làm tăng cân — tăng cân lại làm tệ sinh lý — có phải đổi nhỏ lấy lớn?</strong><br>
+A: KHÔNG. Tăng cân 2-4 kg thường không ảnh hưởng sinh lý đáng kể. Cải thiện từ cai vượt xa tác động xấu của tăng nhẹ. Nếu tăng &gt; 6 kg trong 6 tháng — đó là vấn đề riêng cần giải quyết bằng ăn uống + đi bộ.</p>
+
+<h2>Tham khảo</h2>
+<ol>
+<li>Cao S et al. (2013). <em>Smoking and risk of erectile dysfunction: systematic review of observational studies with meta-analysis</em>. PLOS One 8(4):e60443.</li>
+<li>Harte CB, Meston CM (2012). <em>Association between smoking cai thuốc and sexual health in men</em>. BJU Int 109(6):888-896.</li>
+<li>Sharma R et al. (2016). <em>Cigarette smoking and semen quality: a new meta-analysis</em>. Eur Urol 70(4):635-645.</li>
+<li>Jeremy JY et al. (2007). <em>Cigarette smoking and erectile dysfunction</em>. Int J Impot Res 19(2):134-139.</li>
+<li>Wang W et al. (2013). <em>Effects of cigarette smoking on reproductive hormones</em>. Mediators Inflamm 2013:818590.</li>
+<li>Leproult R, Van Cauter E (2011). <em>Effect of 1 week of sleep restriction on testosterone in young men</em>. JAMA 305(21):2173-2174.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 1 — Vì sao thuốc lá ảnh hưởng khả năng sinh lý?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cương cứng phụ thuộc vào lượng máu đổ vào dương vật qua các động mạch nhỏ (đường kính 1-2mm). Thuốc lá tổn thương các mạch máu này qua 3 cơ chế:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 3 — 5 cải thiện cụ thể anh sẽ thấy là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Lượng máu lên dương vật tăng 25-40% sau 3 tháng cai. Vợ/bạn tình thường nhận xét "anh khác" trước khi anh cảm nhận. Đây là cải thiện dễ nhận thấy nhất.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 5 — Khi nào cần đi khám?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sau 6 tháng cai mà chưa thấy cải thiện sinh lý đáng kể, nên đi khám:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q: Tôi 55 tuổi, cai có còn cải thiện sinh lý không? A: CÓ. Nghiên cứu Harte 2012 (Wisconsin): nam 45-60 cai 6-12 tháng có cải thiện ED rõ rệt — kể cả người đã có ED nặng trước cai. Cai sớm = phục hồi nhiều hơn, nhưng không bao giờ "quá muộn".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Tham khảo là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bài viết bởi Khang Sol — 50 tuổi nhưng cảm thấy như 40 sau 4 năm cai. Cập nhật 14-05-2026.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Sinh lý phục hồi — 1 lý do thật để cai</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành theo tuần (Free khởi động, linh hoạt 25k/tuần), 3 lộ trình theo Mức Lệ Thuộc — Khang đã đi qua đúng giai đoạn này, hiểu vì sao đáng giữ trong 6 tháng đầu.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=sinh-ly&utm_medium=organic">Bắt đầu phục hồi →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — 50 tuổi nhưng cảm thấy như 40 sau 4 năm cai. Cập nhật 14-05-2026.</p>
+</div>

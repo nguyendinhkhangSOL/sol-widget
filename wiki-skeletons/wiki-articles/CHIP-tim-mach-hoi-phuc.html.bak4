@@ -1,0 +1,223 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 4 — Đi khám sau cai là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "🚨 Đi khám / cấp cứu ngay nếu:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=tim-mach) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trước cai mình huyết áp 145/95, tim đập 78 lúc nghỉ. 6 tháng cai — huyết áp 125/82, tim 65. Bác sĩ ngạc nhiên: \"Anh không cần thuốc huyết áp nữa.\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi 65 tuổi, hút 40 năm — cai 1 năm có còn ích?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn lo: "Tim tôi đã hỏng vì 30 năm hút thuốc — cai có còn cứu được không?" Số liệu khoa học từ Surgeon General Report 2020: <strong>Có. Cai 1 năm = CHD risk giảm 50%. Cai 15 năm = về gần người chưa hút.</strong> Tim phục hồi nhanh nhất trong tất cả cơ quan.</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>24 giờ cai: nguy cơ nhồi máu cơ tim (MI) bắt đầu giảm<sup>[1]</sup></li>
+<li>1 năm cai: CHD risk giảm 50%</li>
+<li>5 năm cai: stroke risk ≈ người chưa hút</li>
+<li>15 năm cai: CHD risk gần bằng người chưa hút</li>
+<li><strong>Cai thuốc = can thiệp tim mạch hiệu quả nhất</strong> — mạnh hơn statin/aspirin<sup>[2]</sup></li>
+</ul>
+</div>
+<h2>Phần 1 — Tại sao thuốc lá tàn phá tim mạch?</h2>
+<h3>4 cơ chế chính</h3>
+<p><strong>Co mạch</strong></p>
+<ul>
+<li>Nicotine kích thích α-adrenergic → mạch vành co 5-15%/điếu</li>
+<li>30 năm × 20 điếu/ngày = 220,000 lần co thắt</li>
+<li>→ Tổn thương lớp endothelium → mảng xơ vữa hình thành</li>
+</ul>
+<p><strong>Tăng đông</strong></p>
+<ul>
+<li>CO + nicotine làm tiểu cầu kết tụ</li>
+<li>Fibrinogen máu tăng</li>
+<li>→ Cục máu đông dễ hình thành → MI / stroke</li>
+</ul>
+<p><strong>Xơ vữa</strong></p>
+<ul>
+<li>LDL ("xấu") tăng, HDL ("tốt") giảm</li>
+<li>Lớp endothelium tổn → mảng xơ vữa tại vết thương</li>
+<li>30 năm = mạch máu già như người 60 tuổi (dù mới 45)</li>
+</ul>
+<p><strong>Viêm hệ thống</strong></p>
+<ul>
+<li>CRP (C-reactive protein) tăng</li>
+<li>Viêm mạn tính toàn thân</li>
+<li>→ Cơ chế chính dẫn đến CHD, stroke, bệnh thận</li>
+</ul>
+<h2>Phần 2 — Timeline phục hồi tim mạch</h2>
+<h3>24 giờ</h3>
+<ul>
+<li>Adrenaline + cortisol giảm</li>
+<li>Mạch vành ngừng co thắt từ nicotine</li>
+<li><strong>Nguy cơ MI bắt đầu giảm</strong></li>
+</ul>
+<h3>2-12 tuần</h3>
+<ul>
+<li>Lưu lượng máu vành tăng 20-30%</li>
+<li>Mạch ngoại vi giãn ổn định (tay/chân ấm như chưa hút)</li>
+<li>Huyết áp giảm trung bình 5-10 mmHg</li>
+<li>Mạch lúc nghỉ giảm 10-20 nhịp/phút</li>
+</ul>
+<h3>3-6 tháng</h3>
+<ul>
+<li>HDL tăng 5-10%, LDL giảm 5-10%</li>
+<li>Fibrinogen máu giảm</li>
+<li>CRP (viêm) giảm 30-50%</li>
+</ul>
+<h3>1 năm</h3>
+<ul>
+<li><strong>CHD risk giảm 50%</strong> so với người tiếp tục hút<sup>[3]</sup></li>
+<li>Tỷ lệ tử vong sau MI giảm 36% (Wilson 2000)<sup>[4]</sup></li>
+</ul>
+<h3>2-5 năm</h3>
+<ul>
+<li>CHD risk giảm 70%</li>
+<li>Stroke risk về gần người chưa hút (đặc biệt ở < 60 tuổi)</li>
+</ul>
+<h3>15 năm</h3>
+<ul>
+<li>CHD risk gần bằng người chưa từng hút (cho đa số phân nhóm)</li>
+</ul>
+<h2>Phần 3 — Đặc biệt cho ai?</h2>
+<h3>Người trên 45 tuổi</h3>
+<ul>
+<li>Nhóm rủi ro MI cao nhất</li>
+<li>Cai 1 năm = giảm tử vong tim tương đương dùng statin liều cao</li>
+<li>Cộng dồn statin + cai = hiệu quả gấp 2</li>
+</ul>
+<h3>Người đã có bệnh tim</h3>
+<ul>
+<li>Đặt stent, đau thắt ngực, MI nhẹ trước đó</li>
+<li>Cai = chậm tiến triển, giảm 36% tử vong sau MI</li>
+<li>Quan trọng nhất: KHÔNG hút lại sau MI thứ nhất</li>
+</ul>
+<h3>Tiểu đường + cao huyết áp</h3>
+<ul>
+<li>Combo nguy hiểm với hút thuốc</li>
+<li>Cai = thuốc điều trị (metformin, thuốc HA) hiệu quả hơn</li>
+<li>Có thể giảm liều thuốc HA sau 6-12 tháng cai</li>
+</ul>
+<h3>Người trẻ < 40</h3>
+<ul>
+<li>Lợi nhất về <strong>tổng số năm sống thêm</strong></li>
+<li>Cai trước 40 = sống thêm 9-10 năm so với tiếp tục hút<sup>[5]</sup></li>
+</ul>
+<h2>Phần 4 — Đi khám sau cai</h2>
+<h3>3-6 tháng</h3>
+<ul>
+<li>ECG (điện tim) — phát hiện rối loạn nhịp, ischemia</li>
+<li>Lipid panel — total cholesterol, HDL, LDL, triglyceride</li>
+<li>HA đo nhiều lần — mục tiêu < 130/80 mmHg</li>
+</ul>
+<h3>1 năm</h3>
+<ul>
+<li>Stress test nếu có triệu chứng đau ngực</li>
+<li>Siêu âm tim nếu có rủi ro cao (60+, gia đình MI sớm)</li>
+<li>Lipid panel + HbA1c</li>
+</ul>
+<h3>Nếu có triệu chứng cờ đỏ</h3>
+<p>🚨 Đi khám / cấp cứu ngay nếu:</p>
+<ul>
+<li>Đau ngực dữ dội + lan tay/hàm (<a href="https://sol.vn/wiki/dau-nguc-du-doi-115" style="color:#B25C2C;font-weight:600;">xem chi tiết MI</a>)</li>
+<li>Khó thở khi gắng sức nhẹ (đi cầu thang, mang đồ)</li>
+<li>Đánh trống ngực kéo dài</li>
+<li>Phù chân (suy tim)</li>
+</ul>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=tim-mach)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Trước cai mình huyết áp 145/95, tim đập 78 lúc nghỉ. 6 tháng cai — huyết áp 125/82, tim 65. Bác sĩ ngạc nhiên: <em>"Anh không cần thuốc huyết áp nữa."</em></p>
+<p>1 năm sau cai, leo cầu thang 4 tầng không thở. Đi bộ 5km thoải mái. 3 năm sau, đi khám sức khoẻ — chỉ số tim mạch như tuổi 35 dù mình 48 tuổi.</p>
+<p>Tim mạch là cơ quan phục hồi NHANH NHẤT sau cai. Cứ mỗi năm cai = thêm 10 năm tim khoẻ.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi 65 tuổi, hút 40 năm — cai 1 năm có còn ích?</h3></p>
+<p><p>CÓ rất nhiều. Cai sau 65: giảm tử vong tim mạch 30-50% trong 5-10 năm tiếp theo. Cai chưa bao giờ là quá muộn.</p></p>
+<p><h3>Tôi đang dùng aspirin + statin — có cần tiếp tục sau cai?</h3></p>
+<p><p>CÓ. Bỏ thuốc giảm rủi ro MI mới. Aspirin/statin xử lý xơ vữa đã có. Hỏi bác sĩ về liều — có thể giảm sau 2-3 năm cai sạch.</p></p>
+<p><h3>Cai có làm dao động huyết áp không?</h3></p>
+<p><p>Tuần 1-2: HA có thể dao động (do triệu chứng cai (withdrawal). Sau 1 tháng: ổn định ở mức thấp hơn. Nếu đang dùng thuốc HA — đo HA mỗi sáng + báo bác sĩ sau 4 tuần (có thể giảm liều).</p></p>
+<p><h3>Vợ tôi nói tôi vẫn dễ cáu — có liên quan tim?</h3></p>
+<p><p>Có. Stress mạn tính = tăng cortisol = tăng nguy cơ tim. Cai thuốc giảm cortisol baseline 15-30% sau 6 tuần. Nếu vẫn cáu — có thể là tâm lý cần địa chỉ riêng.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 4 — Đi khám sau cai là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">🚨 Đi khám / cấp cứu ngay nếu:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=tim-mach) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Trước cai mình huyết áp 145/95, tim đập 78 lúc nghỉ. 6 tháng cai — huyết áp 125/82, tim 65. Bác sĩ ngạc nhiên: "Anh không cần thuốc huyết áp nữa."</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi 65 tuổi, hút 40 năm — cai 1 năm có còn ích?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=tim-mach-hoi-phuc">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: CDC (2024). "Health Benefits of Quitting Smoking Over Time." · Critchley JA & Capewell S (2003). *Mortality risk reduction associated with smoking cai thuốc in patients with coronary heart disease*. JAMA 290(1):86-97. · 2020 Surgeon General's Report — *Smoking cai thuốc*. Chapter 4. · Wilson K et al. (2000). *Effect of smoking cai thuốc on mortality after myocardial infarction*. Arch Intern Med 160(7):939-44.
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

@@ -1,0 +1,240 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Drug",
+  "name": "Bupropion",
+  "alternateName": ["Wellbutrin", "Zyban", "Aplenzin"],
+  "description": "Thuốc chống trầm cảm được FDA phê duyệt cai thuốc lá từ 1997. Tác động dopamine + noradrenaline. Hiệu quả 18/100 sạch 6 tháng theo Cochrane 2023.",
+  "manufacturer": {"@type": "Organization", "name": "GlaxoSmithKline"},
+  "drugClass": "Atypical antidepressant (NDRI - Norepinephrine-Dopamine Reuptake Inhibitor)",
+  "prescriptionStatus": "PrescriptionOnly",
+  "dosageForm": "Tablet",
+  "activeIngredient": "Bupropion hydrochloride",
+  "administrationRoute": "Oral",
+  "clinicalPharmacology": "Tác động dopamine + noradrenaline - khác Champix không bám trực tiếp thụ thể nicotine",
+  "url": "https://sol.vn/bupropion-wellbutrin-zyban-cai-thuoc"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Bupropion (Wellbutrin / Zyban) cai thuốc lá — Cơ chế, liều, tác dụng phụ",
+      "description": "Bupropion là thuốc chống trầm cảm được FDA phê duyệt cai thuốc lá từ 1997. Hiệu quả 18/100 sạch 6 tháng. Khi nào nên chọn thay Champix?",
+      "author": {"@type":"Person","name":"Khang Sol (Nguyễn Đình Khang)","url":"https://sol.vn"},
+      "publisher": {"@type":"Organization","name":"Sol Đi Cùng","logo":{"@type":"ImageObject","url":"https://sol.vn/wp-content/uploads/sol-logo.png"}},
+      "datePublished": "2026-05-18","dateModified": "2026-05-18",
+      "mainEntityOfPage": "https://sol.vn/bupropion-wellbutrin-zyban-cai-thuoc"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bupropion là thuốc gì? Cai thuốc lá thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bupropion (tên thương mại Wellbutrin / Zyban) là thuốc chống trầm cảm được Cơ quan Quản lý Thuốc Hoa Kỳ (FDA) phê duyệt cho cai thuốc lá từ 1997. Cơ chế: tác động hai chất dẫn truyền thần kinh dopamine + noradrenaline → giảm cơn thèm thuốc. Khác Champix — KHÔNG bám trực tiếp thụ thể nicotine. Hiệu quả ~18/100 người sạch 6 tháng (giả dược 6/100), tương đương miếng dán NRT đơn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khi nào nên chọn Bupropion thay Champix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bupropion phù hợp nếu anh có dấu hiệu trầm cảm nhẹ song song với cai thuốc (Bupropion là thuốc chống trầm cảm — giải quyết 2 vấn đề cùng lúc). Hoặc nếu anh đã dùng Champix nhưng bị buồn nôn nặng, không chịu được. Bupropion rẻ hơn Champix (~300-450k/tháng so với 400-500k)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bupropion có tác dụng phụ nguy hiểm không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tác dụng phụ hay gặp: mất ngủ (30%), khô miệng (10%), bồn chồn. Nguy hiểm hiếm: giảm ngưỡng co giật (~0.1% — 1 người trong 1000). KHÔNG dùng nếu anh có tiền sử co giật, rối loạn ăn uống, đang uống thuốc chống trầm cảm loại MAOI, hoặc đang cai rượu/thuốc an thần."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mua Bupropion ở đâu Việt Nam? Giá bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cần đơn bác sĩ hô hấp hoặc bác sĩ tâm thần. Khám tại: BV Bạch Mai (Hà Nội), BV Phổi Trung Ương, BV Đại học Y Dược TPHCM, BV Tâm thần TW1. Giá: 2-3 triệu cho liệu trình 12 tuần (~300-450k/tháng). Hiện có bán hợp pháp tại nhà thuốc lớn với đơn."
+      }
+    }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #5C3A1E; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid #E8DFC8; vertical-align: top; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">Anh đã thử Champix nhưng buồn nôn dữ dội — phải bỏ. Hoặc anh có dấu hiệu trầm cảm nhẹ song song với cai thuốc. <strong>Bupropion (tên thương mại Wellbutrin hoặc Zyban) là lựa chọn thứ hai trong nhóm thuốc kê đơn cai thuốc</strong> — vốn là thuốc chống trầm cảm, giải quyết được 2 vấn đề cùng lúc.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Bupropion = tên hoạt chất. Tên thương mại: <strong>Wellbutrin</strong> (chống trầm cảm) hoặc <strong>Zyban</strong> (cai thuốc) — cùng một thuốc</li>
+<li>Cơ quan Quản lý Thuốc Hoa Kỳ (FDA) phê duyệt cho cai thuốc từ 1997</li>
+<li><strong>Cần đơn bác sĩ</strong> — không tự mua</li>
+<li>Liều chuẩn: 7-12 tuần. Bắt đầu trước Ngày Quyết Định 1-2 tuần</li>
+<li>Hiệu quả: ~18/100 sạch 6 tháng (giả dược ~6/100) — tương đương NRT, kém Champix</li>
+<li>Giá VN: 2-3 triệu/12 tuần (~300-450k/tháng)</li>
+</ul>
+</div>
+
+<div class="alarm">
+<h3>⚠️ Cảnh báo quan trọng</h3>
+<p><strong>KHÔNG dùng Bupropion nếu anh:</strong></p>
+<ul>
+<li>Có tiền sử co giật / động kinh</li>
+<li>Có rối loạn ăn uống (chán ăn, ăn ói)</li>
+<li>Đang uống thuốc chống trầm cảm loại MAOI</li>
+<li>Đang cai rượu hoặc thuốc an thần đột ngột</li>
+<li>Có khối u hệ thần kinh trung ương</li>
+</ul>
+<p><strong>Khang không phải bác sĩ.</strong> Bài này chỉ tham khảo — phải khám bác sĩ trước khi dùng. <strong>Sol không hứa cai 100%</strong>.</p>
+</div>
+
+<h2>Phần 1 — Cơ chế hoạt động (nói đơn giản)</h2>
+
+<p>Bupropion ban đầu là thuốc chống trầm cảm. Người ta phát hiện tình cờ: bệnh nhân trầm cảm uống Bupropion tự nhiên cũng bỏ thuốc lá. Nghiên cứu xác nhận → 1997 phê duyệt cho cai thuốc.</p>
+
+<h3>Bupropion làm gì trong não anh?</h3>
+
+<p>Bupropion tác động <strong>hai chất dẫn truyền thần kinh</strong>:</p>
+
+<ul>
+<li><strong>Dopamine</strong> — chất tạo cảm giác sướng + động lực. Khi anh hút thuốc, nicotine làm tăng dopamine → cảm thấy sướng. Bupropion giúp dopamine tăng nhẹ một cách tự nhiên → não bớt "đòi" nicotine.</li>
+<li><strong>Noradrenaline</strong> — chất tỉnh táo + tập trung. Bupropion giúp giữ mức tỉnh táo này, giảm cảm giác mệt mỏi + buồn ngủ thường gặp khi cai thuốc.</li>
+</ul>
+
+<p>Khác Champix ở chỗ: Champix bám trực tiếp thụ thể nicotine trong não, Bupropion không. Bupropion làm việc theo cách "phía sau" — tác động vào hệ thống điều hoà cảm xúc + động lực.</p>
+
+<h2>Phần 2 — Khi nào nên chọn Bupropion?</h2>
+
+<p>Có 4 tình huống Bupropion phù hợp hơn Champix:</p>
+
+<ol>
+<li><strong>Anh có dấu hiệu trầm cảm nhẹ</strong> song song với cai thuốc. Bupropion lo cả 2 — không cần uống 2 thuốc.</li>
+<li><strong>Anh đã thử Champix nhưng buồn nôn nặng</strong> (Champix gây buồn nôn ~30%). Bupropion ít buồn nôn hơn rõ.</li>
+<li><strong>Tài chính hạn chế hơn</strong>. Bupropion rẻ hơn Champix ~20%.</li>
+<li><strong>Anh sợ "mơ lạ" của Champix</strong>. Bupropion ít gây mơ lạ + ác mộng.</li>
+</ol>
+
+<p><strong>KHÔNG nên chọn Bupropion nếu</strong>: anh thuộc nhóm chống chỉ định (xem cảnh báo trên), hoặc anh đã dùng Champix tốt — không có lý do đổi.</p>
+
+<h2>Phần 3 — Liều và cách dùng đúng</h2>
+
+<table>
+<thead>
+<tr><th>Giai đoạn</th><th>Liều</th><th>Ghi chú</th></tr>
+</thead>
+<tbody>
+<tr><td>Ngày 1-3</td><td>150mg × 1 lần/ngày (buổi sáng)</td><td>Bắt đầu trước Ngày Quyết Định 1-2 tuần</td></tr>
+<tr><td>Ngày 4 trở đi</td><td>150mg × 2 lần/ngày (sáng + tối)</td><td>Cách nhau ít nhất 8 tiếng</td></tr>
+<tr><td>Tuần 2 trở đi</td><td>Giữ 300mg/ngày</td><td>Đến hết liệu trình 7-12 tuần</td></tr>
+<tr><td>Sau 12 tuần</td><td>Bác sĩ đánh giá tiếp</td><td>Có thể kéo dài thêm nếu cần</td></tr>
+</tbody>
+</table>
+
+<h3>Lưu ý khi uống</h3>
+
+<ul>
+<li><strong>Uống sau ăn</strong> — giảm buồn nôn + dạ dày</li>
+<li><strong>Liều thứ 2 trước 18h</strong> — tránh mất ngủ</li>
+<li><strong>Không nghiền hoặc nhai</strong> viên thuốc — nuốt nguyên viên</li>
+<li><strong>Hạn chế rượu</strong> — Bupropion + rượu tăng nguy cơ co giật</li>
+<li><strong>Lỡ uống quên</strong>: bỏ qua liều đó, uống liều tiếp theo bình thường. KHÔNG uống bù 2 viên.</li>
+</ul>
+
+<h2>Phần 4 — Tác dụng phụ cần biết</h2>
+
+<h3>Hay gặp (≥10%)</h3>
+<ul>
+<li><strong>Mất ngủ</strong> (30%) — uống liều 2 sớm hơn (trước 18h)</li>
+<li><strong>Khô miệng</strong> (10-15%) — uống nhiều nước, ngậm kẹo không đường</li>
+<li><strong>Bồn chồn, lo âu nhẹ</strong> (10%) — giảm dần sau 1-2 tuần</li>
+<li><strong>Đau đầu</strong> (10%) — paracetamol nếu cần</li>
+</ul>
+
+<h3>Ít gặp nhưng cần báo bác sĩ ngay</h3>
+<ul>
+<li><strong>Phản ứng dị ứng</strong>: phát ban, ngứa, khó thở → ngưng thuốc + đến bệnh viện</li>
+<li><strong>Tâm trạng thay đổi đột ngột</strong>: buồn dữ dội, suy nghĩ tiêu cực → báo bác sĩ</li>
+<li><strong>Co giật</strong> (rất hiếm, ~0.1%) → đến bệnh viện ngay</li>
+</ul>
+
+<h2>Phần 5 — Combo Bupropion + Sol</h2>
+
+<p>Bupropion lo phần <strong>hoá học não bộ</strong> (giảm thèm + giảm trầm cảm). Sol lo phần <strong>tâm lý + thói quen + cộng đồng</strong>. Hai cái bổ sung nhau.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang chia sẻ</div>
+<p>"Lần thứ 5 mình cai thành công nhờ kết hợp giảm dần 2 tuần + Bupropion 12 tuần. Bupropion giúp mình không bị 'sụp đổ' tâm trạng — lần trước cai mình hay cáu gắt với vợ con. Lần này nhẹ nhàng hơn nhiều."</p>
+<p>"Nhưng Bupropion không lo được phần thói quen — cầm ly cà phê là tay tự tìm bao thuốc. Đó là phần Sol làm. Tâm lý + thói quen + có người đi cùng — không thuốc nào thay được."</p>
+</div>
+
+<p>Sol combo đề xuất theo Mức Lệ Thuộc Nicotin (FTND):</p>
+<ul>
+<li><strong>FTND 4-6 (Vừa)</strong> + có dấu hiệu trầm cảm: <strong>Sol + Bupropion</strong> — lo cả 2 vấn đề</li>
+<li><strong>FTND 7-10 (Nặng)</strong> + Champix gây buồn nôn: <strong>Sol + Bupropion</strong> thay thế Champix</li>
+</ul>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL — VIỆT 45+</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol đi cùng anh khi anh uống Bupropion. Trợ lý AI 24/7 giải đáp thắc mắc, Voice của Khang qua từng giai đoạn, cộng đồng anh em đã đi qua.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip-bupropion&utm_campaign=bupropion-cai-thuoc">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Bupropion là thuốc gì? Cai thuốc lá thế nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bupropion (tên thương mại Wellbutrin / Zyban) là thuốc chống trầm cảm được Cơ quan Quản lý Thuốc Hoa Kỳ (FDA) phê duyệt cho cai thuốc lá từ 1997. Cơ chế: tác động hai chất dẫn truyền thần kinh dopamine + noradrenaline → giảm cơn thèm thuốc. Khác Champix — KHÔNG bám trực tiếp thụ thể nicotine.</p>
+</details>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Khi nào nên chọn Bupropion thay Champix?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bupropion phù hợp nếu anh có dấu hiệu trầm cảm nhẹ song song với cai thuốc. Hoặc nếu anh đã dùng Champix nhưng bị buồn nôn nặng. Bupropion rẻ hơn Champix ~20% (~300-450k/tháng so với 400-500k).</p>
+</details>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Bupropion có tác dụng phụ nguy hiểm không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Hay gặp: mất ngủ (30%), khô miệng (10%), bồn chồn. Nguy hiểm hiếm: giảm ngưỡng co giật (~0.1%). KHÔNG dùng nếu anh có tiền sử co giật, rối loạn ăn uống, hoặc đang uống thuốc chống trầm cảm loại MAOI.</p>
+</details>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cur

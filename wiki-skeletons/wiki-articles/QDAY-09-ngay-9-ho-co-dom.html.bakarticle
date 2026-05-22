@@ -1,0 +1,240 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vì sao Ngày 9 ho nhiều?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cilia là hàng tỷ \"lông nhỏ\" trong phế quản. Bình thường chúng đập 1000 lần/phút, đẩy chất bẩn lên cổ họng để anh ho/nuốt. Nicotine làm cilia liệt suốt 25-30 năm — nên tar tích tụ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 9 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Làm loãng đờm — cilia đẩy ra dễ hơn. Đặc biệt nước ấm tốt hơn nước lạnh (nước lạnh co thắt phế quản tạm). Chia đều: 1 ly mỗi giờ. Có thể thêm chanh + mật ong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 9 lần 5 cai, tôi ho có đờm dữ dội — đặc biệt sáng dậy. Đờm đầu tiên ra là màu đen như cà phê. Tôi sợ — nghĩ là máu khô. Vợ tôi bình tĩnh, đưa tôi đi khám phổi luôn hôm đó."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 9. Anh ho có đờm nhiều — đặc biệt sáng dậy. Đờm vàng, có khi nâu, có khi đen. Vợ lo. Anh cũng lo. Tin tốt: <strong>đây là dấu hiệu TỐT nhất tuần này</strong> — phổi anh đang tự dọn dẹp 25-30 năm tar tích tụ.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Cilia phế quản</strong> đã hoạt động trở lại sau 7-9 ngày — đẩy tar 30 năm ra<sup>[1]</sup></li>
+<li>Macrophages "ăn" tar tích tụ — peak D7-D14 (SG 2020)</li>
+<li>Đờm vàng/nâu/có chấm đen = TỐT</li>
+<li>⚠️ Đờm có MÁU đỏ tươi → khám phổi trong tuần</li>
+<li>Hết sau 4-12 tuần. Cách đẩy nhanh: uống nhiều nước ấm + thở sâu</li>
+</ul>
+</div>
+
+<h2>Vì sao Ngày 9 ho nhiều?</h2>
+
+<h3>Cilia tỉnh dậy + Macrophages hoạt động</h3>
+
+<p>Cilia là hàng tỷ "lông nhỏ" trong phế quản. Bình thường chúng đập 1000 lần/phút, đẩy chất bẩn lên cổ họng để anh ho/nuốt. <strong>Nicotine làm cilia liệt</strong> suốt 25-30 năm — nên tar tích tụ.</p>
+
+<p>Sau 7-9 ngày cai, cilia bắt đầu phục hồi. Đồng thời macrophages (tế bào miễn dịch trong phế nang) "ăn" tar tích tụ. Kết quả: <strong>tar được đẩy lên thành đờm</strong>. Anh ho ra — đó là phổi tự dọn.</p>
+
+<h3>Đờm "đẹp" nhất là gì?</h3>
+
+<ul>
+<li><strong>Vàng nhạt — vàng đậm:</strong> bình thường, cilia đang dọn</li>
+<li><strong>Nâu — nâu đen:</strong> rất tốt — tar cũ 5-10 năm ra</li>
+<li><strong>Có chấm đen nhỏ:</strong> tar tích tụ lâu nhất ra</li>
+<li><strong>Xanh:</strong> có thể có viêm nhẹ — nếu kéo dài → khám</li>
+<li><strong>🚨 ĐỎ tươi hoặc nâu như cà phê đậm:</strong> CÓ MÁU — khám ngay</li>
+</ul>
+
+<h2>Triệu chứng hôm nay</h2>
+
+<ul>
+<li>Ho có đờm — đặc biệt sáng dậy (peak)</li>
+<li>Cảm giác "rát họng" nhẹ</li>
+<li>Có thể nghe tiếng khò khè khi thở</li>
+<li>Hơi thở đỡ hơn so với Ngày 1 (mặc dù còn ho)</li>
+<li>Đôi khi ho dữ dội 2-3 phút rồi dừng</li>
+</ul>
+
+<div class="alarm">
+<h4>🚨 Khi nào KHÁM NGAY</h4>
+<ul>
+<li>Đờm có MÁU ĐỎ TƯƠI — khám phổi trong 24-48h (X-quang + có thể CT)</li>
+<li>Đờm như "cà phê đậm" hoặc "bã cà phê" — có máu cũ — khám sớm</li>
+<li>Khó thở dữ dội + môi tím → gọi 115</li>
+<li>Sốt + ho kéo dài &gt; 3 tuần — nguy cơ lao phổi, viêm phổi</li>
+<li>Đau ngực kéo dài khi ho — có thể tổn thương màng phổi</li>
+</ul>
+</div>
+
+<h2>5 hành động Ngày 9</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Uống 2.5L nước ấm/ngày</h4>
+<p>Làm loãng đờm — cilia đẩy ra dễ hơn. Đặc biệt nước ấm tốt hơn nước lạnh (nước lạnh co thắt phế quản tạm). Chia đều: 1 ly mỗi giờ. Có thể thêm chanh + mật ong.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Thở sâu 4-7-8 — 5 lần/ngày</h4>
+<p>Hít vào 4 giây mạnh → giữ 7 giây → thở ra 8 giây có lực. Mỗi đợt 5 lần. Việc thở ra mạnh giúp đẩy đờm sâu lên. Làm 5 đợt/ngày.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Tắm hơi nóng / xông nhẹ</h4>
+<p>15 phút trong nhà tắm hơi (hoặc bồn nước nóng có hơi) — hơi nước nóng giãn phế quản, đờm loãng đi. Đêm có thể xông tinh dầu khuynh diệp / sả. KHÔNG xông khói (vẫn có tar).</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Vỗ lưng nhẹ (postural drainage)</h4>
+<p>Ngồi cúi nhẹ về phía trước, vợ vỗ nhẹ 2 bên lưng 5 phút. Kỹ thuật giúp đẩy đờm sâu trong phổi lên trên. Hoặc tự làm: nằm nghiêng, thở sâu.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Tránh khói + bụi tuyệt đối</h4>
+<p>Phổi đang sửa — đừng tổn thương thêm. Đeo khẩu trang khi ra đường, không ngồi gần người hút, đóng cửa khi quét nhà. Chạy xe máy giờ kẹt — đeo khẩu trang chất lượng tốt.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>Thuốc ho ức chế</strong> (Codeine, Dextromethorphan) — chặn ho = giữ tar trong phổi. KHÔNG nên</li>
+<li><strong>Hút lại</strong> — sẽ liệt cilia lại, mất hết tiến trình</li>
+<li><strong>Khói thuốc thụ động</strong> — không ngồi gần người hút</li>
+<li><strong>Tập gym nặng tuần 1-4</strong> — phổi chưa đủ — đi bộ là đủ</li>
+<li><strong>Lo lắng vì đờm đen</strong> — đó là tar cũ, không phải bệnh nguy hiểm</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 9 lần 5 cai, tôi ho có đờm dữ dội — đặc biệt sáng dậy. Đờm đầu tiên ra là <strong>màu đen như cà phê</strong>. Tôi sợ — nghĩ là máu khô. Vợ tôi bình tĩnh, đưa tôi đi khám phổi luôn hôm đó.</p>
+<p>Bác sĩ chụp X-quang, nói: <em>"Đây là tar tích tụ. Bình thường với người hút 25-30 năm. Phổi anh đang dọn dẹp tốt — đáng mừng. Anh cứ uống nước ấm + thở sâu. Sau 4-12 tuần sẽ giảm."</em></p>
+<p>Tôi về nhà, vợ pha cho 1 ấm nước chanh ấm to. Tôi uống cả ngày. Đêm xông hơi 15 phút trong nhà tắm. Sáng hôm sau ho ít hơn rõ rệt.</p>
+<p>Sau 2 tuần ho giảm 70%. Sau 6 tuần gần như hết. Cuối năm đi khám lại — bác sĩ nói: <em>"Phổi anh khác hoàn toàn so với 6 tháng trước"</em>.</p>
+<p>Anh em ơi — <strong>đờm đen là dấu hiệu phổi đang thay máu</strong>. Đừng panic. Chỉ panic nếu có máu đỏ tươi. Còn lại — đây là 9 tuần đẹp nhất của phổi anh trong nhiều năm.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-8-suong-mu-nao-va-kho-tap-trung-nao-bo-dang/">→ Ngày 8 — Sương mù não</a></li>
+<li><a href="https://sol.vn/ngay-10-con-them-doi-hinh-dang-tu-sinh-ly-sang-t/">→ Ngày 10 — Cơn thèm đổi loại</a></li>
+<li><a href="https://sol.vn/ho-co-dom-khi-cai/">→ Ho có đờm cai thuốc — hướng dẫn đầy đủ</a></li>
+<li><a href="https://sol.vn/khac-dom-co-mau-canh-bao/">→ Khạc đờm có máu — cảnh báo y tế</a></li>
+</ul>
+</div>
+
+🫁 <strong>Ngày 9 — Ho đờm là dấu hiệu TỐT</strong><br><br>
+Cilia phế quản đã hoạt động — đẩy tar 25-30 năm ra. Đờm vàng/nâu/đen là tốt. Phổi đang thay máu.<br><br>
+Hôm nay: uống 2.5L nước ấm, thở sâu 4-7-8 × 5 lần, tắm hơi 15 phút, tránh khói bụi tuyệt đối.<br><br>
+⚠️ Đờm có máu đỏ tươi → khám phổi ngay.<br><br>
+📖 <a href="https://sol.vn/ngay-9-ho-va-dom-phoi-dang-tu-lam-sach/?utm_source=zalo&utm_campaign=qday-9">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Người hút &gt; 30 năm + tuổi &gt; 50 nên CT phổi định kỳ (LDCT) mỗi 1-2 năm để tầm soát ung thư phổi sớm.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Vì sao Ngày 9 ho nhiều?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cilia là hàng tỷ "lông nhỏ" trong phế quản. Bình thường chúng đập 1000 lần/phút, đẩy chất bẩn lên cổ họng để anh ho/nuốt. Nicotine làm cilia liệt suốt 25-30 năm — nên tar tích tụ.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 9 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Làm loãng đờm — cilia đẩy ra dễ hơn. Đặc biệt nước ấm tốt hơn nước lạnh (nước lạnh co thắt phế quản tạm). Chia đều: 1 ly mỗi giờ. Có thể thêm chanh + mật ong.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 9 lần 5 cai, tôi ho có đờm dữ dội — đặc biệt sáng dậy. Đờm đầu tiên ra là màu đen như cà phê. Tôi sợ — nghĩ là máu khô. Vợ tôi bình tĩnh, đưa tôi đi khám phổi luôn hôm đó.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>US Surgeon General. (2020). <em>Smoking cai thuốc: A Report of the Surgeon General</em>. Chapter 3.</li>
+<li>Tetley TD. (2002). <em>Macrophages and the pathogenesis of COPD</em>. Chest 121(5 Suppl):156S-159S.</li>
+<li>Anthonisen NR et al. (2005). <em>The effects of a smoking cai thuốc intervention on 14.5-year mortality</em>. Ann Intern Med 142(4):233-239.</li>
+<li>NHS Smokefree (2024). <em>Coughing and quit smoking</em>.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 9 — Sol đi cùng phổi đang sửa</div>
+<div style="font-size:14px;opacity:.9;">Chip cứu khi đờm lạ + workbook phổi phục hồi. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-9&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã đi khám vì đờm đen Ngày 9, bác sĩ nói "tar tích tụ — đáng mừng". Cập nhật 14-05-2026.</p>
+
+</div>

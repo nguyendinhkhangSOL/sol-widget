@@ -1,0 +1,176 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=stress-cong-viec) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tháng 2 cai mình có 1 deadline lớn — stress cực mạnh. Mình suýt hút lại — đã cầm bao trong tay. Lúc đó mình nhớ: \"Hút sẽ giúp 5 phút. Nhưng 5 năm Tự do là gì?\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi đang stress cao mức — có nên tạm dừng cai không?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Sếp gọi điện gấp, deadline tới gần, anh em nhậu rủ. Tay bạn tự động vươn về bao thuốc — không có. Bạn tự hỏi: <em>"Sao tôi giải stress đây?"</em> Câu trả lời ngắn: bạn đã giải stress chưa bao giờ — chỉ tạm thời tắt cơn thèm.</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Hút thuốc KHÔNG thực sự giảm stress<sup>[1]</sup></li>
+<li>Cảm giác "đỡ" sau hút = giải cơn thèm nicotine, không phải giải stress thật</li>
+<li>Sau cai 2-3 tuần, <strong>mức cortisol baseline giảm</strong> — bạn ít stress hơn<sup>[2]</sup></li>
+<li>Trong 3 tuần đầu, cần thay thế cụ thể</li>
+</ul>
+</div>
+<h2>Phần 1 — Sự thật về thuốc lá và stress</h2>
+<h3>Hiểu lầm phổ biến</h3>
+<ul>
+<li>"Hút 1 điếu xong tỉnh lại, làm việc rõ ràng hơn"</li>
+<li>→ Đó là cơn thèm được giải, không phải stress</li>
+</ul>
+<h3>Khoa học</h3>
+<ul>
+<li><strong>Cortisol mạn tính</strong> ở người hút <strong>CAO HƠN</strong> người không hút<sup>[3]</sup></li>
+<li>Mỗi điếu = adrenaline spike + cortisol spike → ngắn hạn "tỉnh", dài hạn căng thẳng</li>
+<li>Sau 2-3 tuần cai, cortisol baseline giảm 15-30%</li>
+<li>Sau 6 tuần: subjective stress level GIẢM rõ rệt (Taylor 2014, BMJ)<sup>[4]</sup></li>
+</ul>
+<h3>Nói cách khác</h3>
+<blockquote>Bạn đã sống trên adrenaline + cortisol cao 30 năm vì hút thuốc. Cảm giác stress hôm nay khi không hút thuốc — KHÔNG cao hơn ngày bình thường khi còn hút. Khác là não bạn nhớ ra "có gì đó để làm".</blockquote>
+<h2>Phần 2 — 5 cách thay điếu thuốc khi stress</h2>
+<h3>1. Bài thở 4-7-8 (1 phút) — chính bạn làm được tại bàn làm việc</h3>
+<ul>
+<li>Hít vào mũi 4 giây</li>
+<li>Giữ hơi 7 giây</li>
+<li>Thở ra miệng 8 giây</li>
+<li>Lặp 4 lần</li>
+<li>Tác dụng: giảm cortisol, giảm nhịp tim trong 1 phút</li>
+</ul>
+<h3>2. Đi ra ngoài 5 phút</h3>
+<ul>
+<li>Đổi không gian, oxy mới, ánh sáng tự nhiên</li>
+<li>Đi bộ chậm, không xem điện thoại</li>
+<li>Quay lại bàn làm việc → tỉnh táo hơn 30 phút</li>
+</ul>
+<h3>3. 1 ly trà/nước ấm + nhai chậm</h3>
+<ul>
+<li>Caffeine vừa phải (matcha, trà xanh) — không quá đậm</li>
+<li>Nhai miếng bánh quy hoặc kẹo cao su không đường — chiếm "nhu cầu cầm gì đó"</li>
+<li>Nicotine từng kết hợp với caffeine — nay thay bằng caffeine + protein nhỏ</li>
+</ul>
+<h3>4. Gọi 1 cuộc 5 phút</h3>
+<ul>
+<li>Vợ/con/bạn thân không ở văn phòng</li>
+<li>Không cần "lý do" — chỉ "anh muốn nghe giọng em"</li>
+<li>Tăng oxytocin → giảm cortisol nhanh hơn nicotine</li>
+</ul>
+<h3>5. Đứng dậy + giãn cơ</h3>
+<ul>
+<li>10 squat hoặc 10 push-up nhẹ</li>
+<li>Endorphin lên trong 2 phút</li>
+<li>Hiệu quả tốt hơn nicotine cho mood</li>
+</ul>
+<h2>Phần 3 — Quản lý stress dài hạn (sau 30 ngày cai)</h2>
+<h3>Tập thể dục đều đặn</h3>
+<ul>
+<li>Aerobic 150 phút/tuần (đi bộ nhanh, đạp xe, bơi)</li>
+<li>Giảm cortisol baseline 20-30%</li>
+<li>Nghiên cứu: giảm risk MI 35% (vượt cả tác dụng cai)</li>
+</ul>
+<h3>Ngủ đủ + đều</h3>
+<ul>
+<li>7-8 giờ/đêm</li>
+<li>Đi ngủ + dậy cùng giờ mỗi ngày</li>
+<li>Thiếu ngủ tăng cortisol 30%</li>
+</ul>
+<h3>Chánh niệm 10 phút/ngày</h3>
+<ul>
+<li>App Headspace, Calm — có tiếng Việt</li>
+<li>Hoặc đơn giản: ngồi im 10 phút, hít thở</li>
+<li>Sau 8 tuần: cortisol giảm rõ rệt<sup>[5]</sup></li>
+</ul>
+<h3>Đặt giới hạn công việc</h3>
+<ul>
+<li>Không check email sau 19h</li>
+<li>1 ngày cuối tuần OFF hoàn toàn</li>
+<li>"Stress quản lý được" khác "stress quản lý mình"</li>
+</ul>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=stress-cong-viec)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Tháng 2 cai mình có 1 deadline lớn — stress cực mạnh. Mình suýt hút lại — đã cầm bao trong tay. Lúc đó mình nhớ: <em>"Hút sẽ giúp 5 phút. Nhưng 5 năm Tự do là gì?"</em></p>
+<p>Mình đặt bao xuống, đi ra ban công 5 phút thở 4-7-8. Quay vào — bắt đầu việc. Deadline xong. Mình không hút.</p>
+<p>Bài học: stress đến và đi. Hút không giải quyết stress — hút chỉ trì hoãn. Mai stress cũ vẫn còn + thèm nicotine mới.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi đang stress cao mức — có nên tạm dừng cai không?</h3></p>
+<p><p>Không cần. Stress sẽ tự dịu sau 2-3 tuần cai. Nếu thật sự không thể vượt → dùng NRT (miếng dán) thay vì hút lại.</p></p>
+<p><h3>Cà phê có thay được điếu thuốc không?</h3></p>
+<p><p>Một phần (caffeine kích thích nhẹ). Nhưng cà phê + thuốc từng đi chung — uống cà phê có thể tình huống thèm thèm tuần đầu. Cẩn thận.</p></p>
+<p><h3>Có cách nào tránh stress hoàn toàn?</h3></p>
+<p><p>Không. Nhưng có cách quản lý — và quản lý qua hành vi (thở, vận động, kết nối) hiệu quả lâu dài hơn qua hoá chất (thuốc lá, rượu).</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=stress-cong-viec) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tháng 2 cai mình có 1 deadline lớn — stress cực mạnh. Mình suýt hút lại — đã cầm bao trong tay. Lúc đó mình nhớ: "Hút sẽ giúp 5 phút. Nhưng 5 năm Tự do là gì?"</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi đang stress cao mức — có nên tạm dừng cai không?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=stress-cong-viec-cai">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Đi Cùng Sol</a>. Nguồn: Parrott AC (1999). *Does cigarette smoking cause stress?* Am Psychol 54(10):817-820. · Steptoe A & Ussher M (2006). *Smoking, cortisol and nicotine*. Int J Psychophysiol 59(3):228-235. · Cohen S & Lichtenstein E (1990). *Perceived stress, quitting smoking, and smoking tái nghiện*. Health Psychol 9(4):466-478. · Taylor G et al. (2014). *Change in mental health after smoking cai thuốc: systematic review and meta-analysis*. BMJ 348:g1151.
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

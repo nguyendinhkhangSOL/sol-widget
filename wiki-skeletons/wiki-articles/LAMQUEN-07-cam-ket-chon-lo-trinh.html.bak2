@@ -1,0 +1,353 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Viết cam kết bỏ thuốc lá có hiệu quả không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Karlan 2010 (American Economic Journal): commitment device tăng tỷ lệ thành công 53% sau 6 tháng. Cialdini 2006: public commitment (báo người khác) mạnh hơn private 3-5x. Viết + ký + báo người thân là chiến lược khoa học."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3 lộ trình Sol khác nhau ra sao?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A. bỏ đột ngột (cold turkey) — Q-Day = mai, phù hợp FTND ≤3 + tính cách \"0 hoặc 100\". B. 14 ngày Giảm dần (KHUYẾN) — chuẩn bị 14 ngày trước Q-Day, phù hợp FTND 4-7. C. Chờ thêm 1-2 tuần — Stage 1-2 chưa sẵn, đọc thêm Sol."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi nên chọn lộ trình nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dựa trên 3 yếu tố: (1) Stage of Change (Ngày 6), (2) FTND nếu đã biết, (3) tính cách + lối sống. Stage 3+ + FTND ≤3 → A. Stage 3+ + FTND 4-7 → B. Stage 1-2 → C (chờ thêm)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi phải báo ai về cam kết?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tối thiểu 1, lý tưởng 3 người: vợ + 1 bạn thân + 1 đồng nghiệp đáng tin. Báo qua Zalo/SMS để có \"bằng chứng\". Càng nhiều người biết, ràng buộc càng mạnh. Khang Sol báo 8 người lần thứ 5 cai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sau khi cam kết tôi làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lộ trình A: đọc bài T-1 \"Đêm trước Q-Day\" tối nay. Lộ trình B: bắt đầu T-14 ngày mai. Lộ trình C: tiếp tục đọc Sol, quay lại form khi sẵn sàng. Cam kết là điểm chuyển, không phải điểm cuối."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .route-card { background: white; border: 2px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 18px 22px; margin: 14px 0; cursor: pointer; transition: all 0.2s; }
+.sol-wiki .route-card:hover { border-color: #B25C2C; }
+.sol-wiki .route-card h3 { margin-top: 0; }
+.sol-wiki .route-card .route-stat { background: #F4FBF5; padding: 6px 10px; border-radius: 6px; font-size: 13.5px; margin: 8px 0; display: inline-block; }
+.sol-wiki .route-card .route-stat strong { color: #15803D; }
+.sol-wiki .commit-form { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 2px solid #B25C2C; border-radius: 14px; padding: 24px; margin: 24px 0; }
+.sol-wiki .commit-form h3 { margin-top: 0; }
+.sol-wiki .commit-form label { display: block; margin-top: 12px; font-size: 14px; font-weight: 700; color: #5C3A1E; }
+.sol-wiki .commit-form input[type="text"], .sol-wiki .commit-form input[type="date"], .sol-wiki .commit-form select, .sol-wiki .commit-form textarea {
+  width: 100%; padding: 10px 12px; border: 1px solid rgba(178,92,44,0.3);
+  border-radius: 6px; font-size: 14px; box-sizing: border-box; font-family: inherit;
+  margin-top: 4px;
+}
+.sol-wiki .commit-form textarea { resize: vertical; min-height: 60px; }
+.sol-wiki .commit-form .commit-result { background: white; border-radius: 10px; padding: 18px; margin-top: 16px; border-left: 4px solid #16A34A; }
+.sol-wiki .commit-form .commit-result h4 { color: #15803D; margin: 0 0 8px; }
+.sol-wiki .commit-form .commit-result .commit-text { font-style: italic; padding: 10px 14px; background: #FFF4EA; border-radius: 6px; margin: 10px 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">7 ngày Làm quen kết thúc hôm nay. Anh đã biết: 5 lý do khoa học, cơ chế nghiện, chi phí thực sự, vì sao vấp, 3 phương pháp, stage sẵn sàng. Bây giờ — 1 quyết định. Viết cam kết, chọn lộ trình. Sol đi cùng anh từ ngày mai.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Commitment device</strong> (Karlan 2010, AER) tăng tỷ lệ thành công cai nghiện 2x — viết + ký + báo người thân<sup>[1]</sup></li>
+<li><strong>Public commitment</strong> mạnh hơn private 3-5 lần (Cialdini 2006) — accountability là sức mạnh<sup>[2]</sup></li>
+<li>3 lộ trình Sol — chọn 1: <strong>A. bỏ đột ngột ngay / B. 14 ngày Giảm dần → Q-Day / C. Chờ thêm</strong></li>
+<li>Hôm nay: điền form cam kết trong bài + báo 1 người thân + đặt Q-Day cụ thể</li>
+<li>Mai bắt đầu chính thức lộ trình anh chọn</li>
+</ul>
+</div>
+
+<h2>Vì sao "cam kết" matter khoa học?</h2>
+
+<p>Dean Karlan, kinh tế gia Yale, nghiên cứu "commitment devices" — cơ chế giúp con người làm điều mình muốn nhưng khó. Trong American Economic Review 2010, Karlan công bố nghiên cứu với 781 người hút thuốc Philippines:</p>
+
+<ul>
+<li>Nhóm A (control): khuyến cáo bỏ thuốc đơn thuần</li>
+<li>Nhóm B (CARES program): mở tài khoản tiết kiệm — gửi tiền hàng tuần. Sau 6 tháng test nicotine âm tính → lấy tiền + tiết kiệm. Test dương → mất tiền cho UNICEF.</li>
+</ul>
+
+<p>Kết quả sau 6 tháng: nhóm B có tỷ lệ thành công cao hơn nhóm A <strong>53%</strong>. Sau 12 tháng — chênh lệch còn lớn hơn<sup>[1]</sup>.</p>
+
+<p>Cơ chế: cam kết viết + tiền/danh dự gắn → não anh có <strong>"chi phí" của vấp</strong>. Không chỉ là "tôi muốn cai" mà là "tôi đã hứa, mất tiền/mất mặt nếu vấp".</p>
+
+<h3>Public commitment > Private commitment</h3>
+
+<p>Robert Cialdini (Influence, 2006) phân tích 200+ nghiên cứu về cam kết:</p>
+
+<ul>
+<li><strong>Private commitment</strong> (chỉ tự nghĩ): hiệu lực thấp, dễ thay đổi sau 1-2 tuần</li>
+<li><strong>Written commitment</strong> (viết ra): hiệu lực gấp 2 — viết xuống = chấp nhận với chính mình</li>
+<li><strong>Public commitment</strong> (báo người khác): hiệu lực gấp 3-5 — không thể "rút lời" mà không mất mặt<sup>[2]</sup></li>
+</ul>
+
+<p>Đó là vì sao Sol khuyến cáo: <strong>viết cam kết + ký tên + báo ít nhất 1 người thân</strong>. Càng nhiều người biết, anh càng có ràng buộc.</p>
+
+<h2>3 lộ trình — chọn 1</h2>
+
+<div class="route-card">
+<h3>🏃 Lộ trình A — Cold Turkey ngay</h3>
+<p><strong>Phù hợp:</strong> Stage 3+ (Chuẩn bị), FTND ≤3 nhẹ, tính cách "0 hoặc 100", có sự kiện rõ làm bước ngoặt.</p>
+<p><strong>Sol đi cùng:</strong> 30 ngày Q-Day Series (đã sẵn) — mỗi sáng 1 chip Zalo + bài đầy đủ. Q-Day = MAI.</p>
+<div class="route-stat"><strong>Odds:</strong> ×1 base (Cochrane 2016). Cộng coaching = ×1.7</div>
+</div>
+
+<div class="route-card">
+<h3>🌱 Lộ trình B — 14 ngày Giảm dần → Q-Day (KHUYẾN CÁO)</h3>
+<p><strong>Phù hợp:</strong> Stage 3 (Chuẩn bị), FTND 4-7 trung bình, tính cách "từng bước", văn hóa nhậu/cà phê khó cắt ngay.</p>
+<p><strong>Sol đi cùng:</strong> 14 ngày Giảm dần (T-14 → T-1) → 30 ngày Q-Day Series. Tổng 44 ngày. Q-Day = 14 ngày tới.</p>
+<div class="route-stat"><strong>Odds:</strong> ×1.01 vs bỏ đột ngột + ×1.7 NRT combo = <strong>~×1.7</strong> tổng</div>
+</div>
+
+<div class="route-card">
+<h3>⏸ Lộ trình C — Chờ thêm 1-2 tuần</h3>
+<p><strong>Phù hợp:</strong> Stage 1-2 (Tiền cân nhắc / Cân nhắc — xem kết quả test Ngày 6). Chưa cảm thấy "đã sẵn sàng".</p>
+<p><strong>Sol đi cùng:</strong> Đọc thêm các bài Cluster A (Khoa học) + Cluster C (Câu chuyện). Quay lại điền form khi sẵn.</p>
+<div class="route-stat"><strong>Lưu ý:</strong> Stage 1-2 ép quyết → 70-90% vấp (Prochaska). Chờ là chiến lược.</div>
+</div>
+
+<h2>Form cam kết</h2>
+
+<div class="commit-form">
+<h3>✍ Cam kết bỏ thuốc lá của tôi</h3>
+<p style="font-size:14px; margin-top:4px;">Điền 5 mục dưới đây. Khi nhấn "Tạo cam kết", Sol sẽ in ra văn bản hoàn chỉnh — anh chụp màn hình, gửi cho 1 người thân, lưu vào điện thoại.</p>
+
+<label for="commitName">Tên đầy đủ (hoặc cách Sol gọi anh):</label>
+<input type="text" id="commitName" placeholder="Ví dụ: Nguyễn Văn A, hoặc 'Anh Quân'" />
+
+<label for="commitRoute">Lộ trình tôi chọn:</label>
+<select id="commitRoute">
+<option value="A">A — bỏ đột ngột, Q-Day = mai</option>
+<option value="B" selected>B — 14 ngày Giảm dần (KHUYẾN CÁO)</option>
+<option value="C">C — Chờ thêm 1-2 tuần</option>
+</select>
+
+<label for="commitQDay">Q-Day cụ thể của tôi:</label>
+<input type="date" id="commitQDay" />
+<p style="font-size:12px; color:#8A857C; margin:4px 0 0;">Lộ trình A: chọn ngày mai. Lộ trình B: ngày mai + 14 ngày. Lộ trình C: 1-2 tuần tới.</p>
+
+<label for="commitReason">Lý do mạnh nhất khiến tôi bỏ (từ Ngày 1):</label>
+<textarea id="commitReason" placeholder="Ví dụ: Để con tôi không phải thấy bố hôi thuốc nữa. Hoặc: Để sống thêm 10 năm với vợ con."></textarea>
+
+<label for="commitPerson">1 người tôi sẽ báo cam kết này:</label>
+<input type="text" id="commitPerson" placeholder="Ví dụ: Vợ tôi (Nguyễn Thị B), số điện thoại 09xx" />
+
+<button onclick="generateCommit()" style="background:#B25C2C;color:white;border:none;padding:12px 20px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14.5px;width:100%;margin-top:16px;">Tạo cam kết →</button>
+
+<div id="commitResult" style="display:none;"></div>
+
+<script>
+function generateCommit() {
+  var name = document.getElementById('commitName').value.trim();
+  var route = document.getElementById('commitRoute').value;
+  var qday = document.getElementById('commitQDay').value;
+  var reason = document.getElementById('commitReason').value.trim();
+  var person = document.getElementById('commitPerson').value.trim();
+
+  if (!name || !qday || !reason || !person) {
+    alert('Vui lòng điền đủ 5 mục.');
+    return;
+  }
+
+  var routeText = {
+    'A': 'bỏ đột ngột — bỏ đột ngột',
+    'B': '14 ngày Giảm dần → Q-Day',
+    'C': 'Chờ thêm 1-2 tuần, sẽ quyết sau'
+  }[route];
+
+  var qDateObj = new Date(qday);
+  var qDateText = qDateObj.toLocaleDateString('vi-VN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  var today = new Date().toLocaleDateString('vi-VN');
+
+  var html = '<div class="commit-result"><h4>✓ Cam kết của anh đã sẵn sàng</h4>' +
+    '<div class="commit-text">' +
+    '<strong>CAM KẾT BỎ THUỐC LÁ</strong><br><br>' +
+    'Tôi là <strong>' + name + '</strong>, hôm nay <strong>' + today + '</strong>, cam kết với chính mình và với <strong>' + person + '</strong>:<br><br>' +
+    '1. Tôi chọn lộ trình: <strong>' + routeText + '</strong>.<br>' +
+    '2. Q-Day của tôi là: <strong>' + qDateText + '</strong>.<br>' +
+    '3. Lý do tôi bỏ: <em>"' + reason + '"</em><br>' +
+    '4. Khi gặp khó, tôi sẽ nhớ lý do này và quay về Sol để được hỗ trợ.<br>' +
+    '5. Nếu lỡ hút 1 điếu — đó là vấp, không phải tái nghiện. Tôi tiếp tục, không bỏ cuộc.<br><br>' +
+    'Ký: <strong>' + name + '</strong> · Ngày: ' + today +
+    '</div>' +
+    '<p style="font-size:14px; margin:12px 0 0;"><strong>Việc cần làm trong 30 phút tới:</strong></p>' +
+    '<ol style="font-size:14px;">' +
+    '<li>Chụp màn hình bản cam kết này</li>' +
+    '<li>Gửi cho ' + person + ' qua Zalo/SMS</li>' +
+    '<li>Lưu màn hình về Photos điện thoại — đặt làm hình nền nếu cần</li>' +
+    '<li>Nếu Lộ trình A/B: chuẩn bị thân thể cho Q-Day (đọc bài T-1 đêm trước Q-Day)</li>' +
+    '</ol>' +
+    '</div>';
+
+  document.getElementById('commitResult').innerHTML = html;
+  document.getElementById('commitResult').style.display = 'block';
+}
+
+// Auto-set qday based on route
+document.getElementById('commitRoute').addEventListener('change', function() {
+  var route = this.value;
+  var today = new Date();
+  var offset = route === 'A' ? 1 : (route === 'B' ? 15 : 14);
+  today.setDate(today.getDate() + offset);
+  document.getElementById('commitQDay').valueAsDate = today;
+});
+
+// Set default qday on load
+(function() {
+  var t = new Date();
+  t.setDate(t.getDate() + 15); // default route B = 14 days + 1
+  document.getElementById('commitQDay').valueAsDate = t;
+})();
+</script>
+</div>
+
+<h2>Sau khi cam kết — 4 việc trong tuần này</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">📋 Việc cụ thể cho từng lộ trình</div>
+<p><strong>Lộ trình A (bỏ đột ngột):</strong> Đêm nay đọc bài T-1 "Đêm trước Q-Day" trên Sol (link cuối bài). Chuẩn bị thân thể + kit NRT nếu cần. Mai 0h là Q-Day. Bắt đầu series 30 ngày.</p>
+<p><strong>Lộ trình B (Tapering):</strong> Ngày mai là T-14 — đọc bài "Giảm dần có hiệu quả không?". Bắt đầu ghi baseline số điếu. Tuần này: làm test Fagerström (T-11), phân loại điếu (T-12, T-13), cắt điếu đầu tiên (T-10).</p>
+<p><strong>Lộ trình C (Chờ):</strong> Tiếp tục đọc Sol — đặc biệt cluster A (Khoa học) + chip Wiki phổ biến (đi nhậu, cà phê sáng, lo âu). Khi anh sẵn sàng — quay lại bài này điền form lại.</p>
+</div>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — cam kết của mình năm 2020</div>
+<p>Mình kể: lần thứ 5 mình cam kết KHÔNG chỉ với vợ — mà còn với <strong>3 người bạn thân + chú em chồng + 1 nhóm zalo "Bỏ Vinataba" của 5 người mình quen</strong>. Tổng 6 người biết Q-Day của mình.</p>
+<p>Nửa đêm thứ Năm trước Q-Day, mình suýt vấp. Ra ban công đốt 1 điếu. Cầm điếu lên, nhìn ra vợ ngủ trong phòng — nhớ ra "đã hứa với 6 người". Dập điếu, vứt. Quay vào.</p>
+<p>5 năm sau viết bài này, mình vẫn nhớ khoảnh khắc đó. Cam kết không phải vũ khí khi mọi thứ tốt — nó là vũ khí khi mọi thứ tệ. Sao chép thật <strong>nhiều người biết</strong>.</p>
+</div>
+
+<h2>Chính thức tốt nghiệp 7 ngày Làm quen</h2>
+
+<p>Hôm nay anh kết thúc 7 ngày Làm quen. Anh đã đi qua:</p>
+
+<ul>
+<li>Ngày 1 — 5 lý do khoa học (sống thêm 10 năm, tiết kiệm 300 triệu, etc.)</li>
+<li>Ngày 2 — Nghiện nicotine là sinh học, không phải yếu ý chí</li>
+<li>Ngày 3 — Chi phí thực sự 500 triệu/đời (calculator riêng)</li>
+<li>Ngày 4 — Bỏ thuốc thất bại nhiều lần là quy luật, không phải lỗi cá nhân</li>
+<li>Ngày 5 — 3 phương pháp khoa học đã chứng minh Cochrane</li>
+<li>Ngày 6 — Stage sẵn sàng của anh (test 5 câu)</li>
+<li>Ngày 7 — Cam kết + chọn lộ trình (hôm nay)</li>
+</ul>
+
+<p>Anh đã có đủ thông tin để quyết. Sol đã trồng đủ "vốn nhận thức" cho anh. Bây giờ — đến phần hành động. Sol đi cùng tiếp.</p>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+✍ <strong>Ngày 7 Làm quen — Cam kết + chọn lộ trình</strong><br><br>
+Karlan 2010 (AER): commitment device + accountability tăng odds 53%. Cialdini: public > private commitment 3-5x.<br><br>
+3 lộ trình: A. bỏ đột ngột mai / B. 14 ngày Giảm dần (KHUYẾN) / C. Chờ thêm 1-2 tuần.<br><br>
+Hôm nay: điền form cam kết trong bài (5 mục) + báo ít nhất 1 người thân + đặt Q-Day cụ thể. 7 ngày Làm quen tốt nghiệp. Mai bắt đầu lộ trình anh chọn.<br><br>
+📖 <a href="https://sol.vn/lam-quen-ngay-7-cam-ket-chon-lo-trinh/?utm_source=zalo&utm_campaign=lamquen-7">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Form cam kết chỉ là công cụ tâm lý — không lưu data về server. Anh chụp màn hình + gửi cho người thân tự xử lý. Nếu Lộ trình A/B + có bệnh tim/COPD nặng — gặp bác sĩ trước Q-Day để bàn về NRT/Champix an toàn.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Viết cam kết bỏ thuốc lá có hiệu quả không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có. Karlan 2010 (American Economic Journal): commitment device tăng tỷ lệ thành công 53% sau 6 tháng. Cialdini 2006: public commitment (báo người khác) mạnh hơn private 3-5x. Viết + ký + báo người thân là chiến lược khoa học.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 3 lộ trình Sol khác nhau ra sao?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">A. bỏ đột ngột — Q-Day = mai, phù hợp FTND ≤3 + tính cách "0 hoặc 100". B. 14 ngày Giảm dần (KHUYẾN) — chuẩn bị 14 ngày trước Q-Day, phù hợp FTND 4-7. C. Chờ thêm 1-2 tuần — Stage 1-2 chưa sẵn, đọc thêm Sol.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tôi nên chọn lộ trình nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Dựa trên 3 yếu tố: (1) Stage of Change (Ngày 6), (2) FTND nếu đã biết, (3) tính cách + lối sống. Stage 3+ + FTND ≤3 → A. Stage 3+ + FTND 4-7 → B. Stage 1-2 → C (chờ thêm).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Tôi phải báo ai về cam kết?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tối thiểu 1, lý tưởng 3 người: vợ + 1 bạn thân + 1 đồng nghiệp đáng tin. Báo qua Zalo/SMS để có "bằng chứng". Càng nhiều người biết, ràng buộc càng mạnh. Khang Sol báo 8 người lần thứ 5 cai.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Sau khi cam kết tôi làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Lộ trình A: đọc bài T-1 "Đêm trước Q-Day" tối nay. Lộ trình B: bắt đầu T-14 ngày mai. Lộ trình C: tiếp tục đọc Sol, quay lại form khi sẵn sàng. Cam kết là điểm chuyển, không phải điểm cuối.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Giné X, Karlan D, Zinman J. (2010). <em>Put your money where your butt is: a commitment contract for smoking cai thuốc</em>. American Economic Journal: Applied Economics 2(4):213-235.</li>
+<li>Cialdini RB. (2006). <em>Influence: The Psychology of Persuasion</em>. Harper Business. Commitment and consistency principle.</li>
+<li>Lussier JP, Heil SH, Mongeon JA, Badger GJ, Higgins ST. (2006). <em>A meta-analysis of voucher-based reinforcement therapy for substance use disorders</em>. Addiction 101(2):192-203.</li>
+<li>Gollwitzer PM. (1999). <em>Implementation intentions: strong effects of simple plans</em>. American Psychologist 54(7):493-503.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-1-co-hieu-qua-khong/">T-14 — Giảm dần Ngày 1 (Lộ trình B)</a></li>
+<li>→ <a href="https://sol.vn/ngay-1-24-gio-dau-tien-bo-thuoc-la/">Q-Day Day 1 (Lộ trình A — bỏ đột ngột mai)</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-14-dem-truoc-q-day/">T-1 — Đêm trước Q-Day (cho Lộ trình B)</a></li>
+<li>→ <a href="https://sol.vn/lam-quen-ngay-6-do-muc-san-sang/">Ngày 6 — Test stage sẵn sàng</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Sol đi cùng anh đủ 44 ngày — và 12 tháng maintenance nếu cần</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Cam kết hôm nay. Mai bắt đầu chính thức. Mỗi sáng 1 chip Zalo. Sol không bao giờ buông tay anh.</p>
+<a href="https://bothuocla.sol.vn">Đăng ký Sol miễn phí →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Karlan 2010 AER, Cialdini 2006, Gollwitzer 1999. Form cam kết là JS embed — không gửi data về server. Sol là sản phẩm Việt 100%.</p>
+
+</div>

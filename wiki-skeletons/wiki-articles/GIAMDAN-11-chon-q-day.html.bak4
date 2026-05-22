@@ -1,0 +1,249 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Chọn ngày Q-Day cai thuốc thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4 quy tắc USDHHS 2008: (1) Trong 2-7 ngày tới. (2) Có 1 ngày nghỉ ngay sau Q-Day (+50% odds). (3) Không trùng stressor lớn. (4) Báo trước 3 người thân (public commitment x3-5)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q-Day nên rơi vào thứ mấy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thứ Sáu tối / Thứ Bảy / Chủ Nhật tốt nhất — có D1-D2 cuối tuần nghỉ (triệu chứng cai (withdrawal) đỉnh D2-3 rơi vào ngày nghỉ). Tránh Thứ Hai (D2-3 giữa tuần làm việc căng thẳng). Nếu Q-Day là ngày làm việc, xin nghỉ phép D1."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tránh Q-Day vào tuần nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuần có: deadline lớn công việc, đám tang/cưới (nhậu nhiều), khám sức khỏe lớn, sinh con/chuyển nhà/đổi việc, Tết/nghỉ lễ dài. Tuần \"bình thường\" không sự kiện lớn là tốt nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao phải báo 3 người thân trước Q-Day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cialdini 2006: public commitment tăng follow-through 3-5x vs private. Báo trước = accountability + khen khi vượt mốc. Vợ + 1 bạn thân + 1 đồng nghiệp đáng tin. Báo qua Zalo/SMS để có \"bằng chứng\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Đặt Q-Day quá xa có hại gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. West 2017: đặt >7 ngày → tỷ lệ thực thi giảm 30% (78% xuống 51%). Đặt \"khi nào sẵn sàng\" → chỉ 18% thực thi. Càng cụ thể càng tốt."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .rule-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
+.sol-wiki .rule-card h4 { margin: 0 0 6px; color: #5C3A1E; }
+.sol-wiki .rule-card .pro { color: #15803D; font-size: 13.5px; margin: 4px 0; }
+.sol-wiki .rule-card .con { color: #DC2626; font-size: 13.5px; margin: 4px 0; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Q-Day không phải "ngày tôi tự nhiên thấy sẵn sàng" — đó là <strong>quyết định khoa học</strong>. USDHHS 2008 Clinical Practice Guideline có hướng dẫn cụ thể: chọn Q-Day trong 7 ngày, có 1 ngày nghỉ ngay sau, tránh stressor lớn. Hôm nay T-4 (Ngày 11 Giảm dần) — Sol giúp anh chốt Q-Day chính thức.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Q-Day trong <strong>2-7 ngày tới</strong> = tối ưu (West 2017: trễ >7 ngày giảm 30% odds)<sup>[1]</sup></li>
+<li>Có 1 ngày nghỉ ngay sau Q-Day = <strong>+50% odds</strong> (USDHHS 2008)<sup>[2]</sup></li>
+<li>4 quy tắc chọn Q-Day: không stressor / có nghỉ / báo trước / có lịch trống</li>
+<li>Hôm nay: đặt Q-Day cụ thể, viết vào lịch + báo 3 người thân qua tin nhắn</li>
+<li>3 ngày tới: T-3 dọn cue, T-2 viết Plan B, T-1 ritual đêm cuối</li>
+</ul>
+</div>
+
+<h2>Vì sao Q-Day quan trọng?</h2>
+
+<p>Q-Day = ngày anh chính thức 0 điếu thuốc. Đây là <strong>điểm chuyển identity</strong> — từ "tôi đang cai" sang "tôi không hút". West & Brown (2018) khẳng định: chọn ngày cụ thể tăng <strong>sự tự tin cai thuốc</strong> + accountability + thông báo cho người thân.</p>
+
+<p>Đặt Q-Day mơ hồ ("trong tuần này") = chìm. Đặt Q-Day cụ thể ("Thứ Hai 19/05/2026") = thật.</p>
+
+<h2>4 quy tắc chọn Q-Day theo USDHHS 2008</h2>
+
+<div class="rule-card">
+<h4>Quy tắc 1: Trong 2-7 ngày tới</h4>
+<p style="font-size:14px; margin:6px 0;">West 2017 (Addiction Research) theo dõi 2.000 người đặt Q-Day. Người đặt trong 7 ngày có tỷ lệ thực thi 78%. Người đặt 14+ ngày: 51%. Người "khi nào sẵn sàng": 18%.</p>
+<p class="pro">✓ Tối ưu: 3-5 ngày tới — đủ chuẩn bị (Plan B, NRT, dọn cue), chưa mất momentum.</p>
+<p class="con">✗ Tránh: "đầu năm mới", "sau Tết", "sau dự án này" — vô thời hạn.</p>
+</div>
+
+<div class="rule-card">
+<h4>Quy tắc 2: Có 1 ngày nghỉ ngay sau Q-Day</h4>
+<p style="font-size:14px; margin:6px 0;">USDHHS 2008 — D1 sau Q-Day có triệu chứng cai đỉnh (lo, mệt, đầu nặng). Có nghỉ làm = giảm áp lực performance. Tỷ lệ thành công +50%.</p>
+<p class="pro">✓ Q-Day vào Thứ Sáu tối / Thứ Bảy / Chủ Nhật.</p>
+<p class="pro">✓ Hoặc xin nghỉ phép D1 nếu Q-Day là ngày làm việc.</p>
+<p class="con">✗ Q-Day vào Thứ Hai/Thứ Ba — D2-3 (đỉnh triệu chứng cai) trùng giữa tuần làm việc căng thẳng.</p>
+</div>
+
+<div class="rule-card">
+<h4>Quy tắc 3: Không trùng stressor lớn</h4>
+<p style="font-size:14px; margin:6px 0;">Tránh Q-Day trong tuần có:</p>
+<ul style="font-size:14px;">
+<li>Deadline lớn công việc</li>
+<li>Đám tang / cưới (nhậu nhiều, dễ vấp)</li>
+<li>Khám sức khỏe lớn (lo lắng nền)</li>
+<li>Sinh con / chuyển nhà / đổi việc</li>
+<li>Tết / nghỉ lễ dài (rượu bia + tụ tập = cue overload)</li>
+</ul>
+<p class="pro">✓ Tuần "bình thường" — không sự kiện lớn — là tốt nhất.</p>
+</div>
+
+<div class="rule-card">
+<h4>Quy tắc 4: Báo trước 3 người thân</h4>
+<p style="font-size:14px; margin:6px 0;">Cialdini 2006: public commitment tăng follow-through 3-5x vs private. Báo trước = accountability + khen khi vượt mốc.</p>
+<p class="pro">✓ Vợ + 1 bạn thân + 1 đồng nghiệp đáng tin.</p>
+<p class="pro">✓ Báo bằng Zalo/SMS để có "bằng chứng" (không phải nói miệng quên).</p>
+</div>
+
+<h2>Template tin nhắn báo Q-Day</h2>
+
+<p>Em viết sẵn — anh sửa theo cách xưng hô:</p>
+
+<div style="background:#FAFAF8; border-left:3px solid #B25C2C; padding:14px 18px; margin:14px 0; font-style:italic; font-size:14.5px;">
+"Em ơi (vợ), Q-Day của anh là <strong>[Thứ X, ngày DD/MM/2026]</strong>. Hôm đó anh bắt đầu chính thức bỏ thuốc. Anh đang dùng lộ trình Sol — 14 ngày giảm dần (đã giảm 70%) + 30 ngày sau Q-Day. Có lúc anh cáu hay buồn — em nhớ vợ chồng mình đã nói chuyện này. Sol đi cùng anh. Cảm ơn em ủng hộ."
+</div>
+
+<p>Nhắn xong, đợi reply. Reply là OK rồi — không cần thuyết phục thêm. Người thân biết là đủ.</p>
+
+<h2>Lịch 4 ngày T-4 → Q-Day</h2>
+
+<ul>
+<li><strong>T-4 (hôm nay):</strong> Chốt Q-Day, báo 3 người thân</li>
+<li><strong>T-3 (mai):</strong> Dọn cue 30 phút (gạt tàn, bao thuốc, rèm, xe)</li>
+<li><strong>T-2 (kia):</strong> Viết 5 Plan B if-then cho 5 tình huống thèm nặng</li>
+<li><strong>T-1 (đêm trước Q-Day):</strong> Ritual điếu cuối + ăn no + đi bộ + ngủ ≥7h</li>
+<li><strong>D0 = Q-Day:</strong> 0 điếu. Bắt đầu 30 ngày Q-Day Series</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — Q-Day 2020 chọn ngày</div>
+<p>Mình chọn Q-Day là <strong>Thứ Bảy 15/02/2020</strong> — sau Tết Nguyên đán Canh Tý 12 ngày. Lý do:</p>
+<p>1. Tết là cue overload (rượu bia + tụ tập + thuốc) — không dại đặt trong Tết.</p>
+<p>2. Sau Tết 12 ngày, mọi người đã trở lại nhịp công việc — bớt nhậu.</p>
+<p>3. Thứ Bảy = có D1 + D2 cuối tuần nghỉ. triệu chứng cai đỉnh ở D2-3 → rơi vào Chủ Nhật + Thứ Hai (xin nghỉ 1 ngày).</p>
+<p>4. Không có sự kiện gia đình lớn (sinh nhật, đám cưới) trong tháng 2-3.</p>
+<p>Mình báo vợ 14 ngày trước. Báo 2 bạn thân (anh em làm cùng) 7 ngày trước. Báo nhóm zalo "Bỏ Vinataba" (5 anh em cùng cai) 3 ngày trước. Tổng 8 người biết chính xác Q-Day của mình.</p>
+<p>5 năm sau viết bài này — bài học: <strong>Q-Day chọn đúng = thắng 50% trước khi bắt đầu</strong>. Chọn sai (Tết, deadline, đám cưới) = cuộc chiến khó gấp 3.</p>
+</div>
+
+<h2>Hôm nay T-4: Quyết định</h2>
+
+<ol>
+<li>Mở lịch điện thoại — xem 7 ngày tới có ngày nào trống không stressor</li>
+<li>Chọn 1 ngày phù hợp 4 quy tắc trên — viết vào lịch với tiêu đề <strong>"Q-DAY — Sol bắt đầu"</strong></li>
+<li>Soạn tin nhắn báo (template trên) — gửi cho 3 người: vợ + 1 bạn + 1 đồng nghiệp</li>
+<li>Note vào app Sol: "Q-Day = DD/MM/YYYY"</li>
+<li>Tâm trạng có thể bắt đầu lo — bình thường. T-3 mai sẽ làm việc cụ thể (dọn cue) → giảm lo.</li>
+</ol>
+
+<h2>Mai có gì?</h2>
+
+<p>T-3 (Ngày 12 Giảm dần) — Dọn cue 30 phút. Vứt gạt tàn + bật lửa + bao thuốc backup. Giặt rèm + áo. Hút bụi xe. Conklin 2008: cue thị giác tăng cơn thèm 200-400%. Sạch môi trường = -60% tái nghiện 6 tháng.</p>
+
+📅 <strong>T-4 (Giảm dần Ngày 11) — Chọn Q-Day chính thức</strong><br><br>
+4 quy tắc USDHHS 2008: trong 2-7 ngày tới + có 1 ngày nghỉ ngay sau (+50% odds) + không stressor + báo 3 người thân (public commitment x3-5).<br><br>
+Tốt: Thứ Bảy / Chủ Nhật / có xin phép D1. Tránh: Thứ Hai (D2-3 giữa tuần căng), Tết/lễ, deadline lớn.<br><br>
+Hôm nay: chốt ngày, viết lịch, báo 3 người. Mai T-3 dọn cue.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-11-chon-q-day/?utm_source=zalo&utm_campaign=giamdan-11">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu anh dùng Champix/Bupropion — Q-Day phải sau 7 ngày bắt đầu thuốc (thuốc cần thời gian build-up trong máu). Thảo luận với BS để align Q-Day với phác đồ thuốc.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Chọn ngày Q-Day cai thuốc thế nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">4 quy tắc USDHHS 2008: (1) Trong 2-7 ngày tới. (2) Có 1 ngày nghỉ ngay sau Q-Day (+50% odds). (3) Không trùng stressor lớn. (4) Báo trước 3 người thân (public commitment x3-5).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Q-Day nên rơi vào thứ mấy?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Thứ Sáu tối / Thứ Bảy / Chủ Nhật tốt nhất — có D1-D2 cuối tuần nghỉ (triệu chứng cai đỉnh D2-3 rơi vào ngày nghỉ). Tránh Thứ Hai (D2-3 giữa tuần làm việc căng thẳng). Nếu Q-Day là ngày làm việc, xin nghỉ phép D1.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tránh Q-Day vào tuần nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tuần có: deadline lớn công việc, đám tang/cưới (nhậu nhiều), khám sức khỏe lớn, sinh con/chuyển nhà/đổi việc, Tết/nghỉ lễ dài. Tuần "bình thường" không sự kiện lớn là tốt nhất.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Tại sao phải báo 3 người thân trước Q-Day?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cialdini 2006: public commitment tăng follow-through 3-5x vs private. Báo trước = accountability + khen khi vượt mốc. Vợ + 1 bạn thân + 1 đồng nghiệp đáng tin. Báo qua Zalo/SMS để có "bằng chứng".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Đặt Q-Day quá xa có hại gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có. West 2017: đặt >7 ngày → tỷ lệ thực thi giảm 30% (78% xuống 51%). Đặt "khi nào sẵn sàng" → chỉ 18% thực thi. Càng cụ thể càng tốt.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>West R, Brown J. (2018). <em>Theory of addiction</em> (2nd ed.). Wiley-Blackwell. Quit date timing chapter.</li>
+<li>Fiore MC, Jaén CR, Baker TB, et al. (2008). <em>Treating Tobacco Use and Dependence: 2008 Update</em>. USDHHS Clinical Practice Guideline. Chapter 3: Quit Day planning.</li>
+<li>Cialdini RB. (2006). <em>Influence: The Psychology of Persuasion</em>. Harper Business. Commitment + consistency.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-12-don-cue-stimulus-control/">T-3 (Mai) — Dọn cue 30 phút</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-13-plan-b/">T-2 — Viết 5 Plan B</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-14-dem-truoc-q-day/">T-1 — Đêm trước Q-Day</a></li>
+<li>→ <a href="https://sol.vn/ngay-1-24-gio-dau-tien-bo-thuoc-la/">Q-Day Day 1 — 24 giờ đầu</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Q-Day quyết định. 4 ngày tới Sol đi cùng anh chuẩn bị.</strong>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên USDHHS 2008 CPG, West & Brown 2018, Cialdini 2006. Sol là sản phẩm Việt 100%.</p>
+
+</div>

@@ -1,0 +1,174 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Chồng hút thuốc trong nhà mặc dù tôi đã nói nhiều lần — phải làm sao?","acceptedAnswer":{"@type":"Answer","text":"Nói nhiều lần KHÔNG hiệu quả — cần đặt 3 ranh giới cụ thể: (1) Không hút trong nhà 100% — không exception, kể cả trời mưa, kể cả có khách, (2) Hậu quả cụ thể nếu vi phạm — ví dụ vợ đưa con sang nhà bà nội 2 ngày, KHÔNG đe doạ ly hôn, (3) Hỗ trợ trung lập — đặt ghế + ô + bật lửa ngoài ban công sẵn. 3 ranh giới này hiệu quả 70-80% trong 2 tuần đầu (data Sol)."}},
+{"@type":"Question","name":"Mở cửa sổ + bật quạt hút khi chồng hút trong nhà có đủ giảm khói thụ động không?","acceptedAnswer":{"@type":"Answer","text":"Giảm 30-50% nhưng KHÔNG hết. Khói thuốc lá có hạt PM2.5 siêu nhỏ — bám vào tường, rèm cửa, sofa, quần áo trong vòng phút đầu tiên. Mở cửa + quạt giúp giảm khói lơ lửng nhưng third-hand smoke vẫn tồn dư 3-6 tháng sau khi ngừng hút trong nhà. Tiêu chuẩn an toàn duy nhất là không hút trong nhà 100%."}},
+{"@type":"Question","name":"Có thể tạo 'phòng hút' riêng cho chồng trong nhà không?","acceptedAnswer":{"@type":"Answer","text":"Không hiệu quả. Khói lan qua khe cửa, hệ thống điều hoà, gờ tường — đo nồng độ nicotine PM2.5 các phòng khác vẫn cao hơn nhà không khói 5-10 lần. Đặc biệt nhà chung cư có HVAC chia sẻ — khói lan đến hàng xóm. Nếu nhà có sân/ban công riêng — đặt ghế ngoài đó. Nếu không có — hút trên hành lang chung cư có khí thải tự nhiên (không phải vỉa hè đường)."}},
+{"@type":"Question","name":"Chồng nói 'nhà anh, anh muốn hút đâu thì hút' — tôi phải đối thoại như thế nào?","acceptedAnswer":{"@type":"Answer","text":"Đây là vấn đề ranh giới + tôn trọng. Cách Sol khuyến nghị: bình tĩnh trả lời 1 câu — 'Nhà của tụi mình, không phải của anh hay của em. Sức khoẻ con cũng là của tụi mình. Em xin anh hút ngoài 100%.' Sau đó IM — không cãi. Nếu chồng vẫn hút trong nhà sau 1 tuần → thực hiện hậu quả (đưa con sang nhà bà nội/ngoại 2 ngày). Hành động > lời nói."}},
+{"@type":"Question","name":"Tôi có quyền đặt ra ranh giới về sức khỏe trong hôn nhân không?","acceptedAnswer":{"@type":"Answer","text":"Hoàn toàn có. Sức khoẻ cá nhân + sức khoẻ con là quyền cơ bản — không cần xin phép. Ranh giới về thuốc lá (không hút trong nhà, không hút khi ôm con, không hút khi vợ mang thai) là tiêu chuẩn tối thiểu mà mọi hôn nhân tôn trọng nhau đều có. Đây không phải 'kiểm soát' chồng — đây là bảo vệ bản thân + con. Tham khảo: WHO Framework Convention on Tobacco Control 2003."}},
+{"@type":"Question","name":"Nếu chồng vẫn hút trong nhà sau khi tôi đặt ranh giới — tôi có nên ly thân không?","acceptedAnswer":{"@type":"Answer","text":"Ly thân là quyết định cá nhân — không có 'đúng-sai' chung. Sol khuyến nghị thử 3 bước trước khi quyết định lớn: (1) Counseling cặp vợ chồng 4-6 buổi (BV Tâm thần TW, Vinmec, Therapy Vietnam), (2) Ly thân tạm thời 30-60 ngày 'cooling off' — không cam kết ly hôn, (3) Đánh giá sau 6 tháng. Nhiều cặp đã cứu được hôn nhân qua bước 1-2 mà không cần đến bước 3."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .boundary-card { background: white; border: 2px solid #B25C2C; border-radius: 12px; padding: 16px 20px; margin: 14px 0; }
+.sol-wiki .boundary-card .num { display: inline-block; background: #B25C2C; color: white; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.sol-wiki .boundary-card h3 { margin: 4px 0 8px; }
+.sol-wiki .script { background: #FFF4EA; border-left: 3px solid #B25C2C; padding: 10px 14px; border-radius: 6px; margin: 10px 0; font-style: italic; font-size: 14px; }
+.sol-wiki .forward-cta { background: linear-gradient(135deg, #FFF4EA, #FFE8C8); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 24px; margin: 32px 0; }
+.sol-wiki .forward-cta .label { font-size: 12px; font-weight: 700; color: #B25C2C; }
+.sol-wiki .forward-cta h3 { color: #5C3A1E; margin: 8px 0 10px; }
+.sol-wiki .forward-cta .script-box { background: white; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #B25C2C; margin: 14px 0; font-style: italic; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Chị ạ. Chồng vẫn hút trong nhà mặc dù chị đã nói nhiều lần. Mỗi tối ngửi mùi thuốc bám rèm cửa. Con ho. Chị mệt. Em viết bài này không để chị tiếp tục cằn nhằn — em chỉ chị cách <strong>đặt 3 ranh giới cụ thể có hậu quả rõ ràng</strong> để chồng tôn trọng.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"15 năm vợ tôi xin tôi hút ngoài. Tôi nói 'OK' rồi vẫn hút trong nhà. Vợ tôi mệt mỏi không nói nữa. Năm 2019 vợ tôi đưa 2 con sang nhà bà ngoại ở 3 ngày — không nói lý do. Tôi tự hiểu. Đó là lần đầu tôi hút ngoài 100%. Không phải lời nói — hành động."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Nói nhiều lần không hiệu quả</strong> — chồng đã quen "đối phó" bằng lời hứa</li>
+<li><strong>3 ranh giới hiệu quả:</strong> quy tắc rõ ràng, hậu quả cụ thể, hỗ trợ trung lập</li>
+<li><strong>Mở cửa + quạt giảm 30-50%</strong> khói lơ lửng nhưng third-hand smoke vẫn tồn dư 3-6 tháng</li>
+<li><strong>"Phòng hút riêng" KHÔNG hoạt động</strong> — khói lan qua khe cửa, HVAC, gờ tường</li>
+<li><strong>Hành động > lời nói:</strong> đưa con sang nhà bà nội 2-3 ngày khi chồng vi phạm</li>
+</ul></div>
+
+<h2>1. Vì sao "xin chồng hút ngoài" không hiệu quả</h2>
+
+<p>Vấn đề không phải chồng "không thương vợ con". Vấn đề là cấu trúc đối thoại:</p>
+
+<ul>
+<li><strong>Vợ NÓI</strong> — chồng nghe + nói "OK".</li>
+<li>Chồng hút trong nhà — vợ không nói lại (sợ cãi).</li>
+<li>Lần sau chồng hút trong nhà — vợ cằn nhằn.</li>
+<li>Chồng cảm thấy "vợ vớ vẩn" — vẫn hút trong nhà.</li>
+</ul>
+
+<p>Pattern này lặp 3-5 lần → chồng học được: "Vợ nói cho có. Không có hậu quả thật."</p>
+
+<p>Cách thoát: chuyển từ <strong>NÓI</strong> sang <strong>HÀNH ĐỘNG</strong>.</p>
+
+<h2>2. 3 ranh giới cụ thể chị đặt ngay tuần này</h2>
+
+<div class="boundary-card">
+<div class="num">RANH GIỚI 1</div>
+<h3>Quy tắc rõ ràng — không exception</h3>
+<p>Không hút trong nhà 100%. Không exception kể cả: trời mưa, có khách, đêm khuya, sinh nhật, Tết.</p>
+<div class="script">Nói 1 lần khi 2 vợ chồng đang ngồi yên tĩnh: "Em yêu anh. Em muốn nói rõ — từ ngày mai trở đi, nhà tụi mình KHÔNG có khói thuốc. Không exception. Anh hút ngoài ban công 100%."</div>
+<p style="margin-top: 10px;">Sau câu này — IM. Không tranh luận, không giải thích thêm, không xin lỗi vì đặt ranh giới.</p>
+</div>
+
+<div class="boundary-card">
+<div class="num">RANH GIỚI 2</div>
+<h3>Hậu quả cụ thể nếu vi phạm</h3>
+<p>Cần định nghĩa hậu quả rõ — KHÔNG đe doạ ly hôn (quá lớn, không thực hiện được). Hậu quả thực hiện được:</p>
+<ul>
+<li>Lần đầu vi phạm: vợ + con sang nhà bà nội/ngoại 2-3 ngày — không có drama, chỉ "Em với con đi 2 hôm. Cuối tuần em về."</li>
+<li>Lần thứ 2: 5-7 ngày. Cùng 1 cách nói. Không đe doạ.</li>
+<li>Lần thứ 3: counseling cặp vợ chồng bắt buộc — yêu cầu chồng đặt lịch.</li>
+</ul>
+<p>Hậu quả không phải "trừng phạt" — đây là bảo vệ con khỏi khói + cho chồng cơ hội suy nghĩ.</p>
+</div>
+
+<div class="boundary-card">
+<div class="num">RANH GIỚI 3</div>
+<h3>Hỗ trợ trung lập — đặt sẵn ngoài ban công</h3>
+<p>Để chồng dễ tuân thủ, vợ chuẩn bị sẵn:</p>
+<ul>
+<li>Ghế ngồi êm ngoài ban công / sân</li>
+<li>Bật lửa + gạt tàn — không phải đi vào nhà lấy</li>
+<li>Ô + khăn ấm nếu trời mưa lạnh</li>
+<li>Đèn pin nhỏ nếu tối</li>
+</ul>
+<p>Đây không phải "chiều chồng". Đây là loại bỏ exuse — chồng không có lý do "ngoài lạnh quá" / "không có chỗ ngồi".</p>
+</div>
+
+<h2>3. Khi chồng vi phạm — kịch bản 5 bước</h2>
+
+<ol>
+<li><strong>Phát hiện chồng hút trong nhà (lần đầu sau ranh giới):</strong> KHÔNG cãi ngay. Hít sâu.</li>
+<li><strong>Nói 1 câu ngắn:</strong> "Em với con sang nhà bà 2 hôm. Em về cuối tuần."</li>
+<li><strong>Đóng đồ + đưa con đi.</strong> KHÔNG nán lại tranh luận. KHÔNG đe doạ "không bao giờ về".</li>
+<li><strong>Tại nhà bà:</strong> nghỉ ngơi, không gọi cãi qua điện thoại với chồng. Cho mình + chồng không gian.</li>
+<li><strong>Cuối tuần về:</strong> bình thường. KHÔNG nhắc cuộc vi phạm. Sống tiếp. Lần sau nếu vi phạm — lặp lại.</li>
+</ol>
+
+<h2>4. Khi chồng nói "nhà anh, anh hút đâu thì hút"</h2>
+
+<p>Câu này hay xảy ra. Em đề xuất script:</p>
+
+<p style="background:#FFF4EA; padding:12px 16px; border-radius:8px; font-style:italic; margin:12px 0;">"Nhà của tụi mình, không phải của anh hay của em. Sức khoẻ con cũng là của tụi mình. Em xin anh hút ngoài 100%. Em đã suy nghĩ kỹ — đây không thể thương lượng."</p>
+
+<p>Sau câu này — KHÔNG cãi tiếp. Nếu chồng cáu, rời phòng. Quay lại sau 1 tiếng bình thường.</p>
+
+<h2>5. Khi nào cần thoát hiểm — counseling hoặc ly thân tạm</h2>
+
+<p>Nếu sau 3 lần vi phạm + 3 lần thực hiện hậu quả, chồng vẫn không thay đổi → đây không còn vấn đề thuốc lá, mà là vấn đề tôn trọng trong hôn nhân.</p>
+
+<ul>
+<li><strong>Counseling cặp vợ chồng</strong> — BV Tâm thần TW, Vinmec, Therapy Vietnam (~500k-1.5tr/buổi)</li>
+<li><strong>Ly thân tạm 30-60 ngày</strong> — chị + con ở nhà bà ngoại, chồng ở nhà riêng. Không cam kết ly hôn. 90% cặp dùng cách này nói lại được sau 2 tháng.</li>
+<li><strong>Đường dây nóng phụ nữ:</strong> 1900 6188 — tư vấn miễn phí 24/7</li>
+</ul>
+
+<div class="forward-cta">
+<div class="label">🤝 BƯỚC KẾ TIẾP</div>
+<h3>Forward bài này cho chồng — trước khi đặt ranh giới</h3>
+<div class="script-box">"Em muốn nói chuyện sau khi anh đọc bài này. Em đã suy nghĩ kỹ rồi."</div>
+<p style="margin-top: 14px;">→ Link: <strong>https://sol.vn/chong-hut-thuoc-trong-nha/</strong></p>
+</div>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP CHO CHỒNG</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Sol có mode "Bố không hút trong nhà" — track 30 ngày đầu</div>
+<a href="https://sol.vn">Cài app cho chồng →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/khoi-thuoc-thu-dong-cho-con/">Khói thuốc thụ động ảnh hưởng con</a></li>
+<li>→ <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc lá — pillar</a></li>
+<li>→ <a href="https://sol.vn/tre-con-ho-vi-khoi-thuoc-cua-ba/">Con tôi ho vì khói thuốc của ba</a></li>
+<li>→ <a href="https://sol.vn/thuyet-phuc-chong-cai-thuoc-khong-cai-nhau/">5 cách thuyết phục không cãi nhau</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ Bạo lực gia đình: 1900 6188. Cấp cứu: 113.</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>WHO Framework Convention on Tobacco Control (2003). who.int</li>
+<li>Matt GE, et al. (2011). <em>Thirdhand tobacco smoke</em>. Environ Health Perspect 119.</li>
+<li>CDC (2020). <em>Smokefree Home Rules</em>. cdc.gov</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol, ex-smoker 30 năm. Cập nhật 16/5/2026.</p>
+
+</div>

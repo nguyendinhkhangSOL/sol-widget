@@ -1,0 +1,289 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "30 NGÀY KHÔNG THUỐC LÁ là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anh đã làm được điều mà 95% người hút thuốc thử nhưng thất bại lần đầu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 thay đổi đo được — Mốc 1 Tháng là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nghiên cứu Hughes 2004 (\"Shape of the tái nghiện curve\") theo dõi hàng nghìn người cai trong 12 tháng. Phát hiện quan trọng:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Mốc 1 Tháng là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không cần tiệc lớn — 1 bữa tối với vợ con tại nhà hoặc nhà hàng anh thèm. Quan trọng: nói ra cảm xúc. \"Em ơi, anh ơn em 30 ngày qua. Anh không làm được nếu không có em.\" Vợ anh có thể khóc — và đáng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh sau mốc 1 tháng gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mốc 1 Tháng lần 5 cai của tôi là ngày 11 tháng 2 năm 2020 — mùng 18 tháng Giêng âm lịch. Tết Canh Tý. Buổi sáng tôi dậy sớm hơn bình thường, ngồi uống trà ấm với vợ. Cô ấy không nói gì, chỉ nắm tay tôi rất lâu."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .milestone-banner { background: linear-gradient(135deg, #16A34A 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 24px 0; text-align: center; }
+.sol-wiki .milestone-banner h2 { color: white; margin: 0 0 8px; font-size: 28px; }
+.sol-wiki .milestone-banner p { margin: 0; font-size: 16px; opacity: 0.95; }
+.sol-wiki .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+.sol-wiki .stat-card { background: linear-gradient(135deg, #DCFCE7 0%, #FFF4EA 100%); border: 1px solid #16A34A; border-radius: 12px; padding: 14px; text-align: center; }
+.sol-wiki .stat-num { font-size: 26px; font-weight: 700; color: #15803D; }
+.sol-wiki .stat-label { font-size: 12px; color: #5C3A1E; margin-top: 4px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .ahead-box { background: white; border: 2px solid #B25C2C; border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .ahead-box h3 { margin: 0 0 10px; color: #B25C2C; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Một tháng. 30 ngày không thuốc lá. Hôm nay không phải kết thúc — là <strong>điểm khởi đầu của phiên bản mới của anh</strong>. Khoa học đã ghi nhận: tỷ lệ tái phát của anh giờ giảm 50% so với người chưa qua Mốc 1 Tháng (Anthonisen Lung Health Study)<sup>[1]</sup>. Em chúc mừng anh.</p>
+
+<div class="milestone-banner">
+<h2>🏆 30 NGÀY KHÔNG THUỐC LÁ</h2>
+<p>Anh đã làm được điều mà 95% người hút thuốc thử nhưng thất bại lần đầu.</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>tái nghiện risk giảm 50%</strong> — đây là statistical milestone quan trọng nhất<sup>[1]</sup></li>
+<li><strong>FEV1 đã tăng 15%</strong> so với Ngày 1 — đo được bằng spirometry tại BV</li>
+<li><strong>Cilia phổi phục hồi 50-70%</strong> — phổi đã dọn đáng kể tar tích tụ</li>
+<li><strong>Identity đã shift</strong> — anh là "người không hút", không phải "người đang cai"</li>
+<li>5 hành động Mốc 1 Tháng: ăn mừng, viết 10 điều đã học, lập kế hoạch tháng 2-3, mua đồ symbolic, cảm ơn người giúp</li>
+</ul>
+</div>
+
+<h2>5 thay đổi đo được — Mốc 1 Tháng</h2>
+
+<div class="stat-row">
+<div class="stat-card">
+<div class="stat-num">-50%</div>
+<div class="stat-label">Tỷ lệ tái phát giảm</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">+15%</div>
+<div class="stat-label">FEV1 (dung tích phổi)</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">50-70%</div>
+<div class="stat-label">Cilia phổi đã hồi</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">600k+</div>
+<div class="stat-label">VND tiết kiệm (1 bao/ngày)</div>
+</div>
+</div>
+
+<h3>1. Tỷ lệ tái phát giảm 50%</h3>
+
+<p>Nghiên cứu Hughes 2004 ("Shape of the tái nghiện curve")<sup>[2]</sup> theo dõi hàng nghìn người cai trong 12 tháng. Phát hiện quan trọng:</p>
+
+<ul>
+<li>Tuần 1: 35-40% tái phát</li>
+<li>Tuần 2-4: thêm 30% tái phát</li>
+<li><strong>Sau Ngày 30: tỷ lệ tái phát/tuần giảm xuống chỉ còn 1-2%</strong></li>
+<li>Tháng 6-12: hầu như không tái phát thêm</li>
+</ul>
+
+<p>Nghĩa là: nếu anh đã qua Ngày 30, anh có cơ hội <strong>cao gấp 5 lần</strong> để cai hẳn so với người mới Ngày 1. Đây không phải may mắn — là khoa học.</p>
+
+<h3>2. FEV1 đã tăng 15%</h3>
+
+<p>Nếu anh đi đo spirometry tại bệnh viện hôm nay, FEV1 đã tăng 10-15% so với Ngày 1<sup>[3]</sup>. Đây là chỉ số khoa học rõ ràng nhất của phổi.</p>
+
+<h3>3. Cilia phổi phục hồi 50-70%</h3>
+
+<p>Cilia đã làm việc liên tục 3 tuần — đẩy tar tích tụ 25-30 năm ra ngoài. Phổi đã sạch đáng kể (mặc dù chưa phục hồi 100% — cần 1-3 năm cho tổng thể).</p>
+
+<h3>4. Identity đã shift</h3>
+
+<p>Nghiên cứu Tombor 2015<sup>[4]</sup>: khi identity "tôi là người không hút" gắn chặt → tỷ lệ tái phát giảm 50% nữa. Đây là lý do Ngày 24-28 quan trọng — và Ngày 30 củng cố nó.</p>
+
+<h3>5. Tiền tiết kiệm có thể "cảm nhận"</h3>
+
+<p>1 bao/ngày × 30 ngày × 20.000đ = <strong>600.000đ</strong>. 1.5 bao = 900.000đ. Trong 1 năm: 7.3-11 triệu. Số này thật, có thể chuyển sang tài khoản riêng — "Quỹ Tự Do Sol".</p>
+
+<h2>5 hành động Mốc 1 Tháng</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Ăn mừng với gia đình — bữa tối ý nghĩa</h4>
+<p>Không cần tiệc lớn — 1 bữa tối với vợ con tại nhà hoặc nhà hàng anh thèm. Quan trọng: <strong>nói ra cảm xúc</strong>. "Em ơi, anh ơn em 30 ngày qua. Anh không làm được nếu không có em." Vợ anh có thể khóc — và đáng.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Viết 10 điều anh đã học trong 30 ngày</h4>
+<p>Trong sổ tay hoặc note điện thoại. Mỗi điều 1 dòng. tình huống thèm nào lớn nhất? Phương pháp nào hợp? Ai giúp anh nhiều nhất? Lúc khó nhất? Bài học cụ thể nhất? Đây là <strong>vũ khí cá nhân</strong> dùng cho cả tháng 2-12 sau.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Lập kế hoạch tháng 2-3 — Maintenance protocol</h4>
+<p>Tháng 2-3 vẫn còn 20% nguy cơ tái phát (đặc biệt tháng 3-6 — "đã quen, tự tin quá"). Liệt kê: tình huống nguy hiểm sắp đến (đám cưới, Tết, du lịch), Plan B, người sẽ check-in với anh. Xem chi tiết trong bài Ngày 29.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Mua 1 món symbolic — "phiên bản mới"</h4>
+<p>Một món đồ tượng trưng cho phiên bản anh không hút thuốc. Có thể là: 1 đôi giày chạy bộ, 1 bộ áo thể thao, 1 cuốn sách yêu thích, 1 đồng hồ. Mỗi sáng nhìn nó — nhắc anh là "người khác" rồi. Mua bằng tiền tiết kiệm 30 ngày — symbolic.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Cảm ơn 3 người đã giúp</h4>
+<p>Vợ + 1 người bạn + 1 đồng nghiệp gần. Nhắn tin hoặc nói trực tiếp: <em>"Em/anh đã giúp tôi 30 ngày qua. Tôi ơn em/anh."</em> Họ ít khi được nghe câu này. Anh giữ được — vì có họ. Cảm ơn = củng cố mạng lưới support cho tháng 2-12 sau.</p>
+</div>
+</div>
+
+<div class="ahead-box">
+<h3>📅 Phía trước — tháng 2 + tháng 3</h3>
+<p>Mốc 1 Tháng KHÔNG = kết thúc. Tháng 2-6 vẫn cần maintenance:</p>
+<ul>
+<li><strong>Tuần 5-12:</strong> Sol companion vẫn check-in 1 lần/ngày</li>
+<li><strong>Tháng 3:</strong> Đi chụp X-quang phổi — so sánh với ảnh trước cai (nếu có)</li>
+<li><strong>Tháng 6:</strong> Khám sức khoẻ định kỳ — đo FEV1, huyết áp, lipid</li>
+<li><strong>Tháng 12:</strong> Tự thưởng to (du lịch, mua đồ thèm lâu) — cột mốc 1 năm</li>
+</ul>
+<p>Tháng 3-6 là "warning zone" — risk medium (~10% tái nghiện) vì người thường nghĩ "đã quen rồi". Cảnh giác.</p>
+</div>
+
+<h2>Tránh sau Mốc 1 Tháng</h2>
+
+<ul>
+<li><strong>"Đã cai xong"</strong> — sai. Cai là quá trình 12 tháng để vào "an toàn"</li>
+<li><strong>"1 điếu kỷ niệm"</strong> — KHÔNG. AVE = 95% tái nghiện</li>
+<li><strong>Cắt Sol companion ngay</strong> — vẫn nên check-in 1 lần/ngày trong tháng 2</li>
+<li><strong>Tự tin quá khoe khoang</strong> — kiêu căng → vấp tháng 3-6</li>
+<li><strong>Quên người thân đã giúp</strong> — họ là mạng lưới phòng vệ</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Mốc 1 Tháng lần 5 cai của tôi là ngày 11 tháng 2 năm 2020 — mùng 18 tháng Giêng âm lịch. Tết Canh Tý. Buổi sáng tôi dậy sớm hơn bình thường, ngồi uống trà ấm với vợ. Cô ấy không nói gì, chỉ nắm tay tôi rất lâu.</p>
+<p>Tối hôm đó cả nhà đi ăn tại quán cô ấy biết tôi thèm lâu — quán phở bò Bắc đầu phố. Ngồi nhìn con trai 7 tuổi ăn ngon lành, tôi nhận ra: <strong>30 ngày qua nó không né khi tôi ôm</strong>. Trước đó, mỗi lần tôi ôm con, nó thường quay mặt — vì mùi thuốc. Hôm nay nó để tôi hôn lên trán. Cảm giác đó — tôi không quên được.</p>
+<p>30 năm tôi đã cai — và thất bại — và cai — và thất bại. Lần 5 này tôi thành công vì <strong>tôi không cai một mình</strong>. Vợ tôi biết. Một vài đồng nghiệp gần biết. Bupropion 12 tuần đầy đủ liệu trình. Sổ tay tôi viết mỗi tối 5 phút.</p>
+<p>Mốc 1 Tháng tôi viết vào sổ: <em>"30 ngày. Đã làm được. Nhưng đây chưa phải kết thúc — là khởi đầu của phiên bản mới. Tôi không phải người không hút — tôi là Khang Sol."</em></p>
+<p>Đó là dòng đầu tiên của Sol — sản phẩm này. Anh em ơi — anh đã làm được điều mà tôi đã thất bại 4 lần trước khi làm được. Hôm nay tự hào — nhưng cũng <strong>nhớ giữ tỉnh táo cho 11 tháng phía trước</strong>. Sol đi cùng anh đến hết.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-29-nhin-ve-phia-truoc-thang-2-va-thang-3/">→ Ngày 29 — Maintenance protocol tháng 2-3</a></li>
+<li><a href="https://sol.vn/cai-thuoc-bao-lau-phoi-sach/">→ Phổi sạch sau bao lâu — timeline 20 năm</a></li>
+<li><a href="https://sol.vn/cai-thuoc-bao-nhieu-lan-moi-thanh-cong/">→ Cai bao nhiêu lần mới thành công — khoa học</a></li>
+</ul>
+</div>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+🏆 <strong>NGÀY 30 — MỐC 1 THÁNG</strong><br><br>
+tái nghiện risk giảm 50%. FEV1 tăng 15%, cilia phổi hồi 50-70%, identity đã shift. Anh là người khác.<br><br>
+Hôm nay: ăn mừng với gia đình, viết 10 điều đã học, lập kế hoạch tháng 2-3, mua 1 món symbolic, cảm ơn 3 người đã giúp.<br><br>
+Phía trước: tháng 3-6 vẫn cần maintenance. Sol đi cùng anh đến 12 tháng.<br><br>
+📖 <a href="https://sol.vn/ngay-30-moc-1-thang-sau-bo-thuoc-ban-da-tro-thanh-nguoi-khac/?utm_source=zalo&utm_campaign=qday-30">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nội dung mang tính tham khảo dựa trên bằng chứng khoa học. Đi khám sức khoẻ định kỳ tháng 3-6 sau cai để đánh giá phổi, tim mạch, các chỉ số sinh hoá.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. 30 NGÀY KHÔNG THUỐC LÁ là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Anh đã làm được điều mà 95% người hút thuốc thử nhưng thất bại lần đầu.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 thay đổi đo được — Mốc 1 Tháng là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nghiên cứu Hughes 2004 ("Shape of the tái nghiện curve") theo dõi hàng nghìn người cai trong 12 tháng. Phát hiện quan trọng:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. 5 hành động Mốc 1 Tháng là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không cần tiệc lớn — 1 bữa tối với vợ con tại nhà hoặc nhà hàng anh thèm. Quan trọng: nói ra cảm xúc. "Em ơi, anh ơn em 30 ngày qua. Anh không làm được nếu không có em." Vợ anh có thể khóc — và đáng.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Cần tránh sau mốc 1 tháng gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mốc 1 Tháng lần 5 cai của tôi là ngày 11 tháng 2 năm 2020 — mùng 18 tháng Giêng âm lịch. Tết Canh Tý. Buổi sáng tôi dậy sớm hơn bình thường, ngồi uống trà ấm với vợ. Cô ấy không nói gì, chỉ nắm tay tôi rất lâu.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Anthonisen NR et al. (2005). <em>The effects of a smoking cai thuốc intervention on 14.5-year mortality</em>. Ann Intern Med 142(4):233-239.</li>
+<li>Hughes JR. (2004). <em>Shape of the tái nghiện curve and long-term kiêng dứt thuốc among untreated smokers</em>. Addiction 99(1):29-38.</li>
+<li>US Surgeon General. (2020). <em>Smoking cai thuốc: A Report of the Surgeon General</em>. Chapter 3.</li>
+<li>Tombor I et al. (2015). <em>Smoker identity and its potential role in young adults' smoking behavior</em>. Health Psychol Rev 9:204-228.</li>
+<li>Doll R, Hill AB. (2004). <em>Mortality in relation to smoking: 50 years' observations</em>. BMJ 328(7455):1519.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Mốc 1 Tháng — Sol đi cùng đến 12 tháng</div>
+<div style="font-size:14px;opacity:.9;">Maintenance tháng 2-12 quan trọng không kém 30 ngày đầu. Sol có maintenance protocol + voice Khang milestone + chip cứu cơn thèm bất ngờ. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-30&utm_medium=organic">Cùng Sol vào tháng 2 →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã trải qua Mốc 1 Tháng năm 2020. 5 năm sau vẫn cai. Cập nhật 14-05-2026.</p>
+
+</div>

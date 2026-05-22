@@ -1,0 +1,174 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Tin tức tốt là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sau 3-6 tháng cai, đa số user báo cảm giác kết nối SÂU HƠN so với lúc còn hút. Lý do:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=co-don) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuần 4 cai mình cô đơn lạ thường — dù vợ con vẫn ở bên. Hoá ra mình mất \"bạn\" — điếu thuốc 30 năm bên mình mỗi sáng cà phê, mỗi đêm trên ban công."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi nên 'cắt đứt' bạn cũ hút thuốc không?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn cai 2 tuần. Anh em nhậu rủ chiều thứ 6 — bạn đến, ngồi cạnh khói, không hút, không vui. Họ cười câu đùa cũ, bạn không cười được. Đêm về thấy lạc lõng. <strong>Đây là cảm giác mọi người cai đều có, nhưng ít ai nói.</strong></p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Cai = đôi khi mất luôn "vai trò xã hội" cũ — không phải dấu hiệu sai</li>
+<li>50-60% người cai có cảm giác cô đơn tuần 2-6<sup>[1]</sup></li>
+<li>Tự ổn khi xây quan hệ mới hoặc tinh chỉnh quan hệ cũ</li>
+<li>Người Việt 45+ đặc biệt nặng — vì văn hoá nhậu/hút gắn chặt</li>
+</ul>
+</div>
+<h2>Phần 1 — Vì sao cô đơn?</h2>
+<h3>Danh tính shift</h3>
+<ul>
+<li>30 năm hút = một phần "tôi là ai"</li>
+<li>Cai = thay đổi danh tính → tạm thời "không thuộc nơi nào"</li>
+<li>Marcia 1980: danh tính transition gây cô đơn 2-6 tháng đầu<sup>[2]</sup></li>
+</ul>
+<h3>Mất "ngôn ngữ chung"</h3>
+<ul>
+<li>Hút thuốc = activity chung với bạn cũ</li>
+<li>Cai → không có lý do "ra ngoài cùng nhau" nữa</li>
+<li>Cảm giác lạc lõng tại nơi từng quen</li>
+</ul>
+<h3>Người ủng hộ KHÔNG hiểu được</h3>
+<ul>
+<li>Vợ/chồng/con cái: ủng hộ NHƯNG không trải qua → khó share</li>
+<li>Bạn bè đã cai: hiếm ở VN — đa số 45+ vẫn hút</li>
+</ul>
+<h3>Đặc thù Việt 45+</h3>
+<ul>
+<li>Văn hoá nhậu = giải toả + bonding chính</li>
+<li>Hút thuốc = một dạng "đàn ông"</li>
+<li>Cai = cảm giác "không còn là một trong những người đó"</li>
+</ul>
+<h2>Phần 2 — Cách vượt</h2>
+<h3>Xây dựng "nhóm mới" — async hơn sync</h3>
+<ul>
+<li><strong>Cộng đồng trong app SOL</strong> — đọc câu chuyện alumni, viết của mình</li>
+<li><strong>Group cai thuốc Zalo/FB</strong> — không cần gặp mặt, chia sẻ async</li>
+<li><strong>Người thân trực hệ</strong> — vợ, con, anh chị em — nói rõ "tôi cần share"</li>
+</ul>
+<h3>Tinh chỉnh quan hệ cũ</h3>
+<ul>
+<li>Không cần cắt đứt — nhưng đặt giới hạn</li>
+<li>Tuần 1-30: hạn chế nhậu (60-90% rủi ro tái phát)</li>
+<li>Sau 60 ngày: gặp lại bình thường, đặt rõ "tôi không hút"</li>
+<li>Ai ép thuốc 3 lần → đó không phải bạn thật</li>
+</ul>
+<h3>Hoạt động thay nhậu</h3>
+<ul>
+<li>Đi bộ sáng với 1-2 người không hút</li>
+<li>Học 1 món mới (chụp ảnh, làm vườn, sửa xe đạp)</li>
+<li>Tham gia câu lạc bộ địa phương (cờ tướng, bóng bàn, đi bộ)</li>
+<li>Dành thời gian cháu nội/ngoại — vai trò mới + ý nghĩa</li>
+</ul>
+<h3>Khi cô đơn quá</h3>
+<ul>
+<li><strong>Gọi vợ/con</strong> — không cần lý do, "anh muốn nghe giọng em"</li>
+<li><strong>Nhắn Khang</strong> trong app — Khang reply trong 24-48h</li>
+<li><strong>Khám khoa Tâm thần BV gần nhất</strong> — BV Bạch Mai HN 024 3869 3731 · BV Tâm thần TPHCM 1900 599 920</li>
+</ul>
+<h2>Phần 3 — Tin tức tốt</h2>
+<p>Sau 3-6 tháng cai, <strong>đa số user báo cảm giác kết nối SÂU HƠN</strong> so với lúc còn hút. Lý do:</p>
+<ul>
+<li>Không bị "che giấu" bởi nicotine — cảm xúc thật rõ hơn</li>
+<li>Có thời gian/năng lượng cho gia đình</li>
+<li>Tự hào về bản thân → tự tin xã hội</li>
+<li>Bạn bè mới (alumni) thường chất lượng hơn bạn nhậu cũ</li>
+</ul>
+<blockquote>Một số alumni nói: "Tôi cô đơn nhất tuần 3 cai — và 'ít cô đơn' nhất sau 6 tháng cai. Khác hoàn toàn 30 năm trước đó."</blockquote>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=co-don)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Tuần 4 cai mình cô đơn lạ thường — dù vợ con vẫn ở bên. Hoá ra mình mất "bạn" — điếu thuốc 30 năm bên mình mỗi sáng cà phê, mỗi đêm trên ban công.</p>
+<p>Mình kể vợ. Vợ ngồi cạnh không nói gì, chỉ ôm. Hôm sau mình tải app Sol — đọc Khoảng Lặng anh em khác. Đọc xong khóc 1 chút. Hoá ra mình KHÔNG một mình — bao anh em VN 45+ cũng đang đi qua.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi nên 'cắt đứt' bạn cũ hút thuốc không?</h3></p>
+<p><p>Không. Đặt khoảng cách 2-3 tháng đầu, sau đó gặp lại. Bạn THẬT sẽ tôn trọng quyết định cai của bạn.</p></p>
+<p><h3>Tôi sợ vợ thấy tôi yếu khi than buồn — có nên giấu?</h3></p>
+<p><p>Không. Vợ có thể không hiểu hết — nhưng giấu = mất cơ hội kết nối lớn nhất. Nói thẳng "tuần này anh khó". Tin được.</p></p>
+<p><h3>Cô đơn lâu vầy có phải dấu hiệu trầm cảm?</h3></p>
+<p><p>Nếu > 4 tuần + kèm mất ngủ + ý nghĩ tự hại → có thể. Khám tâm thần. Anhedonia tạm thời (xem <a href="https://sol.vn/wiki/buon-chan-tuan-2" style="color:#B25C2C;font-weight:600;">bài chi tiết</a>) khác trầm cảm clinical.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 3 — Tin tức tốt là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sau 3-6 tháng cai, đa số user báo cảm giác kết nối SÂU HƠN so với lúc còn hút. Lý do:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=co-don) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tuần 4 cai mình cô đơn lạ thường — dù vợ con vẫn ở bên. Hoá ra mình mất "bạn" — điếu thuốc 30 năm bên mình mỗi sáng cà phê, mỗi đêm trên ban công.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi nên 'cắt đứt' bạn cũ hút thuốc không?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=co-don-khi-cai">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Đi Cùng Sol</a>. Nguồn: McRobbie H et al. (2008). *Coping with the social aspects of smoking cai thuốc*. Curr Pharm Des 14(13):1259-1273. · Marcia JE (1980). *Danh tính in adolescence and young adulthood*. Wiley. · 2020 Surgeon General's Report — *Smoking cai thuốc*. Chapter 4 (psychosocial).
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

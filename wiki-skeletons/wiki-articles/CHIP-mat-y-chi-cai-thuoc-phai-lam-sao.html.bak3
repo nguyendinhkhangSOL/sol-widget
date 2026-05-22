@@ -1,0 +1,278 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 1 — Vì sao \"mất ý chí\" là dấu hiệu KHOA HỌC, không phải yếu kém là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trong 25-30 năm hút, não bạn nhận dopamine boost mỗi 1-2 giờ từ nicotine. Cai → dopamine baseline tụt 20-40% trong 2-4 tuần đầu. Hậu quả:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 3 — 6 bước xây hệ thống KHÔNG cần ý chí là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vứt sạch thuốc + bật lửa trong nhà. Nói bạn nhậu \"tôi đang cai\" trước cuộc nhậu. Tránh ngồi bàn cũ ở quán café. Khi tình huống thèm không ở quanh, ý chí KHÔNG bị thử thách → tiết kiệm 80% pin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 4 — Khi nào ý chí phục hồi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tin tốt: Bạn không cần \"mạnh hơn\" — chỉ cần vượt qua 4 tuần đầu. Sau đó ý chí tự phục hồi và mạnh hơn cả lúc trước."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q: Tôi đã cố 5-6 lần, lần nào cũng \"mất ý chí\" tuần 2-3. Bệnh trầm cảm tiềm ẩn? A: CÓ THỂ. Nếu mỗi lần cai đều rơi vào tâm trạng đặc biệt nặng + kéo dài > 2 tuần sau khi dừng cai → nên khám bác sĩ tâm thần để loại trừ depression / anxiety tiềm ẩn. Bupropion vừa hỗ trợ cai vừa ổn định tâm trạng — đáng thử."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tham khảo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bài viết bởi Khang Sol — đã từng \"mất ý chí\" lần 3, học từ vợ rằng \"anh dùng ý chí sai cách\". Cập nhật 14-05-2026."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .myth-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 18px 22px; margin: 14px 0; }
+.sol-wiki .myth-card .myth { font-weight: 700; color: #DC2626; margin-bottom: 4px; }
+.sol-wiki .myth-card .fact { color: #15803D; font-weight: 600; margin-top: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 18px 22px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 32px; height: 32px; border-radius: 50%; text-align: center; line-height: 32px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #FFF4EA; color: #5C3A1E; padding: 10px 12px; text-align: left; border-bottom: 2px solid #B25C2C; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn cai thuốc được 10 ngày. Mỗi sáng dậy tự nhủ "hôm nay không hút". Đến chiều, đầu nặng, đồng nghiệp mời café — bạn nghĩ "chỉ 1 điếu thôi". Rồi 2 điếu. Rồi cả bao. Bạn tự trách <strong>"tôi không có ý chí"</strong>. <strong>Đây là sai lầm nguy hiểm nhất</strong> — vì khi tin "tôi yếu", bạn sẽ bỏ cuộc thay vì sửa cách làm.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>"Mất ý chí" KHÔNG phải lỗi cá nhân — là <strong>cơ chế sinh học</strong> khi não thiếu dopamine<sup>[1]</sup></li>
+<li>Ý chí giống cơ bắp: <strong>càng dùng càng yếu</strong> trong ngày. Hết về 0 vào chiều tối</li>
+<li>Người cai thành công KHÔNG dùng ý chí nhiều hơn — họ <strong>xây hệ thống không cần ý chí</strong></li>
+<li>Giảm phụ thuộc ý chí qua 4 cách: thuốc + môi trường + người thân + auto-routine</li>
+<li>Tuần 4 ý chí phục hồi 70% khi dopamine baseline ổn lại</li>
+</ul>
+</div>
+
+<h2>Phần 1 — Vì sao "mất ý chí" là dấu hiệu KHOA HỌC, không phải yếu kém</h2>
+
+<h3>Não bạn đang đói dopamine</h3>
+
+<p>Trong 25-30 năm hút, não bạn nhận dopamine boost mỗi 1-2 giờ từ nicotine. Cai → dopamine baseline tụt 20-40% trong 2-4 tuần đầu<sup>[2]</sup>. Hậu quả:</p>
+
+<ul>
+<li>Mất hứng thú với mọi thứ (gọi là <strong>anhedonia</strong>)</li>
+<li>Mệt mỏi kéo dài, không có lý do rõ</li>
+<li>Quyết định nhỏ trở nên khó (ăn gì, mặc gì, làm gì) — gọi là <strong>decision fatigue</strong></li>
+<li>Ý chí cảm thấy "trống rỗng" — vì hệ thống reward đang phục hồi</li>
+</ul>
+
+<p>Khi não thiếu dopamine, bộ phận não quản lý quyết định (vùng prefrontal cortex) hoạt động yếu hơn 15-30%<sup>[3]</sup>. Đây là <strong>thực sự</strong> — không phải "cảm thấy yếu", mà cơ bắp não đang yếu thật.</p>
+
+<h3>Ý chí giống cơ bắp — dùng nhiều thì kiệt</h3>
+
+<p>Nghiên cứu Baumeister (Đại học Florida)<sup>[4]</sup>: ý chí là <strong>tài nguyên có hạn</strong> trong ngày. Mỗi quyết định "không hút" tiêu tốn 1 unit. Trung bình:</p>
+
+<ul>
+<li><strong>Buổi sáng:</strong> 100 units ý chí — dễ nói "không"</li>
+<li><strong>Trưa:</strong> 50 units — bắt đầu cảm thấy mệt</li>
+<li><strong>Chiều 17:00:</strong> 20 units — vấp dễ nhất</li>
+<li><strong>Tối:</strong> 5 units — gần như không có sức kháng cự</li>
+</ul>
+
+<p>Đây là lý do <strong>phần lớn cú vấp xảy ra chiều/tối</strong> — không phải vì bạn "yếu", mà vì pin ý chí đã hết.</p>
+
+<h2>Phần 2 — 5 myth về ý chí cai thuốc cần xoá</h2>
+
+<div class="myth-card">
+<div class="myth">❌ Myth: "Người cai thành công có ý chí mạnh hơn"</div>
+<div class="fact">✓ Fact: Họ <strong>xây hệ thống không cần ý chí</strong> — môi trường + người thân + auto-routine. Khi gặp tình huống thèm, họ không phải "quyết" — hệ thống tự lo.</div>
+</div>
+
+<div class="myth-card">
+<div class="myth">❌ Myth: "Nếu mất ý chí 1 lần là tôi không đủ kỷ luật"</div>
+<div class="fact">✓ Fact: <strong>100% người cai đều mất ý chí nhiều lần</strong>. Khác biệt: người thành công có "Plan B" khi ý chí cạn. Người thất bại tin "ý chí là tất cả".</div>
+</div>
+
+<div class="myth-card">
+<div class="myth">❌ Myth: "Dùng thuốc/NRT = thừa nhận tôi yếu"</div>
+<div class="fact">✓ Fact: Dùng thuốc = <strong>khoa học</strong>. Vận động viên Olympic dùng huấn luyện viên + công cụ. Phẫu thuật viên dùng dao mổ chính xác. Cai thuốc cũng vậy — dùng đúng công cụ tăng tỷ lệ thành công 3-5x.</div>
+</div>
+
+<div class="myth-card">
+<div class="myth">❌ Myth: "Tôi đã từng có ý chí — tại sao bây giờ mất?"</div>
+<div class="fact">✓ Fact: Ý chí KHÔNG bị "mất". Nó <strong>đang phải làm việc nặng hơn</strong> — vì triệu chứng cai (withdrawal) + decision fatigue + stress đời thường + thiếu dopamine. Bạn vẫn có cùng năng lượng, chỉ là phân bổ khác.</div>
+</div>
+
+<div class="myth-card">
+<div class="myth">❌ Myth: "Nếu tôi đủ quyết tâm, sẽ không có ngày 'mất ý chí'"</div>
+<div class="fact">✓ Fact: Sai. <strong>Quyết tâm = khoảnh khắc</strong>. <strong>Cai thuốc = 90 ngày × 24 giờ × hàng trăm tình huống thèm</strong>. Không có quyết tâm nào "đủ lâu". Cần system thay quyết tâm.</div>
+</div>
+
+<h2>Phần 3 — 6 bước xây hệ thống KHÔNG cần ý chí</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Loại bỏ trigger khỏi tầm với</h4>
+<p>Vứt sạch thuốc + bật lửa trong nhà. Nói bạn nhậu "tôi đang cai" trước cuộc nhậu. Tránh ngồi bàn cũ ở quán café. Khi tình huống thèm không ở quanh, ý chí KHÔNG bị thử thách → tiết kiệm 80% pin.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Thay thế hành động (không phải chỉ "không hút")</h4>
+<p>Khi tay muốn cầm điếu thuốc, đưa tay làm gì khác: ly nước, kẹo cao su, bút bi, cây cảnh. Não cần <strong>thay thế</strong>, không phải "trống rỗng". Quy tắc Atomic Habits: thay vì "đừng làm X", hãy "làm Y thay X"<sup>[5]</sup>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Báo cho 3 người biết bạn đang cai</h4>
+<p>Vợ + 1 đồng nghiệp gần + 1 bạn thân. Họ KHÔNG cần làm gì — chỉ <strong>biết</strong> là đủ. Khi tâm trí muốn "thử 1 điếu", bạn nhớ "anh ấy biết tôi đang cai — nếu hút lại, mình mất mặt". Social accountability mạnh hơn ý chí 3x<sup>[6]</sup>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Dùng thuốc khi mức nghiện cao (FTND ≥ 6)</h4>
+<p>Bupropion 12 tuần HOẶC Champix 12 tuần — kê đơn bác sĩ. Thuốc <strong>không thay thế ý chí</strong> — nó <strong>giảm nhu cầu dùng ý chí</strong> bằng cách ổn định dopamine. Bạn vẫn quyết, nhưng quyết DỄ hơn nhiều.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Auto-routine — thay vì "tự quyết mỗi sáng"</h4>
+<p>Đặt sẵn lịch buổi sáng: dậy → uống nước → đi bộ 10 phút → ăn sáng. Không cần "quyết" mỗi sáng "hôm nay tôi sẽ làm gì". Routine = <strong>0 decision = 0 ý chí tốn</strong>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">6</div>
+<div>
+<h4>App / sổ tay tracking</h4>
+<p>Mỗi tối ghi 1 dòng: "ngày X — không hút — cảm xúc Y". Việc viết tự tạo <strong>identity shift</strong>: "tôi là người đang cai" thay vì "tôi đang cố không hút". Sau 30 ngày, identity đã chuyển → ý chí không còn cần thiết.</p>
+</div>
+</div>
+
+<h2>Phần 4 — Khi nào ý chí phục hồi?</h2>
+
+<table>
+<tr><th>Tuần</th><th>Ý chí (% baseline)</th><th>Lý do</th></tr>
+<tr><td>Tuần 1</td><td>30%</td><td>Dopamine tụt mạnh, triệu chứng cai) đỉnh, decision fatigue cao</td></tr>
+<tr><td>Tuần 2-3</td><td>40%</td><td>"Đống tro tàn" — anhedonia tạm thời</td></tr>
+<tr><td>Tuần 4</td><td>70%</td><td>Receptor dopamine bắt đầu phục hồi</td></tr>
+<tr><td>Tuần 6-8</td><td>90%</td><td>Mood ổn định, ý chí gần bình thường</td></tr>
+<tr><td>Tháng 3+</td><td>110%</td><td><strong>Cao hơn lúc còn hút</strong> — vì tâm trí tự do<sup>[7]</sup></td></tr>
+</table>
+
+<p><strong>Tin tốt:</strong> Bạn không cần "mạnh hơn" — chỉ cần <strong>vượt qua 4 tuần đầu</strong>. Sau đó ý chí tự phục hồi và mạnh hơn cả lúc trước.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>"Lần 3 cai năm 2015, tôi đã nói với vợ 'anh không có ý chí — chắc anh không bao giờ cai được'. Cô ấy nhìn tôi và nói: <em>'Anh có ý chí lắm — anh đã giữ gia đình này 25 năm, làm việc 14 tiếng/ngày 5 năm liền lúc khởi nghiệp, lo cho bố mẹ già 2 phía. Vấn đề không phải ý chí — là anh dùng nó sai cách'</em>."</p>
+<p>"Cô ấy đúng. Tôi đã đốt 100% ý chí cố 'không hút' suốt ngày — đến chiều cạn pin → vấp. Lần 5 (2020), tôi đổi cách: <strong>không cố không hút</strong>. Thay vào đó tôi <strong>thay thế</strong> — buổi sáng tôi đi bộ 20 phút, café đổi sang trà, vợ tôi biết để không hỏi 'anh có thèm không' (câu hỏi đó kích tình huống thèm)."</p>
+<p>"<strong>Ý chí của tôi không thay đổi giữa lần 3 và lần 5</strong>. Chỉ là lần 5 tôi không bắt ý chí gánh việc của hệ thống. Hệ thống lo tình huống thèm — ý chí chỉ cần ra quyết định 1-2 lần/ngày khi có tình huống bất ngờ. Cạn pin chậm hơn rất nhiều."</p>
+<p>"Nếu hôm nay anh đang nghĩ 'tôi mất ý chí rồi' — anh đang sai. <strong>Ý chí anh vẫn nguyên</strong>. Chỉ là anh đang bắt nó làm việc của 4 hệ thống khác. Trả lại cho nó công việc đúng — và anh sẽ thấy mình mạnh hơn anh nghĩ."</p>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<p><strong>Q: Tôi đã cố 5-6 lần, lần nào cũng "mất ý chí" tuần 2-3. Bệnh trầm cảm tiềm ẩn?</strong><br>
+A: CÓ THỂ. Nếu mỗi lần cai đều rơi vào tâm trạng đặc biệt nặng + kéo dài &gt; 2 tuần sau khi dừng cai → nên khám bác sĩ tâm thần để loại trừ <strong>depression / anxiety tiềm ẩn</strong>. Bupropion vừa hỗ trợ cai vừa ổn định tâm trạng — đáng thử.</p>
+
+<p><strong>Q: Có thuốc nào "tăng ý chí" tức thì không?</strong><br>
+A: KHÔNG có thuốc tăng ý chí thuần. Nhưng <strong>caffeine vừa phải</strong> (1-2 ly café/ngày trước 14h) + <strong>L-Theanine</strong> (200mg) + <strong>ngủ đủ 7 tiếng</strong> = boost ý chí ~30% so với thiếu ngủ + đói + dehydrated.</p>
+
+<p><strong>Q: Tôi không có vợ/người thân hỗ trợ. Phải làm sao "social accountability"?</strong><br>
+A: <strong>Sol app</strong> đồng hành 24/7 — Khang đọc tin nhắn user trả phí mỗi ngày. <strong>Cộng đồng cai thuốc Facebook</strong> (vd "Cộng đồng bỏ thuốc lá Việt Nam"). Khi căng thẳng kéo dài → khám khoa Tâm thần BV địa phương. 1 người chấp nhận biết bạn đang cai = đủ.</p>
+
+<p><strong>Q: "Mất ý chí" mãn tính — không cai thuốc, mà cả tập thể dục, ăn uống... cũng yếu?</strong><br>
+A: Đây có thể là dấu hiệu <strong>burnout / kiệt sức cảm xúc</strong>. Cai thuốc lúc đang burnout = tỷ lệ thành công &lt;5%. Nên <strong>nghỉ phép 2-3 tuần</strong>, hồi phục burnout trước, rồi cai. Hoặc song song: vừa cai vừa làm việc với therapist.</p>
+
+<p><strong>Q: Ý chí có "luyện được" không?</strong><br>
+A: Có — nhưng chậm. Mỗi quyết định khó vượt qua (thiền 10 phút, không xem TikTok 1 giờ, đi tập gym khi mệt) đều xây ý chí dần. Nhưng <strong>đừng đợi "luyện ý chí xong mới cai"</strong> — cai thuốc trong khi đang xây ý chí là OK, miễn dùng đủ system.</p>
+
+<h2>Tham khảo</h2>
+<ol>
+<li>Volkow ND et al. (2009). <em>Imaging dopamine's role in drug abuse and addiction</em>. Neuropharmacology 56 Suppl 1:3-8.</li>
+<li>Cosgrove KP et al. (2009). <em>Decreased dopamine transporter availability in tobacco smokers during triệu chứng cai)</em>. Neuropsychopharmacology 34(8):1989-1996.</li>
+<li>Hayashi T et al. (2013). <em>Dorsolateral prefrontal and orbitofrontal cortex interactions during self-control</em>. J Neurosci 33(14):5860-5866.</li>
+<li>Baumeister RF et al. (1998). <em>Ego depletion: Is the active self a limited resource?</em> J Pers Soc Psychol 74(5):1252-1265.</li>
+<li>Clear J (2018). <em>Atomic Habits</em>. Chapter 6 — Make it obvious / attractive / easy / satisfying.</li>
+<li>Stead LF et al. (2017). <em>Behavioural interventions and social support for smoking cai thuốc</em>. Cochrane Database Syst Rev (3):CD009670.</li>
+<li>Taylor G et al. (2014). <em>Change in mental health after smoking cai thuốc: systematic review and meta-analysis</em>. BMJ 348:g1151.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 1 — Vì sao "mất ý chí" là dấu hiệu KHOA HỌC, không phải yếu kém là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Trong 25-30 năm hút, não bạn nhận dopamine boost mỗi 1-2 giờ từ nicotine. Cai → dopamine baseline tụt 20-40% trong 2-4 tuần đầu. Hậu quả:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 3 — 6 bước xây hệ thống KHÔNG cần ý chí là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Vứt sạch thuốc + bật lửa trong nhà. Nói bạn nhậu "tôi đang cai" trước cuộc nhậu. Tránh ngồi bàn cũ ở quán café. Khi tình huống thèm không ở quanh, ý chí KHÔNG bị thử thách → tiết kiệm 80% pin.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 4 — Khi nào ý chí phục hồi?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tin tốt: Bạn không cần "mạnh hơn" — chỉ cần vượt qua 4 tuần đầu. Sau đó ý chí tự phục hồi và mạnh hơn cả lúc trước.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q: Tôi đã cố 5-6 lần, lần nào cũng "mất ý chí" tuần 2-3. Bệnh trầm cảm tiềm ẩn? A: CÓ THỂ. Nếu mỗi lần cai đều rơi vào tâm trạng đặc biệt nặng + kéo dài > 2 tuần sau khi dừng cai → nên khám bác sĩ tâm thần để loại trừ depression / anxiety tiềm ẩn. Bupropion vừa hỗ trợ cai vừa ổn định tâm trạng — đáng thử.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Tham khảo là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bài viết bởi Khang Sol — đã từng "mất ý chí" lần 3, học từ vợ rằng "anh dùng ý chí sai cách". Cập nhật 14-05-2026.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Đừng bắt ý chí gánh hết — xây hệ thống cùng Sol</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành theo tuần (Free khởi động, linh hoạt 25k/tuần khi quen), 3 lộ trình theo Mức Lệ Thuộc — chip cứu cơn thèm, voice Khang khi mệt nhất, hệ thống thay thay ý chí cá nhân.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=mat-y-chi&utm_medium=organic">Bắt đầu với hệ thống →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã từng "mất ý chí" lần 3, học từ vợ rằng "anh dùng ý chí sai cách". Cập nhật 14-05-2026.</p>
+</div>

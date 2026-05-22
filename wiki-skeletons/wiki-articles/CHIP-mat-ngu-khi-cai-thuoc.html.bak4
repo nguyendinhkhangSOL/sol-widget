@@ -1,0 +1,207 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 4 — Tỉnh giấc giữa đêm — đừng nằm đếm trần nhà là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nếu tỉnh > 20 phút mà không ngủ lại được:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q: Tôi có thể uống Seduxen 1 viên tối được không? A: 1 lần thì OK trong trường hợp khẩn (vd đêm trước ngày làm việc quan trọng). Nhưng uống > 3 đêm liên tục → não bắt đầu phụ thuộc. Hỏi bác sĩ trước."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tham khảo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bài viết bởi Khang Sol — đã thức 5 đêm liên tục tuần đầu cai. Cập nhật 13-05-2026."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #FFF4EA; color: #5C3A1E; padding: 10px 12px; text-align: left; border-bottom: 2px solid #B25C2C; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn cai thuốc được 4 ngày, mỗi đêm thức tới 2–3 giờ sáng, ngủ chập chờn, mơ thấy hút lại. Đây là <strong>triệu chứng cai phổ biến #2 (sau cơn thèm)</strong> — và là một trong những lý do khiến nhiều người bỏ cuộc.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li><strong>40–60% người cai bị mất ngủ</strong> trong tuần 1–2<sup>[1]</sup></li>
+<li>Đỉnh ở ngày 2–4, dịu dần sau 1–4 tuần</li>
+<li>Là dấu hiệu não đang xây lại receptor dopamine — <strong>tạm thời, không tổn thương vĩnh viễn</strong></li>
+<li>KHÔNG tự uống thuốc ngủ — dễ phụ thuộc + che lấp tín hiệu phục hồi</li>
+</ul>
+</div>
+
+<h2>Phần 1 — Vì sao mất ngủ khi cai?</h2>
+
+<h3>Nicotine đã "đặt lại đồng hồ ngủ"</h3>
+<ul>
+<li>Nicotine là <strong>chất kích thích</strong> — làm tăng adrenaline và cortisol</li>
+<li>30 năm hút = não đã quen với "chu kỳ kích thích — thư giãn" theo điếu thuốc</li>
+<li>Cai → mất kích thích → não phải <strong>dựng lại chu kỳ ngủ tự nhiên</strong> (mất 2–4 tuần)<sup>[2]</sup></li>
+</ul>
+
+<h3>Withdrawal trực tiếp ảnh hưởng giấc ngủ</h3>
+<ul>
+<li><strong>Tăng nhịp tim đêm</strong> — không liên quan bệnh tim, là phản ứng cai</li>
+<li><strong>Đổ mồ hôi đêm</strong> — cơ thể đang thải độc</li>
+<li><strong>Mơ sống động</strong> — REM sleep tăng vì nicotine từng ức chế</li>
+<li><strong>Tỉnh giấc 2–3 giờ sáng</strong> — cortisol đỉnh, não tỉnh đột ngột</li>
+</ul>
+
+<h3>Tâm lý đi kèm</h3>
+<ul>
+<li>Lo âu về "sẽ cai được không"</li>
+<li>Nhớ cảm giác điếu thuốc trước ngủ (rất thường gặp với người Việt 45+)</li>
+<li>Cáu kỉnh ban ngày → căng thẳng dồn xuống đêm</li>
+</ul>
+
+<h2>Phần 2 — Ban ngày — Lập lại đồng hồ sinh học</h2>
+
+<table>
+<tr><th>Việc</th><th>Khung giờ</th><th>Vì sao</th></tr>
+<tr><td>Mở rèm + đón nắng sớm</td><td>6:30–7:30</td><td>Reset đồng hồ sinh học, tăng melatonin tối</td></tr>
+<tr><td>Cà phê (nếu muốn)</td><td>Trước 14:00</td><td>Caffeine bán hủy 6h — tránh sau 14h</td></tr>
+<tr><td>Đi bộ 30 phút</td><td>Bất kỳ khi nào</td><td>Tăng adenosine — gây buồn ngủ tự nhiên</td></tr>
+<tr><td>Không ngủ trưa &gt; 20 phút</td><td>Trước 15:00</td><td>Ngủ trưa dài cướp giấc đêm</td></tr>
+<tr><td>Ăn tối nhẹ</td><td>2–3h trước ngủ</td><td>Tiêu hoá xong → não nghỉ được</td></tr>
+</table>
+
+<h2>Phần 3 — Trước khi ngủ — Nghi thức 60 phút</h2>
+
+<ul>
+<li><strong>21:00 — Tắt màn hình lớn.</strong> TV + máy tính tắt 1 tiếng trước ngủ. Điện thoại chuyển night mode (filter ánh sáng xanh).</li>
+<li><strong>21:30 — Ngâm chân nước ấm 38–40°C trong 10–15 phút.</strong> Hạ thân nhiệt sau đó → tín hiệu "đi ngủ" cho não<sup>[3]</sup>.</li>
+<li><strong>21:45 — Trà thảo dược</strong> — tâm sen, hoa cúc, lá bạc hà. KHÔNG trà đặc Bắc/trà ướp hoa nhài (có caffeine).</li>
+<li><strong>22:00 — Hít thở 4-7-8 trên giường.</strong> Vào 4 giây — giữ 7 giây — thở ra 8 giây × 4 lần. Hạ nhịp tim, kích hoạt phó giao cảm.</li>
+<li><strong>22:15 — Tắt đèn, để phòng 19–21°C.</strong> Lạnh nhẹ giúp ngủ sâu hơn.</li>
+</ul>
+
+<h2>Phần 4 — Tỉnh giấc giữa đêm — đừng nằm đếm trần nhà</h2>
+
+<p>Nếu tỉnh > 20 phút mà không ngủ lại được:</p>
+<ol>
+<li>Đứng dậy. Đi sang phòng khác (KHÔNG bật đèn sáng).</li>
+<li>Đọc sách giấy hoặc nghe podcast nhẹ 15–20 phút.</li>
+<li>Khi mí mắt nặng → quay lại giường.</li>
+<li>KHÔNG lướt Facebook/TikTok — ánh sáng xanh + dopamine spike sẽ phá thêm chu kỳ ngủ.</li>
+</ol>
+
+<h2>Phần 5 — Khi nào cần thuốc?</h2>
+
+<div class="check-box"><strong>Có thể dùng tạm thời (2–4 tuần):</strong>
+<ul>
+<li><strong>Melatonin 1–3 mg</strong> uống 30 phút trước ngủ — tự nhiên, không phụ thuộc</li>
+<li><strong>Magie 200–400 mg</strong> tối — giúp thư giãn cơ + hệ thần kinh</li>
+<li><strong>Trà tâm sen / lạc tiên</strong> — y học cổ truyền VN, an toàn</li>
+</ul>
+</div>
+
+<div class="alarm">
+<h3>⚠️ Tránh tuyệt đối</h3>
+<ul>
+<li><strong>Thuốc ngủ kê đơn</strong> (Benzodiazepine — Seduxen, Lexomil) — gây phụ thuộc nhanh, càng dùng càng phải tăng liều</li>
+<li><strong>Rượu</strong> — tưởng dễ ngủ nhưng phá giấc ngủ REM, sáng dậy mệt hơn</li>
+<li><strong>Cafe sau 14h</strong> — bán hủy caffeine 6h, ngủ kém cả tuần sau</li>
+</ul>
+</div>
+
+<h2>Phần 6 — Khi nào đi khám?</h2>
+
+<p>🚨 Đặt lịch bác sĩ nếu:</p>
+<ul>
+<li>Mất ngủ <strong>kéo dài &gt; 4 tuần</strong> dù đã làm các biện pháp trên</li>
+<li>Ngủ gật ban ngày liên tục, không thể tỉnh táo lái xe</li>
+<li>Ngừng thở khi ngủ + ngáy to (người thân nghe) — dấu hiệu Sleep Apnea</li>
+<li>Mất ngủ + buồn vô cớ + ý nghĩ tự hại → khám tâm thần ngay</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>"Tuần đầu cai lần thứ 7, tôi thức tới 4 giờ sáng 5 đêm liên tục. Vợ tôi đi mua tâm sen + dạy tôi ngâm chân nước ấm. Đêm thứ 6 tôi ngủ được 5 tiếng — lần đầu thấy hy vọng."</p>
+<p>"Tôi không uống thuốc ngủ vì tôi sợ phụ thuộc thêm 1 cái nữa. <strong>Tốn 3 tuần nhưng ngủ tự nhiên hơn 30 năm trước</strong>. Bạn cũng làm được."</p>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<p><strong>Q: Tôi có thể uống Seduxen 1 viên tối được không?</strong><br>
+A: 1 lần thì OK trong trường hợp khẩn (vd đêm trước ngày làm việc quan trọng). Nhưng uống > 3 đêm liên tục → não bắt đầu phụ thuộc. Hỏi bác sĩ trước.</p>
+
+<p><strong>Q: Melatonin có an toàn cho người 50+?</strong><br>
+A: Có — FDA approve dùng dài hạn, không phụ thuộc<sup>[4]</sup>. Liều 1–3 mg đủ. Tránh dùng nếu đang uống thuốc loãng máu (Warfarin) — hỏi bác sĩ.</p>
+
+<p><strong>Q: Tôi cai 3 tháng rồi vẫn mất ngủ — sao?</strong><br>
+A: 3 tháng đã qua giai đoạn triệu chứng cai (withdrawal) sinh học. Có thể có insomnia mãn tính tiềm ẩn — khám bác sĩ để loại trừ trầm cảm, sleep apnea, tuyến giáp.</p>
+
+<p><strong>Q: Mơ thấy hút lại — sao kỳ vậy?</strong><br>
+A: Bình thường! Não vẫn đang "xoá" liên kết thói quen. <strong>Smoking dreams</strong> báo hiệu não đang processing tốt — không phải dấu hiệu sẽ tái phát<sup>[5]</sup>.</p>
+
+<h2>Tham khảo</h2>
+<ol>
+<li>Hughes JR (2007). <em>Effects of kiêng dứt thuốc from tobacco</em>. Nicotine Tob Res 9(3):315-327.</li>
+<li>Jaehne A et al. (2009). <em>Effects of nicotine on sleep</em>. Sleep Med Rev 13(5):363-377.</li>
+<li>Liao WC et al. (2005). <em>Effects of warm water foot bath on sleep</em>. Int J Nurs Stud 42(3):311-319.</li>
+<li>Auld F et al. (2017). <em>Melatonin in chronic insomnia</em>. Sleep Med Rev 34:10-22.</li>
+<li>Hajek P et al. (2010). <em>Dreams of smoking after quit</em>. Addict Behav 35(4):378-380.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 4 — Tỉnh giấc giữa đêm — đừng nằm đếm trần nhà là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nếu tỉnh > 20 phút mà không ngủ lại được:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q: Tôi có thể uống Seduxen 1 viên tối được không? A: 1 lần thì OK trong trường hợp khẩn (vd đêm trước ngày làm việc quan trọng). Nhưng uống > 3 đêm liên tục → não bắt đầu phụ thuộc. Hỏi bác sĩ trước.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tham khảo là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bài viết bởi Khang Sol — đã thức 5 đêm liên tục tuần đầu cai. Cập nhật 13-05-2026.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngủ trở lại là phần thưởng của tự do</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành 51 ngày — workbook ngủ ngon từng đêm, Voice của Khang đêm khó, chip 90 giây khi tỉnh giấc.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=mat-ngu">Bắt đầu hành trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã thức 5 đêm liên tục tuần đầu cai. Cập nhật 13-05-2026.</p>
+</div>

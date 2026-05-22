@@ -1,0 +1,250 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 1 — Vape thực ra là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marketing thường gọi là \"hơi nước có vị\" — sai. Aerosol vape chứa:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Vì sao vape KHÔNG giúp cai bền vững?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cai thuốc thật = cắt liên kết với nicotine, để não phục hồi receptor. Vape vẫn cung cấp nicotine → não vẫn nghiện. Bạn chỉ đổi hình thức nghiện."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 4 — Khi nào vape có thể tạm hữu ích?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Một số chuyên gia (Public Health England) cho rằng vape có thể là \"harm reduction\" cho người KHÔNG cai được bằng cách khác. Áp dụng nếu:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 5 — Thay vì vape, hãy thử… là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "\"Lần thứ 5 cai năm 2018, tôi đã thử vape. Mua 1 pod Juul từ Hàn Quốc về. Tuần đầu thấy 'đỡ' — không khói, không hôi. Nhưng đến tuần 3, tôi vape nhiều hơn cả lúc hút thuốc — vì không có tro, không có cảm giác 'điếu xong'. Tôi nhận ra mình vừa đổi 1 cái nghiện sang cái nghiện khác — còn tốn tiền hơn.\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q: Anh em tôi cai bằng vape thành công — sao không thử? A: Vape giúp một số người chuyển khỏi thuốc lá điếu. Nhưng \"cai\" theo nghĩa cắt nicotine thì chỉ 9% thành công sau 2 năm. Anh em bạn có thể vẫn đang dùng vape → vẫn nghiện nicotine + chưa cai thật."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tham khảo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bài viết bởi Khang Sol — đã thử vape lần 5 cai, biết đường vòng không phải lối ra. Cập nhật 13-05-2026."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #FFF4EA; color: #5C3A1E; padding: 10px 12px; text-align: left; border-bottom: 2px solid #B25C2C; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.sol-wiki .verdict { background: #FEE2E2; border-left: 4px solid #DC2626; padding: 16px 20px; margin: 16px 0; border-radius: 8px; font-weight: 600; color: #5C3A1E; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn hút thuốc lá 30 năm, đang cân nhắc chuyển vape vì "vape an toàn hơn — đỡ ho, không tro tàn, không hôi miệng". Đây là một trong những câu hỏi <strong>được người Việt 45+ hỏi nhiều nhất</strong> khi muốn cai. Câu trả lời cần rõ ràng — vì quyết định sai có thể kéo dài 5–10 năm.</p>
+
+<div class="verdict">⚠️ Câu trả lời ngắn: <strong>Vape KHÔNG phải cách an toàn để cai thuốc lá.</strong> Vape có thể giảm tác hại ngắn hạn cho người đang hút, nhưng dùng vape để cai = <strong>đổi 1 nghiện sang 1 nghiện khác</strong>, không dứt được nicotine.</div>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Vape <strong>vẫn chứa nicotine</strong> — chất gây nghiện chính</li>
+<li>&gt; 60% người dùng vape để "cai" <strong>quay lại thuốc lá truyền thống</strong> trong 6 tháng<sup>[1]</sup></li>
+<li>Vape có <strong>nguy cơ phổi riêng</strong> (EVALI, popcorn lung) chưa có dữ liệu dài hạn</li>
+<li>Bộ Y Tế Việt Nam đã <strong>cấm vape</strong> từ 01-01-2025 — sử dụng = phạm pháp</li>
+<li>Cách cai đã chứng minh hiệu quả: <strong>bỏ đột ngột (cold turkey) + NRT (miếng dán) hoặc Champix/Bupropion</strong></li>
+</ul>
+</div>
+
+<h2>Phần 1 — Vape thực ra là gì?</h2>
+
+<h3>Cơ chế</h3>
+<ul>
+<li>Vape (e-cigarette / pod / vape pen) = thiết bị làm nóng <strong>tinh dầu có nicotine</strong></li>
+<li>Tinh dầu = propylene glycol + glycerin + nicotine + hương liệu</li>
+<li>Người dùng hít hơi sương (aerosol) → nicotine vào máu trong 7–10 giây (nhanh hơn cả thuốc lá điếu)</li>
+</ul>
+
+<h3>Vape KHÔNG phải "hơi nước"</h3>
+<p>Marketing thường gọi là "hơi nước có vị" — sai. Aerosol vape chứa:</p>
+<ul>
+<li><strong>Formaldehyde, acetaldehyde</strong> — chất gây ung thư (ít hơn thuốc lá nhưng vẫn có)<sup>[2]</sup></li>
+<li><strong>Kim loại nặng</strong> (chì, niken, crom) từ dây nung</li>
+<li><strong>Diacetyl</strong> — gây "popcorn lung" (bệnh phổi mạn tính tắc nghẽn)</li>
+<li><strong>Nicotine liều cao</strong> — 1 pod = nicotine của 20–40 điếu thuốc</li>
+</ul>
+
+<h2>Phần 2 — So sánh: Thuốc lá vs Vape vs NRT</h2>
+
+<table>
+<tr><th></th><th>Thuốc lá điếu</th><th>Vape</th><th>NRT (miếng dán/kẹo)</th></tr>
+<tr><td>Nicotine?</td><td>Có — liều cao</td><td>Có — liều cao</td><td>Có — liều thấp, kiểm soát</td></tr>
+<tr><td>Tar (nhựa thuốc)</td><td>Có (~7000 chất)</td><td>Không</td><td>Không</td></tr>
+<tr><td>Carbon monoxide</td><td>Có — hại tim</td><td>Không</td><td>Không</td></tr>
+<tr><td>Kim loại nặng aerosol</td><td>Có</td><td>Có</td><td>Không</td></tr>
+<tr><td>Gây nghiện?</td><td>Cao</td><td>Cao (giống thuốc lá)</td><td>Thấp (liều giảm dần)</td></tr>
+<tr><td>FDA approve cai thuốc?</td><td>—</td><td><strong>KHÔNG</strong></td><td><strong>CÓ</strong></td></tr>
+<tr><td>Bằng chứng hiệu quả cai</td><td>—</td><td>Yếu, mâu thuẫn</td><td>Mạnh (Cochrane)<sup>[3]</sup></td></tr>
+<tr><td>Hợp pháp tại VN (2025+)</td><td>Có</td><td><strong>KHÔNG — cấm</strong></td><td>Có</td></tr>
+</table>
+
+<h2>Phần 3 — Vì sao vape KHÔNG giúp cai bền vững?</h2>
+
+<h3>Lý do 1: Không cắt nicotine</h3>
+<p>Cai thuốc thật = <strong>cắt liên kết với nicotine</strong>, để não phục hồi receptor. Vape vẫn cung cấp nicotine → não vẫn nghiện. Bạn chỉ <strong>đổi hình thức nghiện</strong>.</p>
+
+<h3>Lý do 2: Pattern hành vi không thay đổi</h3>
+<p>Cốt lõi của nghiện thuốc là <strong>thói quen tay-miệng-hơi</strong>. Vape giữ nguyên pattern này → không học được "sống không thuốc". Khi vape hết pin/hết pod → tình huống thèm thèm thuốc lá điếu vẫn còn nguyên.</p>
+
+<h3>Lý do 3: Liều nicotine cao bất ngờ</h3>
+<p>1 pod Juul (5%) = nicotine của 20–40 điếu. Người mới chuyển từ thuốc lá sang vape thường <strong>hít nhiều hơn họ nghĩ</strong> → nghiện nặng hơn.</p>
+
+<h3>Lý do 4: Tỷ lệ relapse cao</h3>
+<p>Nghiên cứu PATH Study (Mỹ, 2019): trong số người hút thuốc chuyển sang vape để "cai", chỉ <strong>9% bỏ hẳn được nicotine</strong> sau 2 năm. 60% quay lại thuốc lá điếu. 31% vẫn vape (= vẫn nghiện)<sup>[1]</sup>.</p>
+
+<h2>Phần 4 — Khi nào vape có thể tạm hữu ích?</h2>
+
+<p>Một số chuyên gia (Public Health England) cho rằng vape có thể là <strong>"harm reduction"</strong> cho người KHÔNG cai được bằng cách khác. Áp dụng nếu:</p>
+
+<ul>
+<li>Đã thử bỏ đột ngột + NRT + Champix/Bupropion <strong>nhiều lần</strong> đều thất bại</li>
+<li>Cam kết <strong>chuyển hoàn toàn</strong> sang vape (không dùng song song thuốc lá)</li>
+<li>Có kế hoạch <strong>giảm dần nicotine</strong> vape trong 6–12 tháng</li>
+<li>Mua vape có nguồn gốc rõ — không vape lậu</li>
+</ul>
+
+<div class="alarm">
+<h3>⚠️ Tại Việt Nam (từ 01-2025)</h3>
+<p><strong>Vape đã bị Bộ Y Tế cấm hoàn toàn</strong> — bán + nhập khẩu + sử dụng đều phạm pháp. Quyết định 78/QH15 (Quốc Hội). Vape mua trên mạng = vape lậu, không kiểm soát chất lượng → nguy cơ ngộ độc, EVALI cao hơn.</p>
+<p>=> Nếu anh em đang ở Việt Nam, <strong>không nên dùng vape với bất kỳ lý do nào</strong>.</p>
+</div>
+
+<h2>Phần 5 — Thay vì vape, hãy thử…</h2>
+
+<h3>1. Cold turkey + 4 trụ cột</h3>
+<ul>
+<li>Quyết ngày Q-Day, vứt thuốc + bật lửa</li>
+<li>Tập thở 4-7-8 khi thèm</li>
+<li>9 công cụ phân tâm (đi bộ, nhai kẹo cao su, gọi điện…)</li>
+<li>App đồng hành (Sol, QuitNow)</li>
+</ul>
+
+<h3>2. NRT — miếng dán nicotine (cho FTND ≥ 4)</h3>
+<ul>
+<li>Liều cao 4 tuần (21mg/24h), giảm xuống 14mg/2 tuần, 7mg/2 tuần</li>
+<li>Mua tại pharmacy không cần đơn</li>
+<li>Cochrane: <strong>tăng tỷ lệ cai thành công 50–70%</strong><sup>[3]</sup></li>
+</ul>
+
+<h3>3. Thuốc kê đơn (cho FTND ≥ 6)</h3>
+<ul>
+<li><strong>Bupropion (Wellbutrin)</strong> — 150mg × 2/ngày × 8–12 tuần</li>
+<li><strong>Varenicline (Champix)</strong> — 0.5mg tăng dần lên 1mg × 2/ngày × 12 tuần</li>
+<li>Cả 2 đều hiệu quả gấp 2 bỏ đột ngột thuần (USPHS Guidelines)</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>"Lần thứ 5 cai năm 2018, tôi đã thử vape. Mua 1 pod Juul từ Hàn Quốc về. Tuần đầu thấy 'đỡ' — không khói, không hôi. Nhưng đến tuần 3, tôi <strong>vape nhiều hơn cả lúc hút thuốc</strong> — vì không có tro, không có cảm giác 'điếu xong'. Tôi nhận ra mình vừa đổi 1 cái nghiện sang cái nghiện khác — còn tốn tiền hơn."</p>
+<p>"Tôi bỏ vape sau 4 tháng. Đến lần thứ 7 (2020) mới cai được hẳn — bỏ đột ngột + Bupropion. <strong>Vape là đường vòng — không phải lối ra</strong>."</p>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<p><strong>Q: Anh em tôi cai bằng vape thành công — sao không thử?</strong><br>
+A: Vape giúp một số người <strong>chuyển khỏi thuốc lá điếu</strong>. Nhưng "cai" theo nghĩa cắt nicotine thì chỉ 9% thành công sau 2 năm. Anh em bạn có thể vẫn đang dùng vape → vẫn nghiện nicotine + chưa cai thật.</p>
+
+<p><strong>Q: Vape không khói, không hôi — bộ tốt hơn cho gia đình?</strong><br>
+A: Aerosol vape vẫn để lại <strong>kim loại nặng + nicotine residue</strong> trong không khí, đồ vật. Người thân (đặc biệt trẻ em + thai phụ) vẫn hít phải. Không vô hại.</p>
+
+<p><strong>Q: Tôi đã chuyển vape — giờ bỏ vape thế nào?</strong><br>
+A: Coi như đang cai thuốc lá. <strong>bỏ đột ngột + NRT</strong> hoặc giảm dần nồng độ nicotine pod (5% → 3% → 1.5% → 0%) trong 8–12 tuần.</p>
+
+<p><strong>Q: IQOS / heated tobacco có an toàn hơn?</strong><br>
+A: KHÔNG. IQOS làm nóng (không đốt) thuốc lá thật. <strong>Vẫn có nicotine + tar (ít hơn) + chất gây ung thư</strong>. WHO khuyến cáo không dùng để cai. Bộ Y Tế VN cũng cấm IQOS từ 01-2025.</p>
+
+<h2>Tham khảo</h2>
+<ol>
+<li>Pierce JP et al. (2020). <em>Use of e-cigarettes for quitting in PATH Study</em>. JAMA Netw Open 3(8):e2014153.</li>
+<li>Goniewicz ML et al. (2014). <em>Carbonyl compounds in e-cigarette vapors</em>. Nicotine Tob Res 16(6):655-662.</li>
+<li>Hartmann-Boyce J et al. (2018). <em>Nicotine replacement therapy for smoking cai thuốc</em>. Cochrane Database Syst Rev (5):CD000146.</li>
+<li>WHO Report on the Global Tobacco Epidemic (2023). <em>Heated tobacco products and e-cigarettes</em>.</li>
+<li>Quốc Hội Việt Nam — Nghị quyết 78/QH15 (2024). <em>Cấm thuốc lá điện tử và thuốc lá nung nóng</em>.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 1 — Vape thực ra là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Marketing thường gọi là "hơi nước có vị" — sai. Aerosol vape chứa:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 3 — Vì sao vape KHÔNG giúp cai bền vững?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cai thuốc thật = cắt liên kết với nicotine, để não phục hồi receptor. Vape vẫn cung cấp nicotine → não vẫn nghiện. Bạn chỉ đổi hình thức nghiện.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 4 — Khi nào vape có thể tạm hữu ích?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Một số chuyên gia (Public Health England) cho rằng vape có thể là "harm reduction" cho người KHÔNG cai được bằng cách khác. Áp dụng nếu:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Phần 5 — Thay vì vape, hãy thử… là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">"Lần thứ 5 cai năm 2018, tôi đã thử vape. Mua 1 pod Juul từ Hàn Quốc về. Tuần đầu thấy 'đỡ' — không khói, không hôi. Nhưng đến tuần 3, tôi vape nhiều hơn cả lúc hút thuốc — vì không có tro, không có cảm giác 'điếu xong'. Tôi nhận ra mình vừa đổi 1 cái nghiện sang cái nghiện khác — còn tốn tiền hơn."</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q: Anh em tôi cai bằng vape thành công — sao không thử? A: Vape giúp một số người chuyển khỏi thuốc lá điếu. Nhưng "cai" theo nghĩa cắt nicotine thì chỉ 9% thành công sau 2 năm. Anh em bạn có thể vẫn đang dùng vape → vẫn nghiện nicotine + chưa cai thật.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">6. Tham khảo là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bài viết bởi Khang Sol — đã thử vape lần 5 cai, biết đường vòng không phải lối ra. Cập nhật 13-05-2026.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Cách cai an toàn — bằng phương pháp đã chứng minh</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành 51 ngày — phân tích FTND, đề xuất phương pháp phù hợp, voice Khang khi khó nhất.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=vape-an-toan">Bắt đầu hành trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã thử vape lần 5 cai, biết đường vòng không phải lối ra. Cập nhật 13-05-2026.</p>
+</div>

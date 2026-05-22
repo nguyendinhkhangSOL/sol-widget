@@ -1,0 +1,220 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vì sao Ngày 5 thèm ăn mạnh?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1. Leptin tăng lại. Leptin là hormone báo \"đã no\". Nicotine ức chế leptin suốt nhiều năm — anh không thấy đói thật. Cai → leptin tăng → tín hiệu đói mạnh hơn anh quen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động giữ cân Ngày 5 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đói lâu = thèm dữ dội = ăn quá. Sáng 7h, phụ 10h, trưa 12h, phụ 15h, tối 18-19h. Mỗi bữa nhỏ hơn nhưng đều. Bữa phụ: 1 quả táo, 1 nắm hạt, 1 ly sữa chua không đường."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 5 lần 5 cai, tôi đã tăng 1.5 kg trong 5 ngày. Hoảng. Đến tủ lạnh nửa đêm 3 lần. Mở ra thấy 1 hộp kem đầu tôi mua tuần trước — không ăn được, tự tay vứt. Đêm sau vợ tôi mua 1 kí hạt điều rang — đặt trên bàn. \"Đói thì ăn cái này anh\"."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 5. Anh đột nhiên đói liên tục, thèm đồ ngọt, nửa đêm dậy mở tủ lạnh. Đây là <strong>thèm ăn cai thuốc</strong> — vừa do leptin tăng vừa do não tìm dopamine từ nguồn khác. Tin tốt: có thể kiểm soát mà không tăng cân quá 2-4kg.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Nicotine từng ức chế leptin → cai → leptin tăng → đói nhiều hơn<sup>[1]</sup></li>
+<li>BMR giảm 7-10% (~150 kcal/ngày) — nếu ăn cùng lượng, sẽ tăng 0.8 kg/tháng</li>
+<li>Não thiếu dopamine → tìm reward khác: đường + tinh bột tinh</li>
+<li>Trung bình tăng 2-4 kg trong 3 tháng đầu (KHÔNG phải 10 kg)</li>
+<li>5 cách giữ cân: 3 bữa chính + 2 phụ nhỏ, hạt thay kẹo, uống nước trước ăn, đi bộ sau cơm, không cân hằng ngày</li>
+</ul>
+</div>
+
+<h2>Vì sao Ngày 5 thèm ăn mạnh?</h2>
+
+<h3>3 cơ chế cộng dồn</h3>
+
+<p><strong>1. Leptin tăng lại.</strong> Leptin là hormone báo "đã no". Nicotine ức chế leptin suốt nhiều năm — anh không thấy đói thật<sup>[1]</sup>. Cai → leptin tăng → tín hiệu đói mạnh hơn anh quen.</p>
+
+<p><strong>2. BMR giảm 7-10%.</strong> Nicotine làm tăng chuyển hoá cơ bản (BMR). Cai → BMR về bình thường → cần ít hơn 150 kcal/ngày. Nếu vẫn ăn như cũ — dư 150 kcal/ngày = tăng 0.8 kg/tháng.</p>
+
+<p><strong>3. Não tìm dopamine từ đường.</strong> Receptor dopamine "đói" — não tìm reward thay thế. Đường + tinh bột tinh tình huống thèm dopamine spike tương tự nicotine (yếu hơn). Đây là lý do thèm đồ ngọt + mì gói + bánh ngọt.</p>
+
+<h3>Trung bình tăng bao nhiêu?</h3>
+
+<p>Aubin 2012 BMJ<sup>[2]</sup>: theo dõi 62 nghiên cứu, người cai thuốc trung bình tăng:</p>
+<ul>
+<li>1-2 kg trong 1 tháng đầu</li>
+<li>2-4 kg trong 3 tháng đầu</li>
+<li>3-5 kg sau 1 năm (max)</li>
+<li><strong>So với nguy cơ tử vong do thuốc lá — đây là cái giá nhỏ</strong></li>
+</ul>
+
+<h2>5 hành động giữ cân Ngày 5</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Ăn 3 bữa chính + 2 phụ nhỏ — không để bụng trống</h4>
+<p>Đói lâu = thèm dữ dội = ăn quá. Sáng 7h, phụ 10h, trưa 12h, phụ 15h, tối 18-19h. Mỗi bữa nhỏ hơn nhưng đều. Bữa phụ: 1 quả táo, 1 nắm hạt, 1 ly sữa chua không đường.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Hạt thay kẹo</h4>
+<p>Não muốn nhai gì đó — đáp ứng bằng hạt thay đồ ngọt: hạt điều, hạnh nhân, óc chó, hạt hướng dương. Giới hạn 30g/ngày (1 nắm). Có chất béo tốt + protein → no lâu hơn 3x đường.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Uống 1 ly nước trước khi với đồ ăn</h4>
+<p>Khi cảm thấy "đói" — uống 1 ly nước ấm, đợi 5 phút. 60% lần đó là <strong>khát giả đói</strong>. Nếu sau 5 phút vẫn đói — ăn nhẹ. Phương pháp này giảm calo nhập 200-300/ngày dễ dàng.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Đi bộ 15 phút sau bữa cơm</h4>
+<p>Nghiên cứu DiPietro 2013<sup>[3]</sup>: đi bộ 15 phút sau ăn giảm đường máu đỉnh + tăng nhạy insulin. Đi quanh nhà, ban công, sảnh — không cần ra ngoài. Hiệu quả gấp đôi đi bộ buổi sáng đói.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Cân 1 lần/tuần — không cân hằng ngày</h4>
+<p>Cân hằng ngày dao động 1-2 kg → gây stress vô nghĩa. Sáng thứ Bảy, lúc dậy, chưa ăn — cân. So sánh tuần qua tuần. Nếu tăng &lt; 0.5 kg/tuần — OK. &gt; 1 kg/tuần — điều chỉnh.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li>Bia rượu (thêm calo + giảm ý chí)</li>
+<li>Mì gói tối khuya</li>
+<li>Nhịn ăn để giảm cân — phản tác dụng, dễ thèm thuốc</li>
+<li>Đồ ngọt liên tục — đường tạo dopamine spike → thèm thêm</li>
+<li>Cân đo so sánh với người khác</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 5 lần 5 cai, tôi đã tăng 1.5 kg trong 5 ngày. Hoảng. Đến tủ lạnh nửa đêm 3 lần. Mở ra thấy 1 hộp kem đầu tôi mua tuần trước — không ăn được, tự tay vứt. Đêm sau vợ tôi mua 1 kí hạt điều rang — đặt trên bàn. <em>"Đói thì ăn cái này anh"</em>.</p>
+<p>Tuần 1 tôi tăng 2 kg. Tháng 1 tăng 3 kg (từ 70 lên 73 — cao 1m72). Vợ tôi mua quần mới cho tôi — không trách 1 câu. Tôi quyết tâm: <strong>cai trước, giảm cân sau</strong>.</p>
+<p>Tháng 8 (6 tháng sau cai), tôi bắt đầu đi bộ 40 phút sáng. Tháng 12 — về 70 kg. <strong>3 kg là cái giá của tự do — rẻ hơn 30 năm thuốc lá rất nhiều</strong>.</p>
+<p>Anh em ơi — Ngày 5 đói là khoa học. Đừng nhịn (sẽ vấp thuốc). Đừng cuồng cân (vô ích). Cứ ăn đủ + đi bộ + đợi 6 tháng. Cân sẽ tự ổn.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-4-mat-ngu-va-roi-loan-giac-ngu-giai-thich-khoa-hoc/">→ Ngày 4 — Mất ngủ + giấc mơ sống động</a></li>
+<li><a href="https://sol.vn/ngay-6-cau-gat-voi-nguoi-than-day-khong-phai-tin/">→ Ngày 6 — Cáu gắt với người thân</a></li>
+<li><a href="https://sol.vn/tang-can-khi-cai-thuoc/">→ Tăng cân khi cai thuốc — hướng dẫn đầy đủ</a></li>
+<li><a href="https://sol.vn/thuc-don-cai-thuoc-khong-tang-can/">→ Thực đơn 30 ngày không tăng cân</a></li>
+</ul>
+</div>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+🍴 <strong>Ngày 5 — Thèm ăn là khoa học</strong><br><br>
+Leptin tăng + BMR giảm 7-10% + não tìm dopamine từ đường. Trung bình tăng 2-4 kg/3 tháng — KHÔNG phải 10 kg.<br><br>
+Hôm nay: 3 bữa chính + 2 phụ nhỏ, hạt thay kẹo, uống nước trước ăn, đi bộ 15 phút sau cơm.<br><br>
+Cai trước, giảm cân sau. Đừng nhịn ăn.<br><br>
+📖 <a href="https://sol.vn/ngay-5-them-an-va-noi-so-tang-can-su-that-khoa-h/?utm_source=zalo&utm_campaign=qday-5">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Người tiểu đường hoặc đang dùng thuốc giảm cân — hỏi bác sĩ trước khi điều chỉnh chế độ ăn.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Vì sao Ngày 5 thèm ăn mạnh?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">1. Leptin tăng lại. Leptin là hormone báo "đã no". Nicotine ức chế leptin suốt nhiều năm — anh không thấy đói thật. Cai → leptin tăng → tín hiệu đói mạnh hơn anh quen.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động giữ cân Ngày 5 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đói lâu = thèm dữ dội = ăn quá. Sáng 7h, phụ 10h, trưa 12h, phụ 15h, tối 18-19h. Mỗi bữa nhỏ hơn nhưng đều. Bữa phụ: 1 quả táo, 1 nắm hạt, 1 ly sữa chua không đường.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 5 lần 5 cai, tôi đã tăng 1.5 kg trong 5 ngày. Hoảng. Đến tủ lạnh nửa đêm 3 lần. Mở ra thấy 1 hộp kem đầu tôi mua tuần trước — không ăn được, tự tay vứt. Đêm sau vợ tôi mua 1 kí hạt điều rang — đặt trên bàn. "Đói thì ăn cái này anh".</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Audrain-McGovern J, Benowitz NL. (2011). <em>Cigarette smoking, nicotine, and body weight</em>. Clin Pharmacol Ther 90(1):164-168.</li>
+<li>Aubin HJ et al. (2012). <em>Weight gain in smokers after quitting cigarettes: meta-analysis</em>. BMJ 345:e4439.</li>
+<li>DiPietro L et al. (2013). <em>Three 15-min bouts of walking after meals</em>. Diabetes Care 36(10):3262-3268.</li>
+<li>Farley AC et al. (2012). <em>Interventions for preventing weight gain after smoking cai thuốc</em>. Cochrane Database Syst Rev (1):CD006219.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 5 — Sol có thực đơn 30 ngày không tăng cân</div>
+<div style="font-size:14px;opacity:.9;">Workbook dinh dưỡng cai thuốc + chip nhanh khi đói cảm xúc. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-5&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — tăng 3 kg sau cai, giảm lại sau 4 tháng đi bộ. Cập nhật 14-05-2026.</p>
+
+</div>

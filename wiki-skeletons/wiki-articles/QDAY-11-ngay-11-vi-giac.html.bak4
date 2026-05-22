@@ -1,0 +1,227 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hôm nay cơ thể anh đang làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Taste buds (gai vị giác) ở lưỡi tái sinh mỗi 10-14 ngày. Khi anh hút thuốc, khói + nicotine làm tổn thương + làm chậm quá trình này. Cai 10-11 ngày = đã có một thế hệ taste buds mới, không bị nicotine \"che mờ\" — sắc nét hơn 30-50%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động tận hưởng Ngày 11 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sáng nay hoặc trưa — chọn 1 món anh thích (phở, cơm rang, bún chả). Ngồi yên, không điện thoại, ăn từng miếng nhỏ. Chú ý vị mặn, chua, ngọt, mùi rau thơm. Đây là identity shift — anh đang trở thành \"người ăn vì vị, không phải vì no\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 11 lần 5 cai, sáng tôi pha cà phê quen — uống 1 ngụm và không nhận ra được vị này. Quá đắng. Tôi nghĩ vợ pha sai. Vợ uống thử — bảo \"vẫn vậy thôi anh\". Tôi nhận ra: tôi đã không thực sự cảm vị cà phê suốt nhiều năm."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 11. Sáng nay vợ pha cà phê quen — đột nhiên anh thấy cà phê <strong>đắng hơn nhiều</strong> bình thường. Nồi cơm chín có mùi anh không nhớ ngửi từ khi nào. Đây là <strong>vị giác + khứu giác trở lại</strong> — món quà đầu tiên anh nhận được từ phổi sạch.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Taste buds tái sinh</strong> sau 10 ngày — vị giác sắc nét hơn 30-50%<sup>[1]</sup></li>
+<li><strong>Olfactory neurons</strong> không còn bị tar phủ → khứu giác phục hồi rõ rệt</li>
+<li>Hậu quả: cà phê đắng hơn, cơm thơm hơn, rau mùi sắc nét, nước có vị</li>
+<li>Đây là "phần thưởng" đầu tiên cho việc cai — tận hưởng</li>
+<li>Hôm nay: ăn 1 bữa "chậm", đi chợ ngửi rau thơm, nói với vợ "anh ngửi được"</li>
+</ul>
+</div>
+
+<h2>Hôm nay cơ thể anh đang làm gì?</h2>
+
+<h3>Taste buds tái sinh sau 10 ngày</h3>
+
+<p>Taste buds (gai vị giác) ở lưỡi <strong>tái sinh mỗi 10-14 ngày</strong>. Khi anh hút thuốc, khói + nicotine làm tổn thương + làm chậm quá trình này. Cai 10-11 ngày = đã có một thế hệ taste buds mới, không bị nicotine "che mờ" — sắc nét hơn 30-50%<sup>[1]</sup>.</p>
+
+<h3>Khứu giác sạch tar</h3>
+
+<p>Olfactory neurons (tế bào thần kinh khứu giác) trong khoang mũi 25-30 năm bị phủ tar mỏng — giảm độ nhạy. Sau 10 ngày không hút, lớp tar đã được dọn → mùi vị quay về độ nhạy tự nhiên.</p>
+
+<h3>Thực sự "sắc nét hơn"</h3>
+
+<ul>
+<li>Cà phê đắng hơn — anh có thể uống đặc 50% so với trước</li>
+<li>Cơm sáng có mùi thơm cụ thể (gạo + nước nóng)</li>
+<li>Nước lọc "ngon" lạ — vì chất khoáng anh chưa từng cảm</li>
+<li>Trái cây ngọt hơn — đường tự nhiên rõ nét</li>
+<li>Mùi khói thuốc (đi qua người hút) trở nên <strong>cực kỳ khó chịu</strong></li>
+</ul>
+
+<h2>Triệu chứng hôm nay</h2>
+
+<ul>
+<li>Vị mặn / ngọt rõ hơn rõ rệt</li>
+<li>Mùi cơm canh nóng "thấy" lại được</li>
+<li>Cà phê đắng hơn (cảm nhận thật)</li>
+<li>Nước lọc bất ngờ "ngon"</li>
+<li>Khó chịu khi đi qua người hút thuốc — đặc biệt người lạ</li>
+<li>Đôi khi "lạ" — cảm giác như món anh ăn quen lại có vị khác</li>
+</ul>
+
+<h2>5 hành động tận hưởng Ngày 11</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Ăn 1 bữa "chậm" — ngồi yên cảm nhận vị</h4>
+<p>Sáng nay hoặc trưa — chọn 1 món anh thích (phở, cơm rang, bún chả). Ngồi yên, không điện thoại, ăn từng miếng nhỏ. Chú ý vị mặn, chua, ngọt, mùi rau thơm. Đây là <strong>identity shift</strong> — anh đang trở thành "người ăn vì vị, không phải vì no".</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Đi chợ — ngửi rau thơm, gia vị</h4>
+<p>Sáng đi chợ với vợ. Ngửi rau húng quế, ngò gai, hành tăm, gừng. Sẽ <strong>khác hoàn toàn</strong> ngày Q-Day. Mua 1-2 món mới làm gia đình. Đây là kết nối lại với cuộc sống.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Đổi cà phê đặc hơn / pha khác</h4>
+<p>Cà phê cũ giờ quá đắng. Thay vì giảm liều, đổi <strong>loại cà phê</strong> — pha máy, cà phê trứng, cà phê sữa nhẹ. Cảm giác mới. Hoặc đổi sang trà (anh sẽ cảm vị khác hoàn toàn). Khám phá lại.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Nói với vợ: "Anh ngửi được nồi cơm mới chín"</h4>
+<p>Vợ là người đầu tiên thấy thay đổi của anh. Câu nói này: vừa cảm ơn, vừa chia sẻ niềm vui nhỏ. Có thể là khoảnh khắc kết nối nhất tuần này. Đừng để qua mất.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Đổi nước hoa / sữa tắm</h4>
+<p>Khứu giác mới có thể thấy nước hoa cũ <strong>nồng quá</strong> hoặc <strong>nhạt quá</strong>. Mua chai mới — đây là biểu tượng "phiên bản mới" của anh. Mua bằng tiền tiết kiệm 11 ngày × 20k = 220k (1 chai nước hoa nhẹ).</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li>Ăn quá đà đồ ngọt (sensitivity cao = dễ thèm thêm)</li>
+<li>Bia rượu — phá vị giác mới</li>
+<li>Ngồi gần người hút (giờ cực kỳ khó chịu)</li>
+<li>"Thử 1 hơi xem có còn cảm giác cũ" — KHÔNG. Vị giác mới sẽ <strong>tệ hơn</strong></li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 11 lần 5 cai, sáng tôi pha cà phê quen — uống 1 ngụm và <strong>không nhận ra được vị này</strong>. Quá đắng. Tôi nghĩ vợ pha sai. Vợ uống thử — bảo "vẫn vậy thôi anh". Tôi nhận ra: tôi đã không thực sự cảm vị cà phê suốt nhiều năm.</p>
+<p>Tối hôm đó vợ nấu canh chua cá. Tôi húp 1 muỗng — cay, ngọt, chua, mùi rau thơm... tất cả cùng lúc. Tôi đặt muỗng xuống. Vợ hỏi <em>"Sao anh?"</em>. Tôi: <em>"Mặn quá em pha lại không?"</em>. Cô ấy cười: <em>"Em pha đúng như mọi khi"</em>.</p>
+<p>Đó là khoảnh khắc tôi hiểu: <strong>30 năm hút thuốc, tôi đã ăn mà không nếm</strong>. Vợ tôi nấu món tôi yêu suốt 20 năm, tôi khen ngon — nhưng thực ra tôi chỉ cảm 30% vị thật của nó.</p>
+<p>Đêm đó tôi viết: <em>"Cai thuốc trả lại tôi vị giác. Nếu chỉ vì lý do này thôi — cũng đáng cai. Và đó chỉ là Ngày 11."</em></p>
+<p>Anh em ơi — hôm nay anh sẽ cảm thấy <strong>cuộc sống đậm hơn</strong>. Vợ nấu cho anh đã 20-30 năm — hôm nay anh ăn lần đầu thấy mùi vị thật. Đừng để qua mất. Cảm ơn vợ ngay tối nay.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-10-con-them-doi-hinh-dang-tu-sinh-ly-sang-tam-ly/">→ Ngày 10 — Cơn thèm đổi loại</a></li>
+<li><a href="https://sol.vn/ngay-12-dao-dong-nang-luong-luc-khoe-luc-met/">→ Ngày 12 — Dao động năng lượng</a></li>
+<li><a href="https://sol.vn/cai-thuoc-bao-lau-phoi-sach/">→ Phổi sạch sau bao lâu — timeline 20 năm</a></li>
+</ul>
+</div>
+
+👅 <strong>Ngày 11 — Vị giác trở lại</strong><br><br>
+Taste buds tái sinh sau 10 ngày. Khứu giác nhạy hơn 30-50% vì không còn tar phủ. Cà phê đắng hơn, cơm thơm hơn.<br><br>
+Hôm nay: ăn 1 bữa "chậm" + ngồi yên cảm nhận vị. Đi chợ ngửi rau thơm. Nói với vợ "anh ngửi được nồi cơm".<br><br>
+Đây là phần thưởng đầu tiên — đừng để qua mất.<br><br>
+📖 <a href="https://sol.vn/ngay-11-vi-giac-va-khuu-giac-tro-lai-ca-phe-ngon-hon-hoa-thom-hon/?utm_source=zalo&utm_campaign=qday-11">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu sau 4 tuần vẫn không cảm nhận vị giác trở lại — đi khám tai mũi họng để loại trừ polyp mũi, viêm xoang mạn.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Hôm nay cơ thể anh đang làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Taste buds (gai vị giác) ở lưỡi tái sinh mỗi 10-14 ngày. Khi anh hút thuốc, khói + nicotine làm tổn thương + làm chậm quá trình này. Cai 10-11 ngày = đã có một thế hệ taste buds mới, không bị nicotine "che mờ" — sắc nét hơn 30-50%.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động tận hưởng Ngày 11 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sáng nay hoặc trưa — chọn 1 món anh thích (phở, cơm rang, bún chả). Ngồi yên, không điện thoại, ăn từng miếng nhỏ. Chú ý vị mặn, chua, ngọt, mùi rau thơm. Đây là identity shift — anh đang trở thành "người ăn vì vị, không phải vì no".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 11 lần 5 cai, sáng tôi pha cà phê quen — uống 1 ngụm và không nhận ra được vị này. Quá đắng. Tôi nghĩ vợ pha sai. Vợ uống thử — bảo "vẫn vậy thôi anh". Tôi nhận ra: tôi đã không thực sự cảm vị cà phê suốt nhiều năm.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Vennemann MM et al. (2008). <em>The association between smoking and smell and taste impairment</em>. J Neurol 255(8):1121-1126.</li>
+<li>Konstantinidis I et al. (2010). <em>Olfactory recovery after smoking cai thuốc</em>. Eur Arch Otorhinolaryngol 267:1543-1547.</li>
+<li>US Surgeon General. (2020). <em>Smoking cai thuốc</em>. Chapter 3.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 11 — Sol đi cùng phần thưởng đầu tiên</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành 30 ngày — workbook khám phá lại cuộc sống. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-11&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã nhận ra "30 năm ăn không nếm" vào Ngày 11. Cập nhật 14-05-2026.</p>
+
+</div>

@@ -1,0 +1,191 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Tại sao cai thuốc lá lại bị buồn ngủ và mất tập trung?","acceptedAnswer":{"@type":"Answer","text":"3 nguyên nhân khoa học: (1) Nicotine là chất kích thích — khi cắt nicotine, não giảm dopamine + norepinephrine → cảm giác buồn ngủ, brain fog. (2) Receptors nicotine trong vùng vỏ não trước cần 2-4 tuần để 'reset' về baseline tiền nicotine. (3) Mất ngủ tuần 1-2 do triệu chứng cai (withdrawal) → tích lũy thiếu ngủ. Triệu chứng đỉnh điểm ngày 3-14, giảm dần đến tuần 4-6."}},
+{"@type":"Question","name":"Buồn ngủ và mất tập trung kéo dài bao lâu sau khi cai thuốc?","acceptedAnswer":{"@type":"Answer","text":"Timeline điển hình: Tuần 1-2 (đỉnh — brain fog nặng nhất), Tuần 3-4 (giảm 50%), Tuần 5-8 (giảm 80%), Tháng 3 (bình thường gần hoàn toàn). Sau tuần 8, khả năng tập trung thường TỐT HƠN trước khi hút — vì oxygen máu tăng, ngủ ngon hơn. Người >50 tuổi có thể cần 8-12 tuần thay vì 6-8 tuần."}},
+{"@type":"Question","name":"5 mẹo nhanh giảm buồn ngủ ngay khi cai thuốc?",  "acceptedAnswer":{"@type":"Answer","text":"(1) Uống 2L nước/ngày — dehydration làm fog tệ hơn. (2) Đi bộ 10 phút giữa giờ — oxygen máu tăng. (3) Ăn protein bữa sáng (trứng, sữa chua) — giữ blood sugar ổn định. (4) Cà phê đen <200mg/ngày (1-2 ly) — không over-caffeinate. (5) Ngủ 7-9h, ngủ trước 11h. Tránh: đồ ngọt buổi sáng (sugar crash), ngủ trưa >30 phút (phá sleep cycle đêm)."}},
+{"@type":"Question","name":"Có thực phẩm nào giúp tập trung tốt hơn khi cai thuốc?",  "acceptedAnswer":{"@type":"Answer","text":"5 thực phẩm khoa học: (1) Cá hồi / cá thu (omega-3, EPA-DHA tăng tập trung). (2) Trứng (choline cho não). (3) Hạt óc chó / hạt điều (omega-3 thực vật). (4) Việt quất / dâu (anthocyanin chống oxy hoá). (5) Cacao đen >70% (flavonoid + caffeine nhẹ). Tránh: bánh ngọt, nước ngọt, cơm trắng quá nhiều — gây sugar spike + crash."}},
+{"@type":"Question","name":"Khi nào buồn ngủ và mất tập trung cần đi bác sĩ?",  "acceptedAnswer":{"@type":"Answer","text":"3 dấu hiệu cần đi khám: (1) Buồn ngủ + mất tập trung kéo dài >8 tuần không giảm. (2) Ngủ 7-8h nhưng vẫn fog cả ngày — có thể sleep apnea (ngưng thở khi ngủ — phổ biến người béo + hút thuốc cũ). (3) Kèm trầm cảm, mất hứng thú, ăn kém. Đi khám hô hấp (sleep study) hoặc tâm thần. Đa số người sẽ không cần — nhưng đừng chịu một mình quá lâu."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .tip-card { background: white; border-left: 4px solid #16A34A; padding: 14px 18px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tip-card h3 { margin: 0 0 6px; color: #15803D; }
+.sol-wiki .timeline-box { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.sol-wiki .timeline-box .row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px dashed rgba(0,0,0,0.08); }
+.sol-wiki .timeline-box .row:last-child { border-bottom: none; }
+.sol-wiki .timeline-box .time { font-weight: 700; color: #B25C2C; min-width: 110px; font-size: 14px; }
+.sol-wiki .timeline-box .act { flex: 1; font-size: 14.5px; }
+.sol-wiki .food-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.sol-wiki .food-grid .item { background: #F4FBF5; border: 1px solid #86EFAC; border-radius: 10px; padding: 12px; }
+.sol-wiki .food-grid .item strong { color: #15803D; }
+.sol-wiki .warning-box { background: #FEF2F2; border-left: 4px solid #DC2626; padding: 14px 18px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .warning-box strong { color: #DC2626; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Anh ạ. Cai thuốc tuần 1-2 — não anh như sương mù. Buồn ngủ giữa cuộc họp, không tập trung được viết email, mở Excel xong quên đang làm gì. Em viết bài này để anh biết: <strong>đây là KHOA HỌC sinh học, không phải mệt mỏi tâm lý</strong>. Có 5 mẹo cụ thể giảm ngay + timeline rõ ràng — sau 6-8 tuần não anh sẽ TỐT HƠN trước cai.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Tuần 2 cai năm 2021, tôi đang chủ trì meeting với 5 khách hàng. Giữa câu nói tôi quên đang nói gì. Im lặng 5 giây nhìn camera như zombie. Khách hàng cười nói 'Anh OK chứ?' Tôi xin lỗi đi WC vẩy nước lên mặt."</p>
+<p>"Đêm đó tôi nghĩ tôi sẽ phá sản công ty vì cai thuốc. Vợ tôi đọc nghiên cứu — nói 'Đây là brain fog tuần 2. Anh áp dụng 5 mẹo này, tuần 4 sẽ ổn.' Tôi thử. Đúng. Tuần 5 tôi sharper hơn trước hút."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Buồn ngủ + brain fog</strong> là khoa học sinh học — dopamine + norepinephrine giảm khi cắt nicotine</li>
+<li><strong>Timeline:</strong> đỉnh ngày 3-14, giảm 50% tuần 3-4, gần hết tuần 5-8, bình thường tháng 3</li>
+<li><strong>5 mẹo nhanh:</strong> uống 2L nước, đi bộ 10 phút, protein sáng, cà phê <200mg, ngủ trước 11h</li>
+<li><strong>Sau tuần 8</strong> — tập trung thường TỐT HƠN trước cai (oxygen máu tăng + ngủ sâu)</li>
+<li><strong>3 dấu hiệu đi bác sĩ:</strong> >8 tuần không giảm, sleep apnea, trầm cảm kèm theo</li>
+</ul></div>
+
+<h2>1. Vì sao cai thuốc gây buồn ngủ + mất tập trung — khoa học</h2>
+
+<p>Cảm giác fog tuần 1-2 KHÔNG phải "lười" hay "yếu". Đây là sinh học:</p>
+
+<ol>
+<li><strong>Nicotine = chất kích thích.</strong> Trong 30 năm hút, mỗi điếu thuốc anh tăng dopamine 50% + norepinephrine 40%. Não đã quen baseline cao.</li>
+<li><strong>Khi cắt nicotine,</strong> dopamine giảm 30-40% trong tuần đầu (Hughes 2007)<sup>[1]</sup>. Cảm giác: như uống cà phê đột nhiên ngừng.</li>
+<li><strong>Receptors nicotine</strong> trong vùng vỏ não trước (prefrontal cortex — vùng tập trung + ra quyết định) cần 2-4 tuần để "reset" về tiền nicotine.</li>
+<li><strong>Mất ngủ tuần 1-2</strong> do triệu chứng cai tích lũy thiếu ngủ → fog tệ hơn.</li>
+</ol>
+
+<p>Đây không phải "yếu" — anh đã hút 30 năm, não cần thời gian học lại cách hoạt động không có nicotine.</p>
+
+<h2>2. Timeline brain fog — kỳ vọng đúng</h2>
+
+<div class="timeline-box">
+<div class="row"><div class="time">Ngày 1-3</div><div class="act">Cảm thấy bình thường — adrenaline cai vẫn cao, chưa fog hẳn.</div></div>
+<div class="row"><div class="time">Ngày 4-14</div><div class="act"><strong>ĐỈNH FOG</strong>. Buồn ngủ giữa giờ, quên giữa câu, mở email không nhớ làm gì. Bình thường. Áp dụng 5 mẹo phía dưới.</div></div>
+<div class="row"><div class="time">Tuần 3-4</div><div class="act">Fog giảm 50%. Vẫn còn nhưng kiểm soát được. Có thể chủ trì meeting bình thường.</div></div>
+<div class="row"><div class="time">Tuần 5-8</div><div class="act">Fog giảm 80%. Thi thoảng moment nhẹ. Năng suất gần trước cai.</div></div>
+<div class="row"><div class="time">Tháng 3</div><div class="act">Bình thường. Hoặc TỐT HƠN trước cai — oxygen máu tăng + sleep deep hơn.</div></div>
+</div>
+
+<p><strong>Người >50 tuổi:</strong> có thể cần 8-12 tuần thay vì 6-8 tuần. Não dài hơn để re-wire.</p>
+
+<h2>3. 5 mẹo nhanh giảm buồn ngủ + tăng tập trung NGAY</h2>
+
+<div class="tip-card">
+<h3>MẸO 1 — Uống 2L nước/ngày (đơn giản nhất)</h3>
+<p>Dehydration làm fog tệ hơn 2-3 lần. Não 75% là nước.</p>
+<p><strong>Cách áp dụng:</strong> đặt chai 1.5L cạnh bàn làm việc — uống hết trong ngày. Buổi sáng uống 500ml ngay khi tỉnh dậy. Trước mỗi bữa ăn 1 ly.</p>
+<p><strong>Hiệu quả:</strong> sau 3 ngày uống đủ — fog giảm 20-30% mà không cần thay đổi gì khác.</p>
+</div>
+
+<div class="tip-card">
+<h3>MẸO 2 — Đi bộ 10 phút giữa giờ</h3>
+<p>Oxygen máu lên não 30%. Endorphin tăng. Cortisol giảm. Chỉ 10 phút.</p>
+<p><strong>Cách áp dụng:</strong> 2 lần/ngày — sau bữa trưa + 16h30 chiều. KHÔNG cần thay đồ thể thao — đi bộ trong văn phòng / quanh nhà OK.</p>
+<p><strong>Bonus:</strong> đi bộ + nghe podcast → thay thế hành vi "hút thuốc giải lao" cũ.</p>
+</div>
+
+<div class="tip-card">
+<h3>MẸO 3 — Protein cao bữa sáng</h3>
+<p>Carb đơn (bánh mì, phở) → spike blood sugar → crash 2 giờ sau → fog. Protein giữ blood sugar ổn định 4-5 giờ.</p>
+<p><strong>Bữa sáng tốt:</strong> 2 trứng luộc + 1 cốc sữa chua + 1 quả chuối + cà phê. Hoặc bún bò Huế (protein cao) thay vì xôi (carb).</p>
+<p><strong>Tránh:</strong> bánh ngọt buổi sáng, nước ngọt, cơm trắng quá nhiều.</p>
+</div>
+
+<div class="tip-card">
+<h3>MẸO 4 — Cà phê đen 1-2 ly/sáng (max 200mg caffeine)</h3>
+<p>Cà phê giúp — NHƯNG over-caffeinate sau giai đoạn cai gây anxiety + mất ngủ tệ hơn.</p>
+<p><strong>Liều an toàn:</strong> 1-2 cốc đen (200ml) sáng 7-9h. KHÔNG uống sau 14h (phá sleep cycle).</p>
+<p><strong>Lưu ý:</strong> người cũ uống 5-6 ly/ngày — giảm dần 1 ly mỗi tuần. Cắt đột ngột gây đau đầu thêm tuần 2.</p>
+</div>
+
+<div class="tip-card">
+<h3>MẸO 5 — Ngủ trước 11h tối, dậy trước 7h sáng</h3>
+<p>Sleep cycle quan trọng nhất cho não. Ngủ 11h-5h chất lượng cao hơn ngủ 1h-7h dù cùng 6 tiếng.</p>
+<p><strong>Cách áp dụng:</strong> setup phòng ngủ tối, nhiệt độ 23-25°C, KHÔNG điện thoại sau 22h. Đọc sách giấy 20 phút trước ngủ.</p>
+<p><strong>Bonus thở 4-7-8:</strong> 4 nhịp trước khi nhắm mắt → giảm insomnia tuần 1-2.</p>
+</div>
+
+<h2>4. 5 thực phẩm hỗ trợ não khi cai thuốc</h2>
+
+<div class="food-grid">
+<div class="item"><strong>🐟 Cá hồi / Cá thu</strong><br>Omega-3 (EPA-DHA) tăng tập trung. 2-3 lần/tuần.</div>
+<div class="item"><strong>🥚 Trứng</strong><br>Choline → acetylcholine não. Bữa sáng 2-3 trứng.</div>
+<div class="item"><strong>🌰 Hạt óc chó / điều</strong><br>Omega-3 thực vật + magnesium. Snack 30g/ngày.</div>
+<div class="item"><strong>🫐 Việt quất / dâu</strong><br>Anthocyanin chống oxy hoá. 1 cốc/ngày.</div>
+<div class="item"><strong>🍫 Cacao đen >70%</strong><br>Flavonoid + caffeine nhẹ. 20-30g sau lunch.</div>
+<div class="item"><strong>🥑 Bơ + olive</strong><br>Chất béo tốt cho neuron. Salad bơ 2-3 lần/tuần.</div>
+</div>
+
+<p><strong>Tránh tuần 1-4:</strong> nước ngọt, bánh kem, mì gói thường (carb đơn) — gây sugar crash → fog.</p>
+
+<h2>5. Khi nào buồn ngủ + mất tập trung cần đi bác sĩ</h2>
+
+<div class="warning-box">
+<strong>3 dấu hiệu cần can thiệp:</strong>
+<ol>
+<li><strong>Fog kéo dài >8 tuần không giảm</strong> — não anh có vấn đề khác (không chỉ triệu chứng cai). Đi khám hô hấp + thần kinh.</li>
+<li><strong>Ngủ 7-8h vẫn fog cả ngày:</strong> có thể sleep apnea (ngưng thở khi ngủ) — phổ biến nam 40+ tuổi, BMI cao, từng hút thuốc. Sleep study 1-2tr tại BV lớn.</li>
+<li><strong>Kèm trầm cảm:</strong> mất hứng thú, ăn kém, ý nghĩ tiêu cực kéo dài. Đi khám tâm thần. Gọi <strong>1800 599 920</strong>.</li>
+</ol>
+</div>
+
+<p>Đa số người sẽ KHÔNG gặp các vấn đề này. Nhưng biết khi nào cần can thiệp — đừng chịu một mình.</p>
+
+<h2>6. Tin tốt — sau tháng 3 thường TỐT HƠN trước cai</h2>
+
+<p>Đây là điều ít ai nói. Sau 12 tuần cai:</p>
+
+<ul>
+<li><strong>Oxygen máu tăng 15-20%</strong> — não nhận oxygen nhiều hơn → tập trung tốt hơn.</li>
+<li><strong>Ngủ sâu (REM + deep sleep) tăng 25%</strong> — chất lượng ngủ tốt hơn → tỉnh táo ban ngày.</li>
+<li><strong>Cortisol baseline giảm</strong> về mức người không hút — bớt anxiety, bớt fog do stress.</li>
+<li><strong>Trí nhớ ngắn hạn tăng 5-10%</strong> (đo testing) — quên ít hơn.</li>
+</ul>
+
+<p>Anh sẽ có khoảnh khắc 3-4 tháng sau cai khi nhận ra: "Tôi nhớ tên đồng nghiệp mới sau 1 lần. Trước đây phải gặp 3-4 lần." Đó là não đang work tốt hơn.</p>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Daily check-in fog + reminder 5 mẹo — miễn phí</div>
+<a href="https://sol.vn">Cài app Sol →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/qday-08-ngay-8-suong-mu-nao/">Ngày 8 — sương mù não</a></li>
+<li>→ <a href="https://sol.vn/mat-ngu-khi-cai-thuoc-la/">Mất ngủ khi cai thuốc — cách ngủ lại</a></li>
+<li>→ <a href="https://sol.vn/tam-ly-bo-thuoc-thay-doi-nhu-the-nao/">Tâm lý người cai thay đổi 5 giai đoạn</a></li>
+<li>→ <a href="https://sol.vn/vuot-qua-con-them-bang-hoi-tho-sau/">Vượt qua cơn thèm bằng thở sâu</a></li>
+</ul>
+</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Hughes JR (2007). <em>Effects of kiêng dứt thuốc from tobacco: cognitive and behavioral symptoms</em>. Nicotine Tob Res 9.</li>
+<li>Pomerleau OF, et al. (2007). <em>Cognitive function and nicotine triệu chứng cai</em>. Behav Pharmacol 18.</li>
+<li>Wetherell MA, et al. (2018). <em>Sleep apnea in former smokers</em>. Chest 153.</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol, ex-smoker 30 năm, đã cai 5 năm. Cập nhật 17/5/2026.</p>
+
+</div>

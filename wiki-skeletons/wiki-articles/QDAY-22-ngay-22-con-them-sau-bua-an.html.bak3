@@ -1,0 +1,207 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vì sao Ngày 22 thèm sau ăn dai dẳng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sau bữa cơm — insulin tăng (vì carb), glucose máu cao → não tìm \"thưởng\". 25-30 năm hút, mỗi bữa ăn xong = 1 điếu thuốc. Não đã build link \"insulin tăng = thuốc lá đến\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 22 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bữa nào cũng vậy: nhai miếng cuối → đứng dậy → đi rửa bát hoặc đi bộ 5 phút. Đừng ngồi nán \"tiêu hóa\" — đó là context cue cũ. Phá context 30 giây = phá Pavlov."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 22 lần 5 cai, tôi đã có 21 ngày không hút. Đến trưa Ngày 22, vợ nấu cơm canh cá kho — món tôi yêu. Tôi ăn ngon. Ăn xong — ngồi salông uống cà phê. Đột nhiên cơn thèm bùng cực mạnh — tôi không hiểu vì sao. Đã 21 ngày không thèm dữ vậy."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 22. Anh đã cai 3 tuần. cơn thèm phần lớn đã qua. Nhưng vẫn còn 1 tình huống thèm dai dẳng nhất: <strong>5-10 phút sau bữa cơm</strong>. Trưa ăn xong — ngồi vào ghế quen — não tự sinh thèm. Đây là <em>post-meal conditioned cue</em> — Pavlov mạnh thứ 2 sau cà phê + cuộc nhậu.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Post-meal cue cực mạnh (Niaura 1988)<sup>[1]</sup> — não link "no bụng + insulin tăng" với "thưởng nicotine"</li>
+<li>Tuần 3 — cơn thèm sinh học gần hết, nhưng cue này dai dẳng nhất</li>
+<li>Có thể kéo dài 3-6 tháng — đặc biệt sau bữa trưa</li>
+<li>Phá Pavlov: đứng dậy NGAY sau ăn, đánh răng, đi bộ 10 phút</li>
+<li>Đừng coi nhẹ — 20% người vấp tháng 2-3 do post-meal cue</li>
+</ul>
+</div>
+
+<h2>Vì sao Ngày 22 thèm sau ăn dai dẳng?</h2>
+
+<h3>Post-meal cue mạnh hơn anh nghĩ</h3>
+
+<p>Sau bữa cơm — insulin tăng (vì carb), glucose máu cao → não tìm "thưởng". 25-30 năm hút, mỗi bữa ăn xong = 1 điếu thuốc. Não đã build link <strong>"insulin tăng = thuốc lá đến"</strong>.</p>
+
+<p>Tuần 3 — cơn thèm sinh học gần hết. Nhưng cue này <strong>chỉ kích khi gặp tình huống cụ thể</strong>: ngồi bàn ăn xong, mở điện thoại, ngồi ghế quen.</p>
+
+<h3>Niaura 1988 — cue reactivity</h3>
+
+<p>Nghiên cứu Niaura<sup>[1]</sup> đo cơn thèm 30 phút sau bữa ăn ở người cai. Kết quả: cơn thèm tăng <strong>60-80% so với baseline</strong> — kéo dài 15-30 phút. Đây là <em>conditioned cue</em>, không phải triệu chứng cai (withdrawal) sinh học.</p>
+
+<h2>5 hành động Ngày 22</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Sau ăn — đứng dậy NGAY (quy tắc 30 giây)</h4>
+<p>Bữa nào cũng vậy: nhai miếng cuối → đứng dậy → đi rửa bát hoặc đi bộ 5 phút. Đừng ngồi nán "tiêu hóa" — đó là context cue cũ. Phá context 30 giây = phá Pavlov.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Tráng miệng — kẹo cao su hoặc trái cây</h4>
+<p>Tay-miệng habit cần replacement. Kẹo cao su không đường (Xylitol) hoặc 1 miếng trái cây ngọt nhẹ. Não cảm thấy "bữa ăn đã kết thúc trọn vẹn" — không tìm thuốc.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Đánh răng NGAY sau bữa</h4>
+<p>Đánh răng + nước súc miệng tạo cảm giác "miệng đã sạch". Não khó link "miệng vừa đánh răng" với "thèm điếu thuốc đầy mùi". Trick đơn giản nhưng cực hiệu quả.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Đổi chỗ ngồi sau ăn — không phải ghế cũ</h4>
+<p>Nếu trước đây sau ăn anh ngồi ghế salông xem TV (smoke time cũ) → bây giờ ngồi bàn ăn lâu hơn, hoặc ra ban công, hoặc đi bộ. Đổi context = đổi cue tình huống thèm.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Uống 1 ly nước ấm thay vì cà phê tráng miệng</h4>
+<p>Cà phê sau ăn = tình huống thèm × 2 (post-meal cue + cà phê cue). Tuần 3 — thay nước ấm hoặc trà nhẹ. 2-3 tuần sau quay lại cà phê, đã hết Pavlov.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>Ngồi xem TV ngay sau ăn</strong> — tình huống thèm cao</li>
+<li><strong>Cà phê tráng miệng</strong> — combo cue</li>
+<li><strong>Coi nhẹ "chỉ là sau ăn"</strong> — đây là 20% nguyên nhân vấp tháng 2-3</li>
+<li><strong>Ăn nhanh đi nhanh</strong> — phá tiêu hoá. Ăn chậm + đứng dậy ngay khi xong</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 22 lần 5 cai, tôi đã có 21 ngày không hút. Đến trưa Ngày 22, vợ nấu cơm canh cá kho — món tôi yêu. Tôi ăn ngon. Ăn xong — ngồi salông uống cà phê. <strong>Đột nhiên cơn thèm bùng cực mạnh</strong> — tôi không hiểu vì sao. Đã 21 ngày không thèm dữ vậy.</p>
+<p>Tôi đứng dậy đi ra ban công 10 phút. Sóng qua. Tôi nhận ra: <strong>tôi vừa làm chuỗi cue cũ</strong> — bữa cơm + ghế salông + cà phê. Não tự kích.</p>
+<p>Hôm sau tôi đổi: ăn xong → đứng dậy NGAY → đánh răng → uống nước ấm thay cà phê → đi bộ 10 phút. cơn thèm không bùng nữa.</p>
+<p>2 tuần sau (Ngày 36) tôi thử lại — uống cà phê sau ăn. Lúc đó đã hết Pavlov. Bình thường.</p>
+<p>Anh em ơi — Ngày 22 là test "tôi đã thật sự thoát chưa". Đáp án: tuần 3 vẫn còn cue dai dẳng. Đừng coi nhẹ. <strong>Đứng dậy NGAY sau ăn — đơn giản nhưng cứu nguy</strong>.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-21-moc-3-tuan-bo-thuoc-vong-lap-thoi-quen-da-yeu-di/">→ Ngày 21 — Mốc 3 tuần</a></li>
+<li><a href="https://sol.vn/ngay-23-cuoi-tuan-khi-nghi-thuc-cu-khong-con/">→ Ngày 23 — Cuối tuần</a></li>
+<li><a href="https://sol.vn/them-thuoc-dem-khuya-90-giay/">→ Kỹ thuật 90 giây vượt cơn thèm</a></li>
+</ul>
+</div>
+
+🍽 <strong>Ngày 22 — Sau ăn còn thèm</strong><br><br>
+Post-meal cue cực mạnh — não link "no bụng + insulin" với "thưởng nicotine". 20% người vấp tháng 2-3 do cue này.<br><br>
+Hôm nay: đứng dậy NGAY sau ăn (quy tắc 30 giây), đánh răng, đi bộ 10 phút, đổi cà phê → nước ấm.<br><br>
+📖 <a href="https://sol.vn/ngay-22-con-them-sau-bua-an-tai-sao-van-dai-dang/?utm_source=zalo&utm_campaign=qday-22">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Post-meal cue có thể kéo dài 3-6 tháng. Đừng coi nhẹ ngay cả khi đã 1 tháng cai.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Vì sao Ngày 22 thèm sau ăn dai dẳng?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sau bữa cơm — insulin tăng (vì carb), glucose máu cao → não tìm "thưởng". 25-30 năm hút, mỗi bữa ăn xong = 1 điếu thuốc. Não đã build link "insulin tăng = thuốc lá đến".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 22 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bữa nào cũng vậy: nhai miếng cuối → đứng dậy → đi rửa bát hoặc đi bộ 5 phút. Đừng ngồi nán "tiêu hóa" — đó là context cue cũ. Phá context 30 giây = phá Pavlov.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 22 lần 5 cai, tôi đã có 21 ngày không hút. Đến trưa Ngày 22, vợ nấu cơm canh cá kho — món tôi yêu. Tôi ăn ngon. Ăn xong — ngồi salông uống cà phê. Đột nhiên cơn thèm bùng cực mạnh — tôi không hiểu vì sao. Đã 21 ngày không thèm dữ vậy.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Niaura R et al. (1988). <em>Relevance of cue reactivity to understanding alcohol and smoking tái nghiện</em>. J Abnorm Psychol 97:133-152.</li>
+<li>Shiffman S et al. (2002). <em>Real-time analysis of tái nghiện</em>. J Consult Clin Psychol 70:1140-1151.</li>
+<li>Marlatt GA, Gordon JR. (1985). <em>tái nghiện Prevention</em>. Guilford Press.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 22 — Sol có chip post-meal</div>
+<div style="font-size:14px;opacity:.9;">Chip "vừa ăn xong thèm" → 30 giây cứu nguy + voice Khang. Bắt đầu miễn phí.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-22&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã bị post-meal cue tấn công Ngày 22 năm 2020 và học cách phá. Cập nhật 14-05-2026.</p>
+
+</div>

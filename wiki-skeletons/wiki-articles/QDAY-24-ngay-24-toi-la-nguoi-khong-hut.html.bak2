@@ -1,0 +1,230 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Identity shift — bước ngoặt khoa học là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Self-concept = cách anh tự định nghĩa mình. Suốt 25-30 năm hút, identity của anh có bao gồm \"người hút thuốc\" — một phần thân nhận diện. Khi cai, identity này phải bị thay thế."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 24 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không thêm \"đang cai\", không thêm \"đã từng hút\". Chỉ \"không\". Câu trả lời ngắn = identity solid. Mỗi lần nói = củng cố. Trong tuần này anh sẽ nói \"không\" với ít nhất 3 người mới — mỗi lần nói tăng identity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 24 lần 5 cai (đầu tháng 2 năm 2020), tôi đi dự lễ ra mắt của 1 đối tác. Người MC giới thiệu tôi với khách mời mới. Anh ấy hỏi tôi vài câu, đến: \"Anh có hút không, để tôi gọi ra ngoài cho?\"."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 24. Đồng nghiệp mới gặp hỏi: "Anh có hút thuốc không?". Anh trả lời tự nhiên: <strong>"Không, tôi không hút"</strong>. Không thêm "đang cai" — chỉ "không hút". Đây là <em>identity shift</em> — chuyển dịch danh tính. Khoảnh khắc não anh chính thức đổi từ "smoker đang cai" sang "non-smoker".</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Identity shift = tái nghiện rate giảm 50% nữa (Tombor 2015)<sup>[1]</sup></li>
+<li>Chuyển từ "smoker trying to quit" sang "non-smoker"</li>
+<li>Tuần 4 — bắt đầu rõ rệt khi giới thiệu bản thân với người mới</li>
+<li>Dấu hiệu: trả lời "tôi không hút" tự nhiên + không còn thèm dữ</li>
+<li>Hôm nay: nói "tôi không hút" với 3 người, viết "tôi là người..." 5 dòng, đổi avatar</li>
+</ul>
+</div>
+
+<h2>Identity shift — bước ngoặt khoa học</h2>
+
+<h3>Self-concept là gì?</h3>
+
+<p>Self-concept = cách anh tự định nghĩa mình. Suốt 25-30 năm hút, identity của anh có bao gồm "<strong>người hút thuốc</strong>" — một phần thân nhận diện. Khi cai, identity này phải bị thay thế.</p>
+
+<h3>Tombor 2015 — research cốt lõi</h3>
+
+<p>Nghiên cứu Tombor (Health Psychology Review)<sup>[1]</sup>: khi identity "non-smoker" gắn chặt → tỷ lệ tái phát <strong>giảm 50% so với người vẫn coi mình "smoker đang cai"</strong>.</p>
+
+<p>Cơ chế: khi não tin "tôi là người không hút" → mọi lựa chọn tự động align (không nghĩ "1 điếu kỷ niệm", không vào quán café cũ, không gặp bạn nhậu cũ vô tổ chức).</p>
+
+<h3>Khi nào identity shift xảy ra?</h3>
+
+<ul>
+<li>Ngày 14-21: bắt đầu "thử" — vài lần trả lời "không hút" mà cảm thấy lạ</li>
+<li><strong>Ngày 22-28: thành tự nhiên</strong> — nói "không hút" như nói "tôi 50 tuổi"</li>
+<li>Ngày 30+: solid — không còn ý nghĩ "tôi đã từng hút"</li>
+<li>Tháng 3-6: identity hoàn toàn integrated</li>
+</ul>
+
+<h2>Dấu hiệu anh đã identity shift</h2>
+
+<ul>
+<li>Trả lời "tôi không hút" — không thêm "đang cai"</li>
+<li>Đi qua quán café cũ — không có cảm giác "ngày xưa..." mạnh</li>
+<li>Bạn rút thuốc mời — anh từ chối tự nhiên, không thèm</li>
+<li>Nhìn ảnh anh hồi 1 năm trước (có thuốc) — cảm giác "đó là người khác"</li>
+<li>Mơ hút thuốc — tỉnh dậy biết ngay là mơ</li>
+<li>Đôi khi <strong>cảm giác lạ</strong> khi nghĩ về quá khứ hút thuốc</li>
+</ul>
+
+<h2>5 hành động Ngày 24</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Khi ai hỏi "có hút không?" — trả lời "KHÔNG"</h4>
+<p>Không thêm "đang cai", không thêm "đã từng hút". Chỉ "không". Câu trả lời ngắn = identity solid. Mỗi lần nói = củng cố. Trong tuần này anh sẽ nói "không" với ít nhất 3 người mới — mỗi lần nói tăng identity.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Viết "Tôi là người ..." — 5 dòng nhận diện mới</h4>
+<p>Trong sổ tay: <em>"Tôi là người không hút. Tôi là người yêu vợ con. Tôi là người làm việc tốt. Tôi là người tự do. Tôi là người đầu tư cho sức khoẻ."</em> 5 dòng. Mỗi sáng đọc lại 1 lần trong 1 tuần. Identity refresh.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Đổi avatar / wallpaper điện thoại</h4>
+<p>Symbolic shift. Avatar mới = phiên bản mới. Có thể là ảnh đi bộ buổi sáng (không thuốc), ảnh con, ảnh gia đình, hoặc ảnh "Day 24" trên Sol app. Mỗi lần mở điện thoại — nhắc identity mới.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Mua 1 món đồ mới — symbolic "phiên bản mới"</h4>
+<p>Áo, đồng hồ, ví, túi xách — gì đó anh dùng hằng ngày. Khi mặc/mang → nhớ "tôi là phiên bản mới". Mua bằng tiền tiết kiệm 24 ngày × 20k = 480k. Đẹp + symbolic.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Kể với 1 người mới gặp: "Tôi là người không hút"</h4>
+<p>Đồng nghiệp mới, hàng xóm mới, bạn của bạn. Khi giới thiệu — bao gồm "tôi không hút" trong vài câu đầu. Vd: <em>"Tôi 50 tuổi, làm IT, có gia đình, không hút thuốc"</em>. Người mới không biết quá khứ — chỉ biết identity hiện tại của anh.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>"Tôi đã từng hút 30 năm"</strong> — kéo identity cũ về</li>
+<li><strong>"Tôi đang cai"</strong> — vẫn còn smoker identity</li>
+<li><strong>So sánh "ngày xưa tôi hút bao nhiêu"</strong> — focus phiên bản cũ</li>
+<li><strong>Coi đây là "thí nghiệm" — tôi sẽ xem có thật cai được không</strong></li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 24 lần 5 cai (đầu tháng 2 năm 2020), tôi đi dự lễ ra mắt của 1 đối tác. Người MC giới thiệu tôi với khách mời mới. Anh ấy hỏi tôi vài câu, đến: <em>"Anh có hút không, để tôi gọi ra ngoài cho?"</em>.</p>
+<p>Tôi trả lời tự nhiên: <strong>"Không, cảm ơn anh, tôi không hút"</strong>.</p>
+<p>Anh ấy gật đầu, đổi chủ đề. Cuộc nói chuyện tiếp 30 phút. Khi tôi về xe, vợ hỏi tôi cuộc nói chuyện ra sao — tôi kể lại. Đến đoạn "anh ấy hỏi anh có hút không", tôi tự nhận ra: <strong>tôi đã trả lời "không" mà không suy nghĩ. Không nói "đang cai". Không thêm gì</strong>.</p>
+<p>Đêm đó tôi viết: <em>"Ngày 24. Hôm nay tôi nói 'tôi không hút' lần đầu không cần thêm 'đang cai'. Tôi đã là người khác. Tôi không phải Khang-người-hút-thuốc nữa. Tôi là Khang."</em></p>
+<p>Đó là khoảnh khắc identity shift của tôi. 5 năm sau — tôi vẫn nói "tôi không hút" tự nhiên với người mới. Identity đã solid.</p>
+<p>Anh em ơi — Ngày 24 là dấu hiệu não anh đang đổi. <strong>Nói "không hút" — không phải "đang cai"</strong>. Mỗi lần nói = củng cố. Đến Ngày 30 — identity solid.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-23-cuoi-tuan-khi-nghi-thuc-cu-khong-con/">→ Ngày 23 — Cuối tuần</a></li>
+<li><a href="https://sol.vn/ngay-25-can-tai-nghien-vấp-neu-ban-hut-1-dieu-dieu-gi-xay-ra/">→ Ngày 25 — vấp vs tái nghiện</a></li>
+<li><a href="https://sol.vn/khong-la-chinh-minh/">→ Không là chính mình — identity shift</a></li>
+</ul>
+</div>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+🌱 <strong>Ngày 24 — Tôi là người không hút</strong><br><br>
+Identity shift = tái nghiện rate giảm 50% nữa (Tombor 2015). Chuyển từ "đang cai" sang "không hút".<br><br>
+Hôm nay: trả lời "tôi không hút" (KHÔNG thêm "đang cai") với 3 người mới, viết "tôi là người..." 5 dòng, đổi avatar điện thoại.<br><br>
+📖 <a href="https://sol.vn/ngay-24-toi-la-nguoi-khong-hut-chuyen-dich-danh-tinh/?utm_source=zalo&utm_campaign=qday-24">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Identity shift là quá trình 1-3 tháng — Ngày 24 là dấu hiệu bắt đầu rõ. Không phải ai cũng cùng tốc độ. Đừng so sánh.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Identity shift — bước ngoặt khoa học là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Self-concept = cách anh tự định nghĩa mình. Suốt 25-30 năm hút, identity của anh có bao gồm "người hút thuốc" — một phần thân nhận diện. Khi cai, identity này phải bị thay thế.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 24 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không thêm "đang cai", không thêm "đã từng hút". Chỉ "không". Câu trả lời ngắn = identity solid. Mỗi lần nói = củng cố. Trong tuần này anh sẽ nói "không" với ít nhất 3 người mới — mỗi lần nói tăng identity.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 24 lần 5 cai (đầu tháng 2 năm 2020), tôi đi dự lễ ra mắt của 1 đối tác. Người MC giới thiệu tôi với khách mời mới. Anh ấy hỏi tôi vài câu, đến: "Anh có hút không, để tôi gọi ra ngoài cho?".</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Tombor I et al. (2015). <em>Smoker identity and its potential role in young adults' smoking behavior</em>. Health Psychol Rev 9:204-228.</li>
+<li>West R, Brown J. (2013). <em>Theory of Addiction</em>. 2nd Ed. Wiley.</li>
+<li>Vangeli E et al. (2010). <em>Predictors of attempts to stop smoking</em>. Addiction 106:2110-2121.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 24 — Sol cùng anh xây identity mới</div>
+<div style="font-size:14px;opacity:.9;">Workbook identity shift + voice Khang. Bắt đầu miễn phí.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-24&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã identity shift Ngày 24 năm 2020, 5 năm sau vẫn solid. Cập nhật 14-05-2026.</p>
+
+</div>

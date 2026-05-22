@@ -1,0 +1,446 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phương pháp cai thuốc lá nào hiệu quả nhất?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không có \"tốt nhất\" tuyệt đối. 3 phương pháp đã chứng minh Cochrane: bỏ đột ngột (cold turkey) (base), Tapering (RR 1.01 vs bỏ đột ngột), NRT/thuốc kê (RR 1.55-2.24). Kết hợp luôn tốt hơn: Tapering + NRT combo = odds x1.71. FTND ≥7 cần Champix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cold turkey có hiệu quả hơn giảm dần không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Cochrane 2016 (51 RCT, 22.000 người): RR 1.01 (95% CI 0.87-1.17) — tương đương khoa học. Chọn theo tính cách: bỏ đột ngột hợp người \"0 hoặc 100\", FTND ≤3. Tapering hợp người \"từng bước\", FTND 4-7, văn hóa nhậu khó cắt ngay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NRT có an toàn không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có cho đa số người. Stead 2012 Cochrane (117 trials, 51.000 người): NRT tăng odds thành công x1.55 vs placebo. Combo patch + lozenge x1.71. Chống chỉ định: đau ngực không ổn định, nhồi máu cơ tim trong 2 tuần, dị ứng nicotine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Champix (Varenicline) tốt hơn NRT không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có cho FTND nặng. Cahill 2013 Cochrane: Varenicline RR 2.24 vs placebo, RR 1.57 vs NRT đơn. Tác dụng phụ: buồn nôn 30%, mơ kỳ lạ 13%, FDA warning về ý nghĩ tự sát (hiếm). Cần BS kê đơn, ngân sách ~1.5-2 triệu/12 tuần."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bupropion có khác Champix không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khác. Bupropion (Wellbutrin) cơ chế ức chế dopamine + norepinephrine reuptake, đồng thời là thuốc chống trầm cảm. RR 1.62 vs placebo. Phù hợp người có depression đi kèm. Chống chỉ định: tiền sử co giật, rối loạn ăn uống, dùng MAOI."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .method-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 18px 22px; margin: 16px 0; }
+.sol-wiki .method-card h3 { margin-top: 0; }
+.sol-wiki .method-card .method-stat { background: #F4FBF5; border-radius: 8px; padding: 8px 12px; margin: 10px 0; font-size: 14px; }
+.sol-wiki .method-card .method-stat strong { color: #15803D; }
+.sol-wiki .method-card .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.sol-wiki .method-card .pros, .sol-wiki .method-card .cons { padding: 10px 12px; border-radius: 8px; font-size: 13.5px; }
+.sol-wiki .method-card .pros { background: #ECFDF5; border-left: 3px solid #16A34A; }
+.sol-wiki .method-card .cons { background: #FEF2F2; border-left: 3px solid #DC2626; }
+.sol-wiki .method-card .pros h4, .sol-wiki .method-card .cons h4 { margin: 0 0 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+.sol-wiki .method-card .pros h4 { color: #15803D; }
+.sol-wiki .method-card .cons h4 { color: #DC2626; }
+.sol-wiki .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14.5px; }
+.sol-wiki .compare-table th { background: #5C3A1E; color: white; padding: 10px; text-align: left; }
+.sol-wiki .compare-table td { padding: 10px; border-bottom: 1px solid rgba(0,0,0,0.08); vertical-align: top; }
+.sol-wiki .compare-table tr:nth-child(even) { background: #FAFAF8; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Có bao nhiêu cách cai thuốc đã được nghiên cứu chứng minh hiệu quả? Câu trả lời: 3 phương pháp chính. Phương pháp cai thuốc lá nào hiệu quả với anh — phụ thuộc tính cách và mức phụ thuộc. Đây là Ngày 5 của 7 ngày Làm quen — Sol so sánh 3 đường, anh chọn.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>3 phương pháp đã chứng minh khoa học:</strong> bỏ đột ngột, Gradual reduction (tapering), NRT/thuốc kê</li>
+<li><strong>bỏ đột ngột và Tapering = tương đương</strong> về tỷ lệ thành công 6 tháng (Cochrane 2016, RR 1.01)<sup>[1]</sup></li>
+<li><strong>NRT</strong> (miếng dán + viên ngậm) tăng odds <strong>1.55 lần</strong> (Stead 2012, Cochrane)<sup>[2]</sup></li>
+<li><strong>Varenicline (Champix)</strong> tăng odds <strong>2.24 lần</strong> — cao nhất (Cahill 2013, Cochrane)<sup>[3]</sup></li>
+<li><strong>Bupropion</strong> tăng odds <strong>1.62 lần</strong> — phù hợp người có depression đi kèm (Hughes 2014)<sup>[4]</sup></li>
+</ul>
+</div>
+
+<h2>Trước khi so sánh — sự thật quan trọng</h2>
+
+<p>Internet đầy bài viết kiểu "10 cách cai thuốc dễ dàng", "bài thuốc dân gian cai thuốc trong 3 ngày". Đa số không có bằng chứng khoa học. Sol chỉ liệt kê những phương pháp đã qua <strong>Cochrane Database Systematic Reviews</strong> — tổ chức quốc tế chuyên review nghiên cứu y học cao cấp nhất.</p>
+
+<p>Có chính xác <strong>3 con đường</strong> đã được nghiên cứu trên hàng chục nghìn người và chứng minh hiệu quả. Hãy hiểu rõ từng cái trước khi chọn.</p>
+
+<h2>Phương pháp 1: Cold Turkey (bỏ đột ngột)</h2>
+
+<div class="method-card">
+<h3>🎯 Cold Turkey — Hôm nay hút, mai 0%</h3>
+
+<p><strong>Cách làm:</strong> Đặt 1 ngày (Q-Day) — đến ngày đó dừng hoàn toàn, không giảm trước. Tất cả nicotine bị cắt cùng lúc.</p>
+
+<div class="method-stat">
+<strong>Tỷ lệ thành công 6 tháng:</strong> ~5-10% nếu không hỗ trợ, ~15-25% với hỗ trợ behavioral (Hughes 2009)<sup>[5]</sup>
+</div>
+
+<div class="pros-cons">
+<div class="pros">
+<h4>✓ Phù hợp anh nếu</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>Tính cách "0 hoặc 100", không thích nửa vời</li>
+<li>FTND nhẹ (≤3) — phụ thuộc thấp</li>
+<li>Có sự kiện rõ làm "bước ngoặt" (bác sĩ cảnh báo, con sinh, v.v.)</li>
+<li>Đã thử tapering thất bại vì "kéo dài quá"</li>
+</ul>
+</div>
+<div class="cons">
+<h4>✗ Không phù hợp nếu</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>Hút ≥1 bao/ngày, FTND ≥7</li>
+<li>Công việc đòi hỏi tập trung cao 24h đầu</li>
+<li>Đã thử bỏ đột ngột thất bại nhiều lần</li>
+<li>Có bệnh tâm thần đang điều trị</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2>Phương pháp 2: Gradual Reduction (giảm dần — tapering)</h2>
+
+<div class="method-card">
+<h3>📉 Tapering 14 ngày — Giảm bậc đến Q-Day</h3>
+
+<p><strong>Cách làm:</strong> Trong 14 ngày trước Q-Day, mỗi ngày cắt 1 vài điếu theo thứ tự "dễ → khó". Đến Q-Day còn 3-5 điếu, hôm đó dừng hoàn toàn.</p>
+
+<div class="method-stat">
+<strong>Tỷ lệ thành công 6 tháng:</strong> Tương đương bỏ đột ngột — <strong>RR 1.01 (95% CI 0.87-1.17)</strong> theo Lindson-Hawley 2016 Cochrane (51 RCT, 22.000+ người)<sup>[1]</sup>
+</div>
+
+<div class="pros-cons">
+<div class="pros">
+<h4>✓ Phù hợp anh nếu</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>Tính cách "từng bước", thích chuẩn bị</li>
+<li>FTND trung bình (4-6)</li>
+<li>Đã thử bỏ đột ngột thất bại</li>
+<li>Có công việc trí óc — sợ triệu chứng cai (withdrawal) D1-3 ảnh hưởng</li>
+<li>Văn hóa nhậu/cà phê khó cắt ngay 100%</li>
+</ul>
+</div>
+<div class="cons">
+<h4>✗ Không phù hợp nếu</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>Quá nóng vội, muốn "xong ngay"</li>
+<li>Có xu hướng "kéo dài rồi quên"</li>
+<li>Risk hút bù cao (hít sâu hơn để bù — xem T-8)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2>Phương pháp 3: NRT + thuốc kê — Cessation medications</h2>
+
+<p>Đây là phương pháp <strong>tăng odds thành công cao nhất</strong>, có thể kết hợp với bỏ đột ngột hoặc tapering. Có 3 nhóm thuốc đã được FDA + Bộ Y tế VN phê duyệt:</p>
+
+<div class="method-card">
+<h3>💊 3A. NRT (Nicotine Replacement Therapy)</h3>
+
+<p><strong>Cách hoạt động:</strong> Thay nicotine từ thuốc lá bằng nicotine "sạch" (không có 4.000 hóa chất độc khác trong khói). Cơ thể không bị cắt nicotine đột ngột → triệu chứng cai nhẹ hơn rất nhiều.</p>
+
+<p><strong>Dạng phổ biến VN:</strong> Miếng dán (Nicorette patch 7/14/21mg), viên ngậm (lozenge 2mg/4mg), kẹo cao su (Nicotinell gum), spray miệng. Mua được không kê đơn ở Pharmacity, Long Châu, An Khang.</p>
+
+<div class="method-stat">
+<strong>Tỷ lệ thành công:</strong> Tăng odds <strong>1.55 lần</strong> so với placebo (Stead 2012 Cochrane, 117 trials, 51.000 người). Combo patch + lozenge tăng <strong>1.71 lần</strong> so với NRT đơn<sup>[2]</sup>.
+</div>
+
+<div class="pros-cons">
+<div class="pros">
+<h4>✓ Phù hợp</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>FTND 4-6 trung bình</li>
+<li>Sợ triệu chứng cai D1-3 nặng</li>
+<li>Không có chống chỉ định</li>
+</ul>
+</div>
+<div class="cons">
+<h4>✗ Chống chỉ định</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>Đau ngực không ổn định</li>
+<li>Nhồi máu cơ tim trong 2 tuần</li>
+<li>Phụ nữ mang thai (relative)</li>
+<li>Dị ứng nicotine</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="method-card">
+<h3>💊 3B. Varenicline (Champix / Chantix)</h3>
+
+<p><strong>Cách hoạt động:</strong> Bám vào receptor nicotinic acetylcholine α4β2 trong não — vừa kích thích nhẹ (giảm thèm) vừa chặn nicotine từ thuốc gắn vào (nếu lỡ hút, không thấy "ngon"). Cơ chế "kép" độc đáo.</p>
+
+<p><strong>Dùng thế nào:</strong> Bắt đầu 1 tuần TRƯỚC Q-Day, uống đến 12 tuần. Phải có đơn bác sĩ — Champix bán ở VN ~1.5-2 triệu/đợt 12 tuần.</p>
+
+<div class="method-stat">
+<strong>Tỷ lệ thành công:</strong> Tăng odds <strong>2.24 lần</strong> so với placebo, <strong>1.57 lần</strong> so với NRT đơn (Cahill 2013 Cochrane, 27 trials, 12.000 người)<sup>[3]</sup>. CAO NHẤT trong 3 nhóm thuốc.
+</div>
+
+<div class="pros-cons">
+<div class="pros">
+<h4>✓ Phù hợp</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>FTND ≥7 nặng</li>
+<li>Đã thử NRT thất bại</li>
+<li>Hút ≥1.5 bao/ngày</li>
+<li>Có ngân sách (1.5-2 triệu)</li>
+</ul>
+</div>
+<div class="cons">
+<h4>✗ Chống chỉ định / Lưu ý</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>Tiền sử trầm cảm / ý nghĩ tự sát (tương đối)</li>
+<li>Suy thận nặng</li>
+<li>Tác dụng phụ: buồn nôn 30%, mơ kỳ lạ 13%</li>
+<li>Cần theo dõi bởi bác sĩ</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="method-card">
+<h3>💊 3C. Bupropion (Wellbutrin / Zyban)</h3>
+
+<p><strong>Cách hoạt động:</strong> Ức chế tái hấp thu dopamine + norepinephrine — đồng thời là thuốc chống trầm cảm. Giảm thèm thuốc + giảm depression đi kèm cai.</p>
+
+<p><strong>Dùng thế nào:</strong> Bắt đầu 1-2 tuần trước Q-Day, uống 7-12 tuần. Phải có đơn bác sĩ — Wellbutrin ~1-1.5 triệu/đợt.</p>
+
+<div class="method-stat">
+<strong>Tỷ lệ thành công:</strong> Tăng odds <strong>1.62 lần</strong> so với placebo (Hughes 2014 Cochrane, 65 trials)<sup>[4]</sup>.
+</div>
+
+<div class="pros-cons">
+<div class="pros">
+<h4>✓ Phù hợp</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>Có triệu chứng trầm cảm đi kèm</li>
+<li>FTND 4-7</li>
+<li>Không thể dùng Champix</li>
+<li>Lo ngại tăng cân D7-30 sau cai</li>
+</ul>
+</div>
+<div class="cons">
+<h4>✗ Chống chỉ định</h4>
+<ul style="margin: 4px 0 0; font-size: 13px;">
+<li>Tiền sử co giật / động kinh</li>
+<li>Rối loạn ăn uống (chán ăn, ăn ói)</li>
+<li>Đang dùng MAOI</li>
+<li>Mất ngủ nặng — Bupropion làm khó ngủ</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2>So sánh nhanh — Bảng quyết định</h2>
+
+<table class="compare-table">
+<tr>
+<th>Tiêu chí</th>
+<th>bỏ đột ngột</th>
+<th>Tapering 14 ngày</th>
+<th>NRT</th>
+<th>Varenicline</th>
+<th>Bupropion</th>
+</tr>
+<tr>
+<td><strong>Odds vs không hỗ trợ</strong></td>
+<td>×1 (base)</td>
+<td>×1.01</td>
+<td>×1.55</td>
+<td>×2.24</td>
+<td>×1.62</td>
+</tr>
+<tr>
+<td><strong>Phù hợp FTND</strong></td>
+<td>≤3</td>
+<td>4-6</td>
+<td>4-6</td>
+<td>≥7</td>
+<td>4-7 + depression</td>
+</tr>
+<tr>
+<td><strong>Cần đơn BS</strong></td>
+<td>Không</td>
+<td>Không</td>
+<td>Không</td>
+<td>Có</td>
+<td>Có</td>
+</tr>
+<tr>
+<td><strong>Chi phí</strong></td>
+<td>0</td>
+<td>0</td>
+<td>500k-1tr</td>
+<td>1.5-2tr</td>
+<td>1-1.5tr</td>
+</tr>
+<tr>
+<td><strong>triệu chứng cai D1-3</strong></td>
+<td>Cao</td>
+<td>Trung bình</td>
+<td>Thấp</td>
+<td>Thấp</td>
+<td>Trung bình</td>
+</tr>
+<tr>
+<td><strong>Kết hợp được không?</strong></td>
+<td>—</td>
+<td>+ NRT (+1.71)</td>
+<td>+ Tapering</td>
+<td>Đơn lẻ</td>
+<td>+ NRT đôi khi</td>
+</tr>
+</table>
+
+<h2>Khuyến cáo tốt nhất: Kết hợp 2-3 phương pháp</h2>
+
+<p>Các nghiên cứu meta-analysis liên tục cho thấy <strong>kết hợp behavioral + pharmacological luôn tốt hơn đơn lẻ</strong><sup>[5]</sup>:</p>
+
+<ul>
+<li><strong>FTND nhẹ:</strong> bỏ đột ngột + ứng dụng/coaching (như Sol) → đủ</li>
+<li><strong>FTND trung bình:</strong> Tapering 14 ngày + NRT combo (patch + lozenge) → tăng odds 1.71×</li>
+<li><strong>FTND nặng:</strong> Tapering 14 ngày + Varenicline 12 tuần → tăng odds 2.24× + giảm triệu chứng cai</li>
+</ul>
+
+<p>Sol làm gì trong tổ hợp này? Sol là phần "behavioral + coaching" — đi cùng anh từng ngày, gửi chip Zalo, lưu nhật ký, trả lời câu hỏi cấp khi cơn thèm đến. Sol KHÔNG bán thuốc — anh tự đặt NRT (Pharmacity) hoặc khám BS (Champix/Bupropion).</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — 5 lần cai, mỗi lần dùng cách khác</div>
+<p>Mình kể thật để anh hiểu: lần 1 (1995) mình bỏ đột ngột — đập 1 lần, vấp sau 1 tuần. Lần 2-3 (2010-2015) mình tapering không có gì — vấp ở tháng thứ 2. Lần 4 (2018) bỏ đột ngột + NRT — cai được 3 tháng, vấp ở đám cưới bạn. Lần 5 (2020) tapering 2 tuần + Bupropion 12 tuần — cai được, 5 năm rồi vẫn cai.</p>
+<p>Lần thứ 5 mới hợp công thức. Không phải tại 4 lần trước mình yếu — tại mình chưa tìm đúng phương pháp với mức phụ thuộc của mình lúc đó (FTND 7-8). Bupropion vừa giúp đỡ thèm vừa nhẹ depression vốn có. Mỗi người mỗi khác.</p>
+</div>
+
+<h2>Hôm nay anh làm gì?</h2>
+
+<p>Ngày 5 Sol KHÔNG yêu cầu chọn. Chỉ xin anh:</p>
+
+<ol>
+<li>Đọc 3 phương pháp trên, ghi vào điện thoại: <strong>phương pháp nào nghe phù hợp nhất với mình?</strong></li>
+<li>Nếu thiên về NRT hoặc Varenicline/Bupropion — note lại để mai (Ngày 6) làm test mức sẵn sàng + ngày kia (Ngày 7) cam kết chính thức</li>
+<li>Nếu thiên về bỏ đột ngột hoặc Tapering không thuốc — vẫn note, đến Ngày 7 quyết</li>
+</ol>
+
+<p>Đừng vội. Sol đi cùng anh chọn đúng.</p>
+
+<h2>Mai có gì?</h2>
+
+<p>Ngày 6 — Sol cho anh làm test <strong>Stages of Change</strong> (Prochaska 1983): 5 câu xác định anh đang ở giai đoạn nào (Pre-contemplation / Contemplation / Preparation / Action / Maintenance). Stage anh đang ở quyết định nên đặt Q-Day hay chờ thêm.</p>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+🔬 <strong>Ngày 5 Làm quen — 3 phương pháp khoa học</strong><br><br>
+3 đường đã chứng minh Cochrane: bỏ đột ngột + Tapering (RR 1, tương đương), NRT (×1.55), Varenicline (×2.24 — cao nhất), Bupropion (×1.62 + chống depression).<br><br>
+Kết hợp tốt hơn đơn lẻ: Tapering + NRT combo → odds ×1.71. FTND ≥7 nặng → Champix.<br><br>
+Hôm nay: chỉ ghi phương pháp nghe hợp nhất. Mai test stages of change, ngày kia cam kết.<br><br>
+📖 <a href="https://sol.vn/lam-quen-ngay-5-3-phuong-phap-khoa-hoc/?utm_source=zalo&utm_campaign=lamquen-5">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Varenicline (Champix) và Bupropion là thuốc kê đơn — phải khám bác sĩ trước khi dùng. Có chống chỉ định cụ thể (xem từng phần). NRT không kê đơn nhưng vẫn nên thảo luận với dược sĩ nếu có bệnh tim mạch. Sol không thay thế tư vấn y khoa cá nhân.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phương pháp cai thuốc lá nào hiệu quả nhất?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không có "tốt nhất" tuyệt đối. 3 phương pháp đã chứng minh Cochrane: bỏ đột ngột (base), Tapering (RR 1.01 vs bỏ đột ngột), NRT/thuốc kê (RR 1.55-2.24). Kết hợp luôn tốt hơn: Tapering + NRT combo = odds x1.71. FTND ≥7 cần Champix.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Cold turkey có hiệu quả hơn giảm dần không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không. Cochrane 2016 (51 RCT, 22.000 người): RR 1.01 (95% CI 0.87-1.17) — tương đương khoa học. Chọn theo tính cách: bỏ đột ngột hợp người "0 hoặc 100", FTND ≤3. Tapering hợp người "từng bước", FTND 4-7, văn hóa nhậu khó cắt ngay.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. NRT có an toàn không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có cho đa số người. Stead 2012 Cochrane (117 trials, 51.000 người): NRT tăng odds thành công x1.55 vs placebo. Combo patch + lozenge x1.71. Chống chỉ định: đau ngực không ổn định, nhồi máu cơ tim trong 2 tuần, dị ứng nicotine.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Champix (Varenicline) tốt hơn NRT không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có cho FTND nặng. Cahill 2013 Cochrane: Varenicline RR 2.24 vs placebo, RR 1.57 vs NRT đơn. Tác dụng phụ: buồn nôn 30%, mơ kỳ lạ 13%, FDA warning về ý nghĩ tự sát (hiếm). Cần BS kê đơn, ngân sách ~1.5-2 triệu/12 tuần.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Bupropion có khác Champix không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Khác. Bupropion (Wellbutrin) cơ chế ức chế dopamine + norepinephrine reuptake, đồng thời là thuốc chống trầm cảm. RR 1.62 vs placebo. Phù hợp người có depression đi kèm. Chống chỉ định: tiền sử co giật, rối loạn ăn uống, dùng MAOI.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Lindson-Hawley N, Aveyard P, Hughes JR. (2016). <em>Gradual versus abrupt smoking cai thuốc</em>. Cochrane Database Syst Rev. CD008033.</li>
+<li>Stead LF, Perera R, Bullen C, et al. (2012). <em>Nicotine replacement therapy for smoking cai thuốc</em>. Cochrane Database Syst Rev. CD000146.</li>
+<li>Cahill K, Stevens S, Perera R, Lancaster T. (2013). <em>Pharmacological interventions for smoking cai thuốc: an overview and network meta-analysis</em>. Cochrane Database Syst Rev. CD009329.</li>
+<li>Hughes JR, Stead LF, Hartmann-Boyce J, Cahill K, Lancaster T. (2014). <em>Antidepressants for smoking cai thuốc</em>. Cochrane Database Syst Rev. CD000031.</li>
+<li>Fiore MC, Jaén CR, Baker TB, et al. (2008). <em>Treating Tobacco Use and Dependence: 2008 Update</em>. US Department of Health and Human Services Clinical Practice Guideline.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/cold-turkey-vs-giam-dan/">bỏ đột ngột vs Giảm dần — so sánh chi tiết</a></li>
+<li>→ <a href="https://sol.vn/champix-varenicline-cai-thuoc/">Champix/Varenicline — hướng dẫn dùng</a></li>
+<li>→ <a href="https://sol.vn/mieng-dan-nicotine-nrt/">NRT miếng dán nicotine — cách dùng</a></li>
+<li>→ <a href="https://sol.vn/lam-quen-ngay-6-do-muc-san-sang/">Ngày 6 (Mai) — Test mức sẵn sàng</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">7 ngày Làm quen — đến Ngày 7 anh tự chọn lộ trình</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Sol gửi 1 chip Zalo mỗi sáng. Đến Ngày 7 anh có đủ thông tin để cam kết phương pháp + ngày bắt đầu.</p>
+<a href="https://bothuocla.sol.vn">Tham gia miễn phí →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Cochrane Database Systematic Reviews, USDHHS Clinical Practice Guideline 2008. Sol là sản phẩm Việt 100%, không quảng cáo, không bán dữ liệu.</p>
+
+</div>

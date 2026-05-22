@@ -1,0 +1,289 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "5 thay đổi đo được — sau 1 tuần cai thuốc là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Suốt 6 ngày qua, máu anh đã chở oxy 99% (so với chỉ 92-96% khi còn hút thuốc). Đây là sự khác biệt khổng lồ ở cấp tế bào:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Triệu chứng có thể còn — và ít hơn rồi là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nếu hôm nay anh thấy \"tốt hơn nhiều\" — đừng nghỉ chiến lược. Tuần 2 (Ngày 8-14) còn \"Đống tro tàn\" + sương mù não rõ hơn. Hôm nay là chặng nghỉ — không phải đích đến."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Mốc 1 Tuần là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cái gì đó nhỏ anh đã thèm lâu: 1 cuốn sách, 1 bữa ngon, 1 món đồ. Quy tắc duy nhất: KHÔNG được là \"1 điếu cuối kỷ niệm\". 1 điếu = reset receptor + AVE = tái nghiện 95%. Đừng cho não cơ hội học lại."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh tuần này (tuần 2 sắp đến) gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mốc 1 tuần lần 5 cai (tháng 1 năm 2020), tôi đi siêu thị mua 1 quyển sách dày mà tôi đã thèm lâu — \"Atomic Habits\" của James Clear. 200 nghìn — đúng bằng tiền 10 bao thuốc mà tôi đã không hút."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+.sol-wiki .stat-card { background: linear-gradient(135deg, #DCFCE7 0%, #FFF4EA 100%); border: 1px solid #16A34A; border-radius: 12px; padding: 14px; text-align: center; }
+.sol-wiki .stat-num { font-size: 26px; font-weight: 700; color: #15803D; }
+.sol-wiki .stat-label { font-size: 12px; color: #5C3A1E; margin-top: 4px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Một tuần. Bảy ngày. Anh đã vượt qua phần khó nhất của hành trình thuốc lá — phần triệu chứng cai (triệu chứng cai) sinh học đỉnh điểm. Hôm nay là cột mốc đầu tiên đáng tự thưởng. Trong bài này em sẽ chỉ ra <strong>5 thay đổi đo được</strong> mà cơ thể anh đã có trong 7 ngày qua.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>CO máu</strong> đã bình thường liên tục 6 ngày — máu chở oxy 99% (so với 92% khi còn hút)<sup>[1]</sup></li>
+<li><strong>Huyết áp</strong> giảm trung bình 10/5 mmHg<sup>[2]</sup></li>
+<li><strong>Cilia (lông phế quản)</strong> bắt đầu hoạt động trở lại — phổi tỉnh dậy</li>
+<li>Cơn thèm giờ ngắn xuống <strong>60-90 giây</strong> (so với 5 phút Ngày 2-3)</li>
+<li>5 hành động Mốc 1 Tuần: tự thưởng, tính tiền tiết kiệm, selfie, viết nhật ký, báo vợ "tuần đầu xong"</li>
+</ul>
+</div>
+
+<h2>5 thay đổi đo được — sau 1 tuần cai thuốc</h2>
+
+<div class="stat-row">
+<div class="stat-card">
+<div class="stat-num">-50%</div>
+<div class="stat-label">CO trong máu giảm</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">99%</div>
+<div class="stat-label">Oxy hồng cầu (so 92% cũ)</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">-10/5</div>
+<div class="stat-label">mmHg huyết áp giảm</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">90s</div>
+<div class="stat-label">Cơn thèm còn lại</div>
+</div>
+</div>
+
+<h3>1. CO bình thường liên tục 6 ngày</h3>
+
+<p>Suốt 6 ngày qua, máu anh đã chở oxy 99% (so với chỉ 92-96% khi còn hút thuốc). Đây là sự khác biệt khổng lồ ở cấp tế bào:</p>
+
+<ul>
+<li>Cơ tim được oxy đủ → đập nhẹ nhàng hơn</li>
+<li>Não được oxy nhiều hơn → minh mẫn hơn (mặc dù sương mù não vẫn còn ít)</li>
+<li>Cơ bắp hồi phục nhanh hơn sau vận động</li>
+<li>Da bắt đầu hồng hơn (đặc biệt môi + móng tay)</li>
+</ul>
+
+<h3>2. Huyết áp giảm 10/5 mmHg</h3>
+
+<p>Nicotine co mạch mãn tính suốt nhiều năm. Sau 7 ngày cai, mạch máu đã giãn lại — huyết áp giảm trung bình 10 systolic + 5 diastolic<sup>[2]</sup>. Người tiền cao huyết áp có thể về "bình thường cao" thay vì "cao".</p>
+
+<p>Đây cũng giải thích vì sao ngày 2-3 anh có thể bị đau đầu — mạch máu não giãn đột ngột. Bây giờ đã quen.</p>
+
+<h3>3. Cilia phổi bắt đầu hoạt động</h3>
+
+<p>Cilia là hàng tỷ "lông nhỏ" trong phế quản, mỗi ngày đập 1000 lần/phút để đẩy chất bẩn lên cổ họng. Nicotine làm chúng liệt suốt nhiều năm. Sau 7 ngày, một số đã hoạt động lại — nên anh có thể bắt đầu ho có đờm (sẽ peak Ngày 9).</p>
+
+<p><strong>Ho có đờm = dấu hiệu TỐT</strong>. Cilia đang đẩy tar 25-30 năm ra ngoài.</p>
+
+<h3>4. Cơn thèm ngắn lại</h3>
+
+<p>Ngày 2-3 mỗi cơn thèm dài 5-10 phút. Hôm nay phần lớn cơn thèm chỉ còn 60-90 giây. Receptor nicotinic acetylcholine đã upregulate xong vòng đầu — não đang "thích nghi" với mức nicotine 0.</p>
+
+<h3>5. Vị giác + khứu giác bắt đầu trở lại</h3>
+
+<p>Anh có thể bắt đầu nhận ra: cơm sáng có mùi thực sự, cà phê đắng hơn, nước uống có vị khác. Đây là taste buds + olfactory neurons bắt đầu tái sinh<sup>[3]</sup>. Sẽ peak Ngày 11.</p>
+
+<h2>Triệu chứng có thể còn — và ít hơn rồi</h2>
+
+<ul>
+<li><strong>Sương mù não nhẹ</strong> — vẫn còn nhưng đỡ hơn ngày 3</li>
+<li><strong>Ho có đờm</strong> — bắt đầu rõ, vàng/nâu (tốt)</li>
+<li><strong>Cáu kỉnh</strong> — dịu xuống nhiều</li>
+<li><strong>Ngủ vẫn đứt nhẹ</strong> — đỡ hơn ngày 4-5</li>
+<li><strong>Tâm lý "đã qua phần khó"</strong> — cảm thấy tự hào</li>
+</ul>
+
+<p>Nếu hôm nay anh thấy "tốt hơn nhiều" — đừng nghỉ chiến lược. Tuần 2 (Ngày 8-14) còn "Đống tro tàn" + sương mù não rõ hơn. Hôm nay là chặng nghỉ — không phải đích đến.</p>
+
+<div class="alarm">
+<h4>🚨 Khi nào cần khám</h4>
+<ul>
+<li><strong>Ho ra MÁU tươi</strong> → đi khám phổi trong tuần (X-quang + có thể CT)</li>
+<li><strong>Đau ngực kéo dài</strong> không giảm trong 24h → khám tim</li>
+<li><strong>Ý nghĩ tự hại</strong> → đến khoa Tâm thần BV gần nhất ngay</li>
+<li><strong>Khó thở dữ dội</strong> + môi tím → gọi 115</li>
+</ul>
+</div>
+
+<h2>5 hành động Mốc 1 Tuần</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Tự thưởng — nhưng KHÔNG phải thuốc</h4>
+<p>Cái gì đó nhỏ anh đã thèm lâu: 1 cuốn sách, 1 bữa ngon, 1 món đồ. Quy tắc duy nhất: KHÔNG được là "1 điếu cuối kỷ niệm". 1 điếu = reset receptor + AVE = tái nghiện 95%. Đừng cho não cơ hội học lại.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Tính chính xác số tiền tiết kiệm</h4>
+<p>7 ngày × giá thuốc/ngày của anh = ? Phổ biến VN: 1 bao Vinataba 20k/ngày × 7 = <strong>140.000đ</strong>. Người hút 1.5 bao/ngày = <strong>210.000đ</strong>. Số này nhỏ tuần đầu nhưng tích luỹ 1 năm = 5-8 triệu. Anh có thể chuyển ngay sang tài khoản riêng — "Quỹ Tự Do".</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Chụp 1 selfie — so sánh sau 30 ngày</h4>
+<p>Đặt điện thoại lên bàn, chụp mặt + tay tự nhiên không filter. Lưu trong album "Hành Trình Sol". Sau Ngày 30 chụp lại — so sánh môi, da, mắt. Vợ thường nhận xét trước anh.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Viết 3 dòng cảm xúc tuần qua</h4>
+<p>Trong sổ tay hoặc note điện thoại: <em>"Tuần đầu cai, tôi đã cảm thấy ... Khó nhất ngày ... Học được ..."</em>. Việc viết tự tạo danh tính shift — chuyển từ "tôi đang cố không hút" sang "tôi là người đang cai".</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Báo vợ / người thân: "Tuần đầu đã xong"</h4>
+<p>Cảm ơn họ đã chịu khổ tuần đầu (anh chắc đã cáu vài lần). Câu nói có giá trị nhất với vợ: <em>"Em đã giúp anh tuần qua — anh ghi nhớ. Tuần này có thể vẫn còn khó, em chịu tiếp giúp anh."</em></p>
+</div>
+</div>
+
+<h2>Tránh tuần này (Tuần 2 sắp đến)</h2>
+
+<ul>
+<li><strong>"1 điếu kỷ niệm tuần 1"</strong> — KHÔNG. 1 điếu = AVE → 95% tái nghiện</li>
+<li><strong>"Tuần đầu xong, giờ thoải mái"</strong> — tuần 2 sẽ có Đống tro tàn (anhedonia)</li>
+<li><strong>Cuộc nhậu lớn tuần này</strong> — bia/rượu giảm ý chí 30%</li>
+<li><strong>Giảm Sol companion</strong> — vẫn cần đồng hành 30 ngày liên tục</li>
+<li><strong>Tự đánh giá "tôi mạnh hơn người khác"</strong> — kiêu căng dễ gây vấp</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Mốc 1 tuần lần 5 cai (tháng 1 năm 2020), tôi đi siêu thị mua 1 quyển sách dày mà tôi đã thèm lâu — "Atomic Habits" của James Clear. 200 nghìn — đúng bằng tiền 10 bao thuốc mà tôi đã không hút.</p>
+<p>Quyển sách đó dạy tôi: <strong>"Đừng đặt mục tiêu cai cả đời — đặt mục tiêu mỗi ngày không hút"</strong>. Đó là cách 29 ngày sau tôi vẫn không hút.</p>
+<p>Hôm đó tôi cũng viết vào sổ: <em>"Tuần 1 — đã không hút. Khó nhất ngày 3. Học được: cà phê sáng chuyển sang trà ấm thì không thèm. Vợ kiên nhẫn hơn tôi tưởng"</em>. 3 dòng. Sau này tôi đọc lại — thấy mình đã thật sự ở đó.</p>
+<p>Anh em ơi — hôm nay tự thưởng nhỏ thôi nhưng <strong>đừng quên báo vợ "anh ơn em"</strong>. Tuần đầu cô ấy chịu cáu của anh. Một câu cảm ơn — bằng nhiều ngày nhỏ to.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-1-24-gio-dau-tien-bo-thuoc-la/">→ Ngày 1 — Quay lại điểm khởi đầu (ôn lại)</a></li>
+<li><a href="https://sol.vn/ngay-8-suong-mu-nao-va-kho-tap-trung/">→ Ngày 8 — Sương mù não bắt đầu rõ (chuẩn bị)</a></li>
+<li><a href="https://sol.vn/cai-thuoc-bao-lau-phoi-sach/">→ Phổi sạch sau bao lâu? — Khoa học timeline phục hồi phổi</a></li>
+</ul>
+</div>
+
+🏆 <strong>Ngày 7 — Mốc 1 Tuần</strong><br><br>
+CO bình thường 6 ngày, huyết áp giảm 10/5 mmHg, cilia phổi bắt đầu hoạt động, cơn thèm chỉ còn 60-90 giây.<br><br>
+Tự thưởng hôm nay (KHÔNG phải thuốc): chụp selfie, tính tiền tiết kiệm 7 ngày, báo vợ "anh ơn em".<br><br>
+Tuần 2 còn Đống tro tàn — đừng nghỉ chiến lược.<br><br>
+📖 <a href="https://sol.vn/ngay-7-moc-1-tuan-co-the-da-doi/?utm_source=zalo&utm_campaign=qday-7">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nội dung mang tính tham khảo dựa trên bằng chứng khoa học. Mỗi cơ thể khác nhau — luôn hỏi ý kiến bác sĩ trước khi quyết định ngừng/dùng thuốc kê đơn.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. 5 thay đổi đo được — sau 1 tuần cai thuốc là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Suốt 6 ngày qua, máu anh đã chở oxy 99% (so với chỉ 92-96% khi còn hút thuốc). Đây là sự khác biệt khổng lồ ở cấp tế bào:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Triệu chứng có thể còn — và ít hơn rồi là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nếu hôm nay anh thấy "tốt hơn nhiều" — đừng nghỉ chiến lược. Tuần 2 (Ngày 8-14) còn "Đống tro tàn" + sương mù não rõ hơn. Hôm nay là chặng nghỉ — không phải đích đến.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. 5 hành động Mốc 1 Tuần là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cái gì đó nhỏ anh đã thèm lâu: 1 cuốn sách, 1 bữa ngon, 1 món đồ. Quy tắc duy nhất: KHÔNG được là "1 điếu cuối kỷ niệm". 1 điếu = reset receptor + AVE = tái nghiện 95%. Đừng cho não cơ hội học lại.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Cần tránh tuần này (tuần 2 sắp đến) gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mốc 1 tuần lần 5 cai (tháng 1 năm 2020), tôi đi siêu thị mua 1 quyển sách dày mà tôi đã thèm lâu — "Atomic Habits" của James Clear. 200 nghìn — đúng bằng tiền 10 bao thuốc mà tôi đã không hút.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>US Surgeon General. (2020). <em>Smoking cai thuốc: A Report of the Surgeon General</em>. Chapter 3 — Cardiovascular and Respiratory Diseases.</li>
+<li>Mahmud A, Feely J. (2003). <em>Effect of smoking on arterial stiffness</em>. Hypertension 41(1):183-187.</li>
+<li>Vennemann MM et al. (2008). <em>The association between smoking and smell and taste impairment</em>. J Neurol 255(8):1121-1126.</li>
+<li>Hughes JR. (2007). <em>Effects of kiêng dứt thuốc from tobacco</em>. Nicotine Tob Res 9(3):315-327.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Tuần 1 xong — Tuần 2 cùng Sol</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành 30 ngày — Voice của Khang ở những ngày khó nhất, chip cứu cơn thèm, sổ tay tự động. Bắt đầu miễn phí, linh hoạt 25k/tuần khi quen.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-7&utm_medium=organic">Bắt đầu Tuần 2 cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã trải qua Mốc 1 Tuần năm lần. Cập nhật 14-05-2026.</p>
+
+</div>

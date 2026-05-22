@@ -1,0 +1,166 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Con tôi ho liên tục — có thể do khói thuốc của ba không?","acceptedAnswer":{"@type":"Answer","text":"Có khả năng cao. Trẻ phơi nhiễm khói thụ động tăng 50-100% nguy cơ ho mãn tính, viêm phế quản, viêm tai giữa (US Surgeon General 2014). Đặc biệt nếu ho >2 tuần, kèm khò khè, ho nhiều đêm — đi khám bác sĩ Nhi ngay. Yêu cầu test cotinine nước tiểu (~300-500k tại BV Nhi TW, Vinmec) để đo phơi nhiễm chính xác."}},
+{"@type":"Question","name":"Bao lâu sau khi ba ngừng hút trong nhà, con tôi mới hết ho?","acceptedAnswer":{"@type":"Answer","text":"Cải thiện thấy được sau 2-4 tuần. Hết hoàn toàn cần 3-6 tháng. Lý do: third-hand smoke (khói tồn dư) bám tường, rèm, sofa, cần thời gian phân huỷ. Đẩy nhanh: giặt rèm + sofa cover hằng tuần, lau tường + sàn bằng nước nóng + xà phòng kiềm, mở cửa sổ thông khí 30 phút/sáng, dùng máy lọc HEPA."}},
+{"@type":"Question","name":"Tôi có nên đưa con đi khám hô hấp ngay hay chờ thêm vài ngày?","acceptedAnswer":{"@type":"Answer","text":"Đi khám nếu có 1 trong các dấu hiệu: ho >2 tuần liên tục, ho kèm khò khè/thở rít, sốt >38.5°C, ăn kém, mệt mỏi, viêm tai tái phát >3 lần/năm. Đặc biệt trẻ <2 tuổi — không chờ. Bệnh viện Nhi TW Hà Nội, Nhi Đồng 1 TP.HCM, Vinmec, FV đều có chuyên khoa hô hấp trẻ."}},
+{"@type":"Question","name":"Test cotinine nước tiểu cho con là gì và cần làm như thế nào?","acceptedAnswer":{"@type":"Answer","text":"Cotinine là chất chuyển hoá của nicotine, tồn tại trong cơ thể 24-48h. Đo trong nước tiểu trẻ cho biết mức phơi nhiễm 2 ngày qua. Cách: đi khám hô hấp trẻ, nói 'tôi muốn test phơi nhiễm khói thuốc'. Chi phí 300-600k. Kết quả: <1 ng/ml = không phơi nhiễm, 1-10 ng/ml = phơi nhiễm thấp-trung bình, >10 ng/ml = cao cần can thiệp ngay."}},
+{"@type":"Question","name":"Khi đi khám, tôi có nên kể bác sĩ ba của con hút thuốc không?","acceptedAnswer":{"@type":"Answer","text":"Có, nên kể thẳng. Bác sĩ Nhi cần thông tin đầy đủ để chẩn đoán phân biệt — nguyên nhân ho có thể là khói thụ động, hen suyễn di truyền, dị ứng bụi, virus. Bác sĩ không phán xét gia đình — chỉ ghi nhận yếu tố nguy cơ. Bonus: bác sĩ trong vai trò trung lập có thể nói chuyện với ba về sức khoẻ con, hiệu quả hơn vợ nói."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .check-box { background: #FEF2F2; border-left: 4px solid #DC2626; padding: 14px 18px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .check-box strong { color: #DC2626; }
+.sol-wiki .action-box { background: #F4FBF5; border-left: 4px solid #16A34A; padding: 14px 18px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .action-box strong { color: #15803D; }
+.sol-wiki .forward-cta { background: linear-gradient(135deg, #FFF4EA, #FFE8C8); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 24px; margin: 32px 0; }
+.sol-wiki .forward-cta .label { font-size: 12px; font-weight: 700; color: #B25C2C; }
+.sol-wiki .forward-cta h3 { color: #5C3A1E; margin: 8px 0 10px; }
+.sol-wiki .forward-cta .script-box { background: white; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #B25C2C; margin: 14px 0; font-style: italic; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Chị ạ. Con vừa ho lại đêm qua. Chị ngồi cạnh giường nghe tiếng thở khò khè. Chồng nói "trẻ con ho bình thường mà". Chị không tin. Em viết bài này để chị biết: <strong>cảm giác của chị có thể đúng — và có cách kiểm tra cụ thể trong tuần này.</strong></p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Năm 2018 con gái tôi 3 tuổi ho 3 tuần liên tục. Vợ tôi đưa đi khám Vinmec. Bác sĩ đo cotinine nước tiểu cháu — 4.2 ng/ml. Bác sĩ nhìn tôi: 'Anh hút thuốc trong nhà phải không?' Tôi gật đầu. Bác sĩ không phán xét — chỉ nói: 'Nếu anh ngừng hút trong nhà, con sẽ giảm ho trong 4 tuần.' Tôi làm theo. 4 tuần sau cháu giảm rõ. Đó là 1 trong 3 khoảnh khắc đẩy tôi đến quyết định cai năm 2021."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Trẻ phơi nhiễm khói thụ động tăng 50-100% nguy cơ ho mãn tính</strong> (US Surgeon General)</li>
+<li><strong>Test cotinine nước tiểu</strong> ~300-500k tại BV Nhi TW / Vinmec / FV — biết phơi nhiễm chính xác</li>
+<li><strong>Hết ho sau 4-6 tuần</strong> nếu ba ngừng hút trong nhà 100% + làm sạch third-hand smoke</li>
+<li><strong>Bác sĩ trong vai trò trung lập</strong> nói với ba hiệu quả hơn vợ nói</li>
+<li><strong>Dấu hiệu đi khám ngay:</strong> ho >2 tuần, khò khè, sốt, viêm tai tái phát</li>
+</ul></div>
+
+<h2>1. Khi nào con ho do khói thuốc — checklist nhận biết</h2>
+
+<div class="check-box">
+<strong>⚠️ Dấu hiệu khả năng cao do khói thuốc:</strong>
+<ul>
+<li>Ho kéo dài >2 tuần, không kèm sốt cao</li>
+<li>Ho nhiều hơn vào đêm + sáng sớm</li>
+<li>Ho khô (không có đờm) hoặc đờm trắng nhẹ</li>
+<li>Triệu chứng giảm khi đi du lịch / về quê (không có ba)</li>
+<li>Tái phát viêm tai giữa >3 lần/năm</li>
+<li>Khò khè khi chạy nhảy</li>
+</ul>
+</div>
+
+<div class="action-box">
+<strong>✅ Việc làm hôm nay:</strong>
+<ul>
+<li>Đặt lịch khám bác sĩ Nhi chuyên khoa hô hấp trong 7 ngày</li>
+<li>Ghi nhật ký ho: tần suất/ngày, có khò khè không, sau ăn / sau khi ba hút</li>
+<li>Yêu cầu test cotinine nước tiểu — bác sĩ chỉ định được</li>
+</ul>
+</div>
+
+<h2>2. Khám bác sĩ — chuẩn bị gì và hỏi gì</h2>
+
+<p><strong>Trước khi đi:</strong></p>
+<ul>
+<li>Ghi nhật ký ho con 7 ngày trước khám — bao lâu/ngày, lúc nào</li>
+<li>Mang sổ tiêm chủng + lịch sử bệnh</li>
+<li>Nói trước với bác sĩ riêng: "Ba của cháu hút thuốc trong nhà."</li>
+</ul>
+
+<p><strong>Khi khám, hỏi bác sĩ 4 câu:</strong></p>
+<ol>
+<li>"Triệu chứng này có khả năng do khói thuốc thụ động không?"</li>
+<li>"Có nên test cotinine nước tiểu cho cháu?"</li>
+<li>"Có cần test chức năng hô hấp (spirometry) không?"</li>
+<li>"Nếu ba ngừng hút trong nhà, bao lâu cháu sẽ cải thiện?"</li>
+</ol>
+
+<p>Bác sĩ sẽ trả lời cụ thể + ghi vào hồ sơ. Nếu chồng đi cùng — chồng nghe trực tiếp, không thể "vợ phóng đại".</p>
+
+<h2>3. Test cotinine — số liệu cụ thể giúp đối thoại với ba</h2>
+
+<p>Test cotinine nước tiểu trẻ là biện pháp khách quan nhất:</p>
+
+<ul>
+<li><strong>Nơi làm:</strong> BV Nhi TW Hà Nội, Nhi Đồng 1 TP.HCM, Vinmec, FV Hospital, Hanoi French Hospital</li>
+<li><strong>Chi phí:</strong> 300-600k</li>
+<li><strong>Quy trình:</strong> lấy mẫu nước tiểu sáng (1-2ml), kết quả 24-48h</li>
+<li><strong>Đọc kết quả:</strong>
+<ul>
+<li>&lt; 1 ng/ml: không phơi nhiễm đáng kể</li>
+<li>1-10 ng/ml: phơi nhiễm thấp-trung bình</li>
+<li>&gt; 10 ng/ml: cao — cần can thiệp ngay</li>
+</ul>
+</li>
+</ul>
+
+<p>Khi có kết quả, in ra A4. Đặt trên bàn ăn sáng ba. Không nói gì. Số liệu tự lên tiếng.</p>
+
+<h2>4. Roadmap 6 tuần — ba ngừng hút + con hồi phục</h2>
+
+<ul>
+<li><strong>Tuần 1:</strong> ba ngừng hút trong nhà 100%. Làm sạch tường + sàn lần đầu.</li>
+<li><strong>Tuần 2:</strong> ho con giảm ~30%. Tiếp tục giặt rèm + sofa cover.</li>
+<li><strong>Tuần 3-4:</strong> ho giảm ~60%. Mua máy lọc HEPA cho phòng ngủ con.</li>
+<li><strong>Tuần 5-6:</strong> ho gần hết. Re-test cotinine nếu kết quả ban đầu cao.</li>
+</ul>
+
+<p>Nếu sau 6 tuần con vẫn ho — có nguyên nhân khác (hen suyễn di truyền, dị ứng bụi nhà). Đi khám lại để loại trừ.</p>
+
+<div class="forward-cta">
+<div class="label">🤝 BƯỚC KẾ TIẾP</div>
+<h3>Forward bài này + ảnh kết quả khám cho ba</h3>
+<div class="script-box">"Anh, hôm nay đi khám con. Bác sĩ nói có thể do khói thuốc. Em đính kèm kết quả test. Anh đọc bài này thử nhé."</div>
+<p style="margin-top: 14px;">→ Link: <strong>https://sol.vn/tre-con-ho-vi-khoi-thuoc-cua-ba/</strong></p>
+</div>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Cài app cho ba — track 30 ngày đầu không hút trong nhà</div>
+<a href="https://sol.vn">Cài app →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/khoi-thuoc-thu-dong-cho-con/">Khói thuốc thụ động ảnh hưởng con — 5 mức độ</a></li>
+<li>→ <a href="https://sol.vn/chong-hut-thuoc-trong-nha/">Chồng hút thuốc trong nhà — 3 ranh giới</a></li>
+<li>→ <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc lá — pillar</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ Bài này tổng hợp khoa học, không thay thế khám bác sĩ Nhi. Trẻ có dấu hiệu nguy hiểm (thở rít, sốt cao, mệt) — đi viện ngay.</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>US Surgeon General (2014). <em>The Health Consequences of Smoking — 50 Years of Progress</em>. CDC.</li>
+<li>BV Nhi Trung ương (2024). <em>Hướng dẫn khám bệnh hô hấp trẻ phơi nhiễm khói thuốc</em>.</li>
+<li>Yolton K, et al. (2005). <em>Cotinine and child health</em>. Environ Health Perspect 113.</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol, bố của 2 con. Cập nhật 16/5/2026.</p>
+
+</div>

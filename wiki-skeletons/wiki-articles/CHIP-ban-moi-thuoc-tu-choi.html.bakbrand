@@ -1,0 +1,191 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=ban-moi-thuoc) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Day 25 mình đi đám cưới bạn cùng đại học. Bạn rút bao Vinataba quen của mình ngày xưa, mời: \"Khang ơi hút 1 điếu cho vui!\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi nên giải thích lý do cai không?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Anh em mời thuốc lúc nhậu. Bạn cai 20 ngày. Ai cũng nhìn bạn. Câu trả lời nào tốt nhất? <strong>"Tôi không hút"</strong> — 4 từ. Không xin lỗi. Không giải thích. Không "đang cố nhịn".</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>4 từ "tôi không hút" mạnh hơn bất kỳ giải thích nào</li>
+<li>Càng đơn giản càng dễ duy trì</li>
+<li>Quy tắc 3 lần: từ chối 3 lần → đổi chủ đề / đứng dậy</li>
+<li>Người tôn trọng sẽ ngừng. Người không tôn trọng → biết là ai</li>
+</ul>
+</div>
+<h2>Phần 1 — Vì sao "tôi không hút" hiệu quả nhất?</h2>
+<h3>Danh tính-based statement</h3>
+<ul>
+<li>"Tôi không hút" = danh tính (ai tôi là)</li>
+<li>"Tôi đang cố cai" = state (tạm thời)</li>
+<li>Não nghe danh tính → tự động "đứng vào"</li>
+<li>Người mời nghe danh tính → khó tranh luận</li>
+</ul>
+<h3>Không tạo cơ hội tranh cãi</h3>
+<ul>
+<li>"Tôi đang cố cai" → mở lời "thử 1 điếu thôi mà, mai cai tiếp"</li>
+<li>"Tôi không hút" → đóng ngay câu chuyện</li>
+</ul>
+<h3>Không cho cảm giác "yếu"</h3>
+<ul>
+<li>"Cảm ơn anh, em đang nhịn" → ngụ ý đang chiến đấu</li>
+<li>"Tôi không hút" → bình thản, không có gì để chiến đấu</li>
+</ul>
+<h2>Phần 2 — Nguyên tắc 3 lần</h2>
+<h3>Lần 1: Cười nhẹ + "Tôi không hút"</h3>
+<ul>
+<li>Người mời lần đầu thường tốt bụng</li>
+<li>Câu trả lời ngắn = không có ý đối đầu</li>
+<li>80% trường hợp họ nói "ok" và tiếp tục</li>
+</ul>
+<h3>Lần 2: Lặp lại + thay đổi chủ đề</h3>
+<ul>
+<li>"Tao bảo rồi, không hút. Mà này, [hỏi về chuyện gì đó]"</li>
+<li>Tạo lối thoát cho cuộc trò chuyện</li>
+<li>95% trường hợp họ thôi</li>
+</ul>
+<h3>Lần 3: Đứng dậy đi vệ sinh / lấy đồ ăn</h3>
+<ul>
+<li>"Tao đi vệ sinh đã"</li>
+<li>Không cần đáp lời mời nữa</li>
+<li>Quay lại bàn → đổi chủ đề / ngồi gần người khác</li>
+<li>99% trường hợp họ thôi</li>
+</ul>
+<h3>Sau lần 3 vẫn ép → người không tôn trọng</h3>
+<ul>
+<li>Họ không phải bạn thật</li>
+<li>Có thể: rời sớm / chuyển bàn / nói thẳng "Cậu/anh ép quá"</li>
+</ul>
+<h2>Phần 3 — Kịch bản khó</h2>
+<h3>Sếp ép thuốc</h3>
+<ul>
+<li>"Anh thông cảm, em không hút."</li>
+<li>Nếu sếp ép tiếp: nhường điếu cho người khác — "Anh A đang muốn"</li>
+<li>Sếp ép lần 3: rời bàn 5 phút (đi vệ sinh) — quay lại đổi chủ đề</li>
+<li>Sếp ép sau 3 lần = sếp tệ. Không phải lỗi mình.</li>
+</ul>
+<h3>Bạn cũ lâu năm "đùa"</h3>
+<ul>
+<li>"Mày sợ vợ à?" / "Đàn ông không hút thì sao là đàn ông?"</li>
+<li>Không tranh luận. Cười nhẹ: "Tao cũng nghĩ vậy 30 năm trước."</li>
+<li>Không cần thuyết phục họ — họ sẽ nhận ra hoặc không. Đó không phải việc của bạn.</li>
+</ul>
+<h3>Đám tang / đám cưới</h3>
+<ul>
+<li>Cảm xúc cao + áp lực xã hội + nhiều người hút</li>
+<li>"Tôi không hút" + tay cầm chai nước = vật lý chiếm tay</li>
+<li>Nếu ai cố mời thuốc trong đám tang — đó là không tôn trọng người mất, không phải về bạn</li>
+</ul>
+<h3>Người yêu cũ / vợ cũ</h3>
+<ul>
+<li>Thường ép vì lý do tâm lý (test xem bạn còn thay đổi không)</li>
+<li>"Tôi không hút" + không giải thích thêm</li>
+<li>Đừng thuyết phục họ tin — thời gian sẽ chứng minh</li>
+</ul>
+<h2>Phần 4 — Lời khuyên dài hạn</h2>
+<h3>Sau 90 ngày — tự tin</h3>
+<ul>
+<li>4 từ "tôi không hút" trở thành phản xạ</li>
+<li>Người trong nhóm xã hội đã quen — ít người mời</li>
+<li>Có thể nhậu 3-4 giờ không thèm</li>
+</ul>
+<h3>Khi mới nhập nhóm mới (việc mới, sự kiện mới)</h3>
+<ul>
+<li>Tuyên bố ngay từ đầu: "Tôi không hút" trong câu giới thiệu</li>
+<li>Không đợi ai mời — chủ động</li>
+<li>Người mới gặp dễ tôn trọng danh tính hơn bạn cũ</li>
+</ul>
+<h3>Trở thành "người ánh sáng" cho người khác</h3>
+<ul>
+<li>Sau 1 năm cai, bạn có thể trở thành mentor cho anh em đang cai</li>
+<li>"Tôi đã ở chỗ mày 1 năm trước"</li>
+<li>Đây là cách trả ơn thay vì giảng đạo</li>
+</ul>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=ban-moi-thuoc)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Day 25 mình đi đám cưới bạn cùng đại học. Bạn rút bao Vinataba quen của mình ngày xưa, mời: <em>"Khang ơi hút 1 điếu cho vui!"</em></p>
+<p>Mình suýt nhận — tay đã giơ ra. Đột nhiên mình nói: <em>"Tao đang cai. Vợ doạ, sợ vợ hơn sợ ung thư."</em> Bạn cười, không ép. Mình qua được moment.</p>
+<p>Bài học: chuẩn bị câu trả lời TRƯỚC. Lúc thèm + cồn vào + áp lực — não anh không nghĩ ra. Câu nói SẴN = vũ khí.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi nên giải thích lý do cai không?</h3></p>
+<p><p>Không, trừ khi họ hỏi. Tự nguyện giải thích = ngụ ý xin lỗi vì cai. Không cần.</p></p>
+<p><h3>Người mời nói "1 điếu không sao đâu"?</h3></p>
+<p><p>"Cám ơn, tôi không hút." Lặp lại. Không tranh luận về "1 điếu có sao hay không".</p></p>
+<p><h3>Tôi sợ mất bạn nếu kiên định quá?</h3></p>
+<p><p>Bạn THẬT sẽ tôn trọng. Bạn không tôn trọng quyết định của bạn = không phải bạn thật. Cảm giác "mất" tạm thời = đổi quality of relationship.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=ban-moi-thuoc) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Day 25 mình đi đám cưới bạn cùng đại học. Bạn rút bao Vinataba quen của mình ngày xưa, mời: "Khang ơi hút 1 điếu cho vui!"</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi nên giải thích lý do cai không?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=ban-moi-thuoc-tu-choi">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Cialdini RB (2007). *Influence: The Psychology of Persuasion*. Chapter "Commitment and Consistency". · Oyserman D (2010). *Danh tính-based motivation*. Couns Psychol 38(7):1001-1043. · NHS Smokefree (2024). "Saying no to cigarettes."
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

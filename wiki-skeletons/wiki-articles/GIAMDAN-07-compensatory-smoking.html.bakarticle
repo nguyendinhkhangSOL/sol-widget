@@ -1,0 +1,268 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Compensatory smoking là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hiện tượng khi giảm số điếu, người hút có xu hướng hít sâu hơn, ngậm khói lâu hơn, hút nhiều ngụm/điếu hơn để bù nicotine bị mất. Strasser 2007 Drug Alcohol Depend: bù 30-50% nicotine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Làm sao biết tôi đang compensatory smoking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4 dấu hiệu: (1) Hít sâu hơn (80% người tapering có). (2) Ngậm khói lâu 3-5 giây (bình thường 1-2). (3) Nhiều ngụm/điếu (15-18 vs 10-12). (4) Hút tận filter. Quay video chính mình hút 1 điếu để verify."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Compensatory smoking có nguy hiểm không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có 2 cách. (1) Tapering thất bại — giảm điếu nhưng nicotine vào não không giảm → Q-Day vẫn triệu chứng cai (withdrawal) nặng. (2) CO + tar tăng hơn (hít sâu hơn) → tổn hại phổi cấp tính tăng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Làm sao phòng compensatory smoking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4 cách: (1) Đếm ngụm/điếu ≤10, tắt điếu khi đến giới hạn. (2) Hít bình thường — không \"tận hưởng\" sâu hơn. (3) Cân nhắc NRT lozenge sớm (không chờ Q-Day) — não đỡ \"đói\" giữa điếu. (4) Tăng tốc tapering thay vì kéo dài."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có nên đo CO máu để verify không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không bắt buộc. Test strip cotinine ~200k/lần đủ chính xác — đo sáng + tối, so sánh baseline. Cotinine thấp = giảm thực; cao = compensatory. Đa số người không cần đo — quay video + đếm ngụm là đủ."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; color: #2C2A27; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .sign-card { background: white; border-left: 4px solid #F59E0B; padding: 12px 16px; margin: 10px 0; border-radius: 6px; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Anh đã giảm từ 20 → 12 điếu/ngày. Đếm số điếu = thắng? Chưa chắc. Có một trap khoa học gọi là <strong>hút bù</strong> — anh có thể hút ít hơn nhưng <strong>nicotine vào máu giữ nguyên</strong>. Strasser 2007 đo được: bù tới 50% nicotine bị mất. Hôm nay T-8 (Ngày 7 Giảm dần) — Sol cảnh báo về trap này và cách phòng.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>hút bù</strong> = khi giảm số điếu, người hút có xu hướng <strong>hít sâu hơn, giữ khói lâu hơn, hút nhiều ngụm/điếu hơn</strong></li>
+<li>Strasser 2007 (Drug Alcohol Depend) đo: bù 30-50% nicotine bị mất<sup>[1]</sup></li>
+<li>Đếm điếu giảm 40% nhưng cotinine máu chỉ giảm 20% — tức nicotine thực vào não vẫn cao</li>
+<li>4 dấu hiệu cảnh báo: hít sâu hơn, ngậm khói lâu hơn, nhiều ngụm/điếu, tay tự nhiên đưa nhanh</li>
+<li>Cách phòng: quay video chính mình + đếm ngụm/điếu + check người thân</li>
+</ul>
+</div>
+
+<h2>hút bù là gì? Khoa học</h2>
+
+<p>Hiện tượng này được mô tả lần đầu trong thập niên 1970, khi FDA bắt buộc thuốc lá "light" (ít nicotine). Người dùng nói "tôi cảm thấy bằng" — và FDA phát hiện họ <strong>hút sâu hơn để bù</strong>. Đó là bằng chứng đầu tiên về compensation.</p>
+
+<p>Strasser, Lerman, và cộng sự (2007, Drug and Alcohol Dependence) đo trực tiếp trên 80 người hút thuốc:</p>
+
+<ul>
+<li>Cho dùng thuốc giảm nicotine 50%</li>
+<li>Đo: số ngụm/điếu, thời gian ngậm khói, độ sâu hít, lượng CO thở ra</li>
+<li>Đo cotinine máu (chuyển hóa của nicotine — chính xác hơn đếm điếu)</li>
+</ul>
+
+<p>Kết quả: <strong>khi giảm nicotine trong thuốc 50%, nicotine thực vào não chỉ giảm 28%</strong>. Cơ thể bù gần 50% phần bị mất qua hành vi bù.</p>
+
+<div class="stat-highlight">
+<div class="stat-num">−28%</div>
+<div class="stat-label">Nicotine máu thực giảm khi giảm 50% nicotine trong thuốc — bù 50% qua hành vi (Strasser 2007)<sup>[1]</sup></div>
+</div>
+
+<p>Áp dụng cho tapering: nếu anh giảm số điếu 40% nhưng <strong>không kiểm soát hành vi hút</strong>, nicotine vào não chỉ giảm ~20%. Anh "feel" giảm rõ rệt nhưng não thật ra vẫn nhận gần như cũ. Đến Q-Day cắt 100%, triệu chứng cai vẫn nặng vì não chưa thật sự thích nghi.</p>
+
+<h2>4 dấu hiệu anh đang hút bù</h2>
+
+<div class="sign-card">
+<strong>Dấu hiệu 1: Hít sâu hơn</strong><br>
+Cảm giác phổi "đầy" hơn. Ngực căng hơn khi hít. Tự nhiên kéo dài hơi hít. Đây là dấu hiệu phổ biến nhất — 80% người tapering có.
+</div>
+
+<div class="sign-card">
+<strong>Dấu hiệu 2: Ngậm khói lâu hơn</strong><br>
+Bình thường ngậm khói 1-2 giây rồi thở ra. Khi compensatory: ngậm 3-5 giây để cho nicotine hấp thụ qua niêm mạc miệng/họng nhiều hơn.
+</div>
+
+<div class="sign-card">
+<strong>Dấu hiệu 3: Nhiều ngụm/điếu hơn</strong><br>
+Bình thường 1 điếu 10-12 ngụm. Khi compensatory: tăng lên 15-18 ngụm. Hút "hết tận đáy" — đến tận đến filter còn đỏ.
+</div>
+
+<div class="sign-card">
+<strong>Dấu hiệu 4: Tay tự nhiên đưa nhanh + miệng tự "kéo" mạnh</strong><br>
+Không cố ý — phản xạ sinh học. Não nicotine-đói tự điều khiển. Phải có ý thức + người ngoài quan sát mới phát hiện.
+</div>
+
+<h2>Cách phòng compensatory — Hôm nay T-8</h2>
+
+<h3>Phương pháp 1: Quay video chính mình hút 1 điếu</h3>
+
+<p>Cách trực diện nhất. Mở camera điện thoại quay khi hút 1 điếu hôm nay (ngoài ban công, riêng tư). Sau đó xem lại:</p>
+
+<ul>
+<li>Hơi hít có sâu hơn cảm nhận không?</li>
+<li>Ngậm khói có lâu hơn bình thường tuần trước?</li>
+<li>Bao nhiêu ngụm? Đếm.</li>
+<li>Có "tận đến filter" không?</li>
+</ul>
+
+<p>Nhiều người ngạc nhiên — họ tin "tôi hút bình thường" nhưng video cho thấy ngược lại.</p>
+
+<h3>Phương pháp 2: Đếm ngụm có ý thức</h3>
+
+<p>Trong mỗi điếu hôm nay, đếm thầm số ngụm. Mục tiêu: <strong>≤10 ngụm/điếu</strong>. Khi đến 10, tắt điếu — không cố hết.</p>
+
+<p>Điều này đối nghịch instinct ("tôi đã hút ít, nên hút trọn vẹn điếu này"). Nhưng đây là instinct của não nicotine-đói. Đừng theo.</p>
+
+<h3>Phương pháp 3: Nhờ vợ/người thân check</h3>
+
+<p>Nói với vợ/bạn: "Tuần này anh đang giảm điếu. Em/Anh quan sát giúp — anh có hít sâu hơn không, có ngậm khói lâu không?". Đôi mắt ngoài thấy rõ hơn anh tự thấy.</p>
+
+<h3>Phương pháp 4: Đo cotinine (advanced)</h3>
+
+<p>Nếu anh nghiêm túc + có ngân sách, có thể đo nicotine cotinine bằng strip test tại nhà (~200k/strip). Test sáng + tối, so sánh với tuần baseline. Cotinine thấp = giảm thực, cotinine cao = compensatory.</p>
+
+<div class="alarm">
+<h4>⚠ Nếu phát hiện hút bù</h4>
+<p style="font-size:14px; margin:6px 0;"><strong>Đừng panic.</strong> Đây là hiện tượng sinh học, 80% người tapering có. Không phải dấu hiệu thất bại.</p>
+<p style="font-size:14px; margin:6px 0;"><strong>Cách điều chỉnh:</strong> Tiếp tục tapering nhưng:</p>
+<ul style="font-size:14px;">
+<li>Mỗi điếu, đếm ngụm ≤10, tắt điếu khi đến giới hạn</li>
+<li>Hít bình thường — không "tận hưởng" sâu hơn</li>
+<li>Cân nhắc bắt đầu NRT lozenge SỚM (không chờ Q-Day) — giúp não đỡ "đói" giữa điếu</li>
+<li>Tăng tốc tapering nếu FTND nhẹ — cắt thêm 1-2 điếu/ngày từ giờ</li>
+</ul>
+</div>
+
+<h2>Hôm nay T-8: Test compensatory</h2>
+
+<ol>
+<li>Quay video chính mình hút 1 điếu (sáng / sau cơm / chiều)</li>
+<li>Xem lại — soát 4 dấu hiệu trên</li>
+<li>Đếm ngụm/điếu — ghi vào nhật ký</li>
+<li>So sánh với baseline tuần trước (nếu nhớ)</li>
+<li>Nếu compensatory rõ → áp dụng 4 phương pháp phòng</li>
+</ol>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — phát hiện compensatory năm 2020</div>
+<p>Mình kể: T-8 lần thứ 5 cai, vợ mình ngẫu nhiên nhận xét: "Anh hút lâu hơn tuần trước". Mình bảo "không, anh hút ít rồi". Vợ: "Ý em là 1 điếu anh hút lâu hơn — em đếm anh hút điếu sáng nay đến 4 phút".</p>
+<p>Mình ngạc nhiên — không nhận ra. Tuần trước trung bình 2.5 phút/điếu. Bây giờ 4 phút? Nhiều hơn 60%.</p>
+<p>Mình quay video chiều đó — đúng. Mình ngậm khói lâu hơn rõ, đến 14-15 ngụm/điếu (bình thường 10-11). Compensatory cổ điển.</p>
+<p>Mình điều chỉnh: từ T-7 cứ mỗi điếu đếm ≤10 ngụm, tắt điếu đến giới hạn. Và tăng tốc tapering — cắt thêm 1 điếu nữa từ T-7. Đến Q-Day, mình đã giảm đúng 80% thật (không chỉ trên số điếu).</p>
+<p>Bài học: <strong>hút bù là trap kỹ thuật — phát hiện được bằng video + đếm + người ngoài. Không bằng cảm giác chủ quan.</strong></p>
+</div>
+
+<h2>Mai có gì?</h2>
+
+<p>T-7 (Ngày 8 Giảm dần) — Mốc 1 tuần giảm. Đánh giá tổng số điếu tuần này vs tuần trước. Self-compassion thay self-criticism (Wagner 2010: self-criticism tăng vấp 40%). Recalibrate cho 7 ngày tới.</p>
+
+⚠ <strong>T-8 (Giảm dần Ngày 7) — hút bù trap</strong><br><br>
+Strasser 2007: giảm 50% điếu thì nicotine máu chỉ giảm 28% — bù qua hành vi. 4 dấu hiệu: hít sâu hơn, ngậm khói lâu, ≥12 ngụm/điếu, hút tận filter.<br><br>
+Cách phòng: quay video chính mình + đếm ngụm ≤10/điếu + nhờ vợ check. Phát hiện sớm = tapering thật, không chỉ trên số điếu.<br><br>
+Mai T-7 mốc 1 tuần đánh giá. Self-compassion không self-criticism.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-7-compensatory-smoking/?utm_source=zalo&utm_campaign=giamdan-7">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> hút bù là hiện tượng sinh học, không phải lỗi cá nhân. Nhận biết = khắc phục. Nếu nhiều dấu hiệu nặng + FTND ≥7 — cân nhắc dùng NRT lozenge sớm (không chờ Q-Day).
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. hút bù là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Hiện tượng khi giảm số điếu, người hút có xu hướng hít sâu hơn, ngậm khói lâu hơn, hút nhiều ngụm/điếu hơn để bù nicotine bị mất. Strasser 2007 Drug Alcohol Depend: bù 30-50% nicotine.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Làm sao biết tôi đang hút bù?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">4 dấu hiệu: (1) Hít sâu hơn (80% người tapering có). (2) Ngậm khói lâu 3-5 giây (bình thường 1-2). (3) Nhiều ngụm/điếu (15-18 vs 10-12). (4) Hút tận filter. Quay video chính mình hút 1 điếu để verify.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. hút bù có nguy hiểm không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có 2 cách. (1) Giảm dần thất bại — giảm điếu nhưng nicotine vào não không giảm → Q-Day vẫn triệu chứng cai nặng. (2) CO + tar tăng hơn (hít sâu hơn) → tổn hại phổi cấp tính tăng.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Làm sao phòng hút bù?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">4 cách: (1) Đếm ngụm/điếu ≤10, tắt điếu khi đến giới hạn. (2) Hít bình thường — không "tận hưởng" sâu hơn. (3) Cân nhắc NRT lozenge sớm (không chờ Q-Day) — não đỡ "đói" giữa điếu. (4) Tăng tốc tapering thay vì kéo dài.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Tôi có nên đo CO máu để verify không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không bắt buộc. Test strip cotinine ~200k/lần đủ chính xác — đo sáng + tối, so sánh baseline. Cotinine thấp = giảm thực; cao = compensatory. Đa số người không cần đo — quay video + đếm ngụm là đủ.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Strasser AA, Lerman C, Sanborn PM, Pickworth WB, Feldman EA. (2007). <em>New lower nicotine cigarettes can produce hút bù and increased carbon monoxide exposure</em>. Drug and Alcohol Dependence 86(2-3):294-300.</li>
+<li>Benowitz NL, Hall SM, Stewart S, et al. (2007). <em>Nicotine and carcinogen exposure with smoking of progressively reduced nicotine content cigarettes</em>. Cancer Epidemiology Biomarkers & Prevention 16(11):2479-2485.</li>
+<li>Scherer G. (1999). <em>Smoking behaviour and compensation: a review of the literature</em>. Psychopharmacology 145(1):1-20.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-6-tri-hoan-dieu-sang/">T-9 — Trì hoãn điếu sáng</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-8-moc-1-tuan-giam/">T-7 (Mai) — Mốc 1 tuần đánh giá</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">14 ngày Giảm dần — Sol đi cùng tránh trap kỹ thuật</strong>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Strasser 2007, Benowitz 2007, Scherer 1999. Sol là sản phẩm Việt 100%.</p>
+
+</div>

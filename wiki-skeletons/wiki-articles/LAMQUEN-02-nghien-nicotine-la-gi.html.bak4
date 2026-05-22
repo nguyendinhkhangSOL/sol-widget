@@ -1,0 +1,261 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Nghiện nicotine là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tình trạng phụ thuộc sinh học và tâm lý vào nicotine (DSM-5 \"Tobacco Use Disorder\"). US Surgeon General 1988: nicotine gây nghiện ngang heroin và cocaine. Não upregulate 300% receptor nicotinic α4β2 sau nhiều năm hút (Benowitz 2010 NEJM)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao bỏ thuốc khó hơn tưởng tượng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3 cơ chế tấn công song song khi cai: (1) Upregulation — não đói receptor mỗi 1-2 giờ. (2) Dopamine bị \"hack\" — mọi thứ nhạt trong 1-3 tuần. (3) Pavlov nhân tạo — tình huống quen tự kích hoạt thèm. Ý chí thuần không thắng 3 đối thủ này."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có yếu ý chí không khi đã vấp nhiều lần?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. \"Yếu ý chí\" là chẩn đoán sai. Đúng phải là \"chưa có chiến lược cho 3 cơ chế sinh học\". Anh đánh nhau với sinh học, không phải với chính mình. Cần đồng minh + công cụ — không phải gồng ý chí."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Receptor não có hồi phục sau khi cai không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Sau 6-12 tháng cai, receptor nicotinic giảm về baseline. Cơn thèm giảm rõ. Tuy nhiên neural pathway (Pavlovian) không xóa hoàn toàn — vẫn \"ngủ\" và có thể kích hoạt khi stress lớn. Đó là lý do năm 2-3 vẫn cần cảnh giác."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hiểu cơ chế nghiện giúp gì cho việc cai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rất nhiều. Hiểu = bớt tự trách = giảm cortisol = não còn năng lượng cho 3 cơ chế. Wagner 2010: self-criticism tăng tỷ lệ vấp 40%. Self-compassion (Neff 2003) là chiến lược khoa học, không phải softness."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; color: #2C2A27; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Anh đã thử bỏ thuốc 2-3 lần và vấp. Anh tự trách "tại sao mình yếu thế?". Sự thật: nghiện nicotine KHÔNG phải tại yếu ý chí. Nó là sinh học não bộ — đã được hàng trăm nghiên cứu mô tả chi tiết. Hôm nay Ngày 2 Làm quen — Sol cho anh hiểu cơ chế. Hiểu rồi sẽ bớt tự trách.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Nicotine</strong> được FDA phân loại "nghiện ngang heroin và cocaine" — không cường điệu<sup>[1]</sup></li>
+<li>Não anh đã <strong>upregulate 300% receptor nicotinic</strong> sau nhiều năm hút (Benowitz 2010, NEJM)<sup>[2]</sup></li>
+<li>Mỗi 1-2 giờ não "đói" — receptor đòi nicotine để mở. Đó là cơ chế cơn thèm.</li>
+<li><strong>Hệ thưởng dopamine</strong> bị "hack" — não học rằng thuốc = thưởng nhanh</li>
+<li>Bỏ thuốc khó vì 3 lý do sinh học song song, không phải tại "yếu ý chí"</li>
+</ul>
+</div>
+
+<h2>Nghiện nicotine là gì? Định nghĩa khoa học</h2>
+
+<p>Nghiện nicotine (nicotine dependence) là <strong>tình trạng phụ thuộc sinh học và tâm lý</strong> vào nicotine — chất kích thích thần kinh có trong thuốc lá. Định nghĩa chính thức trong DSM-5 (Diagnostic and Statistical Manual of Mental Disorders — sách giáo khoa tâm thần học Hoa Kỳ) gọi đây là "Tobacco Use Disorder" và xếp ngang hàng các rối loạn nghiện khác như rượu, cocaine, heroin<sup>[3]</sup>.</p>
+
+<p>Năm 1988, US Surgeon General trong báo cáo lịch sử "Nicotine Addiction" tuyên bố:</p>
+
+<blockquote style="border-left: 3px solid #B25C2C; padding-left: 14px; margin: 14px 0; font-style: italic;">
+"Nicotine là chất gây nghiện. Quá trình điều khiển hành vi bởi nicotine cũng giống như quá trình điều khiển hành vi bởi các loại ma túy gây nghiện như heroin và cocaine."<br>
+— US Surgeon General Report, 1988<sup>[1]</sup>
+</blockquote>
+
+<p>Đây không phải hô hào. Đây là kết luận sau 20 năm nghiên cứu khoa học liên ngành.</p>
+
+<h2>3 cơ chế sinh học khiến nghiện thuốc khó bỏ</h2>
+
+<h3>Cơ chế 1: Upregulation — não tăng receptor</h3>
+
+<p>Trong não anh có hàng triệu <strong>receptor nicotinic acetylcholine</strong> (viết tắt nAChR). Đây là các "ổ khóa" trên màng tế bào thần kinh — khi nicotine "vừa khít chìa" thì mở kênh, cho ion Na+ và Ca++ chảy vào → tế bào kích hoạt → dopamine được tiết ra → cảm giác "đã".</p>
+
+<p>Nicholas Benowitz, một trong những chuyên gia nicotine hàng đầu thế giới, viết trong New England Journal of Medicine 2010<sup>[2]</sup>:</p>
+
+<blockquote style="border-left: 3px solid #B25C2C; padding-left: 14px; margin: 14px 0; font-style: italic;">
+"Hút thuốc kéo dài dẫn đến tăng số lượng (upregulation) receptor nicotinic α4β2 trong não, có thể tăng đến 200-300% so với người không hút. Đây là phản ứng adaptive của não đối với mất nhạy cảm receptor do tiếp xúc nicotine liên tục."
+</blockquote>
+
+<div class="stat-highlight">
+<div class="stat-num">+300%</div>
+<div class="stat-label">Receptor nicotinic α4β2 trong não người hút lâu năm vs không hút (Benowitz 2010, NEJM)</div>
+</div>
+
+<p>Hiểu đơn giản: não anh đã <strong>tăng 3 lần "ổ khóa" chờ nicotine mở</strong>. Khi anh không hút trong 1-2 giờ, hàng triệu ổ khóa này "đói" — đó là tín hiệu sinh học của cơn thèm. Không phải ảo tưởng, không phải yếu — là sinh học vật chất.</p>
+
+<h3>Cơ chế 2: Hệ thưởng dopamine bị "hack"</h3>
+
+<p>Não bình thường có hệ thưởng (mesolimbic dopamine pathway) — kích hoạt khi anh ăn món ngon, được khen, chiến thắng, làm tình. Cơ chế này tiến hóa để khen thưởng các hành vi giúp sinh tồn.</p>
+
+<p>Nicotine <strong>"đốt cháy" hệ này</strong> bằng cách tiết dopamine NHANH (chỉ 7 giây sau khi hít từ phổi đến não) và NHIỀU (tăng 200-300% baseline). Quan trọng hơn: nicotine làm <strong>không cần lý do</strong> — chỉ cần hít là có dopamine.</p>
+
+<p>Não học rất nhanh: "Hít → 7 giây sau có thưởng". Sau 10 năm hút, đây là một trong những đường dẫn thần kinh mạnh nhất não anh — mạnh hơn rất nhiều so với phần thưởng từ chạy bộ, ôm con, ăn ngon, v.v.</p>
+
+<p>Khi anh bỏ thuốc: phần thưởng tự nhiên VẪN CÓ nhưng nhỏ hơn rất nhiều so với "shot dopamine" từ nicotine. Não anh thấy mọi thứ <strong>"nhạt"</strong>. Đó là anhedonia — một trong những triệu chứng cai khó chịu nhất ở D7-21.</p>
+
+<h3>Cơ chế 3: Conditioning — Pavlov nhân tạo</h3>
+
+<p>Mỗi lần anh hút điếu thuốc trong tình huống cụ thể — cà phê sáng, sau bữa ăn, lái xe, bia hơi, sau sex — não anh tạo <strong>liên kết Pavlov</strong>: tình huống đó = nicotine đến.</p>
+
+<p>Conklin và cộng sự (2008, Addiction) nghiên cứu 134 người hút thuốc, đo nồng độ cơn thèm khi tiếp xúc với các cue (gạt tàn, ảnh thuốc, mùi thuốc) so với cue trung tính. Kết quả: cơn thèm tăng <strong>200-400%</strong> chỉ với cue thị giác — chưa cần nicotine vào người<sup>[4]</sup>.</p>
+
+<p>Nghĩa là: 20 năm hút điếu sáng với cà phê → não anh học được "cà phê sáng KHÔNG ĐẦY ĐỦ nếu thiếu điếu". Bỏ thuốc tuần đầu, cà phê sáng <strong>tự nhiên gây thèm</strong> dù não đã biết "không có thuốc". Đây là Pavlov nhân tạo — anh không tự tạo, không tự gỡ. Phải có chiến lược cụ thể (kiểm soát kích thích, behavior substitution — sẽ học ở 14 ngày Giảm dần).</p>
+
+<h2>Tại sao "yếu ý chí" là cách nghĩ sai?</h2>
+
+<p>Khi 3 cơ chế trên cùng lúc tấn công, anh thử "ý chí" mà bỏ — anh thua không phải vì yếu, vì đối thủ là <strong>sinh học</strong>:</p>
+
+<div class="step-card">
+<h4>Cơ chế 1 (Upregulation) tấn công anh thế nào?</h4>
+<p>Mỗi 1-2 giờ não đói receptor → cảm giác bồn chồn, khó tập trung, cáu, lo. Càng để lâu càng nặng. 24h đầu peak.</p>
+</div>
+
+<div class="step-card">
+<h4>Cơ chế 2 (Dopamine hack) tấn công thế nào?</h4>
+<p>Mọi thứ "nhạt" trong 1-3 tuần đầu. Cà phê không ngon, công việc không hứng, vợ chồng không thú vị. Não kêu gào "cho thuốc đi, có thuốc mới có thưởng".</p>
+</div>
+
+<div class="step-card">
+<h4>Cơ chế 3 (Pavlov) tấn công thế nào?</h4>
+<p>Tình huống nào quen có thuốc — não anh tự động tạo cơn thèm mà không cần anh nghĩ. Sáng dậy → thèm. Sau ăn → thèm. Café → thèm. Đến cả khi nghe người khác hút → thèm.</p>
+</div>
+
+<p>Đối với 1 đối thủ, "ý chí" có thể thắng. Đối với 3 đối thủ song song, không ai thắng được bằng ý chí thô. Cần <strong>chiến lược</strong>: hiểu cơ chế, biết khi nào dùng NRT, biết cách break Pavlov, biết cách thay dopamine.</p>
+
+<p>Sol làm đúng việc đó — đi cùng anh 7 ngày + 14 ngày + 30 ngày, đưa anh chiến lược cụ thể cho từng cơ chế.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — bài học sau 4 lần vấp</div>
+<p>Mình hút 30 năm Vinataba. 4 lần đầu mình thử cai mình nghĩ "tao có ý chí mạnh, tao bỏ được". 4 lần đều vấp trong 1-3 tháng.</p>
+<p>Lần thứ 5 (2020) mình tình cờ đọc một bài về Benowitz và NEJM. Mình hiểu não mình đã thay đổi vật chất — không phải tại mình yếu. Mình đi khám BS, dùng Bupropion 12 tuần. Hiểu cơ chế = chấp nhận cần thuốc giúp. Không phải xấu hổ.</p>
+<p>5 năm sau, mình vẫn cai. Bài học: <strong>"yếu ý chí" là chẩn đoán sai. Đúng phải là "chưa có chiến lược cho 3 cơ chế song song"</strong>. Anh không yếu — anh đang đánh nhau với sinh học. Cần đồng minh.</p>
+</div>
+
+<h2>Hôm nay anh làm gì?</h2>
+
+<p>Ngày 2 chưa cần làm gì kỹ thuật. Chỉ cần:</p>
+
+<ol>
+<li>Đọc lại 3 cơ chế trên — chậm thôi</li>
+<li>Tự hỏi: <strong>"4 lần vấp trước của tôi — tôi đã đánh bằng ý chí thuần hay đã có chiến lược cụ thể cho từng cơ chế?"</strong></li>
+<li>Nếu trả lời "chỉ bằng ý chí" — anh không sai. Anh chỉ chưa đủ thông tin. Sol đang đưa.</li>
+<li>Ghi 1 dòng vào điện thoại: <em>"Tôi sẽ không tự trách thêm về lần vấp trước nữa — tại không hiểu cơ chế, không phải tại yếu."</em></li>
+</ol>
+
+<h2>Mai có gì?</h2>
+
+<p>Ngày 3 — Sol cho anh xem <strong>chi phí thực sự</strong> của thuốc lá. Tiền không chỉ là 30k/bao × 365 ngày. Có chi phí ẩn lớn hơn nhiều: khám hô hấp định kỳ, kháng sinh tái phát, bảo hiểm đắt 20-40%, và mất 10 năm sống (Doll 2004). Sẽ có calculator riêng cho anh.</p>
+
+🧠 <strong>Ngày 2 Làm quen — Nghiện nicotine là gì?</strong><br><br>
+Não anh đã upregulate 300% receptor nicotinic (Benowitz 2010, NEJM). 3 cơ chế tấn công cùng lúc khi bỏ: receptor đói (mỗi 1-2h), dopamine "hack" (mọi thứ nhạt 1-3 tuần), Pavlov nhân tạo (cà phê = thèm).<br><br>
+"Yếu ý chí" là chẩn đoán sai. Đúng: chưa có chiến lược cho 3 cơ chế. Cần đồng minh + chiến thuật cụ thể.<br><br>
+Hôm nay: chỉ đọc, ghi "không tự trách lần vấp trước nữa". Mai chi phí thực sự.<br><br>
+📖 <a href="https://sol.vn/lam-quen-ngay-2-nghien-nicotine-la-gi/?utm_source=zalo&utm_campaign=lamquen-2">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Bài này dựa trên NEJM 2010 (Benowitz), DSM-5, US Surgeon General Report 1988 + 2014, Addiction 2008 (Conklin). Nội dung mang tính giải thích cơ chế — không thay thế chẩn đoán y khoa cá nhân.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Nghiện nicotine là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tình trạng phụ thuộc sinh học và tâm lý vào nicotine (DSM-5 "Tobacco Use Disorder"). US Surgeon General 1988: nicotine gây nghiện ngang heroin và cocaine. Não upregulate 300% receptor nicotinic α4β2 sau nhiều năm hút (Benowitz 2010 NEJM).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Tại sao bỏ thuốc khó hơn tưởng tượng?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">3 cơ chế tấn công song song khi cai: (1) Upregulation — não đói receptor mỗi 1-2 giờ. (2) Dopamine bị "hack" — mọi thứ nhạt trong 1-3 tuần. (3) Pavlov nhân tạo — tình huống quen tự kích hoạt thèm. Ý chí thuần không thắng 3 đối thủ này.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tôi có yếu ý chí không khi đã vấp nhiều lần?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không. "Yếu ý chí" là chẩn đoán sai. Đúng phải là "chưa có chiến lược cho 3 cơ chế sinh học". Anh đánh nhau với sinh học, không phải với chính mình. Cần đồng minh + công cụ — không phải gồng ý chí.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Receptor não có hồi phục sau khi cai không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có. Sau 6-12 tháng cai, receptor nicotinic giảm về baseline. Cơn thèm giảm rõ. Tuy nhiên neural pathway (Pavlovian) không xóa hoàn toàn — vẫn "ngủ" và có thể kích hoạt khi stress lớn. Đó là lý do năm 2-3 vẫn cần cảnh giác.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Hiểu cơ chế nghiện giúp gì cho việc cai?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Rất nhiều. Hiểu = bớt tự trách = giảm cortisol = não còn năng lượng cho 3 cơ chế. Wagner 2010: self-criticism tăng tỷ lệ vấp 40%. Self-compassion (Neff 2003) là chiến lược khoa học, không phải softness.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>U.S. Department of Health and Human Services. (1988). <em>The Health Consequences of Smoking: Nicotine Addiction — A Report of the Surgeon General</em>. CDC.</li>
+<li>Benowitz NL. (2010). <em>Nicotine Addiction</em>. New England Journal of Medicine 362:2295-2303.</li>
+<li>American Psychiatric Association. (2013). <em>Diagnostic and Statistical Manual of Mental Disorders, 5th edition (DSM-5)</em>. Tobacco Use Disorder section.</li>
+<li>Conklin CA, Robin N, Perkins KA, Salkeld RP, McClernon FJ. (2008). <em>Proximal versus distal cues to smoke: the effects of environments on smokers' cue-reactivity</em>. Addiction 103(7):1131-1141.</li>
+<li>Koob GF, Volkow ND. (2010). <em>Neurocircuitry of addiction</em>. Neuropsychopharmacology 35(1):217-238. (Dopamine reward pathway overview)</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/lam-quen-ngay-1-tai-sao-bo-thuoc-la/">Ngày 1 — 5 lý do bỏ thuốc khoa học</a></li>
+<li>→ <a href="https://sol.vn/lam-quen-ngay-3-chi-phi-thuc-su/">Ngày 3 (Mai) — Chi phí thực sự</a></li>
+<li>→ <a href="https://sol.vn/tac-hai-cua-thuoc-la/">Tác hại thuốc lá theo cơ quan</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-bao-nhieu-lan-moi-thanh-cong/">Trung bình 7-10 lần thử mới cai được</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Hiểu cơ chế = bớt tự trách. 7 ngày Làm quen miễn phí</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Sol đi cùng anh tìm chiến lược phù hợp với 3 cơ chế sinh học của anh. Đến Ngày 7 anh tự chọn lộ trình.</p>
+<a href="https://bothuocla.sol.vn">Tham gia miễn phí →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Benowitz 2010 NEJM, US Surgeon General 1988, DSM-5, Conklin 2008 Addiction. Sol là sản phẩm Việt 100%, không quảng cáo, không bán dữ liệu.</p>
+
+</div>

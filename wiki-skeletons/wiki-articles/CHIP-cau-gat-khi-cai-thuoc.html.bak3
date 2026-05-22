@@ -1,0 +1,234 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Báo trước với người thân — quan trọng nhất là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Câu nói duy nhất cần thuộc lòng — nói với vợ, con, đồng nghiệp gần:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 4 — 5 kỹ thuật kiểm soát cơn cáu là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khi cảm thấy nóng bừng lên — TRƯỚC khi mở miệng:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 5 — Khi nào lo lắng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bác sĩ tâm thần có thể kê Bupropion (vừa hỗ trợ cai, vừa ổn định tâm trạng) hoặc các thuốc ngắn hạn khác."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q: Tôi cáu kinh khủng — có nên dừng cai cho yên cửa nhà? A: KHÔNG. Cáu chỉ 2–4 tuần. Bỏ cuộc = tiếp tục hút 10–20 năm + tăng nguy cơ ung thư. Chiến lược tốt hơn: báo trước người thân + xin nghỉ phép 1 tuần nếu được + dùng NRT (miếng dán) giảm triệu chứng cai (withdrawal)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tham khảo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bài viết bởi Khang Sol — đã xin lỗi con 1 lần và học được nhiều hơn 30 năm trước đó. Cập nhật 13-05-2026."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .timeline { background: #FFF4EA; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.sol-wiki .timeline-item { display: flex; gap: 12px; padding: 8px 0; }
+.sol-wiki .timeline-day { font-weight: 700; color: #B25C2C; min-width: 90px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Ngày thứ 3 cai thuốc, bạn quát con vì cái cốc đổ. Vợ nhìn bạn ngạc nhiên — "anh sao thế?". Bạn thấy mặt mình nóng bừng, muốn đập cái gì đó. Đây không phải tính cách bạn — đây là <strong>cáu gắt cai thuốc</strong> — và là dấu hiệu não đang sửa.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li><strong>50–70% người cai bị cáu gắt</strong> rõ rệt trong 2 tuần đầu<sup>[1]</sup></li>
+<li>Đỉnh ở ngày 3–5, dịu nhiều sau 2 tuần, hết hẳn sau 4 tuần</li>
+<li>Là phản ứng <strong>thiếu dopamine + GABA</strong> — không phải bạn "khác đi"</li>
+<li>Báo trước với người thân — họ thông cảm thì giảm 70% xung đột</li>
+</ul>
+</div>
+
+<h2>Phần 1 — Vì sao cáu gắt khi cai?</h2>
+
+<h3>Thiếu dopamine — não "đói reward"</h3>
+<ul>
+<li>30 năm hút = não nhận dopamine boost mỗi 1–2 giờ từ nicotine</li>
+<li>Cai → dopamine baseline tụt 20–40% trong 2–4 tuần đầu<sup>[2]</sup></li>
+<li>Não "đói" reward → cực kỳ nhạy với stimuli khó chịu → bùng nổ dễ hơn</li>
+</ul>
+
+<h3>Tăng adrenaline tự nhiên</h3>
+<ul>
+<li>Nicotine từng <strong>ức chế MAO</strong> (men phá hủy adrenaline)</li>
+<li>Cai → MAO hoạt động lại → adrenaline phá nhanh nhưng <strong>tổng hợp nhiều hơn</strong> để bù</li>
+<li>Kết quả: <strong>nhịp tim nhanh, người nóng, dễ phản ứng</strong></li>
+</ul>
+
+<h3>Thiếu ngủ + cáu gắt = combo</h3>
+<ul>
+<li>Tuần 1–2 thường ngủ kém</li>
+<li>1 đêm thiếu ngủ = ngưỡng cáu giảm 30%<sup>[3]</sup></li>
+<li>3 đêm thiếu ngủ liên tục = "thùng thuốc nổ" về cảm xúc</li>
+</ul>
+
+<h2>Phần 2 — Timeline cáu gắt</h2>
+
+<div class="timeline">
+<div class="timeline-item"><div class="timeline-day">Ngày 1</div><div>Còn ý chí cao, ít cáu</div></div>
+<div class="timeline-item"><div class="timeline-day">Ngày 2–3</div><div>Bắt đầu cảm thấy "khó ở" — phản ứng với chuyện nhỏ</div></div>
+<div class="timeline-item"><div class="timeline-day">Ngày 4–7</div><div><strong>Đỉnh cáu gắt</strong> — dễ nổi nóng với vợ con, đồng nghiệp</div></div>
+<div class="timeline-item"><div class="timeline-day">Tuần 2</div><div>Dịu dần — vẫn hơi cáu nhưng kiểm soát được</div></div>
+<div class="timeline-item"><div class="timeline-day">Tuần 3–4</div><div>Gần về bình thường — chỉ cáu khi stress</div></div>
+<div class="timeline-item"><div class="timeline-day">Tháng 2+</div><div><strong>Tâm trạng ổn định hơn người còn hút</strong><sup>[4]</sup></div></div>
+</div>
+
+<h2>Phần 3 — Báo trước với người thân — quan trọng nhất</h2>
+
+<p>Câu nói duy nhất cần thuộc lòng — nói với vợ, con, đồng nghiệp gần:</p>
+
+<blockquote>"Tôi đang cai thuốc. Tuần này tôi sẽ khó tính hơn vì não đang điều chỉnh — không phải vì em/anh/bạn. Em/anh/bạn giúp tôi 2 tuần — chịu khó. Sau đó tôi hứa sẽ tốt hơn cả lúc còn hút."</blockquote>
+
+<p>Đây là <strong>vaccine xung đột</strong>. Khi mình bùng nổ tuần sau, người thân nhớ câu này → không phản ứng ngược → cãi vã không leo thang.</p>
+
+<h2>Phần 4 — 5 kỹ thuật kiểm soát cơn cáu</h2>
+
+<h3>1. Thở "4 — đếm — đi"</h3>
+<p>Khi cảm thấy nóng bừng lên — TRƯỚC khi mở miệng:</p>
+<ol>
+<li>Hít vào 4 giây, giữ 2 giây, thở ra 6 giây × 3 lần</li>
+<li>Đếm thầm trong đầu 1 → 10</li>
+<li>Đi ra khỏi phòng 5 phút (đi uống nước, ra ban công)</li>
+</ol>
+<p>5 phút sau quay lại, sóng adrenaline đã hạ 60%<sup>[5]</sup>.</p>
+
+<h3>2. Vận động xả adrenaline</h3>
+<ul>
+<li><strong>20 cú đẩy tường</strong> nhanh — xả adrenaline trong 30 giây</li>
+<li><strong>Đi bộ 15 phút</strong> ngoài trời — kích hoạt phó giao cảm</li>
+<li><strong>Bóp bóng cao su</strong> — physical outlet thay vì la hét</li>
+</ul>
+
+<h3>3. Quy tắc "đi xa khỏi nguồn"</h3>
+<p>Trẻ con khóc + vợ hỏi gì đó + ai gọi điện = combo cao. Cách an toàn: nói <em>"Cho anh 5 phút"</em> → đi ra phòng khác → quay lại khi đã hạ nhiệt.</p>
+
+<h3>4. Tránh trigger ban đầu</h3>
+<ul>
+<li>Tuần 1–2 — tránh họp căng thẳng nếu được</li>
+<li>Tránh xem tin chính trị, drama, bóng đá đội mình thua</li>
+<li>Tránh cãi với đồng nghiệp khó tính</li>
+<li>Tránh lái xe đường tắc giờ cao điểm</li>
+</ul>
+
+<h3>5. Ngủ đủ — ưu tiên #1</h3>
+<p>Thiếu ngủ là <strong>multiplier</strong> của cáu gắt. Đi ngủ trước 23h, giữ phòng mát, hạn chế caffeine sau 14h. Xem thêm bài <strong>Mất ngủ khi cai thuốc</strong>.</p>
+
+<h2>Phần 5 — Khi nào lo lắng?</h2>
+
+<div class="alarm">
+<h3>🚨 Cần khám sớm nếu:</h3>
+<ul>
+<li>Đã đập đồ, đánh người, đe doạ ai đó vì cơn cáu</li>
+<li>Cáu kèm <strong>tự hại</strong> hoặc <strong>đập đầu vào tường</strong></li>
+<li>Cáu &gt; 6 tuần không giảm — có thể có rối loạn tâm thần tiềm ẩn</li>
+<li>Có tiền sử rối loạn lưỡng cực, depression — cáu cai có thể tình huống thèm bùng phát</li>
+</ul>
+<p>Bác sĩ tâm thần có thể kê <strong>Bupropion</strong> (vừa hỗ trợ cai, vừa ổn định tâm trạng) hoặc các thuốc ngắn hạn khác.</p>
+</div>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>"Lần 5 cai năm 2020, tôi quát thằng con 7 tuổi vì nó làm rơi cốc nước. Mặt nó co rúm — tôi tỉnh ngay. Đêm đó tôi ôm con, xin lỗi, giải thích 'ba đang cai thuốc, tuần này khó ở'. Nó hiểu hết. Hôm sau nó tự ra cửa khi thấy ba cáu — nó học từ chính tôi."</p>
+<p>"<strong>Trẻ con không phán xét — chúng học</strong>. Tuần khó nhất của tôi cũng là tuần con tôi học rằng người lớn cũng có thể nói 'ba xin lỗi'. Bài học đó đáng hơn 30 năm hút thuốc."</p>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<p><strong>Q: Tôi cáu kinh khủng — có nên dừng cai cho yên cửa nhà?</strong><br>
+A: KHÔNG. Cáu chỉ <strong>2–4 tuần</strong>. Bỏ cuộc = tiếp tục hút 10–20 năm + tăng nguy cơ ung thư. Chiến lược tốt hơn: báo trước người thân + xin nghỉ phép 1 tuần nếu được + dùng NRT (miếng dán) giảm triệu chứng cai.</p>
+
+<p><strong>Q: Có thuốc gì giảm cáu?</strong><br>
+A: <strong>Bupropion (Wellbutrin)</strong> — kê đơn, giúp giảm cáu + hỗ trợ cai. <strong>L-Theanine</strong> (trong trà xanh, có dạng viên 200mg) — giảm nhẹ lo âu/cáu. <strong>Magie 200–400mg/tối</strong> — thư giãn thần kinh.</p>
+
+<p><strong>Q: Vợ tôi đã giận tôi tuần đầu — giờ tôi cai 1 tháng rồi, vẫn căng thẳng. Sao?</strong><br>
+A: Vợ cần <strong>thời gian phục hồi cảm xúc</strong> dài hơn bạn. Cách sửa: xin lỗi cụ thể ("anh xin lỗi đã quát em ngày X"), không lặp lại lý do "vì cai", tặng 1 món quà nhỏ, cuối tuần đi cafe riêng. 2–3 tuần sẽ ổn lại.</p>
+
+<p><strong>Q: Tôi cáu kiểu trầm cảm — không nổi nóng, chỉ buồn + lạnh lùng. Có phải bình thường?</strong><br>
+A: Đây là <strong>"Đống tro tàn"</strong> — tuần 2–3 thường vậy. Nếu kéo dài &gt; 1 tháng → khám tâm lý. Xem bài <strong>Buồn vô cớ tuần 2</strong>.</p>
+
+<h2>Tham khảo</h2>
+<ol>
+<li>Hughes JR (2007). <em>Effects of kiêng dứt thuốc from tobacco</em>. Nicotine Tob Res 9(3):315-327.</li>
+<li>Brody AL et al. (2006). <em>Smoking-induced ventral striatum dopamine release</em>. Am J Psychiatry 161(7):1211-1218.</li>
+<li>Yoo SS et al. (2007). <em>The human emotional brain without sleep</em>. Curr Biol 17(20):R877-R878.</li>
+<li>Taylor G et al. (2014). <em>Change in mental health after smoking cai thuốc</em>. BMJ 348:g1151.</li>
+<li>Ma X et al. (2017). <em>The effect of diaphragmatic breathing on attention</em>. Front Psychol 8:874.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 3 — Báo trước với người thân — quan trọng nhất là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Câu nói duy nhất cần thuộc lòng — nói với vợ, con, đồng nghiệp gần:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 4 — 5 kỹ thuật kiểm soát cơn cáu là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Khi cảm thấy nóng bừng lên — TRƯỚC khi mở miệng:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 5 — Khi nào lo lắng?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bác sĩ tâm thần có thể kê Bupropion (vừa hỗ trợ cai, vừa ổn định tâm trạng) hoặc các thuốc ngắn hạn khác.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q: Tôi cáu kinh khủng — có nên dừng cai cho yên cửa nhà? A: KHÔNG. Cáu chỉ 2–4 tuần. Bỏ cuộc = tiếp tục hút 10–20 năm + tăng nguy cơ ung thư. Chiến lược tốt hơn: báo trước người thân + xin nghỉ phép 1 tuần nếu được + dùng NRT (miếng dán) giảm triệu chứng cai.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Tham khảo là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bài viết bởi Khang Sol — đã xin lỗi con 1 lần và học được nhiều hơn 30 năm trước đó. Cập nhật 13-05-2026.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Cáu gắt sẽ qua — phiên bản tốt hơn của bạn ở phía sau</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành 51 ngày — voice Khang khi bạn cần "đi xa khỏi nguồn", workbook cảm xúc, chat 24/7.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=cau-gat">Bắt đầu hành trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã xin lỗi con 1 lần và học được nhiều hơn 30 năm trước đó. Cập nhật 13-05-2026.</p>
+</div>

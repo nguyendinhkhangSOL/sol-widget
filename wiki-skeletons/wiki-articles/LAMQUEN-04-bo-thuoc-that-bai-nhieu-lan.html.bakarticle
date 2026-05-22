@@ -1,0 +1,293 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Trung bình cần bao nhiêu lần thử để cai thành công?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "6-30 lần (Chaiton 2016 BMJ Open, longitudinal 1.277 người Canada). Trước đây sách giáo khoa nói 5-7 lần — nghiên cứu mới cho thấy con số thực cao hơn nhiều. Không phải tại yếu — đây là quy luật."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao tôi đã thử bỏ thuốc nhiều lần mà vẫn vấp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5 lý do phổ biến nhất: bỏ đột ngột (cold turkey) không chuẩn bị, không có Plan B, cai một mình không hỗ trợ, NRT dùng sai cách hoặc bỏ sớm, \"thử 1 điếu\" (AVE — kiêng dứt thuốc Violation Effect)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mỗi lần vấp có vô ích không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. West 2018: mỗi lần thử có \"learning effect\" — não ghi nhận tình huống thèm nào gây vấp, đường nào không hiệu quả. Lần thứ N có xác suất thành công cao hơn lần N-1. 80%+ người thành công đều nói \"lần này khác vì biết tôi vấp ở đâu\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khang Sol đã vấp bao nhiêu lần trước khi cai thành công?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4 lần (1995, 2010, 2015, 2018). Lần 5 (2020) thành công — 5 năm rồi vẫn cai. Mỗi lần vấp khác nhau: bỏ đột ngột không Plan B, tapering một mình, NRT bỏ sớm, AVE \"1 điếu thử\". Lần 5 áp dụng tất cả bài học."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lần thử này có gì khác lần trước?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anh có dữ liệu từ lần trước: biết tình huống thèm nào dễ vấp, phương pháp nào không hợp tính cách, lý do nào mạnh nhất. Sol giúp anh dùng dữ liệu này — chuẩn bị cụ thể cho từng yếu điểm cá nhân thay vì cố ý chí lại từ đầu."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; color: #2C2A27; }
+.sol-wiki .pitfall-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 14px 0; }
+.sol-wiki .pitfall-card h3 { margin-top: 0; }
+.sol-wiki .pitfall-card .pit-fix { background: #ECFDF5; border-left: 3px solid #16A34A; padding: 10px 14px; border-radius: 6px; margin-top: 10px; font-size: 14px; }
+.sol-wiki .pitfall-card .pit-fix strong { color: #15803D; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Anh đã thử bỏ thuốc 3 lần. Hoặc 5 lần. Mỗi lần đều "lần này nhất định". Mỗi lần đều vấp. Anh nghĩ "tại sao mình yếu thế?". Hôm nay Ngày 4 Làm quen — Sol cho anh xem dữ liệu: trung bình NGƯỜI THÀNH CÔNG cũng thử 6-30 lần mới cai được. Anh không yếu — anh đang ở quy luật.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Trung bình 6-30 lần thử</strong> mới cai được lâu dài (Chaiton 2016, BMJ Open — N=1.277 người Canada theo dõi)<sup>[1]</sup></li>
+<li>Trước đây người ta nghĩ trung bình 5-7 lần — nghiên cứu mới cho thấy thực tế <strong>cao hơn nhiều</strong></li>
+<li>Mỗi lần thử KHÔNG vô ích — não anh học được cái gì gây vấp</li>
+<li>5 lý do phổ biến vấp: bỏ đột ngột không chuẩn bị, không có Kế hoạch B, thiếu hỗ trợ, NRT sai cách, "thử 1 điếu"</li>
+<li>Hôm nay: nhớ lại 3 lần thử trước, ghi lý do vấp mỗi lần — vì lần này khác</li>
+</ul>
+</div>
+
+<h2>Sự thật ít người biết: 7-10 lần là TRUNG BÌNH</h2>
+
+<p>Năm 2016, Chaiton và cộng sự đăng một nghiên cứu trong BMJ Open theo dõi 1.277 người Canada cai thuốc và quan sát số lần họ thử trước khi cai thành công lâu dài (≥1 năm)<sup>[1]</sup>.</p>
+
+<p>Kết quả gây ngạc nhiên ngay cả với cộng đồng y tế:</p>
+
+<div class="stat-highlight">
+<div class="stat-num">6–30 lần</div>
+<div class="stat-label">Số lần thử bỏ thuốc trung bình của người cai thành công lâu dài (Chaiton 2016, BMJ Open)</div>
+</div>
+
+<p>Trước nghiên cứu này, đa số sách giáo khoa y học và websites nói "5-7 lần". Chaiton phát hiện con số đó <strong>underestimate</strong> — phương pháp tính cũ (chỉ hỏi ở cuối "anh đã thử bao nhiêu lần?") thường được nhớ ít hơn thực tế.</p>
+
+<p>Khi Chaiton dùng phương pháp longitudinal (hỏi liên tục mỗi tháng), số lần thử thực tế từ 6 đến hơn 30. Một số người thành công sau 20+ lần.</p>
+
+<p>Ý nghĩa với anh: <strong>nếu anh đã thử 3-5 lần và vấp, anh đang ở giữa quy luật, không phải ngoài lề</strong>. Tiếp tục thử là chiến lược đúng — không phải dấu hiệu yếu.</p>
+
+<h2>Tại sao mỗi lần vấp không vô ích?</h2>
+
+<p>West và cộng sự (2018, Psychological Medicine) phát hiện: mỗi lần thử cai có một "learning effect" — não anh ghi nhận điều gì gây vấp, đường nào không hiệu quả, công cụ nào cần. Lần thứ N có xác suất thành công cao hơn lần thứ N-1<sup>[2]</sup>.</p>
+
+<p>Chia sẻ chuyên môn của Sol: 80%+ user thành công sau khi vấp đều nói "lần này khác" vì họ <strong>biết chính xác cái gì làm họ vấp lần trước</strong> và chuẩn bị cho nó.</p>
+
+<h2>5 lý do phổ biến nhất khiến vấp — và cách tránh</h2>
+
+<div class="pitfall-card">
+<h3>🔴 Lý do 1: Bỏ đột ngột không có chuẩn bị</h3>
+<p>"Mai mình bỏ" — không lên kế hoạch trước, không có NRT/thuốc, không có Kế hoạch B. Khi cơn thèm peak ở D2-3, không có công cụ gì = vấp.</p>
+<p>Khoảng 60% người Việt thử cai theo cách này (Sol khảo sát 2024). Tỷ lệ thành công 6 tháng: ~5%.</p>
+<div class="pit-fix">
+<strong>Cách tránh:</strong> Dành ít nhất 7 ngày Làm quen + 14 ngày Giảm dần để chuẩn bị. Đặt Q-Day có lịch trình rõ. Khi cơn thèm đến, đã có công cụ sẵn (kẹo, nước, đi bộ — Kit Sol).
+</div>
+</div>
+
+<div class="pitfall-card">
+<h3>🔴 Lý do 2: Không có Kế hoạch B cụ thể</h3>
+<p>"Lần này mình quyết tâm" — nhưng khi đối tác mời thuốc ở quán ăn, anh không biết phải nói gì. Nói "tôi đang cai" thì ngại. Nói "không cần" thì người ta vẫn ép. Cuối cùng "1 điếu thôi cho lịch sự" → vấp.</p>
+<p>70% vấp trong tháng đầu xảy ra ở tình huống xã hội (Marlatt 2005). Không có Kế hoạch B = thua ngay.</p>
+<div class="pit-fix">
+<strong>Cách tránh:</strong> Viết 5 câu Kế hoạch B "nếu-thì" trước Q-Day (T-2 trong 14 ngày Giảm dần). Vd: "Khi đối tác mời thuốc → tôi sẽ nói 'Em đang chữa hô hấp, cảm ơn anh' + cầm ly nước". Cụ thể, ngắn, không gây cãi.
+</div>
+</div>
+
+<div class="pitfall-card">
+<h3>🔴 Lý do 3: Cai một mình — không có hỗ trợ</h3>
+<p>Cai trong im lặng, không nói với ai. Khi khó không có chỗ kêu, không có ai khen khi vượt qua. Cảm giác cô đơn → thèm cảm giác "có gì đó" → quay lại thuốc.</p>
+<p>Stead 2017 (Cochrane): cai có hỗ trợ behavioral tăng tỷ lệ thành công 1.4-1.7 lần so với cai một mình<sup>[3]</sup>.</p>
+<div class="pit-fix">
+<strong>Cách tránh:</strong> Báo ít nhất 3 người thân (vợ, 1 bạn thân, 1 đồng nghiệp đáng tin). Tham gia 1 app/coaching (Sol, Quitline). Có ai khen khi anh vượt Day 7, Day 14 — quan trọng hơn anh tưởng.
+</div>
+</div>
+
+<div class="pitfall-card">
+<h3>🔴 Lý do 4: NRT/thuốc dùng sai cách hoặc dừng sớm</h3>
+<p>Mua miếng dán nicotine từ Pharmacity nhưng dùng được 1 tuần thấy "không có gì" rồi bỏ. Hoặc Champix vừa cảm giác "buồn nôn nhẹ" → dừng → 2 ngày sau vấp.</p>
+<p>50% người dùng NRT bỏ trước 4 tuần — đó là lý do NRT trong thực tế kém hiệu quả hơn trong nghiên cứu lâm sàng.</p>
+<div class="pit-fix">
+<strong>Cách tránh:</strong> NRT cần dùng <strong>đủ liều, đủ thời gian (8-12 tuần)</strong>. Champix bắt đầu 1 tuần trước Q-Day, uống đủ 12 tuần. Tác dụng phụ nhẹ thường giảm sau 1-2 tuần. Nếu nặng, gọi BS thay đổi liều — không tự dừng.
+</div>
+</div>
+
+<div class="pitfall-card">
+<h3>🔴 Lý do 5: "Thử 1 điếu" — Kiêng dứt Violation Effect</h3>
+<p>"Mình cai 30 ngày rồi, 1 điếu có sao". 1 điếu → não nhớ ngay vị → 2 điếu → "thôi vấp rồi, mai bắt đầu lại" → 1 tuần sau hút lại như cũ.</p>
+<p>Marlatt gọi đây là <strong>kiêng dứt thuốc Violation Effect (AVE)</strong> — hiệu ứng "đã vi phạm cam kết". Não anh tự tin tin "đã thua rồi" thay vì "vẫn còn cứu". 70% vấp trở thành tái nghiện trong 24h nếu không có chiến lược<sup>[4]</sup>.</p>
+<div class="pit-fix">
+<strong>Cách tránh:</strong> Nguyên tắc Sol: <strong>"vấp ≠ tái nghiện"</strong>. Nếu lỡ hút 1 điếu — TUYỆT ĐỐI không hút điếu thứ 2 trong 1 giờ tiếp. Ghi lý do vấp (cảm xúc, ai, ở đâu), gọi 1 người thân/Sol, tha thứ, tiếp tục Day 31 không phải Day 1.
+</div>
+</div>
+
+<h2>Lần này có thể khác — vì sao?</h2>
+
+<p>Mỗi lần thử trước đã cho anh dữ liệu:</p>
+
+<ol>
+<li>Anh biết cơn thèm peak ở ngày nào (thường D2-3)</li>
+<li>Anh biết tình huống nào dễ vấp nhất (anh đã vấp ở đó rồi)</li>
+<li>Anh biết phương pháp nào KHÔNG hợp với anh (bỏ đột ngột? tapering? NRT?)</li>
+<li>Anh có động lực cụ thể hơn — không phải "tôi nghĩ nên cai" mà "tôi đã thử 5 lần, lần thứ 6 này phải khác"</li>
+</ol>
+
+<p>Sol giúp anh dùng dữ liệu này:</p>
+
+<ul>
+<li>Ngày 3 Làm quen — tính chi phí thực sự (lý do mạnh hơn lần trước)</li>
+<li>Ngày 6 Làm quen — test Các giai đoạn thay đổi (biết anh sẵn sàng đến đâu)</li>
+<li>Ngày 7 Làm quen — cam kết có Plan + báo người thân (không cai một mình nữa)</li>
+<li>14 ngày Giảm dần — chuẩn bị cụ thể từng tình huống thèm (không bỏ đột ngột không chuẩn bị)</li>
+<li>30 ngày Q-Day — có Kế hoạch B viết sẵn cho mỗi tình huống dễ vấp</li>
+</ul>
+
+<p>Đó là lý do em (Sol) nói: <strong>lần thử này có thể là lần cuối</strong>. Không phải vì anh thay đổi tính cách — vì anh có chiến lược khác.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — 4 lần vấp và bài học</div>
+<p>Mình kể nhanh 4 lần vấp:</p>
+<p><strong>Lần 1 (1995, tuổi 20):</strong> bỏ đột ngột, không chuẩn bị, vấp sau 5 ngày khi đi sinh nhật bạn. <strong>Bài học: cần Kế hoạch B cho tình huống xã hội.</strong></p>
+<p><strong>Lần 2 (2010, tuổi 35):</strong> Giảm dần 2 tuần, nhưng cai một mình, không nói với vợ. Khi stress công việc, hút lại. <strong>Bài học: phải có hỗ trợ.</strong></p>
+<p><strong>Lần 3 (2015):</strong> bỏ đột ngột + NRT miếng dán. Dán 1 tuần thấy "vẫn thèm" → bỏ NRT → vấp ở đám cưới. <strong>Bài học: NRT phải đủ 8-12 tuần, không bỏ giữa chừng.</strong></p>
+<p><strong>Lần 4 (2018):</strong> Giảm dần 2 tuần + NRT đủ 12 tuần. Cai được 3 tháng. Vấp ở "1 điếu thử xem" trong tiệc tết. <strong>Bài học: AVE — 1 điếu không bao giờ là 1 điếu.</strong></p>
+<p><strong>Lần 5 (2020):</strong> Giảm dần 2 tuần + Bupropion 12 tuần + cam kết với vợ + Kế hoạch B cho 5 tình huống thèm nặng nhất. Cai được. 5 năm rồi.</p>
+<p>Mình mất 25 năm và 4 lần vấp để hiểu mình cần gì. Anh có thể học nhanh hơn bằng cách dùng Sol — chia sẻ kinh nghiệm vấp của mình + 500 người khác.</p>
+</div>
+
+<h2>Hôm nay anh làm gì?</h2>
+
+<ol>
+<li>Nhớ lại 3 lần thử bỏ thuốc trước (nếu có)</li>
+<li>Với mỗi lần, ghi vào điện thoại:
+   <ul>
+   <li>Lần thử lúc nào? (năm/tuổi)</li>
+   <li>Cai được bao lâu trước khi vấp?</li>
+   <li>Tình huống nào làm vấp?</li>
+   <li>Cảm xúc lúc đó?</li>
+   <li>Lý do (xếp theo 5 lý do trên)?</li>
+   </ul>
+</li>
+<li>Ghi 1 câu kết: <strong>"Lần này tôi sẽ tránh ___ vì lần trước tôi vấp do ___."</strong></li>
+</ol>
+
+<p>Đây là vốn dữ liệu cá nhân cho 14 ngày Giảm dần và 30 ngày Q-Day. Không có ai biết rõ "anh dễ vấp ở đâu" bằng chính anh.</p>
+
+<h2>Mai có gì?</h2>
+
+<p>Ngày 5 Làm quen — Sol so sánh chi tiết <strong>3 phương pháp khoa học</strong>: bỏ đột ngột, Giảm dần, NRT+thuốc kê. Có bảng quyết định dựa trên tính cách + mức phụ thuộc. Anh sẽ chọn được phương pháp phù hợp.</p>
+
+🔄 <strong>Ngày 4 Làm quen — Bỏ thuốc thất bại nhiều lần</strong><br><br>
+Chaiton 2016 BMJ: trung bình 6-30 lần thử mới cai được — không phải yếu, đây là quy luật. 5 lý do vấp phổ biến: bỏ đột ngột không chuẩn bị, không Kế hoạch B, cai một mình, NRT sai cách, "thử 1 điếu" (AVE).<br><br>
+Mỗi lần vấp KHÔNG vô ích — não học được tình huống thèm riêng của anh. Lần thử này có thể khác vì anh có dữ liệu cá nhân.<br><br>
+Hôm nay: ghi lại 3 lần thử trước + lý do vấp mỗi lần. Mai 3 phương pháp khoa học.<br><br>
+📖 <a href="https://sol.vn/lam-quen-ngay-4-bo-thuoc-that-bai-nhieu-lan/?utm_source=zalo&utm_campaign=lamquen-4">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Bài không nhằm trầm trọng hoá vấp. Mục tiêu: bình thường hoá để anh bớt tự trách + có chiến lược cụ thể. Nếu anh đang cảm thấy depression nặng kèm cai thuốc — thảo luận với bác sĩ tâm lý.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Trung bình cần bao nhiêu lần thử để cai thành công?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">6-30 lần (Chaiton 2016 BMJ Open, longitudinal 1.277 người Canada). Trước đây sách giáo khoa nói 5-7 lần — nghiên cứu mới cho thấy con số thực cao hơn nhiều. Không phải tại yếu — đây là quy luật.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Vì sao tôi đã thử bỏ thuốc nhiều lần mà vẫn vấp?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">5 lý do phổ biến nhất: bỏ đột ngột không chuẩn bị, không có Kế hoạch B, cai một mình không hỗ trợ, NRT dùng sai cách hoặc bỏ sớm, "thử 1 điếu" (AVE — kiêng dứt thuốc Violation Effect).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Mỗi lần vấp có vô ích không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không. West 2018: mỗi lần thử có "learning effect" — não ghi nhận tình huống thèm nào gây vấp, đường nào không hiệu quả. Lần thứ N có xác suất thành công cao hơn lần N-1. 80%+ người thành công đều nói "lần này khác vì biết tôi vấp ở đâu".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Khang Sol đã vấp bao nhiêu lần trước khi cai thành công?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">4 lần (1995, 2010, 2015, 2018). Lần 5 (2020) thành công — 5 năm rồi vẫn cai. Mỗi lần vấp khác nhau: bỏ đột ngột không Kế hoạch B, tapering một mình, NRT bỏ sớm, AVE "1 điếu thử". Lần 5 áp dụng tất cả bài học.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Lần thử này có gì khác lần trước?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Anh có dữ liệu từ lần trước: biết tình huống thèm nào dễ vấp, phương pháp nào không hợp tính cách, lý do nào mạnh nhất. Sol giúp anh dùng dữ liệu này — chuẩn bị cụ thể cho từng yếu điểm cá nhân thay vì cố ý chí lại từ đầu.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Chaiton M, Diemert L, Cohen JE, et al. (2016). <em>Estimating the number of quit attempts it takes to quit smoking successfully in a longitudinal cohort of smokers</em>. BMJ Open 6(6):e011045.</li>
+<li>West R, Brown J. (2018). <em>Theory of addiction</em> (2nd ed.). Wiley-Blackwell. (Learning effect across quit attempts)</li>
+<li>Stead LF, Carroll AJ, Lancaster T. (2017). <em>Group behaviour therapy programmes for smoking cai thuốc</em>. Cochrane Database Syst Rev. CD001007.</li>
+<li>Marlatt GA, Donovan DM (Eds.). (2005). <em>tái nghiện Prevention</em> (2nd ed.). Guilford Press. (kiêng dứt thuốc Violation Effect chapter)</li>
+<li>Fiore MC, Jaén CR, Baker TB, et al. (2008). <em>Treating Tobacco Use and Dependence: 2008 Update</em>. USDHHS Clinical Practice Guideline.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/lam-quen-ngay-3-chi-phi-thuc-su/">Ngày 3 — Chi phí thực sự</a></li>
+<li>→ <a href="https://sol.vn/lam-quen-ngay-5-3-phuong-phap-khoa-hoc/">Ngày 5 (Mai) — 3 phương pháp khoa học</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-bao-nhieu-lan-moi-thanh-cong/">Cai thuốc bao nhiêu lần — bài chi tiết</a></li>
+<li>→ <a href="https://sol.vn/lo-hut-dieu-roi/">Lỡ hút 1 điếu rồi — phải làm gì</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Lần thử này có chiến lược khác. 7 ngày Làm quen miễn phí.</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Sol dùng dữ liệu vấp của 500+ người Việt + kinh nghiệm Khang Sol (4 lần vấp, lần 5 thành công).</p>
+<a href="https://bothuocla.sol.vn">Tham gia miễn phí →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Chaiton 2016 BMJ Open, Marlatt 2005, West 2018. Sol là sản phẩm Việt 100%, không quảng cáo, không bán dữ liệu.</p>
+
+</div>

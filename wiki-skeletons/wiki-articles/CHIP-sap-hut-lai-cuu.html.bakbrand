@@ -1,0 +1,279 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "️ 4 bước hành động NGAY — làm theo thứ tự là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nếu không gọi được ai → viết 3 dòng vào sổ: \"3 lý do tôi đã chọn cai\" + \"Hôm nay là Ngày X\" + \"Mai tôi vẫn muốn là người không hút\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao 30 giây quan trọng — khoa học?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anh chỉ quyết định \"không hút điếu này\". 30 giây nữa anh vẫn có thể quyết định lại. Nhưng đa số anh em sau 30 giây sẽ KHÔNG còn muốn — sóng đã qua. Đây là cơ chế sinh học chắc chắn — không phải \"ý chí mạnh hay yếu\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nếu anh đã LỠ hút 1 điếu rồi là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây KHÔNG phải dấu chấm hết. vấp ≠ tái nghiện."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phòng ngừa — đừng để \"30 giây cuối\" lặp lại là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nếu anh hay rơi vào moment này, đây là 3 điều phải làm NGAY hôm nay:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thật. Hughes 2007 đo trên 200 người đang cai: cơn thèm peak 30-60 giây, tan sau 90-180 giây. Anh thử ngay bây giờ — bấm đồng hồ điện thoại 30 giây, thực hiện 4 bước trên. Hết 30 giây, cơn thèm yếu hơn 60%."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI CHIP — sap-hut-lai-cuu (Sol v4 — dual-purpose Chip + SEO)
+  Focus keyword: "sắp hút lại thuốc lá"
+  Source: rewrite từ draft #797 + skeleton chip-sap-hut-lai.md
+  Cluster: B — Phương pháp/Công cụ (màu vàng amber)
+  Audience: chip user đang ở Moment of Truth + SEO user search "sắp hút lại"
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; font-size: 19px; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .step { background: white; border: 1px solid #E8DFC8; border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { flex-shrink: 0; background: #B25C2C; color: white; width: 36px; height: 36px; line-height: 36px; text-align: center; border-radius: 50%; font-weight: 700; font-size: 16px; }
+.sol-wiki .step-body { flex: 1; }
+.sol-wiki .step-title { font-size: 16px; font-weight: 700; color: #5C3A1E; margin: 4px 0 6px; }
+.sol-wiki .step-time { display: inline-block; background: #FFF4EA; color: #B25C2C; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; margin-left: 8px; }
+.sol-wiki .step ul { padding-left: 22px; margin: 6px 0 0; font-size: 14.5px; }
+.sol-wiki .step ul li { margin-bottom: 4px; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box strong { color: #5C3A1E; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li { margin-bottom: 6px; }
+</style>
+
+<div class="sol-wiki">
+
+<div class="alarm">
+<h3>⏱ Anh đang cầm bao thuốc — TAY ĐÃ GIƠ?</h3>
+<p style="margin: 0 0 12px; font-size: 16px;"><strong>30 giây cuối — đủ để cứu 30 ngày qua.</strong></p>
+<p style="margin: 0; font-size: 15px;">Đặt thuốc xuống. Đọc 4 bước dưới đây. Làm theo thứ tự. Sau 60 giây quyết định lại.</p>
+</div>
+
+<p class="lead">
+Anh đã cai 1 tuần, 1 tháng, 3 tháng. Bỗng moment xuất hiện — stress công ty, cãi vợ, đêm khuya cô đơn, đám tiệc. Tay anh đã rút bao thuốc, bật lửa trong tay. Đây là <strong>"Moment of Truth"</strong> mà 60% người cai tái phát (West & Brown 2013). Tin tốt: <strong>cơn thèm cực mạnh chỉ kéo 30-90 giây</strong>. Đợi qua được, prefrontal cortex (não trán) kích hoạt lại — anh tự đặt thuốc xuống. Bài này em chỉ 4 bước cụ thể anh làm NGAY trong 30 giây — Khang đã thử và work.
+</p>
+
+<h2>⚠️ 4 bước hành động NGAY — làm theo thứ tự</h2>
+
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<div class="step-title">ĐẶT THUỐC + BẬT LỬA XUỐNG <span class="step-time">5 giây</span></div>
+<ul>
+<li>Đặt vào ngăn kéo / túi áo khoác / hộc xe — <strong>cách xa tay anh</strong></li>
+<li>Vật lý — KHÔNG cần "thề thốt"</li>
+<li>Tay rảnh → bớt 50% nguy cơ ngay lập tức</li>
+</ul>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<div class="step-title">ĐI RA NGOÀI <span class="step-time">10 giây</span></div>
+<ul>
+<li>Mở cửa, bước ra hành lang / sân / ban công (KHÔNG hút)</li>
+<li>Đổi không khí, đổi không gian = phá tín hiệu thèm (tín hiệu thèm extinction — Marlatt 1985)</li>
+<li>Não cần break vật lý để reset</li>
+</ul>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<div class="step-title">UỐNG MỘT NGỤM NƯỚC <span class="step-time">5 giây</span></div>
+<ul>
+<li>Lấy chai nước / rót cốc</li>
+<li>Uống chậm — cảm nhận lạnh trong miệng</li>
+<li>Hydrate cho não + kéo dãn thời gian</li>
+</ul>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<div class="step-title">GỌI 1 NGƯỜI <span class="step-time">10 giây</span></div>
+<ul>
+<li>Vợ / con / bạn thân / Khang trong app Sol</li>
+<li>KHÔNG cần nói "anh đang thèm" — chỉ "anh muốn nghe giọng em"</li>
+<li>Kết nối → oxytocin → giảm cortisol → cơn thèm tan</li>
+</ul>
+<p style="margin: 10px 0 0; font-size: 14px; color: #5A5650;"><em>Nếu không gọi được ai → viết 3 dòng vào sổ: "3 lý do tôi đã chọn cai" + "Hôm nay là Ngày X" + "Mai tôi vẫn muốn là người không hút".</em></p>
+</div>
+</div>
+
+<h2>✅ Sau 60 giây — kiểm tra lại</h2>
+
+<div class="check-box">
+<strong>Câu hỏi 1: Anh CÒN muốn hút?</strong>
+<ul style="margin-top: 8px;">
+<li><strong>CÓ</strong> → tự hỏi: <em>"tình huống thèm thật là gì? Stress? Nhậu? Cãi nhau? Buồn?"</em> → Giải quyết tình huống thèm gốc, không "1 điếu trá hình". Đọc <a href="https://sol.vn/them-thuoc-dem-khuya-90-giay" style="color: #B25C2C; font-weight: 600;">Thèm thuốc đêm khuya — 90 giây vượt qua</a> hoặc <a href="https://sol.vn/ngay-3-cai-thuoc-kho-nhat" style="color: #B25C2C; font-weight: 600;">Ngày 3 cai thuốc khó nhất</a>.</li>
+<li><strong>KHÔNG</strong> → <strong>anh đã THẮNG</strong>. Ghi vào sổ: <em>"Hôm nay tôi đã suýt hút — nhưng không. Hôm nay là Ngày X+1."</em> Đây là chiến thắng lớn — quan trọng hơn 30 ngày sạch trước đó.</li>
+</ul>
+</div>
+
+<h2>Vì sao 30 giây quan trọng — khoa học</h2>
+
+<h3>1. Khoa học impulse — sóng cơn thèm</h3>
+<ul>
+<li>Cơn thèm cực mạnh kéo <strong>30-90 giây</strong> (Hughes 2007, Nicotine & Tobacco Research)</li>
+<li>Trong 30 giây đầu: prefrontal cortex (não trán — vùng lý trí) bị shutdown tạm → "autopilot" hành động</li>
+<li>Sau 30 giây: PFC kích hoạt lại → kiểm soát quay lại → anh tự đặt thuốc xuống</li>
+</ul>
+
+<h3>2. Anh không quyết định "cai cả đời"</h3>
+<p>Anh chỉ quyết định <strong>"không hút điếu này"</strong>. 30 giây nữa anh vẫn có thể quyết định lại. Nhưng đa số anh em sau 30 giây sẽ KHÔNG còn muốn — sóng đã qua. Đây là cơ chế sinh học chắc chắn — không phải "ý chí mạnh hay yếu".</p>
+
+<h3>3. "Vé một chiều" của 1 điếu</h3>
+<ul>
+<li>1 điếu = nicotine spike → kích hoạt nAChR (receptor nicotinic) 88% (Brody 2006 PET scan)</li>
+<li>nAChR upregulation đã giảm sau 30 ngày sạch → reset toàn bộ về Day 0</li>
+<li>95% người "1 điếu thử" hút lại trong 1 tuần (Hughes 2009)</li>
+<li><strong>KHÔNG có "chỉ 1 điếu thôi"</strong> — chỉ có "0 điếu" hoặc "20 điếu/ngày"</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Lần thứ 5 cai năm 2020, có 1 đêm Day 11 — mình ngồi 1 mình lúc 11h, vợ con đã ngủ. Trong ngăn tủ vẫn còn 1 bao Vinataba mình quên xóa. Mình thèm dữ dội — đã cầm bao thuốc trong tay 5 giây.</p>
+<p>Mình đặt thuốc lên bàn. Bước ra ban công 60 giây. Hít 5 hơi không khí lạnh. Xuống bếp uống 1 cốc nước. Quay lại — mình lấy bao thuốc, vứt vào sọt rác.</p>
+<p>Đêm đó là đêm mình nhớ rõ nhất trong 5 năm cai. Không phải vì nó vĩ đại — vì nó <strong>suýt mất</strong>. Cứ mỗi lần thèm sau đó, mình nhớ đêm Day 11 — nhớ rằng <strong>30 giây cuối quyết định 5 năm tới của mình.</strong></p>
+</div>
+
+<h2>🚨 Nếu anh đã LỠ hút 1 điếu rồi</h2>
+
+<div class="check-box" style="border-left-color: #DC2626; background: #FEE2E2;">
+<p style="margin: 0 0 10px;"><strong style="color: #DC2626;">Đây KHÔNG phải dấu chấm hết.</strong> vấp ≠ tái nghiện.</p>
+<ul style="margin: 0;">
+<li><strong>KHÔNG nói</strong> "thôi hút luôn cho xong" — đó là quyết định riêng, không phải mệnh lệnh từ điếu đó</li>
+<li><strong>Ghi vào sổ</strong>: "Tôi đã lỡ 1 điếu lúc X giờ vì Y lý do." — học từ tình huống thèm</li>
+<li><strong>Tha thứ bản thân</strong> + tiếp tục từ chỗ đang ở — Hughes 2004: người cai thành công lỡ trung bình 3-5 lần trước khi sạch hẳn</li>
+<li><strong>Sáng mai mở app Sol</strong> — Khang đợi anh, KHÔNG reset đếm ngày sạch</li>
+<li>Đọc <a href="https://sol.vn/lo-hut-dieu-roi" style="color: #B25C2C; font-weight: 600;">Tôi đã lỡ hút 1 điếu — phá hết hay không?</a></li>
+</ul>
+</div>
+
+<h2>Phòng ngừa — đừng để "30 giây cuối" lặp lại</h2>
+
+<p>Nếu anh hay rơi vào moment này, đây là 3 điều phải làm NGAY hôm nay:</p>
+
+<ol>
+<li><strong>Xoá sạch thuốc + bật lửa + gạt tàn</strong> trong nhà / xe / chỗ làm. KHÔNG giấu "phòng khi cần".</li>
+<li><strong>Viết 3 lý do anh cai</strong> trên giấy / note điện thoại — đặt nơi dễ thấy (tủ lạnh, gương phòng tắm). Đọc khi thèm.</li>
+<li><strong>Liệt kê 5 tình huống rủi ro cao</strong> + Kế Hoạch B cụ thể cho từng tình huống. Xem <a href="https://sol.vn/cai-thuoc-khi-di-nhau" style="color: #B25C2C; font-weight: 600;">Cai thuốc khi đi nhậu</a> và <a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C; font-weight: 600;">Cai thuốc lá tại nhà — 7 bước</a>.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. ️ 4 bước hành động NGAY — làm theo thứ tự là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nếu không gọi được ai → viết 3 dòng vào sổ: "3 lý do tôi đã chọn cai" + "Hôm nay là Ngày X" + "Mai tôi vẫn muốn là người không hút".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Vì sao 30 giây quan trọng — khoa học?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Anh chỉ quyết định "không hút điếu này". 30 giây nữa anh vẫn có thể quyết định lại. Nhưng đa số anh em sau 30 giây sẽ KHÔNG còn muốn — sóng đã qua. Đây là cơ chế sinh học chắc chắn — không phải "ý chí mạnh hay yếu".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Nếu anh đã LỠ hút 1 điếu rồi là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đây KHÔNG phải dấu chấm hết. vấp ≠ tái nghiện.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Phòng ngừa — đừng để "30 giây cuối" lặp lại là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nếu anh hay rơi vào moment này, đây là 3 điều phải làm NGAY hôm nay:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Thật. Hughes 2007 đo trên 200 người đang cai: cơn thèm peak 30-60 giây, tan sau 90-180 giây. Anh thử ngay bây giờ — bấm đồng hồ điện thoại 30 giây, thực hiện 4 bước trên. Hết 30 giây, cơn thèm yếu hơn 60%.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">Đêm Moment of Truth — anh KHÔNG một mình</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol có Đồng Hồ Cơn Thèm 90 giây + Voice của Khang trong tai anh + nút "Khẩn cấp" 1 tap. 7 ngày Nhận Diện MIỄN PHÍ trước. 3 lộ trình cá nhân hoá theo Mức Lệ Thuộc.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip-sap-hut-lai&utm_campaign=cuu-30s">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<h3>Tôi đang thèm dữ dội — chỉ 30 giây thật sao?</h3>
+<p>Thật. Hughes 2007 đo trên 200 người đang cai: cơn thèm peak 30-60 giây, tan sau 90-180 giây. Anh thử ngay bây giờ — bấm đồng hồ điện thoại 30 giây, thực hiện 4 bước trên. Hết 30 giây, cơn thèm yếu hơn 60%.</p>
+
+<h3>Tại sao tôi suýt hút lại sau 3 tháng đã ổn?</h3>
+<p>3 đỉnh tái phát: Day 3 (thể chất), tuần 7-10 (tâm lý), tháng 3-6 (tự tin giả). Tháng 3 anh thấy "mình đã ổn" → chủ quan ở tình huống cũ (nhậu, stress) → rơi vào tình huống thèm. Bình thường. Hãy giữ Kế Hoạch B luôn sẵn sàng.</p>
+
+<h3>Vợ con không hiểu — mình gọi ai khi thèm đêm khuya?</h3>
+<p>3 lựa chọn: (1) Hotline cai thuốc miễn phí <strong>0888-008-866</strong> (BV Bạch Mai, 24/7), (2) Voice "Khẩn cấp" trong app Sol — Khang nói chuyện với anh, (3) Viết vào sổ thay vì gọi. Đôi khi "nghe giọng mình bình tĩnh" cũng đủ.</p>
+
+<h3>Tôi đã thử nhiều lần — lần này khác gì?</h3>
+<p>Khác ở chỗ anh đang đọc bài này = anh đang LÀM một việc khác (thay vì hút ngay). Đây là tiến bộ — Hughes 2004: người cai thành công trung bình lỡ 3-5 lần. Mỗi lần lỡ + học = gần thành công hơn 1 bước.</p>
+
+<h3>Nếu tôi gọi vợ, vợ giận thì sao?</h3>
+<p>Vợ giận vì lo, không vì anh yếu. Câu mở: <em>"Em ơi, anh đang cố — anh chỉ muốn nghe giọng em 1 phút."</em> Đa số vợ sẽ dịu xuống ngay. Sau cơn thèm, anh có thể giải thích đầy đủ.</p>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/them-thuoc-dem-khuya-90-giay" style="color: #B25C2C;">Thèm thuốc đêm khuya 90 giây</a> ·
+<a href="https://sol.vn/lo-hut-dieu-roi" style="color: #B25C2C;">Tôi đã lỡ hút 1 điếu</a> ·
+<a href="https://sol.vn/ngay-3-cai-thuoc-kho-nhat" style="color: #B25C2C;">Ngày 3 cai thuốc khó nhất</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Hughes 2007 + 2004 + 2009, Brody 2006, Marlatt 1985, West & Brown 2013.
+</p>
+
+<p style="font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px;">
+<strong>🚨 Khẩn cấp y tế</strong>: nếu cơn thèm gây đau ngực dữ dội, khó thở nặng, ngất, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> NGAY hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+
+</div>

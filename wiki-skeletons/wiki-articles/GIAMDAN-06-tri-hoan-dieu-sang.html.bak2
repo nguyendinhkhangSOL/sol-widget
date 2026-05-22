@@ -1,0 +1,304 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tại sao điếu sáng là điếu khó nhất bỏ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Heatherton 1991: chiếm 3/10 FTND. Sau 7-8h ngủ, nicotine trong máu giảm 80% — receptor đói nặng nhất buổi sáng. Cộng cortisol đỉnh circadian (7-9h sáng). Đây là Pavlov mạnh nhất trong ngày."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Làm sao trì hoãn điếu thuốc sáng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3 kỹ thuật: (1) Thủy hóa lập tức — uống 500ml nước lạnh ngay khi tỉnh (KHÔNG ra ban công). (2) Thay thế cảm giác miệng — đánh răng 3 phút + súc miệng nước muối. (3) Vận động nhẹ — đi 100 bước hoặc 10 push-up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mục tiêu trì hoãn bao nhiêu phút là đủ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "T-9: 60 phút sau khi thức. T-8: 90 phút. T-7: 120 phút. Q-Day: 0 điếu sáng. Mỗi 30 phút trì hoãn = -1 điểm FTND. Baker 2007: trì hoãn ≥60 phút tăng odds cai thành công 2.5x."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tránh cà phê 60 phút đầu có cần thiết không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Cà phê là Pavlov tình huống thèm #1 cho điếu sáng (gặp 87% người hút Việt). Tránh cà phê 60 phút đầu = phá liên kết Pavlov mạnh nhất. Sau 1-2 tuần có thể uống cà phê lại nhưng không cần thuốc đi kèm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lỡ hút điếu sáng trong 60 phút thì sao?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không tự trách. Ghi giờ thực sự hút và lý do. Mai thử lại 30 phút trước. Trì hoãn 30-45 phút vẫn là tiến bộ vs 5 phút bình thường — giảm phụ thuộc rõ rệt."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; color: #2C2A27; }
+.sol-wiki .timeline { background: #FAFAF8; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.sol-wiki .timeline .time-row { display: flex; gap: 14px; padding: 8px 0; border-bottom: 1px dashed rgba(0,0,0,0.08); }
+.sol-wiki .timeline .time-row:last-child { border-bottom: none; }
+.sol-wiki .timeline .time { font-weight: 700; color: #B25C2C; min-width: 70px; font-size: 14px; }
+.sol-wiki .timeline .act { flex: 1; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Điếu thuốc sáng là điếu khó nhất. Đây không phải cảm tính — Fagerström đã xếp nó là <strong>câu hỏi số 1</strong> đo mức phụ thuộc. Hôm nay T-9 (Ngày 6 Giảm dần) — Sol dạy anh kỹ thuật trì hoãn 60 phút và 3 thay thế đã được nghiên cứu.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Điếu sáng = câu hỏi #1 trong test Fagerström</strong> — hút trong 5 phút đầu sau dậy = phụ thuộc cao nhất<sup>[1]</sup></li>
+<li>Sau 7-8h ngủ, nicotine trong máu giảm 80% — não đói nặng nhất buổi sáng (Baker 2007)<sup>[2]</sup></li>
+<li><strong>Mục tiêu T-9:</strong> trì hoãn điếu sáng ít nhất 60 phút sau khi thức (D-target: ngày Q-Day = 0 điếu)</li>
+<li>3 kỹ thuật thay thế đã chứng minh: thủy hóa (nước lạnh), thay thế cảm giác (đánh răng + súc miệng muối), vận động nhẹ (đi 100 bước)</li>
+<li>Cộng cắt thêm 1-2 điếu 0-sao trong ngày — tổng T-9 cắt 2-3 điếu</li>
+</ul>
+</div>
+
+<h2>Vì sao điếu sáng đặc biệt khó?</h2>
+
+<h3>Bằng chứng 1: Fagerström xếp #1</h3>
+
+<p>Năm 1991, Heatherton, Kozlowski, Frecker và Fagerström đăng <strong>Fagerström Test for Nicotine Dependence (FTND)</strong> trong British Journal of Addiction — đây là tiêu chuẩn vàng đo mức phụ thuộc nicotine, dùng trong hầu hết nghiên cứu y học và thực hành lâm sàng đến giờ<sup>[1]</sup>.</p>
+
+<p>FTND có 6 câu, mỗi câu có trọng số (weight) khác nhau. <strong>Câu hỏi số 1 quan trọng nhất</strong>:</p>
+
+<blockquote style="border-left: 3px solid #B25C2C; padding-left: 14px; margin: 14px 0; font-style: italic;">
+"Sau khi thức dậy, bao lâu thì anh hút điếu đầu tiên?"<br><br>
+- ≤5 phút: 3 điểm<br>
+- 6-30 phút: 2 điểm<br>
+- 31-60 phút: 1 điểm<br>
+- >60 phút: 0 điểm
+</blockquote>
+
+<p>Một câu chiếm 3/10 điểm tối đa — gần 1/3 toàn bộ test. Vì sao? Vì câu này dự đoán <strong>mức độ thay đổi receptor não</strong> chính xác nhất. Người hút trong 5 phút đầu sau dậy thường:</p>
+
+<ul>
+<li>Có 3-4x nguy cơ tái nghiện trong tuần đầu cai (Baker 2007)<sup>[2]</sup></li>
+<li>Cần liều NRT cao hơn (patch 21mg vs 14mg)</li>
+<li>Có khả năng cao mắc ung thư phổi sớm hơn (Selya 2018, Nicotine Tob Res)</li>
+</ul>
+
+<h3>Bằng chứng 2: Sinh học của giấc ngủ</h3>
+
+<p>Nicotine có thời gian bán huỷ ~1-2 giờ. Sau 7-8 giờ ngủ:</p>
+
+<div class="stat-highlight">
+<div class="stat-num">−80%</div>
+<div class="stat-label">Nicotine trong máu sau 7-8 giờ ngủ — receptor đói nặng nhất buổi sáng</div>
+</div>
+
+<p>Nghĩa là: sáng dậy, anh ở trạng thái "triệu chứng cai (withdrawal) mini" — não đói receptor lớn nhất trong 24 giờ. Điếu sáng cho <strong>shot dopamine cứu nguy</strong> — não anh đã học rằng "thức → đói → điếu → cứu". Đây là Pavlov mạnh nhất.</p>
+
+<h3>Bằng chứng 3: Cortisol đỉnh sáng</h3>
+
+<p>Cortisol (hormone căng thẳng) đạt đỉnh vào 7-9 giờ sáng — quy luật circadian tự nhiên. Nicotine làm cortisol giảm nhanh → cảm giác "thư giãn ngay". Đây là <strong>cơ chế tự thuốc</strong> (self-medication) cho cortisol sáng.</p>
+
+<p>Bỏ điếu sáng = phải đối mặt với cortisol đỉnh không có công cụ giảm. Lo, hồi hộp, ngực hơi căng. Đó là tại sao điếu sáng khó cắt nhất — và cũng là vì sao cắt được nó thì các điếu khác dễ hơn rất nhiều.</p>
+
+<h2>Hôm nay T-9: Mục tiêu trì hoãn 60 phút</h2>
+
+<p>Sol không yêu cầu anh CẮT HẲN điếu sáng hôm nay — quá khó. Mục tiêu T-9 là <strong>trì hoãn ≥60 phút</strong>. Sang T-8, T-7 đẩy dần lên 90, 120 phút. Đến Q-Day = 0 điếu sáng.</p>
+
+<p>Tại sao trì hoãn quan trọng? Vì mỗi 30 phút trì hoãn = -1 điểm FTND. Nghiên cứu cho thấy người trì hoãn được ≥60 phút có khả năng cai thành công gấp 2.5x người hút trong 5 phút đầu (Baker 2007)<sup>[2]</sup>.</p>
+
+<h2>3 kỹ thuật trì hoãn — đã được nghiên cứu</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Thủy hóa lập tức — uống nước lạnh 500ml</h4>
+<p>Ngay khi tỉnh, KHÔNG ra ban công. Đi thẳng bếp/phòng tắm. Uống 500ml nước lạnh (đặt sẵn từ tối). Lý do sinh học: thủy hóa giảm khô miệng (triệu chứng triệu chứng cai), tăng nhịp thở, đánh lừa não "đã có cứu nguy".</p>
+<p><strong>Nghiên cứu hỗ trợ:</strong> Cold water + 4-7-8 breathing có hiệu quả tương đương 2mg nicotine lozenge trong 15 phút đầu (Volkow 2010 review)<sup>[3]</sup>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Thay thế cảm giác miệng — đánh răng + súc miệng nước muối</h4>
+<p>Đánh răng KÉO DÀI 3 phút (gấp 2 thường ngày), súc miệng nước muối ấm 30 giây × 3 lần. Lý do: phá liên kết Pavlov "miệng + nicotine" — não đang đợi "vị đặc trưng", anh thay bằng vị bạc hà + muối.</p>
+<p><strong>Mẹo:</strong> Dùng kem đánh răng bạc hà mạnh (mint extreme). Cảm giác "tê" miệng làm receptor oral fixation tạm thoả mãn.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Vận động nhẹ — đi 100 bước hoặc 10 cái push-up</h4>
+<p>Sau đánh răng, đi 100 bước (ra cửa, đi vòng sân, vòng nhà) HOẶC 10 cái push-up. Lý do: tăng nhịp tim → endorphin tiết ra → đối trọng với cortisol đỉnh. Endorphin = dopamine tự nhiên, làm "thuốc" thay nicotine.</p>
+<p><strong>Nghiên cứu hỗ trợ:</strong> Taylor và Ussher (2007) Br J Sports Med: 10 phút vận động nhẹ giảm cơn thèm 50% trong 30 phút<sup>[4]</sup>.</p>
+</div>
+</div>
+
+<h2>Lịch buổi sáng T-9 — Phá Pavlov điếu sáng</h2>
+
+<div class="timeline">
+<div class="time-row">
+<div class="time">Thức + 0 phút</div>
+<div class="act"><strong>KHÔNG ra ban công.</strong> Đi thẳng bếp, uống 500ml nước lạnh (đã đặt sẵn từ tối T-10).</div>
+</div>
+<div class="time-row">
+<div class="time">+ 5 phút</div>
+<div class="act">Đánh răng 3 phút + súc miệng muối ấm × 3. Cảm nhận vị bạc hà thay vị thuốc.</div>
+</div>
+<div class="time-row">
+<div class="time">+ 10 phút</div>
+<div class="act">Đi 100 bước HOẶC 10 push-up. Endorphin chống cortisol đỉnh.</div>
+</div>
+<div class="time-row">
+<div class="time">+ 20 phút</div>
+<div class="act">Ăn sáng đầy đủ — đặc biệt trái cây (chuối ổn kali) + 1 ly nước cam. Tránh cà phê 60 phút đầu (cà phê = Pavlov với điếu).</div>
+</div>
+<div class="time-row">
+<div class="time">+ 40 phút</div>
+<div class="act">Việc thường ngày khác (đi vệ sinh, mặc đồ, xem tin tức). Cố ý KHÔNG ngồi chỗ quen hút.</div>
+</div>
+<div class="time-row">
+<div class="time">+ 60 phút</div>
+<div class="act"><strong>Mục tiêu đạt!</strong> Nếu vẫn thèm: cà phê + 1 điếu (nếu tapering). Nếu muốn đẩy lên 90 phút — nhai kẹo cao su, đi thêm 50 bước.</div>
+</div>
+</div>
+
+<h2>Cắt thêm điếu nào trong ngày T-9?</h2>
+
+<p>Ngoài điếu sáng trì hoãn, hôm nay anh cắt thêm <strong>1-2 điếu 0-sao</strong> đã chọn từ T-12 (phân loại điếu). Tổng cắt T-9: <strong>2-3 điếu</strong> (1 điếu sáng trì hoãn + 1-2 điếu 0-sao).</p>
+
+<p>Lưu ý: <strong>KHÔNG cố cắt nhiều hơn 3 điếu</strong>. Tapering có hiệu quả là từ từ — cắt nhanh gây hút bù (sẽ học T-8).</p>
+
+<h2>Khi thất bại — không tự trách</h2>
+
+<p>Nếu hôm nay anh chỉ trì hoãn được 30-45 phút (không đến 60), đó vẫn là tiến bộ. Hôm qua anh có thể hút trong 5 phút sau dậy — hôm nay 30-45 phút = giảm phụ thuộc rõ rệt.</p>
+
+<p>Tự trách = tăng cortisol thêm → khó cai hơn. Wagner và Heatherton 2010 (Self-Control in Society): self-criticism tăng tỷ lệ vấp 40%<sup>[5]</sup>. Self-compassion là chiến lược, không phải softness.</p>
+
+<p>Mai T-8 thử lại 60 phút. Mỗi ngày một chút.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — điếu sáng của mình</div>
+<p>Mình hút điếu sáng đầu tiên trong 30 năm. Cứ 5h45 dậy, ra ban công, hút điếu Vinataba với cà phê đen, ngắm phố sáng. Mình nghĩ "điếu này thiêng liêng, không bỏ được".</p>
+<p>Lần 5 cai, mình áp dụng kỹ thuật của Sol: thay vì ra ban công, mình đi thẳng bếp uống nước. Đánh răng kéo dài. Đi 5 vòng quanh nhà với ly nước cam trên tay. Vợ mình ngạc nhiên: "Sao anh quẩn quanh thế?". Mình kể, vợ cười.</p>
+<p>Tuần đầu khó. Mỗi sáng thèm 30-40 phút. Nhưng đến tuần 2 — mình bắt đầu thấy <strong>buổi sáng có vị khác</strong>. Không có khói, không có cay miệng, đầu nhẹ hơn. 5 năm sau viết bài này, mình vẫn không hút sáng. Có thể anh cũng làm được.</p>
+</div>
+
+<h2>Mai có gì?</h2>
+
+<p>Ngày 7 (T-8) — Sol cảnh báo về <strong>hút bù</strong> (Strasser 2007). Đây là TRAP của tapering: khi anh giảm số điếu, có xu hướng hít sâu hơn, giữ lâu hơn → bù 50% nicotine bị mất → đếm điếu giảm nhưng nicotine vào máu không giảm. Phải biết cách phát hiện và phòng.</p>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+☕ <strong>T-9 (Giảm dần Ngày 6) — Trì hoãn điếu sáng 60 phút</strong><br><br>
+Điếu sáng = FTND #1 (Heatherton 1991). Sau 7-8h ngủ, nicotine giảm 80% — não đói nặng nhất. Hôm nay: trì hoãn ≥60 phút.<br><br>
+3 kỹ thuật: thức → 500ml nước lạnh (KHÔNG ra ban công), đánh răng 3 phút + muối, đi 100 bước. Tránh cà phê 60 phút đầu.<br><br>
+Cộng cắt 1-2 điếu 0-sao khác. Tổng T-9: 2-3 điếu. Trì hoãn 30-45 phút = vẫn thắng. Mai hút bù.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-6-tri-hoan-dieu-sang/?utm_source=zalo&utm_campaign=giamdan-6">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu anh có FTND ≥7 (sẽ test T-11) — trì hoãn 60 phút có thể quá khó. Đó là dấu hiệu cần NRT hỗ trợ (sẽ quyết ở T-5). Nếu có bệnh tim mạch, đừng vận động cường độ cao buổi sáng — đi bộ nhẹ là đủ.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Tại sao điếu sáng là điếu khó nhất bỏ?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Heatherton 1991: chiếm 3/10 FTND. Sau 7-8h ngủ, nicotine trong máu giảm 80% — receptor đói nặng nhất buổi sáng. Cộng cortisol đỉnh circadian (7-9h sáng). Đây là Pavlov mạnh nhất trong ngày.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Làm sao trì hoãn điếu thuốc sáng?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">3 kỹ thuật: (1) Thủy hóa lập tức — uống 500ml nước lạnh ngay khi tỉnh (KHÔNG ra ban công). (2) Thay thế cảm giác miệng — đánh răng 3 phút + súc miệng nước muối. (3) Vận động nhẹ — đi 100 bước hoặc 10 push-up.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Mục tiêu trì hoãn bao nhiêu phút là đủ?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">T-9: 60 phút sau khi thức. T-8: 90 phút. T-7: 120 phút. Q-Day: 0 điếu sáng. Mỗi 30 phút trì hoãn = -1 điểm FTND. Baker 2007: trì hoãn ≥60 phút tăng odds cai thành công 2.5x.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Tránh cà phê 60 phút đầu có cần thiết không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có. Cà phê là Pavlov tình huống thèm #1 cho điếu sáng (gặp 87% người hút Việt). Tránh cà phê 60 phút đầu = phá liên kết Pavlov mạnh nhất. Sau 1-2 tuần có thể uống cà phê lại nhưng không cần thuốc đi kèm.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Lỡ hút điếu sáng trong 60 phút thì sao?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không tự trách. Ghi giờ thực sự hút và lý do. Mai thử lại 30 phút trước. Trì hoãn 30-45 phút vẫn là tiến bộ vs 5 phút bình thường — giảm phụ thuộc rõ rệt.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Heatherton TF, Kozlowski LT, Frecker RC, Fagerström KO. (1991). <em>The Fagerström Test for Nicotine Dependence: a revision of the Fagerström Tolerance Questionnaire</em>. British Journal of Addiction 86(9):1119-1127.</li>
+<li>Baker TB, Piper ME, McCarthy DE, et al. (2007). <em>Time to first cigarette in the morning as an index of ability to quit smoking</em>. Nicotine & Tobacco Research 9(Suppl 4):S555-S570.</li>
+<li>Volkow ND, Wang GJ, Fowler JS, Tomasi D, Telang F. (2011). <em>Addiction: beyond dopamine reward circuitry</em>. PNAS 108(37):15037-15042.</li>
+<li>Taylor AH, Ussher MH, Faulkner G. (2007). <em>The acute effects of exercise on cigarette cơn thèm, triệu chứng cai symptoms, affect and smoking behaviour</em>. British Journal of Sports Medicine 41(8):500-504.</li>
+<li>Wagner DD, Heatherton TF. (2010). <em>Giving in to temptation: The emerging cognitive neuroscience of self-regulatory failure</em>. Oxford University Press.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/ca-phe-sang-khong-thuoc/">Cà phê sáng không thuốc — kỹ thuật chi tiết</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-5-cach-cai-thuoc-dan-dan/">T-10 — Cắt điếu đầu tiên</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-7-compensatory-smoking/">T-8 (Mai) — hút bù</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-4-test-fagerstrom/">T-11 — Test Fagerström đầy đủ</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">14 ngày Giảm dần — kỹ thuật cụ thể từng ngày</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Sol đi cùng anh phá Pavlov điếu sáng, sau cơm, bia hơi — từng tình huống thèm một. Mỗi sáng 1 chip Zalo.</p>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Fagerström Test (Heatherton 1991), Baker 2007 Nicotine & Tobacco Research, Taylor 2007 BJSM. Sol là sản phẩm Việt 100%, không quảng cáo, không bán dữ liệu.</p>
+
+</div>

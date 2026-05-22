@@ -1,0 +1,283 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Thực đơn 7 ngày mẫu (giữ cân) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sáng (450 kcal): Phở bò ít nước (1 tô vừa) + đu đủ chín ½ quả"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 4 — Tay-miệng khi thèm — \"chip thay thuốc lá\" là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây là phần quan trọng nhất. Khi não muốn \"nhai cái gì đó\":"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 5 — Vận động — 30 phút/ngày là đủ là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đi bộ sau bữa cơm 15 phút hiệu quả gấp đôi đi bộ buổi sáng chưa ăn — giảm đường máu đỉnh sau ăn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q: Tôi đã tăng 5 kg tuần 2 cai — có bình thường? A: Bình thường. Tuần đầu thường tăng nước + glycogen (giữ nước trong cơ). Sau 2–3 tuần ăn đúng, 1–2 kg sẽ giảm tự nhiên. Đừng panic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tham khảo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bài viết bởi Khang Sol — tăng 3 kg sau cai, giảm lại sau 4 tháng đi bộ. Cập nhật 13-05-2026."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #FFF4EA; color: #5C3A1E; padding: 10px 12px; text-align: left; border-bottom: 2px solid #B25C2C; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.sol-wiki .meal-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 18px; margin: 12px 0; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn lo cai thuốc xong sẽ tăng cân 5–10 kg, mua quần phải lên size. Đây là nỗi sợ <strong>thật sự — không phải tưởng tượng</strong>: trung bình người Việt cai thuốc tăng 4 kg trong năm đầu<sup>[1]</sup>. Nhưng có thực đơn 30 ngày giữ cân — và đây là bài hướng dẫn cụ thể.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Tăng cân khi cai = thật, nhưng <strong>2–4 kg trung bình</strong>, không phải 10 kg</li>
+<li>Đỉnh tăng cân ở <strong>3–6 tháng đầu</strong>, sau đó ổn lại</li>
+<li>Lý do chính: <strong>chuyển hoá giảm 100–200 kcal/ngày</strong> + ăn nhiều đường thay dopamine</li>
+<li>Thực đơn đúng + đi bộ 30 phút/ngày = <strong>giữ cân hoặc tăng &lt; 2 kg</strong></li>
+<li>Đừng đếm cân tuần 1–2 — ưu tiên cai trước</li>
+</ul>
+</div>
+
+<h2>Phần 1 — Vì sao cai thuốc gây tăng cân?</h2>
+
+<h3>Chuyển hoá cơ bản giảm</h3>
+<ul>
+<li>Nicotine làm tăng <strong>BMR (chuyển hoá cơ bản) 7–10%</strong> — khoảng 150–200 kcal/ngày<sup>[2]</sup></li>
+<li>Cai → BMR về bình thường → nếu ăn cùng lượng = tăng 200 kcal/ngày = 0.8 kg/tháng</li>
+</ul>
+
+<h3>Ăn thay nicotine</h3>
+<ul>
+<li>Não thiếu dopamine → tìm reward khác — <strong>đường + tinh bột tinh chế</strong></li>
+<li>Phổ biến: kẹo, bánh ngọt, mì gói, cơm thêm nhiều, sữa đặc, cà phê thêm đường</li>
+<li>Thêm 300–500 kcal/ngày → tăng 1.5 kg/tháng</li>
+</ul>
+
+<h3>Tay-miệng habit còn nguyên</h3>
+<ul>
+<li>30 năm hút = 30 năm "tay đưa lên miệng" mỗi giờ</li>
+<li>Cai → tay-miệng habit chuyển sang <strong>nhai snack</strong> → ăn vặt cả ngày</li>
+</ul>
+
+<h2>Phần 2 — Nguyên tắc thực đơn 30 ngày</h2>
+
+<h3>Quy tắc 3-5-2</h3>
+<ul>
+<li><strong>3 bữa chính</strong> đầy đủ — sáng, trưa, tối</li>
+<li><strong>5 phần rau-trái cây</strong>/ngày — 400g rau + 200g trái cây</li>
+<li><strong>2 lít nước</strong>/ngày — bao gồm canh, không tính cà phê/trà</li>
+</ul>
+
+<h3>Macro mục tiêu (người 70 kg, 50 tuổi)</h3>
+<table>
+<tr><th>Macro</th><th>Lượng/ngày</th><th>Vai trò</th></tr>
+<tr><td>Protein</td><td>1.2–1.5 g/kg = 85–105 g</td><td>Giữ cơ, no lâu</td></tr>
+<tr><td>Tinh bột phức</td><td>200–250 g</td><td>Năng lượng — gạo lứt, khoai, yến mạch</td></tr>
+<tr><td>Chất béo tốt</td><td>50–70 g</td><td>Cá béo, dầu olive, hạt</td></tr>
+<tr><td>Đường tinh</td><td>&lt; 25 g</td><td>Càng ít càng tốt</td></tr>
+<tr><td>Calo</td><td>1800–2000 kcal</td><td>Giảm 200 kcal so với khi hút</td></tr>
+</table>
+
+<h2>Phần 3 — Thực đơn 7 ngày mẫu (giữ cân)</h2>
+
+<h3>Thứ 2 — Khởi đầu nhẹ</h3>
+<div class="meal-card">
+<p><strong>Sáng (450 kcal):</strong> Phở bò ít nước (1 tô vừa) + đu đủ chín ½ quả</p>
+<p><strong>Phụ (100 kcal):</strong> 1 quả táo + 5 hạt óc chó</p>
+<p><strong>Trưa (550 kcal):</strong> Cơm gạo lứt 1 chén + cá hồi nướng 150g + rau cải xào tỏi + canh bí đỏ</p>
+<p><strong>Phụ (100 kcal):</strong> Sữa chua không đường + 1 muỗng hạt chia</p>
+<p><strong>Tối (600 kcal):</strong> Cơm trắng 1 chén + thịt bò xào giá đỗ + canh mồng tơi + 1 quả chuối</p>
+</div>
+
+<h3>Thứ 3 — Tăng protein</h3>
+<div class="meal-card">
+<p><strong>Sáng:</strong> 2 trứng luộc + 1 lát bánh mì nguyên cám + 1 quả kiwi + cà phê đen</p>
+<p><strong>Phụ:</strong> Sữa chua + ½ chén yến mạch khô</p>
+<p><strong>Trưa:</strong> Bún chả 1 phần vừa (bỏ bớt bún, ăn nhiều rau)</p>
+<p><strong>Phụ:</strong> Cà rốt + 1 muỗng bơ đậu phộng</p>
+<p><strong>Tối:</strong> Ức gà nướng + salad rau trộn dầu olive + 1 củ khoai lang luộc nhỏ</p>
+</div>
+
+<h3>Thứ 4 — Cá biển</h3>
+<div class="meal-card">
+<p><strong>Sáng:</strong> Cháo yến mạch + chuối + hạt chia</p>
+<p><strong>Phụ:</strong> 1 ly sữa hạt không đường</p>
+<p><strong>Trưa:</strong> Cá nục kho cà chua + rau muống luộc + cơm gạo lứt ½ chén</p>
+<p><strong>Phụ:</strong> 1 ly nước dừa tươi</p>
+<p><strong>Tối:</strong> Canh chua cá lóc + ức gà luộc xé phay + dưa leo</p>
+</div>
+
+<h3>Thứ 5 — Chay nhẹ</h3>
+<div class="meal-card">
+<p><strong>Sáng:</strong> Bún riêu chay 1 tô + chuối</p>
+<p><strong>Phụ:</strong> Sữa chua + đu đủ</p>
+<p><strong>Trưa:</strong> Đậu phụ sốt cà + rau cải xào nấm + cơm 1 chén</p>
+<p><strong>Phụ:</strong> Trái cây dầm (kiwi + dưa hấu) không sữa đặc</p>
+<p><strong>Tối:</strong> Canh đậu xanh + cá hồi nướng + salad bơ</p>
+</div>
+
+<h3>Thứ 6 — Cuối tuần ăn ngon</h3>
+<div class="meal-card">
+<p><strong>Sáng:</strong> Bánh mì pâté ½ ổ + 1 quả táo + cà phê đen</p>
+<p><strong>Phụ:</strong> Hạt điều rang muối 20g</p>
+<p><strong>Trưa:</strong> Cơm tấm sườn nướng (bỏ ½ cơm, thêm rau) + canh khổ qua</p>
+<p><strong>Phụ:</strong> Nước ép cà rốt-táo (không đường)</p>
+<p><strong>Tối:</strong> Lẩu Thái hải sản (nhiều rau, ít bún) — uống nước lọc thay bia</p>
+</div>
+
+<h3>Thứ 7 — Linh hoạt</h3>
+<div class="meal-card">
+<p><strong>Sáng:</strong> Bún bò Huế 1 tô (ít huyết)</p>
+<p><strong>Phụ:</strong> 1 quả chuối + nước lọc</p>
+<p><strong>Trưa:</strong> Cơm gia đình — chọn nhiều rau, ít tinh bột tinh, protein chính</p>
+<p><strong>Phụ:</strong> Sữa chua trái cây tự pha</p>
+<p><strong>Tối:</strong> Cháo gà ăn nhẹ + rau cải</p>
+</div>
+
+<h3>Chủ nhật — Detox nhẹ</h3>
+<div class="meal-card">
+<p><strong>Sáng:</strong> Sinh tố rau xanh (cải bó xôi + chuối + sữa hạt + hạt chia)</p>
+<p><strong>Trưa:</strong> Salad gà nướng + bánh mì nguyên cám + canh rau</p>
+<p><strong>Tối:</strong> Súp bí đỏ + cá hấp + rau luộc</p>
+<p><em>Cả ngày: 2.5L nước + đi bộ 60 phút</em></p>
+</div>
+
+<h2>Phần 4 — Tay-miệng khi thèm — "chip thay thuốc lá"</h2>
+
+<p>Đây là phần quan trọng nhất. Khi não muốn "nhai cái gì đó":</p>
+
+<ul>
+<li><strong>Kẹo cao su không đường</strong> (Xylitol) — nhai 5–10 phút, đốt 7 kcal</li>
+<li><strong>Cần tây / dưa leo cắt que</strong> — giòn, gần như 0 calo</li>
+<li><strong>Hạt hướng dương / hạt bí</strong> rang không muối — tay-miệng, có chất béo tốt (giới hạn 30g/ngày)</li>
+<li><strong>1 ly nước có chanh-bạc hà</strong> — đánh lừa não "đang nhâm nhi"</li>
+<li><strong>Cà rốt baby</strong> — Vitamin A, sạch, tiện</li>
+</ul>
+
+<h3>Tránh tuyệt đối</h3>
+<ul>
+<li>Snack đóng gói (Lays, Oishi) — 500 kcal/bịch, ăn quên</li>
+<li>Bánh quy / bánh ngọt — đường + tinh bột tinh</li>
+<li>Nước ngọt có ga + sữa đặc</li>
+<li>Mì gói tối khuya</li>
+</ul>
+
+<h2>Phần 5 — Vận động — 30 phút/ngày là đủ</h2>
+
+<ul>
+<li><strong>Đi bộ nhanh 30 phút/ngày</strong> — đốt 150 kcal, dễ duy trì</li>
+<li><strong>Tuần 1–2:</strong> đi bộ chậm, tập làm quen</li>
+<li><strong>Tuần 3+:</strong> tăng cường độ — đi bộ nhanh hoặc leo cầu thang</li>
+<li><strong>Tuần 5+:</strong> thêm 2 buổi tạ nhẹ/tuần (giữ cơ → BMR cao)</li>
+</ul>
+
+<p>Đi bộ <strong>sau bữa cơm 15 phút</strong> hiệu quả gấp đôi đi bộ buổi sáng chưa ăn — giảm đường máu đỉnh sau ăn<sup>[3]</sup>.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>"Lần 7 cai (lần thành công), tôi đã tăng <strong>3 kg trong 6 tháng đầu</strong>. Tôi cao 1m72, từ 70 kg lên 73. Vợ tôi mua quần mới — tôi cảm ơn cô ấy không trách. Tôi quyết tâm: <em>cai trước, giảm cân sau</em>."</p>
+<p>"Tháng 8 (6 tháng sau cai), tôi bắt đầu đi bộ 40 phút mỗi sáng. Sau 4 tháng tôi về 70 kg. <strong>Không tăng cân kéo dài nếu mình kiên trì</strong>. 3 kg là cái giá của tự do — rẻ hơn 30 năm thuốc lá rất nhiều."</p>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<p><strong>Q: Tôi đã tăng 5 kg tuần 2 cai — có bình thường?</strong><br>
+A: Bình thường. Tuần đầu thường tăng nước + glycogen (giữ nước trong cơ). Sau 2–3 tuần ăn đúng, 1–2 kg sẽ giảm tự nhiên. Đừng panic.</p>
+
+<p><strong>Q: Có nên uống thuốc giảm cân khi cai?</strong><br>
+A: KHÔNG. Cai thuốc đã là stress cơ thể — thêm thuốc giảm cân (Orlistat, Saxenda) = quá tải. Đợi 6 tháng sau cai, ổn định mới cân nhắc.</p>
+
+<p><strong>Q: Tôi có thể nhịn ăn gián đoạn (IF 16:8) trong khi cai không?</strong><br>
+A: Không khuyến nghị tuần 1–4. Đói + thèm thuốc + cáu = combo cực mạnh, dễ vấp. Sau 1 tháng cai, có thể thử IF nhẹ (12:12).</p>
+
+<p><strong>Q: Vợ tôi nấu món Việt — không phù hợp thực đơn?</strong><br>
+A: Món Việt rất tốt. Chỉ cần điều chỉnh: <strong>nhiều rau, ít cơm, ít nước mắm/tương ngọt, không chiên ngập dầu</strong>. Phở bò + nhiều rau giá + bỏ ½ bánh phở = bữa hoàn hảo.</p>
+
+<h2>Tham khảo</h2>
+<ol>
+<li>Aubin HJ et al. (2012). <em>Weight gain in smokers after quitting cigarettes</em>. BMJ 345:e4439.</li>
+<li>Audrain-McGovern J, Benowitz NL (2011). <em>Cigarette smoking, nicotine, and body weight</em>. Clin Pharmacol Ther 90(1):164-168.</li>
+<li>DiPietro L et al. (2013). <em>Three 15-min bouts of walking after meals</em>. Diabetes Care 36(10):3262-3268.</li>
+<li>Farley AC et al. (2012). <em>Interventions for preventing weight gain after smoking cai thuốc</em>. Cochrane Database Syst Rev (1):CD006219.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 3 — Thực đơn 7 ngày mẫu (giữ cân) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sáng (450 kcal): Phở bò ít nước (1 tô vừa) + đu đủ chín ½ quả</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 4 — Tay-miệng khi thèm — "chip thay thuốc lá" là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đây là phần quan trọng nhất. Khi não muốn "nhai cái gì đó":</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 5 — Vận động — 30 phút/ngày là đủ là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đi bộ sau bữa cơm 15 phút hiệu quả gấp đôi đi bộ buổi sáng chưa ăn — giảm đường máu đỉnh sau ăn.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q: Tôi đã tăng 5 kg tuần 2 cai — có bình thường? A: Bình thường. Tuần đầu thường tăng nước + glycogen (giữ nước trong cơ). Sau 2–3 tuần ăn đúng, 1–2 kg sẽ giảm tự nhiên. Đừng panic.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Tham khảo là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bài viết bởi Khang Sol — tăng 3 kg sau cai, giảm lại sau 4 tháng đi bộ. Cập nhật 13-05-2026.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Cai trước — giảm cân sau. Sol đi cùng cả hai chặng.</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành 51 ngày — workbook dinh dưỡng cai thuốc, chip nhanh khi đói cảm xúc, Voice của Khang động viên.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=thuc-don-cai">Bắt đầu hành trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — tăng 3 kg sau cai, giảm lại sau 4 tháng đi bộ. Cập nhật 13-05-2026.</p>
+</div>

@@ -1,0 +1,272 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tại sao Ngày 3 lại khó nhất? — Cơ chế khoa học?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Half-life (thời gian bán huỷ) của nicotine trong máu là 2-4 giờ. Sau 7-8 lần half-life (≈ 48-72 giờ), nicotine sạch >99% khỏi cơ thể."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 công cụ cụ thể vượt qua Day 3 — anh làm ngay tối nay là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khi thèm — bật điện thoại đếm 90 giây. Nhìn số đếm xuống. Trong 90 giây đó: KHÔNG hút, KHÔNG ăn vặt, KHÔNG nghĩ về thuốc. Đợi. Hết 90 giây — 80% cơn thèm tự tan. Mình đã đếm Day 3 mình thèm 17 lần — mỗi lần đợi 90 giây. Cuối ngày: 0 điếu hút."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu chuyện Khang — mình đã vượt Day 3 thế nào là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "22-12-2020 âm lịch, mình bỏ thuốc lần thứ 5. Day 1-2 ổn, mình tưởng \"dễ vậy\". Day 3 đến — như một cơn bão."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Day 3 — Lúc nào CẦN đi gặp bác sĩ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "95% anh em qua Day 3 với 5 công cụ trên. 5% có triệu chứng nặng — CẦN gặp bác sĩ:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp về Day 3 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KHÔNG. Brody 2006 PET scan: 1 điếu saturated 88% receptor nicotinic. Anh hút 1 điếu = reset toàn bộ tiến trình 3 ngày → quay lại Day 0. \"Chỉ 1 điếu\" KHÔNG tồn tại. Đợi 90 giây — cơn thèm tự tan."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI A6 — Tại Sao Ngày 3 Khó Nhất (P1, vol 900/tháng)
+  Focus keyword: "ngày 3 cai thuốc"
+  Target intent: science explanation — anh em đang Day 2-3 hoảng
+  Internal links: /bo-thuoc-la, /trieu-chung-cai-thuoc-la-theo-ngay, /cai-thuoc-la-tai-nha
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .quote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 20px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .alert-box { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border-left: 4px solid #DC2626; border-radius: 8px; padding: 18px 22px; margin: 16px 0; }
+.sol-wiki .good-box { background: linear-gradient(135deg, #DCFCE7 0%, #FAFAF8 100%); border-left: 4px solid #16A34A; border-radius: 8px; padding: 18px 22px; margin: 16px 0; }
+.sol-wiki .tool { background: white; border: 1px solid #E8DFC8; border-radius: 10px; padding: 14px 18px; margin: 8px 0; }
+.sol-wiki .tool-title { font-size: 15px; font-weight: 700; color: #5C3A1E; margin-bottom: 4px; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li { margin-bottom: 6px; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">
+Anh đang ở Ngày 2 hoặc Ngày 3 cai thuốc — thèm dữ dội, đầu đau, đêm khó ngủ. Anh hoang mang: <em>"Có phải mình quá yếu? Người khác cai dễ thế, sao mình khó vậy?"</em> Mình trả lời anh ngay: <strong>KHÔNG. Anh không yếu. Ngày 3 là đỉnh khó nhất với MỌI người — đây là khoa học, không phải tính cách</strong>. Nếu anh qua được 24-48 giờ tới, tỷ lệ thành công 30 ngày tăng 3 lần (Hughes 2007). Bài này mình giải thích chính xác cơ chế + 5 cách cụ thể anh làm tối nay.
+</p>
+
+<h2>Tại sao Ngày 3 lại khó nhất? — Cơ chế khoa học</h2>
+
+<h3>Nicotine half-life — Day 3 = nicotine sạch khỏi cơ thể</h3>
+
+<p>Half-life (thời gian bán huỷ) của nicotine trong máu là <strong>2-4 giờ</strong>. Sau 7-8 lần half-life (≈ 48-72 giờ), nicotine sạch &gt;99% khỏi cơ thể.</p>
+
+<p>Lần cuối anh hút → sau 2-4 giờ: nicotine giảm còn 50% → 8 giờ: 25% → 24 giờ: 6% → <strong>48-72 giờ: gần 0%</strong></p>
+
+<p>Đây chính là Ngày 3. Receptor nicotinic não đã quen 30 năm có nicotine — giờ "đói hoàn toàn" → kêu gào dữ dội.</p>
+
+<h3>Receptor nicotinic upregulate — kêu gào dữ dội</h3>
+
+<p>Khi anh hút lâu năm, não thích ứng bằng cách <strong>tăng số lượng receptor nicotinic</strong> (upregulation) — Brody 2006 PET scan cho thấy người hút lâu năm có receptor nhiều gấp 2-3 lần người không hút.</p>
+
+<p>Day 3 = receptor đông, nicotine không có → mỗi receptor "kêu" → não gửi tín hiệu thèm cực mạnh. Đặc biệt:</p>
+
+<ul>
+<li><strong>19-22h</strong>: peak cortisol thấp + adenosine cao → ham muốn cao nhất</li>
+<li><strong>Sau bữa tối</strong>: thói quen 30 năm hút sau ăn</li>
+<li><strong>Buổi sáng dậy</strong>: não đã chờ 6-8 giờ không nicotine</li>
+</ul>
+
+<h3>Triệu chứng cụ thể Day 3</h3>
+
+<p>Hughes 2007 (Nicotine & Tobacco Research) liệt kê các triệu chứng peak ở Day 3:</p>
+
+<ul>
+<li><strong>Thèm thuốc dữ dội</strong>: 17-20 lần/ngày (Khang đã đếm)</li>
+<li><strong>Mất ngủ</strong>: tỉnh giấc 2-3 lần đêm</li>
+<li><strong>Đau đầu</strong>: âm ỉ vùng trán, nặng buổi sáng</li>
+<li><strong>Cáu kỉnh</strong>: vợ/con/đồng nghiệp dễ làm bực</li>
+<li><strong>Bứt rứt tay chân</strong>: không biết để tay đâu</li>
+<li><strong>Tăng cảm giác đói</strong>: muốn ăn vặt</li>
+<li><strong>Khó tập trung</strong>: đọc 1 đoạn phải đọc lại 2-3 lần</li>
+<li><strong>Buồn rầu vô cớ</strong>: cảm giác "trống vắng"</li>
+</ul>
+
+<div class="alert-box">
+<strong>⚠ Đây là moment 80% anh em fail.</strong> Hughes 2004: 70% người cai bỏ đột ngột (cold turkey) không có support tái phát trong 48-72 giờ đầu. Lý do: nghĩ "mình quá yếu" → bỏ cuộc. THỰC TẾ: anh KHÔNG yếu — đây là cơ chế sinh học. Receptor não anh đã đông sau 30 năm, đang kêu gào — không phải tính cách anh.
+</div>
+
+<h2>Day 3 — Tin tốt nào anh cần biết?</h2>
+
+<div class="good-box">
+<strong>1. Cơn thèm chỉ kéo 90-180 giây.</strong> Hughes 2007: dù cơn thèm rất dữ dội, mỗi cơn chỉ kéo 90-180 giây. Đợi qua được — não chuyển sang việc khác. Anh KHÔNG cần "đợi cả ngày" — chỉ cần đợi 90 giây mỗi lần.
+</div>
+
+<div class="good-box">
+<strong>2. Qua Day 3 = qua 80% chặng đường.</strong> Hughes 2004: người vượt qua Day 3 có tỷ lệ thành công 30 ngày cao gấp 3 lần. Day 4 trở đi triệu chứng giảm 40%. Day 7 giảm 70%. Day 14 gần hết hoàn toàn.
+</div>
+
+<div class="good-box">
+<strong>3. Receptor bắt đầu downregulate Day 7+.</strong> Sau Day 7, não bắt đầu giảm số lượng receptor nicotinic — về normal sau 14-21 ngày. Khi đó, nicotine không còn cần nữa.
+</div>
+
+<div class="good-box">
+<strong>4. Day 3 KHÔNG nguy hiểm tính mạng.</strong> Khác với rượu/heroin (cai có thể gây co giật, tử vong) — cai nicotine khó chịu nhưng AN TOÀN với 95% người. Nguy cơ duy nhất là tâm lý.
+</div>
+
+<h2>5 công cụ cụ thể vượt qua Day 3 — anh làm ngay tối nay</h2>
+
+<div class="tool">
+<div class="tool-title">⏱ Công cụ 1: Đếm 90 giây mỗi cơn thèm</div>
+<p style="margin: 6px 0 0;">Khi thèm — bật điện thoại đếm 90 giây. Nhìn số đếm xuống. Trong 90 giây đó: KHÔNG hút, KHÔNG ăn vặt, KHÔNG nghĩ về thuốc. Đợi. Hết 90 giây — 80% cơn thèm tự tan. Mình đã đếm Day 3 mình thèm 17 lần — mỗi lần đợi 90 giây. Cuối ngày: 0 điếu hút.</p>
+</div>
+
+<div class="tool">
+<div class="tool-title">🌬 Công cụ 2: Bài thở 4-7-8 — kích parasympathetic</div>
+<p style="margin: 6px 0 0;">Hít mũi 4 giây → giữ 7 giây → thở ra miệng 8 giây. Lặp 3-4 chu kỳ = đúng 90 giây. Não chuyển trạng thái nghỉ. Brown & Gerbarg 2005: bài này giảm cortisol + tăng dopamine tự nhiên 12%.</p>
+</div>
+
+<div class="tool">
+<div class="tool-title">🚶 Công cụ 3: Đi bộ 5-10 phút khi thèm</div>
+<p style="margin: 6px 0 0;">Đứng dậy ngay khi cơn thèm đến. Đi quanh nhà / ra ban công / xuống đường 5-10 phút. Vận động cơ thể đốt năng lượng + endorphin tự nhiên — thay thế dopamine từ nicotine.</p>
+</div>
+
+<div class="tool">
+<div class="tool-title">💧 Công cụ 4: Uống nước lạnh + cầm đá</div>
+<p style="margin: 6px 0 0;">Sốc nhiệt độ kích thích vagus nerve → tỉnh táo + giảm thèm. Uống 1 cốc nước lạnh + cầm cục đá 30 giây. Bonus: nước làm đầy dạ dày — giảm cảm giác đói giả.</p>
+</div>
+
+<div class="tool">
+<div class="tool-title">📖 Công cụ 5: Đọc lại 3 lý do anh muốn cai</div>
+<p style="margin: 6px 0 0;">Day 0 anh đã viết 3 lý do — vì sức khoẻ / vì con / vì tiền / vì vợ. Lấy giấy đó ra đọc to. Não anh quên trong cơn thèm — anh cần nhắc lại "tại sao". Mình dán giấy trên gương phòng tắm + tủ lạnh.</p>
+</div>
+
+<h2>Câu chuyện Khang — mình đã vượt Day 3 thế nào</h2>
+
+<p>22-12-2020 âm lịch, mình bỏ thuốc lần thứ 5. Day 1-2 ổn, mình tưởng "dễ vậy". Day 3 đến — như một cơn bão.</p>
+
+<p>5h sáng dậy, mình thèm dữ dội. Cầm điện thoại — chưa mở mắt đã muốn hút. Mình thở 4-7-8 ngay trong giường, 3 chu kỳ. Dậy uống nước lạnh.</p>
+
+<p>9h sáng, đang ngồi máy tính → thèm. Đứng dậy đi ra ban công 5 phút. Quay lại.</p>
+
+<p>11h: vợ làm gì đó làm mình cáu — mình quát. Nhận ra cơn thèm đang dồn vào cảm xúc. Xin lỗi vợ. Thở 4-7-8.</p>
+
+<p>14h, 15h, 16h, 17h, 18h: thèm liên tục. Mỗi lần đợi 90 giây. Đếm. Thở. Đi bộ. Lặp lại.</p>
+
+<p>20h: thèm dữ nhất. Mình muốn bỏ cuộc. Mở giấy 3 lý do (đã dán tủ lạnh): <em>"vì con gái nói bố hôi"</em>. Đọc 3 lần. Khóc 1 chút. Đi tắm.</p>
+
+<p>22h: thèm nhẹ, đi ngủ. Đêm tỉnh 2 lần, mỗi lần thở 4-7-8 ngủ lại.</p>
+
+<p>Day 4: thèm chỉ còn 8 lần (giảm 50%). Day 7: chỉ thèm trong tình huống cũ. Day 14: gần hết.</p>
+
+<p>Đến nay 5 năm Tự do. Nếu mình bỏ cuộc Day 3, mình đã không có hôm nay.</p>
+
+<p><a href="https://sol.vn/khang-sol" style="color: #B25C2C; font-weight: 600;">Đọc câu chuyện đầy đủ Khang Sol →</a></p>
+
+<h2>Day 3 — Lúc nào CẦN đi gặp bác sĩ?</h2>
+
+<p>95% anh em qua Day 3 với 5 công cụ trên. 5% có triệu chứng nặng — CẦN gặp bác sĩ:</p>
+
+<ul>
+<li><strong>Đau ngực dữ dội</strong>, lan ra cánh tay trái — có thể đau tim → gọi 115 NGAY</li>
+<li><strong>Khó thở nặng</strong>, không nói được câu dài</li>
+<li><strong>Ý nghĩ tự hại</strong> hoặc trầm cảm nặng</li>
+<li><strong>Co giật</strong>, run rẩy không kiểm soát</li>
+<li><strong>Lú lẫn, không nhận ra người thân</strong></li>
+</ul>
+
+<p>Lúc đó: <strong>Tổng đài cai thuốc miễn phí BV Bạch Mai: <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a></strong> hoặc đến bệnh viện gần nhất.</p>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Tại sao Ngày 3 lại khó nhất? — Cơ chế khoa học?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Half-life (thời gian bán huỷ) của nicotine trong máu là 2-4 giờ. Sau 7-8 lần half-life (≈ 48-72 giờ), nicotine sạch >99% khỏi cơ thể.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 công cụ cụ thể vượt qua Day 3 — anh làm ngay tối nay là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Khi thèm — bật điện thoại đếm 90 giây. Nhìn số đếm xuống. Trong 90 giây đó: KHÔNG hút, KHÔNG ăn vặt, KHÔNG nghĩ về thuốc. Đợi. Hết 90 giây — 80% cơn thèm tự tan. Mình đã đếm Day 3 mình thèm 17 lần — mỗi lần đợi 90 giây. Cuối ngày: 0 điếu hút.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Câu chuyện Khang — mình đã vượt Day 3 thế nào là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">22-12-2020 âm lịch, mình bỏ thuốc lần thứ 5. Day 1-2 ổn, mình tưởng "dễ vậy". Day 3 đến — như một cơn bão.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Day 3 — Lúc nào CẦN đi gặp bác sĩ?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">95% anh em qua Day 3 với 5 công cụ trên. 5% có triệu chứng nặng — CẦN gặp bác sĩ:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Câu hỏi thường gặp về Day 3 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">KHÔNG. Brody 2006 PET scan: 1 điếu saturated 88% receptor nicotinic. Anh hút 1 điếu = reset toàn bộ tiến trình 3 ngày → quay lại Day 0. "Chỉ 1 điếu" KHÔNG tồn tại. Đợi 90 giây — cơn thèm tự tan.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">Sol đặc biệt mạnh cho Day 3 — không để anh một mình</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol gửi Voice của Khang đúng đêm Day 3 — "Mình cũng đã từng đêm đó. Anh đợi 90 giây, mình ở đây." + Đồng hồ Cơn Thèm tự đếm + 9 công cụ phân tâm. Anh không phải một mình ở đỉnh sóng.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=A6&utm_campaign=day-3">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp về Day 3</h2>
+
+<h3>Tôi đang ở Day 3, thèm dữ dội — có nên "hút 1 điếu cho đỡ" không?</h3>
+<p>KHÔNG. Brody 2006 PET scan: 1 điếu saturated 88% receptor nicotinic. Anh hút 1 điếu = reset toàn bộ tiến trình 3 ngày → quay lại Day 0. "Chỉ 1 điếu" KHÔNG tồn tại. Đợi 90 giây — cơn thèm tự tan.</p>
+
+<h3>Tôi đã hút lén 1 điếu Day 3 — đã thất bại chưa?</h3>
+<p>CHƯA. vấp ≠ tái nghiện. 1 điếu là sự cố — không phải thất bại. Người cai thành công trung bình lỡ 3-5 lần trước khi sạch hẳn (Hughes 2004). Ghi vào sổ, tha thứ bản thân, tiếp tục. Đừng "đã hút thì hút luôn" — đó mới là thất bại thật sự.</p>
+
+<h3>Day 3 đau đầu nặng có sao không?</h3>
+<p>Bình thường — do não bị "đói" nicotine + giảm máu lên não tạm thời. Khắc phục: uống nước, ngủ đủ, paracetamol nếu quá khó chịu (an toàn dùng &lt;3 ngày). Đau đầu hết sau Day 7.</p>
+
+<h3>Mất ngủ Day 3 — có nên uống thuốc ngủ không?</h3>
+<p>Tránh thuốc ngủ (benzodiazepine, zolpidem) — gây lệ thuộc + tăng cáu kỉnh. Thay vào đó: bài thở 4-7-8 trước khi ngủ, trà hoa cúc, tắm nước ấm, tránh màn hình 1 giờ trước ngủ. Mất ngủ Day 3 hết sau Day 7-10.</p>
+
+<h3>Tôi 60 tuổi cai thuốc Day 3 cảm thấy yếu hơn người trẻ — bình thường không?</h3>
+<p>Bình thường. Tuổi cao + hút lâu năm (40+ pack-years) → receptor nicotinic upregulate nhiều hơn → Day 3 khó hơn. Cần thêm thời gian + có thể tham vấn bác sĩ về NRT (miếng dán nicotine) để giảm shock — không bắt buộc.</p>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/trieu-chung-cai-thuoc-la-theo-ngay" style="color: #B25C2C;">Triệu chứng cai thuốc Day 1-30</a> ·
+<a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C;">Cai thuốc lá tại nhà — 7 bước</a> ·
+<a href="https://sol.vn/cai-thuoc-bao-lau-phoi-sach" style="color: #B25C2C;">Cai thuốc bao lâu phổi sạch</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Hughes 2007 + 2004, Brody 2006, Brown & Gerbarg 2005, Fiore 2008.
+</p>
+
+<p style="font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px;">
+<strong>🚨 Khẩn cấp y tế</strong>: nếu Day 3 có đau ngực dữ dội, khó thở nặng, co giật, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (miễn phí BV Bạch Mai).
+</p>
+
+</div>

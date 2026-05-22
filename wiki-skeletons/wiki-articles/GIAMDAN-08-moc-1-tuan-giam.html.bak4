@@ -1,0 +1,271 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Sau 1 tuần tapering tôi nên đánh giá thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đếm tổng điếu T-14 → T-8 vs baseline tuần trước. 3 kịch bản: A (giảm ≥30% — trên track), B (10-30% — soát compensatory), C (<10% — gọi BS, có thể cần thuốc kê)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Target -30% sau 1 tuần có thực tế không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có cho FTND ≤6. FTND ≥7 nặng có thể chậm hơn — đó là dấu hiệu cần Champix/Bupropion kê đơn ngay, không chờ T-5. Realistic cho hierarchical reduction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Self-compassion có quan trọng không khi cai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CỰC kỳ quan trọng. Wagner 2010: self-criticism sau slip-up tăng tỷ lệ tái nghiện 40%. Cortisol tăng → prefrontal cortex giảm function → ý chí giảm. Self-compassion (Neff 2003) là chiến lược khoa học."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi nên viết 3 điều tốt nào ở T-7?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cụ thể, không phóng đại. Ví dụ: \"Tuần này anh giảm 7 điếu/ngày\", \"Trì hoãn điếu sáng 45 phút 4/7 ngày\", \"Không vấp dù stress deadline thứ Tư\". Tránh \"tôi cố gắng\" — phải \"tôi đã làm X\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sau T-7 tôi cần làm gì 7 ngày tới?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Target giảm 50-60% so với tuần này. Đến T-1 còn 3-5 điếu/ngày, Q-Day = 0. Plan: T-6 Kit thay thế, T-5 NRT quyết, T-4 chốt Q-Day, T-3 dọn cue, T-2 viết Plan B, T-1 ritual đêm cuối."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .scenario-card { background: white; border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
+.sol-wiki .scenario-card.good { border-left: 4px solid #16A34A; }
+.sol-wiki .scenario-card.warn { border-left: 4px solid #F59E0B; }
+.sol-wiki .scenario-card.bad { border-left: 4px solid #DC2626; }
+.sol-wiki .scenario-card h4 { margin: 0 0 6px; color: #5C3A1E; }
+.sol-wiki .scenario-card p { margin: 6px 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Mốc 1 tuần giảm. Anh đã đi qua T-14 → T-8 — 7 ngày đầu của tapering. Hôm nay T-7 (Ngày 8 Giảm dần) — không phải ngày cắt thêm mà là ngày <strong>đánh giá khoa học + recalibrate</strong>. Quan trọng nhất: <strong>self-compassion thay self-criticism</strong>. Wagner 2010 chứng minh: tự trách tăng tỷ lệ vấp 40%.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Mốc T-7: đếm tổng điếu tuần này (T-14 → T-8) vs baseline tuần trước</li>
+<li><strong>Target -30%</strong> trong 7 ngày đầu là realistic cho hierarchical reduction</li>
+<li>Self-criticism tăng tỷ lệ vấp 40% (Wagner 2010, Self-Control in Society)<sup>[1]</sup></li>
+<li>Self-compassion (Neff 2003) = chiến lược khoa học, không phải softness<sup>[2]</sup></li>
+<li>3 việc hôm nay: đếm, viết 3 điều tốt, recalibrate 7 ngày tới</li>
+</ul>
+</div>
+
+<h2>Đánh giá 7 ngày qua</h2>
+
+<p>Lấy nhật ký Sol/giấy. Tính:</p>
+
+<ul>
+<li><strong>Baseline (T-14 trở trước):</strong> trung bình ___ điếu/ngày</li>
+<li><strong>Tuần T-14 → T-8:</strong> tổng ___ điếu / 7 ngày = trung bình ___ điếu/ngày</li>
+<li><strong>Tỷ lệ giảm:</strong> (Baseline − Tuần) / Baseline × 100%</li>
+</ul>
+
+<h2>3 kịch bản — Anh ở đâu?</h2>
+
+<div class="scenario-card good">
+<h4>🟢 Kịch bản A: Giảm ≥30%</h4>
+<p>Anh đang trên track. Hierarchical reduction đúng phương pháp. Tự tin tăng. Tiếp tục 7 ngày tới với mục tiêu giảm thêm 30-40% từ baseline tuần này.</p>
+<p><strong>Hành động T-7:</strong> Tiếp tục plan. Tăng tốc nhẹ nếu FTND nhẹ (cắt 2-3 điếu/ngày). Nếu FTND ≥7: giữ tốc độ + đảm bảo NRT/thuốc đặt mua/đặt khám ở T-5 (3 ngày tới).</p>
+</div>
+
+<div class="scenario-card warn">
+<h4>🟡 Kịch bản B: Giảm 10-30%</h4>
+<p>Anh đang giảm thật nhưng chậm hơn target. Có thể do hút bù (T-8 cảnh báo), hoặc tình huống thèm nặng chưa kiểm soát.</p>
+<p><strong>Hành động T-7:</strong></p>
+<ul style="font-size:14px;">
+<li>Soát lại nhật ký — tình huống thèm nào anh vẫn chưa cắt (cà phê, sau cơm, stress)?</li>
+<li>Quay video chính mình hút 1 điếu — check compensatory</li>
+<li>Tăng cường behavior substitution (Kit T-6)</li>
+<li>Cân nhắc dùng NRT lozenge SỚM (không chờ T-5) cho cơn thèm peak</li>
+</ul>
+</div>
+
+<div class="scenario-card bad">
+<h4>🔴 Kịch bản C: Giảm &lt;10% hoặc bằng cũ</h4>
+<p>Anh chưa thực sự giảm. KHÔNG self-criticism — đây là dữ liệu, không phải đánh giá đạo đức.</p>
+<p><strong>Có 3 khả năng:</strong></p>
+<ol style="font-size:14px;">
+<li>FTND nặng (≥7) cần thuốc kê đơn — Sol khuyến cáo đặt khám BS NGAY, không chờ T-5</li>
+<li>Stage of Change chưa phù hợp (Stage 1-2 không phải Stage 3+) — tham khảo bài [Ngày 6 Làm quen]</li>
+<li>Phương pháp không phù hợp tính cách — có thể nên switch sang bỏ đột ngột (cold turkey) + thuốc kê</li>
+</ol>
+<p><strong>Hành động T-7:</strong> Gọi bác sĩ Hô hấp/Tâm thần ngay hôm nay. Không trì hoãn đến T-5. Một số người cần combo Champix + tapering từ sớm.</p>
+</div>
+
+<h2>Self-compassion — Khoa học</h2>
+
+<p>Kristin Neff, ĐH Texas, định nghĩa <strong>self-compassion</strong> (2003) là 3 thành phần<sup>[2]</sup>:</p>
+
+<ul>
+<li><strong>Self-kindness vs self-judgment:</strong> Đối xử với bản thân khi gặp thất bại như đối xử với bạn thân (không phải như công an thẩm vấn)</li>
+<li><strong>Common humanity vs isolation:</strong> Nhận ra "tôi không một mình — mọi người cai thuốc đều gặp khó" (không phải "chỉ mình tôi yếu")</li>
+<li><strong>chánh niệm (mindfulness) vs over-identification:</strong> Quan sát cảm xúc khó như nó là — không phóng đại ("tôi thất bại hoàn toàn") cũng không kìm nén</li>
+</ul>
+
+<p>Wagner và Heatherton 2010 (Self-Control in Society, Oxford Press) phân tích meta: <strong>self-criticism sau slip-up tăng tỷ lệ tái nghiện 40%</strong><sup>[1]</sup>. Lý do: tăng cortisol → giảm prefrontal cortex function → giảm ý chí → vấp tiếp.</p>
+
+<p>Self-compassion KHÔNG phải "lười biếng" hoặc "biện minh". Nó là <strong>chiến lược khoa học</strong> để não giữ resource cho lần thử tiếp.</p>
+
+<h2>Bài tập: Viết 3 điều tốt</h2>
+
+<p>Ngày T-7, làm 1 việc đơn giản: viết 3 điều cụ thể anh đã làm tốt trong 7 ngày qua. Ví dụ:</p>
+
+<ol>
+<li>"Tôi đã giảm 4 điếu/ngày so với tuần trước — thành công nhỏ nhưng có thật"</li>
+<li>"Tôi đã trì hoãn điếu sáng được 30 phút vào 3 ngày qua — tốt hơn 0 ngày tuần trước"</li>
+<li>"Tôi đã không hút khi cô bạn mời thuốc trong tiệc cuối tuần — lần đầu sau 15 năm"</li>
+</ol>
+
+<p>Trung thực — không phóng đại, không thu nhỏ. Cụ thể — không nói "tôi cố gắng" mà nói "tôi đã làm X".</p>
+
+<p>Việc này 5 phút. Não anh có lưu trữ "evidence của success" để dùng khi T-2/T-1 có thể lo lắng trước Q-Day.</p>
+
+<h2>Recalibrate 7 ngày tới</h2>
+
+<p>Dựa vào kết quả tuần qua, đặt mục tiêu cho 7 ngày sau:</p>
+
+<ul>
+<li><strong>Tuần này baseline trung bình ___ điếu/ngày</strong></li>
+<li><strong>Target cuối T-1 (đêm trước Q-Day): 3-5 điếu/ngày</strong></li>
+<li><strong>Số ngày còn lại: 7</strong></li>
+<li><strong>Cần cắt thêm: ~50-60% so với tuần này</strong></li>
+</ul>
+
+<p>Plan 7 ngày tới (Wave 2 của tapering):</p>
+
+<ul>
+<li>T-6 (mai): Xây Kit thay thế hoàn chỉnh — kẹo, nước, đi bộ. Cắt thêm 1-2 điếu 1-sao</li>
+<li>T-5: Quyết định NRT/thuốc kê dựa trên FTND — bắt đầu sử dụng nếu cần</li>
+<li>T-4: Chốt Q-Day chính thức, báo 3 người thân</li>
+<li>T-3: Dọn cue 30 phút</li>
+<li>T-2: Viết 5 Plan B if-then</li>
+<li>T-1: Đêm trước Q-Day — ritual + chuẩn bị thân thể</li>
+<li>D0 = Q-Day: 0 điếu</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — T-7 lần thứ 5 cai</div>
+<p>Mình kể: T-7 lần 5 (2020), mình giảm được 28% từ 24 → 17 điếu/ngày. Dưới target 30% một chút. Vợ mình bảo "anh cố thêm tí".</p>
+<p>Mình thấy hơi hụt — định ép thêm. Nhưng nhớ ra Wagner 2010, không tự trách. Viết 3 điều tốt:</p>
+<ol style="font-size:14px;">
+<li>"Tuần này anh giảm 7 điếu/ngày — số có thật, không ảo"</li>
+<li>"Anh đã trì hoãn điếu sáng đến 45 phút 4/7 ngày — phá Pavlov nặng nhất"</li>
+<li>"Anh đã không vấp dù bị stress deadline thứ Tư — Plan B hoạt động"</li>
+</ol>
+<p>Sau khi viết, cảm xúc tốt hơn rõ. Tuần 2 (T-7 → T-1) mình giảm thêm 70% — từ 17 → 5 điếu/ngày. Compounding.</p>
+<p>5 năm sau viết bài này — bài học: <strong>self-compassion ở mốc giữa quan trọng hơn ý chí. Não cần năng lượng cho 7 ngày tiếp — không phí vào tự trách</strong>.</p>
+</div>
+
+<h2>Mai có gì?</h2>
+
+<p>T-6 (Ngày 9 Giảm dần) — Build "Kit Sol" thay thế: kẹo cao su, hạt hướng dương, ống hút inox, túi đi bộ. Marlatt RP framework — behavior substitution là vũ khí khi cơn thèm peak (Q-Day D1-3).</p>
+
+🎯 <strong>T-7 (Giảm dần Ngày 8) — Mốc 1 tuần giảm</strong><br><br>
+Đếm điếu tuần này vs baseline. Target -30%. 3 kịch bản: A (≥30% — tiếp tục), B (10-30% — soát compensatory), C (&lt;10% — gọi BS ngay).<br><br>
+KHÔNG self-criticism — Wagner 2010: tự trách tăng vấp 40%. Self-compassion (Neff 2003) là chiến lược khoa học, không phải softness.<br><br>
+Hôm nay: viết 3 điều cụ thể đã làm tốt. Recalibrate 7 ngày tới: target 3-5 điếu/ngày trước Q-Day.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-8-moc-1-tuan-giam/?utm_source=zalo&utm_campaign=giamdan-8">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu kịch bản C (giảm &lt;10%) và anh đang lo lắng nặng / depression — gặp bác sĩ tâm lý song song với cai thuốc. Cai thuốc có thể tình huống thèm / exacerbate mood disorder nền.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Sau 1 tuần tapering tôi nên đánh giá thế nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đếm tổng điếu T-14 → T-8 vs baseline tuần trước. 3 kịch bản: A (giảm ≥30% — trên track), B (10-30% — soát compensatory), C (<10% — gọi BS, có thể cần thuốc kê).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Target -30% sau 1 tuần có thực tế không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có cho FTND ≤6. FTND ≥7 nặng có thể chậm hơn — đó là dấu hiệu cần Champix/Bupropion kê đơn ngay, không chờ T-5. Realistic cho hierarchical reduction.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Self-compassion có quan trọng không khi cai?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">CỰC kỳ quan trọng. Wagner 2010: self-criticism sau slip-up tăng tỷ lệ tái nghiện 40%. Cortisol tăng → prefrontal cortex giảm function → ý chí giảm. Self-compassion (Neff 2003) là chiến lược khoa học.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Tôi nên viết 3 điều tốt nào ở T-7?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cụ thể, không phóng đại. Ví dụ: "Tuần này anh giảm 7 điếu/ngày", "Trì hoãn điếu sáng 45 phút 4/7 ngày", "Không vấp dù stress deadline thứ Tư". Tránh "tôi cố gắng" — phải "tôi đã làm X".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Sau T-7 tôi cần làm gì 7 ngày tới?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Target giảm 50-60% so với tuần này. Đến T-1 còn 3-5 điếu/ngày, Q-Day = 0. Plan: T-6 Kit thay thế, T-5 NRT quyết, T-4 chốt Q-Day, T-3 dọn cue, T-2 viết Plan B, T-1 ritual đêm cuối.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Wagner DD, Heatherton TF. (2010). <em>Giving in to temptation: The emerging cognitive neuroscience of self-regulatory failure</em>. In: Self-Control in Society, Mind, and Brain. Oxford University Press.</li>
+<li>Neff KD. (2003). <em>Self-compassion: an alternative conceptualization of a healthy attitude toward oneself</em>. Self and Identity 2(2):85-101.</li>
+<li>Kelly AC, Zuroff DC, Foa CL, Gilbert P. (2010). <em>Who benefits from training in self-compassionate self-regulation? A study of smoking reduction</em>. Journal of Social and Clinical Psychology 29(7):727-755.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-7-compensatory-smoking/">T-8 — hút bù</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-9-kit-thay-the/">T-6 (Mai) — Kit thay thế Marlatt</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Sol đếm tự động giúp anh — không phải nhớ thủ công</strong>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Wagner 2010 Oxford, Neff 2003 Self & Identity, Kelly 2010. Sol là sản phẩm Việt 100%.</p>
+
+</div>

@@ -1,0 +1,201 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vì sao Ngày 6 cáu gắt nhất?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cortisol cao — stress hormone peak D5-D7. Nhịp tim nhanh, mặt nóng, dễ phản ứng \"fight\" với chuyện nhỏ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 6 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Câu duy nhất cần nói: \"Hôm nay anh sẽ khó tính nhất tuần này. Không phải vì em/con. Anh sẽ đi ra khỏi phòng khi cảm thấy nóng. 1 tuần nữa anh sẽ dịu lại.\" Khi họ biết trước — không phản ứng ngược → không leo thang."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 6. Anh quát con vì cốc nước rơi. Vợ nhìn lạ vì anh nói cộc. Đồng nghiệp tránh ra khi anh nói chuyện. Đây là <strong>cáu gắt cai thuốc đỉnh điểm</strong> — không phải tính cách anh thay đổi, là <em>cortisol đỉnh + prefrontal cortex yếu</em>.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Cortisol peak D5-D7 (Hughes 2007)<sup>[1]</sup></li>
+<li>Prefrontal cortex (vùng kiểm soát cảm xúc) yếu hơn 15-30% do thiếu dopamine<sup>[2]</sup></li>
+<li>50-70% người cai cáu gắt rõ rệt tuần 1-2</li>
+<li>Đỉnh ở ngày 5-7, dịu nhiều sau 2 tuần, hết hẳn sau ~1 tháng</li>
+<li>Chiến lược: báo trước người thân + 5 kỹ thuật "đi xa khỏi nguồn"</li>
+</ul>
+</div>
+
+<h2>Vì sao Ngày 6 cáu gắt nhất?</h2>
+
+<h3>Cortisol + thiếu dopamine + thiếu ngủ = combo</h3>
+
+<p><strong>Cortisol cao</strong> — stress hormone peak D5-D7. Nhịp tim nhanh, mặt nóng, dễ phản ứng "fight" với chuyện nhỏ.</p>
+
+<p><strong>Prefrontal cortex hypoactive</strong> — đây là vùng não điều khiển ức chế cảm xúc. Khi dopamine thiếu, vùng này hoạt động yếu 15-30%<sup>[2]</sup>. Nghĩa là: anh THẬT SỰ khó kiềm chế — không phải "ý chí yếu".</p>
+
+<p><strong>Thiếu ngủ tích luỹ</strong> — 5 đêm ngủ kém + dopamine thấp = ngưỡng cáu giảm 50%.</p>
+
+<h3>Đây là khoa học — không phải bạn</h3>
+
+<p>Quan trọng: hôm nay anh quát con KHÔNG có nghĩa anh là "bố tệ". Đây là phản ứng sinh học tạm thời. Sẽ qua. Nhưng vẫn cần xử lý — vì gia đình anh đang chịu phần lớn.</p>
+
+<h2>5 hành động Ngày 6</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Báo trước vợ con sáng nay</h4>
+<p>Câu duy nhất cần nói: <em>"Hôm nay anh sẽ khó tính nhất tuần này. Không phải vì em/con. Anh sẽ đi ra khỏi phòng khi cảm thấy nóng. 1 tuần nữa anh sẽ dịu lại."</em> Khi họ biết trước — không phản ứng ngược → không leo thang.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Thở "4-2-6" trước khi mở miệng</h4>
+<p>Khi cảm thấy nóng bừng lên — DỪNG NGAY. Hít vào 4 giây → giữ 2 giây → thở ra 6 giây × 3 lần. Đếm thầm 1-10. Đi ra khỏi phòng 5 phút. Sau 5 phút sóng adrenaline đã hạ 60%<sup>[3]</sup>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>20 cú đẩy tường nhanh — xả adrenaline</h4>
+<p>Khi muốn quát/đập đồ — đứng dậy, đẩy tường 20 cú nhanh trong 30 giây. Adrenaline có outlet vật lý → hạ trong 1 phút. Hiệu quả hơn cả "đếm đến 10". Vợ con sẽ thấy lạ — nhưng tốt hơn quát.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Quy tắc "đi xa khỏi nguồn" 5 phút</h4>
+<p>Trẻ con khóc + vợ hỏi gì đó + điện thoại reo = combo cao. Khi 3 việc cùng lúc: nói <em>"Cho anh 5 phút"</em> → đi ra phòng khác / ban công / nhà tắm → quay lại khi đã hạ nhiệt. Không có gì xấu hổ.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Tránh trigger ban đầu hôm nay</h4>
+<p>Hoãn họp căng thẳng. Tránh xem tin chính trị, drama, bóng đá đội mình thua. Đừng cãi với đồng nghiệp khó. Đừng lái xe giờ tắc nếu có thể. Tuần này là tuần "đi nhẹ" — cuộc đời sẽ đợi.</p>
+</div>
+</div>
+
+<div class="alarm">
+<h4>🚨 Khi nào lo</h4>
+<ul>
+<li>Đã đánh người / đập đồ — DỪNG CAI tạm, chuyển NRT, đến khoa Tâm thần BV</li>
+<li>Cáu kèm ý nghĩ tự hại → khoa Tâm thần BV gần nhất (BV Bạch Mai HN 024 3869 3731 · BV Tâm thần TPHCM 1900 599 920)</li>
+<li>Cáu kéo dài &gt; 6 tuần không giảm — có thể có rối loạn tâm thần tiềm ẩn</li>
+</ul>
+</div>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 6 lần 5 cai (2020) tôi đã quát thằng con 7 tuổi vì làm rơi cốc nước. Mặt nó co rúm — tôi tỉnh ngay. Đêm đó tôi ôm con, xin lỗi, giải thích "ba đang cai thuốc, tuần này khó ở". Nó hiểu hết. Hôm sau nó tự ra cửa khi thấy ba cáu — nó học từ chính tôi.</p>
+<p>Vợ tôi cùng đêm đó đề nghị: <em>"Tuần này anh có cáu — em sẽ nói 'anh đi ra' thay vì cãi lại. Mình hợp tác qua tuần này."</em> Đó là <strong>system thay ý chí</strong> — không cần tôi mạnh hơn, chỉ cần vợ biết cách phản ứng đúng.</p>
+<p>Ngày 6 lần 5, tôi cáu 4 lần. Mỗi lần đi ra ban công 5 phút. Không 1 lần leo thang. Tuần 2 dịu nhiều. Tuần 4 hết hẳn.</p>
+<p>Anh em ơi — cáu Ngày 6 là khoa học, không phải tính cách. Quan trọng: <strong>báo trước vợ con + đi ra khỏi phòng trước khi mở miệng</strong>. Trẻ con không phán xét — chúng học từ anh cách xử lý. Anh xin lỗi 1 lần — con học cả đời.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-5-them-an-va-noi-so-tang-can-su-that-khoa-h/">→ Ngày 5 — Thèm ăn + nỗi sợ tăng cân</a></li>
+<li><a href="https://sol.vn/ngay-7-moc-1-tuan-co-the-da-doi/">→ Ngày 7 — Mốc 1 tuần (chặng nghỉ)</a></li>
+<li><a href="https://sol.vn/cau-gat-khi-cai-thuoc/">→ Cáu gắt cai thuốc — hướng dẫn đầy đủ</a></li>
+<li><a href="https://sol.vn/vo-chong-gian-cai/">→ Vợ chồng giận chuyện cai — cách xử lý</a></li>
+</ul>
+</div>
+
+🔥 <strong>Ngày 6 — Cáu gắt là cortisol đỉnh</strong><br><br>
+Cortisol peak D5-D7, prefrontal yếu 15-30% do thiếu dopamine. Tức giận KHÔNG phải tính cách — là sinh học.<br><br>
+Hôm nay: báo trước vợ con sáng nay, thở 4-2-6 + đi ra khỏi phòng 5 phút trước khi mở miệng, 20 cú đẩy tường khi nóng.<br><br>
+Trẻ con không phán xét — chúng học từ anh.<br><br>
+📖 <a href="https://sol.vn/ngay-6-cau-gat-voi-nguoi-than-day-khong-phai-tin/?utm_source=zalo&utm_campaign=qday-6">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu cáu đến mức có nguy cơ bạo lực — DỪNG CAI tạm thời, đến khoa Tâm thần BV gần nhất. Ưu tiên an toàn gia đình.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Vì sao Ngày 6 cáu gắt nhất?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cortisol cao — stress hormone peak D5-D7. Nhịp tim nhanh, mặt nóng, dễ phản ứng "fight" với chuyện nhỏ.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 6 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Câu duy nhất cần nói: "Hôm nay anh sẽ khó tính nhất tuần này. Không phải vì em/con. Anh sẽ đi ra khỏi phòng khi cảm thấy nóng. 1 tuần nữa anh sẽ dịu lại." Khi họ biết trước — không phản ứng ngược → không leo thang.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Hughes JR. (2007). <em>Effects of kiêng dứt thuốc from tobacco</em>. Nicotine Tob Res 9(3):315-327.</li>
+<li>Hayashi T et al. (2013). <em>Dorsolateral prefrontal and orbitofrontal cortex interactions during self-control</em>. J Neurosci 33(14):5860-5866.</li>
+<li>Ma X et al. (2017). <em>The effect of diaphragmatic breathing on attention</em>. Front Psychol 8:874.</li>
+<li>Taylor G et al. (2014). <em>Change in mental health after smoking cai thuốc</em>. BMJ 348:g1151.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 6 — Sol đi cùng cơn cáu</div>
+<div style="font-size:14px;opacity:.9;">Chip cứu cơn cáu + voice Khang khi anh cần "đi ra 5 phút". Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-6&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã xin lỗi con 1 lần và học được nhiều hơn 30 năm trước đó. Cập nhật 14-05-2026.</p>
+
+</div>

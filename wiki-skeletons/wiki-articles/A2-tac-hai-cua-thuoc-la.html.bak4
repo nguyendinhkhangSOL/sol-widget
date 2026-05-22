@@ -1,0 +1,360 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1. Tác hại thuốc lá — 10 con số đàn ông Việt 40+ cần biết là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây là 10 thống kê quan trọng nhất, sắp xếp theo mức độ ảnh hưởng:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3. Tác hại cho vợ con — anh hút, cả nhà chịu là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây là phần đau lòng nhất. Mình ghi để anh biết:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4. Tin tốt — cơ thể phục hồi rất nhanh sau khi cai là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây là điều mình muốn nói nhiều nhất. Anh em hay nghĩ \"hút lâu rồi, cai cũng không cứu được\" — SAI HOÀN TOÀN. Khoa học chứng minh:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5. Câu chuyện thật — mình hút Vinataba 30 năm là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mình bắt đầu năm 15 tuổi ở quê. Bạn bè rủ. Cha là bộ đội — không cấm. Đến năm 30 tuổi, mình hút 1 bao/ngày. Năm 35, có vấn đề dạ dày — bác sĩ doạ ung thư. Bỏ được 3 tháng. Rồi hút lại."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "6. Anh quyết khi nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đọc bài này xong, anh có 2 lựa chọn:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp về tác hại thuốc lá là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có — chỉ ít hơn người hút nhiều, không phải \"an toàn\". Hút 5 điếu/ngày trong 20 năm vẫn tăng nguy cơ ung thư phổi 8-10 lần. Không có ngưỡng \"an toàn\" cho thuốc lá."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI A2 — Tác Hại Của Thuốc Lá Với Đàn Ông 40+ (P0, vol 14k/tháng)
+  Focus keyword: "tác hại của thuốc lá"
+  Target intent: awareness — anh em muốn hiểu cụ thể hại gì
+  Internal links: /bo-thuoc-la, /khang-sol, /sol-la-gi, /cai-thuoc-la-tai-nha
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .quote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 20px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .stat-box { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #E8DFC8; border-radius: 12px; padding: 20px 22px; margin: 16px 0; }
+.sol-wiki .stat-num { font-size: 32px; font-weight: 700; color: #DC2626; line-height: 1; }
+.sol-wiki .stat-label { font-size: 14px; color: #5C3A1E; font-weight: 600; margin-top: 6px; }
+.sol-wiki .stat-source { font-size: 12px; color: #8A857C; font-style: italic; margin-top: 8px; }
+.sol-wiki .danger-card { background: white; border: 1px solid #FEE2E2; border-left: 4px solid #DC2626; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+.sol-wiki .recovery-card { background: white; border: 1px solid #DCFCE7; border-left: 4px solid #16A34A; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki ul { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li { margin-bottom: 6px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #5C3A1E; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid #E8DFC8; }
+.sol-wiki table tr:nth-child(even) { background: #FAFAF8; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">
+Anh đã hút mấy năm rồi? 10? 20? 30? Mình hút Vinataba 30 năm — đến 45 tuổi mới biết hết. Bài này mình không nói chung chung "thuốc lá có hại" — mình đưa <strong>10 con số cụ thể về tác hại của thuốc lá với đàn ông Việt 40+</strong>, có nguồn khoa học rõ ràng. Anh đọc 5 phút, anh sẽ thấy — tới một mức nào đó, anh không có lựa chọn KHÔNG cai. Nhưng tin tốt: <strong>cơ thể tự phục hồi rất nhanh sau khi cai</strong> — kể cả ở tuổi 50, 60.
+</p>
+
+<h2>1. Tác hại thuốc lá — 10 con số đàn ông Việt 40+ cần biết</h2>
+
+<p>Đây là 10 thống kê quan trọng nhất, sắp xếp theo mức độ ảnh hưởng:</p>
+
+<div class="stat-box">
+<div class="stat-num">40.000</div>
+<div class="stat-label">người Việt chết vì bệnh liên quan thuốc lá MỖI NĂM</div>
+<div class="stat-source">Nguồn: WHO Vietnam Tobacco Atlas 2023. 75% là đàn ông trên 40 tuổi.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">15 năm</div>
+<div class="stat-label">tuổi thọ TRUNG BÌNH bị mất nếu hút trên 1 bao/ngày trong 20+ năm</div>
+<div class="stat-source">Doll & Hill BMJ 2004 — nghiên cứu 50 năm trên 35.000 bác sĩ Anh.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">88%</div>
+<div class="stat-label">receptor nicotinic não bị saturated chỉ sau 1 ĐIẾU thuốc</div>
+<div class="stat-source">Brody 2006 PET scan — đây là cơ chế lệ thuộc, không phải ý chí yếu.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">~110 triệu</div>
+<div class="stat-label">VND đốt cho thuốc lá trong 30 năm (10.000đ/ngày)</div>
+<div class="stat-source">Tính trên giá Vinataba phổ thông VN 2026. Chưa tính chi phí khám bệnh.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">2-4 lần</div>
+<div class="stat-label">nguy cơ bệnh tim mạch tăng so với người không hút</div>
+<div class="stat-source">CDC 2020 + Bộ Y tế VN — nhồi máu cơ tim, đột quỵ, xơ vữa động mạch.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">15-30 lần</div>
+<div class="stat-label">nguy cơ ung thư phổi tăng — riêng đàn ông Việt là cao nhất ĐNA</div>
+<div class="stat-source">WHO IARC Monograph 2012 + Bv Bạch Mai 2023.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">85%</div>
+<div class="stat-label">ca COPD (phổi tắc nghẽn mãn) ở VN do thuốc lá</div>
+<div class="stat-source">Vietnam Lung Association 2022.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">30-40%</div>
+<div class="stat-label">đàn ông hút thuốc bị rối loạn cương dương (ED) sau 20 năm</div>
+<div class="stat-source">JAMA 2019 — vì thuốc lá tổn thương mạch máu nuôi dương vật.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">2x</div>
+<div class="stat-label">nguy cơ vợ con bị ung thư phổi do hút THỤ ĐỘNG</div>
+<div class="stat-source">Surgeon General Report 2014 — hút trong nhà = hại cả gia đình.</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-num">7.000+</div>
+<div class="stat-label">hoá chất trong 1 điếu thuốc, trong đó 70+ chất gây ung thư</div>
+<div class="stat-source">CDC + IARC. Bao gồm: nicotine, tar, CO, benzen, formaldehyde, polonium-210.</div>
+</div>
+
+<h2>2. Tác hại theo từng bộ phận cơ thể — đặc biệt đàn ông 40+</h2>
+
+<h3>🫁 Phổi — cơ quan tổn thương nhiều nhất</h3>
+
+<div class="danger-card">
+<strong>Tổn thương:</strong> Tar tích trong phế nang → COPD, viêm phế quản mãn, ung thư phổi. Cilia (lông phế quản) bị tê liệt — không thải đờm được → ho mãn tính ban đêm.
+<br><br>
+<strong>Triệu chứng anh em 40+ thường có:</strong> ho khan buổi sáng (mucus màu vàng/nâu), khó thở khi leo 4 tầng, hụt hơi khi đi nhanh, đau tức ngực âm ỉ.
+</div>
+
+<h3>❤️ Tim mạch — kẻ giết im lặng</h3>
+
+<div class="danger-card">
+<strong>Tổn thương:</strong> Nicotine + CO làm tim đập nhanh + huyết áp tăng. Tar gây xơ vữa động mạch. Tăng đông máu → nguy cơ nhồi máu cơ tim ở tuổi 45-55 cao gấp 2-4 lần.
+<br><br>
+<strong>Triệu chứng cảnh báo:</strong> tim đập mạnh sau khi hút, đau ngực trái thoáng qua, chân tay lạnh (tuần hoàn kém), huyết áp cao mãn.
+</div>
+
+<h3>🧠 Não — lệ thuộc + giảm trí nhớ</h3>
+
+<div class="danger-card">
+<strong>Tổn thương:</strong> Receptor nicotinic upregulate → não "đói" nicotine mỗi 2-4h. Giảm máu lên não → tăng nguy cơ đột quỵ 50%. Hút >20 năm: tăng 70% nguy cơ Alzheimer sau 65 tuổi.
+<br><br>
+<strong>Triệu chứng:</strong> bồn chồn khi không hút >2h, khó tập trung khi không hút, hay quên tên người mới gặp (50+ tuổi).
+</div>
+
+<h3>🦷 Răng + miệng — bệnh nha chu + ung thư</h3>
+
+<div class="danger-card">
+<strong>Tổn thương:</strong> Răng vàng (tar bám), hôi miệng (sulfur), nha chu (mảng bám), ung thư khoang miệng + thanh quản (15-20 lần cao hơn người không hút). Lưỡi đen (hairy tongue) ở người hút lâu năm.
+</div>
+
+<h3>👨 Khả năng sinh lý — vấn đề ÍT ai nói</h3>
+
+<div class="danger-card">
+<strong>Tổn thương:</strong> Thuốc lá co thắt mạch máu → giảm máu nuôi dương vật. Sau 20 năm hút >1 bao/ngày: 30-40% bị rối loạn cương dương. Giảm sản xuất testosterone 23% (so với người không hút). Tinh trùng giảm chất lượng 23-29%.
+<br><br>
+<strong>Tin tốt:</strong> Cai 6 tháng — testosterone phục hồi 80%. Cai 1 năm — ED giảm rõ rệt.
+</div>
+
+<h3>👁️ Mắt + da</h3>
+
+<div class="danger-card">
+<strong>Tổn thương:</strong> Đục thuỷ tinh thể sớm 5-10 năm. Thoái hoá điểm vàng. Da: nhăn sớm 10 năm (free radicals từ khói thuốc), môi thâm, da xám.
+</div>
+
+<h2>3. Tác hại cho vợ con — anh hút, cả nhà chịu</h2>
+
+<p>Đây là phần đau lòng nhất. Mình ghi để anh biết:</p>
+
+<table>
+<thead>
+<tr><th>Đối tượng</th><th>Nguy cơ do hút thụ động</th><th>Nguồn</th></tr>
+</thead>
+<tbody>
+<tr><td>Vợ không hút</td><td>+30% nguy cơ ung thư phổi · +25% bệnh tim mạch</td><td>Surgeon General 2014</td></tr>
+<tr><td>Con dưới 18 tuổi</td><td>+50% nguy cơ hen suyễn · +100% nguy cơ viêm tai giữa</td><td>WHO 2020</td></tr>
+<tr><td>Con sơ sinh (mẹ hút thụ động khi mang thai)</td><td>+50% SIDS (đột tử ở trẻ) · sinh non · cân nặng thấp</td><td>AAP 2018</td></tr>
+<tr><td>Vợ mang thai</td><td>Sảy thai +30% · sinh non +20% · dị tật bẩm sinh +15%</td><td>CDC 2019</td></tr>
+</tbody>
+</table>
+
+<p>Mình hút 30 năm, vợ con sống chung. Con gái mình nói <em>"bố hôi lắm"</em> năm 8 tuổi. Mình hút trộm hành lang — nhưng mùi không giấu được. Cô con gái lớn lên với hen suyễn nhẹ. Đến giờ mình vẫn áy náy.</p>
+
+<h2>4. Tin tốt — cơ thể phục hồi rất nhanh sau khi cai</h2>
+
+<p>Đây là điều mình muốn nói nhiều nhất. Anh em hay nghĩ <em>"hút lâu rồi, cai cũng không cứu được"</em> — SAI HOÀN TOÀN. Khoa học chứng minh:</p>
+
+<div class="recovery-card">
+<strong>20 phút sau điếu cuối:</strong> nhịp tim + huyết áp về bình thường.
+<div style="font-size: 12px; color: #8A857C; margin-top: 4px;">Mahmud & Feely 2003, BMJ.</div>
+</div>
+
+<div class="recovery-card">
+<strong>12 giờ:</strong> CO trong máu về bình thường — máu vận chuyển oxy tốt hơn.
+</div>
+
+<div class="recovery-card">
+<strong>2-12 tuần:</strong> tuần hoàn + chức năng phổi tăng 30%.
+<div style="font-size: 12px; color: #8A857C; margin-top: 4px;">US Surgeon General 2020.</div>
+</div>
+
+<div class="recovery-card">
+<strong>1-9 tháng:</strong> ho giảm rõ rệt, cilia phế quản phục hồi, ít bị viêm xoang.
+</div>
+
+<div class="recovery-card">
+<strong>1 năm:</strong> nguy cơ bệnh tim mạch giảm <strong>50%</strong>.
+</div>
+
+<div class="recovery-card">
+<strong>5 năm:</strong> nguy cơ đột quỵ về như người không hút.
+</div>
+
+<div class="recovery-card">
+<strong>10 năm:</strong> nguy cơ ung thư phổi giảm <strong>50%</strong>.
+<div style="font-size: 12px; color: #8A857C; margin-top: 4px;">Doll & Hill BMJ 2004.</div>
+</div>
+
+<div class="recovery-card">
+<strong>15 năm:</strong> nguy cơ bệnh tim mạch về NHƯ người không hút bao giờ.
+</div>
+
+<p><strong>Quan trọng nhất:</strong> Doll & Hill 2004 (nghiên cứu 50 năm trên 35.000 bác sĩ) chỉ ra:</p>
+
+<div class="quote">
+<strong>Cai trước 50 tuổi giảm 90% nguy cơ tử vong sớm do thuốc lá. Cai trước 60 tuổi giảm 50%. Cai sau 70 tuổi vẫn giúp.</strong>
+<br><br>
+<em>Không bao giờ muộn để cai. Cứ mỗi năm cai sớm hơn = thêm 1 năm tuổi thọ.</em>
+</div>
+
+<h2>5. Câu chuyện thật — mình hút Vinataba 30 năm</h2>
+
+<p>Mình bắt đầu năm 15 tuổi ở quê. Bạn bè rủ. Cha là bộ đội — không cấm. Đến năm 30 tuổi, mình hút 1 bao/ngày. Năm 35, có vấn đề dạ dày — bác sĩ doạ ung thư. Bỏ được 3 tháng. Rồi hút lại.</p>
+
+<p>Năm 40 tuổi, leo cầu thang nhà 4 tầng đã thở mạnh. Vợ phát hiện huyết áp tăng. Con gái 8 tuổi nói <em>"bố hôi lắm"</em>. Mình đi khám sức khoẻ định kỳ — có chữ "nguy cơ" mới trên giấy.</p>
+
+<p>22-12-2020 âm lịch (45 tuổi) — mình bỏ thật. Đến nay 5 năm Tự do. 6 tháng sau khi cai: hết ho buổi sáng. 1 năm: leo cầu thang 4 tầng không thở. 3 năm: vợ nói da mình sáng lên. 5 năm: cảm giác trẻ lại 10 tuổi.</p>
+
+<p><a href="https://sol.vn/khang-sol" style="color: #B25C2C; font-weight: 600;">Đọc câu chuyện đầy đủ Khang Sol →</a></p>
+
+<h2>6. Anh quyết khi nào?</h2>
+
+<p>Đọc bài này xong, anh có 2 lựa chọn:</p>
+
+<ul>
+<li><strong>Lựa chọn 1:</strong> đóng tab, hút điếu nữa, ngày mai vẫn vậy. 95% anh em ở đây dừng lại tại đây.</li>
+<li><strong>Lựa chọn 2:</strong> ghi vào sổ 3 lý do anh muốn cai. Đặt Ngày Quyết Định 7-14 ngày tới. Đọc tiếp <a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C; font-weight: 600;">7 bước cai thuốc lá tại nhà</a>. 5% anh em chọn cái này — và họ thành công.</li>
+</ul>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. 1. Tác hại thuốc lá — 10 con số đàn ông Việt 40+ cần biết là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đây là 10 thống kê quan trọng nhất, sắp xếp theo mức độ ảnh hưởng:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 3. Tác hại cho vợ con — anh hút, cả nhà chịu là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đây là phần đau lòng nhất. Mình ghi để anh biết:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. 4. Tin tốt — cơ thể phục hồi rất nhanh sau khi cai là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đây là điều mình muốn nói nhiều nhất. Anh em hay nghĩ "hút lâu rồi, cai cũng không cứu được" — SAI HOÀN TOÀN. Khoa học chứng minh:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. 5. Câu chuyện thật — mình hút Vinataba 30 năm là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mình bắt đầu năm 15 tuổi ở quê. Bạn bè rủ. Cha là bộ đội — không cấm. Đến năm 30 tuổi, mình hút 1 bao/ngày. Năm 35, có vấn đề dạ dày — bác sĩ doạ ung thư. Bỏ được 3 tháng. Rồi hút lại.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. 6. Anh quyết khi nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đọc bài này xong, anh có 2 lựa chọn:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">6. Câu hỏi thường gặp về tác hại thuốc lá là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có — chỉ ít hơn người hút nhiều, không phải "an toàn". Hút 5 điếu/ngày trong 20 năm vẫn tăng nguy cơ ung thư phổi 8-10 lần. Không có ngưỡng "an toàn" cho thuốc lá.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt — anh chọn. Khang Sol đi cùng anh từng ngày.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=A2&utm_campaign=tac-hai-cua-thuoc-la">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp về tác hại thuốc lá</h2>
+
+<h3>Hút ít (5-10 điếu/ngày) có hại không?</h3>
+<p>Có — chỉ ít hơn người hút nhiều, không phải "an toàn". Hút 5 điếu/ngày trong 20 năm vẫn tăng nguy cơ ung thư phổi 8-10 lần. Không có ngưỡng "an toàn" cho thuốc lá.</p>
+
+<h3>Thuốc lá điện tử (vape) có ít hại hơn không?</h3>
+<p>Bộ Y tế VN 2024 đã CẤM bán + sử dụng thuốc lá điện tử vì rủi ro phổi cấp (EVALI 2019 đã có người chết ở Mỹ). E-cig vẫn chứa nicotine + hoá chất ít được nghiên cứu dài hạn. KHÔNG khuyến cáo dùng để "cai".</p>
+
+<h3>Thuốc lào (cuốn) có hại bằng thuốc lá điếu không?</h3>
+<p>Hại tương đương hoặc HƠN. Thuốc lào nồng độ nicotine cao hơn, tar nhiều hơn. Hút ống điếu sâu vào phổi → tổn thương phế nang nặng hơn. Đặc biệt ở anh em quê, tỷ lệ ung thư phổi do thuốc lào cao.</p>
+
+<h3>Tôi 55 tuổi, hút 35 năm — cai có cứu được phổi không?</h3>
+<p>CÓ. Doll & Hill 2004: cai ở 55 tuổi giảm 70% nguy cơ tử vong sớm do thuốc lá. Sau 10 năm cai, nguy cơ ung thư phổi giảm 50%. <strong>KHÔNG BAO GIỜ MUỘN.</strong></p>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C;">Cai thuốc lá tại nhà — 7 bước khoa học</a> ·
+<a href="https://sol.vn/trieu-chung-cai-thuoc-la-theo-ngay" style="color: #B25C2C;">Triệu chứng cai thuốc Day 1-30</a> ·
+<a href="https://sol.vn/phuong-phap-cai-thuoc-la" style="color: #B25C2C;">5 phương pháp cai thuốc phổ biến</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. KHÔNG phải bác sĩ — số liệu khoa học có nguồn (WHO, Doll & Hill, CDC), không thay thế tham vấn y khoa.
+</p>
+
+<p style="font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px;">
+<strong>🚨 Khẩn cấp y tế</strong>: nếu anh đau ngực, khó thở, ngất, ho ra máu — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> NGAY. Sol KHÔNG xử lý cấp cứu.<br>
+<strong>Tổng đài tư vấn cai thuốc miễn phí BV Bạch Mai</strong>: <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a>
+</p>
+
+</div>

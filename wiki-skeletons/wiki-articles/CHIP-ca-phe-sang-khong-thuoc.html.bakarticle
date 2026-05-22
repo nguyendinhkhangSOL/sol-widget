@@ -1,0 +1,196 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 2 — Chiến lược 21 ngày là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuần này không cố \"uống cà phê + chống thèm\" — quá khó. Thay vào đó:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=ca-phe-sang) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "30 năm mỗi sáng mình uống cà phê + 2 điếu trên ban công. 30 năm Pavlov — cà phê = thuốc. Cai thuốc tuần đầu, uống cà phê là thèm dữ dội."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi không thể bỏ cà phê — uống tuần đầu được không?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn pha cà phê sáng. Tay bạn TỰ ĐỘNG vươn về cái bao thuốc — không có. Não bạn đã link "cà phê = thuốc" suốt 30 năm. Đây là <strong>điếu thuốc nguy hiểm nhất</strong> với nam Việt 45+ đang cai.</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>"Cà phê sáng + thuốc" là Pavlovian conditioning điển hình — não tự động phản xạ</li>
+<li>70-80% nam Việt 45+ có ritual này</li>
+<li>Phá link cần 14-21 ngày KHÔNG hút trong tình huống cà phê</li>
+<li>Sau khi phá xong: cà phê quay về bình thường, không tình huống thèm nữa</li>
+</ul>
+</div>
+<h2>Phần 1 — Khoa học Pavlovian conditioning</h2>
+<h3>Cơ chế</h3>
+<ul>
+<li>Pavlov 1897 — chó nghe chuông thấy đói (vì luôn ăn sau chuông)</li>
+<li>Não bạn: cà phê → đợi nicotine → tiết dopamine kỳ vọng</li>
+<li>Cà phê đến mà không có nicotine → não "thiếu hụt" → cảm giác trống/thèm</li>
+</ul>
+<h3>30 năm conditioning</h3>
+<ul>
+<li>Mỗi sáng × 30 năm = 11,000 lần lặp lại</li>
+<li>Đây là một trong những conditioning mạnh nhất bạn có</li>
+<li><strong>Nhưng:</strong> nó cũng phá được — chỉ cần 14-21 ngày KHÔNG follow link</li>
+</ul>
+<h3>Cách não phá link</h3>
+<ul>
+<li>Mỗi sáng cà phê + KHÔNG hút = 1 lần "extinction trial"</li>
+<li>Sau 14-21 trial, dopamine kỳ vọng giảm</li>
+<li>Sau 30 trial, link gần như hết</li>
+<li>Sau 60 trial, cà phê quay về bình thường</li>
+</ul>
+<h2>Phần 2 — Chiến lược 21 ngày</h2>
+<h3>Tuần 1: Phá hoàn toàn</h3>
+<p>Tuần này không cố "uống cà phê + chống thèm" — quá khó. Thay vào đó:</p>
+<ul>
+<li><strong>Đổi sang trà ấm</strong> (trà xanh, trà gừng, trà lúa mạch)</li>
+<li><strong>Ngồi chỗ KHÁC</strong> — không phải bàn ăn quen, không cùng vị trí</li>
+<li><strong>Thay đổi ritual</strong> — đọc báo giấy thay điện thoại, nghe radio thay ngồi yên</li>
+<li><strong>Mục tiêu:</strong> 7 sáng KHÔNG có cà phê + KHÔNG có thuốc</li>
+</ul>
+<h3>Tuần 2: Cà phê quay lại — context mới</h3>
+<ul>
+<li>Bắt đầu uống cà phê lại</li>
+<li>Nhưng <strong>KHÔNG cùng context cũ</strong></li>
+</ul>
+<p>  - Đổi loại cà phê (cà phê sữa thay đen, hoặc ngược lại)</p>
+<p>  - Đổi cốc (cốc lớn hơn, màu khác)</p>
+<p>  - Đổi giờ (uống lúc 8h thay vì 6h)</p>
+<p>  - Đổi địa điểm (ban công thay phòng khách)</p>
+<ul>
+<li><strong>Mục tiêu:</strong> 7 ngày cà phê + KHÔNG hút trong context mới</li>
+</ul>
+<h3>Tuần 3: Test context cũ</h3>
+<ul>
+<li>Thử ngồi bàn cũ + cà phê quen</li>
+<li>Lưu ý cảm giác — vẫn còn thèm nhẹ?</li>
+<li>Nếu OK — bạn đã phá link</li>
+<li>Nếu vẫn thèm — quay lại tuần 2 thêm 7 ngày</li>
+</ul>
+<h3>Sau tuần 3: Bình thường</h3>
+<ul>
+<li>Cà phê quay về thói quen bình thường</li>
+<li>Không còn tình huống thèm</li>
+<li>Có thể quay về bàn cũ, cốc cũ</li>
+</ul>
+<h2>Phần 3 — Mẹo để dễ vượt</h2>
+<h3>Sáng dậy</h3>
+<ul>
+<li><strong>Uống nước lọc trước</strong> (250ml) — đẩy được "thèm dạ dày"</li>
+<li><strong>Đánh răng</strong> trước cà phê — vị fresh giảm thèm</li>
+<li><strong>5 phút thiền/đọc báo</strong> — cho não tỉnh dậy không vội ritual cũ</li>
+</ul>
+<h3>Trong khi uống cà phê</h3>
+<ul>
+<li><strong>Cầm cốc bằng tay không thuận</strong> — break automatism</li>
+<li><strong>Uống chậm</strong> — đặt cốc xuống giữa các ngụm</li>
+<li><strong>Không ngồi cùng tư thế cũ</strong> — ngồi thẳng thay vì nằm chiếc ghế quen</li>
+</ul>
+<h3>Nếu thèm dữ dội</h3>
+<ul>
+<li><strong>Đứng dậy đi lại</strong> 30 giây</li>
+<li><strong>Nhai kẹo cao su không đường</strong></li>
+<li><strong>Hít thở 4-7-8</strong> ba lần</li>
+<li><strong>Uống ngụm nước lạnh</strong></li>
+</ul>
+<h3>KHÔNG nên</h3>
+<ul>
+<li>❌ Bỏ cà phê hoàn toàn vĩnh viễn — không cần thiết</li>
+<li>❌ Tăng cà phê đậm hơn để bù — caffeine cao = anxiety + insomnia</li>
+<li>❌ "Thử 1 hơi để chắc đã cai được" — KHÔNG. Reset link Pavlov.</li>
+</ul>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=ca-phe-sang)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>30 năm mỗi sáng mình uống cà phê + 2 điếu trên ban công. 30 năm Pavlov — cà phê = thuốc. Cai thuốc tuần đầu, uống cà phê là thèm dữ dội.</p>
+<p>Mình đổi: tuần 1-2 thay cà phê bằng trà xanh. Đến tuần 3 quay lại cà phê — nhưng ngồi trong nhà, không ra ban công. Đến tháng 2 mình uống cà phê bình thường, không thèm. Phá Pavlov 30 năm trong 1 tháng.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi không thể bỏ cà phê — uống tuần đầu được không?</h3></p>
+<p><p>Có thể, nhưng khó hơn 30%. Nếu phải uống — đổi context (chỗ ngồi, cốc, giờ). Quan trọng là phá link.</p></p>
+<p><h3>Sau 21 ngày link hết — có chắc không?</h3></p>
+<p><p>Đa số có. ~10% người vẫn còn thèm nhẹ sau 1-2 tháng. Tiếp tục — sẽ hết hoàn toàn.</p></p>
+<p><h3>Tôi không uống cà phê — có cần đọc bài này?</h3></p>
+<p><p>Áp dụng tương tự cho ritual khác: trà sáng, ăn sáng, sau cơm, trước ngủ. Đều là Pavlov.</p></p>
+<p><h3>Trà có thay được cà phê không?</h3></p>
+<p><p>Có. Trà ít caffeine hơn (30-50mg vs 80-120mg cà phê). Tuần 1-2 tốt hơn trà.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 2 — Chiến lược 21 ngày là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tuần này không cố "uống cà phê + chống thèm" — quá khó. Thay vào đó:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=ca-phe-sang) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">30 năm mỗi sáng mình uống cà phê + 2 điếu trên ban công. 30 năm Pavlov — cà phê = thuốc. Cai thuốc tuần đầu, uống cà phê là thèm dữ dội.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi không thể bỏ cà phê — uống tuần đầu được không?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=ca-phe-sang-khong-thuoc">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Đi Cùng Sol</a>. Nguồn: Conklin CA & Tiffany ST (2002). *Applying extinction research and theory to tín hiệu thèm-exposure addiction treatments*. Addiction 97(2):155-167. · Stewart J et al. (1984). *Role of unconditioned and conditioned drug effects in the self-administration of opiates and stimulants*. Psychol Rev 91(2):251-268. · NHS Smokefree (2024). "Coping with cơn thèm — coffee."
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

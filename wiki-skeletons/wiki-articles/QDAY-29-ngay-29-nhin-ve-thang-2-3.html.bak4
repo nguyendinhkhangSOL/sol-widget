@@ -1,0 +1,224 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 29 — Maintenance Plan là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Viết kế hoạch tuần 5-12: - Sol companion: vẫn check-in 1 lần/ngày - Mục tiêu lành mạnh thay thế: đi bộ 30 phút/ngày, tập tạ 2 lần/tuần - Tránh tình huống nguy hiểm: đám cưới lớn, đám tang, du lịch dài với bạn nhậu - Người thân biết: vợ + 1 người tiếp tục check-in hằng tuần"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh tâm lý sai gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 29 lần 5 cai, tôi đã viết Maintenance Plan tháng 2 đến tháng 12. Lúc đó tôi đã biết: 4 lần trước tôi đều vấp ở tháng 2-6. Không phải tháng đầu — tháng đầu tôi mạnh ý chí. Tháng 2-6 mới là vùng nguy hiểm thật."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .timeline-box { background: white; border-left: 4px solid #16A34A; padding: 16px 20px; margin: 14px 0; border-radius: 0 12px 12px 0; }
+.sol-wiki .timeline-time { font-weight: 700; color: #15803D; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 29 — 1 ngày trước Mốc 1 Tháng. Anh đã đi 96.6% chặng đầu. Mai sẽ ăn mừng. Nhưng <strong>30 ngày KHÔNG = kết thúc</strong>. Đây là khởi đầu của 11 tháng tiếp theo — và tháng 3-6 vẫn còn warning zone. Hôm nay là ngày <em>maintenance protocol</em> — lên kế hoạch để tháng sau dễ hơn.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>tái nghiện risk drops sharply sau D30 (Hughes 2004)<sup>[1]</sup></li>
+<li>Tháng 3-6 = "warning zone" — risk medium (~10%) do "tự tin quá"</li>
+<li>Maintenance Plan tháng 2-12 quan trọng không kém 30 ngày đầu</li>
+<li>Hôm nay: lên kế hoạch maintenance + đặt mục tiêu tháng 3 + 6 + 12</li>
+<li>Tháng 6 đi khám sức khoẻ + chụp X-quang phổi (so D1)</li>
+</ul>
+</div>
+
+<h2>Tương lai — tháng 2 đến tháng 12</h2>
+
+<h3>Relapse curve khoa học</h3>
+
+<div class="timeline-box">
+<div class="timeline-time">Tuần 1-4 (đã qua)</div>
+<div>triệu chứng cai (withdrawal) sinh học + Đống tro tàn. tái nghiện rate cao nhất.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">Tháng 2 — Stabilization</div>
+<div>Identity solid hơn. Pavlov yếu rõ. tái nghiện rate giảm 50%. Dễ thở.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">Tháng 3-6 — Warning zone</div>
+<div><strong>Risk medium (~10%)</strong>. Tự tin quá → quay lại quán cũ + bạn nhậu → vấp. Cần cảnh giác.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">Tháng 6-12 — Safe zone</div>
+<div>tái nghiện hiếm. Sức khoẻ phục hồi rõ rệt. Identity hoàn toàn integrated.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">Năm 2-5 — Permanent</div>
+<div>Hầu như không tái phát. Phổi sạch 80%. Tim như chưa hút.</div>
+</div>
+
+<h2>5 hành động Ngày 29 — Maintenance Plan</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Lên Maintenance Plan tháng 2-3</h4>
+<p>Viết kế hoạch tuần 5-12:<br>
+- <strong>Sol companion:</strong> vẫn check-in 1 lần/ngày<br>
+- <strong>Mục tiêu lành mạnh thay thế:</strong> đi bộ 30 phút/ngày, tập tạ 2 lần/tuần<br>
+- <strong>Tránh tình huống nguy hiểm:</strong> đám cưới lớn, đám tang, du lịch dài với bạn nhậu<br>
+- <strong>Người thân biết:</strong> vợ + 1 người tiếp tục check-in hằng tuần</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Đặt mục tiêu tháng 3: chụp X-quang phổi</h4>
+<p>Lên lịch khám phổi tháng 3 (90 ngày sau cai). Xem X-quang + so với D1 (nếu có). Bác sĩ sẽ nhận xét cải thiện. Đây là <strong>bằng chứng vật lý</strong> động lực mạnh cho 9 tháng còn lại.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Tháng 6 — khám sức khoẻ định kỳ tổng thể</h4>
+<p>Đo: FEV1 phổi, huyết áp, cholesterol, lipid, đường máu. So với baseline lúc còn hút. Mọi chỉ số sẽ tốt hơn. Đăng ký 1 gói khám sức khoẻ 1-1.5 triệu — đáng đầu tư.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Tháng 12 — tự thưởng to (cột mốc 1 năm)</h4>
+<p>1 năm cai = ~7.3 triệu tiết kiệm (1 bao/ngày). Tự thưởng: du lịch Đà Nẵng / Đà Lạt / Phú Quốc với gia đình. Hoặc mua đồ thèm lâu. Đây là celebration đầu tiên thực sự đáng — không phải Day 30.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Báo người thân: "Anh tiếp tục cai — đừng nghĩ đã xong"</h4>
+<p>Tránh false security. Báo vợ + 2 người thân: <em>"Em ơi, 30 ngày tới là mốc đầu thôi. Anh tiếp tục cai. Vẫn cần em hỗ trợ tháng 2-6."</em> Họ hiểu = họ không thử thách anh.</p>
+</div>
+</div>
+
+<h2>Tránh tâm lý sai</h2>
+
+<ul>
+<li><strong>"30 ngày = xong cai"</strong> — sai. 30 ngày = mốc 1, còn 11 tháng vào safe zone</li>
+<li><strong>"Tự tin quá — tôi mạnh rồi"</strong> — tháng 3-6 vẫn vấp 10% người</li>
+<li><strong>Cắt Sol companion ngay</strong> — vẫn cần đồng hành tháng 2-3</li>
+<li><strong>"Thử 1 điếu kỷ niệm Mốc 1 Tháng"</strong> — KHÔNG. AVE = 95% tái nghiện</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 29 lần 5 cai, tôi đã viết Maintenance Plan tháng 2 đến tháng 12. Lúc đó tôi đã biết: <strong>4 lần trước tôi đều vấp ở tháng 2-6</strong>. Không phải tháng đầu — tháng đầu tôi mạnh ý chí. Tháng 2-6 mới là vùng nguy hiểm thật.</p>
+<p>Plan của tôi cho 11 tháng còn lại:</p>
+<ul>
+<li><strong>Tháng 2:</strong> Vẫn Sol check-in mỗi ngày. Tránh đám cưới lớn (tôi có 1 đám trong tháng — báo trước "có việc gấp")</li>
+<li><strong>Tháng 3:</strong> Chụp X-quang phổi. So với X-quang 2018 (lần đi khám trước). Kết quả thấy phổi sạch hơn rõ</li>
+<li><strong>Tháng 6:</strong> Khám sức khoẻ tổng. FEV1 từ 78% lên 88%. Vợ chụp ảnh tôi tươi hơn hẳn</li>
+<li><strong>Tháng 9:</strong> Tôi tăng đi bộ lên 60 phút/ngày. Giảm 3kg đã tăng tháng đầu</li>
+<li><strong>Tháng 12:</strong> Du lịch Phú Quốc 4 ngày với vợ con. Lần đầu trong 10 năm chúng tôi đi du lịch không có thuốc</li>
+</ul>
+<p>Tôi viết kế hoạch chi tiết Ngày 29. Đến tháng 12 — tôi đã làm gần hết. Đó là sức mạnh của planning ngay từ Day 29.</p>
+<p>Anh em ơi — Mốc 1 Tháng mai là celebration. Hôm nay là <strong>kế hoạch</strong>. Đừng đợi Ngày 30 — viết Plan tháng 2-12 NGAY hôm nay.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-28-tu-hao-va-gia-tri-ban-than-day-khong-phai-phu-phiem/">→ Ngày 28 — Tự hào</a></li>
+<li><a href="https://sol.vn/ngay-30-moc-1-thang-sau-bo-thuoc-ban-da-tro-thanh-ai/">→ Ngày 30 — MỐC 1 THÁNG</a></li>
+<li><a href="https://sol.vn/cai-thuoc-bao-lau-phoi-sach/">→ Phổi sạch sau bao lâu — timeline 20 năm</a></li>
+</ul>
+</div>
+
+🔭 <strong>Ngày 29 — Nhìn về tháng 2-12</strong><br><br>
+tái nghiện risk drops sau D30. Nhưng tháng 3-6 vẫn medium risk (10%) — do "tự tin quá".<br><br>
+Hôm nay: lên Maintenance Plan tháng 2-3, đặt mục tiêu tháng 3 chụp X-quang phổi, tháng 6 khám sức khoẻ tổng, tháng 12 du lịch ăn mừng 1 năm.<br><br>
+📖 <a href="https://sol.vn/ngay-29-nhin-ve-phia-truoc-thang-2-va-thang-3-se-nhu-the-nao/?utm_source=zalo&utm_campaign=qday-29">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Maintenance không có nghĩa "không thoải mái mãi". Tháng 6+ anh sẽ thấy bình thường — chỉ cần ý thức tránh tình huống thèm lớn.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. 5 hành động Ngày 29 — Maintenance Plan là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Viết kế hoạch tuần 5-12: - Sol companion: vẫn check-in 1 lần/ngày - Mục tiêu lành mạnh thay thế: đi bộ 30 phút/ngày, tập tạ 2 lần/tuần - Tránh tình huống nguy hiểm: đám cưới lớn, đám tang, du lịch dài với bạn nhậu - Người thân biết: vợ + 1 người tiếp tục check-in hằng tuần</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Cần tránh tâm lý sai gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 29 lần 5 cai, tôi đã viết Maintenance Plan tháng 2 đến tháng 12. Lúc đó tôi đã biết: 4 lần trước tôi đều vấp ở tháng 2-6. Không phải tháng đầu — tháng đầu tôi mạnh ý chí. Tháng 2-6 mới là vùng nguy hiểm thật.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Hughes JR. (2004). <em>Shape of the tái nghiện curve and long-term kiêng dứt thuốc</em>. Addiction 99(1):29-38.</li>
+<li>Piasecki TM. (2006). <em>tái nghiện to smoking</em>. Clin Psychol Rev 26(2):196-215.</li>
+<li>Anthonisen NR et al. (2005). <em>Lung Health Study 14.5-year mortality</em>. Ann Intern Med 142(4):233-239.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 29 — Sol đi cùng anh đến tháng 12</div>
+<div style="font-size:14px;opacity:.9;">Maintenance plan + Voice của Khang milestone (D60, D90, D180, D365). Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-29&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã viết Maintenance Plan Ngày 29 năm 2020, đến tháng 12 hoàn thành gần hết. Cập nhật 14-05-2026.</p>
+
+</div>

@@ -1,0 +1,208 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 2 — Phân biệt lo âu cai vs MI là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "| Dấu hiệu | Lo âu cai | Nhồi máu cơ tim |"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Cách giảm là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hít thở 4-7-8 (Andrew Weil method)"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=lo-au) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuần 2 mình hay tự nhiên lo âu — tim đập nhanh, ngực tức không lý do. Lần đầu mình hoảng — nghĩ đau tim. Đi khám — bác sĩ bảo: \"Anxiety do cai. Cortisol đang ổn định.\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi có nên dùng thuốc lo âu khi cai?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn cai 4 ngày, đột nhiên thấy tim đập nhanh, ngực tức, tay run nhẹ. Sợ — nghĩ đang lên cơn đau tim. <strong>Đa số: không.</strong> Đây là hệ thần kinh giao cảm đang "reset" sau 30 năm nicotine quản lý.</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>70-80% người cai có lo âu trong 2 tuần đầu<sup>[1]</sup></li>
+<li>Đỉnh ngày 3-7, dịu dần sau 2-4 tuần</li>
+<li>KHÁC nhồi máu cơ tim — phân biệt rõ</li>
+<li>Lo âu <strong>dữ dội + kéo dài</strong> + tiền sử trầm cảm → đi khám</li>
+</ul>
+</div>
+<h2>Phần 1 — Vì sao có lo âu khi cai?</h2>
+<h3>Hệ thần kinh giao cảm tự điều chỉnh</h3>
+<ul>
+<li>Nicotine từng làm tăng adrenaline + cortisol cấp tính (mỗi điếu)</li>
+<li>30 năm = hệ thần kinh "quen sống trên adrenaline"</li>
+<li>Cai → adrenaline giảm xuống mức thấp tạm thời → não nhầm là "đang nguy hiểm" → kích hoạt phản ứng anxiety</li>
+</ul>
+<h3>Glucose máu dao động</h3>
+<ul>
+<li>Nicotine ảnh hưởng insulin</li>
+<li>Cai → đường máu dao động tuần đầu → run tay, lo, đói</li>
+</ul>
+<h3>Lo âu "ẩn" lộ ra</h3>
+<ul>
+<li>Hút thuốc từng "che" lo âu (nicotine có tác dụng anxiolytic ngắn hạn)</li>
+<li>Cai → lo âu vốn có lộ ra rõ</li>
+<li>Hughes 2009: 30-40% người cai có "anxiety disorder" tiềm ẩn không biết<sup>[2]</sup></li>
+</ul>
+<h3>Thiếu dopamine</h3>
+<ul>
+<li>Như anhedonia — dopamine thấp → não "lo lắng vô cớ"</li>
+</ul>
+<h2>Phần 2 — Phân biệt lo âu cai vs MI</h2>
+<p>| Dấu hiệu | Lo âu cai | Nhồi máu cơ tim |</p>
+<p>|---|---|---|</p>
+<p>| Khởi đầu | Từ từ, lan toả | Đột ngột, dữ dội |</p>
+<p>| Đau ngực | Tức nhẹ, không đè ép | Như vật nặng đè |</p>
+<p>| Lan toả | Không | Có (vai trái, hàm) |</p>
+<p>| Khó thở | Có thể có (do thở nhanh) | Đột ngột, dữ dội |</p>
+<p>| Mồ hôi | Có thể có ấm | Lạnh, đột ngột |</p>
+<p>| Buồn nôn | Hiếm | Thường có |</p>
+<p>| Hết khi nghỉ + thở | Có | Không |</p>
+<p>| Kéo dài | Vài chục phút | Liên tục >5 phút không hết |</p>
+<blockquote><strong>Quy tắc:</strong> Lo âu cai HẾT khi hít thở 4-7-8 ba lần. MI KHÔNG hết. Nếu hít thở mà vẫn đau → gọi 115.</blockquote>
+<h2>Phần 3 — Cách giảm</h2>
+<h3>Trong cơn lo âu (3-5 phút)</h3>
+<p><strong>Hít thở 4-7-8</strong> (Andrew Weil method)</p>
+<ol>
+<li>Thở ra hết</li>
+<li>Hít vào mũi 4 giây</li>
+<li>Giữ hơi 7 giây</li>
+<li>Thở ra miệng từ từ 8 giây</li>
+<li>Lặp 4 lần</li>
+</ol>
+<p><strong>Grounding 5-4-3-2-1</strong></p>
+<ul>
+<li>Kể tên 5 vật nhìn thấy</li>
+<li>4 vật chạm được</li>
+<li>3 âm thanh nghe được</li>
+<li>2 mùi</li>
+<li>1 vị</li>
+</ul>
+<p><strong>Đi ra ngoài 5 phút</strong> — đổi không gian + ánh sáng → reset hệ thần kinh</p>
+<h3>Hằng ngày — phòng ngừa</h3>
+<ul>
+<li><strong>Đi bộ aerobic</strong> 30 phút/sáng — giảm cortisol baseline</li>
+<li><strong>Hạn chế cà phê</strong> còn 1 ly/ngày tuần đầu (caffeine = thêm anxiety)</li>
+<li><strong>Ngủ đủ</strong> trước 23h</li>
+<li><strong>Tránh tin xấu/mạng xã hội</strong> trước khi ngủ</li>
+<li><strong>Magie + B-complex</strong> vitamin có thể giúp (hỏi bác sĩ)</li>
+</ul>
+<h3>Khi cần thuốc</h3>
+<ul>
+<li>Hydroxyzine (Atarax) — kê đơn nhẹ, an toàn cho người cai thuốc</li>
+<li>Buspirone — ít gây phụ thuộc</li>
+<li>TRÁNH benzodiazepine (Xanax, Valium) — gây phụ thuộc, không khuyến cáo cho người cai</li>
+</ul>
+<h2>Phần 4 — Khi nào đi khám</h2>
+<p>🚨 <strong>Gọi 115</strong> nếu lo âu kèm:</p>
+<ul>
+<li>Đau ngực dữ dội + lan tay/hàm (<a href="https://sol.vn/wiki/dau-nguc-du-doi-115" style="color:#B25C2C;font-weight:600;">xem chi tiết MI</a>)</li>
+<li>Khó thở dữ dội</li>
+<li>Đổ mồ hôi lạnh + buồn nôn</li>
+<li>Mất ý thức tạm thời</li>
+</ul>
+<p>📅 <strong>Đặt lịch khám tâm thần</strong> nếu:</p>
+<ul>
+<li>Lo âu <strong>kéo dài > 4 tuần</strong> không dịu</li>
+<li><strong>Cơn hoảng loạn (panic attack)</strong> thường xuyên</li>
+<li><strong>Mất ngủ kéo dài</strong> > 5 đêm</li>
+<li><strong>Không làm được việc</strong> vì lo lắng</li>
+</ul>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=lo-au)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Tuần 2 mình hay tự nhiên lo âu — tim đập nhanh, ngực tức không lý do. Lần đầu mình hoảng — nghĩ đau tim. Đi khám — bác sĩ bảo: <em>"Anxiety do cai. Cortisol đang ổn định."</em></p>
+<p>Bài thở 4-7-8 cứu mình 80% lần lo âu. Đến tuần 4 gần hết. Đến nay không còn — thậm chí ít lo âu hơn lúc còn hút. Hoá ra thuốc lá làm anxiety tệ hơn, không giảm.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi có nên dùng thuốc lo âu khi cai?</h3></p>
+<p><p>Đa số không cần. Bài thở + tập thể dục + ngủ đủ giải quyết 80% case. Nếu lo âu nặng > 2 tuần → bác sĩ kê.</p></p>
+<p><h3>Cà phê làm tệ hơn — có phải bỏ luôn?</h3></p>
+<p><p>Không cần. Giảm còn 1 ly sáng tuần đầu, sau 2 tuần quay lại bình thường.</p></p>
+<p><h3>Lo âu này có phải dấu hiệu lo âu mãn tính (GAD)?</h3></p>
+<p><p>Có thể là GAD đã có sẵn, nicotine "che" lâu nay. Nếu sau 4 tuần cai vẫn lo nặng → khám tâm thần.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 2 — Phân biệt lo âu cai vs MI là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">| Dấu hiệu | Lo âu cai | Nhồi máu cơ tim |</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 3 — Cách giảm là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Hít thở 4-7-8 (Andrew Weil method)</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=lo-au) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tuần 2 mình hay tự nhiên lo âu — tim đập nhanh, ngực tức không lý do. Lần đầu mình hoảng — nghĩ đau tim. Đi khám — bác sĩ bảo: "Anxiety do cai. Cortisol đang ổn định."</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi có nên dùng thuốc lo âu khi cai?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=lo-au-vo-co">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Hughes JR (2007). *Effects of kiêng dứt thuốc from tobacco*. Nicotine Tob Res 9(3):315-327. · McDermott MS et al. (2013). *Change in anxiety following successful and unsuccessful attempts at smoking cai thuốc*. Br J Psychiatry 202(1):62-67. · Taylor G et al. (2014). *Change in mental health after smoking cai thuốc: meta-analysis*. BMJ 348:g1151.
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

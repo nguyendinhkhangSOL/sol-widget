@@ -1,0 +1,181 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=khong-la-minh) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuần 4 mình cảm giác \"không là chính mình\" — không biết mình là ai khi không hút. 30 năm mỗi quyết định (uống cà phê, đi WC, đợi tàu) đều kèm điếu thuốc. Cai = mất identity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi cai 6 tháng vẫn cảm giác lạ — có sao không?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn cai 3 tuần. Vợ nói "anh khác lắm". Bạn cũng thấy thế — nhưng không phải khác tốt hay khác tệ. Khác... lạ. Như cái áo mới chưa thoải mái. <strong>Đây là danh tính shift — bạn đang chuyển sang phiên bản mới của bản thân.</strong></p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>60-70% người cai có cảm giác "không là chính mình" tuần 2-4<sup>[1]</sup></li>
+<li>Tự ổn sau 8-12 tuần khi não tích hợp danh tính mới</li>
+<li>Đây là dấu hiệu TỐT — não đang đổi mạch thần kinh</li>
+<li>Khác trầm cảm — không có buồn sâu, chỉ có "lạ"</li>
+</ul>
+</div>
+<h2>Phần 1 — Danh tính là gì và sao bị shake?</h2>
+<h3>Danh tính dựa trên thói quen</h3>
+<ul>
+<li>30 năm hút = một phần "tôi là ai" gắn với hành vi đó</li>
+<li>Tay cầm điếu thuốc, miệng ngậm, mùi quần áo, giờ nghỉ giữa cuộc họp ra hút — tất cả là <em>bạn</em></li>
+</ul>
+<h3>Cai = phá vỡ danh tính cũ</h3>
+<ul>
+<li>Đột nhiên không còn những hành vi đó</li>
+<li>Não chưa kịp build danh tính mới</li>
+<li>→ Cảm giác "rỗng", "không biết mình là ai bây giờ"</li>
+</ul>
+<h3>Khoa học danh tính shift</h3>
+<ul>
+<li>Oyserman 2017: danh tính-based thay đổi hành vi tốt nhất khi <em>gắn hành vi mới vào danh tính mới</em><sup>[2]</sup></li>
+<li>"Tôi đang cai thuốc" (action) khác "Tôi không hút thuốc" (danh tính)</li>
+<li>Danh tính shift vốn ngắn hạn không ổn định, nhưng dài hạn bền hơn ý chí</li>
+</ul>
+<h2>Phần 2 — Các pha danh tính shift</h2>
+<h3>Pha 1: Tuần 1-2 — "Tôi đang cố cai"</h3>
+<ul>
+<li>Danh tính vẫn là người hút đang nhịn</li>
+<li>Cảm giác mất, thiếu</li>
+<li>Mọi thứ là "không hút" (negation)</li>
+</ul>
+<h3>Pha 2: Tuần 3-6 — "Tôi không hút thuốc"</h3>
+<ul>
+<li>Danh tính bắt đầu shift</li>
+<li>Cảm giác "lạ" rõ nhất</li>
+<li>Bắt đầu nói với người khác "tôi không hút"</li>
+</ul>
+<h3>Pha 3: Tháng 2-3 — "Tôi là người đã cai"</h3>
+<ul>
+<li>Danh tính mới ổn định</li>
+<li>Cảm giác "lạ" tan biến</li>
+<li>Bắt đầu thấy phiên bản mới — thường tốt hơn</li>
+</ul>
+<h3>Pha 4: Năm 1+ — "Tôi không phải người hút thuốc"</h3>
+<ul>
+<li>Danh tính hoàn toàn mới</li>
+<li>Khó tin mình từng hút 30 năm</li>
+<li>Cảm giác nhẹ nhõm, tự do</li>
+</ul>
+<h2>Phần 3 — Cách giúp transition mượt</h2>
+<h3>Khẳng định danh tính mới rõ ràng</h3>
+<ul>
+<li>Khi ai mời thuốc: <strong>"Tôi không hút thuốc."</strong></li>
+<li>KHÔNG: "Tôi đang cố cai", "Tôi đang nhịn"</li>
+<li>Sự khác biệt nhỏ này có tác dụng lớn — não tự "đứng vào" danh tính mới</li>
+</ul>
+<h3>Xây hành vi mới gắn với danh tính mới</h3>
+<ul>
+<li>Sáng dậy → trà ấm + đọc 10 phút (thay điếu thuốc sáng)</li>
+<li>Sau cơm → đi bộ 10 phút (thay điếu thuốc sau cơm)</li>
+<li>Stress → bài thở 4-7-8 (thay điếu thuốc stress)</li>
+</ul>
+<blockquote>Mỗi hành vi mới = một viên gạch danh tính mới. 30 ngày × 3 hành vi/ngày = 90 viên gạch.</blockquote>
+<h3>Vai trò mới</h3>
+<ul>
+<li>"Người đồng hành" cho người khác đang cai</li>
+<li>"Ông/bà khoẻ" cho cháu nội/ngoại</li>
+<li>"Người cha tốt" cho con (model behavior)</li>
+<li>"Người chồng tỉnh táo" cho vợ</li>
+</ul>
+<h3>Tránh kích hoạt danh tính cũ</h3>
+<ul>
+<li>Quần áo cũ có mùi thuốc → giặt sạch hoặc bỏ</li>
+<li>Bao thuốc cũ, gạt tàn, bật lửa → bỏ hết</li>
+<li>Ảnh cũ "đang hút" → cất hộp khoá</li>
+</ul>
+<h2>Phần 4 — Khi nào lo</h2>
+<p>🚨 Đi khám tâm lý nếu:</p>
+<ul>
+<li>Cảm giác "không là mình" kéo > 3 tháng không dịu</li>
+<li>Kèm trầm cảm sâu, ý nghĩ tự hại</li>
+<li>Mất khả năng làm việc / giao tiếp bình thường</li>
+<li>Có dấu hiệu <strong>dissociation</strong> (cảm giác rời khỏi cơ thể, nhìn mình từ ngoài)</li>
+</ul>
+<blockquote>Danh tính shift bình thường = "lạ". Dissociation = "không thật, như mơ" — cần khám.</blockquote>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=khong-la-minh)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Tuần 4 mình cảm giác "không là chính mình" — không biết mình là ai khi không hút. 30 năm mỗi quyết định (uống cà phê, đi WC, đợi tàu) đều kèm điếu thuốc. Cai = mất danh tính.</p>
+<p>Đây là <strong>danh tính shift</strong> — không phải "mất" mà "đổi". Mình không phải "người đang cai thuốc" — mình là "người không hút". Câu này nói nhiều = não tin nhiều. Đến tháng 3, mình thật sự thấy: tôi không hút. Danh tính mới hoàn chỉnh.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi cai 6 tháng vẫn cảm giác lạ — có sao không?</h3></p>
+<p><p>6 tháng dài, có thể là dấu hiệu khác (trầm cảm, anxiety). Khám tâm thần loại trừ.</p></p>
+<p><h3>Vợ tôi nói "anh khác lắm" — tốt hay xấu?</h3></p>
+<p><p>Hỏi cô ấy cụ thể. Đa số 70% nói "tốt hơn" (ấm áp hơn, hiện diện hơn). 30% nói "lạ tạm thời". Sau 3 tháng đa số kết luận tốt hơn.</p></p>
+<p><h3>Tôi sợ "phiên bản mới" sẽ chán hơn?</h3></p>
+<p><p>Người alumni báo ngược lại — cuộc sống có ý nghĩa HƠN sau cai. Cảm xúc rõ ràng hơn, kết nối sâu hơn, năng lượng đều hơn.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=khong-la-minh) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tuần 4 mình cảm giác "không là chính mình" — không biết mình là ai khi không hút. 30 năm mỗi quyết định (uống cà phê, đi WC, đợi tàu) đều kèm điếu thuốc. Cai = mất danh tính.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi cai 6 tháng vẫn cảm giác lạ — có sao không?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=khong-la-chinh-minh">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Đi Cùng Sol</a>. Nguồn: West R & Sohal T (2006). *"Catastrophic" pathways to smoking cai thuốc*. BMJ 332(7539):458-460. · Oyserman D & Destin M (2010). *Danh tính-based motivation*. Couns Psychol 38(7):1001-1043. · West R (2017). *Tobacco smoking: Health impact, prevalence, correlates and interventions*. Psychol Health 32(8):1018-1036.
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

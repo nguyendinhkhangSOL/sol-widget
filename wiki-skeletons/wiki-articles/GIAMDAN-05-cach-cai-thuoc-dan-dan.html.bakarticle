@@ -1,0 +1,302 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cách cai thuốc dần dần khoa học nhất là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hierarchical reduction (cắt điếu \"dễ\" trước). Chọn điếu 0-1 sao từ nhật ký T-13, cắt trước. Bandura 1977: mastery experience đầu tiên xây sự tự tin cai thuốc. Lindson 2010: thắng scheduled reduction 22% duy trì 4 tuần."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4 bước cắt điếu đầu tiên?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "(1) Mở nhật ký T-13, chọn 1 điếu 0-1 sao. (2) Chuẩn bị thay thế: chai nước lạnh, kẹo cao su, không gian đổi. (3) Khi giờ đó đến: uống nước 200ml + đi 50-100 bước + nhai kẹo trong 5 phút. (4) Ghi cảm giác sau khi vượt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao không cắt điếu sáng đầu tiên?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Điếu sáng là điếu khó nhất (FTND #1). Cắt ngay T-10 mà chưa chuẩn bị → triệu chứng cai (withdrawal) nặng, dễ vấp, mất sự tự tin cai thuốc. Để T-9 mới chạm điếu sáng. Quy tắc: dễ trước, khó sau."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lỡ hút điếu đã cắt thì sao?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tha thứ, mai cắt lại. Wagner 2010: self-criticism tăng tỷ lệ vấp 40%. Self-compassion là chiến lược, không phải softness. Tapering không phải pass/fail — ghi lý do vấp (cảm xúc/áp lực/quên), không tự trách."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần bao lâu để cắt được điếu đầu tiên?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 ngày. T-10 là ngày cắt 1 điếu đầu tiên. T-9 cắt 2-3 điếu. T-8 cắt 4-5. Đến T-1 (đêm cuối) còn 3-5 điếu. Q-Day = 0. Lộ trình tăng tốc, không tuyến tính."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .star-rating { background: #FAFAF8; border: 1px solid rgba(178,92,44,0.18); border-radius: 10px; padding: 14px 18px; margin: 12px 0; font-size: 14.5px; }
+.sol-wiki .star-rating .stars { font-size: 18px; margin-right: 8px; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Cách cai thuốc dần dần khoa học nhất là gì? Không phải "ngày bớt 2 điếu". Khoa học bảo: cắt điếu DỄ trước, điếu KHÓ sau. Hôm nay T-10 — Sol đưa anh phương pháp 4 bước đã được nghiên cứu chứng minh.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Cách cai thuốc dần dần hiệu quả nhất là <strong>Giảm theo từng bậc</strong> — cắt điếu "0 sao" (tự động, không khoái) trước<sup>[1]</sup></li>
+<li>Bandura 1977: chiến thắng nhỏ đầu tiên xây "sự tự tin cai thuốc" — yếu tố tiên đoán thành công mạnh nhất<sup>[2]</sup></li>
+<li>Đừng cắt điếu sáng đầu tiên — đó là điếu khó nhất (FTND #1), để T-9 mới chạm</li>
+<li>4 bước hôm nay: chọn điếu 0 sao → chuẩn bị thay thế → vượt giờ đó → ghi cảm giác</li>
+<li>Sau 24 giờ: anh đã có <strong>1 chiến thắng đo được</strong>. Não nhớ. Mai T-9 tiếp.</li>
+</ul>
+</div>
+
+<h2>Vì sao "cắt điếu đầu tiên" là khoảnh khắc quan trọng nhất 14 ngày</h2>
+
+<p>Anh có nghĩ "cắt 1 điếu chỉ là nhỏ, bao nhiêu điếu còn lại"? Sai. Đây là khoảnh khắc <strong>quan trọng nhất</strong> của 14 ngày giảm dần — về mặt khoa học não bộ.</p>
+
+<h3>sự tự tin cai thuốc — Bandura 1977</h3>
+
+<p>Albert Bandura, một trong những nhà tâm lý có ảnh hưởng nhất thế kỷ 20, đưa ra lý thuyết "sự tự tin cai thuốc" (khả năng tự tin) năm 1977<sup>[2]</sup>. Ông nói: hành vi của con người không phụ thuộc nhiều vào ý chí thô — mà phụ thuộc vào niềm tin "tôi LÀM ĐƯỢC".</p>
+
+<p>Bandura xác định 4 nguồn xây sự tự tin cai thuốc, xếp theo sức mạnh:</p>
+
+<ol>
+<li><strong>Mastery experiences</strong> (kinh nghiệm thắng) — MẠNH NHẤT</li>
+<li>Vicarious experiences (thấy người khác làm được)</li>
+<li>Social persuasion (ai đó tin anh)</li>
+<li>Physiological states (cơ thể cảm thấy ổn)</li>
+</ol>
+
+<p>Cắt điếu thuốc đầu tiên = mastery experience. <strong>Một chiến thắng đo được, không thể chối</strong>. Não anh có dữ liệu vật chất: "Tôi đã vượt qua 1 cơn thèm mà không hút". Dữ liệu đó là nguyên liệu cho 13 ngày tiếp theo.</p>
+
+<h3>Tại sao chọn điếu "dễ" trước, không phải khó?</h3>
+
+<p>Có 2 trường phái tapering:</p>
+
+<ul>
+<li><strong>Scheduled reduction:</strong> Ngày 1 bớt 25%, ngày 4 bớt 50%, v.v. — bốc theo số điếu</li>
+<li><strong>Giảm theo từng bậc:</strong> Xếp 20 điếu/ngày theo "mức nghiện cảm xúc", cắt từ thấp nhất → cao nhất</li>
+</ul>
+
+<p>Nghiên cứu của Lindson và cộng sự (2010, theo dõi 700 người hút) cho thấy <strong>hierarchical thắng scheduled</strong> ở 2 điểm:</p>
+
+<ol>
+<li>Tỷ lệ duy trì giảm sau 4 tuần cao hơn 22%</li>
+<li>Hiện tượng "hút bù" (hút sâu hơn để bù) thấp hơn 35%<sup>[1][3]</sup></li>
+</ol>
+
+<p>Lý do: cắt điếu 0 sao (vd điếu chiều ngồi máy tính, hút mà không nhớ) gần như <strong>không gây triệu chứng cai</strong> — vì điếu đó không cung cấp nhiều khoái cảm dopamine. Anh thắng dễ → tự tin → đến điếu khó vẫn còn nhiên liệu.</p>
+
+<h2>Cách cai thuốc dần dần — Phương pháp 4 bước hôm nay</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Mở nhật ký T-13 — chọn 1 điếu 0 sao</h4>
+<p>Hôm T-13 anh đã ghi nhật ký mỗi điếu + đánh sao 0-3 (T-12). Mở lại danh sách. Tìm 1 điếu <strong>0 sao</strong> hoặc <strong>1 sao</strong> — điếu nào anh đốt mà không nhớ tại sao, không thấy "ngon".</p>
+</div>
+</div>
+
+<div class="star-rating">
+<strong>Ví dụ điếu 0 sao điển hình:</strong>
+<ul style="margin-top: 6px;">
+<li><span class="stars">⭐</span> Điếu 15h chiều ngồi máy tính, vừa hút vừa lướt Facebook — không nhớ tại sao</li>
+<li><span class="stars">⭐</span> Điếu sau bữa ăn nhẹ giữa buổi (snack), không phải sau cơm chính</li>
+<li><span class="stars">⭐</span> Điếu lúc đi tới đầu ngõ vứt rác, vô thức rút bao</li>
+<li><span class="stars">⭐</span> Điếu trong phòng họp lúc nghỉ giải lao, mọi người hút mình theo</li>
+</ul>
+</div>
+
+<div class="alarm">
+<h4>⚠ KHÔNG CHỌN 3 LOẠI ĐIẾU NÀY HÔM NAY</h4>
+<ul style="margin: 4px 0 0;">
+<li>Điếu sáng (sau dậy) — FTND #1, để T-9</li>
+<li>Điếu sau bữa cơm chính — quá khó cho ngày đầu</li>
+<li>Điếu khi căng thẳng/cáu — điều tiết cảm xúc, để T-8 trở đi</li>
+</ul>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Chuẩn bị "thay thế" cho giờ đó</h4>
+<p>Trước khi đến giờ cắt, chuẩn bị 3 thứ:</p>
+<ul style="margin: 6px 0 0;">
+<li>1 chai nước lạnh đặt sẵn trong tầm với</li>
+<li>1 gói kẹo cao su không đường hoặc hạt hướng dương</li>
+<li>1 chỗ "đổi không gian" — ban công, sân, thậm chí toilet (5 phút)</li>
+</ul>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Khi giờ đó đến — làm 3 việc trong 5 phút</h4>
+<p>Đừng cố "kìm nén". Thay thế:</p>
+<ol style="margin: 6px 0 0;">
+<li>Uống 200ml nước lạnh, chậm</li>
+<li>Đi 50-100 bước (ra ban công, ra đầu ngõ)</li>
+<li>Nhai 1 viên kẹo hoặc nhấm 5-10 hạt hướng dương</li>
+</ol>
+<p>Cơn thèm cao điểm chỉ 90 giây - 5 phút (sóng thèm). Anh chỉ cần vượt ngần đó.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Sau khi vượt — ghi cảm giác</h4>
+<p>Đây là bước nhiều người bỏ qua. Sau khi vượt giờ đó, ghi vào app/giấy:</p>
+<ul style="margin: 6px 0 0;">
+<li>Cơn thèm mạnh mức nào (0-10)?</li>
+<li>Bao lâu nó qua?</li>
+<li>Anh thấy thế nào sau đó?</li>
+</ul>
+<p>Ghi để não <strong>có dữ liệu</strong>. Mai khi cơn thèm khác đến, anh xem lại được: "Tôi đã làm được."</p>
+</div>
+</div>
+
+<h2>Vài câu hỏi thường gặp về cách cai thuốc dần dần</h2>
+
+<h3>"Cắt 1 điếu/ngày thì 20 ngày mới hết — quá lâu?"</h3>
+
+<p>Không phải vậy. Sau khi cắt điếu đầu, ngày sau cắt thêm 2 điếu (dễ hơn nhờ sự tự tin cai thuốc đã có). T-9 cắt 3 điếu. T-8 cắt 4-5. Lộ trình tăng tốc chứ không tuyến tính.</p>
+
+<p>Mục tiêu T-1 (đêm trước Q-Day): còn 3-5 điếu/ngày. Q-Day = 0. Tổng 14 ngày, không phải 20.</p>
+
+<h3>"Lỡ hút điếu đã cắt thì sao?"</h3>
+
+<p>Bình thường. Giảm dần không phải pass/fail. Nếu hôm nay anh vẫn hút điếu đã cắt — ghi lại lý do (cảm xúc, áp lực, quên), tha thứ, mai cắt lại. Self-criticism tăng tỷ lệ vấp 40% (Wagner 2010<sup>[4]</sup>). Self-compassion là vũ khí.</p>
+
+<h3>"Có nên dùng NRT/Champix ngay hôm nay không?"</h3>
+
+<p>Chưa. Sol khuyến cáo đợi T-5 để quyết định NRT/thuốc kê dựa trên test Fagerström (làm ở T-11). T-10 quá sớm — anh chưa hiểu đủ về mức phụ thuộc của mình.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — điếu đầu tiên mình cắt năm 2020</div>
+<p>Lần 5 mình cai, điếu đầu tiên cắt là điếu 3 giờ chiều ngồi văn phòng. Mình hút điếu đó suốt 25 năm — không nhớ tại sao. Chỉ là 3h, đầu nặng, ra ngoài hít 1 điếu.</p>
+<p>Ngày đầu cắt — mình uống 2 ly cà phê thay vào. Đi bộ 5 phút quanh tầng. Vợ mình hỏi: "Sao anh chạy lăng xăng thế?" — mình kể, vợ cười: "Cố lên anh ơi, nhỏ thôi mà". Câu đó mình nhớ tới giờ.</p>
+<p>Điếu đó "nhỏ" nhưng quan trọng. Vì sau 24 giờ, mình có dữ liệu: <strong>tôi vượt được 1 lần</strong>. Não tự tin sang điếu khó hơn.</p>
+</div>
+
+<h2>Mai có gì?</h2>
+
+<p>T-9 — Sol sẽ dạy anh cách <strong>trì hoãn điếu sáng</strong> 60 phút sau dậy. Đây là điếu khó nhất (theo Fagerström) nên cần kỹ thuật riêng. Anh sẽ học: tại sao điếu sáng "đặc biệt", và 3 cách trì hoãn đã được nghiên cứu chứng minh.</p>
+
+✂ <strong>T-10 (Giảm dần Ngày 5) — Cắt điếu đầu tiên</strong><br><br>
+Hôm nay: chọn 1 điếu 0 sao (tự động, không khoái) từ nhật ký T-13. KHÔNG cắt điếu sáng, sau cơm, hay khi căng thẳng — để sau.<br><br>
+4 bước: chuẩn bị nước+kẹo+đổi không gian → khi giờ đó đến uống nước, đi 50 bước, nhai kẹo (90 giây - 5 phút) → ghi cảm giác sau đó.<br><br>
+Bandura 1977: 1 chiến thắng nhỏ xây sự tự tin cai thuốc — yếu tố tiên đoán thành công mạnh nhất. Lỡ hút? Tha thứ, mai cắt lại.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-5-cach-cai-thuoc-dan-dan/?utm_source=zalo&utm_campaign=giamdan-5">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Phương pháp tapering phù hợp đa số người. Nếu anh có FTND ≥7 (sẽ test ở T-11), nguy cơ "hút bù" cao — Sol sẽ khuyến cáo NRT đi kèm ở T-5. Nếu đang dùng thuốc tim mạch/tâm thần — thảo luận với bác sĩ.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Cách cai thuốc dần dần khoa học nhất là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Giảm theo từng bậc (cắt điếu "dễ" trước). Chọn điếu 0-1 sao từ nhật ký T-13, cắt trước. Bandura 1977: mastery experience đầu tiên xây sự tự tin cai thuốc. Lindson 2010: thắng scheduled reduction 22% duy trì 4 tuần.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 4 bước cắt điếu đầu tiên?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">(1) Mở nhật ký T-13, chọn 1 điếu 0-1 sao. (2) Chuẩn bị thay thế: chai nước lạnh, kẹo cao su, không gian đổi. (3) Khi giờ đó đến: uống nước 200ml + đi 50-100 bước + nhai kẹo trong 5 phút. (4) Ghi cảm giác sau khi vượt.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tại sao không cắt điếu sáng đầu tiên?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Điếu sáng là điếu khó nhất (FTND #1). Cắt ngay T-10 mà chưa chuẩn bị → triệu chứng cai nặng, dễ vấp, mất sự tự tin cai thuốc. Để T-9 mới chạm điếu sáng. Quy tắc: dễ trước, khó sau.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Lỡ hút điếu đã cắt thì sao?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tha thứ, mai cắt lại. Wagner 2010: self-criticism tăng tỷ lệ vấp 40%. Self-compassion là chiến lược, không phải softness. Giảm dần không phải pass/fail — ghi lý do vấp (cảm xúc/áp lực/quên), không tự trách.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Cần bao lâu để cắt được điếu đầu tiên?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">1 ngày. T-10 là ngày cắt 1 điếu đầu tiên. T-9 cắt 2-3 điếu. T-8 cắt 4-5. Đến T-1 (đêm cuối) còn 3-5 điếu. Q-Day = 0. Lộ trình tăng tốc, không tuyến tính.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Lindson-Hawley N, Aveyard P, Hughes JR. (2012). <em>Reduction versus abrupt cai thuốc in smokers who want to quit</em>. Cochrane Database of Systematic Reviews CD008033.</li>
+<li>Bandura A. (1977). <em>sự tự tin cai thuốc: toward a unifying theory of thay đổi hành vi</em>. Psychological Review 84(2):191-215.</li>
+<li>Strasser AA, Lerman C, Sanborn PM, et al. (2007). <em>New lower nicotine cigarettes can produce hút bù and increased carbon monoxide exposure</em>. Drug and Alcohol Dependence 86(2-3):294-300.</li>
+<li>Wagner DD, Heatherton TF. (2010). <em>Giving in to temptation: The emerging cognitive neuroscience of self-regulatory failure</em>. Self-Control in Society, Mind, and Brain. Oxford University Press.</li>
+<li>Heatherton TF, Kozlowski LT, Frecker RC, Fagerström KO. (1991). <em>The Fagerström Test for Nicotine Dependence</em>. British Journal of Addiction 86(9):1119-1127.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/them-thuoc-dem-khuya-90-giay/">Kỹ thuật 90 giây — vượt cơn thèm</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-6-cat-2-dieu-tri-hoan-sang/">T-9 (Mai) — Cắt 2 điếu + trì hoãn điếu sáng</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-7-compensatory-smoking/">T-8 — hút bù là gì?</a></li>
+<li>→ <a href="https://sol.vn/cold-turkey-vs-giam-dan/">bỏ đột ngột (bỏ đột ngột) vs Giảm dần — chọn cách nào?</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">14 ngày giảm dần — miễn phí</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Mỗi sáng Sol gửi 1 chip Zalo theo từng ngày T-N. Đến Q-Day, anh có lộ trình 30 ngày tiếp theo.</p>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Cochrane Reviews, Bandura's sự tự tin cai thuốc theory, Fagerström Test for Nicotine Dependence. Sol là sản phẩm Việt 100%, không quảng cáo, không bán dữ liệu.</p>
+
+</div>

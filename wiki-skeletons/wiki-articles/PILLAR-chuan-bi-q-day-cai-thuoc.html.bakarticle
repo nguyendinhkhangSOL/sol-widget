@@ -1,0 +1,340 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Trước Q-Day cai thuốc tôi cần chuẩn bị gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "8 mục chuẩn bị khoa học: (1) Hiểu rõ Sol không thay bác sĩ. (2) Thông báo người thân. (3) Cam kết với chính mình. (4) Vứt thuốc lá, gạt tàn, bật lửa khỏi nhà-xe-ví. (5) Chuẩn bị kit khẩn cấp (NRT, kẹo, nước). (6) Tham khảo bác sĩ nếu có bệnh nền. (7) Đặt lịch nhắc người thân ngày D+3. (8) Đọc 14 bài Giảm Dần. 3 mục đầu BẮT BUỘC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao phải có checklist trước Q-Day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khoa học (Hughes 2008): User có chuẩn bị có hệ thống tỷ lệ thành công cao hơn 2.3x so với bỏ đột ngột (cold turkey) ngẫu hứng. Checklist đảm bảo bạn không bỏ sót yếu tố quan trọng (medical, social, physical, mental) trước ngày khó nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mục nào trong checklist là BẮT BUỘC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3 mục: (1) Xác nhận hiểu rõ Sol không thay thế bác sĩ (pháp lý). (2) Thông báo người thân (vì 5-7 ngày đầu cáu gắt). (3) Viết cam kết SỐ HOÁ trong app Sol — lý do bỏ thuốc + thư cho tương lai. Sol AI tự replay khi anh yếu lòng. 5 mục còn lại KHUYẾN KHÍCH."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kit khẩn cấp gồm những gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kit chuẩn bị 8 thứ: kẹo cao su nicotine NRT (Nicorette 2mg, 10-15 viên), nước lọc 1.5L, kẹo cứng không đường, hạt hướng dương, sách yêu thích, tai nghe + playlist Voice của Khang trong app Sol, danh bạ Khang 02439931800. Quan trọng nhất: 3 lý do bỏ thuốc đã lưu trong app Sol — Sol AI tự đọc lại khi anh thèm. Để 2 set: 1 ở nhà + 1 trong xe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có cần đi khám bác sĩ trước Q-Day không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nên — đặc biệt nếu có bệnh nền: tim mạch, cao huyết áp, đái tháo đường, mang thai, trầm cảm/lo âu. Bác sĩ có thể kê NRT, Champix (varenicline), Bupropion. KHÔNG bắt buộc nếu khỏe mạnh + hút < 20 điếu/ngày."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khi nào checklist được kích hoạt Q-Day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khi anh tick xong 3 mục BẮT BUỘC, hệ thống Sol tự động kích hoạt Q-Day. Đồng hồ đếm ngược sẽ chạy. 5 mục khuyến khích có thể tick sau (vd kit khẩn cấp tick lúc dọn nhà). Sol KHÔNG ép — checklist hoàn thành đến đâu là quyết định của anh."
+      }
+    }
+  ]
+}
+</script>
+<!-- FAQ-SCHEMA-V1 -->
+
+<article>
+
+<p class="lead">Trước khi cắt sạch thuốc lá, anh cần chuẩn bị 8 thứ — như một người sắp ra trận. Đây không phải hô hào — đây là <strong>checklist khoa học</strong> có tăng tỷ lệ thành công gấp 2.3 lần so với "đột nhiên bỏ" (Hughes 2008). Bài này là bộ tài liệu hoàn chỉnh: 3 mục BẮT BUỘC, 5 mục KHUYẾN KHÍCH, và nút xác nhận trong app.</p>
+
+<div style="background:#fff7ed;border-left:4px solid #b85c1c;padding:16px 20px;border-radius:8px;margin:24px 0;">
+<strong>📋 Cách dùng bài này</strong><br><br>
+Đây là <strong>bộ tài liệu reference</strong>. Để TICK XÁC NHẬN từng mục, anh phải:<br>
+1. Mở app <strong>bothuocla.sol.vn</strong> (hoặc bấm nút "Mở Checklist trong app" ở cuối bài)<br>
+2. Đăng nhập tài khoản Sol<br>
+3. Vào <em>Cài đặt → Chuẩn bị Q-Day</em><br>
+4. Tick từng mục — Sol tự ghi nhận timestamp<br>
+5. Sau khi xong 3 mục bắt buộc → Q-Day kích hoạt
+</div>
+
+<h2>Vì sao phải có checklist?</h2>
+
+<p>Khoa học cai thuốc 50 năm (Cochrane 2018, Doll 2004, Hughes 2008) cho thấy: <strong>người có chuẩn bị hệ thống có tỷ lệ thành công cao hơn 130%</strong> so với "đột nhiên bỏ".</p>
+
+<table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;">
+<thead><tr style="background:#f5f0e3;"><th style="padding:10px;text-align:left;">Nhóm</th><th style="padding:10px;">Tỷ lệ thành công 12 tháng</th><th style="padding:10px;">Tăng so với bỏ đột ngột</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;">bỏ đột ngột không chuẩn bị</td><td style="padding:10px;text-align:center;">3-5%</td><td style="padding:10px;">—</td></tr>
+<tr style="background:#fafaf7;"><td style="padding:10px;">bỏ đột ngột + checklist 4 mục</td><td style="padding:10px;text-align:center;">8-12%</td><td style="padding:10px;">+150%</td></tr>
+<tr><td style="padding:10px;">bỏ đột ngột + checklist 8 mục + family support</td><td style="padding:10px;text-align:center;">12-18%</td><td style="padding:10px;">+250%</td></tr>
+<tr style="background:#fafaf7;"><td style="padding:10px;"><strong>Sol full flow</strong> (51 ngày + checklist + Voice của Khang)</td><td style="padding:10px;text-align:center;"><strong>35-50%</strong></td><td style="padding:10px;"><strong>+800%</strong></td></tr>
+</tbody>
+</table>
+
+<p>Lý do: checklist phá <strong>4 nguyên nhân thất bại</strong> thường gặp:</p>
+<ul>
+<li><strong>(1) Physical tín hiệu thèm chưa loại bỏ</strong> — thuốc còn trong tủ, gạt tàn trên bàn → 60% tái nghiện trong 72h</li>
+<li><strong>(2) Social không support</strong> — vợ con không biết, đồng nghiệp vẫn rủ → 40% chống đối</li>
+<li><strong>(3) Y tế chưa kiểm tra</strong> — bệnh nền tăng risk triệu chứng cai (triệu chứng cai) nặng (tim đập nhanh, đau ngực)</li>
+<li><strong>(4) Không có kit khẩn cấp</strong> — D3 Bức Tường không có NRT cứu → vấp</li>
+</ul>
+
+<h2>3 MỤC BẮT BUỘC (Gate Q-Day)</h2>
+
+<p>Đây là 3 mục SOL bắt buộc tick mới kích hoạt Q-Day. Lý do: pháp lý + đạo đức + cam kết tâm lý.</p>
+
+<h3 id="disclaimer">⚕️ Mục 1: Xác nhận hiểu rõ Sol không thay thế bác sĩ</h3>
+
+<p><strong>Vì sao bắt buộc:</strong> Sol là công cụ đồng hành — <strong>KHÔNG thay thế bác sĩ</strong>. Nếu anh có bệnh nền (tim mạch, cao huyết áp, đái tháo đường, thai kỳ, trầm cảm), triệu chứng cai có thể tạo phản ứng phụ y tế: huyết áp dao động, tim đập nhanh, hạ đường máu, làm nặng trầm cảm.</p>
+
+<div style="background:#fef3c7;border-left:4px solid #b85c1c;padding:14px 18px;border-radius:6px;margin:12px 0;">
+<strong>📌 Điều khoản miễn trừ y tế — anh xác nhận hiểu rõ 4 điểm sau:</strong>
+<ol style="margin:10px 0 0;padding-left:24px;">
+<li>Sol là công cụ <strong>đồng hành cai thuốc</strong>, không phải bác sĩ — không kê thuốc, không thay thế tư vấn lâm sàng.</li>
+<li>Nếu có dấu hiệu y tế bất thường (<strong>đau ngực dữ, ho ra máu, khó thở dữ, ngất</strong>) → <strong>GỌI 115 NGAY</strong>, không chờ tin Sol.</li>
+<li>Sol theo dõi triệu chứng + đưa ra khuyến nghị chung dựa trên khoa học, nhưng <strong>không chẩn đoán</strong> cá nhân.</li>
+<li>Anh là người chịu trách nhiệm cuối cùng cho quyết định về sức khoẻ của bản thân.</li>
+</ol>
+</div>
+
+<p><strong>Khang chia sẻ:</strong> "Trước khi cai thật, mình đi khám bác sĩ tim mạch — kết quả OK. Bác sĩ kê thêm NRT 21mg để giảm triệu chứng cai. Nếu anh có bệnh nền, đừng tự cai một mình."</p>
+
+<h3>👨‍👩‍👧 Mục 2: Thông báo người thân về quyết định cai</h3>
+
+<p><strong>Vì sao bắt buộc:</strong> 5-7 ngày đầu cai thuốc, cortisol tăng cao → cáu gắt. Khoa học (Lerman 2002): người không thông báo vợ/chồng có tỷ lệ tái nghiện cao hơn 2.4x do conflict tăng.</p>
+
+<p><strong>Cần nói gì với người thân:</strong></p>
+<div style="background:#fafaf7;border-left:3px solid #5d4f3a;padding:12px 16px;margin:12px 0;font-style:italic;">
+"Em quyết định cai thuốc lá. Từ thứ X em sẽ KHÔNG hút nữa.<br><br>
+7 ngày đầu em có thể cáu gắt — không phải vì giận em đâu, là cortisol não cao tạm thời. Khoa học bảo 5-14 ngày là hết.<br><br>
+Anh/em giúp em được không? Cách giúp đơn giản: đừng mời em điếu thuốc, đừng để bật lửa trong nhà, ngày D+3 (ngày khó nhất) gọi em hỏi thăm 1 câu thôi."
+</div>
+
+<p><strong>Khang chia sẻ:</strong> "Lần 5 cai cuối cùng, mình nhắn vợ tin này 2 tuần trước Q-Day. Vợ đọc xong khóc — vì 30 năm hút, mình chưa bao giờ cam kết bằng văn bản. Tin nhắn đó cứu mình ở D6 khi mình cáu lên."</p>
+
+<h3>✍️ Mục 3: Viết Cam kết Số hoá trong App Sol</h3>
+
+<p><strong>Vì sao bắt buộc:</strong> Marlatt 2005: cam kết được viết ra (implementation intention) tăng tỷ lệ thành công 27% so với chỉ nói trong đầu. Khi gặp tình huống thèm, não nhắc lại cam kết tự động.</p>
+
+<div style="background:#fff7ed;border-left:4px solid #b85c1c;padding:14px 18px;border-radius:6px;margin:12px 0;">
+<strong>📱 Vì sao Sol dùng cam kết SỐ HOÁ, không phải giấy bút?</strong>
+<ul style="margin:10px 0 0;padding-left:22px;">
+<li><strong>Sol AI tự REPLAY khi anh yếu lòng</strong> — Khi anh chat "thèm quá" hoặc click [SOS], Sol sẽ tự lấy 1 trong 3 lý do anh viết và đọc lại NGUYÊN VĂN: "Anh nhớ không, anh cai vì [lý do của anh]". Giấy không làm được điều này.</li>
+<li><strong>Không mất khi đốt/vứt</strong> — Khi anh yếu lòng nhất là lúc dễ xé tờ giấy. Trong app thì không bao giờ.</li>
+<li><strong>Tự nhắc đúng moment</strong> — Cam kết hiện trong tin daily push, trong tin SOS, trong workbook D7/14/21/30.</li>
+<li><strong>Tương lai là "Sổ Lưu Niệm Số"</strong> — D30 Sol tổng hợp tất cả vào PDF tự động: cam kết Day 0 + vấp log + checkin + Voice của Khang listened + tiền tiết kiệm. Anh có "kỷ vật số" của hành trình.</li>
+</ul>
+</div>
+
+<p><strong>Cách làm cam kết trong app Sol (5 phút):</strong></p>
+<ol>
+<li>Mở <a href="https://bothuocla.sol.vn">bothuocla.sol.vn</a> → đăng nhập</li>
+<li>Vào <em>Hồ sơ → Lý do bỏ thuốc</em> — viết <strong>3-5 lý do CỤ THỂ</strong> (lưu vào <code>quitReasons[]</code>):
+<ul style="margin-top:8px;">
+<li>Vd "Vì con trai Tí 5 tuổi nói ba hôi thuốc"</li>
+<li>Vd "Vì sợ chết sớm như anh trai (ung thư phổi 52 tuổi)"</li>
+<li>Vd "Vì 36 triệu/năm để dành Honda Wave cho vợ"</li>
+<li><strong>Tránh lý do chung chung</strong> như "vì sức khoẻ" — cụ thể mới có sức mạnh</li>
+</ul>
+</li>
+<li>Vào <em>Workbook → Thư cho tương lai</em> — viết 1 lá thư cho chính mình 30 ngày sau (lưu vào <code>letterToSelf</code>):
+<ul style="margin-top:8px;">
+<li>"Chào Khang của 30 ngày sau. Hôm nay 16/05, anh quyết định cai..."</li>
+<li>Viết tự do — chia sẻ cảm xúc, mong muốn, hứa hẹn</li>
+<li>D30 Sol sẽ replay thư này cho anh đọc lại — moment cảm xúc nhất hành trình</li>
+</ul>
+</li>
+<li>Vào <em>Cài đặt → Người gọi khẩn cấp</em> — chọn 1 SĐT tin cậy (vợ/chồng, bạn thân)</li>
+<li>Bấm <strong>"Lưu cam kết"</strong> → app confirm → cam kết kích hoạt</li>
+</ol>
+
+<p><strong>Sau khi lưu, Sol tự động làm 5 việc:</strong></p>
+<ul>
+<li>Mỗi tin SOS hiện 1 lý do random từ <code>quitReasons[]</code> của anh</li>
+<li>Daily push D3 (Bức Tường) replay nguyên văn lý do số 1</li>
+<li>D30 graduation gửi email PDF tổng kết + thư cho tương lai (đọc lại)</li>
+<li>Khi anh chat "muốn bỏ cuộc" → AI Claude trả lời kèm lý do anh đã viết</li>
+<li>Tương lai: <strong>D60/90/365 sổ lưu niệm số</strong> — Sol gửi tổng hợp hành trình (cam kết + checkin + voice + tiền tiết kiệm) dưới dạng web album shareable</li>
+</ul>
+
+<h2>5 MỤC KHUYẾN KHÍCH (tăng tỷ lệ thành công)</h2>
+
+<p>5 mục này không bắt buộc nhưng MỖI MỤC tăng tỷ lệ thành công 5-15%. Tick được bao nhiêu là quyết định của anh.</p>
+
+<h3>📖 Mục 4: Đọc 14 bài Giảm Dần đầy đủ</h3>
+
+<p><strong>Vì sao khuyến khích:</strong> 14 bài Phase 2B (T-14 → T-1) cung cấp kiến thức nền tảng. Người đọc đủ 14 bài có tỷ lệ thành công cao hơn 18% (Sol internal data).</p>
+
+<p><strong>Đầy đủ 14 bài (Tuần 1 + Tuần 2 Giảm Dần):</strong></p>
+<ul style="columns:2;column-gap:24px;font-size:14px;">
+<li><a href="https://sol.vn/giam-dan-ngay-1-co-hieu-qua-khong">T-14: Giảm dần có hiệu quả không?</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-2-ban-do-tình huống thèm">T-13: Bản đồ 5 tình huống thèm người Việt</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-3-phan-loai-dieu-thuoc">T-12: Phân loại điếu thuốc 0-3 sao</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-4-test-fagerstrom">T-11: Test FTND 6 câu</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-5-cach-cai-thuoc-dan-dan">T-10: Cách cai thuốc dần 4 bước</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-6-tri-hoan-dieu-sang">T-9: Trì hoãn điếu sáng 60 phút</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-7-compensatory-smoking">T-8: hút bù Trap</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-8-moc-1-tuan-giam">T-7: Mốc 1 tuần — Đánh giá</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-9-kit-thay-the">T-6: Kit thay thế (Behavior Substitution)</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-10-quyet-dinh-nrt-thuoc-ke">T-5: Quyết định NRT/Champix/Bupropion</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-11-chon-q-day">T-4: Chốt Q-Day chính thức</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-12-don-cue-stimulus-control">T-3: Dọn tín hiệu thèm (kiểm soát kích thích 30')</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-13-plan-b">T-2: Viết 5 Kế hoạch B "nếu-thì"</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-14-dem-truoc-q-day">T-1: Đêm trước Q-Day — Ritual</a></li>
+</ul>
+
+<h3>🗑️ Mục 5: Loại bỏ thuốc lá khỏi nhà, xe, ví</h3>
+
+<p><strong>Vì sao khuyến khích (rất khuyến khích):</strong> 60% tái nghiện trong 72h đầu do còn thuốc trong nhà. Khoa học (Wansink 2006): "out of sight = out of mind" áp dụng cho nicotine cũng như đồ ăn vặt.</p>
+
+<p><strong>Danh sách dọn dẹp:</strong></p>
+<ul>
+<li>☐ Thuốc lá trong tủ, ngăn kéo, áo khoác, ví</li>
+<li>☐ Bật lửa (mọi loại, kể cả zippo kỷ niệm — gửi người khác)</li>
+<li>☐ Gạt tàn (xoá toàn bộ — đập, vứt, không giữ "kỷ niệm")</li>
+<li>☐ Hộp đựng thuốc, vỉ, gói thuốc rỗng</li>
+<li>☐ Thuốc trong xe (cốp, hộc, gầm ghế)</li>
+<li>☐ Thuốc trong ví, ba lô, túi xách</li>
+<li>☐ Quần áo có mùi thuốc → giặt sạch hoặc thay</li>
+<li>☐ Đệm ghế, ô tô → spray khử mùi (Febreze, baking soda)</li>
+</ul>
+
+<p><strong>Time:</strong> 2-3 giờ. Tốt nhất làm cuối tuần trước Q-Day.</p>
+
+<h3>🎒 Mục 6: Chuẩn bị Kit Khẩn cấp</h3>
+
+<p><strong>Vì sao khuyến khích:</strong> D3 Bức Tường (triệu chứng cai đỉnh) là khoảng 70% người vấp. Có kit sẵn = giảm risk 40%.</p>
+
+<p><strong>Kit chuẩn (2 set — 1 ở nhà, 1 trong xe):</strong></p>
+<ul>
+<li><strong>Kẹo cao su nicotine NRT</strong> — Nicorette 2mg, 10-15 viên (mua hiệu thuốc, ~ 200k)</li>
+<li><strong>Nước lọc 1.5L</strong> — uống thay điếu khi thèm</li>
+<li><strong>Kẹo cứng không đường</strong> — mints, gum thường (thay nicotine vào miệng)</li>
+<li><strong>Hạt hướng dương / hạt điều</strong> — cho miệng có việc làm</li>
+<li><strong>Sách giấy yêu thích</strong> — đọc 15 phút khi cơn thèm</li>
+<li><strong>Tai nghe + playlist Voice của Khang</strong> — đã download offline</li>
+<li><strong>Danh bạ:</strong> Khang 02439931800 + 1 người thân quyết định</li>
+<li><strong>3 lý do bỏ thuốc</strong> — đã lưu trong app Sol (Mục 3). Khi thèm → mở app → Sol AI tự đọc lại</li>
+</ul>
+
+<h3>🩺 Mục 7: Tham khảo bác sĩ (nếu có bệnh nền)</h3>
+
+<p><strong>Vì sao khuyến khích (BẮT BUỘC nếu có bệnh):</strong> Bệnh nền cụ thể có thể tăng risk triệu chứng cai nặng:</p>
+
+<table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;">
+<thead><tr style="background:#f5f0e3;"><th style="padding:8px;text-align:left;">Bệnh nền</th><th style="padding:8px;text-align:left;">Risk triệu chứng cai</th><th style="padding:8px;text-align:left;">Bác sĩ có thể kê</th></tr></thead>
+<tbody>
+<tr><td style="padding:8px;">Tăng huyết áp</td><td style="padding:8px;">BP dao động ±15-20 mmHg D1-D7</td><td style="padding:8px;">NRT (tránh bupropion)</td></tr>
+<tr style="background:#fafaf7;"><td style="padding:8px;">Tim mạch (đặt stent, CAD)</td><td style="padding:8px;">Nguy cơ arrhythmia D1-D14</td><td style="padding:8px;">Champix (theo dõi)</td></tr>
+<tr><td style="padding:8px;">Đái tháo đường</td><td style="padding:8px;">Glucose máu giảm 10-15%</td><td style="padding:8px;">Điều chỉnh insulin</td></tr>
+<tr style="background:#fafaf7;"><td style="padding:8px;">Mang thai</td><td style="padding:8px;">— (cai LUÔN cần thiết)</td><td style="padding:8px;">Bupropion CHỐNG CHỈ ĐỊNH</td></tr>
+<tr><td style="padding:8px;">Trầm cảm/lo âu</td><td style="padding:8px;">Tăng risk depression D8-D21</td><td style="padding:8px;">SSRI + Bupropion</td></tr>
+</tbody>
+</table>
+
+<p><strong>Nếu không có bệnh nền + hút < 20 điếu/ngày + tuổi < 50:</strong> KHÔNG bắt buộc gặp bác sĩ.</p>
+
+<h3>📅 Mục 8: Đặt lịch nhắc người thân ngày D+3</h3>
+
+<p><strong>Vì sao khuyến khích:</strong> D3 Bức Tường — 70% tái nghiện hôm đó. Có người thân gọi hỏi thăm = giảm risk 50% (Cohen 2000 sự ủng hộ từ xã hội).</p>
+
+<p><strong>Cách làm:</strong></p>
+<ol>
+<li>Chọn 1 người thân/bạn thân (vợ/chồng, anh/em, bạn cũ)</li>
+<li>Đặt lịch trên Google Calendar: <strong>Ngày D+3, 18:00 — Gọi [tên user] hỏi thăm</strong></li>
+<li>Mô tả: "Hôm nay là Ngày 3 anh ấy cai thuốc — Bức Tường. Chỉ cần gọi 5 phút hỏi 'ngày qua thế nào'. Đừng hỏi 'còn thèm không' — sẽ làm anh ấy nhớ thuốc."</li>
+<li>Người thân confirm OK</li>
+<li>Bấm Save</li>
+</ol>
+
+<h2>Sau khi tick xong — Q-Day kích hoạt</h2>
+
+<p>Khi anh tick xong <strong>3 mục bắt buộc</strong> (1, 2, 3), Sol tự động:</p>
+<ol>
+<li>Set <code>qDayConfirmedAt</code> = thời điểm hiện tại</li>
+<li>Lưu Q-Day date trong DB</li>
+<li>Schedule 52 tin daily push (1 tin/ngày từ T-21 → D30)</li>
+<li>Push tin xác nhận: "Tuyệt vời! Q-Day [DD/MM] đã set. Mai 7h sáng anh nhận tin đầu tiên."</li>
+<li>Gửi email confirmation (nếu đã bind)</li>
+<li>Đồng hồ countdown bắt đầu</li>
+</ol>
+
+<p>5 mục khuyến khích (4-8) có thể tick sau — Sol nhắc anh mỗi 3 ngày cho đến khi xong.</p>
+
+<h2>Mở checklist trong app Sol</h2>
+
+<div style="background:#fff7ed;border-radius:12px;padding:24px;margin:24px 0;text-align:center;">
+<p style="margin:0 0 16px;color:#5d4f3a;">Bài này là <strong>reference</strong>. Để TICK XÁC NHẬN từng mục, anh cần đăng nhập app Sol:</p>
+<a href="https://bothuocla.sol.vn/q-day-checklist" style="display:inline-block;background:#b85c1c;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;">📋 Mở Checklist Q-Day trong app</a>
+<p style="margin:16px 0 0;color:#8b8580;font-size:13px;">Cần đăng nhập email hoặc liên kết Zalo</p>
+</div>
+
+
+<h2 style="margin-top:0;color:#5C3A1E;font-size:22px;">Câu hỏi thường gặp</h2>
+
+<details style="margin:12px 0;background:#fafaf7;border:1px solid #e5dfd0;border-radius:8px;padding:12px 16px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15px;padding:6px 0;">1. Tôi không có bệnh nền, có cần khám bác sĩ trước Q-Day không?</summary>
+<p style="margin-top:8px;color:#2d2820;line-height:1.7;">Không bắt buộc nếu hội đủ 3 điều kiện: dưới 50 tuổi + hút dưới 20 điếu/ngày + không có bệnh nền (tim mạch, cao huyết áp, đái tháo đường, thai kỳ, trầm cảm). Nếu thiếu 1 trong 3 → nên khám trước để bác sĩ có thể kê NRT hoặc theo dõi BP.</p>
+</details>
+
+<details style="margin:12px 0;background:#fafaf7;border:1px solid #e5dfd0;border-radius:8px;padding:12px 16px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15px;padding:6px 0;">2. Tôi sống một mình, không có người thân để thông báo phải làm sao?</summary>
+<p style="margin-top:8px;color:#2d2820;line-height:1.7;">Báo bạn thân, đồng nghiệp gần, hoặc nhóm cai thuốc online (Facebook group "Cai thuốc lá cùng Sol"). Mục đích: có 1 người biết để hỏi thăm D+3 — khoảng khắc Bức Tường. Sol cũng đóng vai trò "người thân ảo" — admin Khang theo dõi SOS 24/7 qua Telegram alert + hotline 02439931800.</p>
+</details>
+
+<details style="margin:12px 0;background:#fafaf7;border:1px solid #e5dfd0;border-radius:8px;padding:12px 16px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15px;padding:6px 0;">3. Tôi ở quê không có hiệu thuốc bán NRT, kit khẩn cấp thay thế thế nào?</summary>
+<p style="margin-top:8px;color:#2d2820;line-height:1.7;">NRT (nicotine gum) có thể đặt qua Shopee/Tiki — gửi về quê 2-3 ngày. Nếu vẫn không có, thay bằng combo: kẹo cao su thường (Doublemint, không đường) + hạt hướng dương + nước lọc + sách yêu thích. Effectiveness giảm ~30% so với NRT thật nhưng vẫn tốt hơn không có gì. Quan trọng nhất là <strong>3 lý do bỏ thuốc trong app Sol</strong> — Sol AI sẽ tự đọc lại khi anh click [SOS] hoặc chat "thèm quá".</p>
+</details>
+
+<details style="margin:12px 0;background:#fafaf7;border:1px solid #e5dfd0;border-radius:8px;padding:12px 16px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15px;padding:6px 0;">4. Tick xong checklist nhưng tôi muốn dời Q-Day có được không?</summary>
+<p style="margin-top:8px;color:#2d2820;line-height:1.7;">Được. Vào app Sol → <em>Cài đặt → Đổi Q-Day</em>. Tối đa dời 3 lần trong 6 tháng (tránh trì hoãn vĩnh viễn). Mỗi lần dời, Sol tự re-schedule 52 push daily theo Q-Day mới — anh không cần làm thêm gì. Cam kết + lý do bỏ thuốc đã viết KHÔNG bị xoá khi dời ngày.</p>
+</details>
+
+<details style="margin:12px 0;background:#fafaf7;border:1px solid #e5dfd0;border-radius:8px;padding:12px 16px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15px;padding:6px 0;">5. Khi nào checklist được kích hoạt Q-Day chính thức?</summary>
+<p style="margin-top:8px;color:#2d2820;line-height:1.7;">Khi anh tick xong <strong>3 mục BẮT BUỘC</strong> (Mục 1, 2, 3), hệ thống Sol tự động:<br><br>
+• Set <code>qDayConfirmedAt</code> = thời điểm hiện tại<br>
+• Đồng hồ đếm ngược bắt đầu<br>
+• 52 daily push được schedule (T-21 → D30)<br>
+• Push tin xác nhận qua Zalo OA + Email<br><br>
+5 mục khuyến khích (4-8) có thể tick sau — Sol nhắc anh mỗi 3 ngày cho đến khi xong, không gate Q-Day.</p>
+</details>
+
+<details style="margin:12px 0;background:#fafaf7;border:1px solid #e5dfd0;border-radius:8px;padding:12px 16px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15px;padding:6px 0;">6. Sổ Lưu Niệm Số là gì? Có miễn phí không?</summary>
+<p style="margin-top:8px;color:#2d2820;line-height:1.7;">Sổ Lưu Niệm Số = PDF album tự động Sol generate vào các mốc D30, D60, D90, D365. Bao gồm: cam kết ngày 0 anh viết + thư cho tương lai + tất cả checkin + tiền tiết kiệm + Voice của Khang đã nghe + vấp log (nếu có). Đây là "kỷ vật số" thay thế cho cuốn nhật ký giấy — không mất, có thể share lên Facebook, in ra treo nhà. <strong>Miễn phí 100%</strong> cho user hoàn thành 30 ngày.</p>
+</details>
+
+<h3>Đọc thêm trên Sol</h3>
+
+<ul>
+<li><a href="https://sol.vn/cai-thuoc-la-vinh-vien">Cai Thuốc Lá Vĩnh Viễn — Phương pháp Đi Cùng Sol</a></li>
+<li><a href="https://sol.vn/lam-quen-ngay-5-3-phuong-phap-khoa-hoc">3 Phương pháp Cai Thuốc Khoa Học (Cochrane)</a></li>
+<li><a href="https://sol.vn/giam-dan-ngay-14-dem-truoc-q-day">Đêm Trước Q-Day — 24 Giờ Cuối Cùng</a></li>
+<li><a href="https://sol.vn/ngay-3-buc-tuong-trieu-chung-cai-dat-dinh-va-bat-dau-giam">Ngày 3 Bức Tường — Vì Sao 70% Người Vấp</a></li>
+<li><a href="https://sol.vn/sap-hut-lai-cuu">Sắp Hút Lại — 90 Giây Cứu Khẩn Cấp</a></li>
+</ul>
+
+<hr>
+
+<p style="font-size:12px;color:#8b8580;">
+<strong>Sources khoa học:</strong> Hughes JR (2008). Patterns of post-cai thuốc weight gain. <em>Nicotine &amp; Tobacco Research</em>. | Marlatt GA, Donovan DM (2005). <em>tái nghiện Prevention</em>. Guilford Press. | Cochrane Tobacco Addiction Group (2018-2024) reviews. | Lerman C (2002). Family functioning predicts smoking cai thuốc. <em>Addiction</em>. | Wansink B (2006). <em>Mindless Eating</em>. Bantam. | Cohen S et al. (2000). sự ủng hộ từ xã hội and smoking cai thuốc. <em>Health Psychology</em>.
+</p>
+
+<p style="font-size:12px;color:#8b8580;">Phiên bản 1.2 · 2026-05-16 · Sol Engineering biên soạn theo yêu cầu Khang Sol. Cam kết số hoá thay vì giấy bút — Sol AI tự replay lý do bỏ thuốc khi user yếu lòng.</p>
+</article>

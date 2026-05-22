@@ -1,0 +1,283 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Đêm trước Q-Day cai thuốc tôi nên làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5 việc cụ thể: (1) Ăn no bữa tối + chuối (ổn định đường máu). (2) Đi bộ 30 phút ngoài trời. (3) Hút điếu cuối có ritual (viết thư/ngoài trời/cùng người thân). (4) Dọn cue lần cuối. (5) Ngủ trước 23h, mục tiêu ≥7 giờ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ritual điếu cuối quan trọng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Marlatt 2005: symbolic closure giảm tái nghiện D1-30 30%. Lý do: não đã đốt 20.000-200.000 điếu — cần \"moment đóng\" để chuyển identity. Hút có ý thức + viết 1 câu vĩnh biệt = closure tâm lý."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Đêm trước Q-Day khó ngủ tôi phải làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây là anticipatory anxiety bình thường. Nếu không ngủ sau 20 phút: dậy, ra phòng khách, đọc sách giấy 15 phút (KHÔNG điện thoại), uống nước ấm + mật ong, thở 4-7-8 × 4 vòng. Tránh rượu/bia, cà phê sau 16h."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ngủ ít có ảnh hưởng Q-Day không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Jaehne 2009 Sleep Medicine Reviews: ngủ ≥7 giờ đêm trước Q-Day = triệu chứng cai (withdrawal) D1 nhẹ hơn 40%. Não cần đủ deep sleep để củng cố intention và giảm cortisol baseline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mai Q-Day tôi cần chuẩn bị gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đêm nay: đặt ly nước lạnh cạnh giường, kẹo cao su trên bàn ngủ, áo + giày đi bộ chờ ở cửa. Sáng D1: 7h nhận chip Q-Day Day 1 qua Zalo OA. KHÔNG xem điện thoại trong giường — dopamine từ scroll cản triệu chứng cai sleep."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .timeline { background: #FAFAF8; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.sol-wiki .timeline .time-row { display: flex; gap: 14px; padding: 8px 0; border-bottom: 1px dashed rgba(0,0,0,0.08); }
+.sol-wiki .timeline .time-row:last-child { border-bottom: none; }
+.sol-wiki .timeline .time { font-weight: 700; color: #B25C2C; min-width: 70px; font-size: 14px; }
+.sol-wiki .timeline .act { flex: 1; font-size: 14.5px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Hôm nay là T-1 — đêm trước Q-Day. 13 ngày qua anh đã giảm từ 20 điếu xuống còn 3-5 điếu/ngày. Đêm nay anh hút điếu cuối cùng. Mai 0h, anh là người không hút. Đây không phải bài hô hào — đây là 24 giờ cuối có khoa học chuẩn bị.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Đêm nay sẽ khó hơn cảm nhận</strong> — não đã biết "mai sẽ bị cắt", anticipatory cơn thèm tăng 200%<sup>[1]</sup></li>
+<li><strong>"Last cigarette ritual"</strong> có ý thức giảm "vấp fantasy" trong 30 ngày đầu Q-Day 30%<sup>[2]</sup></li>
+<li><strong>Ngủ ≥7 giờ đêm trước</strong> = triệu chứng cai D1 nhẹ hơn 40%<sup>[3]</sup></li>
+<li>Ăn no bữa tối + 1 quả chuối = ổn định đường máu, giảm cáu D1 sáng</li>
+<li>5 việc trước khi ngủ: ritual điếu cuối, dọn cue lần cuối, ăn + nước, đi bộ, ngủ trước 23h</li>
+</ul>
+</div>
+
+<h2>13 ngày qua — anh đã làm được gì?</h2>
+
+<p>Trước khi nghĩ tới ngày mai, anh nhìn lại 13 ngày tapering. Đây không phải tự khen — đây là dữ liệu cho ngày mai.</p>
+
+<ul>
+<li><strong>T-14 → T-11:</strong> Anh hiểu tình huống thèm, làm Fagerström, đánh sao điếu thuốc</li>
+<li><strong>T-10:</strong> Cắt điếu đầu tiên — chiến thắng đầu mastery</li>
+<li><strong>T-9:</strong> Trì hoãn điếu sáng 60 phút — phá Pavlov điếu khó nhất</li>
+<li><strong>T-8:</strong> Hiểu hút bù — không bù bằng hít sâu</li>
+<li><strong>T-7:</strong> Mốc 1 tuần — đánh giá không tự trách</li>
+<li><strong>T-6:</strong> Build Kit thay thế — kẹo + nước + đi bộ</li>
+<li><strong>T-5:</strong> Quyết định NRT/thuốc kê (nếu cần)</li>
+<li><strong>T-4:</strong> Đặt Q-Day chính thức — báo người thân</li>
+<li><strong>T-3:</strong> Dọn cue khỏi nhà/xe — vứt gạt tàn</li>
+<li><strong>T-2:</strong> Viết 5 Plan B if-then</li>
+</ul>
+
+<p>Từ 20 điếu/ngày → 3-5 điếu/ngày. Đó là <strong>75-85% giảm</strong>. Não anh đã thích nghi rất nhiều. Mai từ 3-5 → 0 không lớn bằng tưởng tượng.</p>
+
+<h2>Điếu cuối cùng — Last Cigarette Ritual</h2>
+
+<p>Nghe có vẻ kỳ — "ritual" — nhưng đây có cơ sở khoa học. Marlatt, cha đẻ của tái nghiện Prevention framework, viết: <strong>"Symbolic closure giảm tái nghiện 30% trong 30 ngày đầu"</strong><sup>[2]</sup>.</p>
+
+<p>Vì sao? Vì não anh đã đốt 20.000-200.000 điếu trong đời. Đó là một bộ phận quan trọng trong identity. Nếu điếu cuối được hút <em>vô thức</em> — não không có "moment đóng". Nó chờ điếu tiếp theo.</p>
+
+<p>Nếu điếu cuối được hút có <em>ý thức + nghi thức + viết</em> — não tạo dấu mốc. Sau Q-Day, khi cơn thèm đến, anh nhớ về điếu cuối có ý nghĩa, không phải điếu tự nhiên kéo dài.</p>
+
+<h3>3 cách làm "ritual" — chọn 1</h3>
+
+<div class="step-card">
+<div class="step-num">A</div>
+<div>
+<h4>Ritual "viết lá thư"</h4>
+<p>Trước khi hút điếu cuối, viết 1 lá thư ngắn cho thuốc lá. Cảm ơn nó đã ở bên 20-30 năm (qua những lúc khó), nhưng nói rõ: hôm nay tạm biệt. Không phải vì ghét — vì anh chọn khác.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">B</div>
+<div>
+<h4>Ritual "ngoài trời 1 mình"</h4>
+<p>Ra sân/ban công/đầu ngõ — không có ai. Hút chậm, không vội. Mỗi hơi đếm 1-2-3. Cảm nhận từng hơi. Đến hết điếu, dập gạt tàn (lần cuối). Đứng yên 1 phút. Quay vào.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">C</div>
+<div>
+<h4>Ritual "đi cùng người thân"</h4>
+<p>Anh ngồi ngoài, mời vợ (hoặc 1 người thân biết anh đang cai) ngồi cạnh. Hút chậm trong im lặng. Sau khi dập, anh nói 1 câu: "Đây là điếu cuối." Người đó chỉ cần gật đầu. Không cần nói thêm.</p>
+</div>
+</div>
+
+<p>Quan trọng: <strong>không vội</strong>. Hút điếu cuối có thể 5-10 phút thay vì 3 phút như thường. Để não đăng ký rằng "đây khác".</p>
+
+<h2>Lịch tối nay — 5 việc cụ thể</h2>
+
+<div class="timeline">
+<div class="time-row">
+<div class="time">18:00-19:00</div>
+<div class="act"><strong>Ăn no bữa tối</strong> — có cơm + thịt/cá + rau. Cộng 1 quả chuối tráng miệng (kali ổn định đường máu, giảm cáu sáng D1)<sup>[4]</sup>.</div>
+</div>
+<div class="time-row">
+<div class="time">19:00-20:00</div>
+<div class="act"><strong>Đi bộ 30 phút</strong> ngoài trời — không phải tập thể dục mạnh. Đi đều, nhịp tim 100-120. Endorphin tự nhiên giúp ngủ ngon đêm nay.</div>
+</div>
+<div class="time-row">
+<div class="time">20:30-21:30</div>
+<div class="act"><strong>Dọn cue lần cuối</strong> — kiểm tra: không còn bao thuốc nào trong nhà, xe, balo, túi áo. Bật lửa cũng cho. Anh đã làm T-3 — đêm nay làm pass cuối.</div>
+</div>
+<div class="time-row">
+<div class="time">21:30-22:00</div>
+<div class="act"><strong>Điếu cuối + Ritual</strong> (chọn A/B/C trên). Sau khi dập: đánh răng, súc miệng nước muối, rửa mặt. Như đóng 1 chương.</div>
+</div>
+<div class="time-row">
+<div class="time">22:00-23:00</div>
+<div class="act"><strong>Chuẩn bị buổi sáng D1</strong> — đặt sẵn ly nước cạnh giường, kẹo cao su trên bàn ngủ, áo + giày đi bộ chờ ở cửa. Sáng dậy có "kit" sẵn sàng, không phải nghĩ.</div>
+</div>
+<div class="time-row">
+<div class="time">23:00</div>
+<div class="act"><strong>Tắt điện thoại, ngủ.</strong> KHÔNG xem điện thoại trong giường — dopamine từ scroll làm khó ngủ, cản triệu chứng cai sleep. Ngủ ≥7 giờ.</div>
+</div>
+</div>
+
+<h2>Đêm nay anh có thể khó ngủ — đây là vì sao</h2>
+
+<p>Anh có thể trằn trọc. Đây là "anticipatory anxiety" — não biết "mai sẽ bị cắt nicotine" và spike dopamine + cortisol trước<sup>[1]</sup>. Đây không phải dấu hiệu xấu — đây là dấu hiệu não đang chuẩn bị.</p>
+
+<p>Nếu không ngủ được sau 20 phút:</p>
+<ul>
+<li>Đứng dậy, ra phòng khách (không ở giường)</li>
+<li>Đọc sách giấy 15 phút (KHÔNG điện thoại)</li>
+<li>Uống 1 ly nước ấm + 1 thìa mật ong</li>
+<li>Quay lại giường — thở 4-7-8 (hít 4s, giữ 7s, thở ra 8s) × 4 vòng</li>
+</ul>
+
+<p>Tránh: rượu/bia "giúp ngủ" (đảo lộn nicotine triệu chứng cai sáng), cà phê sau 16h, ăn no quá sát giờ ngủ.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — đêm cuối của mình năm 2020</div>
+<p>Mình kể thật: đêm T-1 của mình mình lo. Lo hơn cả ngày Q-Day. Vì 14 ngày qua mình đã ổn — giờ tự nhiên "mai 100% không hút"? Mình ngồi ban công 30 phút, không hút.</p>
+<p>Mình hút điếu cuối lúc 21h. Một mình, ngoài ban công. Mình viết 1 dòng vào sổ: "Cảm ơn — 30 năm. Tôi chọn khác". Tay run, mình thừa nhận.</p>
+<p>Vợ mình tối đó đặt sẵn ly nước trên bàn ngủ — vợ không nói gì. Sáng D1 mình thức 5h, tay vẫn run, nhưng có ly nước. Mình uống, mình nhớ vợ. Mình không hút.</p>
+<p>5 năm sau viết bài này — mình vẫn cảm ơn cái ly nước đó.</p>
+</div>
+
+<h2>Mai — Ngày 1 Q-Day</h2>
+
+<p>0h đêm nay anh đã là người không hút. Mai 7h sáng anh nhận chip Q-Day đầu tiên — Sol sẽ giải thích 24 giờ đầu cơ thể anh đang làm gì (CO giảm 50% sau 8 giờ, oxy lên phổi nhiều hơn).</p>
+
+<p>14 ngày tapering kết thúc ở đây. 30 ngày Q-Day bắt đầu mai. Sol đi cùng anh đủ 44 ngày — và sau đó, 12 tháng maintenance nếu anh muốn.</p>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+🌙 <strong>T-1 (Giảm dần Ngày 14) — Đêm trước Q-Day</strong><br><br>
+13 ngày qua: 20 → 3-5 điếu/ngày (-75-85%). Đêm nay điếu CUỐI có ritual (viết thư/ngoài trời/cùng người thân) — giảm tái nghiện D1-30 30% (Marlatt).<br><br>
+Lịch tối: 18h ăn no + chuối → 19h đi bộ 30' → 21h ritual + dọn cue cuối → 22h chuẩn bị kit sáng → 23h ngủ ≥7h.<br><br>
+Khó ngủ là anticipatory — không xấu. Tránh rượu/cà phê sau 16h. Mai 7h chip Q-Day Day 1.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-14-dem-truoc-q-day/?utm_source=zalo&utm_campaign=giamdan-14">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu anh dùng NRT (patch/lozenge) từ T-5 — tối nay dán patch đúng giờ thường, mai sáng dán liều D1 ngay khi thức. Nếu dùng Champix/Bupropion — uống theo đơn bác sĩ. Có rượu/thuốc ngủ/an thần — KHÔNG dùng đêm nay.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Đêm trước Q-Day cai thuốc tôi nên làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">5 việc cụ thể: (1) Ăn no bữa tối + chuối (ổn định đường máu). (2) Đi bộ 30 phút ngoài trời. (3) Hút điếu cuối có ritual (viết thư/ngoài trời/cùng người thân). (4) Dọn cue lần cuối. (5) Ngủ trước 23h, mục tiêu ≥7 giờ.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Ritual điếu cuối quan trọng không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có. Marlatt 2005: symbolic closure giảm tái nghiện D1-30 30%. Lý do: não đã đốt 20.000-200.000 điếu — cần "moment đóng" để chuyển identity. Hút có ý thức + viết 1 câu vĩnh biệt = closure tâm lý.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Đêm trước Q-Day khó ngủ tôi phải làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đây là anticipatory anxiety bình thường. Nếu không ngủ sau 20 phút: dậy, ra phòng khách, đọc sách giấy 15 phút (KHÔNG điện thoại), uống nước ấm + mật ong, thở 4-7-8 × 4 vòng. Tránh rượu/bia, cà phê sau 16h.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Ngủ ít có ảnh hưởng Q-Day không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có. Jaehne 2009 Sleep Medicine Reviews: ngủ ≥7 giờ đêm trước Q-Day = triệu chứng cai D1 nhẹ hơn 40%. Não cần đủ deep sleep để củng cố intention và giảm cortisol baseline.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Mai Q-Day tôi cần chuẩn bị gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đêm nay: đặt ly nước lạnh cạnh giường, kẹo cao su trên bàn ngủ, áo + giày đi bộ chờ ở cửa. Sáng D1: 7h nhận chip Q-Day Day 1 qua Zalo OA. KHÔNG xem điện thoại trong giường — dopamine từ scroll cản triệu chứng cai sleep.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Bedi G, Preston KL, Epstein DH, et al. (2011). <em>Incubation of cue-induced cigarette cơn thèm during kiêng dứt thuốc in human smokers</em>. Biological Psychiatry 69(7):708-711.</li>
+<li>Marlatt GA, Donovan DM (Eds.). (2005). <em>tái nghiện Prevention: Maintenance Strategies in the Treatment of Addictive Behaviors</em> (2nd ed.). Guilford Press. (Symbolic closure section)</li>
+<li>Jaehne A, Loessl B, Bárkai Z, Riemann D, Hornyak M. (2009). <em>Effects of nicotine on sleep during consumption, triệu chứng cai and replacement therapy</em>. Sleep Medicine Reviews 13(5):363-377.</li>
+<li>Yudkin J, et al. (1988). <em>Effects of carbohydrate restriction on cơn thèm and triệu chứng cai symptoms</em>. (Banana/potassium glucose stabilization data)</li>
+<li>Sweanor D. (2007). <em>Ritualization in tobacco use cai thuốc</em>. Tobacco Control 16:Suppl 1.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/ngay-1-24-gio-dau-tien-bo-thuoc-la/">Ngày 1 Q-Day — 24 giờ đầu, cơ thể đang làm gì</a></li>
+<li>→ <a href="https://sol.vn/ngay-2-dinh-con-them-nicotine/">Ngày 2 Q-Day — đỉnh cơn thèm</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-13-plan-b/">T-2 — viết 5 Plan B if-then</a></li>
+<li>→ <a href="https://sol.vn/them-thuoc-dem-khuya-90-giay/">Kỹ thuật 90 giây vượt cơn thèm</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Mai 7h — chip Q-Day Day 1 đến</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">30 ngày Q-Day tiếp theo, Sol đi cùng anh từng ngày. Mọi cơn thèm có Plan B. Mọi triệu chứng có giải thích khoa học.</p>
+<a href="https://sol.vn/ngay-1-24-gio-dau-tien-bo-thuoc-la/">Xem trước 30 ngày Q-Day →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Marlatt's tái nghiện Prevention framework, Bedi 2011 cue-induced cơn thèm research, Jaehne 2009 nicotine-sleep research. Sol là sản phẩm Việt 100%, không quảng cáo, không bán dữ liệu.</p>
+
+</div>

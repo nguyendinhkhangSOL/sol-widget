@@ -1,0 +1,280 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kit cai thuốc tự làm gồm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4 vật dụng (~150-300k): (1) Kẹo cao su không đường vị bạc hà mạnh. (2) Hạt hướng dương Việt Nam. (3) Ống hút inox tái sử dụng. (4) Túi đi bộ: sneakers + chai nước + tai nghe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao cần Kit thay thế khi đã dùng NRT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NRT chỉ thay nicotine (60% reward). Còn oral fixation (25% — miệng) và manual fixation (15% — tay) cần behavior substitution. Pomerleau 2002: 50% người dùng NRT vẫn vấp do oral/manual chưa được giải quyết."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nên đặt Kit ở đâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3 chỗ cố định: (1) Nhà — bát hạt phòng khách + kẹo bếp + sneakers gần cửa. (2) Xe — kẹo + ống hút trong hộc găng tay, chai nước ghế phụ. (3) Balo — kẹo + ống hút mini + túi hạt nhỏ. Trong tầm với khi cơn thèm peak."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tránh 3 thứ thay thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "(1) Đồ ngọt (kẹo có đường, bánh, soda) — spike đường máu → crash → thèm thuốc tăng + tăng cân 2-4kg/tháng. (2) Tăm xỉa răng — chấn thương nướu. (3) Vape/IQOS/thuốc cuốn — vẫn là nicotine, 60% quay lại thuốc lá thực."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có cần đầu tư nhiều cho Kit không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. ~150-300k tổng. Tiết kiệm ~30k/ngày tiền thuốc → hoàn vốn trong 5-10 ngày. Sneakers + chai + tai nghe đa số người đã có. Chỉ cần mua kẹo + hạt + ống hút mới."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .item-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
+.sol-wiki .item-card h4 { margin: 0 0 6px; color: #5C3A1E; }
+.sol-wiki .item-card .price { background: #F4FBF5; padding: 4px 8px; border-radius: 4px; font-size: 12.5px; color: #15803D; display: inline-block; margin-top: 6px; }
+.sol-wiki .item-card p { margin: 6px 0; font-size: 14.5px; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Hút thuốc KHÔNG chỉ là nicotine. Đó là 3 thứ trộn lẫn: <strong>nicotine</strong> (hóa) + <strong>oral fixation</strong> (miệng — Pomerleau 2002) + <strong>manual fixation</strong> (tay — Marlatt RP). NRT/Champix chỉ thay nicotine. Còn miệng và tay cần thay thế hành vi. Hôm nay T-6 (Ngày 9 Giảm dần) — Sol giúp anh xây "Kit Sol" với 4 vật dụng để dùng từ Q-Day.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Hút = nicotine + oral + manual fixation</strong> (Pomerleau 2002; Marlatt RP framework)<sup>[1][2]</sup></li>
+<li>NRT chỉ thay nicotine. Hai cái còn lại cần <strong>behavior substitution</strong> = "Kit Sol"</li>
+<li>4 vật dụng: <strong>kẹo cao su không đường, hạt hướng dương, ống hút inox, túi đi bộ</strong></li>
+<li>Mỗi vật dụng đối phó với 1 tình huống cụ thể (peak cơn thèm, sau cơm, lái xe, stress)</li>
+<li>Hôm nay: mua / chuẩn bị Kit (~150-300k). Đặt sẵn 3 chỗ: nhà, xe, balo</li>
+</ul>
+</div>
+
+<h2>Tại sao "Kit" matter? Khoa học</h2>
+
+<h3>Hai loại fixation ít người biết</h3>
+
+<p>Pomerleau và cộng sự (2002) phân tích hành vi hút: 1 điếu thuốc tiêu thụ ~5-10 phút và có 3 thành phần được não đăng ký riêng:</p>
+
+<ul>
+<li><strong>Nicotinic (~60% reward):</strong> Nicotine vào não trong 7 giây qua phổi. Kích hoạt dopamine.</li>
+<li><strong>Oral (~25% reward):</strong> Cảm giác cay miệng, vị, hơi ấm khói. Não cùi miệng "hài lòng".</li>
+<li><strong>Manual (~15% reward):</strong> Tay cầm điếu, đưa lên, dập, gãi tàn. Kinetic ritual.</li>
+</ul>
+
+<p>Khi anh cắt thuốc, anh mất cả 3. NRT/Champix chỉ thay phần nicotinic. <strong>Oral và manual còn nguyên trong não anh</strong> — tay anh tự nhiên muốn cầm gì, miệng anh tự nhiên muốn "ngậm" gì. Nếu không có thay thế → não tự tìm điếu thuốc.</p>
+
+<p>Đây là lý do nhiều người dùng NRT vẫn vấp ở D5-7: vì oral/manual fixation chưa được giải quyết.</p>
+
+<h2>Kit Sol — 4 vật dụng đối phó</h2>
+
+<div class="item-card">
+<h4>🍬 1. Kẹo cao su không đường (bạc hà mạnh)</h4>
+<p><strong>Đối phó:</strong> Oral fixation + peak cơn thèm (sau cơm, café, lái xe)</p>
+<p><strong>Cách dùng:</strong> Khi cơn thèm peak — nhai 1 viên trong 5-10 phút. Vị bạc hà mạnh tạo cảm giác "tê miệng" thay thế cay khói. Đường-free để tránh tăng cân + sâu răng.</p>
+<p><strong>Khuyến cáo:</strong> Trident, Mentos Pure Fresh, Eclipse — vị peppermint hoặc spearmint mạnh.</p>
+<p class="price">~30-50k/lọ 50 viên</p>
+</div>
+
+<div class="item-card">
+<h4>🌻 2. Hạt hướng dương / hạt bí (vừa rang vừa muối nhẹ)</h4>
+<p><strong>Đối phó:</strong> Oral + Manual fixation trong những lúc rảnh dài (xem TV, đọc báo, ngồi quán cà phê)</p>
+<p><strong>Cách dùng:</strong> Mở vỏ từng hạt bằng tay (manual fixation) + nhai nhân (oral fixation). 1 nhúm hạt = ~20-30 phút "bận tay miệng". Thay thế hành vi hoàn hảo.</p>
+<p><strong>Khuyến cáo:</strong> Hạt hướng dương Việt Nam, hạt bí, hạt dẻ — KHÔNG hạt mặn quá (cao máu).</p>
+<p class="price">~30-60k/kg, dùng 1-2 tuần</p>
+</div>
+
+<div class="item-card">
+<h4>🥤 3. Ống hút inox tái sử dụng</h4>
+<p><strong>Đối phó:</strong> Manual fixation cụ thể — cầm thứ hình "điếu" trong tay</p>
+<p><strong>Cách dùng:</strong> Dùng để uống nước/sinh tố trong văn phòng, quán café. Cảm giác "cầm gì trong tay" giống điếu thuốc. KHÔNG hút khô — sẽ phản tác dụng.</p>
+<p><strong>Bonus:</strong> Eco-friendly, không thải plastic. Nhiều người tiếp tục dùng sau khi cai xong.</p>
+<p class="price">~50-150k bộ 2-4 ống + bàn chải vệ sinh</p>
+</div>
+
+<div class="item-card">
+<h4>👟 4. Túi đi bộ "Kit di động" (sneakers + chai nước + tai nghe)</h4>
+<p><strong>Đối phó:</strong> Stress + cảm xúc bất chợt (cãi vợ, sếp gắt, tin xấu)</p>
+<p><strong>Cách dùng:</strong> Khi cảm xúc nặng — không hút, không nói. Mặc sneakers, cầm chai nước, đeo tai nghe nhạc. Đi bộ 15-20 phút. Endorphin tự nhiên đối trọng cortisol.</p>
+<p><strong>Khuyến cáo:</strong> Để giày + chai nước + tai nghe ở 1 chỗ cố định (gần cửa). Khi cần — không phải tìm.</p>
+<p>Taylor & Ussher 2007 (Br J Sports Med): 10 phút vận động nhẹ giảm cơn thèm 50% trong 30 phút<sup>[3]</sup>.</p>
+<p class="price">Sneakers anh đã có. Chai 0 đồng. Tai nghe có sẵn.</p>
+</div>
+
+<div class="alarm">
+<h4>⚠ Tránh 3 thứ "thay thế sai"</h4>
+<ul style="font-size:14px; margin: 4px 0;">
+<li><strong>Đồ ngọt (kẹo có đường, bánh, soda):</strong> Spike đường máu → crash → cảm giác "đói" → thèm thuốc tăng. Tăng cân 2-4kg trong 1 tháng.</li>
+<li><strong>Tăm xỉa răng / que diêm gặm:</strong> Chấn thương nướu, sâu răng. KHÔNG dùng.</li>
+<li><strong>Vape / IQOS / thuốc cuốn tay:</strong> Vẫn là nicotine. 60% người chuyển sang vape "cai" quay lại thuốc lá trong 6 tháng (WHO 2024).</li>
+</ul>
+</div>
+
+<h2>Đặt Kit ở 3 chỗ</h2>
+
+<p>Quy tắc: <strong>Kit phải có trong tầm với KHI CƠN THÈM ĐẾN</strong>, không phải ở nhà khi anh đang ngoài quán.</p>
+
+<h3>Chỗ 1: Nhà</h3>
+<ul>
+<li>Phòng khách (bàn cà phê): bát hạt hướng dương + lọ kẹo cao su</li>
+<li>Bếp: chai nước lạnh sẵn trong tủ lạnh</li>
+<li>Gần cửa: sneakers + chai nước + tai nghe</li>
+</ul>
+
+<h3>Chỗ 2: Xe</h3>
+<ul>
+<li>Hộc đựng găng tay: 1 lọ kẹo cao su + 1 ống hút inox</li>
+<li>Ghế phụ: chai nước 500ml</li>
+</ul>
+
+<h3>Chỗ 3: Balo / túi xách</h3>
+<ul>
+<li>1 vỉ kẹo cao su (10-15 viên)</li>
+<li>1 ống hút inox + bàn chải mini</li>
+<li>1 túi hạt hướng dương nhỏ (snack)</li>
+</ul>
+
+<p>Tổng chi phí ban đầu Kit Sol: <strong>~150-300k</strong>. Tiết kiệm: ~30k/ngày tiền thuốc. Hoàn vốn trong 5-10 ngày.</p>
+
+<h2>Hôm nay T-6: 1 giờ đi mua Kit</h2>
+
+<ol>
+<li>Ra Pharmacity / Long Châu / siêu thị</li>
+<li>Mua: kẹo cao su không đường (1 lọ), hạt hướng dương (200g), ống hút inox (bộ 4)</li>
+<li>Kiểm tra ở nhà: sneakers + chai nước + tai nghe sẵn sàng</li>
+<li>Đặt Kit 3 chỗ (nhà, xe, balo)</li>
+<li>Test ngay chiều nay — khi có chút thèm nhẹ, dùng 1 vật dụng. Đánh giá cảm giác.</li>
+</ol>
+
+<p>Có Kit không đảm bảo không vấp — nhưng <strong>không có Kit thì ý chí phải gánh tất</strong>. ý chí có hạn (Baumeister 2011). Kit là vũ khí external.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — Kit của mình năm 2020</div>
+<p>Mình kể: Kit mình mua T-6 lần 5 cai (~250k tổng):</p>
+<ul style="font-size:14px;">
+<li>2 lọ Trident bạc hà (~80k) — 1 nhà, 1 ô tô</li>
+<li>500g hạt hướng dương Đà Lạt (~50k) — 1 bát phòng khách, 1 túi xe</li>
+<li>4 ống hút inox + bàn chải (~120k) — 2 nhà, 1 balo, 1 ô tô</li>
+</ul>
+<p>D1 Q-Day, mình thử nghiệm Kit. Sau cơm tối — bình thường mình hút điếu "ngon". Lần này mình mở bát hạt, ngồi xem tin tức 30 phút, nhai từng hạt một. Tay bận, miệng bận. Đến cuối tin tức, mình quên đã "định" hút.</p>
+<p>D3 Q-Day, mình đi 1 cuộc họp dài 4 tiếng. Có 2 cơn thèm peak (8-9/10 cường độ). Mình ngậm kẹo + ra ngoài đi bộ 5 phút trong giờ giải lao. Vượt qua.</p>
+<p>5 năm sau viết bài này — Kit không quá quan trọng nhưng <strong>quan trọng đủ</strong>. Như mũ bảo hiểm — không phải mọi lần đi xe đều bị tai nạn, nhưng khi có thì không muốn không có.</p>
+</div>
+
+<h2>Mai có gì?</h2>
+
+<p>T-5 (Ngày 10 Giảm dần) — Quyết định NRT/thuốc kê dựa trên FTND. Mua/đặt khám hôm đó. Q-Day còn 5 ngày — phải có thuốc trong tay nếu cần.</p>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+🎒 <strong>T-6 (Giảm dần Ngày 9) — Xây Kit thay thế</strong><br><br>
+Hút = nicotine + oral + manual fixation (Pomerleau 2002). NRT chỉ thay nicotine. Oral + manual cần Kit Sol.<br><br>
+4 vật dụng (~150-300k): kẹo cao su không đường + hạt hướng dương + ống hút inox + sneakers/chai nước. Đặt ở 3 chỗ: nhà, xe, balo.<br><br>
+Tránh: đồ ngọt (đường máu), tăm xỉa (nướu), vape (60% quay lại thuốc lá). Mai T-5 quyết định NRT/thuốc kê.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-9-kit-thay-the/?utm_source=zalo&utm_campaign=giamdan-9">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Hạt mặn quá / kẹo có đường nhiều → cao máu / tăng cân. Chọn loại không đường + ít muối. Nếu có tiền sử rối loạn ăn uống — thảo luận với BS trước khi tăng oral substitution.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Kit cai thuốc tự làm gồm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">4 vật dụng (~150-300k): (1) Kẹo cao su không đường vị bạc hà mạnh. (2) Hạt hướng dương Việt Nam. (3) Ống hút inox tái sử dụng. (4) Túi đi bộ: sneakers + chai nước + tai nghe.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Tại sao cần Kit thay thế khi đã dùng NRT?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">NRT chỉ thay nicotine (60% reward). Còn oral fixation (25% — miệng) và manual fixation (15% — tay) cần behavior substitution. Pomerleau 2002: 50% người dùng NRT vẫn vấp do oral/manual chưa được giải quyết.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Nên đặt Kit ở đâu?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">3 chỗ cố định: (1) Nhà — bát hạt phòng khách + kẹo bếp + sneakers gần cửa. (2) Xe — kẹo + ống hút trong hộc găng tay, chai nước ghế phụ. (3) Balo — kẹo + ống hút mini + túi hạt nhỏ. Trong tầm với khi cơn thèm peak.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Tránh 3 thứ thay thế nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">(1) Đồ ngọt (kẹo có đường, bánh, soda) — spike đường máu → crash → thèm thuốc tăng + tăng cân 2-4kg/tháng. (2) Tăm xỉa răng — chấn thương nướu. (3) Vape/IQOS/thuốc cuốn — vẫn là nicotine, 60% quay lại thuốc lá thực.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Có cần đầu tư nhiều cho Kit không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không. ~150-300k tổng. Tiết kiệm ~30k/ngày tiền thuốc → hoàn vốn trong 5-10 ngày. Sneakers + chai + tai nghe đa số người đã có. Chỉ cần mua kẹo + hạt + ống hút mới.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Pomerleau OF, Pomerleau CS. (2002). <em>Cardiovascular and neuroendocrine reactivity to nicotine, stress, and laboratory tasks in smokers</em>. Psychopharmacology 162(2):105-114.</li>
+<li>Marlatt GA, Donovan DM (Eds.). (2005). <em>tái nghiện Prevention</em> (2nd ed.). Guilford Press. Behavior substitution chapter.</li>
+<li>Taylor AH, Ussher MH, Faulkner G. (2007). <em>The acute effects of exercise on cigarette cơn thèm, triệu chứng cai (withdrawal) symptoms, affect and smoking behaviour</em>. British Journal of Sports Medicine 41(8):500-504.</li>
+<li>Baumeister RF, Tierney J. (2011). <em>ý chí: Rediscovering the Greatest Human Strength</em>. Penguin Press.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-8-moc-1-tuan-giam/">T-7 — Mốc 1 tuần đánh giá</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-10-quyet-dinh-nrt-thuoc-ke/">T-5 (Mai) — Quyết định NRT/thuốc kê</a></li>
+<li>→ <a href="https://sol.vn/them-thuoc-dem-khuya-90-giay/">Kỹ thuật 90 giây vượt cơn thèm</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Sol có template Kit + checklist mua trong app</strong>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Pomerleau 2002, Marlatt RP, Taylor 2007 BJSM, Baumeister 2011. Sol là sản phẩm Việt 100%.</p>
+
+</div>

@@ -1,0 +1,224 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Tại sao có những câu vợ nói khiến chồng cai khó hơn?","acceptedAnswer":{"@type":"Answer","text":"Vì những câu đó kích hoạt 1 trong 3 cơ chế: (1) shame (xấu hổ) — như 'anh hứa rồi mà'. (2) reactance (phản kháng) — như 'anh phải bỏ thuốc'. (3) stress — như 'anh không thương con à'. Cả 3 cơ chế đều làm não chồng kêu gọi nicotine để ổn định cortisol. Holahan 2014: vợ nói câu sai làm chồng vấp 1.8 lần cao hơn."}},
+{"@type":"Question","name":"Câu nào hiệu quả nhất trong tuần đầu chồng cai?","acceptedAnswer":{"@type":"Answer","text":"Câu hiệu quả nhất tuần đầu: 'Em không bỏ đi đâu cả.' Câu này: (1) không yêu cầu chồng làm gì, (2) thông báo commitment lâu dài, (3) không phán xét. Khang nói câu này là khoảnh khắc quyết định cuộc cai năm 2021 — vợ Khang viết câu này trên giấy đặt bàn cà phê đêm thứ 3."}},
+{"@type":"Question","name":"Khi chồng cáu kỉnh, vợ nên nói gì để dừng cuộc cãi?","acceptedAnswer":{"@type":"Answer","text":"'Em hiểu anh đang khó. Em sang phòng khác một lát.' Câu này: (1) validate cảm xúc, (2) thông báo rút lui không bí ẩn, (3) bảo vệ cả 2 khỏi leo thang. Sau 30-60 phút quay lại bình thường — KHÔNG nhắc cuộc cáu, KHÔNG hỏi 'anh đỡ chưa'."}},
+{"@type":"Question","name":"Vợ có nên hỏi 'anh có thèm không hôm nay' không?","acceptedAnswer":{"@type":"Answer","text":"KHÔNG. Câu hỏi này biến vợ thành 'người giám sát' thay vì 'chỗ dựa'. Mỗi lần hỏi = nhắc chồng nhớ về cơn thèm. Tốt hơn: hỏi câu mở không liên quan thuốc — 'Tối nay anh muốn ăn gì?' / 'Cuối tuần đi đâu?'. Để chồng nhớ cuộc sống còn có thứ khác ngoài cơn thèm."}},
+{"@type":"Question","name":"Khi chồng vấp 1 điếu, vợ nên nói gì ngay?","acceptedAnswer":{"@type":"Answer","text":"Chỉ 1 câu duy nhất: 'Em buồn nhưng em không giận. Anh có muốn chia sẻ gì xảy ra không?' Câu này: (1) thừa nhận cảm xúc thật của vợ (buồn), (2) tách buồn khỏi giận (chồng không bị attack), (3) câu hỏi mở mời chồng chia sẻ. Marlatt 2005: 70% vấp không thành tái nghiện nếu trong 48h có người không phán xét."}},
+{"@type":"Question","name":"Vợ nên tránh tuyệt đối những câu nào với chồng đang cai?","acceptedAnswer":{"@type":"Answer","text":"3 nhóm câu phá hủy: (1) Tố cáo 'anh hứa rồi mà', 'em đã bảo rồi'. (2) Đe doạ 'anh hút nữa em ly hôn', 'em đưa con về'. (3) Phán xét 'sao anh yếu thế', 'người khác bỏ được mà'. 3 nhóm này tăng tỷ lệ chồng tái nghiện 1.8-2.8 lần. Thay bằng câu 'em' đầu câu, chia sẻ cảm xúc cụ thể."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .yes-card { background: #F4FBF5; border: 2px solid #16A34A; border-radius: 12px; padding: 16px 20px; margin: 14px 0; }
+.sol-wiki .yes-card .num { display: inline-block; background: #16A34A; color: white; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.sol-wiki .yes-card .quote { font-size: 16px; font-weight: 600; color: #15803D; margin: 6px 0; }
+.sol-wiki .yes-card .why { font-size: 13.5px; color: #2C2A27; margin-top: 6px; }
+.sol-wiki .no-card { background: #FEF2F2; border: 2px solid #DC2626; border-radius: 12px; padding: 16px 20px; margin: 14px 0; }
+.sol-wiki .no-card .num { display: inline-block; background: #DC2626; color: white; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.sol-wiki .no-card .quote { font-size: 16px; font-weight: 600; color: #B91C1C; margin: 6px 0; }
+.sol-wiki .no-card .why { font-size: 13.5px; color: #2C2A27; margin-top: 6px; }
+.sol-wiki .forward-cta { background: linear-gradient(135deg, #FFF4EA, #FFE8C8); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 24px; margin: 32px 0; }
+.sol-wiki .forward-cta .label { font-size: 12px; font-weight: 700; color: #B25C2C; }
+.sol-wiki .forward-cta h3 { color: #5C3A1E; margin: 8px 0 10px; }
+.sol-wiki .forward-cta .script-box { background: white; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #B25C2C; margin: 14px 0; font-style: italic; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Chị ạ. Trong 30 ngày tới khi chồng cai, chị sẽ nói khoảng 5.000 câu với chồng. Có những câu giúp chồng vượt qua. Có những câu khiến chồng vấp lại. Bài này là <strong>10 câu nên nói + 10 câu KHÔNG nên nói</strong> — em điền câu cụ thể chị copy được, không phải lý thuyết.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Vợ tôi đã đọc tham khảo list này (em viết cho Sol). Cô ấy nói: 'Em chỉ ước có list này 12 năm trước.' Em viết lại để các chị em không mất 12 năm tự học."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>10 câu NÊN nói:</strong> "Em" đầu câu, validate cảm xúc, không yêu cầu</li>
+<li><strong>10 câu KHÔNG nên nói:</strong> "Anh" đầu câu, tố cáo, đe doạ, phán xét</li>
+<li><strong>Câu hiệu quả #1:</strong> "Em không bỏ đi đâu cả."</li>
+<li><strong>Câu phá hủy #1:</strong> "Anh hứa rồi mà."</li>
+<li><strong>Holahan 2014:</strong> câu sai làm chồng vấp 1.8 lần cao hơn</li>
+</ul></div>
+
+<h2>10 CÂU NÊN NÓI — copy + dùng được ngay</h2>
+
+<div class="yes-card">
+<div class="num">CÂU 1</div>
+<div class="quote">"Em không bỏ đi đâu cả."</div>
+<div class="why"><strong>Khi nào dùng:</strong> tuần đầu Q-Day, đặc biệt đêm 2-3 chồng vật vã. Có thể viết trên giấy thay nói miệng. <strong>Vì sao hiệu quả:</strong> không yêu cầu chồng làm gì, thông báo commitment lâu dài, không phán xét.</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 2</div>
+<div class="quote">"Em hiểu anh đang khó."</div>
+<div class="why"><strong>Khi nào dùng:</strong> chồng cáu, im lặng, mất ngủ. <strong>Vì sao hiệu quả:</strong> validate cảm xúc — chồng không phải "yếu" hay "tệ", chồng đang khó. Validation giảm cortisol 30% trong 10 phút (research neuroscience).</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 3</div>
+<div class="quote">"Em tự hào về anh — dù chỉ 1 ngày."</div>
+<div class="why"><strong>Khi nào dùng:</strong> hết ngày 1, ngày 3, ngày 7. <strong>Vì sao hiệu quả:</strong> celebrate micro-wins — não giải phóng dopamine tự nhiên thay nicotine. Đừng đợi đến D30 mới nói.</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 4</div>
+<div class="quote">"Tối nay anh muốn ăn gì? Em nấu."</div>
+<div class="why"><strong>Khi nào dùng:</strong> mỗi tối tuần 1-2. <strong>Vì sao hiệu quả:</strong> chuyển focus khỏi thuốc lá. Câu hỏi không liên quan thuốc + thể hiện chăm sóc cụ thể. Chồng cảm thấy được yêu mà không bị "giám sát".</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 5</div>
+<div class="quote">"Em sang phòng khác một lát. Em yêu anh."</div>
+<div class="why"><strong>Khi nào dùng:</strong> khi chồng cáu mất kiểm soát. <strong>Vì sao hiệu quả:</strong> rút lui có thông báo + có yêu thương — không phải bỏ rơi. Bảo vệ cả 2 khỏi leo thang.</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 6</div>
+<div class="quote">"Em buồn nhưng em không giận. Anh có muốn chia sẻ gì xảy ra không?"</div>
+<div class="why"><strong>Khi nào dùng:</strong> ngay sau khi chồng vấp 1 điếu. <strong>Vì sao hiệu quả:</strong> tách buồn khỏi giận + câu hỏi mở. Marlatt 2005: 70% vấp không thành tái nghiện nếu xử lý đúng 48h.</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 7</div>
+<div class="quote">"Anh không phải bắt đầu lại. Tiếp tục day-31, không phải day-1."</div>
+<div class="why"><strong>Khi nào dùng:</strong> sau vấp 24-48h. <strong>Vì sao hiệu quả:</strong> phá Abstinence Violation Effect (AVE) — chồng tin "thế là xong" → quay lại pattern. Khẳng định day-31 cứu cuộc cai.</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 8</div>
+<div class="quote">"Em thấy hơi thở anh dễ hơn — đúng không?"</div>
+<div class="why"><strong>Khi nào dùng:</strong> tuần 3-4 khi chồng đã có physical improvement. <strong>Vì sao hiệu quả:</strong> reinforcement positive, dữ liệu khách quan (chứ không phải "em thấy anh giỏi"). Chồng tự xác nhận → ghi nhớ động lực.</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 9</div>
+<div class="quote">"Anh không phải làm một mình. Em ở đây."</div>
+<div class="why"><strong>Khi nào dùng:</strong> bất kỳ lúc nào chồng có dấu hiệu mệt mỏi tinh thần. <strong>Vì sao hiệu quả:</strong> chống lại isolation — kẻ thù lớn nhất của người cai. Câu này repeat được nhiều lần.</div>
+</div>
+
+<div class="yes-card">
+<div class="num">CÂU 10</div>
+<div class="quote">"Em yêu anh. Em không yêu thuốc lá. Đó là điều duy nhất em không yêu của anh."</div>
+<div class="why"><strong>Khi nào dùng:</strong> 1 lần duy nhất trong toàn quá trình — chọn khoảnh khắc đúng (sau bữa cơm, không cãi). <strong>Vì sao hiệu quả:</strong> tách person khỏi behavior. Chồng không phải "người tệ" — chỉ có behavior (hút thuốc) chị không thích.</div>
+</div>
+
+<h2>10 CÂU KHÔNG NÊN NÓI — tránh tuyệt đối</h2>
+
+<div class="no-card">
+<div class="num">CÂU 1</div>
+<div class="quote">"Anh hứa rồi mà còn hút."</div>
+<div class="why"><strong>Vì sao SAI:</strong> tố cáo + shame. Chồng đã xấu hổ với chính mình — câu này nhân lên. <strong>Thay bằng:</strong> "Em buồn. Em không giận."</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 2</div>
+<div class="quote">"Em đã bảo rồi."</div>
+<div class="why"><strong>Vì sao SAI:</strong> tự đặt mình lên trên ("em đã đoán"), khẳng định chồng "thua". Phá hủy động lực hoàn toàn. <strong>Thay bằng:</strong> "Tụi mình cùng đi qua."</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 3</div>
+<div class="quote">"Anh hút nữa em ly hôn."</div>
+<div class="why"><strong>Vì sao SAI:</strong> đe doạ tạo stress lớn → chồng hút nhiều hơn (Cohen 2007: tăng 2.8 lần tái nghiện). <strong>Thay bằng:</strong> nếu thực sự nghĩ ly hôn — đi luật sư, không dùng làm vũ khí.</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 4</div>
+<div class="quote">"Anh không thương con à?"</div>
+<div class="why"><strong>Vì sao SAI:</strong> guilt-trip + tấn công danh tính làm bố. Chồng đã thấy có lỗi — không cần ai nhắc thêm. <strong>Thay bằng:</strong> đặt ảnh con trên bàn làm việc chồng, không nói gì.</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 5</div>
+<div class="quote">"Sao anh yếu thế."</div>
+<div class="why"><strong>Vì sao SAI:</strong> phán xét + attack identity. Cai thuốc không phải vấn đề "mạnh-yếu" — đây là sinh học. <strong>Thay bằng:</strong> "Nicotine là chất nghiện mạnh thứ 2 sau heroin. Anh không yếu."</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 6</div>
+<div class="quote">"Người khác bỏ được mà."</div>
+<div class="why"><strong>Vì sao SAI:</strong> so sánh → shame + cảm giác kém cỏi. Mỗi người cai khác nhau. <strong>Thay bằng:</strong> "Hành trình của anh khác. Tụi mình tìm cách riêng."</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 7</div>
+<div class="quote">"Anh có thèm không hôm nay?"</div>
+<div class="why"><strong>Vì sao SAI:</strong> nhắc chồng nhớ về cơn thèm. Biến vợ thành "giám sát viên". <strong>Thay bằng:</strong> "Tối nay anh muốn ăn gì?"</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 8</div>
+<div class="quote">"Anh phải bỏ vì em + con."</div>
+<div class="why"><strong>Vì sao SAI:</strong> đặt áp lực bên ngoài → kích hoạt reactance. Cai vì người khác bền không bằng cai vì chính mình. <strong>Thay bằng:</strong> "Em ủng hộ quyết định của anh."</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 9</div>
+<div class="quote">"Nhà anh muốn hút thì hút."</div>
+<div class="why"><strong>Vì sao SAI:</strong> passive-aggressive — "em giận nhưng em ngụy biện đồng ý". Chồng không học được gì + vợ tích lũy oán giận. <strong>Thay bằng:</strong> đặt ranh giới rõ ràng (xem bài chong-hut-thuoc-trong-nha).</div>
+</div>
+
+<div class="no-card">
+<div class="num">CÂU 10</div>
+<div class="quote">"Em không hiểu nổi vì sao anh không bỏ được."</div>
+<div class="why"><strong>Vì sao SAI:</strong> đề cao "không hiểu" → vợ không nỗ lực tìm hiểu. Câu này thể hiện sự xa cách trong hôn nhân. <strong>Thay bằng:</strong> "Em đọc bài Sol để hiểu hơn. Tụi mình cùng học."</div>
+</div>
+
+<div class="forward-cta">
+<div class="label">🤝 BƯỚC KẾ TIẾP</div>
+<h3>In list này dán trên tủ lạnh — review mỗi sáng</h3>
+<div class="script-box">Em in 1 trang A4 — cột trái 10 câu nên, cột phải 10 câu không nên. Dán bên trong cửa tủ lạnh. Mỗi sáng em đọc lại 30 giây — review trước khi vào ngày.</div>
+<p style="margin-top: 14px;">→ Link bài: <strong>https://sol.vn/10-cau-nen-noi-khi-chong-dang-cai/</strong></p>
+</div>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP CHO CHỒNG</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Sol có 51 daily reminder cho chồng — không cần vợ nhắc</div>
+<a href="https://sol.vn">Cài app →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc — pillar</a></li>
+<li>→ <a href="https://sol.vn/chong-cai-thuoc-cau-kinh-phai-lam-sao/">Chồng cáu kỉnh tuần đầu</a></li>
+<li>→ <a href="https://sol.vn/chong-cai-thuoc-roi-lai-hut/">Chồng vấp 1 điếu — im hay nói</a></li>
+<li>→ <a href="https://sol.vn/thu-gui-vo-cua-nguoi-chong-da-cai/">Thư gửi vợ của người chồng đã cai</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ List này không phải công thức — adapt theo personality chồng. Có chồng đáp tốt với "em yêu anh", có chồng khó chịu khi nghe lời yêu. Quan sát chồng + điều chỉnh.</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Holahan CK, et al. (2014). <em>Spousal influence on smoking cessation</em>. Ann Behav Med 47.</li>
+<li>Cohen S, et al. (2007). <em>Stress and the relapse of smoking</em>. Health Psychol 26.</li>
+<li>Marlatt GA (2005). <em>Relapse Prevention</em>. Guilford Press.</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol & V., test thực tế 5 năm. Cập nhật 16/5/2026.</p>
+
+</div>

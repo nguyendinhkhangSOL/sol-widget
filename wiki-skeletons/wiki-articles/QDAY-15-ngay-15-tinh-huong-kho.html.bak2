@@ -1,0 +1,250 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tại sao Ngày 15 nguy hiểm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sau 2 tuần, receptor nicotine đã ổn định nhiều. cơn thèm sinh học giảm 70% so với Ngày 3. Anh cảm thấy \"mạnh hơn\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4 tình huống khó nhất tuần 3 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cà phê + thuốc = combo Pavlov mạnh nhất với người Việt 45+. Sáng nay anh ngồi bàn quen, mở laptop — não tự sinh thèm. Đây không phải cơn thèm sinh học, là context cue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 15 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nếu trước đây cà phê đen pha phin → đổi sang cà phê sữa, cappuccino, hoặc trà. Đổi context — não không tình huống thèm với \"cà phê lạ\". 2 tuần sau quay lại cà phê quen — đã hết Pavlov."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh tuần này gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 15 lần 5 cai, tôi đã làm 1 thí nghiệm sai: quay lại quán cà phê cũ. Tôi nghĩ \"đã 2 tuần, kiểm tra xem mình thật sự mạnh không\". Vừa ngồi xuống bàn quen, mở menu — não bùng cơn thèm cực mạnh. Bồi bàn quen tới — tôi nói \"cho 1 cà phê\" — anh ấy hỏi \"anh hôm nay không hút à?\"."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 15. Vào tuần 3 — hôm nay anh sẽ gặp <strong>tình huống khó đầu tiên</strong>: cà phê sáng + đồng nghiệp ngoài giờ. cơn thèm sinh học giảm, nhưng <em>conditioned cue Pavlov</em> đang mạnh nhất. 70% người vấp ở Ngày 15-21 vì <strong>tự tin quá</strong>.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Conditioned cue extinction bắt đầu (Shiffman 2002)<sup>[1]</sup></li>
+<li>cơn thèm sinh học giảm 70% so D3 — nhưng Pavlov vẫn cực mạnh</li>
+<li>Tình huống khó nhất: cà phê sáng, đồng nghiệp ra hút, giờ nghỉ làm việc</li>
+<li>5 cách phá Pavlov: đổi cà phê khác, đi cầu thang giờ nghỉ, ngồi nơi khác</li>
+<li>Đừng để "tôi đã 14 ngày, mạnh rồi" lừa — vẫn cần Plan B</li>
+</ul>
+</div>
+
+<h2>Tại sao Ngày 15 nguy hiểm?</h2>
+
+<h3>Cravings sinh học GIẢM — nhưng Pavlov vẫn còn</h3>
+
+<p>Sau 2 tuần, receptor nicotine đã ổn định nhiều. cơn thèm sinh học giảm 70% so với Ngày 3. Anh cảm thấy "mạnh hơn".</p>
+
+<p><strong>NHƯNG</strong> — conditioned cue (Pavlov) chưa hết<sup>[1]</sup>. 25-30 năm hút đã tạo hàng nghìn liên kết não-điều kiện:</p>
+
+<ul>
+<li>Café sáng + thuốc</li>
+<li>Sau bữa cơm + thuốc</li>
+<li>Stress + thuốc</li>
+<li>Đồng nghiệp gọi ra ngoài + thuốc</li>
+<li>Đi vệ sinh + thuốc</li>
+<li>Lái xe + thuốc</li>
+</ul>
+
+<p>Mỗi cue như "bẫy" — không tự kích nếu anh không gặp, nhưng khi gặp → bùng mạnh.</p>
+
+<h3>Bẫy "tôi đã 14 ngày, mạnh rồi"</h3>
+
+<p>Đây là pattern nguy hiểm nhất. Anh nghĩ "triệu chứng cai (withdrawal) đã qua" → quay lại ngồi quán cũ, gặp bạn nhậu cũ "chỉ cà phê thôi" → 5 phút sau hút lại. Đa số vấp tuần 3-4 là do <strong>tự tin quá sớm</strong>.</p>
+
+<h2>4 tình huống khó nhất tuần 3</h2>
+
+<h3>1. Cà phê sáng + công việc</h3>
+
+<p>Cà phê + thuốc = combo Pavlov mạnh nhất với người Việt 45+. Sáng nay anh ngồi bàn quen, mở laptop — não tự sinh thèm. Đây <strong>không phải cơn thèm sinh học</strong>, là context cue.</p>
+
+<h3>2. Đồng nghiệp ra hút giờ nghỉ</h3>
+
+<p>Smoke break ritual ăn sâu 25-30 năm. 10h sáng + 15h chiều — não đợi "đến giờ ra". Khi đồng nghiệp đứng dậy, mời "cùng đi" — pressure tâm lý.</p>
+
+<h3>3. Sau bữa trưa</h3>
+
+<p>Insulin tăng + dopamine tìm "thưởng" + thói quen cũ ngồi ghế quen. 5-10 phút sau ăn cơn thèm bất ngờ.</p>
+
+<h3>4. Stress công việc bất ngờ</h3>
+
+<p>Họp căng, deadline gấp, sếp gọi — não tự động tìm "smoke break" làm cách giảm stress. Đặc biệt nguy hiểm tuần 3.</p>
+
+<h2>5 hành động Ngày 15</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Tuần này — đổi cà phê / cách pha</h4>
+<p>Nếu trước đây cà phê đen pha phin → đổi sang cà phê sữa, cappuccino, hoặc trà. <strong>Đổi context</strong> — não không tình huống thèm với "cà phê lạ". 2 tuần sau quay lại cà phê quen — đã hết Pavlov.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Giờ nghỉ 10h + 15h — đi cầu thang</h4>
+<p>Lên/xuống 3 tầng cầu thang (3-5 phút). Vận động nhẹ + đổi context + tạo "smoke break thay thế". Nếu đồng nghiệp rủ đi cùng — báo "tôi đang cai, đi với anh em uống nước". Họ hiểu.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Sau bữa cơm — đứng dậy NGAY</h4>
+<p>Quy tắc 30 giây: ăn xong → đứng dậy → đi rửa bát hoặc đi bộ 5 phút. Đừng ngồi nán. Mỗi giây nán = cơn thèm tăng theo cấp số nhân.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Ngồi nơi không thấy người hút</h4>
+<p>Office: ngồi xa cửa, không thấy bàn smoke. Café: ngồi trong nhà có máy lạnh, không ngồi ban công. Quán nhậu — tránh tuần này. <strong>Visual cue mạnh hơn cả khói</strong>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Mang theo "kit cứu nguy"</h4>
+<p>Trong túi/cốp xe: kẹo cao su Xylitol, nước lọc, hạt khô. Khi cue đến — lấy ra dùng ngay (30 giây). Tay-miệng habit có replacement.</p>
+</div>
+</div>
+
+<h2>Tránh tuần này</h2>
+
+<ul>
+<li><strong>"Tôi đã 14 ngày, mạnh rồi"</strong> — sai. Pavlov 3-6 tháng</li>
+<li><strong>Quay lại ngồi quán cũ "xem có thèm không"</strong> — chắc chắn thèm</li>
+<li><strong>Gặp bạn nhậu cũ "chỉ café thôi"</strong> — context nguy hiểm</li>
+<li><strong>Tự nói "1 điếu test xem"</strong> — 1 điếu = reset 72h</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 15 lần 5 cai, tôi đã làm 1 thí nghiệm sai: <strong>quay lại quán cà phê cũ</strong>. Tôi nghĩ "đã 2 tuần, kiểm tra xem mình thật sự mạnh không". Vừa ngồi xuống bàn quen, mở menu — não bùng cơn thèm cực mạnh. Bồi bàn quen tới — tôi nói "cho 1 cà phê" — anh ấy hỏi "anh hôm nay không hút à?". Mặc dù tôi đã định không nói gì, tôi <em>trả lời</em> — và 30 giây sau tôi đứng dậy đi về.</p>
+<p>Tôi không hút. Nhưng cảm giác đó — như rút chân ra khỏi bẫy lần cuối — tôi vẫn nhớ rõ. Sau đó 2 tuần tôi <strong>không quay lại quán cũ</strong>. Chỉ đến tuần thứ 5 tôi mới đi lại, lúc đó đã hết context cue.</p>
+<p>Bài học: <strong>tuần 3 không phải lúc "test" — là lúc bảo vệ</strong>. Tự tin quá = vấp. Tránh tình huống thèm 2 tuần đầu sau Mốc 2 tuần — không phải hèn, là khôn.</p>
+<p>Anh em ơi — hôm nay nếu thấy cơn thèm bất ngờ trong tình huống cũ, đừng nghĩ "tôi không mạnh". Anh đang ở vùng Pavlov đang yếu dần — không cần "test". Đổi context 2 tuần là xong.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-14-moc-2-tuan-bo-thuoc/">→ Ngày 14 — Mốc 2 tuần</a></li>
+<li><a href="https://sol.vn/ngay-16-nhau-bia-hoi-via-he-khong-hut-thuoc-song-sot-qua-buoi-dau-tien/">→ Ngày 16 — Nhậu không thuốc</a></li>
+<li><a href="https://sol.vn/ca-phe-sang-khong-thuoc/">→ Cà phê sáng không thuốc</a></li>
+</ul>
+</div>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+☕ <strong>Ngày 15 — Tình huống khó</strong><br><br>
+cơn thèm sinh học giảm 70% — nhưng Pavlov vẫn cực mạnh. 70% người vấp ở D15-D21 do "tự tin quá".<br><br>
+Hôm nay: đổi cà phê khác, giờ nghỉ đi cầu thang, sau bữa cơm đứng dậy NGAY, ngồi nơi không thấy người hút.<br><br>
+Đừng "test" — đang ở vùng Pavlov yếu dần.<br><br>
+📖 <a href="https://sol.vn/ngay-15-tinh-huong-kho-khan-can-doi-mat-ca-phe-tra-da-via-he-coc-bia-hoi-nhau-bua-an-stress/?utm_source=zalo&utm_campaign=qday-15">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Tuần 3-4 vẫn cần đồng hành — Sol companion hoặc người thân biết.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Tại sao Ngày 15 nguy hiểm?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sau 2 tuần, receptor nicotine đã ổn định nhiều. cơn thèm sinh học giảm 70% so với Ngày 3. Anh cảm thấy "mạnh hơn".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 4 tình huống khó nhất tuần 3 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cà phê + thuốc = combo Pavlov mạnh nhất với người Việt 45+. Sáng nay anh ngồi bàn quen, mở laptop — não tự sinh thèm. Đây không phải cơn thèm sinh học, là context cue.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. 5 hành động Ngày 15 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nếu trước đây cà phê đen pha phin → đổi sang cà phê sữa, cappuccino, hoặc trà. Đổi context — não không tình huống thèm với "cà phê lạ". 2 tuần sau quay lại cà phê quen — đã hết Pavlov.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Cần tránh tuần này gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 15 lần 5 cai, tôi đã làm 1 thí nghiệm sai: quay lại quán cà phê cũ. Tôi nghĩ "đã 2 tuần, kiểm tra xem mình thật sự mạnh không". Vừa ngồi xuống bàn quen, mở menu — não bùng cơn thèm cực mạnh. Bồi bàn quen tới — tôi nói "cho 1 cà phê" — anh ấy hỏi "anh hôm nay không hút à?".</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Shiffman S et al. (2002). <em>Real-time analysis of tái nghiện</em>. J Consult Clin Psychol 70:1140-1151.</li>
+<li>Marlatt GA, Gordon JR. (1985). <em>tái nghiện Prevention</em>. Guilford Press.</li>
+<li>Niaura R et al. (1988). <em>Relevance of cue reactivity to smoking</em>. J Abnorm Psychol 97:133-152.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 15 — Sol có chip cứu Pavlov</div>
+<div style="font-size:14px;opacity:.9;">Khi context cue bùng — bấm chip có sẵn. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-15&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã suýt vấp Ngày 15 vì quay lại quán cà phê cũ. Cập nhật 14-05-2026.</p>
+
+</div>

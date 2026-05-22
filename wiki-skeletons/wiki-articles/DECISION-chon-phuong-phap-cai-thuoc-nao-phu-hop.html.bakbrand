@@ -1,0 +1,252 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Chọn phương pháp cai thuốc lá nào phù hợp với anh? 5 câu hỏi quyết định",
+      "description": "Decision tree 5 câu hỏi (FTND, đã thử bao lần, trầm cảm, tài chính, gia đình) giúp anh chọn đúng phương pháp cai thuốc. Khuyến cáo cá nhân hoá.",
+      "author":{"@type":"Person","name":"Khang Sol","alternateName":"Nguyễn Đình Khang","url":"https://sol.vn/khang-sol","sameAs":["https://web.facebook.com/nguyendinhkhang","https://www.linkedin.com/in/vietnaminternet/"],"jobTitle":"Founder dự án LÀM CHỦ Sol","birthDate":"1976","description":"Hút Vinataba 30 năm (1991-2020). Thử bỏ 4 lần thất bại. Lần thứ 5 thành công 22-12-2020 âm lịch — hơn 5 năm Tự do. Background CNTT 20 năm. KHÔNG phải bác sĩ — người đã đi qua."},
+      "publisher": {"@type":"Organization","name":"Sol Đi Cùng","logo":{"@type":"ImageObject","url":"https://sol.vn/wp-content/uploads/sol-logo.png"}},
+      "datePublished": "2026-05-18","dateModified": "2026-05-18",
+      "mainEntityOfPage": "https://sol.vn/chon-phuong-phap-cai-thuoc-nao-phu-hop"
+    },
+    {
+      "@type": "HowTo",
+      "name": "Cách chọn phương pháp cai thuốc lá phù hợp với bản thân",
+      "description": "5 bước trả lời câu hỏi để quyết định combo phương pháp cai thuốc phù hợp",
+      "totalTime": "PT10M",
+      "step": [
+        {"@type":"HowToStep","position":1,"name":"Làm test Mức Lệ Thuộc Nicotin (FTND)","text":"Trả lời 6 câu hỏi FTND để biết anh thuộc Nhẹ (0-3), Vừa (4-6), hay Nặng (7-10). Mất 2 phút. Đây là nền tảng quyết định mọi thứ."},
+        {"@type":"HowToStep","position":2,"name":"Đếm số lần đã thử cai","text":"Lần đầu? Đã fail 1-2 lần? Đã fail 3+ lần? Càng nhiều lần fail càng cần 'vũ khí mạnh' (thuốc kê + đồng hành)."},
+        {"@type":"HowToStep","position":3,"name":"Kiểm tra tiền sử trầm cảm/lo âu","text":"Có dấu hiệu trầm cảm nhẹ → ưu tiên Bupropion (lo cả 2 vấn đề). Tiền sử trầm cảm nặng → cẩn thận Champix, hỏi bác sĩ trước."},
+        {"@type":"HowToStep","position":4,"name":"Đánh giá tài chính","text":"Hạn chế (<500k/tháng): Sol đơn + NRT đơn. Trung bình (500k-1tr): Sol + NRT đôi. Đủ (>1tr): Sol + Champix (BS kê)."},
+        {"@type":"HowToStep","position":5,"name":"Đánh giá hỗ trợ gia đình","text":"Có vợ/con/anh em ủng hộ: dễ hơn nhiều, có thể bắt đầu nhẹ. Chưa có: ưu tiên cộng đồng Sol để bù 'người đồng hành'."}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Làm sao biết phương pháp cai thuốc nào phù hợp với mình?","acceptedAnswer":{"@type":"Answer","text":"Trả lời 5 câu hỏi: (1) FTND (Mức Lệ Thuộc Nicotin) — Nhẹ/Vừa/Nặng? (2) Đã thử cai bao nhiêu lần? (3) Có tiền sử trầm cảm không? (4) Tài chính có hạn chế không? (5) Có gia đình hỗ trợ không? Mỗi câu trả lời ảnh hưởng combo phương pháp phù hợp. Sol đề xuất matrix cá nhân hoá trong bài."}},
+        {"@type":"Question","name":"Bao nhiêu tuổi cai thuốc là quá muộn?","acceptedAnswer":{"@type":"Answer","text":"KHÔNG bao giờ quá muộn. Theo nghiên cứu Lung Health Study + Doll 2004: cai ở 60 tuổi vẫn tăng tuổi thọ trung bình 3-5 năm. Cai ở 50 tuổi tăng 6-9 năm. Cai ở 30 tuổi gần như phục hồi hoàn toàn nguy cơ. Phổi bắt đầu phục hồi từ 24 giờ sau điếu cuối. Tim mạch phục hồi trong 1-5 năm. KHÔNG có 'quá muộn'."}},
+        {"@type":"Question","name":"Phương pháp cai nào tốt nhất cho người 50 tuổi trở lên?","acceptedAnswer":{"@type":"Answer","text":"Sol đề xuất combo Sol + NRT (FTND vừa) hoặc Sol + Champix (FTND nặng). Lý do: người 50+ thường có sức khoẻ cần ưu tiên, lệ thuộc nicotine lâu năm (cần 'vũ khí mạnh'), tài chính ổn định hơn (đủ cho combo). Sol đặc biệt phù hợp vì viết bằng tiếng Việt + bối cảnh anh em 45+ (nhậu, đám giỗ, vợ con)."}},
+        {"@type":"Question","name":"Combo phương pháp cai thuốc tốt nhất là gì?","acceptedAnswer":{"@type":"Answer","text":"Theo WHO + Cochrane: combo THUỐC (NRT hoặc Champix) + HỖ TRỢ TÂM LÝ (như Sol/CBT) hiệu quả gấp 2-3 lần đơn lẻ. Sol Hybrid v2 đề xuất 3 combo theo FTND: Nhẹ — Sol đơn. Vừa — Sol + NRT. Nặng — Sol + Champix (BS kê). Tất cả combo đều có đồng hành tâm lý + cộng đồng anh em đã đi qua."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .step-box { background: white; border-left: 4px solid #B25C2C; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; box-shadow: 0 2px 4px rgba(178,92,44,0.05); }
+.sol-wiki .step-num { display: inline-block; background: #B25C2C; color: white; width: 32px; height: 32px; border-radius: 50%; text-align: center; line-height: 32px; font-weight: 700; margin-right: 12px; }
+.sol-wiki .persona-card { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #E8DFC8; border-radius: 14px; padding: 20px 24px; margin: 16px 0; }
+.sol-wiki .persona-name { font-size: 17px; font-weight: 700; color: #5C3A1E; margin-bottom: 8px; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #5C3A1E; color: white; padding: 10px 12px; text-align: left; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid #E8DFC8; vertical-align: top; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">Anh đã đọc về 12 phương pháp cai thuốc. Vẫn phân vân: <em>"Cụ thể MÌNH nên chọn cái nào? Champix hay NRT? Cần thêm Sol không? Có tốn quá không?"</em> Bài này là <strong>decision tree 5 câu hỏi</strong> giúp anh tự chọn combo phù hợp với hoàn cảnh cá nhân — trong 10 phút.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Không có "phương pháp tốt nhất cho tất cả" — chỉ có "phù hợp với anh"</li>
+<li>5 yếu tố quyết định: <strong>FTND, số lần đã thử, trầm cảm, tài chính, gia đình</strong></li>
+<li>Cuối bài có 4 personas mẫu — anh thấy mình giống ai → biết chọn gì</li>
+<li>Combo thuốc + đồng hành tâm lý (như Sol) hiệu quả gấp 2-3 lần đơn lẻ</li>
+</ul>
+</div>
+
+<h2>Bước 1 — Làm test Mức Lệ Thuộc Nicotin (FTND) — 2 phút</h2>
+
+<div class="step-box">
+<p><span class="step-num">1</span><strong>Trả lời 6 câu test FTND</strong> — tổng điểm 0-10:</p>
+<ol>
+<li>Sau khi dậy bao lâu anh hút điếu đầu? (≤5p: 3đ / 6-30p: 2đ / 31-60p: 1đ / >60p: 0đ)</li>
+<li>Anh có khó chịu khi không được hút ở nơi cấm? (Có: 1đ / Không: 0đ)</li>
+<li>Điếu nào anh ghét bỏ nhất? (Sáng: 1đ / Khác: 0đ)</li>
+<li>Anh hút bao nhiêu điếu/ngày? (≤10: 0đ / 11-20: 1đ / 21-30: 2đ / ≥31: 3đ)</li>
+<li>Anh hút nhiều buổi sáng hơn buổi khác? (Có: 1đ / Không: 0đ)</li>
+<li>Anh có hút khi đang ốm phải nằm? (Có: 1đ / Không: 0đ)</li>
+</ol>
+<p><strong>Kết quả</strong>:</p>
+<ul>
+<li>0-3 điểm = NHẸ (FTND nhẹ) 🟢</li>
+<li>4-6 điểm = VỪA (FTND vừa) 🟡</li>
+<li>7-10 điểm = NẶNG (FTND nặng) 🔴</li>
+</ul>
+<p>👉 <a href="https://bothuocla.sol.vn/onboarding" style="color:#B25C2C;font-weight:600;">Làm test FTND tự động trên Sol (2 phút) →</a></p>
+</div>
+
+<h2>Bước 2 — Đếm số lần đã thử cai</h2>
+
+<div class="step-box">
+<p><span class="step-num">2</span><strong>Đây là lần thứ mấy anh cai?</strong></p>
+<ul>
+<li><strong>Lần đầu</strong>: chưa biết bản thân response thế nào → thử phương pháp nhẹ trước (Sol + NRT đơn)</li>
+<li><strong>Lần 2-3 (đã fail 1-2 lần)</strong>: đã biết phần nào khó → nâng combo (Sol + NRT đôi hoặc Champix)</li>
+<li><strong>Lần 4+ (đã fail nhiều)</strong>: cần "vũ khí mạnh nhất" → Sol + Champix (BS kê) + cộng đồng tích cực</li>
+</ul>
+<p><em>Lưu ý</em>: fail nhiều lần KHÔNG có nghĩa anh yếu — có nghĩa anh thiếu công cụ. Khang fail 4 lần (1995-2018), lần 5 (2020) thành công nhờ combo đầy đủ.</p>
+</div>
+
+<h2>Bước 3 — Tiền sử trầm cảm / lo âu</h2>
+
+<div class="step-box">
+<p><span class="step-num">3</span><strong>Anh có dấu hiệu trầm cảm hoặc lo âu không?</strong></p>
+<ul>
+<li><strong>Không có dấu hiệu gì</strong>: Sol + NRT hoặc Sol + Champix đều OK</li>
+<li><strong>Trầm cảm nhẹ</strong> (hay buồn, mất hứng): Ưu tiên Sol + <a href="https://sol.vn/bupropion-wellbutrin-zyban-cai-thuoc" style="color:#B25C2C;">Bupropion</a> — vừa cai vừa giảm trầm cảm</li>
+<li><strong>Trầm cảm nặng / đang điều trị</strong>: CẨN THẬN Champix — hỏi bác sĩ trước. Có thể chọn Sol + NRT (an toàn nhất)</li>
+<li><strong>Lo âu nặng / có cơn hoảng loạn</strong>: Sol + tham vấn tâm lý chuyên gia trước khi dùng thuốc cai</li>
+</ul>
+</div>
+
+<h2>Bước 4 — Đánh giá tài chính</h2>
+
+<div class="step-box">
+<p><span class="step-num">4</span><strong>Anh có thể chi bao nhiêu/tháng?</strong></p>
+<table>
+<thead><tr><th>Mức chi</th><th>Combo đề xuất</th><th>Tổng/tháng</th></tr></thead>
+<tbody>
+<tr><td><strong>< 500k</strong></td><td>Sol đơn (149-349k tổng lộ trình) + tự ý chí</td><td>50-100k/tháng</td></tr>
+<tr><td><strong>500k-1tr</strong></td><td>Sol + NRT đơn (miếng dán Nicotinell 21mg)</td><td>~500-700k/tháng</td></tr>
+<tr><td><strong>1tr-1.5tr</strong></td><td>Sol + NRT đôi (miếng dán + kẹo Nicorette)</td><td>~1-1.2tr/tháng</td></tr>
+<tr><td><strong>> 1.5tr</strong></td><td>Sol + Champix (BS kê) + kẹo cấp tốc</td><td>~1.3-1.6tr/tháng</td></tr>
+</tbody>
+</table>
+<p><em>So sánh</em>: nếu anh hút 1 bao/ngày = ~30k/ngày = <strong>~900k/tháng</strong> tiền thuốc. Cai = tiết kiệm số đó.</p>
+</div>
+
+<h2>Bước 5 — Đánh giá hỗ trợ gia đình</h2>
+
+<div class="step-box">
+<p><span class="step-num">5</span><strong>Anh có người ủng hộ không?</strong></p>
+<ul>
+<li><strong>Có vợ/chồng/bạn đời ủng hộ tích cực</strong>: dễ hơn nhiều. Có thể bắt đầu nhẹ — Sol + NRT</li>
+<li><strong>Vợ ủng hộ nhưng đôi khi cằn nhằn</strong>: Sol cộng đồng + bài "<a href="https://sol.vn/vo-giup-chong-bo-thuoc-la" style="color:#B25C2C;">Vợ giúp chồng bỏ thuốc</a>" để vợ đọc cùng</li>
+<li><strong>Sống một mình / chưa có gia đình</strong>: Ưu tiên cộng đồng Sol (Khoảng Lặng + Đại Sảnh) để bù phần "người đồng hành"</li>
+<li><strong>Có con nhỏ</strong>: thêm động lực mạnh — con là lý do cai. Sol có bài về "con ho vì khói thuốc của ba" — đọc trước khi bắt đầu</li>
+</ul>
+</div>
+
+<h2>Tổng hợp — 4 personas mẫu</h2>
+
+<div class="persona-card">
+<p class="persona-name">👤 Anh Hùng — 50 tuổi, Hà Nội, hút 25 năm 1 bao/ngày</p>
+<ul>
+<li><strong>FTND</strong>: 6 (VỪA) — hút điếu đầu sau 15 phút dậy</li>
+<li><strong>Đã thử</strong>: 2 lần (cha xin + bác sĩ doạ) — đều fail Day 3</li>
+<li><strong>Trầm cảm</strong>: không</li>
+<li><strong>Tài chính</strong>: ~1tr/tháng</li>
+<li><strong>Gia đình</strong>: vợ + 2 con ủng hộ tích cực</li>
+<li><strong>👉 Combo đề xuất</strong>: <strong>Sol VỪA (249k) + NRT đôi (Nicotinell 21mg + kẹo Nicorette 2mg) ~700k/tháng</strong></li>
+</ul>
+</div>
+
+<div class="persona-card">
+<p class="persona-name">👤 Anh Tú — 45 tuổi, TPHCM, hút 20 năm 1.5 bao/ngày</p>
+<ul>
+<li><strong>FTND</strong>: 9 (NẶNG) — hút điếu đầu trong 5 phút dậy</li>
+<li><strong>Đã thử</strong>: 4 lần — fail càng nặng hơn mỗi lần</li>
+<li><strong>Trầm cảm</strong>: nhẹ, hay buồn không lý do</li>
+<li><strong>Tài chính</strong>: ~1.5tr/tháng</li>
+<li><strong>Gia đình</strong>: vợ cằn nhằn (đôi khi mỉa mai)</li>
+<li><strong>👉 Combo đề xuất</strong>: <strong>Sol NẶNG (349k) + Bupropion (BS kê) ~750k/tháng</strong> — Bupropion lo cả trầm cảm + cai. Sol cộng đồng giúp đỡ phần vợ.</li>
+</ul>
+</div>
+
+<div class="persona-card">
+<p class="persona-name">👤 Anh Lâm — 35 tuổi, Đà Nẵng, hút 8 năm 10 điếu/ngày</p>
+<ul>
+<li><strong>FTND</strong>: 3 (NHẸ) — hút điếu đầu sau 45 phút dậy</li>
+<li><strong>Đã thử</strong>: lần đầu</li>
+<li><strong>Trầm cảm</strong>: không</li>
+<li><strong>Tài chính</strong>: hạn chế ~300k/tháng</li>
+<li><strong>Gia đình</strong>: vợ mới + con sắp sinh</li>
+<li><strong>👉 Combo đề xuất</strong>: <strong>Sol NHẸ (149k cho 35 ngày) đơn lẻ</strong> — FTND nhẹ + lần đầu + có động lực con sắp sinh = đủ. Tiết kiệm tiền cho con.</li>
+</ul>
+</div>
+
+<div class="persona-card">
+<p class="persona-name">👤 Bác Ba — 60 tuổi, hưu trí, hút 40 năm 2 bao/ngày, đã bị COPD nhẹ</p>
+<ul>
+<li><strong>FTND</strong>: 10 (NẶNG) — hút điếu đầu ngay khi mở mắt</li>
+<li><strong>Đã thử</strong>: 5 lần — toàn ý chí</li>
+<li><strong>Trầm cảm</strong>: không nhưng lo về sức khoẻ</li>
+<li><strong>Tài chính</strong>: ổn định</li>
+<li><strong>Gia đình</strong>: con cháu lớn ủng hộ</li>
+<li><strong>👉 Combo đề xuất</strong>: <strong>Sol NẶNG (349k) + Champix (BS hô hấp kê) + miếng dán NRT giai đoạn đầu ~1.5tr/tháng</strong> + khám BS hô hấp định kỳ. Cai để chậm tiến trình COPD.</li>
+</ul>
+</div>
+
+<h2>Câu hỏi anh em hay hỏi</h2>
+
+<h3>Bao nhiêu tuổi cai thuốc là quá muộn?</h3>
+
+<p>KHÔNG bao giờ quá muộn. Theo Doll 2004 + Lung Health Study:</p>
+
+<ul>
+<li>Cai ở 30 tuổi: gần như phục hồi hoàn toàn nguy cơ ung thư phổi</li>
+<li>Cai ở 50 tuổi: tăng tuổi thọ trung bình 6-9 năm</li>
+<li>Cai ở 60 tuổi: tăng 3-5 năm + giảm 50% nguy cơ tim mạch trong 5 năm</li>
+<li>Cai ở 70 tuổi: vẫn có lợi cho phổi + chất lượng sống</li>
+</ul>
+
+<p>Phổi bắt đầu phục hồi từ <strong>24 giờ sau điếu cuối</strong>. Tim mạch phục hồi rõ trong 1-5 năm.</p>
+
+<h3>Tôi nên bắt đầu phương pháp nào trước?</h3>
+
+<p>Sol đề xuất luôn bắt đầu với <strong>7 ngày Nhận Diện MIỄN PHÍ trên Sol</strong>. Trong 7 ngày này:</p>
+
+<ul>
+<li>Anh chưa cần cai</li>
+<li>Anh làm test FTND chính xác</li>
+<li>Anh nhận diện 5 tình huống gây thèm cá nhân</li>
+<li>Cuối Ngày 7: quyết định combo phù hợp + Ngày Quyết Định</li>
+</ul>
+
+<h3>Nếu fail thì sao?</h3>
+
+<p>Vấp lại = bình thường. Trung bình một người cai 4-7 lần trước khi sạch hẳn. Sol đi cùng anh qua mỗi lần vấp — không trừng phạt, chỉ giúp phân tích "tại sao vấp" + làm lại tốt hơn.</p>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL — TEST FTND MIỄN PHÍ</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Làm test FTND 2 phút trên Sol → biết anh thuộc NHẸ/VỪA/NẶNG → Sol đề xuất combo cá nhân hoá.
+</p>
+<a href="https://bothuocla.sol.vn/onboarding?utm_source=wiki&utm_medium=decision&utm_campaign=chon-phuong-phap">Làm test FTND ngay →</a>
+</div>
+
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Làm sao biết phương pháp cai thuốc nào phù hợp với mình?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Trả lời 5 câu hỏi: FTND, số lần đã thử, trầm cảm, tài chính, gia đình hỗ trợ. Mỗi câu ảnh hưởng combo phù hợp.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Bao nhiêu tuổi cai thuốc là quá muộn?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">KHÔNG bao giờ quá muộn. Cai ở 60 tuổi vẫn tăng tuổi thọ 3-5 năm. Phổi bắt đầu phục hồi từ 24 giờ sau điếu cuối.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phương pháp cai nào tốt nhất cho người 50 tuổi trở lên?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Sol + NRT (FTND vừa) hoặc Sol + Champix (FTND nặng). Sol phù hợp vì viết tiếng Việt + bối cảnh anh em 45+.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Combo phương pháp cai thuốc tốt nhất là gì?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Combo THUỐC + HỖ TRỢ TÂM LÝ hiệu quả gấp 2-3 lần đơn lẻ. Sol Hybrid v2 đề xuất 3 combo theo FTND.</p></details>
+</div>
+
+<hr style="border:0;border-top:1px dashed #E8DFC8;margin:32px 0;">
+
+<p class="footer-meta">
+<strong>Bài liên quan:</strong> <a href="https://sol.vn/combo-toi-uu-cai-thuoc-cho-anh-em-viet-nam-sol-hybrid-v2" style="color:#B25C2C;">Sol Hybrid v2 combo</a> · <a href="https://sol.vn/phuong-phap-cai-thuoc-la-pho-bien" style="color:#B25C2C;">12 phương pháp</a> · <a href="https://sol.vn/champix-vs-nrt-vs-bupropion-chon-thuoc-cai-thuoc-nao" style="color:#B25C2C;">Champix vs NRT vs Bupropion</a> · <a href="https://sol.vn/cai-thuoc-la-cho-nguoi-50-tuoi-co-qua-muon-khong" style="color:#B25C2C;">Cai thuốc cho người 50+</a>
+</p>
+<p class="footer-meta"><strong>Tác giả</strong>: Khang Sol — Sáng lập <a href="https://sol.vn" style="color:#B25C2C;">Sol Đi Cùng</a>.<br><strong>Nguồn bằng chứng</strong>: Heatherton 1991 (FTND validation), Doll 2004 (50-year cohort British doctors smoking + mortality), Lung Health Study (NEJM 2005), WHO Tobacco Cessation Guidelines 2024.</p>
+<p class="footer-emergency"><strong>Lưu ý</strong>: Khang không phải bác sĩ. Bài này là decision guide cá nhân — không thay thế tư vấn bác sĩ. Sol không hứa cai 100%.<br><strong>Tổng đài cai thuốc BV Bạch Mai</strong>: <a href="tel:0888008866" style="color:#B25C2C;font-weight:700;">0888-008-866</a>.</p>
+
+</div>

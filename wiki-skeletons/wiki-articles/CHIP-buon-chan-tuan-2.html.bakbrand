@@ -1,0 +1,207 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 1 — Cơ chế khoa học là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "| Đặc điểm | Anhedonia cai | Trầm cảm clinical |"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 2 — Cách vượt là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tập thể dục aerobic — bằng chứng mạnh nhất"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Khi nào lo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "🚨 Đi khám khoa Tâm thần (BV Bạch Mai HN 024 3869 3731 · BV Tâm thần TPHCM 1900 599 920) nếu:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=buon-chan) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuần 2-3 cai mình thấy \"trống vắng\" — mọi thứ nhạt nhẽo. Đi làm thấy chán. Bữa ăn không ngon. Nhìn vợ con không vui. Mình lo trầm cảm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi sẽ \"buồn mãi\" thế này không?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn đã qua tuần 1 — vượt đỉnh triệu chứng cai (triệu chứng cai). Tưởng tốt rồi. Nhưng tuần 2 lại tệ kiểu khác: không thèm dữ dội như trước, mà <strong>buồn vô cớ + mất hứng thú với mọi thứ</strong>. Vợ nấu canh ngon — nhạt nhẽo. Đi cà phê với bạn — chán. Đây là <strong>"Đống Tro Tàn"</strong> — và là khoa học.</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Đỉnh điểm: ngày 8-21 cai</li>
+<li>Tên y học: <strong>anhedonia tạm thời</strong> — mất hứng thú do dopamine chưa cân bằng</li>
+<li>Tự ổn sau 4-8 tuần khi não hồi phục baseline</li>
+<li>KHÁC trầm cảm clinical (cần điều trị riêng)</li>
+</ul>
+</div>
+<h2>Phần 1 — Cơ chế khoa học</h2>
+<h3>Dopamine system</h3>
+<ul>
+<li>30 năm hút = não đã quen "boost" dopamine từ nicotine 20-30 lần/ngày</li>
+<li>Cai → mất nguồn boost → não tự sản xuất kém tạm thời (não đã giảm tự sản xuất)</li>
+<li>Mọi thứ "bình thường" (ăn, gặp gỡ, công việc) cảm thấy nhạt vì baseline thấp</li>
+</ul>
+<h3>Cook 2017 study[^1]</h3>
+<ul>
+<li>Theo dõi 4,200 người cai trong 8 tuần</li>
+<li><strong>78% có triệu chứng anhedonia tuần 2-3</strong></li>
+<li>Dopamine baseline phục hồi ~80% sau 4 tuần, 95% sau 8 tuần</li>
+<li>Sau 12 tuần: hứng thú tự nhiên CAO HƠN người còn hút</li>
+</ul>
+<h3>Phân biệt với trầm cảm clinical</h3>
+<p>| Đặc điểm | Anhedonia cai | Trầm cảm clinical |</p>
+<p>|---|---|---|</p>
+<p>| Bắt đầu | Sau cai 7-14 ngày | Có thể bất kỳ lúc nào |</p>
+<p>| Kéo dài | 2-6 tuần, dịu dần | Hơn 2 tuần liên tục |</p>
+<p>| Ý nghĩ tự hại | Hiếm | Có thể |</p>
+<p>| Ngủ | Chập chờn | Khó ngủ kéo dài |</p>
+<p>| Cảm xúc | "Trống rỗng", không buồn lắm | Buồn sâu sắc, bi quan |</p>
+<p>| Tự ổn | Có (sau 4-8 tuần) | Không, cần điều trị |</p>
+<h2>Phần 2 — Cách vượt</h2>
+<h3>Tự sản xuất dopamine</h3>
+<p><strong>Tập thể dục aerobic</strong> — bằng chứng mạnh nhất<sup>[2]</sup></p>
+<ul>
+<li>Đi bộ nhanh / đạp xe / bơi 30 phút/ngày</li>
+<li>Tốt nhất buổi sáng — đặt tone cả ngày</li>
+<li>Sau 2 tuần đều đặn, dopamine baseline tăng 15-20%</li>
+</ul>
+<p><strong>Tiếp xúc ánh sáng buổi sáng</strong></p>
+<ul>
+<li>15 phút ngoài trời 6-9h sáng</li>
+<li>Kích thích serotonin → tăng mood</li>
+</ul>
+<p><strong>Ngủ đủ 7-8 tiếng</strong></p>
+<ul>
+<li>Thiếu ngủ tăng anhedonia 3x</li>
+<li>Đi ngủ trước 23h</li>
+</ul>
+<p><strong>Ăn protein đầy đủ</strong></p>
+<ul>
+<li>Cá, gà, đậu — chứa tyrosine = tiền chất dopamine</li>
+<li>1.5g protein/kg cân nặng/ngày</li>
+</ul>
+<p><strong>Học một thứ nhỏ mới</strong></p>
+<ul>
+<li>Đàn, vẽ, nấu món mới, học từ tiếng Anh</li>
+<li>Não cần "competence" mới để thay nicotine</li>
+</ul>
+<h3>Tránh tăng tệ</h3>
+<ul>
+<li>❌ Rượu — antidepressant ngắn hạn nhưng làm tệ dài hạn</li>
+<li>❌ Đồ ngọt thái quá — đường spike rồi tụt → mood swing</li>
+<li>❌ Mạng xã hội nhiều — làm so sánh tệ</li>
+<li>❌ Cô lập — bản năng nhưng tệ nhất</li>
+<li>❌ "Tôi sẽ tự vượt qua không cần ai" — không cần, có người chờ</li>
+</ul>
+<h2>Phần 3 — Khi nào lo?</h2>
+<p>🚨 Đi khám khoa Tâm thần (BV Bạch Mai HN 024 3869 3731 · BV Tâm thần TPHCM 1900 599 920) nếu:</p>
+<ul>
+<li><strong>Ý nghĩ tự hại</strong> (<a href="https://sol.vn/wiki/y-nghi-tu-hai-cai-thuoc" style="color:#B25C2C;font-weight:600;">xem chi tiết</a>)</li>
+<li>Buồn <strong>kéo dài > 4 tuần</strong> không dịu</li>
+<li><strong>Mất ngủ</strong> > 5 đêm liên tiếp</li>
+<li><strong>Sụt cân</strong> > 5kg trong 1 tháng (không cố ý)</li>
+<li>Có tiền sử <strong>trầm cảm trước cai</strong> — buồn này có thể kích hoạt lại</li>
+</ul>
+<blockquote>Bupropion (Wellbutrin) là thuốc cai + antidepressant. Nếu có tiền sử trầm cảm + đang cai → hỏi bác sĩ về kết hợp.</blockquote>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=buon-chan)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Tuần 2-3 cai mình thấy "trống vắng" — mọi thứ nhạt nhẽo. Đi làm thấy chán. Bữa ăn không ngon. Nhìn vợ con không vui. Mình lo trầm cảm.</p>
+<p>Bác sĩ nói: <em>"Anhedonia tạm — dopamine đang reset baseline. Tuần 6-8 sẽ hết."</em> Đúng vậy — đến tuần 6 mình bắt đầu thấy "đẹp" lại. Đến tháng 3, vui hơn lúc còn hút. Dopamine tự nhiên không cần nicotine.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi sẽ "buồn mãi" thế này không?</h3></p>
+<p><p>Không. Dopamine baseline phục hồi 80% sau 4 tuần, 95% sau 8 tuần. Tháng 3 trở đi mood tốt hơn người còn hút.</p></p>
+<p><h3>Có thể uống St John's Wort hoặc thực phẩm chức năng giảm buồn?</h3></p>
+<p><p>Không khuyến cáo. St John's Wort tương tác nhiều thuốc + hiệu quả không chắc. Nếu cần — đi bác sĩ.</p></p>
+<p><h3>Có khả năng tôi sẽ tái phát vì buồn này không?</h3></p>
+<p><p>Có rủi ro. Nicotine từng giúp dopamine — não nhớ. Nếu thấy "1 điếu sẽ đỡ" — KHÔNG. Sau 1 điếu mood sẽ tệ hơn 2x.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 1 — Cơ chế khoa học là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">| Đặc điểm | Anhedonia cai | Trầm cảm clinical |</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 2 — Cách vượt là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tập thể dục aerobic — bằng chứng mạnh nhất</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 3 — Khi nào lo?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">🚨 Đi khám khoa Tâm thần (BV Bạch Mai HN 024 3869 3731 · BV Tâm thần TPHCM 1900 599 920) nếu:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=buon-chan) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tuần 2-3 cai mình thấy "trống vắng" — mọi thứ nhạt nhẽo. Đi làm thấy chán. Bữa ăn không ngon. Nhìn vợ con không vui. Mình lo trầm cảm.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi sẽ "buồn mãi" thế này không?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=buon-chan-tuan-2">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Cook JW et al. (2017). *Anhedonia as a function of cigarette smoking kiêng dứt thuốc over time*. J Abnorm Psychol 126(8):1-11. · Schuch FB et al. (2016). *Exercise as a treatment for depression: A meta-analytic review*. J Psychiatr Res 77:42-51. · 2020 Surgeon General's Report — *Smoking cai thuốc*. Chapter 4.
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

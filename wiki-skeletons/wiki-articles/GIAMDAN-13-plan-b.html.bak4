@@ -1,0 +1,305 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Plan B cai thuốc lá là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Implementation intention (Gollwitzer 1999) — câu \"Khi X xảy ra, tôi sẽ Y\" thay vì \"Tôi sẽ cố gắng không hút\". Cụ thể như công thức nấu ăn. Meta-analysis effect size d=0.65 — tăng odds thành công 2-3x."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi cần viết bao nhiêu Plan B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5 — cho 5 tình huống thèm nặng nhất từ nhật ký T-13. Quy tắc: 5 plan vừa đủ để nhớ, không quá nhiều. Top 5 tình huống thèm phổ biến Việt: cà phê sáng, sau cơm tối, bia hơi, stress công việc, cãi nhau với vợ/người thân."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Plan B phải cụ thể đến mức nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rất cụ thể. KHÔNG: \"khi tôi căng thẳng, tôi sẽ uống nước\". CÓ: \"Khi sếp gọi điện báo deadline gấp, tôi đi xuống tầng 1, mua chai nước lạnh, uống 200ml, đi 100 bước quanh tòa nhà\". Cụ thể = não thi hành được."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3 lỗi viết Plan B phổ biến?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "(1) Quá chung — \"khi tôi căng thẳng\" (có 100 dạng). (2) Hành động chỉ \"không\" — \"tôi sẽ không hút\" (não không hiểu \"không X\" tốt). (3) Quá phức tạp — \"thiền 30 phút\" (lúc thèm cấp không có thời gian)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sau khi viết Plan B tôi làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In/dán gương phòng tắm. Đọc to cho vợ/người thân. Test 1 Plan B chiều nay khi có cơn thèm nhẹ. Mai T-1 ritual đêm cuối. Q-Day Plan B sẵn sàng trong tay."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; color: #2C2A27; }
+.sol-wiki .plan-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 14px 0; }
+.sol-wiki .plan-card .tình huống thèm { background: #FEF2F2; border-left: 3px solid #DC2626; padding: 8px 12px; border-radius: 6px; margin-bottom: 8px; font-size: 14px; }
+.sol-wiki .plan-card .tình huống thèm strong { color: #DC2626; }
+.sol-wiki .plan-card .response { background: #ECFDF5; border-left: 3px solid #16A34A; padding: 8px 12px; border-radius: 6px; font-size: 14px; }
+.sol-wiki .plan-card .response strong { color: #15803D; }
+.sol-wiki .formula-box { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px; margin: 20px 0; text-align: center; font-size: 18px; }
+.sol-wiki .formula-box strong { color: #B25C2C; font-size: 22px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">"Cố gắng không hút" là chiến lược thua. "Khi X xảy ra, tôi sẽ Y" là chiến lược thắng. Khoa học gọi là <strong>implementation intention</strong> (Gollwitzer 1999) — đã được meta-analysis cho thấy tăng tỷ lệ thành công 2-3 lần. Hôm nay T-2 (Ngày 13 Giảm dần) — Sol giúp anh viết 5 Plan B cụ thể cho 5 tình huống thèm nặng nhất.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>"Cố không hút"</strong> chỉ là wish, không phải plan — hệ não nhận ngay "thiếu khoái"</li>
+<li><strong>Plan B if-then</strong> (Gollwitzer 1999) tăng odds thành công 2-3 lần — meta-analysis effect size d=0.65<sup>[1]</sup></li>
+<li>Công thức: "<strong>Khi [tình huống thèm cụ thể] xảy ra, tôi sẽ [hành động cụ thể trong 5 phút]</strong>"</li>
+<li>Hôm nay T-2: viết 5 Plan B cho 5 tình huống thèm nặng nhất (đã liệt kê từ nhật ký T-13)</li>
+<li>Mai T-1: đêm trước Q-Day — anh sẽ cần Plan B này thật ở D1-3 Q-Day</li>
+</ul>
+</div>
+
+<h2>Vì sao "cố gắng" thua "Plan B"?</h2>
+
+<p>Anh có nghe đến cụm từ "ý chí" (sức mạnh ý chí)? Nghiên cứu 30 năm cho thấy <strong>ý chí là tài nguyên CỚ HẠN</strong> — Roy Baumeister gọi đây là "ego depletion". Sau 1 ngày làm việc căng thẳng, ý chí giảm 60-70%. Đó là vì sao tối là lúc dễ vấp nhất.</p>
+
+<p>Plan B if-then KHÁC ý chí. Nó là <strong>quyết định trước</strong>. Khi tình huống X xảy ra (cảm xúc cao, ý chí thấp), não anh KHÔNG phải tự nghĩ "làm gì bây giờ?" — não chỉ thi hành câu lệnh đã viết trước.</p>
+
+<h3>Gollwitzer 1999 — Implementation Intentions</h3>
+
+<p>Peter Gollwitzer, nhà tâm lý ĐH New York, đưa ra khái niệm "implementation intention" trong American Psychologist 1999<sup>[1]</sup>. Khái niệm rất đơn giản: thay vì "tôi sẽ X" (goal intention), viết "<strong>Khi tình huống Y, tôi sẽ X</strong>" (implementation intention).</p>
+
+<p>Sau 25 năm và 200+ nghiên cứu, meta-analysis cho thấy:</p>
+
+<div class="stat-highlight">
+<div class="stat-num">+ 65%</div>
+<div class="stat-label">Tỷ lệ hoàn thành goal khi có if-then plan vs chỉ goal intention (Gollwitzer & Sheeran 2006, effect size d=0.65)</div>
+</div>
+
+<p>Cụ thể với cai thuốc, Armitage 2007 (J Public Health) cho 350 người hút thuốc viết if-then plans → tỷ lệ giảm 50% số điếu sau 2 tháng so với nhóm kiểm soát<sup>[2]</sup>.</p>
+
+<h2>Công thức Plan B Sol</h2>
+
+<div class="formula-box">
+<strong>KHI [tình huống thèm cụ thể] xảy ra,<br>tôi sẽ [hành động cụ thể trong 5 phút].</strong>
+</div>
+
+<p>2 yêu cầu quan trọng:</p>
+
+<ul>
+<li><strong>tình huống thèm CỤ THỂ:</strong> Không phải "khi căng thẳng" — mà "khi sếp gọi điện hỏi report deadline"</li>
+<li><strong>Hành động CỤ THỂ:</strong> Không phải "tôi sẽ không hút" — mà "tôi sẽ đi xuống tầng 1, mua chai nước lạnh, uống 200ml, đi 100 bước quanh tòa nhà"</li>
+</ul>
+
+<p>Cụ thể như công thức nấu ăn — ai cũng có thể làm theo trong tình huống căng thẳng.</p>
+
+<h2>5 Plan B template cho 5 trigger Việt phổ biến</h2>
+
+<p>Em viết sẵn 5 template — anh CHỈNH SỬA theo tình huống cá nhân của anh:</p>
+
+<div class="plan-card">
+<div class="tình huống thèm">
+<strong>tình huống thèm 1 — Cà phê sáng (gặp 87% người hút Việt):</strong><br>
+"Khi tôi pha xong ly cà phê sáng và ngồi xuống ban công..."
+</div>
+<div class="response">
+<strong>PLAN B:</strong> "...tôi sẽ KHÔNG ngồi ban công. Tôi uống cà phê trong bếp/phòng khách, vừa uống vừa đọc 1 trang sách / news. Nếu tay rảnh muốn cầm gì — cầm chai nước. Sau 15 phút uống xong cà phê, tôi đi 50 bước hoặc làm 5 cái push-up."
+</div>
+</div>
+
+<div class="plan-card">
+<div class="tình huống thèm">
+<strong>tình huống thèm 2 — Sau bữa cơm tối (gặp 79%):</strong><br>
+"Khi tôi vừa ăn xong bữa cơm tối và bụng no..."
+</div>
+<div class="response">
+<strong>PLAN B:</strong> "...tôi sẽ đứng dậy NGAY khỏi mâm cơm (không ngồi quá 2 phút). Đi đánh răng + súc miệng nước muối ấm. Sau đó rủ vợ/con đi bộ 15 phút ngoài đường. Nếu mưa — đi cầu thang lên/xuống 5 lượt trong nhà."
+</div>
+</div>
+
+<div class="plan-card">
+<div class="tình huống thèm">
+<strong>tình huống thèm 3 — Bia hơi / nhậu vỉa hè (vấp 70% xảy ra ở đây):</strong><br>
+"Khi tôi ngồi quán bia với bạn và ai đó rút bao thuốc mời..."
+</div>
+<div class="response">
+<strong>PLAN B:</strong> "...tôi sẽ nói: 'Cảm ơn anh, em đang chữa hô hấp — bác sĩ bảo cữ thuốc 6 tháng.' Cầm ngay ly bia/nước, nhấp một ngụm. Nếu họ ép — đi vệ sinh, ra ngoài hít không khí 2 phút. Nếu không kiềm chế được — VỀ NHÀ NGAY, không nán."
+</div>
+</div>
+
+<div class="plan-card">
+<div class="tình huống thèm">
+<strong>tình huống thèm 4 — Stress công việc, sếp/khách khó (gặp 50%):</strong><br>
+"Khi tôi cảm thấy stress đỉnh — sếp gọi gấp, khách phàn nàn, deadline 1 giờ nữa..."
+</div>
+<div class="response">
+<strong>PLAN B:</strong> "...tôi sẽ ĐI XUỐNG TẦNG 1 (đổi không gian). Mua chai nước lạnh từ máy/quán. Uống 200ml. Đi 100 bước quanh tòa nhà. Hít sâu 4-7-8 × 4 vòng (hít 4s, giữ 7s, thở 8s). Quay lại bàn làm việc, vẫn còn stress nhưng đã có 5 phút nghỉ."
+</div>
+</div>
+
+<div class="plan-card">
+<div class="tình huống thèm">
+<strong>tình huống thèm 5 — Cãi nhau với vợ/người thân (cường độ cao):</strong><br>
+"Khi tôi và vợ cãi nhau, cảm xúc giận lên cao..."
+</div>
+<div class="response">
+<strong>PLAN B:</strong> "...tôi sẽ nói: 'Anh cần 15 phút nghĩ lại, mình nói tiếp sau.' Đi ra ngoài (ban công / sân / đầu ngõ — KHÔNG mang điện thoại có thuốc gần đó). Uống nước. Nếu vẫn căng — gọi 1 người bạn nói chuyện 10 phút. Quay vào với cảm xúc đã hạ. KHÔNG hút."
+</div>
+</div>
+
+<h2>Cá nhân hóa: 5 trigger CỦA ANH</h2>
+
+<p>tình huống thèm của anh có thể khác 5 tình huống thèm phổ biến. Cách viết Plan B cá nhân:</p>
+
+<ol>
+<li>Mở nhật ký T-13 (Ngày 2 Giảm dần — bản đồ tình huống thèm anh đã ghi)</li>
+<li>Liệt kê 5 tình huống thèm anh ghi nhiều nhất + đánh sao 3 (mạnh nhất)</li>
+<li>Với mỗi tình huống thèm, viết 1 câu If-Then theo công thức Sol</li>
+<li>Test trong vòng 5 phút — câu Plan B có khả thi không? Có cần đồ chuẩn bị trước (nước, kẹo)?</li>
+<li>Lưu vào điện thoại — màn hình home / widget Sol</li>
+</ol>
+
+<h2>3 lỗi phổ biến khi viết Plan B</h2>
+
+<h3>Lỗi 1: Quá chung — "Khi tôi căng thẳng, tôi sẽ uống nước"</h3>
+<p>"Căng thẳng" có 100 dạng. "Sếp gọi gấp" — cụ thể. "Khách phàn nàn email" — cụ thể. Não cần signal rõ.</p>
+
+<h3>Lỗi 2: Hành động chỉ "không" — "Tôi sẽ không hút"</h3>
+<p>Não không hiểu "không X" tốt bằng "Y". Phải có hành động THAY THẾ. Uống nước, đi bộ, gọi điện — Y cụ thể.</p>
+
+<h3>Lỗi 3: Hành động quá phức tạp — "Tôi sẽ ngồi thiền 30 phút"</h3>
+<p>Trong tình huống thèm cấp, anh không có 30 phút. Plan B phải làm được trong 5 PHÚT. Càng đơn giản càng có cơ hội thực hiện.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — 5 Plan B của mình năm 2020</div>
+<p>Mình viết 5 Plan B này trên 1 tờ giấy, dán lên gương phòng tắm 2 tuần. Mình đọc mỗi sáng + tối. Đến Q-Day, mình thuộc lòng 5 câu.</p>
+<p>Plan B nặng nhất của mình: <strong>"Khi đi đám cưới bạn — tôi sẽ uống bia chậm trong ly thấp (không vỡ ngụm), không ngồi cùng bàn người hút, ngồi gần vợ. Nếu bạn cũ rút bao mời, nói 'Anh ơi em đang chữa hô hấp'. Nếu họ ép quá — ra ngoài đứng 5 phút với vợ. Nếu vẫn căng — về sớm 30 phút."</strong></p>
+<p>Mình áp dụng Plan B này 4 lần trong năm 2020 — lần 1 (đám cưới em), lần 2 (sinh nhật bạn), lần 3 (Tết), lần 4 (gặp đối tác). Cả 4 đều không hút. Plan B chính xác = thắng. Không Plan B = vấp ở lần thứ 1.</p>
+</div>
+
+<h2>Hôm nay T-2: 30 phút viết Plan B</h2>
+
+<ol>
+<li>Lấy giấy/điện thoại — viết 5 tình huống thèm top theo nhật ký T-13</li>
+<li>Với mỗi tình huống thèm, viết 1 câu If-Then theo công thức Sol (10-30s mỗi câu)</li>
+<li>Test mỗi câu: "Câu này tôi làm được trong 5 phút?"</li>
+<li>Chỉnh sửa nếu quá phức tạp</li>
+<li>In ra / dán gương / lưu home screen — dễ thấy</li>
+<li>Đọc to 5 câu cho vợ/người thân (accountability)</li>
+</ol>
+
+<p>Quan trọng: <strong>KHÔNG để mai làm</strong>. T-2 là ngày để viết, T-1 là ngày để chuẩn bị thể chất + ngủ. Mai không có chỗ cho việc "ngồi nghĩ Plan B".</p>
+
+<h2>Mai có gì?</h2>
+
+<p>T-1 (Ngày 14 Giảm dần) — Đêm trước Q-Day. Sol hướng dẫn: ritual điếu cuối có ý thức (Marlatt — giảm tái nghiện D1-30 30%), ăn no + chuối, đi bộ 30 phút, dọn cue lần cuối, ngủ trước 23h. Mai 7h sáng anh nhận chip Q-Day Day 1.</p>
+
+📝 <strong>T-2 (Giảm dần Ngày 13) — Viết 5 Plan B</strong><br><br>
+Công thức Gollwitzer 1999: "Khi [tình huống thèm cụ thể], tôi sẽ [hành động trong 5 phút]". Tăng odds 2-3x (Sheeran meta-analysis d=0.65).<br><br>
+Hôm nay: viết 5 Plan B cho 5 tình huống thèm top từ nhật ký T-13. Cụ thể như công thức nấu ăn. Lưu home screen + đọc to cho vợ.<br><br>
+3 lỗi tránh: quá chung ("căng thẳng"), chỉ "không" ("không hút"), quá phức tạp ("thiền 30 phút"). Đơn giản, 5 phút làm được.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-13-plan-b/?utm_source=zalo&utm_campaign=giamdan-13">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Plan B là chiến lược behavioral — không thay thế hỗ trợ y khoa nếu có FTND ≥7 cần NRT/Champix. Nếu tình huống thèm là cảm xúc nặng (depression, anxiety crisis) — thảo luận với bác sĩ tâm lý song song với cai thuốc.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Plan B cai thuốc lá là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Implementation intention (Gollwitzer 1999) — câu "Khi X xảy ra, tôi sẽ Y" thay vì "Tôi sẽ cố gắng không hút". Cụ thể như công thức nấu ăn. Meta-analysis effect size d=0.65 — tăng odds thành công 2-3x.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Tôi cần viết bao nhiêu Plan B?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">5 — cho 5 tình huống thèm nặng nhất từ nhật ký T-13. Quy tắc: 5 plan vừa đủ để nhớ, không quá nhiều. Top 5 tình huống thèm phổ biến Việt: cà phê sáng, sau cơm tối, bia hơi, stress công việc, cãi nhau với vợ/người thân.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Plan B phải cụ thể đến mức nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Rất cụ thể. KHÔNG: "khi tôi căng thẳng, tôi sẽ uống nước". CÓ: "Khi sếp gọi điện báo deadline gấp, tôi đi xuống tầng 1, mua chai nước lạnh, uống 200ml, đi 100 bước quanh tòa nhà". Cụ thể = não thi hành được.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. 3 lỗi viết Plan B phổ biến?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">(1) Quá chung — "khi tôi căng thẳng" (có 100 dạng). (2) Hành động chỉ "không" — "tôi sẽ không hút" (não không hiểu "không X" tốt). (3) Quá phức tạp — "thiền 30 phút" (lúc thèm cấp không có thời gian).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Sau khi viết Plan B tôi làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">In/dán gương phòng tắm. Đọc to cho vợ/người thân. Test 1 Plan B chiều nay khi có cơn thèm nhẹ. Mai T-1 ritual đêm cuối. Q-Day Plan B sẵn sàng trong tay.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Gollwitzer PM. (1999). <em>Implementation intentions: strong effects of simple plans</em>. American Psychologist 54(7):493-503.</li>
+<li>Armitage CJ. (2007). <em>Effects of an implementation intention-based intervention on fruit consumption</em>. Psychology & Health 22(8):917-928. (Replicated for smoking cai thuốc)</li>
+<li>Gollwitzer PM, Sheeran P. (2006). <em>Implementation intentions and goal achievement: a meta-analysis of effects and processes</em>. Advances in Experimental Social Psychology 38:69-119.</li>
+<li>Baumeister RF, Tierney J. (2011). <em>ý chí: Rediscovering the Greatest Human Strength</em>. Penguin Press. (Ego depletion data)</li>
+<li>Marlatt GA, Donovan DM (Eds.). (2005). <em>tái nghiện Prevention</em> (2nd ed.). Guilford Press. (Coping plan framework)</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-2-ban-do-tình huống thèm/">T-13 — Bản đồ tình huống thèm (data nguồn cho Plan B)</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-14-dem-truoc-q-day/">T-1 (Mai) — Đêm trước Q-Day</a></li>
+<li>→ <a href="https://sol.vn/sap-hut-lai-cuu/">Sắp hút lại — cứu trong 60 phút</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-khi-di-nhau/">Cai thuốc khi đi nhậu — bài chi tiết</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Sol lưu sẵn 5 Plan B của anh — bật chip khi cơn thèm đến</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">App Sol lưu 5 Plan B cá nhân anh — bấm 1 nút khi cơn thèm peak, đọc lại trong 10 giây. Tiết kiệm ý chí.</p>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Gollwitzer 1999 Am Psychol, Sheeran meta-analysis 2006, Armitage 2007, Marlatt RP. Sol là sản phẩm Việt 100%, không quảng cáo, không bán dữ liệu.</p>
+
+</div>

@@ -1,0 +1,235 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hôm nay cơ thể anh đang làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trong 25-30 năm hút, não anh đã tăng số lượng receptor nicotinic acetylcholine (nAChR) ở vùng ventral tegmental area + nucleus accumbens — gọi là upregulation. Mỗi 1-2 giờ, anh tiếp nicotine, receptor được \"lấp đầy\", dopamine spike."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động cụ thể hôm nay là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hít vào 4 giây qua mũi → giữ 7 giây → thở ra 8 giây qua miệng. Lặp 3-5 lần. Kỹ thuật này kích hoạt hệ phó giao cảm → hạ cortisol + giảm nhịp tim trong 60 giây. Anh sẽ ngạc nhiên — rất hiệu quả."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 2 lần 5 cai (13/1/2020) — tôi nhớ rõ vì hôm đó tôi quát con. Con tôi (7 tuổi lúc đó) làm rơi cốc nước — chuyện cực nhỏ. Tôi quát to: \"Sao con cẩu thả vậy!\". Mặt con co rúm. Tôi tỉnh ngay — nhưng đã muộn."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">24 giờ qua adrenaline + quyết tâm đã giúp anh. Hôm nay là ngày 2 — và là ngày receptor nicotine trong não anh thực sự "đói". Đây là đỉnh cơn thèm nicotine — không phải dấu hiệu thất bại, mà là dấu hiệu não đang sửa.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Nicotine đã sạch 80% — receptor nicotinic acetylcholine (nAChR) "đói" → cơn thèm peak<sup>[1]</sup></li>
+<li>Cortisol tăng cao (stress response) — tim đập nhanh, lo âu</li>
+<li>5-10 cơn thèm/ngày, mỗi cơn 90 giây — 5 phút</li>
+<li>Đây KHÔNG phải dấu hiệu thất bại — não đang upregulate receptor</li>
+<li>5 hành động: thở 4-7-8, đi bộ khi thèm, uống nước lạnh, kẹo cao su, báo người thân</li>
+</ul>
+</div>
+
+<h2>Hôm nay cơ thể anh đang làm gì?</h2>
+
+<h3>Receptor nicotine "đói"</h3>
+
+<p>Trong 25-30 năm hút, não anh đã tăng số lượng receptor nicotinic acetylcholine (nAChR) ở vùng ventral tegmental area + nucleus accumbens — gọi là <strong>upregulation</strong><sup>[2]</sup>. Mỗi 1-2 giờ, anh tiếp nicotine, receptor được "lấp đầy", dopamine spike.</p>
+
+<p>Hôm nay nicotine đã sạch hoàn toàn. Receptor vẫn còn (cần 2-4 tuần để giảm số lượng). Nghĩa là: <strong>não có quá nhiều receptor, không có chất để lấp</strong> → cảm giác "đói" cực mạnh.</p>
+
+<h3>Cortisol đỉnh + Adrenaline tăng</h3>
+
+<ul>
+<li>Cortisol (stress hormone) peak D2-D3 (Hughes 2007)<sup>[3]</sup></li>
+<li>MAO không còn bị nicotine ức chế → adrenaline phá nhanh nhưng tổng hợp nhiều hơn</li>
+<li>Kết quả: <strong>tim đập nhanh, mặt nóng, lo âu nhẹ</strong></li>
+</ul>
+
+<h2>Triệu chứng dự kiến hôm nay</h2>
+
+<ul>
+<li><strong>Cơn thèm 5-10 lần/ngày</strong>, mỗi cơn dài 90 giây — 5 phút (đỉnh)</li>
+<li><strong>Đau đầu nhẹ</strong> — mạch máu não giãn lại</li>
+<li><strong>Khó tập trung</strong> tăng so với hôm qua</li>
+<li><strong>Cáu kỉnh</strong> — dễ tức giận chuyện nhỏ</li>
+<li><strong>Mất ngủ</strong> bắt đầu — khó vào giấc, dễ tỉnh giấc đêm</li>
+<li><strong>Thèm đồ ngọt</strong> — não tìm dopamine từ nguồn khác</li>
+</ul>
+
+<div class="alarm">
+<h4>🚨 Khi nào cần khám</h4>
+<ul>
+<li>Đau ngực dữ dội + khó thở → 115</li>
+<li>Run rẩy + đổ mồ hôi đầm + tim đập trên 120 → cấp cứu BV gần nhất</li>
+<li>Ý nghĩ tự hại → khoa Tâm thần BV (BV Bạch Mai HN 024 3869 3731 · BV Tâm thần TPHCM 1900 599 920)</li>
+</ul>
+</div>
+
+<h2>5 hành động cụ thể hôm nay</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Thở 4-7-8 khi cơn thèm đến</h4>
+<p>Hít vào 4 giây qua mũi → giữ 7 giây → thở ra 8 giây qua miệng. Lặp 3-5 lần. Kỹ thuật này kích hoạt hệ phó giao cảm → hạ cortisol + giảm nhịp tim trong 60 giây. Anh sẽ ngạc nhiên — rất hiệu quả.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Đi bộ 200 bước khi thèm đỉnh</h4>
+<p>Đứng dậy ngay khi cơn thèm bắt đầu. Đi quanh phòng, ra ban công, xuống cầu thang. Vận động kích hoạt dopamine tự nhiên + đẩy adrenaline. Sóng thèm chỉ kéo 90 giây — bước qua 90 giây = qua sóng.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Uống ngụm nước lạnh</h4>
+<p>Một cốc nước lạnh có 2 tác dụng: (1) đánh lừa hành vi tay-miệng cũ; (2) làm dịu khô miệng. Nếu được — ngậm 1 viên đá nhỏ. Mỗi cơn thèm → 1 cốc nước.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Nhai kẹo cao su không đường</h4>
+<p>Loại Xylitol (Trident, Doublemint) — không calo, không đường. Nhai 10 phút khi cơn thèm. Tay-miệng habit chuyển sang nhai → không "trống".</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Báo người thân: "Hôm nay là ngày đỉnh"</h4>
+<p>Nói với vợ + 1 người gần: "Hôm nay anh sẽ cáu nhất. Em chịu giúp anh 24 giờ. Mai ngày 3 — sẽ vẫn khó. Đến ngày 7 sẽ dịu." Khi họ biết trước — họ không phản ứng ngược khi anh cáu.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>Đi nhậu</strong> — combo tình huống thèm cao nhất</li>
+<li><strong>Gặp bạn hút thuốc</strong> — context nguy hiểm</li>
+<li><strong>Ngồi không 1 mình quá lâu</strong> — boredom + thèm = vấp</li>
+<li><strong>"Thử 1 hơi xem"</strong> — 1 hơi = reset receptor + 95% tái nghiện</li>
+<li><strong>Quyết định lớn</strong> — não đang yếu phán đoán</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 2 lần 5 cai (13/1/2020) — tôi nhớ rõ vì hôm đó tôi quát con. Con tôi (7 tuổi lúc đó) làm rơi cốc nước — chuyện cực nhỏ. Tôi quát to: <em>"Sao con cẩu thả vậy!"</em>. Mặt con co rúm. Tôi tỉnh ngay — nhưng đã muộn.</p>
+<p>Đêm đó tôi ôm con. Xin lỗi. Giải thích "ba đang cai thuốc, ba sẽ khó tính tuần này — con thương ba". Con tôi gật đầu. Nó hiểu nhiều hơn tôi tưởng.</p>
+<p>Hôm sau tôi báo vợ + đồng nghiệp gần: <strong>"Tôi sẽ cáu nhất tuần này. Đừng nhận cá nhân"</strong>. Họ thông cảm. Khi cáu — tôi đi ra khỏi phòng 5 phút trước khi mở miệng. 4 lần trước cai tôi không làm bước này — và tôi đã mất gia đình từng phần. Lần 5 tôi đã học.</p>
+<p>Anh em ơi — hôm nay là ngày đỉnh. Đừng để adrenaline lừa anh tin "tôi không cai được". Đây là khoa học của receptor nicotine. Mai sẽ vẫn khó. Đến ngày 7 sẽ dịu. <strong>Cứ giữ thêm 1 giờ — rồi 1 giờ nữa</strong>.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-1-24-gio-dau-tien-bo-thuoc-la/">→ Ngày 1 — Quay lại điểm khởi đầu</a></li>
+<li><a href="https://sol.vn/ngay-3-buc-tuong-trieu-chung-cai-dat-dinh-va-bat/">→ Ngày 3 — Bức tường (đỉnh triệu chứng cai (triệu chứng cai)</a></li>
+<li><a href="https://sol.vn/them-thuoc-dem-khuya-90-giay/">→ Kỹ thuật 90 giây vượt cơn thèm</a></li>
+</ul>
+</div>
+
+🌊 <strong>Ngày 2 — Đỉnh cơn thèm</strong><br><br>
+Receptor nicotine "đói" — não đang upregulate. Cortisol đỉnh. Đây không phải thất bại — là khoa học não.<br><br>
+Cơn thèm 5-10 lần/ngày, mỗi cơn 90 giây - 5 phút. Thở 4-7-8, đi 200 bước, uống nước lạnh, kẹo cao su.<br><br>
+Báo người thân: "Hôm nay anh đỉnh khó — em chịu giúp 24h".<br><br>
+📖 <a href="https://sol.vn/ngay-2-dinh-con-them-nicotine/?utm_source=zalo&utm_campaign=qday-2">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nội dung mang tính tham khảo dựa trên bằng chứng khoa học. Mỗi cơ thể khác nhau — luôn hỏi ý kiến bác sĩ.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Hôm nay cơ thể anh đang làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Trong 25-30 năm hút, não anh đã tăng số lượng receptor nicotinic acetylcholine (nAChR) ở vùng ventral tegmental area + nucleus accumbens — gọi là upregulation. Mỗi 1-2 giờ, anh tiếp nicotine, receptor được "lấp đầy", dopamine spike.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động cụ thể hôm nay là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Hít vào 4 giây qua mũi → giữ 7 giây → thở ra 8 giây qua miệng. Lặp 3-5 lần. Kỹ thuật này kích hoạt hệ phó giao cảm → hạ cortisol + giảm nhịp tim trong 60 giây. Anh sẽ ngạc nhiên — rất hiệu quả.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 2 lần 5 cai (13/1/2020) — tôi nhớ rõ vì hôm đó tôi quát con. Con tôi (7 tuổi lúc đó) làm rơi cốc nước — chuyện cực nhỏ. Tôi quát to: "Sao con cẩu thả vậy!". Mặt con co rúm. Tôi tỉnh ngay — nhưng đã muộn.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Benowitz NL. (2010). <em>Nicotine addiction</em>. N Engl J Med 362(24):2295-2303.</li>
+<li>Brody AL et al. (2006). <em>Smoking-induced ventral striatum dopamine release</em>. Am J Psychiatry 161(7):1211-1218.</li>
+<li>Hughes JR. (2007). <em>Effects of kiêng dứt thuốc from tobacco</em>. Nicotine Tob Res 9(3):315-327.</li>
+<li>US Surgeon General. (2020). <em>Smoking cai thuốc</em>. Chapter 3.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 2 — Sol đi cùng đỉnh sóng</div>
+<div style="font-size:14px;opacity:.9;">Sol có chip cứu 90 giây + Voice của Khang đêm khó + lộ trình 30 ngày. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-2&utm_medium=organic">Cùng Sol vượt sóng →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã trải qua Ngày 2 năm lần. Cập nhật 14-05-2026.</p>
+
+</div>

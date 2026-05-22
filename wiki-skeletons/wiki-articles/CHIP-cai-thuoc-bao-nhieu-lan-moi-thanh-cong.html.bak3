@@ -1,0 +1,295 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 1 — Khoa học nói gì về số lần cai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây là tin tuyệt vời: Bạn càng thử nhiều, tỷ lệ thành công càng cao — đảo ngược hoàn toàn với câu chuyện \"thất bại càng nhiều càng vô vọng\" mà nhiều người tin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 2 — 7 bài học từ mỗi lần cai \"thất bại\" là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mỗi lần \"thất bại\" thực ra dạy bạn 1 thứ giá trị cho lần sau:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Tại sao lần thứ N có thể là lần cuối?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sau X lần thử, bạn có 1 lợi thế không người mới nào có:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q: Tôi đã cai >10 lần — có lẽ tôi là trường hợp đặc biệt không cai được? A: KHÔNG. Nghiên cứu Chaiton: trung bình 30+ lần thử. Một số người cần 40-50 lần. Đây là bình thường về mặt khoa học. Đặc biệt với người nghiện nặng (FTND ≥ 6, hút ≥ 25 năm)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tham khảo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bài viết bởi Khang Sol — đã cai 5 lần, lần thứ 5 là lần cuối năm 2020. Cập nhật 14-05-2026."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.sol-wiki .stat-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 18px; text-align: center; }
+.sol-wiki .stat-num { font-size: 28px; font-weight: 700; color: #B25C2C; margin-bottom: 4px; }
+.sol-wiki .stat-label { font-size: 13px; color: #5C3A1E; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .lesson-card { background: white; border-left: 4px solid #B25C2C; padding: 14px 18px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .lesson-num { display: inline-block; background: #B25C2C; color: white; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-right: 8px; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #FFF4EA; color: #5C3A1E; padding: 10px 12px; text-align: left; border-bottom: 2px solid #B25C2C; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn đã cai 3 lần, 5 lần, hoặc 7 lần — và vẫn quay lại điếu thuốc. Bạn đang nghĩ "có lẽ mình không có khả năng". <strong>Đây là sai lầm lớn nhất bạn có thể tin về bản thân.</strong> Khoa học đã chứng minh: cai thuốc lá KHÔNG phải việc thành công ngay lần đầu — và <strong>trung bình mất 30+ lần thử mới cai thành công</strong>. Lần thứ 5 của bạn KHÔNG phải lần cuối — đó là một bước trên đường đi.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Nghiên cứu lớn nhất 2016 (BMJ Open, 1.277 người): <strong>trung bình 30+ lần thử trước khi cai hẳn</strong><sup>[1]</sup></li>
+<li>Tỷ lệ thành công lần đầu cai (bỏ đột ngột (cold turkey): chỉ <strong>3-5%</strong><sup>[2]</sup></li>
+<li>Tỷ lệ thành công sau 6 lần thử: tăng lên ~<strong>40%</strong></li>
+<li>Mỗi lần "thất bại" không phải về 0 — não tích lũy <strong>tri thức cai</strong> qua từng lần</li>
+<li>Người cai &gt;5 lần CÓ TỶ LỆ THÀNH CÔNG CAO HƠN người chưa thử lần nào</li>
+</ul>
+</div>
+
+<h2>Phần 1 — Khoa học nói gì về số lần cai?</h2>
+
+<h3>Nghiên cứu cũ vs mới — sự thật khác nhau</h3>
+<ul>
+<li><strong>Sách giáo khoa cũ (1980-2000s):</strong> "Trung bình 6-11 lần thử" — dựa trên survey ngắn, người chỉ nhớ vài lần cuối<sup>[3]</sup></li>
+<li><strong>Nghiên cứu Chaiton 2016 BMJ Open:</strong> Theo dõi 1.277 người Canada qua 3 năm liên tục → trung bình thật là <strong>30 lần thử trở lên</strong><sup>[1]</sup></li>
+<li><strong>Tại sao chênh lệch?</strong> Mỗi lần "thử" thường là 1 ngày không hút, 1 tuần, 1 tháng — người ta quên những lần ngắn này khi được hỏi sau 5 năm</li>
+</ul>
+
+<h3>Tỷ lệ thành công theo số lần thử</h3>
+
+<div class="stat-grid">
+<div class="stat-card">
+<div class="stat-num">3-5%</div>
+<div class="stat-label">Lần 1 cai (bỏ đột ngột), không hỗ trợ)</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">15-20%</div>
+<div class="stat-label">Lần 1 cai (có NRT hoặc Champix)</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">25-30%</div>
+<div class="stat-label">Sau 3-5 lần thử (kèm hỗ trợ)</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">40%+</div>
+<div class="stat-label">Sau 6-10 lần thử (kết hợp + app + đồng hành)</div>
+</div>
+</div>
+
+<p>Đây là tin tuyệt vời: <strong>Bạn càng thử nhiều, tỷ lệ thành công càng cao</strong> — đảo ngược hoàn toàn với câu chuyện "thất bại càng nhiều càng vô vọng" mà nhiều người tin.</p>
+
+<h3>Vì sao "thất bại" thực ra không phải thất bại?</h3>
+
+<p>Mỗi lần thử cai, não bạn học được 3 thứ quan trọng:</p>
+<ul>
+<li><strong>tình huống thèm nào là nguy hiểm nhất với bạn</strong> (vd: cà phê sáng, cuộc nhậu, stress công việc)</li>
+<li><strong>Phương pháp nào hợp / không hợp với bạn</strong> (bỏ đột ngột), NRT, app đồng hành)</li>
+<li><strong>Giai đoạn nào khó nhất với bạn cá nhân</strong> (ngày 3, tuần 2, tháng 1)</li>
+</ul>
+
+<p>Lần cai thứ N+1 không bắt đầu từ 0 — bắt đầu từ "tôi đã biết tôi sẽ vấp ở đâu". Đó là lợi thế khổng lồ so với người chưa thử bao giờ.</p>
+
+<h2>Phần 2 — 7 bài học từ mỗi lần cai "thất bại"</h2>
+
+<p>Mỗi lần "thất bại" thực ra dạy bạn 1 thứ giá trị cho lần sau:</p>
+
+<div class="lesson-card">
+<p><span class="lesson-num">LẦN 1</span><strong>Bạn không thể "cai bằng ý chí thuần".</strong> Lần đầu phần lớn người dùng bỏ đột ngột), không chuẩn bị → vấp tuần đầu. Bài học: cần phương pháp + công cụ.</p>
+</div>
+
+<div class="lesson-card">
+<p><span class="lesson-num">LẦN 2</span><strong>tình huống thèm nào là kẻ thù số 1 của bạn.</strong> Cà phê? Nhậu? Stress? Lần này bạn nhận diện được chính xác.</p>
+</div>
+
+<div class="lesson-card">
+<p><span class="lesson-num">LẦN 3</span><strong>Cảm giác triệu chứng cai (withdrawal) đỉnh ở đâu.</strong> Đa số ở ngày 3-5 hoặc tuần 2. Biết trước = chuẩn bị được.</p>
+</div>
+
+<div class="lesson-card">
+<p><span class="lesson-num">LẦN 4</span><strong>Người thân có vai trò thế nào.</strong> Lần này bạn biết phải nói gì với vợ/chồng, ai sẽ chia sẻ và ai không.</p>
+</div>
+
+<div class="lesson-card">
+<p><span class="lesson-num">LẦN 5</span><strong>Mind games của não.</strong> "Chỉ 1 điếu thôi", "lần sau cai lại", "stress quá rồi"… Lần này bạn nhận ra ngay khi não nói dối.</p>
+</div>
+
+<div class="lesson-card">
+<p><span class="lesson-num">LẦN 6</span><strong>Bạn cần thuốc/hỗ trợ.</strong> Khi đã thử nhiều cách thuần ý chí, bạn nhận ra Bupropion/Champix/NRT không phải "yếu" — là công cụ.</p>
+</div>
+
+<div class="lesson-card">
+<p><span class="lesson-num">LẦN 7</span><strong>Bạn cần đồng hành dài hạn.</strong> Cai 1 mình = isolated. Có người đồng hành (app, người thân, bác sĩ) tăng tỷ lệ thành công <strong>3-5x</strong><sup>[4]</sup>.</p>
+</div>
+
+<h2>Phần 3 — Tại sao lần thứ N có thể là lần cuối?</h2>
+
+<h3>Tổng hợp "tri thức cai" của bạn lúc này</h3>
+
+<p>Sau X lần thử, bạn có 1 lợi thế không người mới nào có:</p>
+
+<table>
+<tr><th>Câu hỏi</th><th>Bạn đã biết câu trả lời</th></tr>
+<tr><td>Lúc nào tôi sẽ thèm nhất?</td><td>✓ (biết chính xác giờ + tình huống)</td></tr>
+<tr><td>Phương pháp nào hợp với tôi?</td><td>✓ (đã thử + biết hợp/không)</td></tr>
+<tr><td>Ai sẽ giúp tôi?</td><td>✓ (biết người nào hỗ trợ, người nào kéo lại)</td></tr>
+<tr><td>Tôi sẽ vấp ở giai đoạn nào?</td><td>✓ (đã từng vấp, biết trước được)</td></tr>
+<tr><td>Mind game nào nguy hiểm nhất?</td><td>✓ (đã nghe não nói dối nhiều lần)</td></tr>
+</table>
+
+<p>Người mới cai lần đầu = đi trong sương mù. Bạn đã đi qua nhiều lần = có bản đồ.</p>
+
+<h3>Yếu tố quyết định lần thứ N có thành công không</h3>
+
+<ul>
+<li><strong>Bạn có chấp nhận "lần này có thể vấp như lần trước"?</strong> — Tâm thế đúng: vấp là 1 bước, không phải kết thúc</li>
+<li><strong>Bạn có dùng combo (không phải đơn lẻ)?</strong> — Phương pháp + thuốc + đồng hành + tracking = 5x tỷ lệ vs bỏ đột ngột)</li>
+<li><strong>Bạn có support system dài hạn?</strong> — Không phải 30 ngày, mà 90 ngày + 1 năm sau</li>
+<li><strong>Bạn có lý do đủ mạnh?</strong> — Không phải "vì sức khoẻ chung" mà "vì con sắp đại học / vì vợ tôi sợ tôi mất"</li>
+</ul>
+
+<h2>Phần 4 — Chiến lược cho lần thứ tiếp theo</h2>
+
+<h3>Bước 1 — Tổng kết kinh nghiệm cá nhân (15 phút)</h3>
+
+<p>Lấy 1 tờ giấy, trả lời 5 câu:</p>
+<ol>
+<li>Tôi đã cai ... lần. Lần nào dài nhất (... ngày)?</li>
+<li>Mỗi lần tôi vấp vì lý do gì? (liệt kê cụ thể)</li>
+<li>Triệu chứng nào khó nhất với tôi? (thèm, mất ngủ, cáu, buồn...)</li>
+<li>Phương pháp nào tôi đã thử? Kết quả?</li>
+<li>Ai sẽ giúp tôi lần này? (1-3 người tên cụ thể)</li>
+</ol>
+
+<h3>Bước 2 — Combo lần thứ tiếp theo</h3>
+
+<p>Nếu bạn đã thử &gt;3 lần, đây là combo khuyến nghị từ <strong>nghiên cứu USPHS 2020</strong><sup>[5]</sup>:</p>
+
+<ul>
+<li><strong>Phương pháp chính:</strong> bỏ đột ngột) HOẶC giảm dần — chọn theo lần trước</li>
+<li><strong>Hỗ trợ thuốc:</strong> Bupropion 150mg × 2/ngày × 8-12 tuần (nếu FTND ≥ 4) HOẶC NRT miếng dán 4-8 tuần</li>
+<li><strong>Hỗ trợ tâm lý:</strong> App đồng hành 24/7 (vd Sol) + 1 người thân hiểu</li>
+<li><strong>Theo dõi:</strong> Sổ tay hành trình (viết mỗi tối 1 câu) — Cochrane: tracking tăng tỷ lệ 2x</li>
+</ul>
+
+<h3>Bước 3 — Đổi mindset từ "lần cuối" sang "lần tiếp theo"</h3>
+
+<p>Đừng nói với chính mình "lần này phải thành công". Hãy nói: <em>"Lần này tôi sẽ học thêm 1 điều mới. Nếu thành công — tuyệt. Nếu vấp — tôi đã có 1 lý do nữa để đỡ lần sau."</em></p>
+
+<p>Áp lực "phải thành công" thực ra <strong>tăng tỷ lệ vấp 40%</strong><sup>[6]</sup> — vì mỗi giây bạn cảm thấy mình "có thể thất bại" → não tự sinh stress → tình huống thèm thèm.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>"Tôi đã cai 5 lần trước khi thành công. Lần 1 năm 1995 — bỏ 3 ngày, hút lại trong đám cưới bạn. Lần 2 năm 2010 — bỏ 22 ngày, hút lại sau một đợt stress công việc lớn. Lần 3 năm 2015 — bỏ gần 2 tháng, hút lại vì 1 cuộc nhậu xã giao."</p>
+<p>"Lần 4 năm 2018 — tôi thử vape, nghĩ đó là 'cai'. 4 tháng sau tôi quay lại Vinataba. <strong>Đó là lần thất bại đau đớn nhất</strong> — không phải vì hút lại, mà vì tôi tự lừa mình rằng vape là cai."</p>
+<p>"Lần 5 năm 2020 — Bupropion 12 tuần + vợ tôi biết và chịu khổ tuần đầu + tôi viết nhật ký mỗi tối. Đó là lần cuối. Bây giờ 5 năm rồi tôi sạch hoàn toàn."</p>
+<p>"<strong>Nếu bạn đã cai 3-4 lần và đang nghĩ 'chắc mình không có khả năng' — bạn đang sai. Bạn đang ở rất gần.</strong> Tôi đã ở chính vị trí đó năm 2018. Lần thứ 5 chỉ cách 2 năm nữa thôi. Đừng bỏ cuộc tâm lý — chỉ cần học thêm 1 điều từ lần này, rồi thử lại."</p>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<p><strong>Q: Tôi đã cai &gt;10 lần — có lẽ tôi là trường hợp đặc biệt không cai được?</strong><br>
+A: KHÔNG. Nghiên cứu Chaiton: <strong>trung bình 30+ lần thử</strong>. Một số người cần 40-50 lần. Đây là bình thường về mặt khoa học. Đặc biệt với người nghiện nặng (FTND ≥ 6, hút ≥ 25 năm).</p>
+
+<p><strong>Q: Mỗi lần cai có "reset" cơ thể không hay tích luỹ tổn thương?</strong><br>
+A: Mỗi lần cai dù chỉ 1 tuần đều cho cơ thể <strong>thời gian nghỉ + phục hồi nhẹ</strong>. Không tổn thương thêm. Cilia phế quản phục hồi trong 7-14 ngày — mỗi đợt cai là 1 đợt "thay máu" tốt. Đừng nghĩ "đã hỏng rồi cai cũng vô ích".</p>
+
+<p><strong>Q: Có cách nào tính tỷ lệ thành công lần tới của tôi?</strong><br>
+A: Có. Công thức cơ bản:<br>
+- bỏ đột ngột) thuần: 3-5%<br>
+- + NRT: +10% (= 13-15%)<br>
+- + Champix/Bupropion: +20% (= 23-25%)<br>
+- + Đồng hành (app/người thân): +5-10%<br>
+- + Tracking nhật ký: +5%<br>
+→ Combo đầy đủ ≈ <strong>40-50%/lần thử</strong>. Nếu 2-3 lần liên tiếp dùng combo → tổng ~80% thành công.</p>
+
+<p><strong>Q: Tôi có cần khám bác sĩ tâm thần?</strong><br>
+A: Nếu đã cai &gt;5 lần và mỗi lần đều rơi vào trầm cảm/lo âu nặng → CÓ. Có thể có rối loạn tâm thần tiềm ẩn (depression, anxiety) cần điều trị song song. Bác sĩ tâm thần kê Bupropion vừa điều trị tâm lý vừa hỗ trợ cai.</p>
+
+<p><strong>Q: Tỷ lệ cai thành công ở người Việt Nam thực tế là bao nhiêu?</strong><br>
+A: Theo điều tra Quỹ Phòng chống tác hại thuốc lá Việt Nam (2022): chỉ ~<strong>4% người hút thuốc cai được hẳn</strong> trong năm — phần lớn do thiếu phương pháp + thiếu hỗ trợ. Khi có app/bác sĩ + người thân = tăng lên 25-30%.</p>
+
+<h2>Tham khảo</h2>
+<ol>
+<li>Chaiton M et al. (2016). <em>Estimating the number of quit attempts it takes to quit smoking successfully</em>. BMJ Open 6(6):e011045.</li>
+<li>Hughes JR et al. (2004). <em>Shape of the tái nghiện curve and long-term kiêng dứt thuốc</em>. Addiction 99(1):29-38.</li>
+<li>US Department of Health (2020). <em>Smoking cai thuốc: A Report of the Surgeon General</em>. Chapter 4.</li>
+<li>Stead LF et al. (2017). <em>Behavioural interventions for smoking cai thuốc</em>. Cochrane Database Syst Rev (3):CD009670.</li>
+<li>USPHS Clinical Practice Guideline (2020). <em>Treating Tobacco Use and Dependence</em>. Update Panel.</li>
+<li>Webb TL et al. (2010). <em>Effective regulation of cigarette cơn thèm</em>. Psychol Sci 21(10):1490-1497.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 1 — Khoa học nói gì về số lần cai?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đây là tin tuyệt vời: Bạn càng thử nhiều, tỷ lệ thành công càng cao — đảo ngược hoàn toàn với câu chuyện "thất bại càng nhiều càng vô vọng" mà nhiều người tin.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 2 — 7 bài học từ mỗi lần cai "thất bại" là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mỗi lần "thất bại" thực ra dạy bạn 1 thứ giá trị cho lần sau:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 3 — Tại sao lần thứ N có thể là lần cuối?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sau X lần thử, bạn có 1 lợi thế không người mới nào có:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q: Tôi đã cai >10 lần — có lẽ tôi là trường hợp đặc biệt không cai được? A: KHÔNG. Nghiên cứu Chaiton: trung bình 30+ lần thử. Một số người cần 40-50 lần. Đây là bình thường về mặt khoa học. Đặc biệt với người nghiện nặng (FTND ≥ 6, hút ≥ 25 năm).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Tham khảo là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bài viết bởi Khang Sol — đã cai 5 lần, lần thứ 5 là lần cuối năm 2020. Cập nhật 14-05-2026.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Lần thứ tiếp theo có thể là lần cuối</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành 51 ngày — phân tích lịch sử cai của bạn, đề xuất phương pháp + thuốc phù hợp, voice Khang khi anh em mệt nhất.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=bao-nhieu-lan&utm_medium=organic">Bắt đầu lần thứ tiếp theo →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã cai 5 lần, lần thứ 5 là lần cuối năm 2020. Cập nhật 14-05-2026.</p>
+</div>

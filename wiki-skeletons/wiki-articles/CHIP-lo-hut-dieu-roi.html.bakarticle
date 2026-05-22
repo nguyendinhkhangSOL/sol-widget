@@ -1,0 +1,196 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Tránh \"abstinence violation effect\" là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hiệu ứng tâm lý đặc biệt nguy hiểm sau vấp:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=lo-hut-roi) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mình đã lỡ 2 điếu trong tuần đầu cai lần 5 — Day 4 và Day 5, đều ở văn phòng khi stress deadline. Mình ghi vào sổ, không tự trách."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi đã hút 5 điếu trong 1 ngày — vẫn là vấp không?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn vừa hút 1 điếu. Có thể vài hơi, có thể nửa điếu, có thể cả điếu. Đầu bạn ngập trong cảm giác xấu hổ + thất vọng + "tôi yếu lòng". <strong>Dừng lại.</strong> Đây không phải thất bại — đây là vấp (vấp). Đa số người cai thành công đều có vấp. Quan trọng là phản ứng.</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>1 điếu KHÔNG xoá những ngày sạch trước đó</li>
+<li>"Vấp" (vấp) ≠ "Tái phát" (tái nghiện) — phân biệt quan trọng<sup>[1]</sup></li>
+<li>Phản ứng trong 24h quyết định: vấp → đứng lên, hoặc vấp → tái phát</li>
+<li>6-11 lần vấp là TRUNG BÌNH cho người Việt cai được hẳn (CDC)<sup>[2]</sup></li>
+</ul>
+</div>
+<h2>Phần 1 — Vấp vs Tái phát</h2>
+<h3>Vấp (Lỡ điếu)</h3>
+<ul>
+<li>Hút 1 điếu hoặc vài hơi đột xuất</li>
+<li>Có thể vì stress, nhậu, cảm xúc, áp lực</li>
+<li><strong>Đứng dậy ngay</strong> → coi như chương ngắn</li>
+<li>Tổn hại: chỉ reset đồng hồ thể lý ngắn hạn</li>
+</ul>
+<h3>Tái phát (Tái nghiện)</h3>
+<ul>
+<li>Hút 5+ điếu trong 24h sau vấp</li>
+<li>Hoặc tiếp tục hút hằng ngày sau vấp</li>
+<li>Trở lại pattern cũ</li>
+<li>Tổn hại: phải bắt đầu lại + mất confidence</li>
+</ul>
+<blockquote><strong>Quy tắc 24 giờ</strong>: trong 24h sau vấp → bạn quyết định là vấp hay tái phát. Không phải số mệnh — là LỰA CHỌN.</blockquote>
+<h2>Phần 2 — Hành động NGAY (5 bước)</h2>
+<h3>Bước 1: Dập điếu / vứt phần còn lại</h3>
+<ul>
+<li>Vứt vào sọt rác, không "để dành cho lát"</li>
+<li>Bao thuốc còn lại — vứt hoặc cho người khác</li>
+<li>Vật lý — không thoả hiệp</li>
+</ul>
+<h3>Bước 2: Ghi vào nhật ký TRONG 1 GIỜ TỚI</h3>
+<p>Trả lời 4 câu hỏi:</p>
+<ol>
+<li><strong>tình huống thèm thật là gì?</strong> (stress / nhậu / cãi nhau / buồn / nhàm chán...)</li>
+<li><strong>Tôi đang ở đâu, làm gì?</strong> (vị trí, ngữ cảnh)</li>
+<li><strong>Cảm giác trước khi hút?</strong> (run, thèm, lo, tức...)</li>
+<li><strong>Cảm giác SAU khi hút?</strong> (đỡ, không đỡ, xấu hổ, hối hận...)</li>
+</ol>
+<p>Bài học → tránh tình huống thèm này lần sau.</p>
+<h3>Bước 3: Nói với 1 người</h3>
+<ul>
+<li>Vợ / bạn thân / Khang trong app</li>
+<li>Không cần "thú tội" dài</li>
+<li>Đơn giản: "Hôm nay anh đã hút 1 điếu. Anh đang đứng dậy."</li>
+<li>Nói ra = giảm 50% xấu hổ + tăng accountability</li>
+</ul>
+<h3>Bước 4: Plan 24 giờ tới</h3>
+<ul>
+<li><strong>Tránh tình huống thèm vừa kích hoạt</strong> — không nhậu, không gặp người hút</li>
+<li><strong>Chuẩn bị "kit khẩn cấp"</strong> — kẹo cao su, hạt dưa, chai nước</li>
+<li><strong>Đi ngủ sớm</strong> đêm nay — thiếu ngủ = nguy cơ vấp lại</li>
+<li><strong>Sáng mai dậy bình thường</strong> — không cần "thề lại"</li>
+</ul>
+<h3>Bước 5: Tiếp tục</h3>
+<ul>
+<li>Đếm tiếp ngày từ ngày MAI (không reset hoàn toàn)</li>
+<li>Vd: Đã sạch 18 ngày + vấp ngày 18 + sạch tiếp = "tôi cai được 18 ngày, 1 vấp, đang ở Ngày 1 chu kỳ mới"</li>
+<li>Không cần xoá ngày 1-17 — chúng đã có giá trị</li>
+</ul>
+<h2>Phần 3 — Tránh "kiêng dứt violation effect"</h2>
+<p>Hiệu ứng tâm lý đặc biệt nguy hiểm sau vấp:</p>
+<blockquote><em>"Đã hút 1 điếu rồi, hỏng hết. Đêm nay hút thêm vài điếu cho qua chuyện. Mai bắt đầu lại từ đầu."</em></blockquote>
+<p><strong>KHÔNG.</strong> Đây là <strong>kiêng dứt thuốc violation effect</strong> (Marlatt 1985)<sup>[3]</sup> — bẫy tâm lý dẫn đa số tái phát.</p>
+<h3>Sai lầm</h3>
+<ul>
+<li>Coi cai = pass/fail</li>
+<li>1 vấp = thất bại hoàn toàn</li>
+<li>→ "Hút thêm cũng không sao"</li>
+</ul>
+<h3>Đúng</h3>
+<ul>
+<li>Cai = quá trình, không phải sự kiện</li>
+<li>1 vấp = một điểm dữ liệu để học</li>
+<li>→ "Tôi đã không hút trong 432 giờ liên tục. Tôi đã hút 1 điếu. Tôi vẫn là người đang cai."</li>
+</ul>
+<h2>Phần 4 — Học từ vấp</h2>
+<p>Mỗi vấp có "thông điệp":</p>
+<p>| tình huống thèm | Bài học |</p>
+<p>|---|---|</p>
+<p>| Nhậu | Tránh nhậu thêm 2-4 tuần, plan kỹ lần sau |</p>
+<p>| Stress công việc | Cần kỹ thuật giảm stress thay thế (xem <a href="https://sol.vn/wiki/stress-cong-viec-cai" style="color:#B25C2C;font-weight:600;">bài stress</a>) |</p>
+<p>| Cãi nhau gia đình | Cần communicate plan với vợ/con tốt hơn |</p>
+<p>| Cảm xúc đám tang/tang lễ | Cần plan cho lễ trọng tương lai |</p>
+<p>| Buồn vô cớ | Có thể anhedonia "Đống Tro Tàn" — đọc <a href="https://sol.vn/wiki/buon-chan-tuan-2" style="color:#B25C2C;font-weight:600;">bài tuần 2</a> |</p>
+<p>| Bạn ép thuốc | Cần luyện "tôi không hút" cứng hơn |</p>
+<blockquote>Vấp không phải dấu hiệu sai. Vấp là <strong>dữ liệu để cải thiện</strong>.</blockquote>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=lo-hut-roi)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Mình đã lỡ 2 điếu trong tuần đầu cai lần 5 — Day 4 và Day 5, đều ở văn phòng khi stress deadline. Mình ghi vào sổ, không tự trách.</p>
+<p>Sáng hôm sau Day 6, mình mở app Sol — đếm ngày sạch vẫn là 6 (KHÔNG reset). Mình tiếp tục như chưa có gì. Đến Day 30 mình đã quên hẳn 2 điếu đó.</p>
+<p>vấp ≠ tái nghiện. Hughes 2004: người cai thành công lỡ trung bình 3-5 lần. Lỡ là sự cố, không phải thất bại. "Bỏ cuộc sau 1 điếu" mới là thất bại.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi đã hút 5 điếu trong 1 ngày — vẫn là vấp không?</h3></p>
+<p><p>Đã chạm ranh giới tái phát. Đứng dậy NGAY HÔM NAY: vứt thuốc, ghi nhật ký, gọi support. Nếu mai vẫn hút → đã tái phát, cần đặt Q-Day mới.</p></p>
+<p><h3>Tôi cảm thấy quá xấu hổ để tiếp tục — sao?</h3></p>
+<p><p>Cảm xúc bình thường — nhưng đừng để nó dẫn đến tái phát. Nói với vợ / Khang. Sự xấu hổ giảm 70% sau khi nói ra.</p></p>
+<p><h3>Có nên đặt Q-Day mới sau vấp?</h3></p>
+<p><p>Không. Q-Day cũ giữ — 1 vấp ≠ 0 ngày. Tiếp tục đếm. Chỉ đặt Q-Day mới nếu đã tái phát toàn diện > 7 ngày.</p></p>
+<p><h3>Tôi đã thử cai 5 lần, lần nào cũng vấp tuần 2-3 — sai gì?</h3></p>
+<p><p>Pattern rõ — có tình huống thèm lặp lại tuần 2-3. Có thể là "Đống Tro Tàn" anhedonia. Lần sau plan kỹ tuần 2-3 + cân nhắc Champix/Bupropion.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 3 — Tránh "kiêng dứt violation effect" là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Hiệu ứng tâm lý đặc biệt nguy hiểm sau vấp:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=lo-hut-roi) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mình đã lỡ 2 điếu trong tuần đầu cai lần 5 — Day 4 và Day 5, đều ở văn phòng khi stress deadline. Mình ghi vào sổ, không tự trách.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi đã hút 5 điếu trong 1 ngày — vẫn là vấp không?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=lo-hut-dieu-roi">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Đi Cùng Sol</a>. Nguồn: Marlatt GA (1985). *tái nghiện Prevention*. Chapter on "vấp vs tái nghiện distinction". · Chaiton M et al. (2016). *Estimating the number of quit attempts it takes to quit smoking*. BMJ Open 6(6):e011045. · Marlatt GA (1985). *kiêng dứt thuốc Violation Effect*. Cognitive Therapy and Research 8(2):101-129.
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

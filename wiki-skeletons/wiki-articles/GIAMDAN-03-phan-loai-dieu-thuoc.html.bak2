@@ -1,0 +1,262 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phân loại điếu thuốc 0-3 sao theo tiêu chí gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Theo mức khoái cảm + ý thức: 0 sao = tự động hoàn toàn, không nhớ tại sao. 1 sao = habit nhẹ. 2 sao = thấy \"ngon\". 3 sao = thực sự muốn, có khoái cảm cao (anchor cigarette)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao 70% điếu là \"tự động\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "West 2006 PRIME theory: hút lâu năm dùng hệ Impulsive system (phản xạ) thay vì Reflective system (deliberate). Khảo sát 5.000 smokers: 70% điếu là impulsive, người hút 20+ năm tới 80%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao cắt điếu 0 sao trước thay vì điếu khó?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bandura 1977 sự tự tin cai thuốc: chiến thắng dễ → tự tin → cắt khó sau. Lindson 2010 (700 smokers): hierarchical reduction thắng scheduled 22% duy trì 4 tuần. Sequence quan trọng hơn quantity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trung bình một người hút 20 điếu/ngày có bao nhiêu điếu 3 sao?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thường chỉ 1-3 điếu/ngày (5-15%). 60-80% là 0-1 sao (automatic). Khang Sol 22 điếu/ngày trước cai 2020: 14 điếu 0 sao + 5 điếu 1 sao + 2 điếu 2 sao + 1 điếu 3 sao (điếu sáng với cà phê)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trung thực đánh sao có khó không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Sai lầm phổ biến: cho mọi điếu 2-3 sao vì cảm giác \"mỗi điếu đều quan trọng\". Nếu >50% điếu là 2-3 sao, anh đang đánh \"lạc quan\". Trung thực = đa số 0-1 sao."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .star-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+.sol-wiki .star-card .star-label { font-size: 18px; margin-right: 8px; }
+.sol-wiki .star-card h4 { margin: 0 0 6px; display: inline; color: #5C3A1E; }
+.sol-wiki .star-card p { margin: 6px 0; font-size: 14px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Không phải tất cả điếu thuốc của anh đều giống nhau. <strong>70% là "tự động"</strong> — đốt mà không nhớ. <strong>30% là "có ý thức"</strong> — thực sự thấy khoái. Hôm nay T-12 (Ngày 3 Giảm dần) — Sol dạy anh phân loại 0-3 sao cho từng điếu. Đây là nền tảng để T-10 cắt điếu đầu tiên dễ nhất.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>West & Hardy 2006 (PRIME theory): <strong>70% điếu là "automatic"</strong>, 30% "deliberate"<sup>[1]</sup></li>
+<li>Hệ thống 0-3 sao: <strong>0 = tự động không nhớ</strong>, 3 = thực sự muốn, có khoái thật</li>
+<li>Điếu 0-1 sao = mục tiêu cắt T-10 (dễ nhất, ít compensation)</li>
+<li>Điếu 3 sao (thường điếu sáng + sau cơm) = để cuối, T-9 trở đi</li>
+<li>Hôm nay: mở nhật ký T-13, đánh sao mỗi điếu đã ghi</li>
+</ul>
+</div>
+
+<h2>PRIME theory — West 2006</h2>
+
+<p>Robert West, Giáo sư Hành vi Sức khỏe ĐH London, đưa ra <strong>PRIME theory of motivation</strong> năm 2006 (Plans + Responses + Impulses + Motives + Evaluations). Áp dụng vào hút thuốc, ông phân hành vi thành 2 hệ thống:</p>
+
+<ul>
+<li><strong>Reflective system</strong> (deliberate): quyết định có ý thức — "tôi muốn 1 điếu sau cơm để tận hưởng"</li>
+<li><strong>Impulsive system</strong> (automatic): phản xạ — đưa tay lấy bao không nghĩ, đốt, hút</li>
+</ul>
+
+<p>Khảo sát của West trên 5.000 smokers: tỷ lệ điếu impulsive vs deliberate trung bình <strong>70/30</strong>. Người hút lâu năm (20+ năm) tỷ lệ impulsive cao hơn (~80%).</p>
+
+<p>Ý nghĩa cho cai thuốc: <strong>điếu impulsive dễ cắt hơn nhiều — vì não không "thưởng" rõ ràng từ nó</strong>. Cắt điếu deliberate khó hơn vì có "khoái thật" mất đi.</p>
+
+<h2>Hệ thống 0-3 sao của Sol</h2>
+
+<div class="star-card">
+<span class="star-label">⭐</span><h4>0 sao — Tự động hoàn toàn</h4>
+<p>Đặc điểm: đốt mà không nhớ tại sao. Không có "khoảnh khắc khoái". Chỉ là phản xạ (tay đưa bao, lửa, hút, dập). Có thể đang nghĩ chuyện khác hoàn toàn.</p>
+<p><em>Ví dụ:</em> Điếu 15h chiều ngồi máy tính vừa lướt Facebook. Điếu khi đi tới đầu ngõ vứt rác. Điếu phòng họp giờ giải lao theo người khác.</p>
+</div>
+
+<div class="star-card">
+<span class="star-label">⭐⭐</span><h4>1 sao — Habit nhẹ</h4>
+<p>Đặc điểm: có chút ý thức "tôi muốn 1 điếu" nhưng khoái cảm thực thấp. Cảm giác "OK" không phải "ngon". Hoàn thành rồi quên ngay.</p>
+<p><em>Ví dụ:</em> Điếu khi chờ đối tác đến muộn. Điếu sau cuộc gọi khách khó. Điếu trong taxi đường dài.</p>
+</div>
+
+<div class="star-card">
+<span class="star-label">⭐⭐⭐</span><h4>2 sao — Thấy "ngon"</h4>
+<p>Đặc điểm: có khoái thật. Tận hưởng vài giây. Nhớ được cảm giác. Tuy nhiên không "thiêng" — bỏ vẫn được nếu có lý do.</p>
+<p><em>Ví dụ:</em> Điếu sau bữa cơm nhẹ. Điếu khi đứng xem hoàng hôn. Điếu sau công việc xong.</p>
+</div>
+
+<div class="star-card">
+<span class="star-label">⭐⭐⭐⭐</span><h4>3 sao — Thực sự muốn</h4>
+<p>Đặc điểm: khoái cảm cao. Cảm giác "thiêng liêng". Nếu thiếu sẽ thấy ngày không đủ. Đây là <strong>"anchor cigarettes"</strong> — điếu cố định gắn với cảm xúc/tình huống quan trọng.</p>
+<p><em>Ví dụ:</em> Điếu sáng đầu tiên + cà phê đen. Điếu sau bữa cơm tối với gia đình. Điếu cuối ngày trên ban công nhìn đêm. Điếu với bạn cũ trong dịp đặc biệt.</p>
+</div>
+
+<h2>Tại sao đánh sao matter?</h2>
+
+<p>Đánh sao = tạo thứ tự cắt khoa học. Bandura 1977 sự tự tin cai thuốc: bắt đầu chiến thắng dễ → tự tin → đến khó. Cắt điếu 0-1 sao ở T-10 = mastery experience đầu tiên — rất ít triệu chứng cai (withdrawal), rất ít compensation. Não anh có dữ liệu "tôi cắt được" → ngày T-9 cắt thêm dễ hơn.</p>
+
+<p>Ngược lại, nếu anh cắt điếu sáng (3 sao) ngay T-10 không có chuẩn bị — triệu chứng cai nặng, dễ vấp, mất sự tự tin cai thuốc. Hỏng momentum cả 14 ngày.</p>
+
+<p>Lindson 2010 (theo dõi 700 smokers tapering): hierarchical reduction (cắt 0-sao trước) thắng scheduled reduction (cắt theo số điếu) <strong>22% về tỷ lệ duy trì 4 tuần</strong><sup>[2]</sup>.</p>
+
+<h2>Hôm nay T-12: 20 phút đánh sao</h2>
+
+<ol>
+<li>Mở nhật ký T-13 (Ngày 2) — anh đã ghi mỗi điếu hôm qua với giờ + nơi + cảm xúc</li>
+<li>Với mỗi điếu, đánh sao 0-3:
+<ul>
+<li>Cột thêm: "Mức khoái 0-3"</li>
+<li>Trung thực — không "tăng sao" vì sĩ diện ("điếu nào cũng phải 2-3 sao chứ")</li>
+</ul>
+</li>
+<li>Đếm tổng số mỗi mức:
+<ul>
+<li>0 sao: ___ điếu</li>
+<li>1 sao: ___ điếu</li>
+<li>2 sao: ___ điếu</li>
+<li>3 sao: ___ điếu</li>
+</ul>
+</li>
+<li>Tỷ lệ 0+1 sao thường 60-80% — đây là pool để cắt từ T-10</li>
+<li>Note vào app Sol: "Pool 0-1 sao của tôi = ___ điếu (___% tổng)"</li>
+</ol>
+
+<h2>Bài kiểm tra trung thực</h2>
+
+<p>Sai lầm phổ biến: cho mọi điếu 2-3 sao vì cảm giác "mỗi điếu đều quan trọng". Đây là cảm xúc — không phải dữ liệu thực.</p>
+
+<p>Test trung thực: nếu anh có >50% điếu được anh đánh 2-3 sao, có 2 khả năng:</p>
+
+<ol>
+<li>Anh hút rất ít (≤8 điếu/ngày) — đa số là deliberate. Khả năng này hiếm.</li>
+<li>Anh đánh "lạc quan" — gán giá trị cao hơn thực. Quay lại đánh lại trung thực.</li>
+</ol>
+
+<p>Người hút 15-25 điếu/ngày bình thường có ~80-90% là 0-1 sao. Đừng ngạc nhiên — đó là khoa học não, không phải đánh giá đạo đức.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — đánh sao của mình năm 2020</div>
+<p>Mình kể: T-12, mình đánh sao 22 điếu/ngày (tuần trước Q-Day). Kết quả ngạc nhiên:</p>
+<ul>
+<li>0 sao: 14 điếu (64%)</li>
+<li>1 sao: 5 điếu (23%)</li>
+<li>2 sao: 2 điếu (9%)</li>
+<li>3 sao: 1 điếu (4%) — chính xác là điếu sáng với cà phê đen ban công</li>
+</ul>
+<p>Mình tự bất ngờ — gần 90% điếu chỉ là thói quen. Đến cảm giác mình nghĩ tôi tận hưởng — thật ra chỉ là Pavlov. Cảm giác "kỳ" — nhưng đây là dữ liệu.</p>
+<p>Từ T-10 mình cắt đúng theo thứ tự: 0 sao trước (14 điếu), trong 5 ngày. Đến T-5 chỉ còn 8 điếu 1-3 sao. T-1 chỉ còn 4 điếu 2-3 sao. Q-Day cắt nốt.</p>
+<p>Bài học: <strong>biết 70-80% điếu là tự động = tự do tinh thần. Anh không "mất" gì khi cắt — chỉ phá Pavlov.</strong></p>
+</div>
+
+<h2>Mai có gì?</h2>
+
+<p>T-11 (Ngày 4 Giảm dần) — Test Fagerström FTND 6 câu. Đo mức phụ thuộc 0-10. Quyết định T-5 dùng NRT/thuốc kê dựa trên điểm này. Có JS calculator embed trong bài.</p>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+⭐ <strong>T-12 (Giảm dần Ngày 3) — Phân loại điếu 0-3 sao</strong><br><br>
+West 2006 PRIME: 70% điếu "automatic" (đốt vô thức), 30% "deliberate". Người hút 20+ năm: tới 80% automatic.<br><br>
+Hôm nay: mở nhật ký T-13, đánh sao 0-3 mỗi điếu (0 = tự động, 3 = thực sự muốn). Đếm pool 0-1 sao — đây là mục tiêu cắt T-10.<br><br>
+Lindson 2010: hierarchical (cắt 0-sao trước) thắng scheduled 22% duy trì 4 tuần. Trung thực — đừng tăng sao vì sĩ diện.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-3-phan-loai-dieu-thuoc/?utm_source=zalo&utm_campaign=giamdan-3">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Đánh sao là công cụ behavioral self-monitoring — không có rủi ro. Nếu phát hiện nhiều điếu emotional (cảm xúc nặng), đó là dấu hiệu cần Plan B kỹ ở T-2 cho từng tình huống.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phân loại điếu thuốc 0-3 sao theo tiêu chí gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Theo mức khoái cảm + ý thức: 0 sao = tự động hoàn toàn, không nhớ tại sao. 1 sao = habit nhẹ. 2 sao = thấy "ngon". 3 sao = thực sự muốn, có khoái cảm cao (anchor cigarette).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Tại sao 70% điếu là "tự động"?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">West 2006 PRIME theory: hút lâu năm dùng hệ Impulsive system (phản xạ) thay vì Reflective system (deliberate). Khảo sát 5.000 smokers: 70% điếu là impulsive, người hút 20+ năm tới 80%.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tại sao cắt điếu 0 sao trước thay vì điếu khó?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bandura 1977 sự tự tin cai thuốc: chiến thắng dễ → tự tin → cắt khó sau. Lindson 2010 (700 smokers): hierarchical reduction thắng scheduled 22% duy trì 4 tuần. Sequence quan trọng hơn quantity.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Trung bình một người hút 20 điếu/ngày có bao nhiêu điếu 3 sao?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Thường chỉ 1-3 điếu/ngày (5-15%). 60-80% là 0-1 sao (automatic). Khang Sol 22 điếu/ngày trước cai 2020: 14 điếu 0 sao + 5 điếu 1 sao + 2 điếu 2 sao + 1 điếu 3 sao (điếu sáng với cà phê).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Trung thực đánh sao có khó không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có. Sai lầm phổ biến: cho mọi điếu 2-3 sao vì cảm giác "mỗi điếu đều quan trọng". Nếu >50% điếu là 2-3 sao, anh đang đánh "lạc quan". Trung thực = đa số 0-1 sao.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>West R, Hardy A. (2006). <em>Theory of Addiction</em>. Blackwell Publishing. PRIME theory chapters.</li>
+<li>Lindson N, Aveyard P. (2011). <em>An updated meta-analysis of nicotine preloading for smoking cai thuốc</em>. Psychopharmacology 214(3):579-592.</li>
+<li>Wood W, Neal DT. (2007). <em>A new look at habits and the habit-goal interface</em>. Psychological Review 114(4):843-863.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-2-ban-do-tình huống thèm/">T-13 — Bản đồ tình huống thèm (nhật ký nguồn)</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-4-test-fagerstrom/">T-11 (Mai) — Test Fagerström</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-5-cach-cai-thuoc-dan-dan/">T-10 — Cắt điếu đầu tiên</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Sol có template đánh sao trong app — bấm 1 nút mỗi điếu</strong>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên West 2006 PRIME theory, Lindson 2011, Wood & Neal 2007. Sol là sản phẩm Việt 100%.</p>
+
+</div>

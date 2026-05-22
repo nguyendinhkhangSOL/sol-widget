@@ -1,0 +1,159 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 2 — Vì sao có thể xảy ra sau cai thuốc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5 nguyên nhân theo tần suất ở người từng hút:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi cai 3 ngày, khạc đờm nâu có vệt đỏ — bình thường không?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn cai được vài tuần, thấy cơ thể tốt hơn — nhưng sáng nay khạc ra đờm có máu. Đừng hoảng loạn. <strong>Cũng đừng bỏ qua.</strong> Đây là tín hiệu cần khám trong 24-48 giờ.</p>
+<h2>⚠️ Cần biết NGAY</h2>
+<ul>
+<li>Khạc đờm có <strong>bất kỳ vệt máu nào</strong> (đỏ tươi, hồng nhạt, nâu) đều cần đi khám.</li>
+<li>KHÔNG phải lúc nào cũng là ung thư — nhưng phải loại trừ.</li>
+<li>Cai thuốc KHÔNG gây khạc máu — vấn đề có sẵn trước khi cai, giờ mới phát hiện.</li>
+<li>Hotline 24/7 cấp cứu phổi: <strong>115</strong> (nếu khó thở kèm theo)</li>
+</ul>
+<h2>Phần 1 — Khạc đờm có máu là gì?</h2>
+<p>[Outline:]</p>
+<ul>
+<li>Đờm = chất nhầy đường thở (cilia đẩy ra). Bình thường trong/trắng.</li>
+<li>Đờm có máu = hemoptysis — máu hoà với đờm.</li>
+<li>Lượng: vài giọt → vài ml → toàn máu (medical emergency).</li>
+<li>Phân biệt: máu từ phổi (khạc) vs máu từ mũi/miệng (chảy ngược).</li>
+</ul>
+<h2>Phần 2 — Vì sao có thể xảy ra sau cai thuốc?</h2>
+<p>5 nguyên nhân theo tần suất ở người từng hút<sup>[1]</sup>:</p>
+<h3>1. Viêm phế quản mạn (~40%)</h3>
+<ul>
+<li>Phổi đang dọn nhựa tích lâu năm. Đôi khi mạch máu nhỏ vỡ ra.</li>
+<li>Lượng ít, hết trong vài ngày.</li>
+</ul>
+<h3>2. Nhiễm trùng (~25%)</h3>
+<ul>
+<li>Viêm phổi, viêm phế quản cấp.</li>
+<li>Cilia mới mọc lại nên dễ nhiễm 2-4 tuần đầu cai.</li>
+<li>Có thể kèm sốt, đau ngực.</li>
+</ul>
+<h3>3. COPD (~15%)</h3>
+<ul>
+<li>Bệnh phổi tắc nghẽn mạn — phổ biến ở người hút >20 năm.</li>
+<li>Khạc máu nhẹ + khó thở khi gắng sức.</li>
+</ul>
+<h3>4. Ung thư phổi (~10%)</h3>
+<ul>
+<li><strong>Đây là lý do chính phải đi khám</strong>.</li>
+<li>Cai thuốc KHÔNG gây ung thư — nhưng có thể đã có sẵn từ trước.</li>
+<li>Phát hiện sớm = tỷ lệ sống 5 năm 56% (vs 5% giai đoạn cuối)<sup>[2]</sup>.</li>
+</ul>
+<h3>5. Lao phổi (~5% ở VN)</h3>
+<ul>
+<li>Việt Nam vẫn có lao phổ biến hơn các nước phát triển.</li>
+<li>Khạc máu + sốt nhẹ kéo dài + sụt cân.</li>
+</ul>
+<h2>Phần 3 — Cần làm gì?</h2>
+<h3>Trong 24 giờ</h3>
+<ol>
+<li><strong>Đặt lịch khám</strong> chuyên khoa hô hấp / nội tổng quát</li>
+<li>Chụp X-quang phổi + xét nghiệm đờm</li>
+<li>Nếu có triệu chứng kèm (khó thở, đau ngực, sốt cao, sụt cân) → đến BV cấp cứu</li>
+</ol>
+<h3>Khi đi khám — chuẩn bị thông tin</h3>
+<ul>
+<li>Hút bao nhiêu năm, bao nhiêu điếu/ngày</li>
+<li>Cai từ bao giờ</li>
+<li>Lượng máu khạc (vài giọt/vài ml/nhiều)</li>
+<li>Có triệu chứng kèm theo không (sốt, khó thở, sụt cân, đau ngực)</li>
+<li>Tiền sử gia đình ung thư phổi</li>
+</ul>
+<h3>CT low-dose phổi</h3>
+<ul>
+<li>Người hút >20 năm + cai trong 15 năm gần đây nên làm CT low-dose hàng năm<sup>[3]</sup></li>
+<li>USPSTF khuyến cáo cho nhóm rủi ro cao</li>
+<li>Phát hiện ung thư giai đoạn I (kích thước <2cm) — phẫu thuật cắt được</li>
+</ul>
+<h2>Phần 4 — KHÔNG được làm</h2>
+<ul>
+<li>❌ KHÔNG hút thuốc lại — sẽ kích ứng phổi đang viêm</li>
+<li>❌ KHÔNG tự uống thuốc kháng sinh chưa kê đơn</li>
+<li>❌ KHÔNG đợi "xem tuần sau có hết không" — rủi ro cao</li>
+<li>❌ KHÔNG tự ngừng kháng sinh nếu được kê (uống đủ liệu trình)</li>
+</ul>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi cai 3 ngày, khạc đờm nâu có vệt đỏ — bình thường không?</h3></p>
+<p><p>3 ngày sớm để cilia phục hồi. Thường là phế nang vỡ nhẹ do ho mạnh. Đi khám trong tuần để chắc.</p></p>
+<p><h3>Tôi cai 2 năm, vẫn khạc máu thỉnh thoảng — sao?</h3></p>
+<p><p>2 năm không "miễn trừ" ung thư phổi (rủi ro vẫn cao trong 10-15 năm sau cai). CT low-dose hàng năm.</p></p>
+<p><h3>Bệnh viện nào ở VN khám tốt phổi?</h3></p>
+<p><p>BV Phổi TƯ (HN), BV Phạm Ngọc Thạch (HCM), khoa hô hấp BV Bạch Mai/Chợ Rẫy.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 2 — Vì sao có thể xảy ra sau cai thuốc?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">5 nguyên nhân theo tần suất ở người từng hút:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi cai 3 ngày, khạc đờm nâu có vệt đỏ — bình thường không?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=khac-dom-co-mau-canh-bao">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Đi Cùng Sol</a>. Nguồn: Earwood JS & Thompson TD (2015). *Hemoptysis: Evaluation and management*. Am Fam Physician 91(4):243-9. · National Lung Screening Trial (NLST) Research Team (2011). *Reduced lung-cancer mortality with low-dose computed tomographic screening*. NEJM 365(5):395-409. · USPSTF (2021). *Lung Cancer: Screening — Final Recommendation Statement*. · WHO (2024). *Lung cancer — Fact Sheet*. who.int/news-room/fact-sheets/detail/lung-cancer
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

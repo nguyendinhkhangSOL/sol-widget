@@ -1,0 +1,259 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tăng cân trung bình bao nhiêu kg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nghiên cứu Aubin et al. (BMJ 2012) — 62 nghiên cứu trên 14.000 người cai thuốc:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 cách kiểm soát cân nặng khi cai thuốc là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nước làm đầy dạ dày → giảm cảm giác đói. Pha với chanh hoặc gừng — kích vị giác giả. Đặc biệt: uống 1 cốc nước TRƯỚC mỗi bữa ăn 15 phút — giảm 20-30% lượng calo tiêu thụ (nghiên cứu Davy 2010)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu chuyện Khang — mình tăng 3.2kg, mất lại trong 1 năm là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mình cai thuốc 45 tuổi, lúc đó 68kg (cao 1m72). Sau 6 tháng cai: 71.2kg (tăng 3.2kg). Vợ trêu mình \"béo lên\". Mình hơi lo, nhưng nhớ Doll & Hill nói: tăng 5kg vẫn lợi hơn hút."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khi nào nên đi gặp bác sĩ về cân nặng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5 cách trên đủ cho 90% anh em. 10% còn lại cần thêm hỗ trợ — đặc biệt nếu:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Phần lớn tăng cân xảy ra trong 6 tháng đầu (vì chuyển hoá giảm + vị giác phục hồi). Sau 1 năm cân nặng ổn định. Sau 2-3 năm, ~50% người tự lấy lại cân cũ nếu có thói quen tốt."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI A5 — Tăng Cân Khi Cai Thuốc (P1, vol 1.8k/tháng)
+  Focus keyword: "tăng cân khi cai thuốc"
+  Target intent: fear-objection — anh em ngại cai vì sợ tăng cân
+  Internal links: /bo-thuoc-la, /cai-thuoc-la-tai-nha, /trieu-chung-cai-thuoc-la-theo-ngay
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .quote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 20px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .stat-row { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px dashed #E8DFC8; }
+.sol-wiki .stat-num { font-size: 28px; font-weight: 700; color: #B25C2C; text-align: center; min-width: 100px; }
+.sol-wiki .stat-text { font-size: 15px; color: #2C2A27; }
+.sol-wiki .step { background: white; border: 1px solid #DCFCE7; border-left: 4px solid #16A34A; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+.sol-wiki .step-num { display: inline-block; background: #16A34A; color: white; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; font-weight: 700; font-size: 13px; margin-right: 10px; vertical-align: middle; }
+.sol-wiki .step-title { display: inline-block; font-size: 16px; font-weight: 700; color: #5C3A1E; vertical-align: middle; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li { margin-bottom: 6px; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">
+Một trong những nỗi sợ lớn nhất ngăn anh em cai thuốc là: <em>"Cai xong tăng cân thì sao?"</em> Đặc biệt anh em VN trung niên — nhiều người vốn đã thừa cân, sợ thêm vài kg. Mình hiểu — mình cũng đã tăng <strong>3.2 kg</strong> trong 6 tháng đầu cai. Nhưng tin tốt: <strong>tăng cân khi cai thuốc CÓ KIỂM SOÁT ĐƯỢC</strong> — không phải định mệnh. Bài này mình chỉ 5 cách thực tế, đã có hiệu quả trên mình + dựa trên nghiên cứu khoa học.
+</p>
+
+<h2>Tăng cân khi cai thuốc — Vì sao?</h2>
+
+<p>3 lý do sinh học chính:</p>
+
+<div class="stat-row">
+<div class="stat-num">10%</div>
+<div class="stat-text"><strong>Chuyển hoá cơ bản giảm.</strong> Nicotine làm tim đập nhanh + cơ thể đốt nhiều calo. Hết nicotine → cơ thể đốt ít hơn 200-300 calo/ngày. <span style="font-size: 13px; color: #8A857C; font-style: italic;">(NIH 2013)</span></div>
+</div>
+
+<div class="stat-row">
+<div class="stat-num">2x</div>
+<div class="stat-text"><strong>Vị giác phục hồi.</strong> Sau 2 tuần cai, vị giác về 60-80% — anh thấy đồ ăn ngon hơn 2 lần. Đặc biệt đồ ngọt, đồ béo. <span style="font-size: 13px; color: #8A857C; font-style: italic;">(US Surgeon General 2020)</span></div>
+</div>
+
+<div class="stat-row">
+<div class="stat-num">100%</div>
+<div class="stat-text"><strong>Thay thói quen tay-miệng.</strong> Khi thèm thuốc, anh chuyển sang ăn vặt — bánh kẹo, hạt, snack. Thói quen "cầm cái gì đó nhai" thay điếu thuốc.</div>
+</div>
+
+<h2>Tăng cân trung bình bao nhiêu kg?</h2>
+
+<p>Nghiên cứu Aubin et al. (BMJ 2012) — 62 nghiên cứu trên 14.000 người cai thuốc:</p>
+
+<ul>
+<li><strong>Trung bình</strong>: 4-5 kg trong 6-12 tháng đầu</li>
+<li><strong>Phân bố</strong>: 16% giảm cân, 37% tăng &lt;5kg, 34% tăng 5-10kg, 13% tăng &gt;10kg</li>
+<li><strong>Sau 1 năm</strong>: cân nặng ổn định, không tiếp tục tăng</li>
+<li><strong>Sau 5 năm</strong>: ~50% người cai lấy lại cân nặng cũ qua tự điều chỉnh</li>
+</ul>
+
+<div class="quote">
+<strong>Quan trọng:</strong> Lợi ích sức khoẻ của việc CAI lớn hơn rất nhiều so với tác hại của 4-5kg tăng cân. Nghiên cứu Surgeon General 2020: <em>"Cai thuốc + tăng 5kg → vẫn giảm 60% nguy cơ tử vong sớm so với tiếp tục hút."</em> Đừng để nỗi sợ tăng cân ngăn anh cai.
+</div>
+
+<h2>5 cách kiểm soát cân nặng khi cai thuốc</h2>
+
+<div class="step">
+<span class="step-num">1</span>
+<span class="step-title">Uống 2L nước/ngày — vũ khí số 1</span>
+<p style="margin: 10px 0 0;">Nước làm đầy dạ dày → giảm cảm giác đói. Pha với chanh hoặc gừng — kích vị giác giả. Đặc biệt: <strong>uống 1 cốc nước TRƯỚC mỗi bữa ăn 15 phút</strong> — giảm 20-30% lượng calo tiêu thụ (nghiên cứu Davy 2010).</p>
+<p style="margin: 8px 0 0; font-size: 13px; color: #8A857C;">→ Tip Khang: mình mua 1 chai 1L, đổ đầy sáng — phải uống hết trước trưa. Chiều thêm 1 chai nữa.</p>
+</div>
+
+<div class="step">
+<span class="step-num">2</span>
+<span class="step-title">Chia 5 bữa nhỏ thay 3 bữa lớn</span>
+<p style="margin: 10px 0 0;">5 bữa: sáng + 10h + trưa + 15h + tối. Mỗi bữa nhỏ → đường huyết ổn định → ít đói cồn cào → ít ăn vặt. Bữa phụ 10h + 15h: 1 quả táo / nắm hạnh nhân / sữa chua không đường.</p>
+<p style="margin: 8px 0 0; font-size: 13px; color: #8A857C;">→ Khoa học: nghiên cứu Holmstrup 2010 — chia bữa nhỏ giảm cảm giác đói + tăng chuyển hoá 5-10%.</p>
+</div>
+
+<div class="step">
+<span class="step-num">3</span>
+<span class="step-title">Đi bộ 30-45 phút/ngày — không cần gym</span>
+<p style="margin: 10px 0 0;">Đi bộ tốc độ vừa (4-5 km/h) đốt 200-300 calo/giờ — bù chính xác cái mất do hết nicotine. Bonus: tăng dung tích phổi (đang phục hồi), giảm stress, ngủ ngon. Sáng/chiều/tối — chọn lúc anh hay hút nhất.</p>
+<p style="margin: 8px 0 0; font-size: 13px; color: #8A857C;">→ Tip Khang: mình đi bộ 6h sáng (lúc xưa hút điếu sáng) + 7h tối (lúc xưa hút điếu sau ăn). Vừa thay thói quen, vừa đốt calo.</p>
+</div>
+
+<div class="step">
+<span class="step-num">4</span>
+<span class="step-title">Thay snack ngọt = snack lành</span>
+<p style="margin: 10px 0 0;">Anh sẽ muốn ăn vặt — đó là tự nhiên. Nhưng thay đồ ngọt/chiên = đồ ít calo:</p>
+<ul style="margin-top: 8px;">
+<li>Bánh kẹo, snack mặn → hạt (hạnh nhân, hạt điều, hạt bí) — 1 nắm/lần</li>
+<li>Nước ngọt → trà xanh, nước chanh không đường</li>
+<li>Sô-cô-la → trái cây tươi (cam, ổi, táo, dưa hấu)</li>
+<li>Đồ chiên → đậu phộng rang (không muối), bắp rang không bơ</li>
+</ul>
+<p style="margin: 8px 0 0; font-size: 13px; color: #8A857C;">→ Đặc biệt: tránh đồ ngọt sau bữa tối (8-10h) — anh hay thèm hơn lúc xưa hút điếu cuối ngày.</p>
+</div>
+
+<div class="step">
+<span class="step-num">5</span>
+<span class="step-title">Bài thở 4-7-8 thay điếu — đánh lừa não</span>
+<p style="margin: 10px 0 0;">Khi thèm thuốc, đa số anh em chuyển sang ăn vặt. Thay vào đó: <strong>thở 4-7-8</strong> (hít 4s → giữ 7s → thở ra 8s, lặp 3 chu kỳ). Vừa qua được 90 giây thèm, vừa không thêm calo. Nghiên cứu Brown & Gerbarg 2005: bài thở này kích hoạt parasympathetic — giảm cảm giác đói giả.</p>
+<p style="margin: 8px 0 0; font-size: 13px; color: #8A857C;">→ Tip Khang: 80% lần "thèm hút" thực ra là <em>"thèm cảm giác làm gì đó"</em> — không phải đói thật. Thở 90 giây là đủ.</p>
+</div>
+
+<h2>Câu chuyện Khang — mình tăng 3.2kg, mất lại trong 1 năm</h2>
+
+<p>Mình cai thuốc 45 tuổi, lúc đó 68kg (cao 1m72). Sau 6 tháng cai: 71.2kg (tăng 3.2kg). Vợ trêu mình "béo lên". Mình hơi lo, nhưng nhớ Doll & Hill nói: tăng 5kg vẫn lợi hơn hút.</p>
+
+<p>Năm đầu cai mình áp dụng đúng 5 cách trên:</p>
+<ul>
+<li>Uống 2.5L nước/ngày (mua chai 1L)</li>
+<li>Đi bộ 45 phút mỗi sáng — quanh hồ gần nhà</li>
+<li>Bữa phụ: hạt hạnh nhân thay bánh kẹo</li>
+<li>Trà xanh thay cà phê đường (xưa mình uống cà phê + điếu)</li>
+<li>Bài thở 4-7-8: mỗi khi muốn ăn vặt, thở trước</li>
+</ul>
+
+<p>Đến tháng thứ 14, cân nặng về 68.5kg — gần như cũ. Đến nay 5 năm, ổn định 69-70kg. Quan trọng hơn: <strong>khối cơ tăng + mỡ giảm</strong> (nhờ đi bộ). Vợ nói "anh trẻ hơn lúc xưa".</p>
+
+<p><a href="https://sol.vn/khang-sol" style="color: #B25C2C; font-weight: 600;">Đọc câu chuyện đầy đủ Khang Sol →</a></p>
+
+<h2>Khi nào nên đi gặp bác sĩ về cân nặng?</h2>
+
+<p>5 cách trên đủ cho 90% anh em. 10% còn lại cần thêm hỗ trợ — đặc biệt nếu:</p>
+
+<ul>
+<li>Anh đã thừa cân trước khi cai (BMI &gt; 25)</li>
+<li>Có tiền sử rối loạn ăn uống (binge eating)</li>
+<li>Có bệnh nội tiết (tiểu đường, hội chứng chuyển hoá)</li>
+<li>Sau 1 năm cai mà vẫn tăng &gt;10kg không giảm</li>
+</ul>
+
+<p>Lúc đó: gặp bác sĩ dinh dưỡng (BV Bạch Mai, BV Nội tiết TW) hoặc HLV cá nhân. KHÔNG dùng thuốc giảm cân tự ý — nhiều loại trên thị trường VN không an toàn.</p>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Tăng cân trung bình bao nhiêu kg?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nghiên cứu Aubin et al. (BMJ 2012) — 62 nghiên cứu trên 14.000 người cai thuốc:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 cách kiểm soát cân nặng khi cai thuốc là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nước làm đầy dạ dày → giảm cảm giác đói. Pha với chanh hoặc gừng — kích vị giác giả. Đặc biệt: uống 1 cốc nước TRƯỚC mỗi bữa ăn 15 phút — giảm 20-30% lượng calo tiêu thụ (nghiên cứu Davy 2010).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Câu chuyện Khang — mình tăng 3.2kg, mất lại trong 1 năm là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mình cai thuốc 45 tuổi, lúc đó 68kg (cao 1m72). Sau 6 tháng cai: 71.2kg (tăng 3.2kg). Vợ trêu mình "béo lên". Mình hơi lo, nhưng nhớ Doll & Hill nói: tăng 5kg vẫn lợi hơn hút.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Khi nào nên đi gặp bác sĩ về cân nặng?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">5 cách trên đủ cho 90% anh em. 10% còn lại cần thêm hỗ trợ — đặc biệt nếu:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Phần lớn tăng cân xảy ra trong 6 tháng đầu (vì chuyển hoá giảm + vị giác phục hồi). Sau 1 năm cân nặng ổn định. Sau 2-3 năm, ~50% người tự lấy lại cân cũ nếu có thói quen tốt.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">Sol đi cùng anh cai + giữ cân</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol có chip nhắc đi bộ + uống nước + bữa phụ lành mạnh — tự động gửi cho anh. Không chỉ cai thuốc — sống khoẻ hơn.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=A5&utm_campaign=tang-can">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<h3>Tăng cân khi cai thuốc kéo dài bao lâu?</h3>
+<p>Phần lớn tăng cân xảy ra trong 6 tháng đầu (vì chuyển hoá giảm + vị giác phục hồi). Sau 1 năm cân nặng ổn định. Sau 2-3 năm, ~50% người tự lấy lại cân cũ nếu có thói quen tốt.</p>
+
+<h3>Phụ nữ cai thuốc tăng cân nhiều hơn nam giới không?</h3>
+<p>Có — trung bình phụ nữ tăng 4.5-5.5 kg vs nam 3-4 kg trong 6 tháng đầu. Lý do: khối lượng cơ ít hơn → chuyển hoá thấp hơn → mất ít calo từ nicotine hơn. Cách kiểm soát giống nhau.</p>
+
+<h3>Có nên uống cà phê đen để giúp đốt calo + thay thói quen?</h3>
+<p>1-2 ly/ngày OK. Cà phê đen (không đường, không sữa) đốt 100-150 calo/ngày tiếp. Caffeine tăng chuyển hoá ngắn hạn. Nhưng đừng &gt;3 ly — sẽ lo âu + mất ngủ (đặc biệt trong tuần đầu cai).</p>
+
+<h3>Tôi tăng 8 kg sau 3 tháng cai — có cần lo không?</h3>
+<p>Hơi cao nhưng vẫn trong khoảng bình thường (16% người tăng &gt;5kg trong 3 tháng). Áp dụng ngay 5 cách trên + đo cân hàng tuần (không hàng ngày). Nếu sau 6 tháng vẫn tăng tiếp → gặp BS dinh dưỡng.</p>
+
+<h3>Nên cai thuốc trước hay giảm cân trước?</h3>
+<p><strong>Cai thuốc trước</strong> — luôn luôn. Vì: (1) thuốc lá giết nhanh hơn thừa cân; (2) khi đang cai, năng lượng tinh thần dành cho 1 việc dễ hơn; (3) cai thuốc giúp tập thể dục tốt hơn (phổi sạch hơn). Giảm cân sau khi cai thành công 6-12 tháng.</p>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C;">Cai thuốc lá tại nhà — 7 bước</a> ·
+<a href="https://sol.vn/trieu-chung-cai-thuoc-la-theo-ngay" style="color: #B25C2C;">Triệu chứng cai thuốc Day 1-30</a> ·
+<a href="https://sol.vn/cai-thuoc-bao-lau-phoi-sach" style="color: #B25C2C;">Cai thuốc bao lâu phổi sạch</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Aubin BMJ 2012, Davy 2010, NIH 2013, Surgeon General 2020.
+</p>
+
+<p style="font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px;">
+<strong>Lưu ý y khoa</strong>: bài này dành cho người trưởng thành khoẻ mạnh. Nếu anh có tiểu đường, bệnh tim, rối loạn ăn uống — tham vấn bác sĩ trước khi áp dụng chế độ ăn/tập thay đổi.
+</p>
+
+</div>

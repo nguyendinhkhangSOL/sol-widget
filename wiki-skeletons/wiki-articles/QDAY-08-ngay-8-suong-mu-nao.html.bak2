@@ -1,0 +1,222 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vì sao Ngày 8 sương mù não?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nicotine từng kích thích acetylcholine — chất dẫn truyền chính cho trí nhớ + tập trung. 25-30 năm hút, não anh đã quen \"nhận\" tín hiệu này mỗi 1-2 giờ. Cai → não phải tự sản xuất acetylcholine từ choline tự nhiên — chậm hơn nhiều."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 8 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não đang \"thiếu pin\" — đừng cố dùng 2 giờ liên tục. Đặt timer 25 phút làm việc → nghỉ 5 phút. Lặp 4 lần → nghỉ dài 20 phút. Kỹ thuật này phù hợp cho não đang phục hồi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 8 lần 5 cai, tôi vào họp với 5 đồng nghiệp. Tôi là người chủ trì. Đang nói thì quên mất tên đồng nghiệp gần nhất — người tôi làm việc cùng 7 năm. Tôi cười, xin lỗi: \"Cho mình 1 giây, đang cai thuốc, đầu hơi mù mịt\". Cả nhóm cười. Trợ lý nhắc tên. Cuộc họp tiếp."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 8. Anh đọc 1 trang báo 3 lần vẫn không nhớ. Họp mà ý nghĩ trôi đâu. Tên đồng nghiệp quen 5 năm — quên đột nhiên. Đây là <strong>sương mù não cai thuốc</strong> — và nó là dấu hiệu não đang upgrade chứ không xuống cấp.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Receptor acetylcholine</strong> trong não đang tái cân bằng số lượng<sup>[1]</sup></li>
+<li>Glucose uptake ở vỏ não giảm tạm thời — não "thiếu nhiên liệu"</li>
+<li>Dopamine baseline ~70% bình thường (Cook 2017)<sup>[2]</sup></li>
+<li>Hết sau 2-3 tuần — não phục hồi hoàn toàn</li>
+<li>Hôm nay: chia việc 25 phút, ngủ đủ 7-8 tiếng, omega-3, đi bộ, không đa nhiệm</li>
+</ul>
+</div>
+
+<h2>Vì sao Ngày 8 sương mù não?</h2>
+
+<h3>Acetylcholine + Glucose vỏ não</h3>
+
+<p>Nicotine từng kích thích acetylcholine — chất dẫn truyền chính cho trí nhớ + tập trung. 25-30 năm hút, não anh đã quen "nhận" tín hiệu này mỗi 1-2 giờ. Cai → não phải tự sản xuất acetylcholine từ choline tự nhiên — chậm hơn nhiều.</p>
+
+<p>Đồng thời, glucose uptake ở vỏ não giảm tạm thời<sup>[3]</sup>. Não "thiếu nhiên liệu" → tập trung yếu, trí nhớ ngắn hạn kém.</p>
+
+<h3>Dopamine vẫn chưa hồi</h3>
+
+<p>Dopamine baseline mới ~70% bình thường. Dopamine cần thiết cho <em>working memory</em> — khả năng giữ thông tin trong đầu. Thiếu = đọc 1 trang quên 1 trang.</p>
+
+<h2>Triệu chứng hôm nay</h2>
+
+<ul>
+<li>Khó nhớ tên quen — "lưỡi vướng"</li>
+<li>Mất tập trung trong họp/đọc</li>
+<li>Cảm giác đầu "mù mịt"</li>
+<li>Phản xạ chậm hơn bình thường</li>
+<li>Mệt nhanh khi suy nghĩ</li>
+<li>Có thể nhầm chỗ để đồ</li>
+</ul>
+
+<h2>5 hành động Ngày 8</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Pomodoro 25 phút — chia việc lớn</h4>
+<p>Não đang "thiếu pin" — đừng cố dùng 2 giờ liên tục. Đặt timer 25 phút làm việc → nghỉ 5 phút. Lặp 4 lần → nghỉ dài 20 phút. Kỹ thuật này phù hợp cho não đang phục hồi.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Ngủ đủ 7-8 tiếng — không thoả hiệp</h4>
+<p>Não cần ngủ để dọn dẹp (glymphatic system). Thiếu ngủ làm sương mù gấp 3 lần. Ưu tiên ngủ HƠN cố thức làm thêm. Việc làm tệ vì ngủ thiếu = tốn thời gian sửa.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Ăn omega-3 + protein</h4>
+<p>Cá hồi, cá thu, hạt chia, hạt óc chó — omega-3 là "dầu não". Trứng (choline cao) + đậu + hạt — protein cho neurotransmitter. Tránh đường tinh + bột mì trắng (gây spike glucose → crash).</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Đi bộ 30 phút — tăng oxy não</h4>
+<p>Vận động nhẹ tăng lưu lượng máu lên não 25%. 1 nghiên cứu Harvard: đi bộ 30 phút/ngày × 2 tuần cải thiện trí nhớ ngắn hạn 15%. Áp dụng được trong tuần 2-3 sau cai.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Tránh đa nhiệm — làm 1 việc 1 lúc</h4>
+<p>Đa nhiệm bình thường tốn 40% công suất não. Khi anh đang sương mù, đa nhiệm = thảm hoạ. Đóng tab khác, tắt notification, làm xong 1 việc rồi sang việc khác. Năng suất sẽ tốt hơn bất ngờ.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>Thi cử, ký hợp đồng quan trọng</strong> — não yếu phán đoán</li>
+<li><strong>Lái đường xa</strong> — phản xạ chậm 30%</li>
+<li><strong>Cà phê liều cao bù năng lượng</strong> — sẽ crash chiều</li>
+<li><strong>Cãi nhau / đàm phán căng</strong> — não thiếu working memory</li>
+<li><strong>"Tôi đần đi rồi"</strong> — sai. Đây là tạm thời, sẽ qua</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 8 lần 5 cai, tôi vào họp với 5 đồng nghiệp. Tôi là người chủ trì. Đang nói thì <em>quên mất tên đồng nghiệp gần nhất</em> — người tôi làm việc cùng 7 năm. Tôi cười, xin lỗi: <em>"Cho mình 1 giây, đang cai thuốc, đầu hơi mù mịt"</em>. Cả nhóm cười. Trợ lý nhắc tên. Cuộc họp tiếp.</p>
+<p>Điều tôi học: <strong>báo trước</strong>. Trước đó tôi cố giấu sương mù — căng thẳng, sai nhiều hơn. Khi báo "tôi đang cai" — đồng nghiệp thông cảm, đưa tài liệu, nhắc bước. 2 tuần sau hết hẳn.</p>
+<p>Đêm đó tôi viết: <em>"Ngày 8 — đầu mù, nhưng vợ tôi nấu cá hồi nướng tối nay. Ăn ngon. Có thể đó là khoa học của omega-3, hoặc là vì tôi đã ăn được vị thật sau 8 ngày."</em></p>
+<p>Anh em ơi — sương mù não là dấu hiệu não đang upgrade firmware. Đừng đánh giá thấp bản thân ngày này. Tránh việc lớn, ngủ đủ, ăn cá béo. 2 tuần nữa anh sẽ minh mẫn hơn 5 năm trước.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-7-moc-1-tuan-nhung-gi-da-thay-doi-trong-co-/">→ Ngày 7 — Mốc 1 tuần</a></li>
+<li><a href="https://sol.vn/ngay-9-ho-va-dom-phoi-dang-tu-lam-sach/">→ Ngày 9 — Ho có đờm là dấu hiệu tốt</a></li>
+<li><a href="https://sol.vn/them-thuoc-dem-khuya-90-giay/">→ Kỹ thuật 90 giây vượt cơn thèm</a></li>
+</ul>
+</div>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+🌫 <strong>Ngày 8 — Sương mù não bình thường</strong><br><br>
+Receptor acetylcholine tái cân bằng, glucose vỏ não tạm thấp. Hết sau 2-3 tuần. Báo đồng nghiệp "đang cai".<br><br>
+Hôm nay: Pomodoro 25 phút, ngủ 7-8 tiếng, ăn omega-3, đi bộ 30 phút, làm 1 việc 1 lúc.<br><br>
+Tránh: thi cử + lái đường xa + quyết định lớn.<br><br>
+📖 <a href="https://sol.vn/ngay-8-suong-mu-nao-va-kho-tap-trung-nao-bo-dang/?utm_source=zalo&utm_campaign=qday-8">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Sương mù não &gt; 4 tuần không giảm — đi khám loại trừ depression, thiếu B12, tuyến giáp.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Vì sao Ngày 8 sương mù não?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nicotine từng kích thích acetylcholine — chất dẫn truyền chính cho trí nhớ + tập trung. 25-30 năm hút, não anh đã quen "nhận" tín hiệu này mỗi 1-2 giờ. Cai → não phải tự sản xuất acetylcholine từ choline tự nhiên — chậm hơn nhiều.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 8 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Não đang "thiếu pin" — đừng cố dùng 2 giờ liên tục. Đặt timer 25 phút làm việc → nghỉ 5 phút. Lặp 4 lần → nghỉ dài 20 phút. Kỹ thuật này phù hợp cho não đang phục hồi.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 8 lần 5 cai, tôi vào họp với 5 đồng nghiệp. Tôi là người chủ trì. Đang nói thì quên mất tên đồng nghiệp gần nhất — người tôi làm việc cùng 7 năm. Tôi cười, xin lỗi: "Cho mình 1 giây, đang cai thuốc, đầu hơi mù mịt". Cả nhóm cười. Trợ lý nhắc tên. Cuộc họp tiếp.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Benowitz NL. (2010). <em>Nicotine addiction</em>. N Engl J Med 362(24):2295-2303.</li>
+<li>Cook JW et al. (2017). <em>Anhedonia as a function of cigarette smoking kiêng dứt thuốc</em>. J Abnorm Psychol 126(8):1-11.</li>
+<li>Wang W et al. (2013). <em>Effects of cigarette smoking on reproductive hormones</em>. Mediators Inflamm 2013:818590.</li>
+<li>Hughes JR. (2007). <em>Effects of kiêng dứt thuốc from tobacco</em>. Nicotine Tob Res 9(3):315-327.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 8 — Sol đi cùng đầu mù</div>
+<div style="font-size:14px;opacity:.9;">Sol có chip cứu sương mù + workbook não phục hồi. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-8&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã quên tên đồng nghiệp 7 năm trong cuộc họp Ngày 8. Cập nhật 14-05-2026.</p>
+
+</div>

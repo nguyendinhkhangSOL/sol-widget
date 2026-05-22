@@ -1,0 +1,274 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hôm nay cơ thể anh đang làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FEV1 là chỉ số đo lượng không khí anh thở ra trong 1 giây — đây là indicator chính của sức khoẻ phổi. Nghiên cứu Anthonisen Lung Health Study theo dõi hàng nghìn người cai thuốc: trong 2 tuần đầu, FEV1 tăng trung bình 10-15%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Triệu chứng dự kiến tuần 2 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "30% người cai có dấu hiệu trầm cảm nhẹ trong tuần 2-3. Phần lớn tự qua. Nhưng cần khám tâm thần ngay nếu:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Mốc 2 Tuần là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuần 1 anh thưởng nhỏ. Tuần 2 — to hơn: 1 buổi ăn tối với vợ ngoài quán anh thèm lâu, mua đồ thể thao mới, đặt vé đi đâu đó cuối tuần. Phần thưởng cụ thể giúp não tạo positive association với \"cai thuốc = ngày đẹp\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh tuần 2 gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mốc 2 tuần lần 5 cai (cuối tháng 1 năm 2020) là khoảng thời gian tôi sợ nhất. Tuần 1 còn adrenaline + ý chí. Tuần 2 — adrenaline hết, ý chí cạn, mà cuộc đời vẫn phải tiếp tục."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+.sol-wiki .stat-card { background: linear-gradient(135deg, #DCFCE7 0%, #FFF4EA 100%); border: 1px solid #16A34A; border-radius: 12px; padding: 14px; text-align: center; }
+.sol-wiki .stat-num { font-size: 26px; font-weight: 700; color: #15803D; }
+.sol-wiki .stat-label { font-size: 12px; color: #5C3A1E; margin-top: 4px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Hai tuần. 14 ngày. Anh đã vượt qua "ngưỡng nguy hiểm thứ nhất" của tái phát<sup>[1]</sup>. Hôm nay tuần hoàn anh đã cải thiện rõ rệt — FEV1 (dung tích phổi) tăng 10-15%, fibrinogen giảm, nguy cơ đông máu giảm. Nhưng đây cũng là ngày "Đống tro tàn" có thể dày nhất.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>FEV1 (dung tích phổi)</strong> đã tăng 10-15% so với Ngày 1<sup>[2]</sup></li>
+<li><strong>Fibrinogen</strong> giảm → giảm nguy cơ đông máu + đột quỵ</li>
+<li>Tuần hoàn da rõ hơn — môi và móng tay hồng hơn</li>
+<li><strong>⚠️ Đống tro tàn:</strong> Buồn vô cớ + anhedonia có thể peak hôm nay</li>
+<li>5 hành động Mốc 2 Tuần: tự thưởng to hơn, đo cân, đo nhịp tim, vợ chồng đi dạo, lập kế hoạch tuần 3</li>
+</ul>
+</div>
+
+<h2>Hôm nay cơ thể anh đang làm gì?</h2>
+
+<h3>1. FEV1 (dung tích phổi) đã tăng 10-15%</h3>
+
+<p>FEV1 là chỉ số đo lượng không khí anh thở ra trong 1 giây — đây là indicator chính của sức khoẻ phổi. Nghiên cứu Anthonisen Lung Health Study<sup>[2]</sup> theo dõi hàng nghìn người cai thuốc: trong 2 tuần đầu, FEV1 tăng trung bình 10-15%.</p>
+
+<p>Cụ thể nghĩa là:</p>
+<ul>
+<li>Đi cầu thang đỡ thở (so với Ngày 1)</li>
+<li>Chạy bộ ngắn được lâu hơn 20-30%</li>
+<li>Hát/nói chuyện không hụt hơi</li>
+<li>Ngủ ngon hơn (do thở sâu hơn)</li>
+</ul>
+
+<h3>2. Fibrinogen giảm — giảm đông máu</h3>
+
+<p>Fibrinogen là protein gây đông máu. Người hút thuốc thường có fibrinogen cao mãn tính → nguy cơ đột quỵ + nhồi máu cơ tim tăng. Sau 2 tuần cai, fibrinogen giảm rõ — tiếp tục giảm cho đến tháng thứ 3.</p>
+
+<h3>3. Tuần hoàn da cải thiện</h3>
+
+<p>Mạch máu nhỏ (microcirculation) giãn lại sau 2 tuần. Hiển nhiên:</p>
+<ul>
+<li>Môi hồng tự nhiên</li>
+<li>Móng tay sáng hơn</li>
+<li>Tay chân ấm hơn (không còn nicotine co mạch ngoại biên)</li>
+<li>Vết thương lành nhanh hơn</li>
+</ul>
+
+<h3>4. Não đang phục hồi nhưng — Đống tro tàn có thể đỉnh</h3>
+
+<p>Đây là phần khó nhất của tuần 2. Dopamine baseline vẫn còn khoảng 70% bình thường<sup>[3]</sup>. Nicotine receptor đã upregulate đợt 1, đang tái cân bằng tiếp.</p>
+
+<p>Hậu quả: <strong>anhedonia tạm thời</strong> — mọi thứ cảm thấy nhạt nhẽo, mất hứng thú, không có lý do rõ rệt. Đây là <em>Đống tro tàn</em> tuần 2 — một trong những phase nguy hiểm nhất vì người ta dễ nghĩ "tôi không vui — chắc do cai thuốc — vậy hút lại sẽ vui".</p>
+
+<p>Sai. Hút lại sẽ chỉ kéo dài Đống tro tàn vì receptor sẽ phải tái cân bằng lại từ đầu sau lần hút mới.</p>
+
+<h2>Triệu chứng dự kiến tuần 2</h2>
+
+<ul>
+<li><strong>Buồn vô cớ</strong> — không có lý do rõ, đặc biệt chiều/tối</li>
+<li><strong>Mất hứng thú</strong> — phim cũ thấy nhạt, bữa ăn yêu thích không còn ngon</li>
+<li><strong>Mệt lừ đừ</strong> — adenosine đang resensitize</li>
+<li><strong>Sương mù não</strong> — vẫn còn nhưng đỡ hơn tuần 1</li>
+<li><strong>Cơn thèm bất ngờ</strong> — do tình huống thèm (Pavlov), không phải sinh học</li>
+<li><strong>Mơ hút thuốc</strong> — REM rebound</li>
+</ul>
+
+<div class="alarm">
+<h4>🚨 Cảnh báo trầm cảm — khi nào cần khám</h4>
+<p>30% người cai có dấu hiệu trầm cảm nhẹ trong tuần 2-3. Phần lớn tự qua. Nhưng <strong>cần khám tâm thần ngay</strong> nếu:</p>
+<ul>
+<li>Buồn kéo dài &gt; 7 ngày liên tục</li>
+<li>Mất ngủ + chán ăn nặng</li>
+<li>Có tiền sử trầm cảm hoặc đang dùng thuốc tâm thần</li>
+<li><strong>Có ý nghĩ tự hại</strong> → đến cấp cứu (115) hoặc khoa Tâm thần BV gần nhất (BV Bạch Mai HN 024 3869 3731 · BV Tâm thần TPHCM 1900 599 920)</li>
+</ul>
+</div>
+
+<h2>5 hành động Mốc 2 Tuần</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Tự thưởng to hơn tuần 1</h4>
+<p>Tuần 1 anh thưởng nhỏ. Tuần 2 — to hơn: 1 buổi ăn tối với vợ ngoài quán anh thèm lâu, mua đồ thể thao mới, đặt vé đi đâu đó cuối tuần. Phần thưởng cụ thể giúp não tạo positive association với "cai thuốc = ngày đẹp".</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Đo cân nặng + nhịp tim nghỉ</h4>
+<p>Ghi lại số liệu: cân (kg), nhịp tim nghỉ (lúc sáng dậy, chưa cà phê), huyết áp nếu có máy. So sánh với Ngày 1 (nếu anh có ghi). Phần lớn người sau 2 tuần: nhịp tim nghỉ giảm 5-10 bpm, huyết áp giảm. Đây là <strong>bằng chứng vật lý</strong> để não tin "cai có lợi".</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Đi dạo vợ chồng 30 phút</h4>
+<p>Đống tro tàn là cảm xúc, cần liên kết người thân. Đi dạo 30 phút buổi chiều — không điện thoại, chỉ nói chuyện. Vợ thường nhận xét: "anh khác rồi" — mà chính anh chưa thấy. Đây là social proof quan trọng.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Lập kế hoạch tuần 3</h4>
+<p>Tuần 3-4 là "Đống tro tàn" rộng + nhiều tình huống thèm xã hội (đám cưới, sinh nhật, nhậu xã giao). Liệt kê 2-3 tình huống nguy hiểm sắp đến + Kế hoạch B. Khi đã biết trước "tôi sẽ vấp ở đâu" — ý chí cần ít hơn rất nhiều.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Viết "tôi đã học gì 14 ngày qua"</h4>
+<p>5 dòng — không cần đẹp. tình huống thèm lớn nhất là gì? Khi nào dễ vấp nhất? Người nào giúp anh nhiều nhất? Phương pháp nào hợp với anh? Đây là tri thức cai sẽ dùng cho cả tháng 2-3 sau.</p>
+</div>
+</div>
+
+<h2>Tránh tuần 2</h2>
+
+<ul>
+<li><strong>"Đã 2 tuần — chắc cai được rồi"</strong> — quá tự tin = nguy hiểm. Còn 16 ngày + 6 tháng để vào "an toàn"</li>
+<li><strong>Tiệc lớn / đám cưới / sinh nhật</strong> — nếu phải đi, có Kế hoạch B</li>
+<li><strong>Rượu bia &gt; 2 lon</strong> — giảm ý chí 30%</li>
+<li><strong>So sánh với người khác</strong> — "anh ấy cai 1 lần xong, tôi đã 5 lần rồi" — vô ích</li>
+<li><strong>Bỏ Sol companion</strong> — vẫn còn 16 ngày phía trước</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Mốc 2 tuần lần 5 cai (cuối tháng 1 năm 2020) là khoảng thời gian tôi sợ nhất. Tuần 1 còn adrenaline + ý chí. Tuần 2 — adrenaline hết, ý chí cạn, mà cuộc đời vẫn phải tiếp tục.</p>
+<p>Ngày 12, 13, 14 — tôi ngồi văn phòng, thấy mọi thứ <strong>nhạt nhẽo</strong>. Cà phê không ngon. Đọc tin tức không hứng. Vợ nói chuyện tôi chỉ "ừ" thôi. Tôi không cáu — tôi <em>không cảm xúc</em>. Đó mới đáng sợ.</p>
+<p>Vợ tôi để ý — buổi tối chủ động đề nghị: "Đi dạo công viên đi anh". Chúng tôi đi bộ 30 phút trong im lặng. Đến cuối, cô ấy nói: "Anh đang qua đoạn khó — em biết. Anh không phải làm gì cả, chỉ cần ở đây với em là đủ."</p>
+<p>Tối đó tôi khóc. Lần đầu tiên sau 30 năm. Không phải vì cai thuốc — vì tôi nhận ra <strong>tôi đang được yêu mà tôi không thấy</strong> suốt nhiều năm. Cai thuốc cho tôi không khí để thấy lại điều đó.</p>
+<p>Nếu hôm nay anh em đang "thấy nhạt" — đó là Đống tro tàn. Sẽ qua trong 7-14 ngày tới. Cứ đi dạo với vợ, ngủ đủ, đừng nghĩ "tôi không ổn". Anh đang ổn — chỉ là <em>não đang sửa</em>.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-13-cam-xuc-that-thuong-canh-bao-tram-cam/">→ Ngày 13 — Khi nào cảm xúc báo trầm cảm</a></li>
+<li><a href="https://sol.vn/ngay-15-tinh-huong-kho-doi-mat/">→ Ngày 15 — Tình huống khó (café, đồng nghiệp)</a></li>
+<li><a href="https://sol.vn/buon-chan-tuan-2/">→ Đống tro tàn — vì sao buồn vô cớ tuần 2</a></li>
+</ul>
+</div>
+
+🌬 <strong>Ngày 14 — Mốc 2 Tuần</strong><br><br>
+FEV1 anh tăng 10-15%, fibrinogen giảm, tuần hoàn da rõ hơn. Đi cầu thang đỡ thở.<br><br>
+Hôm nay: tự thưởng to hơn tuần 1, đo cân + nhịp tim nghỉ, đi dạo vợ chồng 30 phút, lập kế hoạch tuần 3.<br><br>
+⚠️ "Đống tro tàn" có thể peak hôm nay — buồn vô cớ là khoa học, không phải yếu lòng.<br><br>
+📖 <a href="https://sol.vn/ngay-14-moc-2-tuan-bo-thuoc/?utm_source=zalo&utm_campaign=qday-14">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nội dung mang tính tham khảo dựa trên bằng chứng khoa học. Mỗi cơ thể khác nhau — luôn hỏi ý kiến bác sĩ. Nếu có ý nghĩ tự hại — đến cấp cứu hoặc khoa Tâm thần BV gần nhất ngay.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Hôm nay cơ thể anh đang làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">FEV1 là chỉ số đo lượng không khí anh thở ra trong 1 giây — đây là indicator chính của sức khoẻ phổi. Nghiên cứu Anthonisen Lung Health Study theo dõi hàng nghìn người cai thuốc: trong 2 tuần đầu, FEV1 tăng trung bình 10-15%.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Triệu chứng dự kiến tuần 2 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">30% người cai có dấu hiệu trầm cảm nhẹ trong tuần 2-3. Phần lớn tự qua. Nhưng cần khám tâm thần ngay nếu:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. 5 hành động Mốc 2 Tuần là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tuần 1 anh thưởng nhỏ. Tuần 2 — to hơn: 1 buổi ăn tối với vợ ngoài quán anh thèm lâu, mua đồ thể thao mới, đặt vé đi đâu đó cuối tuần. Phần thưởng cụ thể giúp não tạo positive association với "cai thuốc = ngày đẹp".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Cần tránh tuần 2 gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mốc 2 tuần lần 5 cai (cuối tháng 1 năm 2020) là khoảng thời gian tôi sợ nhất. Tuần 1 còn adrenaline + ý chí. Tuần 2 — adrenaline hết, ý chí cạn, mà cuộc đời vẫn phải tiếp tục.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Hughes JR. (2004). <em>Shape of the tái nghiện curve and dài hạn kiêng dứt thuốc</em>. Addiction 99(1):29-38.</li>
+<li>Anthonisen NR et al. (2005). <em>The effects of a smoking cai thuốc intervention on 14.5-year mortality</em>. Ann Intern Med 142(4):233-239.</li>
+<li>Cook JW et al. (2017). <em>Anhedonia as a function of cigarette smoking kiêng dứt thuốc</em>. J Abnorm Psychol 126(8):1-11.</li>
+<li>US Surgeon General. (2020). <em>Smoking cai thuốc</em>. Chapter 3.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Mốc 2 Tuần — Sol đi cùng anh hết hành trình</div>
+<div style="font-size:14px;opacity:.9;">Tuần 3-4 còn nhiều tình huống thèm xã hội. Sol đồng hành 30 ngày — chip cứu cơn thèm, Voice của Khang đêm Đống tro tàn, sổ tay tự động. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-14&utm_medium=organic">Cùng Sol tuần 3 →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã trải qua Đống tro tàn tuần 2 năm lần. Cập nhật 14-05-2026.</p>
+
+</div>

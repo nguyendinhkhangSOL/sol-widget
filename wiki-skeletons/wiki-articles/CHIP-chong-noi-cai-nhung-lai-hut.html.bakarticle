@@ -1,0 +1,161 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Chồng nói đã cai nhưng tôi phát hiện vẫn lén hút — đây có phải là dối trá không?","acceptedAnswer":{"@type":"Answer","text":"Có và không. Về mặt hành vi — chồng dối trá. Nhưng về tâm lý — đây là 'shame-driven secrecy' (giấu vì xấu hổ), khá phổ biến ở giai đoạn cai. Chồng KHÔNG có ý lừa em — chồng đang lừa chính mình rằng 'lần này không tính'. 60% người cai trải qua giai đoạn này. Cách xử lý: KHÔNG kết tội ngay khi phát hiện — phá hủy luôn cuộc cai. Cách tốt: đặt thuốc lên bàn, nói 1 câu, đợi chồng tự xử lý."}},
+{"@type":"Question","name":"Tôi tìm thấy bao thuốc giấu trong xe — tôi nên đối mặt thế nào?","acceptedAnswer":{"@type":"Answer","text":"KHÔNG đối mặt khi đang nóng. Bước 1: đặt bao thuốc lên bàn ăn sáng chồng (không nói gì). Bước 2: khi chồng thấy + bắt đầu biện minh, nói 1 câu: 'Em không muốn cãi. Em chỉ muốn anh biết em đã thấy.' Bước 3: đợi chồng nói tiếp. Nếu chồng im — chị nói: 'Anh nghĩ tụi mình nên làm gì?' Câu hỏi mở. Chồng tự quyết định."}},
+{"@type":"Question","name":"Tôi mất niềm tin chồng — làm sao tin lại được lời chồng nói?","acceptedAnswer":{"@type":"Answer","text":"Niềm tin không build qua lời nói — build qua hành vi consistent 6-12 tháng. Đừng dựa vào lời hứa nữa. Thay vào đó: (1) cài app Sol theo dõi Q-Day của chồng (chồng share progress), (2) đi khám hô hấp + test cotinine định kỳ 3 tháng/lần, (3) chấp nhận rằng niềm tin không quay lại trong 1 tuần. 6-12 tháng consistent = niềm tin bắt đầu rebuild."}},
+{"@type":"Question","name":"Chồng có thể đang dùng vape giấu thay thuốc lá thường — làm sao biết?","acceptedAnswer":{"@type":"Answer","text":"Dấu hiệu: mùi trái cây/menthol trên áo, miệng có vị ngọt lạ, đỏ mắt sau khi 'ra ngoài', cốc/chai có nước condensation. Vape mùi nhẹ hơn thuốc lá nhiều — dễ giấu. Cách test: test cotinine nước tiểu chồng (làm cùng test khi đi khám hô hấp định kỳ). Cotinine có cả khi dùng vape. Test ~400-600k tại Vinmec, BV Bạch Mai."}},
+{"@type":"Question","name":"Tôi có nên kiểm tra điện thoại / lịch sử lookup mua thuốc của chồng không?","acceptedAnswer":{"@type":"Answer","text":"Không khuyến cáo. Kiểm tra điện thoại lén = vi phạm privacy — kích hoạt phòng thủ mạnh, phá hủy luôn niềm tin còn lại. Nếu em muốn 'verify' chồng — yêu cầu chồng tự share: cài app Sol chung tài khoản gia đình, share Apple Health / Google Fit dữ liệu vận động. Yêu cầu chồng chủ động > kiểm tra lén."}},
+{"@type":"Question","name":"Sau khi phát hiện chồng lén hút 3 lần — tôi có nên ly hôn không?","acceptedAnswer":{"@type":"Answer","text":"3 lần lén hút trong giai đoạn cai = pattern bình thường, KHÔNG là lý do ly hôn riêng. Nhưng nếu kèm: dối trá kéo dài >6 tháng, không cam kết counseling, đe doạ em khi em phát hiện, dùng chuyện cai để gaslight em ('em điên rồi') → đây là vấn đề trust + bạo lực tâm lý lớn hơn thuốc lá. Tham khảo: couple counseling (Therapy Vietnam) hoặc tư vấn luật sư hôn nhân — trước khi quyết ly hôn."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .step-card { background: white; border-left: 4px solid #B25C2C; padding: 14px 18px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .step-card .step-num { font-weight: 700; color: #B25C2C; font-size: 14px; margin-bottom: 4px; }
+.sol-wiki .script { background: #FFF4EA; border-left: 3px solid #B25C2C; padding: 10px 14px; border-radius: 6px; margin: 10px 0; font-style: italic; font-size: 14px; }
+.sol-wiki .warning-box { background: #FEF2F2; border-left: 4px solid #DC2626; padding: 14px 18px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .warning-box strong { color: #DC2626; }
+.sol-wiki .forward-cta { background: linear-gradient(135deg, #FFF4EA, #FFE8C8); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 24px; margin: 32px 0; }
+.sol-wiki .forward-cta .label { font-size: 12px; font-weight: 700; color: #B25C2C; }
+.sol-wiki .forward-cta h3 { color: #5C3A1E; margin: 8px 0 10px; }
+.sol-wiki .forward-cta .script-box { background: white; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #B25C2C; margin: 14px 0; font-style: italic; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Chị ạ. Chị vừa tìm thấy bao thuốc giấu trong xe. Hoặc ngửi mùi thuốc trên áo chồng. Chồng nói "anh đã cai 2 tháng rồi". Bây giờ chị đang ngồi trong xe / phòng tắm — vừa sốc vừa tức. <strong>Đây không phải end-of-the-world. Nhưng cách chị phản ứng 24h tới sẽ quyết định cuộc cai có tiếp tục được không.</strong></p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Năm 2013 tôi nói với vợ tôi cai được 3 tháng. Thật ra tôi lén hút trong xe đi làm. Vợ tôi tìm thấy bao thuốc trong cốp xe. Cô ấy không cãi. Cô ấy đặt bao thuốc lên bàn ăn sáng — không nói gì. Sáng tôi thấy. Đó là khoảnh khắc tôi xấu hổ nhất 30 năm hút. Tôi đã muốn bỏ thật từ đêm đó — nhưng phải mất thêm 8 năm và 2 lần vấp nữa."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>60% người cai có "shame-driven secrecy"</strong> — giấu vì xấu hổ, KHÔNG có ý lừa em</li>
+<li><strong>KHÔNG kết tội ngay khi phát hiện</strong> — phá hủy luôn cuộc cai</li>
+<li><strong>Bước 1:</strong> đặt thuốc lên bàn, KHÔNG nói. Bước 2: 1 câu ngắn. Bước 3: đợi chồng tự xử lý</li>
+<li><strong>Niềm tin rebuild qua 6-12 tháng hành vi consistent</strong>, không qua lời hứa</li>
+<li><strong>KHÔNG kiểm tra điện thoại lén</strong> — vi phạm privacy phá hủy trust còn lại</li>
+</ul></div>
+
+<h2>1. Hiểu cơ chế "shame-driven secrecy"</h2>
+
+<p>Trước khi đối mặt, em hiểu vì sao chồng giấu:</p>
+
+<ul>
+<li><strong>Chồng KHÔNG có ý lừa em.</strong> Chồng đang lừa chính mình — "lần này không tính", "chỉ 1 điếu khi nhậu", "không phải tái nghiện".</li>
+<li><strong>Xấu hổ với em + với chính mình</strong> — đã hứa, đã nói cứng. Bây giờ thừa nhận = thua cuộc với cảm xúc bản thân.</li>
+<li><strong>Sợ phản ứng em</strong> — nếu chị từng cằn nhằn nặng các lần trước, chồng học được "giấu thì đỡ phiền hơn".</li>
+<li><strong>60% người cai trải qua giai đoạn này</strong> (Hughes 2008). Bình thường — không phải dấu hiệu chồng "tệ".</li>
+</ul>
+
+<p>Hiểu cơ chế giúp em đối xử như một người mắc lỗi, không phải kẻ phản bội.</p>
+
+<h2>2. Khi phát hiện — kịch bản 4 bước</h2>
+
+<div class="step-card">
+<div class="step-num">Bước 1 — 0 đến 6 giờ sau phát hiện</div>
+<p>KHÔNG đối mặt ngay. KHÔNG gọi cãi qua điện thoại. KHÔNG khóc trước con. Hít sâu. Đi rửa mặt. Cho mình 6 giờ bình tĩnh.</p>
+</div>
+
+<div class="step-card">
+<div class="step-num">Bước 2 — Sáng hôm sau, đặt thuốc lên bàn ăn</div>
+<p>Đặt bao thuốc / mảnh chứng cứ chị tìm thấy lên bàn ăn sáng. KHÔNG nói gì khi đặt. Tự ăn sáng bình thường. Đợi chồng xuống.</p>
+</div>
+
+<div class="step-card">
+<div class="step-num">Bước 3 — Khi chồng thấy + bắt đầu phản ứng</div>
+<p>Chồng có thể: (a) im lặng đỏ mặt, (b) biện minh, (c) cãi "ai để đó". Mọi phản ứng — em nói <strong>1 câu duy nhất</strong>:</p>
+<div class="script">"Em không muốn cãi. Em chỉ muốn anh biết em đã thấy."</div>
+<p>Sau đó IM. Đợi chồng nói tiếp.</p>
+</div>
+
+<div class="step-card">
+<div class="step-num">Bước 4 — Sau khi chồng đã chia sẻ (dù ít/nhiều)</div>
+<p>Nói 1 câu khẳng định:</p>
+<div class="script">"Em vẫn ở đây. Anh nghĩ tụi mình nên làm gì?"</div>
+<p>Câu hỏi mở — chồng tự đưa ra giải pháp. Em KHÔNG đưa ra. Sau khi chồng trả lời, đồng ý 1 hành động cụ thể nhỏ (gặp bác sĩ tuần sau / cài lại app Sol / đăng ký counseling).</p>
+</div>
+
+<h2>3. Sau cuộc nói chuyện — rebuild trust 6-12 tháng</h2>
+
+<p>Niềm tin không quay lại trong 1 tuần. Đây là roadmap thực tế:</p>
+
+<ul>
+<li><strong>Tháng 1-2:</strong> Em theo dõi qua hành vi (mùi thuốc, app Sol progress), KHÔNG dựa vào lời hứa. Em chấp nhận sự không-chắc-chắn.</li>
+<li><strong>Tháng 3-6:</strong> Test cotinine nước tiểu chồng định kỳ — chồng tự nguyện làm khi đi khám hô hấp. Kết quả &lt;1 ng/ml = chồng nói thật.</li>
+<li><strong>Tháng 6-12:</strong> Niềm tin bắt đầu phục hồi nếu 0 lần phát hiện lén hút. Em có thể tin lại từng phần — không hoàn toàn ngay.</li>
+<li><strong>Sau 12 tháng consistent:</strong> Niềm tin gần như đầy. Em có thể không cần test nữa.</li>
+</ul>
+
+<p>Nếu chồng vẫn lén hút sau 6 tháng — đó là pattern, không phải "vấp ngẫu nhiên". Cần can thiệp lớn hơn (counseling, ly thân tạm).</p>
+
+<h2>4. Khi nào dấu hiệu nguy hiểm hơn thuốc lá</h2>
+
+<div class="warning-box">
+<strong>⚠️ Dấu hiệu nguy hiểm hơn:</strong>
+<ul>
+<li><strong>Gaslighting:</strong> chồng nói "em điên rồi, anh không hút" mặc dù chị có chứng cứ → bạo lực tâm lý</li>
+<li><strong>Đe doạ em khi phát hiện:</strong> "đừng có nói gì nữa" với giọng đáng sợ → cảnh báo</li>
+<li><strong>Dối trá kéo dài &gt;6 tháng + nhiều mặt</strong> (không chỉ thuốc lá) → vấn đề trust hôn nhân, không phải addiction</li>
+<li><strong>Chồng dùng chuyện cai để manipulate</strong>: "vì em mà anh stress nên hút" → emotional abuse</li>
+</ul>
+<p style="margin-top: 8px;">Nếu có 1 trong các dấu hiệu này — đi gặp counseling cá nhân (chỉ cho em) + cân nhắc luật sư hôn nhân.</p>
+</div>
+
+<div class="forward-cta">
+<div class="label">🤝 BƯỚC KẾ TIẾP</div>
+<h3>Forward bài này cho chồng — sau 48h từ cuộc đối thoại</h3>
+<div class="script-box">"Em đọc bài này. Em hiểu hơn vì sao anh giấu. Em không trách. Tụi mình cùng đi qua."</div>
+<p style="margin-top: 14px;">→ Link: <strong>https://sol.vn/chong-noi-cai-nhung-lai-hut/</strong></p>
+</div>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Sol có "trust mode" — chồng share progress với vợ tự nguyện</div>
+<a href="https://sol.vn">Cài app →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/chong-cai-thuoc-roi-lai-hut/">Chồng cai thuốc rồi lại hút — im hay nói</a></li>
+<li>→ <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc — pillar</a></li>
+<li>→ <a href="https://sol.vn/thuyet-phuc-chong-cai-thuoc-khong-cai-nhau/">5 cách thuyết phục không cãi nhau</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-la-vinh-vien/">Cai thuốc vĩnh viễn</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ Bạo lực gia đình/tâm lý: 1900 6188. Tư vấn cặp: Therapy Vietnam, Vinmec ~500k-1.5tr/buổi.</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Hughes JR (2008). <em>Why does smoking tái nghiện occur?</em>. Addictive Behaviors 33.</li>
+<li>Marlatt GA (2005). <em>Tái nghiện Prevention</em>. Guilford Press.</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol, đã lén hút năm 2013. Cập nhật 16/5/2026.</p>
+
+</div>

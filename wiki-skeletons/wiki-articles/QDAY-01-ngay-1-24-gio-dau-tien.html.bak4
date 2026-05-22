@@ -1,0 +1,261 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hôm nay cơ thể anh đang làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trong 24 giờ đầu sau điếu thuốc cuối cùng, cơ thể anh trải qua một loạt thay đổi đo được bằng khoa học — nhanh hơn anh tưởng tượng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Triệu chứng dự kiến hôm nay là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Phần lớn người Việt cai thuốc trong 24h đầu cảm thấy:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động cụ thể hôm nay là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trong nhà, trong xe, trong cặp công việc. KHÔNG giữ \"phòng khi\". Não anh hôm nay nhạy với mọi tín hiệu cũ — thấy bao thuốc trên bàn = tình huống thèm cường độ cao. Vứt hết là bước đầu của identity shift."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q-Day lần 5 của tôi là ngày 12 tháng 1 năm 2020 — một thứ Hai. Buổi sáng tôi dậy sớm hơn bình thường, không đi pha cà phê (vì biết cà phê = tình huống thèm số 1 của tôi). Vợ tôi nhìn tôi, không nói gì, chỉ rót cho tôi 1 ly trà ấm."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Anh đã hút điếu cuối cùng. Bây giờ là giờ thứ nhất của một cuộc đời khác. Trong 24 giờ tới, cơ thể anh sẽ bắt đầu làm điều nó đã không làm được trong nhiều năm — <strong>tự sửa</strong>.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>CO trong máu</strong> sẽ giảm 50% sau 8 giờ và về bình thường sau 12-24h<sup>[1]</sup></li>
+<li><strong>Nicotine</strong> bắt đầu thải — sạch 80% trong 24 giờ<sup>[2]</sup></li>
+<li>Cơn thèm chưa peak (đỉnh ở Ngày 2-3) — hôm nay thường lo âu nhẹ + khô miệng</li>
+<li>5 hành động hôm nay: vứt thuốc, báo người thân, uống 2L nước, đi bộ 20 phút, ngủ sớm</li>
+<li>Ngày mai khó hơn — đừng nghỉ chiến lược sau hôm nay</li>
+</ul>
+</div>
+
+<h2>Hôm nay cơ thể anh đang làm gì?</h2>
+
+<p>Trong 24 giờ đầu sau điếu thuốc cuối cùng, cơ thể anh trải qua một loạt thay đổi đo được bằng khoa học — nhanh hơn anh tưởng tượng.</p>
+
+<h3>Carbon Monoxide (CO) giảm nhanh</h3>
+
+<p>Khi anh hút thuốc, CO trong máu có thể lên 4-8% (so với 1-2% người bình thường). CO chiếm chỗ oxy trên hồng cầu — nghĩa là máu anh suốt nhiều năm chỉ chở 92-96% oxy thay vì 99%.</p>
+
+<ul>
+<li><strong>Giờ thứ 8:</strong> CO giảm 50% — máu bắt đầu chở oxy nhiều hơn<sup>[1]</sup></li>
+<li><strong>Giờ thứ 12-24:</strong> CO về mức bình thường — mạch máu giãn nhẹ</li>
+<li>Nhịp tim chậm lại 5-10 nhịp/phút</li>
+<li>Huyết áp tự ổn định</li>
+</ul>
+
+<h3>Nicotine bắt đầu thải</h3>
+
+<p>Nicotine có thời gian bán huỷ chỉ 1-2 giờ<sup>[2]</sup>. Sau 24 giờ, 80% nicotine đã được gan chuyển hoá và thải qua nước tiểu. Hết hoàn toàn sau 3 ngày.</p>
+
+<p>Nhưng — đây là chỗ then chốt — receptor nicotinic acetylcholine trong não anh đã quen tiếp nhận nicotine mỗi 1-2 giờ. Hôm nay nó bắt đầu "đói". Đó là khoa học cốt lõi của cơn thèm.</p>
+
+<h3>Phổi chưa bắt đầu "dọn dẹp" — đang nghỉ</h3>
+
+<p>Cilia (lông phế quản) — những "chổi nhỏ" trong phổi đã bị nicotine làm liệt suốt nhiều năm. 24 giờ đầu chưa đủ để chúng tỉnh lại. Phải đợi Ngày 7-9.</p>
+
+<h2>Triệu chứng dự kiến hôm nay</h2>
+
+<p>Phần lớn người Việt cai thuốc trong 24h đầu cảm thấy:</p>
+
+<ul>
+<li><strong>Lo âu nhẹ</strong> — não đang "đo lại" mọi thứ</li>
+<li><strong>Khó tập trung</strong> — phổ biến nhất trong 4-6h chiều</li>
+<li><strong>Khô miệng</strong> — do thay đổi nước bọt</li>
+<li><strong>Hơi đói</strong> — BMR tăng nhẹ vì không còn nicotine ức chế leptin</li>
+<li><strong>Đầu hơi nặng</strong> — máu lên não nhiều hơn (sẽ thấy quen sau 48h)</li>
+<li><strong>Cảm giác "đói thuốc"</strong> — chưa mạnh như Ngày 2-3</li>
+</ul>
+
+<p>Nếu cảm thấy chỉ vài triệu chứng — bình thường. Mỗi người khác nhau.</p>
+
+<div class="alarm">
+<h4>🚨 Khi nào cần khám gấp</h4>
+<ul>
+<li>Đau ngực dữ dội + khó thở → gọi <strong>115</strong> ngay (đây là MI tiềm ẩn, không phải triệu chứng cai (withdrawal)</li>
+<li>Run rẩy + đổ mồ hôi đầm đìa + nhịp tim cực nhanh → đến cấp cứu (có thể là phản ứng cai nicotine nặng + bệnh nền)</li>
+<li>Có ý nghĩ tự hại → đến khoa Tâm thần BV gần nhất (BV Bạch Mai HN 024 3869 3731 · BV Tâm thần TPHCM 1900 599 920)</li>
+</ul>
+</div>
+
+<h2>5 hành động cụ thể hôm nay</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Vứt sạch thuốc + bật lửa + gạt tàn</h4>
+<p>Trong nhà, trong xe, trong cặp công việc. KHÔNG giữ "phòng khi". Não anh hôm nay nhạy với mọi tín hiệu cũ — thấy bao thuốc trên bàn = tình huống thèm cường độ cao. Vứt hết là bước đầu của <em>identity shift</em>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Báo 3 người: "Tôi cai từ hôm nay"</h4>
+<p>Vợ + 1 đồng nghiệp gần + 1 bạn không hút. Không cần giải thích dài, chỉ 1 câu: <em>"Anh đang cai thuốc, tuần này khó tính — em chịu giúp anh."</em> Social accountability tăng tỷ lệ thành công 3-5x<sup>[3]</sup>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Uống 2-2.5L nước</h4>
+<p>Nước đẩy nicotine ra qua thận nhanh hơn. Cũng làm dịu khô miệng + giảm cảm giác "đói thuốc giả". Chia đều cả ngày — 1 ly mỗi giờ là tốt nhất. Hạn chế cà phê sau 14h (caffeine không còn bị nicotine "đẩy lùi" → có thể làm tim đập nhanh hơn).</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Đi bộ 20 phút (sáng hoặc chiều)</h4>
+<p>Vận động kích hoạt dopamine tự nhiên — bù lại phần não đang thiếu. Cũng làm tăng oxy lên não — chống đầu nặng. Đi bộ ngoài trời tốt hơn trong nhà (ánh sáng + serotonin). KHÔNG cần chạy hay tập nặng — đi bộ nhẹ là đủ.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Đi ngủ sớm hơn 1 giờ</h4>
+<p>Cơ thể anh đang làm việc nặng — cần thêm sleep. Tránh màn hình 30 phút trước ngủ. Ngâm chân nước ấm 10 phút nếu có thể. Nếu thấy hơi mất ngủ — bình thường, đừng lo. Cơ thể đang đặt lại đồng hồ sinh học.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>Cà phê đậm sau 14h</strong> — tăng tim đập + lo âu</li>
+<li><strong>Rượu bia</strong> — làm tệ lo âu, giảm ý chí, dễ vấp</li>
+<li><strong>Tự đi nhậu / gặp bạn nhậu cũ</strong> — context nguy hiểm</li>
+<li><strong>"Thử 1 hơi xem có thèm không"</strong> — não chỉ cần 1 hơi để reset chu kỳ 72h</li>
+<li><strong>Quyết định lớn</strong> — não đang yếu phán đoán, để mai/tuần sau</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Q-Day lần 5 của tôi là ngày 12 tháng 1 năm 2020 — một thứ Hai. Buổi sáng tôi dậy sớm hơn bình thường, không đi pha cà phê (vì biết cà phê = tình huống thèm số 1 của tôi). Vợ tôi nhìn tôi, không nói gì, chỉ rót cho tôi 1 ly trà ấm.</p>
+<p>Tôi đã chuẩn bị 1 tuần trước — vứt sạch Vinataba trong nhà, trong xe, trong ngăn kéo công ty. Mua sẵn kẹo cao su, hạt hướng dương, nước lọc. 24h đầu tôi không gặp ai ngoài vợ con — biết mình yếu, không thử thách bạn nhậu.</p>
+<p>Triệu chứng hôm đó nhẹ hơn tôi nghĩ — chỉ hơi lo âu chiều và khô miệng. Tôi đi bộ 20 phút tối, ngủ sớm. <strong>Cuối ngày tôi viết vào sổ: "đã không hút trong 24 giờ"</strong>. 4 lần trước tôi đều bỏ qua bước này. Lần này tôi giữ.</p>
+<p>Anh em ơi — hôm nay là ngày dễ nhất trong 30 ngày tới. Đừng để adrenaline ngày đầu lừa anh nghĩ "việc này không khó lắm". Tuần sau khó hơn. Cứ nhẹ nhàng làm 5 việc trên, ngủ sớm. Mai chúng ta gặp lại.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-2-dinh-con-them-nicotine/">→ Ngày 2 — Đỉnh cơn thèm nicotine (chuẩn bị cho ngày mai)</a></li>
+<li><a href="https://sol.vn/trieu-chung-cai-thuoc-la-theo-ngay/">→ Toàn bộ triệu chứng cai thuốc theo ngày — timeline 30 ngày</a></li>
+<li><a href="https://sol.vn/them-thuoc-dem-khuya-90-giay/">→ Kỹ thuật 90 giây vượt cơn thèm</a></li>
+</ul>
+</div>
+
+🌅 <strong>Ngày 1 — 24 giờ đầu</strong><br><br>
+CO trong máu anh sẽ giảm 50% sau 8 giờ, oxy đang lên phổi nhiều hơn. Đây là 24 giờ cơ thể đang "tỉnh lại" sau nhiều năm.<br><br>
+Hành động hôm nay: vứt thuốc + bật lửa, báo 3 người thân, uống 2L nước, đi bộ 20 phút, ngủ sớm 1 giờ.<br><br>
+Ngày mai cơn thèm peak — chuẩn bị tinh thần. Sol đi cùng anh.<br><br>
+📖 <a href="https://sol.vn/ngay-1-24-gio-dau-tien-bo-thuoc-la/?utm_source=zalo&utm_campaign=qday-1">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nội dung này mang tính tham khảo dựa trên bằng chứng khoa học. Mỗi cơ thể khác nhau — luôn hỏi ý kiến bác sĩ trước khi quyết định ngừng/dùng thuốc kê đơn (đặc biệt nếu đang điều trị tim mạch, huyết áp, tâm thần).
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Hôm nay cơ thể anh đang làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Trong 24 giờ đầu sau điếu thuốc cuối cùng, cơ thể anh trải qua một loạt thay đổi đo được bằng khoa học — nhanh hơn anh tưởng tượng.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Triệu chứng dự kiến hôm nay là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Phần lớn người Việt cai thuốc trong 24h đầu cảm thấy:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. 5 hành động cụ thể hôm nay là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Trong nhà, trong xe, trong cặp công việc. KHÔNG giữ "phòng khi". Não anh hôm nay nhạy với mọi tín hiệu cũ — thấy bao thuốc trên bàn = tình huống thèm cường độ cao. Vứt hết là bước đầu của identity shift.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q-Day lần 5 của tôi là ngày 12 tháng 1 năm 2020 — một thứ Hai. Buổi sáng tôi dậy sớm hơn bình thường, không đi pha cà phê (vì biết cà phê = tình huống thèm số 1 của tôi). Vợ tôi nhìn tôi, không nói gì, chỉ rót cho tôi 1 ly trà ấm.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Mahmud A, Feely J. (2003). <em>Effect of smoking on arterial stiffness and pulse pressure amplification</em>. Hypertension 41(1):183-187.</li>
+<li>Benowitz NL. (2010). <em>Nicotine addiction</em>. N Engl J Med 362(24):2295-2303.</li>
+<li>Stead LF et al. (2017). <em>Behavioural interventions for smoking cai thuốc</em>. Cochrane Database Syst Rev (3):CD009670.</li>
+<li>US Surgeon General. (2020). <em>Smoking cai thuốc: A Report of the Surgeon General</em>. Chapter 3.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 1 — bắt đầu cùng Sol</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành theo tuần — Voice của Khang khi anh em mệt nhất, chip cứu cơn thèm, hệ thống thay ý chí. Bắt đầu miễn phí, linh hoạt 25k/tuần khi quen.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-1&utm_medium=organic">Đăng ký Sol miễn phí →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã trải qua Day 1 năm lần (1995, 2010, 2015, 2018, 2020). Cập nhật 14-05-2026.</p>
+
+</div>

@@ -1,0 +1,133 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=dau-dau) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 3 cai lần 5 (22-12-2020 ÂL), mình đau đầu dữ dội — như có vòng kim hoa siết. Mình nằm trên giường, không dám nhìn ánh sáng đèn. Vợ pha 1 cốc nước chanh ấm. Mình uống 2 cốc, ngủ thêm 1 giờ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đau đầu sau cà phê sáng — sao?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn cai 2 ngày, đầu nặng như có vòng kim hoa siết. Đây không phải dấu hiệu tệ — là <strong>dấu hiệu cơ thể đang phục hồi</strong>. Nicotine từng co mạch máu não suốt nhiều năm, giờ chúng đang giãn ra trở lại.</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>70-80% người cai bị đau đầu trong tuần đầu<sup>[1]</sup></li>
+<li>Đỉnh ở ngày 2-5, dịu dần sau 7-14 ngày</li>
+<li>Có thể uống Paracetamol 500mg như bình thường (tối đa 3-4 viên/ngày)</li>
+<li>Đau đầu KÉO DÀI > 2 tuần hoặc kèm khó thở/lú lẫn → khám</li>
+</ul>
+</div>
+<h2>Phần 1 — Cơ chế khoa học</h2>
+<ul>
+<li>Nicotine kích thích thụ thể alpha-adrenergic → <strong>mạch máu não co lại</strong>.</li>
+<li>Hút lâu năm → não quen với máu lưu lượng giảm.</li>
+<li>Cai → mạch giãn lại → <strong>lưu lượng máu tăng đột ngột</strong> → đau đầu.</li>
+<li>Cũng góp phần: <strong>thiếu dopamine</strong> (não chưa thích nghi) + <strong>mất nước</strong> (cai thuốc thường khát).</li>
+</ul>
+<h2>Phần 2 — Cách giảm đau</h2>
+<h3>Trong cơn</h3>
+<ul>
+<li><strong>Uống nước</strong> 1 cốc 300ml — đa số đau đầu cải thiện sau 30 phút</li>
+<li><strong>Paracetamol 500mg</strong> (1-2 viên) hoặc Ibuprofen 400mg — an toàn, không lạm dụng</li>
+<li><strong>Đắp khăn lạnh</strong> lên trán 10 phút</li>
+<li><strong>Đi bộ chậm</strong> ngoài trời 15 phút — oxy thêm não</li>
+</ul>
+<h3>Phòng ngừa hằng ngày tuần đầu</h3>
+<ul>
+<li>Uống <strong>2.5 lít nước</strong> — chia đều cả ngày</li>
+<li>Ngủ đủ 7-8 tiếng — cố gắng ngủ trước 23h</li>
+<li>Hạn chế cà phê còn ≤ 1 ly/ngày — caffeine cũng co mạch</li>
+<li>Tránh rượu — làm đau đầu tệ hơn 3x</li>
+</ul>
+<h2>Phần 3 — Khi nào đi khám</h2>
+<p>🚨 Đi khám ngay nếu:</p>
+<ul>
+<li>Đau dữ dội đột ngột (như bị đập búa)</li>
+<li>Kèm sốt cao + cứng cổ</li>
+<li>Kèm rối loạn ý thức / nhìn mờ / yếu nửa người</li>
+<li>Kéo dài > 2 tuần không giảm dù đã uống thuốc</li>
+</ul>
+<p>Đây có thể là dấu hiệu khác (xuất huyết não, viêm màng não) — không liên quan cai thuốc nhưng cần loại trừ.</p>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=dau-dau)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 3 cai lần 5 (22-12-2020 ÂL), mình đau đầu dữ dội — như có vòng kim hoa siết. Mình nằm trên giường, không dám nhìn ánh sáng đèn. Vợ pha 1 cốc nước chanh ấm. Mình uống 2 cốc, ngủ thêm 1 giờ.</p>
+<p>Tỉnh dậy đỡ 70%. Đau đầu là cái giá <strong>rẻ nhất</strong> mình phải trả cho 30 năm hút thuốc. Đến tuần 2 hết hoàn toàn. Đến nay 5 năm Tự do, không còn đau đầu kiểu đó nữa.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Đau đầu sau cà phê sáng — sao?</h3></p>
+<p><p>Caffeine + nicotine từng "bồi" cùng nhau. Cai thuốc nhưng giữ nguyên cà phê → não bị shock. Giảm cà phê còn 1 ly hoặc đổi sang trà 1-2 tuần.</p></p>
+<p><h3>Tôi đã cai 1 tháng vẫn đau đầu thỉnh thoảng?</h3></p>
+<p><p>Có thể là tension headache không liên quan cai. Khám nội tổng quát loại trừ huyết áp cao, thiếu máu, viêm xoang.</p></p>
+<p><h3>Đau đầu có làm tôi tái phát không?</h3></p>
+<p><p>Không. Hút lại làm đau hơn vì mạch lại co + giãn lặp đi lặp lại. Vượt 2 tuần đầu là hết.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=dau-dau) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 3 cai lần 5 (22-12-2020 ÂL), mình đau đầu dữ dội — như có vòng kim hoa siết. Mình nằm trên giường, không dám nhìn ánh sáng đèn. Vợ pha 1 cốc nước chanh ấm. Mình uống 2 cốc, ngủ thêm 1 giờ.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đau đầu sau cà phê sáng — sao?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=dau-dau-sau-cai">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Hughes JR (2007). *Effects of kiêng dứt thuốc from tobacco*. Nicotine Tob Res 9(3):315-327. (Liệt kê headache là 1 trong 7 triệu chứng cai chính) · Hatsukami D et al. (1984). *Tobacco triệu chứng cai (withdrawal) in women and men*. J Subst Abuse Treat 1(2):101-109. · NHS Smokefree (2024). "Coping with cơn thèm and triệu chứng cai symptoms."
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

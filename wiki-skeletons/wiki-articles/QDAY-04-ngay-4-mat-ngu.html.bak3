@@ -1,0 +1,217 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vì sao Ngày 4 mất ngủ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nicotine là chất kích thích — làm tăng adrenaline và cortisol. 25-30 năm hút, não anh đã quen với chu kỳ \"kích thích → thư giãn\" theo điếu thuốc. Cai → mất kích thích → não phải dựng lại chu kỳ ngủ tự nhiên (mất 2-4 tuần)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 4 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nghiên cứu Liao 2005: ngâm chân nước ấm hạ thân nhiệt sau đó — tín hiệu \"đi ngủ\" mạnh cho não. Hiệu quả hơn cả thuốc ngủ nhẹ. Đơn giản, không tác dụng phụ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khi nào dùng thuốc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có thể tạm thời (2-4 tuần): Melatonin 1-3 mg uống 30 phút trước ngủ — tự nhiên, không phụ thuộc. Magie 200-400 mg tối — thư giãn cơ + hệ thần kinh."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 4. triệu chứng cai (withdrawal) sinh học đã qua đỉnh. Nhưng đêm qua anh thức tới 2 giờ sáng, mơ thấy hút thuốc, đổ mồ hôi đêm. Đây là <strong>REM rebound</strong> — não anh đang xây lại chu kỳ giấc ngủ tự nhiên sau nhiều năm bị nicotine "đặt sai".</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>40-60% người cai bị mất ngủ</strong> rõ rệt ngày 4-7<sup>[1]</sup></li>
+<li>Nicotine từng ức chế REM sleep → cai → <strong>REM rebound</strong> (giấc mơ sống động)</li>
+<li>Cortisol đỉnh đêm → khó vào giấc + tỉnh giữa đêm</li>
+<li>Là dấu hiệu TỐT — não đang lập lại đồng hồ sinh học</li>
+<li>Hết sau 1-4 tuần. KHÔNG tự uống thuốc ngủ kê đơn</li>
+</ul>
+</div>
+
+<h2>Vì sao Ngày 4 mất ngủ?</h2>
+
+<h3>Nicotine từng "đặt lại đồng hồ ngủ"</h3>
+
+<p>Nicotine là <strong>chất kích thích</strong> — làm tăng adrenaline và cortisol. 25-30 năm hút, não anh đã quen với chu kỳ "kích thích → thư giãn" theo điếu thuốc. Cai → mất kích thích → não phải dựng lại chu kỳ ngủ tự nhiên (mất 2-4 tuần)<sup>[2]</sup>.</p>
+
+<h3>REM rebound</h3>
+
+<p>Nicotine ức chế REM sleep (giấc ngủ mơ). Khi cai, não tăng REM mạnh để bù — gọi là <strong>REM rebound</strong>. Kết quả: giấc mơ sống động, đặc biệt <em>mơ thấy hút thuốc</em>. Đây là bình thường + không predict tái phát<sup>[3]</sup>.</p>
+
+<h3>Cortisol đêm cao</h3>
+
+<p>Cortisol vẫn còn cao ngày 4. Đỉnh cortisol thường ở 22h-2h sáng (so với bình thường peak 6h sáng). Hậu quả: khó vào giấc + tỉnh giữa đêm + đổ mồ hôi đêm.</p>
+
+<h2>Triệu chứng hôm nay</h2>
+
+<ul>
+<li>Khó vào giấc — nằm 1 giờ không ngủ được</li>
+<li>Tỉnh giữa đêm 1-2 lần</li>
+<li>Giấc mơ sống động — đặc biệt mơ hút thuốc</li>
+<li>Đổ mồ hôi đêm</li>
+<li>Sáng dậy mệt — không "tươi" như trước</li>
+<li>Headache giảm dần (đỡ hơn ngày 3)</li>
+</ul>
+
+<h2>5 hành động Ngày 4</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Ngâm chân nước ấm 38-40°C trong 10 phút trước ngủ</h4>
+<p>Nghiên cứu Liao 2005<sup>[4]</sup>: ngâm chân nước ấm hạ thân nhiệt sau đó — tín hiệu "đi ngủ" mạnh cho não. Hiệu quả hơn cả thuốc ngủ nhẹ. Đơn giản, không tác dụng phụ.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Tắt màn hình 1 giờ trước ngủ</h4>
+<p>Ánh sáng xanh ức chế melatonin. Anh đã thiếu melatonin rồi — đừng làm tệ thêm. TV + máy tính + điện thoại tắt 21h. Có thể đọc sách giấy hoặc nghe podcast nhẹ.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Trà thảo dược ấm</h4>
+<p>Tâm sen, hoa cúc, lạc tiên — y học cổ truyền VN, an toàn. KHÔNG trà đặc Bắc / trà ướp hoa nhài (có caffeine). KHÔNG cà phê sau 14h. Hạn chế rượu (rượu phá REM sleep mạnh hơn).</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Thở 4-7-8 trên giường</h4>
+<p>Khi vào giường, nằm thẳng, thở 4-7-8 × 5 lần. Kích hoạt phó giao cảm → hạ nhịp tim → vào giấc dễ hơn. Hiệu quả lập tức với 80% người.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Tỉnh giữa đêm — đừng nằm đếm trần</h4>
+<p>Nếu tỉnh giấc + nằm 20 phút không ngủ lại được → đứng dậy, đi sang phòng khác, đọc sách giấy 15 phút. Khi mí mắt nặng → quay lại giường. KHÔNG lướt điện thoại — ánh sáng xanh phá thêm.</p>
+</div>
+</div>
+
+<h2>Khi nào dùng thuốc?</h2>
+
+<p><strong>Có thể tạm thời (2-4 tuần):</strong> Melatonin 1-3 mg uống 30 phút trước ngủ — tự nhiên, không phụ thuộc. Magie 200-400 mg tối — thư giãn cơ + hệ thần kinh.</p>
+
+<p><strong>Tránh tuyệt đối:</strong> Seduxen, Lexomil (Benzodiazepine) — gây phụ thuộc nhanh. Rượu để "dễ ngủ" — phá REM sleep, sáng dậy mệt hơn.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 4 lần 5 cai tôi thức tới 3 giờ sáng. Vợ ngủ rồi, tôi nằm nhìn trần nhà, thấy bóng quạt quay. Mơ thấy mình hút Vinataba ở quán café cũ — tỉnh giấc, tay tự nhiên đưa lên môi như đang cầm điếu. Hoảng.</p>
+<p>Sáng hôm sau, vợ pha trà tâm sen. Cô ấy mua ngoài chợ. "Bà ngoại em dùng từ thời chiến tranh — em thử anh". Tôi uống 3 đêm liên tiếp. Đêm 7 tôi ngủ liên tục 6 tiếng — lần đầu trong tuần.</p>
+<p>Anh em ơi — <strong>mất ngủ tuần đầu là dấu hiệu TỐT</strong>. Não đang sửa. Đừng panic, đừng uống thuốc ngủ kê đơn (tôi đã thử lần 3 — phụ thuộc thêm 1 cái nữa, càng tệ). Ngâm chân + trà thảo dược + thở sâu — đủ rồi.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-3-buc-tuong-trieu-chung-cai-dat-dinh-va-bat/">→ Ngày 3 — Bức tường (ôn lại)</a></li>
+<li><a href="https://sol.vn/ngay-5-them-an-va-noi-so-tang-can-su-that-khoa-h/">→ Ngày 5 — Thèm ăn + nỗi sợ tăng cân</a></li>
+<li><a href="https://sol.vn/mat-ngu-khi-cai-thuoc/">→ Mất ngủ khi cai thuốc — hướng dẫn đầy đủ</a></li>
+</ul>
+</div>
+
+🌙 <strong>Ngày 4 — Mất ngủ là dấu hiệu TỐT</strong><br><br>
+40-60% người cai mất ngủ ngày 4-7. REM rebound = giấc mơ sống động (kể cả mơ hút thuốc). Não đang xây lại chu kỳ ngủ tự nhiên.<br><br>
+Hôm nay: ngâm chân nước ấm 10 phút, tắt màn hình 21h, trà thảo dược, thở 4-7-8 trên giường.<br><br>
+KHÔNG tự uống thuốc ngủ kê đơn.<br><br>
+📖 <a href="https://sol.vn/ngay-4-mat-ngu-va-roi-loan-giac-ngu-giai-thich-khoa-hoc/?utm_source=zalo&utm_campaign=qday-4">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Mất ngủ kéo dài &gt; 4 tuần — đi khám để loại trừ trầm cảm, sleep apnea, tuyến giáp. KHÔNG tự uống Benzodiazepine.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Vì sao Ngày 4 mất ngủ?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nicotine là chất kích thích — làm tăng adrenaline và cortisol. 25-30 năm hút, não anh đã quen với chu kỳ "kích thích → thư giãn" theo điếu thuốc. Cai → mất kích thích → não phải dựng lại chu kỳ ngủ tự nhiên (mất 2-4 tuần).</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 4 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nghiên cứu Liao 2005: ngâm chân nước ấm hạ thân nhiệt sau đó — tín hiệu "đi ngủ" mạnh cho não. Hiệu quả hơn cả thuốc ngủ nhẹ. Đơn giản, không tác dụng phụ.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Khi nào dùng thuốc?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có thể tạm thời (2-4 tuần): Melatonin 1-3 mg uống 30 phút trước ngủ — tự nhiên, không phụ thuộc. Magie 200-400 mg tối — thư giãn cơ + hệ thần kinh.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Hughes JR. (2007). <em>Effects of kiêng dứt thuốc from tobacco</em>. Nicotine Tob Res 9(3):315-327.</li>
+<li>Jaehne A et al. (2009). <em>Effects of nicotine on sleep during consumption, triệu chứng cai and replacement</em>. Sleep Med Rev 13(5):363-377.</li>
+<li>Hajek P et al. (2010). <em>Dreams of smoking after quit</em>. Addict Behav 35(4):378-380.</li>
+<li>Liao WC et al. (2005). <em>Effects of warm water foot bath on sleep</em>. Int J Nurs Stud 42(3):311-319.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 4 — Sol đi cùng đêm khó ngủ</div>
+<div style="font-size:14px;opacity:.9;">Sol có voice Khang đêm khó + workbook ngủ ngon. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-4&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã thức 5 đêm liên tục tuần đầu lần 5 cai. Cập nhật 14-05-2026.</p>
+
+</div>

@@ -1,0 +1,193 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Kẹo cai thuốc lá Nicorette mua ở đâu Việt Nam, giá bao nhiêu?",
+      "description": "Hướng dẫn mua kẹo Nicorette tại Pharmacity, Long Châu — giá 350-500k/hộp 30 viên. Cách nhai 'chew + park' đúng. Phân biệt kẹo nicotine và kẹo thảo dược.",
+      "author": {"@type":"Person","name":"Khang Sol (Nguyễn Đình Khang)","url":"https://sol.vn"},
+      "publisher": {"@type":"Organization","name":"Sol Đi Cùng","logo":{"@type":"ImageObject","url":"https://sol.vn/wp-content/uploads/sol-logo.png"}},
+      "datePublished": "2026-05-18","dateModified": "2026-05-18",
+      "mainEntityOfPage": "https://sol.vn/keo-cai-thuoc-la-nicorette-mua-o-dau-gia-bao-nhieu"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Kẹo và xịt cai thuốc lá có hiệu quả không?","acceptedAnswer":{"@type":"Answer","text":"Tuỳ loại. Kẹo và xịt có nicotine (như Nicorette) thuộc NRT — hiệu quả ~18/100 sạch 6 tháng theo Cochrane 2018. Kẹo thảo dược không nicotine (như Bonbons, kẹo lá thảo dược) chưa có nghiên cứu mạnh — có thể chỉ là giả dược + đánh lạc hướng miệng. Cả 2 đều là OTC (không cần đơn bác sĩ) — mua được tại Pharmacity, Long Châu."}},
+        {"@type":"Question","name":"Khác nhau giữa kẹo có nicotine và kẹo thảo dược?","acceptedAnswer":{"@type":"Answer","text":"Kẹo Nicorette có nicotine 2mg hoặc 4mg/viên — bám thụ thể nicotine trong não, giảm cơn thèm thật. Hiệu quả khoa học chứng minh. Giá ~350-500k/hộp 30 viên. Kẹo thảo dược không nicotine chỉ giúp đánh lạc hướng miệng + làm mát họng. Không tác động cơ chế nghiện. Giá ~100-200k/hộp."}},
+        {"@type":"Question","name":"Mua kẹo cai thuốc Nicorette ở đâu Việt Nam?","acceptedAnswer":{"@type":"Answer","text":"Nicorette có bán tại Pharmacity, Long Châu, các nhà thuốc lớn (chuỗi An Khang, Trung Sơn). Không cần đơn bác sĩ. Giá: 350-500k/hộp 30 viên. Có 2 vị: bạc hà và cam. 2 nồng độ: 2mg (FTND nhẹ-vừa) và 4mg (FTND nặng — hút trong 30 phút sau khi dậy)."}},
+        {"@type":"Question","name":"Khi nào nên dùng kẹo/xịt cai thuốc?","acceptedAnswer":{"@type":"Answer","text":"Kẹo + xịt phù hợp anh: (1) Hút theo thói quen 'đưa lên miệng' — kẹo thay thế tốt. (2) Đang dùng miếng dán nhưng vẫn có lúc thèm dữ — kẹo dùng cấp tốc lúc cơn thèm cao. (3) Đi nhậu/họp/giao lưu — xịt vào miệng trước khi gặp 'tình huống thèm'. Combo với Sol = công cụ vượt 90 giây + đồng hành tâm lý."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #5C3A1E; color: white; padding: 10px 12px; text-align: left; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid #E8DFC8; vertical-align: top; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">Anh đi siêu thị thấy kẹo "cai thuốc lá", quầy thuốc thấy xịt "cai nicotine". Có thật hiệu quả không? Có cần đơn bác sĩ? Mua ở đâu giá bao nhiêu? Bài này phân biệt rõ <strong>kẹo có nicotine</strong> (thật hiệu quả) và <strong>kẹo thảo dược</strong> (chỉ đánh lạc hướng) — chỗ mua + giá VN.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li><strong>Có 3 nhóm sản phẩm OTC</strong> (không cần đơn): kẹo nicotine, xịt nicotine, kẹo/xịt thảo dược không nicotine</li>
+<li><strong>Kẹo có nicotine (Nicorette)</strong> = NRT — hiệu quả ~18/100 sạch 6 tháng</li>
+<li><strong>Kẹo thảo dược không nicotine</strong> = chỉ đánh lạc hướng miệng, không tác động nghiện</li>
+<li>Mua tại Pharmacity, Long Châu — không cần đơn bác sĩ</li>
+<li>Giá: kẹo Nicorette 350-500k/hộp 30 viên. Kẹo thảo dược 100-200k/hộp</li>
+</ul>
+</div>
+
+<h2>Phần 1 — Phân biệt 3 nhóm sản phẩm</h2>
+
+<table>
+<thead>
+<tr><th>Loại</th><th>Hoạt chất</th><th>Cơ chế</th><th>Hiệu quả</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Kẹo có nicotine</strong><br>(Nicorette gum, Nicotinell)</td><td>Nicotine 2mg/4mg</td><td>Bám thụ thể nicotine → giảm cơn thèm</td><td>~18/100 sạch 6 tháng (Cochrane 2018)</td></tr>
+<tr><td><strong>Xịt nicotine</strong><br>(Nicorette QuickMist)</td><td>Nicotine 1mg/lần xịt</td><td>Như trên, nhưng hấp thụ qua niêm mạc miệng nhanh hơn</td><td>~18-22/100 (nhanh + linh hoạt)</td></tr>
+<tr><td><strong>Kẹo thảo dược không nicotine</strong><br>(Bonbons, kẹo gừng, kẹo bạc hà thảo dược)</td><td>Thảo dược + đường + tinh dầu bạc hà</td><td>Đánh lạc hướng miệng + làm mát họng</td><td>Chưa có nghiên cứu — có thể là giả dược</td></tr>
+</tbody>
+</table>
+
+<h3>Nói đơn giản</h3>
+
+<p>Kẹo có nicotine = <strong>thuốc cai thật</strong>. Cơ thể anh được tiếp nicotine sạch (không có 7000 hoá chất khói), giảm cơn thèm. Hiệu quả khoa học chứng minh.</p>
+
+<p>Kẹo thảo dược = <strong>công cụ đánh lạc hướng</strong>. Anh nhai/ngậm thay vì hút. Có thể giúp cảm thấy "có gì làm thay" nhưng không tác động vào nghiện nicotine.</p>
+
+<h2>Phần 2 — Cách dùng kẹo nicotine đúng</h2>
+
+<h3>Chọn liều</h3>
+
+<ul>
+<li><strong>2mg</strong>: nếu anh hút điếu đầu tiên SAU 30 phút khi dậy (FTND nhẹ-vừa, hút &lt;20 điếu/ngày)</li>
+<li><strong>4mg</strong>: nếu anh hút điếu đầu tiên TRONG 30 phút khi dậy (FTND nặng, hút ≥20 điếu/ngày)</li>
+</ul>
+
+<h3>Cách nhai (kỹ thuật "chew + park")</h3>
+
+<ol>
+<li>Nhai chậm 5-10 lần đến khi vị cay nhẹ + nóng ấm</li>
+<li><strong>Đặt giữa má và lợi</strong> ("park") trong 1-2 phút</li>
+<li>Khi vị nhạt → nhai tiếp 5-10 lần</li>
+<li>Lặp lại 30 phút/viên</li>
+</ol>
+
+<p><strong>Tránh</strong>: nhai liên tục như kẹo cao su thường — sẽ nuốt nhiều nicotine vào dạ dày → buồn nôn + kích ứng dạ dày.</p>
+
+<h3>Lịch dùng chuẩn</h3>
+
+<ul>
+<li><strong>Tuần 1-6</strong>: 1 viên mỗi 1-2 giờ. Tối đa 24 viên/ngày (2mg) hoặc 12 viên/ngày (4mg)</li>
+<li><strong>Tuần 7-9</strong>: giảm dần. 1 viên mỗi 2-4 giờ</li>
+<li><strong>Tuần 10-12</strong>: 1 viên mỗi 4-8 giờ. Hết tuần 12 → ngưng</li>
+</ul>
+
+<p><strong>Lưu ý</strong>: tránh uống cà phê, nước cam, nước ngọt 15 phút TRƯỚC khi nhai kẹo — axit làm giảm hấp thụ nicotine.</p>
+
+<h2>Phần 3 — Cách dùng xịt nicotine</h2>
+
+<p>Xịt nicotine (Nicorette QuickMist) hấp thụ nhanh hơn kẹo. Phù hợp cho <strong>cơn thèm cấp tốc</strong> — khi anh đang trong tình huống thèm dữ.</p>
+
+<h3>Cách xịt</h3>
+
+<ol>
+<li>Hít sâu → nín thở</li>
+<li>Xịt 1 lần vào trong miệng (KHÔNG nuốt ngay)</li>
+<li>Giữ trong miệng 2-3 giây → niêm mạc hấp thụ</li>
+<li>Sau đó nuốt bình thường</li>
+</ol>
+
+<p><strong>Liều</strong>: tối đa 2 lần xịt/lần, cách nhau 1-2 giờ. Không quá 64 lần xịt/ngày (4 lần/giờ × 16 giờ thức).</p>
+
+<h2>Phần 4 — Tác dụng phụ + Cảnh báo</h2>
+
+<h3>Hay gặp (kẹo có nicotine)</h3>
+
+<ul>
+<li><strong>Đau hàm</strong> — nhai quá nhiều</li>
+<li><strong>Nấc cụt</strong>, <strong>khó tiêu</strong> — nuốt nicotine vào dạ dày (nhai sai cách)</li>
+<li><strong>Kích ứng miệng + họng</strong> — dùng quá liều</li>
+</ul>
+
+<h3>Hay gặp (xịt nicotine)</h3>
+
+<ul>
+<li><strong>Đắng + cay họng</strong> ngay sau xịt — giảm sau 1-2 phút</li>
+<li><strong>Chảy nước miếng</strong> — bình thường, giảm dần</li>
+</ul>
+
+<h3>Khi nào KHÔNG dùng</h3>
+
+<ul>
+<li>Phụ nữ mang thai + cho con bú (nicotine vào sữa)</li>
+<li>Bệnh tim mạch không ổn định (trao đổi với bác sĩ trước)</li>
+<li>Trẻ em &lt;18 tuổi</li>
+<li>Vẫn đang hút thuốc — kẹo cộng thuốc = quá liều nicotine, buồn nôn</li>
+</ul>
+
+<h2>Phần 5 — Combo kẹo/xịt + Sol</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang chia sẻ</div>
+<p>"Mình hồi đó hút theo thói quen — tay tự tìm bao thuốc lúc cầm ly cà phê. Sau cai, kẹo Nicorette giúp mình lúc đó. Cầm ly cà phê tay tự đưa lên miệng — không có thuốc thì có kẹo."</p>
+<p>"Nhưng kẹo không lo được phần khó nhất — đỉnh thèm Ngày 3 tâm lý sụp đổ. Đó là phần Sol làm — Voice của Khang nói chuyện, anh em đi trước chia sẻ, bài thở 4-7-8 vượt 90 giây. Combo kẹo + Sol = đủ công cụ."</p>
+</div>
+
+<p>Sol combo đề xuất:</p>
+
+<ul>
+<li><strong>Tuần 1-2</strong>: Kẹo nicotine 2mg/4mg + Sol đi cùng + đợi 90 giây mỗi cơn thèm</li>
+<li><strong>Tuần 3-6</strong>: Giảm kẹo dần + Sol vẫn ở cùng — báo cáo Ngày 7/14</li>
+<li><strong>Tuần 7-12</strong>: Ít kẹo + Sol giai đoạn Làm Chủ</li>
+</ul>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL — KẸO + SOL = ĐỦ CÔNG CỤ</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Kẹo lo phần thèm thể chất, Sol lo phần tâm lý + thói quen. Combo hiệu quả gấp 2 lần đơn lẻ.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip-keo-xit&utm_campaign=keo-xit-otc">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Kẹo và xịt cai thuốc có hiệu quả không?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Kẹo/xịt có nicotine (Nicorette) hiệu quả ~18/100 sạch 6 tháng. Kẹo thảo dược không nicotine chỉ đánh lạc hướng miệng, không tác động nghiện.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Khác nhau giữa kẹo có nicotine và kẹo thảo dược?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Kẹo Nicorette có 2mg/4mg nicotine — giảm cơn thèm thật. Kẹo thảo dược chỉ làm mát họng, không có nicotine.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Mua kẹo cai thuốc Nicorette ở đâu Việt Nam?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Pharmacity, Long Châu, An Khang, Trung Sơn. Không cần đơn. 350-500k/hộp 30 viên.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Khi nào nên dùng kẹo/xịt cai thuốc?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Hút theo thói quen "đưa lên miệng". Đang dùng miếng dán nhưng vẫn thèm dữ. Đi nhậu/họp/giao lưu — xịt trước khi vào tình huống thèm.</p></details>
+</div>
+
+<hr style="border:0;border-top:1px dashed #E8DFC8;margin:32px 0;">
+
+<p class="footer-meta">
+<strong>Bài liên quan:</strong> <a href="https://sol.vn/mieng-dan-nicotine-nrt" style="color:#B25C2C;">Miếng dán NRT</a> · <a href="https://sol.vn/champix-varenicline-cai-thuoc" style="color:#B25C2C;">Champix</a> · <a href="https://sol.vn/phuong-phap-cai-thuoc-la-pho-bien" style="color:#B25C2C;">12 phương pháp cai thuốc</a>
+</p>
+<p class="footer-meta"><strong>Tác giả</strong>: Khang Sol — Sáng lập <a href="https://sol.vn" style="color:#B25C2C;">Sol Đi Cùng</a>.<br><strong>Nguồn bằng chứng</strong>: Cochrane 2018 (Stead — Nicotine Replacement Therapy), FDA Consumer Updates 2024.</p>
+<p class="footer-emergency"><strong>Lưu ý</strong>: Kẹo có nicotine vẫn là thuốc — không cho trẻ em. Khang không phải bác sĩ. Sol không hứa cai 100%.<br><strong>Tổng đài cai thuốc BV Bạch Mai</strong>: <a href="tel:0888008866" style="color:#B25C2C;font-weight:700;">0888-008-866</a>.</p>
+
+</div>

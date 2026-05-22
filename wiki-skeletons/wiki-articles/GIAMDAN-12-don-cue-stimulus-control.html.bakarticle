@@ -1,0 +1,333 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dọn nhà cai thuốc gồm những gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3 loại cue cần vứt: (1) Visual — gạt tàn, bật lửa, bao thuốc, diêm, tem thuốc. (2) Olfactory — giặt rèm, áo khoác, hút bụi xe, mùi gối. (3) Tactile — bao thuốc dấu trong túi, hộc tủ, ngăn kéo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao cue thị giác làm tôi thèm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conklin 2008 Addiction: chỉ NHÌN gạt tàn/bao thuốc 5-10 giây đã tăng cơn thèm 200-400%. Đây là Pavlovian conditioning qua 10-30 năm — vùng dopamine reward + insula kích hoạt tự động."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có cần vứt cả bao thuốc cuối còn lại không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CÓ, tuyệt đối. 70% người vấp Q-Day có \"1 bao phòng hờ\" (Sol khảo sát). Lý tính nói \"phòng hờ\", cảm xúc lúc thèm peak nói \"có sẵn, hút thử\". Vứt hết. Nếu thực sự cần khẩn cấp, đi 200m mua NRT lozenge — KHÔNG mua thuốc."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cue tôi không vứt được thì sao?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Một số cue không thể remove: đồng nghiệp hút giờ nghỉ, vợ/bạn nhậu hút, quán cà phê quen. Quy tắc Sol: nếu không remove được cue, remove yourself khỏi cue trong 4 tuần đầu. Đi tầng khác giờ nghỉ, đổi quán mới."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "30 phút dọn cue có đủ không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đủ cho 5 khu vực: Nhà (10p) + Phòng ngủ (5p) + Xe (10p) + Văn phòng (3p) + Cá nhân (2p). Checklist trong bài. Khuyến cáo rủ vợ/bạn cùng dọn — accountability + ăn mừng cùng."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; color: #2C2A27; }
+.sol-wiki .checklist { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 18px 22px; margin: 14px 0; }
+.sol-wiki .checklist h4 { margin-top: 0; color: #5C3A1E; }
+.sol-wiki .checklist ul { list-style: none; padding-left: 0; }
+.sol-wiki .checklist li { padding: 6px 0 6px 28px; position: relative; font-size: 14.5px; }
+.sol-wiki .checklist li:before { content: "☐"; position: absolute; left: 0; top: 4px; font-size: 18px; color: #B25C2C; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .alarm h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Vứt gạt tàn KHÔNG phải tượng trưng — đây là khoa học não. Chỉ cần nhìn thấy gạt tàn (visual tín hiệu thèm), não anh đã tăng cơn thèm 200-400% (Conklin 2008). Hôm nay T-3 (Ngày 12 Giảm dần) — Sol đưa anh checklist 30 phút dọn tín hiệu thèm khỏi nhà, xe, văn phòng. Q-Day còn 3 ngày — phải sạch trước đó.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>kiểm soát kích thích</strong> — chiến lược behavioral mạnh nhất phòng tái nghiện (Marlatt RP framework)<sup>[1]</sup></li>
+<li>tín hiệu thèm tăng cơn thèm <strong>200-400%</strong> chỉ với thị giác (Conklin 2008 Addiction)<sup>[2]</sup></li>
+<li>Môi trường sạch cue = giảm tái nghiện 6 tháng đầu <strong>60%</strong> (Stead 2012)<sup>[3]</sup></li>
+<li>3 loại tín hiệu thèm cần dọn: <strong>visual</strong> (gạt tàn, bật lửa) + <strong>olfactory</strong> (mùi áo, rèm) + <strong>tactile</strong> (bao thuốc dấu trong túi)</li>
+<li>Hôm nay: 30 phút checklist trong bài. KHÔNG GIỮ "1 BAO PHÒNG HỜ" — đây là sai lầm số 1.</li>
+</ul>
+</div>
+
+<h2>Vì sao "vứt gạt tàn" matter khoa học?</h2>
+
+<p>Cảm giác trực giác nói "vứt vài cái đồ vật không thay đổi gì". Sai. Đây là khoa học não đã được PET scan + fMRI đo trực tiếp.</p>
+
+<h3>Conklin 2008 — tiếp xúc với tín hiệu thèm tăng cơn thèm 200-400%</h3>
+
+<p>Conklin và cộng sự (2008, Addiction) làm thí nghiệm: cho 134 người hút thuốc xem <strong>chỉ ảnh</strong> các tín hiệu thèm (gạt tàn, người hút, bao thuốc) so với ảnh trung tính. Đo cơn thèm qua self-report + đo da galvanic.</p>
+
+<p>Kết quả:</p>
+
+<div class="stat-highlight">
+<div class="stat-num">+ 200-400%</div>
+<div class="stat-label">Tăng cơn thèm khi nhìn tín hiệu thèm thị giác, chỉ trong 5-10 giây (Conklin 2008 Addiction)<sup>[2]</sup></div>
+</div>
+
+<p>Nhấn mạnh: <strong>chỉ NHÌN</strong> — không cần ngửi, không cần cầm, không cần ai mời. tín hiệu thèm thị giác đủ kích hoạt vùng não dopamine phần thưởng + insula (vùng cảm xúc thèm). Phản xạ Pavlov 10-30 năm hút thuốc đã đốt cháy đường dẫn thần kinh này.</p>
+
+<h3>Stead 2012 — kiểm soát kích thích giảm tái nghiện 60%</h3>
+
+<p>Stead và cộng sự (2012, Cochrane) meta-analysis 51 trials behavioral interventions cai thuốc. Tìm thấy: <strong>kiểm soát kích thích</strong> (dọn tín hiệu thèm khỏi môi trường) là một trong 3 chiến lược behavioral mạnh nhất, giảm tái nghiện 6 tháng đầu <strong>60%</strong> so với không làm<sup>[3]</sup>.</p>
+
+<p>Đứng trên bỏ đột ngột (bỏ đột ngột) + NRT + counseling — kiểm soát kích thích vẫn add value. Đây là <strong>"free win"</strong> — không tốn tiền, không phụ thuộc ý chí, chỉ cần 30 phút.</p>
+
+<h2>3 loại tín hiệu thèm cần dọn</h2>
+
+<h3>Loại 1: Visual tín hiệu thèm (thị giác)</h3>
+
+<p>Bất kỳ thứ gì <strong>nhìn thấy</strong> liên quan đến hút thuốc:</p>
+
+<ul>
+<li>Gạt tàn (kể cả gạt tàn không dùng từ lâu)</li>
+<li>Bật lửa Zippo, bật lửa thường</li>
+<li>Bao thuốc (vứt hoặc cho bạn — KHÔNG GIỮ "phòng hờ")</li>
+<li>Diêm</li>
+<li>Tem thuốc lá dán trên kính/bàn</li>
+<li>Hộp đựng thuốc</li>
+<li>Ảnh selfie có thuốc trong tay (xóa)</li>
+<li>Stick thuốc giữa kẹp tủ lạnh / kẹp giấy / chỗ vô tình</li>
+</ul>
+
+<h3>Loại 2: Olfactory tín hiệu thèm (khứu giác)</h3>
+
+<p>tín hiệu thèm <strong>ngửi thấy</strong> — mạnh hơn visual với một số người:</p>
+
+<ul>
+<li>Mùi thuốc bám áo khoác / áo gió / áo công sở</li>
+<li>Mùi rèm cửa, đệm sofa, gối</li>
+<li>Mùi thuốc trong xe ô tô / xe máy (mui xe, taplo)</li>
+<li>Mùi tay (móng tay vàng có thể vẫn còn mùi)</li>
+<li>Mùi tóc + râu</li>
+<li>Mùi gối ngủ</li>
+</ul>
+
+<h3>Loại 3: Tactile tín hiệu thèm (xúc giác)</h3>
+
+<p>tín hiệu thèm <strong>cầm trên tay</strong> — ít người để ý nhưng cực mạnh:</p>
+
+<ul>
+<li>Bao mỏng trong túi quần (anh quên có)</li>
+<li>Thuốc dấu trong hộc tủ — backup</li>
+<li>Vỏ hộp diêm trong ngăn kéo</li>
+<li>Cảm giác cầm thứ gì hình điếu (bút, đũa) — nếu dùng để "diễn tập" hút</li>
+</ul>
+
+<h2>Checklist 30 phút — Dọn 5 khu vực</h2>
+
+<div class="checklist">
+<h4>🏠 Khu vực 1: Nhà — Phòng khách + bếp (10 phút)</h4>
+<ul>
+<li>Vứt mọi gạt tàn (kể cả gạt tàn decorative)</li>
+<li>Vứt bật lửa (đem cho hàng xóm hoặc cho công nhân quét rác)</li>
+<li>Lục túi quần / túi áo treo — tìm bao thuốc dấu</li>
+<li>Mở các hộc tủ TV, tủ giày, kệ sách — kiểm tra có thuốc dấu</li>
+<li>Hút bụi sofa + mở cửa sổ thoáng 30 phút</li>
+<li>Giặt rèm cửa (gọi giặt khô nếu lớn)</li>
+</ul>
+</div>
+
+<div class="checklist">
+<h4>🛏 Khu vực 2: Phòng ngủ (5 phút)</h4>
+<ul>
+<li>Giặt áo gối + vỏ chăn (mùi thuốc bám)</li>
+<li>Kiểm tra ngăn kéo tủ đầu giường — bao thuốc backup?</li>
+<li>Kiểm tra túi áo khoác trong tủ — bao dấu?</li>
+<li>Mở cửa sổ + bật quạt 1 tiếng</li>
+</ul>
+</div>
+
+<div class="checklist">
+<h4>🚗 Khu vực 3: Xe (10 phút)</h4>
+<ul>
+<li>Hút bụi sàn + ghế</li>
+<li>Vứt gạt tàn trong xe (nếu có)</li>
+<li>Mở hộc đựng găng tay — kiểm tra bao thuốc</li>
+<li>Mở cốp sau — kiểm tra</li>
+<li>Lau trần xe (mùi bám trần)</li>
+<li>Dùng nước khử mùi xe (Glade / Febreze / nước hoa xe)</li>
+</ul>
+</div>
+
+<div class="checklist">
+<h4>💼 Khu vực 4: Văn phòng / chỗ làm (3 phút)</h4>
+<ul>
+<li>Vứt gạt tàn bàn làm việc</li>
+<li>Kiểm tra hộc tủ — bao thuốc backup</li>
+<li>Vứt bật lửa</li>
+<li>Lục túi laptop / balo công sở</li>
+</ul>
+</div>
+
+<div class="checklist">
+<h4>👤 Khu vực 5: Cá nhân (2 phút)</h4>
+<ul>
+<li>Lục toàn bộ túi quần, áo khoác — bao thuốc dấu</li>
+<li>Kiểm tra ví / bóp da — gạt nhỏ hoặc tem</li>
+<li>Đánh móng tay vàng (cắt + chà với chanh)</li>
+<li>Tắm gội đầu — rửa mùi khỏi tóc + da</li>
+<li>Xóa ảnh selfie có thuốc trong điện thoại</li>
+</ul>
+</div>
+
+<div class="alarm">
+<h4>⚠ Sai lầm SỐ 1 — "Giữ 1 bao phòng hờ"</h4>
+<p style="font-size:14px; margin:6px 0;">70% người vấp Q-Day có "1 bao phòng hờ" trong nhà/xe (Sol khảo sát 2024-2026). Lý do: lý trí nói "phòng hờ", cảm xúc lúc thèm peak nói "có sẵn, hút thử".</p>
+<p style="font-size:14px; margin:6px 0;"><strong>Vứt hết. Không có ngoại lệ.</strong> Nếu thực sự cần nicotine khẩn cấp ở D1-3 Q-Day — đi bộ 200m ra Pharmacity mua NRT lozenge (KHÔNG mua thuốc lá). 200m + thời gian + chi phí = bộ lọc tốt.</p>
+</div>
+
+<h2>tín hiệu thèm có thể không vứt được — Cách xử lý</h2>
+
+<p>Một số tín hiệu thèm không thể vứt — anh không thể tránh:</p>
+
+<ul>
+<li><strong>Đồng nghiệp hút trong giờ nghỉ:</strong> Đi nơi khác trong giờ nghỉ (lên tầng khác, ra cafe khác)</li>
+<li><strong>Vợ/bạn nhậu hút:</strong> Trước Q-Day nói chuyện thẳng — "Anh đang cai. Em/Anh có thể KHÔNG hút trước mặt anh trong 1 tháng đầu?" Đa số đồng ý.</li>
+<li><strong>Quán bia hơi/cafe vỉa hè quen:</strong> Tránh 1 tháng đầu, đổi quán mới (không có ký ức Pavlov)</li>
+<li><strong>Đường đi quen có quán thuốc lá:</strong> Đổi route, đi đường khác trong 4 tuần đầu</li>
+</ul>
+
+<p>Quy tắc Sol: <strong>nếu không thể remove tín hiệu thèm, remove yourself khỏi tín hiệu thèm</strong> trong 4 tuần đầu Q-Day. Sau 4 tuần não đã yếu Pavlov rõ rệt — có thể quay lại từng bước.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — Q-Day 2020 dọn nhà</div>
+<p>Mình kể: T-3 năm 2020, mình dành 1 tiếng (lâu hơn 30 phút Sol khuyến) dọn nhà. Vợ mình cũng tham gia — bê 3 bao thuốc còn lại ra đường, đưa cho ông xe ôm góc phố.</p>
+<p>Mình phát hiện: 1 bao Vinataba nửa bao trong hộc tủ tivi (mình đã quên). 1 bật lửa Zippo trong ngăn kéo bàn làm việc (giấu để nếu Q-Day vấp, đốt 1 điếu). Mình ngạc nhiên là chính mình đã giấu kỹ vậy mà không nhớ.</p>
+<p>Vợ vứt cả 2 cái. Mình hơi đau — cảm giác mất an toàn. Nhưng đêm Q-Day, lúc 23h thèm, mình thử mở các chỗ quen — không có gì. Phải đi bộ 500m ra Circle K. Tới Circle K, mình thay đổi ý → mua kẹo cao su, không mua thuốc. 500m đi bộ = bộ lọc cứu mình.</p>
+<p>5 năm sau viết bài này — bài học: <strong>càng khó hút = càng dễ thắng</strong>. kiểm soát kích thích làm việc khi ý chí yếu.</p>
+</div>
+
+<h2>Hôm nay T-3 — 30 phút dọn tín hiệu thèm</h2>
+
+<ol>
+<li>Set timer 30 phút trên điện thoại</li>
+<li>Bắt đầu khu vực 1 (Nhà — 10 phút). Đi qua từng item trong checklist, tick từng cái</li>
+<li>Khu vực 2 (Phòng ngủ — 5 phút)</li>
+<li>Khu vực 3 (Xe — 10 phút) — đây thường tốn thời gian nhất</li>
+<li>Khu vực 4 + 5 (5 phút)</li>
+<li>Cuối cùng: ăn mừng nhỏ — tắm gội đầu thơm, mặc áo sạch, ngồi xuống thở sâu</li>
+</ol>
+
+<p>Nếu có thời gian, rủ vợ/bạn cùng dọn (accountability + ăn mừng cùng). Nếu một mình — vẫn làm được trong 30 phút.</p>
+
+<h2>Mai có gì?</h2>
+
+<p>T-2 (Ngày 13 Giảm dần) — Viết 5 Kế hoạch B "nếu-thì" theo Gollwitzer 1999. Hôm nay sạch môi trường. Mai chuẩn bị cảm xúc — Kế hoạch B cho 5 tình huống thèm nặng nhất (cà phê sáng, sau cơm, bia hơi, stress, cãi vợ). 2 ngày tới Q-Day.</p>
+
+🧹 <strong>T-3 (Giảm dần Ngày 12) — Dọn tín hiệu thèm 30 phút</strong><br><br>
+Vứt: gạt tàn + bật lửa + bao thuốc còn lại (KHÔNG giữ "phòng hờ"). Giặt rèm + áo khoác. Hút bụi xe. tín hiệu thèm thị giác/khứu giác tăng cơn thèm 200-400% (Conklin 2008).<br><br>
+Sạch môi trường = giảm tái nghiện 60% (Stead 2012). Checklist 30 phút 5 khu vực trong bài.<br><br>
+Mai T-2 viết 5 Kế hoạch B. Q-Day còn 3 ngày — phải sạch trước đó.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-12-don-cue-stimulus-control/?utm_source=zalo&utm_campaign=giamdan-12">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> kiểm soát kích thích là behavioral chiến lược không có rủi ro. Nếu vợ/người thân vẫn hút, nói chuyện thẳng + xin hợp tác 1-3 tháng đầu — đa số đồng ý. Không tạo căng thẳng gia đình.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Dọn nhà cai thuốc gồm những gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">3 loại tín hiệu thèm cần vứt: (1) Visual — gạt tàn, bật lửa, bao thuốc, diêm, tem thuốc. (2) Olfactory — giặt rèm, áo khoác, hút bụi xe, mùi gối. (3) Tactile — bao thuốc dấu trong túi, hộc tủ, ngăn kéo.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Tại sao tín hiệu thèm thị giác làm tôi thèm?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Conklin 2008 Addiction: chỉ NHÌN gạt tàn/bao thuốc 5-10 giây đã tăng cơn thèm 200-400%. Đây là Pavlovian conditioning qua 10-30 năm — vùng dopamine phần thưởng + insula kích hoạt tự động.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Có cần vứt cả bao thuốc cuối còn lại không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">CÓ, tuyệt đối. 70% người vấp Q-Day có "1 bao phòng hờ" (Sol khảo sát). Lý tính nói "phòng hờ", cảm xúc lúc thèm peak nói "có sẵn, hút thử". Vứt hết. Nếu thực sự cần khẩn cấp, đi 200m mua NRT lozenge — KHÔNG mua thuốc.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. tín hiệu thèm tôi không vứt được thì sao?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Một số tín hiệu thèm không thể remove: đồng nghiệp hút giờ nghỉ, vợ/bạn nhậu hút, quán cà phê quen. Quy tắc Sol: nếu không remove được tín hiệu thèm, remove yourself khỏi tín hiệu thèm trong 4 tuần đầu. Đi tầng khác giờ nghỉ, đổi quán mới.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. 30 phút dọn tín hiệu thèm có đủ không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đủ cho 5 khu vực: Nhà (10p) + Phòng ngủ (5p) + Xe (10p) + Văn phòng (3p) + Cá nhân (2p). Checklist trong bài. Khuyến cáo rủ vợ/bạn cùng dọn — accountability + ăn mừng cùng.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Marlatt GA, Donovan DM (Eds.). (2005). <em>tái nghiện Prevention: Maintenance Strategies in the Treatment of Addictive Behaviors</em> (2nd ed.). Guilford Press. Chapter on kiểm soát kích thích.</li>
+<li>Conklin CA, Robin N, Perkins KA, Salkeld RP, McClernon FJ. (2008). <em>Proximal versus distal tín hiệu thèm to smoke: the effects of environments on smokers' tín hiệu thèm-reactivity</em>. Addiction 103(7):1131-1141.</li>
+<li>Stead LF, Lancaster T. (2012). <em>Combined pharmacotherapy and behavioural interventions for smoking cai thuốc</em>. Cochrane Database Syst Rev. CD008286.</li>
+<li>Tiffany ST, Wray JM. (2012). <em>The clinical significance of drug cơn thèm</em>. Annals of the New York Academy of Sciences 1248:1-17.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-2-ban-do-tình huống thèm/">T-13 — Bản đồ tình huống thèm (tín hiệu thèm nào của anh?)</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-13-plan-b/">T-2 (Mai) — Viết 5 Kế hoạch B</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-14-dem-truoc-q-day/">T-1 — Đêm trước Q-Day</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">14 ngày Giảm dần — Q-Day còn 3 ngày</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Sol đi cùng từng ngày. Hôm nay sạch môi trường. Mai chuẩn bị Kế hoạch B. T-1 ritual đêm cuối. D1 chip Q-Day Day 1.</p>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Marlatt tái nghiện Prevention, Conklin 2008 Addiction, Stead 2012 Cochrane. Sol là sản phẩm Việt 100%.</p>
+
+</div>

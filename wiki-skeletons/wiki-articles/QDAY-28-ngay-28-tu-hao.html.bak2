@@ -1,0 +1,227 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tự hào — không phù phiếm, là khoa học là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "sự tự tin cai thuốc = niềm tin vào khả năng đạt mục tiêu (Bandura 1977). Khi anh cai thành công 28 ngày → não anh có bằng chứng vật lý rằng \"tôi có thể đổi việc khó\". sự tự tin cai thuốc tăng → bắt đầu lan sang lĩnh vực khác."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 28 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sổ tay. Mỗi điều 1 dòng. Vd: \"1. Đã cai 28 ngày, lần dài nhất trong 25 năm. 2. Vợ đã ôm tôi nhiều hơn. 3. Con không né khi tôi hôn. 4. Tôi đã sửa cái quạt cũ. 5. Đã tiết kiệm 560k cho Quỹ Tự Do.\" Đọc to. Tin vào những điều mình đã làm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 28 lần 5 cai, tôi ngồi viết 5 điều tự hào. Đến điều thứ 3 tôi dừng lại — tự hỏi: \"5 điều tự hào — về việc tôi đã không hút thuốc. Quá ít? Quá nhiều?\"."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 28. Anh ngồi cà phê sáng, không thèm. Đồng nghiệp ra hút, anh không khó chịu. Vợ ôm anh, anh nói thật <em>"em ơn anh"</em>. Trong gương anh thấy ai đó <strong>tự hào</strong> — không phải kiêu căng. Đây không phải phù phiếm. Đây là <em>sự tự tin cai thuốc</em> — niềm tin mới về khả năng của anh, có thể đổi nhiều thứ khác trong đời.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>sự tự tin cai thuốc spreading effect — cai thuốc thành công → tin có thể đổi thứ khác<sup>[1]</sup></li>
+<li>Tự hào ≠ kiêu căng. Tự hào = ghi nhận thành quả thật</li>
+<li>Identity "tôi là người làm được" lan sang ăn uống, tập, học</li>
+<li>Hôm nay: viết 5 điều tự hào, chia sẻ với 1 người, lên 1 mục tiêu khác cho 30 ngày tới</li>
+<li>Quan trọng: kiêu căng dễ gây vấp — giữ tự hào lành mạnh</li>
+</ul>
+</div>
+
+<h2>Tự hào — không phù phiếm, là khoa học</h2>
+
+<h3>Self-efficacy là gì?</h3>
+
+<p>sự tự tin cai thuốc = niềm tin vào khả năng đạt mục tiêu (Bandura 1977)<sup>[2]</sup>. Khi anh cai thành công 28 ngày → não anh có <strong>bằng chứng vật lý</strong> rằng "tôi có thể đổi việc khó". sự tự tin cai thuốc tăng → bắt đầu lan sang lĩnh vực khác.</p>
+
+<h3>Spreading effect</h3>
+
+<ul>
+<li><strong>Sức khoẻ:</strong> Tôi cai được thuốc → tôi có thể ăn lành hơn / tập gym đều</li>
+<li><strong>Công việc:</strong> Tôi đã chịu khó 28 ngày → tôi có thể học kỹ năng mới</li>
+<li><strong>Quan hệ:</strong> Tôi đã thay đổi → tôi có thể sửa quan hệ rạn nứt</li>
+<li><strong>Bản thân:</strong> Tôi không còn "yếu lòng" — tôi là người làm được</li>
+</ul>
+
+<p>Nghiên cứu Tombor 2015<sup>[1]</sup>: 6-12 tháng sau cai thành công, 60% người báo cáo <strong>tích cực khác trong đời</strong> — không phải coincidence, là spreading.</p>
+
+<h2>5 hành động Ngày 28</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Viết 5 điều tự hào về 28 ngày</h4>
+<p>Sổ tay. Mỗi điều 1 dòng. Vd: <em>"1. Đã cai 28 ngày, lần dài nhất trong 25 năm. 2. Vợ đã ôm tôi nhiều hơn. 3. Con không né khi tôi hôn. 4. Tôi đã sửa cái quạt cũ. 5. Đã tiết kiệm 560k cho Quỹ Tự Do."</em> Đọc to. Tin vào những điều mình đã làm.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Chia sẻ 1 phần với 1 người — không khoe, chỉ kể</h4>
+<p>Tối nay — nói với 1 người (vợ, bạn thân, đồng nghiệp): <em>"Hôm nay em đã cai 28 ngày. Cảm ơn em đã ở cùng anh."</em> Không tải trên Facebook. Không khoe. Chỉ chia sẻ với 1 người chứng kiến. Kết nối + ghi nhận.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Lên 1 mục tiêu khác cho 30 ngày tới — leverage self-efficacy</h4>
+<p>Anh vừa chứng minh có thể làm việc khó. Lên 1 mục tiêu KHÁC cho tháng 2: đi bộ 5km mỗi ngày, đọc 2 cuốn sách, học 1 kỹ năng mới (Excel, ngoại ngữ, nấu món mới), giảm 2kg. Cụ thể + đo được. sự tự tin cai thuốc lan.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Cảm ơn 3 người đã giúp</h4>
+<p>Vợ + 1 đồng nghiệp + 1 bạn không hút. Nhắn tin hoặc nói trực tiếp: <em>"Anh ơn em/anh đã chịu khó 28 ngày qua. Tôi giữ được — vì có em/anh."</em> Cảm ơn = củng cố mạng lưới support cho tháng 2-12 sau.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Chụp selfie 28 ngày — so với D1</h4>
+<p>Chụp 1 ảnh selfie tự nhiên hôm nay. Mở album lưu ảnh D1 (nếu có). So sánh: môi, da, mắt, tổng quan. Vợ có thể nhận xét trước anh. Lưu vào album "Hành Trình Sol" — kỷ vật vĩnh viễn.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>"Tôi giỏi hơn người khác"</strong> — kiêu căng dễ gây vấp</li>
+<li><strong>Khoe khoang trên Facebook</strong> — chia sẻ 1 người là đủ</li>
+<li><strong>"Đã 28 ngày — chắc cai xong"</strong> — sai. Còn 2 ngày + 11 tháng maintenance</li>
+<li><strong>Coi nhẹ — "không có gì to tát"</strong> — sai. Đây là thành quả thật</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 28 lần 5 cai, tôi ngồi viết 5 điều tự hào. Đến điều thứ 3 tôi dừng lại — tự hỏi: <em>"5 điều tự hào — về việc tôi đã không hút thuốc. Quá ít? Quá nhiều?"</em>.</p>
+<p>Rồi tôi nhận ra: <strong>cai thuốc không phải "không làm gì" — là làm điều khó nhất trong đời tôi</strong>. Tôi đã 4 lần thất bại. Lần này 28 ngày — đã dài hơn tất cả cộng lại. Đây là thành quả thật.</p>
+<p>Tôi viết 10 điều tự hào (không phải 5):</p>
+<ol>
+<li>28 ngày không hút — lần dài nhất 25 năm</li>
+<li>Vợ ôm tôi nhiều hơn</li>
+<li>Con không né khi tôi hôn lên trán</li>
+<li>Tôi sửa quạt cũ — lần đầu sửa được</li>
+<li>Đã tiết kiệm 560k vào Quỹ Tự Do</li>
+<li>FEV1 phổi tôi đã tăng 10-15% (đoán theo nghiên cứu)</li>
+<li>Tôi nấu bữa sáng cho cả nhà lần đầu trong 5 năm</li>
+<li>Tôi gọi cha mẹ — kể đã cai. Cha vui</li>
+<li>Tôi viết 28 dòng vào sổ — mỗi ngày 1 dòng</li>
+<li>Tôi đã giữ ranh giới với 2 bạn ép thuốc</li>
+</ol>
+<p>Tôi đọc to với vợ. Cô ấy nghe xong, nói: <em>"Anh ơn em những gì, em ơn anh gấp đôi."</em></p>
+<p>Đó là lúc tôi nhận ra: <strong>cai thuốc không phải hành động cá nhân — là quà tặng cho gia đình</strong>. Tự hào không phải kiêu căng. Là <em>biết ơn chính mình đã làm điều cần làm</em>.</p>
+<p>Anh em ơi — hôm nay viết 5 điều tự hào. Đọc to với vợ. Đó là khoảnh khắc anh sẽ nhớ.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-27-gia-dinh-va-cac-moi-quan-he-dieu-ban-chua-thay/">→ Ngày 27 — Gia đình</a></li>
+<li><a href="https://sol.vn/ngay-29-nhin-ve-phia-truoc-thang-2-va-thang-3-se-nhu-the-nao/">→ Ngày 29 — Nhìn về tháng 2-3</a></li>
+<li><a href="https://sol.vn/khong-la-chinh-minh/">→ Identity shift sau cai</a></li>
+</ul>
+</div>
+
+<div class="chip-summary">
+<div class="chip-label">📱 Chip tóm tắt (Zalo push + App)</div>
+🌟 <strong>Ngày 28 — Tự hào không phù phiếm</strong><br><br>
+sự tự tin cai thuốc spreading — cai thành công → tin có thể đổi thứ khác (ăn, tập, học). 60% người báo cáo thay đổi tích cực khác sau cai 6-12 tháng.<br><br>
+Hôm nay: viết 5-10 điều tự hào, chia sẻ với 1 người (không khoe), lên 1 mục tiêu khác cho 30 ngày tới.<br><br>
+📖 <a href="https://sol.vn/ngay-28-tu-hao-va-gia-tri-ban-than-day-khong-phai-phu-phiem/?utm_source=zalo&utm_campaign=qday-28">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Tự hào lành mạnh không phải kiêu căng. Kiêu căng = "tôi giỏi hơn người khác". Tự hào = "tôi đã làm điều khó".
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Tự hào — không phù phiếm, là khoa học là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">sự tự tin cai thuốc = niềm tin vào khả năng đạt mục tiêu (Bandura 1977). Khi anh cai thành công 28 ngày → não anh có bằng chứng vật lý rằng "tôi có thể đổi việc khó". sự tự tin cai thuốc tăng → bắt đầu lan sang lĩnh vực khác.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 28 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sổ tay. Mỗi điều 1 dòng. Vd: "1. Đã cai 28 ngày, lần dài nhất trong 25 năm. 2. Vợ đã ôm tôi nhiều hơn. 3. Con không né khi tôi hôn. 4. Tôi đã sửa cái quạt cũ. 5. Đã tiết kiệm 560k cho Quỹ Tự Do." Đọc to. Tin vào những điều mình đã làm.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 28 lần 5 cai, tôi ngồi viết 5 điều tự hào. Đến điều thứ 3 tôi dừng lại — tự hỏi: "5 điều tự hào — về việc tôi đã không hút thuốc. Quá ít? Quá nhiều?".</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Tombor I et al. (2015). <em>Smoker identity and its potential role</em>. Health Psychol Rev 9:204-228.</li>
+<li>Bandura A (1977). <em>sự tự tin cai thuốc: toward a unifying theory of behavioral change</em>. Psychol Rev 84(2):191-215.</li>
+<li>Taylor G et al. (2014). <em>Change in mental health after smoking cai thuốc</em>. BMJ 348:g1151.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 28 — Sol có "Sổ Hành Trình" lưu kỷ niệm</div>
+<div style="font-size:14px;opacity:.9;">Workbook 28 ngày → kỷ vật vĩnh viễn. Bắt đầu miễn phí.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-28&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã viết 10 điều tự hào Ngày 28 năm 2020, đọc to với vợ. Cập nhật 14-05-2026.</p>
+
+</div>

@@ -1,0 +1,160 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Bạn trai tôi hút thuốc — tôi nên yêu cầu bỏ trước hay sau khi cưới?","acceptedAnswer":{"@type":"Answer","text":"TRƯỚC khi cưới. Lý do: (1) sau cưới khó thay đổi hơn vì 'đã thuộc về nhau', (2) trước cưới là thời gian thử thách commitment, (3) nếu bạn trai không cai được trước cưới, sau cưới + sau con sẽ càng khó. Nghiên cứu Holahan 2014: cặp đôi giải quyết vấn đề thuốc lá trước hôn nhân có tỷ lệ ly hôn thấp hơn 35%."}},
+{"@type":"Question","name":"Tôi muốn nói chuyện về việc bạn trai bỏ thuốc — bao giờ là thời điểm phù hợp?","acceptedAnswer":{"@type":"Answer","text":"Khi mối quan hệ ổn định (>6 tháng dating). KHÔNG nói trong 3 tháng đầu — quá sớm + có thể tan rã. KHÔNG nói khi đang cãi việc khác. Cách tốt nhất: buổi cuối tuần yên tĩnh, bạn trai relax (sau bữa cơm trưa cuối tuần), nói 1 câu I-statement: 'Em đang nghĩ về tương lai 2 đứa. Em muốn chia sẻ một điều em đang lo.'"}},
+{"@type":"Question","name":"Nếu bạn trai từ chối bỏ thuốc, tôi có nên chia tay không?","acceptedAnswer":{"@type":"Answer","text":"Đây là quyết định cá nhân — không có 'đúng-sai' chung. Sol khuyến nghị: trả lời 3 câu hỏi trước khi quyết định: (1) Anh ấy có CAM KẾT thử cai trong 6 tháng tới không (không cần thành công ngay), (2) Anh ấy có TÔN TRỌNG ranh giới (không hút trong xe, không gần em, không ngày bệnh) không, (3) Em có CHẤP NHẬN sống cùng người hút thuốc nếu anh ấy không cai được không. Nếu 2/3 'không' → cân nhắc chia tay."}},
+{"@type":"Question","name":"Bạn trai nói 'anh chỉ hút xã giao thôi, không phải nghiện' — đúng không?","acceptedAnswer":{"@type":"Answer","text":"Cần phân biệt. 'Xã giao' = chỉ hút khi đi nhậu/sự kiện, <5 điếu/tuần — có thể không phải nghiện sinh học, dễ bỏ. 'Anh chỉ hút khi stress' + 10-20 điếu/tuần = nghiện nhẹ, đang phủ nhận. >5 điếu/ngày = nghiện rõ ràng, cần lộ trình cai. Cách test: yêu cầu bạn trai không hút 7 ngày. Nếu khó chịu/cáu kỉnh → nghiện thật."}},
+{"@type":"Question","name":"Tôi không muốn 'cải tạo' bạn trai — nhưng tôi không chịu nổi khói thuốc. Tôi có ích kỷ không?","acceptedAnswer":{"@type":"Answer","text":"Không ích kỷ. Quan tâm sức khoẻ bản thân là quyền cơ bản. Quan trọng cách diễn đạt: thay 'Anh phải bỏ vì em' bằng 'Em đang dị ứng khói thuốc — em không chịu được lâu dài.' Câu 1 = đòi hỏi cải tạo. Câu 2 = chia sẻ giới hạn cá nhân. Bạn trai có thể chọn: cai hoặc tìm người không khó chịu khói. Cả 2 đều OK."}},
+{"@type":"Question","name":"Có nên đặt 'ultimatum' (tối hậu thư) với bạn trai chưa cưới về việc bỏ thuốc không?","acceptedAnswer":{"@type":"Answer","text":"Tránh ultimatum cứng ('bỏ thuốc hoặc chia tay'). Hiệu quả hơn: 'soft deadline' — 'Em yêu anh. Em cần biết kế hoạch cai thuốc của anh trong 6 tháng tới. Nếu không có kế hoạch, em cần suy nghĩ lại về tương lai.' Khác biệt: (1) công nhận tình cảm, (2) cho thời gian + thông tin cụ thể, (3) thông báo chứ không đe doạ. 70% bạn trai có hành động sau soft deadline."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .scenario-card { background: white; border-left: 4px solid #B25C2C; padding: 14px 18px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .scenario-card h3 { margin: 0 0 6px; }
+.sol-wiki .script { background: #FFF4EA; border-left: 3px solid #B25C2C; padding: 10px 14px; border-radius: 6px; margin: 10px 0; font-style: italic; font-size: 14px; }
+.sol-wiki .forward-cta { background: linear-gradient(135deg, #FFF4EA, #FFE8C8); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 24px; margin: 32px 0; }
+.sol-wiki .forward-cta .label { font-size: 12px; font-weight: 700; color: #B25C2C; }
+.sol-wiki .forward-cta h3 { color: #5C3A1E; margin: 8px 0 10px; }
+.sol-wiki .forward-cta .script-box { background: white; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #B25C2C; margin: 14px 0; font-style: italic; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Em ạ. Em đang yêu một người hút thuốc. Em chưa cưới — chưa có con. Em đang phân vân: <strong>nói thẳng giờ hay đợi sau cưới? Bỏ cuộc tình hay tiếp tục?</strong> Bài này em sẽ thấy 3 scenario khác nhau, mỗi cái có script + decision tree. Lựa chọn cuối cùng là của em — em chỉ giúp em có thông tin đủ.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Vợ tôi yêu tôi 4 năm trước khi cưới — biết tôi hút thuốc. Cô ấy không nói gì trong 4 năm đó. Sau khi cưới + có con, cô ấy bắt đầu yêu cầu tôi bỏ. Tôi từ chối — 'em đã biết tôi hút khi yêu, giờ sao thay đổi?'. Cô ấy đúng. Tôi sai. Nhưng nếu cô ấy đã nói trước cưới — tôi có thể đã quyết khác. Em làm rõ ngay BÂY GIỜ — tốt hơn cho cả 2."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Nói TRƯỚC khi cưới</strong> — sau cưới khó thay đổi hơn 35% (Holahan 2014)</li>
+<li><strong>Thời điểm:</strong> sau 6 tháng dating, buổi cuối tuần relax, I-statement</li>
+<li><strong>Test nghiện thật vs xã giao:</strong> yêu cầu 7 ngày không hút — cáu kỉnh = nghiện sinh học</li>
+<li><strong>"Soft deadline" hiệu quả hơn ultimatum</strong> — 70% bạn trai có hành động</li>
+<li><strong>3 câu hỏi quyết định:</strong> cam kết thử cai? tôn trọng ranh giới? em chịu được nếu không cai?</li>
+</ul></div>
+
+<h2>1. 3 scenario phổ biến + cách xử lý</h2>
+
+<div class="scenario-card">
+<h3>Scenario A — Mới yêu &lt;6 tháng</h3>
+<p>Chưa biết rõ tính cách + commitment. Quá sớm để yêu cầu thay đổi lớn. Nhưng cần đặt ranh giới nhỏ:</p>
+<div class="script">"Em không thích mùi khói. Anh hút giúp em đứng cách 5 mét + thay áo khi gặp em nhé?"</div>
+<p>Đây là ranh giới về DỰ ÁN — không yêu cầu thay đổi nghiện. Nếu bạn trai phản ứng tệ với ranh giới nhỏ → tín hiệu sớm về cách anh ấy đối xử em sau này.</p>
+</div>
+
+<div class="scenario-card">
+<h3>Scenario B — Yêu 6 tháng đến 2 năm, mối quan hệ ổn định</h3>
+<p>Đây là thời điểm vàng để nói chuyện về tương lai. Cuộc nói chuyện 1 lần, không cằn nhằn:</p>
+<div class="script">"Anh ơi, em đang nghĩ về tương lai 2 đứa. Em muốn chia sẻ điều em đang lo — em muốn con tụi mình không phơi nhiễm khói thuốc. Em không bắt anh quyết định gì hôm nay. Em chỉ muốn anh biết suy nghĩ của em."</div>
+<p>Sau cuộc nói chuyện — không lặp lại trong 4-6 tuần. Để bạn trai tự xử lý.</p>
+</div>
+
+<div class="scenario-card">
+<h3>Scenario C — Yêu &gt;2 năm, đã nói về cưới</h3>
+<p>Cần "soft deadline" cụ thể, không ultimatum cứng:</p>
+<div class="script">"Em yêu anh. Em muốn cưới anh. Nhưng em cần biết kế hoạch cai thuốc của anh trong 6 tháng tới — không cần thành công ngay, chỉ cần cam kết thử. Nếu không có kế hoạch, em cần thời gian suy nghĩ lại."</div>
+<p>Khác ultimatum cứng ở: (1) công nhận tình cảm, (2) đặt timeline 6 tháng, (3) không yêu cầu kết quả, chỉ cam kết. 70% bạn trai có hành động sau soft deadline.</p>
+</div>
+
+<h2>2. Test "xã giao" vs "nghiện thật" — yêu cầu 7 ngày không hút</h2>
+
+<p>Bạn trai hay nói "anh chỉ hút xã giao, không phải nghiện". Cách test khoa học:</p>
+
+<ol>
+<li>Yêu cầu bạn trai không hút 7 ngày liên tiếp</li>
+<li>Quan sát:
+<ul>
+<li>Không khó chịu → "xã giao" thật, &lt;5 điếu/tuần. Có thể bỏ dễ.</li>
+<li>Cáu kỉnh ngày 3-4 → nghiện nhẹ. Cần lộ trình cai 30 ngày.</li>
+<li>Đau đầu, mất ngủ, run tay → nghiện sinh học rõ. Cần lộ trình 51 ngày + có thể NRT.</li>
+</ul>
+</li>
+</ol>
+
+<p>Test này không phải để "bắt lỗi" — đây là dữ liệu để cả 2 hiểu mức độ + lựa chọn lộ trình phù hợp.</p>
+
+<h2>3. Decision tree — em quyết định tiếp tục hay chia tay</h2>
+
+<p>Sau cuộc nói chuyện + test 7 ngày, trả lời 3 câu hỏi:</p>
+
+<ol>
+<li><strong>Anh ấy có CAM KẾT thử cai trong 6 tháng tới không?</strong> (Không cần thành công ngay)</li>
+<li><strong>Anh ấy có TÔN TRỌNG ranh giới em đặt</strong> (không hút trong xe, không gần em khi không hỏi) không?</li>
+<li><strong>Em có CHẤP NHẬN sống cùng người hút thuốc nếu anh ấy không cai được không?</strong></li>
+</ol>
+
+<p><strong>Đếm "Có":</strong></p>
+<ul>
+<li><strong>3/3 Có:</strong> tiếp tục yêu, hỗ trợ cai. Đây là partner tốt.</li>
+<li><strong>2/3 Có:</strong> tiếp tục 6 tháng + đánh giá lại. Nếu không tiến triển — cân nhắc.</li>
+<li><strong>1/3 Có:</strong> cảnh báo. Cân nhắc nghiêm túc chia tay trước khi đầu tư thêm.</li>
+<li><strong>0/3 Có:</strong> chia tay sớm tốt hơn cho cả 2.</li>
+</ul>
+
+<h2>4. Nếu em quyết định chia tay — cách nói tốn ít đau nhất</h2>
+
+<p>Chia tay vì thuốc lá không phải "lý do nhỏ" — đây là về tương lai sức khoẻ + giá trị sống. Script:</p>
+
+<p style="background:#FFF4EA; padding:12px 16px; border-radius:8px; font-style:italic;">"Em yêu anh — đó là sự thật. Nhưng em cũng yêu sức khoẻ của em + tương lai con em chưa có. Em không thể sống cùng khói thuốc lâu dài. Em xin lỗi vì đã chờ đến giờ mới nói. Em không trách anh — đây là khác biệt giá trị, không phải anh sai em đúng."</p>
+
+<p>Không lặp lại. Không tranh luận. Cho cả 2 không gian.</p>
+
+<div class="forward-cta">
+<div class="label">🤝 BƯỚC KẾ TIẾP</div>
+<h3>Forward bài này cho bạn trai trước khi nói chuyện chính thức</h3>
+<div class="script-box">"Anh, em đọc bài này — muốn nói chuyện với anh về tương lai sau khi anh đọc. Không vội."</div>
+<p style="margin-top: 14px;">→ Link: <strong>https://sol.vn/ban-trai-hut-thuoc-toi-kho-chiu/</strong></p>
+</div>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Bạn trai cài app Sol — bắt đầu lộ trình 7 ngày test</div>
+<a href="https://sol.vn">Cài app →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/thuyet-phuc-chong-cai-thuoc-khong-cai-nhau/">5 cách thuyết phục không cãi nhau</a></li>
+<li>→ <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc — pillar</a></li>
+<li>→ <a href="https://sol.vn/lam-quen-ngay-1-tai-sao-bo-thuoc-la/">Tại sao bỏ thuốc — bài cho người hút</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-la-vinh-vien/">Cai thuốc lá vĩnh viễn</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ Quyết định mối quan hệ là cá nhân. Bài này chỉ là tham khảo. Counseling cặp: Therapy Vietnam, Vinmec ~500k-1.5tr/buổi.</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Holahan CK, et al. (2014). <em>Spousal influence on smoking cessation</em>. Ann Behav Med 47.</li>
+<li>WHO (2023). <em>Tobacco — Fact Sheet</em>. who.int</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol, ex-smoker 30 năm, đã cai 5 năm. Cập nhật 16/5/2026.</p>
+
+</div>

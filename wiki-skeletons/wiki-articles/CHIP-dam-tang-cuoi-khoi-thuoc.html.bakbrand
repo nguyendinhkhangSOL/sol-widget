@@ -1,0 +1,183 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=dam-tang-cuoi) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Day 30 mình đi đám tang anh họ — quê. Anh em trong họ đều hút. Có bác mời mình: \"Cháu hút 1 điếu cho ấm — đám tang mà.\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có hợp lý khi không đi đám tang vì đang cai?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Sáng dậy nhận tin cô bạn cấp 3 mất. Đám tang chiều mai. Bạn cai 18 ngày. Đi không? Đi thế nào để không tái phát giữa cảm xúc + khói + anh em mời thuốc liên tục? <strong>Đây là chiến lược 4 bước.</strong></p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Đám tang/đám cưới Việt = tình huống thèm combo khó nhất (cảm xúc cao + khói + anh em)</li>
+<li>Tránh hoàn toàn 30 ngày đầu nếu được</li>
+<li>Sau 30 ngày: đi nhưng có plan</li>
+<li>Chuẩn bị plan TRƯỚC sự kiện — không tại chỗ</li>
+</ul>
+</div>
+<h2>Phần 1 — Vì sao nguy hiểm?</h2>
+<h3>Cảm xúc mạnh = tình huống thèm lớn nhất</h3>
+<ul>
+<li>Đám tang: buồn, mất mát, kỷ niệm</li>
+<li>Đám cưới: vui, hồi tưởng, nostalgic</li>
+<li>Cảm xúc cao → não tìm "lối thoát cũ" (nicotine từng giúp)</li>
+<li>Nghiên cứu: 35% tái phát ở Việt cohort xảy ra trong 24h sau sự kiện cảm xúc<sup>[1]</sup></li>
+</ul>
+<h3>Môi trường đặc biệt khó</h3>
+<ul>
+<li>Khói thuốc khắp nơi (đám tang Việt — đặc biệt nông thôn)</li>
+<li>Anh em "mời thuốc cho có chia sẻ"</li>
+<li>Áp lực xã hội: "không hút khi đang đám = thiếu tôn trọng"</li>
+<li>Rượu/bia có sẵn</li>
+</ul>
+<h3>30 năm conditioning</h3>
+<ul>
+<li>Lễ trọng + thuốc + rượu = ritual đã làm 30 năm</li>
+<li>Não link mạnh — khó phá tại chỗ</li>
+</ul>
+<h2>Phần 2 — Plan 4 bước</h2>
+<h3>Bước 1: Quyết định — đi hay không?</h3>
+<p>Nếu cai < 14 ngày:</p>
+<ul>
+<li><strong>TRÁNH nếu không phải gia đình trực hệ</strong></li>
+<li>Gửi vòng hoa + nhờ người đại diện</li>
+<li>"Anh đang ốm, không đi được" — không cần lý do dài</li>
+</ul>
+<p>Nếu cai 14-90 ngày:</p>
+<ul>
+<li>Đi được, nhưng plan kỹ</li>
+<li>Đem theo "kit khẩn cấp"</li>
+</ul>
+<p>Nếu cai > 90 ngày:</p>
+<ul>
+<li>Đi bình thường, vẫn cẩn thận</li>
+</ul>
+<h3>Bước 2: Chuẩn bị 24h trước</h3>
+<ul>
+<li><strong>Ăn no trước</strong> — đường máu thấp = thèm</li>
+<li><strong>Ngủ đủ đêm trước</strong> — thiếu ngủ = giảm kiểm soát</li>
+<li><strong>Báo vợ/người thân</strong> — họ check-in qua điện thoại</li>
+<li><strong>Mang kit:</strong> kẹo cao su (1 hộp), chai nước, hạt dưa</li>
+<li><strong>Định trước thời gian rời</strong> — vd "ở 1 giờ thôi"</li>
+</ul>
+<h3>Bước 3: Trong sự kiện</h3>
+<ul>
+<li><strong>Ngồi ngoài hoặc gần cửa</strong> — không khí + lối thoát</li>
+<li><strong>Uống nước/trà liên tục</strong> — chiếm tay, chiếm miệng</li>
+<li><strong>Đứng dậy đi vệ sinh mỗi 30 phút</strong> — reset cảm xúc</li>
+<li><strong>Tránh nhậu sau lễ</strong> — đó là pha nguy hiểm nhất</li>
+<li><strong>Ăn nhanh, đi sớm</strong> — không ngồi chờ "tàn tiệc"</li>
+</ul>
+<h3>Bước 4: Sau sự kiện 24h</h3>
+<ul>
+<li><strong>Về thẳng nhà</strong> — không ghé quán</li>
+<li><strong>Nhắn 1 người support</strong> — vợ, bạn cai, Khang trong app</li>
+<li><strong>Tắm rửa thay quần áo</strong> — mùi thuốc bám</li>
+<li><strong>Ngủ sớm</strong> — cảm xúc + mệt mỏi = nguy cơ sáng hôm sau "tao chỉ làm 1 điếu cho qua mood"</li>
+</ul>
+<h2>Phần 3 — Tình huống đặc biệt</h2>
+<h3>Đám tang cha/mẹ/anh chị em ruột</h3>
+<ul>
+<li>Cảm xúc cực mạnh — risk cao nhất</li>
+<li>Có thể CHO PHÉP MÌNH dùng NRT (miếng dán nicotine) trong 7 ngày tang</li>
+<li>Đây không phải "tái phát" — là medical strategy</li>
+<li>Sau 7 ngày, ngừng NRT → tiếp tục cai</li>
+<li>Nói trước với bác sĩ nếu có thể</li>
+</ul>
+<h3>Đám cưới con/cháu mình</h3>
+<ul>
+<li>Vui nhưng dài, đông người, áp lực ép thuốc cao</li>
+<li>Plan: chia thành 2 phase — lễ chính (ngắn, kiểm soát) + sau lễ (rủi ro cao)</li>
+<li>Có thể về sớm sau phần lễ chính, không cần ở đến hết</li>
+</ul>
+<h3>Đám đầy tháng / sinh nhật</h3>
+<ul>
+<li>Ít risk hơn — cảm xúc nhẹ, ít người</li>
+<li>Đi bình thường, áp dụng "tôi không hút"</li>
+</ul>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=dam-tang-cuoi)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Day 30 mình đi đám tang anh họ — quê. Anh em trong họ đều hút. Có bác mời mình: <em>"Cháu hút 1 điếu cho ấm — đám tang mà."</em></p>
+<p>Mình nói nhỏ với bác: <em>"Cháu đang cai. Bác giúp cháu không?"</em> Bác im, rồi gật. Đám tang xong, bác dúi vào tay 100k: <em>"Tiền thuốc cháu tiết kiệm, cứ giữ."</em></p>
+<p>Đám tang/cưới quê Việt — văn hoá ép thuốc nặng. Tip: báo TRƯỚC 1 người thân (chú, bác, anh trai) — nhờ họ bảo vệ. Anh em họ sẽ tự ngưng.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Có hợp lý khi không đi đám tang vì đang cai?</h3></p>
+<p><p>Hoàn toàn hợp lý — sức khoẻ tinh thần là ưu tiên. Gửi vòng hoa, gọi điện chia buồn. Người mất sẽ không trách. Người sống nếu trách = họ không hiểu.</p></p>
+<p><h3>Đám tang đầy khói có nguy hiểm cho phổi đang hồi phục?</h3></p>
+<p><p>Có — khói thụ động làm chậm cilia hồi phục. Đeo khẩu trang nếu phải vào trong, ngồi ngoài nếu được.</p></p>
+<p><h3>Tôi đã hút lại 1 điếu trong đám tang — có sai không?</h3></p>
+<p><p>Sai — nhưng không hết. Đứng dậy ngay từ giờ, không "ngày mai". Học từ trải nghiệm: lần sau plan kỹ hơn.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=dam-tang-cuoi) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Day 30 mình đi đám tang anh họ — quê. Anh em trong họ đều hút. Có bác mời mình: "Cháu hút 1 điếu cho ấm — đám tang mà."</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có hợp lý khi không đi đám tang vì đang cai?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=dam-tang-cuoi-khoi-thuoc">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Shiffman S et al. (2002). *Immediate antecedents of cigarette smoking: An analysis from ecological momentary assessment*. J Abnorm Psychol 111(4):531-545. · WHO Vietnam (2020). *Cultural factors in tobacco cai thuốc*. · NHS Smokefree (2024). "Coping with social events."
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

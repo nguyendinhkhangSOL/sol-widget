@@ -1,0 +1,241 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vì sao Ngày 16 nhậu nguy hiểm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nghiên cứu Sayette 2012: link giữa rượu và thuốc lá là cue mạnh nhất. Mạnh hơn cà phê, mạnh hơn café, mạnh hơn stress. Lý do: cả hai cùng tăng dopamine + đã link 25-30 năm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2 lựa chọn — chọn 1 hôm nay là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Báo trước cuộc nhậu: \"Tao đang cai thuốc, tránh 4 tuần đầu. Tuần thứ 5 tao quay lại\". Bạn thật sẽ hiểu. Anh không mất gì — chỉ tạm 4 tuần."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 chiến thuật sống sót cuộc nhậu Ngày 16 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gọi/nhắn 1 ngày trước: \"Anh em ơi, mình đang cai. Tối nay đi nhưng đừng mời thuốc giúp mình. Cám ơn nhé.\" Càng nhiều người biết → áp lực càng ít. Anh đang xây social accountability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 16 lần 3 cai (2015), tôi đã đi nhậu bạn cũ — và vấp. Lúc đó 2 tuần không hút. Tôi nghĩ \"1 buổi thôi\". Đến 11h đêm, 5 lon bia trong người, bạn rút thuốc mời lần thứ 5 — tôi cầm. Hôm sau tôi không cai nữa. Quay lại 1.5 bao/ngày trong 5 năm."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 16. Cuối tuần đầu — sếp rủ nhậu, bạn cũ gọi ra bia hơi vỉa hè. Anh đứng trước 2 lựa chọn: tránh hoàn toàn (an toàn nhưng cô lập), hay đi với Plan B chặt chẽ. Đây là <strong>cue mạnh nhất văn hoá Việt 45+</strong> — alcohol-smoking conditioning ăn sâu hơn cả cà phê.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Alcohol-smoking conditioning = cue mạnh nhất (Sayette 2012)<sup>[1]</sup></li>
+<li>Rượu giảm ý chí cai 30% — kể cả 2-3 lon</li>
+<li>70% người vấp ở tuần 3-4 do cuộc nhậu</li>
+<li>2 lựa chọn: TRÁNH 4 tuần đầu / ĐI với Plan B chặt chẽ</li>
+<li>5 chiến thuật sống sót cuộc nhậu không thuốc</li>
+</ul>
+</div>
+
+<h2>Vì sao Ngày 16 nhậu nguy hiểm?</h2>
+
+<h3>Alcohol-smoking conditioning</h3>
+
+<p>Nghiên cứu Sayette 2012<sup>[1]</sup>: link giữa rượu và thuốc lá là <strong>cue mạnh nhất</strong>. Mạnh hơn cà phê, mạnh hơn café, mạnh hơn stress. Lý do: cả hai cùng tăng dopamine + đã link 25-30 năm.</p>
+
+<h3>Rượu giảm ý chí 30%</h3>
+
+<p>Rượu ức chế prefrontal cortex (vùng quản lý ý chí). 2-3 lon = giảm 30%<sup>[2]</sup>. 5-6 lon = 60%. Anh ngồi nhậu 3 tiếng = ngồi với ý chí <strong>nửa người</strong>.</p>
+
+<h3>Áp lực xã hội</h3>
+
+<p>Văn hoá Việt: "Anh em uống không hút là không thân". Bạn cũ rút thuốc mời — không nhận = "thay đổi rồi", "khác đi". Áp lực này thật sự, mạnh.</p>
+
+<h2>2 lựa chọn — chọn 1 hôm nay</h2>
+
+<h3>Lựa chọn A — TRÁNH 4 tuần đầu (em đề xuất)</h3>
+
+<p>Báo trước cuộc nhậu: <em>"Tao đang cai thuốc, tránh 4 tuần đầu. Tuần thứ 5 tao quay lại"</em>. Bạn thật sẽ hiểu. Anh không mất gì — chỉ tạm 4 tuần.</p>
+
+<p><strong>Ưu:</strong> An toàn 100%. Pavlov yếu dần. Tuần 5 quay lại đã đỡ.<br>
+<strong>Nhược:</strong> Cảm thấy cô lập. Lỡ vài dịp xã giao.</p>
+
+<h3>Lựa chọn B — ĐI với Plan B chặt chẽ</h3>
+
+<p>Nếu bắt buộc đi (sếp, sự kiện gia đình, đối tác quan trọng) — Plan B 5 bước (xem dưới).</p>
+
+<h2>5 chiến thuật sống sót cuộc nhậu Ngày 16</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Báo trước nhóm: "Tôi đang cai — đừng rủ thuốc"</h4>
+<p>Gọi/nhắn 1 ngày trước: <em>"Anh em ơi, mình đang cai. Tối nay đi nhưng đừng mời thuốc giúp mình. Cám ơn nhé."</em> Càng nhiều người biết → áp lực càng ít. Anh đang xây <em>social accountability</em>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Uống chậm — pha bia với nước lọc</h4>
+<p>Mỗi ly bia → 1 ngụm nước lọc giữa. Hoặc uống 1 lon → 1 ly nước. Giảm lượng cồn 40% trong cùng thời gian. Ý chí giữ được lâu hơn.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Ngồi đầu gió, xa người hút nhất</h4>
+<p>Khói trực tiếp = tình huống thèm mạnh. Đầu gió = khói bay đi xa. Ngồi xa người hút 1-2 mét nếu có thể. Nếu phòng kín không tránh được — đề nghị ra ngoài "anh em ngồi sân thoáng hơn".</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Có "lý do về sớm" chuẩn bị trước</h4>
+<p>Trước khi đi — chuẩn bị sẵn: vợ gọi nhắc, con sốt, mai sáng họp. Khi đến giờ "nguy hiểm" (sau 2-3 tiếng nhậu) — viện lý do về. <strong>Không ai thiếu tế nhị bắt anh ở lại nếu lý do hợp lý</strong>.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Câu nói sẵn khi bị mời thuốc</h4>
+<p><em>"Cảm ơn, tao không hút. Đang cai."</em> — 1 lần. Nếu họ ép tiếp: <em>"Đang dùng thuốc, không phối hợp được"</em> (mơ hồ + có vẻ medical → người tế nhị dừng). Nếu vẫn ép — đứng dậy đi vệ sinh, quay lại đổi chủ đề.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>"1 điếu cho có không khí"</strong> — KHÔNG. 1 điếu = 95% tái nghiện</li>
+<li><strong>Nhậu &gt; 5 lon</strong> — ý chí giảm 60%</li>
+<li><strong>Đi nhậu khi đang mệt</strong> — cộng dồn = vấp</li>
+<li><strong>Hứa "chỉ đi 1 tiếng"</strong> — thực tế sẽ 3+ tiếng</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 16 lần 3 cai (2015), tôi đã đi nhậu bạn cũ — và vấp. Lúc đó 2 tuần không hút. Tôi nghĩ "1 buổi thôi". Đến 11h đêm, 5 lon bia trong người, bạn rút thuốc mời lần thứ 5 — tôi cầm. Hôm sau tôi không cai nữa. Quay lại 1.5 bao/ngày trong 5 năm.</p>
+<p>Ngày 16 lần 5 (2020), tôi đã làm khác. Sếp rủ tiệc công ty — tôi đi nhưng <strong>chuẩn bị Plan B chặt</strong>:</p>
+<ol>
+<li>Báo trước: "Em đang cai, đừng mời thuốc"</li>
+<li>Đi cùng 1 đồng nghiệp không hút — anh ấy giúp giữ</li>
+<li>Uống chậm — pha nước lọc giữa</li>
+<li>Vợ gọi "con sốt" lúc 21h (mình hẹn trước)</li>
+<li>Câu nói sẵn: "Cảm ơn anh, em đang dùng thuốc"</li>
+</ol>
+<p>Tôi đi được 2 tiếng, không hút, về nhà. Sáng hôm sau tự hào. Đó là cuộc nhậu thật đầu tiên không thuốc trong 25 năm.</p>
+<p>Anh em ơi — cuộc nhậu Ngày 16 không phải lúc thử nghiệm. <strong>Hoặc tránh 4 tuần, hoặc có Plan B chặt chẽ</strong>. Đừng để 16 ngày bị xoá vì 1 đêm xã giao.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-15-tinh-huong-kho-khan-can-doi-mat-ca-phe-tra-da-via-he-coc-bia-hoi-nhau-bua-an-stress/">→ Ngày 15 — Tình huống khó</a></li>
+<li><a href="https://sol.vn/ngay-17-nham-chan-ke-thu-it-duoc-nhac-den/">→ Ngày 17 — Nhàm chán</a></li>
+<li><a href="https://sol.vn/cai-thuoc-khi-di-nhau/">→ Cai thuốc khi đi nhậu — hướng dẫn đầy đủ</a></li>
+<li><a href="https://sol.vn/ban-moi-thuoc-tu-choi/">→ Bạn mời thuốc — cách từ chối</a></li>
+</ul>
+</div>
+
+🍻 <strong>Ngày 16 — Nhậu không thuốc</strong><br><br>
+Alcohol-smoking là cue mạnh nhất văn hoá Việt. Rượu giảm ý chí 30%. 70% vấp tuần 3-4 do cuộc nhậu.<br><br>
+2 lựa chọn: TRÁNH 4 tuần / ĐI với Plan B (báo trước "tôi cai", uống chậm + nước lọc, ngồi đầu gió, có lý do về sớm).<br><br>
+📖 <a href="https://sol.vn/ngay-16-nhau-bia-hoi-via-he-khong-hut-thuoc-song-sot-qua-buoi-dau-tien/?utm_source=zalo&utm_campaign=qday-16">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Tuần 3-4 vẫn nên hạn chế tối đa cuộc nhậu. An toàn quan trọng hơn xã giao.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Vì sao Ngày 16 nhậu nguy hiểm?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nghiên cứu Sayette 2012: link giữa rượu và thuốc lá là cue mạnh nhất. Mạnh hơn cà phê, mạnh hơn café, mạnh hơn stress. Lý do: cả hai cùng tăng dopamine + đã link 25-30 năm.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 2 lựa chọn — chọn 1 hôm nay là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Báo trước cuộc nhậu: "Tao đang cai thuốc, tránh 4 tuần đầu. Tuần thứ 5 tao quay lại". Bạn thật sẽ hiểu. Anh không mất gì — chỉ tạm 4 tuần.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. 5 chiến thuật sống sót cuộc nhậu Ngày 16 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Gọi/nhắn 1 ngày trước: "Anh em ơi, mình đang cai. Tối nay đi nhưng đừng mời thuốc giúp mình. Cám ơn nhé." Càng nhiều người biết → áp lực càng ít. Anh đang xây social accountability.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 16 lần 3 cai (2015), tôi đã đi nhậu bạn cũ — và vấp. Lúc đó 2 tuần không hút. Tôi nghĩ "1 buổi thôi". Đến 11h đêm, 5 lon bia trong người, bạn rút thuốc mời lần thứ 5 — tôi cầm. Hôm sau tôi không cai nữa. Quay lại 1.5 bao/ngày trong 5 năm.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Sayette MA et al. (2012). <em>The effects of alcohol on cigarette cơn thèm</em>. Psychopharmacology 218(4):717-729.</li>
+<li>Field M et al. (2008). <em>Alcohol and prefrontal cortex</em>. Curr Drug Abuse Rev 1(3):243-252.</li>
+<li>Marlatt GA, Gordon JR. (1985). <em>tái nghiện Prevention</em>. Guilford Press.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 16 — Sol có chip cứu cuộc nhậu</div>
+<div style="font-size:14px;opacity:.9;">Chip nhanh khi bị mời thuốc + Voice của Khang. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-16&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã vấp lần 3 vì 1 cuộc nhậu, lần 5 dùng Plan B vượt qua. Cập nhật 14-05-2026.</p>
+
+</div>

@@ -28,7 +28,7 @@ const patternArg = process.argv.find((a) => a.startsWith('--pattern='));
 
 // ─── Templates ──────────────────────────────────────────────────────
 
-const AUTHOR_BLOCK = `<!-- AUTHOR-BLOCK -->
+const AUTHOR_BLOCK = `<!-- AUTHOR-BLOCK-v2 -->
 <div class="author-meta" style="font-size: 14px; color: #5A5650; margin: 16px 0 24px 0; padding: 12px 16px; background: #FBF7F0; border-left: 4px solid #B25C2C; border-radius: 4px;">
   👤 <strong><a href="https://sol.vn/khang-sol/" style="color: #B25C2C; text-decoration: none;">Khang Sol</a></strong> · Kỹ sư IT · Đã sạch thuốc lá từ 22/12/2020 (5+ năm) · Founder <a href="https://sol.vn">sol.vn</a><br>
   <span style="font-size: 13px; color: #8A857C;">
@@ -36,7 +36,7 @@ const AUTHOR_BLOCK = `<!-- AUTHOR-BLOCK -->
   </span>
 </div>`;
 
-const MEDICAL_DISCLAIMER = `<!-- MEDICAL-DISCLAIMER -->
+const MEDICAL_DISCLAIMER = `<!-- MEDICAL-DISCLAIMER-v2 -->
 <div class="medical-disclaimer" style="background: #F5DDD9; border: 1px solid #C62828; border-radius: 8px; padding: 16px; margin: 24px 0; font-size: 14px; color: #5A5650;">
   <strong style="color: #C62828;">⚕️ Lưu ý y khoa quan trọng</strong>
   <p style="margin: 8px 0 0 0; line-height: 1.6;">
@@ -58,17 +58,29 @@ const MEDICAL_DISCLAIMER = `<!-- MEDICAL-DISCLAIMER -->
 // ─── Inject logic ───────────────────────────────────────────────────
 
 function injectAuthorBlock(html) {
-  if (html.includes('<!-- AUTHOR-BLOCK -->')) return { html, skipped: 'already-has-author' };
-  // Insert sau </h1> đầu tiên
-  const h1Match = html.match(/<\/h1>/);
-  if (!h1Match) return { html, skipped: 'no-h1' };
-  const idx = h1Match.index + h1Match[0].length;
-  const newHtml = html.slice(0, idx) + '\n\n' + AUTHOR_BLOCK + '\n' + html.slice(idx);
-  return { html: newHtml, injected: 'author' };
+  // Stricter marker — chỉ skip nếu có HTML comment chính xác này
+  if (html.includes('<!-- AUTHOR-BLOCK-v2 -->')) return { html, skipped: 'already-has-author' };
+
+  // Wiki snippets KHÔNG có <h1> — insert sau JSON-LD script CUỐI CÙNG
+  // (typically có 1-3 script JSON-LD ở đầu file: Article + FAQPage + ...)
+  const scriptRegex = /<\/script>/g;
+  let lastMatch;
+  let m;
+  while ((m = scriptRegex.exec(html)) !== null) lastMatch = m;
+
+  if (lastMatch) {
+    const idx = lastMatch.index + lastMatch[0].length;
+    const newHtml = html.slice(0, idx) + '\n\n' + AUTHOR_BLOCK + '\n' + html.slice(idx);
+    return { html: newHtml, injected: 'author-after-jsonld' };
+  }
+
+  // Fallback: prepend đầu file
+  return { html: AUTHOR_BLOCK + '\n\n' + html, injected: 'author-prepended' };
 }
 
 function injectDisclaimer(html) {
-  if (html.includes('<!-- MEDICAL-DISCLAIMER -->')) return { html, skipped: 'already-has-disclaimer' };
+  // Stricter marker
+  if (html.includes('<!-- MEDICAL-DISCLAIMER-v2 -->')) return { html, skipped: 'already-has-disclaimer' };
 
   // Insert trước <div class="references"> nếu có
   const refMatch = html.match(/<div class="references"/);

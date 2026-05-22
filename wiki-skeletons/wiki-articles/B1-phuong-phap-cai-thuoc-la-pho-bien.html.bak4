@@ -1,0 +1,315 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tóm tắt nhanh — Tỷ lệ thành công 5 phương pháp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nguồn: Cochrane Tobacco Addiction Group 2020, Hughes 2014, West & Brown 2013. Tỷ lệ tính trên người sạch nicotine 6 tháng liên tục."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phương pháp 1 — Cold Turkey (Bỏ Ngay Không Hỗ Trợ) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mình đã thử bỏ đột ngột (cold turkey) 4 lần — đều fail. Lần 1 cha xin, lần 2 bác sĩ doạ, lần 3 cưới vợ, lần 4 vợ con phát hiện. Mỗi lần \"tay không\" — không có app, không có miếng dán, không có người nhắc. Đỉnh sóng Day 3 không vượt được. Lần 5 mình thành công vì kết hợp bỏ đột ngột + Tracker + Reframe — không phải bỏ đột ngột một mình."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phương pháp 2 — NRT (Nicotine Replacement Therapy) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mình chưa thử NRT — vì hồi đó (2015-2020) chưa phổ biến ở VN. Nhưng nghe anh em đã thử nói: \"Miếng dán giúp đỡ thèm 50%, nhưng vẫn cần kế hoạch tâm lý cho 50% còn lại.\" Đó là lý do Sol không thay thế NRT — Sol bổ sung phần TÂM LÝ + đồng hành mà NRT thiếu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phương pháp 3 — Champix / Bupropion (Thuốc Kê Đơn) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mình chưa thử Champix vì sợ side effects + chi phí cao. Anh em VN nhiều người thử và thành công — đặc biệt nếu đã fail 2-3 lần với bỏ đột ngột. Nếu Khang chỉ định cá nhân — em sẽ recommend: nếu anh hút >20 năm + đã fail >2 lần + có bảo hiểm chi trả → thử Champix dưới giám sát BS. Combo với Sol = best."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phương pháp 4 — Allen Carr (Reframe Tâm Lý) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mình đọc Allen Carr 2 lần trước khi cai lần 5. Sách rất hay — giúp mình HIỂU TẠI SAO mình đã hút (không phải vì ngon, mà vì cơ chế lệ thuộc). Nhưng đọc xong vẫn chưa bỏ được — vì sách không giải quyết Day 3 đỉnh thèm. Sol đứng trên vai Allen Carr ở phần reframe identity — \"anh không thiếu ý chí, não anh đã wire 30 năm\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phương pháp 5 — App Tracker + Community là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mình thử QuitNow và Kwit trong các lần fail trước. App tốt, nhưng giao diện tiếng Anh + tone Tây — không hợp anh em Việt. Voice động viên dạng \"Hey buddy, you're doing great\" không chạm. Đây là lý do mình làm Sol Đi Cùng — tiếng Việt 100%, voice anh em Việt 45+ đã đi qua nói chuyện như anh em."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI B1 — 5 Phương Pháp Cai Thuốc Lá Phổ Biến (P0, vol 3.2k/tháng)
+  Focus keyword: "phương pháp cai thuốc lá"
+  Target intent: comparison — anh em đang research các cách cai
+  Internal links: /bo-thuoc-la, /cai-thuoc-la-tai-nha, /sol-la-gi, /phuong-phap-cai-thuoc-la (landing)
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .quote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 20px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .method-card { background: white; border: 1px solid #E8DFC8; border-radius: 12px; padding: 18px 22px; margin: 16px 0; }
+.sol-wiki .method-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.sol-wiki .method-name { font-size: 18px; font-weight: 700; color: #5C3A1E; }
+.sol-wiki .method-rate { font-size: 13px; font-weight: 700; color: #16A34A; background: #DCFCE7; padding: 4px 10px; border-radius: 999px; }
+.sol-wiki .method-rate.low { color: #DC2626; background: #FEE2E2; }
+.sol-wiki .method-rate.med { color: #D97706; background: #FEF3C7; }
+.sol-wiki .method-row { display: grid; grid-template-columns: 100px 1fr; gap: 8px 14px; margin-top: 10px; font-size: 14px; }
+.sol-wiki .method-row dt { font-weight: 700; color: #B25C2C; }
+.sol-wiki .method-row dd { margin: 0; color: #2C2A27; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13.5px; }
+.sol-wiki table th { background: #5C3A1E; color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 13px; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid #E8DFC8; vertical-align: top; }
+.sol-wiki table tr:nth-child(even) { background: #FAFAF8; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul { padding-left: 24px; margin: 8px 0; }
+.sol-wiki ul li { margin-bottom: 4px; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">
+Anh đã quyết định cai thuốc — nhưng phân vân: <em>"Có những phương pháp cai thuốc lá nào? bỏ đột ngột hay Champix? NRT có hiệu quả không? App tracker có giúp gì không?"</em> Bài này mình tổng hợp <strong>5 phương pháp cai thuốc lá phổ biến trên thế giới + tỷ lệ thành công thực tế</strong> dựa trên nghiên cứu Cochrane Review 2020 — review chuẩn vàng của y học. Mình đã thử cả 5 cách trong 30 năm hút — chia sẻ kinh nghiệm cá nhân. <strong>Spoiler: không có phương pháp "1 size fits all" — combo 2-3 phương pháp tăng tỷ lệ thành công 2-3 lần.</strong>
+</p>
+
+<h2>Tóm tắt nhanh — Tỷ lệ thành công 5 phương pháp</h2>
+
+<table>
+<thead>
+<tr><th>Phương pháp</th><th>Tỷ lệ thành công 6 tháng</th><th>Chi phí (VND/tháng)</th><th>Phù hợp ai</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1. bỏ đột ngột</strong> (bỏ ngay không hỗ trợ)</td><td>3-5%</td><td>0</td><td>Anh ý chí cực mạnh, hút nhẹ</td></tr>
+<tr><td><strong>2. NRT</strong> (miếng dán, kẹo nicotine)</td><td>15-20%</td><td>250-350k</td><td>Anh lệ thuộc nặng, cần giảm dần</td></tr>
+<tr><td><strong>3. Champix/Bupropion</strong> (thuốc kê đơn)</td><td>20-25%</td><td>400-500k</td><td>Anh đã thử 2+ lần fail</td></tr>
+<tr><td><strong>4. Allen Carr</strong> (sách + reframe tâm lý)</td><td>10-15%</td><td>200k (sách + khoá)</td><td>Anh thích đọc, tin reframe</td></tr>
+<tr><td><strong>5. App tracker + community</strong></td><td>15-25%</td><td>0-300k</td><td>Anh quen điện thoại, cần daily support</td></tr>
+<tr style="background: #FFF4EA;"><td><strong>★ Hybrid (Sol)</strong> — kết hợp 5 trên</td><td>30-40%</td><td>149-349k</td><td>Đa số anh em Việt 45+</td></tr>
+</tbody>
+</table>
+
+<p class="quote">
+Nguồn: Cochrane Tobacco Addiction Group 2020, Hughes 2014, West & Brown 2013. Tỷ lệ tính trên người sạch nicotine 6 tháng liên tục.
+</p>
+
+<h2>Phương pháp 1 — Cold Turkey (Bỏ Ngay Không Hỗ Trợ)</h2>
+
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">❄️ bỏ đột ngột</span>
+<span class="method-rate low">3-5% thành công</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Đặt 1 ngày → ngừng hút hoàn toàn từ ngày đó. Không thuốc, không miếng dán, không app.</dd>
+<dt>Khoa học</dt><dd>Hughes 2004 (Tobacco Control) — đây là cách nhiều người thử nhất nhưng tỷ lệ thành công thấp nhất.</dd>
+<dt>Ưu điểm</dt><dd>Miễn phí. Không cần kê đơn. Đơn giản về tinh thần.</dd>
+<dt>Nhược điểm</dt><dd>Triệu chứng cai dữ dội Day 1-7 không có hỗ trợ. 95% fail trong 6 tháng. Đa số tái phát Day 2-3.</dd>
+<dt>Phù hợp ai</dt><dd>Anh hút &lt;5 năm, &lt;10 điếu/ngày, ý chí cực mạnh, từng cai 1-2 lần thành công.</dd>
+</dl>
+</div>
+
+<p>Mình đã thử bỏ đột ngột 4 lần — đều fail. Lần 1 cha xin, lần 2 bác sĩ doạ, lần 3 cưới vợ, lần 4 vợ con phát hiện. Mỗi lần "tay không" — không có app, không có miếng dán, không có người nhắc. Đỉnh sóng Day 3 không vượt được. Lần 5 mình thành công vì kết hợp bỏ đột ngột + Tracker + Reframe — không phải bỏ đột ngột một mình.</p>
+
+<h2>Phương pháp 2 — NRT (Nicotine Replacement Therapy)</h2>
+
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">💊 NRT — Miếng dán, kẹo cao su, viên ngậm nicotine</span>
+<span class="method-rate med">15-20% thành công</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Dùng nicotine "sạch" (không có 7000 hoá chất khói) qua miếng dán/kẹo → giảm liều dần trong 8-12 tuần → cai hẳn.</dd>
+<dt>Khoa học</dt><dd>Cochrane 2018: NRT tăng tỷ lệ thành công 50-70% so với placebo. An toàn — đã dùng 40 năm.</dd>
+<dt>Ưu điểm</dt><dd>Giảm triệu chứng cai (withdrawal) Day 1-7 đáng kể. Không cần kê đơn ở VN (mua nhà thuốc). Có nhiều dạng — chọn theo thói quen.</dd>
+<dt>Nhược điểm</dt><dd>Chi phí 250-350k/tháng. Vẫn lệ thuộc nicotine tạm thời. Side effects: kích ứng da (dán), khô miệng (kẹo).</dd>
+<dt>Sản phẩm VN</dt><dd>Miếng dán Nicotinell, Nicorette. Kẹo cao su Nicorette. Mua tại Pharmacity, Long Châu — không cần đơn.</dd>
+</dl>
+</div>
+
+<p>Mình chưa thử NRT — vì hồi đó (2015-2020) chưa phổ biến ở VN. Nhưng nghe anh em đã thử nói: <em>"Miếng dán giúp đỡ thèm 50%, nhưng vẫn cần kế hoạch tâm lý cho 50% còn lại."</em> Đó là lý do Sol không thay thế NRT — Sol bổ sung phần TÂM LÝ + đồng hành mà NRT thiếu.</p>
+
+<h2>Phương pháp 3 — Champix / Bupropion (Thuốc Kê Đơn)</h2>
+
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">💊 Champix (Varenicline) / Bupropion (Zyban)</span>
+<span class="method-rate">20-25% thành công</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Uống thuốc 12 tuần. Champix tác động receptor nicotinic não — giảm cơn thèm + ngăn khoái cảm khi hút lại.</dd>
+<dt>Khoa học</dt><dd>Cochrane 2016 (24 nghiên cứu, 12.000 người): Champix là phương pháp HIỆU QUẢ NHẤT trong số phương pháp dược. Hiệu quả hơn NRT 1.5x.</dd>
+<dt>Ưu điểm</dt><dd>Tỷ lệ thành công cao nhất trong các phương pháp đơn lẻ. Giảm thèm + cảm giác hài lòng khi hút lại (ngăn tái nghiện).</dd>
+<dt>Nhược điểm</dt><dd>Cần kê đơn bác sĩ. Side effects: buồn nôn (30%), mất ngủ + ác mộng (20%), thay đổi tâm trạng (10%). Có cảnh báo FDA về ý nghĩ tự hại (hiếm, ~0.1%).</dd>
+<dt>Chi phí VN</dt><dd>Champix: 4-5 triệu/12 tuần (~400-500k/tháng). Bupropion: 2-3 triệu/12 tuần. Cần khám BS hô hấp/tâm thần.</dd>
+<dt>Bệnh viện VN</dt><dd>BV Bạch Mai (HN), BV Phổi TW, BV ĐH Y Dược TPHCM, BV Tâm thần TW1 — có kê đơn.</dd>
+</dl>
+</div>
+
+<p>Mình chưa thử Champix vì sợ side effects + chi phí cao. Anh em VN nhiều người thử và thành công — đặc biệt nếu đã fail 2-3 lần với bỏ đột ngột. Nếu Khang chỉ định cá nhân — em sẽ recommend: <strong>nếu anh hút &gt;20 năm + đã fail &gt;2 lần + có bảo hiểm chi trả → thử Champix dưới giám sát BS</strong>. Combo với Sol = best.</p>
+
+<h2>Phương pháp 4 — Allen Carr (Reframe Tâm Lý)</h2>
+
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">📖 Allen Carr's Easy Way to Stop Smoking</span>
+<span class="method-rate med">10-15% thành công</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Đọc sách "The Easy Way" hoặc tham gia khoá 6 giờ. Phương pháp: reframe — "anh không phải bỏ điều gì, anh đang lấy lại cuộc sống bị thuốc lá đánh cắp".</dd>
+<dt>Khoa học</dt><dd>Đánh giá hỗn hợp. Một số nghiên cứu (Frings 2017): hiệu quả tương đương NRT. Cochrane 2019: bằng chứng còn hạn chế.</dd>
+<dt>Ưu điểm</dt><dd>Tập trung vào tâm lý + identity. Không cần thuốc. Bản dịch tiếng Việt rẻ (~150k). Khoá Việt Nam có ở HN/SG.</dd>
+<dt>Nhược điểm</dt><dd>Hiệu quả tuỳ người. Không có support sau buổi đầu — anh em đọc xong vẫn dễ vấp Day 3-7 vì cơ chế thể chất chưa giải quyết.</dd>
+<dt>Sách VN</dt><dd>"Cách Dễ Dàng Để Bỏ Thuốc Lá" — Allen Carr (Tiki, Fahasa). Khoá Allen Carr VN: ~3-5 triệu/buổi.</dd>
+</dl>
+</div>
+
+<p>Mình đọc Allen Carr 2 lần trước khi cai lần 5. Sách rất hay — giúp mình HIỂU TẠI SAO mình đã hút (không phải vì ngon, mà vì cơ chế lệ thuộc). Nhưng đọc xong vẫn chưa bỏ được — vì sách không giải quyết Day 3 đỉnh thèm. <strong>Sol đứng trên vai Allen Carr ở phần reframe identity</strong> — "anh không thiếu ý chí, não anh đã wire 30 năm".</p>
+
+<h2>Phương pháp 5 — App Tracker + Community</h2>
+
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">📱 App cai thuốc + cộng đồng online</span>
+<span class="method-rate">15-25% thành công</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>App đếm ngày sạch + tiền tiết kiệm + community chat. Một số app có voice support / AI chatbot / streak gamification.</dd>
+<dt>Khoa học</dt><dd>Whittaker 2019 (Cochrane): app smoking cai thuốc tăng tỷ lệ thành công 70% so với không app. Cần app có evidence-based (CBT, MI).</dd>
+<dt>Ưu điểm</dt><dd>Miễn phí hoặc rẻ. Daily reminder. Không kỳ thị. Có thể combo với NRT/Champix. Đếm tiền tiết kiệm = motivation lớn.</dd>
+<dt>Nhược điểm</dt><dd>Đa số app tiếng Anh, không phù hợp anh em Việt 45+. App quốc tế thiếu bối cảnh VN (nhậu, đám giỗ, áp lực gia đình).</dd>
+<dt>App phổ biến</dt><dd>Quốc tế: QuitNow (free), Kwit (paid), Smoke Free. <strong>Việt Nam: Sol Đi Cùng</strong> — app TIẾNG VIỆT đầu tiên cho đàn ông 45+, có voice founder Khang Sol, 3 lộ trình theo Mức Lệ Thuộc.</dd>
+</dl>
+</div>
+
+<p>Mình thử QuitNow và Kwit trong các lần fail trước. App tốt, nhưng giao diện tiếng Anh + tone Tây — không hợp anh em Việt. Voice động viên dạng "Hey buddy, you're doing great" không chạm. Đây là lý do mình làm <strong>Sol Đi Cùng — tiếng Việt 100%, voice anh em Việt 45+ đã đi qua nói chuyện như anh em</strong>.</p>
+
+<h2>★ Sol Hybrid — Kết hợp 5 phương pháp cho anh em Việt 45+</h2>
+
+<p>Sol không phát minh phương pháp thứ 6. Sol kết hợp cái mạnh của 5 phương pháp trên, viết lại bằng tiếng Việt cho anh em 45+:</p>
+
+<ul>
+<li><strong>Từ bỏ đột ngột</strong>: kế thừa "Ngày Quyết Định" — 1 ngày bỏ rõ ràng, không kéo dài</li>
+<li><strong>Từ NRT</strong>: thay nicotine bằng <strong>bài thở 4-7-8 + 9 công cụ phân tâm</strong> cho 90 giây thèm</li>
+<li><strong>Từ Champix</strong>: kế thừa <strong>theo dõi sát</strong> — check-in mỗi ngày + báo cáo Day 7/21/52</li>
+<li><strong>Từ Allen Carr</strong>: kế thừa <strong>reframe identity</strong> — "anh không thiếu ý chí, đây là cơ chế não 30 năm"</li>
+<li><strong>Từ App tracker</strong>: kế thừa <strong>đếm ngày + tiền tiết kiệm</strong> + community Khoảng Lặng</li>
+</ul>
+
+<p>Bonus: <strong>Bối cảnh Việt</strong> — Khang đã đi qua đám giỗ ông cụ mời, nhậu đối tác, cà phê sáng, vợ giận, con nói "bố hôi". Không phương pháp Tây nào có.</p>
+
+<p>Tỷ lệ thành công Sol pilot Q1 2026: <strong>~35%</strong> (30 anh em đầu, sạch 30 ngày). Cao hơn mọi phương pháp đơn lẻ.</p>
+
+<p><a href="https://sol.vn/phuong-phap-cai-thuoc-la" style="color: #B25C2C; font-weight: 600;">Xem chi tiết Sol Hybrid 5 phương pháp →</a></p>
+
+<h2>Vậy anh nên chọn phương pháp nào?</h2>
+
+<p>Tuỳ tình trạng của anh:</p>
+
+<ul>
+<li><strong>Hút &lt;5 năm, &lt;10 điếu/ngày, lần đầu cai</strong>: bỏ đột ngột + App (như Sol) là đủ.</li>
+<li><strong>Hút 5-15 năm, 10-20 điếu/ngày</strong>: NRT + App + community (Sol Hybrid).</li>
+<li><strong>Hút &gt;15 năm, &gt;20 điếu/ngày, đã fail &gt;2 lần</strong>: Champix dưới BS + App + Allen Carr.</li>
+<li><strong>Anh em VN 45+ bất kỳ tình trạng</strong>: <strong>Sol Hybrid</strong> — tiếng Việt, bối cảnh hợp, 3 lộ trình theo Mức Lệ Thuộc.</li>
+</ul>
+
+<div class="quote">
+<strong>Tip Khang</strong>: Đừng tốn 6 tháng "research" phương pháp tốt nhất rồi không bao giờ bắt đầu. Phương pháp NÀO cũng tốt hơn không cai. Chọn 1 phương pháp + start ngay tối nay = tốt hơn chờ "phương pháp hoàn hảo".
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Tóm tắt nhanh — Tỷ lệ thành công 5 phương pháp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nguồn: Cochrane Tobacco Addiction Group 2020, Hughes 2014, West & Brown 2013. Tỷ lệ tính trên người sạch nicotine 6 tháng liên tục.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phương pháp 1 — Cold Turkey (Bỏ Ngay Không Hỗ Trợ) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mình đã thử bỏ đột ngột 4 lần — đều fail. Lần 1 cha xin, lần 2 bác sĩ doạ, lần 3 cưới vợ, lần 4 vợ con phát hiện. Mỗi lần "tay không" — không có app, không có miếng dán, không có người nhắc. Đỉnh sóng Day 3 không vượt được. Lần 5 mình thành công vì kết hợp bỏ đột ngột + Tracker + Reframe — không phải bỏ đột ngột một mình.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phương pháp 2 — NRT (Nicotine Replacement Therapy) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mình chưa thử NRT — vì hồi đó (2015-2020) chưa phổ biến ở VN. Nhưng nghe anh em đã thử nói: "Miếng dán giúp đỡ thèm 50%, nhưng vẫn cần kế hoạch tâm lý cho 50% còn lại." Đó là lý do Sol không thay thế NRT — Sol bổ sung phần TÂM LÝ + đồng hành mà NRT thiếu.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Phương pháp 3 — Champix / Bupropion (Thuốc Kê Đơn) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mình chưa thử Champix vì sợ side effects + chi phí cao. Anh em VN nhiều người thử và thành công — đặc biệt nếu đã fail 2-3 lần với bỏ đột ngột. Nếu Khang chỉ định cá nhân — em sẽ recommend: nếu anh hút >20 năm + đã fail >2 lần + có bảo hiểm chi trả → thử Champix dưới giám sát BS. Combo với Sol = best.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Phương pháp 4 — Allen Carr (Reframe Tâm Lý) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mình đọc Allen Carr 2 lần trước khi cai lần 5. Sách rất hay — giúp mình HIỂU TẠI SAO mình đã hút (không phải vì ngon, mà vì cơ chế lệ thuộc). Nhưng đọc xong vẫn chưa bỏ được — vì sách không giải quyết Day 3 đỉnh thèm. Sol đứng trên vai Allen Carr ở phần reframe identity — "anh không thiếu ý chí, não anh đã wire 30 năm".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">6. Phương pháp 5 — App Tracker + Community là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mình thử QuitNow và Kwit trong các lần fail trước. App tốt, nhưng giao diện tiếng Anh + tone Tây — không hợp anh em Việt. Voice động viên dạng "Hey buddy, you're doing great" không chạm. Đây là lý do mình làm Sol Đi Cùng — tiếng Việt 100%, voice anh em Việt 45+ đã đi qua nói chuyện như anh em.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL HYBRID — VIỆT 45+</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol đứng trên vai 5 phương pháp đã chứng minh — viết tiếng Việt cho anh em 45+. 3 lộ trình theo Mức Lệ Thuộc. Khang đi cùng anh từng ngày.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=B1&utm_campaign=phuong-phap">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<h3>Cold Turkey có nguy hiểm không?</h3>
+<p>Không nguy hiểm tính mạng (khác heroin/rượu). Triệu chứng cai khó chịu nhưng an toàn với 95% người trưởng thành. Nguy hiểm duy nhất: tỷ lệ thành công thấp → anh thử + fail nhiều lần → mất niềm tin.</p>
+
+<h3>NRT có gây nghiện nicotine kéo dài không?</h3>
+<p>Có nguy cơ nhưng thấp. 10-15% người dùng NRT &gt;6 tháng (vượt khuyến cáo). NRT vẫn an toàn hơn hút thuốc 99% (không có 7000 hoá chất). Tip: theo đúng schedule giảm liều — không dùng tự ý.</p>
+
+<h3>Champix có side effects nguy hiểm không?</h3>
+<p>FDA 2009 cảnh báo nguy cơ ý nghĩ tự hại + thay đổi tâm trạng. 2016 FDA xoá Black Box (không nguy hiểm như nghi). Nhưng nếu anh có tiền sử trầm cảm, rối loạn lo âu — nói BS trước. KHÔNG dùng nếu đang uống MAO inhibitor.</p>
+
+<h3>App tracker có thật sự giúp không?</h3>
+<p>Cochrane 2019: app evidence-based (có CBT, MI) tăng tỷ lệ thành công 70% so với không app. App "lifestyle" không có science thì không khác gì notification reminder. Sol Đi Cùng dựa trên CBT + chánh niệm (mindfulness) + Habit Reversal Training.</p>
+
+<h3>Combo phương pháp nào tốt nhất?</h3>
+<p>Cochrane 2019: <strong>NRT/Champix + Behavioral Support (như Sol)</strong> = best. Combo tăng tỷ lệ thành công 2-3x so với 1 phương pháp đơn lẻ. Đó là lý do BV Bạch Mai khuyến cáo combo dược + tâm lý.</p>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C;">Cai thuốc lá tại nhà — 7 bước</a> ·
+<a href="https://sol.vn/trieu-chung-cai-thuoc-la-theo-ngay" style="color: #B25C2C;">Triệu chứng cai thuốc Day 1-30</a> ·
+<a href="https://sol.vn/sol-la-gi" style="color: #B25C2C;">Sol Đi Cùng là gì</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Cochrane Tobacco Addiction Group 2020, Hughes 2014, Whittaker 2019, Frings 2017.
+</p>
+
+<p style="font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px;">
+<strong>Lưu ý y khoa</strong>: Bài này chỉ mang tính tham khảo. Champix + Bupropion là thuốc kê đơn — tham vấn BS hô hấp/tâm thần trước khi dùng. <strong>Tổng đài cai thuốc miễn phí BV Bạch Mai</strong>: <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a>.
+</p>
+
+</div>

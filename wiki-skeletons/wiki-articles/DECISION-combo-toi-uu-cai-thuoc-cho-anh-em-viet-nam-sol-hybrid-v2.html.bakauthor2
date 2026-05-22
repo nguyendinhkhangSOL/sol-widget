@@ -1,0 +1,264 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Sol Hybrid v2 — Combo cai thuốc lá tối ưu cho anh em Việt Nam 45+",
+      "description": "3 combo cai thuốc theo Mức Lệ Thuộc Nicotin (FTND): NHẸ (Sol đơn) / VỪA (Sol + NRT) / NẶNG (Sol + Champix). Cost-benefit + roadmap chi tiết.",
+      "author": {"@type":"Person","name":"Khang Sol (Nguyễn Đình Khang)","url":"https://sol.vn/khang-sol","sameAs":["https://web.facebook.com/nguyendinhkhang/","https://www.linkedin.com/in/vietnaminternet/"],"jobTitle":"Sáng lập Sol Đi Cùng","description":"Đã hút Vinataba 30 năm, Tự do 5 năm. Không phải bác sĩ — người đã đi qua."},
+      "publisher": {"@type":"Organization","name":"Sol Đi Cùng","logo":{"@type":"ImageObject","url":"https://sol.vn/wp-content/uploads/sol-logo.png"}},
+      "datePublished": "2026-05-18","dateModified": "2026-05-18",
+      "mainEntityOfPage": "https://sol.vn/combo-toi-uu-cai-thuoc-cho-anh-em-viet-nam-sol-hybrid-v2"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Sol Hybrid v2 là gì?","acceptedAnswer":{"@type":"Answer","text":"Sol Hybrid v2 là chiến lược combo cai thuốc lá cá nhân hoá theo Mức Lệ Thuộc Nicotin (FTND), thiết kế riêng cho anh em Việt Nam 45+. Có 3 combo: NHẸ (FTND 0-3) — Sol đồng hành tâm lý đơn lẻ. VỪA (FTND 4-6) — Sol + NRT (miếng dán + kẹo). NẶNG (FTND 7-10) — Sol + Champix dưới chỉ định bác sĩ. Mọi combo đều cộng phần đồng hành tâm lý + cộng đồng + Voice của Khang."}},
+        {"@type":"Question","name":"Combo Sol Hybrid hiệu quả thế nào so với đơn lẻ?","acceptedAnswer":{"@type":"Answer","text":"Theo Cochrane + WHO: combo thuốc + đồng hành tâm lý hiệu quả gấp 2-3 lần phương pháp đơn lẻ. Sol Pilot Q1/2026 (30 anh em đầu): tỷ lệ sạch 30 ngày ~35% — cao hơn mọi phương pháp đơn lẻ. Ước tính Sol Hybrid v2 đầy đủ: NHẸ ~25-30/100, VỪA ~30-35/100, NẶNG ~30-40/100 sạch 6 tháng."}},
+        {"@type":"Question","name":"Combo Sol + Champix có an toàn không?","acceptedAnswer":{"@type":"Answer","text":"An toàn nếu Champix do bác sĩ kê + theo dõi. Sol và Champix bổ sung nhau — Champix tác động hoá học não, Sol tác động tâm lý + thói quen + cộng đồng. KHÔNG có tương tác giữa Sol (app + nội dung) và Champix. Bác sĩ kê Champix có thể tham khảo Sol như công cụ hỗ trợ tâm lý cho bệnh nhân."}},
+        {"@type":"Question","name":"Tổng chi phí Sol Hybrid v2 bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"NHẸ: 149k Sol đơn (cho 35 ngày). VỪA: 249k Sol + ~500-700k/tháng NRT × 2-3 tháng = tổng ~1.7-2.4 triệu. NẶNG: 349k Sol + ~400-500k/tháng Champix × 3 tháng = tổng ~1.6-1.85 triệu (Champix BS kê, có thể có bảo hiểm). So với tiền hút thuốc 1 bao/ngày = ~900k/tháng → cai 1 tháng = đã hồi vốn."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .combo-card { background: white; border: 2px solid #E8DFC8; border-radius: 14px; padding: 22px 26px; margin: 20px 0; }
+.sol-wiki .combo-card.light { border-color: #16A34A; background: linear-gradient(135deg, #F0FDF4 0%, #FAFAF8 100%); }
+.sol-wiki .combo-card.moderate { border-color: #D97706; background: linear-gradient(135deg, #FEF3C7 0%, #FAFAF8 100%); }
+.sol-wiki .combo-card.heavy { border-color: #DC2626; background: linear-gradient(135deg, #FEE2E2 0%, #FAFAF8 100%); }
+.sol-wiki .combo-name { font-size: 19px; font-weight: 700; color: #5C3A1E; margin-bottom: 8px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #5C3A1E; color: white; padding: 10px 12px; text-align: left; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid #E8DFC8; vertical-align: top; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">Anh đã đọc về 12 phương pháp + làm decision tree. Bài này đi sâu vào <strong>Sol Hybrid v2 — chiến lược combo tối ưu cho anh em Việt Nam 45+</strong>. 3 combo theo Mức Lệ Thuộc Nicotin (FTND) + roadmap chi tiết tuần-tuần + cost-benefit + case studies thật từ Pilot Q1/2026.</p>
+
+<div class="check-box"><strong>Sol Hybrid v2 — 3 combo:</strong>
+<ul>
+<li>🟢 <strong>NHẸ (FTND 0-3)</strong>: Sol đồng hành tâm lý đơn lẻ — 149k cho 35 ngày</li>
+<li>🟡 <strong>VỪA (FTND 4-6)</strong>: Sol + NRT (miếng dán + kẹo) — ~1.7-2.4 triệu tổng</li>
+<li>🔴 <strong>NẶNG (FTND 7-10)</strong>: Sol + Champix (BS kê) — ~1.6-1.85 triệu tổng</li>
+</ul>
+<p>Mọi combo cộng: Voice của Khang + AI tiếng Việt + Kế hoạch B + Cộng đồng Khoảng Lặng + Sổ Hành Trình PDF.</p>
+</div>
+
+<h2>Tại sao "Hybrid" (kết hợp) thay vì đơn lẻ?</h2>
+
+<p>Theo Cochrane Review + WHO Tobacco Cessation Guidelines 2024:</p>
+
+<ul>
+<li>Combo <strong>thuốc + đồng hành tâm lý</strong> hiệu quả gấp 2-3 lần đơn lẻ</li>
+<li>Thuốc lo phần <strong>hoá học não</strong> (giảm cơn thèm + triệu chứng cai)</li>
+<li>Đồng hành tâm lý lo phần <strong>thói quen + tâm lý + cộng đồng</strong> (vượt Ngày 3 đỉnh thèm + giữ động lực dài hạn)</li>
+<li>Thiếu 1 trong 2 → tỷ lệ vấp tăng cao</li>
+</ul>
+
+<p>Sol Hybrid v2 đặc biệt cho VN vì:</p>
+
+<ul>
+<li><strong>Tiếng Việt 100%</strong> — không có app Tây mơ "Hey buddy"</li>
+<li><strong>Bối cảnh VN</strong> — nhậu, đám giỗ, cà phê sáng, vợ giận, con nói "bố hôi"</li>
+<li><strong>Voice của Khang</strong> — anh em 45+ đã đi qua thật sự, không phải diễn viên</li>
+<li><strong>Pricing phù hợp túi tiền VN</strong> — 149-349k thay vì 200-500$ như app Tây</li>
+</ul>
+
+<h2>🟢 Combo NHẸ — Sol đơn lẻ (FTND 0-3)</h2>
+
+<div class="combo-card light">
+<p class="combo-name">Đối tượng phù hợp</p>
+<ul>
+<li>Hút &lt;10 điếu/ngày, &lt;5 năm</li>
+<li>Điếu đầu sau 45 phút khi dậy</li>
+<li>Lần đầu cai hoặc đã thử 1 lần</li>
+<li>Không có dấu hiệu trầm cảm</li>
+<li>Có động lực mạnh (con sắp sinh, sức khoẻ, vợ ủng hộ)</li>
+</ul>
+
+<p class="combo-name">Tại sao không cần thuốc?</p>
+<p>FTND nhẹ → triệu chứng cai thể chất nhẹ. Phần khó là tâm lý + thói quen — Sol giải quyết.</p>
+
+<p class="combo-name">Roadmap 35 ngày</p>
+<table>
+<thead><tr><th>Giai đoạn</th><th>Sol làm gì</th></tr></thead>
+<tbody>
+<tr><td><strong>Tuần 1 (Nhận Diện)</strong></td><td>Test FTND + nhận diện 5 tình huống thèm + Voice của Khang Ngày 0</td></tr>
+<tr><td><strong>Tuần 2 (Kiểm Soát)</strong></td><td>Ngày Quyết Định Day 8. Đợi 90 giây + AI 24/7 + Kế hoạch B</td></tr>
+<tr><td><strong>Tuần 3-5 (Làm Chủ)</strong></td><td>Củng cố thói quen mới. Báo cáo Ngày 21, 30, 35. Cộng đồng Khoảng Lặng</td></tr>
+<tr><td><strong>Sau Ngày 35</strong></td><td>Tốt nghiệp → Nhận Sổ Hành Trình PDF → Người Tự Do FREE mãi mãi</td></tr>
+</tbody>
+</table>
+
+<p class="combo-name">Chi phí + Hiệu quả ước</p>
+<ul>
+<li><strong>Tổng</strong>: 149k cho 35 ngày = ~4.3k/ngày = rẻ hơn 1 điếu Vinataba</li>
+<li><strong>Hiệu quả ước</strong>: 25-30/100 sạch 6 tháng (cao hơn bỏ đột ngột 3-5/100 nhiều)</li>
+</ul>
+</div>
+
+<h2>🟡 Combo VỪA — Sol + NRT (FTND 4-6)</h2>
+
+<div class="combo-card moderate">
+<p class="combo-name">Đối tượng phù hợp</p>
+<ul>
+<li>Hút 10-20 điếu/ngày, 5-15 năm</li>
+<li>Điếu đầu trong 15-45 phút khi dậy</li>
+<li>Đã thử cai 1-3 lần</li>
+<li>Triệu chứng cai trung bình (cáu gắt, mất ngủ, đau đầu)</li>
+<li>Tài chính 500k-1.2tr/tháng</li>
+</ul>
+
+<p class="combo-name">Tại sao cần NRT?</p>
+<p>FTND vừa → triệu chứng cai thể chất rõ. NRT (miếng dán) đưa nicotine sạch (không khói + hắc ín) → giảm 70% triệu chứng. Sol lo phần còn lại.</p>
+
+<p class="combo-name">Roadmap 52 ngày</p>
+<table>
+<thead><tr><th>Giai đoạn</th><th>NRT</th><th>Sol</th></tr></thead>
+<tbody>
+<tr><td><strong>Tuần 1 (Nhận Diện)</strong></td><td>Chưa dùng — đo baseline</td><td>Test FTND + nhận diện tình huống thèm</td></tr>
+<tr><td><strong>Tuần 2-3 (Kiểm Soát)</strong></td><td>Bắt đầu Nicotinell 21mg + kẹo Nicorette 2mg khi thèm</td><td>Ngày Quyết Định + Voice của Khang + AI 24/7</td></tr>
+<tr><td><strong>Tuần 4-6 (Làm Chủ — đầu)</strong></td><td>Giảm Nicotinell 14mg + bớt kẹo</td><td>Củng cố thói quen + Báo cáo Ngày 14, 21, 30</td></tr>
+<tr><td><strong>Tuần 7-8 (Làm Chủ — cuối)</strong></td><td>Nicotinell 7mg → 0</td><td>Cộng đồng Khoảng Lặng + chuẩn bị Tốt Nghiệp</td></tr>
+<tr><td><strong>Sau Ngày 52</strong></td><td>Sạch nicotine</td><td>Sổ Hành Trình PDF + Người Tự Do FREE</td></tr>
+</tbody>
+</table>
+
+<p class="combo-name">Chi phí + Hiệu quả ước</p>
+<ul>
+<li><strong>Sol</strong>: 249k (1 lần cho 52 ngày)</li>
+<li><strong>NRT đôi</strong>: ~500-700k/tháng × 2-3 tháng = 1-2.1 triệu</li>
+<li><strong>Tổng</strong>: ~1.7-2.4 triệu cho 52 ngày</li>
+<li><strong>Hiệu quả ước</strong>: 30-35/100 sạch 6 tháng (cao gấp 5-6 lần bỏ đột ngột)</li>
+</ul>
+</div>
+
+<h2>🔴 Combo NẶNG — Sol + Champix (FTND 7-10)</h2>
+
+<div class="combo-card heavy">
+<p class="combo-name">Đối tượng phù hợp</p>
+<ul>
+<li>Hút &gt;20 điếu/ngày, &gt;15 năm</li>
+<li>Điếu đầu trong 5-15 phút khi dậy</li>
+<li>Đã thử cai 2+ lần, fail</li>
+<li>Triệu chứng cai nặng (run tay, đổ mồ hôi đêm, cáu nặng)</li>
+<li>Có thể có biến chứng sức khoẻ (COPD nhẹ, huyết áp, tim mạch)</li>
+<li>Tài chính 1.5tr+/tháng</li>
+</ul>
+
+<p class="combo-name">Tại sao cần Champix?</p>
+<p>FTND nặng = lệ thuộc sâu, NRT đơn không đủ. Champix bám trực tiếp thụ thể nicotine — giảm 80% cơn thèm + chặn "phần thưởng" nếu lén hút lại. Hiệu quả cao nhất trong các thuốc cai (28/100 đơn lẻ).</p>
+
+<p class="combo-name">Roadmap 65 ngày</p>
+<table>
+<thead><tr><th>Giai đoạn</th><th>Champix</th><th>Sol</th></tr></thead>
+<tbody>
+<tr><td><strong>Tuần 0 (chuẩn bị)</strong></td><td>Khám BS hô hấp/tâm thần → kê đơn 12 tuần</td><td>Test FTND + đăng ký Sol NẶNG</td></tr>
+<tr><td><strong>Tuần 1 (Nhận Diện)</strong></td><td>Bắt đầu 0.5mg × 1/ngày → 0.5mg × 2/ngày</td><td>Voice của Khang + nhận diện tình huống thèm</td></tr>
+<tr><td><strong>Tuần 2 (Kiểm Soát đầu)</strong></td><td>Lên 1mg × 2/ngày. Ngày Quyết Định Day 8-10</td><td>AI 24/7 + Kế hoạch B + Đợi 90 giây</td></tr>
+<tr><td><strong>Tuần 3-6 (Kiểm Soát + Làm Chủ đầu)</strong></td><td>Giữ 1mg × 2/ngày</td><td>Báo cáo Ngày 14, 21, 30 + cộng đồng</td></tr>
+<tr><td><strong>Tuần 7-12 (Làm Chủ)</strong></td><td>Tiếp tục Champix đến hết 12 tuần</td><td>Củng cố danh tính mới — "Người Tự Do"</td></tr>
+<tr><td><strong>Sau Ngày 65</strong></td><td>Hết Champix. BS đánh giá có cần kéo dài thêm</td><td>Sổ Hành Trình PDF + Người Tự Do FREE</td></tr>
+</tbody>
+</table>
+
+<p class="combo-name">Chi phí + Hiệu quả ước</p>
+<ul>
+<li><strong>Sol</strong>: 349k (1 lần cho 65 ngày)</li>
+<li><strong>Champix</strong>: ~400-500k/tháng × 3 tháng = 1.2-1.5 triệu (BS kê, có thể BHYT)</li>
+<li><strong>Tổng</strong>: ~1.6-1.85 triệu cho 65 ngày</li>
+<li><strong>Hiệu quả ước</strong>: 30-40/100 sạch 6 tháng (cao gấp 7-10 lần bỏ đột ngột)</li>
+</ul>
+</div>
+
+<h2>So sánh 3 combo trong 1 bảng</h2>
+
+<table>
+<thead>
+<tr><th>Tiêu chí</th><th>🟢 NHẸ</th><th>🟡 VỪA</th><th>🔴 NẶNG</th></tr>
+</thead>
+<tbody>
+<tr><td>FTND</td><td>0-3</td><td>4-6</td><td>7-10</td></tr>
+<tr><td>Hút/ngày</td><td>&lt;10</td><td>10-20</td><td>&gt;20</td></tr>
+<tr><td>Tổng ngày</td><td>35</td><td>52</td><td>65</td></tr>
+<tr><td>Combo</td><td>Sol đơn</td><td>Sol + NRT đôi</td><td>Sol + Champix</td></tr>
+<tr><td>Tổng chi phí</td><td>149k</td><td>1.7-2.4tr</td><td>1.6-1.85tr</td></tr>
+<tr><td>Hiệu quả ước</td><td>25-30/100</td><td>30-35/100</td><td>30-40/100</td></tr>
+<tr><td>So với tự cai (bỏ đột ngột)</td><td>5-6x</td><td>6-7x</td><td>7-10x</td></tr>
+</tbody>
+</table>
+
+<h2>Tiết kiệm tiền thuốc lá so với combo Sol Hybrid</h2>
+
+<p>Tiền thuốc lá hằng tháng (Vinataba ~30k/bao):</p>
+
+<ul>
+<li>10 điếu/ngày = 0.5 bao = ~15k/ngày = <strong>~450k/tháng</strong></li>
+<li>20 điếu/ngày = 1 bao = <strong>~900k/tháng</strong></li>
+<li>30 điếu/ngày = 1.5 bao = <strong>~1.35 triệu/tháng</strong></li>
+</ul>
+
+<p>Cai 1 tháng tiết kiệm đủ:</p>
+
+<ul>
+<li>FTND nhẹ: cai 1 tháng tiết kiệm 450k → đủ trả 3 lộ trình NHẸ</li>
+<li>FTND vừa: cai 2 tháng tiết kiệm 1.8tr → đủ trả combo VỪA + dư</li>
+<li>FTND nặng: cai 1.5 tháng tiết kiệm 2tr → đủ trả combo NẶNG + dư</li>
+</ul>
+
+<p><strong>Combo Sol Hybrid v2 trả lại tiền cho anh trong 1-2 tháng cai thành công</strong>. Từ tháng 3 trở đi = lời.</p>
+
+<h2>Case studies — Sol Pilot Q1/2026</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">Anh Tâm — 48 tuổi, TPHCM, FTND 6 (Vừa)</div>
+<p>"Mình đã thử cai 3 lần — toàn ý chí. Lần thứ 4 thử Sol VỪA + miếng dán Nicotinell. Đến giờ sạch 47 ngày. Khác biệt lớn nhất: Voice của Khang Ngày 3 đỉnh thèm — anh ấy nói cụ thể những gì mình đang trải qua. Mình không bị một mình."</p>
+</div>
+
+<div class="khang-says">
+<div class="khang-says-label">Bác Hùng — 56 tuổi, Hà Nội, FTND 9 (Nặng), đã COPD</div>
+<p>"Bác sĩ Bạch Mai kê Champix. Mình thêm Sol vì sợ cô đơn. Cộng đồng Khoảng Lặng có anh em 50-60 tuổi như mình — chia sẻ thật. Tuần thứ 8 sạch hoàn toàn. Phổi đỡ hẳn — đi cầu thang 3 tầng không thở dồn nữa."</p>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL HYBRID V2 — VIỆT 45+</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Bắt đầu 7 ngày Sol miễn phí → test FTND → biết anh thuộc combo nào → Sol đề xuất cụ thể.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=decision-hybrid&utm_campaign=sol-hybrid-v2">Bắt đầu Sol Hybrid v2 →</a>
+</div>
+
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Sol Hybrid v2 là gì?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Chiến lược combo cai thuốc cá nhân hoá theo FTND cho anh em VN 45+. 3 combo: NHẸ (Sol đơn), VỪA (Sol + NRT), NẶNG (Sol + Champix).</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Combo Sol Hybrid hiệu quả thế nào so với đơn lẻ?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Hiệu quả gấp 2-3 lần phương pháp đơn lẻ (Cochrane + WHO). Sol Pilot Q1/2026: 35% sạch 30 ngày.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Combo Sol + Champix có an toàn không?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">An toàn nếu Champix do BS kê + theo dõi. Sol và Champix bổ sung nhau, không tương tác.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Tổng chi phí Sol Hybrid v2 bao nhiêu?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">NHẸ: 149k. VỪA: 1.7-2.4tr. NẶNG: 1.6-1.85tr. Cai 1-2 tháng = đã hồi vốn tiền thuốc lá tiết kiệm.</p></details>
+</div>
+
+<hr style="border:0;border-top:1px dashed #E8DFC8;margin:32px 0;">
+
+<p class="footer-meta">
+<strong>Bài liên quan:</strong> <a href="https://sol.vn/chon-phuong-phap-cai-thuoc-nao-phu-hop" style="color:#B25C2C;">Chọn phương pháp nào phù hợp</a> · <a href="https://sol.vn/phuong-phap-cai-thuoc-la-pho-bien" style="color:#B25C2C;">12 phương pháp cai thuốc</a> · <a href="https://sol.vn/champix-vs-nrt-vs-bupropion-chon-thuoc-cai-thuoc-nao" style="color:#B25C2C;">Champix vs NRT vs Bupropion</a>
+</p>
+<p class="footer-meta"><strong>Tác giả</strong>: Khang Sol — Sáng lập <a href="https://sol.vn" style="color:#B25C2C;">Sol Đi Cùng</a>.<br><strong>Nguồn bằng chứng</strong>: Cochrane 2023 + 2024 reviews, WHO Tobacco Cessation Guidelines 2024, Sol Pilot Q1/2026 internal data (30 anh em đầu).</p>
+<p class="footer-emergency"><strong>Lưu ý</strong>: Khang không phải bác sĩ. Champix là thuốc kê đơn — phải BS chỉ định. Sol không hứa cai 100%. Số liệu Pilot là dữ liệu nội bộ giới hạn — không phải nghiên cứu lâm sàng chính quy.<br><strong>Tổng đài cai thuốc BV Bạch Mai</strong>: <a href="tel:0888008866" style="color:#B25C2C;font-weight:700;">08

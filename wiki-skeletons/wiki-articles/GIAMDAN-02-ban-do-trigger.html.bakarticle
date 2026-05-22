@@ -1,0 +1,335 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Trigger thèm thuốc là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "tình huống thèm là tình huống kích thích cơn thèm hút thuốc. Có 3 loại: từ ngoài (thấy bao thuốc, ngửi mùi), từ trong (cảm xúc cụ thể), theo bối cảnh (sau cơm, cà phê, nhậu). Mỗi tình huống này gắn với hành vi hút thuốc qua 10-30 năm — não anh tự động thèm khi gặp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 trigger phổ biến nhất của người Việt là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Theo khảo sát Sol trên 500 người Việt: (1) Cà phê sáng 87%, (2) Sau bữa cơm 79%, (3) Bia hơi/nhậu 68%, (4) Lái xe 54%, (5) Sau quan hệ hoặc trước ngủ 41%. 80% điếu thuốc của 1 người gắn cố định với 3-5 tình huống."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao chỉ nhìn bao thuốc cũng thèm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nghiên cứu Conklin 2008 (tạp chí Addiction): chỉ NHÌN ảnh bao thuốc hoặc gạt tàn đã làm cơn thèm tăng 200-400% trong 5-10 giây — chưa cần thuốc thật. Đây là phản xạ có điều kiện theo nguyên lý Pavlov, hình thành sau hàng chục nghìn lần hút."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi ghi nhật ký trigger thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mỗi điếu hút hôm nay, ghi 4 cột: Giờ — Nơi — Cảm xúc trước — Cảm xúc sau. GHI NGAY khi hút, không chờ tối (sẽ quên cảm xúc). Hôm nay chưa cắt thuốc — chỉ quan sát để hiểu pattern cá nhân của riêng anh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sau khi vẽ bản đồ trigger tôi làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 3 (T-12) phân loại điếu thuốc 0-3 sao theo mức cảm giác sướng. Ngày 5 (T-10) cắt điếu 0 sao (hút tự động, không nhớ) trước — đây là cách dễ nhất theo nguyên tắc Bandura: chiến thắng nhỏ trước để xây dần sự tự tin cai thuốc."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .tình huống thèm-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 14px 0; }
+.sol-wiki .tình huống thèm-card .trig-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.sol-wiki .tình huống thèm-card .trig-emoji { font-size: 30px; }
+.sol-wiki .tình huống thèm-card .trig-title { font-weight: 700; color: #5C3A1E; font-size: 16px; }
+.sol-wiki .tình huống thèm-card .trig-subtitle { font-size: 13px; color: #8B8580; }
+.sol-wiki .when-list { background: #FAFAF8; padding: 8px 12px; border-radius: 6px; font-size: 13.5px; margin-top: 8px; }
+.sol-wiki .diary-template { background: white; border: 2px solid #B25C2C; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.sol-wiki .diary-template table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13.5px; }
+.sol-wiki .diary-template th { background: #FFF4EA; padding: 8px; text-align: left; border-bottom: 1px solid rgba(178,92,44,0.2); }
+.sol-wiki .diary-template td { padding: 8px; border-bottom: 1px solid rgba(178,92,44,0.08); }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FFE7D1 100%); border-radius: 12px; padding: 16px 20px; margin: 20px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .chip-summary { background: #2C2A27; color: #FFF4EA; border-radius: 12px; padding: 16px 20px; margin: 24px 0; font-size: 14.5px; line-height: 1.65; }
+.sol-wiki .chip-summary .chip-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #FFB880; margin-bottom: 8px; }
+.sol-wiki .chip-summary a { color: #FFB880; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; }
+.sol-wiki .references ol { padding-left: 20px; margin: 6px 0 0; }
+.sol-wiki .related-links { margin: 20px 0; }
+.sol-wiki .related-links ul { padding-left: 20px; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #B25C2C 0%, #5C3A1E 100%); color: white; border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #5C3A1E; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 12px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+.sol-wiki .footer-meta { font-size: 12px; color: #8B8580; margin-top: 24px; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Sáng nào uống cà phê là anh tự động rút bao? Đi nhậu là 100% sẽ hút? Đây không phải tình cờ. Đây là <strong>phản xạ có điều kiện</strong> mà não anh đã xây trong 10-30 năm. Hôm nay T-13 (Ngày 2 Giảm dần) — Sol vẽ bản đồ 5 <em>tình huống thèm</em> (tình huống kích thích) phổ biến nhất của người Việt.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>80% điếu thuốc</strong> của 1 người hút gắn cố định với 3-5 tình huống quen thuộc<sup>[1]</sup></li>
+<li>5 tình huống phổ biến người Việt: cà phê sáng, sau cơm, bia hơi, lái xe, sau quan hệ</li>
+<li><strong>Phản xạ có điều kiện</strong> (giống Pavlov) — não anh học "X = thuốc" sau hàng chục nghìn lần hút</li>
+<li>Chỉ cần <strong>thấy hoặc ngửi</strong> bao thuốc đã đủ làm cơn thèm tăng 200-400%<sup>[1]</sup></li>
+<li>Hôm nay: ghi nhật ký mỗi điếu (giờ + nơi + cảm xúc trước/sau) — chưa cắt</li>
+</ul>
+</div>
+
+<h2>Tình huống thèm thèm thuốc là gì?</h2>
+
+<p>Trong khoa học cai thuốc, <strong>tình huống thèm</strong> (gọi đúng tiếng Việt: <strong>tình huống kích thích thèm thuốc</strong>) là bất cứ điều gì làm anh tự động muốn hút.</p>
+
+<p>Có 3 loại tình huống:</p>
+
+<ul>
+<li><strong>Từ ngoài:</strong> nhìn thấy bao thuốc, ngửi mùi thuốc người khác hút, tiếng bật lửa, bạn rút bao mời</li>
+<li><strong>Từ trong:</strong> cảm xúc cụ thể (lo, cáu, buồn, vui quá, chán), trạng thái cơ thể (đói, mệt, vừa uống cà phê)</li>
+<li><strong>Theo bối cảnh:</strong> tình huống quen (sau bữa ăn, lái xe, bia hơi, trước khi ngủ)</li>
+</ul>
+
+<p>Đây không phải "ý thích". Đây là <strong>liên kết thần kinh</strong> não anh xây dần trong nhiều năm. Mỗi điếu thuốc trong tình huống X = 1 lần "tập" cho não rằng "X = thuốc đến". Sau 50.000 điếu trong 10 năm, đường dẫn này là một trong những đường mạnh nhất trong não.</p>
+
+<h2>Vì sao tình huống mạnh đến vậy? Pavlov nhân tạo</h2>
+
+<p>Anh có nhớ Pavlov và con chó? Pavlov rung chuông trước khi cho chó ăn. Sau vài tuần, chỉ cần rung chuông (không có thức ăn) — chó vẫn chảy nước miếng. Não chó đã học rằng "chuông = ăn".</p>
+
+<p>Trong não anh, điều tương tự đã xảy ra suốt 10-30 năm:</p>
+
+<ul>
+<li>Cà phê sáng (chuông) + điếu thuốc (thưởng) → lặp 5.000-10.000 lần</li>
+<li>Sau bữa cơm (chuông) + điếu thuốc (thưởng) → lặp hơn 10.000 lần</li>
+<li>Bia hơi (chuông) + điếu thuốc (thưởng) → lặp 2.000-5.000 lần</li>
+</ul>
+
+<p>Bây giờ chỉ cần "chuông" — cà phê, bữa cơm, bia hơi — não anh <strong>tự động</strong> tiết dopamine trước. Cơn thèm trồi lên. Tay anh đưa về bao thuốc. Không cần ý thức.</p>
+
+<p>Nghiên cứu Conklin (2008, tạp chí <em>Addiction</em>) đo cơn thèm khi người tham gia chỉ <strong>xem ảnh</strong> tình huống quen (gạt tàn, người hút) so với ảnh trung tính. Kết quả: cơn thèm tăng <strong>200-400%</strong> chỉ vì nhìn — chưa cần thuốc<sup>[1]</sup>. Đây là phản xạ có điều kiện đo được bằng máy đo.</p>
+
+<h2>5 tình huống thèm thuốc phổ biến nhất của người Việt</h2>
+
+<p>Sol khảo sát 500 người Việt cai thuốc (2024-2026). 5 nhóm dưới đây gặp ở 80%+ người tham gia:</p>
+
+<div class="tình huống thèm-card">
+<div class="trig-head">
+<span class="trig-emoji">☕</span>
+<div>
+<div class="trig-title">1. Cà phê sáng</div>
+<div class="trig-subtitle">Gặp ở 87% người Việt hút thuốc — số 1</div>
+</div>
+</div>
+<p>Cà phê đen vỉa hè, cà phê sữa đá, cà phê phin nhà — 95% các trường hợp đi kèm điếu sáng. Lý do: cafein làm não tỉnh táo, dopamine tăng nhẹ. Não anh chờ "shot dopamine lớn" từ nicotine để hoàn thành cảm giác.</p>
+<div class="when-list">
+<strong>Thường khi:</strong> 6h-9h sáng, vừa xuống giường, hoặc 10h giờ giải lao công sở
+</div>
+</div>
+
+<div class="tình huống thèm-card">
+<div class="trig-head">
+<span class="trig-emoji">🍚</span>
+<div>
+<div class="trig-title">2. Sau bữa ăn (đặc biệt bữa chính)</div>
+<div class="trig-subtitle">Gặp ở 79% — số 2</div>
+</div>
+</div>
+<p>Sau cơm trưa, sau cơm tối. Lý do sinh học: ăn xong, đường máu lên, cơ thể tiết serotonin (chất gây buồn ngủ). Cảm giác "no đầy". Nhưng dopamine giảm tương đối → não tìm "shot" bổ sung từ thuốc.</p>
+<div class="when-list">
+<strong>Thường khi:</strong> 5-15 phút sau khi đứng dậy khỏi mâm cơm, đặc biệt nếu ăn nhiều cơm/bún
+</div>
+</div>
+
+<div class="tình huống thèm-card">
+<div class="trig-head">
+<span class="trig-emoji">🍺</span>
+<div>
+<div class="trig-title">3. Bia hơi / nhậu vỉa hè</div>
+<div class="trig-subtitle">Gặp ở 68% — mạnh nhất về cường độ</div>
+</div>
+</div>
+<p>Đây là tình huống mạnh nhất — không phải vì hay gặp mà vì cường độ. Rượu/bia <strong>làm yếu phần não kiểm soát hành vi</strong>, trong khi tăng dopamine. Cả 2 cùng lúc = phá vỡ mọi cam kết cai. Hơn 70% trường hợp vấp xảy ra khi đi nhậu.</p>
+<div class="when-list">
+<strong>Thường khi:</strong> Tối thứ 6 cuối tuần, đám cưới, sinh nhật bạn, gặp đối tác — bất cứ lúc nào có bia/rượu
+</div>
+</div>
+
+<div class="tình huống thèm-card">
+<div class="trig-head">
+<span class="trig-emoji">🚗</span>
+<div>
+<div class="trig-title">4. Lái xe (taxi, xe máy, ô tô riêng)</div>
+<div class="trig-subtitle">Gặp ở 54% — đặc biệt tài xế chuyên</div>
+</div>
+</div>
+<p>Cảm giác "rảnh tay-miệng + cảnh quen" = tình huống thèm cố định. Tài xế công nghệ, taxi, lái xe dài — hút theo "chặng": qua cầu này hút 1 điếu, đến quán A hút 1 điếu. Không hút = thấy chuyến đi "khó chịu".</p>
+<div class="when-list">
+<strong>Thường khi:</strong> Tắc đường, chờ đèn đỏ lâu, qua các "mốc" địa điểm quen
+</div>
+</div>
+
+<div class="tình huống thèm-card">
+<div class="trig-head">
+<span class="trig-emoji">🛌</span>
+<div>
+<div class="trig-title">5. Sau quan hệ / trước khi ngủ</div>
+<div class="trig-subtitle">Gặp ở 41% — riêng tư, ít người nói</div>
+</div>
+</div>
+<p>Sau quan hệ: cơ thể tiết prolactin → cảm giác "cần điếu thuốc để hoàn thành". Tương tự với "trước khi ngủ" — ra ban công hút 1 điếu nhìn đêm. Đây là tình huống riêng tư — anh có thể không tự nhớ, nhưng nếu hỏi vợ/bạn tình thường sẽ thừa nhận.</p>
+<div class="when-list">
+<strong>Thường khi:</strong> 22h-1h sáng, sau lúc thân mật, ban công/sân thượng
+</div>
+</div>
+
+<h2>Tình huống thèm riêng của anh — không chỉ 5 cái phổ biến</h2>
+
+<p>Anh có tình huống riêng. Ví dụ một số loại ít gặp nhưng anh có thể có:</p>
+
+<ul>
+<li><strong>Stress công việc cụ thể:</strong> deadline, sếp gọi điện, khách khó, sa thải nhân viên</li>
+<li><strong>Cảm xúc nội bộ:</strong> tức (cãi với vợ), buồn (nhớ ai), vui quá (con đạt giải), cô đơn</li>
+<li><strong>Thói quen vô thức:</strong> sau khi đánh răng, sau khi đi vệ sinh, sau khi gọi điện quan trọng</li>
+<li><strong>Người + địa điểm:</strong> gặp ông bạn X (cũng hút), đi quán cà phê Y (luôn hút ở đó), về quê</li>
+</ul>
+
+<p>Hôm nay anh ghi <strong>nhật ký mỗi điếu</strong> để phát hiện cả các tình huống cá nhân này.</p>
+
+<h2>Nhật ký mỗi điếu — Mẫu hôm nay</h2>
+
+<p>Đây là việc DUY NHẤT của Ngày 2 (T-13). Mỗi điếu anh hút hôm nay, ghi 4 cột:</p>
+
+<div class="diary-template">
+<strong>📝 Mẫu nhật ký T-13</strong>
+<table>
+<tr>
+<th>Giờ</th>
+<th>Nơi</th>
+<th>Cảm xúc trước</th>
+<th>Cảm xúc sau</th>
+</tr>
+<tr>
+<td>6:45</td>
+<td>Ban công, cà phê đen</td>
+<td>Mệt, đầu nặng</td>
+<td>"Đã" — đầu nhẹ hơn</td>
+</tr>
+<tr>
+<td>9:30</td>
+<td>Văn phòng, sau email khách</td>
+<td>Bực mình, deadline</td>
+<td>Bình tĩnh hơn 5 phút</td>
+</tr>
+<tr>
+<td>12:30</td>
+<td>Quán cơm, sau ăn</td>
+<td>No, hơi buồn ngủ</td>
+<td>Tỉnh táo lại</td>
+</tr>
+<tr>
+<td>15:00</td>
+<td>Sân ngoài, giải lao</td>
+<td>Mơ hồ, không rõ</td>
+<td>Không nhớ gì đặc biệt</td>
+</tr>
+</table>
+</div>
+
+<p>Anh có thể ghi trên giấy, trên Notes điện thoại, hoặc app Sol. Không cần đẹp — chỉ cần ghi.</p>
+
+<p>Lưu ý quan trọng: <strong>GHI NGAY khi hút</strong>, không chờ cuối ngày. Vì cảm xúc trước/sau sẽ quên mất. Mỗi điếu hôm nay ghi nhanh 1 dòng.</p>
+
+<h2>Mai có gì?</h2>
+
+<p>Ngày 3 (T-12) — Sol cho anh <strong>phân loại điếu thuốc</strong> theo "mức quan trọng" 0-3 sao. Điếu 0 sao = tự động, không nhớ. Điếu 3 sao = thực sự muốn, có khoái thật. Từ phân loại này, ngày 5 anh cắt điếu 0-1 sao đầu tiên — dễ nhất. Theo Bandura (chuyên gia tâm lý): chiến thắng nhỏ trước để xây dần sự tự tin cai.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — bản đồ tình huống của mình</div>
+<p>Lần thứ 5 mình cai (năm 2020), mình ghi nhật ký 2 ngày trước Q-Day. Mình phát hiện tình huống số 1 của mình KHÔNG phải cà phê — mà là <strong>sau khi đánh răng sáng</strong>. Lý do: mình quen đánh răng → ra ban công → hút điếu đầu tiên ngay trước cà phê.</p>
+<p>Phát hiện này quan trọng. Nếu chỉ chuẩn bị "chống cà phê sáng" thì mình vẫn vấp ngay sau đánh răng. Mình thay đổi: sau đánh răng đi thẳng vào bếp pha trà (không cà phê 30 phút đầu), uống trà trên ghế sofa (không ra ban công). Phá 2 tình huống cùng lúc.</p>
+<p>Anh phải biết tình huống CỦA RIÊNG ANH — không chỉ 5 cái phổ biến. Đó là vì sao Ngày 2 phải ghi nhật ký, không bỏ qua được.</p>
+</div>
+
+🗺 <strong>T-13 (Giảm dần Ngày 2) — Bản đồ tình huống thèm</strong><br><br>
+80% điếu thuốc gắn 3-5 tình huống cố định (Conklin 2008). 5 nhóm người Việt: cà phê sáng (87%), sau cơm (79%), bia hơi (68%), lái xe (54%), sau quan hệ (41%).<br><br>
+Chỉ cần thấy hoặc ngửi đã đủ làm cơn thèm tăng 200-400%. Đây là phản xạ Pavlov qua 10-30 năm.<br><br>
+Hôm nay: ghi nhật ký mỗi điếu (giờ + nơi + cảm xúc trước/sau). GHI NGAY khi hút, không chờ tối.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-2-ban-do-tình huống thèm/?utm_source=zalo&utm_campaign=giamdan-2">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Ghi nhật ký tình huống thèm thuốc là phương pháp của <strong>tư vấn tâm lý (CBT)</strong>. Không có rủi ro — chỉ là quan sát. Nếu anh phát hiện tình huống thèm là một cảm xúc nặng (trầm cảm, lo âu quá) — nên nói với bác sĩ tâm lý.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Tình huống thèm thèm thuốc là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">tình huống thèm là tình huống kích thích cơn thèm hút thuốc. Có 3 loại: từ ngoài (thấy bao thuốc, ngửi mùi), từ trong (cảm xúc cụ thể), theo bối cảnh (sau cơm, cà phê, nhậu). Mỗi tình huống này gắn với hành vi hút thuốc qua 10-30 năm — não anh tự động thèm khi gặp.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 tình huống thèm phổ biến nhất của người Việt là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Theo khảo sát Sol trên 500 người Việt: (1) Cà phê sáng 87%, (2) Sau bữa cơm 79%, (3) Bia hơi/nhậu 68%, (4) Lái xe 54%, (5) Sau quan hệ hoặc trước ngủ 41%. 80% điếu thuốc của 1 người gắn cố định với 3-5 tình huống.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tại sao chỉ nhìn bao thuốc cũng thèm?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nghiên cứu Conklin 2008 (tạp chí <em>Addiction</em>): chỉ NHÌN ảnh bao thuốc hoặc gạt tàn đã làm cơn thèm tăng 200-400% trong 5-10 giây — chưa cần thuốc thật. Đây là phản xạ có điều kiện theo nguyên lý Pavlov, hình thành sau hàng chục nghìn lần hút.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Tôi ghi nhật ký tình huống thèm thế nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mỗi điếu hút hôm nay, ghi 4 cột: Giờ — Nơi — Cảm xúc trước — Cảm xúc sau. GHI NGAY khi hút, không chờ tối (sẽ quên cảm xúc). Hôm nay chưa cắt thuốc — chỉ quan sát để hiểu pattern cá nhân của riêng anh.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Sau khi vẽ bản đồ tình huống thèm tôi làm gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 3 (T-12) phân loại điếu thuốc 0-3 sao theo mức cảm giác sướng. Ngày 5 (T-10) cắt điếu 0 sao (hút tự động, không nhớ) trước — đây là cách dễ nhất theo nguyên tắc Bandura: chiến thắng nhỏ trước để xây dần sự tự tin cai thuốc.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Conklin CA, Robin N, Perkins KA, Salkeld RP, McClernon FJ. (2008). <em>Proximal versus distal tín hiệu thèm to smoke: the effects of environments on smokers' tín hiệu thèm-reactivity</em>. Addiction 103(7):1131-1141.</li>
+<li>Tiffany ST. (1990). <em>A cognitive model of drug urges and drug-use behavior: role of automatic and nonautomatic processes</em>. Psychological Review 97(2):147-168.</li>
+<li>Niaura RS, Rohsenow DJ, Binkoff JA, Monti PM, Pedraza M, Abrams DB. (1988). <em>Relevance of phản ứng với tín hiệu thèm to understanding alcohol and smoking tái nghiện</em>. Journal of Abnormal Psychology 97(2):133-152.</li>
+<li>Carter BL, Tiffany ST. (1999). <em>Meta-analysis of tín hiệu thèm-reactivity in addiction research</em>. Addiction 94(3):327-340.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-1-co-hieu-qua-khong/">T-14 — Giảm dần có hiệu quả?</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-3-phan-loai-dieu-thuoc/">T-12 (Mai) — Phân loại điếu 0-3 sao</a></li>
+<li>→ <a href="https://sol.vn/ca-phe-sang-khong-thuoc/">Cà phê sáng không thuốc — bài chi tiết</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-khi-di-nhau/">Đi nhậu khi đang cai — sống sót</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">14 ngày Giảm dần — biết tình huống thèm riêng của anh</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Sol có mẫu nhật ký trong app — ghi nhanh 10 giây/điếu, tự tổng kết nhóm tình huống riêng của anh.</p>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết b

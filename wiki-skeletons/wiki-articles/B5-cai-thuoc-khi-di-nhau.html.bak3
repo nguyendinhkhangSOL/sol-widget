@@ -1,0 +1,302 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "7 cách thực tế cai thuốc khi đi nhậu là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nhắn 1 người thân trong nhóm (bạn thân nhất / em trai / đồng nghiệp tin tưởng) TRƯỚC KHI ĐI: \"Tao đang cai thuốc. Tối nay nhậu — nếu mày thấy tao cầm điếu, kéo tao ra ngoài 1 phút.\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu chuyện Khang — đám cưới Day 25 mình suýt fail là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Day 25 sau Quyết Định lần 5, mình đi đám cưới bạn cùng đại học. Bia rót đầy, có 4 bạn cũ — tất cả hút thuốc. Bạn rút bao Vinataba quen của mình ngày xưa, ra mời:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tip đặc biệt cho 3 dịp nhậu khó nhất ở Việt Nam là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anh em sẽ ép nhiều. Tip: ngồi cạnh người không hút (vợ, bà chị, đồng nghiệp nữ). Người ngồi cạnh không châm = anh không bị nhắc liên tục. Ngồi gần bàn lễ tân → có cớ \"ra xe lấy quà\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em recommend CÓ — kiêng bia/rượu 30-60 ngày đầu khi cai thuốc. Cồn = tình huống thèm lớn nhất tái phát. Nếu không thể kiêng (lý do công việc/xã hội), áp dụng 7 cách trên + hạn chế <2 ly."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI B5 — Cai Thuốc Lá Khi Đi Nhậu (P0, vol 500/tháng)
+  Focus keyword: "cai thuốc khi đi nhậu"
+  Target intent: situational — anh em đang cai sợ moment nhậu
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .quote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 20px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .scenario { background: white; border: 1px solid #E8DFC8; border-radius: 12px; padding: 18px 22px; margin: 14px 0; }
+.sol-wiki .scenario-tình huống thèm { font-size: 13px; font-weight: 700; color: #DC2626; background: #FEE2E2; padding: 4px 10px; border-radius: 999px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.5px; text-transform: uppercase; }
+.sol-wiki .scenario-script { background: #DCFCE7; border-left: 4px solid #16A34A; padding: 10px 14px; margin: 10px 0; border-radius: 6px; font-size: 14px; }
+.sol-wiki .scenario-script strong { color: #16A34A; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li { margin-bottom: 6px; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">
+Anh đã cai thuốc 2-3 tuần, ổn rồi. Bỗng có cuộc nhậu — đám tiệc, đối tác, anh em rủ. Bia vào, có bạn rút thuốc mời: <em>"Anh một điếu nhé!"</em> Tim anh đập nhanh, tay đã muốn cầm. Đây là <strong>"Moment of Truth"</strong> mà 60% người cai thuốc tái phát ở đây (West & Brown 2013). Bài này em chỉ <strong>7 cách thực tế để cai thuốc khi đi nhậu</strong> — từ trải nghiệm 5 năm Tự do của mình + tips anh em pilot đã làm.
+</p>
+
+<h2>Vì sao nhậu là "Moment of Truth" của cai thuốc?</h2>
+
+<p>4 lý do khoa học:</p>
+
+<h3>1. Cồn làm ý chí YẾU đi</h3>
+<p>Cồn ức chế prefrontal cortex (não trán — vùng kiểm soát) trong 2-3 giờ sau khi uống. Nghiên cứu Goldstein 2002: 1-2 ly bia/rượu giảm 30% khả năng "say NO" với cám dỗ. Đây là sinh học, không phải tính cách.</p>
+
+<h3>2. Cồn + Nicotine = combo dopamine</h3>
+<p>Não anh đã wire 30 năm: <strong>uống bia → châm thuốc → cảm giác đỉnh</strong>. Đây là cue-induced cơn thèm — chỉ cần mùi bia, tiếng cụng ly, đèn quán nhậu là não phát tín hiệu thèm. Brody 2006: receptor nicotinic kích hoạt mạnh hơn khi có cồn.</p>
+
+<h3>3. Áp lực xã hội mạnh</h3>
+<p>Văn hoá Việt: anh em mời thuốc = thể hiện tình cảm. Từ chối = "anh không hoà đồng". Nhiều anh em sợ "bị nói" hơn là sợ tái phát.</p>
+
+<h3>4. "Chỉ 1 điếu thôi" — bẫy tâm lý</h3>
+<p>Trong cuộc nhậu, anh tự nói "chỉ 1 điếu thôi cho vui, mai cai lại". Brody 2006 PET scan: 1 điếu saturated 88% receptor nicotinic → reset toàn bộ tiến trình. Hôm sau anh sẽ hút 5 điếu, ngày sau 10 điếu, tuần sau 20.</p>
+
+<h2>7 cách thực tế cai thuốc khi đi nhậu</h2>
+
+<h3>Cách 1 — Báo trước 1 người trong nhóm</h3>
+
+<div class="scenario">
+<div class="scenario-tình huống thèm">TRƯỚC KHI ĐI NHẬU</div>
+<p>Nhắn 1 người thân trong nhóm (bạn thân nhất / em trai / đồng nghiệp tin tưởng) <strong>TRƯỚC KHI ĐI</strong>: <em>"Tao đang cai thuốc. Tối nay nhậu — nếu mày thấy tao cầm điếu, kéo tao ra ngoài 1 phút."</em></p>
+
+<div class="scenario-script">
+<strong>Câu nhắn mẫu</strong>: "Em, tối nay anh nhậu công ty. Anh đang cai thuốc Day 25. Nếu anh có cầm điếu, em kêu anh 'anh ra xe lấy chìa khoá giúp em'. Anh hiểu liền."
+</div>
+
+<p>Lý do: tự ý chí 1 mình trong cuộc nhậu yếu. Có người "kéo ra" 1 phút = đủ để cơn thèm tan.</p>
+</div>
+
+<h3>Cách 2 — Đặt câu trả lời sẵn (ai cũng hỏi giống nhau)</h3>
+
+<div class="scenario">
+<div class="scenario-tình huống thèm">KHI BẠN RÚT THUỐC MỜI</div>
+
+<p>Câu phổ biến: <em>"Anh em hút 1 điếu nào!"</em></p>
+
+<p>Đáp án mạnh + nhẹ + tự hào:</p>
+
+<div class="scenario-script">
+<strong>Đáp 1</strong> (nhẹ + thật): "Tao đang cai. Tuần thứ 3 rồi. Cảm ơn mày, tối nay không."<br><br>
+<strong>Đáp 2</strong> (vui + tự hào): "Tao thử dừng 1 tháng xem da có sáng hơn không. Vợ tao đố."<br><br>
+<strong>Đáp 3</strong> (y khoa): "Bác sĩ doạ huyết áp, kiêng 1 thời gian."<br><br>
+<strong>Đáp 4</strong> (đùa): "Đang gom tiền sửa xe — 300k/tháng tiền thuốc."
+</div>
+
+<p>Quan trọng: <strong>nói 1 lần là đủ</strong>. Nói 3-4 lần thành chủ đề. Nếu bị ép tiếp, lặp lại y nguyên câu trả lời — đừng tranh luận.</p>
+</div>
+
+<h3>Cách 3 — Thay tay cầm thuốc bằng "cái gì đó"</h3>
+
+<div class="scenario">
+<div class="scenario-tình huống thèm">SUỐT CUỘC NHẬU</div>
+
+<p>Tay anh quen cầm 1 cái gì đó. Não thèm khi tay rỗng. Giải pháp: <strong>cầm ly bia / chén nước trà / hạt dưa / lạc rang luôn luôn</strong>.</p>
+
+<div class="scenario-script">
+<strong>Tip cụ thể</strong>:<br>
+- Tay phải: ly bia (cụng + nhâm nhi)<br>
+- Tay trái: hạt dưa / khô bò / lạc<br>
+- Khi cụng ly: 2 tay cầm — KHÔNG đặt xuống<br>
+- Khi đi WC: vẫn cầm hạt dưa
+</div>
+
+<p>Nghiên cứu: thay habit motor (động tác tay) hiệu quả hơn ý chí cố nén thèm.</p>
+</div>
+
+<h3>Cách 4 — Đi WC mỗi 30 phút (reset não)</h3>
+
+<div class="scenario">
+<div class="scenario-tình huống thèm">MỖI 30 PHÚT</div>
+
+<p>Vào WC 2-3 phút mỗi 30 phút. Tách khỏi bàn nhậu = tách khỏi cue. Trong WC:</p>
+
+<div class="scenario-script">
+<strong>Thở 4-7-8</strong>: hít 4s → giữ 7s → thở ra 8s, lặp 3 lần = 1 phút<br>
+<strong>Đọc 1 lý do</strong>: anh đã viết 3 lý do trên note điện thoại — đọc 1 cái<br>
+<strong>Uống nước</strong>: 1 cốc nước lạnh, sốc nhiệt độ
+</div>
+
+<p>Quay lại bàn → não đã reset. Cơn thèm yếu hơn.</p>
+</div>
+
+<h3>Cách 5 — Uống bia chậm + đan xen nước</h3>
+
+<div class="scenario">
+<div class="scenario-tình huống thèm">SUỐT CUỘC NHẬU</div>
+
+<p>Cồn ức chế ý chí. Uống ÍT cồn = ý chí mạnh hơn.</p>
+
+<div class="scenario-script">
+<strong>Quy tắc 1-1</strong>: 1 ly bia + 1 ly nước lọc xen kẽ<br>
+<strong>Quy tắc 30 phút</strong>: 1 ly bia tối đa 30 phút<br>
+<strong>Quy tắc 4 ly</strong>: tối đa 4 ly cả buổi (không bia/rượu)
+</div>
+
+<p>Bonus: anh em trêu "uống ít quá" → đáp "đang chạy xe", "vợ doạ", "đang uống thuốc" — đều OK.</p>
+</div>
+
+<h3>Cách 6 — Có "cứu cánh" cuối buổi</h3>
+
+<div class="scenario">
+<div class="scenario-tình huống thèm">QUAN TRỌNG NHẤT</div>
+
+<p>Đặt sẵn cuộc gọi giả từ vợ / con / sếp lúc 22h00 hoặc 23h00. Khi nhậu kéo dài, anh có cớ về.</p>
+
+<div class="scenario-script">
+<strong>Setup trước</strong>: nhắn vợ trước "lúc 22h em gọi anh, anh có cớ về nha"<br>
+<strong>Hoặc</strong>: hẹn đồng nghiệp khác "8h tối mai họp sớm, mình về"<br>
+<strong>Hoặc</strong>: đặt báo thức 22h trên điện thoại = "có việc"
+</div>
+
+<p>Nhậu kéo dài quá 3 tiếng = ý chí yếu nhất, rủi ro tái phát cao nhất. Về sớm = về an toàn.</p>
+</div>
+
+<h3>Cách 7 — Hậu nhậu — kế hoạch "đi về"</h3>
+
+<div class="scenario">
+<div class="scenario-tình huống thèm">SAU KHI VỀ NHÀ</div>
+
+<p>Về nhà sau nhậu = thời điểm dễ "cuối ngày 1 điếu nữa nhé". Giải pháp:</p>
+
+<div class="scenario-script">
+<strong>Bước 1</strong>: đánh răng ngay khi về (vị giác sạch = không thèm thuốc)<br>
+<strong>Bước 2</strong>: uống 2 ly nước lớn (giải cồn)<br>
+<strong>Bước 3</strong>: tắm nước ấm 5 phút (relax)<br>
+<strong>Bước 4</strong>: đi ngủ ngay (KHÔNG ra ban công, KHÔNG hút cuối ngày)
+</div>
+
+<p>Nếu anh trong tuần đầu cai → khả năng cao thèm sáng sau khi tỉnh dậy. Sẵn sàng bằng nước + bài thở 4-7-8 lúc thức.</p>
+</div>
+
+<h2>Câu chuyện Khang — đám cưới Day 25 mình suýt fail</h2>
+
+<p>Day 25 sau Quyết Định lần 5, mình đi đám cưới bạn cùng đại học. Bia rót đầy, có 4 bạn cũ — tất cả hút thuốc. Bạn rút bao Vinataba quen của mình ngày xưa, ra mời:</p>
+
+<p><em>"Khang ơi, hút 1 điếu cho vui!"</em></p>
+
+<p>Tim mình đập mạnh. Mùi thuốc lá quen thuộc. Cồn đã ngấm 2 ly. Tay mình đã giơ ra...</p>
+
+<p>Đột nhiên mình nhớ: 25 ngày qua. Voice Khang trên app (giọng mình cách đây 25 ngày): <em>"Mình đã quyết định rồi. Mình không hút."</em></p>
+
+<p>Mình rút tay lại. Nói: <em>"Cảm ơn anh em, tao đang cai. Vợ doạ, sợ vợ hơn sợ ung thư."</em> Anh em cười. Câu chuyện chuyển sang chủ đề khác.</p>
+
+<p>Mình đi WC, thở 4-7-8 3 chu kỳ. Uống nước. Quay lại bàn. Còn lại 1 tiếng nhậu — mình uống 1 ly bia + 2 ly nước xen kẽ. Về sớm 22h.</p>
+
+<p>Đến nay 5 năm Tự do. Nếu mình hút 1 điếu đêm đó, có thể mình đã hút lại đến hôm nay.</p>
+
+<p><a href="https://sol.vn/khang-sol" style="color: #B25C2C; font-weight: 600;">Đọc câu chuyện đầy đủ →</a></p>
+
+<h2>Tip đặc biệt cho 3 dịp nhậu khó nhất ở Việt Nam</h2>
+
+<h3>Tiệc cưới / đám hỏi</h3>
+
+<p>Anh em sẽ ép nhiều. Tip: ngồi cạnh người không hút (vợ, bà chị, đồng nghiệp nữ). Người ngồi cạnh không châm = anh không bị nhắc liên tục. Ngồi gần bàn lễ tân → có cớ "ra xe lấy quà".</p>
+
+<h3>Đám giỗ ông cụ / bố vợ</h3>
+
+<p>Văn hoá: trưởng tộc mời thuốc = phải nhận. Tip: <strong>báo bố vợ TRƯỚC</strong> nửa tháng. "Bố ơi con đang cai thuốc Day 20. Bố giúp con đừng đưa thuốc nhé, con không từ chối được bố." Bố vợ sẽ vui — vì anh kính trọng + đang làm điều tốt.</p>
+
+<h3>Nhậu đối tác / cơ quan</h3>
+
+<p>Tip: đến đúng giờ, về sớm 30 phút (lý do: "vợ con đợi", "8h sáng họp sớm"). Trong 2-3 giờ đầu — ý chí còn mạnh. Sau giờ thứ 3 = vùng nguy hiểm. Tránh.</p>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. 7 cách thực tế cai thuốc khi đi nhậu là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nhắn 1 người thân trong nhóm (bạn thân nhất / em trai / đồng nghiệp tin tưởng) TRƯỚC KHI ĐI: "Tao đang cai thuốc. Tối nay nhậu — nếu mày thấy tao cầm điếu, kéo tao ra ngoài 1 phút."</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Câu chuyện Khang — đám cưới Day 25 mình suýt fail là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Day 25 sau Quyết Định lần 5, mình đi đám cưới bạn cùng đại học. Bia rót đầy, có 4 bạn cũ — tất cả hút thuốc. Bạn rút bao Vinataba quen của mình ngày xưa, ra mời:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tip đặc biệt cho 3 dịp nhậu khó nhất ở Việt Nam là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Anh em sẽ ép nhiều. Tip: ngồi cạnh người không hút (vợ, bà chị, đồng nghiệp nữ). Người ngồi cạnh không châm = anh không bị nhắc liên tục. Ngồi gần bàn lễ tân → có cớ "ra xe lấy quà".</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Em recommend CÓ — kiêng bia/rượu 30-60 ngày đầu khi cai thuốc. Cồn = tình huống thèm lớn nhất tái phát. Nếu không thể kiêng (lý do công việc/xã hội), áp dụng 7 cách trên + hạn chế <2 ly.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL CÓ KẾ HOẠCH B SẴN</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">Sol gửi nhắc 1 giờ TRƯỚC khi anh đi nhậu</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol biết anh có lịch hẹn → push 1 giờ trước với 7 cách + script câu trả lời. Trong nhậu, anh mở app → nghe voice Khang "Mình hiểu, mình cũng đã ở Day 25 đám cưới đó."
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=B5&utm_campaign=di-nhau">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<h3>Khi cai thuốc có nên kiêng bia hoàn toàn 30 ngày đầu không?</h3>
+<p>Em recommend CÓ — kiêng bia/rượu 30-60 ngày đầu khi cai thuốc. Cồn = tình huống thèm lớn nhất tái phát. Nếu không thể kiêng (lý do công việc/xã hội), áp dụng 7 cách trên + hạn chế &lt;2 ly.</p>
+
+<h3>Tôi lỡ hút 1 điếu trong nhậu — đã hỏng tất cả chưa?</h3>
+<p>CHƯA. vấp ≠ tái nghiện. Hughes 2004: người cai thành công trung bình lỡ 3-5 lần trước khi sạch hẳn. Quan trọng: <strong>sáng mai mở app lại, KHÔNG quyết định "thôi hút luôn"</strong>. Tha thứ + tiếp tục.</p>
+
+<h3>Bạn nhậu cứ ép — có nên đổi nhóm bạn không?</h3>
+<p>Không cần đổi hoàn toàn. Tip thực tế: trong 60 ngày đầu cai, GIẢM tần suất nhậu (từ 3 lần/tuần → 1 lần/tuần). Sau 60 ngày anh đã ổn — nhậu lại bình thường mà không cần thuốc.</p>
+
+<h3>Có nên uống cà phê thay bia khi đi cafe với bạn?</h3>
+<p>Tốt. Cà phê đen + nói chuyện = thay được vai trò "bia + thuốc". Nhưng cẩn thận: cà phê cũng là cue cũ (xưa cà phê + điếu). 30 ngày đầu thử trà xanh / nước cam.</p>
+
+<h3>Đi nhậu mà mọi người hút quanh — hút thụ động có hại không?</h3>
+<p>Có. Hít khói thuốc thụ động 1 tiếng = nicotine vào máu nhẹ (~10% liều hút trực tiếp). Có thể tình huống thèm thèm. Tip: ngồi đầu bàn / cạnh quạt / chỗ thoáng. Hoặc nhậu ngoài trời.</p>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C;">Cai thuốc lá tại nhà — 7 bước</a> ·
+<a href="https://sol.vn/ngay-3-cai-thuoc-kho-nhat" style="color: #B25C2C;">Ngày 3 cai thuốc khó nhất</a> ·
+<a href="https://sol.vn/trieu-chung-cai-thuoc-la-theo-ngay" style="color: #B25C2C;">Triệu chứng cai thuốc Day 1-30</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: West & Brown 2013, Goldstein 2002, Brody 2006, Marlatt 1985.
+</p>
+
+<p style="font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px;">
+<strong>Lưu ý</strong>: Bài này dành cho người cai thuốc bình thường. Nếu anh có rối loạn dùng rượu (Alcohol Use Disorder) đồng song — cần tham vấn BS tâm thần để cai song song.
+</p>
+
+</div>

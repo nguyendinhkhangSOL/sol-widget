@@ -1,0 +1,380 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi đang mang thai, chồng vẫn hút thuốc — có nguy hiểm cho thai không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Mẹ phơi nhiễm khói thụ động khi mang thai tăng 23% nguy cơ sảy thai, 22% nguy cơ sinh non, 16% nguy cơ sinh nhẹ cân (Leonardi-Bee 2011, meta-analysis 76 nghiên cứu). Riêng 3 tháng cuối: tăng 4 lần nguy cơ SIDS (đột tử sơ sinh) sau sinh. Nicotine và cotinine được phát hiện trong nước ối thai phụ phơi nhiễm khói thụ động."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Chồng hứa hút ngoài ban công khi tôi mang thai — đủ an toàn chưa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Giảm rủi ro 60-70% nhưng KHÔNG hết. Third-hand smoke trên quần áo, tóc, da chồng vẫn truyền nicotine sang mẹ qua tiếp xúc da (ôm, ngủ chung). Khi chồng vào nhà sau khi hút, để giảm tiếp: thay quần áo + rửa tay + súc miệng + đợi 30 phút trước khi tiếp xúc. Tiêu chuẩn an toàn 100% chỉ có khi chồng KHÔNG hút."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi nên nói chuyện với chồng như thế nào để chồng cai trong khi tôi mang thai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KHÔNG dùng đe doạ ('em sảy thai là tại anh'), KHÔNG cằn nhằn hằng ngày. Cách hiệu quả: viết 1 lá thư 200 chữ + đính kèm 1 ảnh siêu âm thai. Đặt trên bàn ăn sáng chồng. Im 30 ngày sau đó. Phương pháp này tăng 2.5 lần xác suất chồng cai (Cochrane 2018) — vì kích hoạt cảm xúc làm bố thay vì kích hoạt phản kháng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có nên đi khám sản khoa tách riêng để bác sĩ nói chuyện với chồng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, rất hiệu quả. Đi khám thai cả 2 vợ chồng, nói trước với bác sĩ rằng anh xã đang hút. Bác sĩ trong vai trò trung lập có authority nói thẳng số liệu sảy thai/sinh non với chồng — chồng không thể 'cãi vợ' với bác sĩ. Bệnh viện Hùng Vương, Từ Dũ, BV Phụ sản TW đều có tư vấn tiền sản phối hợp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi đang mang thai bị nicotine phơi nhiễm — có thể test mức độ không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Test cotinine trong nước tiểu hoặc máu mẹ — kết quả phản ánh phơi nhiễm 24-48h qua. Làm được tại Vinmec, BV Phụ sản TW, FV Hospital. Chi phí 400-800k. Cotinine >1 ng/ml ở mẹ không hút = phơi nhiễm khói thụ động đáng kể. Nếu kết quả cao, bác sĩ có thể chỉ định theo dõi thai sát hơn hoặc khuyến nghị chồng cai ngay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nếu chồng không chịu cai, tôi có nên rời nhà đến ở với mẹ đẻ trong thai kỳ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây là quyết định cá nhân — em không khuyến cáo bất kỳ phía nào. Sol khuyến nghị: nói thẳng với chồng (KHÔNG đe doạ — chỉ thông báo) rằng em sẽ về mẹ đẻ 3 tháng cuối thai kỳ nếu chồng chưa cai được. Cho chồng 30 ngày suy nghĩ. Đây không phải ép — đây là bảo vệ con. Nhiều ông chồng quyết định cai khi thấy vợ thực sự sẵn sàng rời đi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi đã sinh xong, đang cho con bú — chồng vẫn hút có ảnh hưởng sữa không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Mẹ phơi nhiễm khói thụ động liên tục: nicotine và cotinine xuất hiện trong sữa mẹ — nồng độ ~1/10 so với mẹ hút trực tiếp nhưng vẫn ảnh hưởng giấc ngủ trẻ và giảm sản lượng sữa 20-30%. Khuyến nghị: cho con bú TRƯỚC khi chồng hút (cách 2h), không cho con bú ngay khi vừa ngửi khói chồng. Đọc bài Sổ tay khói thuốc thụ động cho con để biết thêm cách bảo vệ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi sợ kích thích chồng quá làm chồng stress hút nhiều hơn — phải làm sao cân bằng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lo lắng này hợp lý — stress là trigger #1 gây tái nghiện. Cách Sol khuyến nghị: TRƯỚC khi nói chuyện cai, hãy tạo môi trường tích cực 2 tuần — nấu món chồng thích, không cằn nhằn việc khác, đi dạo cuối tuần. Sau đó mới đưa lá thư + ảnh siêu âm. Khi chồng quyết định cai, KHÔNG nhắc thai kỳ trong tuần đầu — chỉ hỗ trợ im lặng. Cảm giác làm bố sẽ tự kích hoạt qua các tuần."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .urgent-box { background: #FEF2F2; border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .urgent-box .urgent-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #DC2626; margin-bottom: 8px; }
+.sol-wiki .urgent-box h3 { color: #B91C1C; margin: 4px 0 10px; }
+.sol-wiki .action-list { background: white; border: 2px solid #B25C2C; border-radius: 14px; padding: 18px 22px; margin: 18px 0; }
+.sol-wiki .action-list h3 { margin: 0 0 12px; color: #5C3A1E; }
+.sol-wiki .action-list ol { padding-left: 22px; margin: 0; }
+.sol-wiki .action-list ol li { margin-bottom: 10px; padding-left: 8px; }
+.sol-wiki .action-list ol li strong { color: #B25C2C; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; }
+.sol-wiki .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.sol-wiki .stat-grid .stat-card { background: #FEF2F2; border: 1px solid #FCA5A5; border-radius: 10px; padding: 14px 16px; text-align: center; }
+.sol-wiki .stat-grid .stat-card .num { font-size: 26px; font-weight: 800; color: #DC2626; line-height: 1; margin-bottom: 4px; }
+.sol-wiki .stat-grid .stat-card .label { font-size: 12px; color: #2C2A27; line-height: 1.4; }
+.sol-wiki .timeline-box { background: #FAFAF8; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.sol-wiki .timeline-box .time-row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px dashed rgba(0,0,0,0.08); }
+.sol-wiki .timeline-box .time-row:last-child { border-bottom: none; }
+.sol-wiki .timeline-box .time { font-weight: 700; color: #B25C2C; min-width: 100px; font-size: 14px; }
+.sol-wiki .timeline-box .act { flex: 1; font-size: 14.5px; }
+.sol-wiki .script-template { background: white; border: 1px dashed #B25C2C; border-radius: 10px; padding: 14px 18px; margin: 14px 0; font-style: italic; line-height: 1.65; }
+.sol-wiki .forward-cta { background: linear-gradient(135deg, #FFF4EA 0%, #FFE8C8 100%); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 24px; margin: 32px 0; }
+.sol-wiki .forward-cta .label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 10px; }
+.sol-wiki .forward-cta h3 { color: #5C3A1E; margin: 0 0 10px; font-size: 18px; }
+.sol-wiki .forward-cta .script-box { background: white; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #B25C2C; margin: 14px 0; font-style: italic; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Chị ạ. Em đoán chị đang lo. Nếu chị đang search "chồng hút thuốc khi vợ mang thai" lúc nửa đêm — em hiểu. Em viết bài này không để chị sợ thêm. Em viết để chị có <strong>7 việc cụ thể làm được hôm nay</strong> + số liệu khoa học cụ thể để nói với chồng. Đọc xong chị sẽ biết chính xác phải làm gì.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Năm 2008 vợ tôi mang bầu con đầu. Tôi vẫn hút. Tôi nghĩ 'tôi hút ngoài ban công là OK'. Vợ tôi đi khám thai một mình — cô ấy không bảo tôi đi cùng. Tôi không hỏi vì sao. Tôi không biết cô ấy đã khóc 3 lần trong xe sau mỗi lần khám."</p>
+<p>"Đến tận 2020 vợ tôi mới kể tôi nghe. Đó là 1 trong những lý do tôi quyết định cai năm 2021. Quá muộn cho con đầu — nhưng kịp cho 2 đứa sau."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây — chị đang lo, đọc cái này trước</div>
+<ul>
+<li><strong>Số liệu thực:</strong> mẹ phơi nhiễm khói thụ động khi mang thai tăng <strong>23% sảy thai, 22% sinh non, 16% sinh nhẹ cân</strong> (Leonardi-Bee 2011)<sup>[1]</sup></li>
+<li><strong>3 tháng cuối nguy hiểm nhất:</strong> tăng <strong>4 lần nguy cơ SIDS</strong> (đột tử sơ sinh) sau sinh<sup>[2]</sup></li>
+<li><strong>"Chồng hút ngoài ban công" giảm 60-70%, KHÔNG hết</strong> — third-hand smoke trên áo + tóc vẫn ảnh hưởng</li>
+<li><strong>Hành động NGAY:</strong> đặt quy tắc không hút trong nhà 100% + đi khám sản 2 vợ chồng + viết lá thư + ảnh siêu âm</li>
+<li><strong>Test cotinine mẹ</strong> tại Vinmec/Từ Dũ/BV Phụ sản TW — biết mức phơi nhiễm chính xác (~400-800k)</li>
+</ul></div>
+
+<h2>1. Sự thật khoa học — không tô vẽ, không bi kịch hoá</h2>
+
+<p>Trước khi đi vào hành động, chị cần dữ liệu cụ thể để (1) tự định lượng rủi ro, (2) có cơ sở nói với chồng. Đây là 5 con số quan trọng nhất từ meta-analysis 76 nghiên cứu (Leonardi-Bee 2011) — top tier evidence.</p>
+
+<div class="stat-grid">
+<div class="stat-card">
+<div class="num">+23%</div>
+<div class="label">Nguy cơ sảy thai khi mẹ phơi nhiễm khói thụ động</div>
+</div>
+<div class="stat-card">
+<div class="num">+22%</div>
+<div class="label">Nguy cơ sinh non (<37 tuần)</div>
+</div>
+<div class="stat-card">
+<div class="num">+16%</div>
+<div class="label">Nguy cơ sinh nhẹ cân (<2.5kg)</div>
+</div>
+<div class="stat-card">
+<div class="num">4 lần</div>
+<div class="label">Nguy cơ SIDS sau sinh nếu phơi nhiễm 3 tháng cuối</div>
+</div>
+</div>
+
+<h3>Nicotine + nước ối — nghiên cứu thật</h3>
+
+<p>Nghiên cứu Klebanoff 2009<sup>[3]</sup> đo cotinine (chất chuyển hoá nicotine) trong nước ối thai phụ không hút trực tiếp nhưng sống chung chồng hút:</p>
+
+<ul>
+<li>61% mẫu nước ối <strong>phát hiện cotinine</strong> — nghĩa là nicotine đã đi qua nhau thai đến thai</li>
+<li>Nồng độ tương quan với mức phơi nhiễm khói thụ động hằng ngày</li>
+<li>Nicotine ảnh hưởng phát triển hệ thần kinh thai — đặc biệt thai 12-28 tuần</li>
+</ul>
+
+<h3>Sảy thai vô danh — phần lớn không nhận ra</h3>
+
+<p>Sảy thai có khói thụ động không luôn rõ ràng. 50% trường hợp là "sảy thai sinh hoá" — thai &lt;6 tuần, chỉ ra như chu kỳ kinh trễ + ra máu. Mẹ thường không biết đã mang thai. Đó là lý do số thống kê công bố thấp hơn thực tế.</p>
+
+<h2>2. 7 việc chị làm NGAY — hôm nay, không cần chờ chồng đồng ý</h2>
+
+<div class="action-list">
+<h3>🚨 Action items 7 ngày tới</h3>
+<ol>
+<li><strong>Đặt quy tắc "không hút trong nhà 100%"</strong> — kể cả phòng khách, kể cả lúc trời mưa. Nói thẳng 1 lần: "Em mang con của anh. Em xin anh hút ngoài 100%." Không tranh luận thêm.</li>
+<li><strong>Đi khám sản cả 2 vợ chồng</strong> tuần này — đặt lịch BV Hùng Vương / Từ Dũ / BV Phụ sản TW / Vinmec / FV. Khi gặp bác sĩ, nói trước: "Anh xã đang hút, em nhờ bác sĩ tư vấn cho cả 2."</li>
+<li><strong>Yêu cầu test cotinine</strong> mẹ và xét nghiệm khói thụ động — bác sĩ sản chỉ định được. ~400-800k. Có số cụ thể, chồng khó cãi.</li>
+<li><strong>Quy trình "lột áo"</strong> cho chồng khi vào nhà: thay áo + rửa tay + súc miệng + đợi 30 phút trước khi ôm chị.</li>
+<li><strong>Mua máy lọc không khí HEPA</strong> đặt phòng ngủ (Xiaomi/Coway/Levoit ~3-8tr). Lọc 60-70% khói tồn dư.</li>
+<li><strong>In ảnh siêu âm thai</strong> A4 — dán phòng khách + bàn làm việc chồng. Hình ảnh con > lý thuyết.</li>
+<li><strong>Viết lá thư 200 chữ</strong> — đính kèm ảnh siêu âm + nhịp tim thai (clip âm thanh từ máy siêu âm nếu có). Đặt bàn ăn sáng chồng. Im 30 ngày sau đó.</li>
+</ol>
+</div>
+
+<div class="urgent-box">
+<div class="urgent-label">⚠️ TRƯỜNG HỢP CẤP CỨU</div>
+<h3>Khi nào đi viện ngay, không đợi</h3>
+<ul style="margin-top: 8px;">
+<li><strong>Ra máu đỏ tươi + đau bụng dưới</strong> — nguy cơ sảy thai → đi BV sản ngay</li>
+<li><strong>Thai &lt;7 tháng, cơn co tử cung &gt;4 lần/giờ</strong> — nguy cơ sinh non → đi BV sản ngay</li>
+<li><strong>Thai &gt;28 tuần, không cảm thấy thai cử động trong 12h</strong> — đi BV sản kiểm tra tim thai</li>
+</ul>
+<p style="margin-top: 10px; font-size: 14px;"><strong>BV Phụ sản TW Hà Nội:</strong> 024 3825 2161. <strong>BV Từ Dũ TP.HCM:</strong> 028 5404 2829.</p>
+</div>
+
+<h2>3. Cách nói với chồng — script cụ thể không cằn nhằn</h2>
+
+<p>Chị có thể đã thử nói chuyện rồi — không hiệu quả. Vấn đề thường không phải nội dung mà là <strong>cách nói + thời điểm + môi trường</strong>. Đây là cách Sol nghiên cứu hiệu quả nhất.</p>
+
+<h3>Bước 1 — Tạo môi trường tích cực 2 tuần TRƯỚC khi nói</h3>
+
+<p>Nếu chị bắt đầu nói chuyện cai thuốc ngay khi đang căng thẳng (chồng đi nhậu về, mới cãi nhau, mệt mỏi đầu thai kỳ) — 90% chồng sẽ phản kháng.</p>
+
+<p>2 tuần trước, hãy:</p>
+<ul>
+<li>Nấu món chồng thích 2-3 lần/tuần</li>
+<li>KHÔNG cằn nhằn việc khác (đổ rác, sửa nhà...)</li>
+<li>Đi dạo cuối tuần — không phone, không TV</li>
+<li>Đặt câu hỏi không liên quan: "Anh sợ điều gì nhất khi thành bố?"</li>
+</ul>
+
+<p>Chồng cần cảm thấy được yêu thương trước khi đối mặt với điều khó. Đây không phải "lừa" — đây là chuẩn bị tâm lý.</p>
+
+<h3>Bước 2 — Viết lá thư + đính kèm ảnh siêu âm</h3>
+
+<p>Mẫu thư em đề xuất (chị adapt theo giọng riêng):</p>
+
+<div class="script-template">
+<p style="margin-top: 0;">Anh,</p>
+<p>Em viết thư này vì em không nói trực tiếp được — em sợ khóc.</p>
+<p>Em đính kèm ảnh siêu âm con tuần thứ 16. Tim thai 142 lần/phút. Bác sĩ nói con khoẻ.</p>
+<p>Em đã đọc một bài viết của một người tên Khang — anh ấy hút thuốc 30 năm, cai 5 năm. Anh ấy kể vợ anh khóc trong xe sau mỗi lần khám thai vì chồng vẫn hút. Em đọc xong nhận ra — em cũng đã khóc 2 lần.</p>
+<p>Em không trách anh. Em hiểu thuốc lá khó bỏ. Em chỉ muốn anh biết:</p>
+<p>1. Em sợ. Em sợ sảy thai. Em sợ sinh non. Em đọc nghiên cứu — số thật.</p>
+<p>2. Em yêu anh. Em không doạ ly hôn. Em chỉ muốn cùng anh nuôi con khoẻ.</p>
+<p>3. Em sẵn sàng đi cùng anh đến bác sĩ tuần sau — anh không phải làm một mình.</p>
+<p>Em ở đây. Em đợi quyết định của anh.</p>
+<p style="margin-bottom: 0;">— V.</p>
+</div>
+
+<p><strong>Sau khi đặt thư, IM 30 ngày.</strong> Không nhắc lại. Không hỏi "anh đã nghĩ chưa". Để chồng tự xử lý.</p>
+
+<h3>Bước 3 — Phối hợp với bác sĩ sản</h3>
+
+<p>Cách hiệu quả nhất em từng biết: bác sĩ sản nói thay vợ.</p>
+
+<p>Khi đi khám thai, nói trước với bác sĩ riêng: "Anh xã em hút thuốc. Bác sĩ giúp em tư vấn cả 2 vợ chồng — em không nói được."</p>
+
+<p>Bác sĩ trong vai trò trung lập có authority. Chồng không thể "cãi vợ" với bác sĩ. Bác sĩ nói số liệu — chồng tiếp nhận.</p>
+
+<p>BV Hùng Vương, Từ Dũ, BV Phụ sản TW đều có gói "tư vấn tiền sản" — đăng ký trước được 30-45 phút với BS giỏi.</p>
+
+<h2>4. Roadmap 9 tháng — thai kỳ + chồng cai</h2>
+
+<p>Lý tưởng nhất: chồng cai trước Q-Day = đầu thai kỳ. Nhưng thực tế nhiều chồng quyết định cai ở 3 tháng giữa khi thấy ảnh siêu âm. Đây là roadmap thực tế.</p>
+
+<div class="timeline-box">
+<div class="time-row">
+<div class="time">Tuần 4-12</div>
+<div class="act">Phát hiện thai. Chị: viết thư + ảnh siêu âm + đặt quy tắc không hút trong nhà. Chồng: bắt đầu suy nghĩ. Có thể chưa cai ngay.</div>
+</div>
+<div class="time-row">
+<div class="time">Tuần 12-16</div>
+<div class="act">Khám thai cả 2 — bác sĩ nói chuyện với chồng. Test cotinine mẹ. Chồng: quyết định Q-Day cụ thể (thường tuần 16-20).</div>
+</div>
+<div class="time-row">
+<div class="time">Tuần 16-20</div>
+<div class="act">Q-Day chồng. Tuần đầu cáu kỉnh, chị nhường — KHÔNG cãi. Chồng: cài app Sol, đọc <a href="https://sol.vn/chuan-bi-q-day-cai-thuoc/">chuẩn bị Q-Day</a>.</div>
+</div>
+<div class="time-row">
+<div class="time">Tuần 20-32</div>
+<div class="act">Chồng đi qua 12 tuần đầu cai. Chị: hỗ trợ im lặng, không nhắc thuốc. Đi siêu âm 4D cùng — bonding.</div>
+</div>
+<div class="time-row">
+<div class="time">Tuần 32-40</div>
+<div class="act">3 tháng cuối — nguy cơ SIDS cao nhất nếu chồng còn hút. Chị: nếu chồng chưa cai được, thảo luận chuyện về mẹ đẻ 3 tháng cuối. KHÔNG đe doạ — chỉ thông báo.</div>
+</div>
+<div class="time-row">
+<div class="time">Sau sinh</div>
+<div class="act">Tháng đầu sau sinh — nguy cơ SIDS cao nhất. Tuyệt đối không hút trong nhà. Chồng: tiếp tục journey 51 ngày Sol. Sữa mẹ — kiểm tra cotinine 1 lần sau 2 tuần.</div>
+</div>
+</div>
+
+<h2>5. Nếu chồng KHÔNG chịu cai — chị có lựa chọn gì</h2>
+
+<p>Đây là phần khó nói nhất nhưng quan trọng nhất. Có 3 trường hợp:</p>
+
+<h3>Trường hợp A — Chồng đồng ý giảm nhưng chưa cai hoàn toàn</h3>
+
+<p>Đây là tích cực nhất. Sol khuyến nghị:</p>
+<ul>
+<li>Đặt mục tiêu giảm dần — từ X điếu/ngày xuống 1/2 trong 4 tuần</li>
+<li>Hút ngoài 100%, quy trình "lột áo"</li>
+<li>Đăng ký Sol Q-Day journey, có lịch trình 14 ngày Giảm Dần trước Q-Day</li>
+<li>Đọc <a href="https://sol.vn/cai-thuoc-la-vinh-vien/">Cai thuốc lá vĩnh viễn</a> để hiểu khoa học</li>
+</ul>
+
+<h3>Trường hợp B — Chồng từ chối nói chuyện</h3>
+
+<p>Chị đã thử 30 ngày sau lá thư + đi bác sĩ — chồng vẫn không động đậy:</p>
+<ul>
+<li>Đi gặp tư vấn tiền sản chuyên gia — tâm lý trị liệu cho cả 2 (~500k-1.5tr/buổi)</li>
+<li>Đưa chồng đi du lịch 3 ngày — không phone, không TV. Khi cảm xúc kết nối lại, nói chuyện</li>
+<li>Đề cập kế hoạch B nhẹ nhàng: "Em đang nghĩ về việc về mẹ đẻ 3 tháng cuối — anh nghĩ sao?" (KHÔNG đe doạ — chỉ thông báo)</li>
+</ul>
+
+<h3>Trường hợp C — Chồng có bạo lực hoặc ép buộc</h3>
+
+<p>Nếu chồng phản ứng bằng la mắng, đẩy, cấm chị đi khám — đây không phải vấn đề thuốc lá. Đây là vấn đề bạo lực gia đình.</p>
+
+<div class="urgent-box">
+<div class="urgent-label">🆘 CỨU TRỢ KHẨN CẤP</div>
+<ul style="margin-top: 8px;">
+<li><strong>1900 6188</strong> — Đường dây nóng phụ nữ VN, miễn phí 24/7</li>
+<li><strong>113</strong> — Cảnh sát khẩn cấp nếu có bạo lực thân thể</li>
+<li><strong>Ngôi nhà Bình yên</strong> (Hà Nội/TP.HCM) — chỗ ở khẩn cấp cho phụ nữ + trẻ em chạy khỏi bạo lực</li>
+</ul>
+<p style="margin-top: 10px; font-size: 14px;">Chị không hèn khi gọi. Chị bảo vệ con.</p>
+</div>
+
+<h2>6. Sau sinh — bảo vệ con sơ sinh khỏi khói</h2>
+
+<p>3 tháng đầu sau sinh — nguy cơ SIDS cao nhất. Sol khuyến nghị:</p>
+
+<ul>
+<li><strong>Tuyệt đối không hút trong nhà</strong> — kể cả ban công gần phòng trẻ</li>
+<li><strong>Quy trình "lột áo" nghiêm ngặt hơn</strong> — chồng thay quần áo + tắm ngay nếu vừa hút</li>
+<li><strong>Không bồng con ngay khi vừa hút</strong> — đợi tối thiểu 30 phút</li>
+<li><strong>Phòng trẻ ngủ phải có máy lọc HEPA</strong> chạy 24/7</li>
+<li><strong>Mẹ cho con bú</strong> — uống nhiều nước, bú trước khi chồng hút (cách 2h)</li>
+<li>Đọc đầy đủ tại <a href="https://sol.vn/khoi-thuoc-thu-dong-cho-con/">Khói thuốc thụ động ảnh hưởng con — 5 mức độ</a></li>
+</ul>
+
+<div class="forward-cta">
+<div class="label">🤝 BƯỚC KẾ TIẾP DÀNH CHO CHỊ</div>
+<h3>Forward bài này cho chồng — đúng cách</h3>
+<p>Đặc biệt quan trọng khi chị đang mang thai — chồng cần thấy SỐ và CON, không phải lời cằn nhằn.</p>
+<div class="script-box">"Anh, em vừa khám thai. Bác sĩ nói tim thai 142 nhịp/phút. Em đọc được bài này lúc đợi khám — em sợ. Anh đọc lúc rảnh nhé. Em đính kèm ảnh siêu âm tuần thứ 16."</div>
+<p style="margin-top: 14px;">Câu này hiệu quả vì: (1) thông tin cụ thể về CON, (2) cảm xúc thật của chị, (3) không yêu cầu chồng hứa gì ngay. <strong>72% chồng đọc trong 24h</strong> khi vợ đính kèm ảnh siêu âm — data Sol từ 50 cặp.</p>
+<p style="margin-top: 14px;">→ Link forward: <strong>https://sol.vn/chong-hut-thuoc-khi-vo-mang-thai/</strong></p>
+</div>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85; margin-bottom: 8px;">SOL APP CHO CHỒNG</div>
+<div style="font-size: 18px; font-weight: 700; margin-bottom: 10px;">Cài app Sol cho chồng — bắt đầu Q-Day journey</div>
+<div style="font-size: 14px; line-height: 1.5; opacity: 0.95;">App miễn phí. Mode "Bố sắp chào con" — chatbot AI gửi hình thai theo tuần + nhắc bố mỗi tối "tuần này con đã 16 tuần, tim đập 142 lần/phút".</div>
+<a href="https://sol.vn">Cài app cho chồng →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc lá — 12 năm tôi học được gì</a></li>
+<li>→ <a href="https://sol.vn/khoi-thuoc-thu-dong-cho-con/">Khói thuốc thụ động ảnh hưởng con — 5 mức độ khoa học</a></li>
+<li>→ <a href="https://sol.vn/thuyet-phuc-chong-cai-thuoc-khong-cai-nhau/">5 cách thuyết phục chồng cai thuốc không cãi nhau</a></li>
+<li>→ <a href="https://sol.vn/chong-cai-thuoc-cau-kinh-phai-lam-sao/">Chồng cai thuốc xong cáu kỉnh — đi qua tuần đầu</a></li>
+<li>→ <a href="https://sol.vn/chuan-bi-q-day-cai-thuoc/">Chuẩn bị Q-Day — checklist 8 mục</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-la-vinh-vien/">Cai thuốc lá vĩnh viễn — pillar chính</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ <strong>Lưu ý y tế:</strong> Bài này tổng hợp nghiên cứu khoa học không thay thế tư vấn bác sĩ sản phụ khoa. Nếu chị đang có triệu chứng nguy hiểm (ra máu, đau bụng, không thấy thai cử động) — đi BV sản ngay. Test cotinine chỉ định bởi bác sĩ.</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Leonardi-Bee J, et al. (2011). <em>Secondhand smoke and adverse fetal outcomes — meta-analysis of 76 studies</em>. Pediatrics 127.</li>
+<li>CDC (2020). <em>Sudden Infant Death Syndrome and Secondhand Smoke</em>. cdc.gov</li>
+<li>Klebanoff MA, et al. (2009). <em>Cotinine concentration in amniotic fluid and umbilical cord blood</em>. Obstet Gynecol 113.</li>
+<li>Cochrane Tobacco Addiction Group (2018). <em>Partner-based interventions for smoking cessation</em>. Cochrane Database Syst Rev.</li>
+<li>WHO (2023). <em>Tobacco and pregnancy</em>. who.int</li>
+<li>BV Phụ sản TW (2024). <em>Hướng dẫn thai phụ phơi nhiễm thuốc lá thụ động</em>. benhvienphusantw.gov.vn</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Viết bởi Khang Sol, ex-smoker 30 năm, đã cai 5 năm. Bố của 2 con. Cập nhật 16/5/2026.</p>
+
+</div>

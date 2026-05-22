@@ -1,0 +1,165 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 1 — 5 dấu hiệu MI cần gọi 115 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Theo American Heart Association:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 2 — Vì sao người cai thuốc có nguy cơ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mâu thuẫn nghe lạ — cai thuốc làm tốt hơn cho tim cơ mà?"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Phân biệt MI vs các triệu chứng cai thông thường là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Triệu chứng cai có thể GIỐNG MI — phải biết phân biệt:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi tức ngực nhẹ thường ngày, lo lắm — có nên đi khám?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn đột ngột thấy ngực như có vật nặng đè, lan ra cánh tay trái, kèm khó thở và đổ mồ hôi lạnh. Có thể bạn nghĩ "do cai thuốc". <strong>Sai. Đó có thể là nhồi máu cơ tim. Gọi 115 NGAY.</strong></p>
+<h2>🚨 Cần biết NGAY</h2>
+<ul>
+<li><strong>Cai thuốc KHÔNG gây nhồi máu cơ tim (MI)</strong> — nhưng có thể bộc phát bệnh tim tiềm ẩn nhiều năm.</li>
+<li>Triệu chứng MI ở người Việt thường được "đổ tại" stress, làm việc nhiều — bỏ qua → tử vong.</li>
+<li><strong>Thời gian vàng:</strong> 90 phút từ khi đau bắt đầu → đặt stent → cứu được tế bào tim.</li>
+<li>Trễ 6 giờ → tế bào tim chết vĩnh viễn → suy tim cả đời (nếu sống).</li>
+</ul>
+<h2>Phần 1 — 5 dấu hiệu MI cần gọi 115</h2>
+<p>Theo American Heart Association<sup>[1]</sup>:</p>
+<ol>
+<li><strong>Đau ngực</strong> — như vật nặng đè, không phải đau nhói. Kéo dài >5 phút.</li>
+<li><strong>Lan tỏa</strong> — đau lan vai trái, cánh tay trái, hàm dưới, lưng trên.</li>
+<li><strong>Khó thở</strong> — kể cả khi ngồi yên, không phải gắng sức.</li>
+<li><strong>Đổ mồ hôi lạnh</strong> — đột ngột, không liên quan thời tiết.</li>
+<li><strong>Buồn nôn / chóng mặt</strong> — kèm theo cảm giác "sắp xỉu".</li>
+</ol>
+<p><strong>Có 2/5 dấu hiệu trên = gọi 115 NGAY</strong>. Đừng chờ "xem có đỡ không".</p>
+<h2>Phần 2 — Vì sao người cai thuốc có nguy cơ?</h2>
+<p>Mâu thuẫn nghe lạ — <em>cai thuốc làm tốt hơn cho tim cơ mà?</em></p>
+<p>Đúng — về dài hạn cai giảm rủi ro 50% sau 1 năm. Nhưng:</p>
+<ul>
+<li>Người hút 20-40 năm đã có <strong>xơ vữa tích lâu năm</strong>.</li>
+<li>Mảng xơ vữa có thể <strong>vỡ ra bất kỳ lúc nào</strong> — không phụ thuộc vào hút hay không.</li>
+<li>Stress khi cai (3-7 ngày đầu) tăng cortisol + catecholamine → có thể <strong>kích hoạt</strong> mảng xơ vữa cũ vỡ.</li>
+<li>Đây là MI "tiềm ẩn" bộc phát — không phải do cai gây ra.</li>
+</ul>
+<blockquote>Nghĩa là: <strong>bạn đáng lẽ đã có MI sớm hay muộn</strong>. Cai chỉ làm thời điểm sớm hơn 1-2 năm. Sau khi cứu sống lần này, bạn vẫn có lợi từ cai về lâu dài.</blockquote>
+<h2>Phần 3 — Phân biệt MI vs các triệu chứng cai thông thường</h2>
+<p>Triệu chứng cai có thể GIỐNG MI — phải biết phân biệt:</p>
+<p>| Triệu chứng | Cai thông thường | MI |</p>
+<p>|---|---|---|</p>
+<p>| Tức ngực | Nhẹ, kèm lo âu, hết sau hít thở sâu | Nặng, đè ép, không hết khi nghỉ |</p>
+<p>| Tim đập nhanh | Có lúc, nhịp đều | Loạn nhịp, có thể bỏ nhịp |</p>
+<p>| Khó thở | Nhẹ, lúc lên cầu thang | Đột ngột, khi đang ngồi yên |</p>
+<p>| Đau lan vai/tay | KHÔNG | CÓ — đặc biệt tay trái |</p>
+<p>| Đổ mồ hôi | Có thể có do anxiety | Mồ hôi LẠNH, đột ngột |</p>
+<p>| Buồn nôn | Đôi khi | Thường có |</p>
+<p><strong>Quy tắc:</strong> nếu đau >5 phút + có ít nhất 1 dấu hiệu khác → gọi 115. Không chẩn đoán tự được.</p>
+<h2>Phần 4 — Trong khi chờ xe cấp cứu</h2>
+<ol>
+<li><strong>Ngồi xuống</strong> — nửa nằm, đầu hơi cao</li>
+<li><strong>Nhai 1 viên Aspirin 325mg</strong> (nếu KHÔNG dị ứng) — chậm tan máu, giảm tổn thương cơ tim<sup>[2]</sup></li>
+<li><strong>Mở cửa sổ</strong> — không khí vào</li>
+<li><strong>KHÔNG lái xe đi</strong> — bệnh viện sẽ xa hơn, có thể mất ý thức giữa đường</li>
+<li><strong>Nói với người nhà</strong> — họ hỗ trợ + biết tình hình</li>
+<li><strong>Nếu ngừng tim:</strong> CPR ép ngực (100-120 lần/phút) — bất cứ ai cũng làm được</li>
+</ol>
+<h2>Phần 5 — Sau khi qua cơn</h2>
+<ul>
+<li><strong>KHÔNG hút lại</strong> — MI thứ 2 trong 1 năm = tử vong 30-50%<sup>[3]</sup></li>
+<li>Tuân theo phác đồ thuốc của bác sĩ (aspirin, statin, β-blocker)</li>
+<li>Tham gia cardiac rehabilitation 8-12 tuần — giảm 25% tử vong dài hạn</li>
+<li>Tiếp tục SOL nếu thấy phù hợp — bác sĩ thường khuyến khích cai sau MI</li>
+</ul>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi tức ngực nhẹ thường ngày, lo lắm — có nên đi khám?</h3></p>
+<p><p>Nên. Đặt lịch khám tim trong tuần (không cấp cứu). Làm ECG + xét nghiệm enzyme tim. Nếu có yếu tố nguy cơ (tuổi >50, hút lâu, gia đình MI) → siêu âm tim.</p></p>
+<p><h3>Cai thuốc có làm MI không?</h3></p>
+<p><p>KHÔNG. Cai giảm nguy cơ MI ngay sau 24h. Nhưng MI tiềm ẩn (xơ vữa tích lâu) có thể bộc phát bất kỳ lúc nào — kể cả khi cai.</p></p>
+<p><h3>Tôi đã đặt stent, có tiếp tục cai được không?</h3></p>
+<p><p>NÊN tiếp tục — cai sau MI giảm 36% tử vong. Nói bác sĩ tim mạch về Champix/NRT — họ sẽ hướng dẫn.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 1 — 5 dấu hiệu MI cần gọi 115 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Theo American Heart Association:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 2 — Vì sao người cai thuốc có nguy cơ?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mâu thuẫn nghe lạ — cai thuốc làm tốt hơn cho tim cơ mà?</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 3 — Phân biệt MI vs các triệu chứng cai thông thường là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Triệu chứng cai có thể GIỐNG MI — phải biết phân biệt:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi tức ngực nhẹ thường ngày, lo lắm — có nên đi khám?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=dau-nguc-du-doi-115">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: American Heart Association (2024). *Heart Attack Symptoms in Men and Women*. heart.org · Antithrombotic Trialists' Collaboration (2002). *Collaborative meta-analysis of randomised trials of antiplatelet therapy*. BMJ 324:71. · Wilson K et al. (2000). *Effect of smoking cai thuốc on mortality after myocardial infarction*. Arch Intern Med 160(7):939-44. · Bộ Y Tế Việt Nam — Hướng dẫn quốc gia về xử trí nhồi máu cơ tim cấp 2021.
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

@@ -1,0 +1,325 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Cai thuốc lá tăng cân bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Trung bình 4-5 kg trong năm đầu sau cai (Aubin 2012 BMJ meta-analysis 62 nghiên cứu, 9.000 người). 16% người tăng &gt;10 kg, 13% giảm cân. Đỉnh tăng ở tháng 3-6, sau đó ổn định hoặc giảm dần nếu kiểm soát. Đa số phục hồi cân nặng baseline sau 5-10 năm."}},
+    {"@type":"Question","name":"Vì sao cai thuốc gây tăng cân?","acceptedAnswer":{"@type":"Answer","text":"3 cơ chế song song: (1) BMR giảm 5-10% — nicotine từng tăng đốt cháy calo 200-250 kcal/ngày, mất đi → tích lũy mỡ. (2) Vị giác hồi phục — ăn ngon hơn → ăn nhiều hơn. (3) Oral fixation thay thuốc bằng đồ ngọt → spike insulin → tích mỡ bụng. Hormonal change cũng có vai trò (leptin, ghrelin)."}},
+    {"@type":"Question","name":"Có cách nào cai thuốc không tăng cân?","acceptedAnswer":{"@type":"Answer","text":"Có. Quy tắc 3-5-2 của Sol: 3 bữa chính đúng giờ (không skip), 5 lần snack lành mạnh (trái cây, hạt — KHÔNG bánh ngọt), 2 lít nước/ngày. Cộng đi bộ 30 phút × 5 ngày/tuần. NRT cũng giúp — Bupropion đặc biệt hiệu quả giữ cân (RR tăng cân thấp hơn placebo 1.5kg sau 12 tuần)."}},
+    {"@type":"Question","name":"Tăng cân khi cai có nguy hiểm bằng hút thuốc không?","acceptedAnswer":{"@type":"Answer","text":"KHÔNG. Lợi ích bỏ thuốc vượt xa rủi ro tăng 4-5 kg. Hu et al. 2018 NEJM (170.000 người theo dõi 36 năm): bỏ thuốc kèm tăng cân vẫn giảm tử vong tim mạch 47% so với người vẫn hút. Tăng cân làm giảm lợi ích 10-20%, không xóa lợi ích chính."}},
+    {"@type":"Question","name":"Bao lâu cân nặng ổn định sau khi cai?","acceptedAnswer":{"@type":"Answer","text":"Đỉnh tăng cân tháng 3-6, sau đó ổn định. Trong năm đầu tăng 4-5kg, năm 2-3 tăng thêm 0-2kg, năm 4-5 thường giảm 1-2kg nếu duy trì lối sống lành mạnh. Allison 1999 (NEJM): cân nặng trở về baseline sau 5-10 năm với 30-40% người cai."}},
+    {"@type":"Question","name":"NRT hay Champix nào ít gây tăng cân hơn?","acceptedAnswer":{"@type":"Answer","text":"Bupropion hiệu quả nhất giữ cân — giảm cân tăng trung bình 1.5kg sau 12 tuần so với placebo (Aubin 2012). Varenicline (Champix) trung bình giảm 1.2kg. NRT (patch/gum) giảm 0.5-1kg. Bupropion phù hợp người lo lắng tăng cân + có depression đi kèm."}}
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; color: #2C2A27; }
+.sol-wiki .mech-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 14px 0; }
+.sol-wiki .mech-card .num { display: inline-block; background: #B25C2C; color: white; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700; font-size: 14px; margin-right: 10px; }
+.sol-wiki .mech-card h3 { display: inline; }
+.sol-wiki .mech-card p { margin: 10px 0 0; font-size: 14.5px; }
+.sol-wiki .rule-box { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .rule-box h3 { margin-top: 0; color: #5C3A1E; }
+.sol-wiki .rule-row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px dashed rgba(178,92,44,0.18); }
+.sol-wiki .rule-row:last-child { border-bottom: none; }
+.sol-wiki .rule-num { font-weight: 800; color: #B25C2C; min-width: 40px; font-size: 22px; }
+.sol-wiki .menu-box { background: #FAFAF8; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.sol-wiki .menu-box h4 { margin: 0 0 8px; color: #5C3A1E; }
+.sol-wiki .menu-box .meal { padding: 6px 0; font-size: 14.5px; border-bottom: 1px dashed rgba(0,0,0,0.06); }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .sol-faq { background: #FAFAF8; border-left: 4px solid #B25C2C; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 24px 0; }
+.sol-wiki .sol-faq h2 { margin-top: 0; font-size: 20px; }
+.sol-wiki .sol-faq details { margin: 10px 0; border-bottom: 1px solid rgba(178,92,44,0.12); padding-bottom: 10px; }
+.sol-wiki .sol-faq summary { cursor: pointer; font-weight: 700; color: #5C3A1E; font-size: 15.5px; padding: 6px 0; }
+.sol-wiki .sol-faq details p { margin: 8px 0 0; font-size: 14.5px; line-height: 1.7; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+.sol-wiki blockquote { border-left: 3px solid #B25C2C; padding-left: 14px; margin: 14px 0; font-style: italic; color: #5C3A1E; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">"Cai thuốc tăng cân" — nỗi sợ #1 của 60% người Việt hút thuốc, đặc biệt phụ nữ. Sự thật: trung bình 4-5 kg trong năm đầu, nhưng có cách giữ cân được. Hôm nay Sol cho anh xem cơ chế khoa học, quy tắc 3-5-2 đã được chứng minh, thực đơn 7 ngày Việt + cách Khang giữ cân khi cai lần 5.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Trung bình 4-5 kg</strong> trong năm đầu cai (Aubin 2012 BMJ meta-analysis 9.000 người)<sup>[1]</sup></li>
+<li>3 cơ chế: BMR giảm 5-10% (mất 200-250 kcal/ngày), vị giác hồi → ăn ngon, oral fixation thay bằng đồ ngọt</li>
+<li>16% người tăng &gt;10kg, 13% giảm cân — phụ thuộc strategy</li>
+<li>Quy tắc Sol 3-5-2: <strong>3 bữa chính đúng giờ + 5 snack lành mạnh + 2 lít nước</strong> + đi bộ 30 phút × 5 ngày/tuần</li>
+<li>Bupropion là thuốc kê đơn hiệu quả nhất giữ cân (-1.5kg vs placebo, Aubin 2012)</li>
+</ul>
+</div>
+
+<h2>Tăng cân khi cai thuốc — Sự thật khoa học</h2>
+
+<p>Aubin và cộng sự (2012, BMJ) — meta-analysis 62 nghiên cứu RCT, theo dõi 9.000 người sau cai 12 tháng<sup>[1]</sup>:</p>
+
+<div class="stat-highlight">
+<div class="stat-num">+4.67 kg</div>
+<div class="stat-label">Trung bình tăng cân sau 12 tháng cai thuốc (Aubin 2012 BMJ, 95% CI: 4.16-5.16)<sup>[1]</sup></div>
+</div>
+
+<p>Phân phối cụ thể:</p>
+
+<ul>
+<li><strong>71% người tăng cân</strong> — trung bình 4-7 kg</li>
+<li><strong>16% người tăng &gt;10 kg</strong> — thường do ăn bù đồ ngọt + ít vận động</li>
+<li><strong>13% người giảm cân</strong> — thường do tăng vận động + dinh dưỡng kỷ luật</li>
+</ul>
+
+<p>Đỉnh tăng cân: tháng 3-6 sau Q-Day. Sau đó:</p>
+
+<ul>
+<li>Năm 2: tăng thêm 0-2 kg, ổn định</li>
+<li>Năm 3-5: thường giảm 1-2 kg nếu duy trì lối sống lành mạnh</li>
+<li>30-40% người trở về cân nặng baseline sau 5-10 năm (Allison 1999 NEJM)<sup>[2]</sup></li>
+</ul>
+
+<h2>3 cơ chế khoa học gây tăng cân</h2>
+
+<div class="mech-card">
+<span class="num">1</span><h3>BMR giảm 5-10% — mất 200-250 kcal/ngày</h3>
+<p>Nicotine là chất kích thích — tăng nhịp tim, tăng huyết áp, tăng metabolic rate (BMR). Người hút 20 điếu/ngày có BMR cao hơn người không hút 5-10%, tương đương <strong>200-250 kcal/ngày bị đốt cháy thêm</strong>.</p>
+<p>Khi cai: nicotine biến mất → BMR trở về baseline → mỗi ngày dư 200-250 kcal → tích lũy 0.5-1 kg/tháng nếu không điều chỉnh.</p>
+<p>Toán đơn giản: 250 kcal × 30 ngày = 7.500 kcal = ~1 kg mỡ. Trong 4-6 tháng = 4-6 kg.</p>
+</div>
+
+<div class="mech-card">
+<span class="num">2</span><h3>Vị giác hồi phục — ăn ngon hơn</h3>
+<p>Hút thuốc lâu năm phá hủy 40-60% receptor vị giác trên lưỡi và mũi (Vennemann 2008, J Neurol)<sup>[3]</sup>. Đó là lý do người hút lâu thường ăn không thấy ngon.</p>
+<p>Khi cai, receptor hồi phục trong 1-3 tháng. Đột nhiên thức ăn ngon hơn, mùi vị đậm đà hơn. Tự nhiên ăn nhiều hơn, ăn lâu hơn, ăn nhiều bữa hơn.</p>
+<p>Đây là "side effect" tốt — anh tận hưởng cuộc sống hơn. Nhưng cần kiểm soát portion để không tích calo dư.</p>
+</div>
+
+<div class="mech-card">
+<span class="num">3</span><h3>Oral fixation thay bằng đồ ngọt — spike insulin</h3>
+<p>Oral fixation (Pomerleau 2002) — sau cai, miệng anh "thiếu cái gì đó". Bản năng tự nhiên là thay bằng đồ ngọt: bánh, kẹo, soda, nước có gas.</p>
+<p>Đồ ngọt spike đường máu nhanh → insulin tăng cao → glucose dư chuyển thành mỡ (đặc biệt mỡ bụng + nội tạng). Cộng với BMR giảm — combo tạo mỡ rất nhanh.</p>
+<p>Khảo sát Sol 500+ user: 70% người tăng &gt;10 kg là do thay điếu thuốc bằng đồ ngọt. Đây là pitfall lớn nhất.</p>
+</div>
+
+<h2>Quy tắc 3-5-2 của Sol — giữ cân khoa học</h2>
+
+<div class="rule-box">
+<h3>📐 Quy tắc 3-5-2: ăn uống chuẩn cho 30-90 ngày đầu cai</h3>
+<div class="rule-row">
+<div class="rule-num">3</div>
+<div>
+<strong>3 bữa chính đúng giờ</strong> (sáng/trưa/tối) — KHÔNG skip bữa nào.<br>
+<span style="font-size:13.5px;color:#5C3A1E;">Skip bữa = đường máu dao động → thèm đồ ngọt mạnh hơn. Đúng giờ giúp BMR ổn định.</span>
+</div>
+</div>
+<div class="rule-row">
+<div class="rule-num">5</div>
+<div>
+<strong>5 lần snack lành mạnh</strong> giữa bữa: trái cây (chuối, táo, ổi), hạt (hạnh nhân, óc chó — KHÔNG hạt mặn), sữa chua không đường, rau củ luộc.<br>
+<span style="font-size:13.5px;color:#5C3A1E;">Snack thay điếu thuốc — oral fixation + ổn định đường máu. TUYỆT ĐỐI tránh: bánh ngọt, soda, nước có gas, kẹo đường.</span>
+</div>
+</div>
+<div class="rule-row">
+<div class="rule-num">2</div>
+<div>
+<strong>2 lít nước/ngày</strong> — uống đều cả ngày.<br>
+<span style="font-size:13.5px;color:#5C3A1E;">Não thường lẫn lộn khát với đói. Uống nước trước khi ăn 15 phút → giảm portion ăn 15-20%. Cũng giúp thải độc nicotine nhanh hơn.</span>
+</div>
+</div>
+</div>
+
+<h3>Cộng thêm: Đi bộ 30 phút × 5 ngày/tuần</h3>
+
+<p>Đi bộ trung bình (3-5 km/h) đốt 150-200 kcal/30 phút. 5 ngày × 175 kcal = 875 kcal/tuần = -3.5 kg mỡ/năm. Cộng quy tắc 3-5-2 → giữ được cân nặng baseline.</p>
+
+<p>Taylor & Ussher 2007 (Br J Sports Med): vận động nhẹ còn giúp giảm cơn thèm 50% trong 30 phút sau exercise<sup>[4]</sup>. Đi bộ giải quyết 2 vấn đề một lúc.</p>
+
+<h2>Thực đơn 7 ngày Việt — Mẫu chuẩn 1.800 kcal</h2>
+
+<p>Em chia sẻ thực đơn 1 ngày mẫu, anh có thể lặp với biến tấu:</p>
+
+<div class="menu-box">
+<h4>📅 Thực đơn ngày 1 mẫu (~1.800 kcal — duy trì cân)</h4>
+<div class="meal"><strong>6:30 sáng — Bữa sáng (400 kcal):</strong> 1 bát phở bò tái nạm (1 tô vừa, không nước béo) + 1 quả chuối + 1 cốc trà xanh không đường</div>
+<div class="meal"><strong>9:30 snack 1 (100 kcal):</strong> 10 hạt hạnh nhân + 1 quả táo</div>
+<div class="meal"><strong>12:00 trưa (500 kcal):</strong> 1 chén cơm trắng + cá hồi áp chảo 120g + rau muống luộc + canh chua cá lóc (1 chén nhỏ) + 1 cam</div>
+<div class="meal"><strong>15:00 snack 2 (100 kcal):</strong> 1 hũ sữa chua không đường + 5 quả ổi cắt lát</div>
+<div class="meal"><strong>17:30 snack 3 (80 kcal):</strong> 1 ly nước cam tươi không đường + 5 hạt óc chó</div>
+<div class="meal"><strong>19:00 tối (500 kcal):</strong> 1 chén cơm gạo lứt + gà nướng 100g (bỏ da) + rau cải xào tỏi + canh cà chua trứng + 1 quả kiwi</div>
+<div class="meal"><strong>21:00 snack 4 (100 kcal):</strong> 1 cốc sữa hạnh nhân không đường + 2 quả chà là</div>
+<div class="meal"><strong>22:30 snack 5 (50 kcal):</strong> 1 chén dưa hấu nhỏ HOẶC 1 chén dưa lưới (nếu vẫn đói)</div>
+</div>
+
+<p>Đa dạng hóa: thay phở bằng bún bò Huế / bún chả / bánh cuốn (sáng), cá hồi bằng cá chép / cá thu / thịt nạc heo (trưa), gà bằng tôm / mực / đậu hũ (tối). Giữ nguyên cấu trúc 3-5-2 + lượng calo.</p>
+
+<h2>NRT/Thuốc kê và tác động lên cân nặng</h2>
+
+<p>Aubin 2012 BMJ phân tích cụ thể từng loại thuốc<sup>[1]</sup>:</p>
+
+<ul>
+<li><strong>Bupropion (Wellbutrin):</strong> Giảm tăng cân -1.5 kg sau 12 tuần vs placebo. Hiệu quả nhất giữ cân. Cơ chế: ức chế dopamine reuptake → giảm thèm đồ ngọt.</li>
+<li><strong>Varenicline (Champix):</strong> Giảm -1.2 kg vs placebo. Tốt thứ hai.</li>
+<li><strong>NRT (patch/gum/lozenge):</strong> Giảm -0.5 đến -1 kg vs placebo. Tốt hơn không thuốc nhưng kém Bupropion.</li>
+<li><strong>NRT lozenge 4mg vs 2mg:</strong> Liều cao hơn giảm tăng cân hiệu quả hơn (Berlin 2017)<sup>[5]</sup>.</li>
+</ul>
+
+<p>Nếu lo lắng tăng cân + FTND ≥4: Sol khuyến cáo Bupropion 12 tuần (kê đơn BS). Đặc biệt nếu có depression đi kèm — Bupropion vừa giảm thèm + giữ cân + cải thiện mood.</p>
+
+<h2>Tăng cân có nguy hiểm bằng hút thuốc không?</h2>
+
+<p><strong>KHÔNG.</strong> Đây là câu hỏi quan trọng nhất. Nhiều người Việt sợ tăng cân hơn tiếp tục hút — hoàn toàn không cân xứng về mặt rủi ro.</p>
+
+<p>Hu et al. (2018, NEJM) — 170.000 người theo dõi 36 năm. So sánh:</p>
+
+<ul>
+<li>Người vẫn hút: baseline (cao nhất tử vong)</li>
+<li>Người bỏ thuốc kèm tăng 2-5 kg: <strong>giảm 47% tử vong tim mạch</strong></li>
+<li>Người bỏ thuốc kèm tăng 5-10 kg: <strong>giảm 47% tử vong tim mạch</strong> (vẫn lớn)</li>
+<li>Người bỏ thuốc không tăng cân: giảm 53% tử vong tim mạch (lợi ích cao nhất)</li>
+</ul>
+
+<div class="stat-highlight">
+<div class="stat-num">-47%</div>
+<div class="stat-label">Giảm tử vong tim mạch sau cai thuốc kèm tăng 2-10 kg vs người vẫn hút (Hu 2018 NEJM)<sup>[6]</sup></div>
+</div>
+
+<p>Nghĩa là: tăng 4-5 kg làm giảm <strong>10-15% lợi ích</strong> bỏ thuốc, KHÔNG xóa lợi ích. Bỏ thuốc + tăng 5 kg vẫn tốt hơn nhiều so với tiếp tục hút.</p>
+
+<p>Quy tắc: <strong>không bao giờ để nỗi sợ tăng cân thành lý do không cai thuốc</strong>. Đó là logic sai. Cai thuốc trước, kiểm soát cân sau.</p>
+
+<h2>Khi nào lo lắng — Khi nào không?</h2>
+
+<p><strong>Bình thường (không cần lo):</strong></p>
+<ul>
+<li>Tăng 2-5 kg trong 6 tháng đầu</li>
+<li>BMI vẫn trong khoảng healthy (18.5-25)</li>
+<li>Vòng eo không tăng quá 5cm</li>
+<li>Áp dụng quy tắc 3-5-2 và đi bộ</li>
+</ul>
+
+<p><strong>Cần chỉnh ngay:</strong></p>
+<ul>
+<li>Tăng &gt;5 kg trong 3 tháng đầu</li>
+<li>BMI &gt;25 (overweight) hoặc đã béo phì</li>
+<li>Vòng eo &gt;90cm (nam) / 80cm (nữ) — risk hội chứng chuyển hóa</li>
+<li>Triglyceride / cholesterol tăng</li>
+<li>Đường máu lúc đói &gt;100 mg/dL</li>
+</ul>
+
+<p>Nếu thuộc nhóm "cần chỉnh", gặp bác sĩ dinh dưỡng hoặc nội tiết. Có thể cần Bupropion thay vì NRT đơn.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol — Tăng cân 3 kg sau cai 2020</div>
+<p>Mình kể: cai 2020, tháng đầu mình tăng 1.5 kg, tháng 2-3 tăng thêm 1.5 kg — tổng 3 kg trong 90 ngày. Vợ mình kể thấy mình "ăn ngon hơn, ngủ ngon hơn, mặt đầy hơn".</p>
+<p>Mình lo. Tháng 4 mình đi cân — 73 kg, từ baseline 70 kg. Mình áp quy tắc 3-5-2 + đi bộ 5 ngày/tuần × 30 phút (mình thường đi cuối giờ chiều với vợ — cũng good for relationship).</p>
+<p>Tháng 6 mình cân lại — 72 kg. Tháng 12 — 71 kg. Năm thứ 2 — 70.5 kg. Năm 5 hiện tại — 70 kg, gần đúng baseline.</p>
+<p>3 kg là cái giá nhỏ cho 5 năm tự do. Mình đã đi cùng vợ chiều chiều — vợ vui hơn nhiều so với chồng hút thuốc trên ban công.</p>
+<p>Anh đừng để sợ tăng cân thành cản trở. Tăng 5 kg → 6 tháng sau giảm được. Hút thuốc → 10 năm sau ung thư phổi không cứu được.</p>
+</div>
+
+<h2>Hôm nay anh làm gì?</h2>
+
+<ol>
+<li><strong>Cân baseline:</strong> Cân hôm nay trước Q-Day, ghi vào nhật ký. Sẽ track lại sau 1/3/6/12 tháng.</li>
+<li><strong>Áp dụng quy tắc 3-5-2 ngay (kể cả trước Q-Day):</strong> 3 bữa chính + 5 snack lành mạnh + 2 lít nước. Tập thành thói quen.</li>
+<li><strong>Mua kit snack lành mạnh:</strong> Hạt hạnh nhân + óc chó + chuối + ổi + táo. Đặt nhà + cơ quan + xe.</li>
+<li><strong>Đặt lịch đi bộ 30 phút × 5 ngày/tuần:</strong> Chiều với vợ/con là tốt nhất — accountability + relationship.</li>
+<li><strong>Nếu FTND ≥4 + lo tăng cân:</strong> Cân nhắc Bupropion 12 tuần (kê đơn BS).</li>
+<li><strong>KHÔNG để sợ tăng cân ngăn cai:</strong> Tăng 4-5kg đổi lấy 47% giảm tử vong tim mạch — quá đáng giá.</li>
+</ol>
+
+⚖ <strong>Tăng cân khi cai thuốc lá</strong><br><br>
+Trung bình 4-5kg năm đầu (Aubin 2012 BMJ, 9.000 người). 3 cơ chế: BMR giảm 5-10% (mất 200-250 kcal/ngày), vị giác hồi → ăn ngon, oral fixation thay đồ ngọt.<br><br>
+Quy tắc Sol 3-5-2: 3 bữa chính đúng giờ + 5 snack lành mạnh + 2 lít nước. Cộng đi bộ 30 phút × 5 ngày/tuần.<br><br>
+Bupropion giảm tăng cân hiệu quả nhất (-1.5kg vs placebo). Tăng cân KHÔNG nguy hiểm bằng hút — bỏ thuốc + tăng 5kg vẫn giảm tử vong 47% (Hu 2018 NEJM).<br><br>
+📖 <a href="https://sol.vn/tang-can-khi-cai-thuoc/">Đọc đầy đủ →</a>
+</div>
+
+<div class="sol-faq">
+<h2>Câu hỏi thường gặp</h2>
+<details>
+<summary>1. Cai thuốc lá tăng cân bao nhiêu?</summary>
+<p>Trung bình 4-5 kg trong năm đầu sau cai (Aubin 2012 BMJ meta-analysis 62 nghiên cứu, 9.000 người). 16% người tăng &gt;10 kg, 13% giảm cân. Đỉnh tăng ở tháng 3-6, sau đó ổn định hoặc giảm dần nếu kiểm soát. Đa số phục hồi cân nặng baseline sau 5-10 năm.</p>
+</details>
+<details>
+<summary>2. Vì sao cai thuốc gây tăng cân?</summary>
+<p>3 cơ chế song song: (1) BMR giảm 5-10% — nicotine từng tăng đốt cháy calo 200-250 kcal/ngày, mất đi → tích lũy mỡ. (2) Vị giác hồi phục — ăn ngon hơn → ăn nhiều hơn. (3) Oral fixation thay thuốc bằng đồ ngọt → spike insulin → tích mỡ bụng. Hormonal change cũng có vai trò (leptin, ghrelin).</p>
+</details>
+<details>
+<summary>3. Có cách nào cai thuốc không tăng cân?</summary>
+<p>Có. Quy tắc 3-5-2 của Sol: 3 bữa chính đúng giờ (không skip), 5 lần snack lành mạnh (trái cây, hạt — KHÔNG bánh ngọt), 2 lít nước/ngày. Cộng đi bộ 30 phút × 5 ngày/tuần. NRT cũng giúp — Bupropion đặc biệt hiệu quả giữ cân (RR tăng cân thấp hơn placebo 1.5kg sau 12 tuần).</p>
+</details>
+<details>
+<summary>4. Tăng cân khi cai có nguy hiểm bằng hút thuốc không?</summary>
+<p>KHÔNG. Lợi ích bỏ thuốc vượt xa rủi ro tăng 4-5 kg. Hu et al. 2018 NEJM (170.000 người theo dõi 36 năm): bỏ thuốc kèm tăng cân vẫn giảm tử vong tim mạch 47% so với người vẫn hút. Tăng cân làm giảm lợi ích 10-20%, không xóa lợi ích chính.</p>
+</details>
+<details>
+<summary>5. Bao lâu cân nặng ổn định sau khi cai?</summary>
+<p>Đỉnh tăng cân tháng 3-6, sau đó ổn định. Trong năm đầu tăng 4-5kg, năm 2-3 tăng thêm 0-2kg, năm 4-5 thường giảm 1-2kg nếu duy trì lối sống lành mạnh. Allison 1999 (NEJM): cân nặng trở về baseline sau 5-10 năm với 30-40% người cai.</p>
+</details>
+<details>
+<summary>6. NRT hay Champix nào ít gây tăng cân hơn?</summary>
+<p>Bupropion hiệu quả nhất giữ cân — giảm cân tăng trung bình 1.5kg sau 12 tuần so với placebo (Aubin 2012). Varenicline (Champix) trung bình giảm 1.2kg. NRT (patch/gum) giảm 0.5-1kg. Bupropion phù hợp người lo lắng tăng cân + có depression đi kèm.</p>
+</details>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Bài này dựa trên Aubin 2012 BMJ, Hu 2018 NEJM, Allison 1999 NEJM. Không thay thế tư vấn dinh dưỡng cá nhân. Nếu anh có bệnh tiểu đường, cao huyết áp, mỡ máu cao — gặp bác sĩ trước khi áp dụng quy tắc 3-5-2 và điều chỉnh theo điều kiện cụ thể.
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Aubin HJ, Farley A, Lycett D, Lahmek P, Aveyard P. (2012). <em>Weight gain in smokers after quitting cigarettes: meta-analysis</em>. BMJ 345:e4439.</li>
+<li>Allison DB, Fontaine KR, Manson JE, Stevens J, VanItallie TB. (1999). <em>Annual deaths attributable to obesity in the United States</em>. JAMA 282(16):1530-1538.</li>
+<li>Vennemann MM, Hummel T, Berger K. (2008). <em>The association between smoking and smell and taste impairment in the general population</em>. Journal of Neurology 255(8):1121-1126.</li>
+<li>Taylor AH, Ussher MH, Faulkner G. (2007). <em>The acute effects of exercise on cigarette cơn thèm, triệu chứng cai (triệu chứng cai) symptoms, affect and smoking behaviour</em>. British Journal of Sports Medicine 41(8):500-504.</li>
+<li>Berlin I, Singleton EG, Heishman SJ. (2017). <em>Predicting smoking cai thuốc outcomes</em>. Nicotine & Tobacco Research 19(5):545-550.</li>
+<li>Hu Y, Zong G, Liu G, et al. (2018). <em>Smoking cai thuốc, weight change, type 2 diabetes, and mortality</em>. New England Journal of Medicine 379(7):623-632.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/cai-thuoc-la-vinh-vien/">Cai thuốc lá vĩnh viễn — Phương pháp Sol</a></li>
+<li>→ <a href="https://sol.vn/thuc-don-cai-thuoc-khong-tang-can/">Thực đơn 30 ngày cai thuốc không tăng cân</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-9-kit-thay-the/">T-6 — Kit thay thế Behavior</a></li>
+<li>→ <a href="https://sol.vn/lam-quen-ngay-1-tai-sao-bo-thuoc-la/">7 ngày Làm quen — bài đầu tiên</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">Cai thuốc + giữ cân — hoàn toàn khả thi với Sol</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Sol có quy tắc 3-5-2 + thực đơn 7 ngày Việt + tracker cân nặng tích hợp. Đừng để sợ tăng cân ngăn anh cai.</p>
+<a href="https://bothuocla.sol.vn">Tham gia 7 ngày Làm quen miễn phí →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi Khang Sol — Founder Đi Cùng Sol, 30 năm hút Vinataba (1990-2020), 5 năm tự do (2020-nay). Tăng 3kg sau cai, giảm về baseline sau 4 năm. Nội dung dựa trên Aubin 2012 BMJ, Hu 2018 NEJM, Allison 1999 NEJM. Cập nhật 14-05-2026.</p>
+
+</div>

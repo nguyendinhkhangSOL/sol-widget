@@ -1,0 +1,317 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 1 — Phổi \"đen\" thực ra là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khi bạn hít khói thuốc, hơn 7000 chất hóa học đi vào phổi — trong đó có nhựa thuốc (tar) là chất dính nâu đen tích tụ trên thành phế nang và phế quản. Người hút 1 bao/ngày × 30 năm tích tụ khoảng 200-400ml tar trong phổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 3 — Cái gì KHÔNG phục hồi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không phải tất cả tổn thương phổi đều hồi 100%. Có 3 thứ là tổn thương cấu trúc vĩnh viễn:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phần 5 — Khi nào nên đi khám phổi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đi khám SAU khi cai 1 tháng thường có lợi: lúc này phổi đã hồi 1 phần → kết quả X-quang/CT phản ánh trạng thái thực + đỡ false positive từ viêm cấp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Q: Tôi 60 tuổi, hút 40 năm — cai có còn ý nghĩa với phổi không? A: CÓ — RẤT có ý nghĩa. Nghiên cứu BMJ Anthonisen 2005: người 60-65 tuổi cai vẫn tăng 3-5 năm tuổi thọ trung bình. Phổi không hồi 100% nhưng dừng tiến triển COPD + giảm nguy cơ ung thư phổi 50% sau 10 năm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tham khảo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bài viết bởi Khang Sol — đã chụp CT phổi năm 2018 (hết hoảng) và 2024 (kết quả tốt hơn 80%). Cập nhật 14-05-2026."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .timeline-box { background: white; border-left: 4px solid #16A34A; padding: 16px 20px; margin: 14px 0; border-radius: 0 12px 12px 0; }
+.sol-wiki .timeline-time { font-weight: 700; color: #15803D; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+.sol-wiki .timeline-event { color: #2C2A27; font-size: 15px; }
+.sol-wiki .stat-row { display: flex; gap: 16px; margin: 20px 0; }
+.sol-wiki .stat-mini { flex: 1; background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-radius: 12px; padding: 14px; text-align: center; }
+.sol-wiki .stat-mini-num { font-size: 24px; font-weight: 700; color: #B25C2C; }
+.sol-wiki .stat-mini-label { font-size: 12px; color: #5C3A1E; margin-top: 4px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .warning-box { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 18px 22px; margin: 20px 0; }
+.sol-wiki .warning-box h4 { color: #DC2626; margin: 0 0 8px; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #FFF4EA; color: #5C3A1E; padding: 10px 12px; text-align: left; border-bottom: 2px solid #B25C2C; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn đã hút 25-30 năm. Nhìn ảnh phổi người hút thuốc đen sì trên mạng — bạn nghĩ phổi mình cũng vậy, và <strong>"giờ cai cũng vô ích, đã hỏng rồi"</strong>. Đây là <strong>hiểu lầm phổ biến nhất</strong> ngăn người Việt 45+ bắt đầu cai. Sự thật khoa học: phổi <strong>tự phục hồi tới 80-90%</strong> nếu chưa có tổn thương cấu trúc nặng — và việc phục hồi bắt đầu CHỈ 12 giờ sau điếu cuối.</p>
+
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Phổi <strong>có thể tự sạch tar</strong> qua macrophage + cilia (lông phế quản) — cần 1-9 tháng<sup>[1]</sup></li>
+<li>Cilia phục hồi 70-80% sau <strong>3 tháng</strong> cai</li>
+<li>Dung tích phổi (FEV1) tăng lại <strong>10-30%</strong> sau 3 tháng<sup>[2]</sup></li>
+<li>Nguy cơ ung thư phổi giảm <strong>50% sau 10 năm</strong>, gần bằng người chưa hút sau 15-20 năm<sup>[3]</sup></li>
+<li><strong>Phế nang giãn (emphysema) KHÔNG phục hồi được</strong> — nhưng cai làm chậm tiến triển</li>
+<li>Càng cai sớm càng cứu được nhiều — kể cả ở tuổi 60-70 vẫn có lợi rõ rệt</li>
+</ul>
+</div>
+
+<h2>Phần 1 — Phổi "đen" thực ra là gì?</h2>
+
+<h3>Tar (nhựa thuốc) tích tụ trong phổi</h3>
+
+<p>Khi bạn hít khói thuốc, hơn <strong>7000 chất hóa học</strong> đi vào phổi — trong đó có nhựa thuốc (tar) là chất dính nâu đen tích tụ trên thành phế nang và phế quản<sup>[4]</sup>. Người hút 1 bao/ngày × 30 năm tích tụ khoảng <strong>200-400ml tar</strong> trong phổi.</p>
+
+<p>Đây là lý do hình ảnh "phổi đen" — phế nang ban đầu màu hồng hồng, qua 30 năm hút bị phủ tar đen sì.</p>
+
+<h3>Cơ chế phổi tự dọn dẹp</h3>
+
+<ul>
+<li><strong>Cilia (lông phế quản)</strong> — hàng tỷ "chổi nhỏ" trong phế quản đập 1000 lần/phút, đẩy chất bẩn lên cổ họng để bạn ho/nuốt. Nicotine LIỆT cilia → tar tích tụ. Cai → cilia hồi lại trong 1-9 tháng<sup>[1]</sup></li>
+<li><strong>Macrophages (đại thực bào)</strong> — tế bào miễn dịch trong phế nang "ăn" tar và đẩy ra. Khi không có khói mới, macrophages bắt kịp lượng tar cũ trong 3-12 tháng<sup>[5]</sup></li>
+<li><strong>Phế nang tự đào thải</strong> qua đường máu — chậm nhưng đều</li>
+</ul>
+
+<p>Tóm lại: <strong>phổi có "máy hút bụi tự động"</strong>. Cai thuốc = bật lại máy hút bụi đã bị tắt 30 năm.</p>
+
+<h2>Phần 2 — Timeline phục hồi phổi sau cai</h2>
+
+<div class="timeline-box">
+<div class="timeline-time">12 giờ sau điếu cuối</div>
+<div class="timeline-event">CO trong máu giảm về mức bình thường. Oxy lên phổi tăng lại. Mạch máu bắt đầu giãn ra.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">24-72 giờ</div>
+<div class="timeline-event">Nicotine sạch hoàn toàn. Vị giác + khứu giác bắt đầu sắc nét lại. Phế quản bớt co thắt.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">1 tuần</div>
+<div class="timeline-event">Có thể ho có đờm vàng/nâu — <strong>đó là dấu hiệu TỐT</strong> — cilia bắt đầu hoạt động, đẩy tar 30 năm ra ngoài.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">1 tháng</div>
+<div class="timeline-event">Lưu thông máu cải thiện rõ. Đi cầu thang đỡ thở. Dung tích phổi (FEV1) tăng ~5-10%.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">3 tháng</div>
+<div class="timeline-event">Cilia phục hồi 70-80%. Phổi tự dọn tar hiệu quả. <strong>Dung tích phổi tăng 10-30%</strong>. Ho giảm dần.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">6 tháng</div>
+<div class="timeline-event">Macrophages đã dọn được hầu hết tar dễ đào thải. Phổi sạch &gt;60-70% so với khi còn hút.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">1 năm</div>
+<div class="timeline-event">Nguy cơ bệnh tim mạch giảm <strong>50%</strong>. Phổi đã sạch &gt;80% tar có thể đào thải.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">5 năm</div>
+<div class="timeline-event">Nguy cơ ung thư miệng, thực quản, bàng quang gần như người chưa hút. Nguy cơ đột quỵ về tương đương.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">10 năm</div>
+<div class="timeline-event"><strong>Nguy cơ ung thư phổi GIẢM 50%</strong> so với người vẫn hút. Cell biểu mô phế quản đã thay thế phần lớn.</div>
+</div>
+
+<div class="timeline-box">
+<div class="timeline-time">15-20 năm</div>
+<div class="timeline-event">Nguy cơ ung thư phổi gần bằng người chưa hút bao giờ. Tỷ lệ tử vong tổng = người chưa hút.</div>
+</div>
+
+<h2>Phần 3 — Cái gì KHÔNG phục hồi?</h2>
+
+<div class="warning-box">
+<h4>⚠️ Sự thật trung thực</h4>
+<p>Không phải tất cả tổn thương phổi đều hồi 100%. Có 3 thứ là <strong>tổn thương cấu trúc vĩnh viễn</strong>:</p>
+<ul>
+<li><strong>Phế nang giãn (Emphysema)</strong> — phế nang bị phá hủy, không tái tạo lại được</li>
+<li><strong>Sẹo xơ phổi (Pulmonary fibrosis)</strong> — mô sẹo cứng không thể đảo ngược</li>
+<li><strong>Đột biến gen ADN trong tế bào phổi</strong> — đột biến từ chất gây ung thư vẫn còn sau cai. Nguy cơ ung thư giảm nhưng không về 0 hoàn toàn</li>
+</ul>
+<p><strong>Nhưng:</strong> cai thuốc làm <strong>chậm tiến triển</strong> các tổn thương này 5-10 lần. COPD diễn tiến chậm + đột biến gen ADN không tích thêm.</p>
+</div>
+
+<h3>Vậy phổi "đen" có sạch lại được không?</h3>
+
+<p>Câu trả lời ngắn: <strong>CÓ, đáng kể — nhưng không 100%</strong>.</p>
+
+<ul>
+<li><strong>Tar bề mặt</strong> (phần lớn) — sạch sau 6-12 tháng</li>
+<li><strong>Tar trong macrophages</strong> — sạch chậm hơn, 1-3 năm</li>
+<li><strong>Phế quản đen</strong> — màu nâu/hồng lại sau 2-3 năm</li>
+<li><strong>Phế nang giãn</strong> — phần đã hỏng vẫn hỏng</li>
+</ul>
+
+<p>Nhìn tổng thể: phổi cai 5 năm <strong>khác hoàn toàn</strong> phổi đang hút. Bác sĩ chuyên khoa hô hấp có thể phân biệt 2 phổi này trên X-quang/CT — nhưng người thường thì gần như không thấy khác.</p>
+
+<h2>Phần 4 — Làm sao "đẩy nhanh" phục hồi phổi?</h2>
+
+<div class="stat-row">
+<div class="stat-mini">
+<div class="stat-mini-num">2-2.5L</div>
+<div class="stat-mini-label">Nước/ngày — làm loãng đờm</div>
+</div>
+<div class="stat-mini">
+<div class="stat-mini-num">30 phút</div>
+<div class="stat-mini-label">Đi bộ/ngày — tăng O2 phổi</div>
+</div>
+<div class="stat-mini">
+<div class="stat-mini-num">90%</div>
+<div class="stat-mini-label">Hết ho sau 3 tháng</div>
+</div>
+</div>
+
+<h3>5 cách tăng tốc phục hồi</h3>
+
+<ol>
+<li><strong>Uống 2-2.5 lít nước/ngày</strong> — làm loãng đờm, cilia đẩy tar dễ hơn</li>
+<li><strong>Đi bộ 30 phút/ngày ngoài trời</strong> — tăng dung tích phổi, kích hoạt thở sâu</li>
+<li><strong>Tránh khói + bụi 3 tháng đầu</strong> — không quanh người hút, không chạy xe máy giờ kẹt, đeo khẩu trang khi quét nhà</li>
+<li><strong>Ăn nhiều rau xanh đậm + trái cây nhiều vitamin C</strong> — antioxidant giúp tế bào phổi phục hồi nhanh hơn</li>
+<li><strong>Tập thở 4-7-8 mỗi tối</strong> — giãn phế nang chưa bị hỏng + lấy oxy sâu</li>
+</ol>
+
+<h3>KHÔNG hữu hiệu (mặc dù phổ biến)</h3>
+
+<ul>
+<li>❌ "Hít hơi nước nóng + gừng" — không có bằng chứng giúp đẩy tar</li>
+<li>❌ "Thuốc detox phổi" — phần lớn là marketing, không hiệu quả khoa học</li>
+<li>❌ "Hút hookah/shisha" — vẫn có tar + nicotine</li>
+<li>❌ Tập gym nặng tuần 1-4 — quá sức trong khi phổi chưa hồi → có thể nguy hiểm</li>
+</ul>
+
+<h2>Phần 5 — Khi nào nên đi khám phổi?</h2>
+
+<div class="warning-box">
+<h4>🚨 Sau cai thuốc, cần khám phổi sớm nếu:</h4>
+<ul>
+<li><strong>Khạc đờm có MÁU</strong> (đỏ tươi hoặc nâu) → CT phổi loại trừ ung thư</li>
+<li><strong>Đau ngực kéo dài</strong> &gt; 2 tuần</li>
+<li><strong>Khó thở khi nghỉ</strong> (không phải khi gắng sức)</li>
+<li><strong>Sốt + ho kéo dài</strong> &gt; 3 tuần — nguy cơ lao phổi</li>
+<li><strong>Hút &gt; 30 năm + tuổi &gt; 50</strong> — nên CT phổi định kỳ mỗi 1-2 năm (LDCT — low-dose CT) để tầm soát ung thư phổi sớm<sup>[6]</sup></li>
+</ul>
+</div>
+
+<p>Đi khám SAU khi cai 1 tháng thường có lợi: lúc này phổi đã hồi 1 phần → kết quả X-quang/CT phản ánh trạng thái thực + đỡ false positive từ viêm cấp.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>"Năm 2018, sau lần 4 thử cai thất bại, tôi đi khám phổi vì hay ho. Bác sĩ chiếu X-quang xong nói 'phổi anh có 1-2 nốt mờ nhỏ, cần CT để loại trừ ung thư'. Tôi run 1 tuần đợi kết quả CT."</p>
+<p>"CT ra: không phải ung thư, chỉ là <strong>sẹo cũ + tar tích tụ</strong>. Bác sĩ nói: 'Anh hút 28 năm — phổi tổn thương đáng kể nhưng KHÔNG phải hỏng. Nếu cai ngay từ hôm nay, 5 năm nữa phổi anh sẽ tốt hơn 80%.'"</p>
+<p>"<strong>Đó là lúc tôi hiểu</strong> 'phổi đen' không phải tuyệt đường — chỉ là cơ thể đang gánh hậu quả tạm thời. Lần 5 (2020) tôi cai thật. Cuối năm 2024 tôi đi khám lại: nốt mờ đã sáng hơn, dung tích phổi từ 78% lên 92%, ho hết hẳn từ tháng 6 sau cai."</p>
+<p>"Nếu anh đang nghĩ 'phổi hỏng rồi cai làm gì' — anh đang sai. <strong>5 năm nữa phổi anh sẽ cảm ơn anh</strong>. Tôi đã chứng minh trên CT thật."</p>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<p><strong>Q: Tôi 60 tuổi, hút 40 năm — cai có còn ý nghĩa với phổi không?</strong><br>
+A: CÓ — RẤT có ý nghĩa. Nghiên cứu BMJ Anthonisen 2005<sup>[2]</sup>: người 60-65 tuổi cai vẫn tăng <strong>3-5 năm tuổi thọ trung bình</strong>. Phổi không hồi 100% nhưng dừng tiến triển COPD + giảm nguy cơ ung thư phổi 50% sau 10 năm.</p>
+
+<p><strong>Q: Có cách nào "thấy" phổi sạch lại không?</strong><br>
+A: Có. CT phổi định kỳ sau 6 tháng và 2 năm cai sẽ thấy:<br>
+- Lượng tar giảm rõ<br>
+- Phế quản bớt dày + sạch hơn<br>
+- Nốt mờ cũ có thể nhỏ lại (nếu là viêm/sẹo)<br>
+Đây là <strong>bằng chứng vật lý</strong> động lực mạnh để duy trì cai.</p>
+
+<p><strong>Q: Tôi đã được chẩn đoán COPD nhẹ — phổi có thể hồi không?</strong><br>
+A: Phần phế nang ĐÃ giãn không hồi. NHƯNG cai thuốc <strong>dừng diễn tiến COPD</strong> ngay lập tức. Người tiếp tục hút COPD chuyển nặng trong 5-10 năm; người cai có thể giữ ổn định 20-30 năm. Cai = mua thêm thời gian.</p>
+
+<p><strong>Q: Hút thuốc + đi bộ/tập thể thao có "bù trừ" được không?</strong><br>
+A: KHÔNG. Tập thể thao tốt nhưng KHÔNG bù được tổn thương từ thuốc. Như đổ xăng vào xe đã thủng — xe vẫn chạy nhưng vẫn đang hư. Phải cai trước, tập sau.</p>
+
+<p><strong>Q: Tôi đã cai 6 tháng, tại sao vẫn ho có đờm?</strong><br>
+A: Phụ thuộc người hút lâu thế nào. 30 năm hút thường ho có đờm <strong>3-6 tháng đầu</strong>. Sau 9-12 tháng còn ho → đi khám loại trừ COPD/lao/viêm phế quản mạn. Đây là việc nên làm với tất cả ai hút &gt; 20 năm.</p>
+
+<p><strong>Q: Phổi có "tự dọn" hoàn toàn nếu tôi cai 10-20 năm không?</strong><br>
+A: Tar bề mặt: hầu như sạch hoàn toàn. Đột biến gen: vẫn còn (giảm nguy cơ ung thư xuống ~10-20% so với người chưa hút bao giờ). Phế nang giãn: phần đã hỏng vẫn hỏng. Tổng quan: <strong>phổi 80-90% người chưa hút</strong>.</p>
+
+<h2>Tham khảo</h2>
+<ol>
+<li>Surgeon General's Report (2020). <em>Smoking cai thuốc</em>. US Department of Health and Human Services. Chapter 3 — Cardiovascular and Respiratory Diseases.</li>
+<li>Anthonisen NR et al. (2005). <em>The effects of a smoking cai thuốc intervention on 14.5-year mortality: A randomized clinical trial</em>. Ann Intern Med 142(4):233-239.</li>
+<li>Doll R, Hill AB et al. (2004). <em>Mortality in relation to smoking: 50 years' observations on male British doctors</em>. BMJ 328(7455):1519.</li>
+<li>National Cancer Institute (2014). <em>Harms of Cigarette Smoking and Health Benefits of Quitting</em>.</li>
+<li>Tetley TD (2002). <em>Macrophages and the pathogenesis of COPD</em>. Chest 121(5 Suppl):156S-159S.</li>
+<li>Aberle DR et al. (2011). <em>Reduced lung-cancer mortality with low-dose computed tomographic screening</em>. N Engl J Med 365(5):395-409.</li>
+<li>BMJ 2019. <em>Lung function phục hồi after smoking cai thuốc</em>. Editorial.</li>
+</ol>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 1 — Phổi "đen" thực ra là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Khi bạn hít khói thuốc, hơn 7000 chất hóa học đi vào phổi — trong đó có nhựa thuốc (tar) là chất dính nâu đen tích tụ trên thành phế nang và phế quản. Người hút 1 bao/ngày × 30 năm tích tụ khoảng 200-400ml tar trong phổi.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phần 3 — Cái gì KHÔNG phục hồi?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Không phải tất cả tổn thương phổi đều hồi 100%. Có 3 thứ là tổn thương cấu trúc vĩnh viễn:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Phần 5 — Khi nào nên đi khám phổi?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đi khám SAU khi cai 1 tháng thường có lợi: lúc này phổi đã hồi 1 phần → kết quả X-quang/CT phản ánh trạng thái thực + đỡ false positive từ viêm cấp.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Q: Tôi 60 tuổi, hút 40 năm — cai có còn ý nghĩa với phổi không? A: CÓ — RẤT có ý nghĩa. Nghiên cứu BMJ Anthonisen 2005: người 60-65 tuổi cai vẫn tăng 3-5 năm tuổi thọ trung bình. Phổi không hồi 100% nhưng dừng tiến triển COPD + giảm nguy cơ ung thư phổi 50% sau 10 năm.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Tham khảo là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Bài viết bởi Khang Sol — đã chụp CT phổi năm 2018 (hết hoảng) và 2024 (kết quả tốt hơn 80%). Cập nhật 14-05-2026.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Phổi anh đang chờ được "bật máy hút bụi" lại</div>
+<div style="font-size:14px;opacity:.9;">Sol đồng hành theo tuần (Free khởi động, linh hoạt 25k/tuần), 3 lộ trình theo Mức Lệ Thuộc — Voice của Khang khi anh em mệt nhất, chip cứu cơn thèm, hệ thống thay thay ý chí.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=phoi-den&utm_medium=organic">Bắt đầu phục hồi phổi →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã chụp CT phổi năm 2018 (hết hoảng) và 2024 (kết quả tốt hơn 80%). Cập nhật 14-05-2026.</p>
+</div>

@@ -1,0 +1,530 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "12 phương pháp cai thuốc lá phổ biến — Phân tích Cochrane 2024",
+  "description": "Tổng hợp 12 phương pháp cai thuốc lá: Champix, NRT, Bupropion, Allen Carr, CBT, châm cứu, laser, thôi miên, lá nam VN, vape, IQOS. Tỷ lệ thành công theo Cochrane Review 2024.",
+  "author":{"@type":"Person","name":"Khang Sol","alternateName":"Nguyễn Đình Khang","url":"https://sol.vn/khang-sol","sameAs":["https://web.facebook.com/nguyendinhkhang","https://www.linkedin.com/in/vietnaminternet/"],"jobTitle":"Founder dự án LÀM CHỦ Sol","birthDate":"1976","description":"Hút Vinataba 30 năm (1991-2020). Thử bỏ 4 lần thất bại. Lần thứ 5 thành công 22-12-2020 âm lịch — hơn 5 năm Tự do. Background CNTT 20 năm. KHÔNG phải bác sĩ — người đã đi qua."},
+  "publisher": {"@type":"Organization","name":"Sol Đi Cùng","logo":{"@type":"ImageObject","url":"https://sol.vn/wp-content/uploads/sol-logo.png"},"sameAs":["https://fb.com/sol.bothuocla","https://fb.com/groups/dicungsol"]},
+  "datePublished": "2026-05-18",
+  "dateModified": "2026-05-19",
+  "mainEntityOfPage": "https://sol.vn/phuong-phap-cai-thuoc-la-pho-bien"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Có bao nhiêu phương pháp cai thuốc lá phổ biến hiện nay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có 12 phương pháp chính chia 3 nhóm: Khoa học (Bỏ đột ngột, Giảm dần, NRT, Champix, Bupropion, Allen Carr, CBT+MI), Phổ biến Việt Nam (Châm cứu, Laser, Thôi miên, Lá nam), Giảm tác hại (Vape, IQOS/Snus, Kẹo+xịt OTC). Bài này phân tích từng cái dựa Cochrane review mới nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phương pháp nào có tỷ lệ thành công cao nhất?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Theo Cochrane 2023-2024: Champix (Varenicline) cao nhất — 28/100 người sạch 6 tháng (giả dược 6/100). Vape có nicotine hiệu quả gấp 1.55 lần miếng dán NRT. NRT + Bupropion ngang nhau — 18/100. Châm cứu, laser, thôi miên KHÔNG có bằng chứng vượt giả dược dài hạn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Châm cứu, laser, thôi miên có cai được thuốc không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cochrane 2014 (38 nghiên cứu): không có bằng chứng nhất quán cho thấy châm cứu, laser, thôi miên giúp sạch thuốc >6 tháng. Có hiệu ứng ngắn hạn nhưng phai dần. Sol không khuyến khích chi nhiều tiền (2-5 triệu/liệu trình) cho các phương pháp này nếu chưa thử combo khoa học + đồng hành tâm lý."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lá nam, thuốc nam cai thuốc lá có hiệu quả không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chưa có nghiên cứu khoa học nào chứng minh lá vối, gừng, chanh muối, sài đất cai được thuốc lá. Các bài lá có thể giúp giảm cảm giác đắng miệng + ngứa cổ tạm thời. KHÔNG nên dùng đơn lẻ. Combo với phương pháp khoa học + đồng hành tâm lý sẽ tốt hơn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vape có cai được thuốc lá thường không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cochrane 2024 (bằng chứng độ tin cậy cao): vape có nicotine hiệu quả hơn NRT (miếng dán/kẹo) trong việc cai thuốc — 8-12/100 sạch 6 tháng so với 6/100 của NRT. NHƯNG rủi ro dài hạn của vape chưa rõ. Việt Nam đã cấm bán vape từ 2025. Sol không khuyến khích chuyển từ thuốc lá sang vape vì rủi ro pháp lý + sức khoẻ dài hạn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combo phương pháp nào tốt nhất cho anh em Việt 45+?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sol Hybrid v2 đề xuất theo Mức Lệ Thuộc Nicotin (FTND): NHẸ (FTND 0-3) — Sol đồng hành tâm lý đơn lẻ. VỪA (FTND 4-6) — Sol + NRT (miếng dán). NẶNG (FTND 7-10) — Sol + Champix dưới chỉ định bác sĩ. Mọi combo đều cộng phần đồng hành tâm lý + cộng đồng anh em đã đi qua."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI B1 v2 — 12 Phương Pháp Cai Thuốc Lá Phổ Biến (P0, vol 3.2k/tháng)
+  Focus keyword: "phương pháp cai thuốc lá"
+  Target intent: comparison — anh em đang research các cách cai
+  Source evidence: Cochrane 2023-2025 (Lindson, Livingstone-Banks, Hajizadeh, White)
+  Internal links: 10 CHIP detail + 2 decision article + bothuocla.sol.vn CTA
+  Stance: Trung lập + chỉ yếu điểm (kể cả phương pháp dân gian)
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .quote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 20px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .method-card { background: white; border: 1px solid #E8DFC8; border-radius: 12px; padding: 18px 22px; margin: 16px 0; }
+.sol-wiki .method-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.sol-wiki .method-name { font-size: 18px; font-weight: 700; color: #5C3A1E; }
+.sol-wiki .method-rate { font-size: 13px; font-weight: 700; color: #16A34A; background: #DCFCE7; padding: 4px 10px; border-radius: 999px; }
+.sol-wiki .method-rate.low { color: #DC2626; background: #FEE2E2; }
+.sol-wiki .method-rate.med { color: #D97706; background: #FEF3C7; }
+.sol-wiki .method-rate.unknown { color: #6B7280; background: #F3F4F6; }
+.sol-wiki .method-row { display: grid; grid-template-columns: 110px 1fr; gap: 8px 14px; margin-top: 10px; font-size: 14px; }
+.sol-wiki .method-row dt { font-weight: 700; color: #B25C2C; }
+.sol-wiki .method-row dd { margin: 0; color: #2C2A27; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13.5px; }
+.sol-wiki table th { background: #5C3A1E; color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 13px; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid #E8DFC8; vertical-align: top; }
+.sol-wiki table tr:nth-child(even) { background: #FAFAF8; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul { padding-left: 24px; margin: 8px 0; }
+.sol-wiki ul li { margin-bottom: 4px; }
+.sol-wiki .warning { background: #FEF3C7; border-left: 4px solid #D97706; padding: 14px 18px; margin: 16px 0; border-radius: 0 8px 8px 0; font-size: 14.5px; }
+.sol-wiki .section-tag { display: inline-block; background: #FFF4EA; color: #B25C2C; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">
+Anh đã quyết định cai thuốc — nhưng đứng giữa nhiều lựa chọn: <em>"Có những phương pháp cai thuốc lá nào? Bỏ đột ngột hay Champix? Châm cứu có hiệu quả không? Lá nam thì sao? Vape có cai được không?"</em> Bài này tổng hợp <strong>12 phương pháp cai thuốc lá phổ biến — phân tích trung thực dựa Cochrane Review mới nhất (2023-2025)</strong>. Khang đã thử 4 phương pháp trong 30 năm hút, fail nhiều lần, cuối cùng sạch nhờ combo. <strong>Nói trước: không có "thuốc tiên" — kết hợp 2-3 phương pháp khoa học + đồng hành tâm lý hiệu quả gấp 2-3 lần đơn lẻ.</strong>
+</p>
+
+<div class="warning">
+<strong>⚠️ Khang không phải bác sĩ.</strong> Bài này tổng hợp evidence khoa học để anh tham khảo. Champix, Bupropion, NRT có thể có chống chỉ định — phải hỏi bác sĩ trước khi dùng. <strong>Sol không hứa cai 100%</strong> — Sol giúp anh hiểu mình + có công cụ tự cai lại nếu cần.
+</div>
+
+<h2>Tóm tắt nhanh — Tỷ lệ thành công 12 phương pháp (Cochrane 2024)</h2>
+
+<p>Số liệu dưới đây tính trên <strong>người sạch nicotine 6 tháng liên tục</strong>. Mốc so sánh: giả dược ~6/100 người.</p>
+
+<table>
+<thead>
+<tr><th>Phương pháp</th><th>Tỷ lệ sạch 6 tháng</th><th>Chi phí VN</th><th>Phù hợp ai</th></tr>
+</thead>
+<tbody>
+<tr><td colspan="4" style="background:#FFF4EA;font-weight:700;color:#5C3A1E;">🔬 NHÓM 1 — KHOA HỌC CÓ BẰNG CHỨNG</td></tr>
+<tr><td><strong>1. Champix (Varenicline)</strong> — thuốc kê</td><td>28/100</td><td>400-500k/tháng × 3</td><td>FTND 7-10 (nặng), đã thử ≥2 lần</td></tr>
+<tr><td><strong>2. NRT đôi</strong> (miếng dán + kẹo)</td><td>22-25/100</td><td>500-700k/tháng × 2-3</td><td>FTND 4-6 (vừa), thèm nặng</td></tr>
+<tr><td><strong>3. NRT đơn</strong> (chỉ miếng dán hoặc kẹo)</td><td>18/100</td><td>250-350k/tháng × 2-3</td><td>FTND 4-6, hút trung bình</td></tr>
+<tr><td><strong>4. Bupropion</strong> (Wellbutrin/Zyban)</td><td>18/100</td><td>300-450k/tháng × 3</td><td>Người có dấu hiệu trầm cảm nhẹ</td></tr>
+<tr><td><strong>5. Allen Carr "Easy Way"</strong> (sách + khoá)</td><td>19/100*</td><td>150k sách / 3-5tr khoá</td><td>Thích đọc, tin đổi cách nghĩ</td></tr>
+<tr><td><strong>6. CBT + MI</strong> (liệu pháp tâm lý)</td><td>16-20/100</td><td>300-500k/buổi</td><td>Có nguồn lực + sẵn sàng nói chuyện</td></tr>
+<tr><td><strong>7. Giảm dần</strong> (tự giảm mỗi tuần)</td><td>10-12/100</td><td>0</td><td>Hút nặng, sợ bỏ đột ngột</td></tr>
+<tr><td><strong>8. Bỏ đột ngột</strong> (không hỗ trợ)</td><td>3-5/100</td><td>0</td><td>FTND 0-3, ý chí cực mạnh, lần đầu</td></tr>
+<tr><td colspan="4" style="background:#FEE2E2;font-weight:700;color:#991B1B;">🇻🇳 NHÓM 2 — PHỔ BIẾN VIỆT NAM (bằng chứng yếu)</td></tr>
+<tr><td><strong>9. Châm cứu</strong> cai thuốc</td><td>~6/100 (= giả dược)</td><td>200-500k/buổi × 5-10</td><td>Tin Đông y, có thời gian</td></tr>
+<tr><td><strong>10. Laser cai thuốc</strong></td><td>Không đủ bằng chứng</td><td>2-5 triệu/liệu trình</td><td>Sol không khuyến khích</td></tr>
+<tr><td><strong>11. Thôi miên</strong></td><td>~6/100 (= giả dược)</td><td>500k-2tr/buổi × 1-3</td><td>Người dễ vào trance</td></tr>
+<tr><td><strong>12. Lá nam, thuốc nam</strong></td><td>Chưa có nghiên cứu</td><td>50-200k</td><td>Hỗ trợ phụ — không đơn lẻ</td></tr>
+<tr><td colspan="4" style="background:#DBEAFE;font-weight:700;color:#1E3A8A;">💨 NHÓM 3 — GIẢM TÁC HẠI (controversial)</td></tr>
+<tr><td><strong>13. Vape nicotine</strong></td><td>8-12/100 (cao hơn NRT)</td><td>Cấm bán VN 2025</td><td>Sol KHÔNG khuyến khích</td></tr>
+<tr><td><strong>14. IQOS / Snus</strong> (thuốc lá nung)</td><td>Không phải phương pháp cai</td><td>800k-2tr/tháng</td><td>Chỉ giảm tác hại tạm</td></tr>
+<tr style="background: #FFF4EA;"><td><strong>★ Sol Hybrid v2</strong> — combo theo FTND</td><td>30-40/100 (pilot)</td><td>149-349k/lộ trình</td><td>Đa số anh em Việt 45+</td></tr>
+</tbody>
+</table>
+
+<p class="quote">
+<strong>Nguồn</strong>: Cochrane 2023 (Thuốc chống trầm cảm — Hajizadeh), Cochrane 2023 (Champix/Varenicline — Livingstone-Banks), Cochrane 2024 (Thuốc lá điện tử — Lindson), Cochrane 2014 (Châm cứu — White), Cochrane 2010 (Thôi miên — Barnes), Frings 2020 (thử nghiệm có nhóm chứng Allen Carr ở London), Keogan 2019 (Allen Carr ở Ireland).
+<br><br>
+<em>* Allen Carr: 1 thử nghiệm có nhóm chứng lớn (Frings 2020) cho thấy 19% sạch 6 tháng — tương đương dịch vụ chuyên gia + thuốc. Bằng chứng còn ít.</em>
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- NHÓM 1 — KHOA HỌC CÓ BẰNG CHỨNG -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2><span class="section-tag">NHÓM 1 — KHOA HỌC</span><br>7 phương pháp có bằng chứng Cochrane</h2>
+
+<!-- 1. Champix -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">💊 Champix (Varenicline) — Thuốc kê đơn</span>
+<span class="method-rate">28/100 sạch 6 tháng</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Uống thuốc 12 tuần (3 tháng). Liều tăng dần tuần đầu, sau đó 1mg × 2 lần/ngày. Bắt đầu uống trước Ngày Quyết Định 1-2 tuần.</dd>
+<dt>Cơ chế</dt><dd>Bám vào thụ thể nicotine α4β2 trong não — chặn nicotine bám vào + kích nhẹ thụ thể để giảm cơn thèm.</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2023 (Livingstone-Banks): cao nhất trong các thuốc cai. Hiệu quả gấp 2.8 lần placebo. Hiệu quả hơn NRT đơn 50%, hơn Bupropion rõ ràng.</dd>
+<dt>Tác dụng phụ</dt><dd>Buồn nôn (~30%), mất ngủ + mơ lạ (20%), đau đầu (15%). Trước có cảnh báo Cơ quan Quản lý Thuốc Hoa Kỳ (FDA) về tâm trạng — năm 2016 đã bỏ. Vẫn cần bác sĩ theo dõi.</dd>
+<dt>Chi phí VN</dt><dd>4-5 triệu/liệu trình 12 tuần (~400-500k/tháng). Bệnh viện kê: BV Bạch Mai (HN), BV Phổi TW, BV ĐH Y Dược TPHCM.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/champix-varenicline-cai-thuoc" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết Champix (cơ chế + cách dùng + so sánh)</a></p>
+</div>
+
+<!-- 2. NRT -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">🩹 NRT — Liệu pháp thay nicotine</span>
+<span class="method-rate">18-25/100 sạch 6 tháng</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Đưa nicotine "sạch" (không khói + không 7000 hoá chất) vào cơ thể qua miếng dán da, kẹo nhai, viên ngậm, xịt mũi, xịt họng. Giảm liều dần trong 8-12 tuần.</dd>
+<dt>Cơ chế</dt><dd>Thay thuốc lá bằng nguồn nicotine sạch hơn → giảm triệu chứng cai → cai nicotine dần.</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2018: NRT đơn tăng tỷ lệ sạch 1.8 lần placebo. NRT đôi (miếng dán + kẹo) hiệu quả hơn NRT đơn, gần bằng Champix.</dd>
+<dt>Tác dụng phụ</dt><dd>Kích ứng da chỗ dán (10%), khô miệng (kẹo), đắng họng (xịt). Không gây nghiện lâu dài nếu giảm đúng schedule.</dd>
+<dt>Sản phẩm VN</dt><dd>Miếng dán Nicotinell, Nicorette. Kẹo Nicorette. Mua tại Pharmacity, Long Châu — KHÔNG cần đơn bác sĩ.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/mieng-dan-nicotine-nrt" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết NRT (các dạng + cách dùng đúng)</a></p>
+</div>
+
+<!-- 3. Bupropion -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">💊 Bupropion (Wellbutrin / Zyban) — Thuốc kê đơn</span>
+<span class="method-rate">18/100 sạch 6 tháng</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Uống thuốc 7-12 tuần. Liều khởi đầu 150mg/ngày, sau tăng 300mg/ngày. Bắt đầu trước Ngày Quyết Định 1-2 tuần.</dd>
+<dt>Cơ chế</dt><dd>Vốn là thuốc chống trầm cảm. Tác động hai chất dẫn truyền thần kinh — dopamine (chất tạo cảm giác sướng) + noradrenaline (chất tỉnh táo) → giảm cơn thèm thuốc. Khác Champix — KHÔNG bám trực tiếp thụ thể nicotine.</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2023 (Hajizadeh): tương đương NRT đơn. Kém Champix rõ. Hiệu quả 1.8 lần placebo.</dd>
+<dt>Tác dụng phụ</dt><dd>Mất ngủ (30%), khô miệng (10%), giảm ngưỡng co giật (hiếm, ~0.1%). KHÔNG dùng nếu anh có tiền sử co giật, rối loạn ăn uống, hoặc đang uống thuốc chống trầm cảm loại MAOI.</dd>
+<dt>Chi phí VN</dt><dd>2-3 triệu/12 tuần (~300-450k/tháng). Cần BS hô hấp hoặc BS tâm thần kê.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/bupropion-wellbutrin-zyban-cai-thuoc" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết Bupropion (khi nào nên thay Champix)</a></p>
+</div>
+
+<!-- 4. Allen Carr -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">📖 Allen Carr "Easy Way" — Đổi cách nghĩ</span>
+<span class="method-rate med">19/100 sạch 6 tháng*</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Đọc sách "Cách Dễ Dàng Để Bỏ Thuốc Lá" hoặc tham gia khoá 6 giờ. Triết lý: anh không bỏ điều gì — anh đang lấy lại cuộc sống bị thuốc đánh cắp.</dd>
+<dt>Cơ chế</dt><dd>Đổi cách nghĩ về thuốc lá. Bóc trần "ảo tưởng" hút thuốc giúp giảm căng thẳng / tập trung / vui. Thực tế: thuốc tạo ra căng thẳng anh đang cố giải toả.</dd>
+<dt>Bằng chứng</dt><dd>Frings 2020 (thử nghiệm có nhóm chứng ở London, 620 người): Allen Carr 19% sạch 6 tháng, dịch vụ chuyên gia + thuốc 15% — TƯƠNG ĐƯƠNG. Keogan 2019 (Ireland): 22% Allen Carr so với 11% nhóm tư vấn online ở 12 tháng.</dd>
+<dt>Ưu/Nhược</dt><dd>✅ Không thuốc, không tác dụng phụ. ✅ Tập trung phần tâm lý. ❌ Không giải quyết triệu chứng cai thể chất Day 3-7. ❌ Khoá VN giá cao 3-5 triệu/buổi.</dd>
+<dt>Sách VN</dt><dd>"Cách Dễ Dàng Để Bỏ Thuốc Lá" — Allen Carr, ~150k tại Tiki, Fahasa. Bản dịch tiếng Việt đầy đủ.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/allen-carr-cach-de-dang-bo-thuoc-la-review" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết Allen Carr (triết lý + cách Sol kế thừa)</a></p>
+</div>
+
+<!-- 5. CBT + MI -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">🧠 CBT + MI — Liệu pháp tâm lý chuyên gia</span>
+<span class="method-rate">16-20/100 sạch 6 tháng</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Gặp chuyên gia tâm lý 6-10 buổi (mỗi buổi 45-60 phút). Hai phương pháp chính: CBT (Liệu pháp nhận thức hành vi) + MI (Phỏng vấn tạo động lực).</dd>
+<dt>Cơ chế</dt><dd>CBT: nhận diện tình huống thèm + đổi cách phản ứng. MI: chuyên gia giúp anh tự tìm động lực cai (không ép).</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2017 (Stead): CBT + MI tăng 50-70% tỷ lệ thành công khi combo với thuốc (NRT/Champix). Đơn lẻ hiệu quả ít hơn.</dd>
+<dt>Ưu/Nhược</dt><dd>✅ Không thuốc. ✅ Giải quyết gốc tâm lý. ❌ Đắt (300-500k/buổi). ❌ VN ít chuyên gia tâm lý chuyên cai thuốc.</dd>
+<dt>VN tìm đâu</dt><dd>BV Tâm thần TW1, BV Đại học Y Dược TPHCM, Phòng khám Tâm lý — chỉ một số có chương trình cai thuốc.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/lieu-phap-tam-ly-cai-thuoc-la-cbt-mi" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết CBT + MI (Sol dùng 43 mảnh CBT tiếng Việt)</a></p>
+</div>
+
+<!-- 6. Giảm dần -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">📉 Giảm dần — Hút ít đi từng tuần</span>
+<span class="method-rate med">10-12/100 sạch 6 tháng</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Tuần 1: hút 20 điếu/ngày → tuần 2: 15 → tuần 3: 10 → tuần 4: 5 → tuần 5: 0. Hoặc giảm theo giờ (chỉ hút sau 9h, sau 12h…).</dd>
+<dt>Cơ chế</dt><dd>Giảm dần liều nicotine cho não quen từng bước. Tránh "cú sốc" của bỏ đột ngột.</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2019 (Lindson): hiệu quả tương đương bỏ đột ngột — không khá hơn. Tỷ lệ ~10-12/100.</dd>
+<dt>Ưu/Nhược</dt><dd>✅ Nhẹ nhàng với người sợ triệu chứng cai. ✅ Miễn phí. ❌ Kéo dài "đau đớn" — mỗi điếu vẫn là lệ thuộc. ❌ Dễ kẹt mãi ở 5 điếu/ngày, không xuống 0.</dd>
+<dt>Cảnh báo</dt><dd>Đa số người giảm dần rồi "kẹt" ở mức thấp 3-5 điếu/ngày — vẫn nghiện. Phải có Ngày Quyết Định rõ ràng để xuống 0.</dd>
+</dl>
+</div>
+
+<!-- 7. Bỏ đột ngột -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">❄️ Bỏ đột ngột — Cai ngay không hỗ trợ</span>
+<span class="method-rate low">3-5/100 sạch 6 tháng</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Đặt 1 ngày. Đến ngày đó ngừng hút hoàn toàn. Không thuốc, không miếng dán, không app, không người nhắc.</dd>
+<dt>Cơ chế</dt><dd>"Tay không" vượt cơn thèm. Dựa hoàn toàn vào ý chí + tự kiềm chế.</dd>
+<dt>Bằng chứng</dt><dd>Hughes 2004: cách nhiều người thử nhất (~70% người cai chọn cách này) nhưng tỷ lệ thành công thấp nhất (3-5%). 95% tái phát trong 6 tháng — đa số ngay Day 2-3.</dd>
+<dt>Ưu/Nhược</dt><dd>✅ Miễn phí, không kê đơn. ❌ Triệu chứng cai dữ dội Day 1-7 không có hỗ trợ. ❌ Đỉnh thèm Day 3 ít ai vượt được tay không.</dd>
+<dt>Phù hợp ai</dt><dd>Anh hút &lt;5 năm, &lt;10 điếu/ngày, FTND 0-3, ý chí cực mạnh, lần đầu cai.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><em>Khang đã thử cách này 4 lần trong 30 năm — đều fail. Đây là lý do mình làm Sol — combo "Bỏ đột ngột + Theo dõi + Đồng hành tâm lý" thay vì "tay không".</em></p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- NHÓM 2 — PHỔ BIẾN VIỆT NAM (BẰNG CHỨNG YẾU) -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2><span class="section-tag" style="background:#FEE2E2;color:#991B1B;">NHÓM 2 — DÂN GIAN VN</span><br>4 phương pháp phổ biến nhưng bằng chứng yếu</h2>
+
+<p>Đây là các phương pháp quảng cáo nhiều ở Việt Nam. Sol viết trung lập — không phê phán Đông y nhưng nói thật về bằng chứng khoa học để anh không tốn tiền oan.</p>
+
+<!-- 8. Châm cứu -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">🪡 Châm cứu cai thuốc lá</span>
+<span class="method-rate unknown">~6/100 (= giả dược)</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Châm 4-6 huyệt tai (Shenmen, Lung, Mouth, Stomach) + một số huyệt tay. 5-10 buổi, mỗi buổi 20-30 phút.</dd>
+<dt>Cơ chế (claim)</dt><dd>Theo Đông y: kích huyệt giúp giảm thèm + cân bằng năng lượng. Theo Tây y: chưa có cơ chế rõ ràng.</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2014 (White, 38 nghiên cứu): KHÔNG có bằng chứng nhất quán giúp sạch &gt;6 tháng. Hiệu ứng ngắn hạn ngay sau buổi nhưng phai dần. Có thể tương đương placebo.</dd>
+<dt>Chi phí VN</dt><dd>200-500k/buổi × 5-10 buổi = 1-5 triệu/liệu trình. Có ở BV Y học cổ truyền + nhiều phòng khám Đông y.</dd>
+<dt>Khi nào nên thử</dt><dd>Nếu anh đã làm combo Sol + NRT + Champix mà vẫn fail, và anh tin Đông y → thử như phần phụ. KHÔNG nên dùng đơn lẻ.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/nhi-cham-cai-thuoc-la-co-hieu-qua-khong" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết châm cứu (cơ chế + evidence chi tiết)</a></p>
+</div>
+
+<!-- 9. Laser -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">🔴 Laser cai thuốc lá</span>
+<span class="method-rate unknown">Không đủ bằng chứng</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Chiếu laser năng lượng thấp vào các huyệt tai + tay (giống châm cứu nhưng không châm kim). 1-3 buổi, mỗi buổi 15-30 phút.</dd>
+<dt>Cơ chế (claim)</dt><dd>Kích huyệt bằng tia laser → giúp giảm thèm + sinh hormone vui tự nhiên (endorphin).</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2014: gộp chung với châm cứu — KHÔNG có bằng chứng nhất quán giúp sạch &gt;6 tháng. Trung tâm quảng cáo "90% thành công" thường thiếu nhóm chứng + theo dõi dài hạn.</dd>
+<dt>Chi phí VN</dt><dd>Cao nhất nhóm dân gian: 2-5 triệu/liệu trình. Trung tâm thẩm mỹ + spa quảng cáo nhiều.</dd>
+<dt>Cảnh báo</dt><dd>⚠️ Nhiều trung tâm thổi phồng tỷ lệ thành công. Trước khi chi 2-5 triệu, hỏi: "Có nghiên cứu khoa học nào tôi đọc được không?" Nếu trung tâm né tránh → cẩn thận.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/laser-cai-thuoc-la-co-that-hieu-qua-khong" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết laser cai thuốc (quảng cáo vs sự thật)</a></p>
+</div>
+
+<!-- 10. Thôi miên -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">🌀 Thôi miên cai thuốc lá</span>
+<span class="method-rate unknown">~6/100 (= giả dược)</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Chuyên gia thôi miên đưa anh vào trạng thái thư giãn sâu (trance). Trong trạng thái này, gợi ý vào tiềm thức "thuốc lá gây hại, anh không cần thuốc nữa".</dd>
+<dt>Cơ chế (claim)</dt><dd>Tiềm thức tiếp nhận gợi ý dễ hơn ý thức → thay đổi hành vi.</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2010 (Barnes, 11 nghiên cứu): KHÔNG có hiệu quả vượt trội ở mốc 6 tháng so với các phương pháp khác hoặc không can thiệp.</dd>
+<dt>Chi phí VN</dt><dd>500k-2 triệu/buổi × 1-3 buổi. Ít chuyên gia thôi miên trị liệu chính quy ở VN.</dd>
+<dt>Khi nào nên thử</dt><dd>Nếu anh dễ vào trạng thái thư giãn sâu + tin tưởng — có thể thử như phần phụ. Một số người phản ứng tốt. Nhưng KHÔNG nên dùng đơn lẻ thay phương pháp khoa học.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/thoi-mien-cai-thuoc-la-co-hieu-qua" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết thôi miên (cách hoạt động + ai dễ vào trance)</a></p>
+</div>
+
+<!-- 11. Lá nam -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">🌿 Lá nam, thuốc nam cai thuốc</span>
+<span class="method-rate unknown">Chưa có nghiên cứu</span>
+</div>
+<dl class="method-row">
+<dt>Bài phổ biến VN</dt><dd>Nước lá vối, gừng tươi nhai sống, chanh muối, sài đất, lá bồ công anh, trà xanh đặc. Mỗi bài có công thức truyền miệng riêng.</dd>
+<dt>Cơ chế (claim)</dt><dd>Một số bài giúp giảm cảm giác đắng miệng + ngứa cổ sau khi cai (triệu chứng cai). Một số khử mùi thuốc trong cơ thể.</dd>
+<dt>Bằng chứng</dt><dd>KHÔNG có nghiên cứu khoa học chính quy nào chứng minh lá nam giúp cai thuốc lá. Toàn truyền miệng + kinh nghiệm cá nhân.</dd>
+<dt>An toàn</dt><dd>Đa số an toàn nếu dùng vừa phải. Cẩn thận: gừng quá nhiều có thể đau dạ dày. Chanh muối nhiều có thể tăng huyết áp.</dd>
+<dt>Stance Sol</dt><dd>Trung lập. Anh dùng song song với phương pháp khoa học cũng OK — coi như giúp giảm triệu chứng. KHÔNG dùng thay thế Sol/NRT/Champix.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/cay-thuoc-nam-cai-thuoc-la-co-hieu-qua-khong" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết lá nam VN (5 bài phổ biến + cách dùng đúng)</a></p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- NHÓM 3 — GIẢM TÁC HẠI -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2><span class="section-tag" style="background:#DBEAFE;color:#1E3A8A;">NHÓM 3 — GIẢM TÁC HẠI</span><br>3 lựa chọn gây tranh cãi</h2>
+
+<!-- 12. Vape -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">💨 Vape (Thuốc lá điện tử)</span>
+<span class="method-rate">8-12/100 sạch 6 tháng (cao hơn NRT)</span>
+</div>
+<dl class="method-row">
+<dt>Cách làm</dt><dd>Dùng thiết bị điện tử hoá hơi dung dịch chứa nicotine. Giảm dần nồng độ nicotine cho đến khi cai hẳn.</dd>
+<dt>Cơ chế</dt><dd>Đưa nicotine không kèm 7000 hoá chất khói + hắc ín. Giả lập "hành vi hút" để não dễ chấp nhận hơn miếng dán.</dd>
+<dt>Bằng chứng</dt><dd>Cochrane 2024 (Lindson, bằng chứng độ tin cậy cao): vape có nicotine HIỆU QUẢ HƠN NRT. Hiệu quả gấp 1.55 lần — tức 8-12 người sạch / 100 so với 6/100 với NRT.</dd>
+<dt>Cảnh báo VN</dt><dd>⚠️ Việt Nam đã CẤM bán, sản xuất, nhập khẩu vape từ 2025 (Quyết định Quốc Hội). Mua chui có rủi ro pháp lý. Vape lậu chất lượng kém — có thể nguy hiểm.</dd>
+<dt>Rủi ro dài hạn</dt><dd>Vape mới phổ biến ~15 năm — rủi ro dài hạn chưa rõ. EVALI (tổn thương phổi cấp) đã ghi nhận. Sol KHÔNG khuyến khích chuyển từ thuốc sang vape.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/vape-thuoc-la-dien-tu-co-cai-duoc-thuoc-la-thuong" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết vape (evidence + stance Sol)</a></p>
+</div>
+
+<!-- 13. IQOS / Snus -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">🔥 IQOS / Snus — Thuốc lá nung / Thuốc lá ngậm</span>
+<span class="method-rate unknown">Không phải phương pháp cai</span>
+</div>
+<dl class="method-row">
+<dt>IQOS là gì</dt><dd>Thiết bị nung lá thuốc ở nhiệt độ thấp (~350°C) thay vì đốt (~600°C). Vẫn có nicotine + một số hoá chất. Hãng Philip Morris.</dd>
+<dt>Snus là gì</dt><dd>Túi nhỏ chứa lá thuốc ướt, ngậm trong miệng giữa môi và lợi. Phổ biến Thuỵ Điển, Na Uy.</dd>
+<dt>Bằng chứng</dt><dd>Đây là phương pháp GIẢM TÁC HẠI, KHÔNG phải phương pháp cai. Vẫn có nicotine — anh vẫn nghiện. Tổn thương khác (miệng, lợi với snus) chưa rõ dài hạn.</dd>
+<dt>Pháp lý VN</dt><dd>IQOS cũng nằm trong nhóm bị cấm 2025. Mua + dùng có rủi ro.</dd>
+<dt>Stance Sol</dt><dd>KHÔNG khuyến khích. Nếu anh muốn giảm tác hại tạm thời (vì chưa cai được hẳn), có thể là cầu nối. Nhưng MỤC TIÊU cuối vẫn phải sạch nicotine — chứ không chuyển sang IQOS mãi mãi.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/iqos-thuoc-la-nung-co-cai-duoc-thuoc-la-khong" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết IQOS + Snus (giảm tác hại là gì)</a></p>
+</div>
+
+<!-- 14. Kẹo / xịt OTC -->
+<div class="method-card">
+<div class="method-header">
+<span class="method-name">🍬 Kẹo + xịt cai thuốc OTC (không kê đơn)</span>
+<span class="method-rate med">~15/100 sạch 6 tháng</span>
+</div>
+<dl class="method-row">
+<dt>Sản phẩm</dt><dd>Kẹo Nicorette (có nicotine — thuộc NRT). Kẹo thảo dược (không nicotine — vd Bonbons). Xịt mũi/họng giả nicotine.</dd>
+<dt>Cách làm</dt><dd>Ngậm kẹo / xịt khi thèm thuốc. Đánh lạc hướng cơn thèm + làm sạch miệng.</dd>
+<dt>Bằng chứng</dt><dd>Kẹo có nicotine: thuộc NRT — 18/100 (như trên). Kẹo thảo dược không nicotine: chưa có nghiên cứu mạnh, có thể chỉ là giả dược + đánh lạc hướng miệng.</dd>
+<dt>Chi phí VN</dt><dd>Kẹo Nicorette: 350-500k/hộp 30 viên. Kẹo thảo dược: 100-200k/hộp. Mua tại Pharmacity, Long Châu, các nhà thuốc lớn.</dd>
+<dt>Khi nào nên dùng</dt><dd>Tốt cho người hút theo thói quen (đưa lên miệng). Combo với Sol/Champix + miếng dán = hỗ trợ tâm lý "đưa lên miệng" rất tốt.</dd>
+</dl>
+<p style="margin:12px 0 0;font-size:13.5px;"><a href="https://sol.vn/keo-cai-thuoc-la-nicorette-mua-o-dau-gia-bao-nhieu" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết kẹo + xịt (mua ở đâu + cách dùng đúng)</a></p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SOL HYBRID V2 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2>★ Sol Hybrid v2 — Combo theo Mức Lệ Thuộc (FTND)</h2>
+
+<p>Sol không phát minh phương pháp thứ 15. Sol kết hợp cái mạnh nhất của các phương pháp khoa học + viết bằng tiếng Việt cho anh em 45+:</p>
+
+<table>
+<thead>
+<tr><th>Mức Lệ Thuộc</th><th>Combo đề xuất</th><th>Lý do</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🟢 NHẸ (FTND 0-3)</strong><br>&lt;10 điếu/ngày, &lt;5 năm</td>
+<td>Sol đơn lẻ (đồng hành tâm lý + Voice của Khang + 9 công cụ vượt thèm 90 giây)</td>
+<td>Mức nhẹ — không cần thuốc. Phần khó là tâm lý + thói quen, Sol giải quyết.</td>
+</tr>
+<tr>
+<td><strong>🟡 VỪA (FTND 4-6)</strong><br>10-20 điếu/ngày, 5-15 năm</td>
+<td>Sol + NRT đôi (miếng dán + kẹo). Có thể thêm châm cứu nếu tin Đông y.</td>
+<td>Triệu chứng cai thể chất nặng — cần NRT. Sol lo phần tâm lý + đồng hành 52 ngày.</td>
+</tr>
+<tr>
+<td><strong>🔴 NẶNG (FTND 7-10)</strong><br>&gt;20 điếu/ngày, &gt;15 năm</td>
+<td>Sol + Champix (BS kê) + miếng dán NRT (giai đoạn đầu).</td>
+<td>Lệ thuộc sâu — cần "vũ khí mạnh nhất". Champix lo thụ thể nicotine, Sol lo tâm lý + cộng đồng.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Tất cả combo Sol Hybrid đều cộng:</p>
+<ul>
+<li><strong>Đồng hành 35-65 ngày</strong> qua 3 chặng Nhận Diện → Kiểm Soát → Làm Chủ</li>
+<li><strong>Voice của Khang</strong> — 9 đoạn anh em đi trước chia sẻ qua từng giai đoạn</li>
+<li><strong>Trợ lý AI tiếng Việt</strong> 24/7 — hỏi gì cũng được, ngại gì cũng nói được</li>
+<li><strong>Kế hoạch B "nếu-thì"</strong> — chuẩn bị sẵn cho 5 tình huống gây thèm cá nhân</li>
+<li><strong>Cộng đồng Khoảng Lặng</strong> — anh em đi trước ẩn danh chia sẻ</li>
+</ul>
+
+<p>Tỷ lệ thành công <strong>Sol Pilot Q1/2026 ~35%</strong> sạch 30 ngày (30 anh em đầu). Cao hơn mọi phương pháp đơn lẻ. Sol đang chuẩn bị Pilot 30 anh em đầu tiên FREE 100% Q2/2026.</p>
+
+<p><a href="https://sol.vn/combo-toi-uu-cai-thuoc-cho-anh-em-viet-nam-sol-hybrid-v2" style="color: #B25C2C; font-weight: 600;">→ Đọc chi tiết Sol Hybrid v2 + decision tree chọn combo</a></p>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- DECISION GUIDE -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2>Vậy anh nên chọn phương pháp nào?</h2>
+
+<p>Tuỳ tình trạng cụ thể của anh — 5 câu hỏi giúp anh tự chọn:</p>
+
+<ol style="font-size:15px;line-height:1.8;">
+<li><strong>FTND của anh là bao nhiêu?</strong> (làm test 2 phút) → NHẸ / VỪA / NẶNG quyết combo</li>
+<li><strong>Anh đã thử cai mấy lần?</strong> → Lần đầu: thử nhẹ trước. Đã fail &gt;2 lần: cần "vũ khí mạnh"</li>
+<li><strong>Anh có tiền sử trầm cảm / lo âu không?</strong> → Có: cẩn thận Champix, ưu tiên Bupropion + tâm lý</li>
+<li><strong>Tài chính của anh thế nào?</strong> → Hạn chế: Sol + NRT (~500k/tháng). Đủ: combo Sol + Champix (~700-900k/tháng)</li>
+<li><strong>Anh có gia đình hỗ trợ không?</strong> → Có: dễ hơn nhiều. Chưa: ưu tiên cộng đồng Sol</li>
+</ol>
+
+<div class="quote">
+<strong>Tip Khang</strong>: Đừng tốn 6 tháng "research" phương pháp tốt nhất rồi không bao giờ bắt đầu. Phương pháp NÀO cũng tốt hơn không cai. <strong>Chọn 1 combo + bắt đầu Ngày Quyết Định tuần sau = tốt hơn chờ "phương pháp hoàn hảo".</strong>
+</div>
+
+<p><a href="https://sol.vn/chon-phuong-phap-cai-thuoc-nao-phu-hop" style="color: #B25C2C; font-weight: 600;">→ Decision tree đầy đủ "Chọn phương pháp nào phù hợp với anh"</a></p>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CTA -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL — VIỆT 45+</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol đứng trên vai các phương pháp khoa học đã chứng minh — viết bằng tiếng Việt cho anh em 45+. 3 lộ trình theo Mức Lệ Thuộc. Khang đi cùng anh từng ngày.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=B1v2&utm_campaign=phuong-phap-12">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FAQ -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Có bao nhiêu phương pháp cai thuốc lá phổ biến hiện nay?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có 12 phương pháp chính chia 3 nhóm: Khoa học (Bỏ đột ngột, Giảm dần, NRT, Champix, Bupropion, Allen Carr, CBT+MI), Phổ biến Việt Nam (Châm cứu, Laser, Thôi miên, Lá nam), Giảm tác hại (Vape, IQOS/Snus, Kẹo+xịt OTC). Bài này phân tích từng cái dựa Cochrane review mới nhất.</p>
+</details>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Phương pháp nào có tỷ lệ thành công cao nhất?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Theo Cochrane 2023-2024: Champix (Varenicline) cao nhất — 28/100 người sạch 6 tháng (placebo 6/100). Vape nicotine cao hơn miếng dán NRT (RR 1.55). NRT + Bupropion ngang nhau — 18/100. Châm cứu, laser, thôi miên KHÔNG có bằng chứng vượt placebo dài hạn.</p>
+</details>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Châm cứu, laser, thôi miên có cai được thuốc không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cochrane 2014 (38 nghiên cứu): không có bằng chứng nhất quán cho thấy châm cứu, laser, thôi miên giúp sạch thuốc &gt;6 tháng. Có hiệu ứng ngắn hạn nhưng phai dần. Sol không khuyến khích chi nhiều tiền (2-5 triệu/liệu trình) cho các phương pháp này nếu chưa thử combo khoa học + đồng hành tâm lý.</p>
+</details>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Lá nam, thuốc nam cai thuốc lá có hiệu quả không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Chưa có nghiên cứu khoa học nào chứng minh lá vối, gừng, chanh muối, sài đất cai được thuốc lá. Các bài lá có thể giúp giảm cảm giác đắng miệng + ngứa cổ tạm thời. KHÔNG nên dùng đơn lẻ. Combo với phương pháp khoa học + đồng hành tâm lý sẽ tốt hơn.</p>
+</details>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Vape có cai được thuốc lá thường không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Cochrane 2024 (bằng chứng độ tin cậy cao): vape có nicotine hiệu quả hơn NRT (miếng dán/kẹo) trong việc cai thuốc — 8-12/100 sạch 6 tháng so với 6/100 của NRT. NHƯNG rủi ro dài hạn của vape chưa rõ. Việt Nam đã cấm bán vape từ 2025. Sol không khuyến khích chuyển từ thuốc lá sang vape vì rủi ro pháp lý + sức khoẻ dài hạn.</p>
+</details>
+
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">6. Combo phương pháp nào tốt nhất cho anh em Việt 45+?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Sol Hybrid v2 đề xuất theo Mức Lệ Thuộc Nicotin (FTND): NHẸ (FTND 0-3) — Sol đồng hành tâm lý đơn lẻ. VỪA (FTND 4-6) — Sol + NRT (miếng dán). NẶNG (FTND 7-10) — Sol + Champix dưới chỉ định bác sĩ. Mọi combo đều cộng phần đồng hành tâm lý + cộng đồng anh em đã đi qua.</p>
+</details>
+
+</div>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/cai-thuoc-la-vinh-vien" style="color: #B25C2C;">Cai thuốc lá vĩnh viễn — 5 kỹ năng</a> ·
+<a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C;">Cai thuốc lá tại nhà</a> ·
+<a href="https://sol.vn/trieu-chung-cai-thuoc-la-theo-ngay" style="color: #B25C2C;">Triệu chứng cai theo ngày</a> ·
+<a href="https://sol.vn/cold-turkey-vs-giam-dan" style="color: #B25C2C;">Bỏ đột ngột vs Giảm dần</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả</strong>: Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Sáng lập <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>.
+<br>
+<strong>Nguồn bằng chứng</strong>: Cochrane 202

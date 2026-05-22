@@ -1,0 +1,254 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Champix vs NRT vs Bupropion — Chọn thuốc cai thuốc lá nào? So sánh chi tiết",
+      "description": "So sánh 3 thuốc cai thuốc chính: Champix (Varenicline), NRT (miếng dán nicotine), Bupropion (Wellbutrin/Zyban). Hiệu quả, giá VN, tác dụng phụ — chọn thuốc nào phù hợp với anh.",
+      "author":{"@type":"Person","name":"Khang Sol","alternateName":"Nguyễn Đình Khang","url":"https://sol.vn/khang-sol","sameAs":["https://web.facebook.com/nguyendinhkhang","https://www.linkedin.com/in/vietnaminternet/"],"jobTitle":"Founder dự án LÀM CHỦ Sol","birthDate":"1976","description":"Hút Vinataba 30 năm (1991-2020). Thử bỏ 4 lần thất bại. Lần thứ 5 thành công 22-12-2020 âm lịch — hơn 5 năm Tự do. Background CNTT 20 năm. KHÔNG phải bác sĩ — người đã đi qua."},
+      "publisher": {"@type":"Organization","name":"Sol Đi Cùng","logo":{"@type":"ImageObject","url":"https://sol.vn/wp-content/uploads/sol-logo.png"}},
+      "datePublished": "2026-05-18","dateModified": "2026-05-18",
+      "mainEntityOfPage": "https://sol.vn/champix-vs-nrt-vs-bupropion-chon-thuoc-cai-thuoc-nao"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Champix hay NRT hiệu quả hơn?","acceptedAnswer":{"@type":"Answer","text":"Champix hiệu quả CAO HƠN NRT. Theo Cochrane 2023: Champix giúp 28/100 người sạch 6 tháng, NRT đơn 18/100, NRT đôi 22-25/100. Champix hiệu quả gấp 1.5 lần NRT đơn. NHƯNG Champix có nhiều tác dụng phụ hơn (buồn nôn ~30%, mơ lạ ~20%) và cần đơn bác sĩ. NRT an toàn hơn, không cần đơn, mua tại Pharmacity."}},
+        {"@type":"Question","name":"Bupropion vs Champix khác nhau thế nào?","acceptedAnswer":{"@type":"Answer","text":"Champix bám trực tiếp thụ thể nicotine trong não → giảm thèm + chặn 'phần thưởng' khi hút lại. Bupropion là thuốc chống trầm cảm — tác động dopamine + noradrenaline gián tiếp. Champix hiệu quả hơn (28/100 vs 18/100). Bupropion phù hợp hơn nếu anh có dấu hiệu trầm cảm nhẹ — vừa cai vừa giảm trầm cảm."}},
+        {"@type":"Question","name":"Thuốc cai thuốc lá nào rẻ nhất Việt Nam?","acceptedAnswer":{"@type":"Answer","text":"NRT (miếng dán Nicotinell 21mg) rẻ nhất: ~250-350k/tháng × 2-3 tháng. Bupropion: 300-450k/tháng × 3 tháng. Champix đắt nhất: 400-500k/tháng × 3 tháng. Nhưng tính theo hiệu quả per đồng, Champix vẫn rẻ hơn (do tỷ lệ thành công cao). NRT KHÔNG cần đơn — mua tại Pharmacity, Long Châu."}},
+        {"@type":"Question","name":"Nên dùng combo 2 thuốc cùng lúc không?","acceptedAnswer":{"@type":"Answer","text":"Có thể combo NRT đôi (miếng dán + kẹo) — đã chứng minh hiệu quả hơn NRT đơn. Champix + NRT trong giai đoạn đầu OK (BS có thể chỉ định). KHÔNG combo Champix + Bupropion (cùng tác động hệ thần kinh — tăng rủi ro). KHÔNG combo Bupropion với NRT nếu BS không chỉ định. Combo nào cũng phải hỏi bác sĩ."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.sol-wiki table th { background: #5C3A1E; color: white; padding: 10px 12px; text-align: left; }
+.sol-wiki table td { padding: 10px 12px; border-bottom: 1px solid #E8DFC8; vertical-align: top; }
+.sol-wiki .winner { background: #DCFCE7; font-weight: 700; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">Anh đã quyết định dùng thuốc để cai. Vào nhà thuốc, bác sĩ kê đơn — anh được hỏi: <em>"Anh muốn Champix, NRT hay Bupropion?"</em> Anh không biết khác nhau thế nào. Bài này so sánh chi tiết 3 thuốc — <strong>hiệu quả, giá, tác dụng phụ, ai phù hợp</strong> — dựa Cochrane 2023-2024.</p>
+
+<div class="check-box"><strong>So sánh nhanh — Cochrane 2024:</strong>
+<ul>
+<li>🥇 <strong>Champix</strong>: hiệu quả cao nhất (28/100 sạch 6 tháng) nhưng đắt + nhiều tác dụng phụ</li>
+<li>🥈 <strong>NRT đôi</strong> (miếng dán + kẹo): hiệu quả gần Champix (22-25/100) + an toàn nhất</li>
+<li>🥉 <strong>Bupropion</strong>: hiệu quả trung bình (18/100) — tốt cho người có trầm cảm nhẹ</li>
+<li><strong>Combo + Sol</strong>: tăng hiệu quả 50-70% bất kỳ thuốc nào</li>
+</ul>
+</div>
+
+<h2>Bảng so sánh tổng thể</h2>
+
+<table>
+<thead>
+<tr><th>Tiêu chí</th><th>Champix (Varenicline)</th><th>NRT (miếng dán + kẹo)</th><th>Bupropion (Wellbutrin/Zyban)</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hiệu quả 6 tháng</strong></td>
+<td class="winner">28/100 (cao nhất)</td>
+<td>18-25/100</td>
+<td>18/100</td>
+</tr>
+<tr>
+<td><strong>Cơ chế</strong></td>
+<td>Bám thụ thể nicotine α4β2 (chặn + kích nhẹ)</td>
+<td>Thay nicotine sạch (không khói)</td>
+<td>Tác động dopamine + noradrenaline (gián tiếp)</td>
+</tr>
+<tr>
+<td><strong>Cần đơn BS?</strong></td>
+<td>CÓ (BS hô hấp / tâm thần)</td>
+<td class="winner">KHÔNG (OTC tại nhà thuốc)</td>
+<td>CÓ (BS hô hấp / tâm thần)</td>
+</tr>
+<tr>
+<td><strong>Liệu trình</strong></td>
+<td>12 tuần (có thể kéo 24)</td>
+<td>8-12 tuần</td>
+<td>7-12 tuần</td>
+</tr>
+<tr>
+<td><strong>Khi nào bắt đầu?</strong></td>
+<td>Trước Ngày Quyết Định 1-2 tuần</td>
+<td>Ngày Quyết Định</td>
+<td>Trước Ngày Quyết Định 1-2 tuần</td>
+</tr>
+<tr>
+<td><strong>Tác dụng phụ chính</strong></td>
+<td>Buồn nôn 30%, mơ lạ 20%, đau đầu 15%</td>
+<td class="winner">Kích ứng da 10%, khô miệng — nhẹ nhất</td>
+<td>Mất ngủ 30%, khô miệng 10%, hiếm: giảm ngưỡng co giật 0.1%</td>
+</tr>
+<tr>
+<td><strong>Chống chỉ định</strong></td>
+<td>Trầm cảm nặng, suy thận giai đoạn cuối</td>
+<td class="winner">Phụ nữ mang thai, bệnh tim không ổn định</td>
+<td>Tiền sử co giật, rối loạn ăn uống, MAOI</td>
+</tr>
+<tr>
+<td><strong>Giá VN/tháng</strong></td>
+<td>~400-500k</td>
+<td class="winner">~250-350k (NRT đơn)<br>~500-700k (NRT đôi)</td>
+<td>~300-450k</td>
+</tr>
+<tr>
+<td><strong>Tổng liệu trình</strong></td>
+<td>~1.2-1.5 triệu</td>
+<td class="winner">~750k-2.1 triệu</td>
+<td>~1-1.35 triệu</td>
+</tr>
+<tr>
+<td><strong>Phù hợp ai</strong></td>
+<td>FTND 7-10, đã thử ≥2 lần</td>
+<td>FTND 4-6, lần đầu hoặc đã thử 1 lần</td>
+<td>Có dấu hiệu trầm cảm nhẹ + đang cai</td>
+</tr>
+</tbody>
+</table>
+
+<p><em class="winner" style="background:#DCFCE7;padding:4px 8px;border-radius:4px;">Ô xanh = thuốc tốt nhất cho tiêu chí đó</em></p>
+
+<h2>Phân tích chi tiết từng thuốc</h2>
+
+<h3>🥇 Champix (Varenicline) — "Vũ khí mạnh nhất"</h3>
+
+<p><strong>Ai nên chọn Champix:</strong></p>
+
+<ul>
+<li>FTND 7-10 (NẶNG) — hút >20 điếu/ngày, >15 năm</li>
+<li>Đã thử cai ≥2 lần — fail toàn bộ</li>
+<li>Có sức khoẻ tổng thể tốt (không trầm cảm nặng, không suy thận)</li>
+<li>Sẵn sàng chịu buồn nôn + mơ lạ tuần đầu</li>
+<li>Tài chính ổn (1.5-2 triệu cho 3 tháng)</li>
+</ul>
+
+<p><strong>Ai KHÔNG nên chọn Champix:</strong></p>
+
+<ul>
+<li>Trầm cảm nặng hoặc đang điều trị tâm thần</li>
+<li>Suy thận giai đoạn cuối</li>
+<li>Phụ nữ mang thai</li>
+<li>Người sợ buồn nôn — Champix gây buồn nôn ~30%</li>
+</ul>
+
+<p><a href="https://sol.vn/champix-varenicline-cai-thuoc" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết Champix (cơ chế + liều + bệnh viện kê)</a></p>
+
+<h3>🥈 NRT — "An toàn nhất, dễ mua nhất"</h3>
+
+<p><strong>Ai nên chọn NRT:</strong></p>
+
+<ul>
+<li>FTND 4-6 (VỪA) — hút 10-20 điếu/ngày</li>
+<li>Muốn bắt đầu nhẹ — không cần đơn BS</li>
+<li>Có thai (NRT là lựa chọn duy nhất an toàn — nhưng vẫn phải hỏi BS sản)</li>
+<li>Có bệnh nền (tim mạch ổn định, tiểu đường) — NRT ít tương tác thuốc khác</li>
+<li>Hút theo thói quen "đưa lên miệng" — kẹo Nicorette giả lập tốt</li>
+</ul>
+
+<p><strong>Combo NRT đôi (miếng dán + kẹo) khuyến cáo:</strong></p>
+
+<ul>
+<li>Miếng dán Nicotinell 21mg: tiết nicotine đều cả ngày → mức nền</li>
+<li>Kẹo Nicorette 2mg/4mg: dùng khi cơn thèm cấp tốc → đáp ứng nhanh</li>
+<li>Combo này hiệu quả gấp 1.3 lần NRT đơn (Cochrane 2018)</li>
+</ul>
+
+<p><a href="https://sol.vn/mieng-dan-nicotine-nrt" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết NRT (các dạng + cách dùng đúng)</a></p>
+
+<h3>🥉 Bupropion — "Cho người có trầm cảm song song"</h3>
+
+<p><strong>Ai nên chọn Bupropion:</strong></p>
+
+<ul>
+<li>Có dấu hiệu trầm cảm nhẹ song song với cai (hay buồn, mất hứng) — Bupropion lo cả 2</li>
+<li>Đã thử Champix nhưng buồn nôn nặng — đổi sang Bupropion</li>
+<li>Tài chính trung bình (rẻ hơn Champix ~20%)</li>
+<li>Sợ mơ lạ + ác mộng của Champix</li>
+</ul>
+
+<p><strong>Ai KHÔNG nên chọn Bupropion:</strong></p>
+
+<ul>
+<li>Tiền sử co giật / động kinh — Bupropion giảm ngưỡng co giật</li>
+<li>Rối loạn ăn uống (chán ăn, ăn ói)</li>
+<li>Đang uống thuốc chống trầm cảm loại MAOI</li>
+<li>Đang cai rượu / thuốc an thần đột ngột</li>
+</ul>
+
+<p><a href="https://sol.vn/bupropion-wellbutrin-zyban-cai-thuoc" style="color:#B25C2C;font-weight:600;">→ Đọc chi tiết Bupropion (khi nào nên thay Champix)</a></p>
+
+<h2>Hiệu quả tăng cường khi combo với Sol</h2>
+
+<p>Quan trọng: thuốc đơn lẻ hiệu quả không cao bằng combo thuốc + đồng hành tâm lý. Sol cộng thêm:</p>
+
+<table>
+<thead>
+<tr><th>Thuốc đơn</th><th>Hiệu quả 6 tháng</th><th>+ Sol</th><th>Tăng</th></tr>
+</thead>
+<tbody>
+<tr><td>Champix đơn</td><td>28/100</td><td>~35-40/100</td><td>+25-40%</td></tr>
+<tr><td>NRT đôi đơn</td><td>22-25/100</td><td>~30-35/100</td><td>+35-50%</td></tr>
+<tr><td>Bupropion đơn</td><td>18/100</td><td>~25-30/100</td><td>+40-65%</td></tr>
+</tbody>
+</table>
+
+<p>Lý do: thuốc lo phần hoá học não, Sol lo phần tâm lý + thói quen + cộng đồng. Hai cái không thay thế nhau — bổ sung nhau.</p>
+
+<h2>Khang chia sẻ — Mình đã thử cái nào?</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang chia sẻ</div>
+<p>"Mình thử Bupropion ở lần thứ 5 (2020) — kết hợp với giảm dần 2 tuần. Lý do mình chọn Bupropion: hồi đó mình đang căng thẳng công việc, hay buồn không lý do. Bupropion giúp 2 vấn đề cùng lúc."</p>
+<p>"Champix mình chưa thử — sợ buồn nôn 30% + chi phí cao hơn. Nhưng anh em VN đã dùng Champix thành công kể: 'Mạnh hơn Bupropion nhiều, đỡ thèm thấy rõ.'"</p>
+<p>"Lời khuyên Khang: nếu anh có ngân sách + sức khoẻ tốt → Champix. Nếu sợ tác dụng phụ → NRT đôi. Nếu có dấu hiệu trầm cảm → Bupropion. Cộng Sol để giải quyết phần tâm lý + thói quen."</p>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL — CỘNG VỚI BẤT KỲ THUỐC NÀO</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol tăng hiệu quả thuốc cai 25-65%. Combo với Champix/NRT/Bupropion đều OK. Tiếng Việt cho anh em 45+.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=comparison-drugs&utm_campaign=champix-vs-nrt-vs-bupropion">Bắt đầu Sol + thuốc →</a>
+</div>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Champix hay NRT hiệu quả hơn?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Champix hiệu quả cao hơn — 28/100 vs 18-25/100 (NRT đôi). Nhưng Champix nhiều tác dụng phụ + cần đơn BS. NRT an toàn hơn + mua tự do.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Bupropion vs Champix khác nhau thế nào?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">Champix bám trực tiếp thụ thể nicotine. Bupropion tác động gián tiếp qua dopamine + noradrenaline. Champix hiệu quả hơn nhưng Bupropion phù hợp người có trầm cảm nhẹ.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Thuốc cai thuốc lá nào rẻ nhất Việt Nam?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">NRT đơn rẻ nhất ~250-350k/tháng. Bupropion ~300-450k. Champix ~400-500k. Nhưng Champix hiệu quả cao nên "rẻ" hơn tính theo per thành công.</p></details>
+<details style="margin:10px 0;padding-bottom:10px;border-bottom:1px solid rgba(178,92,44,0.12);"><summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Nên dùng combo 2 thuốc cùng lúc không?</summary><p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;">NRT đôi (miếng dán + kẹo) OK + hiệu quả hơn NRT đơn. Champix + NRT giai đoạn đầu OK (BS chỉ định). KHÔNG combo Champix + Bupropion. Phải hỏi bác sĩ.</p></details>
+</div>
+
+<hr style="border:0;border-top:1px dashed #E8DFC8;margin:32px 0;">
+
+<p class="footer-meta">
+<strong>Bài liên quan:</strong> <a href="https://sol.vn/champix-varenicline-cai-thuoc" style="color:#B25C2C;">Champix chi tiết</a> · <a href="https://sol.vn/mieng-dan-nicotine-nrt" style="color:#B25C2C;">NRT chi tiết</a> · <a href="https://sol.vn/bupropion-wellbutrin-zyban-cai-thuoc" style="color:#B25C2C;">Bupropion chi tiết</a> · <a href="https://sol.vn/chon-phuong-phap-cai-thuoc-nao-phu-hop" style="color:#B25C2C;">Chọn phương pháp nào</a> · <a href="https://sol.vn/combo-toi-uu-cai-thuoc-cho-anh-em-viet-nam-sol-hybrid-v2" style="color:#B25C2C;">Sol Hybrid v2 combo</a>
+</p>
+<p class="footer-meta"><strong>Tác giả</strong>: Khang Sol — Sáng lập <a href="https://sol.vn" style="color:#B25C2C;">Sol Đi Cùng</a>.<br><strong>Nguồn bằng chứng</strong>: Cochrane 2023 (Livingstone-Banks — Champix), Cochrane 2023 (Hajizadeh — Bupropion), Cochrane 2018 (Stead — NRT), Cochrane Overview Reviews 2024 (Livingstone-Banks et al.).</p>
+<p class="footer-emergency"><strong>Lưu ý y khoa quan trọng</strong>: Champix + Bupropion là thuốc kê đơn — phải có BS chỉ định. NRT bán tự do nhưng vẫn nên hỏi BS nếu có bệnh nền. Khang không phải bác sĩ. Sol không hứa cai 100%.<br><strong>Tổng đài cai thuốc BV Bạch Mai</strong>: <a href="tel:0888008866" style="color:#B25C2C;font-weight:700;">0888-008-866</a>.</p>
+
+</div>

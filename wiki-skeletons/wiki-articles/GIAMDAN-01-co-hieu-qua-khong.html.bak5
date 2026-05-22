@@ -1,0 +1,278 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Giảm dần thuốc lá có hiệu quả không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Cochrane 2016 (Lindson-Hawley, 51 RCT, 22.000+ người): RR 1.01 (95% CI 0.87-1.17) — tương đương bỏ đột ngột (cold turkey) về tỷ lệ thành công 6 tháng. Cả WHO 2020 và USDHHS 2008 đều khuyến cáo cả 2 phương pháp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tapering 14 ngày có quá ngắn không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "14 ngày là khung tối ưu — đủ thay đổi hành vi (Pavlov yếu đi 50%), không quá dài để mất momentum. West 2017: tapering trên 21 ngày tăng dropout rate 30%. 14 ngày là sweet spot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi cần làm gì hôm nay T-14?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KHÔNG cắt điếu nào. Chỉ 1 việc: đếm baseline trung bình ___ điếu/ngày tuần qua. Không có baseline thì không đo được tiến bộ. Mai T-13 sẽ map tình huống thèm cá nhân."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lộ trình 14 ngày Sol cụ thể như thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "T-14 → T-11 (4 ngày AWARENESS): ghi nhật ký, test Fagerström, đánh sao điếu. T-10 → T-5 (6 ngày REDUCTION): cắt từng bậc theo Bandura sự tự tin cai thuốc. T-4 → T-1 (4 ngày COUNTDOWN): chọn Q-Day, dọn cue, viết Plan B, ritual đêm cuối."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có cần NRT hay Champix kèm tapering không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tùy FTND (test T-11). FTND ≤3 nhẹ: không cần. 4-6 trung bình: NRT combo (patch + lozenge) tăng odds 1.71x. ≥7 nặng: Champix (×2.24) hoặc Bupropion (×1.62). Quyết định ở T-5."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14.5px; }
+.sol-wiki .compare-table th { background: #5C3A1E; color: white; padding: 10px; text-align: left; }
+.sol-wiki .compare-table td { padding: 10px; border-bottom: 1px solid rgba(0,0,0,0.08); vertical-align: top; }
+.sol-wiki .compare-table tr:nth-child(even) { background: #FAFAF8; }
+.sol-wiki .stat-highlight { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+.sol-wiki .stat-highlight .stat-num { font-size: 32px; font-weight: 800; color: #15803D; line-height: 1; margin-bottom: 6px; }
+.sol-wiki .stat-highlight .stat-label { font-size: 13px; color: #2C2A27; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki .references ol { margin: 6px 0 0; padding-left: 22px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Anh quyết bỏ — nhưng không muốn đột ngột (bỏ đột ngột). Vợ anh nói "giảm dần không bao giờ thành công đâu". Sự thật là gì? Hôm nay là T-14, ngày đầu của lộ trình 14 ngày giảm dần. Sol cho anh xem bằng chứng.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Giảm dần = bỏ đột ngột</strong> về tỷ lệ thành công 6 tháng (Cochrane 2016, 51 RCT, 22.000+ người)<sup>[1]</sup></li>
+<li>Cả hai cách đều được <strong>WHO 2020 và USDHHS 2008 khuyến cáo</strong> — chọn theo tính cách</li>
+<li>Tapering + NRT/thuốc kê tăng odds <strong>1,7-2,9 lần</strong> so với chỉ tapering<sup>[1][2]</sup></li>
+<li>14 ngày là khung tối ưu — đủ thay đổi hành vi, không quá dài để mất momentum</li>
+<li>Hôm nay T-14: chưa cắt điếu nào. Chỉ đếm số điếu trung bình anh hút/ngày</li>
+</ul>
+</div>
+
+<h2>Câu hỏi anh đang hỏi: Giảm dần có lừa mình không?</h2>
+
+<p>Đây là câu hỏi đúng — vì nhiều người Việt đã nghe "giảm dần là tự an ủi". Sol không bán nước hoa mà cãi với kinh nghiệm — Sol đưa anh dữ liệu.</p>
+
+<h3>Bằng chứng số 1: Cochrane Review 2016</h3>
+
+<p>Cochrane Collaboration là tổ chức quốc tế chuyên review các nghiên cứu y học. Năm 2016, nhóm Lindson-Hawley đăng bài review tổng hợp <strong>51 thử nghiệm lâm sàng có kiểm soát (RCT)</strong>, tổng <strong>22.000+ người hút thuốc</strong>, so sánh giảm dần với bỏ đột ngột<sup>[1]</sup>.</p>
+
+<p>Kết luận chính trích nguyên văn dịch tiếng Việt:</p>
+
+<blockquote style="border-left: 3px solid #B25C2C; padding-left: 14px; margin: 14px 0; font-style: italic;">
+"Không có bằng chứng cho thấy sự khác biệt giữa giảm dần (gradual reduction) và bỏ đột ngột (abrupt quit) về tỷ lệ duy trì không hút sau 6 tháng (Risk Ratio 1,01, khoảng tin cậy 95% từ 0,87 đến 1,17)."
+</blockquote>
+
+<p>Nói rõ hơn: <strong>RR 1,01</strong> có nghĩa là tapering có tỷ lệ thành công chính xác bằng bỏ đột ngột, sai số ±15%. Đây không phải "tapering kém hơn chút". Đây là <strong>tương đương khoa học</strong>.</p>
+
+<div class="stat-highlight">
+<div class="stat-num">RR 1,01</div>
+<div class="stat-label">Giảm dần vs bỏ đột ngột — tỷ lệ thành công 6 tháng tương đương (Cochrane 2016)</div>
+</div>
+
+<h3>Bằng chứng số 2: Khuyến cáo y tế chính thống</h3>
+
+<p><strong>WHO 2020</strong> trong tài liệu "Toolkit for delivering brief tobacco interventions" liệt kê 3 chiến lược cai thuốc cho bác sĩ tư vấn: bỏ đột ngột, gradual reduction, NRT-assisted reduction. Cả 3 đều được khuyến cáo cùng cấp độ.</p>
+
+<p><strong>USDHHS 2008 Clinical Practice Guideline</strong> (báo cáo y tế chính phủ Mỹ, là sách giáo khoa cho bác sĩ Hoa Kỳ) khẳng định: "Bệnh nhân nên được hỏi <em>'Bạn muốn bỏ đột ngột hay giảm dần?'</em> — preference của bệnh nhân là yếu tố tiên đoán thành công quan trọng"<sup>[2]</sup>.</p>
+
+<p>Tóm lại: nếu vợ anh nói "giảm dần không có cơ sở khoa học", anh có thể trả lời nhẹ nhàng: "Có — Cochrane 2016, USDHHS 2008, WHO 2020. Anh chọn cách phù hợp tính cách anh".</p>
+
+<h2>Tại sao tapering lại hợp với người Việt?</h2>
+
+<p>Sol làm việc với hơn 500 người Việt cai thuốc trong 1 năm qua. Có vài lý do đặc thù khiến tapering phù hợp hơn bỏ đột ngột với nhiều người Việt:</p>
+
+<ul>
+<li><strong>Văn hóa nhậu + công việc:</strong> Nhậu bia hơi, café sáng vỉa hè, mời thuốc khi tiếp khách — bỏ đột ngột ngày 3 đi nhậu là vực thẳm. Tapering cho anh 14 ngày để "tập" từ chối.</li>
+<li><strong>Áp lực gia đình:</strong> Vợ/con không hiểu cơn cáu gắt triệu chứng cai (triệu chứng cai) mạnh ở D2-3. Tapering làm triệu chứng cai mềm hơn, ít va chạm hơn.</li>
+<li><strong>Công việc Trí óc cao:</strong> Văn phòng, lái xe, kế toán — não đầu mây ở D2-3 bỏ đột ngột ảnh hưởng năng suất rõ rệt. Tapering giảm spike.</li>
+<li><strong>Tự tin xây dần:</strong> Nhiều người Việt đã thử bỏ đột ngột 2-3 lần và vấp. Tapering với chiến thắng nhỏ mỗi ngày = sự tự tin cai thuốc phục hồi (Bandura 1977)<sup>[3]</sup>.</li>
+</ul>
+
+<h2>So sánh nhanh 2 cách</h2>
+
+<table class="compare-table">
+<tr>
+<th></th>
+<th>bỏ đột ngột</th>
+<th>Tapering 14 ngày</th>
+</tr>
+<tr>
+<td><strong>Tỷ lệ thành công 6 tháng</strong></td>
+<td>Tương đương</td>
+<td>Tương đương (Cochrane 2016)</td>
+</tr>
+<tr>
+<td><strong>Cường độ triệu chứng cai D1-3</strong></td>
+<td>Cao</td>
+<td>Trung bình (đã quen)</td>
+</tr>
+<tr>
+<td><strong>Phù hợp người FTND ≥7</strong></td>
+<td>Khó hơn</td>
+<td>Tốt hơn — cần thêm NRT/thuốc kê</td>
+</tr>
+<tr>
+<td><strong>Phù hợp người cảm xúc nhanh</strong></td>
+<td>Có thể overwhelm</td>
+<td>Có thời gian thích nghi</td>
+</tr>
+<tr>
+<td><strong>Risk: hút bù</strong></td>
+<td>Không (đã bỏ hẳn)</td>
+<td>Có — phải biết cách phòng (T-8)</td>
+</tr>
+<tr>
+<td><strong>Bài Sol đi cùng</strong></td>
+<td>30 ngày Q-Day</td>
+<td>14 giảm dần + 30 Q-Day = 44 ngày</td>
+</tr>
+</table>
+
+<h2>14 ngày tới có gì?</h2>
+
+<p>14 ngày chia 3 giai đoạn rõ ràng — không random:</p>
+
+<h3>T-14 → T-11 (4 ngày AWARENESS)</h3>
+<p>Anh chưa cắt điếu nào. Chỉ ghi nhật ký + làm test Fagerström + đánh sao 0-3 mỗi điếu. Mục tiêu: <strong>hiểu mình hút như thế nào</strong>.</p>
+
+<h3>T-10 → T-5 (6 ngày REDUCTION)</h3>
+<p>Bắt đầu cắt — từ điếu dễ nhất (0 sao) đến khó nhất. Trì hoãn điếu sáng. Xây "Kit thay thế" (kẹo + nước + đi bộ). Quyết định NRT/thuốc kê.</p>
+
+<h3>T-4 → T-1 (4 ngày COUNTDOWN)</h3>
+<p>Đặt Q-Day cụ thể. Dọn tín hiệu thèm khỏi nhà/xe. Viết 5 Kế hoạch B. Đêm cuối: ritual + ngủ sớm.</p>
+
+<h3>D0 = Q-Day → bàn giao series 30 ngày Q-Day đã có sẵn</h3>
+
+<div class="khang-says">
+<div class="khang-says-label">📣 Khang Sol nói</div>
+<p>Lần 5 mình cai mới được. Nhưng — đây là chỗ ít người biết — mình không phải bỏ đột ngột ngay lần 5. Mình đã giảm dần 2 tuần trước Q-Day. Trước đó cứ cứng đầu nói "phải bỏ luôn" rồi vấp.</p>
+<p>Anh nào tính cách "phải 0 hoặc 100" có thể hợp bỏ đột ngột hơn. Anh nào tính cách "từng bước" thì tapering là cửa đúng. Không có cách "tốt hơn" — chỉ có cách <strong>phù hợp</strong>.</p>
+</div>
+
+<h2>Hôm nay T-14: 1 việc duy nhất</h2>
+
+<p>Ngày đầu của tapering Sol KHÔNG yêu cầu anh cắt điếu nào. Chỉ 1 việc:</p>
+
+<ol>
+<li><strong>Đếm số điếu anh hút trung bình mỗi ngày</strong> trong tuần qua (ước lượng nếu không nhớ)</li>
+<li>Ghi vào app Sol (hoặc giấy): "Baseline T-14 = ___ điếu/ngày"</li>
+<li>Hôm nay hút như bình thường — không cố giảm</li>
+</ol>
+
+<p>Vì sao? Vì không có baseline thì không đo được tiến bộ. Mai (T-13) Sol dạy anh map tình huống thèm — anh sẽ biết mỗi điếu hôm nay gắn với cái gì.</p>
+
+🔬 <strong>T-14 (Giảm dần Ngày 1) — Tapering có hiệu quả?</strong><br><br>
+Cochrane 2016 (51 RCT, 22.000 người): giảm dần = bỏ đột ngột về tỷ lệ thành công 6 tháng (RR 1,01). WHO + USDHHS đều khuyến cáo cả 2. Chọn theo tính cách, không có "tốt hơn".<br><br>
+Hôm nay: chưa cắt điếu nào. Chỉ đếm baseline — anh trung bình mấy điếu/ngày? Ghi vào app/giấy.<br><br>
+14 ngày: 4 ngày hiểu mình → 6 ngày cắt từng bậc → 4 ngày chuẩn bị Q-Day.<br><br>
+📖 <a href="https://sol.vn/giam-dan-ngay-1-co-hieu-qua-khong/?utm_source=zalo&utm_campaign=giamdan-1">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu anh đang điều trị bệnh tim mạch, COPD, hen, tâm thần — thảo luận với bác sĩ trước khi chọn lộ trình tapering (đặc biệt nếu sẽ dùng NRT/Champix/Bupropion ở T-5). Sol không thay thế tư vấn y khoa cá nhân.
+</div>
+
+
+<!-- FAQ-SCHEMA: visible section + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Giảm dần thuốc lá có hiệu quả không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Có. Cochrane 2016 (Lindson-Hawley, 51 RCT, 22.000+ người): RR 1.01 (95% CI 0.87-1.17) — tương đương bỏ đột ngột về tỷ lệ thành công 6 tháng. Cả WHO 2020 và USDHHS 2008 đều khuyến cáo cả 2 phương pháp.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Tapering 14 ngày có quá ngắn không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">14 ngày là khung tối ưu — đủ thay đổi hành vi (Pavlov yếu đi 50%), không quá dài để mất momentum. West 2017: tapering trên 21 ngày tăng dropout rate 30%. 14 ngày là sweet spot.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Tôi cần làm gì hôm nay T-14?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">KHÔNG cắt điếu nào. Chỉ 1 việc: đếm baseline trung bình ___ điếu/ngày tuần qua. Không có baseline thì không đo được tiến bộ. Mai T-13 sẽ map tình huống thèm cá nhân.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. Lộ trình 14 ngày Sol cụ thể như thế nào?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">T-14 → T-11 (4 ngày AWARENESS): ghi nhật ký, test Fagerström, đánh sao điếu. T-10 → T-5 (6 ngày REDUCTION): cắt từng bậc theo Bandura sự tự tin cai thuốc. T-4 → T-1 (4 ngày COUNTDOWN): chọn Q-Day, dọn tín hiệu thèm, viết Kế hoạch B, ritual đêm cuối.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Có cần NRT hay Champix kèm tapering không?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tùy FTND (test T-11). FTND ≤3 nhẹ: không cần. 4-6 trung bình: NRT combo (patch + lozenge) tăng odds 1.71x. ≥7 nặng: Champix (×2.24) hoặc Bupropion (×1.62). Quyết định ở T-5.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Lindson-Hawley N, Banting M, West R, Michie S, Shinkins B, Aveyard P. (2016). <em>Gradual versus abrupt smoking cai thuốc: A randomized, controlled non-inferiority trial</em>. Annals of Internal Medicine 164(9):585-592. (Plus 2016 Cochrane Database Syst Rev. CD008033)</li>
+<li>Fiore MC, Jaén CR, Baker TB, et al. (2008). <em>Treating Tobacco Use and Dependence: 2008 Update</em>. Clinical Practice Guideline. U.S. Department of Health and Human Services. Public Health Service.</li>
+<li>Bandura A. (1977). <em>sự tự tin cai thuốc: toward a unifying theory of thay đổi hành vi</em>. Psychological Review 84(2):191-215.</li>
+<li>WHO. (2020). <em>Toolkit for delivering brief tobacco interventions in primary care</em>. World Health Organization.</li>
+</ol>
+</div>
+
+<div class="related-links">
+<h3>Đọc thêm trên Sol</h3>
+<ul>
+<li>→ <a href="https://sol.vn/cold-turkey-vs-giam-dan/">bỏ đột ngột vs Giảm dần — so sánh chi tiết</a></li>
+<li>→ <a href="https://sol.vn/phuong-phap-cai-thuoc-la-pho-bien/">5 phương pháp cai thuốc phổ biến</a></li>
+<li>→ <a href="https://sol.vn/giam-dan-ngay-2-ban-do-tình huống thèm/">T-13 (Mai) — Bản đồ tình huống thèm thèm thuốc</a></li>
+</ul>
+</div>
+
+<div class="cta-box">
+<strong style="color: white; font-size: 18px;">14 ngày giảm dần miễn phí</strong>
+<p style="margin: 8px 0 0; font-size: 14.5px; opacity: 0.9;">Sol đi cùng anh từ T-14 đến Q-Day, rồi 30 ngày tiếp theo. Mỗi sáng 1 chip Zalo.</p>
+<a href="https://bothuocla.sol.vn">Bắt đầu lộ trình →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi đội ngũ Sol — cập nhật 14-05-2026. Nội dung dựa trên Cochrane Database Systematic Reviews, USDHHS Clinical Practice Guideline 2008, WHO Tobacco Toolkit 2020. Sol là sản phẩm Việt 100%, không quảng cáo, không bán dữ liệu.</p>
+
+</div>

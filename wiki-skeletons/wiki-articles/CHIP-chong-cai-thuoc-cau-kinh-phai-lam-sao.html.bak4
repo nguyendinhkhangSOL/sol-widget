@@ -1,0 +1,193 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Chồng cai thuốc cáu kỉnh có bình thường không hay là cảnh báo?","acceptedAnswer":{"@type":"Answer","text":"Hoàn toàn bình thường — đây là triệu chứng cai (withdrawal) sinh học, không phải chồng cố tình hành xử tệ. Đỉnh điểm ngày 3-7 sau khi bỏ. Nguyên nhân: nicotine ức chế cortisol + giải phóng dopamine; khi cắt nicotine, cortisol tăng đột ngột + dopamine giảm → kích thích thần kinh + dễ cáu. Triệu chứng giảm rõ sau ngày 14, gần hết sau ngày 30."}},
+{"@type":"Question","name":"Bao lâu thì chồng hết cáu kỉnh sau khi cai thuốc?","acceptedAnswer":{"@type":"Answer","text":"Lịch trình điển hình: ngày 1-2 hơi khó chịu, ngày 3-7 đỉnh cáu (cao điểm), ngày 8-14 giảm dần, ngày 15-30 thi thoảng cáu, sau ngày 30 trở lại bình thường. Có thể có 'flare-up' (bùng phát) ở tuần 6, tuần 12 khi gặp trigger lớn. Mỗi người khác nhau — tùy vào số năm hút + số điếu/ngày trước cai."}},
+{"@type":"Question","name":"Khi chồng cáu đập đồ, tôi nên cãi lại hay im lặng?","acceptedAnswer":{"@type":"Answer","text":"KHÔNG cãi lại — sẽ làm chồng cáu hơn + có thể hút lại. KHÔNG im lặng phán xét (nhìn theo cách 'em đã nói rồi'). Cách đúng: nói 1 câu ngắn 'Em hiểu anh đang khó. Em sang phòng ngủ một lát.' Rồi rút lui 30-60 phút. Bảo vệ bản thân + cho chồng không gian xử lý. Sau khi chồng dịu, quay lại bình thường — không nhắc."}},
+{"@type":"Question","name":"Tôi có nên tránh nói chuyện gì với chồng trong tuần cao điểm cáu kỉnh?","acceptedAnswer":{"@type":"Answer","text":"Có. Tuần 1-2 sau Q-Day, tránh: (1) đề cập tiền nong / bills, (2) chuyện rủ chồng nói chuyện sâu (cảm xúc), (3) phàn nàn việc khác (nhà cửa, mẹ chồng, công việc), (4) hỏi 'anh có thèm không hôm nay'. Tập trung: nấu món chồng thích, đi dạo im lặng, để remote TV chồng tự chọn, ngủ đủ."}},
+{"@type":"Question","name":"Nếu chồng cáu với con tôi — tôi phải làm gì?","acceptedAnswer":{"@type":"Answer","text":"Đây là priority cao nhất bảo vệ con. Trước Q-Day, nói thẳng với chồng: 'Em hỗ trợ anh 100% nhưng con không được làm bị thương. Nếu anh thấy mình sắp cáu với con, sang phòng riêng 10 phút.' Tuần đầu, chủ động đưa con sang nhà bà ngoại / bà nội 3-5 ngày nếu cần. Đây không phải 'bỏ chồng' — đây là bảo vệ con + giảm áp lực chồng."}},
+{"@type":"Question","name":"Chồng cáu kỉnh + bắt đầu uống rượu nhiều — đây có phải dấu hiệu nguy hiểm?","acceptedAnswer":{"@type":"Answer","text":"Có. Đây là 'chuyển nghiện' (substance substitution) — não thay nicotine bằng alcohol. Phổ biến nhưng nguy hiểm vì rượu có thể nặng hơn nicotine. Nếu chồng uống >3 ly/ngày trong tuần 2-3 sau cai → đi gặp addiction counselor ngay. Phòng khám tâm thần BV Đại học Y, BV Tâm thần TW có gói tư vấn. Đừng đợi chồng 'tự lo'."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .day-card { background: white; border-left: 4px solid #B25C2C; padding: 14px 18px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .day-card .day-label { font-weight: 700; color: #B25C2C; font-size: 14px; margin-bottom: 6px; }
+.sol-wiki .severity-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 14px 0; }
+.sol-wiki .severity-grid .sev { background: #FAFAF8; border-radius: 10px; padding: 12px; text-align: center; }
+.sol-wiki .severity-grid .sev .num { font-size: 24px; font-weight: 800; color: #B25C2C; line-height: 1; }
+.sol-wiki .severity-grid .sev .lbl { font-size: 12px; margin-top: 4px; color: #5C3A1E; }
+.sol-wiki .warning-box { background: #FEF2F2; border-left: 4px solid #DC2626; padding: 14px 18px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .warning-box strong { color: #DC2626; }
+.sol-wiki .forward-cta { background: linear-gradient(135deg, #FFF4EA 0%, #FFE8C8 100%); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 24px; margin: 32px 0; }
+.sol-wiki .forward-cta .label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 10px; }
+.sol-wiki .forward-cta h3 { color: #5C3A1E; margin: 0 0 10px; }
+.sol-wiki .forward-cta .script-box { background: white; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #B25C2C; margin: 14px 0; font-style: italic; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Chị ạ. Chồng vừa cáu xong — chị đang ngồi trong xe đang khóc / phòng ngủ đóng cửa / nhà tắm. Em đoán đúng không? Em viết bài này để chị biết: <strong>điều đang xảy ra là sinh học</strong>, không phải vì chồng không thương vợ con. Có lịch trình. Có cách đi qua. Tuần cao điểm rồi sẽ qua.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Ngày thứ 5 sau Q-Day năm 2021, tôi đập remote TV vào tường. Vợ tôi không cãi. Cô ấy nhặt remote, để xuống bàn, đi sang phòng ngủ. 1 tiếng sau quay lại nói: 'Em làm cơm rồi.' Đó là cách cô ấy cứu cuộc cai năm thứ 4 — không cãi, không khóc, không rời nhà."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Cáu kỉnh là triệu chứng cai sinh học</strong> — không phải chồng cố tình. Đỉnh ngày 3-7</li>
+<li><strong>Lịch trình:</strong> ngày 1-2 khó chịu / 3-7 đỉnh cáu / 8-14 giảm / 15-30 thi thoảng / sau 30 ngày bình thường</li>
+<li><strong>Khi cáu:</strong> nói 1 câu ấm "Em hiểu" → rút lui 30-60 phút → quay lại không nhắc</li>
+<li><strong>3 dấu hiệu nguy hiểm:</strong> cáu với con, bạo lực thân thể, uống rượu nhiều thay thuốc</li>
+<li><strong>Vợ tự chăm sóc bản thân</strong> tuần 1-3 quan trọng hơn "cứu" chồng</li>
+</ul></div>
+
+<h2>1. Vì sao chồng cáu kỉnh khi cai — khoa học cụ thể</h2>
+
+<p>Cáu kỉnh không phải tính cách. Đây là phản ứng sinh học của não khi cắt nicotine. Hiểu đúng cơ chế giúp chị không "lấy nhân tâm" cuộc cãi.</p>
+
+<p>Nicotine làm 2 việc trong não khi chồng hút mỗi điếu:</p>
+<ul>
+<li><strong>Giải phóng dopamine</strong> — cảm giác "ổn", "thư giãn"</li>
+<li><strong>Ức chế cortisol</strong> — giảm cảm giác stress</li>
+</ul>
+
+<p>Khi chồng cắt nicotine đột ngột, cả 2 cơ chế đảo ngược:</p>
+<ul>
+<li>Dopamine <strong>giảm 30-40%</strong> trong 3-7 ngày đầu (Hughes 2007)<sup>[1]</sup></li>
+<li>Cortisol <strong>tăng 20-30%</strong> — não chồng ở trạng thái stress liên tục</li>
+</ul>
+
+<p>Kết quả: <strong>kích thích thần kinh + ngưỡng chịu đựng giảm</strong>. 1 câu hỏi bình thường có thể trigger cáu. Đây không phải "chồng tệ" — đây là sinh học.</p>
+
+<h2>2. Lịch trình cáu kỉnh — chị biết trước để chuẩn bị</h2>
+
+<div class="severity-grid">
+<div class="sev"><div class="num">N1-2</div><div class="lbl">Khó chịu nhẹ</div></div>
+<div class="sev" style="background:#FEF2F2;"><div class="num">N3-7</div><div class="lbl">ĐỈNH CÁU</div></div>
+<div class="sev"><div class="num">N8-14</div><div class="lbl">Giảm dần</div></div>
+</div>
+
+<div class="day-card">
+<div class="day-label">Ngày 1-2 — Honeymoon ngắn</div>
+<p>Chồng còn motivation cao. Cáu nhẹ. Có thể nói chuyện được. Chị: support nhẹ nhàng, không kỳ vọng quá cao.</p>
+</div>
+
+<div class="day-card">
+<div class="day-label">Ngày 3-7 — ĐỈNH CÁU KỈNH</div>
+<p>Đây là tuần khó nhất. Chồng có thể: đập đồ, im lặng cả ngày, không ăn, mất ngủ, đổ lỗi cho vợ. Chị: <strong>rút lui mode</strong> — không cãi, không khóc, không đặt câu hỏi sâu. Chỉ nấu cơm + để chồng làm điều mình muốn.</p>
+</div>
+
+<div class="day-card">
+<div class="day-label">Ngày 8-14 — Giảm dần</div>
+<p>Cáu kỉnh giảm 50-70%. Chồng bắt đầu ăn ngủ tốt hơn. Vẫn có flare-up khi gặp trigger (đám tang, đi nhậu, gặp người hút).</p>
+</div>
+
+<div class="day-card">
+<div class="day-label">Ngày 15-30 — Thi thoảng cáu</div>
+<p>Hầu như bình thường. 1-2 lần/tuần cáu khi gặp trigger lớn. Có thể bắt đầu nói chuyện sâu lại với chồng.</p>
+</div>
+
+<div class="day-card">
+<div class="day-label">Sau ngày 30 — Bình thường</div>
+<p>Cortisol + dopamine cân bằng lại. Lưu ý "flare-up" có thể đến tuần 6, 12 khi gặp stress lớn (mất việc, gia đình ốm). Bình thường — không phải tái nghiện.</p>
+</div>
+
+<h2>3. Khi chồng cáu — kịch bản 4 bước</h2>
+
+<ol>
+<li><strong>Bước 1 — Không cãi lại.</strong> Bất kỳ điều chồng nói tệ — KHÔNG phản pháo. Đây không phải lúc tranh luận đúng sai.</li>
+<li><strong>Bước 2 — Nói 1 câu ngắn ấm.</strong> "Em hiểu anh đang khó. Em sang phòng ngủ một lát." Câu này: validate cảm xúc chồng + thông báo rút lui không bí ẩn.</li>
+<li><strong>Bước 3 — Rút lui 30-60 phút.</strong> Sang phòng khác, đóng cửa nhẹ. Không khóc trong điện thoại bạn (chồng sẽ nghe). Tự chăm sóc: thiền, đọc sách, gọi mẹ đẻ.</li>
+<li><strong>Bước 4 — Quay lại bình thường.</strong> Sau 30-60 phút, ra bếp / phòng khách bình thường. KHÔNG nhắc lại cuộc cáu. KHÔNG hỏi "anh đỡ chưa". Hành xử như chưa xảy ra. Chồng sẽ tự xin lỗi sau 1-2 ngày.</li>
+</ol>
+
+<h2>4. 3 dấu hiệu NGUY HIỂM cần can thiệp ngay</h2>
+
+<div class="warning-box">
+<strong>⚠️ Dấu hiệu 1 — Cáu với con hoặc bạo lực thân thể</strong>
+<p>Bảo vệ con là priority TUYỆT ĐỐI. Đưa con sang nhà bà nội/bà ngoại 3-5 ngày. Không phải "bỏ chồng" — chỉ giảm áp lực + bảo vệ con. Nếu có bạo lực với chị: gọi <strong>1900 6188</strong> (đường dây nóng phụ nữ VN) hoặc <strong>113</strong>.</p>
+</div>
+
+<div class="warning-box">
+<strong>⚠️ Dấu hiệu 2 — Uống rượu nhiều thay thuốc (chuyển nghiện)</strong>
+<p>Não thay nicotine bằng alcohol. Nếu chồng uống &gt;3 ly/ngày trong tuần 2-3 sau cai → đi gặp addiction counselor. BV Đại học Y, BV Tâm thần TW có gói tư vấn. Đừng đợi.</p>
+</div>
+
+<div class="warning-box">
+<strong>⚠️ Dấu hiệu 3 — Trầm cảm sâu, nói "thà chết còn hơn"</strong>
+<p>Trầm cảm sau cai thuốc tồn tại — đặc biệt người đã trầm cảm trước. Gọi <strong>1800 599 920</strong> (tư vấn tâm lý quốc gia VN). Nếu nói tự sát cụ thể → đưa BV tâm thần ngay.</p>
+</div>
+
+<h2>5. Chị cần tự chăm sóc — không phải "cứu" chồng</h2>
+
+<p>3 tuần đầu sau Q-Day chồng — chị cũng cần sức. Em đề xuất:</p>
+
+<ul>
+<li><strong>Ngủ đủ 7-8h</strong> — không thức đợi chồng. Chồng tự xử lý insomnia.</li>
+<li><strong>Đi tập gym / yoga 3 buổi/tuần</strong> — endorphin tự nhiên, giảm stress chị.</li>
+<li><strong>Hẹn 1 bạn thân cà phê 1 lần/tuần</strong> — không phải về chồng. Về việc khác.</li>
+<li><strong>Đi spa 1 lần</strong> tuần 2 — tự thưởng bản thân.</li>
+<li><strong>Đọc bài <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc lá</a></strong> — full strategy.</li>
+</ul>
+
+<p>Vợ kiệt sức trước chồng = cả hai vấp. Vợ giữ sức tốt = chồng có chỗ dựa.</p>
+
+<div class="forward-cta">
+<div class="label">🤝 BƯỚC KẾ TIẾP</div>
+<h3>Forward bài này cho chồng — nếu chồng đang trong tuần cáu</h3>
+<p>Khi chồng đỡ cáu (ngày 8+), forward bài này để chồng tự hiểu điều đang xảy ra.</p>
+<div class="script-box">"Em đọc bài này hôm trước — hiểu hơn vì sao tuần qua anh khó. Em không trách. Tụi mình cùng đi qua nhé."</div>
+<p style="margin-top: 14px;">→ Link: <strong>https://sol.vn/chong-cai-thuoc-cau-kinh-phai-lam-sao/</strong></p>
+</div>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP CHO CHỒNG</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Sol AI hỗ trợ chồng giữa cơn cáu — không thức vợ</div>
+<a href="https://sol.vn">Cài app cho chồng →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc lá — pillar chính</a></li>
+<li>→ <a href="https://sol.vn/thuyet-phuc-chong-cai-thuoc-khong-cai-nhau/">5 cách thuyết phục chồng không cãi nhau</a></li>
+<li>→ <a href="https://sol.vn/chong-cai-thuoc-roi-lai-hut/">Chồng cai rồi lại hút — im hay nói</a></li>
+<li>→ <a href="https://sol.vn/qday-02-ngay-2-dinh-con-them/">Ngày 2 đỉnh cơn thèm — bài cho chồng</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ Nếu có bạo lực gia đình: 1900 6188. Cấp cứu: 113. Tư vấn tâm lý: 1800 599 920.</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Hughes JR (2007). <em>Effects of abstinence from tobacco: valid symptoms and time course</em>. Nicotine Tob Res 9.</li>
+<li>Hughes JR (2008). <em>Smoking and suicide: a brief overview</em>. Drug Alcohol Depend 98.</li>
+<li>Vũ Trí Thanh, BV Tâm thần TW (2023). <em>Quản lý triệu chứng cai chất gây nghiện</em>.</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol, ex-smoker 30 năm, đã cai 5 năm. Bố của 2 con. Cập nhật 16/5/2026.</p>
+
+</div>

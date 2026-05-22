@@ -1,0 +1,284 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Tôi hút bao nhiêu điếu/ngày thì tiết kiệm được bao nhiêu nếu cai?","acceptedAnswer":{"@type":"Answer","text":"Trung bình người Việt hút 20 điếu/ngày = 1 bao Vinataba 25.000đ. Tính: 25.000 × 365 = 9.125.000đ/năm. Người hút 1.5 bao/ngày = ~13.7 triệu/năm. Người hút 2 bao/ngày = ~18.3 triệu/năm. Sử dụng calculator phía trên để tính chính xác theo brand + số điếu của anh."}},
+{"@type":"Question","name":"Cộng thêm chi phí gián tiếp (sức khỏe, thời gian) thì thực ra tốn bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Chi phí gián tiếp gấp 2-3 lần chi phí trực tiếp. Bao gồm: bảo hiểm y tế tăng (~500k-1tr/năm), chi phí khám hô hấp định kỳ (1-2tr/năm sau 40 tuổi), giảm năng suất công việc (~5-10% lương), nguy cơ điều trị COPD/ung thư về sau (~50-500 triệu). Tính tổng: 1 người hút 1 bao/ngày tốn thực 25-35 triệu/năm khi tính đủ."}},
+{"@type":"Question","name":"Tiền tiết kiệm cai thuốc dùng làm gì để bền vững nhất?",  "acceptedAnswer":{"@type":"Answer","text":"3 cách phổ biến: (1) Mở tài khoản riêng 'Tiền tự do' — chuyển tiền thuốc hằng ngày vào → 12 tháng sau du lịch gia đình. (2) Đầu tư dài hạn — VNINDEX ETF, gửi tiết kiệm 12% năm — 9 triệu/năm × 10 năm = ~150 triệu. (3) Sửa nhà / mua thiết bị gia đình giảm áp lực vợ. Sol app có feature 'Sổ tiết kiệm' tự động cộng dồn theo ngày."}},
+{"@type":"Question","name":"Nếu tôi đã cai 1 tháng, tiền tiết kiệm tính thế nào?",  "acceptedAnswer":{"@type":"Answer","text":"Đếm từ Q-Day (ngày bỏ thuốc chính thức). Ví dụ: Q-Day 1/4/2026, hôm nay 1/5/2026 = 30 ngày. Hút trước cai 1 bao/ngày × 25k = tiết kiệm 750.000đ. Sol app tự track từ Q-Day → hiển thị tổng tiền + số điếu KHÔNG hút + số phút lifespan thêm. Mỗi mốc 100k / 1tr / 10tr — app push notification milestone."}},
+{"@type":"Question","name":"So sánh tiền tiết kiệm cai thuốc với gì cho thấy giá trị thực?",  "acceptedAnswer":{"@type":"Answer","text":"1 năm tiết kiệm 9 triệu = 1 chuyến du lịch Đà Nẵng gia đình 5 ngày, hoặc iPhone 15 Pro Max, hoặc 1 năm học thêm cho con. 5 năm = 45 triệu = đặt cọc mua nhà ngoại ô HN/HCM, hoặc xe Wave Alpha mới. 10 năm = 90 triệu = vốn khởi nghiệp nhỏ. So sánh cụ thể giúp não anh xem tiền thuốc lá KHÔNG chỉ là 'bao 25k/ngày'."}},
+{"@type":"Question","name":"Có app/web nào theo dõi tự động số tiền tiết kiệm cai thuốc tiếng Việt không?",  "acceptedAnswer":{"@type":"Answer","text":"Sol app (sol.vn) có feature 'Sổ tiết kiệm' miễn phí: nhập 1 lần số điếu/ngày + giá bao → app tự cộng dồn từ Q-Day. Có push notification mốc 100k / 1tr / 5tr / 10tr. Khác app Tây: tiền VND, brand thuốc lá VN (Vinataba, Sài Gòn, Thăng Long, Marlboro), so sánh giá trị bằng giá VN (du lịch, iPhone, học phí)."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .calc-box { background: white; border: 3px solid #B25C2C; border-radius: 16px; padding: 24px; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.sol-wiki .calc-box h3 { margin: 0 0 16px; color: #5C3A1E; font-size: 22px; text-align: center; }
+.sol-wiki .calc-input { margin: 14px 0; }
+.sol-wiki .calc-input label { display: block; font-weight: 600; color: #5C3A1E; margin-bottom: 6px; font-size: 15px; }
+.sol-wiki .calc-input input, .sol-wiki .calc-input select { width: 100%; padding: 12px 14px; border: 2px solid #FFE4C8; border-radius: 10px; font-size: 16px; font-family: inherit; box-sizing: border-box; background: #FFFBF0; }
+.sol-wiki .calc-input input:focus, .sol-wiki .calc-input select:focus { outline: none; border-color: #B25C2C; }
+.sol-wiki .calc-result { background: linear-gradient(135deg, #FFF4EA, #FFE8C8); border-radius: 12px; padding: 18px; margin-top: 20px; text-align: center; }
+.sol-wiki .calc-result .result-num { font-size: 38px; font-weight: 800; color: #5C3A1E; line-height: 1; margin: 8px 0; }
+.sol-wiki .calc-result .result-label { font-size: 13px; color: #8A5A2A; }
+.sol-wiki .calc-compare { background: #F4FBF5; border-left: 4px solid #16A34A; padding: 14px 18px; margin-top: 14px; border-radius: 0 8px 8px 0; font-size: 14px; }
+.sol-wiki .calc-compare strong { color: #15803D; }
+.sol-wiki .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+.sol-wiki .stat-grid .card { background: #FFF4EA; border: 1px solid rgba(178,92,44,0.18); border-radius: 10px; padding: 14px; text-align: center; }
+.sol-wiki .stat-grid .num { font-size: 24px; font-weight: 800; color: #B25C2C; line-height: 1; }
+.sol-wiki .stat-grid .lbl { font-size: 12px; margin-top: 4px; color: #5C3A1E; }
+.sol-wiki .compare-row { display: flex; justify-content: space-between; padding: 10px 14px; margin: 8px 0; background: #FAFAF8; border-radius: 8px; }
+.sol-wiki .compare-row .label { font-weight: 600; color: #5C3A1E; }
+.sol-wiki .compare-row .value { color: #B25C2C; font-weight: 700; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">Anh ạ. Anh đang cân nhắc cai thuốc. Trong đầu có 100 lý do, 1 trong số đó là "tốn tiền". Anh search "công cụ tính tiền tiết kiệm bỏ thuốc lá" — em đoán anh muốn 1 con số <strong>cụ thể, sốc, gắn với cuộc sống anh</strong>, không phải lý thuyết "hút thuốc rất tốn kém". Em build calculator cho anh ngay trong bài này — nhập 2 con số, ra tiền tiết kiệm 1 năm + 5 năm + 10 năm. Plus so sánh với giá trị thực ở VN.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Năm 2020 vợ tôi nói: 'Anh hút Vinataba 25 năm rồi — em tính ra anh đã đốt mất hơn 1 căn nhà ngoại ô.' Tôi không tin. Tôi mở Excel ngồi tính: 25 năm × 1 bao/ngày × 25.000đ = 228 triệu. Đúng 1 căn nhà 50m² Hà Nội ngoại ô 2010. Đêm đó tôi không ngủ được. 3 tháng sau tôi cai."</p>
+</div>
+
+<!-- ─── CALCULATOR INTERACTIVE ─── -->
+<div class="calc-box">
+<h3>🧮 Tính ngay — anh tiết kiệm bao nhiêu?</h3>
+
+<div class="calc-input">
+<label for="sol-cigs">Số điếu hút trung bình/ngày:</label>
+<input type="number" id="sol-cigs" value="20" min="1" max="100" />
+</div>
+
+<div class="calc-input">
+<label for="sol-brand">Loại thuốc anh đang hút:</label>
+<select id="sol-brand">
+<option value="25000">Vinataba — 25.000đ/bao</option>
+<option value="22000">Sài Gòn Bạc Hà — 22.000đ/bao</option>
+<option value="28000">Thăng Long — 28.000đ/bao</option>
+<option value="32000">Marlboro — 32.000đ/bao</option>
+<option value="45000">Marlboro Gold (cao cấp) — 45.000đ/bao</option>
+<option value="30000">555 / Dunhill — 30.000đ/bao</option>
+<option value="20000" selected>Trung bình thuốc VN (20.000đ/bao)</option>
+</select>
+</div>
+
+<div class="calc-result">
+<div class="result-label">SỐ TIỀN ANH ĐANG ĐỐT MỖI NĂM</div>
+<div class="result-num" id="sol-year">0đ</div>
+<div class="result-label" style="margin-top: 8px;">≈ <span id="sol-year-en">0</span> USD</div>
+</div>
+
+<div class="calc-result" style="background: linear-gradient(135deg, #F4FBF5, #DFFCE0);">
+<div class="result-label" style="color: #15803D;">NẾU CAI HÔM NAY — TIẾT KIỆM 5 NĂM</div>
+<div class="result-num" id="sol-5year" style="color: #15803D;">0đ</div>
+</div>
+
+<div class="calc-result" style="background: linear-gradient(135deg, #FFF4EA, #FFE8C8);">
+<div class="result-label">TIẾT KIỆM 10 NĂM (KHANG ĐÃ CAI 5 NĂM — SẮP TỚI 10 NĂM)</div>
+<div class="result-num" id="sol-10year">0đ</div>
+</div>
+
+<div class="calc-compare">
+<strong>SO SÁNH GIÁ TRỊ THỰC (10 năm tiết kiệm):</strong>
+<div id="sol-compare" style="margin-top: 8px; line-height: 1.8;"></div>
+</div>
+</div>
+
+<script>
+(function() {
+  function fmt(n) {
+    if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + ' triệu đ';
+    if (n >= 1000) return (n / 1000).toFixed(0) + '.000đ';
+    return n + 'đ';
+  }
+  function calc() {
+    var cigs = parseInt(document.getElementById('sol-cigs').value) || 20;
+    var pricePack = parseInt(document.getElementById('sol-brand').value) || 25000;
+    var perDay = (cigs / 20) * pricePack;
+    var perYear = perDay * 365;
+    var per5Year = perYear * 5;
+    var per10Year = perYear * 10;
+    document.getElementById('sol-year').textContent = fmt(perYear);
+    document.getElementById('sol-year-en').textContent = '$' + (perYear / 24500).toFixed(0);
+    document.getElementById('sol-5year').textContent = fmt(per5Year);
+    document.getElementById('sol-10year').textContent = fmt(per10Year);
+
+    // Compare
+    var compareHtml = '';
+    var trips = Math.floor(per10Year / 8000000);
+    var iphones = Math.floor(per10Year / 32000000);
+    var schoolYears = Math.floor(per10Year / 15000000);
+    var motorbikes = Math.floor(per10Year / 25000000);
+    var houseDeposits = Math.floor(per10Year / 200000000);
+
+    if (trips > 0) compareHtml += '• ' + trips + ' chuyến du lịch Đà Nẵng gia đình 5 ngày<br>';
+    if (iphones > 0) compareHtml += '• ' + iphones + ' chiếc iPhone 15 Pro Max<br>';
+    if (schoolYears > 0) compareHtml += '• ' + schoolYears + ' năm học phí thêm cho con<br>';
+    if (motorbikes > 0) compareHtml += '• ' + motorbikes + ' xe máy Wave Alpha mới<br>';
+    if (houseDeposits > 0) compareHtml += '• ' + houseDeposits + ' lần đặt cọc nhà ngoại ô<br>';
+    if (compareHtml === '') compareHtml = '• Nhiều hơn anh nghĩ — hãy tăng số điếu để thấy';
+    document.getElementById('sol-compare').innerHTML = compareHtml;
+  }
+  document.getElementById('sol-cigs').addEventListener('input', calc);
+  document.getElementById('sol-brand').addEventListener('change', calc);
+  calc();
+})();
+</script>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>Người hút 1 bao/ngày (25k Vinataba) đốt 9.1 triệu/năm</strong> — không tính chi phí gián tiếp</li>
+<li><strong>Chi phí gián tiếp gấp 2-3 lần</strong>: bảo hiểm, khám, năng suất, ung thư/COPD về sau</li>
+<li><strong>10 năm cai = 91 triệu</strong> — bằng 11 chuyến du lịch Đà Nẵng gia đình</li>
+<li><strong>3 cách dùng tiền tiết kiệm bền vững:</strong> tài khoản "tự do", đầu tư VNINDEX, sửa nhà</li>
+<li><strong>Sol app có feature "Sổ tiết kiệm" miễn phí</strong> — tự cộng dồn từ Q-Day</li>
+</ul></div>
+
+<h2>1. Tại sao tính tiền tiết kiệm quan trọng hơn lý do "tốt cho sức khỏe"</h2>
+
+<p>Lý do "sức khỏe" mơ hồ + xa. Tiền cụ thể + ngay.</p>
+
+<p>Não anh có 2 hệ thống ra quyết định (Kahneman 2011)<sup>[1]</sup>:</p>
+<ul>
+<li><strong>Hệ thống 1 (nhanh, cảm xúc):</strong> "Hút thì khoái — cai thì khó." → tay vươn lấy bao thuốc</li>
+<li><strong>Hệ thống 2 (chậm, lý lẽ):</strong> "Hút có hại sức khỏe lâu dài." → bị Hệ thống 1 đè</li>
+</ul>
+
+<p>Sức khỏe = abstract → kích hoạt Hệ thống 2 → yếu. Tiền cụ thể = concrete → kích hoạt Hệ thống 1 → mạnh.</p>
+
+<p>Khi anh nhìn thấy <strong>"đã đốt 228 triệu"</strong> (con số cụ thể) — não cảm thấy <strong>loss aversion</strong> (sợ mất tiền) — cảm xúc thật, ngay lập tức.</p>
+
+<h2>2. Chi phí trực tiếp — tính theo brand VN phổ biến</h2>
+
+<div class="stat-grid">
+<div class="card"><div class="num">9.1tr</div><div class="lbl">Vinataba 1 bao/ngày × 1 năm</div></div>
+<div class="card"><div class="num">13.7tr</div><div class="lbl">Vinataba 1.5 bao/ngày × 1 năm</div></div>
+<div class="card"><div class="num">18.3tr</div><div class="lbl">Vinataba 2 bao/ngày × 1 năm</div></div>
+</div>
+
+<h3>So sánh 5 brand phổ biến VN</h3>
+
+<div class="compare-row">
+<span class="label">Sài Gòn Bạc Hà (rẻ)</span><span class="value">22.000đ × 365 = 8tr/năm</span>
+</div>
+<div class="compare-row">
+<span class="label">Vinataba (phổ biến nhất)</span><span class="value">25.000đ × 365 = 9.1tr/năm</span>
+</div>
+<div class="compare-row">
+<span class="label">Thăng Long</span><span class="value">28.000đ × 365 = 10.2tr/năm</span>
+</div>
+<div class="compare-row">
+<span class="label">555 / Dunhill</span><span class="value">30.000đ × 365 = 11tr/năm</span>
+</div>
+<div class="compare-row">
+<span class="label">Marlboro Gold (cao cấp)</span><span class="value">45.000đ × 365 = 16.4tr/năm</span>
+</div>
+
+<h2>3. Chi phí GIÁN TIẾP — phần đa số người Việt bỏ qua</h2>
+
+<p>Chi phí thực ≠ chỉ tiền mua thuốc. Cộng thêm:</p>
+
+<ul>
+<li><strong>Bảo hiểm sức khỏe tăng:</strong> 500k-1tr/năm phụ thu nếu khai báo hút thuốc với BV tư (Vinmec, FV)</li>
+<li><strong>Khám hô hấp định kỳ:</strong> sau 40 tuổi mỗi 6 tháng/lần — 800k-1.5tr/lần (FBC, X-quang phổi, spirometry)</li>
+<li><strong>Răng + nha khoa:</strong> thuốc lá làm vàng răng, viêm lợi → 2-5tr/năm chỉnh sửa</li>
+<li><strong>Giảm năng suất:</strong> nghiên cứu Bunn 2006 — người hút giảm 5-10% năng suất so với không hút (đi hút giữa giờ, brain fog, hợp đồng mất do mùi)<sup>[2]</sup></li>
+<li><strong>Quần áo + nội thất:</strong> giặt khô áo ám khói, mua máy lọc không khí — 2-3tr/năm</li>
+<li><strong>Rủi ro lớn về sau:</strong> điều trị COPD ~50tr/năm, ung thư phổi ~200-500tr một đợt</li>
+</ul>
+
+<p><strong>Tổng cộng thực tế:</strong> người hút 1 bao/ngày 30+ tuổi tốn <strong>25-35 triệu/năm</strong>, không phải chỉ 9 triệu.</p>
+
+<h2>4. Tiền tiết kiệm dùng làm gì để bền vững</h2>
+
+<h3>Cách 1 — Tài khoản "Tiền tự do" (đơn giản nhất)</h3>
+<ol>
+<li>Mở tài khoản tiết kiệm riêng (Techcombank, MB, Vietcombank)</li>
+<li>Đặt tên: "Tiền tự do — Khang's"</li>
+<li>Mỗi sáng chuyển 25.000đ (giá 1 bao thuốc) vào tài khoản này</li>
+<li>KHÔNG động vào trong 1 năm</li>
+<li>Cuối năm: 9.1 triệu — đi du lịch gia đình</li>
+</ol>
+
+<h3>Cách 2 — Đầu tư VNINDEX ETF</h3>
+<p>9 triệu/năm × 10 năm + lãi 12%/năm compound = <strong>~165 triệu</strong> sau 10 năm.</p>
+<p>App đầu tư: VNDirect, SSI, TCBS — chỉ cần 100k khởi đầu. Mỗi tháng chuyển 750k vào VFMVN30 ETF (theo VN30 index).</p>
+
+<h3>Cách 3 — Sửa nhà / mua thiết bị giảm áp lực gia đình</h3>
+<p>9 triệu/năm có thể:</p>
+<ul>
+<li>Sửa bếp + thay máy hút mùi</li>
+<li>Mua máy lọc không khí Xiaomi/Coway cho cả nhà</li>
+<li>Đặt cọc 1 chuyến du lịch nước ngoài (Bangkok, Penang) gia đình</li>
+<li>Mua xe đạp + đồ thể thao cho cả nhà</li>
+</ul>
+
+<h2>5. Tracking — Sol app feature "Sổ tiết kiệm" tự động</h2>
+
+<p>Đa số người tự track 1-2 tuần đầu, sau đó bỏ. Cần automation:</p>
+
+<ul>
+<li><strong>Sol app:</strong> nhập 1 lần (số điếu/ngày + giá bao) → app tự cộng dồn từ Q-Day</li>
+<li><strong>Push notification mốc:</strong> 100k (ngày 4), 1 triệu (ngày 40), 5 triệu (~tháng 7), 10 triệu (~tháng 14)</li>
+<li><strong>So sánh real-time:</strong> "Anh đã tiết kiệm 8.5 triệu = 1 chuyến Đà Lạt gia đình"</li>
+<li><strong>Share screenshot:</strong> 1 tap → post lên FB Group + tag bạn bè ủng hộ</li>
+</ul>
+
+<p>App miễn phí. Tải tại sol.vn.</p>
+
+<h2>6. Kết hợp số liệu vào câu chuyện kể vợ + con</h2>
+
+<p>Số khô = không hiệu quả. Số + câu chuyện = sức mạnh thật.</p>
+
+<p>Câu chuyện template:</p>
+
+<p style="background:#FFF4EA; padding:14px 18px; border-radius:10px; font-style:italic;">"Em [vợ], anh tính lại — 25 năm hút thuốc anh đã đốt 228 triệu. Đủ trả tiền cọc nhà ngoại ô năm 2010. Anh không bù được quá khứ — nhưng anh đang cai từ tháng tới. 5 năm sau tụi mình có 45 triệu — đủ 1 chuyến đi Nhật cả gia đình. Em đi cùng anh nhé."</p>
+
+<p>Câu này hoạt động vì: (1) thừa nhận quá khứ, (2) số cụ thể, (3) kế hoạch tương lai chung, (4) mời gọi đồng hành.</p>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP — SỔ TIẾT KIỆM TỰ ĐỘNG</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Track tiền tiết kiệm từng ngày — miễn phí vào trải nghiệm</div>
+<a href="https://sol.vn">Cài app Sol →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/chi-phi-thuc-su-cua-thuoc-la/">Chi phí thực sự của thuốc lá — không chỉ tiền</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-la-vinh-vien/">Cai thuốc lá vĩnh viễn — pillar</a></li>
+<li>→ <a href="https://sol.vn/chuan-bi-q-day-cai-thuoc/">Chuẩn bị Q-Day — checklist 8 mục</a></li>
+<li>→ <a href="https://sol.vn/dong-luc-bo-thuoc-cho-nguoi-co-gia-dinh/">Động lực bỏ thuốc cho người có gia đình</a></li>
+</ul>
+</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Kahneman D (2011). <em>Thinking, Fast and Slow</em>. Farrar, Straus and Giroux.</li>
+<li>Bunn WB, et al. (2006). <em>The impact of smoking on workplace productivity</em>. J Occup Environ Med 48.</li>
+<li>WHO (2023). <em>Economic costs of tobacco use in Vietnam</em>. who.int</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol, đã đốt 228 triệu trong 25 năm. Cai 5 năm. Cập nhật 17/5/2026.</p>
+
+</div>

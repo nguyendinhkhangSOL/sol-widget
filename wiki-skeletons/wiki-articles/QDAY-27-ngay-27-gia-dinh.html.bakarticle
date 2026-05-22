@@ -1,0 +1,212 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Gia đình thấy gì khác?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nghiên cứu Pierce 1998: trẻ em dưới 10 tuổi nhận ra cha mẹ cai thuốc nhanh hơn người lớn. Lý do: khứu giác trẻ nhạy hơn, không bị \"quen\" với mùi thuốc. Con anh có thể nhận ra trước anh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 27 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tối nay — ngồi cạnh vợ, hỏi trực tiếp. Đừng gợi ý câu trả lời. Để vợ tự kể. Câu trả lời có thể: \"Anh thơm hơn\", \"Anh kiên nhẫn với con hơn\", \"Em ngủ ngon hơn vì không ngửi mùi\", \"Anh có thời gian hơn cho gia đình\". Đây là feedback quý nhất — không phải SEO, không phải số liệu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 27 lần 5 cai, tôi đã làm 5 việc trên. Tối đó, tôi hỏi vợ: \"Em thấy anh khác gì 27 ngày qua?\". Cô ấy nhìn tôi rất lâu, rồi nói:"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 27. Vợ anh ôm anh lâu hơn bình thường mỗi sáng. Con không né khi anh hôn lên trán. Anh em họ gọi điện hỏi thăm. Đây là <strong>family dynamics improvement</strong> — điều anh chưa thấy trong 25-30 năm hút thuốc. Mùi thuốc + thái độ cáu kỉnh đã rời đi — và gia đình đang thấy phiên bản mới của anh.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Family dynamics cải thiện rõ sau 30 ngày cai (Pierce 1998)<sup>[1]</sup></li>
+<li>Vợ + con thấy thay đổi: mùi thân thiện, mood ổn, kết nối lại</li>
+<li>Đây là <strong>phần thưởng vô hình</strong> — không đo được nhưng quan trọng nhất</li>
+<li>Hôm nay: hỏi vợ "em thấy anh khác gì", chơi với con không màn hình, gọi cha mẹ</li>
+<li>30 ngày cai đã đổi cách gia đình nhìn anh</li>
+</ul>
+</div>
+
+<h2>Gia đình thấy gì khác?</h2>
+
+<h3>5 thay đổi cụ thể</h3>
+
+<ul>
+<li><strong>Mùi cơ thể:</strong> Tóc, áo, hơi thở không còn mùi thuốc — đặc biệt nhạy với vợ + con</li>
+<li><strong>Mood ổn định:</strong> Ít cáu hơn (sau tuần 4), kiên nhẫn hơn với chuyện nhỏ</li>
+<li><strong>Năng lượng:</strong> Đi cầu thang đỡ thở, chơi với con lâu hơn, không "mệt đi nằm" sớm</li>
+<li><strong>Kết nối:</strong> Ăn cơm cả nhà cùng nhau, không bận "đi ra ngoài" giờ cơm</li>
+<li><strong>Sức khoẻ tổng:</strong> Da hồng hơn, mắt sáng hơn, ít ho — vợ nhận thấy</li>
+</ul>
+
+<h3>Trẻ con thấy nhanh nhất</h3>
+
+<p>Nghiên cứu Pierce 1998<sup>[1]</sup>: trẻ em dưới 10 tuổi nhận ra cha mẹ cai thuốc <strong>nhanh hơn người lớn</strong>. Lý do: khứu giác trẻ nhạy hơn, không bị "quen" với mùi thuốc. Con anh có thể nhận ra trước anh.</p>
+
+<h2>5 hành động Ngày 27</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Hỏi vợ trực tiếp: "Em thấy anh khác gì?"</h4>
+<p>Tối nay — ngồi cạnh vợ, hỏi trực tiếp. Đừng gợi ý câu trả lời. Để vợ tự kể. Câu trả lời có thể: <em>"Anh thơm hơn", "Anh kiên nhẫn với con hơn", "Em ngủ ngon hơn vì không ngửi mùi", "Anh có thời gian hơn cho gia đình"</em>. Đây là feedback quý nhất — không phải SEO, không phải số liệu.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Chơi 30 phút với con — không màn hình</h4>
+<p>Tối nay — cất điện thoại. 30 phút chơi với con trực tiếp: cờ tướng, vẽ tranh, lego, đá bóng sân nhỏ, đọc truyện cùng nhau. Con không cần "anh giải trí" — chỉ cần <strong>anh có mặt</strong>. 30 ngày cai đã trả lại cho anh sự hiện diện đó.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Mua 1 món quà nhỏ tặng vợ — không cần dịp</h4>
+<p>Trên đường về — mua hoa nhỏ, 1 chai nước hoa cô ấy thèm, 1 hộp bánh. Khi tặng — không cần lý do. Chỉ nói: <em>"Anh ơn em đã chịu khó 27 ngày qua"</em>. Cô ấy không nhận quà to — cô ấy nhận sự ghi nhớ.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Ăn cơm cả nhà — không TV</h4>
+<p>Tối nay bữa cơm — tắt TV. Đặt điện thoại sang phòng khác. Cả nhà ngồi cùng bàn 30 phút. Nói chuyện. Hỏi mỗi người: "Hôm nay có gì hay?". Vợ ngạc nhiên. Con sẽ kể nhiều hơn anh tưởng.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Gọi cha mẹ — kể anh đã cai 27 ngày</h4>
+<p>Nếu cha mẹ còn sống — gọi điện. Kể: <em>"Bố mẹ, con cai thuốc gần 1 tháng rồi. Sức khoẻ tốt hơn nhiều"</em>. Cha mẹ thường lo nhất về sức khoẻ con. Tin này — họ chờ lâu. Đừng để qua tháng nữa mới kể.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>Kiêu căng "tôi đã làm điều phi thường"</strong> — nhẹ nhàng, không khoe</li>
+<li><strong>Đòi vợ khen ngợi</strong> — không cần. Cô ấy thấy + biết</li>
+<li><strong>So sánh với chồng/anh em khác chưa cai</strong> — vô ích</li>
+<li><strong>"Tôi tha cho gia đình đã chịu khổ"</strong> — sai. Anh ơn gia đình, không phải ngược lại</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 27 lần 5 cai, tôi đã làm 5 việc trên. Tối đó, tôi hỏi vợ: <em>"Em thấy anh khác gì 27 ngày qua?"</em>. Cô ấy nhìn tôi rất lâu, rồi nói:</p>
+<p><em>"Anh thơm hơn. Tóc anh không còn mùi thuốc. Em ngủ ngon hơn — trước anh ho nhiều ban đêm, em không nhận ra mãi đến khi nó hết. Con không né khi anh ôm. Hôm nay em thấy anh ngồi ăn cơm cả bữa, không xin ra ngoài giữa chừng. Em đã chờ 25 năm để có 1 bữa cơm anh ngồi từ đầu đến cuối."</em></p>
+<p>Tôi không khóc — nhưng tôi nhìn cô ấy lâu. <strong>25 năm tôi đã không thấy điều cô ấy chịu</strong>. Mùi thuốc trên tóc tôi cô ấy ngửi mỗi tối ngủ cạnh. Tiếng ho đêm đánh thức cô ấy mãi. Bữa cơm nửa chừng tôi ra ngoài — cô ấy ngồi với con một mình.</p>
+<p>Tôi đứng dậy, đi vào bếp, lấy ly nước cho cô ấy. Lần đầu trong 20 năm tôi tự lấy nước cho vợ. Cô ấy mỉm cười.</p>
+<p>Anh em ơi — Ngày 27 là <strong>ngày anh nhận ra gì gia đình đã chịu</strong>. Đừng đợi đến Ngày 365 — hôm nay hỏi vợ "em thấy anh khác gì". Câu trả lời sẽ làm anh không bao giờ muốn quay lại.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-26-tien-tiet-kiem-dong-tien-ban-dang-doi-lay-suc-khoe/">→ Ngày 26 — Tiền tiết kiệm</a></li>
+<li><a href="https://sol.vn/ngay-28-tu-hao-va-gia-tri-ban-than-day-khong-phai-phu-phiem/">→ Ngày 28 — Tự hào</a></li>
+<li><a href="https://sol.vn/vo-chong-gian-cai/">→ Vợ chồng giận chuyện cai</a></li>
+</ul>
+</div>
+
+❤️ <strong>Ngày 27 — Gia đình thấy khác</strong><br><br>
+Family dynamics cải thiện rõ: mùi cơ thể sạch, mood ổn, kết nối lại. Trẻ con thấy nhanh nhất (Pierce 1998).<br><br>
+Hôm nay: hỏi vợ "em thấy anh khác gì?", chơi 30 phút với con không màn hình, mua quà nhỏ tặng vợ, gọi cha mẹ.<br><br>
+Đây là phần thưởng vô hình — quý nhất 30 ngày.<br><br>
+📖 <a href="https://sol.vn/ngay-27-gia-dinh-va-cac-moi-quan-he-dieu-ban-chua-thay/?utm_source=zalo&utm_campaign=qday-27">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu gia đình anh đã rạn nứt do thuốc lá nhiều năm — đừng kỳ vọng "tự ổn lại sau 30 ngày". Cần thời gian + có thể tư vấn gia đình.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Gia đình thấy gì khác?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nghiên cứu Pierce 1998: trẻ em dưới 10 tuổi nhận ra cha mẹ cai thuốc nhanh hơn người lớn. Lý do: khứu giác trẻ nhạy hơn, không bị "quen" với mùi thuốc. Con anh có thể nhận ra trước anh.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 27 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tối nay — ngồi cạnh vợ, hỏi trực tiếp. Đừng gợi ý câu trả lời. Để vợ tự kể. Câu trả lời có thể: "Anh thơm hơn", "Anh kiên nhẫn với con hơn", "Em ngủ ngon hơn vì không ngửi mùi", "Anh có thời gian hơn cho gia đình". Đây là feedback quý nhất — không phải SEO, không phải số liệu.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 27 lần 5 cai, tôi đã làm 5 việc trên. Tối đó, tôi hỏi vợ: "Em thấy anh khác gì 27 ngày qua?". Cô ấy nhìn tôi rất lâu, rồi nói:</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Pierce JP et al. (1998). <em>Smoking initiation and quitting in adolescents and adults</em>. JAMA 279(7):511-515.</li>
+<li>WHO (2023). <em>Tobacco control and family health</em>.</li>
+<li>Surgeon General Report (2014). <em>Health Consequences of Smoking — Family Effects</em>.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 27 — Sol có lời nhắc gia đình</div>
+<div style="font-size:14px;opacity:.9;">Chip "ơn vợ con" + Voice của Khang ngày này. Bắt đầu miễn phí.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-27&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã ngồi nghe vợ kể 25 năm chịu khổ trong 30 phút tối Ngày 27. Cập nhật 14-05-2026.</p>
+
+</div>

@@ -1,0 +1,160 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Sau khi chồng bỏ thuốc, vợ thay đổi gì trong cuộc sống?","acceptedAnswer":{"@type":"Answer","text":"Vợ Khang chia sẻ 6 thay đổi lớn: (1) Ngủ ngon hơn — không lo mùi thuốc ám đệm gối. (2) Hôn nhau lại sau 12 năm — không còn vị thuốc. (3) Tiết kiệm 36 triệu/năm — đi du lịch gia đình lần đầu. (4) Con ngừng ho mãn tính sau 6 tuần. (5) Bớt anxiety âm thầm — không lo ung thư chồng. (6) Quan hệ tình dục cải thiện — testosterone chồng tăng 18% sau 6 tháng cai."}},
+{"@type":"Question","name":"Sau bao lâu vợ mới thấy thay đổi rõ rệt trong hôn nhân?","acceptedAnswer":{"@type":"Answer","text":"Thay đổi physical trong 1-4 tuần đầu: mùi nhà sạch, drap mền không ám khói, hơi thở chồng dễ chịu hơn khi nói chuyện gần. Thay đổi emotional trong 3-6 tháng: chồng bớt cáu, ngủ ngon, không thức 2h sáng tìm điếu cuối. Thay đổi tài chính trong 12 tháng: 30-40 triệu tiết kiệm rõ ràng. Thay đổi relationship — gốc rễ — trong 6-18 tháng."}},
+{"@type":"Question","name":"Vợ có cần thời gian để 'điều chỉnh' với phiên bản mới của chồng không?",  "acceptedAnswer":{"@type":"Answer","text":"Có. Đây là điều ít ai nói. Vợ Khang chia sẻ: 'Tôi đã quen với chồng hút thuốc 12 năm. Khi anh cai, có cảm giác chồng tôi khác — vui vẻ hơn, năng động hơn, nhưng cũng cáu hơn ở tháng đầu, ít trầm tư hơn. Tôi mất 3-4 tháng quen với version mới của anh.' Đây bình thường — cần thời gian re-calibrate relationship sau big change."}},
+{"@type":"Question","name":"Có vợ nào cảm thấy 'mất' điều gì khi chồng bỏ thuốc không?",  "acceptedAnswer":{"@type":"Answer","text":"Có — và rất phổ biến nhưng ít người dám nói. Vợ Khang: 'Tôi mất những buổi tối anh ra ban công hút — đó là lúc tôi đọc sách một mình. Anh cai, anh ở trong nhà nhiều hơn — tôi mất thời gian một mình.' Đây không phải vấn đề — chỉ cần adjustment. Sau 3-6 tháng vợ tìm được rhythm mới của relationship."}},
+{"@type":"Question","name":"Khi nào vợ biết chồng đã 'cai vĩnh viễn' chưa phải lo nữa?",  "acceptedAnswer":{"@type":"Answer","text":"Khoa học: ≥5 năm liên tục không hút = 'vĩnh viễn' theo định nghĩa lâm sàng (Hughes 2008). Sau 5 năm tỷ lệ tái nghiện chỉ ~1%. Nhưng vợ có thể relax sớm hơn: sau 12 tháng không lo hằng ngày, sau 24 tháng coi như 'người không hút', sau 60 tháng (5 năm) ngừng nghĩ về việc đó. Khang đã 5 năm — vợ Khang nói 'tôi không nghĩ đến thuốc lá trong cuộc sống nữa'."}},
+{"@type":"Question","name":"Vợ làm gì để duy trì cuộc cai của chồng năm 2-5?",  "acceptedAnswer":{"@type":"Answer","text":"3 việc nhỏ nhưng đều: (1) Celebrate milestone — D90, 6 tháng, 1 năm, 3 năm, 5 năm với 1 món chồng thích / 1 chuyến đi. (2) Hỏi sau stress lớn (mất việc, gia đình ốm): 'Anh OK chứ?' — không nhắc thuốc, chỉ check-in cảm xúc. (3) Không lưu giữ ấn vật 'người đã hút' — vứt gạt tàn, bao thuốc còn sót lại sau D90."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .vo-says { background: linear-gradient(135deg, #F4FBF5 0%, #FAFAF8 100%); border: 1px solid #16A34A; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .vo-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #15803D; margin-bottom: 8px; }
+.sol-wiki .vo-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .change-card { background: white; border: 2px solid #B25C2C; border-radius: 12px; padding: 16px 20px; margin: 14px 0; }
+.sol-wiki .change-card .num { display: inline-block; background: #B25C2C; color: white; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.sol-wiki .change-card h3 { margin: 4px 0 8px; }
+.sol-wiki .change-card .quote { background: #FFF4EA; border-left: 3px solid #B25C2C; padding: 10px 14px; border-radius: 6px; margin: 10px 0; font-style: italic; font-size: 14px; }
+.sol-wiki .timeline { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.sol-wiki .timeline .row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px dashed rgba(0,0,0,0.08); }
+.sol-wiki .timeline .row:last-child { border-bottom: none; }
+.sol-wiki .timeline .time { font-weight: 700; color: #B25C2C; min-width: 90px; font-size: 14px; }
+.sol-wiki .timeline .act { flex: 1; font-size: 14px; }
+.sol-wiki .forward-cta { background: linear-gradient(135deg, #FFF4EA, #FFE8C8); border: 2px solid #B25C2C; border-radius: 14px; padding: 22px 24px; margin: 32px 0; }
+.sol-wiki .forward-cta .label { font-size: 12px; font-weight: 700; color: #B25C2C; }
+.sol-wiki .forward-cta h3 { color: #5C3A1E; margin: 8px 0 10px; }
+.sol-wiki .forward-cta .script-box { background: white; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #B25C2C; margin: 14px 0; font-style: italic; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Chị ạ. Đây là bài duy nhất trên Sol vợ Khang viết. Chị Khang đã đồng ý chia sẻ — vì cô ấy nói: "Có quá nhiều bài viết về người chồng cai. Không có bài nào về vợ sau khi chồng cai. Vợ cũng thay đổi — và sự thay đổi đó ít người nói."</p>
+
+<div class="vo-says">
+<div class="vo-says-label">Vợ Khang nói thẳng</div>
+<p>"Tôi tên V. Tôi 47 tuổi. Tôi là vợ của Khang 22 năm. Tôi đã sống với chồng hút thuốc 17 năm + chồng đã cai 5 năm. Đây là cảm nhận thật của tôi — không phải article tâm lý."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>6 thay đổi lớn của vợ:</strong> ngủ ngon, hôn lại, tiết kiệm 36 triệu/năm, con ngừng ho, bớt anxiety, quan hệ tốt hơn</li>
+<li><strong>Thay đổi physical 1-4 tuần</strong> | Emotional 3-6 tháng | Tài chính 12 tháng | Relationship 6-18 tháng</li>
+<li><strong>Vợ cần 3-4 tháng quen "version mới" của chồng</strong> — bình thường</li>
+<li><strong>Một số vợ cảm thấy "mất" điều gì</strong> — như thời gian một mình lúc chồng ra ban công hút</li>
+<li><strong>5 năm = "vĩnh viễn" lâm sàng</strong> — vợ Khang đã ngừng nghĩ về thuốc lá</li>
+</ul></div>
+
+<h2>1. 6 thay đổi lớn vợ Khang chia sẻ</h2>
+
+<div class="change-card">
+<div class="num">THAY ĐỔI 1</div>
+<h3>Ngủ ngon hơn — không lo mùi thuốc ám đệm gối</h3>
+<div class="quote">"17 năm tôi ngủ với mùi thuốc trên áo gối Khang. Tôi tưởng quen rồi. Sau khi Khang cai 2 tuần, tôi đổi áo gối mới — và lần đầu trong 17 năm tôi ngủ liền 7 tiếng không tỉnh. Tôi mới biết tôi đã không ngủ ngon suốt 17 năm."</div>
+</div>
+
+<div class="change-card">
+<div class="num">THAY ĐỔI 2</div>
+<h3>Hôn lại sau 12 năm</h3>
+<div class="quote">"Tôi đã không hôn miệng Khang trong 12 năm. Tôi không nói. Anh ấy không hỏi. Sau khi Khang cai 6 tuần, một tối tôi đột nhiên muốn hôn — không cần lý do. Tôi hôn. Khang khóc. Đó là khoảnh khắc tôi biết hôn nhân tôi đã sống lại."</div>
+</div>
+
+<div class="change-card">
+<div class="num">THAY ĐỔI 3</div>
+<h3>Tiết kiệm 36 triệu/năm — đi du lịch gia đình lần đầu</h3>
+<div class="quote">"Khang hút 1 bao Vinataba/ngày = 100k/ngày = 36 triệu/năm. Sau khi cai, tiền đó đi vào tài khoản tiết kiệm chung. Sau 12 tháng tụi tôi đi Phú Quốc 4 người cả gia đình — chuyến đi lần đầu sau 8 năm. Tiền không phải lý do tôi muốn anh cai — nhưng tiền là kết quả ngọt nhất."</div>
+</div>
+
+<div class="change-card">
+<div class="num">THAY ĐỔI 4</div>
+<h3>Con ngừng ho mãn tính sau 6 tuần</h3>
+<div class="quote">"Con gái An ho 3 năm liên tục — tôi tưởng do dị ứng bụi. Sau khi Khang ngừng hút trong nhà 6 tuần, cháu ngừng ho hoàn toàn. Tôi gọi bác sĩ Nhi — bác sĩ nói: 'Cô đã biết nguyên nhân từ trước.' Tôi không nói được gì. Tôi đã 'không biết' vì tôi không muốn biết."</div>
+</div>
+
+<div class="change-card">
+<div class="num">THAY ĐỔI 5</div>
+<h3>Bớt anxiety âm thầm — không lo ung thư chồng</h3>
+<div class="quote">"Tôi đã không nhận ra trong 17 năm tôi luôn có một mảng lo trong lòng — 'không biết hôm nào Khang đi khám sẽ ra tin xấu'. Lo nhỏ, hằng ngày, nền nhỏ. Sau khi Khang cai 12 tháng và đi khám phổi clean, mảng lo đó biến mất. Tôi mới biết tôi đã sống với nó suốt 17 năm — như sương mù tôi không thấy vì tôi ở trong đó."</div>
+</div>
+
+<div class="change-card">
+<div class="num">THAY ĐỔI 6</div>
+<h3>Quan hệ tình dục cải thiện</h3>
+<div class="quote">"Không tế nhị nhưng tôi muốn nói vì đây là điều ít vợ nào dám nói. Testosterone chồng tăng 18% sau 6 tháng cai (đo lâm sàng). Tôi cảm thấy được — không phải vì 'science' mà vì Khang muốn gần hơn, năng lượng hơn. Sau 20 năm hôn nhân, chúng tôi đang trải qua khoảnh khắc tốt nhất."</div>
+</div>
+
+<h2>2. Timeline thay đổi — vợ nên kỳ vọng gì khi</h2>
+
+<div class="timeline">
+<div class="row"><div class="time">Tuần 1-4</div><div class="act">Physical: mùi nhà sạch, drap không ám khói, hơi thở chồng dễ chịu, ngủ ngon hơn.</div></div>
+<div class="row"><div class="time">Tháng 2-3</div><div class="act">Emotional: chồng bớt cáu (sau peak ngày 3-7), ngủ ngon, ít stress. Vợ cần adjust với version mới.</div></div>
+<div class="row"><div class="time">Tháng 4-6</div><div class="act">Health: chồng vị giác trở lại, tăng cân 2-4kg, hơi thở dễ. Vợ thấy quan hệ vật lý cải thiện.</div></div>
+<div class="row"><div class="time">Tháng 6-12</div><div class="act">Tài chính: tiết kiệm rõ. Mối quan hệ sâu hơn — không có chuyện thuốc lá làm "cánh cửa đóng".</div></div>
+<div class="row"><div class="time">Năm 2-5</div><div class="act">Anxiety nền biến mất. Vợ ngừng nghĩ về việc đó. Mối quan hệ là "couple bình thường" lần đầu sau nhiều năm.</div></div>
+</div>
+
+<h2>3. Một sự thật ít ai nói — vợ cũng "mất" gì khi chồng bỏ thuốc</h2>
+
+<div class="vo-says">
+<div class="vo-says-label">Vợ Khang nói thẳng</div>
+<p>"Tôi mất điều này — và tôi muốn chị em khác biết để chuẩn bị tinh thần:"</p>
+<p>"Mỗi tối Khang ra ban công hút 15 phút — đó là 15 phút tôi đọc sách một mình. Khi anh cai, anh ở trong nhà nhiều hơn — tôi mất 15 phút đó."</p>
+<p>"Tôi mất 'cái cớ' để khó chịu với Khang. 12 năm tôi đã đổ lỗi tất cả mâu thuẫn cho thuốc lá. Khi không còn lý do đó, tôi phải đối mặt với những vấn đề khác trong hôn nhân — cái này thực ra khó hơn."</p>
+<p>"Tôi mất danh tính 'vợ của người hút' — tôi không nhận ra đây là 1 phần của tôi trong 12 năm cho đến khi nó mất."</p>
+<p>"Không một mất nào trong đó là 'không đáng' — nhưng tôi muốn chị em biết đó là sự thật. Sau khi chồng cai, vợ cũng cần 3-6 tháng để adjust danh tính của chính mình."</p>
+</div>
+
+<h2>4. Vợ làm gì để duy trì cai năm 2-5</h2>
+
+<ol>
+<li><strong>Celebrate milestone:</strong> D90, 6 tháng, 1 năm, 3 năm, 5 năm — 1 món chồng thích / 1 chuyến đi cuối tuần</li>
+<li><strong>Hỏi sau stress lớn:</strong> sau khi chồng mất việc / gia đình ốm — "Anh OK chứ?" KHÔNG nhắc thuốc, chỉ check-in cảm xúc</li>
+<li><strong>Không lưu giữ ấn vật:</strong> vứt gạt tàn, bao thuốc còn sót sau D90. Không "kỷ niệm" thời hút thuốc</li>
+<li><strong>Đi khám phổi định kỳ 6 tháng/lần</strong> — yên tâm + thấy improvement cụ thể</li>
+<li><strong>Đăng story / chia sẻ với bạn bè cùng hoàn cảnh</strong> — chị em khác thấy hy vọng</li>
+</ol>
+
+<div class="forward-cta">
+<div class="label">🤝 BƯỚC KẾ TIẾP</div>
+<h3>Forward bài này cho 3 người chị quen — đang giúp chồng cai</h3>
+<div class="script-box">"Em đọc bài này — vợ của 1 người đã cai 5 năm chia sẻ. Đọc thấy hy vọng. Em gửi chị / em / cô."</div>
+<p style="margin-top: 14px;">→ Link: <strong>https://sol.vn/sau-khi-chong-bo-thuoc-vo-thay-doi-gi/</strong></p>
+</div>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP CHO CHỒNG</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Khi chồng sẵn sàng — Sol đồng hành 51 ngày + Sổ Lưu Niệm D30/60/90</div>
+<a href="https://sol.vn">Cài app →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/thu-gui-vo-cua-nguoi-chong-da-cai/">Thư gửi vợ của người chồng đã cai 5 năm</a></li>
+<li>→ <a href="https://sol.vn/vo-giup-chong-bo-thuoc-la/">Vợ giúp chồng bỏ thuốc — pillar</a></li>
+<li>→ <a href="https://sol.vn/10-cau-nen-noi-khi-chong-dang-cai/">10 câu nên nói + 10 câu KHÔNG nên nói</a></li>
+<li>→ <a href="https://sol.vn/con-toi-da-viet-thu-xin-bo-bo-thuoc/">Đứa con 6 tuổi viết thư xin bố bỏ thuốc</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ Câu chuyện này là thật của vợ Khang (đã xin phép đăng). Mỗi gia đình trải nghiệm khác — không có template chuẩn.</div>
+
+<p class="footer-meta">— V., vợ Khang, 22 năm hôn nhân. Cập nhật 16/5/2026.</p>
+
+</div>

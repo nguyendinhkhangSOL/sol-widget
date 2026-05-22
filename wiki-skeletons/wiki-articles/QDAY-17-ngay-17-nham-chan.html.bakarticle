@@ -1,0 +1,212 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vì sao nhàm chán nguy hiểm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khi không có gì kích thích (boring task, ngồi không), dopamine ở trạng thái thấp. Não tự động tìm stimulation. Trong 25-30 năm, \"stimulation default\" của anh là hút thuốc."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5 hành động Ngày 17 là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đan, đọc sách, học nấu, sửa xe, chơi đàn, vẽ, đi câu, làm vườn. Cái gì anh đã muốn lâu mà chưa làm? Đăng ký 1 lớp / mua dụng cụ TUẦN NÀY. Hobby mới = dopamine nguồn mới. Hết nhàm chán."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cần tránh hôm nay gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngày 17 lần 5 cai rơi vào thứ Bảy. Tôi dậy 9h — không có gì làm. Vợ và con đi siêu thị. Tôi ngồi sofa, mở Facebook, scroll 1.5 tiếng. Đột nhiên thèm thuốc cực mạnh — không có lý do."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .tldr ul { margin: 6px 0 0; padding-left: 20px; }
+.sol-wiki .tldr li { margin-bottom: 6px; }
+.sol-wiki .step-card { background: white; border: 1px solid rgba(178,92,44,0.18); border-radius: 12px; padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.sol-wiki .step-num { background: #B25C2C; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 700; flex-shrink: 0; }
+.sol-wiki .step-card h4 { margin: 0 0 6px; color: #5C3A1E; font-size: 15.5px; }
+.sol-wiki .step-card p { margin: 0; font-size: 14.5px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .chip-summary { background: #F4FBF5; border: 2px dashed #16A34A; border-radius: 12px; padding: 16px 18px; margin: 20px 0; font-size: 14px; }
+.sol-wiki .chip-summary .chip-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #15803D; margin-bottom: 6px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links li { margin-bottom: 8px; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Ngày 17. Anh ngồi nhà cuối tuần — không có gì làm. Lướt TikTok 2 tiếng. Mở tủ lạnh 3 lần. Tự hỏi "mình đang làm gì?". Đây là <strong>nhàm chán</strong> — kẻ thù ít được nhắc nhất nhưng là tình huống thèm tái nghiện nguy hiểm. Não low dopamine + không có "việc" = tìm thuốc lá.</p>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li>Nhàm chán = low dopamine state → não tìm stimulation (Marlatt 1985)<sup>[1]</sup></li>
+<li>Hút thuốc đã là "default fix" cho boredom 25-30 năm</li>
+<li>15% case vấp do nhàm chán — đặc biệt cuối tuần, kỳ nghỉ</li>
+<li>Giải pháp: <strong>thay thế default</strong> — tạo hobby mới, đăng ký lớp, gặp người mới</li>
+<li>5 hành động hôm nay: đăng ký 1 hobby, đi đường mới, gặp người cũ, viết, ngủ đủ</li>
+</ul>
+</div>
+
+<h2>Vì sao nhàm chán nguy hiểm?</h2>
+
+<h3>Low dopamine state</h3>
+
+<p>Khi không có gì kích thích (boring task, ngồi không), dopamine ở trạng thái thấp. Não tự động <strong>tìm stimulation</strong><sup>[1]</sup>. Trong 25-30 năm, "stimulation default" của anh là hút thuốc.</p>
+
+<p>Cai → não vẫn cần stimulation → nếu không có thay thế → tìm thuốc lá.</p>
+
+<h3>Cuối tuần đặc biệt nguy hiểm</h3>
+
+<p>Trong tuần — công việc tự cấu trúc thời gian. Cuối tuần — anh tự lập kế hoạch. Nếu không có gì làm → ngồi không → nhàm chán → cơn thèm.</p>
+
+<h3>Cảnh báo từ research</h3>
+
+<p>Nghiên cứu Marlatt 1985 phân tích 311 vấp<sup>[1]</sup>: nhàm chán chiếm <strong>15% nguyên nhân vấp</strong> — đứng thứ 3 sau stress + xã giao. Nhưng nhàm chán <strong>ít được nói đến</strong> trong hướng dẫn cai — nên người ta không chuẩn bị.</p>
+
+<h2>5 hành động Ngày 17</h2>
+
+<div class="step-card">
+<div class="step-num">1</div>
+<div>
+<h4>Đăng ký 1 hobby mới — bắt đầu tuần này</h4>
+<p>Đan, đọc sách, học nấu, sửa xe, chơi đàn, vẽ, đi câu, làm vườn. Cái gì anh đã muốn lâu mà chưa làm? Đăng ký 1 lớp / mua dụng cụ TUẦN NÀY. Hobby mới = dopamine nguồn mới. Hết nhàm chán.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">2</div>
+<div>
+<h4>Đi bộ đường khác mỗi ngày</h4>
+<p>Đừng đi cùng 1 đường về nhà. Đường mới = não thấy mới = dopamine tự nhiên. 30 phút mỗi sáng — khu phố khác, công viên mới, đường ven sông. Nội thành VN nhiều chỗ chưa khám phá hết.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">3</div>
+<div>
+<h4>Gặp 1 người cũ — bạn lâu không gặp</h4>
+<p>Bạn học cấp 3, đồng nghiệp cũ, anh em họ — gọi 1 người, hẹn café. Connection xã hội tăng oxytocin → giảm nhàm chán + tăng dopamine. Không cần sự kiện lớn — 1 buổi café 1 tiếng đủ.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">4</div>
+<div>
+<h4>Viết — 5 phút mỗi tối</h4>
+<p>Sổ tay hoặc note điện thoại. 5 dòng: <em>"Hôm nay tôi đã ... Cảm xúc ... Học được ..."</em>. Việc viết bản thân là dopamine source — tạo "produced something" feeling. Sau 30 ngày có 30 trang journey.</p>
+</div>
+</div>
+
+<div class="step-card">
+<div class="step-num">5</div>
+<div>
+<h4>Ngủ đủ — nhàm chán thường đi cùng mệt</h4>
+<p>Nhàm chán kèm mệt = combo nguy hiểm. Ngủ 7-8 tiếng. Nếu mệt nhưng không buồn ngủ → đi bộ 30 phút ngoài trời thay vì ngồi.</p>
+</div>
+</div>
+
+<h2>Tránh hôm nay</h2>
+
+<ul>
+<li><strong>Lướt mạng vô thức</strong> 2-3 tiếng — đánh lừa não là "đang làm gì"</li>
+<li><strong>Uống bia để "qua giờ"</strong> — vào vòng nhậu + thuốc</li>
+<li><strong>Ngồi nhà cả ngày</strong> — không ra ngoài tuần này = tệ</li>
+<li><strong>"Tôi không có sở thích"</strong> — sai, anh chưa thử đủ</li>
+</ul>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Ngày 17 lần 5 cai rơi vào thứ Bảy. Tôi dậy 9h — không có gì làm. Vợ và con đi siêu thị. Tôi ngồi sofa, mở Facebook, scroll 1.5 tiếng. Đột nhiên thèm thuốc cực mạnh — không có lý do.</p>
+<p>Tôi đứng dậy. Hiểu: <strong>đây là nhàm chán, không phải thèm thuốc thật</strong>. Tôi đi tìm cái gì làm.</p>
+<p>Sửa cái quạt cũ — nó hỏng 3 tháng tôi không sửa. Mất 45 phút, sửa được. Tôi tự hào. Tối nay vợ ngạc nhiên — "Ơ quạt sửa rồi à anh?". Tôi: <em>"Lần đầu sửa được sau 30 năm"</em>. Cô ấy cười.</p>
+<p>Hôm sau Chủ nhật — tôi đi mua đồ làm tủ gỗ nhỏ. Tôi chưa làm mộc bao giờ. Lên YouTube xem, mua dụng cụ. 2 tuần sau làm xong cái kệ sách. Hobby mới của tôi sau đó. 5 năm sau tôi vẫn làm — đã đóng 30+ món đồ.</p>
+<p>Anh em ơi — nhàm chán không phải bỏ qua. Đó là cơ hội <strong>tạo hobby mới</strong> — phiên bản mới của anh. Sửa cái gì đó, học cái gì đó. Đừng để não tìm thuốc lá thay thế.</p>
+</div>
+
+<div class="related-links">
+<h3>📖 Bài liên quan trong hành trình</h3>
+<ul>
+<li><a href="https://sol.vn/ngay-16-nhau-bia-hoi-via-he-khong-hut-thuoc-song-sot-qua-buoi-dau-tien/">→ Ngày 16 — Nhậu không thuốc</a></li>
+<li><a href="https://sol.vn/ngay-18-stress-cong-viec-dieu-thuoc-gio-nghi-khong-con/">→ Ngày 18 — Stress công việc</a></li>
+<li><a href="https://sol.vn/buon-chan-tuan-2/">→ Đống tro tàn — buồn vô cớ tuần 2</a></li>
+</ul>
+</div>
+
+😐 <strong>Ngày 17 — Nhàm chán</strong><br><br>
+Low dopamine state → não tìm stimulation. Hút thuốc đã là "default fix" 25-30 năm. 15% người vấp do nhàm chán.<br><br>
+Hôm nay: đăng ký 1 hobby mới, đi đường khác, gọi 1 người bạn cũ, viết 5 phút.<br><br>
+Đây là cơ hội tạo phiên bản mới — sửa, học, kết nối.<br><br>
+📖 <a href="https://sol.vn/ngay-17-nham-chan-ke-thu-it-duoc-nhac-den/?utm_source=zalo&utm_campaign=qday-17">Đọc đầy đủ →</a>
+</div>
+
+<div class="disclaimer">
+<strong>Lưu ý:</strong> Nếu nhàm chán + mệt mỏi mãn tính + thiếu năng lượng kéo dài — khám loại trừ trầm cảm.
+</div>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Vì sao nhàm chán nguy hiểm?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Khi không có gì kích thích (boring task, ngồi không), dopamine ở trạng thái thấp. Não tự động tìm stimulation. Trong 25-30 năm, "stimulation default" của anh là hút thuốc.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. 5 hành động Ngày 17 là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Đan, đọc sách, học nấu, sửa xe, chơi đàn, vẽ, đi câu, làm vườn. Cái gì anh đã muốn lâu mà chưa làm? Đăng ký 1 lớp / mua dụng cụ TUẦN NÀY. Hobby mới = dopamine nguồn mới. Hết nhàm chán.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Cần tránh hôm nay gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Ngày 17 lần 5 cai rơi vào thứ Bảy. Tôi dậy 9h — không có gì làm. Vợ và con đi siêu thị. Tôi ngồi sofa, mở Facebook, scroll 1.5 tiếng. Đột nhiên thèm thuốc cực mạnh — không có lý do.</p>
+</details>
+</div>
+
+<div class="references">
+<strong>Tham khảo khoa học:</strong>
+<ol>
+<li>Marlatt GA, Gordon JR. (1985). <em>tái nghiện Prevention</em>. Guilford Press — Chapter 2 (boredom = 15% vấp).</li>
+<li>Shiffman S (1982). <em>tái nghiện following smoking cai thuốc</em>. J Consult Clin Psychol 50:71-86.</li>
+<li>Csikszentmihalyi M (1990). <em>Flow: The Psychology of Optimal Experience</em>.</li>
+</ol>
+</div>
+
+<div class="cta-box">
+<div style="font-size:18px;font-weight:700;margin-bottom:6px;">Ngày 17 — Sol có chip cứu nhàm chán</div>
+<div style="font-size:14px;opacity:.9;">Chip "đang nhàm chán" → 9 hoạt động thay thế. Bắt đầu miễn phí, linh hoạt 25k/tuần.</div>
+<a href="https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=qday-17&utm_medium=organic">Cùng Sol →</a>
+</div>
+
+<p class="footer-meta">Bài viết bởi <strong>Khang Sol</strong> — đã tạo hobby mộc từ Ngày 17 năm 2020, đã làm 30+ món đồ. Cập nhật 14-05-2026.</p>
+
+</div>

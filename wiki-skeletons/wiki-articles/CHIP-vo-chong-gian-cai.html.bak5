@@ -1,0 +1,191 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 2 — Chiến lược 5 bước là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trước khi đặt Q-Day, ngồi xuống với vợ/chồng:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=vo-chong-gian) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuần 2 cai mình cáu vợ vô cớ — chỉ vì cô ấy hỏi \"Anh ăn cơm chưa?\". Mình quát. Vợ giận, không nói chuyện 2 ngày."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi đã cáu vợ hôm qua — sửa thế nào?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Bạn cai 9 ngày. Vợ vô tình nói câu nhẹ — bạn nổi cáu vô lý. Vợ giận. Bạn biết mình sai nhưng không kiểm soát được. <strong>Đây là triệu chứng cai (triệu chứng cai), không phải bản chất bạn.</strong> Và là điều cần nói rõ với vợ — trước khi cô ấy bỏ về nhà mẹ.</p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>80-90% người cai có cáu kỉnh tuần 1-3<sup>[1]</sup></li>
+<li>Cortisol + thiếu dopamine + thiếu ngủ = perfect storm</li>
+<li>Người gần nhất (vợ/chồng/con) chịu nặng nhất</li>
+<li>Cách duy nhất giảm: <strong>nói trước, không sau</strong></li>
+</ul>
+</div>
+<h2>Phần 1 — Vì sao cáu kỉnh khi cai?</h2>
+<h3>Khoa học</h3>
+<ul>
+<li>Nicotine từng kích hoạt dopamine + serotonin → mood ổn định ngắn hạn</li>
+<li>Cai → thiếu dopamine → não khó dung hoà cảm xúc</li>
+<li>Thiếu ngủ + đường máu dao động → thấp ngưỡng nổi nóng</li>
+<li>Cortisol stress cao tuần 1-3 → tự kích hoạt amygdala (vùng não sợ/tức)</li>
+</ul>
+<h3>Hughes 2007 mô tả: "irritability" là 1 trong 7 triệu chứng cai chính[^2]</h3>
+<ul>
+<li>Đỉnh ngày 3-7</li>
+<li>Dịu dần sau 2 tuần, hết hoàn toàn sau 3-4 tuần</li>
+<li>1 trong những lý do hàng đầu của tái phát: vợ giận → căng thẳng → "1 điếu"</li>
+</ul>
+<h3>Nói cách khác</h3>
+<blockquote>Bạn không "bỗng nhiên trở thành người tệ". Bạn đang qua thời gian khó nhất + người thân chịu chung. Cả hai phía đều cần biết là tạm thời.</blockquote>
+<h2>Phần 2 — Chiến lược 5 bước</h2>
+<h3>Bước 1: Nói trước khi vào tuần khó nhất</h3>
+<p><strong>Trước khi đặt Q-Day</strong>, ngồi xuống với vợ/chồng:</p>
+<blockquote>"Em ơi, anh đang chuẩn bị cai thuốc. Khoa học nói tuần 1-3 anh sẽ cáu kỉnh, khó tính, không phải bản chất anh. Anh xin lỗi trước. Em chịu giúp anh 3 tuần — anh hứa sau đó tốt hơn. Nếu em thấy quá, cứ nói thẳng."</blockquote>
+<p>Câu này cứu được 80% xung đột tiềm ẩn.</p>
+<h3>Bước 2: Đặt "Code red" trong nhà</h3>
+<p>Quy ước với vợ/con:</p>
+<ul>
+<li>"Khi anh nói <strong>'cho anh 5 phút'</strong> = anh ra ngoài để bình tĩnh, không phải bỏ đi"</li>
+<li>"Khi anh nói <strong>'không phải tại em'</strong> = anh đang trong cơn cáu, không có ý kiến em"</li>
+<li>Trẻ con cũng có thể hiểu — giúp tránh trauma cho con</li>
+</ul>
+<h3>Bước 3: Khi cảm thấy nổi cáu — đi ra ngoài</h3>
+<ul>
+<li>Đứng dậy: "Anh ra ngoài 10 phút"</li>
+<li>Đi xa khỏi gia đình</li>
+<li>Hít thở 4-7-8 ba lần</li>
+<li>Đi bộ chậm</li>
+<li>Quay vào → đã reset 70%</li>
+</ul>
+<blockquote>KHÔNG đập đồ, KHÔNG hét, KHÔNG nói câu sẽ hối hận sau.</blockquote>
+<h3>Bước 4: Sau cơn — apologize cụ thể</h3>
+<ul>
+<li>"Em ơi, anh xin lỗi vì đã cáu lúc nãy"</li>
+<li>KHÔNG: "Vì cai thuốc anh mới thế" — đổ lỗi không xin lỗi</li>
+<li>CÓ: "Anh đang vật lộn, nhưng em không đáng nhận" — nhận trách nhiệm + giải thích</li>
+<li>Hành động: rửa bát / mua hoa / massage chân — không lời</li>
+</ul>
+<h3>Bước 5: Sau 4 tuần — review</h3>
+<ul>
+<li>Tuần 5-6 cai, cảm xúc đã ổn hơn</li>
+<li>Ngồi xuống: "Em ơi, em đã chịu khó. Anh học được gì 4 tuần qua?"</li>
+<li>Đây là khoảnh khắc kết nối lại + tăng intimacy</li>
+</ul>
+<h2>Phần 3 — Tình huống đặc biệt</h2>
+<h3>Vợ đe doạ "anh không cai được tôi đi"</h3>
+<ul>
+<li>Đây thường là từ stress, không phải quyết định</li>
+<li>Đừng phản ứng cảm xúc</li>
+<li>"Em đang khó, anh cũng khó. Mình đi qua cùng nhau"</li>
+<li>Đề xuất counseling cặp 1-2 buổi nếu kéo dài</li>
+</ul>
+<h3>Con cái sợ</h3>
+<ul>
+<li>Trẻ 5-12 tuổi rất nhạy cảm với mood của cha mẹ</li>
+<li>Nói thẳng với con: "Bố đang khó vì cai thuốc — bố không giận con đâu, bố thương con"</li>
+<li>Cho con phần trong chuyện: "Con nhắc bố 'bình tĩnh' khi thấy bố cáu nhé"</li>
+</ul>
+<h3>Người yêu cũ / vợ cũ tìm lại</h3>
+<ul>
+<li>Đặc biệt khó khi cai — cảm xúc dâng cao</li>
+<li>Tốt nhất: KHÔNG gặp trong 30 ngày đầu cai</li>
+<li>Nếu phải: ngắn, không rượu, có người thứ 3</li>
+</ul>
+<h3>Bạo lực gia đình</h3>
+<ul>
+<li>Nếu cảm thấy có thể đánh vợ/con — DỪNG CAI ngay</li>
+<li>Đi khám khoa Tâm thần BV gần nhất (BV Bạch Mai HN: 024 3869 3731 · BV Tâm thần TPHCM: 1900 599 920)</li>
+<li>Có thể cần kết hợp Bupropion + therapy</li>
+</ul>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=vo-chong-gian)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Tuần 2 cai mình cáu vợ vô cớ — chỉ vì cô ấy hỏi <em>"Anh ăn cơm chưa?"</em>. Mình quát. Vợ giận, không nói chuyện 2 ngày.</p>
+<p>Mình tự hỏi: tại sao mình hỗn? Hoá ra cai thuốc = cortisol cao + dopamine thấp = dễ cáu. Mình xin lỗi vợ, giải thích. Vợ hiểu — vì cô ấy đã chờ ngày này 30 năm.</p>
+<p>Tip cho anh: BÁO TRƯỚC vợ về tuần đầu cai. <em>"Em ơi, tuần này anh cáu lắm — không phải vì em, là vì hút. Em cho anh time."</em> Đa số vợ sẽ thông cảm.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi đã cáu vợ hôm qua — sửa thế nào?</h3></p>
+<p><p>Apologize cụ thể trong vòng 24h. KHÔNG đợi "lúc đỡ căng". Câu xin lỗi muộn = mất giá trị.</p></p>
+<p><h3>Vợ tôi không hiểu cai khó — phải làm sao?</h3></p>
+<p><p>In bài này ra cho cô ấy đọc. Hoặc cùng đọc bài "tuần 1 cai" trên sol.vn. Khoa học giúp cô ấy thông cảm hơn lý do cá nhân.</p></p>
+<p><h3>Tôi không có vợ/chồng — sống một mình. Cáu với ai?</h3></p>
+<p><p>May mắn — ít xung đột. Nhưng cảnh giác với đồng nghiệp + bạn bè. Plan: đi bộ 30 phút/ngày để xả + nhắn tin Khang trong app khi nổi cáu.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 2 — Chiến lược 5 bước là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Trước khi đặt Q-Day, ngồi xuống với vợ/chồng:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=vo-chong-gian) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tuần 2 cai mình cáu vợ vô cớ — chỉ vì cô ấy hỏi "Anh ăn cơm chưa?". Mình quát. Vợ giận, không nói chuyện 2 ngày.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi đã cáu vợ hôm qua — sửa thế nào?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=vo-chong-gian-cai">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn: Hughes JR (2007). *Effects of kiêng dứt thuốc from tobacco*. Nicotine Tob Res 9(3):315-327. · West R (2017). *Tobacco smoking: Health impact, prevalence, correlates and interventions*. Psychol Health 32(8):1018-1036. · NHS Smokefree (2024). "Telling your family you're quitting."
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

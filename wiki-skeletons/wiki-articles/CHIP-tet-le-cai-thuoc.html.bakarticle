@@ -1,0 +1,225 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phần 1 — Vì sao Tết khó?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mỗi sự kiện = 1 tình huống thèm. Liên tục = mệt mỏi → giảm kiểm soát."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=tet-le) là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tết 2021 mình mới cai 1 tháng. Cả nhà sum vầy 5 ngày. Mọi anh em đều hút — sảnh nhà ông cụ khói mịt. Mình suýt fail nhiều lần."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu hỏi thường gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tôi nên về quê hay ở thành phố Tết?"
+      }
+    }
+  ]
+}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki blockquote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .check-box { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+.sol-wiki .check-box ul { margin: 8px 0 0; }
+.sol-wiki .alarm { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 2px solid #DC2626; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .alarm h3 { color: #DC2626; margin-top: 0; }
+.sol-wiki .alarm strong { color: #DC2626; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA 0%, #FAFAF8 100%); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; color: #2C2A27; font-size: 15.5px; }
+.sol-wiki .khang-says p:last-child { margin-bottom: 0; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .footer-emergency { font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki ul li, .sol-wiki ol li { margin-bottom: 6px; }
+.sol-wiki code { background: #FFF4EA; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+<div class="sol-wiki">
+<p class="lead">Tết. Anh em họ hàng tụ tập. Chú bác mời thuốc. Chai rượu trên bàn. Bạn cai 6 tháng. <strong>Đây là test lớn nhất năm — và là chỗ 35-40% người Việt cai năm đầu tái phát.</strong></p>
+<div class="check-box"><strong>Cần biết ngay:</strong>
+<ul>
+<li>Tết là <strong>thử thách số 1</strong> với người cai năm đầu Việt Nam<sup>[1]</sup></li>
+<li>tình huống thèm combo: rượu + cảm xúc + áp lực gia đình + 4-5 ngày liên tục</li>
+<li>Cần plan TRƯỚC Tết 1-2 tuần, không tại chỗ</li>
+<li>Sau 2-3 Tết cai thành công → ổn định, đời sau dễ hơn</li>
+</ul>
+</div>
+<h2>Phần 1 — Vì sao Tết khó?</h2>
+<h3>4 ngày liên tục = 4 trận đánh</h3>
+<ul>
+<li>Ngày 30: tất niên gia đình</li>
+<li>Mùng 1: thăm gia đình bên nội/ngoại</li>
+<li>Mùng 2-3: bạn bè + họ hàng xa</li>
+<li>Mùng 4-5: dã ngoại / nhậu kéo dài</li>
+</ul>
+<p>Mỗi sự kiện = 1 tình huống thèm. Liên tục = mệt mỏi → giảm kiểm soát.</p>
+<h3>Áp lực văn hoá đặc biệt</h3>
+<ul>
+<li>"Tết phải vui vẻ" — cảm xúc cao</li>
+<li>"Làm vài ly chúc Tết" — rượu vô tránh được</li>
+<li>"Khói hương + khói thuốc" trên bàn thờ</li>
+<li>"Chú/bác bận hay không?" — bị trêu nếu từ chối</li>
+</ul>
+<h3>Họ hàng "không biết bạn cai"</h3>
+<ul>
+<li>Lâu ngày không gặp → không biết bạn đã cai</li>
+<li>Mời thuốc tự nhiên, không có ý xấu</li>
+<li>Phải repeat "tôi không hút" 20-30 lần/Tết</li>
+</ul>
+<h2>Phần 2 — Plan 7 ngày trước Tết</h2>
+<h3>Bước 1: Thông báo trong gia đình 1-2 tuần trước</h3>
+<ul>
+<li>Gọi từng người thân trực hệ: "Em/anh đã cai thuốc, Tết đừng mời nhé"</li>
+<li>Vợ/chồng đặc biệt — cần "đồng minh" trong các bữa</li>
+<li>Con cái lớn — bảo họ check-in, hỏi han trong các bữa</li>
+</ul>
+<h3>Bước 2: Plan từng ngày Tết</h3>
+<p><strong>Ngày 30 (tất niên)</strong></p>
+<ul>
+<li>Ăn ở nhà mình, kiểm soát được</li>
+<li>Hạn chế chai rượu — bữa cuối năm có thể nhẹ nhàng</li>
+</ul>
+<p><strong>Mùng 1 (gia đình ruột)</strong></p>
+<ul>
+<li>Người trực hệ — đã thông báo rồi</li>
+<li>An toàn nhất Tết</li>
+<li>Nghỉ tốt cho ngày 2-3</li>
+</ul>
+<p><strong>Mùng 2-3 (rộng hơn)</strong></p>
+<ul>
+<li>Đây là pha rủi ro cao nhất</li>
+<li>Plan: thăm 2-3 nhà/ngày tối đa (đủ thời gian reset)</li>
+<li>Không ngồi quá 1 giờ mỗi nhà</li>
+<li>Có "lý do về" sẵn sàng</li>
+</ul>
+<p><strong>Mùng 4-5+</strong></p>
+<ul>
+<li>Risk dã ngoại / nhậu dài</li>
+<li>Cân nhắc đi du lịch ngắn (núi, biển) — tránh môi trường nguy hiểm</li>
+<li>Hoặc về nhà sớm, dành ngày cuối nghỉ</li>
+</ul>
+<h3>Bước 3: Chuẩn bị "kit Tết"</h3>
+<p>Mang theo trong tất cả các chuyến thăm:</p>
+<ul>
+<li>Kẹo cao su không đường (2-3 hộp)</li>
+<li>Chai nước 500ml</li>
+<li>Hạt dưa, hạnh nhân, mứt — chiếm tay/miệng</li>
+<li>Điện thoại đầy pin (gọi vợ khi cần)</li>
+</ul>
+<h3>Bước 4: Câu trả lời chuẩn cho họ hàng</h3>
+<p><strong>"Sao chú không hút nữa?"</strong></p>
+<ul>
+<li>"Cháu/em bỏ rồi, lâu lắm" → ngắn, không giải thích</li>
+<li>KHÔNG: "đang cai", "thử bỏ" — sẽ bị thử thách</li>
+</ul>
+<p><strong>"Hút 1 điếu Tết cho có không khí"</strong></p>
+<ul>
+<li>"Cảm ơn chú/anh, cháu/em không hút" + cười nhẹ</li>
+<li>Lặp lại nếu cần. Không tranh luận.</li>
+</ul>
+<p><strong>"Mày không phải đàn ông à?"</strong></p>
+<ul>
+<li>Đùa thôi. Cười. "Cháu vẫn là đàn ông, chỉ không hút."</li>
+<li>Đổi chủ đề ngay: hỏi về con cháu họ</li>
+</ul>
+<h2>Phần 3 — Trong các tình huống Tết</h2>
+<h3>Bữa cơm chính</h3>
+<ul>
+<li><strong>Ngồi cạnh người không hút</strong> (vợ, mẹ, em gái)</li>
+<li>Không ngồi đầu bàn — tránh làm tâm điểm</li>
+<li>Ăn nhanh, đứng dậy "phụ rửa bát" — cớ rời bàn</li>
+</ul>
+<h3>Sau ăn — pha "ngồi nói chuyện"</h3>
+<ul>
+<li>Đây là lúc thuốc + rượu phổ biến nhất</li>
+<li>Đứng dậy đi chơi với cháu nhỏ — vai trò mới</li>
+<li>Hoặc đi ra hiên / sân — không khí thoáng</li>
+</ul>
+<h3>Lì xì xong → "phải đi"</h3>
+<ul>
+<li>"Cháu phải về nhà bên ngoại nữa" — luôn có "nơi khác phải đến"</li>
+<li>Không cần ở lại lâu</li>
+</ul>
+<h3>Tối đêm Giao thừa</h3>
+<ul>
+<li>Đây là khoảnh khắc xúc cảm lớn — gia đình tụ</li>
+<li>Plan: ở nhà mình hoặc nhà gần thân trực hệ</li>
+<li>Có vợ/con bên cạnh</li>
+<li>Không nhậu lâu</li>
+</ul>
+<h2>Phần 4 — Sau Tết</h2>
+<ul>
+<li><strong>Mùng 6-7</strong>: tự thưởng vì đã vượt qua</li>
+<li>Đi nha sĩ tẩy trắng răng, mua thứ nhỏ ấp ủ</li>
+<li>Ghi nhật ký: học được gì 5 ngày Tết?</li>
+<li><strong>Tết năm sau dễ hơn 50%</strong> — đã có kinh nghiệm</li>
+</ul>
+<h2>Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=tet-le)</h2>
+
+<div class="khang-says">
+<div class="khang-says-label">💬 Khang nói</div>
+<p>Tết 2021 mình mới cai 1 tháng. Cả nhà sum vầy 5 ngày. Mọi anh em đều hút — sảnh nhà ông cụ khói mịt. Mình suýt fail nhiều lần.</p>
+<p>Mình áp dụng: ngồi sát vợ + cháu, đi WC mỗi giờ thở 4-7-8, uống nước nhiều, đi bộ quanh xóm với cháu. 5 ngày Tết — mình không hút điếu nào. Đó là moment thử thách lớn nhất 5 năm cai của mình.</p>
+<p>Tết / lễ là moment nguy hiểm bậc nhất — chuẩn bị kế hoạch TRƯỚC 1 tuần.</p>
+</div>
+<h2>Câu hỏi thường gặp</h2>
+<p><h3>Tôi nên về quê hay ở thành phố Tết?</h3></p>
+<p><p>Tuỳ — ở quê thường khó hơn (anh em ép thuốc nhiều). Năm đầu cai → cân nhắc ở thành phố hoặc đi du lịch.</p></p>
+<p><h3>Có nên kể với họ hàng tôi đã cai?</h3></p>
+<p><p>NÊN — chủ động trước khi họ mời. Tự tin: "Cháu cai thuốc 6 tháng rồi, anh đừng mời nhé." Họ sẽ tôn trọng.</p></p>
+<p><h3>Tết tôi đã hút 1-2 điếu vì cảm xúc — sao đây?</h3></p>
+<p><p>Đứng dậy NGAY hôm nay. Đừng chờ "qua Tết bắt đầu lại". Học: Tết sau plan kỹ hơn. Bạn vẫn là người cai — chỉ vấp.</p></p>
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Phần 1 — Vì sao Tết khó?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Mỗi sự kiện = 1 tình huống thèm. Liên tục = mệt mỏi → giảm kiểm soát.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. Bắt đầu cùng SOL → [bothuocla.sol.vn](https://bothuocla.sol.vn?utm_source=wiki&utm_campaign=tet-le) là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tết 2021 mình mới cai 1 tháng. Cả nhà sum vầy 5 ngày. Mọi anh em đều hút — sảnh nhà ông cụ khói mịt. Mình suýt fail nhiều lần.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. Câu hỏi thường gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Tôi nên về quê hay ở thành phố Tết?</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Cá nhân hoá theo Mức Lệ Thuộc của anh. 3 lộ trình 35/52/65 ngày. 4 cách trả tiền linh hoạt. Khang đi cùng anh từng ngày bằng voice + AI + Khoảng Lặng anh em VN.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=chip&utm_campaign=tet-le-cai-thuoc">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+<p class="footer-meta">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Đi Cùng Sol</a>. Nguồn: WHO Vietnam (2020). *Smoking cai thuốc cultural factors — Tet holiday*. · Shiffman S et al. (2002). *Immediate antecedents of cigarette smoking*. J Abnorm Psychol 111(4):531-545. · NHS Smokefree (2024). "Coping with holidays."
+</p>
+<p class="footer-emergency">
+<strong>🚨 Khẩn cấp y tế</strong>: đau ngực dữ dội, khó thở nặng, ngất, ho ra máu, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> hoặc tổng đài cai thuốc miễn phí BV Bạch Mai <a href="tel:0888008866" style="color: #B25C2C; font-weight: 700;">0888-008-866</a> (24/7).
+</p>
+</div>

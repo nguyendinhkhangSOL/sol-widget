@@ -1,0 +1,354 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tổng quan — 3 đỉnh sóng anh sẽ gặp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nghiên cứu Hughes 2007 (Nicotine & Tobacco Research) chia triệu chứng cai thuốc thành 3 đỉnh:"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WEEK 1 (Day 1-7) — Đỉnh sóng thể chất là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "20 phút sau điếu cuối: nhịp tim + huyết áp về bình thường. 8 giờ: CO trong máu giảm 50%. 12-24 giờ: hết CO hoàn toàn — máu chở oxy nhiều hơn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WEEK 2 (Day 8-14) — Đỉnh sóng tâm lý là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Triệu chứng thể chất gần 0. Nhưng tâm lý: anh em hay buồn vô cớ, cáu vợ con vô cớ, cảm thấy \"cuộc sống nhạt nhẽo\". Đây là dopamine baseline đang reset — não cũ đã quen với \"boost\" 88% mỗi điếu. Nay không có → cảm thấy underwhelming."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WEEK 3-4 (Day 15-30) — Định hình thói quen mới là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lally 2010: trung bình 21 ngày não build thói quen mới. Day 15-21: cilia phế quản phục hồi 50%, ít ho hơn. Tuần hoàn tăng — leo cầu thang đỡ thở. Da bắt đầu sáng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sau Day 30 — Tiếp tục đi đến Day 52 Tốt Nghiệp là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "30 ngày KHÔNG phải là kết thúc. Hughes 2004: 65% người sạch 30 ngày tái phát trong 6 tháng đầu — vì chưa rebuild đủ identity. Anh cần thêm 30 ngày \"Làm Chủ\" để não thực sự internalize."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Câu chuyện Khang — mình đã đi qua 5 lần là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4 lần đầu mình fail vì KHÔNG biết trước triệu chứng. Lần 5 mình đọc Hughes 2007, biết Day 3 là đỉnh — chuẩn bị tinh thần. Day 3 thèm 17 lần, mình đếm. Mỗi lần đợi 90 giây + bài thở. Qua được Day 3 = qua được 80%."
+      }
+    }
+  ]
+}
+</script>
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  WIKI A3 — Triệu Chứng Cai Thuốc Theo Ngày — Day 1-30 (P0, vol 3.6k/tháng)
+  Focus keyword: "triệu chứng cai thuốc lá"
+  Target intent: timeline guide — anh em đang cai muốn biết mỗi ngày sẽ thế nào
+  Internal links: /bo-thuoc-la, /khang-sol, /sol-la-gi, /cai-thuoc-la-tai-nha
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; color: #2C2A27; line-height: 1.65; margin: 0 0 24px; }
+.sol-wiki .quote { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 20px 0; font-style: italic; color: #5C3A1E; }
+.sol-wiki .day-card { background: white; border: 1px solid #E8DFC8; border-radius: 12px; padding: 18px 22px; margin: 14px 0; }
+.sol-wiki .day-num { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #B25C2C; margin-bottom: 4px; }
+.sol-wiki .day-title { font-size: 18px; font-weight: 700; color: #5C3A1E; margin: 0 0 8px; }
+.sol-wiki .day-peak { background: linear-gradient(135deg, #FEE2E2 0%, #FFF4EA 100%); border: 1px solid #DC2626; border-radius: 12px; padding: 18px 22px; margin: 14px 0; }
+.sol-wiki .day-peak .day-num { color: #DC2626; }
+.sol-wiki .day-good { background: linear-gradient(135deg, #DCFCE7 0%, #FAFAF8 100%); border: 1px solid #16A34A; border-radius: 12px; padding: 18px 22px; margin: 14px 0; }
+.sol-wiki .day-good .day-num { color: #16A34A; }
+.sol-wiki .symptom { display: inline-block; background: #FFF4EA; color: #5C3A1E; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; margin: 2px 4px 2px 0; }
+.sol-wiki .tip { background: #F0FDF4; border-left: 3px solid #16A34A; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+.sol-wiki .tip strong { color: #16A34A; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; font-size: 15px; }
+.sol-wiki strong { color: #5C3A1E; }
+</style>
+
+<div class="sol-wiki">
+
+<p class="lead">
+Anh đang cai thuốc — và anh muốn biết <em>"Ngày mai mình sẽ thấy gì? Ngày 3 có khó như người ta nói không? Bao lâu mới hết thèm hoàn toàn?"</em> Bài này mình mô tả <strong>chính xác triệu chứng cai thuốc theo từng ngày từ Day 1 đến Day 30</strong>, dựa trên dữ liệu khoa học (Hughes 2007, NIH 2020) + 30 năm trải nghiệm cá nhân của mình. Anh đọc rồi sẽ thấy — <strong>cơn thèm không phải ác mộng nếu anh biết trước nó đến lúc nào</strong>.
+</p>
+
+<h2>Tổng quan — 3 đỉnh sóng anh sẽ gặp</h2>
+
+<p>Nghiên cứu Hughes 2007 (Nicotine & Tobacco Research) chia triệu chứng cai thuốc thành 3 đỉnh:</p>
+
+<ul>
+<li><strong>Đỉnh 1 — Day 2-3</strong>: cao nhất, khó nhất. 80% anh em fail ở đây.</li>
+<li><strong>Đỉnh 2 — Day 7-10</strong>: tâm lý — cảm giác "mất bạn". Buồn rầu vô cớ.</li>
+<li><strong>Đỉnh 3 — Day 21-30</strong>: tự tin giả — anh thấy "mình đã ổn", dễ chủ quan → tái phát.</li>
+</ul>
+
+<p>Sau Day 30, cường độ giảm 80%. Sau Day 90 hoàn toàn ổn định.</p>
+
+<h2>WEEK 1 (Day 1-7) — Đỉnh sóng thể chất</h2>
+
+<div class="day-card">
+<div class="day-num">DAY 1 · 0-24 GIỜ ĐẦU</div>
+<h3 class="day-title">Cảm giác lạ — não chưa nhận ra</h3>
+<p>20 phút sau điếu cuối: nhịp tim + huyết áp về bình thường. 8 giờ: CO trong máu giảm 50%. 12-24 giờ: hết CO hoàn toàn — máu chở oxy nhiều hơn.</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Lo âu nhẹ</span>
+<span class="symptom">Khó tập trung</span>
+<span class="symptom">Hồi hộp</span>
+<span class="symptom">Đói nhanh</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Anh thấy "không khó như tưởng" — đừng chủ quan. Mai đỉnh sóng đến.</div>
+</div>
+
+<div class="day-peak">
+<div class="day-num">DAY 2 · 24-48 GIỜ</div>
+<h3 class="day-title">Sáng đầu tiên — khó nhất tuần</h3>
+<p>Receptor nicotinic não bắt đầu "đói" — đây là triệu chứng cai (triệu chứng cai) thật sự. Buổi sáng dậy: thèm dữ dội (não đã chờ nicotine cả đêm). Hughes 2007: 70% người cai fail trong 48-72 giờ đầu.</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Thèm dữ dội</span>
+<span class="symptom">Cáu kỉnh</span>
+<span class="symptom">Mất ngủ</span>
+<span class="symptom">Đau đầu</span>
+<span class="symptom">Bứt rứt tay chân</span>
+<span class="symptom">Ăn nhiều hơn</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Bài thở 4-7-8 ngay khi vừa dậy — TRƯỚC khi mở mắt nghĩ đến thuốc. Nếu thèm, đợi 90 giây — cơn thèm tự tan. <a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C; font-weight: 600;">Xem 7 bước cụ thể →</a></div>
+</div>
+
+<div class="day-peak">
+<div class="day-num">DAY 3 · ĐỈNH KHÓ NHẤT</div>
+<h3 class="day-title">Đêm tối thứ 3 — sóng cao nhất</h3>
+<p>Đây là ngày khó nhất. Nicotine đã sạch khỏi cơ thể (half-life 2-4h × 7-8 lần). Receptor nicotinic kêu gào — não cảm giác "thiếu một thứ gì đó". Đặc biệt khó từ 19-22h.</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Thèm cực mạnh</span>
+<span class="symptom">Buồn rầu</span>
+<span class="symptom">Khó ngủ</span>
+<span class="symptom">Đau đầu nặng</span>
+<span class="symptom">Bồn chồn</span>
+<span class="symptom">Hơi mệt mỏi</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Mình đã đếm — Day 3 mình thèm 17 lần trong ngày. Mỗi lần đợi 90 giây + bài thở + ra ngoài đi 5 phút. <strong>Qua được Day 3 = qua được 80% chặng đường.</strong> Hughes 2007: tỷ lệ thành công 30 ngày tăng 3x nếu qua Day 3.</div>
+</div>
+
+<div class="day-card">
+<div class="day-num">DAY 4-5 · BẮT ĐẦU DỄ HƠN</div>
+<h3 class="day-title">Triệu chứng giảm 40% — cảnh báo "tự tin sớm"</h3>
+<p>Sau Day 3, triệu chứng thể chất giảm rõ. Cilia phế quản bắt đầu hoạt động lại — ho khan nhiều hơn (đây là dấu hiệu TỐT, phổi đang sạch).</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Thèm giảm 50%</span>
+<span class="symptom">Ho khan tăng (tốt)</span>
+<span class="symptom">Mệt mỏi nhẹ</span>
+<span class="symptom">Táo bón (đường ruột chậm vì hết nicotine)</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> ĐỪNG nghĩ "mình đã ổn — 1 điếu chắc không sao". Brody 2006: 1 điếu saturated 88% receptor — reset toàn bộ tiến trình. <strong>Không có "chỉ 1 điếu".</strong></div>
+</div>
+
+<div class="day-card">
+<div class="day-num">DAY 6-7 · KẾT TUẦN ĐẦU</div>
+<h3 class="day-title">Cơ thể đã ổn — tâm lý bắt đầu khó</h3>
+<p>Triệu chứng thể chất gần hết. Nhưng cảm giác "mất bạn", "mất nghi thức tay chân" bắt đầu. Anh em thường nhớ điếu sau ăn, điếu cà phê sáng — không vì nicotine, mà vì THÓI QUEN.</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Cảm giác mất gì đó</span>
+<span class="symptom">Buồn nhẹ</span>
+<span class="symptom">Khó chịu tay chân</span>
+<span class="symptom">Tăng cân 0.5-1 kg</span>
+<span class="symptom">Ngủ ngon hơn</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Đây là lúc viết Báo Cáo Tuần 1 — anh em đã thắng cơn thèm bao nhiêu lần? Tiết kiệm bao nhiêu? Tâm trạng có khác không? Đây là chứng cứ cho não — não cần "thấy" mới tin.</div>
+</div>
+
+<h2>WEEK 2 (Day 8-14) — Đỉnh sóng tâm lý</h2>
+
+<div class="day-card">
+<div class="day-num">DAY 8-10</div>
+<h3 class="day-title">Cảm giác trống vắng — peak tâm lý</h3>
+<p>Triệu chứng thể chất gần 0. Nhưng tâm lý: anh em hay buồn vô cớ, cáu vợ con vô cớ, cảm thấy "cuộc sống nhạt nhẽo". Đây là dopamine baseline đang reset — não cũ đã quen với "boost" 88% mỗi điếu. Nay không có → cảm thấy underwhelming.</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Buồn vô cớ</span>
+<span class="symptom">Cảm giác nhạt nhẽo</span>
+<span class="symptom">Cáu kỉnh với người thân</span>
+<span class="symptom">Khó tập trung</span>
+<span class="symptom">Vẫn thèm lúc stress</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Nghiên cứu Lally 2010 — não cần 21 ngày build thói quen mới. Đây là giai đoạn "rebuild". Tập thể dục 30 phút/ngày — nâng dopamine tự nhiên.</div>
+</div>
+
+<div class="day-card">
+<div class="day-num">DAY 11-13</div>
+<h3 class="day-title">"Day 17 wall" — tường đầu tiên</h3>
+<p>Anh em hay gặp "wall" — cảm giác bế tắc, không tiến bộ. Vẫn thèm khi stress công ty. Vẫn nhớ cà phê sáng có điếu thuốc.</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Mất động lực</span>
+<span class="symptom">Hỏi "có đáng không"</span>
+<span class="symptom">Thèm trong stress</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Đọc lại 3 lý do anh viết Day 0. Nhìn số tiền tiết kiệm. Nhìn ảnh con. Đây là MOMENT OF TRUTH — qua được thì 80% xong.</div>
+</div>
+
+<div class="day-good">
+<div class="day-num">DAY 14 · MỐC QUAN TRỌNG</div>
+<h3 class="day-title">Receptor nicotinic giảm 40% — phục hồi cơ chế</h3>
+<p>2 tuần — receptor nicotinic não giảm 40% (so với khi hút). Phổi đã sạch tar 30%. Vị giác về 60-70%. Anh ăn thấy ngon hơn.</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Vị giác về</span>
+<span class="symptom">Khứu giác về</span>
+<span class="symptom">Ngủ sâu hơn</span>
+<span class="symptom">Thèm còn nhưng yếu</span>
+<span class="symptom">Năng lượng tăng</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Báo cáo Tuần 2: "tôi đã sạch 14 ngày — receptor giảm 40%". Khoa học chứng minh được. Đây là CHỨNG CỨ — không phải cảm giác.</div>
+</div>
+
+<h2>WEEK 3-4 (Day 15-30) — Định hình thói quen mới</h2>
+
+<div class="day-card">
+<div class="day-num">DAY 15-21</div>
+<h3 class="day-title">Habit shift — não bắt đầu rewire</h3>
+<p>Lally 2010: trung bình 21 ngày não build thói quen mới. Day 15-21: cilia phế quản phục hồi 50%, ít ho hơn. Tuần hoàn tăng — leo cầu thang đỡ thở. Da bắt đầu sáng.</p>
+<p><strong>Triệu chứng:</strong>
+<span class="symptom">Thèm chỉ tình huống cụ thể</span>
+<span class="symptom">Đêm ngủ ngon</span>
+<span class="symptom">Da sáng lên</span>
+<span class="symptom">Sức bền tăng</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Day 21 là "Ngày Quyết Định Thứ 2" — anh chuyển từ "đang cai" sang "không hút". Danh tính shift. Anh nói <em>"tôi không hút"</em> thay vì <em>"tôi đang cai"</em>.</div>
+</div>
+
+<div class="day-peak">
+<div class="day-num">DAY 22-28 · NGUY HIỂM TỰ TIN GIẢ</div>
+<h3 class="day-title">"Mình đã ổn rồi" — đỉnh tái phát số 1</h3>
+<p>Đây là moment NGUY HIỂM thứ 2 sau Day 3. Anh em thấy mình đã ổn, đi nhậu, "chỉ 1 điếu thôi". Thực tế: receptor nicotinic vẫn còn 30%. 1 điếu = saturated 88% lại → quay lại Day 0.</p>
+<p><strong>Triệu chứng đặc trưng:</strong>
+<span class="symptom">Tự tin quá mức</span>
+<span class="symptom">Thử "1 điếu" trong xã giao</span>
+<span class="symptom">Nhậu/đám tiệc khó</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Mình đã fail 2 lần ở Day 25 (hút trong tiệc cuối năm) và Day 28 (uống rượu với bạn cũ). Lần 5 mình thành công — nhờ mình ĐỀ PHÒNG đỉnh sóng này. Kế hoạch B trước khi đi nhậu là BẮT BUỘC.</div>
+</div>
+
+<div class="day-good">
+<div class="day-num">DAY 30 · 1 THÁNG SẠCH</div>
+<h3 class="day-title">Mốc kỳ tích — body đã phục hồi đáng kể</h3>
+<p>Phổi: tar giảm 30%. Tim mạch: nguy cơ giảm 25%. Vị giác: 80%. Da: sáng rõ. Năng lượng: cao nhất trong 5 năm qua. Khang đã ở Day 30 — leo 4 tầng không thở.</p>
+<p><strong>Triệu chứng còn lại:</strong>
+<span class="symptom">Thèm hiếm (chỉ tình huống cũ)</span>
+<span class="symptom">Da sáng rõ</span>
+<span class="symptom">Ăn ngon hơn 2x</span>
+<span class="symptom">Ngủ sâu</span>
+<span class="symptom">Đỡ ho 80%</span>
+</p>
+<div class="tip"><strong>Tip Khang:</strong> Báo cáo Ngày 30: số ngày sạch + tiền tiết kiệm + cải thiện sức khoẻ. Đây là CHỨNG CỨ cho 30 ngày tiếp theo. Tiếp tục Day 31-52 để "Tốt Nghiệp".</div>
+</div>
+
+<h2>Sau Day 30 — Tiếp tục đi đến Day 52 Tốt Nghiệp</h2>
+
+<p>30 ngày KHÔNG phải là kết thúc. Hughes 2004: 65% người sạch 30 ngày tái phát trong 6 tháng đầu — vì <strong>chưa rebuild đủ danh tính</strong>. Anh cần thêm 30 ngày "Làm Chủ" để não thực sự internalize.</p>
+
+<p>Sol Đi Cùng có 3 lộ trình theo Mức Lệ Thuộc:</p>
+<ul>
+<li><strong>🟢 Nhẹ (FTND 0-3)</strong>: 35 ngày tổng. Ngày Quyết Định: Ngày 15.</li>
+<li><strong>🟡 Vừa (FTND 4-6)</strong>: 52 ngày tổng. Ngày Quyết Định: Ngày 22.</li>
+<li><strong>🔴 Nặng (FTND 7-10)</strong>: 65 ngày tổng. Ngày Quyết Định linh hoạt 22-28.</li>
+</ul>
+
+<p><a href="https://sol.vn/sol-la-gi" style="color: #B25C2C; font-weight: 600;">Xem chi tiết 3 lộ trình →</a></p>
+
+<h2>Câu chuyện Khang — mình đã đi qua 5 lần</h2>
+
+<p>4 lần đầu mình fail vì KHÔNG biết trước triệu chứng. Lần 5 mình đọc Hughes 2007, biết Day 3 là đỉnh — chuẩn bị tinh thần. Day 3 thèm 17 lần, mình đếm. Mỗi lần đợi 90 giây + bài thở. Qua được Day 3 = qua được 80%.</p>
+
+<p>Day 25 mình đi đám cưới, có bạn cũ rủ. Mình thèm dữ dội — đã có sẵn Kế Hoạch B trong đầu: uống coca + đi WC 5 phút khi muốn hút. Qua được. Đến Day 30, mình biết mình đã thành công.</p>
+
+<p>Đến nay đã 5 năm Tự do. <a href="https://sol.vn/khang-sol" style="color: #B25C2C; font-weight: 600;">Đọc câu chuyện đầy đủ →</a></p>
+
+
+<!-- FAQ-SCHEMA: auto-extracted from H2 sections + JSON-LD đã inject ở đầu file -->
+<div class="sol-faq" style="background:#FAFAF8;border-left:4px solid #B25C2C;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;">
+<h2 style="margin-top:0;color:#5C3A1E;font-size:20px;">Câu hỏi thường gặp</h2>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">1. Tổng quan — 3 đỉnh sóng anh sẽ gặp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Nghiên cứu Hughes 2007 (Nicotine & Tobacco Research) chia triệu chứng cai thuốc thành 3 đỉnh:</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">2. WEEK 1 (Day 1-7) — Đỉnh sóng thể chất là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">20 phút sau điếu cuối: nhịp tim + huyết áp về bình thường. 8 giờ: CO trong máu giảm 50%. 12-24 giờ: hết CO hoàn toàn — máu chở oxy nhiều hơn.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">3. WEEK 2 (Day 8-14) — Đỉnh sóng tâm lý là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Triệu chứng thể chất gần 0. Nhưng tâm lý: anh em hay buồn vô cớ, cáu vợ con vô cớ, cảm thấy "cuộc sống nhạt nhẽo". Đây là dopamine baseline đang reset — não cũ đã quen với "boost" 88% mỗi điếu. Nay không có → cảm thấy underwhelming.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">4. WEEK 3-4 (Day 15-30) — Định hình thói quen mới là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">Lally 2010: trung bình 21 ngày não build thói quen mới. Day 15-21: cilia phế quản phục hồi 50%, ít ho hơn. Tuần hoàn tăng — leo cầu thang đỡ thở. Da bắt đầu sáng.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">5. Sau Day 30 — Tiếp tục đi đến Day 52 Tốt Nghiệp là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">30 ngày KHÔNG phải là kết thúc. Hughes 2004: 65% người sạch 30 ngày tái phát trong 6 tháng đầu — vì chưa rebuild đủ danh tính. Anh cần thêm 30 ngày "Làm Chủ" để não thực sự internalize.</p>
+</details>
+<details style="margin:10px 0;border-bottom:1px solid rgba(178,92,44,0.12);padding-bottom:10px;">
+<summary style="cursor:pointer;font-weight:700;color:#5C3A1E;font-size:15.5px;padding:6px 0;">6. Câu chuyện Khang — mình đã đi qua 5 lần là gì?</summary>
+<p style="margin:8px 0 0;font-size:14.5px;line-height:1.7;color:#2C2A27;">4 lần đầu mình fail vì KHÔNG biết trước triệu chứng. Lần 5 mình đọc Hughes 2007, biết Day 3 là đỉnh — chuẩn bị tinh thần. Day 3 thèm 17 lần, mình đếm. Mỗi lần đợi 90 giây + bài thở. Qua được Day 3 = qua được 80%.</p>
+</details>
+</div>
+
+<div class="cta-box">
+<p style="font-size: 14px; opacity: 0.9; margin: 0 0 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">🌱 SOL ĐI CÙNG</p>
+<p style="font-size: 22px; font-weight: 700; margin: 0 0 14px;">7 ngày Nhận Diện MIỄN PHÍ — không cần SĐT</p>
+<p style="font-size: 15px; opacity: 0.95; line-height: 1.6; margin: 0 0 8px;">
+Sol biết Day 3 anh sẽ khó nhất — gửi Voice của Khang đúng đêm đó. Sol biết Day 25 anh dễ tái phát — gửi Kế Hoạch B trước khi anh đi nhậu. Cá nhân hoá theo từng ngày.
+</p>
+<a href="https://bothuocla.sol.vn/?utm_source=wiki&utm_medium=A3&utm_campaign=trieu-chung-cai-thuoc">Bắt đầu 7 ngày — mình đợi anh →</a>
+</div>
+
+<h2>Câu hỏi thường gặp về triệu chứng cai thuốc</h2>
+
+<h3>Triệu chứng cai thuốc kéo dài bao lâu?</h3>
+<p>Thể chất (đau đầu, thèm, mất ngủ): mạnh Day 1-3, giảm rõ sau Day 7, hết hoàn toàn sau Day 14-21. Tâm lý (buồn, cáu): kéo dài 4-6 tuần. Thèm thoáng qua tình huống cũ: 6-12 tháng. Sau Day 90 hoàn toàn ổn định.</p>
+
+<h3>Tại sao Day 3 lại khó nhất?</h3>
+<p>Vì đây là lúc nicotine cuối cùng sạch khỏi cơ thể (half-life 2-4h × 7-8 lần ≈ 48-72h). Receptor nicotinic não bắt đầu "kêu gào" nhưng chưa downregulate. Sau Day 7 receptor bắt đầu giảm — thèm tự yếu đi.</p>
+
+<h3>Cai thuốc có gây táo bón không?</h3>
+<p>Có — 30-40% người cai bị táo bón Day 2-14. Lý do: nicotine kích thích đường ruột, hết nicotine → ruột chậm tạm thời. Tip: uống 2L nước/ngày, ăn nhiều rau, đi bộ 30 phút/ngày. Tự khỏi sau 2 tuần.</p>
+
+<h3>Tăng cân khi cai thuốc — bao nhiêu là bình thường?</h3>
+<p>Trung bình 2-4 kg trong 6 tháng đầu. Lý do: (1) chuyển hoá giảm 10% khi hết nicotine; (2) thay thói quen tay-miệng bằng ăn vặt; (3) vị giác về → ăn ngon hơn. <a href="https://sol.vn/tang-can-khi-cai-thuoc" style="color: #B25C2C;">Xem cách kiểm soát →</a></p>
+
+<h3>Khi nào cần đến bác sĩ?</h3>
+<p>Nếu triệu chứng cai gây: đau ngực dữ dội, khó thở nặng, ngất, ý nghĩ tự hại, trầm cảm nặng → đến bác sĩ NGAY. 95% anh em không cần. Nhưng nếu có rối loạn tâm thần đã chẩn đoán trước → tham vấn bác sĩ trước khi cai.</p>
+
+<hr style="border: 0; border-top: 1px dashed #E8DFC8; margin: 32px 0;">
+
+<p style="font-size: 14px; color: #8A857C; font-style: italic; margin: 0 0 16px;">
+<strong>Bài liên quan:</strong>
+<a href="https://sol.vn/cai-thuoc-la-tai-nha" style="color: #B25C2C;">Cai thuốc lá tại nhà — 7 bước</a> ·
+<a href="https://sol.vn/tac-hai-cua-thuoc-la" style="color: #B25C2C;">Tác hại của thuốc lá với đàn ông 40+</a> ·
+<a href="https://sol.vn/phuong-phap-cai-thuoc-la" style="color: #B25C2C;">5 phương pháp cai thuốc phổ biến</a>
+</p>
+
+<p style="font-size: 13px; color: #8A857C; font-style: italic;">
+<strong>Tác giả:</strong> Khang Sol (Nguyễn Đình Khang) — đã hút Vinataba 30 năm, Tự do hơn 5 năm. Founder <a href="https://sol.vn" style="color: #B25C2C;">Sol Đi Cùng</a>. Nguồn khoa học: Hughes 2007, Brody 2006, Lally 2010, Doll & Hill 2004.
+</p>
+
+<p style="font-size: 12px; color: #8A857C; font-style: italic; background: #FFF4EA; padding: 12px 14px; border-radius: 8px;">
+<strong>🚨 Khẩn cấp y tế</strong>: nếu triệu chứng cai gây đau ngực dữ dội, khó thở nặng, ý nghĩ tự hại — gọi <a href="tel:115" style="color: #B25C2C; font-weight: 700;">115</a> NGAY. Sol KHÔNG xử lý cấp cứu y khoa.
+</p>
+
+</div>

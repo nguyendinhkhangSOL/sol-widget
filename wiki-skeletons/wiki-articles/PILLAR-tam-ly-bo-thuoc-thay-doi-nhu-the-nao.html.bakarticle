@@ -1,0 +1,170 @@
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Tâm lý người bỏ thuốc thay đổi qua các giai đoạn nào?","acceptedAnswer":{"@type":"Answer","text":"5 giai đoạn theo Prochaska 1983: (1) Tiền dự định (chưa nghĩ cai), (2) Dự định (đang cân nhắc 6 tháng), (3) Chuẩn bị (sắp Q-Day), (4) Hành động (1-6 tháng sau cai - giai đoạn cảm xúc sốc nhất), (5) Duy trì (>6 tháng - identity reformation). Hiểu giai đoạn giúp anh biết cảm xúc nào bình thường, cảm xúc nào cần can thiệp."}},
+{"@type":"Question","name":"Cảm xúc nào kỳ lạ nhất khi cai thuốc mà ít người nói?","acceptedAnswer":{"@type":"Answer","text":"3 cảm xúc bất ngờ: (1) 'Tang chế cho thuốc lá' (grief) — cảm giác mất một người bạn 30 năm, dù không khoẻ. (2) 'mất danh tính' — không biết mình là ai khi không hút. (3) 'Tự ti vô cớ' — cảm thấy 'kém hơn' khi tụ tập với người vẫn hút. Tất cả bình thường, kéo dài 4-12 tuần. Không phải dấu hiệu thất bại."}},
+{"@type":"Question","name":"Tại sao tôi cảm thấy buồn / khóc dễ hơn sau khi cai thuốc?",  "acceptedAnswer":{"@type":"Answer","text":"Nicotine ức chế cảm xúc 30 năm. Khi cai, cảm xúc nén lâu trồi lên = anh khóc dễ hơn, giận dễ hơn, vui dễ hơn. Đây không phải 'mất kiểm soát' — đây là CẢM XÚC THẬT trở lại. 70% nam cai 30+ năm trải qua giai đoạn 'cảm xúc lụt' 4-8 tuần đầu. Lành mạnh. Cho phép cảm xúc đi qua, không cố đè."}},
+{"@type":"Question","name":"Khi nào tâm lý ổn định lại sau cai thuốc?",  "acceptedAnswer":{"@type":"Answer","text":"3 mốc: Ngày 30 (tâm lý bắt đầu ổn, cảm xúc bớt 'lụt'), Ngày 90 (identity mới hình thành — 'người không hút'), 1 năm (tái nghiện risk giảm 70%, cảm xúc baseline ổn định), 5 năm (Hughes 2008: 'permanent quit' threshold — tỷ lệ tái nghiện chỉ 1%). Mỗi mốc anh có thể đo subjective với câu hỏi: 'Hôm nay tôi có nghĩ về thuốc lá tự nhiên không?'"}},
+{"@type":"Question","name":"Khi nào cần đi gặp chuyên gia tâm lý khi cai thuốc?",  "acceptedAnswer":{"@type":"Answer","text":"4 dấu hiệu cần can thiệp ngay: (1) Trầm cảm kéo dài >4 tuần (mất hứng thú, ngủ kém, ăn kém), (2) Ý nghĩ tự hại, (3) Lạm dụng rượu/chất khác thay thuốc, (4) Hoảng loạn cấp tính (panic attack >3 lần/tuần). Liên hệ: 1800 599 920 (tư vấn tâm lý quốc gia VN). Đa số sẽ không cần — nhưng biết khi nào cần là quan trọng."}}
+]}
+</script>
+<style>
+.sol-wiki { font-family: 'Be Vietnam Pro', sans-serif; color: #2C2A27; line-height: 1.7; }
+.sol-wiki h2 { color: #5C3A1E; font-size: 22px; margin: 32px 0 14px; font-weight: 700; }
+.sol-wiki h3 { color: #B25C2C; font-size: 17px; margin: 22px 0 10px; font-weight: 700; }
+.sol-wiki .lead { font-size: 17px; line-height: 1.65; margin: 0 0 24px; font-style: italic; color: #5C3A1E; }
+.sol-wiki .tldr { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .tldr-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 6px; }
+.sol-wiki .khang-says { background: linear-gradient(135deg, #FFF4EA, #FAFAF8); border: 1px solid #B25C2C; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+.sol-wiki .khang-says-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #B25C2C; margin-bottom: 8px; }
+.sol-wiki .khang-says p { margin: 0 0 12px; font-style: italic; font-size: 15.5px; }
+.sol-wiki .stage-card { background: white; border-left: 4px solid #B25C2C; padding: 14px 18px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .stage-card .stage-num { display: inline-block; background: #B25C2C; color: white; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.sol-wiki .stage-card h3 { margin: 4px 0 6px; }
+.sol-wiki .warning-box { background: #FEF2F2; border-left: 4px solid #DC2626; padding: 14px 18px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.sol-wiki .warning-box strong { color: #DC2626; }
+.sol-wiki .cta-box { background: linear-gradient(135deg, #5C3A1E, #B25C2C); color: white; padding: 28px 24px; border-radius: 14px; margin: 32px 0; text-align: center; }
+.sol-wiki .cta-box a { display: inline-block; background: white; color: #B25C2C; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+.sol-wiki .related-links { background: #FFF4EA; border-left: 4px solid #B25C2C; padding: 16px 20px; margin: 24px 0 16px; border-radius: 0 8px 8px 0; }
+.sol-wiki .related-links h3 { margin: 0 0 10px; font-size: 16px; }
+.sol-wiki .related-links ul { margin: 0; padding-left: 20px; list-style: none; }
+.sol-wiki .related-links a { color: #B25C2C; text-decoration: none; font-weight: 600; }
+.sol-wiki .footer-meta { font-size: 13px; color: #8A857C; font-style: italic; margin: 16px 0; }
+.sol-wiki .references { background: #FAFAF8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; }
+.sol-wiki strong { color: #5C3A1E; }
+.sol-wiki ul, .sol-wiki ol { padding-left: 24px; margin: 12px 0; }
+.sol-wiki .disclaimer { background: #FFF4EA; border-radius: 8px; padding: 14px 18px; margin: 24px 0 8px; font-size: 13px; color: #5C3A1E; font-style: italic; }
+</style>
+<div class="sol-wiki">
+
+<p class="lead">Anh ạ. Khi cai thuốc, cơ thể đau, đó là điều khoa học giải thích rõ. Nhưng <strong>TÂM LÝ thay đổi như thế nào</strong> — ít người Việt nói tới. Em viết bài này dựa trên 5 năm cai của Khang + nghiên cứu Prochaska/Hughes — chỉ anh 5 giai đoạn tâm lý sẽ đi qua, cảm xúc nào bình thường, khi nào cần can thiệp.</p>
+
+<div class="khang-says">
+<div class="khang-says-label">Khang nói thẳng</div>
+<p>"Tuần 3 sau Q-Day 2021, tôi khóc khi xem 1 quảng cáo bia. Tôi 50 tuổi. Tôi không biết tại sao tôi khóc. Vợ tôi nhìn tôi như tôi mất kiểm soát. Đêm đó tôi gọi 1 bác sĩ tâm lý — anh ấy nói: 'Bác đã ức chế cảm xúc 30 năm bằng nicotine. Bây giờ chúng trào lên. Bình thường. Cho qua.' Tôi nhẹ nhõm. Đó là cảm xúc thật trở lại."</p>
+</div>
+
+<div class="tldr">
+<div class="tldr-label">⚡ Tóm tắt 30 giây</div>
+<ul>
+<li><strong>5 giai đoạn tâm lý:</strong> Tiền dự định → Dự định → Chuẩn bị → Hành động → Duy trì (Prochaska)</li>
+<li><strong>"Tang chế cho thuốc lá" thật:</strong> cảm giác mất một người bạn 30 năm</li>
+<li><strong>"Cảm xúc lụt" tuần 1-8:</strong> khóc dễ, giận dễ — cảm xúc thật trở lại sau 30 năm bị nicotine ức chế</li>
+<li><strong>3 mốc ổn định:</strong> Ngày 30 (tâm lý ổn) / D90 (danh tính mới) / 5 năm (vĩnh viễn)</li>
+<li><strong>4 dấu hiệu cần chuyên gia:</strong> trầm cảm >4 tuần, ý nghĩ tự hại, lạm dụng rượu, panic attack</li>
+</ul></div>
+
+<h2>1. 5 giai đoạn tâm lý — Prochaska's Transtheoretical Model</h2>
+
+<p>Mô hình khoa học chuẩn sử dụng từ 1983, áp dụng cho mọi hành vi gây nghiện. Đây là roadmap anh đang đi qua.</p>
+
+<div class="stage-card">
+<div class="stage-num">GIAI ĐOẠN 1</div>
+<h3>Tiền dự định (chưa nghĩ tới chuyện cai) — "Chưa nghĩ cai"</h3>
+<p>"Tôi hút lâu rồi, không sao." Có thể kéo dài 5-30 năm. Đặc trưng: phủ nhận tác hại, hợp lý hoá ("ông tôi hút 80 năm vẫn khoẻ"), cảm giác mất quyền nếu bị yêu cầu cai.</p>
+<p><strong>Cảm xúc:</strong> bình thường, đôi khi có cảm giác có lỗi nhỏ → đè nén nhanh bằng điếu thuốc.</p>
+</div>
+
+<div class="stage-card">
+<div class="stage-num">GIAI ĐOẠN 2</div>
+<h3>Dự định (đang cân nhắc cai) — "Đang cân nhắc 6 tháng"</h3>
+<p>Lý do bắt đầu xuất hiện: con bệnh, vợ mang thai, khám sức khỏe xấu. Cân nhắc pros/cons. Có thể kéo dài 6 tháng - 2 năm.</p>
+<p><strong>Cảm xúc:</strong> mâu thuẫn — vừa muốn cai vừa sợ cai. "Tôi sẽ là ai khi không hút?" Lo lắng tăng nội tâm. Đây là giai đoạn anh search Google "cai thuốc lá".</p>
+</div>
+
+<div class="stage-card">
+<div class="stage-num">GIAI ĐOẠN 3</div>
+<h3>Chuẩn bị (Preparation) — "Sắp Q-Day"</h3>
+<p>Quyết định cai trong 30 ngày tới. Chọn Q-Day cụ thể, báo gia đình, dọn nhà sạch thuốc. Cảm xúc: hỗn hợp háo hức + sợ hãi.</p>
+<p><strong>Cảm xúc:</strong> hồi hộp, có chút sợ thất bại (đặc biệt nếu đã vấp các lần trước). Nightmare có thể tăng. Đây là giai đoạn dễ trì hoãn — "Để tuần sau".</p>
+</div>
+
+<div class="stage-card">
+<div class="stage-num">GIAI ĐOẠN 4</div>
+<h3>Hành động (Action) — Ngày 1 → Tháng 6 (SỐC CẢM XÚC NHẤT)</h3>
+<p>Đây là giai đoạn KHÓ NHẤT về tâm lý. Cảm xúc đảo lộn nhiều nhất.</p>
+<ul>
+<li><strong>Tuần 1-2:</strong> Sóc cấp tính. Cáu kỉnh, mất ngủ, "Tang chế cho thuốc lá".</li>
+<li><strong>Tuần 3-8:</strong> "Cảm xúc lụt" — khóc dễ, giận dễ, vui dễ. Cảm xúc thật trở lại.</li>
+<li><strong>Tháng 2-6:</strong> mất danh tính — "Tôi là ai khi không hút?" Đặc biệt nam 30+ năm hút.</li>
+</ul>
+</div>
+
+<div class="stage-card">
+<div class="stage-num">GIAI ĐOẠN 5</div>
+<h3>Duy trì (Maintenance) — >6 tháng tới 5 năm</h3>
+<p>Danh tính mới hình thành — "Tôi là người không hút". Cảm xúc baseline ổn định. Cơn thèm thi thoảng nhưng yếu.</p>
+<p><strong>Rủi ro:</strong> sự cố stress lớn (mất việc, người thân mất) — tăng 2.8 lần tái nghiện (Cohen 2007). Strategy: maintenance program — đi bộ, thiền, gặp counseling 1-2 buổi sau sự cố.</p>
+</div>
+
+<h2>2. 3 cảm xúc kỳ lạ ít người nói — bình thường</h2>
+
+<h3>① "Tang chế cho thuốc lá" (Grief)</h3>
+<p>Cảm giác mất một người bạn 30 năm. Dù người bạn đó không tốt. Như mất một người yêu cũ — biết là dở nhưng vẫn nhớ.</p>
+<p><strong>Khi xảy ra:</strong> Tuần 1-4 sau Q-Day. Đặc biệt khi đi qua quán cà phê quen, gặp bạn cũ vẫn hút.</p>
+<p><strong>Cách qua:</strong> Cho phép cảm xúc đi qua. Có thể viết 1 lá thư "Tạm biệt thuốc lá" — KHÔNG đùa, đây là kỹ thuật ritual closure khoa học.</p>
+
+<h3>② mất danh tính</h3>
+<p>"Tôi không biết tôi là ai khi không hút." Đặc biệt nam 30+ năm hút — danh tính gắn chặt vào hành vi.</p>
+<p><strong>Khi xảy ra:</strong> Tháng 1-3 sau Q-Day. "Tôi là người uống cà phê hút thuốc sáng nay → tôi là... gì?"</p>
+<p><strong>Cách qua:</strong> Danh tính reframe — "Tôi là người uống cà phê + đọc sách buổi sáng." Build danh tính mới qua hành vi mới, không cố tìm danh tính cũ thay thế.</p>
+
+<h3>③ Tự ti vô cớ trong nhóm</h3>
+<p>Khi đi nhậu / cà phê với bạn vẫn hút — cảm thấy "kém hơn", "xa cách". Họ hút, anh không. Cảm giác "outsider".</p>
+<p><strong>Khi xảy ra:</strong> Tháng 1-6 sau Q-Day, đặc biệt tình huống xã hội.</p>
+<p><strong>Cách qua:</strong> Reframe — "Tôi đang đi trước anh em này — tôi đã làm điều họ chưa dám." tự nói chuyện với mình positive, không avoid social gathering.</p>
+
+<h2>3. Khi nào cảm xúc bất thường — cần can thiệp</h2>
+
+<div class="warning-box">
+<strong>4 dấu hiệu cần đi gặp chuyên gia ngay:</strong>
+<ol>
+<li><strong>Trầm cảm kéo dài >4 tuần:</strong> mất hứng thú mọi việc, ngủ kém kéo dài, ăn kém, mệt mỏi không lý do.</li>
+<li><strong>Ý nghĩ tự hại:</strong> "Thà chết còn hơn", suy nghĩ tự sát cụ thể. Gọi <strong>1800 599 920</strong> ngay.</li>
+<li><strong>Lạm dụng rượu/chất khác thay thuốc:</strong> uống >3 ly/ngày, dùng thuốc ngủ thường xuyên. Đây là "substance substitution" — cần addiction counselor.</li>
+<li><strong>Panic attack >3 lần/tuần:</strong> tim đập nhanh đột ngột, khó thở, cảm giác sắp chết. Đi gặp bác sĩ tâm thần.</li>
+</ol>
+</div>
+
+<p>Đa số người cai sẽ không gặp 4 dấu hiệu này. Nhưng biết khi nào cần can thiệp là quan trọng — đừng "chịu" một mình.</p>
+
+<h2>4. Roadmap cảm xúc — kỳ vọng đúng cho mỗi mốc</h2>
+
+<ul>
+<li><strong>Ngày 1-7:</strong> Sóc cấp tính. Cáu kỉnh đỉnh ngày 3-7. Bình thường.</li>
+<li><strong>Ngày 8-30:</strong> "Cảm xúc lụt". Khóc dễ, giận dễ. Bình thường.</li>
+<li><strong>Tháng 2-6:</strong> mất danh tính + tự ti xã hội. Bình thường.</li>
+<li><strong>Tháng 6-12:</strong> Tâm lý baseline ổn định. Danh tính mới hình thành.</li>
+<li><strong>Năm 1-5:</strong> Cơn thèm thi thoảng nhưng yếu. Sự cố stress lớn vẫn risk.</li>
+<li><strong>Năm 5+:</strong> Vĩnh viễn threshold. Tâm lý người không hút bình thường — không khác người chưa từng hút.</li>
+</ul>
+
+<div class="cta-box">
+<div style="font-size: 14px; opacity: 0.85;">SOL APP</div>
+<div style="font-size: 18px; font-weight: 700; margin: 8px 0;">Daily check-in cảm xúc + chatbot AI Khang giọng 24/7</div>
+<a href="https://sol.vn">Cài app Sol →</a>
+</div>
+
+<div class="related-links">
+<h3>📖 Đọc thêm</h3>
+<ul>
+<li>→ <a href="https://sol.vn/cai-thuoc-bang-thien-va-chanh-niem/">Cai thuốc bằng thiền và chánh niệm</a></li>
+<li>→ <a href="https://sol.vn/cai-thuoc-la-vinh-vien/">Cai thuốc vĩnh viễn — 5 năm threshold</a></li>
+<li>→ <a href="https://sol.vn/khong-la-chinh-minh/">Không là chính mình — mất danh tính</a></li>
+<li>→ <a href="https://sol.vn/tai-sao-cang-cang-thang-cang-them-thuoc/">Tại sao stress + thuốc lá khoá nhau</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">⚠️ Bài tổng hợp khoa học + kinh nghiệm cá nhân, không thay thế tư vấn tâm lý chuyên gia. Nếu có dấu hiệu cần can thiệp — gặp bác sĩ tâm thần hoặc gọi 1800 599 920.</div>
+
+<div class="references">
+<strong>Tài liệu tham khảo</strong>
+<ol>
+<li>Prochaska JO, DiClemente CC (1983). <em>Stages and processes of self-change of smoking</em>. J Consult Clin Psychol 51.</li>
+<li>Hughes JR (2008). <em>Smoking and suicide: a brief overview</em>. Drug Alcohol Depend 98.</li>
+<li>Cohen S, et al. (2007). <em>Stress and the tái nghiện of smoking</em>. Health Psychol 26.</li>
+</ol>
+</div>
+
+<p class="footer-meta">— Khang Sol, ex-smoker 30 năm, đã cai 5 năm. Cập nhật 17/5/2026.</p>
+
+</div>
