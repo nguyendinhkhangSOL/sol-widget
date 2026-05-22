@@ -27,6 +27,12 @@ import { useStore } from '../state/store';
 
 type Phase = 'questions' | 'submitting' | 'result' | 'redirecting';
 
+interface ResultPayload {
+  result: FtndResult;
+  cigsBaseline: number;
+  pricePerCig: number;
+}
+
 export function TestFtnd() {
   const navigate = useNavigate();
   const user = useStore((s) => s.user);
@@ -35,7 +41,7 @@ export function TestFtnd() {
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<FtndAnswer[]>([]);
   const [phase, setPhase] = useState<Phase>('questions');
-  const [result, setResult] = useState<FtndResult | null>(null);
+  const [result, setResult] = useState<ResultPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const totalQuestions = FTND_QUESTIONS.length;
@@ -85,7 +91,7 @@ export function TestFtnd() {
         answers: finalAnswers,
       });
 
-      setResult(local);
+      setResult({ result: local, cigsBaseline, pricePerCig });
       setPhase('result');
 
       // Refresh user store với dữ liệu mới
@@ -130,7 +136,15 @@ export function TestFtnd() {
 
   // ─── PHASE: result ──────────────────────────────────────────────────────
   if (phase === 'result' && result) {
-    return <ResultView pronouns={pronouns} result={result} onEnter={enterDashboard} />;
+    return (
+      <ResultView
+        pronouns={pronouns}
+        result={result.result}
+        cigsBaseline={result.cigsBaseline}
+        pricePerCig={result.pricePerCig}
+        onEnter={enterDashboard}
+      />
+    );
   }
 
   // ─── PHASE: questions ───────────────────────────────────────────────────
@@ -222,94 +236,269 @@ export function TestFtnd() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Result view — show cohort + plan + CTA enter dashboard
+// Result view — Marketing landing 8 section (Day 9 — 2026-05-22)
+// "Moment of truth" sau khi user khám phá mức nghiện → bán giá trị trước
+// CTA. KHÔNG auto-redirect — user chủ động scroll + click.
 // ─────────────────────────────────────────────────────────────────────────
 interface ResultViewProps {
   pronouns: string;
   result: FtndResult;
+  cigsBaseline: number;
+  pricePerCig: number;
   onEnter: () => void;
 }
 
-function ResultView({ pronouns, result, onEnter }: ResultViewProps) {
-  const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-  const cohortColors = useMemo(() => {
-    return {
-      LIGHT: { border: 'border-sol-green', bg: 'bg-sol-green-soft', text: 'text-sol-green-ink' },
-      MODERATE: { border: 'border-sol-orange', bg: 'bg-sol-orange-soft', text: 'text-sol-orange-ink' },
-      HEAVY: { border: 'border-sol-red', bg: 'bg-sol-red-soft', text: 'text-sol-red-ink' },
-    } as const;
-  }, []);
+function ResultView({ pronouns, result, cigsBaseline, pricePerCig, onEnter }: ResultViewProps) {
+  const cohortColors = useMemo(() => ({
+    LIGHT:    { border: 'border-sol-green',  bg: 'bg-sol-green-soft',  text: 'text-sol-green-ink' },
+    MODERATE: { border: 'border-sol-orange', bg: 'bg-sol-orange-soft', text: 'text-sol-orange-ink' },
+    HEAVY:    { border: 'border-sol-red',    bg: 'bg-sol-red-soft',    text: 'text-sol-red-ink' },
+  } as const), []);
   const c = cohortColors[result.cohort];
+
+  // ─── Personalized shock numbers ──────────────────────────────────────
+  const ASSUMED_YEARS = 10;
+  const dailyCost = cigsBaseline * pricePerCig;
+  const yearlyCost = dailyCost * 365;
+  const lifetimeCost = yearlyCost * ASSUMED_YEARS;
+  const minutesLostPerCig = 11; // WHO/CDC — Doll 2004
+  const lifetimeCigs = cigsBaseline * 365 * ASSUMED_YEARS;
+  const lifeDaysLost = Math.round((lifetimeCigs * minutesLostPerCig) / (60 * 24));
+  const trialSavings = dailyCost * 7;
+  const cohortLabel = result.cohort === 'LIGHT' ? 'NHẸ' : result.cohort === 'MODERATE' ? 'TRUNG BÌNH' : 'NẶNG';
+  const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+  const Pn = cap(pronouns);
+  const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n);
 
   return (
     <div className="fixed inset-0 z-40 bg-sol-bg overflow-y-auto">
-      <div className="max-w-xl mx-auto p-6 pb-16">
-        {/* Hero */}
+      <div className="max-w-2xl mx-auto p-4 sm:p-6 pb-24">
+
+        {/* ═══════ 1. Hero — Cohort revealed ═══════ */}
         <div className="text-center pt-8 mb-6">
-          <div className="text-6xl mb-3" aria-hidden="true">{result.plan.emoji}</div>
-          <p className="text-meta text-sol-ink-2 uppercase tracking-wider mb-1">Kết quả Test FTND</p>
-          <h1 className="text-h1 font-bold text-sol-ink">
-            {result.score}/10 — {result.cohort}
-          </h1>
-          <p className="text-body text-sol-ink-2 mt-1">{result.scoreRange}</p>
-        </div>
-
-        {/* Cohort plan card */}
-        <div className={`sol-card-padded border-t-4 ${c.border} mb-5`}>
-          <p className={`text-meta ${c.text} font-bold uppercase tracking-wider mb-1`}>
-            {result.plan.audienceLabel}
+          <div className="text-7xl mb-3" aria-hidden="true">{result.plan.emoji}</div>
+          <p className="text-meta text-sol-ink-2 uppercase tracking-wider mb-1">
+            Kết quả Test FTND của {pronouns}
           </p>
-          <h2 className="text-h2 font-bold text-sol-ink mb-2">{result.plan.name}</h2>
-          <p className="text-body text-sol-ink-2 mb-4">{result.plan.description}</p>
-
-          <div className="bg-sol-soft rounded-xl p-4 mb-4">
-            <div className="flex justify-between items-baseline mb-2">
-              <span className="text-meta text-sol-ink-2">Trọn gói lộ trình</span>
-              <span className={`text-h2 font-bold ${c.text}`}>{formatVND(result.plan.totalPrice)}</span>
-            </div>
-            <p className="text-meta text-sol-ink-3">
-              7 ngày Nhận Diện FREE + {result.plan.paidDays} ngày × {formatVND(result.plan.dailyRate)}
-            </p>
-            <p className="text-meta text-sol-ink-3 mt-1">
-              Hoặc trả góp {formatVND(result.plan.weeklyRate)}/tuần
-            </p>
-          </div>
+          <h1 className="text-[40px] leading-tight font-bold text-sol-ink">
+            {result.score}/10
+          </h1>
+          <p className={`text-h2 font-bold ${c.text} mt-1`}>Mức lệ thuộc {cohortLabel}</p>
+          <p className="text-body text-sol-ink-2 mt-2">
+            {result.plan.audienceLabel} · {result.scoreRange}
+          </p>
         </div>
 
-        {/* What it means */}
-        <div className="sol-card-padded mb-5">
-          <h3 className="text-h3 font-semibold text-sol-ink mb-3">Điều này có nghĩa là gì?</h3>
+        {/* ═══════ 2. Personalized shock — Money + life lost ═══════ */}
+        <div className={`sol-card-padded ${c.bg} border-l-4 ${c.border} mb-6`}>
+          <p className={`text-meta ${c.text} font-bold uppercase tracking-wide mb-3`}>
+            💸 Cái giá của thói quen
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+            <div className="bg-white rounded-xl p-3 text-center">
+              <div className="text-meta text-sol-ink-3">Mỗi ngày</div>
+              <div className={`text-h3 font-bold ${c.text}`}>{fmt(dailyCost)}đ</div>
+              <div className="text-meta text-sol-ink-3 mt-1">{cigsBaseline} điếu</div>
+            </div>
+            <div className="bg-white rounded-xl p-3 text-center">
+              <div className="text-meta text-sol-ink-3">Mỗi năm</div>
+              <div className={`text-h3 font-bold ${c.text}`}>{fmt(Math.round(yearlyCost / 1000))}k</div>
+              <div className="text-meta text-sol-ink-3 mt-1">12 tháng</div>
+            </div>
+            <div className="bg-white rounded-xl p-3 text-center">
+              <div className="text-meta text-sol-ink-3">10 năm qua</div>
+              <div className={`text-h3 font-bold ${c.text}`}>{fmt(Math.round(lifetimeCost / 1000000))}tr</div>
+              <div className="text-meta text-sol-ink-3 mt-1">tiền đã đốt</div>
+            </div>
+          </div>
+          <p className="text-body text-sol-ink mb-1">
+            Và <strong className="text-sol-red-ink">~{lifeDaysLost} ngày sống</strong> đã mất theo
+            ({fmt(lifetimeCigs)} điếu × 11 phút/điếu — WHO 2004).
+          </p>
+          <p className="text-meta text-sol-ink-3 italic">
+            * Ước tính theo {cigsBaseline} điếu/ngày × 10 năm. {Pn} chỉnh chi tiết được trong Cài đặt.
+          </p>
+        </div>
+
+        {/* ═══════ 3. Điều này có nghĩa là gì ═══════ */}
+        <div className="sol-card-padded mb-6">
+          <h3 className="text-h3 font-semibold text-sol-ink mb-3">
+            🧠 Điều này có nghĩa gì với {pronouns}?
+          </h3>
           <ul className="space-y-2">
             {result.whatItMeans.map((line, i) => (
               <li key={i} className="flex items-start gap-2 text-body text-sol-ink-2">
-                <span className={c.text}>✓</span>
+                <span className={c.text + ' font-bold mt-0.5'}>✓</span>
                 <span>{line}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Reassurance */}
-        <div className="sol-card-padded bg-sol-green-soft/40 border-l-4 border-sol-green mb-5">
-          <p className="text-body text-sol-ink">
-            <strong>{cap(pronouns)} không một mình.</strong> Khang đã trải qua chính lộ trình này
-            và sạch thuốc từ 2021. Sol sẽ đi cùng {pronouns} suốt {result.plan.totalDays} ngày.
+        {/* ═══════ 4. Lộ trình 88 ngày timeline ═══════ */}
+        <div className="sol-card-padded mb-6">
+          <h3 className="text-h3 font-semibold text-sol-ink mb-1">
+            🗺️ Lộ trình Sol cho {pronouns}
+          </h3>
+          <p className="text-meta text-sol-ink-3 mb-4">
+            {result.plan.totalDays} ngày · {result.plan.freeDays} ngày FREE + {result.plan.paidDays} ngày × {formatVND(result.plan.dailyRate)}
           </p>
-          <p className="text-meta text-sol-ink-2 mt-2">
-            7 ngày đầu hoàn toàn miễn phí. Không cần đặt cọc. Quyết định tiếp sau.
+
+          <div className="space-y-3">
+            {[
+              { phase: 1, day: '1-7',  emoji: '🌱', name: 'Nhận Thức', desc: `Sol quan sát — ${pronouns} chưa cần bỏ thuốc. Chỉ ghi hút lúc nào, vì sao.`, highlight: true },
+              { phase: 2, day: '8-28', emoji: '⚡', name: 'Hành Động', desc: 'Giảm dần. Chuẩn bị Q-Day. Khang gửi Voice cho từng phase.' },
+              { phase: 3, day: '29-58', emoji: '🔥', name: 'Giải Phóng', desc: 'Q-Day! 30 ngày khúc cua. AI Mentor 24/7. Khang nhắn Zalo 7h sáng.' },
+              { phase: 4, day: '59-88', emoji: '🌅', name: 'Tái Thiết', desc: `${Pn} KHÔNG còn là người hút thuốc. Sol đi cùng tới khi vững.` },
+            ].map((p) => (
+              <div
+                key={p.phase}
+                className={`flex gap-3 p-3 rounded-xl ${p.highlight ? 'bg-sol-green-soft border-2 border-sol-green' : 'bg-sol-soft'}`}
+              >
+                <div className="text-3xl flex-shrink-0">{p.emoji}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-baseline gap-2 mb-1 flex-wrap">
+                    <strong className="text-body text-sol-ink">Phase {p.phase} — {p.name}</strong>
+                    <span className="text-meta text-sol-ink-3">Day {p.day}</span>
+                    {p.highlight && (
+                      <span className="text-[10px] uppercase tracking-wide font-bold bg-sol-green text-white px-2 py-0.5 rounded-full">
+                        Bắt đầu 7 ngày FREE
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-meta text-sol-ink-2">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ═══════ 5. Sol có 6 điểm khác ═══════ */}
+        <div className="sol-card-padded mb-6">
+          <h3 className="text-h3 font-semibold text-sol-ink mb-3">
+            ⭐ Sol khác app cai thuốc khác thế nào?
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { icon: '🤖', title: 'AI Mentor 24/7', desc: 'Gemini 2.5 trả lời cá nhân hoá giọng anh em — không phải bot dịch máy.' },
+              { icon: '🎧', title: 'Voice Khang Sol', desc: 'Khang đã sạch thuốc từ 2021. Voice riêng cho từng phase, không AI.' },
+              { icon: '💬', title: '101 câu trả lời sẵn', desc: 'CHIP intent matcher — thèm gì cũng có sẵn 1-click, không cần gõ.' },
+              { icon: '🛡️', title: '"Khoảng Lặng" ẩn danh', desc: 'Tâm sự ẩn danh với cộng đồng — không lộ Zalo cá nhân.' },
+              { icon: '🚪', title: 'Rút lui văn minh', desc: 'Hoàn tiền ngày chưa dùng. Không ràng buộc bằng tiền cọc.' },
+              { icon: '📊', title: 'Tracking thực tế', desc: 'Tiết kiệm tiền, ngày sống thêm, streak — số liệu của riêng anh.' },
+            ].map((item) => (
+              <div key={item.title} className="flex gap-2 p-3 bg-sol-soft rounded-lg">
+                <div className="text-2xl flex-shrink-0">{item.icon}</div>
+                <div>
+                  <div className="text-body font-semibold text-sol-ink">{item.title}</div>
+                  <div className="text-meta text-sol-ink-2">{item.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ═══════ 6. Khang là ai ═══════ */}
+        <div className="sol-card-padded bg-sol-earth-soft border-l-4 border-sol-earth mb-6">
+          <div className="flex items-start gap-3">
+            <div className="text-5xl flex-shrink-0">🌅</div>
+            <div>
+              <p className="text-meta text-sol-earth-ink font-bold uppercase tracking-wide mb-1">
+                Khang là ai?
+              </p>
+              <p className="text-body text-sol-ink mb-2">
+                Tôi là <strong>Khang Sol</strong> — kỹ sư IT, đã sạch thuốc từ 2021 sau 12 năm hút.
+                Sol là app tôi tự code, tự vận hành 1 mình + AI Gemini.
+              </p>
+              <p className="text-body text-sol-ink-2 mb-3">
+                Không phải bác sĩ. Không bán thuốc. Chỉ chia sẻ trải nghiệm thực + công cụ
+                để {pronouns} không phải đi một mình như tôi đã đi.
+              </p>
+              <a
+                href="https://sol.vn/khang-sol"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-meta text-sol-earth-ink font-semibold hover:underline"
+              >
+                📖 Đọc câu chuyện Khang trên sol.vn →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ═══════ 7. FAQ ngắn 3 câu ═══════ */}
+        <div className="sol-card-padded mb-6">
+          <h3 className="text-h3 font-semibold text-sol-ink mb-3">
+            ❓ {Pn} đang phân vân?
+          </h3>
+          <div className="space-y-3">
+            {[
+              {
+                q: 'Tôi đã thử bỏ nhiều lần thất bại — Sol có khác không?',
+                a: 'Khác. Sol không bắt anh "không hút". 7 ngày đầu chỉ quan sát. Phase 2 giảm dần. Q-Day Day 28 mới bỏ thật. Lapse được phép — không reset, chỉ học từ đó.',
+              },
+              {
+                q: '5.000đ/ngày — sao rẻ vậy? Có gì gài không?',
+                a: `7 ngày Nhận Diện FREE thật. Sau đó ${fmt(dailyCost)}đ/ngày anh đã đốt thuốc nay đầu tư cho app. Không lưu thẻ, không auto-charge. Khang đang tri ân 500 anh em đầu — giá thật sẽ là 9k/ngày.`,
+              },
+              {
+                q: 'Tôi không muốn vợ con biết tôi tải app cai thuốc',
+                a: 'Sol hoàn toàn ẩn danh. Không cần SĐT thật ngay. Không thông báo Zalo. App hiện như app đọc tin tức bình thường.',
+              },
+            ].map((faq, i) => (
+              <details key={i} className="cursor-pointer">
+                <summary className="text-body font-semibold text-sol-ink py-2">
+                  {faq.q}
+                </summary>
+                <p className="text-meta text-sol-ink-2 mt-1 pl-4 border-l-2 border-sol-line">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+          <p className="text-meta text-sol-ink-3 mt-4">
+            Xem đầy đủ FAQ + bảng giá khi vào hành trình → /pricing
           </p>
         </div>
 
-        {/* CTA */}
-        <button
-          onClick={onEnter}
-          className="sol-btn-primary w-full min-h-tap text-body font-semibold"
-        >
-          Vào hành trình ngày 1 →
-        </button>
+        {/* ═══════ 8. Final CTA — Sticky ═══════ */}
+        <div className="sticky bottom-4 z-10">
+          <div className={`sol-card-padded border-t-4 ${c.border} shadow-xl bg-sol-paper`}>
+            <p className={`text-meta ${c.text} font-bold uppercase tracking-wide text-center mb-2`}>
+              Sẵn sàng?
+            </p>
+            <h3 className="text-h2 font-bold text-sol-ink text-center mb-3">
+              7 ngày đầu hoàn toàn FREE
+            </h3>
+            <p className="text-meta text-sol-ink-2 text-center mb-4">
+              Tiết kiệm ngay <strong className={c.text}>{fmt(trialSavings)}đ</strong> tuần này.
+              Không đặt cọc. Bất kỳ lúc nào dừng = ngắt đồng hành.
+            </p>
 
-        <p className="text-meta text-sol-ink-3 text-center mt-4">
-          Anh sẽ thấy chi tiết 3 gói + cách thanh toán trong app.
+            <button
+              onClick={onEnter}
+              className="sol-btn-primary w-full min-h-tap text-body font-bold py-3"
+            >
+              🌱 Vào hành trình ngày 1 →
+            </button>
+
+            <a
+              href="https://sol.vn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center text-meta text-sol-ink-3 mt-3 hover:text-sol-ink"
+            >
+              Hoặc đọc Wiki Bỏ Thuốc 150+ bài (sol.vn) trước khi quyết →
+            </a>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <p className="text-meta text-sol-ink-3 text-center mt-6">
+          Sol không phải cơ sở y tế · không bán thuốc · không kê đơn<br />
+          Liên hệ Khang: <a href="https://zalo.me/3049397094672064963" className="text-sol-blue">Zalo OA</a>
+          {' · '}
+          <a href="mailto:nguyendinhkhang@gmail.com" className="text-sol-blue">khang@sol.vn</a>
         </p>
       </div>
     </div>
