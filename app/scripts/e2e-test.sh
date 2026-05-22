@@ -143,18 +143,18 @@ fi
 # ────────────────────────────────────────────────────────────
 section "[5/7] Chat — CHIP click + AI free-form"
 
-# 5a. CHIP click (canned)
-CHIPS=$(curl -s "$BASE/api/canned-replies" -H "$AUTH_HEADER")
-CHIP_COUNT=$(echo "$CHIPS" | jq 'length // 0')
+# 5a. CHIP click (canned) — endpoint là /content/canned-replies, trả {items:[...]}
+CHIPS=$(curl -s "$BASE/api/content/canned-replies" -H "$AUTH_HEADER")
+CHIP_COUNT=$(echo "$CHIPS" | jq '.items | length // 0' 2>/dev/null || echo "0")
 info "Loaded $CHIP_COUNT CHIPs"
 
 if [ "$CHIP_COUNT" -lt 50 ]; then
-    fail "Expected >= 50 chips, got $CHIP_COUNT"
+    fail "Expected >= 50 chips, got $CHIP_COUNT (response: $(echo "$CHIPS" | head -c 200))"
 fi
 
-CHIP_ID=$(echo "$CHIPS" | jq -r '.[0].id // empty')
-CHIP_LABEL=$(echo "$CHIPS" | jq -r '.[0].label // empty')
-CHIP_ANSWER=$(echo "$CHIPS" | jq -r '.[0].answer // empty')
+CHIP_ID=$(echo "$CHIPS" | jq -r '.items[0].id // empty')
+CHIP_LABEL=$(echo "$CHIPS" | jq -r '.items[0].label // empty')
+CHIP_ANSWER=$(echo "$CHIPS" | jq -r '.items[0].answer // empty')
 
 if [ -n "$CHIP_ID" ]; then
     CHIP_POST=$(curl -s -X POST "$BASE/api/messages" \
