@@ -105,16 +105,18 @@ function injectDisclaimer(html) {
 function processFile(filePath) {
   const original = fs.readFileSync(filePath, 'utf-8');
 
+  // 2026-05-22: KHÔNG inject disclaimer nữa — sol-global-footer.php
+  // mu-plugin đã inject Sol footer + disclaimer vào MỌI page WP.
+  // Inject ở đây gây trùng lặp. Chỉ inject author block.
   const r1 = injectAuthorBlock(original);
-  const r2 = injectDisclaimer(r1.html);
 
   return {
     file: path.basename(filePath),
     original,
-    final: r2.html,
-    changed: original !== r2.html,
+    final: r1.html,
+    changed: original !== r1.html,
     author: r1.injected || r1.skipped,
-    disclaimer: r2.injected || r2.skipped,
+    disclaimer: 'skipped-by-footer-plugin',
   };
 }
 
