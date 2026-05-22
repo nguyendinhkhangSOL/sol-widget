@@ -109,8 +109,9 @@ export function TodayCard({
 }
 
 /* ─── STORY CARD ─────────────────────────────────────────────────────────── */
-export function StoryCard({ story, accent = '#B25C2C' }: { story: string[]; accent?: string }) {
-  if (!story || story.length === 0) return null;
+export function StoryCard({ story, accent = '#B25C2C' }: { story?: string[]; accent?: string }) {
+  // Day 9 (2026-05-22): defensive — backend có thể trả undefined cho user mới
+  if (!story || !Array.isArray(story) || story.length === 0) return null;
   return (
     <div
       className="rounded-2xl p-6 border"
@@ -142,19 +143,22 @@ export function NextInsightCard({ insight }: { insight: string }) {
 export function PatternHeatmapCard({
   hourly, cigsAvg7d, accent = '#B25C2C',
 }: {
-  hourly: number[];
-  cigsAvg7d: number;
+  hourly?: number[];
+  cigsAvg7d?: number;
   accent?: string;
 }) {
-  const maxValue = Math.max(1, ...hourly);
+  // Day 9 (2026-05-22): defensive — backend có thể trả undefined cho user mới
+  const safeHourly = Array.isArray(hourly) ? hourly : new Array(24).fill(0);
+  const safeAvg = typeof cigsAvg7d === 'number' ? cigsAvg7d : 0;
+  const maxValue = Math.max(1, ...safeHourly);
   return (
     <div className="bg-sol-paper border border-sol-line rounded-2xl p-6 shadow-card">
       <div className="flex items-baseline justify-between mb-3">
         <div className="text-h3 font-semibold text-sol-ink">📊 Bản đồ hành vi 7 ngày</div>
-        <div className="text-meta text-sol-ink-3">TB: <strong className="text-sol-ink">{cigsAvg7d}</strong>/ngày</div>
+        <div className="text-meta text-sol-ink-3">TB: <strong className="text-sol-ink">{safeAvg}</strong>/ngày</div>
       </div>
       <div className="flex items-end gap-1 h-20">
-        {hourly.map((count, hour) => {
+        {safeHourly.map((count, hour) => {
           const ratio = count / maxValue;
           const height = Math.max(4, ratio * 80);
           const opacity = count === 0 ? 0.15 : 0.4 + ratio * 0.6;
@@ -227,10 +231,12 @@ export interface BodyMilestone {
 export function BodyTimelineCard({
   unlocked, next, qDayConfirmed,
 }: {
-  unlocked: BodyMilestone[];
-  next: BodyMilestone | null;
-  qDayConfirmed: boolean;
+  unlocked?: BodyMilestone[];
+  next?: BodyMilestone | null;
+  qDayConfirmed?: boolean;
 }) {
+  // Day 9 (2026-05-22): defensive — backend có thể trả undefined cho user mới
+  const safeUnlocked = Array.isArray(unlocked) ? unlocked : [];
   if (!qDayConfirmed) {
     return (
       <div className="bg-sol-paper border border-sol-line rounded-2xl p-6 shadow-card">
@@ -255,7 +261,7 @@ export function BodyTimelineCard({
     <div className="bg-sol-paper border border-sol-line rounded-2xl p-6 shadow-card">
       <div className="text-h3 font-semibold text-sol-ink mb-4">🩺 Cơ thể đang sửa</div>
       <div className="space-y-3">
-        {unlocked.map((m) => (
+        {safeUnlocked.map((m) => (
           <div key={m.daysAfterQDay} className="flex items-start gap-3 p-3 bg-sol-green-soft/40 rounded-xl">
             <span className="text-sol-green-ink text-xl">✓</span>
             <span className="text-3xl shrink-0" aria-hidden="true">{m.emoji}</span>
@@ -286,10 +292,12 @@ export function BodyTimelineCard({
 export function CohortCard({
   cohort, mentorMode = false,
 }: {
-  cohort: Array<{ pseudonym: string; dayInJourney: number; stageLabel: string }>;
+  cohort?: Array<{ pseudonym: string; dayInJourney: number; stageLabel: string }>;
   mentorMode?: boolean;
 }) {
-  if (cohort.length === 0) return null;
+  // Day 9 (2026-05-22): defensive guard — backend có thể trả undefined
+  // cho user mới chưa có cohortKey → tránh crash `cohort.length`.
+  if (!cohort || cohort.length === 0) return null;
   return (
     <div className="bg-sol-paper border border-sol-line rounded-2xl p-6 shadow-card">
       <div className="text-h3 font-semibold text-sol-ink mb-3">
