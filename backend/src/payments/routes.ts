@@ -29,6 +29,125 @@ import { assertChecklistComplete } from '../tiers/qDayChecklist';
 export const paymentsRouter = Router();
 paymentsRouter.use(authMiddleware);
 
+// ─── Day 5 (2026-05-21): VietQR intent endpoint ────────────────────────────
+// Business model mới (chốt 21/5 sáng):
+//   5.000đ/ngày × 28/45/58 paid days theo cohort LIGHT/MODERATE/HEAVY
+//   = 140k / 225k / 290k trọn gói
+//   Alternative: 35.000đ/tuần (góp phí theo tuần sau 7 ngày free)
+//
+// Flow:
+//   1. User chọn gói + paymentMode (full | weekly) ở /pricing
+//   2. POST /payments/vietqr/intent tạo PaymentLog status=PENDING
+//   3. Return VietQR URL + bank info + nội dung CK "SOL <userId-short>"
+//   4. User quét QR → chuyển khoản tay
+//   5. Admin (Khang) confirm bằng tay qua admin panel → status=PAID + extend tier
+
+const VIETQR_BANK_BIN = process.env.VIETQR_BANK_BIN || '970422'; // MB Bank default
+const VIETQR_ACCOUNT_NO = process.env.VIETQR_ACCOUNT_NO || '00000000';
+const VIETQR_ACCOUNT_NAME = process.env.VIETQR_ACCOUNT_NAME || 'HKD SOL VIETNAM';
+const VIETQR_TEMPLATE = process.env.VIETQR_TEMPLATE || 'compact2';
+
+const BANK_NAMES: Record<string, string> = {
+  '970422': 'MB Bank',
+  '970436': 'Vietcombank',
+  '970418': 'BIDV',
+  '970423': 'TPBank',
+  '970407': 'Techcombank',
+  '970432': 'VPBank',
+  '970415': 'VietinBank',
+  '970405': 'Agribank',
+};
+
+const COHORT_PRICING: Record<'LIGHT' | 'MODERATE' | 'HEAVY', {
+  totalDays: number; paidDays: number; totalPrice: number; weeklyRate: number;
+}> = {
+  LIGHT:    { totalDays: 35, paidDays: 28, totalPrice: 140000, weeklyRate: 35000 },
+  MODERATE: { totalDays: 52, paidDays: 45, totalPrice: 225000, weeklyRate: 35000 },
+  HEAVY:    { totalDays: 65, paidDays: 58, totalPrice: 290000, weeklyRate: 35000 },
+};
+
+const vietqrIntentSchema = z.object({
+  cohort: z.enum(['LIGHT', 'MODERATE', 'HEAVY']),
+  paymentMode: z.enum(['full', 'weekly']).default('full'),
+});
+
+paymentsRouter.post('/vietqr/intent', async (req: AuthedRequest, res) => {
+  try {
+    const parsed = vietqrIntentSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ error: 'invalid_body', details: parsed.error.format() });
+    }
+    const { cohort, paymentMode } = parsed.data;
+    const pricing = COHORT_PRICING[cohort];
+    const amountVnd = paymentMode === 'full' ? pricing.totalPrice : pricing.weeklyRate;
+
+    const user = await prisma.user.findUnique({
+      where: { id: req.userId! },
+      select: { id: true, name: true, pronouns: true, settings: true },
+    });
+    if (!user) return res.status(404).json({ error: 'user_not_found' });
+
+    // Mã CK: SOL + 8 ký tự cuối userId (không space để bank parse dễ)
+    const userIdShort = user.id.slice(-8).toUpperCase();
+    const addInfo = `SOL${userIdShort}`;
+
+    // Tạo PaymentLog status PENDING — admin confirm sau qua admin panel
+    // Reuse field cũ: targetTier=DONG_HANH placeholder (tier-cohort migration sau);
+    // metadata lưu cohort+paymentMode để admin biết.
+    const payment = await prisma.paymentLog.create({
+      data: {
+        userId: user.id,
+        targetTier: 'DONG_HANH',
+        amountVnd,
+        provider: 'VIETQR',
+        status: 'PENDING',
+        metadata: {
+          cohort,
+          paymentMode,
+          totalDays: paymentMode === 'full' ? pricing.totalDays : 7,
+          paidDays: paymentMode === 'full' ? pricing.paidDays : 7,
+          ip: req.ip,
+          userAgent: req.headers['user-agent'] ?? null,
+          addInfo,
+        },
+      },
+    });
+
+    // VietQR URL — img.vietqr.io public endpoint, không cần API key
+    const qrUrl = `https://img.vietqr.io/image/${VIETQR_BANK_BIN}-${VIETQR_ACCOUNT_NO}-${VIETQR_TEMPLATE}.png?amount=${amountVnd}&addInfo=${encodeURIComponent(addInfo)}&accountName=${encodeURIComponent(VIETQR_ACCOUNT_NAME)}`;
+
+    return res.json({
+      ok: true,
+      paymentId: payment.id,
+      qrUrl,
+      amount: amountVnd,
+      content: addInfo,
+      bank: {
+        name: BANK_NAMES[VIETQR_BANK_BIN] || 'Bank',
+        bin: VIETQR_BANK_BIN,
+        accountNumber: VIETQR_ACCOUNT_NO,
+        accountName: VIETQR_ACCOUNT_NAME,
+      },
+      pricing: {
+        cohort,
+        paymentMode,
+        totalDays: paymentMode === 'full' ? pricing.totalDays : 7,
+        paidDays: paymentMode === 'full' ? pricing.paidDays : 7,
+        dailyRate: 5000,
+      },
+      instructions: [
+        `Mở app ngân hàng → Quét QR.`,
+        `Kiểm tra: ${VIETQR_ACCOUNT_NAME} · STK ${VIETQR_ACCOUNT_NO}.`,
+        `Số tiền: ${amountVnd.toLocaleString('vi-VN')}đ. Nội dung: ${addInfo}.`,
+        `Sau khi CK xong, Khang sẽ confirm trong vòng 24h và mở tier cho ${user.pronouns ?? 'anh'}.`,
+      ],
+    });
+  } catch (e: any) {
+    console.error('[payments/vietqr/intent] error:', e);
+    return res.status(500).json({ error: 'vietqr_intent_error', message: e?.message });
+  }
+});
+
 const checkoutSchema = z.object({
   targetTier: z.enum(['KHOI_DONG', 'DONG_HANH']),
   // 'mock' (default), 'momo', 'vietqr', 'bank_transfer'

@@ -600,6 +600,40 @@ export const api = {
       body: JSON.stringify(body),
     }),
 
+  /**
+   * Day 5 (2026-05-21): Tạo PaymentLog VietQR intent.
+   * User chọn cohort + paymentMode → backend gen QR URL + bank info.
+   * User CK → admin (Khang) confirm sau qua admin panel.
+   */
+  createVietqrIntent: (body: {
+    cohort: 'LIGHT' | 'MODERATE' | 'HEAVY';
+    paymentMode: 'full' | 'weekly';
+  }) =>
+    request<{
+      ok: boolean;
+      paymentId: string;
+      qrUrl: string;
+      amount: number;
+      content: string;
+      bank: {
+        name: string;
+        bin: string;
+        accountNumber: string;
+        accountName: string;
+      };
+      pricing: {
+        cohort: 'LIGHT' | 'MODERATE' | 'HEAVY';
+        paymentMode: 'full' | 'weekly';
+        totalDays: number;
+        paidDays: number;
+        dailyRate: number;
+      };
+      instructions: string[];
+    }>('/payments/vietqr/intent', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
+
   getMoneyBreakdown: () =>
     request<{
       days: Array<{ day: number; cigs: number; avoided: number; moneyDelta: number; cumulative: number }>;
