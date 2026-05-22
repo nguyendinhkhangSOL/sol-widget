@@ -24,7 +24,9 @@ import {
 } from '../lib/ftnd';
 import { api, ApiError } from '../services/api';
 import { useStore } from '../state/store';
-import { PersonalizationModal } from '../components/PersonalizationModal';
+// Day 9 (2026-05-22): Tạm bỏ import PersonalizationModal — Khang quyết
+// không pop modal sau FTND. User tự chỉnh pronouns/name trong /settings.
+// Component còn ở components/PersonalizationModal.tsx — có thể wire lại sau.
 
 // Day 9 (2026-05-22): Add 'intro' phase ở đầu — giải thích khoa học + mục đích
 // + privacy trước khi user click "Bắt đầu". Tận dụng không gian quảng cáo.
@@ -51,8 +53,6 @@ export function TestFtnd() {
   const [answers, setAnswers] = useState<FtndAnswer[]>([]);
   // Day 9: default 'intro' để user đọc giải thích trước khi click "Bắt đầu"
   const [phase, setPhase] = useState<Phase>('intro');
-  // Day 9: Personalization modal sau FTND, trước Result page
-  const [showPersonaModal, setShowPersonaModal] = useState(false);
   const embedMode = useMemo(() => isEmbedMode(), []);
   const [submitStep, setSubmitStep] = useState(0); // 0-3 cho animation submitting
   const [result, setResult] = useState<ResultPayload | null>(null);
@@ -131,17 +131,8 @@ export function TestFtnd() {
       setResult({ result: local, cigsBaseline, pricePerCig });
       setPhase('result');
 
-      // Refresh user store với dữ liệu mới (await để PersonalizationModal
-      // có user state mới nhất hiển thị)
-      await bootstrap().catch(() => {});
-
-      // Day 9: Pop modal cá nhân hoá nếu user chưa set pronouns thật
-      // (default = 'bạn'). Skip nếu user đã có pronouns custom hoặc embed mode.
-      const userNow = useStore.getState().user;
-      const hasPersonalPronouns = userNow?.pronouns && userNow.pronouns !== 'bạn';
-      if (!hasPersonalPronouns && !embedMode) {
-        setShowPersonaModal(true);
-      }
+      // Refresh user store với dữ liệu mới
+      bootstrap().catch(() => {});
     } catch (err) {
       const msg =
         err instanceof ApiError
@@ -343,23 +334,14 @@ export function TestFtnd() {
   // ─── PHASE: result ──────────────────────────────────────────────────────
   if (phase === 'result' && result) {
     return (
-      <>
-        <ResultView
-          pronouns={pronouns}
-          result={result.result}
-          cigsBaseline={result.cigsBaseline}
-          pricePerCig={result.pricePerCig}
-          answers={answers}
-          onEnter={enterDashboard}
-        />
-        {/* Day 9: Modal cá nhân hoá pop ngay khi vào Result page (1 lần)
-            cho user mới chưa set pronouns. User có thể skip. */}
-        <PersonalizationModal
-          open={showPersonaModal}
-          onDone={() => setShowPersonaModal(false)}
-          onSkip={() => setShowPersonaModal(false)}
-        />
-      </>
+      <ResultView
+        pronouns={pronouns}
+        result={result.result}
+        cigsBaseline={result.cigsBaseline}
+        pricePerCig={result.pricePerCig}
+        answers={answers}
+        onEnter={enterDashboard}
+      />
     );
   }
 
