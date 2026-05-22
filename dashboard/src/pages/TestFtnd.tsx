@@ -41,6 +41,7 @@ export function TestFtnd() {
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<FtndAnswer[]>([]);
   const [phase, setPhase] = useState<Phase>('questions');
+  const [submitStep, setSubmitStep] = useState(0); // 0-3 cho animation submitting
   const [result, setResult] = useState<ResultPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -75,6 +76,7 @@ export function TestFtnd() {
 
   async function submitTest(finalAnswers: FtndAnswer[]) {
     setPhase('submitting');
+    setSubmitStep(0);
     setError(null);
 
     try {
@@ -83,13 +85,30 @@ export function TestFtnd() {
       const cigsBaseline = estimateCigsBaseline(finalAnswers[3]?.a ?? 1);
       const pricePerCig = 1000; // Default phổ thông 20k/bao; user có thể chỉnh sau ở /settings
 
-      await api.submitFtndOnboarding({
+      // Day 9 (2026-05-22): Dramatic delay — Sol "đang nghĩ" 3 step ~2.8s
+      // tạo anticipation trước khi reveal Result page.
+      // Network thật ~200ms; multi-step delay tạo cảm giác Sol phân tích kỹ.
+      const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+      // Submit API + animate steps song song để không block
+      const submitPromise = api.submitFtndOnboarding({
         cigsBaseline,
         pricePerCig,
         ftndScore: local.score,
         cohort: local.cohort,
         answers: finalAnswers,
       });
+
+      await sleep(800);
+      setSubmitStep(1); // "Phân tích cohort..."
+      await sleep(900);
+      setSubmitStep(2); // "Chọn lộ trình..."
+      await sleep(900);
+      setSubmitStep(3); // "Sẵn sàng..."
+      await sleep(400);
+
+      // Đợi API xong (thường đã xong rồi sau 2.6s sleep)
+      await submitPromise;
 
       setResult({ result: local, cigsBaseline, pricePerCig });
       setPhase('result');
@@ -119,15 +138,46 @@ export function TestFtnd() {
     navigate('/', { replace: true });
   }
 
-  // ─── PHASE: submitting ──────────────────────────────────────────────────
+  // ─── PHASE: submitting — multi-step animation 2.8s ──────────────────────
+  // Day 9 (2026-05-22): Dramatic pause cho user cảm "Sol đang nghĩ kỹ"
+  // trước khi reveal Result page (vốn rất ấn tượng + dài).
   if (phase === 'submitting') {
+    const steps = [
+      { emoji: '📊', label: 'Tính FTND score…', detail: '6 câu trả lời của ' + pronouns },
+      { emoji: '🧠', label: 'Phân tích mức lệ thuộc…', detail: 'So sánh với 500 anh em khác' },
+      { emoji: '🗺️', label: 'Chọn lộ trình phù hợp…', detail: '35 / 52 / 65 ngày' },
+      { emoji: '✨', label: 'Sẵn sàng!', detail: 'Sol đã hiểu ' + pronouns },
+    ];
     return (
       <div className="fixed inset-0 z-40 bg-sol-bg flex items-center justify-center p-6">
-        <div className="sol-card-padded text-center max-w-md">
-          <div className="inline-block animate-spin w-12 h-12 border-4 border-sol-green border-t-transparent rounded-full mb-4" />
-          <p className="text-h3 font-semibold text-sol-ink">Đang phân tích kết quả…</p>
-          <p className="text-body text-sol-ink-2 mt-2">
-            Sol đang tính toán Mức Lệ Thuộc của {pronouns}
+        <div className="sol-card-padded text-center max-w-md w-full">
+          <div className="text-6xl mb-4 animate-pulse" aria-hidden="true">
+            {steps[submitStep].emoji}
+          </div>
+          <p className="text-h3 font-semibold text-sol-ink mb-1">
+            {steps[submitStep].label}
+          </p>
+          <p className="text-body text-sol-ink-2 mb-5">
+            {steps[submitStep].detail}
+          </p>
+
+          {/* Step progress dots */}
+          <div className="flex items-center justify-center gap-2 mb-2">
+            {steps.map((_, i) => (
+              <div
+                key={i}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i < submitStep
+                    ? 'w-8 bg-sol-green'
+                    : i === submitStep
+                    ? 'w-12 bg-sol-green animate-pulse'
+                    : 'w-2 bg-sol-line'
+                }`}
+              />
+            ))}
+          </div>
+          <p className="text-meta text-sol-ink-3">
+            Step {submitStep + 1}/{steps.length}
           </p>
         </div>
       </div>
