@@ -192,6 +192,7 @@ export function TestFtnd() {
         result={result.result}
         cigsBaseline={result.cigsBaseline}
         pricePerCig={result.pricePerCig}
+        answers={answers}
         onEnter={enterDashboard}
       />
     );
@@ -295,10 +296,11 @@ interface ResultViewProps {
   result: FtndResult;
   cigsBaseline: number;
   pricePerCig: number;
+  answers: FtndAnswer[];
   onEnter: () => void;
 }
 
-function ResultView({ pronouns, result, cigsBaseline, pricePerCig, onEnter }: ResultViewProps) {
+function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEnter }: ResultViewProps) {
   const cohortColors = useMemo(() => ({
     LIGHT:    { border: 'border-sol-green',  bg: 'bg-sol-green-soft',  text: 'text-sol-green-ink' },
     MODERATE: { border: 'border-sol-orange', bg: 'bg-sol-orange-soft', text: 'text-sol-orange-ink' },
@@ -325,7 +327,13 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, onEnter }: Re
       <div className="max-w-2xl mx-auto p-4 sm:p-6 pb-24">
 
         {/* ═══════ 1. Hero — Cohort revealed ═══════ */}
-        <div className="text-center pt-8 mb-6">
+        <div className="text-center pt-8 mb-4">
+          {/* Test completed banner */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-sol-green-soft border border-sol-green rounded-full text-meta text-sol-green-ink font-semibold mb-4">
+            <span aria-hidden>✓</span>
+            <span>Test FTND xong — 6/6 câu</span>
+          </div>
+
           <div className="text-7xl mb-3" aria-hidden="true">{result.plan.emoji}</div>
           <p className="text-meta text-sol-ink-2 uppercase tracking-wider mb-1">
             Kết quả Test FTND của {pronouns}
@@ -337,6 +345,34 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, onEnter }: Re
           <p className="text-body text-sol-ink-2 mt-2">
             {result.plan.audienceLabel} · {result.scoreRange}
           </p>
+        </div>
+
+        {/* ═══════ Reading hint + collapsible xem lại 6 câu ═══════ */}
+        <div className="text-center mb-6">
+          <p className="text-meta text-sol-ink-2 mb-3 animate-pulse">
+            👇 Cuộn xuống đọc — Sol đã chuẩn bị 7 thông tin cá nhân hoá cho {pronouns}
+          </p>
+          <details className="inline-block">
+            <summary className="text-meta text-sol-ink-3 hover:text-sol-ink cursor-pointer">
+              📝 Xem lại 6 câu trả lời của {pronouns}
+            </summary>
+            <div className="text-left mt-3 p-4 bg-sol-soft rounded-xl max-w-md mx-auto">
+              {FTND_QUESTIONS.map((q, i) => {
+                const ans = answers[i];
+                const opt = ans ? q.options.find((o) => o.value === ans.a) : null;
+                return (
+                  <div key={q.id} className="mb-2 text-meta">
+                    <strong className="text-sol-ink">Câu {q.id}.</strong>{' '}
+                    <span className="text-sol-ink-2">{q.question}</span>
+                    <div className="ml-4 text-sol-green-ink mt-0.5">
+                      → {opt?.label || '(chưa trả lời)'}{' '}
+                      <span className="text-sol-ink-3">({ans?.a ?? '?'} điểm)</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </details>
         </div>
 
         {/* ═══════ 2. Personalized shock — Money + life lost ═══════ */}
@@ -511,36 +547,37 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, onEnter }: Re
           </p>
         </div>
 
-        {/* ═══════ 8. Final CTA — Sticky ═══════ */}
-        <div className="sticky bottom-4 z-10">
-          <div className={`sol-card-padded border-t-4 ${c.border} shadow-xl bg-sol-paper`}>
-            <p className={`text-meta ${c.text} font-bold uppercase tracking-wide text-center mb-2`}>
-              Sẵn sàng?
-            </p>
-            <h3 className="text-h2 font-bold text-sol-ink text-center mb-3">
-              7 ngày đầu hoàn toàn FREE
-            </h3>
-            <p className="text-meta text-sol-ink-2 text-center mb-4">
-              Tiết kiệm ngay <strong className={c.text}>{fmt(trialSavings)}đ</strong> tuần này.
-              Không đặt cọc. Bất kỳ lúc nào dừng = ngắt đồng hành.
-            </p>
+        {/* ═══════ 8. Final CTA — block ở cuối (KHÔNG sticky) ═══════ */}
+        {/* Day 9: bỏ sticky CTA — force user scroll qua hết 7 section content
+            trên rồi mới thấy nút "Vào hành trình". Tránh user click sớm bỏ qua
+            marketing content. */}
+        <div className={`sol-card-padded border-t-4 ${c.border} shadow-xl bg-sol-paper mt-8`}>
+          <p className={`text-meta ${c.text} font-bold uppercase tracking-wide text-center mb-2`}>
+            Đã đọc hết · Sẵn sàng đi?
+          </p>
+          <h3 className="text-h2 font-bold text-sol-ink text-center mb-3">
+            7 ngày đầu hoàn toàn FREE
+          </h3>
+          <p className="text-meta text-sol-ink-2 text-center mb-4">
+            Tiết kiệm ngay <strong className={c.text}>{fmt(trialSavings)}đ</strong> tuần này.
+            Không đặt cọc. Bất kỳ lúc nào dừng = ngắt đồng hành.
+          </p>
 
-            <button
-              onClick={onEnter}
-              className="sol-btn-primary w-full min-h-tap text-body font-bold py-3"
-            >
-              🌱 Vào hành trình ngày 1 →
-            </button>
+          <button
+            onClick={onEnter}
+            className="sol-btn-primary w-full min-h-tap text-body font-bold py-3 text-lg"
+          >
+            🌱 Tiếp tục hành trình ngày 1 →
+          </button>
 
-            <a
-              href="https://sol.vn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-center text-meta text-sol-ink-3 mt-3 hover:text-sol-ink"
-            >
-              Hoặc đọc Wiki Bỏ Thuốc 150+ bài (sol.vn) trước khi quyết →
-            </a>
-          </div>
+          <a
+            href="https://sol.vn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-center text-meta text-sol-ink-3 mt-3 hover:text-sol-ink"
+          >
+            Hoặc đọc Wiki Bỏ Thuốc 150+ bài (sol.vn) trước khi quyết →
+          </a>
         </div>
 
         {/* Footer */}
