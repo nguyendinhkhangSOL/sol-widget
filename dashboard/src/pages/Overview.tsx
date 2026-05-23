@@ -18,6 +18,9 @@ import { PhaseRebuild } from '../components/views/phaseB/PhaseRebuild';
 import { PhaseAmbassador } from '../components/views/phaseB/PhaseAmbassador';
 import { ExitModal } from '../components/views/phaseB/_shared';
 import { DashboardData } from '../components/views/phaseB/types';
+// Day 8 (2026-05-23): Journey Simulator HERO — slider time-travel + 4 body
+// recovery rings + milestones. Theo spec anh Khang 23/5.
+import { JourneySimulator } from '../components/JourneySimulator';
 // Silent Companionship widgets (pivot 2026-05-08)
 import {
   ControlScoreWidget,
@@ -182,6 +185,22 @@ export function Overview() {
       {/* Crisis trigger button — luôn ở top, accessibility cao nhất */}
       <CrisisTriggerButton />
 
+      {/* ═══════════════════════════════════════════════════════════════
+          JOURNEY SIMULATOR — HERO (anh Khang chốt 23/5/2026)
+          Slider time-travel + 3 hero stats + 4 body recovery rings + milestones
+          ═══════════════════════════════════════════════════════════════ */}
+      <JourneySimulator
+        currentDay={data.journey.dayInJourney}
+        cohort={v2?.cohort ?? 'MODERATE'}
+        cohortTotalDays={v2?.totalDays ?? 52}
+        baselineCigsPerDay={data.user.cigsBaseline || 20}
+        pricePerCig={data.user.pricePerCig || 1500}
+        masteryScore={undefined /* TODO: wire control-score endpoint */}
+        pronouns={data.user.pronouns}
+        userName={data.user.name}
+        onShareClick={undefined /* TODO: Phase 2 — html-to-image PNG */}
+      />
+
       {/* Quick Win Day 3 báo cáo (chỉ hiện Day 3+) */}
       <QuickWinDay3Widget />
 
@@ -197,7 +216,7 @@ export function Overview() {
       {/* Anonymous Stats — "Tuần này trong Sol" */}
       <AnonymousStatsWidget />
 
-      {/* PhaseBar 4 viên ngọc — V2 cohort-aware */}
+      {/* PhaseBar 4 viên ngọc — V2 cohort-aware (giữ làm secondary nav) */}
       <PhaseBar
         stage={barStage}
         progressInStage={barProgressInStage}

@@ -53,7 +53,7 @@ export function Layout() {
   const eff: UserTier = (user?.effectiveTier ?? user?.tier ?? 'FREE') as UserTier;
   const links = useMemo(() => {
     const base: { to: string; label: string; icon: string }[] = [
-      { to: '/', label: 'Tổng quan', icon: '🏠' },
+      { to: '/', label: 'Hành Trình', icon: '🗺️' },
       { to: '/chat', label: 'Trò chuyện', icon: '💬' },
       // Silent Companionship 3 tab chính — pivot 2026-05-08
       { to: '/doc', label: 'Đọc', icon: '📖' },
@@ -61,7 +61,7 @@ export function Layout() {
       { to: '/hoi', label: 'Hỏi Khang', icon: '💭' },
       // Hành trình luôn hiện — FREE user thấy demo + calendar 30 ngày,
       // paid user thấy data thật. UI consistency > tier gating.
-      { to: '/journey', label: 'Hành trình', icon: '🗺️' },
+      { to: '/journey', label: 'Nhật Ký & Check-in', icon: '📔' },
     ];
     if (hasFeature(eff, 'workbook.write') || hasFeature(eff, 'workbook.read.full') || hasFeature(eff, 'workbook.read.week1_2')) {
       base.push({ to: '/workbook', label: 'Sổ Lưu Niệm', icon: '📖' });
@@ -93,9 +93,9 @@ export function Layout() {
   const mobileLinks = useMemo(() => {
     // Mobile bottom nav 4 mục core. Hành trình luôn hiện (FREE thấy demo).
     return [
-      { to: '/', label: 'Tổng quan', icon: '🏠' },
+      { to: '/', label: 'Hành Trình', icon: '🗺️' },
       { to: '/chat', label: 'Trò chuyện', icon: '💬' },
-      { to: '/journey', label: 'Hành trình', icon: '🗺️' },
+      { to: '/journey', label: 'Nhật Ký & Check-in', icon: '📔' },
       { to: '/settings', label: 'Cài đặt', icon: '⚙️' },
     ];
   }, []);
