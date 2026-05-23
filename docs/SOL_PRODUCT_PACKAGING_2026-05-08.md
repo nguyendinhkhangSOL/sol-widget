@@ -77,7 +77,7 @@ Sau 14 ngày nếu anh không thấy mình lấy lại được gì — Sol tr�
 
 ---
 
-## TIER 3 — Sol Đi Cùng (Membership, 99k/tháng)
+## TIER 3 — Đi Cùng Sol (Membership, 99k/tháng)
 
 ### Slogan
 > "Sol đi cùng — anh quyết Q-Day khi nào sẵn sàng."
@@ -121,7 +121,7 @@ Tháng đầu nếu không thấy lấy lại — Sol trả 99k. Tháng sau hủ
 Không phải 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp). Không phải 1 năm. Là đời.
 
 ### Anh nhận được
-Tất cả Sol Đi Cùng **lifetime**, cộng:
+Tất cả Đi Cùng Sol **lifetime**, cộng:
 - Phase 2 "Đời Sạch" lifetime: Sleep, Stress, Cha-con, Tài chính
 - 1 voice Khang mới/tháng forever
 - Inner Circle 10-20 anh em alumni đã đi qua
@@ -169,7 +169,7 @@ Anh muốn Sol đi cùng đời, không phải product transactional 52 ngày (5
 
 → User cảm: *"Hay thật. Sol biết tôi rõ hơn tôi biết."*
 
-→ **Đây là moment user willingness-to-pay tăng vọt** — Sol upsell Sol 14 / Sol Đi Cùng ngay sau báo cáo Day 3.
+→ **Đây là moment user willingness-to-pay tăng vọt** — Sol upsell Sol 14 / Đi Cùng Sol ngay sau báo cáo Day 3.
 
 ---
 
@@ -262,7 +262,7 @@ Tùy package, Khang dùng câu khác nhau:
 ### Sales Sol 14 (99k)
 > "Anh chưa cần Q-Day. Chưa cần bỏ ngay. Chỉ thử 14 ngày bẻ vài thói quen vô thức xem sao. 99k. Nếu anh không thấy lấy lại được gì — Sol trả lại."
 
-### Sales Sol Đi Cùng (99k/tháng)
+### Sales Đi Cùng Sol (99k/tháng)
 > "Anh đã quyết bỏ rồi. Sol đi cùng. Q-Day anh chọn — không phải Sol ép. Hủy bất kỳ tháng nào. 99k/tháng — bằng 4 bao thuốc."
 
 ### Sales Sol Trọn Vẹn (1.890k)

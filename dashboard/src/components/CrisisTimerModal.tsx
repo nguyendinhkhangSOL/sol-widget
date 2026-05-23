@@ -1,5 +1,5 @@
 /**
- * Modal "Đợi 90 giây" — "Tôi đang thèm" — vượt cơn thèm 90 giây với giọng Khang.
+ * Modal "Đợi 90 giây" — "Tôi đang thèm" — vượt cơn thèm 90 giây với Khang chia sẻ qua Voice.
  * Khoa học: cơn thèm trong não kéo dài 90-180 giây — đợi qua được, mạng dopamine yếu đi.
  *
  * Flow:

@@ -124,7 +124,7 @@ function TabGlobal() {
   const templates = [
     { code: 'SOL_WELCOME', desc: 'Day 1 chào mừng', tag: 'Tag 2', sent: 3, status: 'Approved', enabled: true },
     { code: 'SOL_DAILY_CHECKIN', desc: '20:00 nhắc check-in', tag: 'Tag 2', sent: 32, status: 'Approved', enabled: true },
-    { code: 'SOL_VOICE_RELEASE', desc: 'Voice Khang cột mốc', tag: 'Tag 2', sent: 0, status: 'Voice 404', enabled: true, warning: true },
+    { code: 'SOL_VOICE_RELEASE', desc: 'Voice Khang chia sẻ cột mốc', tag: 'Tag 2', sent: 0, status: 'Voice 404', enabled: true, warning: true },
     { code: 'SOL_Q_DAY_MORNING', desc: 'Day 22 sáng 7h', tag: 'Tag 2', sent: 1, status: 'Approved', enabled: true },
     { code: 'SOL_T_MINUS_2', desc: 'Day 20 còn 2 ngày', tag: 'Tag 2', sent: 2, status: 'Approved', enabled: true },
     { code: 'SOL_CRISIS_DETECT', desc: 'Ad-hoc moment khó', tag: 'Tag 2', sent: 4, status: 'Approved', enabled: true },

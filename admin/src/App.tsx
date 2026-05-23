@@ -29,6 +29,8 @@ import { AdminContentAudit } from './pages/AdminContentAudit';
 import { AdminContent } from './pages/AdminContent';
 import { AdminMessaging } from './pages/AdminMessaging';
 import { AdminZaloTemplates } from './pages/AdminZaloTemplates';
+import { AdminZaloJourney } from './pages/AdminZaloJourney';
+import { AdminZaloSos } from './pages/AdminZaloSos';
 
 export function App() {
   const user = useStore((s) => s.user);
@@ -96,6 +98,9 @@ export function App() {
         {/* Zalo OA — Sol v3 12-05-2026 */}
         <Route path="messaging" element={<AdminMessaging />} />
         <Route path="zalo-templates" element={<AdminZaloTemplates />} />
+        {/* Phase 5 — Sprint 3 — 51-Day Journey Scheduler */}
+        <Route path="zalo-journey" element={<AdminZaloJourney />} />
+        <Route path="zalo-sos" element={<AdminZaloSos />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />

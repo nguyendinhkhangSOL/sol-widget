@@ -147,7 +147,7 @@ Remove-Item pages\Journey.tsx.bak
 
 4. **Day 7 chúc mừng** (90s): *"Anh đã 7 ngày với Sol. Anh đã thấy mình rõ hơn 30 năm qua. Báo cáo trong app cho anh thấy cụ thể. Anh muốn đi tiếp Sol Bứt Phá hay tự đi từ đây — anh quyết. Tôi đợi anh."*
 
-5. **Day 14 — kết thúc Sol Bứt Phá** (90s): *"Anh đã 14 ngày. Cái anh có sau 14 ngày này — không ai lấy đi được. Kể cả 1 năm sau anh có lỡ hút trong đám giỗ ông, anh sẽ biết quay lại. Sol cho anh năng lực tự cai forever — đó là điều phương pháp khác không cho. Tôi mời anh đi tiếp Sol Đi Cùng. Hoặc anh đi một mình từ đây. Anh quyết. Tôi đợi."*
+5. **Day 14 — kết thúc Sol Bứt Phá** (90s): *"Anh đã 14 ngày. Cái anh có sau 14 ngày này — không ai lấy đi được. Kể cả 1 năm sau anh có lỡ hút trong đám giỗ ông, anh sẽ biết quay lại. Sol cho anh năng lực tự cai forever — đó là điều phương pháp khác không cho. Tôi mời anh đi tiếp Đi Cùng Sol. Hoặc anh đi một mình từ đây. Anh quyết. Tôi đợi."*
 
 **Lưu ý kỹ thuật**:
 - Microphone Yeti / Rode NT-USB là đủ
@@ -158,7 +158,7 @@ Remove-Item pages\Journey.tsx.bak
 
 ### A5. 👥 Recruit 30 anh em pilot — TUẦN 2
 
-**Pilot terms**: Free Sol Bứt Phá + 1 tháng Sol Đi Cùng đổi 30 phút phỏng vấn cuối kỳ.
+**Pilot terms**: Free Sol Bứt Phá + 1 tháng Đi Cùng Sol đổi 30 phút phỏng vấn cuối kỳ.
 
 **Mục tiêu**: 30 anh em đăng ký + ≥20 hoàn thành 7 ngày đầu
 
@@ -174,13 +174,13 @@ Remove-Item pages\Journey.tsx.bak
 | 2 | Section "4 chặng — pricing" | 70k/140k/210k Promo (conflict với 99k) | "4 giai đoạn hành trình" — KHÔNG pricing |
 | 3 | Pricing tier 1 | "Sol 7" | "Sol Khám Phá" |
 | 4 | Pricing tier 2 | "Sol Start 99k" | "Sol Bứt Phá 99k" + bỏ claim "20-40% giảm" + bỏ "14 audio mỗi ngày" |
-| 5 | Pricing tier 3 | "Sol Control 99k/tháng" + "60-80% giảm" + "voice tuần" | "Sol Đi Cùng 99k/tháng" + nhấn "KHÔNG tự rút" + "voice hàng tháng" |
+| 5 | Pricing tier 3 | "Sol Control 99k/tháng" + "60-80% giảm" + "voice tuần" | "Đi Cùng Sol 99k/tháng" + nhấn "KHÔNG tự rút" + "voice hàng tháng" |
 | 6 | Common guarantees | (5 dòng cũ) | Thêm 2 dòng: "Sol KHÔNG tự rút lần 2" + "Sol là dự án cá nhân của Khang" |
 | 7 | "Day 21 không đỡ" legacy | "money-back Day 21 không đỡ" | "Hoàn tiền không hỏi lý do" |
 
 **KHANG XÁC NHẬN**:
 - Số 0888-008-866 đúng không? Verify trên website Bệnh viện Bạch Mai
-- Tên "Sol Khám Phá / Sol Bứt Phá / Sol Đi Cùng" Khang đồng ý?
+- Tên "Sol Khám Phá / Sol Bứt Phá / Đi Cùng Sol" Khang đồng ý?
 - Voice mới hàng tháng (1/tháng) Khang cam kết được, hay 4/năm thực tế hơn?
 
 ### B2. UI Việt hoá (15 instances)

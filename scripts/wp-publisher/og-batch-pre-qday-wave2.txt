@@ -1,0 +1,5 @@
+# Pre-Q-Day Wave 2 — 3 bài tiếp theo
+# slug | cluster | title
+giam-dan-ngay-13-plan-b|B|T-2 Giảm Dần — Viết 5 Plan B If-Then
+lam-quen-ngay-6-do-muc-san-sang|A|Ngày 6 Làm Quen — Test Stages Of Change
+lam-quen-ngay-7-cam-ket-chon-lo-trinh|C|Ngày 7 Làm Quen — Cam Kết Chọn Lộ Trình

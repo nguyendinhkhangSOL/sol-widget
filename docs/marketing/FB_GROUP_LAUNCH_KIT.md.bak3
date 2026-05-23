@@ -1,0 +1,323 @@
+# Đi Cùng Sol — FB Group Launch Kit
+
+> Tên nhóm chính thức: **Đi Cùng Sol: Cộng Đồng Bỏ Thuốc Lá Không Tái Nghiện**
+> Tagline ngắn: *Anh em đồng hành — không bán thuốc, không đe doạ.*
+
+Tone toàn bộ doc tuân thủ **SOL_VOICE_STYLE_GUIDE.md** — câu ≤ 15 từ, 1 dữ kiện/câu, câu chuyện > số liệu, anh em ngồi cà phê.
+
+---
+
+## 1. Thông số cấu hình nhóm
+
+| Trường | Giá trị | Ghi chú |
+|--------|---------|---------|
+| Tên | Đi Cùng Sol: Cộng Đồng Bỏ Thuốc Lá Không Tái Nghiện | 47 ký tự, fit FB limit 75 |
+| Privacy | **Private** (Riêng tư) | Người ngoài thấy được tên + description nhưng không đọc post — khuyến khích xin join |
+| Visibility | **Visible** (Hiển thị) | Tìm được trên FB Search → SEO group |
+| Loại | Support (Hỗ trợ) | Phân loại đúng tăng reach organic |
+| Vị trí | Việt Nam | Filter target market |
+| Slug URL | `dicungsol` (nếu được — anh thử khi tạo) | Ngắn, dễ nhớ |
+| Ảnh cover | Hình mặt trời mọc trên núi (Sol = mặt trời) + slogan | Em sẽ gen sau khi anh chốt |
+| Ảnh đại diện | Logo "Đi Cùng Sol" tròn | Đồng bộ app + Zalo OA |
+
+---
+
+## 2. Description nhóm (paste vào "About" khi tạo)
+
+```
+Đi Cùng Sol — cộng đồng anh em cai thuốc lá Việt Nam.
+
+"Sol" là mặt trời — nhỏ thôi nhưng đủ ấm khi đêm dài nhất. Nhóm này dành cho anh em đã hút thuốc 10, 20, 30 năm, đã thử cai vài lần, đã tái nghiện và muốn lần này khác đi.
+
+Người lập nhóm là Khang — hút 30 năm, cai 5 năm. Không bác sĩ. Không bán NRT. Chỉ là một người anh em đi trước, kể lại đường đã đi.
+
+Trong nhóm anh em sẽ thấy:
+- Câu chuyện thật của người đã cai 1 năm, 5 năm, 10 năm
+- Khoa học nicotine giải thích bằng tiếng Việt dễ hiểu
+- Cách xử lý cơn thèm 90 giây không cần ý chí
+- Cách đứng dậy khi vấp 1 điếu — không phải làm lại từ đầu
+- Bài viết miễn phí trên sol.vn (104 bài đã viết, 0 đồng quảng cáo)
+
+App miễn phí Sol — chatbot AI giọng Khang đồng hành Q-Day:
+👉 https://sol.vn
+
+Không phải khoá học. Không phải thuốc. Chỉ là anh em đi cùng nhau.
+```
+
+**Ký tự:** ~900 (FB limit 3000). Còn dư cho anh thêm câu chuyện cá nhân nếu muốn.
+
+---
+
+## 3. Rules nhóm — 5 điều
+
+Paste vào tab **Group Rules**:
+
+### 1. Tôn trọng — không miệt thị, không phán xét
+Anh em đến đây vì khó. Người tái nghiện lần 5 vẫn được chào đón như người mới. Không ai "yếu đuối" cả — nicotine là chất gây nghiện mạnh thứ 2 sau heroin.
+
+### 2. Không bán hàng — không spam link sản phẩm
+Cấm post link bán NRT, kẹo nicotine, miếng dán, "thuốc nam cai thuốc 3 ngày", "thực phẩm chức năng". Vi phạm = ban vĩnh viễn. Sol KHÔNG bán thuốc. Chia sẻ kinh nghiệm dùng NRT có toa bác sĩ thì được.
+
+### 3. Chia sẻ câu chuyện thật — không sáo rỗng
+Post chia sẻ ngày 3, ngày 10, ngày 30 cai luôn được hoan nghênh. Post kiểu "cai thuốc dễ lắm chỉ cần ý chí" sẽ bị duyệt lại — vì không đúng thực tế và làm tổn thương người đang vật vã.
+
+### 4. Bảo mật — không screenshot post ra ngoài
+Anh em chia sẻ thật vì tin nhóm kín. Cấm chụp ảnh post + ảnh thành viên đăng lên FB/TikTok cá nhân. Vi phạm = ban.
+
+### 5. SOS — luôn được trả lời trong 1 giờ
+Nếu anh em đang vật vã, đang muốn châm điếu, đang muốn bỏ cuộc — post **#SOS** ở đầu bài. Sol cam kết admin (Khang hoặc volunteer) trả lời trong 1 giờ. Đây là nhóm cứu nhau, không phải nhóm khoe thành tích.
+
+---
+
+## 4. 3 câu hỏi sàng lọc khi xin join
+
+FB cho phép tối đa 3 câu hỏi. Mục đích: filter spam bot + cam kết đọc rules.
+
+```
+Câu 1 (bắt buộc, multiple choice):
+Anh/chị hiện đang ở giai đoạn nào?
+  ☐ Đang cân nhắc cai
+  ☐ Đã có Q-Day (ngày bỏ thuốc) cụ thể
+  ☐ Đang trong tuần đầu cai
+  ☐ Đã cai > 30 ngày
+  ☐ Đã tái nghiện và muốn thử lại
+  ☐ Người thân của người cai thuốc
+
+Câu 2 (bắt buộc, short answer):
+Một câu ngắn — vì sao anh/chị muốn cai (hoặc giúp người thân cai)?
+(Để admin biết anh/chị là người thật, không phải bot. Câu trả lời không bị share công khai.)
+
+Câu 3 (bắt buộc, checkbox):
+☐ Tôi đồng ý KHÔNG post link bán thuốc/NRT/sản phẩm cai thuốc.
+☐ Tôi cam kết giữ kín nội dung nhóm — không screenshot ra ngoài.
+```
+
+**Auto-reject criteria** (admin nhanh):
+- Câu 2 trả lời kiểu "abc", "123", "ok" → bot/spam
+- Profile FB < 30 ngày tuổi + 0 ảnh thật → bot
+- Đã share link bán thuốc trên timeline cá nhân → spam
+
+---
+
+## 5. Content Calendar 30 ngày đầu
+
+**Mục tiêu month 1:**
+- 100 thành viên thật (chất lượng > số lượng)
+- 5-10 post/tuần (vừa đủ active, không spam feed)
+- Tỷ lệ admin post : member post = 70% : 30% (tháng đầu admin lead, tháng 2 tự chuyển)
+
+### Tần suất post:
+
+| Loại post | Tần suất | Người post | Thời điểm |
+|-----------|----------|------------|-----------|
+| Câu chuyện cá nhân Khang | 2 lần/tuần | Khang | T2 + T5, 20h |
+| Khoa học giải thích đơn giản | 2 lần/tuần | Khang | T3 + T6, 9h sáng |
+| Câu hỏi mở (engagement) | 2 lần/tuần | Khang | T4 + CN, 19h |
+| Link bài wiki sol.vn | 1 lần/tuần | Khang | T7, 10h sáng |
+| #SOS welcome | Hằng ngày | Auto/admin | Khi có người post |
+
+### Theme 4 tuần:
+
+**Tuần 1 — Giới thiệu + an toàn**
+- Khang kể câu chuyện 30 năm hút → 5 năm cai
+- Giải thích "Sol" nghĩa là gì
+- Rules + how to post #SOS
+- Pin câu chuyện 1 thành viên (xin phép)
+
+**Tuần 2 — Khoa học**
+- Cơ chế nicotine 90 giây
+- Vì sao "ý chí" không đủ
+- Trigger là gì + cách lập "bản đồ trigger" cá nhân
+- NRT có thật sự giúp không? (trung lập, không bán)
+
+**Tuần 3 — Cộng đồng**
+- Post "Hôm nay ngày thứ mấy của anh?" (thread dài, ai cũng comment)
+- Bài học từ những lần tái nghiện
+- Câu chuyện vợ/con sau khi anh cai
+- Tiền tiết kiệm tính bằng gì (du lịch, đầu tư, sửa nhà)
+
+**Tuần 4 — Hành động**
+- Q-Day là gì + cách chọn
+- Checklist 8 mục chuẩn bị Q-Day (link bài PILLAR)
+- Live Q&A 60 phút Khang trả lời câu hỏi
+- Tổng kết tháng + roadmap tháng 2
+
+---
+
+## 6. 5 POST MỞ MÀN — ready-to-paste
+
+> Anh paste lần lượt, mỗi post cách 4-6 tiếng để nhóm trông "live" tự nhiên.
+
+---
+
+### 📌 POST #1 — Welcome (pin post)
+
+```
+Chào anh em.
+
+Tôi là Khang. Hút thuốc 30 năm. Cai được 5 năm.
+
+Không bác sĩ. Không bán thuốc cai. Không khoá học 3 triệu.
+
+Lập nhóm này vì 30 năm trước tôi không có ai để hỏi khi vật vã đến phát điên ở ngày thứ 3. Tôi tự mò, vấp 4-5 lần, mất 12 năm mới thật sự bỏ được.
+
+Anh em đến đây, dù đang ở giai đoạn nào — đang cân nhắc, đang vật vã, đã tái nghiện lần 3, lần 5 — đều được chào đón.
+
+Quy tắc duy nhất: tôn trọng nhau. Không miệt thị. Không bán hàng.
+
+Đọc Rules trong tab Group Rules trước khi post đầu tiên nhé.
+
+Nếu đang khó — viết #SOS ở đầu post. Tôi cam kết trả lời trong 1 giờ.
+
+Đi cùng nhau.
+
+— Khang Sol
+```
+
+---
+
+### 📌 POST #2 — Câu chuyện thật (T+1 ngày sau Post 1)
+
+```
+Ngày thứ 3 sau khi tôi bỏ thuốc — năm 2021.
+
+Đêm đó tôi ngồi trong bếp lúc 2h sáng, tay run, mồ hôi vã ra, miệng đắng. Vợ ngủ trên gác, không biết.
+
+Tôi đứng dậy 4 lần để đi tìm điếu cuối tôi giấu sau tủ. Mỗi lần tới gần lại quay lại.
+
+Lần thứ 5 tôi không quay lại nữa. Tôi xé bao thuốc, ném vào bồn cầu, xả nước.
+
+Sáng hôm sau tôi vẫn vật vã. Nhưng tôi biết — không còn đường lùi.
+
+Năm năm sau, tôi viết bài này cho anh em.
+
+Cai thuốc không phải về ý chí. Nó là về việc cắt đường lùi đúng lúc cơ thể yếu nhất.
+
+Anh em đã có khoảnh khắc nào "cắt đường lùi" chưa? Chia sẻ dưới comment nhé.
+```
+
+---
+
+### 📌 POST #3 — Khoa học đơn giản (T+2 ngày)
+
+```
+Vì sao cơn thèm chỉ kéo dài 90 giây?
+
+Nicotine bám vào "điểm tiếp nhận" trong não. Khi không có thuốc, điểm này gửi tín hiệu "đói" lên vỏ não.
+
+Tín hiệu này MẠNH NHẤT trong 90 giây đầu — sau đó NÃO TỰ ĐIỀU CHỈNH XUỐNG.
+
+Nghĩa là: nếu anh em đợi được 90 giây — cơn thèm này TỰ ĐI.
+
+Không cần ý chí siêu nhân. Không cần thiền 10 năm. Chỉ cần đếm 90 giây.
+
+Cách tôi đếm:
+- Uống 1 ly nước lạnh — 30 giây
+- Ra ban công hít thở 5 nhịp sâu — 30 giây
+- Gọi 1 người bạn nói "tao đang vật" — 30 giây
+
+Hết. 90 giây trôi qua. Cơn thèm rút.
+
+Anh em thử cách nào hiệu quả nhất? Comment chia sẻ cho người mới vào.
+```
+
+---
+
+### 📌 POST #4 — Câu hỏi mở engagement (T+3 ngày)
+
+```
+Hỏi anh em: trong giây phút quyết định cai, anh em nghĩ tới AI nhất?
+
+Tôi nghĩ tới ảnh con gái 4 tuổi cầm điếu nhặt được trong gạt tàn, đưa lên miệng tập hút.
+
+Đó là khoảnh khắc tôi biết — không phải cai cho mình.
+
+Anh em? Hình ảnh nào, câu nói nào của ai, mùi gì... đã đẩy anh em đến quyết định?
+
+Không cần dài. 1-2 câu cũng được. Người sau đọc sẽ thấy mình trong đó.
+```
+
+---
+
+### 📌 POST #5 — Link bài wiki + CTA app (T+5 ngày)
+
+```
+Anh em nào sắp tới Q-Day (ngày bỏ thuốc chính thức) — đọc bài này trước.
+
+Checklist 8 mục chuẩn bị 7 ngày trước Q-Day:
+👉 https://sol.vn/chuan-bi-q-day-cai-thuoc/
+
+Không phải lý thuyết. Đây là những gì tôi đã KHÔNG làm năm 2009 — nên tôi vấp.
+Và là những gì tôi LÀM năm 2021 — nên tôi thành công.
+
+Bài 8 mục bao gồm:
+1. Đọc disclaimer y tế nếu anh em đang dùng thuốc khác
+2. Báo gia đình — họ phải biết Q-Day là ngày nào
+3. Cam kết SỐ HOÁ trong app Sol (không phải giấy bút — giấy bút em đốt mất rồi)
+4. Dọn nhà sạch thuốc — không 1 điếu giấu trong xe
+5. Lập bản đồ trigger cá nhân
+6. Plan B if-then cho 5 tình huống tệ nhất
+7. Đặt giờ Q-Day cụ thể (không phải "thứ 2 tuần sau")
+8. Hẹn 1 người accountability gọi anh em ngày 1, 3, 7
+
+Anh em nào đã chọn Q-Day rồi? Comment ngày cụ thể — nhóm sẽ cùng đếm ngược.
+
+Anh em chưa app Sol — cài miễn phí ở sol.vn. Chatbot Sol AI giọng tôi trực 24/7.
+```
+
+---
+
+## 7. Operational notes — Khang chú ý
+
+- **Đừng cố reply mọi comment** — 1 post member nói cảm xúc khó, Khang reply 1 câu chân thành 30 giây. Không cần trả lời từng câu.
+- **Sàng lọc xin join mỗi ngày 1 lần** — 20 phút sáng cà phê. Đừng để dồn 100 đơn.
+- **Pin Post #1 + Post #5** — 2 post quan trọng nhất tháng đầu.
+- **Tag "Featured"** cho 3 post Khang tâm đắc nhất → FB tự pin lên đầu cho member mới.
+- **Tránh post liên tiếp 3 cái cùng ngày** — algorithm FB giảm reach. Tối đa 1 post/ngày từ admin.
+- **Theo dõi metric tuần**: số join, số active, số #SOS, số chuyển sang app Sol. Báo em sau 30 ngày em tinh chỉnh kế hoạch tháng 2.
+
+---
+
+## 8. Chống khủng hoảng — playbook 4 tình huống xấu
+
+### A. Có người post #SOS muốn tự tử / tự hại
+- Trả lời ngay 1 câu ấm: "Tôi đọc thấy rồi anh. Đợi tôi 30 giây."
+- Inbox message riêng — không xử lý công khai
+- Cung cấp **1800 599 920** (Đường dây nóng tư vấn tâm lý VN)
+- Nếu nghiêm trọng — báo người thân (nếu anh có info) hoặc 113
+
+### B. Có người tấn công member khác / phân biệt
+- Hide comment ngay (đừng xoá — giữ evidence)
+- Inbox warn private + nhắc rule
+- Repeat = ban
+
+### C. Báo chí / cá nhân tiêu cực chụp screenshot phá nhóm
+- Đừng cãi công khai
+- Post 1 statement ngắn: "Nhóm là không gian an toàn. Chúng tôi không bình luận về thông tin lấy ra ngoài ngữ cảnh."
+- Inbox người post screenshot — yêu cầu gỡ
+- Nếu không gỡ — báo FB report + kéo dư luận về bài VnExpress của Khang
+
+### D. Spam quảng cáo NRT/thuốc nam ồ ạt
+- Bật "post approval" 100% trong 1 tuần đầu
+- Sau tuần 2 đánh giá: nếu spam giảm → tắt approval cho member trusted
+- Banned list lưu vào file Excel, kiểm tra trùng email mỗi tuần
+
+---
+
+## Roadmap sau 30 ngày
+
+Tháng 2 — em sẽ làm với anh:
+- Onboard 2-3 volunteer admin (member tích cực tuần 1-4)
+- Setup "Buddy system" — match người mới với người đã cai > 90 ngày
+- Live Q&A hàng tháng (60 phút Khang trả lời + share)
+- Integrate group → app Sol qua deeplink (member click bài wiki → mở app)
+- Crosspost từ FB → Zalo OA channel (member 2 platform)
+
+---
+
+**Sources / Cross-ref:**
+- [SOL_VOICE_STYLE_GUIDE.md](./SOL_VOICE_STYLE_GUIDE.md) — tone của mọi post
+- [VNEXPRESS_PITCH_v2.md](./VNEXPRESS_PITCH_v2.md) — câu chuyện Khang cho báo
+- [PILLAR-chuan-bi-q-day-cai-thuoc.html](../../wiki-skeletons/wiki-articles/PILLAR-chuan-bi-q-day-cai-thuoc.html) — bài link trong Post #5
+
+— Generated by Sol AI assistant, 2026-05-15

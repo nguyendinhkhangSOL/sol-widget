@@ -35,6 +35,8 @@ const MENU_GROUPS: MenuGroup[] = [
     items: [
       { to: '/messaging', label: 'Bộ ĐK nhắn tin', icon: '⚙️' },
       { to: '/zalo-templates', label: 'Mẫu Zalo', icon: '📨' },
+      { to: '/zalo-journey', label: '51-Day Journey', icon: '🛤️' },
+      { to: '/zalo-sos', label: 'SOS Alerts', icon: '🆘' },
       { to: '/canned-replies', label: 'Câu trả lời sẵn', icon: '💬' },
     ],
   },
@@ -43,7 +45,7 @@ const MENU_GROUPS: MenuGroup[] = [
     subtitle: 'Content + Voice + Wiki',
     items: [
       { to: '/content', label: 'Biên tập tin', icon: '✍️' },
-      { to: '/voice', label: 'Voice Khang', icon: '🎙️' },
+      { to: '/voice', label: 'Voice của Khang', icon: '🎙️' },
       { to: '/wiki', label: 'Wiki', icon: '📰' },
       { to: '/q-day-checklist', label: 'Checklist Q-Day', icon: '✅' },
     ],

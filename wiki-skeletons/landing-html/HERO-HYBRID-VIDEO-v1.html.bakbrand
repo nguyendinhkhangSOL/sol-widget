@@ -1,0 +1,328 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  HERO HYBRID VIDEO — Sprint 0 Visual Assets
+  Expert recommendation: Poster ảnh + Video YouTube lazy-load
+
+  Strategy:
+  • Default: Ảnh Khang chân dung 50 tuổi (load instant)
+  • Overlay: Nút ▶ Play to + duration "90 giây"
+  • Click play → load YouTube embed (lazy-load, không waste bandwidth)
+  • Mobile 3G/4G friendly — user chủ động click
+
+  Tích hợp: Replace section I HERO trong 05-sol-homepage-v3.html
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-hero-hybrid {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: 64px 24px 56px;
+  background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.sol-hero-hybrid-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .sol-hero-hybrid-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+}
+
+.sol-hero-hybrid h1 {
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 880px) {
+  .sol-hero-hybrid h1 { font-size: 32px; }
+}
+
+.sol-hero-hybrid .sub-1 {
+  font-size: 19px;
+  opacity: 0.96;
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+
+.sol-hero-hybrid .sub-2 {
+  font-size: 16px;
+  opacity: 0.92;
+  margin: 0 0 24px;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.sol-hero-cta-primary {
+  display: inline-block;
+  background: white;
+  color: #B25C2C;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+  transition: transform 0.15s ease;
+}
+.sol-hero-cta-primary:hover { transform: translateY(-2px); }
+
+.sol-hero-cta-note {
+  font-size: 13px;
+  opacity: 0.85;
+  margin: 8px 0 0;
+}
+
+/* ═══ VIDEO POSTER ═══ */
+.sol-hero-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  background: #2C2A27;
+}
+
+.sol-hero-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.sol-hero-video:hover img { transform: scale(1.04); }
+
+.sol-hero-video .play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.65) 100%);
+  transition: background 0.2s ease;
+}
+.sol-hero-video:hover .play-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.75) 100%);
+}
+
+.sol-hero-video .play-button {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  margin-top: -40px;
+}
+.sol-hero-video .play-button::before {
+  content: '';
+  width: 0; height: 0;
+  border-left: 22px solid #B25C2C;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  margin-left: 6px;
+}
+
+.sol-hero-video .video-caption {
+  color: white;
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  text-align: left;
+}
+.sol-hero-video .video-caption .name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 2px;
+}
+.sol-hero-video .video-caption .desc {
+  font-size: 12.5px;
+  opacity: 0.92;
+  margin: 0;
+}
+.sol-hero-video .video-duration {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+/* ═══ TRUST STRIP ═══ */
+.sol-hero-trust {
+  max-width: 1080px;
+  margin: 32px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+@media (max-width: 720px) {
+  .sol-hero-trust { grid-template-columns: 1fr; gap: 10px; }
+}
+
+.sol-hero-trust-item {
+  text-align: center;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.5;
+}
+.sol-hero-trust-item .icon {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 4px;
+}
+.sol-hero-trust-item strong { color: white; }
+</style>
+
+
+<section class="sol-hero-hybrid">
+
+  <div class="sol-hero-hybrid-grid">
+
+    <!-- ═══ LEFT — Copy ═══ -->
+    <div>
+      <h1>Anh đã thử bỏ thuốc bao lần rồi?</h1>
+
+      <p class="sub-1">
+        Mình đã thử 4 lần thất bại trước khi thành công lần thứ 5.
+      </p>
+
+      <p class="sub-2">
+        Đến hôm nay, đã hơn 5 năm Tự do. — Khang Sol
+      </p>
+
+      <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=hero_v3&utm_campaign=primary_cta" class="sol-hero-cta-primary">
+        🌱 Bắt đầu 7 ngày NHẬN DIỆN MIỄN PHÍ →
+      </a>
+
+      <p class="sol-hero-cta-note">
+        Không cần SĐT · 30 giây đăng ký · Không cam kết
+      </p>
+    </div>
+
+    <!-- ═══ RIGHT — Video Poster ═══ -->
+    <div
+      class="sol-hero-video"
+      id="khang-hero-video"
+      data-youtube-id="REPLACE_WITH_YOUTUBE_ID"
+      onclick="loadKhangVideo(this)"
+      role="button"
+      tabindex="0"
+      aria-label="Bấm để xem Khang Sol nói 90 giây về Sol Đi Cùng">
+
+      <!-- Poster image -->
+      <img
+        src="https://sol.vn/images/khang-portrait-hero.jpg"
+        alt="Khang Sol — Người sáng lập Sol Đi Cùng — 50 tuổi, hơn 5 năm Tự do nicotine"
+        loading="eager">
+
+      <!-- Duration badge -->
+      <div class="video-duration">⏱ 90 giây</div>
+
+      <!-- Play overlay -->
+      <div class="play-overlay">
+        <div class="play-button"></div>
+        <div class="video-caption">
+          <p class="name">Khang Sol kể chuyện</p>
+          <p class="desc">"30 năm hút. 4 lần thử. Lần thứ 5 — không có nghi lễ gì."</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ═══ TRUST STRIP ═══ -->
+  <div class="sol-hero-trust">
+    <div class="sol-hero-trust-item">
+      <span class="icon">🇻🇳</span>
+      <strong>100% tiếng Việt</strong> cho anh em 45+
+    </div>
+    <div class="sol-hero-trust-item">
+      <span class="icon">✋</span>
+      <strong>Khang đã đi qua</strong> — không phải bác sĩ
+    </div>
+    <div class="sol-hero-trust-item">
+      <span class="icon">💝</span>
+      <strong>Hoàn tiền</strong> nếu lộ trình không hiệu quả
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  LAZY-LOAD YOUTUBE — chỉ load khi click (Paul Irish pattern)
+  Lý do: Hero load instant, không tốn data của khách 4G
+  ═══════════════════════════════════════════════════════════════════ -->
+<script>
+function loadKhangVideo(el) {
+  var videoId = el.dataset.youtubeId;
+  if (!videoId || videoId === 'REPLACE_WITH_YOUTUBE_ID') {
+    alert('Video chưa upload. Anh quay xong YouTube, paste ID vào.');
+    return;
+  }
+
+  var iframe = document.createElement('iframe');
+  iframe.setAttribute('src',
+    'https://www.youtube-nocookie.com/embed/' + videoId +
+    '?autoplay=1&rel=0&modestbranding=1&playsinline=1'
+  );
+  iframe.setAttribute('frameborder', '0');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('title', 'Khang Sol kể chuyện');
+  iframe.style.cssText = 'position: absolute; inset: 0; width: 100%; height: 100%; border: 0;';
+
+  el.innerHTML = '';
+  el.appendChild(iframe);
+  el.style.cursor = 'default';
+  el.onclick = null;
+
+  // Track engagement (GA4 / FB Pixel)
+  if (window.gtag) gtag('event', 'video_play', { video_name: 'khang_hero_90s' });
+  if (window.fbq) fbq('track', 'ViewContent', { content_name: 'Khang Hero Video' });
+}
+
+// Keyboard accessibility
+document.getElementById('khang-hero-video').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    loadKhangVideo(this);
+  }
+});
+</script>

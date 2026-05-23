@@ -32,7 +32,7 @@ export const VI = {
   ONBOARDING: 'Đăng Ký',
   IDENTITY: 'Chính Mình',                // Identity shift
   COMMITMENT: 'Cam Kết',
-  WORKBOOK: 'Sổ Hành Trình',
+  WORKBOOK: 'Sổ Lưu Niệm',
   BREATHING_EXERCISE: 'Bài Thở 4-7-8',
 
   // ─── Cấp độ / Nhóm ───────────────────────────────────

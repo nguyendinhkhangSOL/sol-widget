@@ -81,7 +81,7 @@ model ContentItem {
 }
 
 enum ContentVoice {
-  KHANG_SOL          // Giọng Khang Sol — ký tên, cá nhân
+  KHANG_SOL          // Khang chia sẻ qua Voice Sol — ký tên, cá nhân
   SOL_DONG_HANH      // Giọng Sol Đồng hành — assistant tự xưng
 }
 ```

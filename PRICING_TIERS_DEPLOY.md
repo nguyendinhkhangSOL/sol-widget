@@ -72,7 +72,7 @@ Admin routes mở rộng (`backend/src/admin/routes.ts`):
 - `TierBadge.tsx` — chip nhỏ trong header
 - `views/PaywallView.tsx` — 3-step paywall (Khang's story → bullets → pay)
 - `views/RefundView.tsx` — 3-step refund (lý do → số tiền → confirm)
-- `views/VoiceInboxView.tsx` — danh sách voice Khang
+- `views/VoiceInboxView.tsx` — danh sách Voice của Khang
 
 **Widget — gating:**
 - `WidgetPanel` header có `TierBadge` click mở paywall
@@ -87,7 +87,7 @@ Admin routes mở rộng (`backend/src/admin/routes.ts`):
 
 **Dashboard — sidebar gate by tier:** Layout.tsx tính `links` theo `effectiveTier`:
 - FREE: Tổng quan, Sổ tay (mẫu), Phân tích, Mở khoá ✨, Cài đặt
-- KHOI_DONG: + Hành trình, Sổ tay đầy đủ, Voice Khang, Báo cáo, Lên Đồng hành
+- KHOI_DONG: + Hành trình, Sổ tay đầy đủ, Voice của Khang, Báo cáo, Lên Đồng hành
 - DONG_HANH: + Hoàn tiền
 
 ## Hệ quản trị (admin)
@@ -102,7 +102,7 @@ Các pages mới (`dashboard/src/pages/admin/`):
 - `AdminAnalytics.tsx` — funnel bar chart + revenue by tier
 - `AdminWiki.tsx` — **2 widget WordPress** (link admin + top posts/conversion mock)
 
-**AdminLayout** nav mở rộng với 9 mục: Bảng điều khiển / Người dùng / Hoàn tiền / Voice Khang / Cohort / Phân tích / Wiki / AI / Câu trả lời sẵn.
+**AdminLayout** nav mở rộng với 9 mục: Bảng điều khiển / Người dùng / Hoàn tiền / Voice của Khang / Cohort / Phân tích / Wiki / AI / Câu trả lời sẵn.
 
 ## Thay wiki editor → 2 widget WordPress
 

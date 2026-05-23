@@ -153,7 +153,7 @@ function Header({ dayNumber, isAnonymous, onClose }: { dayNumber: number; isAnon
           </button>
         )}
         {/* Voice Khang — moved from footer tab to header (UX v2) */}
-        <HeaderIconButton label="Voice Khang" onClick={() => useStore.getState().setView('voice')}>
+        <HeaderIconButton label="Voice của Khang" onClick={() => useStore.getState().setView('voice')}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <rect x="9" y="3" width="6" height="12" rx="3" stroke="currentColor" strokeWidth="1.6" />
             <path d="M5 11a7 7 0 0 0 14 0M12 18v3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />

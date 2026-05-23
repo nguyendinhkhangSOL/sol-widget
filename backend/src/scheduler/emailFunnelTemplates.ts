@@ -276,12 +276,12 @@ Vào Làm Chủ 199k: {appUrl}/paywall?tier=DONG_HANH
     subject: 'Còn 7 ngày tốt nghiệp · viết lại Identity',
     htmlBody: `
 <p><strong>Còn 7 ngày tới Day 52 — Lễ Tốt Nghiệp Người Tự Do.</strong></p>
-<p>Hôm nay Sol gợi ý {pronoun} mở Sổ Hành Trình → tab <strong>Bản Thân</strong> → đọc lại 7 câu identity {pronoun} đã viết hồi Kiểm Soát.</p>
+<p>Hôm nay Sol gợi ý {pronoun} mở Sổ Lưu Niệm → tab <strong>Bản Thân</strong> → đọc lại 7 câu identity {pronoun} đã viết hồi Kiểm Soát.</p>
 <p>So sánh với cảm xúc bây giờ. {Pronoun} sẽ thấy mình khác.</p>
 <p>Nếu thấy có câu muốn viết lại — viết lại. Đây là dấu hiệu identity đã thật sự đổi.</p>
 <p style="margin-top: 20px;"><a href="{appUrl}/workbook?tab=prep" style="color: #B25C2C; font-weight: 600;">Mở Bản Thân →</a></p>
     `,
-    textBody: `Còn 7 ngày tốt nghiệp. Mở Sổ Hành Trình → tab Bản Thân → đọc 7 câu Identity. So với bây giờ {pronoun} sẽ thấy khác.
+    textBody: `Còn 7 ngày tốt nghiệp. Mở Sổ Lưu Niệm → tab Bản Thân → đọc 7 câu Identity. So với bây giờ {pronoun} sẽ thấy khác.
 
 — Sol`,
   },
@@ -328,7 +328,7 @@ Mai {pronoun} là Người Tự Do — Sol miễn phí mãi.
 <p>Không phải "đang cố không hút". Là <strong>không phải</strong> người hút. Identity đã đổi.</p>
 <p>Đây là chặng <strong>🌟 Người Tự Do</strong> — Sol mở quyền vĩnh viễn cho {pronoun}, miễn phí mãi mãi. {Pronoun} có thể:</p>
 <ul>
-  <li>Truy cập Sổ Hành Trình đầy đủ — bản 51 ngày của riêng {pronoun}</li>
+  <li>Truy cập Sổ Lưu Niệm đầy đủ — bản 51 ngày của riêng {pronoun}</li>
   <li>Đọc & viết cộng đồng cohort</li>
   <li>Huy hiệu Người Tự Do vĩnh viễn</li>
   <li>Đại Sứ Sol (tuỳ chọn) — mentor 1 anh em mới đang vào Sol</li>

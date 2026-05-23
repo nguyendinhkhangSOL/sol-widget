@@ -21,7 +21,7 @@
 | 7 | **Anonymous Stats Feed** "Tuần này trong Sol" | Dashboard widget góc trên | Mỗi lần mở app | Sol Khám Phá+ |
 | 8 | **Control Score** + Bậc Lấy Lại | Dashboard widget chính | Mỗi lần mở app | All tier |
 | 9 | **AI chat reply** | Chat interface (bottom nav) | Anh gửi → reply trong giây | All tier |
-| 10 | **Hỏi Khang voice reply broadcast** | Tab **"Hỏi"** — list voice replies | Anh nghe khi muốn | Sol Start+ |
+| 10 | **Hỏi Khang trả lời qua Voice broadcast** | Tab **"Hỏi"** — list voice replies | Anh nghe khi muốn | Sol Start+ |
 | 11 | **Crisis Timer 90s + voice** | Button "Tôi đang thèm" trong dashboard | Anh bấm khi crave | Sol Start+ |
 | 12 | **Trigger Playbook 4 chiến thuật** | Tab "Sổ tay" / Workbook | Anh tự mở tham khảo | Sol Start+ |
 | 13 | **Tin nhắn riêng Khang** | Inbox riêng trong Profile | 1-2 lần/tháng (Sol Trọn Vẹn) | Sol Trọn Vẹn |
@@ -311,7 +311,7 @@ Sol design với **friction tối thiểu** cho input:
 - Anonymous Stats Feed (Dashboard)
 - Control Score (Dashboard)
 - AI chat reply (Tab Chat)
-- Hỏi Khang voice reply (Tab Hỏi)
+- Hỏi Khang trả lời qua Voice (Tab Hỏi)
 - Crisis Timer + voice (button)
 - Tin Nhắn Riêng Khang (Profile inbox)
 

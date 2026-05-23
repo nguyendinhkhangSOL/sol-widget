@@ -99,6 +99,13 @@ model User {
   // Hiển thị trong header chat, push notification, v.v.
   assistantName String   @default("Sol Đồng hành")
   ftndScore     Int?     // 0-10 Fagerström
+  // Cohort FTND severity (canonical 2026-05-18):
+  //   'LIGHT'    — FTND 0-3, lộ trình 35 ngày
+  //   'MODERATE' — FTND 4-6, lộ trình 52 ngày (default)
+  //   'HEAVY'    — FTND 7-10, lộ trình 65 ngày
+  // Auto-assign sau FTND test (POST /journey/onboarding/ftnd).
+  // Nullable cho user cũ chưa làm FTND — service.readCohort() trả 'MODERATE' default.
+  ftndCohort    String?  // 'LIGHT' | 'MODERATE' | 'HEAVY'
   quitDate      DateTime? // when user started the 30-day program
   timezone      String   @default("Asia/Ho_Chi_Minh")
 

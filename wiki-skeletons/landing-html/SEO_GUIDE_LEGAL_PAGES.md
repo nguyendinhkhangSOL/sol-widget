@@ -48,7 +48,7 @@
 |---|---|
 | **Focus keyword** | `điều khoản sử dụng sol` |
 | **SEO title** | `Điều Khoản Sử Dụng \| Sol — Hoàn tiền 100% không hỏi` |
-| **Meta description** | `Sol hoàn tiền 100% trong 14-30 ngày — không hỏi lý do. Huỷ Sol Đi Cùng 1 chạm. Đại Sứ Sol KHÔNG là đa cấp. Liên hệ: 024 3993 1800` |
+| **Meta description** | `Sol hoàn tiền 100% trong 14-30 ngày — không hỏi lý do. Huỷ Đi Cùng Sol 1 chạm. Đại Sứ Sol KHÔNG là đa cấp. Liên hệ: 024 3993 1800` |
 | **OG title** | giống SEO title |
 | **OG description** | giống meta description |
 | **Robots** | Index, Follow |

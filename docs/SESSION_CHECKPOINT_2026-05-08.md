@@ -307,7 +307,7 @@ CÓ → build. KHÔNG hoặc không chắc → defer.
 2. **Quick Win Day 3 báo cáo** auto-gen (3-4 ngày code)
 3. **Lapse-friendly UX** — không reset streak + voice lapse mở (1 tuần code)
 
-### Tuần 2 — Sol Đi Cùng tier 99k/tháng
+### Tuần 2 — Đi Cùng Sol tier 99k/tháng
 
 4. **Membership 99k/tháng + cancel anytime** — recurring billing (1 tuần code)
 5. **Pricing page 2 tier** rewrite — drop tier 3+4 visible
@@ -316,7 +316,7 @@ CÓ → build. KHÔNG hoặc không chắc → defer.
 ### Tuần 3 — Recruit 30 anh em pilot
 
 7. **Recruit 30 anh em** từ FB Khang / Zalo / bạn bè / forum cai thuốc
-8. **Pilot terms**: free Sol Đi Cùng 60 ngày, đổi data + 30 phút phỏng vấn cuối kỳ
+8. **Pilot terms**: free Đi Cùng Sol 60 ngày, đổi data + 30 phút phỏng vấn cuối kỳ
 9. **Daily check-in** — 5 user/tuần hỏi "anh quay lại vì gì"
 
 ### Tuần 4 — Đo + iterate
@@ -479,7 +479,7 @@ Session 2026-05-08 trước đó đã đi qua:
 
 6. ROADMAP 4 TUẦN MVP:
    - T1: Voice + Quick Win + Lapse
-   - T2: Sol Đi Cùng 99k/tháng
+   - T2: Đi Cùng Sol 99k/tháng
    - T3: Recruit 30 pilot
    - T4: Đo 5 PMF criteria + iterate
 

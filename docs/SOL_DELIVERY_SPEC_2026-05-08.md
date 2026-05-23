@@ -40,7 +40,7 @@
 | **Day 2** | Đọc wiki "Cơn thèm 90 giây" + 1 prompt nhỏ | Wiki + prompt | ✅ Wiki có |
 | **Day 3** ⭐ | **Báo cáo nhanh tự gen**: trung bình điếu, top 3 trigger, khoảnh khắc tổn thương | Auto-report + email + dashboard widget | ❌ Chưa có (Task #66) |
 | **Day 4-6** | Trigger awareness micro-prompts hàng ngày | 3 prompts nhỏ | 🟡 Prompts cơ bản có |
-| **Day 7** | **Báo cáo đầy đủ + voice Khang Day 7** + invite Sol 14 / Sol Đi Cùng | Full report dashboard + voice + email upsell | ❌ Voice / 🟡 Report |
+| **Day 7** | **Báo cáo đầy đủ + voice Khang Day 7** + invite Sol 14 / Đi Cùng Sol | Full report dashboard + voice + email upsell | ❌ Voice / 🟡 Report |
 
 ## Anh nhận được — feature list
 
@@ -107,7 +107,7 @@ Free → không refund cần xử lý.
 | **Day 7** | Mid-checkpoint: anh giảm bao nhiêu? | Mid-report + voice Khang | ❌ Chưa có |
 | **Day 8-10** | Practice 2 thêm trigger còn lại | App prompt | ❌ Chưa có |
 | **Day 11-13** | Crisis playbook + urge surfing 90s audio | Audio Khang + crisis flow | ❌ Chưa có |
-| **Day 14** | **Báo cáo đầy đủ 14 ngày** + invite Sol Đi Cùng | Full report + voice Khang Day 14 + email upsell | ❌ Chưa có |
+| **Day 14** | **Báo cáo đầy đủ 14 ngày** + invite Đi Cùng Sol | Full report + voice Khang Day 14 + email upsell | ❌ Chưa có |
 
 ## Anh nhận được — feature list
 
@@ -159,7 +159,7 @@ Sol cam kết **đa số anh em** đạt được sau 14 ngày:
 
 ---
 
-# GÓI 3 — Sol Đi Cùng
+# GÓI 3 — Đi Cùng Sol
 
 ## Đặc điểm
 
@@ -173,7 +173,7 @@ Sol cam kết **đa số anh em** đạt được sau 14 ngày:
 
 ## Lộ trình — User journey theo state, không theo Day
 
-Khác 2 gói trên: **Sol Đi Cùng đi theo TRẠNG THÁI user**, không theo timeline cứng.
+Khác 2 gói trên: **Đi Cùng Sol đi theo TRẠNG THÁI user**, không theo timeline cứng.
 
 | State user | User trải nghiệm | Sol deliver |
 |---|---|---|
@@ -253,7 +253,7 @@ Sol cam kết **đa số anh em** đạt được (theo timeline riêng anh — 
 | Mốc | User trải nghiệm | Sol deliver |
 |---|---|---|
 | **Mua** | Welcome ceremony voice Khang | Voice premium "anh chính thức là 1 trong inner circle" |
-| **Tháng 1+** | Membership Đi Cùng full + Phase 2 Đời Sạch unlock | Full Sol Đi Cùng + Phase 2 content |
+| **Tháng 1+** | Membership Đi Cùng full + Phase 2 Đời Sạch unlock | Full Đi Cùng Sol + Phase 2 content |
 | **Mỗi tháng** | 1 voice Khang mới về life topic (Sleep/Stress/Cha-con/Tài chính) | Voice premium 5-10 phút |
 | **Inner Circle** | Khang 1-1 voice khi anh request | Voice cá nhân hóa |
 | **Mốc 100/365/1000 ngày** | Voice riêng cho anh | Voice cá nhân hóa |
@@ -262,7 +262,7 @@ Sol cam kết **đa số anh em** đạt được (theo timeline riêng anh — 
 
 ## Anh nhận được — feature list
 
-- ☐ Tất cả Sol Đi Cùng **lifetime**
+- ☐ Tất cả Đi Cùng Sol **lifetime**
 - ☐ Phase 2 "Đời Sạch" lifetime: Sleep, Stress, Cha-con, Tài chính
 - ☐ 1 voice Khang mới/tháng forever
 - ☐ Inner Circle 10-20 anh em alumni đã đi qua 52 ngày (51d Sol-active + Day 52 lễ tốt nghiệp)
@@ -393,7 +393,7 @@ Bảng này là tim của document. Mỗi cam kết marketing đều có 1 dòng
    - Pricing page UI: thêm card thứ 4
    - Payment flow
 
-## Tuần 3-4 (P0 — for Sol Đi Cùng launch)
+## Tuần 3-4 (P0 — for Đi Cùng Sol launch)
 
 5. **Membership 99k/tháng cancel anytime** (Task #59)
 6. **Q-Day flexible** (Task #64)
@@ -417,7 +417,7 @@ Bảng này là tim của document. Mỗi cam kết marketing đều có 1 dòng
 ## Tháng 3-4 (Pilot)
 
 17. **Pilot 100 anh em đầu** (Task #50)
-    - Free Tier Sol Đi Cùng
+    - Free Tier Đi Cùng Sol
     - Đo Day 7, 14, 21, Q-Day, 30, 60, 88
     - Mỗi tuần phỏng vấn 5-10 user
 
@@ -444,7 +444,7 @@ Sol 14 (99k):
 - Điều kiện: anh log ít nhất 5/14 ngày trong app.
 - Không cần kể lý do.
 
-Sol Đi Cùng (99k/tháng):
+Đi Cùng Sol (99k/tháng):
 - Tháng đầu: nếu không thấy lấy lại — trả 99k. Không hỏi.
 - Các tháng sau: hủy bất kỳ lúc nào. Không refund tháng đã dùng.
 

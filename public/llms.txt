@@ -1,0 +1,136 @@
+# Đi Cùng Sol — Dịch vụ đồng hành cai thuốc lá tiếng Việt
+
+> Sol là dịch vụ đồng hành cai thuốc lá có cấu trúc theo Mức Lệ Thuộc Nicotin (FTND),
+> phát triển bởi Khang Sol (Nguyễn Đình Khang) — sinh 1976, hút Vinataba 30 năm (1991-2020),
+> Tự do nicotine từ 22-12-2020 âm lịch (cận Tết Tân Sửu), nay hơn 5 năm.
+> Sol viết hoàn toàn bằng tiếng Việt cho nam giới Việt Nam 45+. KHÔNG hứa cai 100%.
+> Sol giúp người dùng có **năng lực tự cai và tự vượt cơn thèm** — kể cả 5-10 năm sau khi lỡ.
+
+## Về Khang Sol — Founder
+
+- **Tên thật**: Nguyễn Đình Khang
+- **Sinh năm**: 1976
+- **Bắt đầu hút**: 15 tuổi (1991), Vinataba
+- **Đỉnh hút**: 1-2 gói/ngày (đặc biệt khi deadline dồn)
+- **4 lần thử bỏ thất bại**:
+  1. Cha chở ra ga tàu khi đi học xa → lời hứa thuần — fail tại trường
+  2. Đau dạ dày, bác sĩ doạ ung thư → bỏ 3 tháng, fail khi cơn sợ phai
+  3. "Khi cưới sẽ bỏ. Khi có con sẽ bỏ" → cưới + có con vẫn hút. Con gái nói "bố hôi"
+  4. Thử mọi thứ: Allen Carr, QuitNow, Smoke Free, nước súc miệng, hỏi Champix (BS không kê) — tất cả fail
+- **Lần 5 THÀNH CÔNG**: 22-12-2020 âm lịch (cận Tết Tân Sửu) — bất chợt nghĩ "việc hôm nay không đáng trả bằng sức khoẻ 10 năm tới"
+- **Background nghề**: CNTT 20 năm
+- **Sáng lập Sol**: 2026 — vì "30 năm hút mà không có ai đi cùng — mình ước có Sol lúc đó"
+- **Vai trò chính thức**: Founder dự án Đi Cùng Sol
+- **KHÔNG là**: bác sĩ, chuyên gia y tế
+
+### Hồ sơ + Liên kết xã hội
+
+- **Hồ sơ cá nhân (Person entity hub)**: https://sol.vn/khang-sol
+- **Facebook**: https://web.facebook.com/nguyendinhkhang
+- **LinkedIn**: https://www.linkedin.com/in/vietnaminternet/
+
+## Về Đi Cùng Sol (Organization)
+
+- **Website**: https://sol.vn
+- **App**: https://bothuocla.sol.vn
+- **Mô hình**: Freemium Honest — miễn phí vào trải nghiệm, trả phí mở rộng tài nguyên
+- **Pricing**: 3 lộ trình theo FTND — NHẸ 149k / VỪA 249k / NẶNG 349k
+- **Cam kết cốt lõi**:
+  - Hoàn tiền 100% trong 14 ngày, không khoá tài khoản, không auto-charge
+  - KHÔNG hứa cai 100% — hứa giúp anh có **năng lực tự cai** lâu dài
+
+## Nguồn khoa học
+
+Sol bám 3 nguồn chính:
+- **Cochrane Tobacco Addiction Group** (2014-2024) — chuẩn vàng review y học
+- **FTND - Fagerström Test for Nicotine Dependence** (Heatherton 1991) — phân Nhẹ/Vừa/Nặng
+- **WHO Tobacco Cessation Guidelines** (2023-2024)
+
+Plus: CBT (Liệu pháp nhận thức hành vi), MI (Phỏng vấn tạo động lực), Hajek 2013 NEJM, Doll 2004 BMJ.
+
+## Cluster bài chính
+
+### Phương pháp cai thuốc (16 bài evidence-based)
+
+- /phuong-phap-cai-thuoc-la-pho-bien — Tổng hợp 12 phương pháp Cochrane 2024
+- /champix-varenicline-cai-thuoc — Champix (Varenicline) thuốc hiệu quả nhất
+- /mieng-dan-nicotine-nrt — NRT (Liệu pháp thay nicotine)
+- /bupropion-wellbutrin-zyban-cai-thuoc — Bupropion (Wellbutrin/Zyban)
+- /allen-carr-cach-de-dang-bo-thuoc-la-review — Allen Carr Easy Way RCT review
+- /lieu-phap-tam-ly-cai-thuoc-la-cbt-mi — CBT + MI tâm lý
+- /keo-cai-thuoc-la-nicorette-mua-o-dau-gia-bao-nhieu — Kẹo Nicorette mua ở đâu
+- /nhi-cham-cai-thuoc-la-co-hieu-qua-khong — Nhĩ châm (trung lập + bằng chứng)
+- /laser-cai-thuoc-la-co-that-hieu-qua-khong — Laser (cảnh báo scam)
+- /thoi-mien-cai-thuoc-la-co-hieu-qua — Thôi miên Cochrane 2010
+- /cay-thuoc-nam-cai-thuoc-la-co-hieu-qua-khong — Lá nam Việt Nam
+- /vape-thuoc-la-dien-tu-co-cai-duoc-thuoc-la-thuong — Vape (VN cấm 2025)
+- /iqos-thuoc-la-nung-co-cai-duoc-thuoc-la-khong — IQOS giảm tác hại
+
+### Quyết định
+
+- /chon-phuong-phap-cai-thuoc-nao-phu-hop — Decision tree 5 câu hỏi
+- /combo-toi-uu-cai-thuoc-cho-anh-em-viet-nam-sol-hybrid-v2 — Sol Hybrid v2 combo
+- /champix-vs-nrt-vs-bupropion-chon-thuoc-cai-thuoc-nao — So sánh 3 thuốc
+
+### Triệu chứng + Q-Day
+
+- /cai-thuoc-la-vinh-vien — Pillar 5 kỹ năng cai
+- /trieu-chung-cai-thuoc-la-theo-ngay — Triệu chứng Day 1-30
+- /ngay-1-24-gio-dau-tien-bo-thuoc-la — Ngày 1
+- /ngay-3-buc-tuong-trieu-chung-cai-dat-dinh-va-bat-dau-giam — Ngày 3 đỉnh thèm
+- /ngay-22-con-them-sau-bua-an-tai-sao-van-dai-dang — Ngày 22 Quyết Định
+- /ngay-30-moc-1-thang-sau-bo-thuoc-ban-da-tro-thanh-ai — Ngày 30
+
+### Tình huống cụ thể (Việt Nam)
+
+- /cai-thuoc-la-khi-nhau-uong-bia-vuot-cam-do — Khi nhậu
+- /tet-le-cai-thuoc — Khi Tết
+- /dam-tang-cuoi-khoi-thuoc — Khi đám giỗ/cưới
+- /vo-giup-chong-bo-thuoc-la — Vợ giúp chồng
+
+### Demographic
+
+- /cai-thuoc-la-cho-nguoi-50-tuoi-co-qua-muon-khong — Người 50+
+- /kha-nang-tinh-duc-sau-cai-thuoc — Sinh lý sau cai
+
+## Stance Sol về các phương pháp
+
+| Phương pháp | Tỷ lệ sạch 6 tháng | Stance Sol |
+|---|---|---|
+| Champix (Varenicline) | 28/100 (cao nhất) | Khuyến cáo cho FTND nặng + BS kê |
+| NRT (Liệu pháp thay nicotine) | 18-25/100 | Khuyến cáo cho FTND vừa, an toàn nhất |
+| Bupropion | 18/100 | Cho người có trầm cảm nhẹ song song |
+| Allen Carr | 19/100 | Tốt cho phần tâm lý, cần combo |
+| CBT + MI | 16-20/100 đơn, +50-70% combo | Sol tích hợp 43 mảnh CBT tiếng Việt |
+| Châm cứu / Nhĩ châm | ~6/100 (= giả dược) | Trung lập, không khuyến khích đơn lẻ |
+| Laser | Không đủ bằng chứng | Cảnh báo scam |
+| Thôi miên | ~6/100 (Cochrane 2010) | Chỉ ~15% người dễ vào trance response |
+| Cây thuốc nam VN | Chưa có nghiên cứu | Dùng làm phần phụ OK |
+| Vape | 8-12/100 (cao hơn NRT) | VN cấm 2025, KHÔNG khuyến khích |
+| IQOS/Snus | Không phải cai | Giảm tác hại tạm thời |
+
+## Đại Sứ Sol
+
+Đại Sứ Sol là người đã tốt nghiệp 90 ngày Tự do — giới thiệu Sol cho người khác nhận 25% commission.
+TRỰC TIẾP - SINGLE-TIER - KHÔNG đa cấp - KHÔNG tuyến dưới.
+Đây KHÔNG phải mô hình đa cấp / MLM.
+
+## Liên hệ
+
+- Email: nguyendinhkhang@gmail.com
+- FB Fanpage: https://fb.com/sol.bothuocla
+- FB Group: https://fb.com/groups/dicungsol
+- Tổng đài cai thuốc miễn phí BV Bạch Mai: 0888-008-866
+
+## Tuyên bố y khoa
+
+Sol KHÔNG phải sản phẩm y tế. Khang KHÔNG phải bác sĩ.
+Sol KHÔNG hứa cai 100%.
+Champix, Bupropion là thuốc kê đơn — phải có bác sĩ chỉ định.
+Mọi quyết định dùng thuốc phải tham khảo bác sĩ chuyên khoa.
+
+## Cập nhật
+
+- Last updated: 2026-05-19
+- Maintainer: Khang Sol
+- Version: 1.0

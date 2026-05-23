@@ -829,3 +829,104 @@ export const messagingApi = {
       `/api/messaging/users${q ? '?q=' + encodeURIComponent(q) : ''}`,
     ),
 };
+
+// ─────────────────────────────────────────────────────────────────
+// Phase 5 — 51-Day Journey Scheduler (Sprint 3 admin dashboard)
+// ─────────────────────────────────────────────────────────────────
+
+export type JourneyType = 'lam-quen' | 'giam-dan' | 'q-day' | 'full-51' | 'maintenance';
+export type JourneyStatus = 'active' | 'paused' | 'graduated' | 'relapsed';
+export type SosSeverity = 'critical' | 'high' | 'medium' | 'low';
+
+export interface JourneyQueueItem {
+  id: string;
+  userId: string;
+  userName: string | null;
+  phone: string | null;
+  currentDay: number | null;
+  dayOffset: number;
+  templateCode: string;
+  scheduledAt: string;
+  wikiSlug: string | null;
+}
+
+export interface JourneyQueueResponse {
+  horizonHours: number;
+  total: number;
+  byHour: Record<string, number>;
+  estCostVnd: number;
+  items: JourneyQueueItem[];
+}
+
+export interface JourneyUser {
+  id: string;
+  name: string | null;
+  phone: string | null;
+  journeyType: JourneyType | null;
+  qDayDate: string | null;
+  currentDay: number | null;
+  status: JourneyStatus | null;
+  preferredHour: number;
+  enrolledAt: string | null;
+  sent: number;
+  opened: number;
+  clicked: number;
+}
+
+export interface SOSAlertItem {
+  id: string;
+  userId: string;
+  userName: string | null;
+  currentDay: number | null;
+  triggerType: string;
+  matchedKeyword: string | null;
+  userMessage: string | null;
+  severity: SosSeverity;
+  status: string;
+  triggeredAt: string;
+  respondedAt: string | null;
+  respondedByAdminId: string | null;
+}
+
+export interface JourneyStats {
+  users: { activeJourney: number; graduated: number };
+  today: { sent: number; pending: number; estCostVnd: number };
+  sos: { open: number };
+  last7d: { totalSent: number };
+}
+
+export const journeyApi = {
+  stats: () => request<JourneyStats>('/api/zalo/journey/stats'),
+  queue: (hours: number = 24) =>
+    request<JourneyQueueResponse>(`/api/zalo/journey/queue?hours=${hours}`),
+  users: (status: JourneyStatus = 'active', journeyType?: JourneyType) =>
+    request<{ total: number; items: JourneyUser[] }>(
+      `/api/zalo/journey/users?status=${status}${journeyType ? '&journeyType=' + journeyType : ''}`,
+    ),
+  userDetail: (id: string) =>
+    request<any>(`/api/zalo/journey/users/${encodeURIComponent(id)}`),
+  sosList: (status: string = 'pending,auto_responded,admin_responding') =>
+    request<{ total: number; items: SOSAlertItem[] }>(
+      `/api/zalo/journey/sos?status=${encodeURIComponent(status)}`,
+    ),
+  sosRespond: (alertId: string, message: string) =>
+    request<{ ok: boolean }>(`/api/zalo/journey/sos/${encodeURIComponent(alertId)}/respond`, {
+      method: 'POST',
+      body: JSON.stringify({ message }),
+    }),
+  sosResolve: (alertId: string, notes?: string) =>
+    request<{ ok: boolean }>(`/api/zalo/journey/sos/${encodeURIComponent(alertId)}/resolve`, {
+      method: 'POST',
+      body: JSON.stringify({ notes: notes ?? '' }),
+    }),
+  enroll: (data: { userId: string; journeyType: JourneyType; qDayDate: string; preferredHour?: number }) =>
+    request<{ ok: boolean; created: number; userId: string }>('/api/zalo/journey/enroll', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
+  cancel: (userId: string, reason?: string) =>
+    request<{ ok: boolean; cancelled: number }>(
+      `/api/zalo/journey/cancel/${encodeURIComponent(userId)}`,
+      { method: 'POST', body: JSON.stringify({ reason: reason ?? 'admin_cancel' }) },
+    ),
+};

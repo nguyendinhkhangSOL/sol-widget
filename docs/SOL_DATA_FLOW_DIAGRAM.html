@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sol — Sơ đồ luồng dữ liệu theo thời gian + chức năng</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 1400px; margin: 0 auto; padding: 24px;
+    background: #fafaf7; color: #2d2820; line-height: 1.6;
+  }
+  h1 { color: #b85c1c; border-bottom: 3px solid #b85c1c; padding-bottom: 8px; }
+  h2 { color: #2d2820; margin-top: 48px; border-left: 4px solid #b85c1c; padding-left: 12px; }
+  h3 { color: #5d4f3a; margin-top: 32px; }
+  .diagram-container {
+    background: #fff; border: 1px solid #e5dfd0; border-radius: 12px;
+    padding: 24px; margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    overflow-x: auto;
+  }
+  .mermaid { text-align: center; min-height: 100px; }
+  .legend {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px; margin: 16px 0;
+  }
+  .legend-item {
+    background: #fff; padding: 8px 12px; border-radius: 6px;
+    border-left: 4px solid #b85c1c; font-size: 14px;
+  }
+  .legend-item.input { border-left-color: #2563eb; }
+  .legend-item.output { border-left-color: #16a34a; }
+  .legend-item.db { border-left-color: #9333ea; }
+  .legend-item.crisis { border-left-color: #dc2626; }
+  .note {
+    background: #fff7ed; border-left: 4px solid #f59e0b;
+    padding: 12px 16px; border-radius: 6px; margin: 12px 0;
+    font-size: 14px;
+  }
+  table {
+    width: 100%; border-collapse: collapse; margin: 12px 0;
+    font-size: 14px;
+  }
+  th { background: #f5f0e3; padding: 10px; text-align: left; }
+  td { padding: 10px; border-bottom: 1px solid #e5dfd0; }
+  td:first-child { font-weight: 600; color: #5d4f3a; }
+  code {
+    background: #f5f0e3; padding: 2px 6px; border-radius: 4px;
+    font-size: 13px; color: #5d4f3a;
+  }
+  .toc {
+    background: #fff; border: 1px solid #e5dfd0; border-radius: 12px;
+    padding: 16px 24px; margin: 16px 0;
+  }
+  .toc a { color: #b85c1c; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<h1>🛤️ Sol — Sơ đồ luồng dữ liệu theo thời gian + chức năng</h1>
+
+<p><strong>Bổ sung cho:</strong> <code>SOL_COMMUNICATION_TIMELINE.md</code><br>
+<strong>Phiên bản:</strong> 1.1 (2026-05-15)<br>
+<strong>Render:</strong> Mở file này trong browser — Mermaid auto-render diagrams.</p>
+
+<div class="toc">
+<strong>Mục lục:</strong>
+<ul>
+<li><a href="#timeline">1. Timeline data flow — 52 ngày (đường ngang)</a></li>
+<li><a href="#data-direction">2. Hướng luồng dữ liệu (in/out/internal)</a></li>
+<li><a href="#flow-follow">3. Flow: User follow OA → enroll</a></li>
+<li><a href="#flow-daily">4. Flow: Daily push cron fire</a></li>
+<li><a href="#flow-widget">4b. Flow: Widget Chat anonymous-first auth ⭐</a></li>
+<li><a href="#flow-sync">4c. Flow: State sync 3 surface (Widget ↔ Dashboard ↔ Zalo OA) ⭐</a></li>
+<li><a href="#flow-sos">5. Flow: SOS trigger + response</a></li>
+<li><a href="#flow-lapse">6. Flow: Lapse event recovery</a></li>
+<li><a href="#state-journey">7. State machine: JourneyStatus</a></li>
+<li><a href="#state-push">8. State machine: ScheduledPush.status</a></li>
+<li><a href="#state-sos">9. State machine: SOSAlert.status</a></li>
+<li><a href="#state-conversation">10. State machine: UserState (conversation)</a></li>
+<li><a href="#er-diagram">11. Entity Relationship — 39 tables</a></li>
+<li><a href="#data-accumulation">12. Data accumulation cumulative chart</a></li>
+</ul>
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="timeline">1. Timeline Data Flow — 52 ngày</h2>
+
+<p>Sơ đồ Gantt-style cho 52 ngày journey. Mỗi swimlane = 1 loại data flow.</p>
+
+<div class="legend">
+  <div class="legend-item input"><strong>🔵 USER INPUT</strong> — User gửi vào hệ thống</div>
+  <div class="legend-item output"><strong>🟢 SOL OUTPUT</strong> — Sol gửi cho user</div>
+  <div class="legend-item db"><strong>🟣 DB WRITE</strong> — Hệ thống ghi vào DB</div>
+  <div class="legend-item crisis"><strong>🔴 CRISIS</strong> — Crisis event</div>
+</div>
+
+<div class="diagram-container">
+<div class="mermaid">
+gantt
+    title 52-Day Journey Data Flow Timeline
+    dateFormat YYYY-MM-DD
+    axisFormat %d/%m
+
+    section Phase 1 (D0)
+    Welcome message (follow event)        :crit, p1a, 2026-04-29, 1h
+    User click button "Tôi vừa quyết tâm" :p1b, after p1a, 2h
+    User pick Q-Day                       :p1c, after p1b, 5h
+    Enroll → 52 ScheduledPush created     :crit, p1d, after p1c, 6h
+
+    section Phase 2A LamQuen
+    T-21 Daily chip "Vì sao bạn nghiện"    :p2a1, 2026-04-30, 1d
+    T-18 FTND quiz                         :p2a2, 2026-05-03, 1d
+    T-15 Cam kết bridge                    :crit, p2a3, 2026-05-06, 1d
+
+    section Phase 2B GiamDan
+    T-14 Giảm 25% daily                    :p2b1, 2026-05-07, 1d
+    T-10 Cắt điếu sáng                     :crit, p2b2, 2026-05-11, 1d
+    T-7 Mốc 1 tuần                         :p2b3, 2026-05-14, 1d
+    T-3 Vứt thuốc                          :crit, p2b4, 2026-05-18, 1d
+    T-1 Đêm trước Q-Day                    :crit, p2b5, 2026-05-20, 1d
+
+    section Phase 3 Q-Day
+    D0 Q-Day morning                       :crit, p3a, 2026-05-21, 12h
+    SOS spike + crisis events              :crit, p3b, 2026-05-21, 12h
+
+    section Phase 4 Q-Day Series
+    D3 Bức Tường (peak crisis)             :crit, p4a, 2026-05-24, 1d
+    D7 Mốc 1 tuần                          :p4b, 2026-05-28, 1d
+    D14 Mốc 2 tuần                         :p4c, 2026-06-04, 1d
+    D16 Đi nhậu lần đầu                    :crit, p4d, 2026-06-06, 1d
+    D21 Mốc 3 tuần                         :p4e, 2026-06-11, 1d
+    D24 Identity shift                     :p4f, 2026-06-14, 1d
+    D30 Graduation                         :crit, p4g, 2026-06-20, 1d
+
+    section Phase 5
+    Weekly maintenance (D31+)              :p5, 2026-06-21, 30d
+    D60 Anniversary                        :p5b, 2026-07-20, 1d
+    D90 X-ray reminder                     :p5c, 2026-08-19, 1d
+</div>
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="data-direction">2. Hướng luồng dữ liệu (in/out/internal)</h2>
+
+<p>Sơ đồ tổng quan 3 hướng dữ liệu giữa User, Sol Backend, và External services.</p>
+
+<div class="diagram-container">
+<div class="mermaid">
+flowchart LR
+    subgraph User["👤 USER"]
+      Uz["Zalo OA app"]
+      Uw["Web sol.vn"]
+      Ua["App bothuocla.sol.vn"]
+    end
+
+    subgraph SolBackend["🖥️ SOL BACKEND"]
+      direction TB
+      WH["Webhook<br/>/api/zalo/webhook"]
+      API["REST API<br/>/api/users, /api/checkins..."]
+      CRON["Cron Worker<br/>(24 jobs)"]
+      DB[("PostgreSQL<br/>39 tables")]
+      WH --> DB
+      API --> DB
+      CRON --> DB
+    end
+
+    subgraph External["☁️ EXTERNAL"]
+      ZL["Zalo OpenAPI<br/>ZNS + Free OA"]
+      EM["Email SMTP"]
+      TG["Telegram Bot"]
+    end
+
+    Uz -- "follow, send_text<br/>click_button" --> WH
+    Ua -- "POST checkin,<br/>POST lapse" --> API
+    Uw -- "Click wiki link" --> API
+
+    DB --> CRON
+    CRON -- "ZNS send" --> ZL
+    ZL -- "Daily chip,<br/>milestone, SOS" --> Uz
+
+    DB --> API
+    API -- "Email magic link" --> EM
+    EM --> Uw
+
+    DB --> CRON
+    CRON -- "SOS critical alert" --> TG
+    TG -- "Push notification" --> User
+
+    style User fill:#dbeafe,stroke:#2563eb
+    style SolBackend fill:#fef3c7,stroke:#b85c1c
+    style External fill:#dcfce7,stroke:#16a34a
+    style DB fill:#f3e8ff,stroke:#9333ea
+</div>
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="flow-follow">3. Flow: User follow OA → Enroll (Day 0)</h2>
+
+<p>Sequence diagram chi tiết — từ lúc user follow đến lúc 52 push được tạo.</p>
+
+<div class="diagram-container">
+<div class="mermaid">
+sequenceDiagram
+    actor U as 👤 User
+    participant Z as 📱 Zalo OA
+    participant W as Webhook
+    participant J as journeyEngine
+    participant D as Database
+    participant O as oaClient
+
+    U->>Z: Click "Quan tâm OA Đi Cùng Sol"
+    Z->>W: POST /webhook { event: "follow", sender_id }
+    W->>D: UPSERT ZaloOAUser (zaloUserId, oaId, displayName)
+    W->>O: oaSendText(welcome + 3 buttons)
+    O->>Z: Send Free OA message
+    Z->>U: Hiện tin chào + 3 button
+
+    U->>Z: Click "Tôi vừa quyết tâm"
+    Z->>W: POST /webhook { event: "user_send_text", text: "/lo-trinh-full-51" }
+    W->>D: CREATE User (anonymous-first)
+    W->>D: UPDATE ZaloOAUser.userId (LINK)
+    W->>D: UPSERT UserState (flow=journey_choice, step=waiting_qday)
+    W->>O: oaSendText("Hỏi Q-Day" + 3 button)
+    O->>Z: Send Free OA
+    Z->>U: Hiện tin hỏi Q-Day
+
+    U->>Z: Click "Ngày mai"
+    Z->>W: POST /webhook { text: "/q-day-tomorrow" }
+    W->>D: READ UserState (lấy journeyType)
+    W->>J: enrollUser({ userId, journeyType, qDayDate })
+
+    J->>D: UPDATE User (journeyType, qDayDate, journeyStatus='active', journeyEnrolledAt)
+
+    loop For each dayOffset (-21 to 30)
+      J->>J: resolveTemplateForDay(dayOffset, journeyType)
+      J->>J: computeScheduledAt(qDay + offset + preferredHour)
+      J->>D: UPSERT ScheduledPush (userId, dayOffset, templateCode, scheduledAt, params)
+    end
+
+    J-->>W: { created: 52 }
+    W->>D: UPDATE UserState (clear stateData)
+    W->>O: oaSendText("Đã set Q-Day. 52 lịch tin tạo")
+    O->>Z: Send Free OA
+    Z->>U: Hiện tin confirm
+
+    Note over D: DB ghi ~ 56 rows<br/>(1 ZaloOAUser, 1 User, 1 UserState,<br/>52 ScheduledPush, + ZNSLog)
+</div>
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="flow-daily">4. Flow: Daily push cron fire (mỗi 5 phút)</h2>
+
+<div class="diagram-container">
+<div class="mermaid">
+sequenceDiagram
+    participant C as Cron */5 min
+    participant F as fireDuePushes
+    participant D as Database
+    participant T as ZaloTemplate
+    participant O as oaClient
+    participant Z as Zalo ZNS API
+    actor U as 👤 User
+
+    C->>F: Trigger
+    F->>D: SELECT ScheduledPush<br/>WHERE scheduledAt <= NOW()<br/>AND status='pending'<br/>LIMIT 50
+    D-->>F: 17 pending pushes
+
+    loop For each push
+      F->>D: READ User + messagingProfile (mute check)
+      alt User muted/paused
+        F->>D: UPDATE ScheduledPush.status='cancelled'
+      else User active
+        F->>D: UPDATE ScheduledPush.status='sending' (lock)
+        F->>T: READ ZaloTemplate WHERE code=?
+
+        alt Template chưa APPROVED
+          F->>D: UPDATE status='failed'<br/>errorCode='TEMPLATE_NOT_APPROVED'
+        else Template OK
+          F->>O: znsSendTemplate(phone, templateId, params)
+          O->>Z: POST /message/template
+          Z-->>O: { ok, messageId }
+
+          alt Success
+            F->>D: CREATE ZNSLog (status=SENT)
+            F->>D: UPDATE ScheduledPush.status='sent', znsLogId, sentAt
+            F->>D: UPSERT UserMessagingProfile.totalSent++
+            Z-->>U: User nhận tin daily chip
+          else Fail
+            F->>D: UPDATE ScheduledPush.status='pending'<br/>retryCount++<br/>scheduledAt += backoff
+            Note over F: Exponential backoff:<br/>2, 4, 8 phút
+          end
+        end
+      end
+    end
+
+    F-->>C: { scanned, sent, failed, skipped }
+</div>
+</div>
+
+<div class="note">
+<strong>📝 Note:</strong> Cron mỗi 5 phút mới fire. Nếu user chọn <code>preferredPushHour=7</code>, push sẽ thực sự fire trong khoảng 7:00-7:05.
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="flow-widget">4b. Flow: Web Widget Chat — Anonymous-first auth ⭐</h2>
+
+<p>Khác với Zalo OA (cần follow), Web Widget cho user vào ngay không cần phone/OTP.</p>
+
+<div class="diagram-container">
+<div class="mermaid">
+sequenceDiagram
+    actor U as 👤 User
+    participant B as 🌐 Browser (sol.vn)
+    participant W as Sol Widget<br/>(IIFE embed)
+    participant LS as localStorage
+    participant API as Sol Backend
+    participant DB as Database
+    participant S as Socket.IO
+
+    U->>B: Vào sol.vn/cai-thuoc-la-tai-nha
+    B->>W: window.SOLWidget.init()
+    W->>LS: Read sol_token + deviceUid
+
+    alt Token tồn tại (returning user)
+      W->>API: GET /users/me<br/>(Authorization: Bearer)
+      API-->>W: User profile
+    else No token (first visit)
+      W->>LS: Generate deviceUid (UUID v4)
+      W->>API: POST /auth/anonymous { deviceUid, originDomain }
+      API->>DB: CREATE User (isAnonymous=true)
+      API-->>W: { jwt, user }
+      W->>LS: setItem('sol_token', jwt)
+    else URL ?zalo=success&token=XXX (OAuth callback)
+      W->>LS: setItem('sol_token', token from URL)
+      W->>API: GET /users/me
+      W->>B: history.replaceState (clear URL)
+    end
+
+    W->>S: io(socketBase, { auth: { token } })
+    S->>API: Verify JWT, join room user:{id}
+
+    Note over W,U: Widget ready — bubble góc dưới
+
+    U->>W: Click bubble → mở Panel
+    U->>W: Chat "anh sắp hút"
+    W->>API: POST /messages { text: "anh sắp hút" }
+    API->>DB: WRITE Message (role=USER)
+    API->>API: intentRouter → CRISIS detect
+    API->>S: emit message:new (Sol stream chunks)
+    S-->>W: Typing animation realtime
+    W->>U: "Hít sâu 4-7-8. Cơn thèm 90 giây..."
+    API->>DB: WRITE Message (role=ASSISTANT)
+    API->>DB: WRITE CrisisEvent
+
+    Note over W: Sau 3 ngày engagement
+    W->>U: Soft prompt "Liên kết Zalo bảo vệ hành trình"
+</div>
+</div>
+
+<div class="note">
+<strong>💡 Key insight:</strong> Widget = <strong>zero-friction entry</strong>. User chỉ cần MỞ TRANG là vào được. Khác Zalo OA phải follow + cho phép push.
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="flow-sync">4c. Flow: State sync 3 surface ⭐</h2>
+
+<p>User có thể access Sol qua 3 nơi cùng lúc. Sol đồng bộ data realtime.</p>
+
+<div class="diagram-container">
+<div class="mermaid">
+flowchart TB
+    subgraph Surfaces["3 Surface — Same User"]
+      W1["💻 Widget PC<br/>(sol.vn wiki page)"]
+      W2["📱 Dashboard mobile<br/>(bothuocla.sol.vn)"]
+      W3["💬 Zalo OA chat<br/>(Zalo app)"]
+    end
+
+    subgraph Backend["Sol Backend"]
+      API["REST API<br/>+ Socket.IO"]
+      DB[("User cmp1<br/>messages, checkins,<br/>journey state")]
+    end
+
+    W1 -- "deviceUid_A" --> API
+    W2 -- "deviceUid_B<br/>(or zaloUserId)" --> API
+    W3 -- "zaloUserId_X" --> API
+
+    API <--> DB
+
+    API -- "emit message:new<br/>checkin:reminder" --> W1
+    API -- "emit message:new<br/>checkin:reminder" --> W2
+
+    API -- "ZNS push" --> W3
+
+    style W1 fill:#dbeafe,stroke:#2563eb
+    style W2 fill:#dbeafe,stroke:#2563eb
+    style W3 fill:#fef3c7,stroke:#b85c1c
+    style DB fill:#f3e8ff,stroke:#9333ea
+</div>
+</div>
+
+<h3>Identity binding flow — Merge accounts</h3>
+
+<div class="diagram-container">
+<div class="mermaid">
+sequenceDiagram
+    actor U as 👤 User
+    participant W as Widget PC
+    participant Z as Zalo Mobile
+    participant API as Sol Backend
+    participant DB as Database
+
+    Note over U: Lần 1: PC
+    U->>W: Vào sol.vn → anonymous
+    W->>API: POST /auth/anonymous { deviceUid_A }
+    API->>DB: CREATE User cmp1 (anon, deviceUid=A)
+
+    Note over U: Lần 2: Mobile
+    U->>Z: Follow OA Sol trên Zalo
+    Z->>API: Webhook follow event
+    API->>DB: CREATE ZaloOAUser (zaloUserId=X)
+    API->>DB: (Optional) CREATE User cmp2 (anon, zaloUserId=X)
+
+    Note over U: Bind Zalo trên Widget PC
+    U->>W: Click "Liên kết Zalo"
+    W->>API: Redirect Zalo OAuth
+    API-->>W: Callback ?token=XXX (cmp2's JWT)
+
+    Note over API: MERGE LOGIC
+    API->>DB: READ User cmp1 (current widget session)
+    API->>DB: READ User cmp2 (zaloUserId=X)
+    API->>DB: MERGE: cmp1.zaloUserId = X
+    API->>DB: UPDATE ZaloOAUser.userId = cmp1
+    API->>DB: COPY messages, checkins từ cmp2 → cmp1
+    API->>DB: DELETE cmp2
+
+    Note over U: Lần 3: PC khác (login Zalo)
+    U->>W: PC mới login bằng Zalo
+    W->>API: OAuth → token cmp1's
+    API-->>W: User cmp1 full state
+    W->>U: Restore tất cả hành trình
+</div>
+</div>
+
+<div class="note">
+<strong>📌 Khi merge xảy ra:</strong> Backend đảm bảo <code>messages</code>, <code>checkins</code>, <code>journey state</code> được copy sang account chính. User KHÔNG mất data dù dùng 5 thiết bị khác nhau.
+</div>
+
+<h3>Touchpoint Widget Chat — 15 events chính</h3>
+
+<table>
+<thead>
+<tr><th>Touchpoint</th><th>UI</th><th>API endpoint</th><th>Lưu vào</th></tr>
+</thead>
+<tbody>
+<tr><td>Widget mount (lần đầu)</td><td>Bubble góc</td><td><code>POST /auth/anonymous</code></td><td>User (anon)</td></tr>
+<tr><td>User chat text</td><td>Input box</td><td><code>POST /messages</code></td><td>Message (USER)</td></tr>
+<tr><td>Sol AI stream reply</td><td>Typing indicator</td><td>SSE <code>/messages/stream</code></td><td>Message (ASSISTANT)</td></tr>
+<tr><td>Daily check-in</td><td>Flow 4 step</td><td><code>POST /checkins</code></td><td>CheckIn</td></tr>
+<tr><td>Click chip suggestion</td><td>Pre-fill prompt</td><td><code>POST /messages</code></td><td>Message + CannedReply++</td></tr>
+<tr><td>90s breathing timer</td><td>Modal overlay</td><td><code>POST /crisis-timer</code></td><td>CrisisTimerLog</td></tr>
+<tr><td>Log "Tôi đã hút"</td><td>Lapse modal</td><td><code>POST /lapse</code></td><td>LapseEvent + CigaretteLog</td></tr>
+<tr><td>Workbook entry</td><td>Journal editor</td><td><code>POST /journal</code></td><td>ProgressJournal</td></tr>
+<tr><td>Listen Khang voice</td><td>Audio inline</td><td><code>POST /voice/listen</code></td><td>KhangVoiceListen</td></tr>
+<tr><td>FTND test 6 câu</td><td>Quiz UI</td><td><code>PUT /users/me/profile</code></td><td>User.ftndScore</td></tr>
+<tr><td>Quit reasons (3-5)</td><td>Wizard</td><td><code>PUT /users/me/profile</code></td><td>User.quitReasons[]</td></tr>
+<tr><td>Top triggers</td><td>Wizard checkbox</td><td><code>PUT /users/me/profile</code></td><td>User.topTriggers[]</td></tr>
+<tr><td>Bind Zalo</td><td>OAuth button</td><td><code>POST /auth/zalo/callback</code></td><td>User.zaloUserId + MERGE</td></tr>
+<tr><td>Bind phone OTP</td><td>Modal nhập SĐT</td><td><code>POST /auth/phone/{request,verify}</code></td><td>User.phone + OtpCode</td></tr>
+<tr><td>Unbind / Logout</td><td>Settings</td><td><code>POST /auth/logout</code></td><td>Clear localStorage</td></tr>
+</tbody>
+</table>
+
+<h3>Widget vs Zalo OA — So sánh chiến lược</h3>
+
+<table>
+<thead>
+<tr><th>Tiêu chí</th><th>💻 Web Widget</th><th>📱 Zalo OA</th></tr>
+</thead>
+<tbody>
+<tr><td>Auth barrier</td><td>Anonymous-first (zero friction)</td><td>Phải follow OA</td></tr>
+<tr><td>Push proactive</td><td>Web Push + Socket realtime</td><td>ZNS template (mạnh hơn về reach)</td></tr>
+<tr><td>Reply latency</td><td>&lt; 200ms (SSE stream)</td><td>&lt; 5s (Zalo API)</td></tr>
+<tr><td>Cost mỗi tin</td><td>0đ</td><td>~ 300đ/tin ZNS</td></tr>
+<tr><td>Phone notification</td><td>Chỉ khi browser mở</td><td>✓ Push mạnh</td></tr>
+<tr><td>Stream typing</td><td>✓ AI thật chunk</td><td>✗ Fixed template</td></tr>
+<tr><td>Rich UI</td><td>✓ React full</td><td>Text + 3 button max</td></tr>
+<tr><td>Voice playback</td><td>✓ Inline player</td><td>Phải click URL ra browser</td></tr>
+<tr><td>Workbook journal</td><td>✓ Editor đầy đủ</td><td>Chỉ chat text</td></tr>
+<tr><td>Crisis 90s timer</td><td>✓ Visual countdown</td><td>Text "đếm 1,2,3..."</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<strong>🎯 Best practice:</strong>
+<ul>
+<li><strong>Zalo OA</strong> → cho <strong>push</strong> (Sol nhắc anh hằng ngày qua phone notification)</li>
+<li><strong>Web Widget</strong> → cho <strong>deep work</strong> (workbook, voice, AI chat sâu, checkin chi tiết)</li>
+</ul>
+User dùng cả 2 cùng lúc — Zalo nhận push, click link wiki → vào sol.vn → widget tự nhận diện user (qua bind Zalo) → tiếp tục chat sâu hơn.
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="flow-sos">5. Flow: SOS Trigger + Response</h2>
+
+<div class="diagram-container">
+<div class="mermaid">
+sequenceDiagram
+    actor U as 👤 User
+    participant Z as Zalo OA
+    participant W as Webhook
+    participant I as intentRouter
+    participant S as sosHandler
+    participant D as Database
+    participant O as oaClient
+    participant SK as Socket Admin
+    participant K as 👤 Khang Admin
+
+    alt SOS via button click
+      U->>Z: Click [🆘 Tôi đang khó]
+      Z->>W: text="/sos"
+      W->>S: triggerSos(triggerType=button)
+    else SOS via keyword
+      U->>Z: Chat "Tôi sắp hút lại rồi"
+      Z->>W: text="..."
+      W->>I: routeUserMessage(text)
+      I->>I: Match CRISIS keyword
+      I-->>W: { type: 'CRISIS', matchedKeyword: 'sắp hút' }
+      W->>S: triggerSos(triggerType=keyword)
+    end
+
+    S->>S: classifySeverity(keyword/message)
+    Note over S: critical | high | medium | low
+    S->>D: READ User (lookup name, currentDay)
+    S->>D: CREATE SOSAlert (severity, triggerType, userMessage)
+
+    S->>O: oaSendText(SOS reply template)
+    O->>Z: Free OA reply
+    Z->>U: "Đừng làm gì 90s. Hotline 02439931800"
+
+    S->>D: UPDATE SOSAlert.status='auto_responded'
+    S->>SK: socket.broadcast('sos:new', payload)
+    SK->>K: 🆘 ALERT trên admin dashboard real-time
+
+    alt Severity=critical (TODO Sprint 4)
+      S-->>K: Telegram alert qua bot
+    end
+
+    alt User click [Tôi đã vượt qua]
+      U->>Z: text="/victory"
+      Z->>W: Webhook
+      W->>S: handleVictory()
+      S->>D: UPDATE SOSAlert.status='resolved', resolvedAt
+      S->>O: oaSendText("Tuyệt vời! Anh đã vượt cơn")
+      O->>Z: Free OA
+      Z->>U: Tin chúc mừng
+    else Khang reply qua admin
+      K->>SK: POST /sos/:id/respond
+      SK->>D: UPDATE SOSAlert.status='admin_responding'<br/>respondedAt, responseMessage
+      SK->>O: oaSendText(Khang's message)
+      O->>Z: Free OA
+      Z->>U: Khang reply
+    else 72h không respond
+      Note over D: Cron daily check<br/>UPDATE status='no_response_72h'
+    end
+</div>
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="flow-lapse">6. Flow: Lapse Event Recovery</h2>
+
+<p>Khi user "Tôi đã hút 1 điếu" (lapse) — Sol chuyển sang recovery mode (KHÔNG kết tội, KHÔNG cancel journey).</p>
+
+<div class="diagram-container">
+<div class="mermaid">
+sequenceDiagram
+    actor U as 👤 User
+    participant A as App bothuocla.sol.vn
+    participant API as /api/lapse
+    participant D as Database
+    participant J as journeyEngine
+    participant O as oaClient
+    participant Z as Zalo OA
+
+    U->>A: Click "Tôi đã hút 1 điếu" (lapse log)
+    A->>API: POST /api/lapse { count: 1, time, context }
+    API->>D: CREATE LapseEvent (userId, time, count, context)
+    API->>D: CREATE CigaretteLog (userId, count, day)
+
+    alt Lapse > threshold (vd 3 điếu/ngày)
+      API->>J: Đánh dấu relapsed
+      J->>D: UPDATE User.journeyStatus='relapsed'
+      J->>D: UPDATE ScheduledPush WHERE status='pending' SET status='cancelled'
+      Note over J: Re-enroll vào shorter<br/>recovery journey (TBD)
+    end
+
+    API->>O: oaSendText(SOL_LAPSE_RECOVERY template)
+    O->>Z: ZNS template
+    Z->>U: "1 lapse ≠ relapse. 70% phục hồi (Marlatt). Tiếp tục anh nhé"
+</div>
+</div>
+
+<div class="note">
+<strong>🎯 Triết lý lapse:</strong> Theo Marlatt 1985, 70% user phục hồi sau 1 lapse nếu KHÔNG bị tự đánh giá. Sol không cancel journey — chỉ note + encouragement.
+</div>
+
+<!-- ──────────────────────────────────────────────────── -->
+<h2 id="state-journey">7. State machine: JourneyStatus (per User)</h2>
+
+<div class="diagram-container">
+<div class="mermaid">
+stateDiagram-v2
+    [*] --> NULL: User mới
+    NULL --> active: enrollUser()
+
+    active --> paused: User pause<br/>(Cancel pending push)
+    paused --> active: User resume<br/>(Re-schedule push)
+
+    active --> relapsed: Lapse > threshold
+    relapsed --> active: Re-enroll<br/>(shorter recovery)
+
+    active --> graduated: D30 hit
+    graduated --> [*]: Maintenance mode
+
+    note right of active
+      Cron 7:30 AM:
+      currentJourneyDay updated
+    end note
+
+    note left of paused
+      ScheduledPush:
+      pending → cancelled
+    end note
+</div>
+</div>
+
+<!-- ────────────────────────────────────────────

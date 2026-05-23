@@ -1,0 +1,13 @@
+# Pre-Q-Day Wave 1 — 10 bài Làm quen + Giảm dần
+# Format: slug|cluster|title
+# cluster: A=green (Khoa học), B=amber (Phương pháp), C=red (Câu chuyện/Ritual)
+lam-quen-ngay-1-tai-sao-bo-thuoc-la|A|Ngày 1 Làm Quen — 5 Lý Do Bỏ Thuốc Khoa Học
+lam-quen-ngay-2-nghien-nicotine-la-gi|A|Ngày 2 Làm Quen — Nghiện Nicotine Là Sinh Học
+lam-quen-ngay-3-chi-phi-thuc-su|C|Ngày 3 Làm Quen — Chi Phí Thực Sự 500 Triệu Đời
+lam-quen-ngay-4-bo-thuoc-that-bai-nhieu-lan|C|Ngày 4 Làm Quen — Bỏ Thuốc Thất Bại Nhiều Lần
+lam-quen-ngay-5-3-phuong-phap-khoa-hoc|B|Ngày 5 Làm Quen — 3 Phương Pháp Khoa Học
+giam-dan-ngay-1-co-hieu-qua-khong|A|T-14 Giảm Dần — Tapering Có Hiệu Quả Không?
+giam-dan-ngay-2-ban-do-trigger|A|T-13 Giảm Dần — Bản Đồ 5 Trigger Người Việt
+giam-dan-ngay-5-cach-cai-thuoc-dan-dan|B|T-10 Giảm Dần — Cách Cai Thuốc Dần Dần
+giam-dan-ngay-6-tri-hoan-dieu-sang|B|T-9 Giảm Dần — Trì Hoãn Điếu Sáng 60 Phút
+giam-dan-ngay-14-dem-truoc-q-day|C|T-1 Giảm Dần — Đêm Trước Q-Day Ritual

@@ -1,0 +1,130 @@
+# Sol FB Setup — Hồ Sơ Hoàn Chỉnh Cho Khang
+
+> **Single landing page** — anh mở file này, click theo thứ tự là setup xong Page + Group + Asset trong 1 buổi.
+
+---
+
+## 📋 Checklist 4 bước — paste theo thứ tự
+
+### ✅ Bước 1 — Setup Fanpage (15 phút)
+URL hiện có: **https://fb.com/sol.bothuocla**
+
+1. Đọc: [FANPAGE_LAUNCH_KIT.md](./FANPAGE_LAUNCH_KIT.md)
+2. Vào Page → Settings:
+   - Categories: paste section 1.1 (Health & Wellness + Community Service + Education)
+   - Page Info: paste section 1.3 (Username, Website, Email, Hours)
+3. About:
+   - Short Bio 155 ký tự: paste section 2.1
+   - Long About: paste section 2.2
+   - Mission: paste section 2.3
+   - Page Story: paste section 2.4
+4. CTA Button: chọn **Sign Up** → link `https://sol.vn` (section 3)
+5. Upload assets:
+   - Profile: [`page-profile-square.png`](../../public/brand/page-profile-square.png)
+   - Cover: [`fb-group-cover.png`](../../public/brand/fb-group-cover.png)
+6. Pin Post #1 (Founder intro): paste section 6 + ảnh kèm [`story-founder-30-5.png`](../../public/brand/story-founder-30-5.png)
+
+### ✅ Bước 2 — Setup FB Group (10 phút)
+1. Đọc: [FB_GROUP_LAUNCH_KIT.md](./FB_GROUP_LAUNCH_KIT.md)
+2. Tạo group:
+   - https://www.facebook.com/groups/create
+   - Tên: `Đi Cùng Sol: Cộng Đồng Bỏ Thuốc Lá Không Tái Nghiện`
+   - Privacy: **Private** + Visibility: **Visible**
+3. Upload assets:
+   - Avatar: [`sol-logo-round.png`](../../public/brand/sol-logo-round.png)
+   - Cover: [`fb-group-cover.png`](../../public/brand/fb-group-cover.png)
+4. Setup:
+   - Description: paste section 2 từ launch kit
+   - Rules 5 điều: paste section 3
+   - 3 câu hỏi sàng lọc: paste section 4
+5. Pin Post #1 (Welcome): paste section 6 launch kit + ảnh [`post-template-quote.png`](../../public/brand/post-template-quote.png)
+
+### ✅ Bước 3 — Cross-link Page ↔ Group (5 phút)
+1. Page Settings → Linked Page → liên kết với Group vừa tạo
+2. Group Settings → Linked Pages → liên kết ngược lại
+3. Cập nhật **Post #4 Fanpage** với link Group thật
+4. Cập nhật **Post #5 Fanpage** với link Group thật
+
+### ✅ Bước 4 — Zalo OA gói Cơ Bản miễn phí (20 phút)
+1. https://oa.zalo.me → "Tạo OA mới"
+2. Tên: `Đi Cùng Sol`
+3. Upload:
+   - Avatar: [`sol-logo-round.png`](../../public/brand/sol-logo-round.png)
+   - Cover: [`cover-mobile-1080.png`](../../public/brand/cover-mobile-1080.png)
+4. Welcome message setup (tự động khi user follow OA — gói Cơ bản đã có):
+   ```
+   Chào anh em — Khang Sol đây.
+
+   Cảm ơn anh đã follow OA. Sol miễn phí 100% — không bán gì cả.
+
+   Anh chọn cách Sol đồng hành:
+   1. /caithuoc — xem hành trình 51 ngày Q-Day
+   2. /khoa-hoc — 104 bài wiki khoa học cai thuốc
+   3. /sos — đang vật vã? Nhắn ngay, Sol AI trả lời 24/7
+
+   → Cài app: https://sol.vn
+   → Group FB: (paste link sau)
+   ```
+5. Menu cửa sổ chat (gói Cơ bản đã có):
+   - Cai thuốc → https://sol.vn
+   - Khoa học → https://sol.vn/wiki
+   - Group → (link FB Group)
+
+### ✅ Bước 5 — Strategy + theo dõi
+1. Đọc: [CROSS_CHANNEL_STRATEGY.md](./CROSS_CHANNEL_STRATEGY.md) — biết post cái gì lên đâu
+2. Đọc: [ZALO_OA_PRICING_STRATEGY.md](./ZALO_OA_PRICING_STRATEGY.md) — biết khi nào nâng gói (sẽ tạo sau)
+3. Pin tab Page Insights → check Reach + Page Likes mỗi tối T7
+
+---
+
+## 📁 Đường dẫn tất cả file
+
+### Docs marketing (4 file)
+
+| File | Vai trò |
+|------|---------|
+| [FANPAGE_LAUNCH_KIT.md](./FANPAGE_LAUNCH_KIT.md) | Hồ sơ Fanpage đầy đủ — About, CTA, 5 post mở màn |
+| [FB_GROUP_LAUNCH_KIT.md](./FB_GROUP_LAUNCH_KIT.md) | Hồ sơ Group — rules, 5 post mở màn, content calendar 30 ngày |
+| [CROSS_CHANNEL_STRATEGY.md](./CROSS_CHANNEL_STRATEGY.md) | Page ↔ Group ↔ Zalo ↔ App — decision tree post lên đâu |
+| [SOL_VOICE_STYLE_GUIDE.md](./SOL_VOICE_STYLE_GUIDE.md) | Tone chung mọi post |
+
+### Brand assets (11 file)
+
+| File | Kích thước | Dùng cho |
+|------|-----------|----------|
+| [fb-group-cover.png](../../public/brand/fb-group-cover.png) | 1640×856 | Cover Page + Group desktop |
+| [cover-mobile-1080.png](../../public/brand/cover-mobile-1080.png) | 1080×1080 | Zalo OA cover + mobile-safe |
+| [sol-logo-round.png](../../public/brand/sol-logo-round.png) | 1200×1200 | Logo tròn — Group avatar + Zalo OA |
+| [page-profile-square.png](../../public/brand/page-profile-square.png) | 1080×1080 | Profile Fanpage |
+| [post-template-quote.png](../../public/brand/post-template-quote.png) | 1080×1080 | Post quote "Cai thuốc không phải về ý chí" |
+| [post-quote-90giay.png](../../public/brand/post-quote-90giay.png) | 1080×1080 | Post #3 — Cơn thèm 90 giây |
+| [post-quote-vap.png](../../public/brand/post-quote-vap.png) | 1080×1080 | Post — Vấp 1 điếu không phải làm lại |
+| [post-quote-question.png](../../public/brand/post-quote-question.png) | 1080×1080 | Post engagement question |
+| [story-welcome-1080x1920.png](../../public/brand/story-welcome-1080x1920.png) | 1080×1920 | FB/IG Story Welcome |
+| [story-founder-30-5.png](../../public/brand/story-founder-30-5.png) | 1080×1920 | Story "30 năm hút 5 năm cai" |
+| [story-invite-group.png](../../public/brand/story-invite-group.png) | 1080×1920 | Story CTA join Group |
+| [README.md](../../public/brand/README.md) | — | Brand color palette + font + upload guide |
+
+---
+
+## 🎯 Mục tiêu Month 1 (organic only)
+
+| Metric | Target |
+|--------|--------|
+| Page Followers | 200 |
+| Group Members | 100 |
+| Active Member (post/comment/wk) | 30 |
+| Zalo OA Subscribers | 50 |
+| Wiki Organic Visits/wk | 500 |
+
+---
+
+## ❓ Có vấn đề gì cần em hỗ trợ
+
+Khang báo em qua chat hoặc paste error/screenshot:
+- Asset bị crop sai → em regen
+- Text caption không vừa → em viết lại
+- Cần thêm post / story → em gen thêm
+- Câu hỏi setting FB → em research + trả lời
+
+— Sol AI assistant, 2026-05-16

@@ -1,0 +1,35 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://sol.vn/wp-json/",
+      "service-desc": [
+        {
+          "href": "https://sol.vn/wp-json/wp/v2",
+          "type": "application/json",
+          "title": "WordPress REST API v2 — Đi Cùng Sol"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://developer.wordpress.org/rest-api/",
+          "type": "text/html",
+          "title": "WordPress REST API Reference"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://sol.vn/wp-json/",
+          "type": "application/json",
+          "title": "WordPress REST API Discovery (health endpoint)"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://sol.vn/llms.txt",
+          "type": "text/plain",
+          "title": "Đi Cùng Sol — AI agent instructions (llms.txt standard)"
+        }
+      ]
+    }
+  ]
+}

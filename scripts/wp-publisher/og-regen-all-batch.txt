@@ -1,0 +1,136 @@
+10-cau-nen-noi-khi-chong-dang-cai|C|10 Câu Nên Nói + 10 Câu KHÔNG Nên Nói Với Chồng Đang Cai
+app-cai-thuoc-la-tieng-viet|B|Bảng so sánh nhanh 5 app
+ban-moi-thuoc-tu-choi|C|Bạn Mời Thuốc — 5 Câu Từ Chối Không Mất Lòng 2026
+ban-trai-hut-thuoc-toi-kho-chiu|C|Bạn Trai Hút Thuốc Tôi Khó Chịu — Chia Tay Hay Cùng Đi (Decision Tree)
+buon-chan-tuan-2|C|Buồn Chán Tuần 2 Cai Thuốc — Đống Tro Tàn 2026
+ca-phe-sang-khong-thuoc|C|Cà Phê Sáng Không Thuốc — Phá Pavlov 90 Ngày
+cach-bo-thuoc-vinh-vien-khong-tai-nghien|A|Cách Bỏ Thuốc Vĩnh Viễn Không Tái Nghiện 2026
+cai-thuoc-bang-thien-va-chanh-niem|B|Cai Thuốc Bang Thien Va Chanh Niem
+cai-thuoc-bao-lau-phoi-sach|A|Phổi sạch tar trong bao lâu?
+cai-thuoc-bao-nhieu-lan-moi-thanh-cong|C|Cai Thuốc Bao Nhiêu Lần Mới Thành Công? Trung Bình 30+
+cai-thuoc-khi-di-nhau|B|Vì sao nhậu là "Moment of Truth" của cai thuốc?
+cai-thuoc-la-tai-nha|B|Cai thuốc lá tại nhà có hiệu quả không?
+cai-thuoc-la-vinh-vien|A|Cai Thuốc Lá Vĩnh Viễn — Phương Pháp Sol 2026
+cau-gat-khi-cai-thuoc|C|Cáu Gắt Khi Cai Thuốc — 5 Kỹ Thuật Kiểm Soát 2026
+champix-varenicline-cai-thuoc|B|Champix Varenicline Cai Thuốc — Hiệu Quả + Tác Dụng Phụ
+chong-cai-thuoc-cau-kinh-phai-lam-sao|C|Chồng Cai Thuốc Cáu Kỉnh — Đi Qua Tuần Đầu (Lịch Trình + Kịch Bản)
+chong-cai-thuoc-roi-lai-hut|C|Chồng Cai Thuốc Rồi Lại Hút — Im Hay Nói? (48h Vàng)
+chong-hut-thuoc-khi-vo-mang-thai|C|Chồng Hút Thuốc Khi Vợ Mang Thai — 7 Việc Làm Ngay (Khẩn Cấp)
+chong-hut-thuoc-trong-nha|C|Chồng Hút Thuốc Trong Nhà — 3 Ranh Giới Vợ Nên Đặt Tuần Này
+chong-mat-khi-cai|A|Chóng Mặt Khi Cai Thuốc — Bao Lâu Hết? 2026
+chong-noi-cai-nhung-lai-hut|C|Chồng Nói Cai Nhưng Lén Hút — Trust Broken Phải Làm Sao
+co-don-khi-cai|C|Cô Đơn Khi Cai Thuốc — Vì Sao + 5 Cách Vượt 2026
+cold-turkey-vs-giam-dan|B|So sánh nhanh — Bảng quyết định
+con-toi-da-viet-thu-xin-bo-bo-thuoc|A|Con 6 Tuổi Viết Thư Xin Bố Bỏ Thuốc — Câu Chuyện Khang Sol
+cong-cu-tinh-tien-tiet-kiem-bo-thuoc|A|Công Cụ Tính Tiền Tiết Kiệm Bỏ Thuốc Lá (Calculator) — Sol
+dam-tang-cuoi-khoi-thuoc|C|Đám Tang Cưới Có Thuốc — Cách Vượt Sự Kiện 2026
+dau-dau-sau-cai|A|Đau Đầu Sau Cai Thuốc — Vì Sao + Cách Giảm 2026
+dau-nguc-du-doi-115|A|Đau Ngực Dữ Dội Khi Cai Thuốc — Gọi 115 Khi Nào?
+dong-luc-bo-thuoc-cho-nguoi-co-gia-dinh|A|Động Lực Bỏ Thuốc Lá Cho Người Có Gia Đình — Khang Sol
+giam-dan-ngay-1-co-hieu-qua-khong|C|T-14 Giảm Dần — Tapering Có Hiệu Quả Không?
+giam-dan-ngay-10-quyet-dinh-nrt-thuoc-ke|B|T-5 Giảm Dần — Quyết Định NRT / Champix / Bupropion
+giam-dan-ngay-11-chon-q-day|C|T-4 Giảm Dần — Chốt Q-Day Chính Thức
+giam-dan-ngay-12-don-cue-stimulus-control|C|T-3 Giảm Dần — Dọn Cue Stimulus Control 30 Phút
+giam-dan-ngay-13-plan-b|C|T-2 Giảm Dần — Viết 5 Plan B If-Then
+giam-dan-ngay-14-dem-truoc-q-day|C|T-1 Giảm Dần — Đêm Trước Q-Day Ritual
+giam-dan-ngay-2-ban-do-trigger|C|T-13 Giảm Dần — Bản Đồ 5 Trigger Người Việt
+giam-dan-ngay-3-phan-loai-dieu-thuoc|C|T-12 Giảm Dần — Phân Loại Điếu Thuốc 0-3 Sao
+giam-dan-ngay-4-test-fagerstrom|C|T-11 Giảm Dần — Test Fagerström FTND 6 Câu
+giam-dan-ngay-5-cach-cai-thuoc-dan-dan|C|T-10 Giảm Dần — Cách Cai Thuốc Dần Dần 4 Bước
+giam-dan-ngay-6-tri-hoan-dieu-sang|C|T-9 Giảm Dần — Trì Hoãn Điếu Sáng 60 Phút
+giam-dan-ngay-7-compensatory-smoking|C|T-8 Giảm Dần — Compensatory Smoking Trap
+giam-dan-ngay-8-moc-1-tuan-giam|C|T-7 Giảm Dần — Mốc 1 Tuần Đánh Giá
+giam-dan-ngay-9-kit-thay-the|C|T-6 Giảm Dần — Kit Thay Thế Behavior Substitution
+gui-thu-cho-sol|C|Anh chị có thể gửi điều gì cho Sol
+ho-co-dom-khi-cai|A|Ho Có Đờm Khi Cai Thuốc — Dấu Hiệu Tốt 2026
+ho-ra-mau-khi-cai-thuoc|A|Ho Ra Máu Khi Cai Thuốc — Cảnh Báo Y Tế 2026
+kha-nang-tinh-duc-sau-cai-thuoc|A|Khả Năng Sinh Lý Sau Cai Thuốc — Phục Hồi 12 Tháng
+khac-dom-co-mau-canh-bao|A|Khạc Đờm Có Máu Khi Cai Thuốc — Khi Nào Cần Khám?
+kho-tho-khi-cai|A|Khó Thở Khi Cai Thuốc — Bình Thường Hay Nguy Hiểm?
+khoi-thuoc-thu-dong-cho-con|A|Khói Thuốc Thụ Động Ảnh Hưởng Con — 5 Mức Độ Khoa Học (Sol)
+khong-la-chinh-minh|C|Không Là Chính Mình Sau Cai Thuốc — Bình Thường?
+khong-the-cai-thuoc-da-thu-moi-cach|C|Không Thể Cai Thuốc — Đã Thử Mọi Cách Vẫn Vấp 2026
+lam-quen-ngay-1-tai-sao-bo-thuoc-la|C|Ngày 1 Làm Quen — 5 Lý Do Bỏ Thuốc Khoa Học
+lam-quen-ngay-2-nghien-nicotine-la-gi|C|Ngày 2 Làm Quen — Nghiện Nicotine Là Sinh Học
+lam-quen-ngay-3-chi-phi-thuc-su|C|Ngày 3 Làm Quen — Chi Phí Thực Sự 500 Triệu Đời
+lam-quen-ngay-4-bo-thuoc-that-bai-nhieu-lan|C|Ngày 4 Làm Quen — Bỏ Thuốc Thất Bại Nhiều Lần
+lam-quen-ngay-5-3-phuong-phap-khoa-hoc|B|Ngày 5 Làm Quen — 3 Phương Pháp Cai Thuốc Khoa Học
+lam-quen-ngay-6-do-muc-san-sang|C|Ngày 6 Làm Quen — Đo Mức Sẵn Sàng Stages Of Change
+lam-quen-ngay-7-cam-ket-chon-lo-trinh|C|Ngày 7 Làm Quen — Cam Kết + Chọn Lộ Trình Bỏ Thuốc
+lo-au-vo-co|C|Lo Âu Vô Cớ Khi Cai Thuốc — Bình Thường? 2026
+lo-hut-dieu-roi|C|Lỡ Hút Điếu Rồi Có Phải Tái Nghiện? Lapse vs Relapse
+mat-ngu-khi-cai-thuoc|A|Mất Ngủ Khi Cai Thuốc — Vì Sao + 5 Cách Ngủ Lại 2026
+mat-y-chi-cai-thuoc-phai-lam-sao|C|Mất Ý Chí Cai Thuốc — Lỗi Hệ Thống Không Phải Anh
+meo-giam-buon-ngu-mat-tap-trung-cai-thuoc|A|Mẹo Giảm Buồn Ngủ Và Mất Tập Trung Khi Cai Thuốc Lá
+mieng-dan-nicotine-nrt|B|Miếng Dán Nicotine NRT — Hướng Dẫn Sử Dụng 2026
+mieng-lo-loet|A|Miệng Lở Loét Khi Cai Thuốc — Bình Thường?
+moc-2-tuan-tuan-hoan-cai-thien-phoi-manh-hon|B|Moc 2 Tuan Tuan Hoan Cai Thien Phoi Manh Hon
+mua-thuoc-la-dien-tu-co-giup-chong-cai|C|Mua Thuốc Lá Điện Tử (Vape) Cho Chồng Có Giúp Cai? — Sự Thật
+muon-bo-cuoc-cai-thuoc|C|Muốn Bỏ Cuộc Cai Thuốc — 5 Cách Vượt Qua 2026
+ngay-1-24-gio-dau-tien-bo-thuoc-la|C|Ngày 1 24 Gio Dau Tien Bỏ Thuốc La
+ngay-2-dinh-con-them-nicotine|C|Ngày 2 Dinh Con Them Nicotine
+ngay-21-moc-3-tuan-bo-thuoc-vong-lap-thoi-quen-da-vung-chua|C|Ngày 21 Moc 3 Tuan Bỏ Thuốc Vong Lap Thoi Quen Da Vung Chua
+ngay-3-buc-tuong-trieu-chung-cai-dat-dinh-va-bat|C|Ngày 3 Buc Tuong Trieu Chung Cai Dat Dinh Va Bat
+ngay-3-cai-thuoc-kho-nhat|C|Tại sao Ngày 3 lại khó nhất? — Cơ chế khoa học
+ngay-30-moc-1-thang-sau-bo-thuoc-ban-da-tro-thanh-nguoi-khac|C|Ngày 30 Moc 1 Thang Sau Bỏ Thuốc Ban Da Tro Thanh Nguoi Khac
+ngay-4-mat-ngu-va-roi-loan-giac-ngu-giai-thich-khoa-hoc|C|Ngày 4 Mat Ngu Va Roi Loan Giac Ngu Giai Thich Khoa Hoc
+ngay-5-them-an-va-noi-so-tang-can-su-that-khoa-h|C|Ngày 5 Them An Va Noi So Tang Can Su That Khoa H
+ngay-6-cau-gat-voi-nguoi-than-day-khong-phai-tin|C|Ngày 6 Cau Gat Voi Nguoi Than Day Khong Phai Tin
+ngay-7-moc-1-tuan-nhung-gi-da-thay-doi-trong-co-|C|Ngày 7 Moc 1 Tuan Nhung Gi Da Thay Doi Trong Co
+nhat-ky-cai-thuoc-cua-nguoi-thanh-cong|A|Nhật Ký Cai Thuốc Lá Của Người Thành Công (1825 Ngày — Khang Sol)
+phoi-den-co-sach-lai-duoc-khong|A|Phổi Đen Có Sạch Lại Được Không Sau Khi Cai? 2026
+qday-01|C|Qday 01
+qday-02|C|Qday 02
+qday-03|C|Qday 03
+qday-04|C|Qday 04
+qday-05|C|Qday 05
+qday-06|C|Qday 06
+qday-07|C|Qday 07
+qday-08|C|Qday 08
+qday-09|C|Qday 09
+qday-10|C|Qday 10
+qday-11|C|Qday 11
+qday-12|C|Qday 12
+qday-13|C|Qday 13
+qday-14|C|Qday 14
+qday-15|C|Qday 15
+qday-16|C|Qday 16
+qday-17|C|Qday 17
+qday-18|C|Qday 18
+qday-19|C|Qday 19
+qday-20|C|Qday 20
+qday-21|C|Qday 21
+qday-22|C|Qday 22
+qday-23|C|Qday 23
+qday-24|C|Qday 24
+qday-25|C|Qday 25
+qday-26|C|Qday 26
+qday-27|C|Qday 27
+qday-28|C|Qday 28
+qday-29|C|Qday 29
+qday-30|C|Qday 30
+sap-hut-lai-cuu|C|Sắp Hút Lại — Cứu Khẩn Cấp 90 Giây Vượt Cơn Thèm
+sau-khi-chong-bo-thuoc-vo-thay-doi-gi|A|Sau Khi Chồng Bỏ Thuốc — Vợ Thay Đổi Gì (Vợ Khang Chia Sẻ Thật)
+stress-cong-viec-cai|C|Stress Công Việc Khi Cai Thuốc — Smoke Break Thay Thế
+tac-hai-cua-thuoc-la|A|Tac Hai Cua Thuoc La
+tac-hai-thuoc-la-den-phoi|A|Tác Hại Của Thuốc Lá Đến Phổi — Khoa Học 2026
+tai-sao-cang-cang-thang-cang-them-thuoc|A|Tại Sao Càng Căng Thẳng Càng Thèm Thuốc Lá? (Khoa Học)
+tam-ly-bo-thuoc-thay-doi-nhu-the-nao|A|Tâm Lý Người Bỏ Thuốc Lá Thay Đổi Như Thế Nào (5 Giai Đoạn)
+tang-can-khi-cai-thuoc|A|Tăng Cân Khi Cai Thuốc Lá — Cách Giữ Cân 2026
+tao-bon-khi-cai|A|Táo Bón Khi Cai Thuốc — Vì Sao + Cách Xử Lý 2026
+test-direct|A|Test Direct
+tet-le-cai-thuoc|C|Tết Lễ Cai Thuốc — Sống Sót Văn Hoá Bia Rượu 2026
+them-thuoc-dem-khuya-90-giay|A|Khoa học: Vì sao cơn thèm chỉ 90 giây?
+thu-gui-vo-cua-nguoi-chong-da-cai|A|Thư Gửi Vợ Của Người Chồng Đã Cai 5 Năm — Khang & V.
+thuc-don-cai-thuoc-khong-tang-can|A|Thực Đơn Cai Thuốc Không Tăng Cân — 7 Ngày Mẫu
+thuyet-phuc-chong-cai-thuoc-khong-cai-nhau|C|5 Cách Thuyết Phục Chồng Cai Thuốc Không Cãi Nhau (Khang Sol)
+tim-mach-hoi-phuc|A|Tim Mạch Hồi Phục Sau Cai Thuốc — Timeline 2026
+tre-con-ho-vi-khoi-thuoc-cua-ba|C|Con Tôi Ho Vì Khói Thuốc Của Ba — Phải Làm Gì Hôm Nay
+trieu-chung-cai-thuoc-la-theo-ngay|A|Tổng quan — 3 đỉnh sóng anh sẽ gặp
+ung-thu-phoi-va-thuoc-la|A|Ung Thư Phổi Và Thuốc Lá — Nguy Cơ + Tầm Soát 2026
+vape-co-an-toan-de-cai-thuoc|B|Vape Có An Toàn Để Cai Thuốc Không? Khoa Học 2026
+vape-co-hai-nhu-thuoc-la-khong|B|Vape Có Hại Như Thuốc Lá Không? — Khoa Học 2026
+vo-chong-gian-cai|C|Vợ Chồng Giận Khi Cai Thuốc — 5 Cách Hoà Giải
+vo-giup-chong-bo-thuoc-la|C|Vợ Giúp Chồng Bỏ Thuốc Lá — 12 Năm Tôi Học Được Gì (Khang Sol)
+vuot-qua-con-them-bang-hoi-tho-sau|A|Vượt Qua Cơn Thèm Thuốc Lá Bằng Hơi Thở Sâu (76 Giây)
+y-nghi-tu-hai-cai-thuoc|A|Ý Nghĩ Tự Hại Khi Cai Thuốc — Khi Nào Cần Khám?

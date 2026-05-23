@@ -73,7 +73,7 @@ def gen_og_image(title, cluster='A', slug='wiki', output_dir=None):
 
     # Sol wordmark
     font_brand = ImageFont.truetype(FONT_PATH, 26)
-    draw.text((115, 38), 'Sol Đi Cùng', fill=BROWN, font=font_brand)
+    draw.text((115, 38), 'Đi Cùng Sol', fill=BROWN, font=font_brand)
     font_tag = ImageFont.truetype(FONT_PATH_REG, 14)
     draw.text((115, 70), 'sol.vn · Cai thuốc lá Việt 45+', fill=INK2, font=font_tag)
 

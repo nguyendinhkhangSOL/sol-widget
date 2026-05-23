@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Đi Cùng Sol — App đồng hành cai thuốc lá cho nam giới Việt 45+. Sắp ra mắt phiên bản web. Hiện tại đọc bài + tham gia cộng đồng tại sol.vn">
+<meta name="theme-color" content="#5C3A1E">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://sol.vn/">
+
+<!-- Google Search Console verification -->
+<meta name="google-site-verification" content="ifuIrZvF4YgGEj2B0J1TIG9wfY2VH7ZD5HgaLdORChE" />
+
+<!-- Google Analytics 4 — SOL.VN GA4 (G-S5ELGXBLWK) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S5ELGXBLWK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S5ELGXBLWK', {
+    'page_title': 'Đi Cùng Sol — Sắp ra mắt',
+    'page_path': '/'
+  });
+</script>
+
+<!-- Microsoft Clarity — heatmap + session recording -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "wu12r2qt0o");
+</script>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Đi Cùng Sol — App cai thuốc lá Việt 45+">
+<meta property="og:description" content="App đồng hành cai thuốc đang chuẩn bị ra mắt. Hiện đọc 140+ bài + cộng đồng tại sol.vn">
+<meta property="og:url" content="https://bothuocla.sol.vn/">
+<meta property="og:type" content="website">
+
+<title>Đi Cùng Sol — App cai thuốc lá sắp ra mắt</title>
+
+<style>
+  :root {
+    --brown: #5C3A1E;
+    --orange: #B25C2C;
+    --paper: #FFF4EA;
+    --cream: #FAF4EC;
+    --ink: #2C2A27;
+    --ink2: #5A5650;
+    --green: #16A34A;
+    --gold: #D97706;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--paper) 100%);
+    color: var(--ink);
+    line-height: 1.65;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Top bar */
+  .topbar {
+    background: var(--brown);
+    color: var(--paper);
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .topbar a { color: var(--paper); text-decoration: underline; }
+
+  /* Container */
+  .container {
+    flex: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    width: 100%;
+  }
+
+  /* Logo */
+  .logo-wrap {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--brown);
+  }
+
+  .logo-circle {
+    width: 64px;
+    height: 64px;
+    background: var(--brown);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Georgia, serif;
+  }
+
+  .logo-text {
+    text-align: left;
+  }
+
+  .logo-text h1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--brown);
+  }
+
+  .logo-text p {
+    font-size: 13px;
+    color: var(--ink2);
+    margin-top: 2px;
+  }
+
+  /* Hero */
+  .hero {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 4px 24px rgba(92, 58, 30, 0.08);
+    border-left: 6px solid var(--orange);
+    margin-bottom: 28px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero h2 {
+    font-size: 30px;
+    line-height: 1.25;
+    color: var(--brown);
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--ink2);
+    margin-bottom: 12px;
+  }
+
+  /* CTA grid */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .cta {
+    display: block;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .cta-primary {
+    background: var(--orange);
+    color: white;
+  }
+
+  .cta-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(178, 92, 44, 0.3);
+  }
+
+  .cta-secondary {
+    background: var(--cream);
+    color: var(--brown);
+    border: 2px solid var(--brown);
+  }
+
+  .cta-secondary:hover {
+    background: var(--brown);
+    color: white;
+  }
+
+  /* Value props */
+  .values {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(92, 58, 30, 0.06);
+    margin-bottom: 28px;
+  }
+
+  .values h3 {
+    color: var(--brown);
+    font-size: 18px;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+
+  .values ul {
+    list-style: none;
+  }
+
+  .values li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+    color: var(--ink2);
+    font-size: 15px;
+    border-bottom: 1px solid var(--cream);
+  }
+
+  .values li:last-child { border-bottom: none; }
+
+  .values li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  /* Founder quote */
+  .quote {
+    background: var(--brown);
+    color: var(--paper);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  .quote::before {
+    content: """;
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    font-size: 72px;
+    color: var(--orange);
+    font-family: Georgia, serif;
+    line-height: 1;
+    opacity: 0.5;
+  }
+
+  .quote p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+    font-style: italic;
+    padding-left: 12px;
+  }
+
+  .quote-author {
+    font-size: 14px;
+    color: var(--orange);
+    font-weight: 600;
+    text-align: right;
+    font-style: normal;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--brown);
+    color: var(--paper);
+    padding: 24px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  footer a {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  footer p { margin: 6px 0; }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .container { padding: 32px 16px 60px; }
+    .hero { padding: 28px 20px; }
+    .hero h2 { font-size: 24px; }
+    .logo-text h1 { font-size: 22px; }
+    .logo-circle { width: 52px; height: 52px; font-size: 26px; }
+    .values, .quote { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  📰 Đọc bài + tham gia cộng đồng tại <a href="https://sol.vn">sol.vn</a>
+</div>
+
+<div class="container">
+
+  <div class="logo-wrap">
+    <div class="logo">
+      <div class="logo-circle">S</div>
+      <div class="logo-text">
+        <h1>Đi Cùng Sol</h1>
+        <p>Cai thuốc lá · Cho nam giới Việt 45+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <span class="badge">SẮP RA MẮT</span>
+    <h2>App đồng hành cai thuốc đang được hoàn thiện</h2>
+    <p>
+      Phiên bản web của <strong>Đi Cùng Sol</strong> đang trong giai đoạn phát triển cuối.
+      Sẽ ra mắt trong thời gian sớm nhất.
+    </p>
+    <p>
+      Trong khi chờ, anh có thể đọc <strong>140+ bài viết khoa học</strong> về cai thuốc lá
+      và tham gia <strong>cộng đồng anh em Sol</strong> tại trang chính.
+    </p>
+
+    <div class="cta-grid">
+      <a href="https://sol.vn" class="cta cta-primary">
+        Đọc bài tại sol.vn →
+      </a>
+      <a href="https://fb.com/groups/dicungsol" class="cta cta-secondary">
+        Vào Cộng đồng Facebook
+      </a>
+    </div>
+  </div>
+
+  <div class="values">
+    <h3>Đi Cùng Sol giúp anh điều gì?</h3>
+    <ul>
+      <li><strong>Phân loại Mức Lệ Thuộc</strong> theo bài test FTND (Fagerström) — biết mình Nhẹ / Vừa / Nặng</li>
+      <li><strong>Lộ trình 90 ngày</strong> bám sát giai đoạn cai (Day 1 → Day 3 đỉnh thèm → Day 22 Quyết Định → Day 30 Tự Do)</li>
+      <li><strong>Vượt cơn thèm 4 phút</strong> — kỹ năng SOS khi anh muốn châm điếu</li>
+      <li><strong>Bám 3 nguồn khoa học</strong>: Cochrane Reviews · FTND · WHO Tobacco Cessation Guidelines</li>
+      <li><strong>Cộng đồng anh em đã Tự do</strong> — không một mình vật lộn</li>
+    </ul>
+  </div>
+
+  <div class="quote">
+    <p>
+      30 năm hút Vinataba (1991-2020). Thử bỏ 4 lần thất bại — Allen Carr, QuitNow, hỏi
+      Champix bác sĩ không kê. Lần thứ 5 thành công ngày 22-12 âm lịch (cận Tết Tân Sửu),
+      nay hơn 5 năm Tự do. Sol ra đời vì ngày đó tôi ước có ai đi cùng.
+    </p>
+    <p class="quote-author">— Khang Sol · Founder Đi Cùng Sol</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Đi Cùng Sol · Dự án độc lập của Khang Sol (Nguyễn Đình Khang)</p>
+  <p>
+    <a href="https://sol.vn">sol.vn</a> ·
+    <a href="https://fb.com/sol.bothuocla">Facebook Page</a> ·
+    <a href="mailto:nguyendinhkhang@gmail.com">Liên hệ</a>
+  </p>
+  <p style="margin-top:14px;color:rgba(255,244,234,0.5);font-size:11px;">
+    Sol KHÔNG phải sản phẩm y tế · Khang KHÔNG phải bác sĩ · Sol KHÔNG hứa cai 100%
+  </p>
+</footer>
+
+</body>
+</html>

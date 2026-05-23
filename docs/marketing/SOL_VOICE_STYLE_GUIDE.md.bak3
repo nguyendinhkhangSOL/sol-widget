@@ -1,0 +1,248 @@
+# Sol Voice Style Guide — Viết cho người cai thuốc
+
+**Audience:** Người Việt 35-55, đang cai thuốc D1-D30. Não suy giảm chú ý do cortisol cao + dopamine thấp. Không phải sinh viên đọc paper.
+
+**Tone:** Như anh em ngồi quán cà phê kể chuyện — không phải bác sĩ giảng bài.
+
+---
+
+## 🧠 Hiểu trạng thái não người cai
+
+D1-D7 sau cắt thuốc:
+- Khả năng chú ý **giảm 30-40%** (Hughes 2008)
+- Khó tập trung > 5 phút
+- Đọc đoạn dài → bỏ giữa chừng
+- Câu phức tạp → cáu, bỏ luôn bài
+
+→ Viết cho người **mệt + cáu + khó tập trung**. Không phải người tỉnh táo.
+
+---
+
+## 5 NGUYÊN TẮC VÀNG
+
+### 1. Câu ≤ 15 từ. Đoạn ≤ 3 câu
+
+**❌ Câu dài:**
+> "Theo nghiên cứu của Hughes (2008) đăng trên tạp chí Nicotine & Tobacco Research, sau khi cắt thuốc đột ngột, các điểm tiếp nhận nicotine trong não tăng gấp 3 lần dẫn đến triệu chứng cai như cortisol tăng cao và dopamine giảm sâu trong 7-14 ngày."
+
+**✅ Câu ngắn:**
+> "Khi anh cắt thuốc, não 'đói'.
+> Đó là khoa học. Không phải yếu đuối.
+> Tệ nhất 7-14 ngày đầu. Sau đó qua."
+
+### 2. Một dữ kiện một câu
+
+**❌ Dồn:**
+> "Cold turkey 3-5%, NRT 10-15%, Champix 25-30%, combo 35-40%"
+
+**✅ Tách:**
+> "Bỏ đột ngột một mình: 5% thành công.
+> Có hỗ trợ: 25-35%.
+> Sol thuộc nhóm có hỗ trợ."
+
+### 3. Câu chuyện > Con số
+
+**❌ Số liệu:**
+> "70% người tái nghiện ở giai đoạn D15-D21 do quá tự tin (Marlatt 1985)"
+
+**✅ Chuyện:**
+> "Đến ngày 15, anh thấy 'tôi đã ổn'.
+> Lần 4 tôi cũng nghĩ vậy.
+> Đi nhậu xong, hút lại.
+> Đừng chủ quan."
+
+### 4. Hành động cụ thể > Giải thích cơ chế
+
+**❌ Cơ chế:**
+> "Kế hoạch dự phòng 'nếu-thì' (implementation intention) tăng tỷ lệ thành công 27%"
+
+**✅ Hành động:**
+> "Khi thèm, làm 1 trong 3 việc:
+> 1. Uống nước
+> 2. Đi bộ 5 phút
+> 3. Mở Sol bấm SOS"
+
+### 5. Bỏ ngoặc nếu không hữu ích
+
+**Quy tắc ngoặc:**
+- Giữ trong ngoặc CHỈ KHI user có thể tra cứu thêm (NRT, Cochrane, Champix)
+- BỎ ngoặc khi thuật ngữ user không bao giờ tra (metabolism, baseline, dopamine, cortisol nếu đã dịch)
+
+**❌ Ngoặc dư:**
+> "Tốc độ trao đổi chất (metabolism) giảm 7-10% (BMR baseline)"
+
+**✅ Sạch:**
+> "Cơ thể đốt ít năng lượng hơn 7-10%."
+
+---
+
+## 📝 BẢNG VIỆT HOÁ — Quy tắc khi viết bài mới
+
+### Loại A: PHẢI Việt hoá (không có ngoặc)
+
+| Từ Anh | Viết là |
+|--------|---------|
+| willpower | ý chí |
+| cravings | cơn thèm |
+| social support | sự đồng hành |
+| coping | ứng phó |
+| trigger (động từ) | gây thèm / kích hoạt |
+| metabolism | trao đổi chất / đốt năng lượng |
+| baseline | mức bình thường |
+| habit | thói quen |
+| reward | phần thưởng / cảm giác sướng |
+
+### Loại B: Việt hoá + Để gốc trong ngoặc lần đầu, sau đó bỏ
+
+| Từ Anh | Viết lần đầu | Lần sau |
+|--------|--------------|---------|
+| trigger (danh từ) | "tình huống kích thích thèm thuốc (trigger)" | "tình huống kích thích" |
+| lapse | "vấp 1 lần (lapse)" | "vấp 1 lần" |
+| relapse | "tái nghiện (relapse)" | "tái nghiện" |
+| withdrawal | "triệu chứng cai (withdrawal)" | "triệu chứng cai" |
+| cold turkey | "bỏ đột ngột (cold turkey)" | "bỏ đột ngột" |
+| Q-Day | "ngày dứt thuốc (Q-Day)" | "Q-Day" hoặc "ngày dứt" |
+
+### Loại C: Giữ nguyên (tên thuốc, tổ chức, hoá chất)
+
+| Từ Anh | Lý do giữ |
+|--------|-----------|
+| Nicotine | Tên hoạt chất, mọi người biết |
+| Dopamine | Tên hoá chất não bộ |
+| Cortisol | Tên hormone |
+| Champix / Varenicline | Tên thuốc |
+| Bupropion | Tên thuốc |
+| Cochrane | Tên tổ chức |
+| NIDA, WHO, FDA | Tên tổ chức |
+| Fagerström | Tên test |
+| Marlatt, Hughes, Doll | Tên tác giả |
+
+### Loại D: Viết tắt y khoa
+
+| Tắt | Cách viết |
+|-----|-----------|
+| NRT | "kẹo cao su/miếng dán nicotine (NRT)" lần đầu; "NRT" lần sau |
+| CBT | "tư vấn tâm lý (CBT)" |
+| FEV1 | "thể tích phổi (FEV1)" |
+| COPD | "bệnh phổi tắc nghẽn mãn tính (COPD)" |
+| BMR | "tốc độ đốt năng lượng cơ bản (BMR)" |
+| BP | "huyết áp" — bỏ luôn BP |
+| CO | "khí CO" |
+| REM | "giai đoạn ngủ sâu (REM)" |
+
+---
+
+## 🎙 KHANG'S VOICE — Đặc trưng giọng Khang
+
+### DO ✅
+
+- **"Anh"** với user (đa số nam giới VN cai thuốc)
+- **"Mình"** thay "tôi" khi kể chuyện cá nhân
+- Câu xác nhận cảm xúc trước: "Em hiểu — cảm giác đó tệ lắm"
+- Chia sẻ kinh nghiệm: "Lần 4 tôi cũng vậy"
+- Hành động cụ thể cuối: "Anh làm 1 trong 3 việc..."
+
+### DON'T ❌
+
+- "Bạn" với người 35-55 (sai văn hoá)
+- "Quý vị" (quá trang trọng)
+- "Anh phải / Anh nên / Anh cần" (lên lớp)
+- "Theo nghiên cứu của..." giữa câu (làm rối)
+- Câu giải thích cơ chế khi user đang thèm
+- Đánh giá: "Đó là sai", "Đó là yếu đuối"
+
+### Tone theo phase
+
+| Phase user | Tone Khang |
+|------------|------------|
+| Pre-Q-Day (T-21 → T-1) | Khoa học, giải thích, chuẩn bị |
+| Q-Day (D0) | Khuyến khích, cùng đồng hành |
+| D1-D7 Crisis | **Bình tĩnh, ngắn gọn, cứu hộ** (não user yếu) |
+| D8-D14 | Bạn bè, chia sẻ |
+| D15-D30 | Mentor, nhắc cảnh giác |
+| D30+ | Mentor lâu năm, khuyến khích mentor lại |
+
+---
+
+## 📐 CẤU TRÚC BÀI WIKI/CHIP CHUẨN
+
+### Mở bài (lead — 50 từ)
+
+**Công thức:**
+```
+[Cảm xúc/trạng thái user đang gặp] + [khoa học giải thích trong 1 câu] + [câu chuyện Khang 1 dòng] + [hành động hôm nay].
+```
+
+**Ví dụ:**
+> "Ngày 3 anh sẽ thấy như sốt. Đầu nặng. Cáu gắt. Đó là 'Bức Tường' — đỉnh triệu chứng cai (withdrawal). Khang Day 3 cũng đã đi qua. Hôm nay anh chỉ cần làm 3 việc."
+
+### Thân bài
+
+- **Mỗi H2** = 1 ý chính, không > 3 đoạn dưới
+- **Mỗi đoạn** ≤ 3 câu
+- **Câu** ≤ 15 từ
+- Sau mỗi giải thích → ngay 1 ví dụ hoặc hành động
+
+### Kết bài (40 từ)
+
+**Công thức:**
+```
+[Tóm 1 câu] + [Khang's blessing] + [CTA].
+```
+
+**Ví dụ:**
+> "Hôm nay tệ — mai đỡ hơn. Khang đã đi qua, anh cũng làm được. Mở Sol app khi cần SOS — em ở đó."
+
+---
+
+## 🧪 CHECKLIST trước khi xuất bản
+
+- [ ] Đọc to bài lên — có chỗ nào ngắt khó thở không?
+- [ ] Câu dài nhất ≤ 25 từ?
+- [ ] Đoạn dài nhất ≤ 4 câu?
+- [ ] Thuật ngữ y khoa có giải thích bằng tiếng Việt không?
+- [ ] Có ≥ 1 câu chuyện cá nhân Khang?
+- [ ] Có ≥ 1 hành động cụ thể user có thể làm ngay?
+- [ ] Đã loại bỏ "anh phải / nên / cần"?
+- [ ] CTA cuối bài có không?
+- [ ] Đọc trên điện thoại — scroll OK không?
+
+---
+
+## 📊 CÔNG CỤ AUDIT
+
+Em đã xây script tự động kiểm tra Việt hoá:
+
+```powershell
+cd C:\BOTHUOCLA\sol-widget\scripts\wp-publisher
+
+# Audit toàn bộ 103 bài
+node audit-vietnamese.js
+
+# Top 10 bài cần Việt hoá nhất
+node audit-vietnamese.js --top=10
+
+# Chi tiết 1 thuật ngữ (vd "trigger")
+node audit-vietnamese.js --term=trigger
+
+# Export CSV để xem trong Excel
+node audit-vietnamese.js --csv > docs/audit-vietnamese.csv
+```
+
+**Output sẽ cho biết:**
+- 🔴 Thuật ngữ **nên Việt hoá** xuất hiện bao nhiêu lần trong bao nhiêu bài
+- 🟡 Thuật ngữ **khuyến nghị Việt hoá**
+- 🟢 Thuật ngữ **OK giữ nguyên** (tên thuốc, tổ chức, hormone)
+- Per-file: top 5 thuật ngữ trong từng bài
+
+---
+
+**File này dùng cho:**
+- AI Claude khi viết tin Zalo OA / chip / wiki mới
+- Khang khi tự viết Khang voice
+- Marketing team khi viết landing page / FB post
+- Biên tập viên khi review bài trước publish
+
+Cập nhật mỗi khi phát hiện thuật ngữ mới hoặc style mới phù hợp người Việt cai thuốc.
+
+— Sol Engineering · 2026-05-16

@@ -35,7 +35,7 @@ const MENU_GROUPS: MenuGroup[] = [
     subtitle: 'Content + Voice + Wiki',
     items: [
       { to: '/admin/content', label: 'Biên tập tin', icon: '✍️' },
-      { to: '/admin/voice', label: 'Voice Khang', icon: '🎙️' },
+      { to: '/admin/voice', label: 'Voice của Khang', icon: '🎙️' },
       { to: '/admin/wiki', label: 'Wiki', icon: '📰' },
       { to: '/admin/q-day-checklist', label: 'Checklist Q-Day', icon: '✅' },
     ],

@@ -194,7 +194,7 @@ tiersRouter.get('/catalog', (_req, res) => {
         refundType: 'conditional',                        // Day 21 nếu ≥80% metric mà không giảm
         bullets: [
           'Chat Sol không giới hạn',
-          'Sổ Hành Trình đầy đủ Tuần 1 + Tuần 2 (14 bài)',
+          'Sổ Lưu Niệm đầy đủ Tuần 1 + Tuần 2 (14 bài)',
           '12 bài tập theo từng ngày',
           '3 Voice của Khang (Ngày 1, 3, 7)',
           'Báo cáo Ngày 7 cá nhân hoá (PDF)',
@@ -218,7 +218,7 @@ tiersRouter.get('/catalog', (_req, res) => {
         recommended: true,
         bullets: [
           'Toàn bộ Kiểm Soát + memory dài hạn 30+ ngày',
-          'Sổ Hành Trình 4 tuần đầy đủ (26 bài)',
+          'Sổ Lưu Niệm 4 tuần đầy đủ (26 bài)',
           '24 bài tập + 8 bài duy trì',
           '6 Voice của Khang + thư cuối Ngày 30',
           'Báo cáo Ngày 21 + Album hành trình Ngày 51 (PDF cao cấp)',
@@ -239,7 +239,7 @@ tiersRouter.get('/catalog', (_req, res) => {
         refundable: false,
         forever: true,
         bullets: [
-          'Truy cập Sổ Hành Trình đầy đủ',
+          'Truy cập Sổ Lưu Niệm đầy đủ',
           'Đọc & viết cộng đồng cohort',
           'Huy hiệu Người Tự Do vĩnh viễn',
           'Lễ tốt nghiệp Day 52 — chứng nhận từ Khang',

@@ -178,7 +178,7 @@ export function AdminUserDetail() {
               </button>
             ))}
             {voiceList.filter((v) => v.triggerType === 'MANUAL' || v.triggerType === 'CRISIS').length === 0 && (
-              <div className="text-meta text-sol-ink-3">Chưa có voice MANUAL/CRISIS. Thêm ở trang Voice Khang.</div>
+              <div className="text-meta text-sol-ink-3">Chưa có voice MANUAL/CRISIS. Thêm ở trang Voice của Khang.</div>
             )}
           </div>
         </section>

@@ -352,7 +352,7 @@ Trong 4 tuần đầu pilot 30 anh em:
 > - **Chat** với AI bất kỳ lúc nào (1-1, kín)
 > - **Nghe** Khang nói mỗi tuần
 > - **Đọc** Khoảng Lặng — anh em khác viết anonymous
-> - **Hỏi** Khang anonymous, Khang voice reply
+> - **Hỏi** Khang anonymous, Khang trả lời qua Voice
 >
 > Không ai bắt anh nói gì. Anh chỉ cần mở app khi mệt."
 
@@ -370,7 +370,7 @@ Trong 4 tuần đầu pilot 30 anh em:
 > - Chat với AI 24/7 (1-1, kín)
 > - Nghe voice Khang
 > - Đọc Khoảng Lặng (anh em viết anonymous)
-> - Hỏi Khang anonymous → Khang voice reply tuần sau
+> - Hỏi Khang anonymous → Khang trả lời qua Voice tuần sau
 >
 > Không có group nào ép anh post hay phải tham gia.
 

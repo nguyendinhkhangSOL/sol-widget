@@ -1,0 +1,67 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "version": "0.2.0",
+  "publisher": {
+    "name": "Đi Cùng Sol",
+    "url": "https://sol.vn",
+    "contact": "nguyendinhkhang@gmail.com"
+  },
+  "skills": [
+    {
+      "name": "Đọc bài Wiki cai thuốc lá",
+      "type": "content",
+      "description": "Truy cập 140+ bài viết khoa học về cai thuốc lá tiếng Việt — bám Cochrane Reviews + FTND + WHO Guidelines. Bao gồm 16 phương pháp (Champix, NRT, CBT, Allen Carr...), triệu chứng Day 1-30, tình huống Việt Nam (nhậu, Tết, đám giỗ).",
+      "url": "https://sol.vn/sitemap_index.xml",
+      "tags": ["smoking-cessation", "vietnamese", "evidence-based", "health"]
+    },
+    {
+      "name": "Test FTND — Fagerström",
+      "type": "tool",
+      "description": "Bài test 6 câu phân loại Mức Lệ Thuộc Nicotin (FTND): Nhẹ / Vừa / Nặng. Áp dụng chuẩn Heatherton 1991. Sẽ available trên bothuocla.sol.vn khi launch.",
+      "url": "https://bothuocla.sol.vn/test-ftnd",
+      "status": "planned",
+      "tags": ["assessment", "ftnd", "nicotine-dependence"]
+    },
+    {
+      "name": "Lộ trình 90 ngày Tự do",
+      "type": "tool",
+      "description": "Daily journey từ Day 1 (24 giờ đầu) → Day 3 (đỉnh thèm) → Day 22 (Ngày Quyết Định) → Day 90 (Tự do bền vững). Bám theo giai đoạn cai cấu trúc.",
+      "url": "https://bothuocla.sol.vn/lo-trinh",
+      "status": "planned",
+      "tags": ["coaching", "behavioral-therapy", "daily"]
+    },
+    {
+      "name": "Vượt cơn thèm SOS",
+      "type": "tool",
+      "description": "Kỹ năng SOS 4 phút khi user muốn châm điếu. CBT-based: nhận diện trigger → tách rời → vận động → reward thay thế. Sẽ available trên bothuocla.sol.vn.",
+      "url": "https://bothuocla.sol.vn/vuot-con-them",
+      "status": "planned",
+      "tags": ["cbt", "craving-management", "sos"]
+    },
+    {
+      "name": "Cộng đồng anh em Sol",
+      "type": "community",
+      "description": "Facebook group cho nam giới Việt 45+ đang cai thuốc lá. Chia sẻ kinh nghiệm + động viên + Khang Sol (founder) trực tiếp tham gia.",
+      "url": "https://fb.com/groups/dicungsol",
+      "tags": ["community", "peer-support", "vietnamese"]
+    },
+    {
+      "name": "Hồ sơ Khang Sol — Founder",
+      "type": "person",
+      "description": "Nguyễn Đình Khang (sinh 1976) — hút Vinataba 30 năm (1991-2020), thử bỏ 4 lần thất bại, lần thứ 5 thành công 22-12-2020 âm lịch, nay hơn 5 năm Tự do. KHÔNG là bác sĩ. Sáng lập Đi Cùng Sol 2026.",
+      "url": "https://sol.vn/khang-sol",
+      "tags": ["founder", "person", "e-e-a-t"]
+    }
+  ],
+  "metadata": {
+    "language": "vi",
+    "audience": "Vietnamese men 45+ wanting to quit smoking",
+    "evidence_base": [
+      "Cochrane Tobacco Addiction Group (2014-2024)",
+      "Fagerström Test for Nicotine Dependence (FTND) — Heatherton 1991",
+      "WHO Tobacco Cessation Guidelines (2023-2024)"
+    ],
+    "disclaimer": "Sol KHÔNG phải sản phẩm y tế. Khang KHÔNG phải bác sĩ. Sol KHÔNG hứa cai 100% — hứa giúp anh có năng lực tự cai.",
+    "last_updated": "2026-05-20"
+  }
+}

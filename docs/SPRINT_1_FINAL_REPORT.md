@@ -366,7 +366,7 @@ backend/src/scheduler/emailFunnelAdaptive.ts          Thêm text field, re-inclu
 
 ### Quyết định brand voice
 
-1. **Tone NAME → FUNCTION**: KHÔNG dùng "Giọng Khang" (dễ bị ghét), dùng vai trò "Người đã đi qua"
+1. **Tone NAME → FUNCTION**: KHÔNG dùng "Khang chia sẻ qua Voice" (dễ bị ghét), dùng vai trò "Người đã đi qua"
 2. **Việt hoá triệt để** (Khang không giỏi tiếng Anh)
 3. **Anh — em** xưng hô (gần gũi với người 45+)
 4. **Sol KHÔNG hứa, Sol đi cùng** (positioning chính)

@@ -56,7 +56,7 @@ Anh click **Bắt đầu**.
 
 App tự tạo cho anh một profile anonymous (deviceUid). Không cần nhập gì.
 
-Một voice clip 60 giây tự play. Giọng Khang — không phải AI — chậm rãi:
+Một voice clip 60 giây tự play. Khang chia sẻ qua Voice — không phải AI — chậm rãi:
 
 > *"Khang đây. Mình ở Đà Nẵng giống anh. 50 tuổi. Hút 30 năm. Anh không yếu — não anh đã wire 30 năm với điếu thuốc. Đây là cơ chế, không phải nhân cách. Mình ngồi đây với anh tuần đầu. Anh chỉ cần một việc: ghi điếu khi nhớ. Không quên cũng không sao. Bắt đầu thôi."*
 
@@ -152,7 +152,7 @@ Day 5 — anh thử **Hỏi Khang** lần đầu. Tab "Hỏi" trong app.
 [Submit anonymous]
 
 App reply:
-> *"Đã nhận. Khang đọc inbox 1-2 lần/tuần. Nếu câu của anh được pick — Khang voice reply Chủ Nhật."*
+> *"Đã nhận. Khang đọc inbox 1-2 lần/tuần. Nếu câu của anh được pick — Khang trả lời qua Voice Chủ Nhật."*
 
 Anh không kỳ vọng gì. Nhưng anh cảm thấy *được nghe*.
 

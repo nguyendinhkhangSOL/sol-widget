@@ -24,6 +24,13 @@ import {
   generateNextInsight,
   Q_DAY,
   type JourneyStage,
+  // V2 cohort-aware (canonical 2026-05-18)
+  readCohort,
+  COHORT_DEFS,
+  getChapterDayInfo,
+  deriveQDayStateV2,
+  shouldGenerateMemoryBook,
+  type Cohort,
 } from './service';
 
 export const journeyRouter = Router();
@@ -70,8 +77,19 @@ journeyRouter.get('/dashboard', async (req: AuthedRequest, res) => {
   if (!user) return res.status(404).json({ error: 'not_found' });
 
   const dayInJourney = computeDayInJourney(user.quitDate);
-  const stageInfo = getStageDayInfo(dayInJourney);
-  const qDayState = deriveQDayState(dayInJourney, user.qDayConfirmedAt);
+  const stageInfo = getStageDayInfo(dayInJourney);  // LEGACY 88-day
+  const qDayState = deriveQDayState(dayInJourney, user.qDayConfirmedAt);  // LEGACY Q_DAY=28
+
+  // ── V2 COHORT-AWARE (canonical 2026-05-18) ─────────────────────────────
+  const cohortCode: Cohort = readCohort({
+    ftndCohort: (user as any).ftndCohort,
+    settings: user.settings,
+  });
+  const cohortDef = COHORT_DEFS[cohortCode];
+  const chapterInfo = getChapterDayInfo(dayInJourney, cohortCode);
+  const qDayStateV2 = deriveQDayStateV2(dayInJourney, user.qDayConfirmedAt, cohortCode);
+  const completedMainJourney = dayInJourney >= cohortDef.totalDays;
+  const memoryBookReady = shouldGenerateMemoryBook(dayInJourney, cohortCode);
 
   // Cigarette stats
   const [cigsLogged, cigsSkipped] = await Promise.all([
@@ -233,10 +251,9 @@ journeyRouter.get('/dashboard', async (req: AuthedRequest, res) => {
       onboardingCompletedAt: user.onboardingCompletedAt,
     },
     journey: {
+      // LEGACY 88-day fields (giữ tương thích với UI cũ chưa migrate)
       dayInJourney,
       qDay: Q_DAY,
-      // Lịch chính 60 ngày = Phase 1+2+3 (round up từ 7+21+30=58)
-      // Phase 4 = bonus 30 ngày, không tính trong "lịch chính"
       totalDays: 88,
       progressPercent: Math.min(100, Math.round((dayInJourney / 88) * 100)),
       stage: stageInfo.stage,
@@ -247,6 +264,41 @@ journeyRouter.get('/dashboard', async (req: AuthedRequest, res) => {
       dayInStage: stageInfo.dayInStage,
       totalInStage: stageInfo.totalInStage,
       progressInStage: stageInfo.progressInStage,
+    },
+    // V2 COHORT-AWARE (canonical 2026-05-18) — dùng cho UI mới
+    journeyV2: {
+      dayInJourney,
+      cohort: cohortCode,                                  // 'LIGHT' | 'MODERATE' | 'HEAVY'
+      cohortLabel: cohortDef.label,                        // 'NHẸ' | 'VỪA' | 'NẶNG'
+      cohortEmoji: cohortDef.emoji,
+      cohortTagline: cohortDef.tagline,
+      totalDays: cohortDef.totalDays,                      // 35 / 52 / 65
+      qDay: cohortDef.qDay,                                // 15 / 22 / 28
+      progressPercent: Math.min(100, Math.round((dayInJourney / cohortDef.totalDays) * 100)),
+      completedMainJourney,                                // Đã hoàn thành lộ trình chính
+      memoryBookReady,                                     // Sổ Lưu Niệm sẵn sàng generate
+      // Chặng hiện tại (NHAN_DIEN | KIEM_SOAT | LAM_CHU | TAI_THIET)
+      chapter: chapterInfo.chapter,
+      chapterLabel: chapterInfo.chapterLabel,
+      chapterTagline: chapterInfo.chapterTagline,
+      chapterEmoji: chapterInfo.chapterEmoji,
+      chapterColor: chapterInfo.chapterColor,
+      dayInChapter: chapterInfo.dayInChapter,
+      totalInChapter: chapterInfo.totalInChapter === Infinity ? null : chapterInfo.totalInChapter,
+      progressInChapter: chapterInfo.progressInChapter,
+      // Boundaries của 3 chặng chính (cho UI render timeline grid)
+      chapters: cohortDef.chapters,
+      taiThietStart: cohortDef.taiThietStart,
+    },
+    qDayV2: {
+      qDay: qDayStateV2.qDay,
+      isPreQDay: qDayStateV2.isPreQDay,
+      isQDay: qDayStateV2.isQDay,
+      isPostQDay: qDayStateV2.isPostQDay,
+      needsConfirmation: qDayStateV2.needsConfirmation,
+      daysUntilQDay: qDayStateV2.daysUntilQDay,
+      qDayConfirmedAt: qDayStateV2.qDayConfirmedAt,
+      clockEnabled: qDayStateV2.clockEnabled,
     },
     qDay: {
       isPreQDay: qDayState.isPreQDay,
@@ -465,7 +517,8 @@ journeyRouter.post('/onboarding/ftnd', async (req: AuthedRequest, res) => {
         cigsBaseline,
         pricePerCig,
         ftndScore: finalScore,
-        settings: newSettings,
+        ftndCohort: finalCohort,  // V2 dedicated field (canonical 2026-05-18)
+        settings: newSettings,    // Keep settings.severityCohort cho legacy fallback
         onboardingCompletedAt: new Date(),
         ...(existing?.quitDate ? {} : { quitDate: new Date() }),
       },
@@ -474,6 +527,7 @@ journeyRouter.post('/onboarding/ftnd', async (req: AuthedRequest, res) => {
         cigsBaseline: true,
         pricePerCig: true,
         ftndScore: true,
+        ftndCohort: true,
         onboardingCompletedAt: true,
         quitDate: true,
         pronouns: true,

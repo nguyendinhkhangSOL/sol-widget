@@ -22,7 +22,7 @@ export function VoiceInboxView() {
   return (
     <div className="h-full flex flex-col p-5 overflow-y-auto">
       <div className="flex items-center justify-between mb-3">
-        <h2 className="text-base font-bold text-sol-ink">🎙️ Voice Khang</h2>
+        <h2 className="text-base font-bold text-sol-ink">🎙️ Voice của Khang</h2>
         <button
           className="text-meta text-sol-ink-3 underline"
           onClick={() => setView('greeting')}

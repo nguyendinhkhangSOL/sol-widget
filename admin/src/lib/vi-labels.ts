@@ -7,7 +7,7 @@ export const VI = {
   CRISIS_MODE: 'Lúc Khó Nhất', PLAN_B: 'Kế Hoạch Dự Phòng', PLAN_B_SHORT: 'Kế B',
   CHECK_IN: 'Ghi Nhận Hôm Nay', CHECK_IN_SHORT: 'Ghi nhận', STREAK: 'Chuỗi Ngày Sạch',
   WITHDRAWAL: 'Lúc Rút (Sau Cai)', ONBOARDING: 'Đăng Ký', IDENTITY: 'Chính Mình', COMMITMENT: 'Cam Kết',
-  WORKBOOK: 'Sổ Hành Trình', BREATHING_EXERCISE: 'Bài Thở 4-7-8',
+  WORKBOOK: 'Sổ Lưu Niệm', BREATHING_EXERCISE: 'Bài Thở 4-7-8',
   COHORT: 'Nhóm', TIER: 'Chặng', FTND: 'Mức Lệ Thuộc Nicotin', FTND_SHORT: 'Mức Lệ Thuộc',
   COHORT_LIGHT: 'Nhẹ', COHORT_MODERATE: 'Vừa', COHORT_HEAVY: 'Nặng',
   NOTIFICATION: 'Tin Nhắn Nhắc', VOICE_MESSAGE: 'Bản Ghi Âm Anh Khang',

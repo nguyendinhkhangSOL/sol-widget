@@ -51,6 +51,16 @@ $SOL_REDIRECTS = [
     // Format: '/wiki/<slug>/' => '/<slug>/'
     // (uncomment khi cần)
     // '/wiki/cai-thuoc-la-tai-nha/' => '/cai-thuoc-la-tai-nha/',
+
+    // ─── Pre-Q-Day CTA — DECISION: direct link tới bothuocla.sol.vn ───
+    // 21 bài Pre-Q-Day CTA bây giờ link THẲNG tới https://bothuocla.sol.vn
+    // (subdomain app Sol — đã LIVE). KHÔNG cần redirect 4 URL này, vì
+    // direct link giữ SEO juice tốt hơn 301 (Google tính 100% PageRank
+    // cho destination với direct link, ~85-90% cho 301).
+    //
+    // KHI nào cần redirect lại 4 URL này:
+    //   - Nếu Google index nhầm các URL chưa LIVE
+    //   - Hoặc anh build landing thật trên sol.vn (lúc đó comment ra)
 ];
 
 // ─── Redirect handler ─────────────────────────────────────────────
@@ -67,19 +77,3 @@ add_action('template_redirect', function () use ($SOL_REDIRECTS) {
     if (isset($SOL_REDIRECTS[$normalized])) {
         $target = $SOL_REDIRECTS[$normalized];
         wp_safe_redirect(home_url($target), 301);
-        exit;
-    }
-
-    // Bonus: /?p=598 → tam-nhin → /sol-gioi-thieu.../
-    // (WP đã handle ?p=ID nếu post tồn tại — chỉ catch khi post đã trash)
-    if (isset($_GET['p']) && $_GET['p'] === '598') {
-        wp_safe_redirect(home_url('/sol-gioi-thieu-thuong-hieu-va-su-menh/'), 301);
-        exit;
-    }
-}, 1);
-
-// ─── Helper: log redirects (chỉ dev, tắt khi production) ─────────
-// add_action('template_redirect', function () {
-//     if (is_admin()) return;
-//     error_log('[sol-redirect] ' . $_SERVER['REQUEST_URI']);
-// }, 0);

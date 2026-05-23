@@ -1,6 +1,6 @@
 /**
  * HỎI KHANG — Anonymous Mailbox + Voice Reply Broadcast
- * Tab "Hỏi" — user submit câu hỏi anonymous, nghe Khang voice reply public.
+ * Tab "Hỏi" — user submit câu hỏi anonymous, nghe Khang trả lời qua Voice public.
  */
 
 import { useEffect, useRef, useState } from 'react';
@@ -134,7 +134,7 @@ export function HoiKhang() {
       >
         {[
           { key: 'ask', label: 'Gửi câu hỏi' },
-          { key: 'replies', label: 'Voice Khang trả lời' },
+          { key: 'replies', label: 'Khang trả lời qua Voice' },
           { key: 'mine', label: 'Câu của tôi' },
         ].map((t) => (
           <button
@@ -173,7 +173,7 @@ export function HoiKhang() {
             <ol style={{ fontSize: 13.5, color: '#5A5650', lineHeight: 1.7, margin: 0, paddingLeft: 20 }}>
               <li>Anh viết câu hỏi anonymous (Khang không biết anh là ai).</li>
               <li>1-2 lần/tuần Khang đọc inbox, pick 3-5 câu đáng quan tâm chung.</li>
-              <li>Khang voice reply 5-10 phút broadcast cho tất cả nghe.</li>
+              <li>Khang trả lời qua Voice 5-10 phút broadcast cho tất cả nghe.</li>
               <li>Câu của anh có thể không được chọn — nhưng câu Khang trả lời cho người khác có thể giúp anh.</li>
             </ol>
           </div>

@@ -1,8 +1,13 @@
 // dashboard/src/pages/Journey.tsx
-// PHASE B — 88-day journey với 4 viên ngọc + lịch phase-grouped + DayDetail.
-// Bỏ 30-cell grid Phase A. Thay bằng 4 nhóm: Nhận Thức (7) / Hành Động (21) /
-// Giải Phóng (30) / Tái Thiết (30). Tổng = 88. Phase tương lai dim, phase đã
-// qua filled mờ, phase hiện tại pulse + ô ngày hôm nay highlight.
+// COHORT-AWARE journey (canonical 2026-05-18, anh Khang confirm 22/5/2026).
+//
+// 4 chặng theo cohort FTND của user:
+//   🟢 LIGHT    (35 ngày): Nhận Diện 1-7  + Kiểm Soát 8-14 + Làm Chủ 15-35 + Tái Thiết 36+
+//   🟡 MODERATE (52 ngày): Nhận Diện 1-7  + Kiểm Soát 8-21 + Làm Chủ 22-52 + Tái Thiết 53+
+//   🔴 HEAVY    (65 ngày): Nhận Diện 1-7  + Kiểm Soát 8-28 + Làm Chủ 29-65 + Tái Thiết 66+
+//
+// Tái Thiết = extension MIỄN PHÍ Day (totalDays+1) → 88+ (bảo trì thành công,
+// anti-relapse). Không giới hạn thời gian, không tăng giá.
 
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -10,23 +15,76 @@ import clsx from 'clsx';
 import { useStore } from '../state/store';
 import { api, ApiError } from '../services/api';
 import { PhaseBar } from '../components/views/phaseB/PhaseBar';
-import type { DashboardData, Stage } from '../components/views/phaseB/types';
+import type { DashboardData, Stage, Cohort, JourneyChapter } from '../components/views/phaseB/types';
 
-interface PhaseSection {
-  key: Stage;
+interface ChapterSection {
+  key: JourneyChapter;
+  legacyKey: Stage;          // mapping ngược cho PhaseBar
   label: string;
+  tagline: string;
   emoji: string;
   color: string;
-  startDay: number;   // dayInJourney (1-based)
-  endDay: number;
-  total: number;
+  startDay: number;
+  endDay: number;            // Infinity cho Tái Thiết
+  total: number;             // Infinity cho Tái Thiết
 }
 
-const PHASE_SECTIONS: PhaseSection[] = [
-  { key: 'NHAN_THUC',  label: 'Nhận Thức',  emoji: '🌱', color: '#B25C2C', startDay: 1,  endDay: 7,  total: 7 },
-  { key: 'HANH_DONG',  label: 'Hành Động',  emoji: '🔥', color: '#B8860B', startDay: 8,  endDay: 28, total: 21 },
-  { key: 'GIAI_PHONG', label: 'Giải Phóng', emoji: '🚭', color: '#3A7CA5', startDay: 29, endDay: 58, total: 30 },
-  { key: 'TAI_THIET',  label: 'Tái Thiết',  emoji: '🌟', color: '#5C3A1E', startDay: 59, endDay: 88, total: 30 },
+// Chapter colors & labels (mirror cohortConfig.ts backend)
+const CHAPTER_META: Record<JourneyChapter, { label: string; tagline: string; emoji: string; color: string; legacy: Stage }> = {
+  NHAN_DIEN: { label: 'Nhận Diện', tagline: 'Quan sát — chưa thay đổi gì',     emoji: '🌱', color: '#B25C2C', legacy: 'NHAN_THUC' },
+  KIEM_SOAT: { label: 'Kiểm Soát', tagline: 'Giảm dần — xây thói quen mới',    emoji: '🔥', color: '#B8860B', legacy: 'HANH_DONG' },
+  LAM_CHU:   { label: 'Làm Chủ',   tagline: 'Bỏ hẳn — đồng hồ tự do',          emoji: '🚭', color: '#3A7CA5', legacy: 'GIAI_PHONG' },
+  TAI_THIET: { label: 'Tái Thiết', tagline: 'Bảo trì thành công — miễn phí ∞', emoji: '🌟', color: '#5C3A1E', legacy: 'TAI_THIET' },
+};
+
+/** Tạo 4 chapter sections theo cohort. Tái Thiết kéo dài đến Day 88+ (cap UI 88). */
+function getChapterSections(
+  journeyV2: NonNullable<DashboardData['journeyV2']>,
+): ChapterSection[] {
+  const chapters = journeyV2.chapters;
+  const taiThietEnd = 88; // UI cap — backend extension không giới hạn
+  return [
+    {
+      key: 'NHAN_DIEN',
+      ...CHAPTER_META.NHAN_DIEN,
+      legacyKey: CHAPTER_META.NHAN_DIEN.legacy,
+      startDay: chapters.NHAN_DIEN.start,
+      endDay: chapters.NHAN_DIEN.end,
+      total: chapters.NHAN_DIEN.total,
+    },
+    {
+      key: 'KIEM_SOAT',
+      ...CHAPTER_META.KIEM_SOAT,
+      legacyKey: CHAPTER_META.KIEM_SOAT.legacy,
+      startDay: chapters.KIEM_SOAT.start,
+      endDay: chapters.KIEM_SOAT.end,
+      total: chapters.KIEM_SOAT.total,
+    },
+    {
+      key: 'LAM_CHU',
+      ...CHAPTER_META.LAM_CHU,
+      legacyKey: CHAPTER_META.LAM_CHU.legacy,
+      startDay: chapters.LAM_CHU.start,
+      endDay: chapters.LAM_CHU.end,
+      total: chapters.LAM_CHU.total,
+    },
+    {
+      key: 'TAI_THIET',
+      ...CHAPTER_META.TAI_THIET,
+      legacyKey: CHAPTER_META.TAI_THIET.legacy,
+      startDay: journeyV2.taiThietStart,
+      endDay: taiThietEnd,
+      total: Math.max(0, taiThietEnd - journeyV2.taiThietStart + 1),
+    },
+  ];
+}
+
+// LEGACY fallback — chỉ dùng khi backend trả journey cũ (chưa migrate xong)
+const PHASE_SECTIONS_LEGACY: ChapterSection[] = [
+  { key: 'NHAN_DIEN', legacyKey: 'NHAN_THUC',  label: 'Nhận Diện', tagline: '', emoji: '🌱', color: '#B25C2C', startDay: 1,  endDay: 7,  total: 7 },
+  { key: 'KIEM_SOAT', legacyKey: 'HANH_DONG',  label: 'Kiểm Soát', tagline: '', emoji: '🔥', color: '#B8860B', startDay: 8,  endDay: 28, total: 21 },
+  { key: 'LAM_CHU',   legacyKey: 'GIAI_PHONG', label: 'Làm Chủ',   tagline: '', emoji: '🚭', color: '#3A7CA5', startDay: 29, endDay: 58, total: 30 },
+  { key: 'TAI_THIET', legacyKey: 'TAI_THIET',  label: 'Tái Thiết', tagline: '', emoji: '🌟', color: '#5C3A1E', startDay: 59, endDay: 88, total: 30 },
 ];
 
 export function Journey() {
@@ -53,8 +111,21 @@ export function Journey() {
   }
   useEffect(() => { load(); }, []);
 
+  // V2 cohort-aware sections (fallback legacy 88-day nếu API chưa trả journeyV2)
+  const sections = useMemo(() => {
+    if (data?.journeyV2) return getChapterSections(data.journeyV2);
+    return PHASE_SECTIONS_LEGACY;
+  }, [data?.journeyV2]);
+
+  const maxDay = useMemo(() => {
+    if (!sections.length) return 88;
+    return sections[sections.length - 1].endDay;
+  }, [sections]);
+
+  const cohortCode: Cohort | null = data?.journeyV2?.cohort ?? null;
+
   const selectedDay = dayParam ? parseInt(dayParam, 10) : null;
-  const selected = selectedDay && selectedDay >= 1 && selectedDay <= 88 ? selectedDay : null;
+  const selected = selectedDay && selectedDay >= 1 && selectedDay <= maxDay ? selectedDay : null;
 
   // Map check-ins theo dayInJourney. Check-in cũ dùng dayNumber 1-30 (Phase A).
   // Phase B: contentDay = dayInJourney - 28 cho Phase 3 (29 → 1, 58 → 30).
@@ -93,29 +164,73 @@ export function Journey() {
   if (!data) return null;
 
   const currentDay = data.journey.dayInJourney;
-  const currentStage = data.journey.stage;
   const qDayConfirmed = !!data.user.qDayConfirmedAt;
+
+  // V2 cohort info nếu có. Fallback legacy stage cho PhaseBar.
+  const v2 = data.journeyV2;
+  const cohortLabel = v2?.cohortLabel ?? '';
+  const cohortEmoji = v2?.cohortEmoji ?? '';
+  const cohortTagline = v2?.cohortTagline ?? '';
+  const totalDays = v2?.totalDays ?? 88;
+  const currentStageForBar: Stage = (v2 ? CHAPTER_META[v2.chapter].legacy : data.journey.stage);
+  const dayInChapterForBar = v2?.dayInChapter ?? data.journey.dayInStage;
+  const totalInChapterForBar = (v2?.totalInChapter ?? data.journey.totalInStage) || data.journey.totalInStage;
+  const progressInChapterForBar = v2?.progressInChapter ?? data.journey.progressInStage;
 
   return (
     <div className="w-full max-w-[1100px] mx-auto p-4 lg:p-6 pb-24 lg:pb-8 space-y-6">
       <header className="px-1">
         <h1 className="text-display text-sol-ink font-bold">🗺️ Hành Trình Sol</h1>
-        <p className="text-body text-sol-ink-2 mt-1">
-          4 chặng tiến hoá hành vi — Nhận Thức · Hành Động · Giải Phóng · Tái Thiết. Click vào mỗi ngày để xem chi tiết.
-        </p>
+        {v2 ? (
+          <p className="text-body text-sol-ink-2 mt-1">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-sol-paper border border-sol-ink/10 font-semibold mr-2">
+              <span>{cohortEmoji}</span>
+              <span>Lộ trình {cohortLabel}</span>
+              <span className="text-sol-ink-3 font-normal">· {totalDays} ngày</span>
+            </span>
+            {cohortTagline}. Click mỗi ngày để xem chi tiết.
+          </p>
+        ) : (
+          <p className="text-body text-sol-ink-2 mt-1">
+            4 chặng tiến hoá hành vi — Nhận Diện · Kiểm Soát · Làm Chủ · Tái Thiết. Click mỗi ngày để xem chi tiết.
+          </p>
+        )}
       </header>
 
       <PhaseBar
-        stage={currentStage}
-        progressInStage={data.journey.progressInStage}
-        dayInStage={data.journey.dayInStage}
-        totalInStage={data.journey.totalInStage}
+        stage={currentStageForBar}
+        progressInStage={progressInChapterForBar}
+        dayInStage={dayInChapterForBar}
+        totalInStage={totalInChapterForBar}
       />
 
-      {/* 4 phase sections — mỗi section 1 grid cells riêng */}
-      {PHASE_SECTIONS.map((phase) => {
-        const isPastPhase = currentDay > phase.endDay;
-        const isCurrentPhase = currentDay >= phase.startDay && currentDay <= phase.endDay;
+      {/* Memory Book ready banner — khi user hoàn thành lộ trình chính */}
+      {v2?.memoryBookReady && (
+        <div className="bg-gradient-to-r from-sol-clay/10 to-sol-gold/10 border-2 border-sol-clay rounded-2xl p-5 flex items-center gap-4">
+          <div className="text-5xl">📖</div>
+          <div className="flex-1">
+            <h2 className="text-h2 font-bold text-sol-clay">Sổ Lưu Niệm sẵn sàng</h2>
+            <p className="text-body text-sol-ink-2 mt-1">
+              Anh vừa hoàn thành lộ trình {cohortLabel} {totalDays} ngày. Sổ Lưu Niệm của hành trình anh đã được tổng hợp — sẵn sàng xem + chia sẻ.
+            </p>
+          </div>
+          <button
+            onClick={() => nav('/workbook?print=1')}
+            className="px-5 py-3 rounded-xl bg-sol-clay text-white font-semibold whitespace-nowrap"
+          >
+            Mở Sổ Lưu Niệm
+          </button>
+        </div>
+      )}
+
+      {/* 4 chapter sections — render dynamic theo cohort */}
+      {sections.map((phase) => {
+        // Tái Thiết = open-ended → user vẫn ở đó nếu day >= startDay, không có "đã qua"
+        const isTaiThiet = phase.key === 'TAI_THIET';
+        const isPastPhase = !isTaiThiet && currentDay > phase.endDay;
+        const isCurrentPhase = isTaiThiet
+          ? currentDay >= phase.startDay
+          : currentDay >= phase.startDay && currentDay <= phase.endDay;
         const isFuturePhase = currentDay < phase.startDay;
         const cols = phase.total <= 7 ? 7 : 10;
 
@@ -139,7 +254,9 @@ export function Journey() {
                   {phase.label}
                 </h2>
                 <span className="text-meta text-sol-ink-3">
-                  Ngày {phase.startDay}–{phase.endDay} · {phase.total} ngày
+                  {isTaiThiet
+                    ? `Ngày ${phase.startDay}+ · Bonus miễn phí`
+                    : `Ngày ${phase.startDay}–${phase.endDay} · ${phase.total} ngày`}
                 </span>
               </div>
               {isCurrentPhase && (
@@ -159,6 +276,11 @@ export function Journey() {
               )}
             </div>
 
+            {/* Tagline chặng */}
+            {phase.tagline && (
+              <p className="text-meta text-sol-ink-3 -mt-3 mb-3 italic">{phase.tagline}</p>
+            )}
+
             <div
               className="grid gap-2"
               style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
@@ -168,11 +290,13 @@ export function Journey() {
                 const isToday = day === currentDay;
                 const isLocked = day > currentDay;
 
-                // Check-in lookup: Phase A dùng dayNumber 1-30, Phase B Phase 3 map
-                // dayInJourney 29-58 → contentDay 1-30 cũ.
+                // Check-in lookup: dùng day trực tiếp (mỗi day có 1 check-in unique).
+                // Legacy fallback: GIAI_PHONG cũ map day 29-58 → contentDay 1-30,
+                // chỉ apply khi phase.key === 'LAM_CHU' VÀ KHÔNG có journeyV2
+                // (tức backend chưa migrate). V2 → dùng day thẳng.
                 let checkinKey = day;
-                if (phase.key === 'GIAI_PHONG') {
-                  checkinKey = day - 28; // 29→1, 58→30
+                if (!v2 && phase.key === 'LAM_CHU') {
+                  checkinKey = day - 28; // legacy mapping
                 }
                 const ci = checkinByDay.get(checkinKey);
 

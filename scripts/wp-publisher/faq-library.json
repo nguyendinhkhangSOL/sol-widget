@@ -1,0 +1,157 @@
+{
+  "cai-thuoc-la-vinh-vien": [
+    {"q":"Cai thuốc lá vĩnh viễn nghĩa là gì?","a":"Trong khoa học cessation, \"vĩnh viễn\" = giữ được ≥5 năm liên tục không hút (Hughes 2008 Addictive Behaviors). Đến mốc này, tỷ lệ tái nghiện chỉ còn ~1% — não đã re-wire đủ để cơn thèm không còn là threat lớn."},
+    {"q":"Tại sao 70% người vấp trong năm đầu sau cai?","a":"Không phải tại yếu ý chí. 3 cơ chế sinh học song song: receptor upregulation chưa reset (mất 6-12 tháng), Pavlovian conditioning vẫn mạnh (10-30 năm thói quen không xóa trong 30 ngày), và identity transition chưa hoàn tất. Ý chí thuần không thắng được — cần CHIẾN LƯỢC cụ thể."},
+    {"q":"Phương pháp Đi Cùng Sol khác cách cai thuốc khác như thế nào?","a":"Phương pháp truyền thống (cold turkey, NRT, Champix) chỉ dạy CAI trong 30-90 ngày đầu. Sol dạy CAI + KỸ NĂNG VĨNH VIỄN qua 4 tier: lộ trình 51 ngày, maintenance 12 tháng, kiến thức 5 cơ chế tái nghiện, và Khang Sol voice + community. Mục tiêu: anh sống vĩnh viễn không hút, không chỉ cai 30 ngày."},
+    {"q":"Nếu tôi lỡ hút 1 điếu sau 6 tháng cai, có phải vấp hoàn toàn không?","a":"Không. Marlatt 2005 gọi đây là Abstinence Violation Effect (AVE). 70% lapse trở thành relapse trong 24h NẾU không có chiến lược. Quy tắc Sol: Lapse ≠ Relapse. Trong 60 phút sau lỡ hút, ghi lý do, gọi 1 người thân, tha thứ, tiếp Day 31 (không phải Day 1). Skill này giữ 70% lapse không thành relapse."},
+    {"q":"5 nguyên nhân tái nghiện sau cai 1-5 năm là gì?","a":"(1) AVE — \"1 điếu có sao\" → mất kiểm soát. (2) Social trigger — đám tang/cưới/nhậu sau dài. (3) Stress event lớn — mất việc, ly hôn, gia đình ốm (Cohen 2007: tăng relapse 2.8x). (4) Emotion regulation kém — không thay được \"thuốc giảm stress\". (5) Identity loss — \"tôi là ai khi không hút?\"."},
+    {"q":"Cần bao lâu để được Sol xem là \"không hút vĩnh viễn\"?","a":"Lộ trình full Sol: 7 ngày Làm quen + 14 ngày Giảm dần + 30 ngày Q-Day + 12 tháng Maintenance = 16 tháng đầu. Sau đó năm 2-5 là \"vĩnh viễn threshold\" theo Hughes 2008. Đến năm 5, anh được xem là vĩnh viễn không hút theo định nghĩa lâm sàng."}
+  ],
+  "lam-quen-ngay-1-tai-sao-bo-thuoc-la": [
+    {"q":"Tại sao nên bỏ thuốc lá?","a":"5 lý do khoa học: sống thêm trung bình 10 năm (Doll 2004 BMJ), tiết kiệm 100-300 triệu/đời, phổi hồi phục 30% trong 9 tháng, tim giảm 50% nguy cơ nhồi máu sau 1 năm, con bớt 50% nguy cơ bệnh hô hấp."},
+    {"q":"Bỏ thuốc có quá muộn nếu đã hút 30 năm?","a":"Không. Doll 2004 (50-Year British Doctors Study): bỏ trước 40 lấy lại gần hết 10 năm sống, bỏ trước 50 lấy lại 6 năm, bỏ trước 60 vẫn còn 3 năm. Bỏ ở bất kỳ tuổi nào cũng tốt hơn không bỏ."},
+    {"q":"Phổi hồi phục bao lâu sau khi bỏ thuốc?","a":"Theo US Surgeon General 2014: 20 phút huyết áp về bình thường, 12 giờ CO máu giảm, 2-3 tuần FEV1 tăng, 1-9 tháng cilia phổi hồi 50-70% (ho giảm, đờm giảm rõ), 1 năm tim giảm 50% nguy cơ. Phổi không trở về 100% nhưng cải thiện đáng kể."},
+    {"q":"Bỏ thuốc tiết kiệm bao nhiêu tiền?","a":"1 bao Vinataba 30k/ngày × 365 = 11 triệu/năm tiền thuốc thuần. Cộng chi phí ẩn (răng, bảo hiểm, khám hô hấp): ~4tr/năm. Cộng chi phí bệnh tật expected: ~80tr. 30 năm hút = 500-700 triệu (WHO ước tính)."},
+    {"q":"Sol có giúp con tôi không?","a":"Có. Khói thuốc thụ động tăng nguy cơ viêm phế quản 1.5-2x, hen suyễn 1.3-1.8x, SIDS 2x ở trẻ sơ sinh (Öberg 2011 Lancet). Khi anh bỏ thuốc, môi trường nhà sạch khói → con bớt 50% nguy cơ bệnh hô hấp."}
+  ],
+  "lam-quen-ngay-2-nghien-nicotine-la-gi": [
+    {"q":"Nghiện nicotine là gì?","a":"Tình trạng phụ thuộc sinh học và tâm lý vào nicotine (DSM-5 \"Tobacco Use Disorder\"). US Surgeon General 1988: nicotine gây nghiện ngang heroin và cocaine. Não upregulate 300% receptor nicotinic α4β2 sau nhiều năm hút (Benowitz 2010 NEJM)."},
+    {"q":"Tại sao bỏ thuốc khó hơn tưởng tượng?","a":"3 cơ chế tấn công song song khi cai: (1) Upregulation — não đói receptor mỗi 1-2 giờ. (2) Dopamine bị \"hack\" — mọi thứ nhạt trong 1-3 tuần. (3) Pavlov nhân tạo — tình huống quen tự kích hoạt thèm. Ý chí thuần không thắng 3 đối thủ này."},
+    {"q":"Tôi có yếu ý chí không khi đã vấp nhiều lần?","a":"Không. \"Yếu ý chí\" là chẩn đoán sai. Đúng phải là \"chưa có chiến lược cho 3 cơ chế sinh học\". Anh đánh nhau với sinh học, không phải với chính mình. Cần đồng minh + công cụ — không phải gồng ý chí."},
+    {"q":"Receptor não có hồi phục sau khi cai không?","a":"Có. Sau 6-12 tháng cai, receptor nicotinic giảm về baseline. Cơn thèm giảm rõ. Tuy nhiên neural pathway (Pavlovian) không xóa hoàn toàn — vẫn \"ngủ\" và có thể kích hoạt khi stress lớn. Đó là lý do năm 2-3 vẫn cần cảnh giác."},
+    {"q":"Hiểu cơ chế nghiện giúp gì cho việc cai?","a":"Rất nhiều. Hiểu = bớt tự trách = giảm cortisol = não còn năng lượng cho 3 cơ chế. Wagner 2010: self-criticism tăng tỷ lệ vấp 40%. Self-compassion (Neff 2003) là chiến lược khoa học, không phải softness."}
+  ],
+  "lam-quen-ngay-3-chi-phi-thuc-su": [
+    {"q":"Hút thuốc tốn bao nhiêu tiền mỗi năm?","a":"1 bao/ngày × 30k × 365 = 11 triệu/năm tiền thuốc thuần. Cộng 4 tầng chi phí ẩn: răng + bảo hiểm + khám hô hấp + quần áo ~4 triệu/năm. Tổng ~15 triệu/năm."},
+    {"q":"Mỗi điếu thuốc lá làm mất bao nhiêu phút đời?","a":"11 phút theo Shaw 2000 BMJ (cohort 35.000 bác sĩ Anh). Tính cụ thể: 30 năm hút × 20 điếu/ngày × 11 phút = 4.4 năm đời mất. Doll 2004 ước tính lớn hơn: 10 năm tuổi thọ trung bình."},
+    {"q":"Bảo hiểm sức khỏe rẻ hơn bao nhiêu nếu bỏ thuốc?","a":"Bảo hiểm tư VN (Manulife, Prudential, Bảo Việt) charge thêm 15-40% phí cho người hút. Bỏ thuốc và xác nhận 1 năm sau → giảm xuống mức non-smoker. Tiết kiệm 1-2 triệu/năm phí bảo hiểm."},
+    {"q":"30 năm tiền hút thuốc mua được gì?","a":"~328 triệu (chỉ tiền thuốc thuần) — đủ mua: 1 căn nhà cấp 4 ở quê, 4 năm học đại học cho con, 5 chuyến đi châu Âu cả gia đình, hoặc đầu tư chứng khoán lãi kép thành ~600-800 triệu trong 30 năm."},
+    {"q":"Tiền tiết kiệm sau khi bỏ dùng gì có ý nghĩa nhất?","a":"Top 5 câu trả lời từ 500+ user Sol: học cho con (1 học kỳ đại học), du lịch gia đình (1 chuyến/năm), đầu tư sức khỏe (gym + dinh dưỡng + khám định kỳ), tích lũy nhà/đất, sửa nhà / mua xe."}
+  ],
+  "lam-quen-ngay-4-bo-thuoc-that-bai-nhieu-lan": [
+    {"q":"Trung bình cần bao nhiêu lần thử để cai thành công?","a":"6-30 lần (Chaiton 2016 BMJ Open, longitudinal 1.277 người Canada). Trước đây sách giáo khoa nói 5-7 lần — nghiên cứu mới cho thấy con số thực cao hơn nhiều. Không phải tại yếu — đây là quy luật."},
+    {"q":"Vì sao tôi đã thử bỏ thuốc nhiều lần mà vẫn vấp?","a":"5 lý do phổ biến nhất: cold turkey không chuẩn bị, không có Plan B, cai một mình không hỗ trợ, NRT dùng sai cách hoặc bỏ sớm, \"thử 1 điếu\" (AVE — Abstinence Violation Effect)."},
+    {"q":"Mỗi lần vấp có vô ích không?","a":"Không. West 2018: mỗi lần thử có \"learning effect\" — não ghi nhận trigger nào gây vấp, đường nào không hiệu quả. Lần thứ N có xác suất thành công cao hơn lần N-1. 80%+ người thành công đều nói \"lần này khác vì biết tôi vấp ở đâu\"."},
+    {"q":"Khang Sol đã vấp bao nhiêu lần trước khi cai thành công?","a":"4 lần (1995, 2010, 2015, 2018). Lần 5 (2020) thành công — 5 năm rồi vẫn cai. Mỗi lần vấp khác nhau: cold turkey không Plan B, tapering một mình, NRT bỏ sớm, AVE \"1 điếu thử\". Lần 5 áp dụng tất cả bài học."},
+    {"q":"Lần thử này có gì khác lần trước?","a":"Anh có dữ liệu từ lần trước: biết trigger nào dễ vấp, phương pháp nào không hợp tính cách, lý do nào mạnh nhất. Sol giúp anh dùng dữ liệu này — chuẩn bị cụ thể cho từng yếu điểm cá nhân thay vì cố ý chí lại từ đầu."}
+  ],
+  "lam-quen-ngay-5-3-phuong-phap-khoa-hoc": [
+    {"q":"Phương pháp cai thuốc lá nào hiệu quả nhất?","a":"Không có \"tốt nhất\" tuyệt đối. 3 phương pháp đã chứng minh Cochrane: Cold turkey (base), Tapering (RR 1.01 vs cold turkey), NRT/thuốc kê (RR 1.55-2.24). Kết hợp luôn tốt hơn: Tapering + NRT combo = odds x1.71. FTND ≥7 cần Champix."},
+    {"q":"Cold turkey có hiệu quả hơn giảm dần không?","a":"Không. Cochrane 2016 (51 RCT, 22.000 người): RR 1.01 (95% CI 0.87-1.17) — tương đương khoa học. Chọn theo tính cách: cold turkey hợp người \"0 hoặc 100\", FTND ≤3. Tapering hợp người \"từng bước\", FTND 4-7, văn hóa nhậu khó cắt ngay."},
+    {"q":"NRT có an toàn không?","a":"Có cho đa số người. Stead 2012 Cochrane (117 trials, 51.000 người): NRT tăng odds thành công x1.55 vs placebo. Combo patch + lozenge x1.71. Chống chỉ định: đau ngực không ổn định, nhồi máu cơ tim trong 2 tuần, dị ứng nicotine."},
+    {"q":"Champix (Varenicline) tốt hơn NRT không?","a":"Có cho FTND nặng. Cahill 2013 Cochrane: Varenicline RR 2.24 vs placebo, RR 1.57 vs NRT đơn. Tác dụng phụ: buồn nôn 30%, mơ kỳ lạ 13%, FDA warning về ý nghĩ tự sát (hiếm). Cần BS kê đơn, ngân sách ~1.5-2 triệu/12 tuần."},
+    {"q":"Bupropion có khác Champix không?","a":"Khác. Bupropion (Wellbutrin) cơ chế ức chế dopamine + norepinephrine reuptake, đồng thời là thuốc chống trầm cảm. RR 1.62 vs placebo. Phù hợp người có depression đi kèm. Chống chỉ định: tiền sử co giật, rối loạn ăn uống, dùng MAOI."}
+  ],
+  "lam-quen-ngay-6-do-muc-san-sang": [
+    {"q":"Làm sao biết tôi đã sẵn sàng bỏ thuốc?","a":"Làm test Stages of Change 5 câu (Prochaska & DiClemente 1983 TTM). 5 stage: Pre-contemplation → Contemplation → Preparation → Action → Maintenance. Stage 3+ (Preparation) mới nên đặt Q-Day."},
+    {"q":"Stage of Change của tôi là gì?","a":"Phụ thuộc 5 câu test: ý định bỏ trong 30 ngày, đã thử giảm 6 tháng qua, đã đặt Q-Day, đã chọn phương pháp, đã có hệ thống hỗ trợ. Tổng điểm 0-20 → 5 stage tương ứng."},
+    {"q":"Nếu tôi ở Stage 1-2 (chưa quyết) thì sao?","a":"KHÔNG ép quyết. Prochaska 1992: Stage 1-2 ép bỏ → 70-90% vấp trong 30 ngày. Stage 3 đặt Q-Day → 30-40% thành công 6 tháng. Stage matter hơn quyết tâm. Tiếp tục đọc Sol — khi anh sẵn sàng tự thấy."},
+    {"q":"Tại sao Stage matter hơn ý chí?","a":"Vì Stage tương quan với mức độ não đã \"chuyển dịch\" — Stage 1 não vẫn thấy hút \"đáng\". Ép quyết khi não chưa sẵn = thua từ Day 1. Stage 3+ nghĩa não đã đồng ý — chiến đấu thực sự khả thi."},
+    {"q":"Tôi mất bao lâu để chuyển từ Stage 2 sang Stage 3?","a":"Trung bình 2-6 tháng nếu được giáo dục đủ. Sol thiết kế 7 ngày Làm quen để dồn quá trình này vào 1 tuần — đến Ngày 7 anh có đủ thông tin để quyết. Một số người vẫn ở Stage 2 sau 7 ngày — không sao, tiếp tục đọc."}
+  ],
+  "lam-quen-ngay-7-cam-ket-chon-lo-trinh": [
+    {"q":"Viết cam kết bỏ thuốc lá có hiệu quả không?","a":"Có. Karlan 2010 (American Economic Journal): commitment device tăng tỷ lệ thành công 53% sau 6 tháng. Cialdini 2006: public commitment (báo người khác) mạnh hơn private 3-5x. Viết + ký + báo người thân là chiến lược khoa học."},
+    {"q":"3 lộ trình Sol khác nhau ra sao?","a":"A. Cold Turkey — Q-Day = mai, phù hợp FTND ≤3 + tính cách \"0 hoặc 100\". B. 14 ngày Giảm dần (KHUYẾN) — chuẩn bị 14 ngày trước Q-Day, phù hợp FTND 4-7. C. Chờ thêm 1-2 tuần — Stage 1-2 chưa sẵn, đọc thêm Sol."},
+    {"q":"Tôi nên chọn lộ trình nào?","a":"Dựa trên 3 yếu tố: (1) Stage of Change (Ngày 6), (2) FTND nếu đã biết, (3) tính cách + lối sống. Stage 3+ + FTND ≤3 → A. Stage 3+ + FTND 4-7 → B. Stage 1-2 → C (chờ thêm)."},
+    {"q":"Tôi phải báo ai về cam kết?","a":"Tối thiểu 1, lý tưởng 3 người: vợ + 1 bạn thân + 1 đồng nghiệp đáng tin. Báo qua Zalo/SMS để có \"bằng chứng\". Càng nhiều người biết, ràng buộc càng mạnh. Khang Sol báo 8 người lần thứ 5 cai."},
+    {"q":"Sau khi cam kết tôi làm gì?","a":"Lộ trình A: đọc bài T-1 \"Đêm trước Q-Day\" tối nay. Lộ trình B: bắt đầu T-14 ngày mai. Lộ trình C: tiếp tục đọc Sol, quay lại form khi sẵn sàng. Cam kết là điểm chuyển, không phải điểm cuối."}
+  ],
+  "giam-dan-ngay-1-co-hieu-qua-khong": [
+    {"q":"Giảm dần thuốc lá có hiệu quả không?","a":"Có. Cochrane 2016 (Lindson-Hawley, 51 RCT, 22.000+ người): RR 1.01 (95% CI 0.87-1.17) — tương đương cold turkey về tỷ lệ thành công 6 tháng. Cả WHO 2020 và USDHHS 2008 đều khuyến cáo cả 2 phương pháp."},
+    {"q":"Tapering 14 ngày có quá ngắn không?","a":"14 ngày là khung tối ưu — đủ thay đổi hành vi (Pavlov yếu đi 50%), không quá dài để mất momentum. West 2017: tapering trên 21 ngày tăng dropout rate 30%. 14 ngày là sweet spot."},
+    {"q":"Tôi cần làm gì hôm nay T-14?","a":"KHÔNG cắt điếu nào. Chỉ 1 việc: đếm baseline trung bình ___ điếu/ngày tuần qua. Không có baseline thì không đo được tiến bộ. Mai T-13 sẽ map trigger cá nhân."},
+    {"q":"Lộ trình 14 ngày Sol cụ thể như thế nào?","a":"T-14 → T-11 (4 ngày AWARENESS): ghi nhật ký, test Fagerström, đánh sao điếu. T-10 → T-5 (6 ngày REDUCTION): cắt từng bậc theo Bandura self-efficacy. T-4 → T-1 (4 ngày COUNTDOWN): chọn Q-Day, dọn cue, viết Plan B, ritual đêm cuối."},
+    {"q":"Có cần NRT hay Champix kèm tapering không?","a":"Tùy FTND (test T-11). FTND ≤3 nhẹ: không cần. 4-6 trung bình: NRT combo (patch + lozenge) tăng odds 1.71x. ≥7 nặng: Champix (×2.24) hoặc Bupropion (×1.62). Quyết định ở T-5."}
+  ],
+  "giam-dan-ngay-2-ban-do-trigger": [
+    {"q":"Trigger thèm thuốc là gì?","a":"Bất kỳ tình huống/cảm xúc/cue nào kích hoạt cơn thèm tự động. Có 3 loại: External (gạt tàn, người hút), Internal (cảm xúc cụ thể), Contextual (sau cơm, cà phê, nhậu). Trigger là liên kết thần kinh xây dần trong 10-30 năm."},
+    {"q":"5 trigger phổ biến nhất của người Việt là gì?","a":"Theo khảo sát Sol 500+ user: (1) Cà phê sáng 87%, (2) Sau bữa cơm 79%, (3) Bia hơi/nhậu 68%, (4) Lái xe 54%, (5) Sau sex/trước ngủ 41%. 80% điếu gắn 3-5 trigger cố định."},
+    {"q":"Tại sao cue thị giác đủ kích hoạt cơn thèm?","a":"Conklin 2008 Addiction: chỉ NHÌN ảnh cue (gạt tàn, bao thuốc) đã tăng craving 200-400% trong 5-10 giây — chưa cần thuốc thực. Đây là Pavlovian conditioning qua hàng chục nghìn lần lặp."},
+    {"q":"Tôi ghi nhật ký trigger thế nào?","a":"Template 4 cột: Giờ | Nơi | Cảm xúc trước | Cảm xúc sau. Mỗi điếu hôm nay ghi 1 dòng. GHI NGAY khi hút, không chờ tối (sẽ quên cảm xúc). Mục tiêu: hiểu pattern cá nhân, không cắt vội."},
+    {"q":"Sau khi map trigger tôi làm gì?","a":"Ngày 3 (T-12) phân loại 0-3 sao cho từng điếu. Ngày 5 (T-10) cắt điếu \"0 sao\" (tự động) trước theo Bandura self-efficacy. Trigger map là nền tảng cho cả 14 ngày tapering."}
+  ],
+  "giam-dan-ngay-3-phan-loai-dieu-thuoc": [
+    {"q":"Phân loại điếu thuốc 0-3 sao theo tiêu chí gì?","a":"Theo mức khoái cảm + ý thức: 0 sao = tự động hoàn toàn, không nhớ tại sao. 1 sao = habit nhẹ. 2 sao = thấy \"ngon\". 3 sao = thực sự muốn, có khoái cảm cao (anchor cigarette)."},
+    {"q":"Tại sao 70% điếu là \"tự động\"?","a":"West 2006 PRIME theory: hút lâu năm dùng hệ Impulsive system (phản xạ) thay vì Reflective system (deliberate). Khảo sát 5.000 smokers: 70% điếu là impulsive, người hút 20+ năm tới 80%."},
+    {"q":"Tại sao cắt điếu 0 sao trước thay vì điếu khó?","a":"Bandura 1977 self-efficacy: chiến thắng dễ → tự tin → cắt khó sau. Lindson 2010 (700 smokers): hierarchical reduction thắng scheduled 22% duy trì 4 tuần. Sequence quan trọng hơn quantity."},
+    {"q":"Trung bình một người hút 20 điếu/ngày có bao nhiêu điếu 3 sao?","a":"Thường chỉ 1-3 điếu/ngày (5-15%). 60-80% là 0-1 sao (automatic). Khang Sol 22 điếu/ngày trước cai 2020: 14 điếu 0 sao + 5 điếu 1 sao + 2 điếu 2 sao + 1 điếu 3 sao (điếu sáng với cà phê)."},
+    {"q":"Trung thực đánh sao có khó không?","a":"Có. Sai lầm phổ biến: cho mọi điếu 2-3 sao vì cảm giác \"mỗi điếu đều quan trọng\". Nếu >50% điếu là 2-3 sao, anh đang đánh \"lạc quan\". Trung thực = đa số 0-1 sao."}
+  ],
+  "giam-dan-ngay-4-test-fagerstrom": [
+    {"q":"Test Fagerström FTND là gì?","a":"Tiêu chuẩn vàng quốc tế đo phụ thuộc nicotine (Heatherton et al. 1991, British Journal of Addiction). 6 câu hỏi, score 0-10. Đã được validate ở 100.000+ người, 30+ quốc gia. Cochrane, WHO, USDHHS đều dùng FTND."},
+    {"q":"Điểm FTND của tôi nghĩa là gì?","a":"≤3 = nhẹ (cold turkey hoặc tapering không cần thuốc). 4-6 = trung bình (NRT combo patch + lozenge khuyến cáo). ≥7 = nặng (cần Champix/Bupropion kê đơn). Score càng cao, cần thuốc hỗ trợ càng nhiều."},
+    {"q":"Tại sao câu hỏi điếu sáng quan trọng nhất?","a":"Chiếm 3/10 điểm — gấp 3 các câu khác. Baker 2007 phân tích 12.000 smokers: thời gian đến điếu đầu tiên (TTFC) là dự đoán đơn lẻ tốt nhất về craving withdrawal (R²=0.42) và relapse week 1 (HR 3.1)."},
+    {"q":"FTND có chính xác không?","a":"Rất chính xác cho mục đích lâm sàng. Validate trên 100.000+ smokers. Tương quan với cotinine máu, PET scan receptor density, và tỷ lệ cessation success. Không thay thế chẩn đoán BS nhưng đủ cho screening và quyết định NRT/thuốc."},
+    {"q":"FTND nặng có cai được không?","a":"Có, nhưng cần thuốc hỗ trợ. FTND ≥7 không thuốc = 3-5% thành công. Có Champix 12 tuần = 15-25%. Khác biệt khổng lồ. KHÔNG nên cold turkey một mình nếu FTND ≥7."}
+  ],
+  "giam-dan-ngay-5-cach-cai-thuoc-dan-dan": [
+    {"q":"Cách cai thuốc dần dần khoa học nhất là gì?","a":"Hierarchical reduction (cắt điếu \"dễ\" trước). Chọn điếu 0-1 sao từ nhật ký T-13, cắt trước. Bandura 1977: mastery experience đầu tiên xây self-efficacy. Lindson 2010: thắng scheduled reduction 22% duy trì 4 tuần."},
+    {"q":"4 bước cắt điếu đầu tiên?","a":"(1) Mở nhật ký T-13, chọn 1 điếu 0-1 sao. (2) Chuẩn bị thay thế: chai nước lạnh, kẹo cao su, không gian đổi. (3) Khi giờ đó đến: uống nước 200ml + đi 50-100 bước + nhai kẹo trong 5 phút. (4) Ghi cảm giác sau khi vượt."},
+    {"q":"Tại sao không cắt điếu sáng đầu tiên?","a":"Điếu sáng là điếu khó nhất (FTND #1). Cắt ngay T-10 mà chưa chuẩn bị → withdrawal nặng, dễ vấp, mất self-efficacy. Để T-9 mới chạm điếu sáng. Quy tắc: dễ trước, khó sau."},
+    {"q":"Lỡ hút điếu đã cắt thì sao?","a":"Tha thứ, mai cắt lại. Wagner 2010: self-criticism tăng tỷ lệ vấp 40%. Self-compassion là chiến lược, không phải softness. Tapering không phải pass/fail — ghi lý do vấp (cảm xúc/áp lực/quên), không tự trách."},
+    {"q":"Cần bao lâu để cắt được điếu đầu tiên?","a":"1 ngày. T-10 là ngày cắt 1 điếu đầu tiên. T-9 cắt 2-3 điếu. T-8 cắt 4-5. Đến T-1 (đêm cuối) còn 3-5 điếu. Q-Day = 0. Lộ trình tăng tốc, không tuyến tính."}
+  ],
+  "giam-dan-ngay-6-tri-hoan-dieu-sang": [
+    {"q":"Tại sao điếu sáng là điếu khó nhất bỏ?","a":"Heatherton 1991: chiếm 3/10 FTND. Sau 7-8h ngủ, nicotine trong máu giảm 80% — receptor đói nặng nhất buổi sáng. Cộng cortisol đỉnh circadian (7-9h sáng). Đây là Pavlov mạnh nhất trong ngày."},
+    {"q":"Làm sao trì hoãn điếu thuốc sáng?","a":"3 kỹ thuật: (1) Thủy hóa lập tức — uống 500ml nước lạnh ngay khi tỉnh (KHÔNG ra ban công). (2) Thay thế cảm giác miệng — đánh răng 3 phút + súc miệng nước muối. (3) Vận động nhẹ — đi 100 bước hoặc 10 push-up."},
+    {"q":"Mục tiêu trì hoãn bao nhiêu phút là đủ?","a":"T-9: 60 phút sau khi thức. T-8: 90 phút. T-7: 120 phút. Q-Day: 0 điếu sáng. Mỗi 30 phút trì hoãn = -1 điểm FTND. Baker 2007: trì hoãn ≥60 phút tăng odds cai thành công 2.5x."},
+    {"q":"Tránh cà phê 60 phút đầu có cần thiết không?","a":"Có. Cà phê là Pavlov trigger #1 cho điếu sáng (gặp 87% người hút Việt). Tránh cà phê 60 phút đầu = phá liên kết Pavlov mạnh nhất. Sau 1-2 tuần có thể uống cà phê lại nhưng không cần thuốc đi kèm."},
+    {"q":"Lỡ hút điếu sáng trong 60 phút thì sao?","a":"Không tự trách. Ghi giờ thực sự hút và lý do. Mai thử lại 30 phút trước. Trì hoãn 30-45 phút vẫn là tiến bộ vs 5 phút bình thường — giảm phụ thuộc rõ rệt."}
+  ],
+  "giam-dan-ngay-7-compensatory-smoking": [
+    {"q":"Compensatory smoking là gì?","a":"Hiện tượng khi giảm số điếu, người hút có xu hướng hít sâu hơn, ngậm khói lâu hơn, hút nhiều ngụm/điếu hơn để bù nicotine bị mất. Strasser 2007 Drug Alcohol Depend: bù 30-50% nicotine."},
+    {"q":"Làm sao biết tôi đang compensatory smoking?","a":"4 dấu hiệu: (1) Hít sâu hơn (80% người tapering có). (2) Ngậm khói lâu 3-5 giây (bình thường 1-2). (3) Nhiều ngụm/điếu (15-18 vs 10-12). (4) Hút tận filter. Quay video chính mình hút 1 điếu để verify."},
+    {"q":"Compensatory smoking có nguy hiểm không?","a":"Có 2 cách. (1) Tapering thất bại — giảm điếu nhưng nicotine vào não không giảm → Q-Day vẫn withdrawal nặng. (2) CO + tar tăng hơn (hít sâu hơn) → tổn hại phổi cấp tính tăng."},
+    {"q":"Làm sao phòng compensatory smoking?","a":"4 cách: (1) Đếm ngụm/điếu ≤10, tắt điếu khi đến giới hạn. (2) Hít bình thường — không \"tận hưởng\" sâu hơn. (3) Cân nhắc NRT lozenge sớm (không chờ Q-Day) — não đỡ \"đói\" giữa điếu. (4) Tăng tốc tapering thay vì kéo dài."},
+    {"q":"Tôi có nên đo CO máu để verify không?","a":"Không bắt buộc. Test strip cotinine ~200k/lần đủ chính xác — đo sáng + tối, so sánh baseline. Cotinine thấp = giảm thực; cao = compensatory. Đa số người không cần đo — quay video + đếm ngụm là đủ."}
+  ],
+  "giam-dan-ngay-8-moc-1-tuan-giam": [
+    {"q":"Sau 1 tuần tapering tôi nên đánh giá thế nào?","a":"Đếm tổng điếu T-14 → T-8 vs baseline tuần trước. 3 kịch bản: A (giảm ≥30% — trên track), B (10-30% — soát compensatory), C (<10% — gọi BS, có thể cần thuốc kê)."},
+    {"q":"Target -30% sau 1 tuần có thực tế không?","a":"Có cho FTND ≤6. FTND ≥7 nặng có thể chậm hơn — đó là dấu hiệu cần Champix/Bupropion kê đơn ngay, không chờ T-5. Realistic cho hierarchical reduction."},
+    {"q":"Self-compassion có quan trọng không khi cai?","a":"CỰC kỳ quan trọng. Wagner 2010: self-criticism sau slip-up tăng tỷ lệ relapse 40%. Cortisol tăng → prefrontal cortex giảm function → willpower giảm. Self-compassion (Neff 2003) là chiến lược khoa học."},
+    {"q":"Tôi nên viết 3 điều tốt nào ở T-7?","a":"Cụ thể, không phóng đại. Ví dụ: \"Tuần này anh giảm 7 điếu/ngày\", \"Trì hoãn điếu sáng 45 phút 4/7 ngày\", \"Không vấp dù stress deadline thứ Tư\". Tránh \"tôi cố gắng\" — phải \"tôi đã làm X\"."},
+    {"q":"Sau T-7 tôi cần làm gì 7 ngày tới?","a":"Target giảm 50-60% so với tuần này. Đến T-1 còn 3-5 điếu/ngày, Q-Day = 0. Plan: T-6 Kit thay thế, T-5 NRT quyết, T-4 chốt Q-Day, T-3 dọn cue, T-2 viết Plan B, T-1 ritual đêm cuối."}
+  ],
+  "giam-dan-ngay-9-kit-thay-the": [
+    {"q":"Kit cai thuốc tự làm gồm gì?","a":"4 vật dụng (~150-300k): (1) Kẹo cao su không đường vị bạc hà mạnh. (2) Hạt hướng dương Việt Nam. (3) Ống hút inox tái sử dụng. (4) Túi đi bộ: sneakers + chai nước + tai nghe."},
+    {"q":"Tại sao cần Kit thay thế khi đã dùng NRT?","a":"NRT chỉ thay nicotine (60% reward). Còn oral fixation (25% — miệng) và manual fixation (15% — tay) cần behavior substitution. Pomerleau 2002: 50% người dùng NRT vẫn vấp do oral/manual chưa được giải quyết."},
+    {"q":"Nên đặt Kit ở đâu?","a":"3 chỗ cố định: (1) Nhà — bát hạt phòng khách + kẹo bếp + sneakers gần cửa. (2) Xe — kẹo + ống hút trong hộc găng tay, chai nước ghế phụ. (3) Balo — kẹo + ống hút mini + túi hạt nhỏ. Trong tầm với khi cơn thèm peak."},
+    {"q":"Tránh 3 thứ thay thế nào?","a":"(1) Đồ ngọt (kẹo có đường, bánh, soda) — spike đường máu → crash → thèm thuốc tăng + tăng cân 2-4kg/tháng. (2) Tăm xỉa răng — chấn thương nướu. (3) Vape/IQOS/thuốc cuốn — vẫn là nicotine, 60% quay lại thuốc lá thực."},
+    {"q":"Có cần đầu tư nhiều cho Kit không?","a":"Không. ~150-300k tổng. Tiết kiệm ~30k/ngày tiền thuốc → hoàn vốn trong 5-10 ngày. Sneakers + chai + tai nghe đa số người đã có. Chỉ cần mua kẹo + hạt + ống hút mới."}
+  ],
+  "giam-dan-ngay-10-quyet-dinh-nrt-thuoc-ke": [
+    {"q":"NRT là gì có hiệu quả không?","a":"NRT (Nicotine Replacement Therapy) — thay nicotine từ thuốc lá bằng nicotine \"sạch\" (patch, lozenge, gum, spray). Stead 2012 Cochrane (117 trials, 51.000 người): NRT tăng odds thành công x1.55 vs placebo. Combo patch + lozenge x1.71."},
+    {"q":"Khi nào cần dùng NRT?","a":"Dựa trên FTND (test T-11): ≤3 không cần. 4-6 trung bình → NRT combo (patch 14mg + lozenge 2mg as needed). ≥7 nặng → Champix/Bupropion kê đơn thay vì NRT đơn."},
+    {"q":"NRT vs Champix khác nhau ra sao?","a":"NRT (~500-700k/đợt): không kê đơn, thay nicotine cùng cơ chế. Champix (~1.5-2tr/12 tuần): kê đơn BS, bám receptor α4β2, vừa giảm thèm vừa chặn nicotine. Odds Champix cao nhất 2.24x vs placebo, NRT 1.55x."},
+    {"q":"Bupropion phù hợp ai?","a":"Người FTND 4-7 có depression đi kèm. Bupropion (Wellbutrin) cơ chế kép: chống trầm cảm + giảm thèm. RR 1.62. Chống chỉ định: tiền sử co giật, rối loạn ăn uống, MAOI, mất ngủ nặng."},
+    {"q":"Bắt đầu thuốc khi nào?","a":"NRT: từ Q-Day (D0). Champix/Bupropion: 7-14 ngày TRƯỚC Q-Day (cần build-up trong máu). Phác đồ Champix: 0.5mg×1/ngày × 3 ngày, 0.5mg×2/ngày × 4 ngày, 1mg×2/ngày × 11 tuần. Đủ 12 tuần — KHÔNG bỏ giữa chừng."}
+  ],
+  "giam-dan-ngay-11-chon-q-day": [
+    {"q":"Chọn ngày Q-Day cai thuốc thế nào?","a":"4 quy tắc USDHHS 2008: (1) Trong 2-7 ngày tới. (2) Có 1 ngày nghỉ ngay sau Q-Day (+50% odds). (3) Không trùng stressor lớn. (4) Báo trước 3 người thân (public commitment x3-5)."},
+    {"q":"Q-Day nên rơi vào thứ mấy?","a":"Thứ Sáu tối / Thứ Bảy / Chủ Nhật tốt nhất — có D1-D2 cuối tuần nghỉ (withdrawal đỉnh D2-3 rơi vào ngày nghỉ). Tránh Thứ Hai (D2-3 giữa tuần làm việc căng thẳng). Nếu Q-Day là ngày làm việc, xin nghỉ phép D1."},
+    {"q":"Tránh Q-Day vào tuần nào?","a":"Tuần có: deadline lớn công việc, đám tang/cưới (nhậu nhiều), khám sức khỏe lớn, sinh con/chuyển nhà/đổi việc, Tết/nghỉ lễ dài. Tuần \"bình thường\" không sự kiện lớn là tốt nhất."},
+    {"q":"Tại sao phải báo 3 người thân trước Q-Day?","a":"Cialdini 2006: public commitment tăng follow-through 3-5x vs private. Báo trước = accountability + khen khi vượt mốc. Vợ + 1 bạn thân + 1 đồng nghiệp đáng tin. Báo qua Zalo/SMS để có \"bằng chứng\"."},
+    {"q":"Đặt Q-Day quá xa có hại gì?","a":"Có. West 2017: đặt >7 ngày → tỷ lệ thực thi giảm 30% (78% xuống 51%). Đặt \"khi nào sẵn sàng\" → chỉ 18% thực thi. Càng cụ thể càng tốt."}
+  ],
+  "giam-dan-ngay-12-don-cue-stimulus-control": [
+    {"q":"Dọn nhà cai thuốc gồm những gì?","a":"3 loại cue cần vứt: (1) Visual — gạt tàn, bật lửa, bao thuốc, diêm, tem thuốc. (2) Olfactory — giặt rèm, áo khoác, hút bụi xe, mùi gối. (3) Tactile — bao thuốc dấu trong túi, hộc tủ, ngăn kéo."},
+    {"q":"Tại sao cue thị giác làm tôi thèm?","a":"Conklin 2008 Addiction: chỉ NHÌN gạt tàn/bao thuốc 5-10 giây đã tăng craving 200-400%. Đây là Pavlovian conditioning qua 10-30 năm — vùng dopamine reward + insula kích hoạt tự động."},
+    {"q":"Có cần vứt cả bao thuốc cuối còn lại không?","a":"CÓ, tuyệt đối. 70% người vấp Q-Day có \"1 bao phòng hờ\" (Sol khảo sát). Lý tính nói \"phòng hờ\", cảm xúc lúc thèm peak nói \"có sẵn, hút thử\". Vứt hết. Nếu thực sự cần khẩn cấp, đi 200m mua NRT lozenge — KHÔNG mua thuốc."},
+    {"q":"Cue tôi không vứt được thì sao?","a":"Một số cue không thể remove: đồng nghiệp hút giờ nghỉ, vợ/bạn nhậu hút, quán cà phê quen. Quy tắc Sol: nếu không remove được cue, remove yourself khỏi cue trong 4 tuần đầu. Đi tầng khác giờ nghỉ, đổi quán mới."},
+    {"q":"30 phút dọn cue có đủ không?","a":"Đủ cho 5 khu vực: Nhà (10p) + Phòng ngủ (5p) + Xe (10p) + Văn phòng (3p) + Cá nhân (2p). Checklist trong bài. Khuyến cáo rủ vợ/bạn cùng dọn — accountability + ăn mừng cùng."}
+  ],
+  "giam-dan-ngay-13-plan-b": [
+    {"q":"Plan B cai thuốc lá là gì?","a":"Implementation intention (Gollwitzer 1999) — câu \"Khi X xảy ra, tôi sẽ Y\" thay vì \"Tôi sẽ cố gắng không hút\". Cụ thể như công thức nấu ăn. Meta-analysis effect size d=0.65 — tăng odds thành công 2-3x."},
+    {"q":"Tôi cần viết bao nhiêu Plan B?","a":"5 — cho 5 trigger nặng nhất từ nhật ký T-13. Quy tắc: 5 plan vừa đủ để nhớ, không quá nhiều. Top 5 trigger phổ biến Việt: cà phê sáng, sau cơm tối, bia hơi, stress công việc, cãi nhau với vợ/người thân."},
+    {"q":"Plan B phải cụ thể đến mức nào?","a":"Rất cụ thể. KHÔNG: \"khi tôi căng thẳng, tôi sẽ uống nước\". CÓ: \"Khi sếp gọi điện báo deadline gấp, tôi đi xuống tầng 1, mua chai nước lạnh, uống 200ml, đi 100 bước quanh tòa nhà\". Cụ thể = não thi hành được."},
+    {"q":"3 lỗi viết Plan B phổ biến?","a":"(1) Quá chung — \"khi tôi căng thẳng\" (có 100 dạng). (2) Hành động chỉ \"không\" — \"tôi sẽ không hút\" (não không hiểu \"không X\" tốt). (3) Quá phức tạp — \"thiền 30 phút\" (lúc thèm cấp không có thời gian)."},
+    {"q":"Sau khi viết Plan B tôi làm gì?","a":"In/dán gương phòng tắm. Đọc to cho vợ/người thân. Test 1 Plan B chiều nay khi có cơn thèm nhẹ. Mai T-1 ritual đêm cuối. Q-Day Plan B sẵn sàng trong tay."}
+  ],
+  "giam-dan-ngay-14-dem-truoc-q-day": [
+    {"q":"Đêm trước Q-Day cai thuốc tôi nên làm gì?","a":"5 việc cụ thể: (1) Ăn no bữa tối + chuối (ổn định đường máu). (2) Đi bộ 30 phút ngoài trời. (3) Hút điếu cuối có ritual (viết thư/ngoài trời/cùng người thân). (4) Dọn cue lần cuối. (5) Ngủ trước 23h, mục tiêu ≥7 giờ."},
+    {"q":"Ritual điếu cuối quan trọng không?","a":"Có. Marlatt 2005: symbolic closure giảm relapse D1-30 30%. Lý do: não đã đốt 20.000-200.000 điếu — cần \"moment đóng\" để chuyển identity. Hút có ý thức + viết 1 câu vĩnh biệt = closure tâm lý."},
+    {"q":"Đêm trước Q-Day khó ngủ tôi phải làm gì?","a":"Đây là anticipatory anxiety bình thường. Nếu không ngủ sau 20 phút: dậy, ra phòng khách, đọc sách giấy 15 phút (KHÔNG điện thoại), uống nước ấm + mật ong, thở 4-7-8 × 4 vòng. Tránh rượu/bia, cà phê sau 16h."},
+    {"q":"Ngủ ít có ảnh hưởng Q-Day không?","a":"Có. Jaehne 2009 Sleep Medicine Reviews: ngủ ≥7 giờ đêm trước Q-Day = withdrawal D1 nhẹ hơn 40%. Não cần đủ deep sleep để củng cố intention và giảm cortisol baseline."},
+    {"q":"Mai Q-Day tôi cần chuẩn bị gì?","a":"Đêm nay: đặt ly nước lạnh cạnh giường, kẹo cao su trên bàn ngủ, áo + giày đi bộ chờ ở cửa. Sáng D1: 7h nhận chip Q-Day Day 1 qua Zalo OA. KHÔNG xem điện thoại trong giường — dopamine từ scroll cản withdrawal sleep."}
+  ]
+}

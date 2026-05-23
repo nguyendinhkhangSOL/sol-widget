@@ -12,16 +12,30 @@ import type { Cohort } from '../lib/ftnd';
 
 interface User {
   ftndScore?: number;
+  ftndCohort?: string | null;  // V2 dedicated field (2026-05-22)
   settings?: any;
 }
 
-/** Derive severity cohort từ user state — prefer settings, fallback ftndScore. */
+/**
+ * Derive severity cohort từ user state. Priority:
+ *   1. user.ftndCohort (V2 dedicated field, sau migration 22/5/2026)
+ *   2. user.settings.severityCohort (legacy fallback)
+ *   3. user.ftndScore (derive nếu chỉ có score)
+ *   4. null nếu chưa có FTND data
+ */
 export function getSeverityCohort(user: User | null | undefined): Cohort | null {
   if (!user) return null;
+  // 1. V2 field
+  const fromField = user.ftndCohort;
+  if (fromField === 'LIGHT' || fromField === 'MODERATE' || fromField === 'HEAVY') {
+    return fromField as Cohort;
+  }
+  // 2. Legacy settings
   const fromSettings = user.settings?.severityCohort as Cohort | undefined;
   if (fromSettings === 'LIGHT' || fromSettings === 'MODERATE' || fromSettings === 'HEAVY') {
     return fromSettings;
   }
+  // 3. Derive from score
   if (typeof user.ftndScore === 'number') {
     if (user.ftndScore <= 3) return 'LIGHT';
     if (user.ftndScore <= 6) return 'MODERATE';

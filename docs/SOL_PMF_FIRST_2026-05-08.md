@@ -57,7 +57,7 @@ Câu trả lời thật có thể là:
 | Tier | Giá | Mục đích |
 |---|---|---|
 | **Khám Phá** | 0đ | Trust building, lead gen |
-| **Sol Đi Cùng** | 99k/tháng | Validation revenue + retention |
+| **Đi Cùng Sol** | 99k/tháng | Validation revenue + retention |
 
 **Drop tạm:**
 - ❌ Sol Start (99k one-time, 14 ngày) — overlap Khám Phá + Đi Cùng
@@ -232,7 +232,7 @@ Reset roadmap về 4 tuần MVP:
 2. **Quick Win Day 3 báo cáo cá nhân** auto-gen
 3. **Lapse-friendly UX** — log "đã hút" không reset streak, mở voice lapse
 
-### Tuần 2 — Sol Đi Cùng tier 99k/tháng
+### Tuần 2 — Đi Cùng Sol tier 99k/tháng
 
 4. **Membership 99k/tháng + cancel anytime** (Stripe-like flow VN)
 5. **Pricing page rewrite** — chỉ 2 tier (Khám Phá + Đi Cùng)

@@ -1,9 +1,23 @@
 // backend/src/journey/service.ts
-// Phase B — 88-day journey: NHAN_THUC + HANH_DONG + GIAI_PHONG + TAI_THIET + DAI_SU
-// Q-Day = Day 28. Money saved cumulative cho phép âm.
 //
-// Triết lý: Không phải 4 gói thời gian — 1 hành trình tiến hoá hành vi 4 lớp.
-// Awareness → Rewiring → Stabilization → Maintenance.
+// SOL Journey Service — v2 (2026-05-22, cohort-aware)
+//
+// MIGRATION TO 3-COHORT FTND (canonical 2026-05-18):
+//   - Spec mới: LIGHT 35 ngày / MODERATE 52 ngày / HEAVY 65 ngày.
+//   - Q-Day: linh hoạt theo cohort (Day 15 / 22 / 28).
+//   - Day 66+ = Tái Thiết extension miễn phí (bảo trì thành công).
+//
+// File này ADDITIVE — giữ functions cũ (deriveStage, getStageDayInfo,
+// deriveQDayState với Q_DAY=28 cứng) làm BACKWARD-COMPATIBLE cho code chưa
+// migrate. Code mới dùng functions trong `cohortConfig.ts` + helpers V2 dưới.
+//
+// LEGACY 88-day stages (kept for backward compat):
+//   NHAN_THUC + HANH_DONG + GIAI_PHONG + TAI_THIET + DAI_SU
+//   (Day 1-7 / 8-28 / 29-58 / 59-88 / 89+, Q-Day = 28)
+//
+// NEW canonical chapters (use cohortConfig.ts):
+//   NHAN_DIEN + KIEM_SOAT + LAM_CHU + TAI_THIET
+//   (boundaries depend on user.ftndCohort)
 
 export type JourneyStage =
   | 'NHAN_THUC'      // Day 1-7   (Awareness)
@@ -139,6 +153,7 @@ export interface BodyMilestone {
 }
 
 export const BODY_MILESTONES: BodyMilestone[] = [
+  // ─── Chặng Kiểm Soát + Làm Chủ (Day 1-60) ────────────────────────────────
   { daysAfterQDay: 1,  emoji: '🩸', title: 'CO máu giảm 50%',           detail: 'Sau 8 giờ. Hồng cầu chở oxy hiệu quả hơn (CDC).' },
   { daysAfterQDay: 2,  emoji: '🌬️', title: 'Nicotin sạch máu',          detail: '48 giờ — half-life 2h, 99% đã thải qua nước tiểu (NHS).' },
   { daysAfterQDay: 3,  emoji: '🫁', title: 'Phổi bắt đầu mở',            detail: '72 giờ — ống phế quản giãn, hô hấp dễ hơn.' },
@@ -146,7 +161,16 @@ export const BODY_MILESTONES: BodyMilestone[] = [
   { daysAfterQDay: 14, emoji: '🧠', title: 'Receptor giảm 40%',           detail: 'Não đã "tháo" phần lớn nhu cầu nicotin (Brody 2006).' },
   { daysAfterQDay: 21, emoji: '🔥', title: '3 tuần — thói quen mới',     detail: 'Lally 2010 — não bắt đầu coi không-hút là default.' },
   { daysAfterQDay: 30, emoji: '🌸', title: 'Phổi hồi 10% chức năng',     detail: 'NHS — khởi đầu của hồi phục dài hạn.' },
-  { daysAfterQDay: 60, emoji: '💎', title: '2 tháng — Tái Thiết',         detail: 'Doll & Hill BMJ 2004 — giảm 90% nguy cơ ung thư phổi nếu cai trước 50 tuổi.' },
+  { daysAfterQDay: 60, emoji: '💎', title: '2 tháng — giảm 90% nguy cơ', detail: 'Doll & Hill BMJ 2004 — giảm 90% nguy cơ ung thư phổi nếu cai trước 50 tuổi.' },
+
+  // ─── Chặng Tái Thiết — Bảo trì thành công (Day 65+, extension miễn phí) ──
+  { daysAfterQDay: 65, emoji: '🌿', title: '65 ngày — Não stabilize',    detail: 'Reward pathway reset xong (Volkow 2012). Cảm giác "thèm" thành ký ức, không còn impulse.' },
+  { daysAfterQDay: 75, emoji: '😮‍💨', title: '75 ngày — Ho mãn tính giảm 70%', detail: 'NHS — cilia mọc lại, đẩy sạch chất nhầy. Sáng dậy không khạc đờm.' },
+  { daysAfterQDay: 80, emoji: '🫁', title: '80 ngày — Phổi hồi 25%',     detail: 'Doll & Hill BMJ 2004 — FEV1 tăng đáng kể, sức bền tăng rõ.' },
+  { daysAfterQDay: 88, emoji: '🏆', title: '88 ngày — Người Tự Do',       detail: 'Không còn cảm thấy cần thuốc khi căng thẳng. Identity đã chuyển — "tôi không hút" thay "tôi đang cai".' },
+  { daysAfterQDay: 120, emoji: '💪', title: '4 tháng — Cardio phục hồi', detail: 'Mayo Clinic — tim mạch hồi gần như người chưa hút. Đi bộ 30 phút không thở dốc.' },
+  { daysAfterQDay: 180, emoji: '🌟', title: '6 tháng — Da + tóc đẹp lại', detail: 'Microcirculation phục hồi. Da sáng, tóc dày hơn (Dermatology Times 2018).' },
+  { daysAfterQDay: 365, emoji: '🎂', title: '1 năm — Nguy cơ tim giảm 50%', detail: 'AHA — nguy cơ nhồi máu cơ tim chỉ còn 1/2 so với khi còn hút.' },
 ];
 
 export function getUnlockedMilestones(qDayConfirmedAt: Date | null | undefined): BodyMilestone[] {
@@ -386,4 +410,77 @@ export function computeMoneySaved(
   const expectedCigs = dayInJourney * baselineCigsPerDay;
   const cigsAvoided = Math.max(0, expectedCigs - cigsLogged);
   return cigsAvoided * pricePerCig;
+}
+
+// ═════════════════════════════════════════════════════════════════════════
+// ═══════════════ V2 — COHORT-AWARE HELPERS (CANONICAL 2026-05-18) ═════════
+// ═════════════════════════════════════════════════════════════════════════
+//
+// Sử dụng các functions dưới đây cho code MỚI. Code cũ vẫn dùng deriveStage,
+// getStageDayInfo, deriveQDayState (rigid 88-day, Q_DAY=28) cho đến khi
+// migrate xong UI dashboard.
+//
+// Import: `import { ... } from './cohortConfig';`
+// Re-export ở đây để 1 import path duy nhất cho callers.
+
+export {
+  type Cohort,
+  type JourneyChapter,
+  type ChapterRange,
+  type ChapterDayInfo,
+  type CohortDef,
+  type QDayStateV2,
+  COHORT_DEFS,
+  CHAPTER_LABELS,
+  CHAPTER_TAGLINES,
+  CHAPTER_EMOJI,
+  CHAPTER_COLORS,
+  assignCohortFromFTND,
+  deriveChapter,
+  getChapterDayInfo,
+  deriveQDayStateV2,
+  getMemoryBookTriggerDay,
+  shouldGenerateMemoryBook,
+} from './cohortConfig';
+
+/**
+ * Đọc cohort từ user record. Priority:
+ *   1. `user.ftndCohort` (dedicated field, sau migration)
+ *   2. `user.settings.severityCohort` (legacy fallback)
+ *   3. Default: 'MODERATE'
+ *
+ * Dùng helper này MỌI NƠI cần `cohort` để tránh inconsistency.
+ */
+export function readCohort(user: {
+  ftndCohort?: string | null;
+  settings?: any;
+}): 'LIGHT' | 'MODERATE' | 'HEAVY' {
+  const fromField = user.ftndCohort;
+  if (fromField === 'LIGHT' || fromField === 'MODERATE' || fromField === 'HEAVY') {
+    return fromField;
+  }
+  const fromSettings = user.settings?.severityCohort;
+  if (fromSettings === 'LIGHT' || fromSettings === 'MODERATE' || fromSettings === 'HEAVY') {
+    return fromSettings;
+  }
+  return 'MODERATE'; // canonical default
+}
+
+/**
+ * Adapter: trả về stage info CŨ (NHAN_THUC/HANH_DONG/...) tương ứng với
+ * chapter V2 (NHAN_DIEN/KIEM_SOAT/...). Dùng cho code cũ chưa migrate.
+ *
+ * Mapping:
+ *   NHAN_DIEN → NHAN_THUC
+ *   KIEM_SOAT → HANH_DONG
+ *   LAM_CHU   → GIAI_PHONG
+ *   TAI_THIET → TAI_THIET
+ */
+export function chapterToLegacyStage(chapter: import('./cohortConfig').JourneyChapter): JourneyStage {
+  switch (chapter) {
+    case 'NHAN_DIEN': return 'NHAN_THUC';
+    case 'KIEM_SOAT': return 'HANH_DONG';
+    case 'LAM_CHU':   return 'GIAI_PHONG';
+    case 'TAI_THIET': return 'TAI_THIET';
+  }
 }

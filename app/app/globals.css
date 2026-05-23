@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sol-brown: #5C3A1E;
+  --sol-orange: #B25C2C;
+  --sol-paper: #FFF4EA;
+  --sol-cream: #FAF4EC;
+  --sol-ink: #2C2A27;
+  --sol-ink2: #5A5650;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, var(--sol-cream) 0%, var(--sol-paper) 100%);
+  color: var(--sol-ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+@layer components {
+  /* Sol button styles */
+  .btn-primary {
+    @apply inline-block bg-sol-orange text-white font-semibold px-6 py-3 rounded-xl
+           hover:bg-sol-brown transition-all duration-200
+           shadow-md hover:shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-sol-orange focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-block bg-sol-cream text-sol-brown font-semibold px-6 py-3 rounded-xl
+           border-2 border-sol-brown
+           hover:bg-sol-brown hover:text-white transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-sol-brown focus:ring-offset-2;
+  }
+
+  /* Sol card style */
+  .card-sol {
+    @apply bg-white rounded-2xl p-6 md:p-8 shadow-sm
+           border border-sol-cream;
+  }
+
+  /* Sol input */
+  .input-sol {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-sol-cream
+           focus:border-sol-orange focus:outline-none
+           text-base bg-white;
+  }
+
+  /* Sol container */
+  .container-sol {
+    @apply max-w-content mx-auto px-4 sm:px-6;
+  }
+}
+
+/* Skip to content for accessibility */
+.skip-link {
+  @apply absolute -top-40 left-0 bg-sol-brown text-white px-4 py-2 rounded
+         focus:top-0 z-50;
+}

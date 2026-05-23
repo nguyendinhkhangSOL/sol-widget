@@ -1,0 +1,8 @@
+giam-dan-ngay-3-phan-loai-dieu-thuoc|A|T-12 Giảm Dần — Phân Loại Điếu 0-3 Sao
+giam-dan-ngay-4-test-fagerstrom|A|T-11 Giảm Dần — Test Fagerström FTND
+giam-dan-ngay-7-compensatory-smoking|A|T-8 Giảm Dần — Compensatory Smoking Trap
+giam-dan-ngay-8-moc-1-tuan-giam|C|T-7 Giảm Dần — Mốc 1 Tuần Đánh Giá
+giam-dan-ngay-9-kit-thay-the|B|T-6 Giảm Dần — Kit Thay Thế Behavior
+giam-dan-ngay-10-quyet-dinh-nrt-thuoc-ke|B|T-5 Giảm Dần — Quyết Định NRT/Thuốc Kê
+giam-dan-ngay-11-chon-q-day|C|T-4 Giảm Dần — Chốt Q-Day Chính Thức
+giam-dan-ngay-12-don-cue-stimulus-control|B|T-3 Giảm Dần — Dọn Cue 30 Phút

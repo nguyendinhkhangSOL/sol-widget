@@ -20,7 +20,7 @@ export function VoiceInbox() {
 
   return (
     <div className="p-6 lg:p-10 max-w-3xl mx-auto pb-24">
-      <h1 className="text-2xl font-bold text-sol-ink mb-2">🎙️ Voice Khang</h1>
+      <h1 className="text-2xl font-bold text-sol-ink mb-2">🎙️ Voice của Khang</h1>
       <p className="text-meta text-sol-ink-2 mb-6">
         Khang gửi voice vào những thời điểm quan trọng — Ngày 1, 3, 7, 14,
         21, 30 và lúc bạn cần. Đây là tài sản riêng, không AI nào tạo được.

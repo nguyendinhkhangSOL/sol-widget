@@ -1,0 +1,523 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  BO-THUOC-LA HUB v3 — sol.vn/bo-thuoc-la/
+  Vai trò: Page SEO chính cho keyword "cai thuốc lá" tiếng Việt
+  KPI: Rank top 3 Google "cai thuốc lá" / "bỏ thuốc lá"
+
+  Cấu trúc:
+    1. Hero — "Cai thuốc lá Cùng Sol Đi Cùng"
+    2. 4 chặng tiến hoá (NHẬN DIỆN → KIỂM SOÁT → LÀM CHỦ → NGƯỜI TỰ DO)
+    3. Khang teaser (link /khang-sol)
+    4. 5 phương pháp so sánh teaser (link /phuong-phap-cai-thuoc-la)
+    5. Pricing brief (link /gia)
+    6. 9 công cụ + 41 wiki + 15 voice (link /sol-la-gi)
+    7. Pilot 30 anh em CTA (link /pilot)
+    8. Q&A teaser 3 câu top (link /cau-hoi)
+    9. Final CTA + Footer
+
+  Publish: REPLACE current /bo-thuoc-la/ page content
+  Template: Sol Default — Page Standard
+  Title SEO: "Cai thuốc lá — Sol Đi Cùng cho anh em Việt 45+ | 3 lộ trình theo Mức Lệ Thuộc"
+  Meta Description: "Cai thuốc lá cá nhân hoá theo Mức Lệ Thuộc Nicotin (FTND chuẩn quốc tế): 3 lộ trình 35/52/65 ngày + 4 cách trả linh hoạt. 7 ngày miễn phí với Khang Sol — người đã đi qua 30 năm hút Vinataba."
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+.sol-hub { font-family: 'Be Vietnam Pro', -apple-system, sans-serif; color: #2C2A27; }
+.sol-hub h1, .sol-hub h2, .sol-hub h3 { margin: 0; }
+
+.sol-hub-stages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.sol-hub-stage-card {
+  background: white;
+  border: 1px solid #E8DFC8;
+  border-radius: 14px;
+  padding: 22px 20px;
+  text-align: center;
+  transition: transform 0.15s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.sol-hub-stage-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(178,92,44,0.12); }
+
+.sol-hub-stage-card.recommended {
+  border: 2px solid #B25C2C;
+  box-shadow: 0 4px 16px rgba(178,92,44,0.12);
+  position: relative;
+}
+.sol-hub-stage-card.recommended::before {
+  content: "KHUYẾN NGHỊ";
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  background: #B25C2C; color: white;
+  padding: 3px 12px; border-radius: 999px;
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+}
+
+.sol-hub-stage-num {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: #B8860B; font-weight: 700; margin-bottom: 6px;
+}
+.sol-hub-stage-icon { font-size: 36px; margin: 4px 0 10px; }
+.sol-hub-stage-name {
+  font-size: 17px; color: #5C3A1E; font-weight: 700;
+  margin-bottom: 6px; line-height: 1.3;
+}
+.sol-hub-stage-meta {
+  font-size: 13px; color: #5A5650; margin-bottom: 10px;
+  line-height: 1.5;
+}
+.sol-hub-stage-price {
+  font-size: 18px; font-weight: 700; color: #B25C2C;
+}
+
+.sol-hub-method-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 20px 0 24px;
+}
+
+.sol-hub-method-card {
+  background: white;
+  padding: 16px 12px;
+  border-radius: 10px;
+  border-top: 4px solid #B25C2C;
+  text-align: center;
+  font-size: 13px;
+}
+.sol-hub-method-card strong {
+  display: block;
+  font-size: 14px;
+  color: #5C3A1E;
+  margin-bottom: 4px;
+}
+.sol-hub-method-card span {
+  font-size: 11px;
+  color: #8A857C;
+}
+
+.sol-hub-cta-primary {
+  display: inline-block;
+  background: #B25C2C;
+  color: white;
+  padding: 16px 36px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(178,92,44,0.25);
+}
+
+.sol-hub-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.sol-hub-feature-card {
+  background: #FFF4EA;
+  border-radius: 12px;
+  padding: 20px 22px;
+  border-left: 4px solid #B25C2C;
+}
+.sol-hub-feature-card h3 {
+  font-size: 16px;
+  color: #5C3A1E;
+  margin-bottom: 8px;
+}
+
+.sol-hub-qa {
+  background: white;
+  border: 1px solid #E8DFC8;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 10px;
+}
+.sol-hub-qa summary {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5C3A1E;
+  cursor: pointer;
+}
+.sol-hub-qa p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #2C2A27;
+  margin: 12px 0 0;
+}
+
+@media (max-width: 880px) {
+  .sol-hub-stages { grid-template-columns: repeat(2, 1fr); }
+  .sol-hub-method-grid { grid-template-columns: repeat(2, 1fr); }
+  .sol-hub-feature-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .sol-hub section { padding-left: 16px !important; padding-right: 16px !important; }
+  .sol-hub h2 { font-size: 22px !important; }
+}
+</style>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cai thuốc lá Cùng Sol — Hybrid 5 phương pháp cho anh em Việt 45+",
+  "description": "Cai thuốc lá theo 4 chặng NHẬN DIỆN/KIỂM SOÁT/LÀM CHỦ/NGƯỜI TỰ DO. 7 ngày miễn phí. Khang Sol đã đi qua 30 năm hút Vinataba.",
+  "url": "https://sol.vn/bo-thuoc-la/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Đi Cùng Sol",
+    "url": "https://sol.vn"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Cai thuốc lá"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Khang Sol",
+    "url": "https://sol.vn/khang-sol"
+  }
+}
+</script>
+
+
+<div class="sol-hub">
+
+<!-- ═══ HERO ═══ -->
+<section style="padding: 64px 24px 40px; max-width: 880px; margin: 0 auto; text-align: center;">
+
+  <p style="font-size: 13px; color: #B25C2C; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin: 0 0 14px;">CAI THUỐC LÁ CÙNG SOL</p>
+
+  <h1 style="font-size: 38px; color: #5C3A1E; line-height: 1.2; margin: 0 0 18px; font-weight: 700; letter-spacing: -0.5px;">
+    Cai thuốc lá — không phải bỏ một mình
+  </h1>
+
+  <p style="font-size: 18px; color: #5A5650; line-height: 1.65; max-width: 720px; margin: 0 auto 28px;">
+    Sol Đi Cùng là phương pháp <strong>HYBRID 5 phương pháp</strong> đã chứng minh — viết bằng tiếng Việt cho anh em 45+. <strong>7 ngày NHẬN DIỆN MIỄN PHÍ</strong> trước, không cần SĐT.
+  </p>
+
+  <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=hub&utm_campaign=bo_thuoc_la" class="sol-hub-cta-primary">
+    🌱 Bắt đầu 7 ngày miễn phí
+  </a>
+
+  <p style="font-size: 14px; color: #8A857C; margin: 14px 0 0; font-style: italic;">
+    Mình là Khang Sol — đã hút Vinataba 30 năm, hơn 5 năm Tự do. <a href="/khang-sol" style="color: #B25C2C;">Đọc câu chuyện mình →</a>
+  </p>
+
+</section>
+
+
+<!-- ═══ Sol v4 — 3 LỘ TRÌNH THEO MỨC LỆ THUỘC ═══ -->
+<section style="padding: 32px 24px 56px; max-width: 1100px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 28px; line-height: 1.25; margin: 0 0 14px;">
+    3 lộ trình — anh đi đúng theo Mức Lệ Thuộc của mình
+  </h2>
+  <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.65; max-width: 720px; margin: 0 auto 24px;">
+    Sol dùng thang đo Lệ Thuộc Nicotin quốc tế (FTND) để cá nhân hoá lộ trình.
+    Anh hút nhẹ → 35 ngày. Anh hút đa số → 52 ngày. Anh hút nặng → 65 ngày + Ngày Quyết Định linh hoạt.
+  </p>
+
+  <!-- 3 LỘ TRÌNH CARDS — replace 4 stage cards cũ -->
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;" class="sol-hub-cohort-grid">
+
+    <a href="/gia" style="background: white; padding: 22px 18px; border-radius: 14px; border: 1px solid #DCFCE7; border-top: 5px solid #16A34A; text-decoration: none; display: block;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px;">
+        <div style="font-size: 13px; color: #16A34A; font-weight: 700; letter-spacing: 0.5px;">🟢 LỘ TRÌNH NHẸ</div>
+        <span style="font-size: 10px; color: #16A34A; background: #DCFCE7; padding: 2px 8px; border-radius: 999px; font-weight: 600;">FTND 0–3</span>
+      </div>
+      <div style="font-size: 28px; font-weight: 700; color: #5C3A1E; margin: 4px 0;">35 <span style="font-size: 13px; color: #8A857C; font-weight: 400;">ngày</span></div>
+      <p style="font-size: 12.5px; color: #5A5650; margin: 4px 0 10px; line-height: 1.5;">Hút &lt;10 điếu/ngày, dưới 5 năm</p>
+      <div style="font-size: 11.5px; color: #2C2A27; line-height: 1.6;">
+        7 ngày Nhận Diện · 7 ngày Kiểm Soát · 21 ngày Làm Chủ<br>
+        <strong style="color: #16A34A;">Quyết Định: Ngày 15</strong>
+      </div>
+      <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #E8DFC8; font-size: 12px; color: #5A5650;">
+        Từ <strong style="color: #16A34A;">25k/tuần</strong> · cả gói <strong>149k</strong>
+      </div>
+    </a>
+
+    <a href="/gia" style="background: white; padding: 22px 18px; border-radius: 14px; border: 2px solid #B25C2C; border-top: 5px solid #D97706; text-decoration: none; display: block; position: relative; box-shadow: 0 4px 16px rgba(178,92,44,0.12);">
+      <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #B25C2C; color: white; padding: 3px 12px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 1px;">ĐA SỐ ANH EM</div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px; margin-top: 4px;">
+        <div style="font-size: 13px; color: #D97706; font-weight: 700; letter-spacing: 0.5px;">🟡 LỘ TRÌNH VỪA</div>
+        <span style="font-size: 10px; color: #D97706; background: #FEF3C7; padding: 2px 8px; border-radius: 999px; font-weight: 600;">FTND 4–6</span>
+      </div>
+      <div style="font-size: 28px; font-weight: 700; color: #5C3A1E; margin: 4px 0;">52 <span style="font-size: 13px; color: #8A857C; font-weight: 400;">ngày</span></div>
+      <p style="font-size: 12.5px; color: #5A5650; margin: 4px 0 10px; line-height: 1.5;">Hút 10–20 điếu/ngày, 5–15 năm</p>
+      <div style="font-size: 11.5px; color: #2C2A27; line-height: 1.6;">
+        7 ngày Nhận Diện · 14 ngày Kiểm Soát · 30 ngày Làm Chủ<br>
+        <strong style="color: #D97706;">Quyết Định: Ngày 22</strong>
+      </div>
+      <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #E8DFC8; font-size: 12px; color: #5A5650;">
+        Từ <strong style="color: #B25C2C;">30k/tuần</strong> · cả gói <strong>249k</strong>
+      </div>
+    </a>
+
+    <a href="/gia" style="background: white; padding: 22px 18px; border-radius: 14px; border: 1px solid #FEE2E2; border-top: 5px solid #DC2626; text-decoration: none; display: block;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px;">
+        <div style="font-size: 13px; color: #DC2626; font-weight: 700; letter-spacing: 0.5px;">🔴 LỘ TRÌNH NẶNG</div>
+        <span style="font-size: 10px; color: #DC2626; background: #FEE2E2; padding: 2px 8px; border-radius: 999px; font-weight: 600;">FTND 7–10</span>
+      </div>
+      <div style="font-size: 28px; font-weight: 700; color: #5C3A1E; margin: 4px 0;">65 <span style="font-size: 13px; color: #8A857C; font-weight: 400;">ngày</span></div>
+      <p style="font-size: 12.5px; color: #5A5650; margin: 4px 0 10px; line-height: 1.5;">Hút &gt;20 điếu/ngày, &gt;15 năm</p>
+      <div style="font-size: 11.5px; color: #2C2A27; line-height: 1.6;">
+        7 ngày Nhận Diện · 21 ngày Kiểm Soát · 30 ngày Làm Chủ<br>
+        <strong style="color: #DC2626;">Quyết Định: linh hoạt Ngày 22–28</strong>
+      </div>
+      <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #E8DFC8; font-size: 12px; color: #5A5650;">
+        Từ <strong style="color: #DC2626;">35k/tuần</strong> · cả gói <strong>349k</strong>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- 3 CHẶNG TRONG MỖI LỘ TRÌNH -->
+  <div style="text-align: center; padding: 18px 20px; background: #FFF4EA; border-radius: 12px; margin-bottom: 16px;">
+    <p style="margin: 0 0 8px; font-size: 14px; color: #5C3A1E; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Mỗi lộ trình gồm 3 chặng — Sol tự đưa anh qua từng chặng</p>
+    <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px;">
+      <span style="font-size: 13.5px; color: #2C2A27;">🌱 <strong>Nhận Diện</strong> · quan sát mình</span>
+      <span style="font-size: 13.5px; color: #8A857C;">→</span>
+      <span style="font-size: 13.5px; color: #2C2A27;">🟡 <strong>Kiểm Soát</strong> · giảm tần suất</span>
+      <span style="font-size: 13.5px; color: #8A857C;">→</span>
+      <span style="font-size: 13.5px; color: #2C2A27;">🔴 <strong>Làm Chủ</strong> · cai hẳn + bảo vệ</span>
+      <span style="font-size: 13.5px; color: #8A857C;">→</span>
+      <span style="font-size: 13.5px; color: #2C2A27;">🌟 <strong>Người Tự Do</strong> · FREE mãi</span>
+    </div>
+  </div>
+
+  <div style="text-align: center; padding: 18px 24px; background: #FFF4EA; border-radius: 12px;">
+    <p style="margin: 0; font-size: 15px; color: #5C3A1E; line-height: 1.65;">
+      <strong>4 cách trả tiền linh hoạt</strong> trong mỗi lộ trình: Trả Thử 49k · Trả Theo Tuần · Trả Một Lần (tiết kiệm 25–30%) · Trả Sau Khi Thành Công.
+    </p>
+    <p style="margin: 10px 0 0; font-size: 14px;">
+      <a href="/gia" style="color: #B25C2C; font-weight: 700;">Xem bảng giá chi tiết 3 lộ trình × 4 cách trả →</a>
+    </p>
+  </div>
+
+  <style>
+    @media (max-width: 880px) {
+      .sol-hub-cohort-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+    }
+  </style>
+
+</section>
+
+
+<!-- ═══ SOL HYBRID 5 PHƯƠNG PHÁP ═══ -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: #FFF8F2;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+
+    <h2 style="text-align: center; color: #5C3A1E; font-size: 28px; line-height: 1.25; margin: 0 0 14px;">
+      Sol đứng trên vai 5 phương pháp đã chứng minh
+    </h2>
+    <p style="text-align: center; color: #5A5650; font-size: 16px; line-height: 1.65; max-width: 720px; margin: 0 auto 24px;">
+      Mình không phát minh phương pháp mới. Sol kế thừa cái mạnh của Cold Turkey, NRT, Champix, Allen Carr, app tracker — viết lại bằng tiếng Việt cho anh em 45+.
+    </p>
+
+    <div class="sol-hub-method-grid">
+      <div class="sol-hub-method-card" style="border-top-color: #C62828;">
+        <strong>1. Cold Turkey</strong>
+        <span>Dứt nicotine — Ngày Q</span>
+      </div>
+      <div class="sol-hub-method-card" style="border-top-color: #1976D2;">
+        <strong>2. NRT</strong>
+        <span>Giảm withdrawal — thở 4-2-6</span>
+      </div>
+      <div class="sol-hub-method-card" style="border-top-color: #6A1B9A;">
+        <strong>3. Champix</strong>
+        <span>Theo dõi sát — báo cáo 7/21/51</span>
+      </div>
+      <div class="sol-hub-method-card" style="border-top-color: #B8860B;">
+        <strong>4. Allen Carr</strong>
+        <span>Reframe identity</span>
+      </div>
+      <div class="sol-hub-method-card" style="border-top-color: #2E7D32;">
+        <strong>5. Free Apps</strong>
+        <span>Tracker bản đồ thèm</span>
+      </div>
+    </div>
+
+    <p style="text-align: center; margin: 24px 0 0;">
+      <a href="/phuong-phap-cai-thuoc-la" style="color: #B25C2C; font-weight: 600; font-size: 15px; border-bottom: 1px solid #B25C2C; padding-bottom: 2px; text-decoration: none;">
+        Xem so sánh đầy đủ 5 phương pháp + Sol Hybrid →
+      </a>
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ═══ SOL LÀM GÌ ═══ -->
+<section style="padding: 56px 24px; max-width: 1000px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 28px; line-height: 1.25; margin: 0 0 14px;">
+    Sol cung cấp gì cho anh
+  </h2>
+
+  <div class="sol-hub-feature-grid">
+
+    <div class="sol-hub-feature-card">
+      <h3>⏱ 9 công cụ khi thèm</h3>
+      <p style="font-size: 14px; color: #2C2A27; margin: 0; line-height: 1.65;">
+        Đợi 90s · Uống nước · Đi bộ · Giọng Khang · Chip CBT · Đọc 3 lý do · Plan B · Đếm tiền tiết kiệm
+      </p>
+    </div>
+
+    <div class="sol-hub-feature-card">
+      <h3>📚 41 wiki + 127 nội dung</h3>
+      <p style="font-size: 14px; color: #2C2A27; margin: 0; line-height: 1.65;">
+        41 wiki long-form Vietnamese cite khoa học · 127 nội dung cá nhân hoá theo data của anh
+      </p>
+    </div>
+
+    <div class="sol-hub-feature-card">
+      <h3>🎧 15 đoạn giọng Khang</h3>
+      <p style="font-size: 14px; color: #2C2A27; margin: 0; line-height: 1.65;">
+        Mình thu sẵn 15 đoạn — phát đúng moment khó (đêm Ngày 3, lỡ điếu, Ngày 0 Q-Day...)
+      </p>
+    </div>
+
+    <div class="sol-hub-feature-card">
+      <h3>📓 Sổ Hành Trình 5 phần</h3>
+      <p style="font-size: 14px; color: #2C2A27; margin: 0; line-height: 1.65;">
+        Pre-Q + T1 + T2 + T3 + T4 = 40 bài viết tay — tư liệu cho Cuốn Nhật Ký kỷ vật
+      </p>
+    </div>
+
+    <div class="sol-hub-feature-card">
+      <h3>📊 Dashboard 4 phase</h3>
+      <p style="font-size: 14px; color: #2C2A27; margin: 0; line-height: 1.65;">
+        Bản đồ cơn thèm 24h · Báo cáo Ngày 7/21/51 · Chỉ Số Hiểu Mình composite
+      </p>
+    </div>
+
+    <div class="sol-hub-feature-card">
+      <h3>🎓 Cuốn Nhật Ký Ngày 52</h3>
+      <p style="font-size: 14px; color: #2C2A27; margin: 0; line-height: 1.65;">
+        PDF 50-80 trang có tên anh + ký Khang Sol — anh giữ vĩnh viễn, chia sẻ con cháu
+      </p>
+    </div>
+
+  </div>
+
+  <p style="text-align: center; margin: 28px 0 0;">
+    <a href="/sol-la-gi" style="color: #B25C2C; font-weight: 600; font-size: 15px; border-bottom: 1px solid #B25C2C; padding-bottom: 2px; text-decoration: none;">
+      Xem chi tiết Sol làm gì cho anh →
+    </a>
+  </p>
+
+</section>
+
+
+<!-- ═══ KHANG TEASER ═══ -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: linear-gradient(135deg, #5C3A1E 0%, #B25C2C 100%); color: white;">
+  <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+
+    <p style="font-size: 13px; color: #FFD700; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin: 0 0 14px;">CÂU CHUYỆN MÌNH</p>
+
+    <h2 style="font-size: 28px; color: white; line-height: 1.25; margin: 0 0 18px; font-weight: 700;">
+      30 năm hút. 4 lần thử. Lần thứ 5 — không có nghi lễ gì.
+    </h2>
+
+    <p style="font-size: 17px; line-height: 1.75; opacity: 0.95; margin: 0 0 24px;">
+      Mình đã thử Cold Turkey 4 lần, đọc Allen Carr, mua nước súc miệng cai thuốc, tải app tracker — đều thất bại. 22-12-2020 âm lịch, bất chợt mình nghĩ tới hậu quả lâu dài. Mình cai. Đến nay đã hơn 5 năm Tự do.
+    </p>
+
+    <a href="/khang-sol" style="display: inline-block; background: white; color: #B25C2C; padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none;">
+      Đọc câu chuyện đầy đủ →
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ═══ 3 Q&A TEASER ═══ -->
+<section style="padding: 56px 24px; max-width: 760px; margin: 0 auto;">
+
+  <h2 style="text-align: center; color: #5C3A1E; font-size: 26px; line-height: 1.25; margin: 0 0 24px;">
+    3 câu anh em thường hỏi mình
+  </h2>
+
+  <details class="sol-hub-qa">
+    <summary>Tôi đã thử bỏ 4-5 lần thất bại — Sol khác gì?</summary>
+    <p>Sol KHÔNG bắt anh "bỏ ngay". 7 ngày NHẬN DIỆN chỉ quan sát — chưa cai. Đây là khác biệt cơ bản với cách anh đã thử. Bộ não 45+ đã nghiện 20-30 năm — không bỏ qua sức ý chí được trong 1 ngày. Mình cũng đã thử 4 lần thất bại — lần thứ 5 thành công vì có cấu trúc, không phải vì ý chí mạnh hơn.</p>
+  </details>
+
+  <details class="sol-hub-qa">
+    <summary>Sol có đắt không?</summary>
+    <p>Sol có <strong>3 lộ trình + 4 cách trả tiền</strong>. Trung bình anh đốt 20.000đ/ngày (1 bao 20k) × 30 = 600.000đ/tháng thuốc. Trả cả gói: Nhẹ <strong>149k</strong>, Vừa <strong>249k</strong>, Nặng <strong>349k</strong> — đều rẻ hơn 1 tháng tiền thuốc. Nếu sợ rủi ro, anh chọn <strong>Trả Theo Tuần</strong> 25–35k/tuần (huỷ lúc nào cũng được), hoặc <strong>Trả Sau Khi Thành Công</strong> (chỉ tính khi anh sạch 21+ ngày). Anh đổi 1 tháng tiền thuốc lấy 35/52/65 ngày Sol đi cùng + Cuốn Nhật Ký giữ vĩnh viễn.</p>
+  </details>
+
+  <details class="sol-hub-qa">
+    <summary>Sol có hứa cai trọn đời không?</summary>
+    <p>KHÔNG hứa cai trọn đời. Không phương pháp nào trên thế giới hứa được điều đó. Sol hứa <strong>NĂNG LỰC TỰ CAI</strong> khi anh lỡ — vì cai dễ, hút lại RẤT DỄ. Sol thiết kế cho việc anh có thể lỡ — lỡ 1 điếu KHÔNG reset đếm ngày, có giọng Khang "Mình tiếp tục được" tự động phát. Đây là sự thật của hành trình cai thuốc.</p>
+  </details>
+
+  <p style="text-align: center; margin: 24px 0 0;">
+    <a href="/cau-hoi" style="color: #B25C2C; font-weight: 600; font-size: 15px; border-bottom: 1px solid #B25C2C; padding-bottom: 2px; text-decoration: none;">
+      Xem 21 câu anh em hỏi mình →
+    </a>
+  </p>
+
+</section>
+
+
+<!-- ═══ PILOT 30 ANH EM ═══ -->
+<section style="width: 100vw; position: relative; left: 50%; margin-left: -50vw; padding: 56px 24px; background: #FFF4EA;">
+  <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+
+    <p style="font-size: 13px; color: #B25C2C; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin: 0 0 14px;">PILOT Q2/2026</p>
+
+    <h2 style="font-size: 28px; color: #5C3A1E; line-height: 1.25; margin: 0 0 18px;">
+      30 anh em pilot — MIỄN PHÍ 298k giá thật
+    </h2>
+
+    <p style="font-size: 17px; line-height: 1.7; color: #2C2A27; margin: 0 0 24px;">
+      Mình tuyển 30 anh em Việt 45+ đi cùng từ Ngày 0 đến Ngày 52 lễ. Anh nhận MIỄN PHÍ toàn bộ Sol KIỂM SOÁT + Sol LÀM CHỦ. Đổi lại: anh điểm danh 30 giây/ngày + 30 phút phỏng vấn cuối kỳ.
+    </p>
+
+    <a href="/pilot" style="display: inline-block; background: #B25C2C; color: white; padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none;">
+      📝 Đăng ký pilot →
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ═══ FINAL CTA ═══ -->
+<section style="padding: 64px 24px; max-width: 720px; margin: 0 auto; text-align: center;">
+
+  <h2 style="font-size: 28px; color: #5C3A1E; line-height: 1.25; margin: 0 0 16px;">
+    Anh sẵn sàng?
+  </h2>
+
+  <p style="font-size: 17px; line-height: 1.7; color: #2C2A27; margin: 0 0 28px;">
+    7 ngày NHẬN DIỆN miễn phí · Không cần SĐT · Không cam kết tiếp.<br>
+    Hết 7 ngày anh quyết tiếp hay dừng — mình không bám.
+  </p>
+
+  <a href="https://bothuocla.sol.vn/?utm_source=sol_vn&utm_medium=hub&utm_campaign=bo_thuoc_la_cta" class="sol-hub-cta-primary">
+    🌱 Bắt đầu miễn phí ngay
+  </a>
+
+  <p style="margin: 24px 0 0; font-size: 14px; color: #8A857C;">
+    <a href="/khang-sol" style="color: #B25C2C; margin: 0 10px;">Câu chuyện Khang</a> ·
+    <a href="/sol-la-gi" style="color: #B25C2C; margin: 0 10px;">Sol làm gì</a> ·
+    <a href="/phuong-phap-cai-thuoc-la" style="color: #B25C2C; margin: 0 10px;">5 phương pháp</a> ·
+    <a href="/gia" style="color: #B25C2C; margin: 0 10px;">Bảng giá</a> ·
+    <a href="/cau-hoi" style="color: #B25C2C; margin: 0 10px;">21 câu hỏi</a>
+  </p>
+
+</section>
+
+</div>
