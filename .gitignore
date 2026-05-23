@@ -48,3 +48,5 @@ outputs/
 .~lock.*#
 ~$*.docx
 ~$*.xlsx
+# Credentials — KHÔNG BAO GIỜ push (bị commit nhầm 23/5/2026 do quên gitignore)
+docs/01-CREDENTIALS.md
