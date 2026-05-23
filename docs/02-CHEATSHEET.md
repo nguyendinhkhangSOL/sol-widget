@@ -9,21 +9,23 @@
 ### Login VPS
 
 ```powershell
-# Login bằng alias (đã setup ~/.ssh/config)
-ssh sol-vps
+# ✅ Cách CHUẨN (anh Khang chốt 23/5/2026) — dùng hostname:
+ssh solop@bothuocla.sol.vn
 
-# Hoặc full command
-ssh -i $env:USERPROFILE\.ssh\sol_vps solop@103.72.57.11
+# Alternative: alias nếu đã setup ~/.ssh/config
+ssh sol-vps
 ```
+
+> ⚠️ **KHÔNG dùng IP gốc** (vd `103.72.57.11` hay `103.221.221.79`) — IP có thể rotate hoặc cache cũ. Hostname `bothuocla.sol.vn` luôn resolve đúng (Cloudflare DNS không proxy port 22).
 
 ### Chạy 1 lệnh trên VPS không cần login
 
 ```powershell
 # Một lệnh
-ssh sol-vps "sudo systemctl status nginx --no-pager"
+ssh solop@bothuocla.sol.vn "sudo systemctl status nginx --no-pager"
 
 # Nhiều lệnh
-ssh sol-vps "df -h && free -h && uptime"
+ssh solop@bothuocla.sol.vn "df -h && free -h && uptime"
 ```
 
 ### Khẩn cấp — login khi SSH fail

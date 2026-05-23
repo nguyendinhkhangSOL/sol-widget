@@ -12,9 +12,12 @@ import react from '@vitejs/plugin-react';
 //
 // Vite tự đọc env variable BASE_URL — anh có thể override bằng:
 //   $env:VITE_BASE = "/app/"; npm run build
-// Mặc định cho production build là /app/, dev là /.
+//
+// 2026-05-23: Production base = '/' (nginx serve root /var/www/bothuocla-sol-vn).
+// Trước đây '/app/' nhưng nginx không có /app/ location → asset 404.
+// Dev vẫn '/'. Custom prefix qua env VITE_BASE nếu cần.
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: process.env.VITE_BASE ?? (command === 'build' ? '/app/' : '/'),
+  base: process.env.VITE_BASE ?? '/',
   server: { port: 5175 },
 }));
