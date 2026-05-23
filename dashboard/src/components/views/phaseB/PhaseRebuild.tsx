@@ -11,7 +11,7 @@ import {
 import { useToast } from '../../../lib/toast';
 
 const ACCENT = '#5C3A1E';
-const TOTAL_DAYS = 88;
+const TOTAL_DAYS_LEGACY = 88; // fallback nếu không có journeyV2
 
 interface ClockState {
   days: number;
@@ -53,7 +53,11 @@ export function PhaseRebuild({ data, onReload, onShowExit }: PhaseProps) {
   }, [data.qDay.recentSlip, data.qDay.lastSlipLogId]);
 
   const dayInJourney = data.journey.dayInJourney;
-  const daysToAmbassador = Math.max(0, TOTAL_DAYS + 1 - dayInJourney);
+  // V2 cohort-aware: Đại Sứ Sol unlock khi user hoàn thành lộ trình chính
+  // theo cohort (LIGHT D35 / MODERATE D52 / HEAVY D65). User KHÔNG còn phải
+  // đợi Day 89 legacy.
+  const totalDaysCohort = data.journeyV2?.totalDays ?? TOTAL_DAYS_LEGACY;
+  const daysToAmbassador = Math.max(0, totalDaysCohort + 1 - dayInJourney);
   const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
   function handleLogged() {

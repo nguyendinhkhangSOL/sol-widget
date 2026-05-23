@@ -13,18 +13,20 @@ interface PhaseInfo {
   soft: string;
 }
 
+// Labels canonical 2026-05-18 (override legacy "Nhận Thức/Hành Động/Giải Phóng").
+// Stage keys vẫn legacy để code mapping ngược, nhưng label hiển thị V2.
 const PHASES: PhaseInfo[] = [
-  { key: 'NHAN_THUC',   emoji: '🌱', label: 'Nhận Thức',  color: '#B25C2C', ink: '#6B3318', soft: '#F4DDC8' },
-  { key: 'HANH_DONG',   emoji: '🔥', label: 'Hành Động',  color: '#B8860B', ink: '#6B5008', soft: '#F0E2B8' },
-  { key: 'GIAI_PHONG',  emoji: '🚭', label: 'Giải Phóng', color: '#3A7CA5', ink: '#225573', soft: '#E2EDF4' },
-  { key: 'TAI_THIET',   emoji: '🌟', label: 'Tái Thiết',  color: '#5C3A1E', ink: '#3A2410', soft: '#E8DCCA' },
+  { key: 'NHAN_THUC',   emoji: '🌱', label: 'Nhận Diện', color: '#B25C2C', ink: '#6B3318', soft: '#F4DDC8' },
+  { key: 'HANH_DONG',   emoji: '🔥', label: 'Kiểm Soát', color: '#B8860B', ink: '#6B5008', soft: '#F0E2B8' },
+  { key: 'GIAI_PHONG',  emoji: '🚭', label: 'Làm Chủ',   color: '#3A7CA5', ink: '#225573', soft: '#E2EDF4' },
+  { key: 'TAI_THIET',   emoji: '🌟', label: 'Tái Thiết', color: '#5C3A1E', ink: '#3A2410', soft: '#E8DCCA' },
 ];
 
 const PHASE_TAGLINES: Record<Stage, string> = {
-  NHAN_THUC:  'Quan sát chính mình',
-  HANH_DONG:  'Phá bỏ thói quen',
-  GIAI_PHONG: 'Bỏ hẳn — sống tự do',
-  TAI_THIET:  'Giữ vững — tái thiết',
+  NHAN_THUC:  'Quan sát — chưa thay đổi gì',
+  HANH_DONG:  'Giảm dần — xây thói quen mới',
+  GIAI_PHONG: 'Bỏ hẳn — đồng hồ tự do',
+  TAI_THIET:  'Bảo trì thành công — miễn phí ∞',
   DAI_SU:     'Mentor cohort mới',
 };
 
@@ -134,7 +136,7 @@ export function PhaseBar({ stage, progressInStage, dayInStage, totalInStage }: P
 
       {!isAmbassador && dayInStage && totalInStage && (
         <div className="text-meta text-sol-ink-3 mt-2">
-          Tuần này: ngày <strong className="text-sol-ink">{dayInStage}</strong>/{totalInStage}
+          Chặng này: ngày <strong className="text-sol-ink">{dayInStage}</strong>/{totalInStage}
         </div>
       )}
     </div>

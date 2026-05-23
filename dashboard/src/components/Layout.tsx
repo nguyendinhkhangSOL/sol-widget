@@ -64,10 +64,10 @@ export function Layout() {
       { to: '/journey', label: 'Hành trình', icon: '🗺️' },
     ];
     if (hasFeature(eff, 'workbook.write') || hasFeature(eff, 'workbook.read.full') || hasFeature(eff, 'workbook.read.week1_2')) {
-      base.push({ to: '/workbook', label: 'Sổ tay', icon: '📖' });
+      base.push({ to: '/workbook', label: 'Sổ Lưu Niệm', icon: '📖' });
     } else {
-      // FREE: label "Sổ tay (mẫu)" để rõ là demo
-      base.push({ to: '/workbook', label: 'Sổ tay (mẫu)', icon: '📖' });
+      // FREE: label "Sổ Lưu Niệm (mẫu)" để rõ là demo
+      base.push({ to: '/workbook', label: 'Sổ Lưu Niệm (mẫu)', icon: '📖' });
     }
     base.push({ to: '/analytics', label: 'Phân tích', icon: '📊' });
     if (hasFeature(eff, 'voice.day_1_3_7') || hasFeature(eff, 'voice.day_1_3_7_14_21_30_letter')) {

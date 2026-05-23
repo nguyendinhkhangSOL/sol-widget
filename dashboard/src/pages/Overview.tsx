@@ -117,15 +117,31 @@ export function Overview() {
     return <ExitedState pronouns={data.user.pronouns} onResume={reload} />;
   }
 
-  // ─── PHASE ROUTER ───────────────────────────────────────────────────────
+  // ─── PHASE ROUTER (V2 cohort-aware) ─────────────────────────────────────
+  // Ưu tiên journeyV2.chapter (cohort-aware, canonical 2026-05-18). Fallback
+  // journey.stage legacy nếu backend chưa migrate.
+  //
+  // Mapping: NHAN_DIEN → Observer (Nhận Thức cũ)
+  //          KIEM_SOAT → Action (Hành Động cũ)
+  //          LAM_CHU   → Liberation (Giải Phóng cũ)
+  //          TAI_THIET → Rebuild (Tái Thiết cũ)
   const sharedProps = {
     data,
     onReload: reload,
     onShowExit: () => setShowExit(true),
   };
 
+  const v2 = data.journeyV2;
+  // Effective stage = V2 chapter mapped to legacy stage cho phase view router
+  const effectiveStage = v2
+    ? (v2.chapter === 'NHAN_DIEN' ? 'NHAN_THUC'
+      : v2.chapter === 'KIEM_SOAT' ? 'HANH_DONG'
+      : v2.chapter === 'LAM_CHU'   ? 'GIAI_PHONG'
+      : 'TAI_THIET')
+    : data.journey.stage;
+
   let phaseView;
-  switch (data.journey.stage) {
+  switch (effectiveStage) {
     case 'NHAN_THUC':
       phaseView = <PhaseObserver {...sharedProps} />;
       break;
@@ -144,6 +160,12 @@ export function Overview() {
     default:
       phaseView = <PhaseObserver {...sharedProps} />;
   }
+
+  // PhaseBar values: ưu tiên V2 chapter info, fallback legacy stage info
+  const barStage = effectiveStage;
+  const barDayInStage = v2?.dayInChapter ?? data.journey.dayInStage;
+  const barTotalInStage = (v2?.totalInChapter ?? data.journey.totalInStage) || data.journey.totalInStage;
+  const barProgressInStage = v2?.progressInChapter ?? data.journey.progressInStage;
 
   const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -175,12 +197,12 @@ export function Overview() {
       {/* Anonymous Stats — "Tuần này trong Sol" */}
       <AnonymousStatsWidget />
 
-      {/* PhaseBar 4 viên ngọc */}
+      {/* PhaseBar 4 viên ngọc — V2 cohort-aware */}
       <PhaseBar
-        stage={data.journey.stage}
-        progressInStage={data.journey.progressInStage}
-        dayInStage={data.journey.dayInStage}
-        totalInStage={data.journey.totalInStage}
+        stage={barStage}
+        progressInStage={barProgressInStage}
+        dayInStage={barDayInStage}
+        totalInStage={barTotalInStage}
       />
 
       {/* Phase view */}
