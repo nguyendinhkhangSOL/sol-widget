@@ -21,6 +21,8 @@ import { DashboardData } from '../components/views/phaseB/types';
 // Day 8 (2026-05-23): Journey Simulator HERO — slider time-travel + 4 body
 // recovery rings + milestones. Theo spec anh Khang 23/5.
 import { JourneySimulator } from '../components/JourneySimulator';
+// Daily Alert — cảnh báo ngày hôm nay với pulse animation
+import { DailyJourneyAlert } from '../components/DailyJourneyAlert';
 // Silent Companionship widgets (pivot 2026-05-08)
 import {
   ControlScoreWidget,
@@ -184,6 +186,12 @@ export function Overview() {
 
       {/* Crisis trigger button — luôn ở top, accessibility cao nhất */}
       <CrisisTriggerButton />
+
+      {/* DAILY JOURNEY ALERT — cảnh báo ngày hôm nay với pulse animation */}
+      <DailyJourneyAlert
+        dayInJourney={data.journey.dayInJourney}
+        pronouns={data.user.pronouns}
+      />
 
       {/* ═══════════════════════════════════════════════════════════════
           JOURNEY SIMULATOR — HERO (anh Khang chốt 23/5/2026)
