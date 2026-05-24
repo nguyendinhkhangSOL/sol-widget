@@ -21,6 +21,10 @@ C:\BOTHUOCLA\sol-widget\docs\
 ├── 08-OPERATIONS.md                  ← 🛠️ Runbook ops hằng ngày + troubleshooting
 ├── 09-DECISIONS.md                   ← 📝 Technical decisions log (date + lý do)
 ├── 10-ROADMAP.md                     ← 🗓️ Roadmap Day 1 → D-Day → post-launch
+├── 11-STORAGE_STRUCTURE.md           ← 📁 Storage layout: VPS path, S3, Prisma backups
+├── 12-JOURNEY_SIMULATOR_DESIGN.md    ← 🗺️ JourneySimulator formula + 28 citations
+├── 13-UX_FLOW.md                     ← 🎯 User journeys end-to-end (6 flow)
+├── 14-FUNCTIONAL_MAP.md              ← 🗺️ Pages/components/API/cron functional map
 ├── CHANGELOG_2026-05.md              ← 📅 Log chi tiết task + bug fix tháng 5
 ├── SETUP_LOG_2026-05-20.md           ← 📝 Chi tiết setup ngày 2026-05-20
 ├── SEO_COMPLIANCE_AUDIT_2026-05-22.md ← ✅ Audit Google compliance (PASS)
@@ -105,7 +109,7 @@ Chi tiết: [05-ARCHITECTURE.md](./05-ARCHITECTURE.md).
 
 ---
 
-## Sol Stack Status (2026-05-22)
+## Sol Stack Status (2026-05-23)
 
 | Component | Status | Reference |
 |---|---|---|
@@ -122,6 +126,10 @@ Chi tiết: [05-ARCHITECTURE.md](./05-ARCHITECTURE.md).
 | Zalo OA webhook | ✅ Live (token exp 25/8) | 09-DECISIONS.md |
 | **VietQR static payment** | ✅ **Admin confirm manual** | 09-DECISIONS.md |
 | 26 cron job in-process | ✅ Active (ENABLE_SCHEDULER=true) | 05-ARCHITECTURE.md |
+| **JourneySimulator hero + Body Recovery curves** | ✅ **Live (4 system, 28 milestones)** | 12-JOURNEY_SIMULATOR_DESIGN.md |
+| **Daily Alert pulse + 27 curated alerts** | ✅ **Live (animate-pulse, dismiss/day)** | 05-ARCHITECTURE.md |
+| **3-cohort FTND migration (LIGHT/MODERATE/HEAVY)** | ✅ **Live (cohortConfig + service V2)** | 09-DECISIONS.md |
+| **10 seed test users matrix** | ✅ **Done (3 cohort × milestones)** | CHANGELOG_2026-05.md |
 | GA4 tracking | ✅ G-S5ELGXBLWK | 01-CREDENTIALS.md |
 | Microsoft Clarity | ✅ wu12r2qt0o | 01-CREDENTIALS.md |
 | GSC 4 properties | ✅ verified | 01-CREDENTIALS.md |
@@ -130,8 +138,8 @@ Chi tiết: [05-ARCHITECTURE.md](./05-ARCHITECTURE.md).
 | **Sprint 31-5 SEO (7 bài flagship)** | ✅ **Published 22/5** | CHANGELOG_2026-05.md |
 | **143 wiki author block** | ✅ **Bulk injected** | CHANGELOG_2026-05.md |
 | Agent Readiness Score | ✅ ~95/100 | SETUP_LOG_2026-05-20.md |
-| Soft launch Wave 1 | 🟡 **Pending 23/5** | SOFT_LAUNCH_CHECKLIST.md |
-| **D-Day World No Tobacco Day** | 🔥 **2026-05-31 (D-9)** | 10-ROADMAP.md |
+| Soft launch Wave 1 | 🟡 **Pending 24-25/5** | SOFT_LAUNCH_CHECKLIST.md |
+| **D-Day World No Tobacco Day** | 🔥 **2026-05-31 (D-8)** | 10-ROADMAP.md |
 
 ---
 
@@ -216,6 +224,7 @@ C:\BOTHUOCLA\sol-widget\
 | 2026-05-20 | Initial setup ngày đầu — VPS + Cloudflare + landing | 00-04 |
 | 2026-05-21 | Backend + Dashboard + Admin deploy | (chưa update docs) |
 | 2026-05-22 | Email Brevo + DKIM/SPF/DMARC + Sprint SEO + Docs overhaul | 00 (update), 05-10 + CHANGELOG (new) |
+| 2026-05-23 | 3-cohort FTND migrate + JourneySimulator + Daily Alert + Rename UI | 05, 09, 00, CHANGELOG (update) + 12, 13, 14 (new) |
 
 ---
 
@@ -275,5 +284,5 @@ Mọi quyết định kỹ thuật quan trọng đều có **date + lý do** tro
 
 **Maintainer**: Khang Sol (Nguyễn Đình Khang)
 **Project**: Đi Cùng Sol — app cai thuốc lá 30 ngày cho người Việt 45+
-**Last updated**: 2026-05-22
-**Version**: 2.0 (rewrite từ 1.0 sau khi deploy backend + mail stack)
+**Last updated**: 2026-05-23
+**Version**: 2.1 (add cohort migration + JourneySimulator + UX flow docs)

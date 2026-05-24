@@ -104,7 +104,7 @@ export function Journey() {
       setData(r);
     } catch (e) {
       console.error('Failed to load journey', e);
-      setError(e instanceof ApiError ? `API ${e.status}: ${e.body?.message ?? ''}` : 'Lỗi tải hành trình.');
+      setError(e instanceof ApiError ? `Lỗi kết nối (${e.status}): ${e.body?.message ?? ''}` : 'Sol chưa tải được hành trình. Thử lại sau nhé.');
     } finally {
       setLoading(false);
     }
@@ -188,11 +188,11 @@ export function Journey() {
               <span>Lộ trình {cohortLabel}</span>
               <span className="text-sol-ink-3 font-normal">· {totalDays} ngày</span>
             </span>
-            {cohortTagline}. Click mỗi ngày để xem chi tiết.
+            {cohortTagline}. Bấm vào mỗi ngày để xem chi tiết.
           </p>
         ) : (
           <p className="text-body text-sol-ink-2 mt-1">
-            4 chặng tiến hoá hành vi — Nhận Diện · Kiểm Soát · Làm Chủ · Tái Thiết. Click mỗi ngày để xem chi tiết.
+            4 chặng hành trình — Nhận Diện · Kiểm Soát · Làm Chủ · Tái Thiết. Bấm vào mỗi ngày để xem chi tiết.
           </p>
         )}
       </header>
@@ -255,7 +255,7 @@ export function Journey() {
                 </h2>
                 <span className="text-meta text-sol-ink-3">
                   {isTaiThiet
-                    ? `Ngày ${phase.startDay}+ · Bonus miễn phí`
+                    ? `Ngày ${phase.startDay}+ · Tặng miễn phí`
                     : `Ngày ${phase.startDay}–${phase.endDay} · ${phase.total} ngày`}
                 </span>
               </div>
@@ -342,11 +342,11 @@ export function Journey() {
               <div className="mt-4 pt-4 border-t border-sol-line text-meta text-sol-ink-2 italic flex items-center gap-2">
                 <span className="text-xl">🌅</span>
                 <span>
-                  Day 28 = <strong>Ngày bỏ</strong> — ngày {data.user.pronouns} cam kết bỏ hẳn.
+                  Ngày 28 = <strong>Ngày Quyết Định</strong> — ngày {data.user.pronouns} cam kết bỏ hẳn.
                   {qDayConfirmed && currentDay >= 28
                     ? ' ✓ Đã cam kết.'
                     : currentDay >= 28
-                    ? ' Chưa cam kết — bấm vào Tổng quan để xác nhận.'
+                    ? ' Chưa cam kết — bấm vào Hành Trình để xác nhận.'
                     : ' Sẽ tới sau.'}
                 </span>
               </div>
@@ -364,12 +364,12 @@ export function Journey() {
             <span className="text-meta opacity-90">Ngày 52+ · vĩnh viễn (Người Tự Do)</span>
           </div>
           <p className="text-body opacity-90">
-            {data.user.pronouns} đã graduate. Hành trình 52 ngày hoàn tất — giờ là lúc chia sẻ với người mới.
+            {data.user.pronouns} đã tốt nghiệp. Hành trình 52 ngày hoàn tất — giờ là lúc chia sẻ với người mới.
           </p>
         </section>
       )}
 
-      {selected && <DayDetail day={selected} stage={currentStage} />}
+      {selected && <DayDetail day={selected} stage={currentStageForBar} />}
     </div>
   );
 }
@@ -447,7 +447,7 @@ function DayDetail({ day, stage }: { day: number; stage: Stage }) {
             <div className="text-body text-sol-ink-3 italic">Đang tải…</div>
           ) : !isPhase3 && (!content || !content.content) ? (
             <div className="bg-sol-blue-soft/40 border border-sol-blue/20 rounded-lg p-4 text-meta text-sol-blue-ink">
-              📝 Phase {stage === 'NHAN_THUC' ? '1 Nhận Thức' : stage === 'HANH_DONG' ? '2 Hành Động' : '4 Tái Thiết'} — content đang được Khang biên soạn (38 bài Phase B). Tạm thời chưa có nội dung cho ngày này.
+              📝 Chặng {stage === 'NHAN_THUC' ? 'Nhận Diện' : stage === 'HANH_DONG' ? 'Kiểm Soát' : 'Tái Thiết'} — Khang đang biên soạn nội dung cho ngày này. Sẽ có sớm.
             </div>
           ) : !content?.content ? (
             <div className="text-body text-sol-ink-3 italic">Chưa có nội dung.</div>

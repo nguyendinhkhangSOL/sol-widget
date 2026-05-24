@@ -232,7 +232,7 @@ export function QuickWinDay3Widget() {
         </div>
         {data.topTriggers.length > 0 && (
           <div style={{ fontSize: 14.5, color: '#2C2A27', lineHeight: 1.7, marginTop: 4 }}>
-            Top trigger:{' '}
+            Tình huống thèm hay gặp:{' '}
             {data.topTriggers
               .map((t) => `${t.trigger} (${t.pct}%)`)
               .join(', ')}
@@ -313,7 +313,7 @@ export function Day7ReportWidget() {
         </div>
         {data.topTriggers && data.topTriggers.length > 0 && (
           <div style={{ fontSize: 14.5, color: '#2C2A27', lineHeight: 1.7, marginTop: 6 }}>
-            <strong>5 trigger lớn nhất:</strong>{' '}
+            <strong>5 tình huống gây thèm nhiều nhất:</strong>{' '}
             {data.topTriggers
               .map((t: any) => `${t.trigger} (${t.pct}%)`)
               .join(', ')}
@@ -413,7 +413,7 @@ export function Day14ReportWidget() {
         }}
       >
         <div style={{ flex: 1, minWidth: 100 }}>
-          <div style={{ fontSize: 11, color: '#8A857C' }}>Baseline</div>
+          <div style={{ fontSize: 11, color: '#8A857C' }}>Mức nền</div>
           <div style={{ fontSize: 22, color: '#5A5650', fontWeight: 700 }}>
             {data.baselineAvgPerDay}
           </div>
@@ -431,7 +431,7 @@ export function Day14ReportWidget() {
           <div style={{ fontSize: 22, color: '#B25C2C', fontWeight: 700 }}>
             {data.reductionPct}%
           </div>
-          <div style={{ fontSize: 11, color: '#8A857C' }}>so baseline</div>
+          <div style={{ fontSize: 11, color: '#8A857C' }}>so với mức nền</div>
         </div>
       </div>
       <div style={{ fontSize: 13.5, color: '#5A5650', marginBottom: 14, lineHeight: 1.7 }}>

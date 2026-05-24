@@ -8,10 +8,10 @@ import { api, ApiError } from '../../../services/api';
 import { QuitlineButton } from '../../QuitlineButton';
 
 export const TRIGGER_LABELS: Record<string, { label: string; emoji: string }> = {
-  STRESS: { label: 'Stress', emoji: '😤' },
+  STRESS: { label: 'Căng thẳng', emoji: '😤' },
   EATING: { label: 'Sau cơm', emoji: '🍚' },
-  IDLE: { label: 'Rảnh', emoji: '😶' },
-  SOCIAL: { label: 'Tụ tập', emoji: '🍺' },
+  IDLE: { label: 'Lúc rảnh', emoji: '😶' },
+  SOCIAL: { label: 'Tụ tập / Nhậu', emoji: '🍺' },
   OTHER: { label: 'Khác', emoji: '·' },
 };
 
@@ -91,14 +91,14 @@ export function TodayCard({
         <Stat label="Số điếu" value={String(cigsCount)} accent={accent} />
         <Stat label="Bỏ qua" value={String(cigsSkipped)} accent="#3A7CA5" sub="🎉" />
         <Stat
-          label="Peak"
+          label="Giờ thèm nhất"
           value={peakHour !== null ? `${peakHour}h` : '—'}
           sub={peakHour !== null ? 'giờ thèm nhất' : 'chưa có dữ liệu'}
         />
       </div>
       {topTrigger && (
         <div className="flex items-center gap-2 text-body text-sol-ink-2 pt-3 border-t border-sol-line">
-          <span>Trigger chính:</span>
+          <span>Tình huống chính:</span>
           <span className="px-3 py-1 rounded-full bg-sol-orange-soft text-sol-orange-ink font-semibold">
             {TRIGGER_LABELS[topTrigger]?.emoji} {TRIGGER_LABELS[topTrigger]?.label ?? topTrigger}
           </span>
@@ -242,7 +242,7 @@ export function BodyTimelineCard({
       <div className="bg-sol-paper border border-sol-line rounded-2xl p-6 shadow-card">
         <div className="text-h3 font-semibold text-sol-ink mb-2">🩺 Cơ thể sẽ sửa</div>
         <p className="text-body text-sol-ink-3 italic mb-4">
-          Sau Ngày bỏ (cam kết bỏ hẳn), cơ thể bạn bắt đầu hồi phục theo timeline khoa học CDC/NHS:
+          Sau Ngày Quyết Định (cam kết bỏ hẳn), cơ thể bạn bắt đầu hồi phục theo các mốc khoa học của CDC/NHS:
         </p>
         {next && (
           <div className="flex items-start gap-3 opacity-60 p-3 bg-sol-bg rounded-xl">

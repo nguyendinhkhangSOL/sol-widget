@@ -43,7 +43,7 @@ export function Login() {
       await api.requestOtp(phone.trim());
       setStep('otp');
     } catch (e: any) {
-      setErr(e?.message ?? 'Có lỗi');
+      setErr(e?.message ?? 'Có lỗi xảy ra');
     } finally {
       setLoading(false);
     }
@@ -83,7 +83,7 @@ export function Login() {
       await bootstrap();
       nav('/', { replace: true });
     } catch (e: any) {
-      setErr(e?.message ?? 'Mã chưa đúng');
+      setErr(e?.message ?? 'Mã chưa đúng. Thử lại nhé.');
     } finally {
       setLoading(false);
     }

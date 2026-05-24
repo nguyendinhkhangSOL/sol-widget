@@ -39,8 +39,8 @@ export function Pricing() {
     } catch (err) {
       const msg =
         err instanceof ApiError
-          ? (err.body as any)?.message || `Lỗi ${err.status}`
-          : 'Không kết nối được Sol';
+          ? (err.body as any)?.message || `Lỗi kết nối (${err.status})`
+          : 'Sol chưa kết nối được';
       toast.error(msg, '⚠️');
     } finally {
       setSubmitting(null);
@@ -98,9 +98,9 @@ export function Pricing() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {[
-            { icon: '💻', title: 'Máy chủ & DB', desc: 'Lưu hành trình, check-in, cơn thèm.' },
+            { icon: '💻', title: 'Máy chủ & dữ liệu', desc: 'Lưu hành trình, ghi nhận hôm nay, cơn thèm.' },
             { icon: '💬', title: 'Zalo OA', desc: 'Tin nhắn nhắc 7h sáng theo khung giờ.' },
-            { icon: '🤖', title: 'AI Mentor', desc: 'API Gemini/Claude để mentor 24/7.' },
+            { icon: '🤖', title: 'Trợ lý AI', desc: 'Trò chuyện với Sol bất kỳ lúc nào trong ngày.' },
           ].map((item) => (
             <div key={item.title} className="bg-sol-soft rounded-xl p-3">
               <div className="text-2xl mb-1">{item.icon}</div>
@@ -158,7 +158,7 @@ export function Pricing() {
                 disabled={isSubmitting || !!submitting}
                 className={`block w-full text-center py-3 rounded-xl font-semibold text-white text-body transition min-h-tap ${c.btn} disabled:opacity-60 disabled:cursor-wait`}
               >
-                {isSubmitting ? 'Đang tạo QR...' : 'Bắt đầu — Quét QR →'}
+                {isSubmitting ? 'Đang tạo mã QR…' : 'Bắt đầu — Quét QR →'}
               </button>
             </div>
           );
@@ -181,7 +181,7 @@ export function Pricing() {
           disabled={!!submitting}
           className="sol-btn-secondary min-h-tap px-6"
         >
-          {submitting?.endsWith('-weekly') ? 'Đang tạo QR...' : 'Đóng 35k tuần này →'}
+          {submitting?.endsWith('-weekly') ? 'Đang tạo mã QR…' : 'Đóng 35.000đ tuần này →'}
         </button>
         <p className="text-meta text-sol-ink-3 italic mt-3">
           Sòng phẳng và chủ động 100% — không có bất kỳ khoản phí oan nào.
@@ -225,11 +225,11 @@ export function Pricing() {
             },
             {
               q: 'Hệ thống có tự động gia hạn hoặc âm thầm trừ tiền không?',
-              a: 'Tuyệt đối không. Mọi giao dịch đều là quét QR thủ công chuyển khoản tay sang TK chính chủ Khang Sol. KHÔNG lưu thẻ tín dụng, KHÔNG auto-charge.',
+              a: 'Tuyệt đối không. Mọi giao dịch đều là quét QR thủ công, chuyển khoản tay sang tài khoản chính chủ Khang Sol. KHÔNG lưu thẻ tín dụng, KHÔNG tự trừ tiền.',
             },
             {
               q: 'Tại sao mức phí hiện tại là 5.000đ/ngày thay vì giá gốc 9.000đ/ngày?',
-              a: 'Sol đang trong giai đoạn đồng hành cùng 500 anh em đầu tiên để tối ưu AI Mentor. Vì hệ thống còn điểm chưa hoàn hảo, Khang để mức phí tri ân tối thiểu 5.000đ/ngày.',
+              a: 'Sol đang trong giai đoạn đồng hành cùng 500 anh em đầu tiên để hoàn thiện trợ lý AI. Vì hệ thống còn điểm chưa hoàn hảo, Khang để mức phí tri ân tối thiểu 5.000đ/ngày.',
             },
             {
               q: 'Dự án Sol có hợp pháp không?',
@@ -237,7 +237,7 @@ export function Pricing() {
             },
             {
               q: 'Khang có phải bác sĩ không?',
-              a: 'KHÔNG. Khang là kỹ sư IT đã sạch thuốc từ 2021, chia sẻ trải nghiệm thực chứng từ chính hành trình của mình. KHÔNG đưa ra lời khuyên/chẩn đoán y khoa. Mọi quyết định dùng Champix/Bupropion phải tham khảo bác sĩ.',
+              a: 'KHÔNG. Khang là kỹ sư phần mềm đã sạch thuốc từ năm 2021, chia sẻ trải nghiệm thực chứng từ chính hành trình của mình. KHÔNG đưa ra lời khuyên hay chẩn đoán y khoa. Mọi quyết định dùng thuốc cai (Champix/Bupropion) phải tham khảo bác sĩ.',
             },
           ].map((faq, i) => (
             <details key={i} className="sol-card-padded cursor-pointer">

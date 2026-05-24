@@ -20,10 +20,10 @@ export function VoiceInbox() {
 
   return (
     <div className="p-6 lg:p-10 max-w-3xl mx-auto pb-24">
-      <h1 className="text-2xl font-bold text-sol-ink mb-2">🎙️ Voice của Khang</h1>
+      <h1 className="text-2xl font-bold text-sol-ink mb-2">🎙️ Bản ghi âm của Khang</h1>
       <p className="text-meta text-sol-ink-2 mb-6">
-        Khang gửi voice vào những thời điểm quan trọng — Ngày 1, 3, 7, 14,
-        21, 30 và lúc bạn cần. Đây là tài sản riêng, không AI nào tạo được.
+        Khang gửi bản ghi âm vào những thời điểm quan trọng — Ngày 1, 3, 7,
+        14, 21, 30 và lúc bạn cần. Đây là tài sản riêng, không AI nào tạo được.
       </p>
 
       {loading && <div className="text-sol-ink-2">Đang tải…</div>}
@@ -31,7 +31,7 @@ export function VoiceInbox() {
         <div className="bg-sol-paper rounded-2xl border border-sol-line p-8 text-center">
           <div className="text-3xl mb-2">📻</div>
           <div className="text-sol-ink-2">
-            Chưa có voice nào. Khang sẽ gửi vào đúng ngày bạn cần.
+            Chưa có bản ghi âm nào. Khang sẽ gửi vào đúng ngày bạn cần.
           </div>
         </div>
       )}

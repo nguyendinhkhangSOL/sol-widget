@@ -156,7 +156,7 @@ export function Settings() {
     } else if (quitReasons.length < PROFILE_SELECT_LIMIT) {
       setQuitReasons([...quitReasons, r]);
     } else {
-      setMsg(`Tối đa ${PROFILE_SELECT_LIMIT} lý do — bỏ chọn 1 cái rồi thêm.`);
+      setMsg(`Tối đa ${PROFILE_SELECT_LIMIT} lý do — bỏ chọn một cái rồi thêm cái mới.`);
     }
   }
   function addReasonCustom() {
@@ -174,7 +174,7 @@ export function Settings() {
     } else if (topTriggers.length < PROFILE_SELECT_LIMIT) {
       setTopTriggers([...topTriggers, tr]);
     } else {
-      setMsg(`Tối đa ${PROFILE_SELECT_LIMIT} trigger — bỏ chọn 1 cái rồi thêm.`);
+      setMsg(`Tối đa ${PROFILE_SELECT_LIMIT} tình huống — bỏ chọn một cái rồi thêm cái mới.`);
     }
   }
   function addTriggerCustom() {
@@ -277,7 +277,7 @@ export function Settings() {
         });
       setMsg('✓ Đã lưu');
     } catch (e: any) {
-      setMsg(e?.message ?? 'Có lỗi');
+      setMsg(e?.message ?? 'Có lỗi xảy ra');
     } finally {
       setSaving(false);
     }
@@ -318,9 +318,9 @@ export function Settings() {
                 navigator.clipboard?.writeText(user.phone!).catch(() => {});
               }}
               className="text-meta text-sol-ink-3 hover:text-sol-ink underline"
-              aria-label="Copy số điện thoại"
+              aria-label="Sao chép số điện thoại"
             >
-              Copy SĐT
+              Sao chép SĐT
             </button>
           )}
         </div>
@@ -373,7 +373,7 @@ export function Settings() {
               Đây là SĐT bạn đang đăng nhập. Đổi SĐT cần liên hệ Khang.
             </p>
           </Field>
-          <Field label="Ngày bắt đầu cai (Q-Day)">
+          <Field label="Ngày bắt đầu cai (Ngày Quyết Định)">
             <input
               type="date"
               className="w-full px-3 py-2 rounded-lg border border-black/10 bg-white"
@@ -477,7 +477,7 @@ export function Settings() {
           <div className="mt-3 p-4 rounded-xl bg-sol-bg border border-black/5 space-y-2.5">
             <div className="flex items-center gap-2">
               <div className="text-[10px] uppercase tracking-wider text-sol-ink/50">
-                AI sẽ chào ông kiểu này
+                Sol sẽ chào bạn như sau
               </div>
               <span className="px-2 py-0.5 rounded-full bg-sol-green/10 text-sol-green text-[11px] font-semibold">
                 {namePreview.signature}
@@ -494,7 +494,7 @@ export function Settings() {
         </div>
       </Section>
 
-      <Section title="Hồ sơ cai thuốc" icon="🚭" hint="Tuổi · Số năm hút · Lý do · Tác nhân">
+      <Section title="Hồ sơ cai thuốc" icon="🚭" hint="Tuổi · Số năm hút · Lý do · Tình huống gây thèm">
         <p className="text-xs text-sol-ink/60 -mt-1 mb-3">
           Mấy thông tin này giúp Sol viết tin nhắn đúng "chất" của bạn — nhắc lại lý do của bạn,
           biết khi nào cơ thể bạn cần thêm thời gian phục hồi.
@@ -601,7 +601,7 @@ export function Settings() {
           {/* Trigger thèm thuốc */}
           <Field label={`Khi nào bạn hay thèm thuốc nhất? (chọn tối đa ${PROFILE_SELECT_LIMIT})`}>
             <p className="text-[11px] text-sol-ink/50 -mt-1 mb-2">
-              Sol sẽ nhận diện khoảnh khắc này và gợi cách thay thế — vd cà phê + 4-7-8 thay vì cà phê + thuốc.
+              Sol sẽ nhận diện khoảnh khắc này và gợi cách thay thế — ví dụ cà phê + thở 4-7-8 thay vì cà phê + thuốc.
             </p>
             <div className="flex flex-wrap gap-1.5">
               {TRIGGER_PRESETS.map((tr) => {
@@ -645,7 +645,7 @@ export function Settings() {
             {topTriggers.length < PROFILE_SELECT_LIMIT && (
               <div className="mt-2 flex gap-2">
                 <input
-                  placeholder="Trigger riêng của bạn (vd: lúc đi câu)"
+                  placeholder="Tình huống riêng của bạn (vd: lúc đi câu)"
                   value={triggerCustom}
                   onChange={(e) => setTriggerCustom(e.target.value.slice(0, TRIGGER_MAX))}
                   onKeyDown={(e) => {
@@ -723,7 +723,7 @@ export function Settings() {
             >
               <div className="font-bold text-meta text-sol-ink">⚕️ Khoa học</div>
               <div className="text-[11px] text-sol-ink-2 mt-1 leading-relaxed">
-                Withdrawal · Slump · Habit Reset · Consolidation
+                Triệu Chứng Cai · Giảm Sút · Tái Lập Thói Quen · Củng Cố
               </div>
             </button>
           </div>
@@ -791,7 +791,7 @@ export function Settings() {
               ))}
             </div>
             <div className="text-[11px] text-sol-ink/50 mt-2">
-              Ví dụ: gói Thăng Long 20 điếu ~ 25.000đ → ~1.250đ/điếu · Marlboro 20 điếu ~ 32.000đ → ~1.600đ/điếu
+              Ví dụ: bao Thăng Long 20 điếu ~ 25.000đ → ~1.250đ/điếu · Marlboro 20 điếu ~ 32.000đ → ~1.600đ/điếu
             </div>
           </Field>
 
@@ -807,7 +807,7 @@ export function Settings() {
               <PreviewBox label="Mỗi năm" value={formatVndFull(preview.yearly)} />
             </div>
             <div className="text-[11px] text-sol-ink/60 mt-2">
-              Con số này hiện lên đồng hồ Tổng quan và card chia sẻ thành tích.
+              Con số này hiện trên trang Hành Trình và tấm thẻ chia sẻ thành tích.
             </div>
           </div>
         </div>

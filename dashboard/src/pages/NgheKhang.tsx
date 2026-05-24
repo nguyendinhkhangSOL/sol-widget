@@ -152,7 +152,7 @@ export function NgheKhang() {
         <div style={{ textAlign: 'center', color: '#8A857C', padding: 40 }}>Đang tải…</div>
       ) : items.length === 0 ? (
         <div style={{ textAlign: 'center', color: '#8A857C', padding: 40 }}>
-          Chưa có voice cho chủ đề này. Khang sắp record.
+          Chưa có bản ghi âm nào cho chủ đề này. Khang sắp thu.
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>

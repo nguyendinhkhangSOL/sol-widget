@@ -201,8 +201,8 @@ export function Chat() {
     } catch (e: any) {
       const errMsg =
         e instanceof ApiError && e.status === 402
-          ? 'Bạn đã hết tin AI hôm nay. Quay lại sáng mai hoặc xem các gói trả phí ở Cài đặt.'
-          : 'Không gửi được. Kiểm tra kết nối rồi thử lại.';
+          ? 'Bạn đã dùng hết lượt trò chuyện với Sol hôm nay. Quay lại sáng mai, hoặc xem các gói đồng hành ở Cài đặt.'
+          : 'Sol không gửi được. Kiểm tra mạng rồi thử lại nhé.';
       setMessages((prev) => [
         ...prev,
         {
@@ -223,7 +223,7 @@ export function Chat() {
       <header className="mb-3">
         <h1 className="text-h1 text-sol-ink">Trò chuyện với Sol</h1>
         <p className="text-meta text-sol-ink-3 mt-1">
-          {user?.assistantName ?? 'Sol Đồng hành'} đang ở đây — kể cho Sol nghe bạn thế nào.
+          {user?.assistantName ?? 'Sol Đồng hành'} đang ở đây — kể cho Sol nghe anh thế nào.
         </p>
       </header>
 
@@ -239,11 +239,11 @@ export function Chat() {
               chips={rankedChips}
               onChipClick={handleChipClick}
               onFallbackClick={handleFallbackClick}
-              title="Bạn muốn hỏi Sol về…"
+              title="Anh muốn hỏi Sol về…"
             />
           ) : (
             <div className="text-center text-sol-ink-3 py-8">
-              Chưa có tin nhắn nào. Hãy chia sẻ với Sol điều bạn đang nghĩ.
+              Chưa có tin nhắn nào. Anh chia sẻ với Sol điều đang nghĩ nhé.
             </div>
           )
         ) : (
@@ -308,7 +308,7 @@ export function Chat() {
             }
           }}
           rows={1}
-          placeholder="Kể Sol nghe bạn đang thế nào…"
+          placeholder="Kể Sol nghe anh đang thế nào…"
           className="flex-1 resize-none bg-transparent px-3 py-2 text-body leading-relaxed focus:outline-none placeholder:text-sol-ink-3 max-h-[200px]"
         />
         <button
@@ -323,7 +323,7 @@ export function Chat() {
         </button>
       </div>
       <p className="text-meta text-sol-ink-3 text-center mt-1.5">
-        Enter để gửi · Shift+Enter xuống dòng · Tab để chọn gợi ý
+        Bấm Enter để gửi · Shift+Enter để xuống dòng · Tab để chọn gợi ý
       </p>
     </div>
   );
@@ -362,13 +362,13 @@ const SENDER_META: Record<SenderKind, {
   },
   ai: {
     avatar: '🤖',
-    label: 'Sol AI',
+    label: 'Sol',
     badgeClass: 'bg-sol-blue-soft text-sol-blue-ink',
     bubbleClass: 'bg-white border border-sol-blue/40 text-sol-ink rounded-tl-sm',
   },
   chip: {
     avatar: '🧩',
-    label: 'Sol Chip',
+    label: 'Sol Gợi Ý',
     badgeClass: 'bg-sol-orange-soft text-sol-orange-ink',
     bubbleClass: 'bg-white border border-sol-orange/40 text-sol-ink rounded-tl-sm',
   },

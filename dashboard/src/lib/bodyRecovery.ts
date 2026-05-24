@@ -32,14 +32,14 @@ export const HEART_MILESTONES: Milestone[] = [
   {
     days: 0.014, // 20 minutes
     title: 'Nhịp tim & huyết áp giảm',
-    detail: 'Chỉ 20 phút sau điếu cuối, nhịp tim và huyết áp bắt đầu trở về mức bình thường khi nicotine ngừng kích thích hệ giao cảm.',
+    detail: 'Chỉ 20 phút sau điếu cuối, nhịp tim và huyết áp bắt đầu trở về mức bình thường khi nicotin ngừng kích thích hệ giao cảm.',
     source: 'CDC',
     sourceUrl: 'https://www.cdc.gov/tobacco/about/benefits-of-quitting.html',
   },
   {
     days: 0.5, // 12 hours
-    title: 'CO trong máu về bình thường',
-    detail: 'Sau 12 giờ, nồng độ carbon monoxide trong máu giảm về mức người không hút, oxy được vận chuyển hiệu quả trở lại.',
+    title: 'Khí độc CO trong máu về bình thường',
+    detail: 'Sau 12 giờ, nồng độ khí carbon monoxide (CO) trong máu giảm về mức người không hút, oxy được vận chuyển hiệu quả trở lại.',
     source: 'CDC',
     sourceUrl: 'https://www.cdc.gov/tobacco/about/benefits-of-quitting.html',
   },
@@ -54,7 +54,7 @@ export const HEART_MILESTONES: Milestone[] = [
     days: 7,
     title: 'Mạch máu giãn nở tốt hơn',
     detail: 'Sau 1 tuần, chức năng nội mô mạch máu hồi phục, huyết áp ổn định, lưu thông máu cải thiện rõ rệt.',
-    source: 'AHA / J Am Coll Cardiol 2024',
+    source: 'AHA / Tạp chí J Am Coll Cardiol 2024',
     sourceUrl: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11843939/',
   },
   {
@@ -112,7 +112,7 @@ export const LUNG_MILESTONES: Milestone[] = [
   {
     days: 14,
     title: 'Lông mao bắt đầu tái tạo',
-    detail: 'Hệ thống lông mao (cilia) trong đường thở bắt đầu mọc lại, đẩy chất nhầy và độc tố ra ngoài hiệu quả hơn.',
+    detail: 'Hệ thống lông mao (lông nhỏ quét sạch phổi) trong đường thở bắt đầu mọc lại, đẩy chất nhầy và độc tố ra ngoài hiệu quả hơn.',
     source: 'Surgeon General 2020',
     sourceUrl: 'https://www.hhs.gov/sites/default/files/2020-cessation-sgr-full-report.pdf',
   },
@@ -126,7 +126,7 @@ export const LUNG_MILESTONES: Milestone[] = [
   {
     days: 270, // 9 tháng
     title: 'Lông mao phục hồi gần hoàn toàn',
-    detail: 'Sau 9 tháng, cilia phục hồi đầy đủ, phổi tự làm sạch tốt, giảm nhiễm trùng và ho mãn tính.',
+    detail: 'Sau 9 tháng, lông mao phổi phục hồi đầy đủ, phổi tự làm sạch tốt, giảm nhiễm trùng và ho mãn tính.',
     source: 'NHS',
     sourceUrl: 'https://www.nhs.uk/live-well/quit-smoking/what-happens-when-you-quit-smoking/',
   },
@@ -169,37 +169,37 @@ export const LUNG_CURVE: RecoveryCurve = {
 export const BRAIN_MILESTONES: Milestone[] = [
   {
     days: 2.5, // 2-3 ngày
-    title: 'Nicotine sạch khỏi cơ thể',
-    detail: 'Sau 48-72 giờ, nicotine và cotinine được đào thải hoàn toàn; triệu chứng cai (cáu gắt, thèm) đỉnh điểm rồi giảm.',
+    title: 'Nicotin sạch khỏi cơ thể',
+    detail: 'Sau 48-72 giờ, nicotin và cotinin được đào thải hoàn toàn; triệu chứng cai (cáu gắt, thèm) đỉnh điểm rồi giảm.',
     source: 'Surgeon General 2020',
     sourceUrl: 'https://www.hhs.gov/sites/default/files/2020-cessation-sgr-full-report.pdf',
   },
   {
     days: 10, // 1-2 tuần
     title: 'Cơn thèm thưa dần',
-    detail: 'Tần suất và cường độ cơn thèm thuốc giảm rõ; chu kỳ kích hoạt receptor α4β2 ngừng, não bắt đầu tái cân bằng.',
-    source: 'Brody 2006, Arch Gen Psychiatry',
+    detail: 'Tần suất và cường độ cơn thèm thuốc giảm rõ; chu kỳ kích hoạt thụ thể nicotin ngừng, não bắt đầu tái cân bằng.',
+    source: 'Brody 2006, Tạp chí Arch Gen Psychiatry',
     sourceUrl: 'https://pubmed.ncbi.nlm.nih.gov/16894066/',
   },
   {
     days: 30,
-    title: 'Receptor nicotinic giảm về gần bình thường',
-    detail: 'Sau ~4 tuần, mật độ thụ thể α4β2 nicotinic acetylcholine (bị tăng do hút thuốc) giảm rõ rệt về mức người không hút.',
+    title: 'Thụ thể Nicotin giảm về gần bình thường',
+    detail: 'Sau khoảng 4 tuần, mật độ thụ thể nicotin trong não (vốn bị tăng do hút thuốc) giảm rõ rệt về mức người không hút.',
     source: 'Cosgrove 2009 / Brody 2013',
     sourceUrl: 'https://www.nature.com/articles/npp201353',
   },
   {
     days: 90, // 3 tháng
-    title: 'Dopamine về mức bình thường',
-    detail: 'Sau 3 tháng, khả năng tổng hợp dopamine ở thể vân phục hồi hoàn toàn — não tự tạo "phần thưởng" mà không cần nicotine.',
-    source: 'Rademacher 2016, Biol Psychiatry',
+    title: 'Dopamine (chất hạnh phúc) về mức bình thường',
+    detail: 'Sau 3 tháng, khả năng tự tạo dopamine ở não phục hồi hoàn toàn — não tự tạo "phần thưởng" mà không cần nicotin.',
+    source: 'Rademacher 2016, Tạp chí Biol Psychiatry',
     sourceUrl: 'https://pubmed.ncbi.nlm.nih.gov/26803340/',
   },
   {
     days: 180, // 6 tháng
     title: 'Mạch máu não & nhận thức cải thiện',
-    detail: 'Sau 6 tháng, tưới máu não, trí nhớ làm việc và tập trung cải thiện; nguy cơ tái nghiện giảm mạnh.',
-    source: 'McClernon-related research',
+    detail: 'Sau 6 tháng, tưới máu não, trí nhớ làm việc và tập trung cải thiện; nguy cơ tái hút giảm mạnh.',
+    source: 'McClernon 2016',
     sourceUrl: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5330670/',
   },
 ];
@@ -222,36 +222,36 @@ export const IMMUNE_MILESTONES: Milestone[] = [
   {
     days: 1,
     title: 'Viêm cấp bắt đầu hạ',
-    detail: 'Trong 24 giờ, dấu hiệu viêm trong máu (CRP, fibrinogen) ngừng tăng; bạch cầu trung tính bắt đầu giảm về bình thường.',
-    source: 'Mayo Clinic Proc 2005',
+    detail: 'Trong 24 giờ, các dấu hiệu viêm trong máu ngừng tăng; bạch cầu bắt đầu giảm về bình thường.',
+    source: 'Tạp chí Mayo Clinic Proc 2005',
     sourceUrl: 'https://www.mayoclinicproceedings.org/article/S0025-6196(11)61584-X/abstract',
   },
   {
     days: 7,
     title: 'Số lượng bạch cầu giảm rõ',
-    detail: 'Sau 1 tuần, lượng bạch cầu (WBC) — vốn tăng cao do viêm mạn tính ở người hút — giảm đáng kể.',
-    source: 'Br J Haematol',
+    detail: 'Sau 1 tuần, lượng bạch cầu — vốn tăng cao do viêm mạn tính ở người hút — giảm đáng kể.',
+    source: 'Tạp chí Br J Haematol',
     sourceUrl: 'https://pubmed.ncbi.nlm.nih.gov/1538385/',
   },
   {
     days: 30,
     title: 'Niêm mạc miệng & họng lành',
-    detail: 'Sau 1 tháng, niêm mạc đường hô hấp trên hồi phục, IgA tăng, ít nhiễm trùng hô hấp hơn.',
+    detail: 'Sau 1 tháng, niêm mạc đường hô hấp trên hồi phục, kháng thể tăng, ít nhiễm trùng hô hấp hơn.',
     source: 'NHS',
     sourceUrl: 'https://www.nhs.uk/live-well/quit-smoking/what-happens-when-you-quit-smoking/',
   },
   {
     days: 90,
     title: 'Tế bào miễn dịch tự nhiên hồi phục',
-    detail: 'Sau 3 tháng, hoạt tính tế bào NK (natural killer) và đại thực bào phế nang trở về gần bình thường.',
-    source: 'Smoking & Inflammation, NCBI',
+    detail: 'Sau 3 tháng, hoạt tính tế bào miễn dịch tự nhiên và đại thực bào phế nang trở về gần bình thường.',
+    source: 'Nghiên cứu NCBI về hút thuốc và viêm',
     sourceUrl: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1160597/',
   },
   {
     days: 365,
-    title: 'Hệ miễn dịch thích nghi gần như đầy đủ',
-    detail: 'Sau 1 năm, tỉ lệ tế bào CD8+/CD3+ T, tế bào B và monocyte phục hồi hoàn toàn về mức người không hút.',
-    source: 'Nature Comm 2024',
+    title: 'Hệ miễn dịch hồi phục gần như đầy đủ',
+    detail: 'Sau 1 năm, tỉ lệ tế bào miễn dịch (T, B, monocyte) phục hồi hoàn toàn về mức người không hút.',
+    source: 'Tạp chí Nature Comm 2024',
     sourceUrl: 'https://pubmed.ncbi.nlm.nih.gov/38355790/',
   },
 ];

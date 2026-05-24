@@ -91,7 +91,7 @@ export function DailyJourneyAlert({ dayInJourney, pronouns = 'anh' }: DailyJourn
           {/* Header */}
           <div className="flex items-baseline justify-between gap-2">
             <div className="text-meta uppercase tracking-wide font-semibold" style={{ color: style.textColor }}>
-              ⚡ Cảnh báo hành trình · Ngày {dayInJourney}
+              ⚡ Báo trước hôm nay · Ngày {dayInJourney}
             </div>
             <button
               onClick={handleDismiss}

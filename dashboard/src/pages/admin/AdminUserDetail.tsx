@@ -125,7 +125,7 @@ export function AdminUserDetail() {
           )}
           {u.topTriggers?.length > 0 && (
             <div className="mt-3">
-              <div className="text-meta uppercase text-sol-ink-3 font-semibold">Trigger</div>
+              <div className="text-meta uppercase text-sol-ink-3 font-semibold">Tình huống</div>
               <div className="flex flex-wrap gap-2 mt-1.5">
                 {u.topTriggers.map((t: string, i: number) => (
                   <span key={i} className="px-2 py-1 rounded-lg bg-sol-orange-soft text-sol-orange-ink text-meta">

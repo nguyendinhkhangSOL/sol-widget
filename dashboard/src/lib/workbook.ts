@@ -76,7 +76,7 @@ export const WEEKS: WeekInfo[] = [
     days: [8, 9, 10, 11, 12, 13, 14],
     phase: PHASES.dong_tro_tan,
     title: 'Tuần 2 · Đống Tro Tàn',
-    blurb: 'Thể chất nhẹ hơn nhưng đầu óc vẫn bấp bênh. Giữ thói quen, tránh trigger.',
+    blurb: 'Thể chất nhẹ hơn nhưng đầu óc vẫn bấp bênh. Giữ thói quen, tránh tình huống gây thèm.',
     ebookLink: 'https://bothuocla.sol.vn/ebook',
   },
   {
@@ -166,7 +166,7 @@ export const PRE_QUIT_PHASES: PreQuitPhase[] = [
       { key: 'p7_2', title: 'Nói cho ít nhất 1 người thân biết', sub: 'Người biết = người có thể giúp bạn' },
       { key: 'p7_3', title: 'Đọc Ebook Sol Chương 1–3', sub: 'Hiểu cơ chế nghiện — không thể chiến thắng kẻ thù mà không biết nó là ai' },
       { key: 'p7_4', title: 'Đăng ký bothuocla.sol.vn và kích hoạt Dashboard', sub: 'Để đếm ngược đến Giờ G từ đúng thời điểm' },
-      { key: 'p7_5', title: 'Xác định 3 trigger chính của mình', sub: 'Khi nào bạn thường hút thuốc nhất?' },
+      { key: 'p7_5', title: 'Xác định 3 tình huống gây thèm chính của mình', sub: 'Khi nào bạn thường hút thuốc nhất?' },
       { key: 'p7_6', title: 'Chuẩn bị "vũ khí thay thế"', sub: 'Kẹo cao su, nước lạnh, trà xanh, hạt dưa…' },
       { key: 'p7_7', title: 'Lập kế hoạch "30 phút đầu tiên mỗi sáng"', sub: 'Buổi sáng là thời điểm nguy hiểm nhất — chuẩn bị trước' },
     ],

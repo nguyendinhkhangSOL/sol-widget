@@ -156,7 +156,7 @@ export function DayCard({ day }: Props) {
       {/* Notes */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         <NoteField label="🏆 Chiến thắng hôm nay" ph="Dù nhỏ — mỗi giờ không hút là chiến thắng" value={dayLog.win ?? ''} onChange={(v) => setDayField(day, 'win', v)} />
-        <NoteField label="⚡ Khó khăn gặp phải" ph="Trigger nào xuất hiện hôm nay?" value={dayLog.hard ?? ''} onChange={(v) => setDayField(day, 'hard', v)} />
+        <NoteField label="⚡ Khó khăn gặp phải" ph="Tình huống nào gây thèm hôm nay?" value={dayLog.hard ?? ''} onChange={(v) => setDayField(day, 'hard', v)} />
         <NoteField label="💪 Ngày mai tôi sẽ" ph="1 hành động cụ thể…" value={dayLog.tomorrow ?? ''} onChange={(v) => setDayField(day, 'tomorrow', v)} />
         <NoteField label="📝 Ghi chú thêm" ph="Cảm xúc, suy nghĩ, bất cứ điều gì…" value={dayLog.note ?? ''} onChange={(v) => setDayField(day, 'note', v)} />
       </div>

@@ -94,7 +94,7 @@ export function AdminVoice() {
             />
           </Field>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <Field label="Trigger type">
+            <Field label="Loại tình huống">
               <select
                 className="input-text"
                 value={editing.triggerType}
@@ -190,7 +190,7 @@ export function AdminVoice() {
           <thead className="bg-sol-paper text-[11px] uppercase text-sol-ink-3 tracking-wider">
             <tr>
               <th className="text-left px-4 py-3">Tiêu đề</th>
-              <th className="text-left px-4 py-3">Trigger</th>
+              <th className="text-left px-4 py-3">Tình huống</th>
               <th className="text-left px-4 py-3">Tier ≥</th>
               <th className="text-left px-4 py-3">Audio</th>
               <th className="text-center">Bật</th>

@@ -17,7 +17,7 @@ const TIMELINE = [
     wiki: 'https://sol.vn/wiki/nicotine-anhedonia', wikiLabel: 'Nicotine Anhedonia' },
   { emoji: '⚡', color: '#E65100', title: 'Tháng 4–6: Tái kích hoạt bởi sự kiện',
     desc: 'Đám cưới, tiệc, stress công việc, chia tay — những sự kiện cảm xúc mạnh sẽ kích hoạt lại ký ức hút thuốc. Cơn thèm có thể quay lại bất ngờ dù bạn đã ổn nhiều tháng.',
-    wiki: 'https://sol.vn/wiki/trigger-cam-xuc', wikiLabel: 'Trigger cảm xúc' },
+    wiki: 'https://sol.vn/wiki/trigger-cam-xuc', wikiLabel: 'Tình huống cảm xúc gây thèm' },
   { emoji: '🌱', color: '#7CB342', title: 'Năm đầu tiên: Xây dựng bản sắc người không hút thuốc',
     desc: 'Sau 6–12 tháng, não sẽ dần ngừng tự nhận là "người hút thuốc đang bỏ" và bắt đầu thực sự là "người không hút thuốc". Đây là mục tiêu thật sự.',
     wiki: 'https://sol.vn/wiki/ban-sac-moi', wikiLabel: 'Xây dựng bản sắc mới' },

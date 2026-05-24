@@ -56,7 +56,7 @@ const COHORT_VISUAL: Record<Cohort, {
   LIGHT: {
     emoji: '🟢',
     label: 'Nhẹ',
-    audienceShort: '< 10 điếu/ngày',
+    audienceShort: 'Dưới 10 điếu/ngày',
     border: 'border-sol-green',
     bg: 'bg-sol-green-soft',
     text: 'text-sol-green-ink',
@@ -74,7 +74,7 @@ const COHORT_VISUAL: Record<Cohort, {
   HEAVY: {
     emoji: '🔴',
     label: 'Nặng',
-    audienceShort: '> 1 bao/ngày',
+    audienceShort: 'Trên 1 bao/ngày',
     border: 'border-sol-red',
     bg: 'bg-sol-red-soft',
     text: 'text-sol-red-ink',

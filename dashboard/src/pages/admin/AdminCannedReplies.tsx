@@ -583,7 +583,7 @@ export function AdminCannedReplies() {
               {/* ── Trigger filter — intent matching cho chat tự do ───── */}
               <div className="bg-sol-blue-soft border border-sol-blue/30 rounded-xl p-3 mt-2">
                 <label className="sol-field-label text-sol-blue-ink">
-                  🎯 Trigger phrases (mỗi dòng 1 cụm từ)
+                  🎯 Cụm từ kích hoạt (mỗi dòng 1 cụm từ)
                 </label>
                 <p className="text-meta text-sol-ink-3 mt-0.5 mb-2 leading-relaxed">
                   Khi user gõ chat tự do có chứa cụm từ này → tự động render câu

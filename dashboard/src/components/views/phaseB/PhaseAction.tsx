@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { PhaseProps } from './types';
 import {
   TodayCard, StoryCard, NextInsightCard, PatternHeatmapCard,
-  MoneySavedCard, CohortCard, CigaretteLogger,
+  MoneySavedCard, CohortCard, CigaretteLogger, TRIGGER_LABELS,
 } from './_shared';
 
 const ACCENT = '#B8860B';
@@ -94,7 +94,7 @@ export function PhaseAction({ data, onReload, onShowExit }: PhaseProps) {
             </strong>
           </div>
           <div className="flex items-baseline justify-between">
-            <span className="text-body text-sol-ink-3">vs Baseline {baseline}</span>
+            <span className="text-body text-sol-ink-3">so với mức nền {baseline}</span>
             <span className={
               `text-body font-semibold ${
                 isReducing ? 'text-sol-green-ink' : isIncreasing ? 'text-sol-red' : 'text-sol-ink-3'
@@ -125,7 +125,7 @@ export function PhaseAction({ data, onReload, onShowExit }: PhaseProps) {
           {data.today.topTrigger && (
             <div className="bg-sol-orange-soft/40 border border-sol-orange/30 rounded-2xl p-6">
               <div className="text-h3 font-semibold text-sol-orange-ink mb-3">
-                🎯 Plan B cho trigger {data.today.topTrigger}
+                🎯 Kế B cho tình huống {TRIGGER_LABELS[data.today.topTrigger]?.label ?? data.today.topTrigger}
               </div>
               <div className="flex items-start gap-4 text-body-lg">
                 <span className="text-4xl shrink-0" aria-hidden="true">{planB.emoji}</span>

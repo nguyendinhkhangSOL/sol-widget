@@ -345,7 +345,7 @@ export function JourneySimulator({
           emoji="🚭"
           label="Điếu KHÔNG đốt"
           value={fmtCigs(stats.cigsAvoided)}
-          hint={`Baseline ${baselineCigsPerDay} điếu/ngày`}
+          hint={`Mức nền ${baselineCigsPerDay} điếu/ngày`}
           highlight
         />
         <HeroStat
@@ -380,9 +380,9 @@ export function JourneySimulator({
       {/* ─── 4 BODY RECOVERY RINGS ───────────────────────────────────── */}
       <div>
         <div className="flex items-baseline justify-between mb-3">
-          <h2 className="text-h2 font-semibold text-sol-ink">🩺 Cơ thể đang sửa</h2>
+          <h2 className="text-h2 font-semibold text-sol-ink">🩺 Cơ thể đang hồi phục</h2>
           <span className="text-meta text-sol-ink-3 italic">
-            Curves từ CDC, NHS, AHA, Surgeon General 2020
+            Theo nghiên cứu CDC, NHS, AHA, Surgeon General 2020
           </span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

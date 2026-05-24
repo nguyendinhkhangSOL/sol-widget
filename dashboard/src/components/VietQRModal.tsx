@@ -150,9 +150,9 @@ export function VietQRModal({ payload, pronouns, onClose }: Props) {
 
           {/* Pricing summary */}
           <div className="border border-sol-line rounded-xl p-3 text-body text-sol-ink-2">
-            <strong className="text-sol-ink">Gói {payload.pricing.cohort}</strong> ·{' '}
+            <strong className="text-sol-ink">Lộ trình {payload.pricing.cohort === 'LIGHT' ? 'Nhẹ' : payload.pricing.cohort === 'HEAVY' ? 'Nặng' : 'Trung bình'}</strong> ·{' '}
             {payload.pricing.paymentMode === 'full'
-              ? `${payload.pricing.totalDays} ngày (7 free + ${payload.pricing.paidDays} × ${fmt(payload.pricing.dailyRate)}đ)`
+              ? `${payload.pricing.totalDays} ngày (7 ngày miễn phí + ${payload.pricing.paidDays} × ${fmt(payload.pricing.dailyRate)}đ)`
               : `Trả góp tuần — 7 ngày × ${fmt(payload.pricing.dailyRate)}đ`}
           </div>
 
@@ -165,8 +165,8 @@ export function VietQRModal({ payload, pronouns, onClose }: Props) {
 
           {/* Reassurance */}
           <div className="bg-sol-orange-soft/40 border-l-4 border-sol-orange rounded-r-lg p-3 text-meta text-sol-ink">
-            <strong>Sòng phẳng:</strong> Sol KHÔNG lưu thẻ, KHÔNG auto-charge.
-            {pronouns === 'anh' ? ' Anh' : ` ${pronouns}`} CK tay 1 lần — sau đó Khang confirm và mở lộ trình.
+            <strong>Sòng phẳng:</strong> Sol KHÔNG lưu thẻ, KHÔNG tự trừ tiền.
+            {pronouns === 'anh' ? ' Anh' : ` ${pronouns}`} chuyển khoản tay 1 lần — sau đó Khang xác nhận và mở lộ trình.
             Hoàn tiền ngày chưa dùng (sau ≥ 7 ngày Ngắt Cơn).
           </div>
 

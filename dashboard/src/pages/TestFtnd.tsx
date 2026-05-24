@@ -136,8 +136,8 @@ export function TestFtnd() {
     } catch (err) {
       const msg =
         err instanceof ApiError
-          ? `Lỗi ${err.status}: ${(err.body as any)?.message || (err.body as any)?.error || 'Sol chưa lưu được.'}`
-          : 'Không kết nối được Sol. Kiểm tra mạng rồi thử lại?';
+          ? `Lỗi kết nối (${err.status}): ${(err.body as any)?.message || (err.body as any)?.error || 'Sol chưa lưu được.'}`
+          : 'Sol chưa kết nối được. Kiểm tra mạng rồi thử lại nhé.';
       setError(msg);
       setPhase('questions');
       setCurrentQ(totalQuestions - 1); // back về câu cuối
@@ -181,7 +181,7 @@ export function TestFtnd() {
           <div className="text-center pt-8 mb-6">
             <div className="text-6xl mb-3" aria-hidden="true">🌅</div>
             <p className="text-meta text-sol-orange-ink uppercase tracking-wider mb-1 font-bold">
-              Test Mức Lệ Thuộc Nicotine
+              Test Mức Lệ Thuộc Nicotin
             </p>
             <h1 className="text-h1 font-bold text-sol-ink mb-2">
               Sol cần hiểu {pronouns} trước
@@ -197,9 +197,9 @@ export function TestFtnd() {
               🧪 Test này là gì?
             </h2>
             <p className="text-body text-sol-ink-2 mb-2">
-              <strong>FTND — Fagerström Test for Nicotine Dependence</strong> là
-              bộ test chuẩn quốc tế từ <strong>1991</strong>, được bác sĩ + nghiên cứu cai
-              thuốc dùng toàn cầu để đo mức "đói nicotine" sinh học.
+              <strong>FTND</strong> (Mức Lệ Thuộc Nicotin) là bộ câu hỏi chuẩn
+              quốc tế từ <strong>năm 1991</strong>, được bác sĩ + nghiên cứu cai
+              thuốc dùng khắp thế giới để đo mức "đói nicotin" sinh học.
             </p>
             <p className="text-body text-sol-ink-2">
               Chia 3 mức: <span className="font-semibold text-sol-green-ink">NHẸ (0-3)</span>{' · '}
@@ -247,11 +247,11 @@ export function TestFtnd() {
             </h2>
             <p className="text-body text-sol-ink-2 mb-2">
               Heatherton TF, Kozlowski LT, Frecker RC, Fagerström KO (1991).
-              "The Fagerström Test for Nicotine Dependence: a revision of the Fagerström Tolerance Questionnaire."
-              <em> Br J Addict.</em> 86(9): 1119–1127.
+              "Bài kiểm tra Fagerström đo mức lệ thuộc Nicotin."
+              <em> Tạp chí Br J Addict.</em> số 86(9): 1119–1127.
             </p>
             <p className="text-meta text-sol-ink-3">
-              Khuyến nghị bởi WHO, CDC, Bộ Y tế Việt Nam — dùng trong tất cả phòng khám cai thuốc.
+              Khuyến nghị bởi WHO, CDC và Bộ Y tế Việt Nam — dùng trong tất cả phòng khám cai thuốc.
             </p>
           </div>
 
@@ -260,11 +260,11 @@ export function TestFtnd() {
             onClick={() => setPhase('questions')}
             className="sol-btn-primary w-full min-h-tap text-body font-bold py-3 text-lg"
           >
-            🚀 Bắt đầu test 6 câu (90 giây) →
+            🚀 Bắt đầu trả lời 6 câu (90 giây) →
           </button>
 
           <p className="text-meta text-sol-ink-3 text-center mt-3">
-            Test xong, Sol sẽ trả kết quả ngay + đề xuất lộ trình cá nhân hoá.
+            Trả lời xong, Sol sẽ báo kết quả ngay + đề xuất lộ trình riêng cho {pronouns}.
           </p>
 
           {/* Embed mode: link sol.vn */}
@@ -290,9 +290,9 @@ export function TestFtnd() {
   // trước khi reveal Result page (vốn rất ấn tượng + dài).
   if (phase === 'submitting') {
     const steps = [
-      { emoji: '📊', label: 'Tính FTND score…', detail: '6 câu trả lời của ' + pronouns },
-      { emoji: '🧠', label: 'Phân tích mức lệ thuộc…', detail: 'So sánh với 500 anh em khác' },
-      { emoji: '🗺️', label: 'Chọn lộ trình phù hợp…', detail: '35 / 52 / 65 ngày' },
+      { emoji: '📊', label: 'Đang tính điểm FTND…', detail: '6 câu trả lời của ' + pronouns },
+      { emoji: '🧠', label: 'Đang phân tích mức lệ thuộc…', detail: 'So sánh với 500 anh em khác' },
+      { emoji: '🗺️', label: 'Đang chọn lộ trình phù hợp…', detail: '35 / 52 / 65 ngày' },
       { emoji: '✨', label: 'Sẵn sàng!', detail: 'Sol đã hiểu ' + pronouns },
     ];
     return (
@@ -324,7 +324,7 @@ export function TestFtnd() {
             ))}
           </div>
           <p className="text-meta text-sol-ink-3">
-            Step {submitStep + 1}/{steps.length}
+            Bước {submitStep + 1}/{steps.length}
           </p>
         </div>
       </div>
@@ -352,7 +352,7 @@ export function TestFtnd() {
         {/* Header */}
         <div className="text-center mb-6 pt-6">
           <div className="text-5xl mb-2" aria-hidden="true">🌅</div>
-          <h1 className="text-h2 font-bold text-sol-ink">Test FTND — 6 câu</h1>
+          <h1 className="text-h2 font-bold text-sol-ink">Test Mức Lệ Thuộc — 6 câu</h1>
           <p className="text-body text-sol-ink-2 mt-1">
             Sol cần hiểu mức lệ thuộc của {pronouns} để chọn lộ trình phù hợp.
           </p>
@@ -426,7 +426,7 @@ export function TestFtnd() {
 
         {/* Footer note */}
         <p className="text-meta text-sol-ink-3 text-center mt-6">
-          Test FTND (Fagerström) — chuẩn quốc tế từ 1991. Không lưu thông tin cá nhân.
+          Mức Lệ Thuộc Nicotin (FTND) — chuẩn quốc tế từ năm 1991. Sol không lưu thông tin cá nhân.
         </p>
       </div>
     </div>
@@ -478,12 +478,12 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
           {/* Test completed banner */}
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-sol-green-soft border border-sol-green rounded-full text-meta text-sol-green-ink font-semibold mb-4">
             <span aria-hidden>✓</span>
-            <span>Test FTND xong — 6/6 câu</span>
+            <span>Đã trả lời xong — 6/6 câu</span>
           </div>
 
           <div className="text-7xl mb-3" aria-hidden="true">{result.plan.emoji}</div>
           <p className="text-meta text-sol-ink-2 uppercase tracking-wider mb-1">
-            Kết quả Test FTND của {pronouns}
+            Kết quả Mức Lệ Thuộc của {pronouns}
           </p>
           <h1 className="text-[40px] leading-tight font-bold text-sol-ink">
             {result.score}/10
@@ -579,9 +579,9 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
 
           <div className="space-y-3">
             {[
-              { phase: 1, day: '1-7',  emoji: '🌱', name: 'Nhận Thức', desc: `Sol quan sát — ${pronouns} chưa cần bỏ thuốc. Chỉ ghi hút lúc nào, vì sao.`, highlight: true },
-              { phase: 2, day: '8-28', emoji: '⚡', name: 'Hành Động', desc: 'Giảm dần. Chuẩn bị Q-Day. Khang gửi Voice cho từng phase.' },
-              { phase: 3, day: '29-58', emoji: '🔥', name: 'Giải Phóng', desc: 'Q-Day! 30 ngày khúc cua. AI Mentor 24/7. Khang nhắn Zalo 7h sáng.' },
+              { phase: 1, day: '1-7',  emoji: '🌱', name: 'Nhận Diện', desc: `Sol cùng ${pronouns} quan sát — chưa cần bỏ thuốc. Chỉ ghi hút lúc nào, vì sao.`, highlight: true },
+              { phase: 2, day: '8-28', emoji: '⚡', name: 'Kiểm Soát', desc: 'Giảm dần. Chuẩn bị Ngày Quyết Định. Khang gửi voice cho từng chặng.' },
+              { phase: 3, day: '29-58', emoji: '🔥', name: 'Làm Chủ', desc: 'Ngày Quyết Định! 30 ngày khúc cua. Sol trò chuyện 24/7. Khang nhắn Zalo lúc 7h sáng.' },
               { phase: 4, day: '59-88', emoji: '🌅', name: 'Tái Thiết', desc: `${Pn} KHÔNG còn là người hút thuốc. Sol đi cùng tới khi vững.` },
             ].map((p) => (
               <div
@@ -591,11 +591,11 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
                 <div className="text-3xl flex-shrink-0">{p.emoji}</div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-2 mb-1 flex-wrap">
-                    <strong className="text-body text-sol-ink">Phase {p.phase} — {p.name}</strong>
-                    <span className="text-meta text-sol-ink-3">Day {p.day}</span>
+                    <strong className="text-body text-sol-ink">Chặng {p.phase} — {p.name}</strong>
+                    <span className="text-meta text-sol-ink-3">Ngày {p.day}</span>
                     {p.highlight && (
                       <span className="text-[10px] uppercase tracking-wide font-bold bg-sol-green text-white px-2 py-0.5 rounded-full">
-                        Bắt đầu 7 ngày FREE
+                        7 ngày miễn phí
                       </span>
                     )}
                   </div>
@@ -613,12 +613,12 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { icon: '🤖', title: 'AI Mentor 24/7', desc: 'Gemini 2.5 trả lời cá nhân hoá giọng anh em — không phải bot dịch máy.' },
-              { icon: '🎧', title: 'Voice Khang Sol', desc: 'Khang đã sạch thuốc từ 2021. Voice riêng cho từng phase, không AI.' },
-              { icon: '💬', title: '101 câu trả lời sẵn', desc: 'CHIP intent matcher — thèm gì cũng có sẵn 1-click, không cần gõ.' },
+              { icon: '🤖', title: 'Sol trò chuyện 24/7', desc: 'Trí tuệ nhân tạo (AI) trả lời cá nhân hoá giọng anh em — không phải bot dịch máy.' },
+              { icon: '🎧', title: 'Voice của Khang', desc: 'Khang đã sạch thuốc từ năm 2021. Bản ghi âm riêng cho từng chặng, không phải máy đọc.' },
+              { icon: '💬', title: '101 câu trả lời sẵn', desc: 'Gợi ý câu hỏi — thèm gì cũng có sẵn 1 chạm, không cần gõ.' },
               { icon: '🛡️', title: '"Khoảng Lặng" ẩn danh', desc: 'Tâm sự ẩn danh với cộng đồng — không lộ Zalo cá nhân.' },
               { icon: '🚪', title: 'Rút lui văn minh', desc: 'Hoàn tiền ngày chưa dùng. Không ràng buộc bằng tiền cọc.' },
-              { icon: '📊', title: 'Tracking thực tế', desc: 'Tiết kiệm tiền, ngày sống thêm, streak — số liệu của riêng anh.' },
+              { icon: '📊', title: 'Theo dõi thực tế', desc: 'Tiền tiết kiệm, ngày sống thêm, chuỗi ngày sạch — số liệu của riêng anh.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-2 p-3 bg-sol-soft rounded-lg">
                 <div className="text-2xl flex-shrink-0">{item.icon}</div>
@@ -640,8 +640,8 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
                 Khang là ai?
               </p>
               <p className="text-body text-sol-ink mb-2">
-                Tôi là <strong>Khang Sol</strong> — kỹ sư IT, đã sạch thuốc từ 2021 sau 12 năm hút.
-                Sol là app tôi tự code, tự vận hành 1 mình + AI Gemini.
+                Tôi là <strong>Khang Sol</strong> — kỹ sư phần mềm, đã sạch thuốc từ năm 2021 sau 12 năm hút.
+                Sol là ứng dụng tôi tự viết, tự vận hành một mình với hỗ trợ của AI.
               </p>
               <p className="text-body text-sol-ink-2 mb-3">
                 Không phải bác sĩ. Không bán thuốc. Chỉ chia sẻ trải nghiệm thực + công cụ
@@ -668,15 +668,15 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
             {[
               {
                 q: 'Tôi đã thử bỏ nhiều lần thất bại — Sol có khác không?',
-                a: 'Khác. Sol không bắt anh "không hút". 7 ngày đầu chỉ quan sát. Phase 2 giảm dần. Q-Day Day 28 mới bỏ thật. Lapse được phép — không reset, chỉ học từ đó.',
+                a: 'Khác. Sol không bắt anh "không hút". 7 ngày đầu chỉ quan sát. Chặng Kiểm Soát giảm dần. Đến Ngày 28 (Ngày Quyết Định) mới bỏ thật. Trượt nhẹ được phép — không tính lại từ đầu, chỉ học từ đó.',
               },
               {
                 q: '5.000đ/ngày — sao rẻ vậy? Có gì gài không?',
-                a: `7 ngày Nhận Diện FREE thật. Sau đó ${fmt(dailyCost)}đ/ngày anh đã đốt thuốc nay đầu tư cho app. Không lưu thẻ, không auto-charge. Khang đang tri ân 500 anh em đầu — giá thật sẽ là 9k/ngày.`,
+                a: `7 ngày Nhận Diện miễn phí thật. Sau đó ${fmt(dailyCost)}đ/ngày anh đã đốt thuốc nay đầu tư cho ứng dụng. Không lưu thẻ, không tự trừ tiền. Khang đang tri ân 500 anh em đầu — giá thật sẽ là 9.000đ/ngày.`,
               },
               {
-                q: 'Tôi không muốn vợ con biết tôi tải app cai thuốc',
-                a: 'Sol hoàn toàn ẩn danh. Không cần SĐT thật ngay. Không thông báo Zalo. App hiện như app đọc tin tức bình thường.',
+                q: 'Tôi không muốn vợ con biết tôi tải ứng dụng cai thuốc',
+                a: 'Sol hoàn toàn ẩn danh. Không cần số điện thoại thật ngay. Không thông báo Zalo. Ứng dụng hiện như ứng dụng đọc tin tức bình thường.',
               },
             ].map((faq, i) => (
               <details key={i} className="cursor-pointer">
@@ -690,7 +690,7 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
             ))}
           </div>
           <p className="text-meta text-sol-ink-3 mt-4">
-            Xem đầy đủ FAQ + bảng giá khi vào hành trình → /pricing
+            Xem đầy đủ câu hỏi thường gặp + bảng giá khi vào hành trình → Mức Phí
           </p>
         </div>
 
@@ -703,7 +703,7 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
             Đã đọc hết · Sẵn sàng đi?
           </p>
           <h3 className="text-h2 font-bold text-sol-ink text-center mb-3">
-            7 ngày đầu hoàn toàn FREE
+            7 ngày đầu hoàn toàn miễn phí
           </h3>
           <p className="text-meta text-sol-ink-2 text-center mb-4">
             Tiết kiệm ngay <strong className={c.text}>{fmt(trialSavings)}đ</strong> tuần này.
@@ -723,7 +723,7 @@ function ResultView({ pronouns, result, cigsBaseline, pricePerCig, answers, onEn
             rel="noopener noreferrer"
             className="block text-center text-meta text-sol-ink-3 mt-3 hover:text-sol-ink"
           >
-            Hoặc đọc Wiki Bỏ Thuốc 150+ bài (sol.vn) trước khi quyết →
+            Hoặc đọc 150+ bài viết về bỏ thuốc tại sol.vn trước khi quyết →
           </a>
         </div>
 

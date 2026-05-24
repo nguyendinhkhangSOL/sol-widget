@@ -36,11 +36,11 @@ import type { Stage, DashboardData } from '../components/views/phaseB/types';
 type WorkbookTab = 'prep' | 'phase-1' | 'phase-2' | 'phase-3' | 'phase-4';
 
 const TABS: { id: WorkbookTab; label: string; emoji: string; range: string; color: string }[] = [
-  { id: 'prep',     label: 'Chuẩn bị',    emoji: '📋', range: 'Trước Q-Day',  color: '#5C5650' },
-  { id: 'phase-1',  label: 'Nhận Thức',  emoji: '🌱', range: 'Ngày 1–7',     color: '#B25C2C' },
-  { id: 'phase-2',  label: 'Hành Động',  emoji: '🔥', range: 'Ngày 8–28',    color: '#B8860B' },
-  { id: 'phase-3',  label: 'Giải Phóng', emoji: '🚭', range: 'Ngày 29–58',   color: '#3A7CA5' },
-  { id: 'phase-4',  label: 'Tái Thiết',  emoji: '🌟', range: 'Ngày 59–88',   color: '#5C3A1E' },
+  { id: 'prep',     label: 'Chuẩn bị',  emoji: '📋', range: 'Trước Ngày Quyết Định', color: '#5C5650' },
+  { id: 'phase-1',  label: 'Nhận Diện', emoji: '🌱', range: 'Ngày 1–7',              color: '#B25C2C' },
+  { id: 'phase-2',  label: 'Kiểm Soát', emoji: '🔥', range: 'Ngày 8–28',             color: '#B8860B' },
+  { id: 'phase-3',  label: 'Làm Chủ',   emoji: '🚭', range: 'Ngày 29–58',            color: '#3A7CA5' },
+  { id: 'phase-4',  label: 'Tái Thiết', emoji: '🌟', range: 'Ngày 59–88',            color: '#5C3A1E' },
 ];
 
 function tabFromStage(stage: Stage | null, dayInJourney: number): WorkbookTab {
@@ -184,9 +184,9 @@ export function Workbook() {
                 setTimeout(() => window.print(), 100);
               }}
               className="shrink-0 min-h-tap px-3 py-2 rounded-lg text-meta font-medium bg-sol-paper border border-sol-line text-sol-ink-2 hover:bg-sol-soft flex flex-col items-start"
-              title="In toàn bộ sổ tay 4 chặng tiến hoá"
+              title="In toàn bộ Sổ Lưu Niệm 4 chặng hành trình"
             >
-              <span>🖨️ In sách</span>
+              <span>🖨️ In sổ</span>
               <span className="text-[10px] text-sol-ink-3">Toàn bộ</span>
             </button>
           </div>
@@ -260,7 +260,7 @@ export function Workbook() {
           </div>
           bothuocla.sol.vn · sol.vn
           <div className="mt-1 text-[11px]">
-            Sổ tay 4 chặng tiến hoá này thuộc về bạn — hành trình cũng vậy.
+            Sổ Lưu Niệm 4 chặng hành trình này thuộc về bạn — hành trình cũng vậy.
           </div>
         </footer>
       </div>
@@ -274,11 +274,11 @@ function Phase3Hero() {
     <div className="bg-sol-blue-soft/40 border border-sol-blue/20 rounded-2xl p-6 mb-2">
       <div className="flex items-baseline gap-3 mb-2">
         <span className="text-3xl" aria-hidden="true">🚭</span>
-        <h2 className="text-h1 text-sol-blue-ink font-bold">Giai đoạn Giải Phóng</h2>
+        <h2 className="text-h1 text-sol-blue-ink font-bold">Chặng Làm Chủ</h2>
       </div>
       <p className="text-body text-sol-ink leading-relaxed">
-        Đây là 30 ngày sau Q-Day — đồng hồ tự do của bạn đang chạy.
-        Sổ tay được biên soạn theo từng tuần (T1–T4) để bạn ghi lại hành trình bỏ hẳn.
+        Đây là 30 ngày sau Ngày Quyết Định — đồng hồ tự do của bạn đang chạy.
+        Sổ Lưu Niệm được biên soạn theo từng tuần (T1–T4) để bạn ghi lại hành trình bỏ hẳn.
       </p>
     </div>
   );
@@ -288,10 +288,10 @@ function Phase3Hero() {
 function PhasePlaceholder({ phase, stage }: { phase: WorkbookTab; stage: Stage }) {
   const meta = TABS.find((t) => t.id === phase)!;
   const description: Record<Stage, string> = {
-    NHAN_THUC: 'Tuần đầu — Sol gợi ý 7 prompt quan sát hành vi: ghi từng điếu, map trigger, viết phản chiếu mỗi tối. Không có mục tiêu, chỉ quan sát.',
-    HANH_DONG: '21 ngày phá vòng lặp — prompt mỗi ngày về delay craving, swap habit, viết Plan B cho từng trigger. Tuần 3 chuẩn bị Q-Day.',
+    NHAN_THUC: 'Tuần đầu — Sol gợi ý 7 câu hỏi quan sát hành vi: ghi từng điếu, nhận diện tình huống gây thèm, viết phản chiếu mỗi tối. Không có mục tiêu, chỉ quan sát.',
+    HANH_DONG: '21 ngày phá vòng lặp cũ — mỗi ngày một câu hỏi về cách trì hoãn cơn thèm, thay thế thói quen, viết Kế B cho từng tình huống. Tuần 3 chuẩn bị Ngày Quyết Định.',
     GIAI_PHONG: '',
-    TAI_THIET: '10 prompt maintenance — identity rebuild, anti-relapse cảnh báo, lập gia đình/con cái như anchor dài hạn.',
+    TAI_THIET: '10 câu hỏi duy trì thành quả — xây dựng "Chính Mình" mới, cảnh báo phòng ngừa tái hút, lấy gia đình/con cái làm động lực dài hạn.',
     DAI_SU: '',
   };
 
@@ -319,9 +319,9 @@ function PhasePlaceholder({ phase, stage }: { phase: WorkbookTab; stage: Stage }
           <strong className="text-sol-ink">Sol đang biên soạn</strong>
         </div>
         <p className="text-meta text-sol-ink-2 leading-relaxed">
-          Khang đang viết <strong>38 bài content Phase B</strong> (Phase 1: 7 bài, Phase 2: 21 bài, Phase 4: 10 bài).
-          Khi sẵn sàng, prompt từng ngày sẽ xuất hiện ở đây — auto-fill từ check-in,
-          sync lên backend để AI Mentor cá nhân hoá phản chiếu.
+          Khang đang viết <strong>38 bài nội dung cho chặng này</strong> (Nhận Diện: 7 bài, Kiểm Soát: 21 bài, Tái Thiết: 10 bài).
+          Khi sẵn sàng, câu hỏi từng ngày sẽ xuất hiện ở đây — tự điền theo ghi nhận của bạn,
+          để Sol cá nhân hoá lời nhắn phản chiếu.
         </p>
       </div>
     </div>

@@ -34,7 +34,7 @@ export function PhaseObserver({ data, onReload, onShowExit }: PhaseProps) {
         <p className="text-body-lg text-sol-ink-2 mt-3 leading-relaxed max-w-xl mx-auto">
           Sol chưa yêu cầu {data.user.pronouns} bỏ.
           <br />
-          Chỉ cần ghi nhận từng điếu — Sol đang học pattern của {data.user.pronouns}.
+          Chỉ cần ghi nhận từng điếu — Sol đang học quy luật của {data.user.pronouns}.
         </p>
       </div>
 

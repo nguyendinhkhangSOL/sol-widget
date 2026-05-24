@@ -1,7 +1,7 @@
 # Sol — Architecture Overview
 
 > Toàn bộ kiến trúc kỹ thuật Sol / Đi Cùng Sol. Đọc file này để hiểu hệ thống vận hành cách nào.
-> Cập nhật: 2026-05-22 (sau khi deploy backend Express + Brevo SMTP + dashboard SPA).
+> Cập nhật: 2026-05-23 (sau khi migrate 3-cohort FTND + Journey Simulator + Daily Alert).
 
 ---
 
@@ -144,7 +144,11 @@ helmet          Security headers
 /auth/*              anonymous / phone OTP / Zalo OAuth / recovery
 /auth/email/*        magic link email (Brevo)
 /users/*             profile + notification prefs
-/journey/*           dashboard, qday-confirm, onboarding, money-breakdown
+/journey/*           dashboard (V2 cohort-aware), qday-confirm, onboarding, money-breakdown
+                     ├── GET  /journey/dashboard         → journeyV2 + qDayV2 + cohort label
+                     ├── POST /journey/onboarding/ftnd   → score + cohort write user.ftndCohort
+                     ├── POST /journey/onboarding/baseline → cigsBaseline + pricePerCig
+                     └── POST /journey/qday-confirm      → set qDayConfirmedAt = now
 /messages/*          chat AI + history
 /checkins/*          daily check-in
 /exercises/*         workbook exercise log
@@ -189,6 +193,41 @@ Xem thêm trong code `worker.ts` (1057 dòng).
 
 **⚠️ Rule**: chỉ chạy 1 instance scheduler. `ENABLE_SCHEDULER=true` chỉ set 1 PM2 process.
 
+### 4.5. Cohort journey logic (23/5)
+
+**File mới**: `backend/src/journey/cohortConfig.ts`
+
+```typescript
+export const COHORTS = {
+  LIGHT:    { ftnd: [0, 3], total: 35, recognize: 7, control: 7,  master: 21, qDay: 15 },
+  MODERATE: { ftnd: [4, 6], total: 52, recognize: 7, control: 14, master: 30, qDay: 22 },
+  HEAVY:    { ftnd: [7,10], total: 65, recognize: 7, control: 21, master: 30, qDay: 28 },
+};
+```
+
+**File mới**: `backend/src/journey/service.ts` V2 helpers:
+- `computeCohort(ftndScore)` → `'LIGHT' | 'MODERATE' | 'HEAVY'`
+- `buildJourneyV2(user)` → return `{ cohort, dayInJourney, chapterIndex, totalDays, milestoneListForToday }`
+- `buildQDayV2(user)` → return `{ qDayDate, daysToQDay, needsConfirmation }`
+
+**Schema migration**: `User` model field mới
+```prisma
+model User {
+  // ... existing fields
+  ftndCohort   String?   @db.VarChar(16)   // "LIGHT" | "MODERATE" | "HEAVY"
+  // computed at FTND submit → cached for fast cohort-aware queries
+}
+```
+
+**API response shape mới** (`/journey/dashboard`):
+```json
+{
+  "journeyV2": { "cohort": "MODERATE", "dayInJourney": 12, "chapter": "Kiểm Soát", "totalDays": 52, "qDayDay": 22 },
+  "qDayV2": { "qDayDate": "2026-06-14", "daysToQDay": 10, "needsConfirmation": false },
+  "milestones": [...]
+}
+```
+
 ---
 
 ## 5. Frontend stacks
@@ -204,6 +243,41 @@ Bespoke fetch wrapper (KHÔNG React Query)
 ```
 
 **18 page**: `/login`, `/auth/email`, `/` Overview, `/chat`, `/journey/[:day]`, `/workbook`, `/history`, `/analytics`, `/settings`, `/pricing`, `/test-ftnd` (entry funnel), `/refund`, `/reports`, `/voice`, `/science`, `/q-day-checklist`, `/doc` (Khoảng Lặng), `/nghe`, `/hoi`.
+
+**Sidebar labels (rename 23/5)**:
+- `/` route label **"Tổng Quan" → "Hành Trình"** (HERO Tổng Quan = Journey Simulator)
+- `/journey` route label **"Hành trình" → "Nhật Ký & Check-in"** (grid 88-day check-in)
+- `/workbook` label **"Sổ Hành Trình" → "Sổ Lưu Niệm"** (UI labels only — backend `memoryBook.ts` filename internal giữ nguyên)
+
+**Frontend components mới (23/5)**:
+
+```
+dashboard/src/components/
+├── JourneySimulator.tsx       HERO Tổng Quan — slider time-travel Day 0→730
+│   ├── slider + quick jumps (Hôm nay / 1tuần / 1 tháng / 3 tháng / 1 năm)
+│   ├── 3 hero stats live: Điếu KHÔNG đốt / Tiền tiết kiệm / Tuổi thọ thêm
+│   ├── 4 RecoveryRing: Tim mạch / Phổi / Não bộ / Miễn dịch (fill % theo slider)
+│   └── 28 milestone list theo dayInJourney (CDC/NHS/AHA citations)
+│
+└── DailyJourneyAlert.tsx      Pulse banner phía trên simulator
+    ├── animate-pulse 2s slow loop để gây attention
+    ├── show 1 alert/day theo dayInJourney
+    └── localStorage dismiss per-day → tránh spam
+
+dashboard/src/lib/
+├── bodyRecovery.ts            data + formula
+│   ├── 4 curves config (heart/lung/brain/immune) — halfLifeDay + floor + max
+│   ├── computeRecoveryPercent(curve, day) — exponential half-life formula
+│   ├── 28 milestones array với src URLs (CDC/NHS/AHA/Surgeon General)
+│   └── 14 unique citation URLs (peer-reviewed + tổ chức y tế)
+│
+└── dailyJourneyAlerts.ts      27 daily alerts curated
+    ├── alert per dayInJourney (mostly Day 1-30 dense, then milestone-based)
+    ├── tone founder-to-founder, anh
+    └── icon + headline + body text
+```
+
+**Chi tiết khoa học**: [12-JOURNEY_SIMULATOR_DESIGN.md](./12-JOURNEY_SIMULATOR_DESIGN.md).
 
 **Auth bootstrap (App.tsx)**: 
 1. Zalo OAuth callback `?zalo=success`
@@ -305,8 +379,11 @@ Build IIFE `sol-widget.js` (~343kB, gzip 101kB) inline CSS — embed vào sol.vn
 - [07-DEPLOY_WORKFLOW.md](./07-DEPLOY_WORKFLOW.md) — workflow edit → live
 - [08-OPERATIONS.md](./08-OPERATIONS.md) — runbook ops hằng ngày
 - [DEPLOYMENT_PLAN_OLD_CODEBASE.md](./DEPLOYMENT_PLAN_OLD_CODEBASE.md) — kế hoạch deploy gốc 21/5
+- [12-JOURNEY_SIMULATOR_DESIGN.md](./12-JOURNEY_SIMULATOR_DESIGN.md) — formula + citations Journey Simulator
+- [13-UX_FLOW.md](./13-UX_FLOW.md) — user journey end-to-end
+- [14-FUNCTIONAL_MAP.md](./14-FUNCTIONAL_MAP.md) — sơ đồ chức năng pages/API/cron
 
 ---
 
-**Last updated**: 2026-05-22
+**Last updated**: 2026-05-23
 **Maintainer**: Khang Sol

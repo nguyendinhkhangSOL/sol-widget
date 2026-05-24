@@ -49,11 +49,11 @@ export function Overview() {
       console.error('Failed to load journey dashboard', e);
       if (e instanceof ApiError) {
         const detail = e.body?.message || e.body?.error || JSON.stringify(e.body).slice(0, 200);
-        setError(`API ${e.status}: ${detail}`);
+        setError(`Lỗi kết nối (${e.status}): ${detail}`);
       } else if (e instanceof Error) {
         setError(`Lỗi mạng: ${e.message}`);
       } else {
-        setError('Lỗi không xác định khi tải hành trình.');
+        setError('Sol chưa tải được hành trình. Thử lại sau nhé.');
       }
     } finally {
       setLoading(false);
@@ -82,8 +82,8 @@ export function Overview() {
           <h2 className="text-h1 text-sol-ink mb-3">Sol chưa kết nối được</h2>
           <p className="text-body text-sol-ink-2 mb-3 leading-relaxed">{error}</p>
           <p className="text-meta text-sol-ink-3 mb-5 italic">
-            Có thể backend chưa apply migration Phase B hoặc chưa rebuild image.
-            Kiểm tra terminal nơi chạy backend.
+            Hệ thống Sol đang gặp trục trặc. Anh thử kiểm tra mạng rồi bấm
+            "Thử lại". Nếu vẫn không được, nhắn Khang qua Zalo OA giúp anh.
           </p>
           <button
             onClick={reload}
@@ -259,7 +259,7 @@ function ExitedState({ pronouns, onResume }: { pronouns: string; onResume: () =>
       await api.resumeJourney();
       onResume();
     } catch (e) {
-      setError(e instanceof ApiError ? `Lỗi ${e.status}` : 'Không kết nối được Sol.');
+      setError(e instanceof ApiError ? `Lỗi kết nối (${e.status})` : 'Sol chưa kết nối được. Thử lại sau nhé.');
     } finally {
       setResuming(false);
     }

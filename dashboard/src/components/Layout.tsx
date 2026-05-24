@@ -71,7 +71,7 @@ export function Layout() {
     }
     base.push({ to: '/analytics', label: 'Phân tích', icon: '📊' });
     if (hasFeature(eff, 'voice.day_1_3_7') || hasFeature(eff, 'voice.day_1_3_7_14_21_30_letter')) {
-      base.push({ to: '/voice', label: 'Voice của Khang', icon: '🎙️' });
+      base.push({ to: '/voice', label: 'Bản ghi âm của Khang', icon: '🎙️' });
     }
     if (hasFeature(eff, 'report.day10') || hasFeature(eff, 'report.day30_album')) {
       base.push({ to: '/reports', label: 'Báo cáo', icon: '📄' });
@@ -197,7 +197,7 @@ export function Layout() {
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-meta font-medium transition bg-sol-soft text-sol-ink-2 hover:bg-sol-line"
             >
               <span>🔧</span>
-              <span>Admin console</span>
+              <span>Quản trị</span>
               <span className="ml-auto text-sol-ink-3 text-[11px] uppercase tracking-wide">↗ admin.sol.vn</span>
             </a>
           )}

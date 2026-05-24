@@ -516,11 +516,11 @@ export function RelapsePlanSection() {
     { tKey: 'trig3T', pKey: 'trig3P', num: 3 },
   ];
   return (
-    <SectionCard accent="red" icon="⚠️" title="Kế Hoạch Khi Tái Phát" subtitle="Lập kế hoạch trước — không phải sau khi nó xảy ra">
+    <SectionCard accent="red" icon="⚠️" title="Kế Hoạch Khi Tái Hút" subtitle="Lập kế hoạch trước — không phải sau khi nó xảy ra">
       <Callout accent="orange" icon="💡">
-        Tái phát KHÔNG có nghĩa là thất bại. Trung bình một người cần nhiều lần thử trước khi bỏ được hẳn.
+        Tái hút KHÔNG có nghĩa là thất bại. Trung bình một người cần nhiều lần thử trước khi bỏ được hẳn.
       </Callout>
-      <FieldLabel>3 trigger nguy hiểm nhất của tôi và cách xử lý:</FieldLabel>
+      <FieldLabel>3 tình huống nguy hiểm nhất của tôi và cách xử lý:</FieldLabel>
       <div className="space-y-3 mt-2">
         {triggers.map((t) => (
           <div key={t.num} className="flex gap-3">
@@ -529,7 +529,7 @@ export function RelapsePlanSection() {
             </div>
             <div className="flex-1 space-y-2">
               <div>
-                <FieldLabel color="#C62828">TRIGGER</FieldLabel>
+                <FieldLabel color="#C62828">TÌNH HUỐNG</FieldLabel>
                 <TextInput
                   value={data[t.tKey] as string}
                   onChange={(e) => set(t.tKey as any, e.target.value)}
@@ -541,7 +541,7 @@ export function RelapsePlanSection() {
                 <TextInput
                   value={data[t.pKey] as string}
                   onChange={(e) => set(t.pKey as any, e.target.value)}
-                  placeholder={t.num === 1 ? 'Ví dụ: Uống trà xanh, ra ngoài đi bộ 5 phút, nhắn tin Sol Mentor' : ''}
+                  placeholder={t.num === 1 ? 'Ví dụ: Uống trà xanh, ra ngoài đi bộ 5 phút, nhắn tin Sol' : ''}
                 />
               </div>
             </div>
