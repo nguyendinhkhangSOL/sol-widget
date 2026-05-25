@@ -23,6 +23,8 @@ import { DashboardData } from '../components/views/phaseB/types';
 import { JourneySimulator } from '../components/JourneySimulator';
 // Daily Alert — cảnh báo ngày hôm nay với pulse animation
 import { DailyJourneyAlert } from '../components/DailyJourneyAlert';
+// "Lý do bạn bắt đầu" — motivation reminder cuối page
+import { WhyReminderCard } from '../components/WhyReminderCard';
 // Silent Companionship widgets (pivot 2026-05-08)
 import {
   ControlScoreWidget,
@@ -234,6 +236,13 @@ export function Overview() {
 
       {/* Phase view */}
       {phaseView}
+
+      {/* "LÝ DO BẠN BẮT ĐẦU" — motivation reminder, cuối page (anh Khang 25/5) */}
+      <WhyReminderCard
+        quitReasons={(data.user as any).quitReasons ?? []}
+        pronouns={data.user.pronouns}
+        userName={data.user.name}
+      />
 
       {showExit && (
         <ExitModal

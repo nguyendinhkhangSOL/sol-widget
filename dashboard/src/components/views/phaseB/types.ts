@@ -34,6 +34,7 @@ export interface DashboardData {
     cigsBaseline: number;
     pricePerCig: number;
     onboardingCompletedAt: string | null;
+    quitReasons?: string[];
   };
   journey: {
     // LEGACY 88-day fields (giữ tương thích với code cũ)

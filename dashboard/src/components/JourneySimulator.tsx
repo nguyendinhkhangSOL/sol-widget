@@ -131,27 +131,36 @@ function HeroStat({
   hint?: string;
   highlight?: boolean;
 }) {
+  // FIX 25/5: bỏ "bg-sol-clay text-white" vì class clay không generate trong build
+  // → text trắng trên background cream (default) → không đọc rõ.
+  // Solution: highlight card dùng inline style + dark text trên light bg, có
+  // accent ring + slight color tint để vẫn nổi bật.
   return (
     <div
       className={`rounded-2xl p-4 ${
         highlight
-          ? 'bg-sol-clay text-white shadow-card'
+          ? 'border-2 shadow-pop'
           : 'bg-sol-paper border border-sol-line'
       }`}
+      style={highlight ? {
+        backgroundColor: '#FBE8DA', // peach tint nhẹ
+        borderColor: '#B25C2C',     // clay accent border
+      } : undefined}
     >
-      <div className={`text-meta ${highlight ? 'text-white/80' : 'text-sol-ink-3'} flex items-center gap-1`}>
+      <div className={`text-meta flex items-center gap-1 ${highlight ? 'font-bold' : 'text-sol-ink-3'}`}
+           style={highlight ? { color: '#6B3318' } : undefined}>
         <span aria-hidden="true">{emoji}</span>
         <span>{label}</span>
       </div>
       <div
-        className={`text-h1 font-bold mt-1 tabular-nums ${
-          highlight ? 'text-white' : 'text-sol-ink'
-        }`}
+        className="text-h1 font-bold mt-1 tabular-nums"
+        style={{ color: highlight ? '#6B3318' : '#2A2620' }}
       >
         {value}
       </div>
       {hint && (
-        <div className={`text-[11px] mt-1 ${highlight ? 'text-white/70' : 'text-sol-ink-3'}`}>
+        <div className="text-[11px] mt-1"
+             style={{ color: highlight ? '#8A5A3C' : '#8A857C' }}>
           {hint}
         </div>
       )}

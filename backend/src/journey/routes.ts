@@ -249,6 +249,8 @@ journeyRouter.get('/dashboard', async (req: AuthedRequest, res) => {
       cigsBaseline: user.cigsBaseline,
       pricePerCig: user.pricePerCig,
       onboardingCompletedAt: user.onboardingCompletedAt,
+      // Lý do cai (cho WhyReminderCard cuối trang Hành Trình, 25/5/2026)
+      quitReasons: user.quitReasons ?? [],
     },
     journey: {
       // LEGACY 88-day fields (giữ tương thích với UI cũ chưa migrate)

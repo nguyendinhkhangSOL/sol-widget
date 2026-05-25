@@ -61,7 +61,7 @@ export function Layout() {
       { to: '/hoi', label: 'Hỏi Khang', icon: '💭' },
       // Hành trình luôn hiện — FREE user thấy demo + calendar 30 ngày,
       // paid user thấy data thật. UI consistency > tier gating.
-      { to: '/journey', label: 'Nhật Ký & Check-in', icon: '📔' },
+      { to: '/journey', label: 'Nhật Ký', icon: '📔' },
     ];
     if (hasFeature(eff, 'workbook.write') || hasFeature(eff, 'workbook.read.full') || hasFeature(eff, 'workbook.read.week1_2')) {
       base.push({ to: '/workbook', label: 'Sổ Lưu Niệm', icon: '📖' });
@@ -95,7 +95,7 @@ export function Layout() {
     return [
       { to: '/', label: 'Hành Trình', icon: '🗺️' },
       { to: '/chat', label: 'Trò chuyện', icon: '💬' },
-      { to: '/journey', label: 'Nhật Ký & Check-in', icon: '📔' },
+      { to: '/journey', label: 'Nhật Ký', icon: '📔' },
       { to: '/settings', label: 'Cài đặt', icon: '⚙️' },
     ];
   }, []);
