@@ -1,7 +1,49 @@
 # Sol — Changelog tháng 5/2026
 
 > Log chi tiết từng task + bug fix theo ngày, dùng để recall context khi review hoặc nhập session mới.
-> Cập nhật: 2026-05-24.
+> Cập nhật: 2026-05-25.
+
+---
+
+## 2026-05-25 — Prompt AI v2.1 (cohort/chapter/Q-Day aware, Việt hoá hoàn toàn)
+
+### Refactor `backend/src/ai/prompts.ts` v1 → v2.1
+- Cohort awareness: thay hard-code "Ngày X/30" bằng dynamic `${dayInJourney}/${totalDays}` theo cohort LIGHT 35 / MODERATE 52 / HEAVY 65.
+- Chapter awareness: tone bot khác nhau theo 4 chương NHẬN DIỆN → KIỂM SOÁT → LÀM CHỦ → TÁI THIẾT.
+- Q-Day awareness: trước/đúng/sau Q-Day → guidance khác nhau.
+- Khang persona compressed: 52t, hút Vinataba 30 năm, cai 22/12/2020 âm, 5 năm tự do, 1 lần slip.
+- 3 trụ cột: KHOA HỌC + TRẢI NGHIỆM + HÀNH ĐỘNG (theo đối tác).
+- "Mình - bạn/anh" voice (giữ giống Khang's voice trong /khang-sol/).
+- Phân biệt **Sol AI** (bot AI tự do) vs **Sol Trải nghiệm** (chip phím tắt template).
+- Anti-injection: từ chối + bridge.
+- Channel-aware format (widget no bullet, page bullet OK).
+- Personalization rules (4) + few-shot examples (2: slip + injection).
+- Việt hoá toàn bộ section tag: `<vai_tro>`, `<su_menh>`, `<thong_tin_user>`, `<giong_noi>`, `<ca_nhan_hoa>`, `<cach_tra_loi>`, `<vi_du>`, `<ranh_gioi>`, `<dinh_dang>`.
+
+### Token count
+- v1 cũ: ~1500-2000 tokens (cơ bản)
+- v2 verbose: ~3500 tokens (full features, lê thê)
+- **v2.1 compress + Việt hoá: ~1591 tokens** (full features, density cao)
+- Cost @ 500 user × 5 msg/ngày: ~$360/tháng
+- Cost @ 5000 user: ~$3,600/tháng
+
+### Wire MentorContext fields mới (machine.ts)
+- Import `assignCohortFromFTND`, `deriveChapter`, `deriveQDayStateV2`, `COHORT_DEFS`, `CHAPTER_LABELS` từ `journey/cohortConfig.ts`.
+- Compute + pass: `cohort`, `cohortLabel`, `totalDays`, `qDay`, `dayInJourney`, `qDayStatus`, `daysUntilQDay`, `chapter`, `chapterLabel`, `channel = 'page'`.
+
+### Files
+- `backend/src/ai/prompts.ts` — v2.1 live
+- `backend/src/ai/prompts.v1.backup.txt` — version cũ
+- `backend/src/ai/prompts.v2-verbose.backup.txt` — v2 verbose
+- `backend/src/state/machine.ts` — wire fields mới
+
+### Bug fix sau deploy
+- Bot bịa URL wiki kiểu `[Đọc sâu: ...](/wiki/Phục_hồi_phổi_sau_cai_thuốc_lá)` — không tồn tại trên sol.vn (Sol dùng `https://sol.vn/<slug>/` không có `/wiki/` prefix). Fix: thêm rule "KHÔNG bịa URL, KHÔNG tạo Markdown link không kiểm chứng. Dẫn user bằng câu chữ."
+
+### Sổ nợ — fix sau launch 31/5
+- **Action button UI handler**: bot output `→ [Tên action]` (vd `[Bắt đầu thở]`, `[Ghi slip]`) nhưng dashboard `Chat.tsx` chưa parse thành button clickable. User hiện chỉ thấy text plain. → Cần (1) parse regex `/→ \[(.+?)\]/`, (2) map action name → component handler, (3) test 5-10 message. Estimate 30-45 phút.
+- **Sol AI vs Sol Trải nghiệm — UI label bubble**: dashboard chat hiển thị tên bot thống nhất (current = assistantName user chọn). Cần split: chip response → "Sol Trải nghiệm", AI response → "Sol AI" (default) hoặc tên user đặt. Cần backend trả về `source: 'chip' | 'ai'` trong message metadata + UI render label tương ứng.
+- **Rename "Sol Đồng hành" → "Sol AI"** ở các vị trí runtime khác: Settings, PersonalizationModal, Welcome page, Email funnel template (~12 file Tier A/B). Migration DB optional cho user cũ.
 
 ---
 
