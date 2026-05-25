@@ -7,6 +7,13 @@ import { prisma } from '../db';
 import { askMentor } from '../ai/mentor';
 import { computeDayNumber } from '../utils/dayNumber';
 import { logger } from '../utils/logger';
+import {
+  assignCohortFromFTND,
+  deriveChapter,
+  deriveQDayStateV2,
+  COHORT_DEFS,
+  CHAPTER_LABELS,
+} from '../journey/cohortConfig';
 
 // Each outbound reply the state machine emits.
 export interface Outbound {
@@ -302,11 +309,37 @@ async function handleFreeChat(userId: string, message: string): Promise<StateRes
   // Simple mood trend heuristic.
   const moodTrend = computeMoodTrend(recentCheckins);
 
+  // ── V2.1 prompt context: cohort + chapter + Q-Day awareness ──────────
+  const dayInJourney = computeDayNumber(user.quitDate);
+  const cohort = user.ftndScore != null ? assignCohortFromFTND(user.ftndScore) : null;
+
+  let cohortLabel: string | undefined;
+  let totalDays: number | undefined;
+  let qDay: number | undefined;
+  let qDayStatus: 'before' | 'today' | 'after' | undefined;
+  let daysUntilQDay: number | undefined;
+  let chapter: 'NHAN_DIEN' | 'KIEM_SOAT' | 'LAM_CHU' | 'TAI_THIET' | undefined;
+  let chapterLabel: string | undefined;
+
+  if (cohort) {
+    const def = COHORT_DEFS[cohort];
+    cohortLabel = def.label;          // 'NHẸ' | 'VỪA' | 'NẶNG'
+    totalDays = def.totalDays;        // 35 | 52 | 65
+    qDay = def.qDay;                  // 15 | 22 | 28
+
+    const qDayState = deriveQDayStateV2(dayInJourney, user.qDayConfirmedAt, cohort);
+    qDayStatus = qDayState.isQDay ? 'today' : qDayState.isPostQDay ? 'after' : 'before';
+    daysUntilQDay = qDayState.daysUntilQDay;
+
+    chapter = deriveChapter(dayInJourney, cohort);
+    chapterLabel = CHAPTER_LABELS[chapter];
+  }
+
   const reply = await askMentor(userId, message, {
     name: user.name,
     pronouns: user.pronouns,
     assistantName: user.assistantName,
-    dayNumber: computeDayNumber(user.quitDate),
+    dayNumber: dayInJourney,
     ftndScore: user.ftndScore,
     checkinStreak: user.checkinStreak,
     topTriggers: user.topTriggers,
@@ -315,6 +348,17 @@ async function handleFreeChat(userId: string, message: string): Promise<StateRes
     age: user.age,
     yearsSmoked: user.yearsSmoked,
     quitReasons: user.quitReasons,
+    // V2.1 — cohort/chapter/Q-Day awareness
+    cohort,
+    cohortLabel,
+    totalDays,
+    qDay,
+    dayInJourney,
+    qDayStatus,
+    daysUntilQDay,
+    chapter,
+    chapterLabel,
+    channel: 'page',   // /chat page render full screen; widget có thể override
     recentCheckins: recentCheckins.map((c) => ({
       dayNumber: c.dayNumber,
       smoked: c.smoked,

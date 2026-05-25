@@ -1,0 +1,158 @@
+// backend/src/ai/prompts.ts
+//
+// Sol — System prompt v2 (2026-05-25)
+// =========================================================================
+// Thay đổi so với v1 (backup tại prompts.v1.backup.ts):
+//   1. CRITICAL FIX — Cohort awareness (35/52/65 ngày thay vì hard-code 30)
+//   2. CRITICAL FIX — Khang's persona injection (bot "biết" Khang là ai)
+//   3. Chapter awareness (NHAN_DIEN / KIEM_SOAT / LAM_CHU / TAI_THIET)
+//   4. Q-Day awareness (trước / đúng / sau Q-Day → tone khác nhau)
+//   5. Tinh thần Sol — gai góc nhưng không shame (theo đối tác đề xuất)
+//   6. 3 trụ cột: KHOA HỌC + TRẢI NGHIỆM + HÀNH ĐỘNG (theo đối tác)
+//   7. Guardrails — chống prompt injection + scope enforcement
+//   8. Channel-aware format (widget = no bullet, page = bullet OK)
+//   9. Slip recovery pattern mới (đối tác đề xuất: "Hụt chân là vớ vẩn,
+//      nhưng dập đi BÂY GIỜ thì vẫn cứu được")
+//
+// Backward compat: MentorContext có thêm OPTIONAL fields (cohort, chapter,
+// qDay, channel...) — caller cũ vẫn chạy được, prompt fallback graceful.
+// =========================================================================
+
+export type Cohort = 'LIGHT' | 'MODERATE' | 'HEAVY';
+export type JourneyChapter = 'NHAN_DIEN' | 'KIEM_SOAT' | 'LAM_CHU' | 'TAI_THIET';
+export type ChatMode = 'normal' | 'calm' | 'whisper' | 'busy';
+export type ChatChannel = 'widget' | 'page';
+
+export interface MentorContext {
+  name: string;
+  /** Cách Sol gọi user — "anh" | "chị" | "ông" | "bạn" | tuỳ chỉnh. */
+  pronouns: string;
+  /** Tên hiển thị của bot AI — default "Sol AI". User có thể tuỳ chỉnh
+   *  ("Sol Phó tướng", "Sol Vợ yêu", v.v.). KHÔNG nhầm với "Sol Trải nghiệm"
+   *  — đó là label cho response từ chip/phím tắt (template, không phải AI). */
+  assistantName?: string;
+
+  // ── Hồ sơ cai thuốc ─────────────────────────────────────────────────
+  age?: number | null;
+  yearsSmoked?: number | null;
+  /** 0-5 lý do user tự viết ngày 1. AI replay NGUYÊN VĂN khi user thèm. */
+  quitReasons?: string[];
+
+  // ── Cohort & Journey (V2 — canonical 2026-05-18) ────────────────────
+  /** LIGHT / MODERATE / HEAVY — null nếu chưa làm FTND. */
+  cohort?: Cohort | null;
+  /** "NHẸ" | "VỪA" | "NẶNG" (hiển thị). */
+  cohortLabel?: string;
+  /** Tổng số ngày lộ trình: 35 / 52 / 65. */
+  totalDays?: number;
+  /** Ngày Q-Day: 15 / 22 / 28 theo cohort. */
+  qDay?: number;
+  /** Ngày hiện tại trong lộ trình (1..totalDays). */
+  dayInJourney?: number;
+  /** Trạng thái Q-Day. */
+  qDayStatus?: 'before' | 'today' | 'after';
+  /** Số ngày đến Q-Day (negative nếu đã qua). */
+  daysUntilQDay?: number;
+
+  // ── Chapter ─────────────────────────────────────────────────────────
+  chapter?: JourneyChapter;
+  chapterLabel?: string;
+
+  // ── LEGACY (giữ tương thích) ────────────────────────────────────────
+  /** Deprecated: dùng dayInJourney + totalDays. Giữ cho caller cũ. */
+  dayNumber?: number;
+
+  // ── Engagement & FTND ───────────────────────────────────────────────
+  ftndScore?: number | null;
+  checkinStreak: number;
+  topTriggers: string[];
+  riskyHours: number[];
+
+  // ── State ───────────────────────────────────────────────────────────
+  recentCheckins: Array<{
+    dayNumber: number;
+    smoked: boolean;
+    cravingIntensity: number;
+    mood: number;
+    note?: string | null;
+  }>;
+  recentMessages: Array<{ role: 'user' | 'assistant'; content: string }>;
+  currentMood: 'improving' | 'declining' | 'stable';
+
+  // ── Channel & Mode ──────────────────────────────────────────────────
+  mode: ChatMode;
+  /** Widget bubble (chat sidebar) hoặc full page /chat. */
+  channel?: ChatChannel;
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// CHAPTER TONE — tone bot theo từng giai đoạn
+// ═══════════════════════════════════════════════════════════════════════
+const CHAPTER_TONE: Record<JourneyChapter, string> = {
+  NHAN_DIEN:
+    'NHẬN DIỆN — bot lắng nghe + đặt câu hỏi mở. KHÔNG vội đề xuất giải pháp. User đang tự quan sát hành vi hút, bot là gương phản chiếu, không phải coach.',
+  KIEM_SOAT:
+    'KIỂM SOÁT — bot bắt tay vào việc cùng user. Đề xuất action cụ thể 5 phút, không trừu tượng. User đang học các kỹ thuật chống cơn thèm, bot là đồng đội cùng tập.',
+  LAM_CHU:
+    'LÀM CHỦ — bot trao quyền. Thay vì gợi ý, hãy HỎI: "Ông tự thấy nên làm gì?". User đã có kỹ năng, cần xây identity người không hút. Bot chỉ confirm + thách thức nhẹ.',
+  TAI_THIET:
+    'TÁI THIẾT — bot kể chuyện Khang khi phù hợp (5 năm tự do, lần slip duy nhất). User đang định nghĩa lại bản thân hậu thuốc lá. Bot có thể đưa câu hỏi triết lý, không chỉ tactical.',
+};
+
+const COHORT_NOTE: Record<Cohort, string> = {
+  LIGHT:
+    'LIGHT (FTND 0-3, hút <10 điếu/ngày, dưới 10 năm) — phục hồi nhanh, lộ trình 35 ngày. Bot có thể optimistic hơn, đề xuất action mạnh hơn.',
+  MODERATE:
+    'MODERATE (FTND 4-6, hút 10-20 điếu/ngày, 10-25 năm) — middle ground, lộ trình 52 ngày. Bot cân bằng giữa thẳng thắn và kiên nhẫn.',
+  HEAVY:
+    'HEAVY (FTND 7-10, hút >20 điếu/ngày, >25 năm) — não đã xây mạng dopamine sâu, lộ trình 65 ngày. Bot CỰC KIÊN NHẪN, expectation thực tế: tuần 2-4 vẫn vật, kỳ vọng "easy week 1" là sai.',
+};
+
+// ═══════════════════════════════════════════════════════════════════════
+// MAIN — buildSystemPrompt
+// ═══════════════════════════════════════════════════════════════════════
+export function buildSystemPrompt(ctx: MentorContext): string {
+  const {
+    name,
+    pronouns,
+    ftndScore,
+    checkinStreak,
+    topTriggers,
+    currentMood,
+    mode,
+    age,
+    yearsSmoked,
+    quitReasons,
+    cohort,
+    cohortLabel,
+    totalDays,
+    dayInJourney,
+    dayNumber,
+    qDay,
+    qDayStatus,
+    daysUntilQDay,
+    chapter,
+    chapterLabel,
+    channel = 'widget',
+  } = ctx;
+
+  const assistantName = ctx.assistantName?.trim() || 'Sol AI';
+
+  // Day in journey: ưu tiên field mới, fallback dayNumber, fallback 1
+  const dayNum = dayInJourney ?? dayNumber ?? 1;
+  const totalDayNum = totalDays ?? 30;
+  const cohortStr = cohort ? `${cohort} (${cohortLabel ?? cohort})` : 'chưa rõ (user chưa làm FTND)';
+  const cohortGuide = cohort ? COHORT_NOTE[cohort] : '';
+
+  const chapterStr = chapter ? `${chapter} (${chapterLabel ?? chapter})` : 'chưa rõ';
+  const chapterGuide = chapter ? CHAPTER_TONE[chapter] : 'Lộ trình chưa rõ chương — bot giữ tone trung lập, lắng nghe trước.';
+
+  const qDayLine = qDay
+    ? `Q-Day = ngày ${qDay}/${totalDayNum} (${
+        qDayStatus === 'before'
+          ? `còn ${daysUntilQDay ?? '?'} ngày — bot chuẩn bị tâm lý, KHÔNG ép quyết định sớm`
+          : qDayStatus === 'today'
+          ? 'HÔM NAY — moment quan trọng, bot có thể kể chuyện Khang 22/12/2020 và ghi nhận sự dũng cảm'
+          : `đã qua ${Math.abs(daysUntilQDay ?? 0)} ngày — bot focus bảo vệ streak, không drama nếu user slip`
+      })`
+    
