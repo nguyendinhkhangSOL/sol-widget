@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎨 AI Studio — Sol La Bàn</title>
+<meta name="description" content="Bộ công cụ AI cho chuyên gia 40-60: 40 Prompt template + Biên tập cá nhân + Sol Đồng Hành AI chat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber-50:#FFFBEB; --amber-100:#FEF3C7; --amber-200:#FDE68A;
+  --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+  --navy-50:#F8FAFC; --navy-100:#F1F5F9; --navy-200:#E2E8F0;
+  --navy-400:#94A3B8; --navy-500:#64748B; --navy-700:#334155;
+  --navy-900:#0F172A;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Inter',-apple-system,sans-serif;
+  background:var(--navy-50);
+  color:var(--navy-700); line-height:1.6;
+  min-height:100vh;
+}
+
+/* Header + Footer injected by sol-ui.js */
+
+/* ═══ HERO ═══ */
+.hero {
+  max-width:1200px; margin:0 auto;
+  padding:32px 20px 12px;
+}
+.hero__badge {
+  display:inline-block; padding:4px 12px;
+  background:linear-gradient(135deg,var(--amber-100),var(--amber-200));
+  border-radius:999px; font-size:12px; font-weight:700;
+  color:var(--amber-700); letter-spacing:1px; text-transform:uppercase;
+  margin-bottom:12px;
+}
+.hero h1 {
+  font-family:'Lora',serif;
+  font-size:32px; font-weight:800; color:var(--navy-900);
+  margin-bottom:8px;
+}
+.hero p { font-size:16px; color:var(--navy-500); max-width:640px; }
+
+/* ═══ TABS ═══ */
+.tabs-wrapper {
+  background:#fff;
+  border-bottom:1px solid var(--navy-200);
+  position:sticky; top:56px;
+  z-index:50;
+}
+.tabs {
+  max-width:1200px; margin:0 auto;
+  padding:0 20px;
+  display:flex; gap:4px;
+  overflow-x:auto;
+}
+.tab-btn {
+  padding:14px 20px;
+  background:transparent; border:none;
+  font-family:inherit; font-size:15px; font-weight:700;
+  color:var(--navy-500);
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  transition:all .15s;
+  white-space:nowrap;
+  display:flex; align-items:center; gap:6px;
+}
+.tab-btn:hover { color:var(--navy-700); }
+.tab-btn.active {
+  color:var(--amber-700);
+  border-bottom-color:var(--amber-500);
+}
+.tab-badge {
+  display:inline-block; padding:1px 6px;
+  background:var(--amber-500); color:#fff;
+  border-radius:6px; font-size:10px; font-weight:800;
+}
+
+/* ═══ TAB CONTENT ═══ */
+.tab-content {
+  display:none;
+  width:100%;
+}
+.tab-content.active { display:block; }
+
+.tab-iframe {
+  width:100%;
+  min-height:calc(100vh - 240px);
+  border:0;
+  display:block;
+  background:var(--navy-50);
+}
+
+.tab-loading {
+  padding:60px 20px;
+  text-align:center;
+  color:var(--navy-500);
+  font-size:14px;
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size:24px; }
+  .tab-btn { padding:12px 14px; font-size:14px; }
+  .tabs-wrapper { top:52px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header injected by sol-ui.js -->
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <span class="hero__badge">✨ Bộ công cụ AI cho 40-60</span>
+  <h1>🎨 AI Studio</h1>
+  <p><strong>40 Prompt template</strong> đã kiểm chứng · <strong>Biên tập</strong> prompt cá nhân · Chat với <strong>Sol Đồng Hành AI</strong>. Tất cả trong 1 nơi.</p>
+</section>
+
+<!-- ═══ TABS ═══ -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="library">📚 Thư viện Prompt <span class="tab-badge">40</span></button>
+    <button class="tab-btn" data-tab="editor">✏️ Biên tập cá nhân</button>
+    <button class="tab-btn" data-tab="chat">🤖 Sol Đồng Hành AI</button>
+  </div>
+</div>
+
+<!-- ═══ TAB CONTENTS (iframes lazy-load) ═══ -->
+<div class="tab-content active" id="tab-library">
+  <iframe class="tab-iframe" id="iframe-library" src="/prompts/?embed=1" title="Thư viện 40 Prompt Templates"></iframe>
+</div>
+
+<div class="tab-content" id="tab-editor">
+  <div class="tab-loading" id="loading-editor">⏳ Đang tải editor...</div>
+</div>
+
+<div class="tab-content" id="tab-chat">
+  <div class="tab-loading" id="loading-chat">⏳ Đang tải Sol Đồng Hành...</div>
+</div>
+
+<script>
+const IFRAMES = {
+  library: '/prompts/?embed=1',
+  editor: '/prompts-studio/?embed=1',
+  chat: '/toi/sol-dong-hanh/?embed=1',
+};
+const loadedTabs = new Set(['library']); // Tab 1 loaded by default
+
+function loadTab(tab) {
+  if (loadedTabs.has(tab)) return;
+  const container = document.getElementById('tab-' + tab);
+  const iframe = document.createElement('iframe');
+  iframe.className = 'tab-iframe';
+  iframe.id = 'iframe-' + tab;
+  iframe.src = IFRAMES[tab];
+  iframe.title = tab;
+  container.innerHTML = '';
+  container.appendChild(iframe);
+  loadedTabs.add(tab);
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+    loadTab(tab); // Lazy load
+    history.replaceState(null, '', '?tab=' + tab);
+    window.scrollTo({ top: document.querySelector('.tabs-wrapper').offsetTop - 60, behavior: 'smooth' });
+  });
+});
+
+// Restore tab from URL on page load
+const urlTab = new URLSearchParams(location.search).get('tab');
+if (urlTab && IFRAMES[urlTab]) {
+  document.querySelector('[data-tab="' + urlTab + '"]').click();
+}
+</script>
+
+<script src="/sol-ui.js" defer></script>
+<script src="/js/sol-user-nav.js" defer></script>
+</body>
+</html>

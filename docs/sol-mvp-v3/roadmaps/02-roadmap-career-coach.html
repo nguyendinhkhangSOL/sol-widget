@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap 90 ngày — Huấn luyện Sự nghiệp (Career Coach) | Sol Active</title>
+<meta name="description" content="Lộ trình 90 ngày chi tiết cho người 40-60 muốn làm Huấn luyện Sự nghiệp. 12 tuần × 3-5 việc/tuần + KPIs + công cụ + mẫu Notion, Coaching Framework.">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --amber-50:#FFFBEB; --amber-100:#FEF3C7; --amber-400:#FBBF24; --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+  --navy-50:#F8FAFC; --navy-100:#F1F5F9; --navy-200:#E2E8F0; --navy-300:#CBD5E1;
+  --navy-400:#94A3B8; --navy-500:#64748B; --navy-700:#334155;
+  --navy-800:#1E293B; --navy-900:#0F172A;
+  --emerald-500:#10B981; --emerald-600:#059669; --emerald-700:#047857;
+  --red-500:#EF4444; --red-600:#DC2626;
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+body { font-family: var(--sans); background: var(--navy-50); color: var(--navy-700); line-height: 1.7; font-size: 16px; }
+.container { max-width: 780px; margin: 0 auto; padding: 40px 20px; }
+
+.paywall-lock { background: linear-gradient(135deg, var(--amber-100), #fff); border: 2px solid var(--amber-500); border-radius: 16px; padding: 24px; margin-bottom: 32px; text-align: center; }
+.paywall-lock__badge { display: inline-block; background: var(--amber-500); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 8px; }
+.paywall-lock__text { color: var(--navy-800); font-size: 14.5px; font-weight: 500; }
+.paywall-lock__text b { color: var(--amber-700); }
+
+.breadcrumb { font-size: 13px; color: var(--navy-500); margin-bottom: 16px; }
+.breadcrumb a { color: var(--amber-600); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+.hero { background: linear-gradient(135deg, var(--navy-900), var(--navy-800)); color: #fff; border-radius: 24px; padding: 48px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 65%); pointer-events: none; }
+.hero__eyebrow { display: inline-block; background: var(--amber-500); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 16px; }
+.hero__title { font-family: var(--serif); font-size: 36px; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 12px; position: relative; }
+.hero__title .amber { color: var(--amber-400); }
+.hero__subtitle { font-size: 17px; color: var(--navy-300); margin-bottom: 24px; position: relative; }
+.hero__outcomes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; position: relative; }
+@media (max-width: 560px) { .hero__outcomes { grid-template-columns: 1fr; } }
+.hero__outcome { background: rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; border: 1px solid rgba(255,255,255,0.1); }
+.hero__outcome__label { font-size: 11px; color: var(--navy-400); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 4px; }
+.hero__outcome__value { font-family: var(--serif); font-size: 22px; font-weight: 800; color: var(--amber-400); }
+.hero__outcome__meta { font-size: 12.5px; color: var(--navy-300); margin-top: 4px; }
+
+.section { background: #fff; border: 1px solid var(--navy-200); border-radius: 20px; padding: 32px 28px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); }
+.section h2 { font-family: var(--serif); font-size: 24px; font-weight: 800; color: var(--navy-900); line-height: 1.3; margin-bottom: 12px; }
+.section h3 { font-family: var(--serif); font-size: 19px; font-weight: 700; color: var(--navy-900); margin: 24px 0 10px; }
+.section p { margin-bottom: 12px; font-size: 15.5px; line-height: 1.7; color: var(--navy-700); }
+.section p b { color: var(--amber-700); font-weight: 700; }
+.section p strong { color: var(--navy-900); font-weight: 700; }
+
+.month-block { background: #fff; border: 1px solid var(--navy-200); border-radius: 20px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); }
+.month-header { padding: 28px 28px 20px; background: linear-gradient(135deg, var(--amber-500), var(--amber-600)); color: #fff; }
+.month-header__label { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; opacity: 0.9; }
+.month-header__title { font-family: var(--serif); font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+.month-header__desc { font-size: 15px; opacity: 0.95; }
+.month-body { padding: 24px 28px 28px; }
+
+.week { border-left: 3px solid var(--amber-500); padding: 16px 20px; margin-bottom: 16px; background: var(--navy-50); border-radius: 0 10px 10px 0; }
+.week__header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.week__num { background: var(--amber-500); color: #fff; padding: 3px 10px; border-radius: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; }
+.week__title { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--navy-900); flex: 1; line-height: 1.3; }
+.week ul { margin: 8px 0 8px 20px; padding: 0; }
+.week ul li { margin-bottom: 6px; font-size: 14.5px; color: var(--navy-700); line-height: 1.6; }
+.week ul li b { color: var(--amber-700); font-weight: 700; }
+.week__kpi { margin-top: 10px; padding: 10px 12px; background: rgba(16, 185, 129, 0.08); border-left: 3px solid var(--emerald-500); border-radius: 6px; font-size: 13.5px; color: var(--emerald-700); }
+.week__kpi b { font-weight: 700; }
+
+.tools-box { background: linear-gradient(135deg, var(--navy-50), #fff); border: 1px solid var(--navy-200); border-radius: 14px; padding: 20px 22px; margin: 16px 0; }
+.tools-box h4 { font-size: 13px; color: var(--navy-500); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 12px; }
+.tools-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+@media (max-width: 560px) { .tools-list { grid-template-columns: 1fr; } }
+.tool-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: #fff; border-radius: 8px; font-size: 13.5px; color: var(--navy-700); }
+.tool-item__icon { font-size: 16px; }
+.tool-item__name { flex: 1; font-weight: 600; }
+.tool-item__cost { font-size: 11.5px; color: var(--navy-500); font-weight: 500; }
+
+.pitfall { border-left: 3px solid var(--red-500); background: rgba(220, 38, 38, 0.04); padding: 14px 18px; border-radius: 0 10px 10px 0; margin-bottom: 12px; }
+.pitfall h4 { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--red-600); margin-bottom: 6px; }
+.pitfall p { font-size: 14.5px; color: var(--navy-700); }
+.pitfall p b { color: var(--red-600); }
+
+.benchmark { background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600)); color: #fff; border-radius: 20px; padding: 32px 28px; margin-bottom: 24px; }
+.benchmark h2 { font-family: var(--serif); color: #fff; font-size: 24px; margin-bottom: 16px; }
+.benchmark ul { list-style: none; padding: 0; margin: 0; }
+.benchmark li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff; font-size: 15.5px; line-height: 1.6; display: flex; gap: 12px; align-items: flex-start; }
+.benchmark li:last-child { border-bottom: none; }
+.benchmark li::before { content: '🎯'; flex-shrink: 0; font-size: 18px; }
+.benchmark li b { color: #FEF3C7; font-weight: 800; }
+
+.cta { background: linear-gradient(135deg, var(--amber-500), var(--amber-600)); border-radius: 20px; padding: 32px 28px; color: #fff; text-align: center; margin-bottom: 24px; }
+.cta h2 { font-family: var(--serif); font-size: 24px; color: #fff; margin-bottom: 12px; }
+.cta p { color: rgba(255,255,255,0.95); font-size: 15px; margin-bottom: 20px; }
+.cta__btn { display: inline-block; background: #fff; color: var(--amber-700); padding: 14px 32px; border-radius: 12px; font-weight: 800; font-size: 16px; text-decoration: none; box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+.cta__link { display: block; color: rgba(255,255,255,0.9); font-size: 13.5px; text-decoration: underline; margin-top: 12px; }
+
+.back-link { text-align: center; margin: 32px 0; }
+.back-link a { color: var(--navy-500); text-decoration: none; font-size: 14px; font-weight: 600; }
+.back-link a:hover { color: var(--amber-600); }
+
+.templates-callout { background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 14px; padding: 20px 22px; margin: 20px 0; }
+.templates-callout h4 { font-size: 13px; color: #7C3AED; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 10px; }
+.templates-callout ul { list-style: none; padding: 0; margin: 0; }
+.templates-callout li { padding: 6px 0; font-size: 14px; color: var(--navy-700); display: flex; gap: 10px; align-items: center; }
+.templates-callout li::before { content: '📄'; flex-shrink: 0; }
+.templates-callout li b { color: #7C3AED; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="https://sol.vn/">Trang chủ</a> · <a href="https://huongdi.sol.vn/">Sol La Bàn</a> · <a href="https://sol.vn/roadmaps/">Roadmap 90 ngày</a> · Huấn luyện Sự nghiệp
+  </div>
+
+  <div class="paywall-lock" id="paywall-notice">
+    <div class="paywall-lock__badge">🔒 SOL ACTIVE</div>
+    <div class="paywall-lock__text">
+      Đây là <b>lộ trình chi tiết 90 ngày</b> — 1 trong 10 roadmap độc quyền cho Sol Active. Đang xem phần trải nghiệm miễn phí.
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <div class="hero">
+    <div class="hero__eyebrow">🧭 HUẤN LUYỆN SỰ NGHIỆP</div>
+    <h1 class="hero__title">Lộ trình <span class="amber">90 ngày</span> để trở thành Huấn luyện Sự nghiệp có trả phí</h1>
+    <p class="hero__subtitle">12 tuần chi tiết — từ nghỉ việc → chứng chỉ ICF → 5 khách miễn phí → 3 khách trả phí đầu tiên. Doanh thu mục tiêu 30-45 triệu/tháng.</p>
+
+    <div class="hero__outcomes">
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 30 ngày</div>
+        <div class="hero__outcome__value">Chứng chỉ</div>
+        <div class="hero__outcome__meta">ICF ACC đăng ký + niche chốt</div>
+      </div>
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 60 ngày</div>
+        <div class="hero__outcome__value">Pilot</div>
+        <div class="hero__outcome__meta">5 khách miễn phí + 5 nhận xét</div>
+      </div>
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 90 ngày</div>
+        <div class="hero__outcome__value">Trả phí</div>
+        <div class="hero__outcome__meta">3 khách × 10tr/gói 3 tháng</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OVERVIEW ═══ -->
+  <div class="section">
+    <h2>Tổng quan lộ trình</h2>
+
+    <p><strong>Mô hình:</strong> Huấn luyện Sự nghiệp (Career Coach) — hỗ trợ người trung niên 35-55 tìm hướng đi mới sau nghỉ việc/burnout, chuyển ngành, hoặc thăng tiến. Gói dịch vụ: 8-12 buổi × 60 phút trong 3 tháng.</p>
+
+    <p><strong>Điều kiện phù hợp:</strong></p>
+    <ul style="margin-left:20px;">
+      <li>DNA <b>"Con người + Chuyên môn"</b> chiếm ưu thế (Bước 1 Sol La Bàn)</li>
+      <li>15-20+ năm kinh nghiệm quản lý, HR, hoặc leadership</li>
+      <li>Đã từng cố vấn (mentor) 5-10 người trẻ trong sự nghiệp</li>
+      <li>Có khả năng lắng nghe sâu, đặt câu hỏi mạnh</li>
+      <li>Vốn ban đầu <b>30-80 triệu</b> (chứng chỉ ICF ACC ~30-50 triệu + marketing)</li>
+      <li>Đầu tư <b>15-20 giờ/tuần</b> (part-time), có thể scale lên 25 giờ</li>
+    </ul>
+
+    <h3>Chia thành 3 giai đoạn</h3>
+    <p><b>Tháng 1 (Tuần 1-4) — Chứng chỉ + Định vị:</b> Đăng ký chứng chỉ ICF ACC (60 giờ), chọn niche cụ thể, viết lại LinkedIn với positioning "Coach cho ai".</p>
+
+    <p><b>Tháng 2 (Tuần 5-8) — Pilot Cohort Miễn phí:</b> Recruit 5 khách miễn phí (pro bono), coach 6-8 buổi/khách, thu thập nhận xét chuyên sâu để xây social proof.</p>
+
+    <p><b>Tháng 3 (Tuần 9-12) — Ra mắt Trả phí:</b> Launch gói premium 10-15 triệu/3 tháng, chốt 3 khách trả phí đầu, deliver + xin nhận xét paid client.</p>
+  </div>
+
+  <!-- ═══ THÁNG 1 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 1</div>
+      <div class="month-header__title">Tháng 1 — Chứng chỉ + Định vị</div>
+      <div class="month-header__desc">Tuần 1-4: Đăng ký chứng chỉ ICF, chọn niche, xây LinkedIn positioning, chuẩn bị framework coaching.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 1 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 1</span>
+          <span class="week__title">Reset + Đăng ký ICF ACC Program</span>
+        </div>
+        <ul>
+          <li><b>Nghỉ 3-5 ngày</b> — refresh, không email công việc cũ.</li>
+          <li><b>Nghiên cứu 3 chương trình ICF-accredited</b> tại VN/online: Coach for Life · CoachU · ICA (International Coach Academy). So sánh giá, thời lượng, credentials giảng viên.</li>
+          <li><b>Đăng ký 1 chương trình ICF ACC</b> (60 giờ, ~30-50 triệu). Bắt đầu học ngay tuần 2.</li>
+          <li><b>Đọc 3 sách coaching bắt buộc:</b> "Co-Active Coaching" (Whitworth), "The Coaching Habit" (Bungay Stanier), "Immunity to Change" (Kegan).</li>
+          <li><b>Setup CRM:</b> Notion database, 3 pipelines — Pilot Candidates / Paying Clients / Nurture.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> ICF program đã đăng ký · 1 sách đọc xong · CRM setup
+        </div>
+      </div>
+
+      <!-- Tuần 2 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 2</span>
+          <span class="week__title">Chọn Niche + Ideal Client Profile</span>
+        </div>
+        <ul>
+          <li><b>Brainstorm 5 niche</b> có sẵn với chuyên môn: (1) Middle managers muốn thăng tiến director · (2) Chuyên viên IT muốn chuyển sang leadership · (3) Người trung niên burnout muốn chuyển ngành · (4) Founder mất định hướng · (5) Working mothers quay lại nghề.</li>
+          <li><b>Chọn 1 niche</b> dựa trên: fit với network + đam mê + có thể trả phí.</li>
+          <li><b>Viết Ideal Client Profile (ICP)</b> 1 trang — 15 tiêu chí: tuổi, thu nhập, nỗi đau, đã thử gì, sẵn sàng đầu tư bao nhiêu.</li>
+          <li><b>Interview 5 người</b> match ICP — 30 phút, chỉ hỏi về nỗi đau (không sales).</li>
+          <li><b>Bắt đầu ICF class</b> — tuần 1 học Foundations of Coaching.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Niche chốt · ICP 1 trang · 5 interviews hoàn thành · Insights 3 nỗi đau lớn nhất
+        </div>
+      </div>
+
+      <!-- Tuần 3 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 3</span>
+          <span class="week__title">Viết lại LinkedIn + Signature Framework</span>
+        </div>
+        <ul>
+          <li><b>Ảnh bìa + đại diện</b> mới. Tone ấm áp, tin cậy (không quá formal).</li>
+          <li><b>Headline mới:</b> "Coach cho [Niche cụ thể] · ICF ACC · Giúp bạn tìm hướng đi mới trong 90 ngày". Ví dụ: "Coach cho Working Mothers 35-45 muốn quay lại nghề · ICF ACC · Giúp bạn tìm định vị nghề nghiệp phù hợp với đời sống mới."</li>
+          <li><b>Bio 400-500 từ:</b> Câu chuyện chuyển hướng của bạn → Vì sao chọn coach → Signature framework → 3 chuyển đổi cụ thể bạn giúp khách → CTA.</li>
+          <li><b>Xây Signature Framework 5 bước</b> — tên riêng của bạn (ví dụ: "5 Bước La Bàn Nghề" hoặc "Chuyển Hướng Ngọt Ngào"). Chỉ 1 trang mô tả, mỗi bước 1 câu.</li>
+          <li><b>Viết 3 pinned posts</b> giới thiệu framework, kèm 1 khách case (dùng người bạn nếu chưa có khách thực).</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> LinkedIn Profile hoàn thiện · Signature Framework 1 trang · 3 bài đăng
+        </div>
+      </div>
+
+      <!-- Tuần 4 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 4</span>
+          <span class="week__title">Hạ tầng + Chuẩn bị Pilot Cohort</span>
+        </div>
+        <ul>
+          <li><b>Landing page 1 trang</b> (Carrd): "Pilot Cohort miễn phí — 5 chỗ · 3 tháng coaching · Đổi lại nhận xét chi tiết". Cực clear về value + trade-off.</li>
+          <li><b>Cal.com setup:</b> "Sample Coaching Session 30 phút miễn phí" — 5 slot/tuần.</li>
+          <li><b>Notion Client Portal template:</b> Session notes · Goals tracking · Homework · Nhận xét sau session.</li>
+          <li><b>Coaching Agreement (hợp đồng)</b> — pilot version: cam kết 8 buổi, deliver nhận xét chi tiết + testimonial cuối chương trình.</li>
+          <li><b>Đăng bài LinkedIn</b> chính thức announce: "Đang mở 5 chỗ pilot coach miễn phí cho [Niche]. Ai match, DM tôi."</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Landing page live · 20-30 DM inbound · 8-10 sample sessions đã book
+        </div>
+      </div>
+
+      <div class="templates-callout">
+        <h4>📄 Mẫu tài liệu Sol Active</h4>
+        <ul>
+          <li><b>Notion CRM Coach</b> — 3 pipeline stages + templates session notes</li>
+          <li><b>Ideal Client Profile Template</b> — 15 tiêu chí + interview questions</li>
+          <li><b>Landing Page "Pilot Cohort"</b> — Carrd theme copy-paste</li>
+          <li><b>Coaching Agreement</b> — pilot version + paid version</li>
+          <li><b>Signature Framework Canvas</b> — 5 bước worksheet</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ THÁNG 2 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 2</div>
+      <div class="month-header__title">Tháng 2 — Pilot Cohort Miễn phí</div>
+      <div class="month-header__desc">Tuần 5-8: Chọn 5 khách pilot, coach 2 buổi/khách, thu thập insights + xây social proof.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 5 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 5</span>
+          <span class="week__title">Sample Sessions + Chọn 5 Pilot</span>
+        </div>
+        <ul>
+          <li><b>Thực hiện 8-10 sample sessions</b> (30 phút mỗi cuộc). Kể chuyện signature framework + demo 1 câu hỏi coaching mạnh.</li>
+          <li><b>Score 8-10 candidates</b> theo tiêu chí: (1) Match ICP · (2) Sẵn sàng cam kết 8 buổi · (3) Chấp nhận bị record để feedback · (4) Có network để giới thiệu sau.</li>
+          <li><b>Chọn 5 khách pilot</b> — chốt trong 3 ngày cuối tuần.</li>
+          <li><b>Gửi Welcome Kit</b> cho 5 khách: Agreement pilot · Notion portal link · Homework buổi 1 (Life Wheel + goals).</li>
+          <li><b>Kick-off Session 1</b> với khách #1 và #2 trong tuần.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 5 pilot khách chốt · 2 kick-off hoàn thành · Welcome Kit đã gửi
+        </div>
+      </div>
+
+      <!-- Tuần 6 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 6</span>
+          <span class="week__title">Kick-off 5 khách + Học ICF Module 2</span>
+        </div>
+        <ul>
+          <li><b>Kick-off 3 khách còn lại</b> — Session 1 focus: (1) Understand mục tiêu 3 tháng · (2) Đánh giá bằng Life Wheel + Career Assessment · (3) Chốt 1 "big rock" cần giải quyết.</li>
+          <li><b>Ghi âm mỗi session</b> (xin phép trước) — nghe lại 1 lần để cải thiện.</li>
+          <li><b>Peer coaching với bạn ICF cohort</b>: coach cho 1 bạn, nhận coaching từ 1 bạn khác. 2 buổi/tuần.</li>
+          <li><b>ICF Module 2:</b> Powerful Questions + Deep Listening.</li>
+          <li><b>3 bài LinkedIn</b> chia sẻ insights từ sessions (đã anonymize + xin phép).</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 5 khách active · 2 peer sessions · 3 bài LinkedIn
+        </div>
+      </div>
+
+      <!-- Tuần 7 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 7</span>
+          <span class="week__title">Session 3-4 với mỗi khách + Nhận xét giữa kỳ</span>
+        </div>
+        <ul>
+          <li><b>10 sessions tuần này</b> (2 buổi/khách × 5 khách).</li>
+          <li><b>Sau session 4:</b> Gửi survey "Nhận xét giữa kỳ" 5 câu hỏi cho mỗi khách. Insights vô cùng quý giá.</li>
+          <li><b>1 buổi Q&A tập thể</b> 90 phút với 5 khách pilot — build cộng đồng + xin nhận xét thời gian thực.</li>
+          <li><b>Tinh chỉnh framework</b> dựa trên feedback (câu hỏi nào hiệu quả nhất, homework nào challenging nhất).</li>
+          <li><b>2 bài LinkedIn</b> — 1 bài case study (anonymized) từ pilot cohort.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 10 sessions hoàn thành · 5 survey giữa kỳ nhận được · Framework v2 refined
+        </div>
+      </div>
+
+      <!-- Tuần 8 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 8</span>
+          <span class="week__title">Session 5-6 + Chuẩn bị Ra mắt Paid</span>
+        </div>
+        <ul>
+          <li><b>10 sessions tuần này</b> (2 buổi/khách × 5 khách).</li>
+          <li><b>Xin nhận xét video</b> từ 3 khách pilot đã có breakthrough rõ nhất (dùng cho marketing tháng 3).</li>
+          <li><b>Chuẩn bị gói Paid v1:</b><br>• Gói Standard: 8 buổi × 60 phút × 10 triệu = 10 triệu/3 tháng<br>• Gói Premium: 12 buổi + email support × 15 triệu = 15 triệu/3 tháng<br>• Gói VIP: 12 buổi + WhatsApp support + assessment × 25 triệu = 25 triệu/3 tháng</li>
+          <li><b>Landing page Paid</b> — thay pilot cohort bằng paid offer. Kèm 3 testimonial video ở fold đầu.</li>
+          <li><b>Announce trên LinkedIn:</b> "Sau 8 tuần với 5 khách pilot, tôi mở gói coaching trả phí. 3 chỗ tháng 8 · giá đầu 10 triệu/3 tháng."</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần 8:</b> 3 nhận xét video · Landing page Paid live · 15-20 DM inbound quan tâm paid
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ THÁNG 3 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 3</div>
+      <div class="month-header__title">Tháng 3 — Ra mắt Trả phí</div>
+      <div class="month-header__desc">Tuần 9-12: Chốt 3 khách trả phí đầu, tiếp tục deliver pilot cohort, xin nhận xét paid client.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 9 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 9</span>
+          <span class="week__title">Discovery Calls Paid + Kết thúc Pilot</span>
+        </div>
+        <ul>
+          <li><b>Discovery calls 45 phút</b> cho 8-10 người từ pipeline inbound. Script rõ ràng: 5' intro · 25' tìm hiểu vấn đề · 10' giới thiệu 3 gói · 5' Q&A.</li>
+          <li><b>Target chốt 3 khách paid</b> trong tuần này — ưu tiên gói Standard 10 triệu để dễ chốt.</li>
+          <li><b>Session 7-8 (kết) với 5 khách pilot</b> — 2 buổi cuối tập trung: Reflection + Next 90 days plan + Nhận xét chi tiết.</li>
+          <li><b>Xin giới thiệu</b> từ 5 khách pilot — mỗi khách giới thiệu 2-3 người → Pipeline 10-15 warm leads.</li>
+          <li><b>Đăng bài LinkedIn "Kết thúc Pilot Cohort":</b> Số liệu impact + 3 nhận xét video full.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Pilot cohort đóng · 3 khách paid chốt · <b>Doanh thu 30 triệu</b> · 10-15 warm leads
+        </div>
+      </div>
+
+      <!-- Tuần 10 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 10</span>
+          <span class="week__title">Kick-off 3 Paid Clients + ICF Certification</span>
+        </div>
+        <ul>
+          <li><b>Kick-off 3 khách paid</b> — Welcome Kit paid version có thêm: bonus assessment tool (StrengthsFinder hoặc DISC), 1-page personal manifesto template.</li>
+          <li><b>Hoàn thành 60 giờ ICF ACC</b> nếu chưa xong. Nộp application chính thức.</li>
+          <li><b>Content marketing:</b> 3 bài LinkedIn/tuần + 1 bài dài Facebook (target community mẹ 35-45 nếu đó là niche).</li>
+          <li><b>Podcast guest:</b> Pitch 5 podcast VN về nghề nghiệp/self-development. Target 1-2 acceptances.</li>
+          <li><b>Weekly review với 3 khách</b>: 3 sessions × 60 phút.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 3 kick-off paid xong · ICF hồ sơ nộp · 5 podcast pitches gửi
+        </div>
+      </div>
+
+      <!-- Tuần 11 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 11</span>
+          <span class="week__title">Deliver Value + Xin Nhận xét Paid</span>
+        </div>
+        <ul>
+          <li><b>Session 2-3 với 3 khách paid</b> — deliver 1 quick win rõ ràng trong tuần đầu (assessment insights + 1 actionable plan).</li>
+          <li><b>Sau session 3:</b> Gửi email "3 tuần đầu insights" cho từng khách — cá nhân hoá, chi tiết. Đây là moment build loyalty.</li>
+          <li><b>Bắt đầu batch outreach mới:</b> 20 DM cho warm leads từ pilot referrals.</li>
+          <li><b>Podcast interview:</b> Nếu accept, record 1-2 episodes.</li>
+          <li><b>Bài LinkedIn flagship</b> "3 điều tôi học sau 5 pilot + 3 paid clients" — long-form 1500 từ.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 9 paid sessions delivered · 20 DM outreach · 1 podcast recorded · 1 flagship post
+        </div>
+      </div>
+
+      <!-- Tuần 12 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 12</span>
+          <span class="week__title">Retrospective 90 ngày + Kế hoạch Tháng 4</span>
+        </div>
+        <ul>
+          <li><b>Session 4 với 3 khách paid</b> (session 1 trong tháng thứ 2). Deliver mid-point review + adjust plan.</li>
+          <li><b>Retrospective 90 ngày cá nhân:</b> Metrics — Doanh thu · Số khách · LinkedIn followers · Framework refinements. Review LEARNING.</li>
+          <li><b>Tăng giá lần 1:</b> Khách #4 trở đi, gói Standard tăng lên <b>12 triệu/3 tháng</b>. Không grandfather giảm giá cho pilot referrals.</li>
+          <li><b>Discovery calls cho tháng 4:</b> Target 5 calls, chốt 2 khách mới.</li>
+          <li><b>ICF ACC certification:</b> Follow up hồ sơ, prep interview nếu có.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần 12:</b> <b>3 khách paid active</b> · Doanh thu <b>30-35 triệu/tháng</b> · Pipeline 5-8 khách · <b>5 nhận xét</b> (2 video + 3 text) · ICF nộp hồ sơ
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ TOOLS ═══ -->
+  <div class="section">
+    <h2>Bộ công cụ cần thiết</h2>
+    <p>Tổng chi phí công cụ ~<b>1.5-2 triệu/tháng</b> khi đầy đủ. Chứng chỉ ICF ~30-50 triệu (one-time).</p>
+
+    <div class="tools-box">
+      <h4>🛠️ Danh sách 10 công cụ (theo thứ tự ưu tiên)</h4>
+      <div class="tools-list">
+        <div class="tool-item"><span class="tool-item__icon">🎓</span><span class="tool-item__name">ICF ACC Program</span><span class="tool-item__cost">30-50tr/1 lần</span></div>
+        <div class="tool-item"><span class="tool-item__icon">💼</span><span class="tool-item__name">LinkedIn Premium</span><span class="tool-item__cost">750k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📓</span><span class="tool-item__name">Notion Pro</span><span class="tool-item__cost">Miễn phí → 200k</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📅</span><span class="tool-item__name">Cal.com</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎥</span><span class="tool-item__name">Zoom Pro</span><span class="tool-item__cost">350k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎨</span><span class="tool-item__name">Canva Pro</span><span class="tool-item__cost">300k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🌐</span><span class="tool-item__name">Carrd landing</span><span class="tool-item__cost">500k/năm</span></div>
+        <div class="tool-item"><span class="tool-item__icon">💳</span><span class="tool-item__name">Stripe/Payoo</span><span class="tool-item__cost">3-5% fee</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📧</span><span class="tool-item__name">Gmail Workspace</span><span class="tool-item__cost">150k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📊</span><span class="tool-item__name">Google Workspace</span><span class="tool-item__cost">150k/tháng</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PITFALLS ═══ -->
+  <div class="section">
+    <h2>5 sai lầm phổ biến cần tránh</h2>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 1: Đi tìm khách trả phí ngay chưa có chứng chỉ</h4>
+      <p>ICF ACC là tấm vé <b>chuyên nghiệp</b> tối thiểu ở VN. Không có chứng chỉ = khó charge > 5tr/gói. Đúng: Đăng ký ngay Tuần 1, học song song với pilot cohort.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 2: Pilot cohort > 5 khách</h4>
+      <p>Tham lam nhận 10 khách miễn phí → không đủ chất lượng, mỗi khách chỉ 30% attention. Đúng: <b>Đúng 5 khách pilot</b>, deliver chất lượng cao, thu 5 nhận xét chi tiết.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 3: Niche "tôi coach cho ai cũng được"</h4>
+      <p>Khó marketing, khó word-of-mouth. Đúng: <b>1 niche cực rõ</b> — "Working Mothers 35-45 quay lại nghề sau sinh". Càng cụ thể càng dễ giới thiệu.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 4: Chargefirst khách paid quá thấp (5 triệu/gói)</h4>
+      <p>Khách 5tr/gói coi coaching là "thử cho vui" → engagement thấp. Đúng: <b>Tối thiểu 10 triệu/gói 3 tháng</b> — filter khách nghiêm túc.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 5: Không xin nhận xét ngay sau breakthrough</h4>
+      <p>Chờ hết chương trình mới xin → khách quên chi tiết cụ thể. Đúng: <b>Xin nhận xét ngay tuần khách có "Aha moment"</b>, timing quan trọng hơn hoàn thành chương trình.</p>
+    </div>
+  </div>
+
+  <!-- ═══ BENCHMARK ═══ -->
+  <div class="benchmark">
+    <h2>🎯 Bảng cột mốc thành công</h2>
+    <ul>
+      <li><b>Ngày 30:</b> ICF ACC bắt đầu · Niche chốt · LinkedIn 800-1.500 followers · 5 pilot chốt · Signature Framework v1</li>
+      <li><b>Ngày 60:</b> 40 pilot sessions delivered · 3 video testimonials · Landing Paid live · 15-20 warm leads · ICF 40 giờ</li>
+      <li><b>Ngày 90:</b> <b>3 khách paid</b> × 10 triệu = doanh thu <b>30 triệu</b> · Pipeline 5-8 khách · 5 nhận xét · ICF hoàn thành</li>
+      <li><b>Ngày 180:</b> 6-8 khách × 12-15 triệu = <b>45-70 triệu/tháng</b> · Group program launch · 1-2 podcast interviews · Waitlist bắt đầu</li>
+    </ul>
+  </div>
+
+  <!-- ═══ CTA ═══ -->
+  <div class="cta">
+    <h2>Sẵn sàng làm theo Roadmap này?</h2>
+    <p>Sol Active mở khoá <b>tất cả mẫu tài liệu</b> (Notion CRM Coach, Coaching Agreement, Signature Framework Canvas, Landing Pilot + Paid) + <b>9 roadmap khác</b> cho các mô hình khởi nghiệp 40-60.</p>
+    <a href="https://sol.vn/thanh-toan/" class="cta__btn">🚀 Nâng cấp Sol Active 499k/năm →</a>
+    <a href="https://sol.vn/case-studies/02-career-coach-anh-thang/" class="cta__link">Xem trường hợp thực tế: Anh Thắng 46 tuổi đã theo roadmap này →</a>
+  </div>
+
+  <div class="back-link">
+    <a href="/roadmaps/">← Xem 9 roadmap khác</a>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  try {
+    var tier = localStorage.getItem('sol_tier');
+    var active = localStorage.getItem('sol_active');
+    if (tier === 'active' || tier === 'founder' || active === 'true') {
+      document.getElementById('paywall-notice').style.display = 'none';
+    }
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>

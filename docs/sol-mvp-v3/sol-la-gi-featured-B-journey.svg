@@ -1,0 +1,56 @@
+<svg viewBox="0 0 1200 630" width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <title>Sol La Gi Featured Image - Option B 5 Bước Journey</title>
+
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#F59E0B"/>
+
+  <text x="80" y="90" font-family="'Inter', Arial, sans-serif" font-size="18" fill="#F59E0B" font-weight="700" letter-spacing="5">
+    SOL LÀ GÌ?
+  </text>
+
+  <text x="80" y="180" font-family="Georgia, 'Lora', serif" font-size="60" font-weight="800" fill="#FFFFFF">
+    Hệ thống 5 Bước Sol La Bàn
+  </text>
+  <text x="80" y="245" font-family="Georgia, 'Lora', serif" font-size="60" font-weight="800" fill="#F59E0B" font-style="italic">
+    tái khởi nghiệp đúng hướng
+  </text>
+
+  <text x="80" y="295" font-family="'Inter', sans-serif" font-size="22" fill="#CBD5E1" font-weight="400">
+    Đồng hành cùng người Việt độ tuổi 40 đến 60
+  </text>
+
+  <g transform="translate(80, 380)">
+    <circle cx="60" cy="0" r="45" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" stroke-width="3"/>
+    <text x="60" y="15" font-family="Georgia, serif" font-size="40" font-weight="800" fill="#F59E0B" text-anchor="middle">1</text>
+    <text x="60" y="85" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">THẤU HIỂU</text>
+    <path d="M 115 0 L 175 0 M 165 -10 L 175 0 L 165 10" stroke="#334155" stroke-width="2" fill="none"/>
+
+    <circle cx="230" cy="0" r="45" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" stroke-width="3"/>
+    <text x="230" y="15" font-family="Georgia, serif" font-size="40" font-weight="800" fill="#F59E0B" text-anchor="middle">2</text>
+    <text x="230" y="85" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">KHAI PHÁ</text>
+    <path d="M 285 0 L 345 0 M 335 -10 L 345 0 L 335 10" stroke="#334155" stroke-width="2" fill="none"/>
+
+    <circle cx="400" cy="0" r="45" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" stroke-width="3"/>
+    <text x="400" y="15" font-family="Georgia, serif" font-size="40" font-weight="800" fill="#F59E0B" text-anchor="middle">3</text>
+    <text x="400" y="85" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">CHỌN HƯỚNG</text>
+    <path d="M 455 0 L 515 0 M 505 -10 L 515 0 L 505 10" stroke="#334155" stroke-width="2" fill="none"/>
+
+    <circle cx="570" cy="0" r="45" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" stroke-width="3"/>
+    <text x="570" y="15" font-family="Georgia, serif" font-size="40" font-weight="800" fill="#F59E0B" text-anchor="middle">4</text>
+    <text x="570" y="85" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">HÀNH ĐỘNG</text>
+    <path d="M 625 0 L 685 0 M 675 -10 L 685 0 L 675 10" stroke="#334155" stroke-width="2" fill="none"/>
+
+    <circle cx="740" cy="0" r="45" fill="#F59E0B" stroke="#F59E0B" stroke-width="3"/>
+    <text x="740" y="15" font-family="Georgia, serif" font-size="40" font-weight="800" fill="#0F172A" text-anchor="middle">5</text>
+    <text x="740" y="85" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">AN TOÀN</text>
+  </g>
+
+  <line x1="80" y1="530" x2="1120" y2="530" stroke="#334155" stroke-width="1"/>
+
+  <text x="80" y="580" font-family="Georgia, 'Lora', serif" font-size="22" fill="#F59E0B" font-style="italic">
+    Đúng hướng · Đúng bước · Đúng tương lai
+  </text>
+  <text x="1120" y="580" font-family="'Inter', sans-serif" font-size="16" fill="#94A3B8" font-weight="600" letter-spacing="2" text-anchor="end">
+    SOL.VN
+  </text>
+</svg>

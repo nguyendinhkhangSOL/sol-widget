@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Sol Featured Image Generator — 16 bài SEO</title>
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background: #F8FAFC; padding: 40px 20px; margin: 0; }
+  h1 { color: #0F172A; margin-bottom: 8px; }
+  .subtitle { color: #64748B; margin-bottom: 24px; }
+  .card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .card h2 { margin-top: 0; color: #F59E0B; font-size: 16px; }
+  .card small { color: #64748B; }
+  .thumb { border: 1px solid #E2E8F0; border-radius: 8px; margin-top: 12px; display: block; }
+  .btn { display: inline-block; background: #F59E0B; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; margin-right: 8px; font-size: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 16px; }
+</style>
+</head>
+<body>
+<h1>Sol Featured Image Generator</h1>
+<p class="subtitle">16 bài SEO — 1200×630 (Facebook/LinkedIn OG image). Click "Download PNG" để lưu.</p>
+
+<div class="grid" id="grid"></div>
+
+<script>
+const ARTICLES = [
+  { id: '01', code: 'PILLAR', title: 'Tái khởi nghiệp tinh gọn 40-60', subtitle: 'Guide toàn diện 2026' },
+  { id: '02', code: 'A1', title: '40 tuổi nên kinh doanh gì?', subtitle: '10 mô hình phù hợp' },
+  { id: '03', code: 'A2', title: '45 tuổi nên kinh doanh gì?', subtitle: '8 mô hình + Case study' },
+  { id: '04', code: 'A3', title: '50 tuổi có nên kinh doanh?', subtitle: '6 hướng đi phù hợp' },
+  { id: '05', code: 'B1', title: 'Doanh nghiệp 1 người', subtitle: 'Mô hình mới cho 40-60' },
+  { id: '06', code: 'B2', title: 'One Person Company', subtitle: 'Xu hướng 2026' },
+  { id: '07', code: 'B3', title: 'Kinh doanh tinh gọn', subtitle: 'Nguyên tắc & áp dụng' },
+  { id: '08', code: 'C1', title: '5 Bước Sol La Bàn', subtitle: 'Hướng dẫn chi tiết' },
+  { id: '09', code: 'C2', title: 'AI cho người 40-60', subtitle: 'Tăng thu nhập với AI' },
+  { id: '10', code: 'C3', title: 'Hệ sinh thái Sol', subtitle: 'Sách · Trí · Cộng đồng' },
+  { id: '11', code: 'D1', title: 'Cựu CFO chuyển hướng', subtitle: '5 mô hình hiệu quả' },
+  { id: '12', code: 'D2', title: 'Nghỉ việc tuổi 45', subtitle: '6 bước quyết định' },
+  { id: '13', code: 'D3', title: 'Fractional CFO là gì?', subtitle: 'Mô hình cho cựu CFO' },
+  { id: '14', code: 'S1', title: '5 dấu hiệu cần chuyển hướng', subtitle: 'Tuổi 45+' },
+  { id: '15', code: 'S2', title: 'Checklist 30 ngày', subtitle: 'Chuẩn bị khởi nghiệp' },
+  { id: '16', code: 'S3', title: '10 sai lầm khởi nghiệp 45+', subtitle: 'Và cách tránh' }
+];
+
+function svgTemplate(article) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-${article.id}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="amber-${article.id}" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg-${article.id})"/>
+  <circle cx="1050" cy="120" r="180" fill="#F59E0B" opacity="0.08"/>
+  <circle cx="150" cy="500" r="220" fill="#F59E0B" opacity="0.05"/>
+  <text x="80" y="130" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#F59E0B" letter-spacing="4">SOL LA BÀN · ${article.code}</text>
+  <text x="80" y="270" font-family="Lora, Georgia, serif" font-size="64" font-weight="700" fill="#FFFFFF">${article.title}</text>
+  <text x="80" y="340" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#CBD5E1">${article.subtitle}</text>
+  <line x1="80" y1="420" x2="240" y2="420" stroke="#F59E0B" stroke-width="4"/>
+  <text x="80" y="480" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="#F59E0B">🧭 sol.vn/huong-di</text>
+  <text x="80" y="520" font-family="Inter, sans-serif" font-size="16" font-weight="400" fill="#94A3B8">Tái khởi nghiệp tinh gọn cho người 40-60</text>
+  <g transform="translate(1000, 470)">
+    <circle cx="60" cy="60" r="60" fill="url(#amber-${article.id})"/>
+    <text x="60" y="80" font-family="Inter, sans-serif" font-size="48" font-weight="900" fill="#0F172A" text-anchor="middle">S</text>
+  </g>
+</svg>`;
+}
+
+function downloadSVG(id, svgContent) {
+  const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `featured-${id}.svg`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function downloadPNG(id, svgContent) {
+  const svgBlob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(svgBlob);
+  const img = new Image();
+  img.onload = function() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1200;
+    canvas.height = 630;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    canvas.toBlob(function(blob) {
+      const pngUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = pngUrl;
+      a.download = `featured-${id}.png`;
+      a.click();
+      URL.revokeObjectURL(pngUrl);
+      URL.revokeObjectURL(url);
+    }, 'image/png');
+  };
+  img.src = url;
+}
+
+const grid = document.getElementById('grid');
+ARTICLES.forEach(article => {
+  const svg = svgTemplate(article);
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <h2>#${article.id} — ${article.code}</h2>
+    <small>${article.title}</small>
+    <div class="thumb" style="max-width:100%; height:auto;">${svg.replace('width="1200" height="630"', 'width="100%" height="auto"')}</div>
+    <button class="btn" onclick='downloadSVG("${article.id}-${article.code}", ${JSON.stringify(svg)})'>⬇ SVG</button>
+    <button class="btn" onclick='downloadPNG("${article.id}-${article.code}", ${JSON.stringify(svg)})'>⬇ PNG 1200×630</button>
+  `;
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>

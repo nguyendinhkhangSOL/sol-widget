@@ -1,0 +1,56 @@
+═══════════════════════════════════════════════════════════
+DEPLOY PROMPT LIBRARY V2 → huongdi.sol.vn/prompts/
+═══════════════════════════════════════════════════════════
+
+CHẠY 3 LỆNH SAU TRÊN TERMINAL LOCAL (Windows PowerShell / Git Bash):
+
+───────────────────────────────────────────────────────────
+BƯỚC 1: Upload file lên VPS (/tmp/)
+───────────────────────────────────────────────────────────
+
+scp C:\BOTHUOCLA\sol-widget\docs\sol-mvp-v3\prompt-database\prompts-builder.html sol-vps:/tmp/prompts-builder.html
+
+Kết quả kỳ vọng: hiển thị progress upload, kết thúc "100%"
+
+
+───────────────────────────────────────────────────────────
+BƯỚC 2: Backup file cũ + Deploy file mới (SSH vào VPS)
+───────────────────────────────────────────────────────────
+
+ssh sol-vps 'sudo mkdir -p /var/www/huongdi/public/prompts && \
+  if [ -f /var/www/huongdi/public/prompts/index.html ]; then \
+    sudo cp /var/www/huongdi/public/prompts/index.html /var/www/huongdi/public/prompts/index.html.bak-$(date +%Y%m%d-%H%M); \
+  fi && \
+  sudo mv /tmp/prompts-builder.html /var/www/huongdi/public/prompts/index.html && \
+  sudo chown www-data:www-data /var/www/huongdi/public/prompts/index.html && \
+  echo "✅ DEPLOYED"'
+
+Kết quả kỳ vọng: "✅ DEPLOYED"
+
+
+───────────────────────────────────────────────────────────
+BƯỚC 3: Test URL production
+───────────────────────────────────────────────────────────
+
+Mở trình duyệt Incognito → truy cập:
+
+https://huongdi.sol.vn/prompts/
+
+CHECKLIST TEST:
+[ ] Header + footer đồng nhất (từ sol-ui.js)
+[ ] Hero title: "40 mẫu câu hỏi AI đã soạn sẵn cho 5 Bước Sol La Bàn"
+[ ] 6 tabs hiển thị đúng số count: Tất cả (40) / B1 (5) / B2 (5) / B3 (5) / B4 (20) / B5 (5)
+[ ] Search box hoạt động: gõ "email" thấy filter
+[ ] Click tab "🌱 Bước 1" → hiển thị 5 prompt Thấu Hiểu
+[ ] Click 1 card → mở form → điền → "🎯 Tạo câu hỏi AI"
+[ ] Có nút "📋 Sao chép" hoạt động
+[ ] Mobile: responsive tốt
+
+═══════════════════════════════════════════════════════════
+NẾU CÓ LỖI — ROLLBACK
+═══════════════════════════════════════════════════════════
+
+ssh sol-vps 'sudo cp /var/www/huongdi/public/prompts/index.html.bak-<timestamp> \
+  /var/www/huongdi/public/prompts/index.html'
+
+═══════════════════════════════════════════════════════════

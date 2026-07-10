@@ -1,0 +1,325 @@
+<!--
+═══════════════════════════════════════════════════════════════
+QUIZ CTA COMPONENTS — Ready-to-paste vào homepage & footer
+═══════════════════════════════════════════════════════════════
+
+Bao gồm 3 components:
+  A. Hero Dual-CTA (2 boxes: Quiz vs Sol La Bàn)  — dùng cho homepage
+  B. Sidebar CTA compact                          — dùng cho bài viết SEO
+  C. Footer link                                  — dùng ở footer
+
+Deploy:
+  1. Paste HTML component vào vị trí tương ứng trong homepage/footer
+  2. CSS đã inline, không cần thêm dependency
+  3. Adjust colors nếu palette khác (--amber-500, --navy-900)
+-->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- COMPONENT A: HERO DUAL-CTA — Homepage below hero headline -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="dual-cta">
+  <!-- Card 1: Quiz cold traffic hook -->
+  <a href="/kham-pha-nhanh/" class="dual-cta__card dual-cta__card--quiz">
+    <div class="dual-cta__badge">🎯 DÀNH CHO NGƯỜI MỚI</div>
+    <div class="dual-cta__icon">🧪</div>
+    <h3 class="dual-cta__title">Chưa biết bắt đầu?</h3>
+    <p class="dual-cta__subtitle">Làm quiz 10 câu · 3 phút · Không cần đăng ký</p>
+    <ul class="dual-cta__benefits">
+      <li>✓ Gợi ý sơ bộ mô hình phù hợp</li>
+      <li>✓ Không lưu data, ẩn danh 100%</li>
+    </ul>
+    <div class="dual-cta__button dual-cta__button--secondary">
+      Bắt đầu quiz →
+    </div>
+  </a>
+
+  <!-- Card 2: Sol La Bàn warm traffic core product -->
+  <a href="/thau-hieu/" class="dual-cta__card dual-cta__card--product">
+    <div class="dual-cta__badge dual-cta__badge--product">🧭 SẴN SÀNG SỞ HỮU</div>
+    <div class="dual-cta__icon">🧭</div>
+    <h3 class="dual-cta__title">Vào Sol La Bàn</h3>
+    <p class="dual-cta__subtitle">5 Bước · Top 5 mô hình personalized · Roadmap 90 ngày</p>
+    <ul class="dual-cta__benefits">
+      <li>✓ Đăng ký FREE — 12 mô hình mở khoá</li>
+      <li>✓ Sổ Hành Trình lưu vĩnh viễn</li>
+    </ul>
+    <div class="dual-cta__button dual-cta__button--primary">
+      Vào Sol La Bàn →
+    </div>
+  </a>
+</div>
+
+<style>
+.dual-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 780px;
+  margin: 24px auto 40px;
+  padding: 0 20px;
+}
+
+.dual-cta__card {
+  display: block;
+  padding: 24px 22px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  position: relative;
+}
+
+.dual-cta__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+}
+
+.dual-cta__card--quiz:hover { border-color: #94A3B8; }
+.dual-cta__card--product:hover { border-color: #F59E0B; }
+
+.dual-cta__badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: #F1F5F9;
+  color: #475569;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.dual-cta__badge--product {
+  background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+  color: #B45309;
+}
+
+.dual-cta__icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.dual-cta__title {
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.dual-cta__subtitle {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.dual-cta__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+.dual-cta__benefits li {
+  font-size: 13px;
+  color: #334155;
+  padding: 2px 0;
+  line-height: 1.4;
+}
+
+.dual-cta__button {
+  display: block;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform 0.15s;
+}
+
+.dual-cta__button--secondary {
+  background: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+}
+
+.dual-cta__button--primary {
+  background: linear-gradient(135deg, #F59E0B, #B45309);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+.dual-cta__card--quiz:hover .dual-cta__button--secondary {
+  background: #F1F5F9;
+}
+
+.dual-cta__card--product:hover .dual-cta__button--primary {
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+}
+
+@media (max-width: 640px) {
+  .dual-cta {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .dual-cta__title { font-size: 20px; }
+}
+</style>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- COMPONENT B: SIDEBAR CTA COMPACT — Blog posts sidebar -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<aside class="sidebar-cta">
+  <div class="sidebar-cta__icon">🎯</div>
+  <h4 class="sidebar-cta__title">Bạn hợp mô hình nào trong 37?</h4>
+  <p class="sidebar-cta__text">
+    Làm quiz 3 phút để có gợi ý sơ bộ. Không cần đăng ký, ẩn danh 100%.
+  </p>
+  <a href="/kham-pha-nhanh/" class="sidebar-cta__button">
+    Bắt đầu quiz →
+  </a>
+  <p class="sidebar-cta__note">
+    Hoặc <a href="/thau-hieu/">vào Sol La Bàn</a> để test đầy đủ 5 Bước.
+  </p>
+</aside>
+
+<style>
+.sidebar-cta {
+  background: linear-gradient(135deg, #FEF3C7, #FFFFFF);
+  border: 1px solid #FDE68A;
+  border-radius: 14px;
+  padding: 22px 20px;
+  text-align: center;
+  max-width: 320px;
+  margin: 24px auto;
+}
+
+.sidebar-cta__icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.sidebar-cta__title {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.sidebar-cta__text {
+  font-size: 13px;
+  color: #475569;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.sidebar-cta__button {
+  display: block;
+  padding: 10px 16px;
+  background: #0F172A;
+  color: #F59E0B;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+
+.sidebar-cta__button:hover {
+  background: #1E293B;
+}
+
+.sidebar-cta__note {
+  font-size: 11px;
+  color: #64748B;
+  margin: 10px 0 0;
+}
+
+.sidebar-cta__note a {
+  color: #B45309;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sidebar-cta__note a:hover {
+  text-decoration: underline;
+}
+</style>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- COMPONENT C: FOOTER LINK — Simple link trong footer nav -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--
+Thêm vào footer navigation, ở section "Sản phẩm" hoặc "Miễn phí":
+-->
+
+<div class="footer-tool-links">
+  <h4 class="footer-tool-links__title">Công cụ miễn phí</h4>
+  <a href="/kham-pha-nhanh/" class="footer-tool-links__item">
+    🎯 <span>Kiểm tra 3 phút</span>
+    <span class="footer-tool-links__hint">Quiz gợi ý mô hình</span>
+  </a>
+  <a href="/thau-hieu/" class="footer-tool-links__item">
+    🧭 <span>Sol La Bàn (Bước 1)</span>
+    <span class="footer-tool-links__hint">Thấu hiểu DNA nghề nghiệp</span>
+  </a>
+  <a href="/ai-studio/" class="footer-tool-links__item">
+    🎨 <span>AI Studio</span>
+    <span class="footer-tool-links__hint">40 prompt + Sol AI</span>
+  </a>
+</div>
+
+<style>
+.footer-tool-links {
+  padding: 20px 0;
+}
+
+.footer-tool-links__title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #94A3B8;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.footer-tool-links__item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 0;
+  color: #E2E8F0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.1s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-tool-links__item:hover {
+  color: #F59E0B;
+}
+
+.footer-tool-links__item > span:first-of-type {
+  font-weight: 600;
+}
+
+.footer-tool-links__hint {
+  margin-left: auto;
+  font-size: 11px;
+  color: #64748B;
+}
+
+@media (max-width: 640px) {
+  .footer-tool-links__hint { display: none; }
+}
+</style>

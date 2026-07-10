@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hành trình Sol La Bàn của tôi</title>
+<meta name="description" content="Dashboard cá nhân hoá — theo dõi tiến độ 5 bước Sol La Bàn và bước tiếp theo cần làm.">
+<link rel="canonical" href="https://huongdi.sol.vn/toi/">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --amber: #F59E0B; --amber-light: #FEF3C7; --amber-dark: #B45309;
+    --navy: #0F172A; --navy-2: #1E293B; --slate: #64748B;
+    --border: #E2E8F0; --bg: #F8FAFC; --white: #FFFFFF;
+    --success: #16A34A; --danger: #DC2626;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Roboto, Inter, sans-serif;
+    background: var(--bg); color: var(--navy); line-height: 1.6;
+  }
+
+  /* Header */
+  .top-bar {
+    background: var(--white); border-bottom: 1px solid var(--border);
+    padding: 16px 24px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { font-weight: 700; color: var(--navy); font-size: 18px; }
+  .brand span { color: var(--amber); }
+  .user-menu { display: flex; align-items: center; gap: 16px; font-size: 14px; }
+  .tier-badge { padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .tier-FREE { background: #E2E8F0; color: #475569; }
+  .tier-ACTIVE { background: #FEF3C7; color: #B45309; }
+  .tier-FOUNDER { background: #FDE68A; color: #78350F; }
+
+  /* Container */
+  .container { max-width: 900px; margin: 0 auto; padding: 32px 24px; }
+
+  /* Welcome */
+  .welcome { margin-bottom: 32px; }
+  .welcome h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .welcome p { color: var(--slate); font-size: 15px; }
+
+  /* Progress bar */
+  .progress-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin-bottom: 24px;
+  }
+  .progress-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .progress-title { font-size: 14px; color: var(--slate); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .progress-percent { font-size: 24px; font-weight: 700; color: var(--amber); }
+  .progress-bar { height: 10px; background: var(--bg); border-radius: 999px; overflow: hidden; }
+  .progress-fill {
+    height: 100%; background: linear-gradient(90deg, var(--amber), var(--amber-dark));
+    border-radius: 999px; transition: width 0.6s ease;
+  }
+  .steps {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 20px;
+  }
+  .step {
+    text-align: center; padding: 8px; border-radius: 8px;
+    font-size: 12px; color: var(--slate); font-weight: 500;
+  }
+  .step.done { color: var(--success); font-weight: 600; }
+  .step.active { color: var(--amber); font-weight: 700; }
+  .step-icon { font-size: 24px; margin-bottom: 4px; opacity: 0.4; }
+  .step.done .step-icon, .step.active .step-icon { opacity: 1; }
+
+  /* Next action card */
+  .next-action {
+    background: linear-gradient(135deg, var(--amber-light), #FDE68A);
+    border: 2px solid var(--amber); border-radius: 16px;
+    padding: 28px; margin-bottom: 24px;
+  }
+  .next-action-label {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--amber-dark); font-weight: 700; margin-bottom: 8px;
+  }
+  .next-action-icon { font-size: 40px; margin-bottom: 12px; }
+  .next-action-title { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .next-action-reason { color: #78350F; margin-bottom: 20px; font-size: 15px; line-height: 1.6; }
+  .btn-primary {
+    display: inline-block; background: var(--navy); color: var(--white);
+    padding: 14px 28px; border-radius: 8px; text-decoration: none;
+    font-weight: 600; font-size: 15px; transition: transform 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); }
+
+  /* Summary cards */
+  .summary-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px; margin-bottom: 24px;
+  }
+  .sum-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .sum-card h3 { font-size: 15px; font-weight: 600; color: var(--slate); margin-bottom: 12px; }
+  .sum-card .value { font-size: 20px; font-weight: 700; color: var(--navy); }
+  .sum-card .sub { font-size: 13px; color: var(--slate); margin-top: 4px; }
+
+  /* Scores mini */
+  .scores { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+  .score-item { font-size: 13px; }
+  .score-label { color: var(--slate); }
+  .score-value { font-weight: 600; color: var(--navy); }
+
+  /* Loading */
+  .skeleton { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: skel 1.4s infinite; border-radius: 8px; height: 20px; }
+  @keyframes skel { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+  .loading { text-align: center; padding: 60px 20px; color: var(--slate); }
+
+  /* Empty state (chưa login) */
+  .empty { text-align: center; padding: 60px 20px; }
+  .empty h2 { font-size: 22px; margin-bottom: 12px; }
+  .empty p { color: var(--slate); margin-bottom: 20px; }
+
+  @media (max-width: 640px) {
+    .container { padding: 20px 16px; }
+    .steps { grid-template-columns: repeat(5, 1fr); font-size: 10px; }
+    .step-icon { font-size: 18px; }
+    .next-action { padding: 20px; }
+    .next-action-title { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="brand">🧭 Sol <span>La Bàn</span></div>
+  <div class="user-menu" id="userMenu">
+    <span class="skeleton" style="width: 120px; height: 16px;"></span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="welcome" id="welcome">
+    <div class="skeleton" style="width: 300px; height: 32px; margin-bottom: 12px;"></div>
+    <div class="skeleton" style="width: 400px; height: 16px;"></div>
+  </div>
+
+  <!-- Progress card -->
+  <div class="progress-card" id="progressCard" style="display: none;">
+    <div class="progress-header">
+      <div class="progress-title">Tiến độ 5 bước Sol La Bàn</div>
+      <div class="progress-percent" id="progressPercent">0%</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 0%;"></div></div>
+    <div class="steps" id="stepsGrid">
+      <div class="step" data-step="p1"><div class="step-icon">🧬</div><div>Khám phá</div></div>
+      <div class="step" data-step="p2"><div class="step-icon">💼</div><div>Kiểm kê</div></div>
+      <div class="step" data-step="p3"><div class="step-icon">🧭</div><div>La bàn</div></div>
+      <div class="step" data-step="roadmap"><div class="step-icon">📓</div><div>Roadmap</div></div>
+      <div class="step" data-step="antoan"><div class="step-icon">🏆</div><div>An toàn</div></div>
+    </div>
+  </div>
+
+  <!-- Next action -->
+  <div class="next-action" id="nextAction" style="display: none;">
+    <div class="next-action-label" id="nextLabel">Bước tiếp theo</div>
+    <div class="next-action-icon" id="nextIcon">🎯</div>
+    <div class="next-action-title" id="nextTitle">...</div>
+    <div class="next-action-reason" id="nextReason">...</div>
+    <a href="#" class="btn-primary" id="nextCta">Bắt đầu</a>
+  </div>
+
+  <!-- Summary grid -->
+  <div class="summary-grid" id="summaryGrid"></div>
+
+  <!-- Empty state -->
+  <div class="empty" id="emptyState" style="display: none;">
+    <h2>🔒 Chưa đăng nhập</h2>
+    <p>Đăng nhập để xem hành trình cá nhân của anh chị.</p>
+    <a href="/dang-nhap/" class="btn-primary">Đăng nhập</a>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  const API_BASE = window.SOL_API_BASE || 'https://huongdi.sol.vn/api';
+
+  function getJwt() { return localStorage.getItem('sol_jwt'); }
+  function getUser() { try { return JSON.parse(localStorage.getItem('sol_user') || 'null'); } catch { return null; } }
+
+  const jwt = getJwt();
+  const user = getUser();
+
+  if (!jwt || !user) {
+    // Chưa login → show empty state
+    document.getElementById('welcome').style.display = 'none';
+    document.getElementById('userMenu').innerHTML = '<a href="/dang-nhap/" style="color:#F59E0B; text-decoration:none;">Đăng nhập</a>';
+    document.getElementById('emptyState').style.display = 'block';
+    return;
+  }
+
+  // ─── Load dashboard state ─────────────────────────────────────
+  fetch(API_BASE + '/user/dashboard', {
+    headers: { 'Authorization': 'Bearer ' + jwt },
+  })
+    .then(r => r.json())
+    .then(data => {
+      if (!data.success) throw new Error(data.message || 'Load fail');
+      renderDashboard(data);
+    })
+    .catch(err => {
+      console.warn('Dashboard load fail:', err);
+      document.getElementById('welcome').innerHTML =
+        '<h1>Xin chào ' + (user.displayName || 'anh chị') + '!</h1>' +
+        '<p>Không load được dashboard. <a href="/kham-pha-ban-than/">Bắt đầu P1 →</a></p>';
+    });
+
+  function renderDashboard(d) {
+    const u = d.user;
+    const p = d.progress;
+    const na = d.nextAction;
+    const s = d.summary;
+
+    // Top bar user menu
+    document.getElementById('userMenu').innerHTML =
+      '<span class="tier-badge tier-' + u.tier + '">' + u.tier + '</span>' +
+      '<span>' + u.displayName + '</span>' +
+      '<a href="#" onclick="localStorage.clear(); location.href=\'/dang-nhap/\'; return false;" style="color:#94A3B8; text-decoration:none; font-size:13px;">Đăng xuất</a>';
+
+    // Welcome
+    document.getElementById('welcome').innerHTML =
+      '<h1>Xin chào ' + u.displayName + '! 👋</h1>' +
+      '<p>Anh chị đang ở giai đoạn <strong>' + humanState(d.state) + '</strong>. Đây là bức tranh tổng thể hành trình.</p>';
+
+    // Progress card
+    document.getElementById('progressCard').style.display = 'block';
+    document.getElementById('progressPercent').textContent = p.percent + '%';
+    document.getElementById('progressFill').style.width = p.percent + '%';
+
+    const stepMap = {
+      p1: p.p1_done,
+      p2: p.p2_done,
+      p3: p.p3_viewed,
+      roadmap: p.direction_chosen || p.roadmap_active,
+      antoan: p.roadmap_complete,
+    };
+    // Determine "active" step (first NOT done)
+    const stepOrder = ['p1', 'p2', 'p3', 'roadmap', 'antoan'];
+    const activeStep = stepOrder.find(s => !stepMap[s]) || 'antoan';
+
+    document.querySelectorAll('.step').forEach(el => {
+      const stepKey = el.getAttribute('data-step');
+      el.classList.remove('done', 'active');
+      if (stepMap[stepKey]) el.classList.add('done');
+      else if (stepKey === activeStep) el.classList.add('active');
+    });
+
+    // Next action
+    document.getElementById('nextAction').style.display = 'block';
+    document.getElementById('nextIcon').textContent = na.icon || '🎯';
+    document.getElementById('nextTitle').textContent = na.title;
+    document.getElementById('nextReason').textContent = na.reason;
+    const cta = document.getElementById('nextCta');
+    cta.textContent = na.cta;
+    cta.href = na.url;
+
+    // Summary cards
+    renderSummary(s, u);
+  }
+
+  function renderSummary(s, u) {
+    const grid = document.getElementById('summaryGrid');
+    let html = '';
+
+    if (s.p1) {
+      html += '<div class="sum-card"><h3>🧬 DNA nghề nghiệp (P1)</h3>' +
+        '<div class="value">' + humanizeRank(s.p1.rank1) + '</div>' +
+        '<div class="sub">Rank 2: ' + humanizeRank(s.p1.rank2) + '</div>' +
+        '<div class="scores">' +
+        '<div class="score-item"><span class="score-label">Người:</span> <span class="score-value">' + s.p1.scores.people + '</span></div>' +
+        '<div class="score-item"><span class="score-label">Chuyên môn:</span> <span class="score-value">' + s.p1.scores.expert + '</span></div>' +
+        '<div class="score-item"><span class="score-label">Xây dựng:</span> <span class="score-value">' + s.p1.scores.builder + '</span></div>' +
+        '<div class="score-item"><span class="score-label">Độc lập:</span> <span class="score-value">' + s.p1.scores.independent + '</span></div>' +
+        '</div></div>';
+    }
+
+    if (s.p2) {
+      html += '<div class="sum-card"><h3>💼 Nguồn lực (P2)</h3>' +
+        '<div class="value">' + humanizeResource(s.p2.topResource) + '</div>' +
+        '<div class="sub">Nguồn lực mạnh nhất · Mục tiêu thu nhập: ' + (s.p2.incomeGoal || 'N/A') + '</div>' +
+        '</div>';
+    }
+
+    if (s.savedDirections && s.savedDirections.length > 0) {
+      html += '<div class="sum-card"><h3>🎯 Hướng đi đã chọn</h3>';
+      s.savedDirections.forEach(d => {
+        html += '<div style="margin-bottom:8px;"><strong>' + d.directionName + '</strong>' +
+          (d.matchScore ? ' <span style="color:#F59E0B; font-size:13px;">(' + d.matchScore + '% match)</span>' : '') +
+          '</div>';
+      });
+      html += '</div>';
+    }
+
+    grid.innerHTML = html || '<div class="sum-card"><p style="color:#64748B; text-align:center;">Chưa có dữ liệu — hãy bắt đầu Bước 1.</p></div>';
+  }
+
+  function humanState(s) {
+    const map = {
+      BLANK: 'Chưa bắt đầu',
+      P1_DONE: 'Đã Khám phá bản thân',
+      P2_DONE: 'Đã Kiểm kê nguồn lực',
+      P3_VIEWED: 'Đã Mở la bàn',
+      DIRECTION_CHOSEN: 'Đã chọn hướng đi',
+      ROADMAP_ACTIVE: 'Đang chạy Roadmap 90 ngày',
+      ROADMAP_COMPLETE: 'Đã hoàn thành Roadmap',
+    };
+    return map[s] || s;
+  }
+
+  function humanizeRank(r) {
+    const map = { people: 'Kết nối Người', expert: 'Chuyên môn sâu', builder: 'Xây dựng hệ thống', independent: 'Độc lập tự chủ' };
+    return map[r] || r;
+  }
+
+  function humanizeResource(r) {
+    const map = { experience: 'Kinh nghiệm', capital: 'Vốn', time: 'Thời gian', technology: 'Công nghệ', network: 'Network', risk: 'Khẩu vị rủi ro', energy: 'Năng lượng' };
+    return map[r] || r;
+  }
+})();
+</script>
+</body>
+</html>

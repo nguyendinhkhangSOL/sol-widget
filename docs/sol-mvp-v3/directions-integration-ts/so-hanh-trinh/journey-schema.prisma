@@ -1,0 +1,26 @@
+// ═══════════════════════════════════════════════════════════════
+// JOURNEY (Sổ Hành Trình) — Layer 2
+// Append vào schema.prisma
+// ═══════════════════════════════════════════════════════════════
+
+model JourneyDay {
+  id             String    @id @default(uuid())
+  userId         String    @map("user_id")
+  directionId    String?   @map("direction_id")
+  day            Int       // 1-90
+  phase          String    // "D30" | "D60" | "D90"
+  journalContent String?   @map("journal_content")
+  mood           Int?      // 1-5
+  wins           String[]  @default([])
+  blockers       String[]  @default([])
+  tasksCompleted Json?     @map("tasks_completed")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  user           User      @relation("UserJourneyDays", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, day])
+  @@index([userId])
+  @@index([userId, phase])
+  @@map("journey_days")
+}

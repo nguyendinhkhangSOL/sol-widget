@@ -1,0 +1,15 @@
+# Edit this file to introduce tasks to be run by cron.
+#
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+#
+# m h  dom mon dow   command
+
+# ─── Backup sol_prod (Sol Cai Thuốc) ─────────────────────────────
+0 2 * * * pg_dump sol_prod | gzip > /var/backups/postgres/sol_prod-$(date +\%F).sql.gz
+0 3 * * * find /var/backups/postgres -name "sol_prod-*.sql.gz" -mtime +30 -delete
+
+# ─── Backup huongdi_prod (Sol La Bàn) — Added 2026-07-04 ─────────
+5 2 * * * pg_dump huongdi_prod | gzip > /var/backups/postgres/huongdi_prod-$(date +\%F).sql.gz
+5 3 * * * find /var/backups/postgres -name "huongdi_prod-*.sql.gz" -mtime +30 -delete

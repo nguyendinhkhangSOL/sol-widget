@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nâng cấp Sol Active/Founder — Sol La Bàn</title>
+<meta name="description" content="Nâng cấp tài khoản Sol lên Active (499k/năm) hoặc Founder Edition (1.999k lifetime). Chỉ dành cho thành viên đã đăng ký.">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --amber-50:#FFFBEB; --amber-100:#FEF3C7; --amber-200:#FDE68A;
+  --amber-400:#FBBF24; --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+  --navy-50:#F8FAFC; --navy-100:#F1F5F9; --navy-200:#E2E8F0;
+  --navy-400:#94A3B8; --navy-500:#64748B; --navy-700:#334155;
+  --navy-800:#1E293B; --navy-900:#0F172A;
+  --emerald-500:#10B981; --emerald-600:#059669; --emerald-700:#047857;
+  --purple-500:#8B5CF6; --purple-600:#7C3AED;
+  --red-500:#EF4444; --red-600:#DC2626;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Inter',-apple-system,sans-serif;
+  background:linear-gradient(135deg,var(--navy-50),#fff);
+  color:var(--navy-700); line-height:1.6;
+  min-height:100vh;
+}
+
+.container {
+  max-width:640px; margin:0 auto; padding:40px 20px;
+}
+
+/* ═══ HEADER ═══ */
+.header {
+  text-align:center; margin-bottom:32px;
+}
+.header a {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:14px; color:var(--navy-500); text-decoration:none;
+  padding:8px 14px; border-radius:20px;
+  background:#fff; border:1px solid var(--navy-200);
+  transition:all .15s;
+}
+.header a:hover { border-color:var(--amber-500); color:var(--amber-700); }
+
+/* ═══ CARD ═══ */
+.card {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:20px; padding:40px 36px;
+  box-shadow:0 8px 32px rgba(15,23,42,0.06);
+}
+
+.card__eyebrow {
+  font-size:12px; letter-spacing:2px; font-weight:800;
+  color:var(--amber-600); text-transform:uppercase;
+  margin-bottom:10px; text-align:center;
+}
+.card__title {
+  font-family:'Lora',serif;
+  font-size:28px; font-weight:800; color:var(--navy-900);
+  text-align:center; margin-bottom:8px; line-height:1.2;
+}
+.card__subtitle {
+  text-align:center; color:var(--navy-500);
+  font-size:15px; margin-bottom:28px;
+}
+
+/* ═══ TIER SELECTOR ═══ */
+.tier-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:12px; margin-bottom:28px;
+}
+.tier-option {
+  border:2px solid var(--navy-200); border-radius:14px;
+  padding:20px 18px; cursor:pointer;
+  transition:all .15s;
+  background:#fff;
+  position:relative;
+}
+.tier-option:hover { border-color:var(--amber-400); }
+.tier-option.selected {
+  border-color:var(--amber-500);
+  background:linear-gradient(135deg,var(--amber-50),#fff);
+  box-shadow:0 4px 12px rgba(245,158,11,0.15);
+}
+.tier-option.selected.founder {
+  border-color:var(--purple-500);
+  background:linear-gradient(135deg,#F5F3FF,#fff);
+  box-shadow:0 4px 12px rgba(139,92,246,0.15);
+}
+.tier-option__badge {
+  position:absolute; top:-8px; right:12px;
+  background:var(--amber-500); color:#fff;
+  padding:3px 10px; border-radius:10px;
+  font-size:10px; font-weight:800; letter-spacing:1px;
+}
+.tier-option.founder .tier-option__badge { background:var(--purple-500); }
+.tier-option__icon { font-size:24px; margin-bottom:8px; }
+.tier-option__name {
+  font-size:13px; font-weight:800; color:var(--navy-500);
+  letter-spacing:1px; margin-bottom:4px;
+}
+.tier-option__title {
+  font-family:'Lora',serif; font-size:20px; font-weight:700;
+  color:var(--navy-900); margin-bottom:6px;
+}
+.tier-option__price {
+  font-family:'Lora',serif; font-size:22px; font-weight:800;
+  color:var(--amber-600);
+}
+.tier-option.founder .tier-option__price { color:var(--purple-600); }
+.tier-option__period { font-size:12px; color:var(--navy-500); margin-left:2px; }
+
+/* ═══ FORM ═══ */
+.form-group { margin-bottom:20px; }
+.form-label {
+  display:block; font-size:13.5px; font-weight:700;
+  color:var(--navy-800); margin-bottom:8px;
+}
+.form-required { color:var(--amber-600); }
+.form-input {
+  width:100%; padding:12px 16px;
+  border:2px solid var(--navy-200); border-radius:10px;
+  font-family:inherit; font-size:14.5px;
+  background:#fff; color:var(--navy-900);
+  transition:border-color .15s;
+}
+.form-input:focus {
+  outline:none; border-color:var(--amber-500);
+}
+.form-input::placeholder { color:var(--navy-400); font-style:italic; }
+.form-hint {
+  font-size:12.5px; color:var(--navy-500);
+  margin-top:6px; font-style:italic;
+}
+.form-error {
+  font-size:12.5px; color:var(--red-500);
+  margin-top:6px; font-weight:600;
+  display:none;
+}
+.form-input.error { border-color:var(--red-500); }
+.form-input.error + .form-error { display:block; }
+
+.checkbox-group {
+  display:flex; align-items:flex-start; gap:10px;
+  margin-bottom:24px;
+}
+.checkbox-group input {
+  margin-top:4px; width:18px; height:18px;
+  accent-color:var(--amber-600);
+}
+.checkbox-group label {
+  font-size:13px; color:var(--navy-700);
+}
+.checkbox-group a { color:var(--amber-600); }
+
+/* ═══ BUTTONS ═══ */
+.btn {
+  display:block; width:100%; padding:16px 24px;
+  border-radius:12px; font-size:15.5px; font-weight:800;
+  cursor:pointer; border:none; font-family:inherit;
+  transition:all .2s; text-decoration:none; text-align:center;
+}
+.btn:disabled { opacity:0.5; cursor:not-allowed; }
+.btn-primary {
+  background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+  color:#fff;
+}
+.btn-primary:hover:not(:disabled) {
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(245,158,11,0.35);
+}
+.btn-secondary {
+  background:#fff; color:var(--navy-700);
+  border:2px solid var(--navy-200); margin-top:10px;
+}
+.btn-secondary:hover { background:var(--navy-50); }
+
+/* ═══ QR STATE ═══ */
+.qr-box {
+  background:linear-gradient(135deg,var(--navy-50),#fff);
+  border:2px dashed var(--amber-500);
+  border-radius:16px; padding:24px;
+  text-align:center; margin-bottom:20px;
+}
+.qr-image {
+  width:280px; height:280px; max-width:100%;
+  background:#fff; border-radius:12px;
+  margin:0 auto 12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+.qr-image img { width:100%; height:100%; object-fit:contain; }
+.qr-image__fallback {
+  padding:40px 20px; font-size:13px; color:var(--navy-500);
+}
+.qr-instruction {
+  font-size:13.5px; color:var(--navy-700); font-weight:600;
+  margin-bottom:4px;
+}
+.qr-instruction strong { color:var(--amber-700); }
+
+.countdown {
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--navy-900); color:#fff;
+  padding:8px 14px; border-radius:20px;
+  font-size:13px; font-weight:700;
+  margin-bottom:20px;
+}
+.countdown.warn { background:var(--red-600); }
+
+/* ═══ BANK INFO ═══ */
+.divider {
+  text-align:center; margin:24px 0 16px;
+  font-size:12px; letter-spacing:2px; font-weight:700;
+  color:var(--navy-400); text-transform:uppercase;
+}
+.divider::before, .divider::after {
+  content:''; display:inline-block;
+  width:60px; height:1px; background:var(--navy-200);
+  vertical-align:middle; margin:0 12px;
+}
+
+.bank-info {
+  background:var(--navy-50); border-radius:12px;
+  padding:20px 22px; margin-bottom:20px;
+}
+.bank-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:8px 0;
+  border-bottom:1px solid var(--navy-100);
+  font-size:14px;
+}
+.bank-row:last-child { border-bottom:none; }
+.bank-row__label { color:var(--navy-500); }
+.bank-row__value {
+  color:var(--navy-900); font-weight:700;
+  display:flex; align-items:center; gap:8px;
+}
+.bank-row__value strong { color:var(--amber-700); }
+.copy-btn {
+  background:var(--amber-100); color:var(--amber-700);
+  border:none; padding:4px 10px; border-radius:6px;
+  font-size:11px; font-weight:700; cursor:pointer;
+  font-family:inherit;
+}
+.copy-btn:hover { background:var(--amber-200); }
+.copy-btn.copied {
+  background:var(--emerald-500); color:#fff;
+}
+
+.warning-box {
+  background:var(--amber-50); border:1px solid var(--amber-200);
+  border-left:4px solid var(--amber-500);
+  border-radius:8px; padding:12px 16px;
+  font-size:13px; color:var(--navy-700);
+  margin-bottom:20px;
+}
+.warning-box strong { color:var(--amber-700); }
+
+/* ═══ WAITING STATE ═══ */
+.wait-icon {
+  width:80px; height:80px; margin:0 auto 20px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--amber-100),var(--amber-200));
+  display:flex; align-items:center; justify-content:center;
+  font-size:40px;
+}
+.wait-details {
+  background:var(--navy-50); border-radius:12px;
+  padding:20px 24px; margin:20px 0;
+}
+.wait-details__row {
+  display:flex; justify-content:space-between;
+  padding:6px 0; font-size:14px;
+}
+.wait-details__row span:first-child { color:var(--navy-500); }
+.wait-details__row span:last-child { color:var(--navy-900); font-weight:700; }
+
+.zalo-cta {
+  background:linear-gradient(135deg,#0068ff,#0052cc);
+  color:#fff !important; padding:14px 20px;
+  border-radius:10px; text-decoration:none;
+  display:block; text-align:center;
+  font-weight:700; font-size:14px;
+  margin-top:12px;
+}
+.zalo-cta:hover { transform:translateY(-2px); }
+
+/* ═══ STATE SWITCHING ═══ */
+.state { display:none; }
+.state.active { display:block; }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:600px) {
+  .container { padding:20px 12px; }
+  .card { padding:28px 20px; }
+  .card__title { font-size:22px; }
+  .tier-grid { grid-template-columns:1fr; }
+  .qr-image { width:240px; height:240px; }
+}
+</style>
+</head>
+<body>
+<script>
+// ═══ AUTH GUARD (2026-07-06) — Yêu cầu login trước khi thanh toán ═══
+(function() {
+  const jwt = localStorage.getItem('sol_jwt');
+  const user = (function(){ try { return JSON.parse(localStorage.getItem('sol_user') || 'null'); } catch { return null; } })();
+
+  if (!jwt || !user) {
+    // Redirect to login, keep current URL as next
+    const nextUrl = encodeURIComponent(location.pathname + location.search);
+    location.replace('/dang-nhap/?next=' + nextUrl + '&reason=payment_required');
+  }
+})();
+</script>
+
+
+
+<div class="container">
+
+  <div class="header">
+    <a href="/pricing/">← Quay lại bảng giá</a>
+  </div>
+
+  <!-- ═══ STATE 1: FORM ═══ -->
+  <div class="state active" id="state-form">
+    <div class="card">
+
+      <!-- ⭐ Unified Auth: Logged-in banner -->
+      <div id="sol-logged-in-banner" style="display:none; background:linear-gradient(135deg,#ECFDF5,#D1FAE5); border:1px solid #10B981; border-radius:10px; padding:14px 16px; margin-bottom:20px; font-size:14px; color:#065F46;">
+        ✅ Bạn đang đăng nhập với <strong id="sol-current-email">—</strong> (<span id="sol-current-tier" style="padding:1px 8px; background:#10B981; color:white; border-radius:6px; font-size:11px; font-weight:700;">—</span>). Chỉ cần bổ sung Zalo (nếu khác SĐT) và bấm thanh toán.
+      </div>
+
+      <div class="card__eyebrow">🏦 THANH TOÁN QUA QR</div>
+      <h1 class="card__title">Đăng ký Sol</h1>
+      <p class="card__subtitle">Chào mừng thành viên Sol. Chọn gói + xác nhận thông tin để nâng cấp. Sol xác nhận qua Zalo/Email trong 24h.</p>
+
+      <!-- V1.2: Cross-link Đăng nhập cho user cũ -->
+      <div style="text-align:center; margin:12px 0 20px; padding:12px 16px; background:var(--amber-50); border-radius:8px; font-size:13.5px; color:var(--navy-700);">
+        💡 Đã có tài khoản Sol Active? <a href="/dang-nhap/" style="color:var(--amber-700); font-weight:700; text-decoration:none; border-bottom:1.5px solid var(--amber-500);">Đăng nhập →</a>
+      </div>
+
+      <!-- Tier selector -->
+      <label class="form-label" style="margin-bottom:12px;">1. Chọn gói của anh chị:</label>
+      <div class="tier-grid">
+        <div class="tier-option selected" data-tier="active" onclick="selectTier(this,'active')">
+          <div class="tier-option__badge">PHỔ BIẾN</div>
+          <div class="tier-option__icon">⭐</div>
+          <div class="tier-option__name">SOL ACTIVE</div>
+          <div class="tier-option__title">499k</div>
+          <div class="tier-option__price">499.000đ<span class="tier-option__period">/năm</span></div>
+        </div>
+        <div class="tier-option founder" data-tier="founder" onclick="selectTier(this,'founder')">
+          <div class="tier-option__badge">100 SLOT</div>
+          <div class="tier-option__icon">🌟</div>
+          <div class="tier-option__name">SOL FOUNDER</div>
+          <div class="tier-option__title">Lifetime</div>
+          <div class="tier-option__price">1.999.000đ<span class="tier-option__period">trọn đời</span></div>
+        </div>
+      </div>
+
+      <!-- Form fields -->
+      <div class="form-group">
+        <label class="form-label">2. Số điện thoại <span class="form-required">*</span></label>
+        <input type="tel" class="form-input" id="phone" placeholder="VD: 0912345678" maxlength="11" inputmode="numeric">
+        <div class="form-hint">💡 Sol dùng số này làm mã tham chiếu để tra cứu thanh toán.</div>
+        <div class="form-error">Vui lòng nhập SĐT hợp lệ (10-11 số, bắt đầu bằng 0)</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">3. Email nhận link kích hoạt <span class="form-required">*</span></label>
+        <input type="email" class="form-input" id="email" placeholder="VD: anh.tuan@gmail.com" onblur="onEmailBlurCheck()">
+        <div class="form-hint">Sol gửi link kích hoạt qua email này. Kiểm tra Spam nếu không thấy.</div>
+        <div class="form-error">Vui lòng nhập email hợp lệ</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">4. Zalo (nếu khác SĐT trên)</label>
+        <input type="tel" class="form-input" id="zalo" placeholder="Mặc định = SĐT ở trên" maxlength="11" inputmode="numeric">
+        <div class="form-hint">Sol sẽ gửi thêm tin nhắn Zalo có link kích hoạt để tiện.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">5. Họ tên (để Sol gọi tên anh chị)</label>
+        <input type="text" class="form-input" id="fullname" placeholder="VD: Nguyễn Văn Tuấn">
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="agree">
+        <label for="agree">
+          Tôi đồng ý với <a href="/pricing/#faq">Điều khoản dịch vụ</a> và
+          <a href="/pricing/#faq">Chính sách hoàn tiền</a>.
+        </label>
+      </div>
+
+      <button class="btn btn-primary" onclick="submitForm()">🏦 Tạo mã QR chuyển khoản →</button>
+      <button class="btn btn-secondary" onclick="location.href='/pricing/'">Xem lại bảng giá</button>
+    </div>
+  </div>
+
+  <!-- ═══ STATE 2: QR ═══ -->
+  <div class="state" id="state-qr">
+    <div class="card">
+      <div class="card__eyebrow">🏦 CHUYỂN KHOẢN <span id="qr-amount"></span></div>
+      <h1 class="card__title">Quét mã VietQR</h1>
+      <p class="card__subtitle">Mở app ngân hàng bất kỳ → Quét mã → Xác nhận. Sol tự động khớp giao dịch qua nội dung chuyển khoản.</p>
+
+      <div style="text-align:center; margin-bottom:20px;">
+        <div class="countdown" id="countdown">⏱ <span id="countdown-time">30:00</span></div>
+      </div>
+
+      <div class="qr-box">
+        <div class="qr-image" id="qr-image">
+          <div class="qr-image__fallback">⏳ Đang tạo QR...</div>
+        </div>
+        <div class="qr-instruction">
+          Mở app ngân hàng → <strong>Quét mã QR</strong> → Xác nhận
+        </div>
+      </div>
+
+      <div class="warning-box">
+        ⚠️ <strong>Quan trọng:</strong> Đúng số tiền + đúng nội dung chuyển khoản để Sol xác nhận tự động (không cần liên hệ).
+      </div>
+
+      <div class="divider">Hoặc chuyển thủ công</div>
+
+      <div class="bank-info">
+        <div class="bank-row">
+          <span class="bank-row__label">🏦 Ngân hàng</span>
+          <span class="bank-row__value" id="bank-name">Techcombank</span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-row__label">💳 Số tài khoản</span>
+          <span class="bank-row__value">
+            <span id="bank-account">11522026076011</span>
+            <button class="copy-btn" onclick="copyText('bank-account',this)">Copy</button>
+          </span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-row__label">👤 Chủ TK</span>
+          <span class="bank-row__value">CONG TY CO PHAN VINET</span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-row__label">💰 Số tiền</span>
+          <span class="bank-row__value">
+            <strong id="qr-amount-2">499.000đ</strong>
+            <button class="copy-btn" onclick="copyText('qr-amount-value',this)">Copy</button>
+            <span id="qr-amount-value" style="display:none;">499000</span>
+          </span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-row__label">📝 Nội dung</span>
+          <span class="bank-row__value">
+            <strong id="qr-memo">SOL-ACT-0000000000</strong>
+            <button class="copy-btn" onclick="copyText('qr-memo',this)">Copy</button>
+          </span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="confirmPayment()">✅ Tôi đã chuyển khoản</button>
+      <button class="btn btn-secondary" onclick="goToForm()">← Chỉnh sửa thông tin</button>
+    </div>
+  </div>
+
+  <!-- ═══ STATE 3: WAITING ═══ -->
+  <div class="state" id="state-waiting">
+    <div class="card">
+      <div class="wait-icon">⏳</div>
+      <h1 class="card__title" id="wait-hello">Cảm ơn anh chị!</h1>
+      <p class="card__subtitle">Sol đang xác nhận thanh toán. Anh chị sẽ nhận được link kích hoạt trong <strong>24 giờ</strong>.</p>
+
+      <div class="wait-details">
+        <div class="wait-details__row">
+          <span>📱 SĐT:</span> <span id="wait-phone"></span>
+        </div>
+        <div class="wait-details__row">
+          <span>📧 Email:</span> <span id="wait-email"></span>
+        </div>
+        <div class="wait-details__row">
+          <span>💰 Gói:</span> <span id="wait-tier"></span>
+        </div>
+        <div class="wait-details__row">
+          <span>📝 Mã tham chiếu:</span> <span id="wait-memo"></span>
+        </div>
+        <div class="wait-details__row">
+          <span>🕐 Thời gian chờ:</span> <span>Tối đa 24 giờ</span>
+        </div>
+      </div>
+
+      <p style="font-size:14px; color:var(--navy-700); margin-bottom:12px;">
+        📢 Sol sẽ gửi:
+      </p>
+      <ul style="margin-left:20px; margin-bottom:20px; font-size:14px; color:var(--navy-700);">
+        <li>✓ <strong>Zalo</strong> tin nhắn có link kích hoạt (nhanh nhất)</li>
+        <li>✓ <strong>Email</strong> có link kích hoạt (backup)</li>
+      </ul>
+
+      <div class="warning-box">
+        💡 <strong>Chưa nhận được sau 24 giờ?</strong> Có thể do memo sai. Ping Khang qua Zalo dưới đây kèm ảnh biên lai.
+      </div>
+
+      <a href="https://zalo.me/0912727381" target="_blank" class="zalo-cta">
+        💬 Ping Khang qua Zalo
+      </a>
+
+      <button class="btn btn-secondary" onclick="location.href='/prompts/'" style="margin-top:16px;">
+        🤖 Trong lúc chờ, thử 5 câu hỏi AI miễn phí →
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// CONFIG — Bank info + Zalo
+// ═══════════════════════════════════════════════════════════
+const CONFIG = {
+  bank: {
+    id: 'tcb',  // Techcombank
+    name: 'Techcombank',
+    account: '11522026076011',
+    accountName: 'CONG TY CO PHAN VINET'
+  },
+  zalo: '0912727381',
+  tiers: {
+    active:  { name: 'Sol Active',  amount: 499000,  code: 'ACT', display: '499.000đ' },
+    founder: { name: 'Sol Founder', amount: 1999000, code: 'FDR', display: '1.999.000đ' }
+  },
+  timeoutMinutes: 30
+};
+
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+let selectedTier = 'active';
+let countdownTimer = null;
+let submittedData = null;
+
+// ═══════════════════════════════════════════════════════════
+// UNIFIED AUTH INTEGRATION (2026-07-06)
+// ═══════════════════════════════════════════════════════════
+const API_BASE = '/api';
+
+function getJwt() { return localStorage.getItem('sol_jwt'); }
+function getUser() {
+  try { return JSON.parse(localStorage.getItem('sol_user') || 'null'); }
+  catch { return null; }
+}
+
+function showAuthModal(opts) {
+  document.getElementById('sol-auth-modal-title').textContent = opts.title || 'Email đã có tài khoản';
+  document.getElementById('sol-auth-modal-body').textContent = opts.body || '';
+  const primary = document.getElementById('sol-auth-modal-primary');
+  primary.textContent = opts.primaryLabel || 'Đăng nhập →';
+  primary.href = opts.primaryHref || '/dang-nhap/';
+  document.getElementById('sol-auth-modal-close').textContent = opts.closeLabel || 'Dùng email khác';
+  document.getElementById('sol-auth-modal').style.display = 'flex';
+}
+function hideAuthModal() { document.getElementById('sol-auth-modal').style.display = 'none'; }
+
+let emailCheckTimer = null;
+async function onEmailBlurCheck() {
+  if (getJwt()) return;
+  clearTimeout(emailCheckTimer);
+  const emailEl = document.getElementById('email');
+  const email = emailEl.value.trim().toLowerCase();
+  if (!validateEmail(email)) return;
+
+  emailCheckTimer = setTimeout(async () => {
+    try {
+      const res = await fetch(API_BASE + '/user/check-email?email=' + encodeURIComponent(email));
+      const data = await res.json();
+      if (data.success && data.exists && data.hasPassword) {
+        const nextUrl = encodeURIComponent(location.pathname + location.search);
+        showAuthModal({
+          title: 'Email đã có tài khoản Sol',
+          body: 'Vui lòng đăng nhập trước để tiếp tục thanh toán (form sẽ tự pre-fill).',
+          primaryLabel: '🔓 Đăng nhập →',
+          primaryHref: '/dang-nhap/?next=' + nextUrl,
+          closeLabel: 'Dùng email khác'
+        });
+      }
+    } catch (err) { /* silent */ }
+  }, 400);
+}
+
+function initAuthPrefill() {
+  const jwt = getJwt();
+  const user = getUser();
+  if (!jwt || !user) return;
+
+  const emailEl = document.getElementById('email');
+  const phoneEl = document.getElementById('phone');
+  const nameEl = document.getElementById('fullname');
+
+  if (user.email && emailEl) {
+    emailEl.value = user.email;
+    emailEl.readOnly = true;
+    emailEl.style.background = 'var(--navy-100)';
+    emailEl.style.cursor = 'not-allowed';
+  }
+  if (user.phone && phoneEl) {
+    phoneEl.value = user.phone;
+    phoneEl.readOnly = true;
+    phoneEl.style.background = 'var(--navy-100)';
+    phoneEl.style.cursor = 'not-allowed';
+  }
+  if (user.displayName && nameEl) {
+    nameEl.value = user.displayName;
+    nameEl.readOnly = true;
+    nameEl.style.background = 'var(--navy-100)';
+    nameEl.style.cursor = 'not-allowed';
+  }
+
+  const banner = document.getElementById('sol-logged-in-banner');
+  if (banner) {
+    document.getElementById('sol-current-email').textContent = user.email || user.phone;
+    document.getElementById('sol-current-tier').textContent = user.tier || 'FREE';
+    banner.style.display = 'block';
+  }
+
+  if (user.tier === 'FOUNDER') {
+    showAuthModal({
+      title: '✨ Bạn đã là Founder Edition (Lifetime)',
+      body: 'Không cần thanh toán thêm. Nhấn để về Dashboard.',
+      primaryLabel: 'Về Dashboard →',
+      primaryHref: '/toi/',
+      closeLabel: 'Ở lại đây'
+    });
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// FUNCTIONS
+// ═══════════════════════════════════════════════════════════
+function selectTier(el, tier) {
+  selectedTier = tier;
+  document.querySelectorAll('.tier-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function validatePhone(phone) {
+  const clean = phone.replace(/\s/g, '');
+  return /^0[0-9]{9,10}$/.test(clean);
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+}
+
+function showFieldError(id, hasError) {
+  document.getElementById(id).classList.toggle('error', hasError);
+}
+
+async function submitForm() {
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const zalo = document.getElementById('zalo').value.trim() || phone;
+  const fullname = document.getElementById('fullname').value.trim();
+  const agree = document.getElementById('agree').checked;
+
+  let hasError = false;
+
+  if (!validatePhone(phone)) { showFieldError('phone', true); hasError = true; }
+  else showFieldError('phone', false);
+
+  if (!validateEmail(email)) { showFieldError('email', true); hasError = true; }
+  else showFieldError('email', false);
+
+  if (!agree) {
+    alert('Vui lòng đồng ý Điều khoản để tiếp tục.');
+    hasError = true;
+  }
+
+  if (hasError) return;
+
+  const tier = CONFIG.tiers[selectedTier];
+  const now = Date.now();
+
+  // Loading state trên submit button
+  const submitBtn = document.querySelector('#state-form button.btn-primary')
+                 || document.querySelector('#state-form button[onclick*="submitForm"]');
+  const btnHTML = submitBtn ? submitBtn.innerHTML : '';
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '⏳ Đang gửi...'; }
+
+  // Fallback memo (nếu API fail)
+  let memo = 'SOL-' + tier.code + '-' + phone;
+  let leadId = null;
+
+  // POST /api/leads — Backend save lead + notify Khang + trả memo chuẩn
+  let isNewShellUser = false;
+  try {
+    const headers = {'Content-Type': 'application/json'};
+    const jwt = getJwt();
+    if (jwt) headers['Authorization'] = 'Bearer ' + jwt;
+
+    const res = await fetch('/api/leads', {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify({
+        ten: fullname || 'Anh chị',
+        sdt: phone,
+        email: email,
+        zalo: zalo,
+        goi: selectedTier
+      })
+    });
+    const data = await res.json();
+
+    // ⭐ Handle 409 ACCOUNT_EXISTS — force login modal
+    if (!data.success && data.errorCode === 'ACCOUNT_EXISTS') {
+      const nextUrl = encodeURIComponent(location.pathname + location.search);
+      showAuthModal({
+        title: 'Email đã có tài khoản Sol',
+        body: data.message || 'Vui lòng đăng nhập trước để tiếp tục thanh toán.',
+        primaryLabel: '🔓 Đăng nhập →',
+        primaryHref: data.redirect || ('/dang-nhap/?next=' + nextUrl),
+        closeLabel: 'Dùng email khác'
+      });
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = btnHTML; }
+      return;
+    }
+
+    if (data.success && data.payment_info) {
+      leadId = data.lead_id;
+      memo = data.payment_info.transfer_note;
+      isNewShellUser = !!data.is_new_shell_user;
+      console.log('[thanh-toan] Lead saved id=' + leadId + ' memo=' + memo + ' shell=' + isNewShellUser);
+    } else if (data.message && res.status < 500) {
+      alert('⚠ ' + data.message);
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = btnHTML; }
+      return;
+    }
+  } catch (err) {
+    console.warn('[thanh-toan] API fail, dùng memo fallback:', err);
+  }
+
+  submittedData = {
+    tier: selectedTier,
+    tierName: tier.name,
+    amount: tier.amount,
+    display: tier.display,
+    memo: memo,
+    phone: phone,
+    email: email,
+    zalo: zalo,
+    fullname: fullname || 'Anh chị',
+    lead_id: leadId,
+    isNewShellUser: isNewShellUser,
+    createdAt: new Date(now).toISOString(),
+    expiresAt: new Date(now + CONFIG.timeoutMinutes * 60 * 1000).toISOString()
+  };
+
+  localStorage.setItem('sol_pending_payment', JSON.stringify(submittedData));
+
+  if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = btnHTML; }
+
+  showQRState();
+}
+
+function showQRState() {
+  document.getElementById('state-form').classList.remove('active');
+  document.getElementById('state-qr').classList.add('active');
+  document.getElementById('state-waiting').classList.remove('active');
+
+  const d = submittedData;
+  document.getElementById('qr-amount').textContent = d.display;
+  document.getElementById('qr-amount-2').textContent = d.display;
+  document.getElementById('qr-amount-value').textContent = d.amount;
+  document.getElementById('qr-memo').textContent = d.memo;
+  document.getElementById('bank-name').textContent = CONFIG.bank.name;
+  document.getElementById('bank-account').textContent = CONFIG.bank.account;
+
+  // Render VietQR
+  renderVietQR();
+
+  // Start countdown
+  startCountdown();
+
+  window.scrollTo(0, 0);
+}
+
+function renderVietQR() {
+  const d = submittedData;
+  const qrURL = 'https://img.vietqr.io/image/' +
+    CONFIG.bank.id + '-' +
+    CONFIG.bank.account.replace(/[^0-9]/g, '') +
+    '-compact2.png?amount=' + d.amount +
+    '&addInfo=' + encodeURIComponent(d.memo) +
+    '&accountName=' + encodeURIComponent(CONFIG.bank.accountName);
+
+  const qrEl = document.getElementById('qr-image');
+
+  // Nếu số TK là placeholder, hiển thị fallback
+  if (CONFIG.bank.account.includes('[') || CONFIG.bank.account.includes('CẬP NHẬT')) {
+    qrEl.innerHTML = '<div class="qr-image__fallback">⚠️ Sol đang cập nhật số tài khoản.<br>Vui lòng liên hệ Khang qua Zalo để nhận thông tin thanh toán.</div>';
+    return;
+  }
+
+  const img = new Image();
+  img.onload = () => { qrEl.innerHTML = ''; qrEl.appendChild(img); };
+  img.onerror = () => {
+    qrEl.innerHTML = '<div class="qr-image__fallback">⚠️ Không tải được QR.<br>Vui lòng chuyển khoản thủ công theo thông tin bên dưới.</div>';
+  };
+  img.alt = 'VietQR ' + d.memo;
+  img.src = qrURL;
+}
+
+function startCountdown() {
+  const el = document.getElementById('countdown-time');
+  const box = document.getElementById('countdown');
+  const expiresAt = new Date(submittedData.expiresAt).getTime();
+
+  clearInterval(countdownTimer);
+  countdownTimer = setInterval(() => {
+    const now = Date.now();
+    const remain = Math.max(0, expiresAt - now);
+    const mins = Math.floor(remain / 60000);
+    const secs = Math.floor((remain % 60000) / 1000);
+    el.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+
+    if (remain < 5 * 60 * 1000) box.classList.add('warn');
+
+    if (remain <= 0) {
+      clearInterval(countdownTimer);
+      alert('⏱ Hết hạn giao dịch. Vui lòng tạo lại QR mới.');
+      goToForm();
+    }
+  }, 1000);
+}
+
+function copyText(id, btn) {
+  const text = document.getElementById(id).textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Đã copy';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => alert('Không copy được. Vui lòng chọn và Ctrl+C.'));
+}
+
+function confirmPayment() {
+  clearInterval(countdownTimer);
+
+  document.getElementById('state-qr').classList.remove('active');
+  document.getElementById('state-waiting').classList.add('active');
+
+  const d = submittedData;
+  document.getElementById('wait-hello').textContent = 'Cảm ơn ' + d.fullname + '!';
+  document.getElementById('wait-phone').textContent = d.phone;
+  document.getElementById('wait-email').textContent = d.email;
+  document.getElementById('wait-tier').textContent = d.tierName + ' (' + d.display + ')';
+  document.getElementById('wait-memo').textContent = d.memo;
+
+  // Update Zalo CTA link
+  document.querySelector('.zalo-cta').href = 'https://zalo.me/' + CONFIG.zalo;
+
+  // Update localStorage
+  d.status = 'awaiting_confirmation';
+  d.confirmedAt = new Date().toISOString();
+  localStorage.setItem('sol_pending_payment', JSON.stringify(d));
+
+  // Optional: also send notification to hello@sol.vn via mailto (fallback)
+  // window.open('mailto:hello@sol.vn?subject=' + ...);
+
+  window.scrollTo(0, 0);
+}
+
+function goToForm() {
+  clearInterval(countdownTimer);
+  document.getElementById('state-form').classList.add('active');
+  document.getElementById('state-qr').classList.remove('active');
+  document.getElementById('state-waiting').classList.remove('active');
+  window.scrollTo(0, 0);
+}
+
+// ═══════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════
+
+// ⭐ Unified Auth: pre-fill nếu logged in
+initAuthPrefill();
+
+// Read tier from URL ?tier=active|founder
+const params = new URLSearchParams(window.location.search);
+const urlTier = params.get('tier');
+if (urlTier === 'founder' || urlTier === 'active') {
+  const el = document.querySelector('.tier-option[data-tier="' + urlTier + '"]');
+  if (el) selectTier(el, urlTier);
+}
+
+// Restore pending payment (if user came back)
+try {
+  const pending = JSON.parse(localStorage.getItem('sol_pending_payment') || 'null');
+  if (pending && pending.status === 'awaiting_confirmation') {
+    const confirmedAt = new Date(pending.confirmedAt).getTime();
+    const hoursSince = (Date.now() - confirmedAt) / (3600 * 1000);
+    if (hoursSince < 48) {
+      // Still valid — show waiting state
+      submittedData = pending;
+      document.getElementById('state-form').classList.remove('active');
+      document.getElementById('state-waiting').classList.add('active');
+      document.getElementById('wait-hello').textContent = 'Chào ' + pending.fullname + '!';
+      document.getElementById('wait-phone').textContent = pending.phone;
+      document.getElementById('wait-email').textContent = pending.email;
+      document.getElementById('wait-tier').textContent = pending.tierName + ' (' + pending.display + ')';
+      document.getElementById('wait-memo').textContent = pending.memo;
+      document.querySelector('.zalo-cta').href = 'https://zalo.me/' + CONFIG.zalo;
+    }
+  }
+} catch(e) { /* ignore */ }
+</script>
+
+<!-- ═══ Unified Auth Modal (2026-07-06) ═══ -->
+<div id="sol-auth-modal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:100000; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:white; border-radius:16px; max-width:440px; width:100%; padding:32px 28px; box-shadow:0 20px 60px rgba(0,0,0,0.25);">
+    <div style="font-size:36px; margin-bottom:12px;">👤</div>
+    <h3 id="sol-auth-modal-title" style="font-size:20px; margin-bottom:8px; color:#0F172A; font-family:'Inter',sans-serif; font-weight:700;">Email đã có tài khoản Sol</h3>
+    <p id="sol-auth-modal-body" style="color:#475569; margin-bottom:24px; line-height:1.5; font-size:14px;">Vui lòng đăng nhập trước để tiếp tục thanh toán.</p>
+    <div style="display:flex; gap:8px; flex-direction:column;">
+      <a id="sol-auth-modal-primary" href="#" style="display:block; text-align:center; padding:12px 20px; background:linear-gradient(135deg,#F59E0B,#B45309); color:white; border-radius:10px; font-weight:700; text-decoration:none; font-size:15px;">🔓 Đăng nhập →</a>
+      <button id="sol-auth-modal-close" onclick="hideAuthModal()" style="padding:10px; background:#F1F5F9; border:none; border-radius:8px; color:#475569; cursor:pointer; font-weight:500; font-size:14px;">Dùng email khác</button>
+    </div>
+  </div>
+</div>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"8da7df691f7a4588b9f3fd29b21f09d8","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

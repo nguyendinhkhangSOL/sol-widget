@@ -1,0 +1,202 @@
+<!--
+  SMART CHECKOUT SNIPPET — Copy vào /var/www/huongdi/public/thanh-toan/index.html
+
+  Logic:
+    1. Detect JWT trong localStorage
+    2. Nếu logged in → pre-fill email/phone/name (readonly), chỉ show zalo + gói
+    3. Nếu anonymous → full form, onBlur email check-email → 409 modal
+    4. Handle response từ POST /api/leads:
+       - 409 ACCOUNT_EXISTS → modal force login
+       - success → show VietQR
+
+  Cách integrate:
+    A. Đặt <script id="sol-checkout-smart"> này TRƯỚC </body>
+    B. Đảm bảo form có id="checkout-form", các input có id: email, sdt (phone), ten, zalo, goi
+    C. Thêm modal HTML markup vào body
+-->
+
+<!-- ═══ Modal HTML (add vào body của /thanh-toan/) ═══ -->
+<div id="sol-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:100000; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:white; border-radius:16px; max-width:440px; width:100%; padding:32px 28px; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
+    <div style="font-size:32px; margin-bottom:12px;">👤</div>
+    <h3 id="sol-modal-title" style="font-size:20px; margin-bottom:8px; color:#0F172A;">Email đã có tài khoản Sol</h3>
+    <p id="sol-modal-body" style="color:#475569; margin-bottom:20px; line-height:1.5;">Vui lòng đăng nhập trước để tiếp tục thanh toán. Form sẽ tự động điền thông tin của bạn.</p>
+    <div style="display:flex; gap:8px; flex-direction:column;">
+      <a id="sol-modal-primary" href="#" style="display:block; text-align:center; padding:12px 20px; background:linear-gradient(135deg,#F59E0B,#B45309); color:white; border-radius:10px; font-weight:700; text-decoration:none;">Đăng nhập →</a>
+      <button id="sol-modal-close" style="padding:10px; background:#F1F5F9; border:none; border-radius:8px; color:#475569; cursor:pointer; font-weight:500;">Dùng email khác</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Info banner khi logged in ═══ -->
+<div id="sol-logged-in-banner" style="display:none; background:#ECFDF5; border:1px solid #10B981; border-radius:10px; padding:14px 16px; margin-bottom:20px; font-size:14px; color:#065F46;">
+  ✅ Bạn đang đăng nhập với <strong id="sol-current-email">—</strong>. Chỉ cần bổ sung Zalo (tuỳ chọn) và bấm thanh toán.
+</div>
+
+<!-- ═══ Smart Checkout Script ═══ -->
+<script id="sol-checkout-smart">
+(function() {
+  'use strict';
+
+  const API_BASE = 'https://huongdi.sol.vn/api';
+
+  // Helper: get JWT from localStorage
+  function getJwt() { return localStorage.getItem('sol_jwt'); }
+  function getUser() {
+    try { return JSON.parse(localStorage.getItem('sol_user') || 'null'); }
+    catch { return null; }
+  }
+
+  // Modal helpers
+  const $modal = document.getElementById('sol-modal');
+  const $modalTitle = document.getElementById('sol-modal-title');
+  const $modalBody = document.getElementById('sol-modal-body');
+  const $modalPrimary = document.getElementById('sol-modal-primary');
+  const $modalClose = document.getElementById('sol-modal-close');
+
+  function showModal({ title, body, primaryLabel, primaryHref, closeLabel }) {
+    if (title) $modalTitle.textContent = title;
+    if (body) $modalBody.textContent = body;
+    if (primaryLabel) $modalPrimary.textContent = primaryLabel;
+    if (primaryHref) $modalPrimary.href = primaryHref;
+    if (closeLabel) $modalClose.textContent = closeLabel;
+    $modal.style.display = 'flex';
+  }
+  function hideModal() { $modal.style.display = 'none'; }
+  $modalClose?.addEventListener('click', hideModal);
+  $modal?.addEventListener('click', (e) => { if (e.target === $modal) hideModal(); });
+
+  // ─── Init on page load ───
+  document.addEventListener('DOMContentLoaded', async () => {
+    const jwt = getJwt();
+    const user = getUser();
+    const form = document.getElementById('checkout-form') || document.querySelector('form');
+    if (!form) return;
+
+    // Case A: User đã login → pre-fill readonly
+    if (jwt && user) {
+      const $email = form.querySelector('#email, [name="email"]');
+      const $phone = form.querySelector('#sdt, [name="sdt"], #phone, [name="phone"]');
+      const $name = form.querySelector('#ten, [name="ten"], #name, [name="name"]');
+
+      if ($email && user.email) {
+        $email.value = user.email;
+        $email.readOnly = true;
+        $email.style.background = '#F1F5F9';
+        $email.style.cursor = 'not-allowed';
+      }
+      if ($phone && user.phone) {
+        $phone.value = user.phone;
+        $phone.readOnly = true;
+        $phone.style.background = '#F1F5F9';
+        $phone.style.cursor = 'not-allowed';
+      }
+      if ($name && user.displayName) {
+        $name.value = user.displayName;
+        $name.readOnly = true;
+        $name.style.background = '#F1F5F9';
+        $name.style.cursor = 'not-allowed';
+      }
+
+      // Show banner
+      const $banner = document.getElementById('sol-logged-in-banner');
+      const $currentEmail = document.getElementById('sol-current-email');
+      if ($banner) $banner.style.display = 'block';
+      if ($currentEmail) $currentEmail.textContent = user.email || user.phone;
+
+      // Hide tier upsell if already ACTIVE/FOUNDER
+      if (user.tier === 'FOUNDER') {
+        showModal({
+          title: 'Bạn đã là Founder Edition (Lifetime)',
+          body: 'Không cần thanh toán thêm. Truy cập Dashboard để dùng.',
+          primaryLabel: 'Về Dashboard →',
+          primaryHref: '/toi/',
+          closeLabel: 'Đóng'
+        });
+      }
+    }
+
+    // Case B: Anonymous → onBlur email check
+    if (!jwt) {
+      const $email = form.querySelector('#email, [name="email"]');
+      if ($email) {
+        let checkTimeout;
+        $email.addEventListener('blur', () => {
+          clearTimeout(checkTimeout);
+          const email = $email.value.trim().toLowerCase();
+          if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) return;
+
+          checkTimeout = setTimeout(async () => {
+            try {
+              const res = await fetch(`${API_BASE}/user/check-email?email=${encodeURIComponent(email)}`);
+              const data = await res.json();
+              if (data.exists && data.hasPassword) {
+                // Force login
+                const nextUrl = encodeURIComponent(location.pathname + location.search);
+                showModal({
+                  title: 'Email đã có tài khoản Sol',
+                  body: 'Vui lòng đăng nhập trước để tiếp tục thanh toán.',
+                  primaryLabel: 'Đăng nhập →',
+                  primaryHref: `/dang-nhap/?next=${nextUrl}`,
+                  closeLabel: 'Dùng email khác'
+                });
+              }
+            } catch (err) { /* silent */ }
+          }, 500);
+        });
+      }
+    }
+
+    // ─── Intercept form submit ───
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const payload = {
+        ten: fd.get('ten') || fd.get('name') || '',
+        sdt: fd.get('sdt') || fd.get('phone') || '',
+        email: fd.get('email') || '',
+        zalo: fd.get('zalo') || '',
+        goi: fd.get('goi') || 'active',
+      };
+
+      try {
+        const headers = { 'Content-Type': 'application/json' };
+        if (jwt) headers['Authorization'] = 'Bearer ' + jwt;
+
+        const res = await fetch(`${API_BASE}/leads`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+
+        if (!data.success) {
+          if (data.errorCode === 'ACCOUNT_EXISTS' && data.redirect) {
+            showModal({
+              title: 'Email đã có tài khoản Sol',
+              body: data.message,
+              primaryLabel: 'Đăng nhập →',
+              primaryHref: data.redirect,
+              closeLabel: 'Dùng email khác'
+            });
+          } else {
+            alert(data.message || 'Có lỗi. Vui lòng thử lại.');
+          }
+          return;
+        }
+
+        // Success — show payment info (existing UI có thể handle)
+        // Ship generic display fallback
+        const payInfo = data.payment_info;
+        alert(`✅ ${data.message}\n\nChuyển khoản:\n${payInfo.bank}\nSTK: ${payInfo.account}\nSố tiền: ${payInfo.amount.toLocaleString('vi-VN')}đ\nNội dung: ${payInfo.transfer_note}\n\n${data.is_new_shell_user ? '📧 Sau khi thanh toán, kiểm tra email để nhận link kích hoạt.' : ''}`);
+
+        // Optionally: redirect to a success page
+        // location.href = '/thanh-toan/thanh-cong/?lead=' + data.lead_id;
+      } catch (err) {
+        console.error(err);
+        alert('Lỗi kết nối. Vui lòng thử lại hoặc liên hệ Zalo 0912727381.');
+      }
+    });
+  });
+})();
+</script>

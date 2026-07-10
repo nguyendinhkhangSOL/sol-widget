@@ -1,0 +1,341 @@
+<!--
+Standalone Admin Leads page — cho adminhuongdi.sol.vn/leads.html
+Copy vào /var/www/adminhuongdi/public/leads.html
+Hoặc integrate vào SPA hiện có (React/Vue/vanilla)
+
+CẦN: Auth token trong localStorage (key: 'admin_token' hoặc tương tự)
+-->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Sol Leads Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #F1F5F9; color: #0F172A; padding: 24px; }
+  .container { max-width: 1400px; margin: 0 auto; }
+  h1 { color: #0F172A; margin-bottom: 20px; font-size: 24px; }
+  .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .stat { background: #fff; padding: 16px; border-radius: 12px; border-left: 4px solid #F59E0B; }
+  .stat-label { font-size: 12px; color: #64748B; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+  .stat-money { color: #16A34A; font-size: 14px; margin-top: 2px; }
+  .toolbar { background: #fff; padding: 16px; border-radius: 12px; margin-bottom: 16px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .toolbar input, .toolbar select { padding: 8px 12px; border: 1px solid #E2E8F0; border-radius: 8px; font-size: 14px; }
+  .toolbar input { flex: 1; min-width: 200px; }
+  table { width: 100%; background: #fff; border-radius: 12px; overflow: hidden; border-collapse: collapse; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  th { background: #0F172A; color: #F59E0B; padding: 12px; text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  td { padding: 12px; border-bottom: 1px solid #F1F5F9; font-size: 14px; }
+  tr:hover { background: #FFFBEB; }
+  .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+  .badge-pending { background: #FEF3C7; color: #B45309; }
+  .badge-paid { background: #DBEAFE; color: #1E40AF; }
+  .badge-activated { background: #D1FAE5; color: #065F46; }
+  .badge-cancelled { background: #FEE2E2; color: #991B1B; }
+  .badge-active-pkg { background: #F59E0B; color: #fff; }
+  .badge-founder-pkg { background: #7C3AED; color: #fff; }
+  .btn { padding: 6px 12px; border-radius: 6px; border: none; cursor: pointer; font-weight: 600; font-size: 12px; margin: 2px; }
+  .btn-approve { background: #16A34A; color: #fff; }
+  .btn-reject { background: #DC2626; color: #fff; }
+  .btn-view { background: #64748B; color: #fff; }
+  .btn-copy { background: #F59E0B; color: #fff; }
+  .btn-zalo { background: #0068FF; color: #fff; }
+  .btn-message { background: #7C3AED; color: #fff; }
+  .zalo-modal { max-width: 600px; }
+  .zalo-modal textarea { min-height: 200px; font-family: 'Inter', sans-serif; }
+  .action-group { display: flex; flex-wrap: wrap; gap: 4px; }
+  .modal-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: none; z-index: 1000; }
+  .modal { background: #fff; max-width: 500px; margin: 100px auto; padding: 24px; border-radius: 12px; }
+  .modal h2 { margin-bottom: 16px; }
+  .modal .form-row { margin-bottom: 12px; }
+  .modal input, .modal textarea { width: 100%; padding: 10px; border: 1px solid #E2E8F0; border-radius: 8px; font-size: 14px; font-family: inherit; }
+  .empty { text-align: center; padding: 60px; color: #94A3B8; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>💰 Sol Leads Admin</h1>
+
+  <div class="summary" id="summary"></div>
+
+  <div class="toolbar">
+    <select id="filter-status">
+      <option value="all">Tất cả</option>
+      <option value="pending" selected>Pending (chờ CK)</option>
+      <option value="paid">Paid (đã approve)</option>
+      <option value="activated">Activated</option>
+      <option value="cancelled">Cancelled</option>
+    </select>
+    <input type="text" id="search" placeholder="Tìm theo tên, SĐT, email...">
+    <button class="btn btn-view" onclick="loadLeads()">🔄 Reload</button>
+  </div>
+
+  <div id="leads-container"></div>
+</div>
+
+<!-- Modal Approve -->
+<div class="modal-backdrop" id="modal-approve">
+  <div class="modal">
+    <h2 style="color:#16A34A;">✅ Approve Lead</h2>
+    <p id="approve-info" style="margin-bottom:16px;"></p>
+    <div class="form-row">
+      <label>Ghi chú (optional):</label>
+      <textarea id="approve-notes" rows="2" placeholder="VD: Đã nhận CK 499k lúc 14:32"></textarea>
+    </div>
+    <div style="display:flex; gap:8px; justify-content:flex-end;">
+      <button class="btn btn-view" onclick="closeModal('modal-approve')">Huỷ</button>
+      <button class="btn btn-approve" onclick="submitApprove()">✅ Approve + Gửi magic link</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reject -->
+<div class="modal-backdrop" id="modal-reject">
+  <div class="modal">
+    <h2 style="color:#DC2626;">❌ Reject Lead</h2>
+    <p id="reject-info" style="margin-bottom:16px;"></p>
+    <div class="form-row">
+      <label>Lý do reject (bắt buộc):</label>
+      <textarea id="reject-reason" rows="2" placeholder="VD: Spam, SĐT giả, không chuyển khoản trong 48h"></textarea>
+    </div>
+    <div style="display:flex; gap:8px; justify-content:flex-end;">
+      <button class="btn btn-view" onclick="closeModal('modal-reject')">Huỷ</button>
+      <button class="btn btn-reject" onclick="submitReject()">❌ Reject</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'https://huongdi.sol.vn/api';
+const TOKEN = localStorage.getItem('admin_token') || ''; // TODO: adjust key theo auth thật của admin SPA
+
+async function apiCall(url, method = 'GET', body = null) {
+  const opts = {
+    method,
+    headers: { 'Authorization': 'Bearer ' + TOKEN, 'Content-Type': 'application/json' }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const r = await fetch(API + url, opts);
+  return r.json();
+}
+
+let currentApproveId = null;
+let currentRejectId = null;
+
+async function loadLeads() {
+  const status = document.getElementById('filter-status').value;
+  const search = document.getElementById('search').value.trim();
+
+  const q = new URLSearchParams({ status, search, limit: 100 });
+  const data = await apiCall('/admin/leads?' + q.toString());
+
+  if (!data.success) {
+    alert('Lỗi: ' + (data.message || 'Không load được'));
+    return;
+  }
+
+  renderSummary(data.summary);
+  renderTable(data.leads);
+}
+
+function renderSummary(summary) {
+  const el = document.getElementById('summary');
+  const labels = {
+    pending: '⏳ Chờ CK',
+    paid: '💰 Đã approve',
+    activated: '🎉 Activated',
+    cancelled: '❌ Huỷ'
+  };
+  el.innerHTML = summary.map(s => `
+    <div class="stat">
+      <div class="stat-label">${labels[s.payment_status] || s.payment_status}</div>
+      <div class="stat-value">${s.count}</div>
+      <div class="stat-money">${(s.total || 0).toLocaleString('vi-VN')}đ</div>
+    </div>
+  `).join('');
+}
+
+function renderTable(leads) {
+  const el = document.getElementById('leads-container');
+  if (!leads.length) {
+    el.innerHTML = '<div class="empty">Không có lead nào</div>';
+    return;
+  }
+
+  const rows = leads.map(l => `
+    <tr>
+      <td>#${l.id}</td>
+      <td><strong>${escapeHtml(l.ten)}</strong></td>
+      <td><a href="tel:${l.sdt}">${l.sdt}</a></td>
+      <td>${l.email || '-'}</td>
+      <td>${l.zalo || '-'}</td>
+      <td><span class="badge badge-${l.goi === 'founder' ? 'founder-pkg' : 'active-pkg'}">${l.goi.toUpperCase()}</span></td>
+      <td><strong>${l.amount.toLocaleString('vi-VN')}đ</strong></td>
+      <td><span class="badge badge-${l.payment_status}">${statusLabel(l.payment_status)}</span></td>
+      <td>${formatDate(l.created_at)}</td>
+      <td>${actionButtons(l)}</td>
+    </tr>
+  `).join('');
+
+  el.innerHTML = `
+    <table>
+      <thead><tr>
+        <th>#</th><th>Tên</th><th>SĐT</th><th>Email</th><th>Zalo</th>
+        <th>Gói</th><th>Số tiền</th><th>Status</th><th>Ngày</th><th>Actions</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+function actionButtons(l) {
+  const zaloPhone = (l.zalo || l.sdt).replace(/[.\s-]/g, '');
+  const zaloUrl = `https://zalo.me/${zaloPhone}`;
+
+  if (l.payment_status === 'pending') {
+    return `<div class="action-group">
+      <button class="btn btn-approve" onclick='openApprove(${l.id}, ${JSON.stringify(l.ten)}, ${l.amount})'>✅ Approve</button>
+      <a class="btn btn-zalo" href="${zaloUrl}" target="_blank" title="Mở Zalo chat để hỏi user CK chưa">💬 Zalo</a>
+      <button class="btn btn-reject" onclick='openReject(${l.id}, ${JSON.stringify(l.ten)})'>❌</button>
+    </div>`;
+  }
+  if (l.payment_status === 'paid' && l.magic_token) {
+    const link = 'https://sol.vn/kich-hoat/?token=' + l.magic_token;
+    return `<div class="action-group">
+      <button class="btn btn-message" onclick='openZaloSend(${l.id}, ${JSON.stringify(l.ten)}, ${JSON.stringify(link)}, "${zaloUrl}", "${l.goi}")'>📱 Gửi Zalo</button>
+      <button class="btn btn-copy" onclick='copyLink(${JSON.stringify(link)})'>📋 Copy link</button>
+      <button class="btn btn-view" onclick="resendMagic(${l.id})">📤 Resend email</button>
+    </div>`;
+  }
+  if (l.payment_status === 'activated') {
+    return `<span style="color:#16A34A; font-weight:600;">✅ Đang dùng</span>`;
+  }
+  return '-';
+}
+
+// Modal gửi tin Zalo — mở Zalo Web + copy tin nhắn mẫu
+function openZaloSend(id, ten, magicLink, zaloUrl, goi) {
+  const goiLabel = goi === 'founder' ? 'Founder trọn đời' : 'Active 1 năm';
+  const msg = `Chào anh/chị ${ten},
+
+Cảm ơn anh/chị đã tin tưởng Sol La Bàn. Em xác nhận đã nhận thanh toán cho gói ${goiLabel}.
+
+Đây là link kích hoạt tài khoản của anh/chị:
+${magicLink}
+
+Chỉ cần click link → Sol sẽ tự động kích hoạt trong 3 giây. Sau đó anh/chị có thể vào huongdi.sol.vn để dùng đầy đủ 37 mô hình + 40 câu hỏi AI.
+
+Nếu có gì khó khăn, anh/chị nhắn Zalo em bất cứ lúc nào.
+
+Trân trọng,
+Khang Sol · Founder Sol.vn`;
+
+  // Tạo modal Zalo Send
+  const backdrop = document.createElement('div');
+  backdrop.className = 'modal-backdrop';
+  backdrop.style.display = 'block';
+  backdrop.innerHTML = `
+    <div class="modal zalo-modal">
+      <h2 style="color:#0068FF;">📱 Gửi Zalo cho ${escapeHtml(ten)}</h2>
+      <p style="margin-bottom:12px; color:#64748B;">
+        <strong>Bước 1:</strong> Click "📋 Copy tin nhắn" bên dưới<br>
+        <strong>Bước 2:</strong> Click "💬 Mở Zalo chat" → mở tab mới với chat user<br>
+        <strong>Bước 3:</strong> Paste (Ctrl+V) vào ô Zalo → Enter gửi
+      </p>
+      <div class="form-row">
+        <label><strong>Tin nhắn để copy:</strong></label>
+        <textarea id="zalo-msg-text" readonly>${escapeHtml(msg)}</textarea>
+      </div>
+      <div style="display:flex; gap:8px; justify-content:space-between; align-items:center;">
+        <button class="btn btn-view" onclick="this.closest('.modal-backdrop').remove()">Đóng</button>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-copy" onclick="copyText(document.getElementById('zalo-msg-text').value)">📋 Copy tin nhắn</button>
+          <a class="btn btn-zalo" href="${zaloUrl}" target="_blank">💬 Mở Zalo chat</a>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(backdrop);
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    // Tạm hiện notification
+    const notif = document.createElement('div');
+    notif.style.cssText = 'position:fixed; top:20px; right:20px; background:#16A34A; color:#fff; padding:12px 20px; border-radius:8px; z-index:9999; box-shadow:0 4px 12px rgba(0,0,0,0.2);';
+    notif.textContent = '✅ Đã copy vào clipboard';
+    document.body.appendChild(notif);
+    setTimeout(() => notif.remove(), 2000);
+  });
+}
+
+function openApprove(id, ten, amount) {
+  currentApproveId = id;
+  document.getElementById('approve-info').innerHTML =
+    `Approve <strong>${ten}</strong> với gói ${amount.toLocaleString('vi-VN')}đ?<br>
+     <small>Sẽ tạo magic link + gửi email cho user (nếu có email).</small>`;
+  document.getElementById('modal-approve').style.display = 'block';
+}
+
+function openReject(id, ten) {
+  currentRejectId = id;
+  document.getElementById('reject-info').innerHTML = `Reject <strong>${ten}</strong>?`;
+  document.getElementById('modal-reject').style.display = 'block';
+}
+
+function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
+async function submitApprove() {
+  const notes = document.getElementById('approve-notes').value;
+  const data = await apiCall(`/admin/leads/${currentApproveId}/approve`, 'POST', { notes });
+  if (data.success) {
+    closeModal('modal-approve');
+    prompt('✅ Approved! Copy magic link để gửi Zalo cho user:', data.magic_link);
+    loadLeads();
+  } else {
+    alert('Lỗi: ' + data.message);
+  }
+}
+
+async function submitReject() {
+  const reason = document.getElementById('reject-reason').value.trim();
+  if (!reason) { alert('Nhập lý do'); return; }
+  const data = await apiCall(`/admin/leads/${currentRejectId}/reject`, 'POST', { reason });
+  if (data.success) {
+    closeModal('modal-reject');
+    loadLeads();
+  }
+}
+
+async function resendMagic(id) {
+  const data = await apiCall(`/admin/leads/${id}/resend-magic`, 'POST');
+  if (data.success) {
+    prompt('Magic link:', data.magic_link);
+  }
+}
+
+function copyLink(link) {
+  navigator.clipboard.writeText(link).then(() => alert('✅ Đã copy: ' + link));
+}
+
+function statusLabel(s) {
+  return {pending:'Pending', paid:'Paid', activated:'Activated', cancelled:'Cancelled', expired:'Expired'}[s] || s;
+}
+function formatDate(iso) {
+  return new Date(iso).toLocaleString('vi-VN', {day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+}
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+document.getElementById('filter-status').addEventListener('change', loadLeads);
+document.getElementById('search').addEventListener('input', debounce(loadLeads, 400));
+function debounce(fn, ms) { let t; return () => { clearTimeout(t); t = setTimeout(fn, ms); }; }
+
+loadLeads();
+setInterval(loadLeads, 30000); // Auto refresh mỗi 30s
+</script>
+</body>
+</html>

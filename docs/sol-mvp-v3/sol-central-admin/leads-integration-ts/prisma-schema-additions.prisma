@@ -1,0 +1,99 @@
+// ═══════════════════════════════════════════════════════════════
+// APPEND vào /var/www/huongdi/backend/prisma/schema.prisma
+// (paste vào cuối file, sau model RefreshToken)
+// ═══════════════════════════════════════════════════════════════
+
+// ============================================================
+// ENUMS mới cho Lead
+// ============================================================
+enum LeadPackage {
+  ACTIVE      // 499k/năm
+  FOUNDER     // 1999k trọn đời
+  RENEWAL     // renew 499k
+}
+
+enum LeadStatus {
+  PENDING     // chưa CK
+  PAID        // Khang đã confirm CK, đã tạo magic token
+  ACTIVATED   // user đã click magic link
+  EXPIRED     // hết 365 ngày
+  CANCELLED   // huỷ / spam
+}
+
+enum NotifyChannel {
+  EMAIL_KHANG
+  SMS_KHANG
+  EMAIL_USER
+  ZALO_USER
+}
+
+enum NotifyStatus {
+  SENT
+  FAILED
+  SKIPPED
+}
+
+// ============================================================
+// LEAD — User Management V1
+// ============================================================
+model Lead {
+  id             Int          @id @default(autoincrement())
+
+  // Từ form /thanh-toan/
+  ten            String
+  sdt            String
+  email          String?
+  zalo           String?
+
+  // Gói + số tiền
+  goi            LeadPackage
+  amount         Int          // VNĐ
+
+  // Workflow
+  paymentStatus  LeadStatus   @default(PENDING) @map("payment_status")
+
+  // Magic link
+  magicToken     String?      @unique @map("magic_token")
+  magicSentAt    DateTime?    @map("magic_sent_at")
+  activatedAt    DateTime?    @map("activated_at")
+  expiresAt      DateTime?    @map("expires_at")
+
+  // Admin
+  notes          String?
+  approvedBy     String?      @map("approved_by")
+  cancelReason   String?      @map("cancel_reason")
+
+  // Metadata
+  ipAddress      String?      @map("ip_address")
+  userAgent      String?      @map("user_agent") @db.Text
+  referer        String?      @db.Text
+
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt      @map("updated_at")
+
+  notifications  LeadNotification[]
+
+  @@index([sdt])
+  @@index([email])
+  @@index([paymentStatus])
+  @@index([magicToken])
+  @@index([createdAt(sort: Desc)])
+  @@map("leads")
+}
+
+// ============================================================
+// LEAD NOTIFICATION LOG
+// ============================================================
+model LeadNotification {
+  id            Int           @id @default(autoincrement())
+  leadId        Int           @map("lead_id")
+  channel       NotifyChannel
+  status        NotifyStatus
+  errorMessage  String?       @map("error_message") @db.Text
+  sentAt        DateTime      @default(now()) @map("sent_at")
+
+  lead          Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+  @@map("lead_notifications")
+}

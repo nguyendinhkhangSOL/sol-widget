@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kích hoạt Sol Active — sol.vn</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Trang kích hoạt tài khoản Sol Active. Chỉ truy cập qua link riêng.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amber: #F59E0B;
+      --amber-dark: #D97706;
+      --amber-light: #FCD34D;
+      --navy: #0F172A;
+      --navy-2: #1E293B;
+      --navy-3: #334155;
+      --slate: #64748B;
+      --slate-2: #94A3B8;
+      --slate-3: #CBD5E1;
+      --slate-4: #E2E8F0;
+      --slate-5: #F1F5F9;
+      --green: #16A34A;
+      --red: #DC2626;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+      color: var(--slate-5);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .card {
+      max-width: 520px;
+      width: 100%;
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 24px;
+      padding: 48px 40px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .logo-icon {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+    .logo-text {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 0.5px;
+    }
+    .logo-sub {
+      font-size: 12px;
+      color: var(--slate-2);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* States */
+    .state { display: none; text-align: center; position: relative; }
+    .state.active { display: block; }
+
+    /* Loading */
+    .spinner {
+      width: 56px;
+      height: 56px;
+      margin: 24px auto;
+      border: 4px solid rgba(245, 158, 11, 0.15);
+      border-top-color: var(--amber);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .loading-text {
+      color: var(--slate-3);
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    /* Success */
+    .success-icon {
+      font-size: 72px;
+      margin: 24px 0 8px;
+      animation: bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    @keyframes bounce {
+      0% { transform: scale(0); }
+      70% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    h1 span.amber { color: var(--amber-light); }
+
+    .subtitle {
+      color: var(--slate-3);
+      font-size: 15.5px;
+      margin-bottom: 24px;
+    }
+
+    .info-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 3px solid var(--amber);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 24px 0;
+      text-align: left;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+    }
+    .info-row + .info-row { border-top: 1px dashed rgba(148, 163, 184, 0.2); }
+    .info-label {
+      color: var(--slate-2);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .info-value {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .info-value.tier-active { color: var(--amber-light); }
+    .info-value.tier-founder {
+      color: var(--amber-light);
+      text-shadow: 0 0 12px rgba(252, 211, 77, 0.5);
+    }
+
+    .cta-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--amber) 0%, var(--amber-dark) 100%);
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+      margin-top: 8px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s;
+      font-family: inherit;
+    }
+    .cta-primary:hover { transform: translateY(-2px); }
+
+    .countdown {
+      color: var(--slate-2);
+      font-size: 13px;
+      margin-top: 14px;
+    }
+    .countdown b { color: var(--amber-light); }
+
+    /* Error */
+    .error-icon {
+      font-size: 56px;
+      margin: 24px 0 8px;
+      opacity: 0.85;
+    }
+    .error-title { color: var(--white); }
+    .error-msg {
+      color: var(--slate-3);
+      font-size: 14.5px;
+      padding: 14px 18px;
+      background: rgba(220, 38, 38, 0.08);
+      border-left: 3px solid var(--red);
+      border-radius: 6px;
+      margin: 18px 0;
+      text-align: left;
+    }
+    .error-actions {
+      margin-top: 20px;
+    }
+    .zalo-btn {
+      display: inline-block;
+      background: #0068FF;
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 4px;
+    }
+    .home-btn {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--slate-3);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      color: var(--slate-2);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .footer-note a { color: var(--amber-light); text-decoration: none; }
+
+    @media (max-width: 520px) {
+      .card { padding: 36px 24px; }
+      h1 { font-size: 24px; }
+      .success-icon { font-size: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">🧭</div>
+      <div class="logo-text">Sol La Bàn</div>
+      <div class="logo-sub">Kích hoạt tài khoản</div>
+    </div>
+
+    <!-- Loading state -->
+    <div id="state-loading" class="state active">
+      <div class="spinner"></div>
+      <div class="loading-text">Đang xác thực link kích hoạt...</div>
+    </div>
+
+    <!-- Success state -->
+    <div id="state-success" class="state">
+      <div class="success-icon">🎉</div>
+      <h1>Chào <span class="amber" id="user-name">bạn</span>!</h1>
+      <p class="subtitle" id="success-subtitle">Sol Active đã kích hoạt. Chào mừng anh/chị vào hệ thống.</p>
+
+      <div class="info-box">
+        <div class="info-row">
+          <span class="info-label">Gói</span>
+          <span class="info-value tier-active" id="tier-label">Active</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Hết hạn</span>
+          <span class="info-value" id="expires-label">—</span>
+        </div>
+      </div>
+
+      <button class="cta-primary" id="continue-btn">Vào Sol La Bàn →</button>
+
+      <div class="countdown" id="countdown-text">Tự động chuyển sau <b id="countdown">5</b>s</div>
+    </div>
+
+    <!-- Error state -->
+    <div id="state-error" class="state">
+      <div class="error-icon">❌</div>
+      <h1 class="error-title">Không kích hoạt được</h1>
+      <div class="error-msg" id="error-msg">Link không hợp lệ hoặc đã hết hạn.</div>
+
+      <div class="error-actions">
+        <a href="https://zalo.me/0912727381" class="zalo-btn">💬 Zalo hỗ trợ 0912727381</a>
+        <a href="https://sol.vn/" class="home-btn">← Về trang chủ</a>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Có gì không rõ, anh/chị nhắn Zalo <a href="https://zalo.me/0912727381">0912727381</a> em xử lý trong 5 phút.<br>
+      — <b>Khang Sol</b> · Founder sol.vn
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var API_BASE = 'https://huongdi.sol.vn';
+      var HUONGDI_URL = 'https://huongdi.sol.vn/';
+
+      function $(id) { return document.getElementById(id); }
+      function show(state) {
+        ['loading','success','error'].forEach(function(s){
+          var el = $('state-'+s);
+          if (el) el.classList.toggle('active', s === state);
+        });
+      }
+      function fmtDate(iso) {
+        if (!iso) return '—';
+        try {
+          var d = new Date(iso);
+          var pad = function(n){return String(n).padStart(2,'0');};
+          return pad(d.getDate()) + '/' + pad(d.getMonth()+1) + '/' + d.getFullYear();
+        } catch(e) { return iso; }
+      }
+
+      // Parse token from URL
+      var params = new URLSearchParams(window.location.search);
+      var token = (params.get('token') || '').trim();
+
+      if (!token || token.length < 20) {
+        $('error-msg').textContent = 'Không có token trong URL. Vui lòng dùng link Sol đã gửi qua Zalo/Email.';
+        show('error');
+        return;
+      }
+
+      // Call API activate
+      fetch(API_BASE + '/api/activate?token=' + encodeURIComponent(token), {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(r) { return r.json().then(function(d){ return { status: r.status, data: d }; }); })
+      .then(function(res) {
+        if (!res.data.success) {
+          $('error-msg').textContent = res.data.message || 'Không kích hoạt được. Vui lòng thử lại.';
+          show('error');
+          return;
+        }
+
+        // V1.2: Nếu user chưa đặt password → redirect trang đặt mật khẩu
+        if (res.data.password_required === true) {
+          window.location.href = '/dat-mat-khau/?token=' + encodeURIComponent(token);
+          return;
+        }
+
+        var d = res.data;
+        var ten = d.ten || 'anh/chị';
+        var tier = (d.tier || 'active').toLowerCase();
+        var expires = d.expires_at || '';
+
+        $('user-name').textContent = ten;
+        $('tier-label').textContent = tier === 'founder' ? 'Founder Edition' : 'Active';
+        $('tier-label').className = 'info-value tier-' + tier;
+        $('expires-label').textContent = fmtDate(expires);
+
+        if (!d.first_activation) {
+          $('success-subtitle').textContent = 'Tài khoản đã kích hoạt từ trước. Anh/chị có thể vào Sol La Bàn ngay.';
+        }
+
+        show('success');
+
+        // Build handoff URL để set localStorage bên huongdi.sol.vn
+        var handoffParams = new URLSearchParams({
+          welcome: '1',
+          tier: tier,
+          ten: ten,
+          expires: expires,
+          token: token.substring(0, 12) // partial for verify
+        });
+        var handoffUrl = HUONGDI_URL + '?' + handoffParams.toString();
+
+        $('continue-btn').addEventListener('click', function() {
+          window.location.href = handoffUrl;
+        });
+
+        // Auto-redirect countdown
+        var sec = 5;
+        var timer = setInterval(function() {
+          sec--;
+          $('countdown').textContent = sec;
+          if (sec <= 0) {
+            clearInterval(timer);
+            window.location.href = handoffUrl;
+          }
+        }, 1000);
+      })
+      .catch(function(err) {
+        console.error('[activate]', err);
+        $('error-msg').textContent = 'Không kết nối được máy chủ. Vui lòng thử lại hoặc liên hệ Zalo.';
+        show('error');
+      });
+    })();
+  </script>
+</body>
+</html>

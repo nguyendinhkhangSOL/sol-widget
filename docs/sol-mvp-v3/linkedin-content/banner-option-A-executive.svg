@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1584 396" width="1584" height="396" xmlns="http://www.w3.org/2000/svg">
+  <title>Sol La Bàn - Option A Executive Statement</title>
+
+  <!-- Navy background -->
+  <rect width="1584" height="396" fill="#0F172A"/>
+
+  <!-- Amber accent bar left -->
+  <rect x="0" y="0" width="12" height="396" fill="#F59E0B"/>
+
+  <!-- Subtle horizontal line -->
+  <line x1="380" y1="198" x2="1350" y2="198" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Small brand tag top -->
+  <text x="440" y="90" font-family="'Inter', Arial, sans-serif" font-size="18" fill="#F59E0B" font-weight="700" letter-spacing="4">
+    SOL LA BÀN · ĐI CÙNG SOL
+  </text>
+
+  <!-- Main headline 2 lines -->
+  <text x="440" y="170" font-family="Georgia, 'Lora', serif" font-size="56" font-weight="700" fill="#FFFFFF">
+    Đúng hướng. Đúng bước.
+  </text>
+  <text x="440" y="245" font-family="Georgia, 'Lora', serif" font-size="56" font-weight="700" fill="#F59E0B" font-style="italic">
+    Đúng tương lai.
+  </text>
+
+  <!-- Tagline below -->
+  <text x="440" y="300" font-family="'Inter', Arial, sans-serif" font-size="22" fill="#CBD5E1">
+    Hệ thống 5 Bước tái khởi nghiệp cho người Việt 40-60
+  </text>
+
+  <!-- Credit -->
+  <text x="440" y="350" font-family="'Inter', Arial, sans-serif" font-size="16" fill="#64748B" font-weight="600" letter-spacing="2">
+    SOL.VN · NGUYỄN ĐÌNH KHANG · 20 NĂM SÁNG LẬP SME
+  </text>
+
+  <!-- Sol S logo right side -->
+  <circle cx="1420" cy="198" r="90" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.4"/>
+  <circle cx="1420" cy="198" r="70" fill="#F59E0B" opacity="0.1"/>
+  <text x="1420" y="230" font-family="Georgia, 'Lora', serif" font-size="80" font-weight="800" fill="#F59E0B" text-anchor="middle">S</text>
+
+  <!-- Compass rose points -->
+  <g transform="translate(1420, 198)" opacity="0.35">
+    <path d="M 0,-95 L 5,-75 L 0,-70 L -5,-75 Z" fill="#F59E0B"/>
+    <path d="M 95,0 L 75,5 L 70,0 L 75,-5 Z" fill="#F59E0B"/>
+    <path d="M 0,95 L -5,75 L 0,70 L 5,75 Z" fill="#F59E0B"/>
+    <path d="M -95,0 L -75,-5 L -70,0 L -75,5 Z" fill="#F59E0B"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+// ═══════════════════════════════════════════════════════════════
+// BATCH A — User Tier System (append to schema.prisma)
+// ═══════════════════════════════════════════════════════════════
+
+enum UserTier {
+  FREE      // Đăng ký nhưng chưa pay
+  ACTIVE    // Đã pay 499k, active 1 năm
+  FOUNDER   // Đã pay 1.999k lifetime
+  EXPIRED   // Active hết hạn (option renewal)
+}

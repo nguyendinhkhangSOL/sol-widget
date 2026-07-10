@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap 90 ngày — Chuyên gia Tài chính Bán thời gian (Fractional CFO) | Sol Active</title>
+<meta name="description" content="Lộ trình 90 ngày chi tiết cho người 40-60 muốn làm Chuyên gia Tài chính Bán thời gian. 12 tuần × 3-5 việc/tuần + KPIs + công cụ + mẫu Notion, Google Sheets.">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --amber-50:#FFFBEB; --amber-100:#FEF3C7; --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+  --navy-50:#F8FAFC; --navy-100:#F1F5F9; --navy-200:#E2E8F0;
+  --navy-400:#94A3B8; --navy-500:#64748B; --navy-700:#334155;
+  --navy-800:#1E293B; --navy-900:#0F172A;
+  --emerald-500:#10B981; --emerald-600:#059669; --emerald-700:#047857;
+  --red-500:#EF4444; --red-600:#DC2626;
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+body { font-family: var(--sans); background: var(--navy-50); color: var(--navy-700); line-height: 1.7; font-size: 16px; }
+.container { max-width: 780px; margin: 0 auto; padding: 40px 20px; }
+
+.paywall-lock {
+  background: linear-gradient(135deg, var(--amber-100), #fff);
+  border: 2px solid var(--amber-500);
+  border-radius: 16px;
+  padding: 24px; margin-bottom: 32px; text-align: center;
+}
+.paywall-lock__badge {
+  display: inline-block; background: var(--amber-500); color: #fff;
+  padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800;
+  letter-spacing: 1.5px; margin-bottom: 8px;
+}
+.paywall-lock__text { color: var(--navy-800); font-size: 14.5px; font-weight: 500; }
+.paywall-lock__text b { color: var(--amber-700); }
+
+.breadcrumb { font-size: 13px; color: var(--navy-500); margin-bottom: 16px; }
+.breadcrumb a { color: var(--amber-600); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
+  color: #fff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  margin-bottom: 32px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -50px; right: -50px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero__eyebrow {
+  display: inline-block; background: var(--amber-500); color: #fff;
+  padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800;
+  letter-spacing: 1.5px; margin-bottom: 16px;
+}
+.hero__title {
+  font-family: var(--serif); font-size: 36px; font-weight: 800;
+  color: #fff; line-height: 1.2; margin-bottom: 12px; position: relative;
+}
+.hero__title .amber { color: var(--amber-400); }
+.hero__subtitle {
+  font-size: 17px; color: var(--navy-300); margin-bottom: 24px; position: relative;
+}
+.hero__outcomes {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  margin-top: 20px; position: relative;
+}
+@media (max-width: 560px) { .hero__outcomes { grid-template-columns: 1fr; } }
+.hero__outcome {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.hero__outcome__label {
+  font-size: 11px; color: var(--navy-400); text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 700; margin-bottom: 4px;
+}
+.hero__outcome__value { font-family: var(--serif); font-size: 22px; font-weight: 800; color: var(--amber-400); }
+.hero__outcome__meta { font-size: 12.5px; color: var(--navy-300); margin-top: 4px; }
+
+/* Section */
+.section {
+  background: #fff; border: 1px solid var(--navy-200); border-radius: 20px;
+  padding: 32px 28px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+.section h2 {
+  font-family: var(--serif); font-size: 24px; font-weight: 800;
+  color: var(--navy-900); line-height: 1.3; margin-bottom: 12px;
+}
+.section h3 { font-family: var(--serif); font-size: 19px; font-weight: 700; color: var(--navy-900); margin: 24px 0 10px; }
+.section p { margin-bottom: 12px; font-size: 15.5px; line-height: 1.7; color: var(--navy-700); }
+.section p b { color: var(--amber-700); font-weight: 700; }
+.section p strong { color: var(--navy-900); font-weight: 700; }
+
+/* Month header */
+.month-block {
+  background: #fff;
+  border: 1px solid var(--navy-200);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+.month-header {
+  padding: 28px 28px 20px;
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  color: #fff;
+}
+.month-header__label {
+  font-size: 12px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 6px; opacity: 0.9;
+}
+.month-header__title {
+  font-family: var(--serif); font-size: 26px; font-weight: 800;
+  margin-bottom: 6px;
+}
+.month-header__desc { font-size: 15px; opacity: 0.95; }
+
+.month-body { padding: 24px 28px 28px; }
+
+/* Week card */
+.week {
+  border-left: 3px solid var(--amber-500);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  background: var(--navy-50);
+  border-radius: 0 10px 10px 0;
+}
+.week__header {
+  display: flex; align-items: baseline;
+  gap: 10px; margin-bottom: 10px; flex-wrap: wrap;
+}
+.week__num {
+  background: var(--amber-500); color: #fff;
+  padding: 3px 10px; border-radius: 8px;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+}
+.week__title {
+  font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--navy-900);
+  flex: 1; line-height: 1.3;
+}
+.week ul { margin: 8px 0 8px 20px; padding: 0; }
+.week ul li { margin-bottom: 6px; font-size: 14.5px; color: var(--navy-700); line-height: 1.6; }
+.week ul li b { color: var(--amber-700); font-weight: 700; }
+
+.week__kpi {
+  margin-top: 10px; padding: 10px 12px;
+  background: rgba(16, 185, 129, 0.08);
+  border-left: 3px solid var(--emerald-500);
+  border-radius: 6px;
+  font-size: 13.5px; color: var(--emerald-700);
+}
+.week__kpi b { font-weight: 700; }
+
+/* Tools box */
+.tools-box {
+  background: linear-gradient(135deg, var(--navy-50), #fff);
+  border: 1px solid var(--navy-200);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: 16px 0;
+}
+.tools-box h4 {
+  font-size: 13px; color: var(--navy-500); text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 12px;
+}
+.tools-list {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+}
+@media (max-width: 560px) { .tools-list { grid-template-columns: 1fr; } }
+.tool-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: var(--navy-700);
+}
+.tool-item__icon { font-size: 16px; }
+.tool-item__name { flex: 1; font-weight: 600; }
+.tool-item__cost { font-size: 11.5px; color: var(--navy-500); font-weight: 500; }
+
+/* Pitfalls */
+.pitfall {
+  border-left: 3px solid var(--red-500);
+  background: rgba(220, 38, 38, 0.04);
+  padding: 14px 18px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 12px;
+}
+.pitfall h4 {
+  font-family: var(--serif); font-size: 16px; font-weight: 700;
+  color: var(--red-600); margin-bottom: 6px;
+}
+.pitfall p { font-size: 14.5px; color: var(--navy-700); }
+.pitfall p b { color: var(--red-600); }
+
+/* Benchmark */
+.benchmark {
+  background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+  color: #fff;
+  border-radius: 20px; padding: 32px 28px; margin-bottom: 24px;
+}
+.benchmark h2 {
+  font-family: var(--serif); color: #fff; font-size: 24px; margin-bottom: 16px;
+}
+.benchmark ul { list-style: none; padding: 0; margin: 0; }
+.benchmark li {
+  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.15);
+  color: #fff; font-size: 15.5px; line-height: 1.6;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.benchmark li:last-child { border-bottom: none; }
+.benchmark li::before {
+  content: '🎯'; flex-shrink: 0; font-size: 18px;
+}
+.benchmark li b { color: #FEF3C7; font-weight: 800; }
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+  border-radius: 20px; padding: 32px 28px; color: #fff; text-align: center; margin-bottom: 24px;
+}
+.cta h2 { font-family: var(--serif); font-size: 24px; color: #fff; margin-bottom: 12px; }
+.cta p { color: rgba(255,255,255,0.95); font-size: 15px; margin-bottom: 20px; }
+.cta__btn {
+  display: inline-block; background: #fff; color: var(--amber-700);
+  padding: 14px 32px; border-radius: 12px; font-weight: 800; font-size: 16px;
+  text-decoration: none; box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.cta__link {
+  display: block; color: rgba(255,255,255,0.9); font-size: 13.5px;
+  text-decoration: underline; margin-top: 12px;
+}
+
+.back-link { text-align: center; margin: 32px 0; }
+.back-link a { color: var(--navy-500); text-decoration: none; font-size: 14px; font-weight: 600; }
+.back-link a:hover { color: var(--amber-600); }
+
+/* Templates callout */
+.templates-callout {
+  background: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: 20px 0;
+}
+.templates-callout h4 {
+  font-size: 13px; color: #7C3AED; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 10px;
+}
+.templates-callout ul {
+  list-style: none; padding: 0; margin: 0;
+}
+.templates-callout li {
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--navy-700);
+  display: flex; gap: 10px;
+  align-items: center;
+}
+.templates-callout li::before {
+  content: '📄'; flex-shrink: 0;
+}
+.templates-callout li b { color: #7C3AED; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="https://sol.vn/">Trang chủ</a> · <a href="https://huongdi.sol.vn/">Sol La Bàn</a> · <a href="https://sol.vn/roadmaps/">Roadmap 90 ngày</a> · Chuyên gia Tài chính Bán thời gian
+  </div>
+
+  <div class="paywall-lock" id="paywall-notice">
+    <div class="paywall-lock__badge">🔒 SOL ACTIVE</div>
+    <div class="paywall-lock__text">
+      Đây là <b>lộ trình chi tiết 90 ngày</b> — 1 trong 10 roadmap độc quyền cho Sol Active. Đang xem phần trải nghiệm miễn phí.
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <div class="hero">
+    <div class="hero__eyebrow">💎 CHUYÊN GIA TÀI CHÍNH BÁN THỜI GIAN</div>
+    <h1 class="hero__title">Lộ trình <span class="amber">90 ngày</span> để trở thành Chuyên gia Tài chính Bán thời gian</h1>
+    <p class="hero__subtitle">12 tuần chi tiết — từ nghỉ việc → khách đầu tiên → doanh thu 25-75 triệu/tháng. Kèm mẫu Notion, Google Sheets, và checklist KPI theo tuần.</p>
+
+    <div class="hero__outcomes">
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 30 ngày</div>
+        <div class="hero__outcome__value">Định vị</div>
+        <div class="hero__outcome__meta">Rõ niche + LinkedIn + 100 network</div>
+      </div>
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 60 ngày</div>
+        <div class="hero__outcome__value">Momentum</div>
+        <div class="hero__outcome__meta">2k followers + 20 discovery call</div>
+      </div>
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 90 ngày</div>
+        <div class="hero__outcome__value">Khách #1</div>
+        <div class="hero__outcome__meta">25-30 triệu/tháng đầu tiên</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OVERVIEW ═══ -->
+  <div class="section">
+    <h2>Tổng quan lộ trình</h2>
+
+    <p><strong>Mô hình:</strong> Chuyên gia Tài chính Bán thời gian (Fractional CFO/CMO/CTO) — làm việc như Giám đốc Tài chính/Marketing/Kỹ thuật cho 2-4 doanh nghiệp vừa và nhỏ cùng lúc, mỗi khách 2-3 ngày/tuần.</p>
+
+    <p><strong>Điều kiện phù hợp:</strong></p>
+    <ul style="margin-left:20px;">
+      <li>DNA <b>"Chuyên môn sâu"</b> chiếm ưu thế (Bước 1 Sol La Bàn)</li>
+      <li>15-20+ năm kinh nghiệm trong 1 lĩnh vực (tài chính, marketing, kỹ thuật, vận hành)</li>
+      <li>Đã có vị trí quản lý cấp cao (Giám đốc phòng, chi nhánh, tương đương)</li>
+      <li>Có network 100+ mối quan hệ chất lượng cao (khách cũ, đồng nghiệp, đối tác)</li>
+      <li>Vốn ban đầu <b>50-200 triệu</b> (không cần lớn, chủ yếu tài chính chi trả 6-12 tháng chờ khách)</li>
+      <li>Có thể invest <b>10-20 giờ/tuần</b> (part-time), có thể tăng lên 20-25 giờ nếu cần</li>
+    </ul>
+
+    <h3>Chia thành 3 giai đoạn</h3>
+    <p><b>Tháng 1 (Tuần 1-4) — Định vị:</b> Reset, chọn niche cụ thể, viết lại LinkedIn, map network 200 người, xây dựng hạ tầng ban đầu (website landing page, CRM, calendar).</p>
+
+    <p><b>Tháng 2 (Tuần 5-8) — Xây dựng dấu ấn:</b> Content velocity trên LinkedIn (3 bài/tuần), tiếp cận ấm áp 30-50 network, xin speaking gigs, build referral system.</p>
+
+    <p><b>Tháng 3 (Tuần 9-12) — Chốt khách đầu:</b> Discovery calls funnel, chốt khách #1 với giá 25-30 triệu/tháng, deliver first value + xin nhận xét, mở rộng sang khách #2 và #3.</p>
+  </div>
+
+  <!-- ═══ THÁNG 1 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 1</div>
+      <div class="month-header__title">Tháng 1 — Định vị</div>
+      <div class="month-header__desc">Tuần 1-4: Reset tinh thần, chọn niche, xây thương hiệu cá nhân trên LinkedIn, hoàn thiện hạ tầng.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 1 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 1</span>
+          <span class="week__title">Nghỉ ngơi + Kiểm kê Network</span>
+        </div>
+        <ul>
+          <li><b>Nghỉ 3 ngày hoàn toàn</b> — không laptop, không email công việc cũ. Cho não reset.</li>
+          <li><b>Kiểm kê mối quan hệ:</b> Liệt kê 100-200 người trong network từ 15-20 năm sự nghiệp. Chia 3 nhóm: Khách cũ (30-50) · Đồng nghiệp cũ (50-80) · Bạn học/mối quan hệ chéo ngành (30-50).</li>
+          <li><b>Đọc 3 nguồn</b> về Chuyên gia Bán thời gian ở VN/Sing/Mỹ (LinkedIn, bài blog). Note các insights.</li>
+          <li><b>Setup CRM:</b> Tạo Notion database với 200 contacts. Trường: Tên, Chức danh, Công ty, Mối quan hệ, Ngành, Có thể giúp gì.</li>
+          <li><b>Discussion vợ/chồng:</b> Confirm buffer tài chính 12 tháng + timeline expectations.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 200 contacts trong Notion CRM · 3 insights từ nghiên cứu · Discussion gia đình hoàn tất
+        </div>
+      </div>
+
+      <!-- Tuần 2 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 2</span>
+          <span class="week__title">Viết lại LinkedIn Profile hoàn toàn</span>
+        </div>
+        <ul>
+          <li><b>Ảnh bìa mới</b> (Canva): Nền màu, tên + chức danh "Fractional CFO for [Niche]" + tagline ngắn.</li>
+          <li><b>Ảnh đại diện chuyên nghiệp</b> (500k thuê chụp studio nếu chưa có).</li>
+          <li><b>Tiêu đề nghề (headline):</b> "Chuyên gia Tài chính Bán thời gian cho [Niche cụ thể] · [Số năm] kinh nghiệm · [Value prop]". Ví dụ: "Fractional CFO for F&B chuỗi 5-30 chi nhánh · 22 năm banking · Chuyên dòng tiền + kiểm soát chi phí".</li>
+          <li><b>Bio (About) dài 300-500 từ:</b> Story arc — Journey 15-20 năm sự nghiệp → Điểm bùng nổ → Vì sao chuyển hướng → Cách anh/chị đang giúp SME → CTA "Nhắn tin nếu bạn cần tư vấn".</li>
+          <li><b>5 bài đăng ghim</b> (pinned posts): Chia sẻ 5 case study/insights nổi bật (viết mới hoặc tổng hợp từ kinh nghiệm cũ, đã ẩn tên brand).</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> LinkedIn Profile hoàn thiện · 3 người bạn thân review + góp ý · Đã fix theo feedback
+        </div>
+      </div>
+
+      <!-- Tuần 3 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 3</span>
+          <span class="week__title">Chọn Niche cụ thể + Interview 3 chủ SME</span>
+        </div>
+        <ul>
+          <li><b>Nghiên cứu 5 ngành</b> potentially phù hợp: F&B chuỗi, Bán lẻ, SaaS/tech, Sản xuất SME, Thương mại điện tử. Điền vào Google Sheets — 5 cột: Ngành / Kích thước thị trường / Cạnh tranh / Nỗi đau / Fit với chuyên môn của anh/chị.</li>
+          <li><b>Chọn 1 niche</b> dựa trên: fit với chuyên môn + có network sẵn + thị trường sôi động.</li>
+          <li><b>Interview 3 chủ SME</b> trong niche này — <b>không sales</b>, chỉ hỏi: "Vấn đề tài chính lớn nhất anh/chị đang đối mặt là gì?" (30 phút mỗi cuộc).</li>
+          <li><b>Xác định 3 nỗi đau</b> cụ thể + 2 giải pháp anh/chị có thể mang đến.</li>
+          <li><b>Update headline LinkedIn</b> chốt lại niche cụ thể (không chung chung).</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Niche chọn chốt · 3 cuộc interview hoàn thành · 3 nỗi đau xác định
+        </div>
+      </div>
+
+      <!-- Tuần 4 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 4</span>
+          <span class="week__title">Xây hạ tầng ban đầu</span>
+        </div>
+        <ul>
+          <li><b>Website landing page 1 trang</b> (Carrd hoặc Wix, ~500k setup): Value prop rõ ràng · Về tôi · 3 dịch vụ · CTA "Đặt cuộc gọi khám phá 30 phút miễn phí".</li>
+          <li><b>Đăng ký Calendly hoặc Cal.com</b> (free): Setup "Cuộc gọi khám phá 30 phút" — chỉ 5 slot/tuần.</li>
+          <li><b>Notion Client Onboarding template:</b> Câu hỏi khảo sát trước cuộc gọi + Contract template + Kick-off checklist.</li>
+          <li><b>Google Sheets Financial Dashboard template:</b> Chuẩn bị 1 template để show khách trong cuộc gọi (demo value).</li>
+          <li><b>Mở tài khoản ngân hàng riêng</b> (nếu chưa) cho thu nhập tư vấn. MB Bank Business hoặc Techcombank Business (miễn phí).</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Website live · Calendly setup · Notion + Sheets templates ready · Tài khoản ngân hàng riêng mở
+        </div>
+      </div>
+
+      <div class="templates-callout">
+        <h4>📄 Mẫu tài liệu Sol Active</h4>
+        <ul>
+          <li><b>Notion CRM Template</b> — 200 contacts + tracking pipeline</li>
+          <li><b>Google Sheets Niche Research</b> — 5 ngành + criteria matrix</li>
+          <li><b>Landing Page Template</b> — Carrd theme copy-paste</li>
+          <li><b>Client Onboarding Notion</b> — 15 câu hỏi khảo sát + contract</li>
+          <li><b>Financial Dashboard Sheets</b> — 12 charts + KPIs ngành F&B / Retail</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ THÁNG 2 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 2</div>
+      <div class="month-header__title">Tháng 2 — Xây Dấu Ấn</div>
+      <div class="month-header__desc">Tuần 5-8: Content velocity trên LinkedIn, tiếp cận ấm áp network, xin diễn thuyết, xây hệ thống giới thiệu.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 5 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 5</span>
+          <span class="week__title">Ra mắt Content trên LinkedIn</span>
+        </div>
+        <ul>
+          <li><b>Kế hoạch nội dung 4 tuần:</b> 3 bài/tuần × 4 tuần = 12 bài. Chủ đề mix: 4 bài "trường hợp thực tế" (từ kinh nghiệm cũ) · 4 bài "framework/insights" · 2 bài "sai lầm phổ biến" · 2 bài "câu chuyện cá nhân".</li>
+          <li><b>Viết + đăng 3 bài đầu tiên</b> tuần này. Mỗi bài 300-500 từ.</li>
+          <li><b>Format bài:</b> Hook mạnh câu đầu · Value trong 300-500 từ · CTA nhẹ ở cuối (comment hoặc DM).</li>
+          <li><b>Trả lời tất cả comments</b> trong 24 giờ đầu.</li>
+          <li><b>Kết nối 20 người mới</b> trong niche mỗi tuần (LinkedIn Premium tự trả tiền nhanh — 750k/tháng).</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 3 bài LinkedIn đăng · 20 kết nối mới · 100 tương tác (likes/comments)
+        </div>
+      </div>
+
+      <!-- Tuần 6 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 6</span>
+          <span class="week__title">Tiếp cận Ấm áp Đợt 1 (20 contacts)</span>
+        </div>
+        <ul>
+          <li><b>Chọn 20 contacts từ CRM</b> — người anh/chị đã liên lạc trong 3 năm qua, có công ty niche phù hợp.</li>
+          <li><b>Gửi tin nhắn cá nhân hoá</b> (KHÔNG sales, KHÔNG copy-paste). Format: "Chào [Tên], lâu rồi không gặp. Vừa thấy [công ty của họ] mở thêm chi nhánh — chúc mừng! Anh đang xây một hướng đi mới sau khi nghỉ ngân hàng — làm Fractional CFO cho F&B chuỗi. Nếu tiện, uống cà phê 30 phút cuối tuần chia sẻ kinh nghiệm dòng tiền với anh nhé?"</li>
+          <li><b>Follow-up sau 5 ngày</b> nếu chưa reply — 1 lần duy nhất.</li>
+          <li><b>Viết 3 bài LinkedIn</b> tiếp tục.</li>
+          <li><b>Track pipeline</b> trong Notion: 20 sent → X replies → Y meetings.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 20 tin nhắn cá nhân hoá đã gửi · 5-8 phản hồi tích cực · 2-3 cuộc gặp đã đặt lịch
+        </div>
+      </div>
+
+      <!-- Tuần 7 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 7</span>
+          <span class="week__title">Diễn thuyết + Bài viết dài</span>
+        </div>
+        <ul>
+          <li><b>Nghiên cứu 5 sự kiện</b> trong niche (Career Fair, Industry Conference, Business Meetup). Filter theo timeline 3-6 tháng tới.</li>
+          <li><b>Nộp đơn làm speaker</b> cho 3 sự kiện. Kèm signature talk 20 phút chuẩn bị sẵn ("5 sai lầm về dòng tiền của SME F&B" hoặc tương tự).</li>
+          <li><b>Viết bài "flagship"</b> — 1 bài LinkedIn dài 1500-2000 từ. Chủ đề nào có nhiều insight nhất từ 20 năm kinh nghiệm. Đây là bài dễ viral.</li>
+          <li><b>2 cuộc gặp từ tuần trước</b> — có 30 phút cà phê chất lượng cao.</li>
+          <li><b>Tiếp cận ấm áp đợt 2:</b> 15 contacts mới.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 3 đơn speaker gửi · 1 bài flagship đăng (target 1k likes) · 2 cuộc gặp thực tế đã diễn ra
+        </div>
+      </div>
+
+      <!-- Tuần 8 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 8</span>
+          <span class="week__title">Hệ thống Giới thiệu + Review Tháng 2</span>
+        </div>
+        <ul>
+          <li><b>Ping 5 người bạn thân + 5 sếp cũ:</b> "Nếu ai trong network của anh/chị cần Fractional CFO cho F&B, gửi cho em nhé — em cảm ơn."</li>
+          <li><b>Tạo "referral kit":</b> 1 email template + 1 landing page URL để họ có thể forward.</li>
+          <li><b>Review Tháng 2 metrics:</b> LinkedIn followers · Bài viết engagement · Cuộc gặp thực tế · Cuộc gọi khám phá đã book.</li>
+          <li><b>Adjust chiến lược</b> nếu cần: Niche vẫn phù hợp không? Content nào nhận được nhiều tương tác nhất? Ai trong network active nhất?</li>
+          <li><b>3 bài LinkedIn</b> tiếp tục.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần 8:</b> Cumulative — <b>2.000 followers</b> LinkedIn · <b>15-20 cuộc gặp</b> đã diễn ra · <b>3 cuộc gọi khám phá</b> đã book cho tháng 3
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ THÁNG 3 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 3</div>
+      <div class="month-header__title">Tháng 3 — Chốt Khách Đầu</div>
+      <div class="month-header__desc">Tuần 9-12: Cuộc gọi khám phá funnel, chốt khách #1, deliver first value, mở rộng khách #2 và #3.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 9 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 9</span>
+          <span class="week__title">Discovery Call Funnel + Practice</span>
+        </div>
+        <ul>
+          <li><b>Chuẩn bị script Discovery Call</b> 45 phút: 5' introduction · 15' tìm hiểu vấn đề của khách · 15' chia sẻ giải pháp/framework · 10' bàn về hợp tác + báo giá.</li>
+          <li><b>Practice với 3 người bạn</b> — role-play khách khó. Record + review.</li>
+          <li><b>Tinh chỉnh giá:</b> Khách đầu tiên charge <b>25 triệu/tháng</b> (thấp hơn giá đích 30-35tr — dễ chốt + thu thập nhận xét). Có thể discount 20% cho 3 tháng đầu.</li>
+          <li><b>Chuẩn bị "Value Package" pdf</b> 5 trang: About · Dịch vụ · Case study · Pricing · Testimonials (dùng của người bạn nếu chưa có).</li>
+          <li><b>3 bài LinkedIn</b> + trả lời DM tích cực.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Script + Value Package hoàn thiện · 3 buổi tập luyện · Pricing chốt
+        </div>
+      </div>
+
+      <!-- Tuần 10 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 10</span>
+          <span class="week__title">Tiếp cận Ấm áp Đợt 3 + Discovery Calls thực</span>
+        </div>
+        <ul>
+          <li><b>Batch outreach 30 contacts</b> — bao gồm hot leads từ 2 tháng trước.</li>
+          <li><b>Book 5 cuộc gọi khám phá thực</b> trong tuần này.</li>
+          <li><b>Sau mỗi cuộc gọi:</b> Gửi "value follow-up email" trong 24 giờ — kèm insights, không sales.</li>
+          <li><b>Target: 1 khách hàng chốt</b> vào cuối tuần với giá 25 triệu/tháng. Nếu không chốt được, đừng panic — tiếp tục pipeline.</li>
+          <li><b>2 bài LinkedIn</b> — chất lượng cao hơn số lượng.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 5 cuộc gọi khám phá diễn ra · 1-2 hợp đồng đã ký · Doanh thu bắt đầu: <b>25-50 triệu</b>
+        </div>
+      </div>
+
+      <!-- Tuần 11 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 11</span>
+          <span class="week__title">Kick-off Khách #1 + Deliver Value</span>
+        </div>
+        <ul>
+          <li><b>Onboarding session 90 phút</b> với khách đầu tiên: Understand business · Review 3 tháng gần nhất báo cáo tài chính · Set 3 mục tiêu cho quý.</li>
+          <li><b>Deliver ngay 1 quick win</b> trong tuần đầu: 1 dashboard KPI hoặc 1 analysis đơn giản mà khách chưa từng có → tạo cảm giác "wow" ngay.</li>
+          <li><b>Setup weekly check-in</b> 60 phút/tuần.</li>
+          <li><b>Tiếp cận ấm áp đợt 4</b> — 25 contacts mới.</li>
+          <li><b>Đăng bài LinkedIn</b> về "week 1 as Fractional CFO" (careful — không nêu tên khách).</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Khách #1 hoàn thành onboarding · 1 quick win đã deliver · 2-3 discovery calls mới đã book
+        </div>
+      </div>
+
+      <!-- Tuần 12 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 12</span>
+          <span class="week__title">Xin Nhận Xét + Scale sang Khách #2, #3</span>
+        </div>
+        <ul>
+          <li><b>Xin nhận xét khách #1</b> sau 30 ngày hợp tác — video 60-90 giây hoặc quote text với ảnh.</li>
+          <li><b>Đăng nhận xét lên LinkedIn</b> — social proof mạnh nhất cho khách mới.</li>
+          <li><b>Discovery calls cho khách #2, #3</b> — target 3-5 cuộc trong tuần.</li>
+          <li><b>Với khách #2 trở đi: tăng giá lên 30 triệu/tháng</b> (không "grandfather" giảm giá).</li>
+          <li><b>Retrospective 90 ngày:</b> Điều gì hiệu quả? Điều gì cần điều chỉnh? Kế hoạch Tháng 4-6.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần 12:</b> <b>1-2 khách active</b> · Doanh thu <b>25-55 triệu/tháng</b> · Pipeline <b>3-5 khách tiềm năng</b> · <b>1 nhận xét video</b> đã có
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ TOOLS ═══ -->
+  <div class="section">
+    <h2>Bộ công cụ cần thiết</h2>
+    <p>Tổng chi phí công cụ ~<b>1-2 triệu/tháng</b> khi đầy đủ. Có thể start free.</p>
+
+    <div class="tools-box">
+      <h4>🛠️ Danh sách 10 công cụ (theo thứ tự ưu tiên)</h4>
+      <div class="tools-list">
+        <div class="tool-item"><span class="tool-item__icon">💼</span><span class="tool-item__name">LinkedIn Premium</span><span class="tool-item__cost">750k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📓</span><span class="tool-item__name">Notion Pro</span><span class="tool-item__cost">Miễn phí → 200k</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📅</span><span class="tool-item__name">Cal.com</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📊</span><span class="tool-item__name">Google Sheets</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎨</span><span class="tool-item__name">Canva Pro</span><span class="tool-item__cost">300k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🌐</span><span class="tool-item__name">Carrd landing page</span><span class="tool-item__cost">500k/năm</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎬</span><span class="tool-item__name">Loom video</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📧</span><span class="tool-item__name">Gmail Workspace</span><span class="tool-item__cost">150k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🔒</span><span class="tool-item__name">1Password</span><span class="tool-item__cost">80k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎥</span><span class="tool-item__name">Zoom Pro</span><span class="tool-item__cost">350k/tháng</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PITFALLS ═══ -->
+  <div class="section">
+    <h2>5 sai lầm phổ biến cần tránh</h2>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 1: Bắt đầu tạo nội dung ngay chưa có định vị</h4>
+      <p>Tuần 1-2 mà đã đăng LinkedIn thì content lạc hướng, sau đó phải xoá. Cách đúng: <b>Tuần 1-4 chỉ định vị</b>, tuần 5+ mới content velocity.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 2: Đặt giá quá thấp để "dễ chốt"</h4>
+      <p>Charge 10 triệu/tháng vì "sợ khách không chấp nhận" → nhận khách <b>tệ</b> → burnout. Đúng: <b>25-30 triệu/tháng khách #1</b>, có thể 20% discount cho 3 tháng đầu nhưng KHÔNG dưới 20 triệu.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 3: Niche quá rộng "tôi tư vấn cho mọi ngành"</h4>
+      <p>Khách không nhớ được anh/chị. Đúng: <b>1 niche cực rõ</b> — "Fractional CFO cho chuỗi F&B 5-15 chi nhánh tại HCM." Càng cụ thể càng dễ định vị.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 4: Nhận khách "không match" chỉ vì có tiền</h4>
+      <p>Chủ SME kiểu "luôn đúng, không tin số liệu" — dù trả cao vẫn nên từ chối. Đúng: <b>Trong 3 khách đầu, ít nhất 1 khách sẽ không match</b>, dừng hợp đồng sau 6-8 tuần.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 5: Không có buffer 12 tháng</h4>
+      <p>Bắt đầu với 6 tháng buffer → tháng 3 chưa có khách → panic → chấp nhận khách tệ. Đúng: <b>12-18 tháng buffer</b> trước khi bắt đầu. Nếu không có, tiết kiệm thêm 3-6 tháng trước khi nghỉ chính thức.</p>
+    </div>
+  </div>
+
+  <!-- ═══ BENCHMARK ═══ -->
+  <div class="benchmark">
+    <h2>🎯 Bảng cột mốc thành công</h2>
+    <ul>
+      <li><b>Ngày 30:</b> LinkedIn có 500-1.000 followers · Niche chốt · Website live · 200 contacts trong CRM</li>
+      <li><b>Ngày 60:</b> 2.000 followers · 12 bài đã đăng · 15-20 cuộc gặp thực tế · 3 cuộc gọi khám phá đã book</li>
+      <li><b>Ngày 90:</b> <b>1-2 khách active</b> · Doanh thu 25-50 triệu/tháng · Pipeline 3-5 khách · 1 nhận xét đã có</li>
+      <li><b>Ngày 180:</b> 3-4 khách × 25-30 triệu = <b>75-120 triệu/tháng</b> · Waitlist bắt đầu có · Từ chối 1-2 khách/tháng</li>
+    </ul>
+  </div>
+
+  <!-- ═══ CTA ═══ -->
+  <div class="cta">
+    <h2>Sẵn sàng làm theo Roadmap này?</h2>
+    <p>Sol Active mở khoá <b>tất cả mẫu tài liệu</b> (Notion CRM, Google Sheets templates, Landing page template, Client onboarding, Financial dashboards) + <b>9 roadmap khác</b> cho các mô hình khởi nghiệp 40-60.</p>
+    <a href="https://sol.vn/thanh-toan/" class="cta__btn">🚀 Nâng cấp Sol Active 499k/năm →</a>
+    <a href="https://sol.vn/case-studies/01-fractional-cfo-anh-duc/" class="cta__link">Xem trường hợp thực tế: Anh Đức 48 tuổi đã theo roadmap này →</a>
+  </div>
+
+  <div class="back-link">
+    <a href="/roadmaps/">← Xem 9 roadmap khác</a>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  try {
+    var tier = localStorage.getItem('sol_tier');
+    var active = localStorage.getItem('sol_active');
+    if (tier === 'active' || tier === 'founder' || active === 'true') {
+      document.getElementById('paywall-notice').style.display = 'none';
+    }
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>

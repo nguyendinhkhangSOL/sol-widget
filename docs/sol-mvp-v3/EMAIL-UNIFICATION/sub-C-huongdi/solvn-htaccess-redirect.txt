@@ -1,0 +1,13 @@
+# ═══════════════════════════════════════════════
+# 301 Redirect: sol.vn/thanh-toan/* → huongdi.sol.vn/thanh-toan/
+# ═══════════════════════════════════════════════
+#
+# Paste vào ĐẦU file:
+#   /public_html/thanh-toan/.htaccess
+#
+# Nếu file .htaccess chưa có, tạo mới với nội dung dưới đây.
+
+RewriteEngine On
+
+# Redirect toàn bộ /thanh-toan/* sang huongdi.sol.vn với 301 permanent
+RewriteRule ^(.*)$ https://huongdi.sol.vn/thanh-toan/ [R=301,L]

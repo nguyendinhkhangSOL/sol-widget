@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kích hoạt Sol Active</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+  }
+  .card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    backdrop-filter: blur(20px);
+  }
+  .icon { font-size: 72px; margin-bottom: 16px; }
+  h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #F59E0B;
+  }
+  .status-message {
+    color: #CBD5E1;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .name-highlight {
+    color: #FCD34D;
+    font-weight: 700;
+  }
+  .tier-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: #0F172A;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin: 12px 0 20px;
+  }
+  .expires {
+    color: #94A3B8;
+    font-size: 13px;
+    margin-bottom: 32px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 15px;
+    box-shadow: 0 8px 24px rgba(245,158,11,0.4);
+    transition: transform 0.15s;
+  }
+  .cta-btn:hover { transform: translateY(-2px); }
+  .spinner {
+    border: 3px solid rgba(245,158,11,0.2);
+    border-top-color: #F59E0B;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 0.8s linear infinite;
+    margin: 24px auto;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .error { color: #F87171; }
+  .success { color: #34D399; }
+  .support-link {
+    color: #94A3B8;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  .support-link a { color: #F59E0B; text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div id="state-loading">
+      <div class="icon">🧭</div>
+      <h1>Đang kích hoạt Sol...</h1>
+      <div class="spinner"></div>
+      <p class="status-message">Vui lòng chờ vài giây.</p>
+    </div>
+
+    <div id="state-success" style="display:none;">
+      <div class="icon">🎉</div>
+      <h1 class="success">Chào <span class="name-highlight" id="user-name"></span>!</h1>
+      <div class="tier-badge" id="tier-badge">SOL ACTIVE</div>
+      <p class="status-message">
+        Gói của anh/chị đã được kích hoạt.<br>
+        Đang chuyển hướng đến trang Sol La Bàn...
+      </p>
+      <p class="expires">Có hiệu lực đến: <strong id="expires-date"></strong></p>
+      <a href="https://huongdi.sol.vn/" class="cta-btn">→ Vào Sol La Bàn ngay</a>
+      <p class="support-link" style="margin-top:24px;">
+        Đăng ký thành công 🎊 · Cảm ơn anh/chị đã tin tưởng Sol
+      </p>
+    </div>
+
+    <div id="state-error" style="display:none;">
+      <div class="icon">❌</div>
+      <h1 class="error">Link không hợp lệ</h1>
+      <p class="status-message" id="error-message">
+        Link kích hoạt không hợp lệ hoặc đã hết hạn.
+      </p>
+      <a href="https://sol.vn/thanh-toan/" class="cta-btn">→ Đăng ký lại</a>
+      <p class="support-link">
+        Cần trợ giúp? <a href="https://zalo.me/0912727381">Chat Zalo</a> · <a href="tel:02439931800">024.3993.1800</a>
+      </p>
+    </div>
+  </div>
+
+<script>
+(function() {
+  // Đọc token từ URL
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get('token');
+
+  if (!token) {
+    showError('Không có token trong link. Kiểm tra lại link đã nhận qua Zalo/Email.');
+    return;
+  }
+
+  // Gọi API activate
+  fetch('https://huongdi.sol.vn/api/activate?token=' + encodeURIComponent(token))
+    .then(r => r.json())
+    .then(data => {
+      if (!data.success) {
+        showError(data.message || 'Kích hoạt thất bại. Vui lòng liên hệ Zalo 0912727381.');
+        return;
+      }
+      showSuccess(data);
+    })
+    .catch(err => {
+      console.error('Activate error:', err);
+      showError('Không kết nối được server. Vui lòng kiểm tra mạng và thử lại.');
+    });
+
+  function showSuccess(data) {
+    // Set localStorage → unlock 37 mô hình
+    try {
+      localStorage.setItem('sol_tier', data.tier);
+      localStorage.setItem('sol_tier_name', data.ten);
+      localStorage.setItem('sol_tier_expires', data.expires_at);
+      localStorage.setItem('sol_tier_activated', new Date().toISOString());
+    } catch (e) {
+      console.warn('localStorage failed:', e);
+    }
+
+    // Update UI
+    document.getElementById('state-loading').style.display = 'none';
+    document.getElementById('state-success').style.display = 'block';
+    document.getElementById('user-name').textContent = data.ten;
+    document.getElementById('tier-badge').textContent =
+      data.tier === 'founder' ? '⭐ SOL FOUNDER (LIFETIME)' : 'SOL ACTIVE (1 NĂM)';
+    document.getElementById('expires-date').textContent =
+      new Date(data.expires_at).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+    // Auto-redirect sau 5s (để user kịp đọc)
+    setTimeout(() => {
+      window.location.href = 'https://huongdi.sol.vn/';
+    }, 5000);
+  }
+
+  function showError(msg) {
+    document.getElementById('state-loading').style.display = 'none';
+    document.getElementById('state-error').style.display = 'block';
+    document.getElementById('error-message').textContent = msg;
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng ký tài khoản — Sol La Bàn</title>
+<meta name="description" content="Tạo tài khoản miễn phí Sol La Bàn để lưu lại kết quả định vị hướng đi và roadmap cá nhân.">
+<link rel="canonical" href="https://huongdi.sol.vn/dang-ky/">
+<style>
+  :root {
+    --gold: #C9A961;
+    --dark: #0f1419;
+    --panel: #1a1f26;
+    --border: #2a3138;
+    --text: #e8ecef;
+    --muted: #8b949e;
+    --error: #f85149;
+    --success: #3fb950;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--dark); color: var(--text);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px; width: 100%; max-width: 440px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .logo { font-size: 28px; margin-bottom: 4px; }
+  h1 { font-size: 24px; margin-bottom: 8px; color: var(--gold); font-weight: 600; }
+  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
+
+  .field { margin-bottom: 18px; }
+  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
+  input {
+    width: 100%; padding: 12px 14px; background: var(--dark); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px; font-size: 15px;
+    transition: border-color 0.2s;
+  }
+  input:focus { outline: none; border-color: var(--gold); }
+
+  .btn {
+    width: 100%; padding: 14px; background: var(--gold); color: var(--dark);
+    border: none; border-radius: 8px; font-size: 15px; font-weight: 600;
+    cursor: pointer; transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .msg {
+    padding: 12px; border-radius: 8px; font-size: 14px; margin-bottom: 18px;
+    display: none;
+  }
+  .msg.error { background: rgba(248,81,73,0.1); color: var(--error); border: 1px solid var(--error); display: block; }
+  .msg.success { background: rgba(63,185,80,0.1); color: var(--success); border: 1px solid var(--success); display: block; }
+
+  .footer {
+    text-align: center; margin-top: 24px; padding-top: 24px;
+    border-top: 1px solid var(--border); font-size: 13px; color: var(--muted);
+  }
+  .footer a { color: var(--gold); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  .divider { text-align: center; color: var(--muted); font-size: 13px; margin: 12px 0; }
+  .terms {
+    font-size: 12px; color: var(--muted); margin-top: 16px; text-align: center; line-height: 1.5;
+  }
+  .terms a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">🧭</div>
+  <h1>Đăng ký miễn phí</h1>
+  <p class="subtitle">Tạo tài khoản để lưu kết quả P1 / P2 và mở roadmap cá nhân.</p>
+
+  <div id="msg" class="msg"></div>
+
+  <form id="registerForm">
+    <div class="field">
+      <label for="displayName">Tên hiển thị</label>
+      <input type="text" id="displayName" name="displayName" placeholder="Nguyễn Văn A" required>
+    </div>
+
+    <div class="field">
+      <label for="phone">Số điện thoại</label>
+      <input type="tel" id="phone" name="phone" placeholder="0912345678" pattern="[0-9+]{9,15}" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email (tuỳ chọn)</label>
+      <input type="email" id="email" name="email" placeholder="ban@email.com">
+    </div>
+
+    <div class="field">
+      <label for="password">Mật khẩu (tối thiểu 6 ký tự)</label>
+      <input type="password" id="password" name="password" minlength="6" required>
+    </div>
+
+    <button type="submit" class="btn" id="submitBtn">Tạo tài khoản Free</button>
+  </form>
+
+  <p class="terms">
+    Đăng ký tức đồng ý với <a href="/dieu-khoan/">Điều khoản</a> và <a href="/bao-mat/">Chính sách bảo mật</a>.
+  </p>
+
+  <div class="footer">
+    Đã có tài khoản? <a href="/dang-nhap/">Đăng nhập</a><br>
+    <div class="divider">— hoặc —</div>
+    Muốn nâng cấp Active/Founder? <a href="/thanh-toan/">Xem gói</a>
+  </div>
+</div>
+
+<script>
+(function() {
+  const API_BASE = window.SOL_API_BASE || 'https://huongdi.sol.vn/api';
+  const form = document.getElementById('registerForm');
+  const msg = document.getElementById('msg');
+  const btn = document.getElementById('submitBtn');
+
+  function showMsg(text, type) {
+    msg.textContent = text;
+    msg.className = 'msg ' + type;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.className = 'msg';
+    btn.disabled = true;
+    btn.textContent = 'Đang tạo tài khoản...';
+
+    const sessionId = localStorage.getItem('sol_session_id') || undefined;
+
+    const payload = {
+      displayName: form.displayName.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim() || undefined,
+      password: form.password.value,
+      sessionId,
+    };
+
+    try {
+      const res = await fetch(API_BASE + '/user/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        showMsg(data.message || 'Đăng ký thất bại', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Tạo tài khoản Free';
+        return;
+      }
+
+      // Save JWT + user info
+      localStorage.setItem('sol_jwt', data.token);
+      localStorage.setItem('sol_user', JSON.stringify(data.user));
+
+      showMsg('Đăng ký thành công! Đang chuyển hướng...', 'success');
+
+      const merged = data.merged || {};
+      const hasData = (merged.events || 0) + (merged.p1 || 0) + (merged.p2 || 0) > 0;
+      const dest = hasData ? '/la-ban-huong-di/' : '/kham-pha-ban-than/';
+      setTimeout(() => { location.href = dest; }, 1000);
+
+    } catch (err) {
+      showMsg('Không thể kết nối máy chủ. Thử lại sau.', 'error');
+      btn.disabled = false;
+      btn.textContent = 'Tạo tài khoản Free';
+    }
+  });
+})();
+</script>
+</body>
+</html>

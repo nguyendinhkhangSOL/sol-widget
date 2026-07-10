@@ -1,0 +1,54 @@
+// ═══════════════════════════════════════════════════════════════
+// SOL ĐỒNG HÀNH AI — Chat conversations + messages
+// Append vào schema.prisma
+// ═══════════════════════════════════════════════════════════════
+
+model SolChatConversation {
+  id          String            @id @default(uuid())
+  userId      String            @map("user_id")
+  title       String?           // Auto-generated from first message
+  directionId String?           @map("direction_id")  // Context: hướng đi user đang theo đuổi
+  phase       String?           // Context: D30 / D60 / D90 nếu đang trong Sổ Hành Trình
+  totalTokens Int               @default(0) @map("total_tokens")
+  totalCostUsd Float            @default(0) @map("total_cost_usd")
+  createdAt   DateTime          @default(now()) @map("created_at")
+  updatedAt   DateTime          @updatedAt @map("updated_at")
+
+  user        User              @relation("UserSolChats", fields: [userId], references: [id], onDelete: Cascade)
+  messages    SolChatMessage[]
+
+  @@index([userId])
+  @@index([userId, createdAt])
+  @@map("sol_chat_conversations")
+}
+
+model SolChatMessage {
+  id             String              @id @default(uuid())
+  conversationId String              @map("conversation_id")
+  role           String              // "user" | "assistant" | "system"
+  content        String              @db.Text
+  tokensIn       Int?                @map("tokens_in")
+  tokensOut      Int?                @map("tokens_out")
+  model          String?             // "claude-haiku-3" | "claude-sonnet-3.5"
+  costUsd        Float?              @map("cost_usd")
+  createdAt      DateTime            @default(now()) @map("created_at")
+
+  conversation   SolChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+  @@index([createdAt])
+  @@map("sol_chat_messages")
+}
+
+model SolChatQuota {
+  id           String   @id @default(uuid())
+  userId       String   @unique @map("user_id")
+  monthKey     String   @map("month_key")     // "2026-07"
+  messagesUsed Int      @default(0) @map("messages_used")
+  quotaLimit   Int      @default(30) @map("quota_limit")   // 30 for Active, 200+ for Founder
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@unique([userId, monthKey])
+  @@index([userId])
+  @@map("sol_chat_quota")
+}

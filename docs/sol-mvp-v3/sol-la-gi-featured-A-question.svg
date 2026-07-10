@@ -1,0 +1,57 @@
+<svg viewBox="0 0 1200 630" width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <title>Sol La Gi Featured Image - Sol La Ban 5 Buoc</title>
+
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#F59E0B"/>
+
+  <text x="80" y="90" font-family="'Inter', Arial, sans-serif" font-size="18" fill="#F59E0B" font-weight="700" letter-spacing="5">
+    ĐI CÙNG SOL
+  </text>
+
+  <text x="80" y="200" font-family="Georgia, 'Lora', serif" font-size="110" font-weight="800" fill="#FFFFFF">
+    Sol Là
+  </text>
+  <text x="80" y="315" font-family="Georgia, 'Lora', serif" font-size="110" font-weight="800" fill="#F59E0B" font-style="italic">
+    Gì?
+  </text>
+
+  <text x="80" y="385" font-family="'Inter', sans-serif" font-size="28" fill="#CBD5E1" font-weight="500">
+    Hệ thống 5 Bước Sol La Bàn
+  </text>
+  <text x="80" y="425" font-family="'Inter', sans-serif" font-size="28" fill="#CBD5E1" font-weight="500">
+    dành riêng cho người Việt 40-60
+  </text>
+
+  <line x1="80" y1="480" x2="700" y2="480" stroke="#334155" stroke-width="1"/>
+
+  <g transform="translate(80, 540)">
+    <text x="0" y="0" font-family="Georgia, serif" font-size="42" font-weight="800" fill="#F59E0B">37</text>
+    <text x="0" y="30" font-family="'Inter', sans-serif" font-size="14" fill="#94A3B8" font-weight="600" letter-spacing="1">MÔ HÌNH</text>
+    <line x1="120" y1="-40" x2="120" y2="10" stroke="#334155" stroke-width="1"/>
+    <text x="150" y="0" font-family="Georgia, serif" font-size="42" font-weight="800" fill="#F59E0B">90</text>
+    <text x="150" y="30" font-family="'Inter', sans-serif" font-size="14" fill="#94A3B8" font-weight="600" letter-spacing="1">NGÀY</text>
+    <line x1="290" y1="-40" x2="290" y2="10" stroke="#334155" stroke-width="1"/>
+    <text x="320" y="0" font-family="Georgia, serif" font-size="42" font-weight="800" fill="#F59E0B">5</text>
+    <text x="320" y="30" font-family="'Inter', sans-serif" font-size="14" fill="#94A3B8" font-weight="600" letter-spacing="1">BƯỚC</text>
+  </g>
+
+  <g transform="translate(950, 315)">
+    <circle cx="0" cy="0" r="180" fill="none" stroke="#F59E0B" stroke-width="4" opacity="0.3"/>
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.5"/>
+    <circle cx="0" cy="0" r="100" fill="#F59E0B" opacity="0.1"/>
+    <text x="0" y="55" font-family="Georgia, 'Lora', serif" font-size="180" font-weight="800" fill="#F59E0B" text-anchor="middle">S</text>
+    <g opacity="0.4">
+      <path d="M 0,-185 L 8,-160 L 0,-155 L -8,-160 Z" fill="#F59E0B"/>
+      <path d="M 185,0 L 160,8 L 155,0 L 160,-8 Z" fill="#F59E0B"/>
+      <path d="M 0,185 L -8,160 L 0,155 L 8,160 Z" fill="#F59E0B"/>
+      <path d="M -185,0 L -160,-8 L -155,0 L -160,8 Z" fill="#F59E0B"/>
+    </g>
+  </g>
+
+  <text x="600" y="605" font-family="Georgia, 'Lora', serif" font-size="18" fill="#F59E0B" font-style="italic" text-anchor="middle">
+    Đúng hướng · Đúng bước · Đúng tương lai
+  </text>
+  <text x="1120" y="605" font-family="'Inter', sans-serif" font-size="14" fill="#64748B" font-weight="600" letter-spacing="2" text-anchor="end">
+    SOL.VN
+  </text>
+</svg>

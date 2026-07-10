@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lộ trình 90 ngày — Chuyên gia Chia sẻ Trải nghiệm (thời AI 2026) | Sol Active</title>
+<meta name="description" content="Lộ trình 90 ngày thực chiến thời AI cho người 40-60 muốn kiếm tiền từ chuyên môn qua workshop, cộng đồng, coaching. Không phải mô hình creator kiểu cũ.">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --amber-100:#FEF3C7; --amber-400:#FBBF24; --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+  --navy-50:#F8FAFC; --navy-200:#E2E8F0; --navy-300:#CBD5E1;
+  --navy-400:#94A3B8; --navy-500:#64748B; --navy-700:#334155;
+  --navy-800:#1E293B; --navy-900:#0F172A;
+  --emerald-500:#10B981; --emerald-600:#059669; --emerald-700:#047857;
+  --red-500:#EF4444; --red-600:#DC2626;
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+body { font-family: var(--sans); background: var(--navy-50); color: var(--navy-700); line-height: 1.7; font-size: 16px; }
+.container { max-width: 780px; margin: 0 auto; padding: 40px 20px; }
+
+.paywall-lock { background: linear-gradient(135deg, var(--amber-100), #fff); border: 2px solid var(--amber-500); border-radius: 16px; padding: 24px; margin-bottom: 32px; text-align: center; }
+.paywall-lock__badge { display: inline-block; background: var(--amber-500); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 8px; }
+.paywall-lock__text { color: var(--navy-800); font-size: 14.5px; font-weight: 500; }
+.paywall-lock__text b { color: var(--amber-700); }
+
+.breadcrumb { font-size: 13px; color: var(--navy-500); margin-bottom: 16px; }
+.breadcrumb a { color: var(--amber-600); text-decoration: none; }
+
+.hero { background: linear-gradient(135deg, var(--navy-900), var(--navy-800)); color: #fff; border-radius: 24px; padding: 48px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 65%); pointer-events: none; }
+.hero__eyebrow { display: inline-block; background: var(--amber-500); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 16px; }
+.hero__title { font-family: var(--serif); font-size: 36px; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 12px; position: relative; }
+.hero__title .amber { color: var(--amber-400); }
+.hero__subtitle { font-size: 17px; color: var(--navy-300); margin-bottom: 24px; position: relative; }
+.hero__outcomes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; position: relative; }
+@media (max-width: 560px) { .hero__outcomes { grid-template-columns: 1fr; } }
+.hero__outcome { background: rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; border: 1px solid rgba(255,255,255,0.1); }
+.hero__outcome__label { font-size: 11px; color: var(--navy-400); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 4px; }
+.hero__outcome__value { font-family: var(--serif); font-size: 22px; font-weight: 800; color: var(--amber-400); }
+.hero__outcome__meta { font-size: 12.5px; color: var(--navy-300); margin-top: 4px; }
+
+.section { background: #fff; border: 1px solid var(--navy-200); border-radius: 20px; padding: 32px 28px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); }
+.section h2 { font-family: var(--serif); font-size: 24px; font-weight: 800; color: var(--navy-900); line-height: 1.3; margin-bottom: 12px; }
+.section h3 { font-family: var(--serif); font-size: 19px; font-weight: 700; color: var(--navy-900); margin: 24px 0 10px; }
+.section p { margin-bottom: 12px; font-size: 15.5px; line-height: 1.7; color: var(--navy-700); }
+.section p b { color: var(--amber-700); font-weight: 700; }
+.section p strong { color: var(--navy-900); font-weight: 700; }
+
+.month-block { background: #fff; border: 1px solid var(--navy-200); border-radius: 20px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); }
+.month-header { padding: 28px 28px 20px; background: linear-gradient(135deg, var(--amber-500), var(--amber-600)); color: #fff; }
+.month-header__label { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; opacity: 0.9; }
+.month-header__title { font-family: var(--serif); font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+.month-header__desc { font-size: 15px; opacity: 0.95; }
+.month-body { padding: 24px 28px 28px; }
+
+.week { border-left: 3px solid var(--amber-500); padding: 16px 20px; margin-bottom: 16px; background: var(--navy-50); border-radius: 0 10px 10px 0; }
+.week__header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.week__num { background: var(--amber-500); color: #fff; padding: 3px 10px; border-radius: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; }
+.week__title { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--navy-900); flex: 1; line-height: 1.3; }
+.week ul { margin: 8px 0 8px 20px; padding: 0; }
+.week ul li { margin-bottom: 6px; font-size: 14.5px; color: var(--navy-700); line-height: 1.6; }
+.week ul li b { color: var(--amber-700); font-weight: 700; }
+.week__kpi { margin-top: 10px; padding: 10px 12px; background: rgba(16, 185, 129, 0.08); border-left: 3px solid var(--emerald-500); border-radius: 6px; font-size: 13.5px; color: var(--emerald-700); }
+
+.tools-box { background: linear-gradient(135deg, var(--navy-50), #fff); border: 1px solid var(--navy-200); border-radius: 14px; padding: 20px 22px; margin: 16px 0; }
+.tools-box h4 { font-size: 13px; color: var(--navy-500); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 12px; }
+.tools-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+@media (max-width: 560px) { .tools-list { grid-template-columns: 1fr; } }
+.tool-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: #fff; border-radius: 8px; font-size: 13.5px; color: var(--navy-700); }
+.tool-item__icon { font-size: 16px; }
+.tool-item__name { flex: 1; font-weight: 600; }
+.tool-item__cost { font-size: 11.5px; color: var(--navy-500); font-weight: 500; }
+
+.pitfall { border-left: 3px solid var(--red-500); background: rgba(220, 38, 38, 0.04); padding: 14px 18px; border-radius: 0 10px 10px 0; margin-bottom: 12px; }
+.pitfall h4 { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--red-600); margin-bottom: 6px; }
+.pitfall p { font-size: 14.5px; color: var(--navy-700); }
+.pitfall p b { color: var(--red-600); }
+
+.benchmark { background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600)); color: #fff; border-radius: 20px; padding: 32px 28px; margin-bottom: 24px; }
+.benchmark h2 { font-family: var(--serif); color: #fff; font-size: 24px; margin-bottom: 16px; }
+.benchmark ul { list-style: none; padding: 0; margin: 0; }
+.benchmark li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff; font-size: 15.5px; line-height: 1.6; display: flex; gap: 12px; align-items: flex-start; }
+.benchmark li:last-child { border-bottom: none; }
+.benchmark li::before { content: '🎯'; flex-shrink: 0; font-size: 18px; }
+.benchmark li b { color: #FEF3C7; font-weight: 800; }
+
+.cta { background: linear-gradient(135deg, var(--amber-500), var(--amber-600)); border-radius: 20px; padding: 32px 28px; color: #fff; text-align: center; margin-bottom: 24px; }
+.cta h2 { font-family: var(--serif); font-size: 24px; color: #fff; margin-bottom: 12px; }
+.cta p { color: rgba(255,255,255,0.95); font-size: 15px; margin-bottom: 20px; }
+.cta__btn { display: inline-block; background: #fff; color: var(--amber-700); padding: 14px 32px; border-radius: 12px; font-weight: 800; font-size: 16px; text-decoration: none; box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+.cta__link { display: block; color: rgba(255,255,255,0.9); font-size: 13.5px; text-decoration: underline; margin-top: 12px; }
+
+.back-link { text-align: center; margin: 32px 0; }
+.back-link a { color: var(--navy-500); text-decoration: none; font-size: 14px; font-weight: 600; }
+
+.templates-callout { background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 14px; padding: 20px 22px; margin: 20px 0; }
+.templates-callout h4 { font-size: 13px; color: #7C3AED; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 10px; }
+.templates-callout ul { list-style: none; padding: 0; margin: 0; }
+.templates-callout li { padding: 6px 0; font-size: 14px; color: var(--navy-700); display: flex; gap: 10px; align-items: center; }
+.templates-callout li::before { content: '📄'; flex-shrink: 0; }
+.templates-callout li b { color: #7C3AED; }
+
+.ai-reality { background: linear-gradient(135deg, #1E293B, #0F172A); color: #fff; border-radius: 20px; padding: 32px 28px; margin-bottom: 24px; border: 1px solid #F59E0B; }
+.ai-reality__badge { display: inline-block; background: var(--amber-500); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 12px; }
+.ai-reality h2 { font-family: var(--serif); color: #fff; font-size: 24px; margin-bottom: 16px; }
+.ai-reality p { color: var(--navy-300); font-size: 15px; margin-bottom: 12px; }
+.ai-reality p b { color: var(--amber-400); }
+.ai-reality__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+@media (max-width: 560px) { .ai-reality__grid { grid-template-columns: 1fr; } }
+.ai-reality__col { padding: 16px; border-radius: 12px; }
+.ai-reality__col--dead { background: rgba(220, 38, 38, 0.15); border: 1px solid rgba(220, 38, 38, 0.3); }
+.ai-reality__col--alive { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); }
+.ai-reality__col h4 { font-family: var(--serif); font-size: 16px; margin-bottom: 10px; color: #fff; }
+.ai-reality__col--dead h4 { color: #FCA5A5; }
+.ai-reality__col--alive h4 { color: #6EE7B7; }
+.ai-reality__col ul { list-style: none; padding: 0; margin: 0; }
+.ai-reality__col li { font-size: 13.5px; padding: 4px 0; color: #E2E8F0; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="https://sol.vn/">Trang chủ</a> · <a href="https://huongdi.sol.vn/">Sol La Bàn</a> · <a href="https://sol.vn/roadmaps/">Lộ trình 90 ngày</a> · Chuyên gia Chia sẻ Trải nghiệm
+  </div>
+
+  <div class="paywall-lock" id="paywall-notice">
+    <div class="paywall-lock__badge">🔒 SOL ACTIVE</div>
+    <div class="paywall-lock__text">
+      Đây là <b>lộ trình chi tiết 90 ngày</b> — 1 trong 10 lộ trình độc quyền cho Sol Active. Anh/chị đang xem phần trải nghiệm miễn phí.
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <div class="hero">
+    <div class="hero__eyebrow">🧠 CHUYÊN GIA CHIA SẺ TRẢI NGHIỆM (THỜI AI)</div>
+    <h1 class="hero__title">Lộ trình <span class="amber">90 ngày</span> cho Chuyên gia 40-60 kiếm tiền từ trải nghiệm sống — không phải creator kiểu cũ</h1>
+    <p class="hero__subtitle">Thời AI, mô hình "content creator kiểu cũ" đã chết. Lộ trình này <b>CHỈ DÀNH CHO NGƯỜI CÓ NGHỀ THỰC</b> — 20-25 năm chuyên môn thực chiến. Dòng tiền khó, cần kiên trì. Focus vào <b>gặp gỡ thật + sản phẩm chất lượng cao</b>. Doanh thu 5-12 triệu/tháng sau 90 ngày.</p>
+
+    <div class="hero__outcomes">
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 30 ngày</div>
+        <div class="hero__outcome__value">Uy tín</div>
+        <div class="hero__outcome__meta">Fanpage + 20 bài "câu chuyện thật"</div>
+      </div>
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 60 ngày</div>
+        <div class="hero__outcome__value">Cộng đồng</div>
+        <div class="hero__outcome__meta">Group Zalo + 1 workshop pilot offline</div>
+      </div>
+      <div class="hero__outcome">
+        <div class="hero__outcome__label">Sau 90 ngày</div>
+        <div class="hero__outcome__value">4 nguồn thu</div>
+        <div class="hero__outcome__meta">Workshop + Coaching + Tư vấn + Ebook</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ AI REALITY ═══ -->
+  <div class="ai-reality">
+    <div class="ai-reality__badge">⚠️ THỰC TẾ 2026</div>
+    <h2>Vì sao mô hình "content creator" kiểu cũ đã chết ở VN</h2>
+    <p>Từ 2024-2026, AI (ChatGPT, Claude, Gemini) đã <b>phổ cập tận đến bà bán rau</b>. Ai cũng viết được bài blog, ebook, script TikTok trong 5 phút. Kết quả:</p>
+    <p>• Ebook 200-500k <b>không ai mua</b> — họ tự bảo AI viết miễn phí<br>• PDF template "10 mẹo X" <b>tràn ngập miễn phí</b><br>• Blog SEO chuẩn <b>AI viết tốt hơn người</b><br>• Newsletter thông tin <b>chết dần</b> — AI curate được<br>• Video TikTok generic <b>AI voice-over + slide 30 giây</b> làm được</p>
+
+    <div class="ai-reality__grid">
+      <div class="ai-reality__col ai-reality__col--dead">
+        <h4>💀 ĐÃ CHẾT (AI nuốt)</h4>
+        <ul>
+          <li>❌ Ebook AI generic 100-300k</li>
+          <li>❌ PDF template "10 mẹo" rẻ</li>
+          <li>❌ Mini khoá video ghi sẵn</li>
+          <li>❌ Blog SEO, Newsletter</li>
+          <li>❌ Booking brand nhỏ 500k-1tr</li>
+          <li>❌ TikTok view farming, Affiliate spam</li>
+        </ul>
+      </div>
+      <div class="ai-reality__col ai-reality__col--alive">
+        <h4>✅ VẪN SỐNG (AI không thay được)</h4>
+        <ul>
+          <li>✓ Workshop offline mặt đối mặt</li>
+          <li>✓ Cộng đồng nhỏ mối quan hệ thật</li>
+          <li>✓ Coaching gói sâu 3-6 tháng</li>
+          <li>✓ Tư vấn 1:1 với 20 năm trải nghiệm</li>
+          <li>✓ Ebook chất lượng cao (30 câu chuyện thật) 500k+</li>
+          <li>✓ B2B training in-house · Speaker sự kiện</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px;"><b>Lợi thế lớn nhất của người 40-60:</b> AI không có ký ức 20 năm sống, không có mạng lưới quan hệ thật, không thể ngồi cạnh 1 người mẹ đang khủng hoảng. Đây là "moat" mà AI không thể sao chép.</p>
+    <p><b>Định vị mới:</b> Không phải "content creator" — mà là <b>"Chuyên gia chia sẻ trải nghiệm sống"</b>. Content chỉ là công cụ tạo uy tín. Tiền đến từ gặp gỡ thật + sản phẩm chất lượng cao.</p>
+    <p style="margin-top: 16px; padding: 14px 16px; background: rgba(220, 38, 38, 0.15); border-left: 3px solid #EF4444; border-radius: 6px; color: #FCA5A5;"><b>⚠️ Cảnh báo thẳng:</b> Chỉ 5-10% chuyên gia VN sống được từ content 2026. Dòng tiền content creator VN <b>KHÔNG DỄ</b> và <b>chỉ dành cho người có nghề thực</b>. Nếu bạn muốn "nghỉ việc làm creator" mà không có 20+ năm nghề chuyên môn → lộ trình này KHÔNG dành cho bạn.</p>
+  </div>
+
+  <!-- ═══ OVERVIEW ═══ -->
+  <div class="section">
+    <h2>Tổng quan lộ trình mới</h2>
+
+    <p><strong>Mô hình:</strong> Chuyên gia 40-60 có 20-25 năm nghề thực chiến, chia sẻ trải nghiệm sống qua Fanpage + TikTok (build uy tín), sau đó monetize qua 4 nguồn <b>khó bị AI thay thế</b>: (1) Workshop offline · (2) Coaching gói sâu · (3) Tư vấn 1:1 · (4) Ebook/Bộ tài liệu chất lượng cao (không phải AI generic). Mid-late thêm Cộng đồng có phí + B2B training.</p>
+
+    <p><strong>Điều kiện BẮT BUỘC (không thoả 1 trong các điều kiện dưới → không nên đi lộ trình này):</strong></p>
+    <ul style="margin-left:20px;">
+      <li>DNA <b>"Chuyên môn sâu + Chia sẻ"</b> (Bước 1 Sol La Bàn)</li>
+      <li><b>20-25+ năm nghề thực chiến</b> — không phải "nghề tay trái" hay "sở thích"</li>
+      <li>Có <b>kết quả cụ thể</b> đo được: đã dạy 500+ học viên · Đã cố vấn 100+ dự án · Đã điều hành 20+ nhân sự... (tuỳ ngành)</li>
+      <li>Sẵn sàng <b>gặp học viên mặt đối mặt</b> — không né offline</li>
+      <li>Có thể tổ chức workshop 15-30 người (thuê phòng, MC nhóm)</li>
+      <li>Buffer tài chính <b>18-24 tháng</b> (60-150 triệu) — 2026 không còn "6 tháng success"</li>
+      <li>Đầu tư <b>3-4 giờ/ngày</b> — có thể lên 6 giờ nếu cấp bách</li>
+    </ul>
+    <p style="padding: 12px 14px; background: var(--amber-100); border-radius: 8px; font-size: 14.5px; color: var(--navy-800); margin-top: 12px;"><b>Nếu bạn KHÔNG có 20+ năm nghề:</b> Hãy xem lộ trình khác — Sol La Bàn có 9 mô hình khác phù hợp với bạn hơn (Franchise, Angel Investment, Đại lý ngành mới, Digital services...). Đừng cố làm creator nếu chưa có nghề thực.</p>
+
+    <h3>3 giai đoạn</h3>
+    <p><b>Tháng 1 (Tuần 1-4) — Định vị + Uy tín online:</b> Chọn ngách sâu, mở Fanpage Facebook + TikTok, đăng 20 bài "câu chuyện có thật" (AI không thể fake trải nghiệm cá nhân), đạt 500 người theo dõi.</p>
+
+    <p><b>Tháng 2 (Tuần 5-8) — Cộng đồng + Workshop pilot:</b> Mở Group Zalo/Facebook riêng (free tier), tổ chức 1 workshop offline pilot 15-20 người (thu 300-500k/người), quan sát who's the buyer.</p>
+
+    <p><b>Tháng 3 (Tuần 9-12) — 4 nguồn thu thực:</b> Coaching gói 6 tuần (3-5 người × 3 triệu), tư vấn 1:1 gói 4 buổi (2-3 khách × 2 triệu), workshop #2 nâng lên 180-200k/người × 25-30 chỗ, ebook chất lượng cao 499k (15-25 đơn).</p>
+  </div>
+
+  <!-- ═══ THÁNG 1 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 1</div>
+      <div class="month-header__title">Tháng 1 — Định vị + Uy tín online</div>
+      <div class="month-header__desc">Tuần 1-4: Chọn ngách sâu, Fanpage + TikTok, 20 bài "câu chuyện thật" — điều AI không thể fake.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 1 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 1</span>
+          <span class="week__title">Chọn ngách "sâu" + Kiểm kê trải nghiệm sống</span>
+        </div>
+        <ul>
+          <li><b>Nghỉ 3-5 ngày</b> refresh.</li>
+          <li><b>Kiểm kê 30 câu chuyện có thật</b> từ 20 năm sự nghiệp — mỗi câu 1 dòng note. Đây là VÀNG. AI không có, không copy được.</li>
+          <li><b>Chọn ngách sâu (không rộng):</b> Ví dụ giáo viên tiểu học 25 năm → không chọn "giáo dục trẻ em" chung chung mà chọn "Dạy trẻ lớp 1 phát âm chuẩn tiếng Việt sau 30 ngày" — đặc biệt, không AI generic content nào chạm được.</li>
+          <li><b>Test ngách bằng câu hỏi:</b> "Nếu bạn gặp 100 người trong ngách, bạn có 30 câu chuyện KHÔNG lặp lại để chia sẻ không?" Nếu không → ngách chưa đủ sâu.</li>
+          <li><b>Xem 10 chuyên gia VN thành công 2025-2026</b> cùng ngách — không xem creator tây. Note họ đã pivot khỏi ebook/newsletter chưa? Họ tổ chức workshop bao lâu 1 lần?</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 30 câu chuyện đã note · Ngách sâu chốt · Phân tích 10 chuyên gia VN
+        </div>
+      </div>
+
+      <!-- Tuần 2 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 2</span>
+          <span class="week__title">Fanpage + TikTok — tối ưu "người thật"</span>
+        </div>
+        <ul>
+          <li><b>Fanpage mới:</b> Tên "[Tên thật] · [Nghề nghiệp thật] [Số năm] năm". Ví dụ "Cô Lan · Cô giáo tiểu học 25 năm". Đây là điều AI không copy được — người thật, tên thật, đời thật.</li>
+          <li><b>Ảnh bìa Canva:</b> Ảnh bạn thật, đang làm việc thật (đang dạy, đang tư vấn, đang gặp học viên). KHÔNG dùng ảnh stock hoặc ảnh AI generate.</li>
+          <li><b>Phần giới thiệu Fanpage:</b> 3 câu — "Tôi đã dạy 500+ trẻ lớp 1 trong 25 năm. Tôi biết cụ thể vì sao con bạn ngại phát âm. Tôi chia sẻ mẹo thực chiến từ đời dạy."</li>
+          <li><b>Tài khoản TikTok:</b> Cùng tên. Bio: "Cô giáo 25 năm · Chia sẻ mẹo dạy con lớp 1 · Sáng tạo tuổi 50". Đường link Fanpage vào bio.</li>
+          <li><b>Chuẩn bị 5 bài "câu chuyện thật":</b> Draft trên Google Docs. Format: Câu mở gắt (1 dòng) · Câu chuyện chi tiết 200-300 từ · Bài học rút ra 1-2 câu · Câu hỏi cho reader.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Fanpage + TikTok setup xong · 5 bài draft · Ảnh thật (không AI generate)
+        </div>
+      </div>
+
+      <!-- Tuần 3 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 3</span>
+          <span class="week__title">Ra mắt Content — Chống chỉ định AI generic</span>
+        </div>
+        <ul>
+          <li><b>Đăng 5 bài "câu chuyện thật" đầu</b> (T2, T3, T4, T6, T7). Khung giờ VN: 7-8h sáng hoặc 20-21h tối.</li>
+          <li><b>Quy tắc vàng:</b> Mỗi bài phải có <b>1 chi tiết cụ thể mà AI không viết được</b> — tên thật (đã đổi), địa điểm cụ thể, thời gian cụ thể, cảm xúc thật của bạn. Ví dụ: "Năm 2018, phụ huynh Nga ở Đông Anh gọi khóc lúc 22h vì con lớp 1 không đọc được. Tôi nhớ tiếng chị nghẹn ngào..."</li>
+          <li><b>Trả lời TẤT CẢ comment trong 2 giờ</b> — bằng câu trả lời cá nhân hoá (không copy paste). Facebook đo tốc độ + chất lượng reply để push bài.</li>
+          <li><b>5 video TikTok 30-60 giây</b> — mặt bạn, giọng bạn, kể chuyện thật. KHÔNG dùng AI voice-over. KHÔNG dùng script generic.</li>
+          <li><b>Chia sẻ 3 bài đầu tiên</b> lên trang cá nhân Facebook — bạn bè cũ sẽ tương tác.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 5 bài Fanpage + 5 video TikTok · 100-200 tương tác · 150 lượt theo dõi Fanpage
+        </div>
+      </div>
+
+      <!-- Tuần 4 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 4</span>
+          <span class="week__title">Group Facebook + Xây "sổ liên lạc" khách tiềm năng</span>
+        </div>
+        <ul>
+          <li><b>5 bài Fanpage tiếp theo</b> (tổng 10 bài trong 2 tuần đăng).</li>
+          <li><b>Tham gia 10 Group Facebook lớn trong ngách</b> — Group nhiều thành viên, active. Đọc luật group.</li>
+          <li><b>Comment giá trị 3-5 bài/group/ngày</b> — <b>không self-promote</b>. Comment với insight thật từ 25 năm trải nghiệm. Đây là cách xây uy tín nhanh nhất.</li>
+          <li><b>Bắt đầu "sổ liên lạc":</b> Google Sheets với 3 cột — Tên · Trang cá nhân · Bài đã inbox/comment. Target: 100 người vào cuối tháng 1 (những người đã tương tác nhiều với bạn).</li>
+          <li><b>Boost 1 bài top perform</b> 300-500k/5 ngày để kiểm chứng ngách. Target female 30-55 tại VN.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần 4:</b> <b>500 followers Fanpage</b> · 20 bài đã đăng · 100 người trong sổ liên lạc · 3 Group approve post giá trị
+        </div>
+      </div>
+
+      <div class="templates-callout">
+        <h4>🧰 Sol Active trang bị gì (KHÔNG phải template điền sẵn)</h4>
+        <p style="font-size: 13.5px; color: var(--navy-700); margin-bottom: 12px;">Sol Active <b>KHÔNG giao template AI generic</b> hoặc "danh sách 50 Group Facebook" lỗi thời. Sol Active giao <b>framework để BẠN TỰ TẠO tài liệu độc quyền</b> từ 20 năm nghề của MÌNH — không ai copy được.</p>
+        <ul>
+          <li><b>Framework "Sổ 30 câu chuyện"</b> — 8 câu hỏi khai thác + 5 dạng câu chuyện có sức mạnh cao, để bạn tự viết 30 câu chuyện của MÌNH (không phải Khang viết sẵn)</li>
+          <li><b>Framework "15 dạng bài Facebook"</b> — cấu trúc hook + body + CTA + câu hỏi filler để bạn viết theo GIỌNG RIÊNG của bạn</li>
+          <li><b>Framework "Kể chuyện TikTok"</b> — 5 structure gốc + hướng dẫn adapt theo chủ đề CỦA BẠN</li>
+          <li><b>Framework "Tự tìm Group Facebook"</b> — 5 tiêu chí filter Group + cách audit chất lượng (thay vì danh sách sẵn lỗi thời sau 6 tháng)</li>
+          <li><b>Framework "Sổ liên lạc"</b> — 3 giai đoạn nurture khách + câu hỏi phân loại theo ngách của bạn</li>
+          <li><b>Weekly Office Hour</b> với Khang Sol — 1 giờ/tuần thứ 7, trao đổi trực tiếp về template BẠN đang xây</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--amber-700); margin-top: 12px; padding: 8px 10px; background: var(--amber-100); border-radius: 6px;"><b>Vì sao khác biệt:</b> 1.000 Active user sẽ có 1.000 template khác nhau, mỗi người ĐỘC QUYỀN. Không giống 1.000 khoá học rẻ tiền copy-paste — nơi feed VN nhìn giống nhau, giống AI viết.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ THÁNG 2 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 2</div>
+      <div class="month-header__title">Tháng 2 — Cộng đồng + Workshop pilot</div>
+      <div class="month-header__desc">Tuần 5-8: Mở Group Zalo/Facebook riêng, tổ chức 1 workshop offline pilot 15-20 người — nguồn thu ĐẦU TIÊN.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 5 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 5</span>
+          <span class="week__title">Mở Group Zalo miễn phí + Chuẩn bị Workshop</span>
+        </div>
+        <ul>
+          <li><b>Mở Group Zalo miễn phí</b> — tối đa 1.000 thành viên. Tên rõ ràng: "[Ngách] Cùng Cô [Tên]". Ví dụ: "Nuôi Dạy Con Lớp 1 Cùng Cô Lan".</li>
+          <li><b>Rules Group đơn giản:</b> (1) Không spam · (2) Không quảng cáo · (3) Chia sẻ chuyện thật · (4) Hỏi cụ thể sẽ có phản hồi cụ thể.</li>
+          <li><b>Cross-promote:</b> Post trên Fanpage "Ai muốn tham gia cộng đồng Zalo riêng, chia sẻ câu chuyện thật với tôi — link comment." Post 1 lần/tuần.</li>
+          <li><b>Chuẩn bị Workshop pilot đầu tiên</b> — 1 ngày Thứ 7, 3-4 giờ (14h-17h) tại quán cà phê hoặc phòng thuê nhỏ (~1-1,5 triệu thuê). Chủ đề cụ thể: "Bí quyết 20 năm dạy con lớp 1 phát âm chuẩn". Chỉ 15-20 người.</li>
+          <li><b>Giá pilot 150k/người</b> (giá vừa túi VN, dễ chốt đủ 15-20 người + thu nhận xét chi tiết). Chi phí phòng + nước + tài liệu in = ~800k-1 triệu. Doanh thu 150k × 18 = 2,7 triệu. Lãi pilot ~1,7-1,9 triệu.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Group Zalo active · 30-50 thành viên đầu · Landing page workshop live · 5 người đã đăng ký sớm
+        </div>
+      </div>
+
+      <!-- Tuần 6 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 6</span>
+          <span class="week__title">Bán vé Workshop pilot + Nuôi Group Zalo</span>
+        </div>
+        <ul>
+          <li><b>Đẩy vé workshop:</b> 3 bài Fanpage + 3 video TikTok kể chuyện "Vì sao tôi mở workshop này" + Post trong 5 Group Facebook lớn (nếu Group cho phép).</li>
+          <li><b>Target chốt 15-20 vé × 150k = 2,25-3 triệu</b> trong tuần này.</li>
+          <li><b>Nuôi Group Zalo:</b> Đăng 2-3 lần/tuần — story ngắn từ 25 năm nghề. Trả lời câu hỏi thành viên trong 6 giờ.</li>
+          <li><b>Nhắn tin cá nhân 30 người đã tương tác nhiều</b> ở tháng 1 — mời tham gia workshop với ưu đãi "Người theo dõi tháng đầu 120k thay vì 150k".</li>
+          <li><b>3 video TikTok</b> tiếp tục — 1 video preview workshop content.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 15-20 vé workshop chốt (2,25-3 triệu) · Group Zalo 80-100 thành viên
+        </div>
+      </div>
+
+      <!-- Tuần 7 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 7</span>
+          <span class="week__title">Tổ chức Workshop pilot + Xin nhận xét ngay</span>
+        </div>
+        <ul>
+          <li><b>Tổ chức workshop Thứ 7</b> — 3-4 giờ: 30' giới thiệu + 2h nội dung chính + 30-60' Q&A + networking.</li>
+          <li><b>Kịch bản workshop:</b> 3 câu chuyện thật (mỗi câu 20 phút) · 1 bài tập thực hành (30 phút) · 1 checklist 10 bước phụ huynh áp dụng ngay (in giấy phát).</li>
+          <li><b>QUAY VIDEO buổi workshop</b> (xin phép trước) — trích 5-10 clip 60 giây cho content TikTok tuần sau.</li>
+          <li><b>Ngay sau workshop:</b> Xin nhận xét ngay tại chỗ. 5 người viết text 3-5 câu · 3 người quay video 30 giây "Cảm nhận sau workshop".</li>
+          <li><b>Follow-up qua Zalo cá nhân</b> mỗi khách trong 48 giờ — cảm ơn + gửi tài liệu bổ sung + hỏi phản hồi.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Workshop 18-20 người thành công · <b>Thu 2,7-3 triệu, lãi ~1,7-2 triệu</b> · 8 nhận xét (5 text + 3 video) · 5 clip TikTok từ workshop
+        </div>
+      </div>
+
+      <!-- Tuần 8 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 8</span>
+          <span class="week__title">Đánh giá + Chuẩn bị 3 nguồn thu sâu hơn</span>
+        </div>
+        <ul>
+          <li><b>Đăng nhận xét lên Fanpage</b> — 3 video + 5 text testimonial. Social proof cực mạnh cho tháng 3.</li>
+          <li><b>Đánh giá tháng 2:</b> Fanpage · TikTok · Group Zalo · Workshop pilot (khách nào phù hợp nhất, khách nào sẽ mua tiếp).</li>
+          <li><b>Chuẩn bị 4 offer tháng 3:</b><br>• <b>Coaching gói 6 tuần</b> — 6 buổi cá nhân qua Zalo Call: 3 triệu/gói. Chỉ nhận 5 người.<br>• <b>Tư vấn 1:1 gói 4 buổi</b> — cho case cụ thể: 2 triệu/gói. Chỉ 3 người.<br>• <b>Workshop offline #2</b> — nâng lên 180-200k/người, 25-30 chỗ (nhận xét từ workshop pilot làm social proof).<br>• <b>Ebook + Bộ tài liệu chất lượng cao</b> — 30 case study có thật từ 25 năm nghề + 20 template PDF/Excel áp dụng ngay: <b>499k</b>. Không phải PDF AI generic. Đây là knowledge asset thật.</li>
+          <li><b>Landing đơn giản</b> trong Zalo OA hoặc Google Sites (miễn phí) — không cần Wordpress.</li>
+          <li><b>Cho pilot workshop attendee ưu đãi trước:</b> "Coaching gói 6 tuần chỉ 2,5 triệu cho 15 người đã tham gia workshop pilot".</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần 8:</b> <b>1.500 Fanpage · 800 TikTok · 200 Group Zalo</b> · 3 offer sẵn sàng · 3-5 pilot attendee đã đăng ký coaching sớm
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ THÁNG 3 ═══ -->
+  <div class="month-block">
+    <div class="month-header">
+      <div class="month-header__label">GIAI ĐOẠN 3</div>
+      <div class="month-header__title">Tháng 3 — 3 nguồn thu thực</div>
+      <div class="month-header__desc">Tuần 9-12: Chốt coaching gói + tư vấn 1:1 + workshop offline #2. Doanh thu tháng đầu 5-15 triệu.</div>
+    </div>
+
+    <div class="month-body">
+
+      <!-- Tuần 9 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 9</span>
+          <span class="week__title">Chốt Coaching gói + Tư vấn 1:1</span>
+        </div>
+        <ul>
+          <li><b>Đẩy coaching gói 6 tuần</b> trên Fanpage + Group Zalo + Zalo cá nhân: "Chỉ 5 chỗ. Ai muốn có 6 buổi cá nhân với tôi trong 6 tuần để giải quyết cụ thể vấn đề X — nhắn tin ngay."</li>
+          <li><b>Target: Chốt 3-5 coaching gói</b> × 3 triệu = 9-15 triệu (thu 50% trước, 50% giữa gói).</li>
+          <li><b>Song song: Chốt 2-3 tư vấn 1:1 gói</b> × 2 triệu = 4-6 triệu. Đối tượng: case cụ thể muốn giải quyết ngay không muốn coaching dài.</li>
+          <li><b>Kick-off session</b> với 3 khách coaching đầu tiên trong tuần — Xây trust ngay từ buổi đầu.</li>
+          <li><b>2 bài Fanpage + 3 video TikTok</b> tiếp tục volume.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 3-5 coaching chốt · 2-3 tư vấn chốt · Tuần thu đầu 5-8 triệu · 5 kick-off session
+        </div>
+      </div>
+
+      <!-- Tuần 10 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 10</span>
+          <span class="week__title">Deliver + Đẩy Workshop #2</span>
+        </div>
+        <ul>
+          <li><b>Deliver 5-8 sessions</b> (coaching + tư vấn) — mỗi buổi 60-90 phút. Ghi note chi tiết trong Notion.</li>
+          <li><b>Sau mỗi session:</b> Gửi bản ghi note qua Zalo + 3 việc khách cần làm trong tuần tới. Đây là chỗ AI không thay được — care thật.</li>
+          <li><b>Đẩy Workshop #2</b> — nâng lên 500k/người, chủ đề khác. Target 20 chỗ = 10 triệu doanh thu.</li>
+          <li><b>Social proof đẩy mạnh:</b> Post 3 nhận xét video từ workshop pilot lên Fanpage + TikTok. Nhận xét từ khách coaching đầu tiên (nếu có breakthrough sớm).</li>
+          <li><b>Cross-sell:</b> Khách tư vấn xong → mời tham gia workshop #2 với discount 20%.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> 5-8 sessions delivered · Workshop #2 đã có 10-15 vé đăng ký · 2 nhận xét mới
+        </div>
+      </div>
+
+      <!-- Tuần 11 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 11</span>
+          <span class="week__title">Workshop #2 offline + Sessions tiếp</span>
+        </div>
+        <ul>
+          <li><b>Tổ chức Workshop #2</b> — Thứ 7, 3-4 giờ, 25-30 người × 180-200k = <b>4,5-6 triệu doanh thu</b>. Lãi ~2,5-4 triệu sau chi phí.</li>
+          <li><b>Kịch bản Workshop #2 nâng cấp:</b> Deep dive hơn workshop pilot. Có bài tập nhóm 2 người + take-home checklist chi tiết.</li>
+          <li><b>Deliver 4-6 sessions coaching/tư vấn</b> tiếp trong tuần.</li>
+          <li><b>Xin nhận xét ngay tại workshop</b> — target 5 video + 8 text.</li>
+          <li><b>Sau workshop:</b> Mời 5-8 attendee tham gia Group Zalo riêng cho học viên workshop — nurture cho batch 2 (coaching gói).</li>
+          <li><b>Ra mắt Ebook "30 câu chuyện thật + 20 template" giá 499k:</b> Đây là knowledge asset thực từ 25 năm nghề — không phải PDF AI generic. Bán qua Google Form + chuyển khoản → gửi Google Drive tự động. Target 15-25 đơn tuần này (7,5-12,5 triệu). Điểm bán: "AI viết bài chung chung. Đây là ebook 30 câu chuyện có thật, có tên có địa điểm có thời gian cụ thể — không AI nào fake được."</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần:</b> Workshop #2 xong (<b>lãi 2,5-4 triệu</b>) · Ebook launch (<b>7,5-12,5 triệu</b>) · 6 sessions delivered · 13 nhận xét mới
+        </div>
+      </div>
+
+      <!-- Tuần 12 -->
+      <div class="week">
+        <div class="week__header">
+          <span class="week__num">TUẦN 12</span>
+          <span class="week__title">Tổng kết + Chuẩn bị B2B outreach tháng 4</span>
+        </div>
+        <ul>
+          <li><b>Tổng kết 90 ngày realistic:</b><br>• Workshop pilot lãi 1,7-2 triệu<br>• Workshop #2 lãi 2,5-4 triệu<br>• Coaching 3-5 người × 3 triệu = 9-15 triệu (trải trong 2 tháng)<br>• Tư vấn 2-3 người × 2 triệu = 4-6 triệu<br>• Ebook 15-25 đơn × 499k = 7,5-12,5 triệu<br>• <b>Tổng doanh thu tháng 3: 10-18 triệu</b> (không có phép màu!)</li>
+          <li><b>Chuẩn bị B2B outreach tháng 4:</b> Nếu có nhận xét mạnh + workshop track record → tiếp cận 5-10 doanh nghiệp SME trong ngách. Offer: training in-house 1 buổi 8-12 triệu.</li>
+          <li><b>Tăng giá tháng 4:</b> Coaching gói 3 triệu → 4 triệu. Workshop 180-200k → 250-300k. Không grandfather giảm giá.</li>
+          <li><b>Bắt đầu batch 2 coaching gói</b> — target 5 người mới, có nhận xét mạnh hơn nên dễ chốt hơn tháng 3.</li>
+          <li><b>Nếu Group Zalo &gt; 300 thành viên</b> — cân nhắc launch <b>Cộng đồng có phí</b> tháng 5: 200-300k/tháng cho 30-50 thành viên. Recurring revenue 6-15 triệu/tháng.</li>
+        </ul>
+        <div class="week__kpi">
+          <b>KPI cuối tuần 12:</b> <b>2.500 Fanpage · 1.500 TikTok · 300+ Zalo Group</b> · Doanh thu tháng 3 <b>10-18 triệu</b> · Q2 plan có B2B + Cộng đồng phí
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ TOOLS ═══ -->
+  <div class="section">
+    <h2>Bộ công cụ cần thiết (thời AI 2026)</h2>
+    <p>Chi phí công cụ ~<b>500k-1 triệu/tháng</b>. Chi phí workshop offline ~<b>1-2 triệu/buổi</b> (phòng + nước + tài liệu in).</p>
+
+    <div class="tools-box">
+      <h4>🛠️ Danh sách 10 công cụ theo thứ tự ưu tiên</h4>
+      <div class="tools-list">
+        <div class="tool-item"><span class="tool-item__icon">📘</span><span class="tool-item__name">Facebook Fanpage</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">💬</span><span class="tool-item__name">Zalo Group + OA</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎵</span><span class="tool-item__name">TikTok Studio</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎬</span><span class="tool-item__name">CapCut chỉnh sửa</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🏢</span><span class="tool-item__name">Phòng workshop thuê</span><span class="tool-item__cost">1-2tr/buổi</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎨</span><span class="tool-item__name">Canva tiếng Việt</span><span class="tool-item__cost">300k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">📊</span><span class="tool-item__name">Google Workspace</span><span class="tool-item__cost">Miễn phí</span></div>
+        <div class="tool-item"><span class="tool-item__icon">💰</span><span class="tool-item__name">Facebook Ads boost</span><span class="tool-item__cost">500k-1tr/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🎥</span><span class="tool-item__name">Zoom Pro (call sâu)</span><span class="tool-item__cost">350k/tháng</span></div>
+        <div class="tool-item"><span class="tool-item__icon">🤖</span><span class="tool-item__name">Claude/ChatGPT (support)</span><span class="tool-item__cost">Miễn phí → 500k</span></div>
+      </div>
+    </div>
+    <p style="margin-top: 16px; padding: 12px; background: var(--amber-100); border-radius: 8px; font-size: 14px; color: var(--navy-800);"><b>Note:</b> Đầu tư quan trọng nhất KHÔNG PHẢI công cụ mà là <b>chi phí workshop offline</b> (thuê phòng, in tài liệu, nước uống). Budget 3-5 triệu/tháng cho workshop.</p>
+  </div>
+
+  <!-- ═══ PITFALLS ═══ -->
+  <div class="section">
+    <h2>5 sai lầm chết người thời AI 2026</h2>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 1: Bán ebook/PDF template AI generic 100-300k</h4>
+      <p>Ai giờ cũng có Claude/ChatGPT — họ tự viết ebook trong 30 phút. Ebook 100-300k viết bằng AI KHÔNG ai mua. Đúng: <b>Nếu làm ebook thì phải là ebook chất lượng cao — 30 câu chuyện thật từ 20 năm nghề + 20 template áp dụng ngay + có tên có địa điểm có thời gian cụ thể. Giá 400-500k, khách hiểu giá trị.</b> Không cạnh tranh giá thấp với AI — cạnh tranh chất lượng trải nghiệm.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 2: Dùng AI viết bài Fanpage generic</h4>
+      <p>AI viết bài "10 mẹo dạy con" quá giỏi — audience nhận ra ngay. Nếu bạn dùng AI cho content tổng quan, bạn CHÍNH LÀ đối thủ của AI (và thua). Đúng: <b>Chỉ dùng AI để chỉnh câu văn. Nội dung PHẢI là câu chuyện thật từ 20 năm sự nghiệp.</b></p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 3: Chờ đủ 5.000 followers mới tổ chức workshop</h4>
+      <p>Có 500 followers mà 15 người tin bạn → workshop pilot đầy. Có 5.000 followers mà toàn view farming → chỉ 2 người mua vé. Đúng: <b>Tổ chức workshop từ tháng 2 dù chỉ 500 followers, focus quality relationship.</b></p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 4: Từ chối offline vì "ngại gặp"</h4>
+      <p>Đây là moat 40-60 vs AI. Nếu bạn cũng chỉ ngồi sau máy tính → thua AI. Đúng: <b>1 workshop/tháng offline là bắt buộc.</b> Nhìn mắt học viên, bắt tay, cà phê sau buổi.</p>
+    </div>
+
+    <div class="pitfall">
+      <h4>❌ Sai lầm 5: Kỳ vọng "6 tháng nghỉ việc thu nhập 50 triệu/tháng"</h4>
+      <p>Guru bán khoá cho bạn kịch bản 2020 — thời AI 2026 không còn khả thi. Đúng: <b>Chấp nhận 90 ngày thu 5-15 triệu, 180 ngày 15-25 triệu, 365 ngày 25-40 triệu (top 20%). Cần buffer 18-24 tháng.</b></p>
+    </div>
+  </div>
+
+  <!-- ═══ BENCHMARK ═══ -->
+  <div class="benchmark">
+    <h2>🎯 Cột mốc thành công thực tế 2026</h2>
+    <ul>
+      <li><b>Ngày 30:</b> 500 Fanpage · 20 bài "câu chuyện thật" · 100 người trong sổ liên lạc · Chưa có thu</li>
+      <li><b>Ngày 60:</b> 1.500 Fanpage · 200 Zalo Group · Workshop pilot xong (<b>lãi 1,7-2 triệu</b>) · 8 nhận xét</li>
+      <li><b>Ngày 90:</b> <b>2.500 Fanpage</b> · Doanh thu tháng 3 <b>10-18 triệu</b> (Workshop + Coaching + Tư vấn + Ebook chất lượng) · 20+ nhận xét</li>
+      <li><b>Ngày 180:</b> 5.000 Fanpage · Doanh thu <b>15-25 triệu/tháng</b> ổn định · Cộng đồng có phí launch · 1-2 B2B contract</li>
+      <li><b>Ngày 365:</b> Top 20% chuyên gia VN đạt <b>25-40 triệu/tháng</b> ổn định. Top 10% đạt 40-60 triệu. Đa số 15-25 triệu. <b>Bám 90% người bỏ cuộc trước 6 tháng.</b></li>
+    </ul>
+  </div>
+
+  <!-- ═══ CTA ═══ -->
+  <div class="cta">
+    <h2>Sẵn sàng làm theo lộ trình 2026 này?</h2>
+    <p>Sol Active mở khoá <b>bộ framework tự tạo tài liệu độc quyền</b> (không phải template copy-paste) + <b>Weekly Office Hour</b> với Khang Sol + <b>9 lộ trình khác</b> cho các mô hình khởi nghiệp 40-60 tại VN.</p>
+    <a href="https://sol.vn/thanh-toan/" class="cta__btn">🚀 Nâng cấp Sol Active 499k/năm →</a>
+    <a href="https://sol.vn/case-studies/03-content-creator-chi-lan/" class="cta__link">Xem trường hợp thực tế: Chị Lan 44 tuổi đã đi lộ trình này →</a>
+  </div>
+
+  <div class="back-link">
+    <a href="/roadmaps/">← Xem 9 lộ trình khác</a>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  try {
+    var tier = localStorage.getItem('sol_tier');
+    var active = localStorage.getItem('sol_active');
+    if (tier === 'active' || tier === 'founder' || active === 'true') {
+      document.getElementById('paywall-notice').style.display = 'none';
+    }
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>

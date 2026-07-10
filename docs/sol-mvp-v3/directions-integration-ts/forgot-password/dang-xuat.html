@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng xuất — Sol La Bàn</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  body {
+    font-family:-apple-system, 'Segoe UI', Roboto, sans-serif;
+    background:#F8FAFC; color:#0F172A;
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    margin:0; padding:20px;
+  }
+  .card {
+    background:white; border-radius:16px; padding:40px; text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,0.08); max-width:400px;
+  }
+  .icon { font-size:48px; margin-bottom:16px; }
+  h1 { font-size:22px; margin-bottom:8px; }
+  p { color:#64748B; font-size:14px; margin-bottom:20px; }
+  .spinner {
+    width:32px; height:32px; margin:0 auto 12px;
+    border:3px solid #FEF3C7; border-top-color:#F59E0B;
+    border-radius:50%; animation:spin 1s linear infinite;
+  }
+  @keyframes spin { to { transform:rotate(360deg); } }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">👋</div>
+  <div class="spinner"></div>
+  <h1>Đang đăng xuất...</h1>
+  <p>Cảm ơn anh chị đã dùng Sol La Bàn.<br>Đang chuyển về trang đăng nhập...</p>
+</div>
+
+<script>
+(function() {
+  // Clear tất cả auth data
+  localStorage.removeItem('sol_jwt');
+  localStorage.removeItem('sol_user');
+  localStorage.removeItem('sol_active');
+  localStorage.removeItem('sol_tier');
+  localStorage.removeItem('sol_p1_id');
+  localStorage.removeItem('sol_p2_id');
+  // Giữ sol_session_id cho analytics cross-session
+
+  // Redirect sau 1 giây
+  setTimeout(() => {
+    location.href = '/dang-nhap/';
+  }, 1000);
+})();
+</script>
+</body>
+</html>

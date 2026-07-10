@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="37 hướng đi được cá nhân hoá theo kết quả P1+P2 của bạn. Tìm mô hình tạo thu nhập phù hợp nhất sau tuổi 40.">
+<title>La Bàn Hướng Đi — 37 Hướng Đi Phù Hợp | Sol.vn</title>
+<style>
+:root{
+  --g:#1a6b4a;--gm:#2e8b63;--gl:#e8f5ee;--gd:#134e3a;
+  --a:#f59e0b;--al:#fef3c7;
+  --tx:#1a202c;--mu:#6b7280;--bd:#e5e7eb;--bg:#f9fafb;--wh:#fff;
+  --sh:0 2px 12px rgba(0,0,0,.08);--r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--tx);font-size:15px;line-height:1.6}
+a{text-decoration:none}
+
+/* HEADER */
+.hdr{background:rgba(9,13,26,.97);border-bottom:1px solid rgba(30,45,71,.8);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:57px;z-index:200;backdrop-filter:blur(8px);gap:12px;flex-wrap:wrap}
+.hdr-r{display:flex;gap:8px}
+.btn-sm{font-size:12px;color:var(--mu);background:transparent;border:1px solid var(--bd);padding:5px 12px;border-radius:99px;cursor:pointer;white-space:nowrap}
+.btn-sm:hover{border-color:var(--g);color:var(--g)}
+
+/* SCREENS */
+.scr{display:none}.scr.on{display:block}
+
+/* NO-DATA */
+.nodata{max-width:480px;margin:60px auto;padding:24px;text-align:center}
+.nodata .ico{font-size:52px;margin-bottom:14px}
+.nodata h2{font-size:22px;font-weight:800;color:var(--g);margin-bottom:8px}
+.nodata p{color:var(--mu);margin-bottom:22px}
+.nd-steps{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;text-align:left}
+.nd-step{background:var(--wh);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;border:2px solid var(--bd)}
+.nd-step.done{border-color:#86efac;background:#f0fdf4}
+.nd-step-ico{font-size:20px}
+.nd-step-info strong{display:block;font-size:14px;font-weight:700}
+.nd-step-info span{font-size:13px;color:var(--mu)}
+.nd-badge{margin-left:auto;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px}
+.ndb-done{background:#d1fae5;color:#059669}
+.ndb-todo{background:var(--bd);color:var(--mu)}
+.btn-go{display:block;padding:15px;background:var(--g);color:white;border:none;border-radius:var(--r);font-size:16px;font-weight:700;cursor:pointer;text-align:center}
+.btn-go:hover{background:var(--gm)}
+
+/* LOADING */
+.loading{max-width:420px;margin:80px auto;text-align:center;padding:20px}
+.spin{width:48px;height:48px;border:4px solid var(--bd);border-top-color:var(--g);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 18px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading h2{font-size:18px;font-weight:700;color:var(--g);margin-bottom:6px}
+.loading p{color:var(--mu);font-size:14px}
+
+/* RESULTS LAYOUT */
+.res{max-width:780px;margin:0 auto;padding:18px 14px 60px}
+
+/* PROFILE CARD */
+.profile-card{background:linear-gradient(135deg,var(--gd) 0%,#1a6b4a 100%);border-radius:var(--r);padding:20px 22px;margin-bottom:16px;color:white}
+.pc-top{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.pc-block{flex:1;min-width:160px}
+.pc-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;opacity:.7;margin-bottom:8px}
+.dna-bars{display:flex;flex-direction:column;gap:5px}
+.dna-row{display:flex;align-items:center;gap:8px}
+.dna-name{font-size:12px;font-weight:600;width:80px;opacity:.9}
+.dna-track{flex:1;height:5px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden}
+.dna-fill{height:100%;border-radius:99px;background:rgba(255,255,255,.8)}
+.dna-val{font-size:11px;font-weight:700;width:28px;text-align:right;opacity:.85}
+.res-chips{display:flex;flex-wrap:wrap;gap:6px}
+.res-chip{font-size:12px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:white}
+.pc-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.pc-title{font-size:15px;font-weight:700}
+.pc-sub{font-size:13px;opacity:.75;margin-top:2px}
+.pc-edit{font-size:12px;padding:5px 14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:99px;color:white;cursor:pointer}
+.pc-edit:hover{background:rgba(255,255,255,.25)}
+
+/* FILTER ROW */
+.filter-section{background:var(--wh);border-radius:var(--r);padding:12px 16px;margin-bottom:14px;box-shadow:var(--sh)}
+.cat-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.cat-tab{font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;border:1.5px solid var(--bd);background:transparent;cursor:pointer;color:var(--tx);white-space:nowrap}
+.cat-tab.on{border-color:var(--g);background:var(--g);color:white}
+.cat-tab:hover:not(.on){border-color:var(--g);color:var(--g)}
+.sort-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.sort-label{font-size:11px;color:var(--mu);font-weight:600}
+.sort-btn{font-size:12px;font-weight:500;padding:4px 10px;border-radius:99px;border:1px solid var(--bd);background:transparent;cursor:pointer;color:var(--mu)}
+.sort-btn.on{background:var(--al);border-color:var(--a);color:#92400e;font-weight:700}
+
+/* RESULTS HEADER */
+.res-hdr{margin-bottom:14px}
+.res-hdr h1{font-size:20px;font-weight:800;color:var(--g);margin-bottom:3px}
+.res-hdr p{color:var(--mu);font-size:13px}
+
+/* CARDS */
+.cards{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--wh);border-radius:var(--r);box-shadow:var(--sh);border:2px solid transparent;transition:border-color .18s;overflow:hidden}
+.card.top3{border-color:#86efac}
+.card:hover{border-color:var(--gm)}
+.card-hd{padding:16px 18px;cursor:pointer;display:flex;align-items:flex-start;gap:12px}
+.card-emoji{font-size:24px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-meta{flex:1;min-width:0}
+.rank-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:4px}
+.rb1{background:#fef08a;color:#713f12}
+.rb2{background:#dbeafe;color:#1e3a8a}
+.rb3{background:#f3f4f6;color:#374151}
+.card-title{font-size:15px;font-weight:800;margin-bottom:5px;line-height:1.3}
+.card-badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:5px}
+.cbadge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px}
+.cb-chuyenmon{background:#dbeafe;color:#1e40af}
+.cb-daotao{background:#ede9fe;color:#5b21b6}
+.cb-noidungso{background:#fce7f3;color:#9d174d}
+.cb-kinhdoanh{background:#ffedd5;color:#c2410c}
+.cb-daily{background:#ccfbf1;color:#0f766e}
+.cb-dichvu{background:#d1fae5;color:#065f46}
+.cb-dauthu{background:#fef9c3;color:#713f12}
+.cb-income{background:#f0fdf4;color:#15803d;border:1px solid #86efac}
+.cb-time{background:var(--bg);color:var(--mu);border:1px solid var(--bd)}
+.cb-risk-lo{background:#f0fdf4;color:#15803d}
+.cb-risk-md{background:var(--al);color:#92400e}
+.cb-risk-hi{background:#fee2e2;color:#dc2626}
+.cb-new{background:#fed7aa;color:#c2410c}
+.card-desc{font-size:13px;color:var(--mu);line-height:1.5}
+.sc{flex-shrink:0;width:58px;height:58px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;border:3px solid}
+.sc-gold{background:#fef9c3;border-color:#fbbf24;color:#713f12}
+.sc-green{background:#dcfce7;border-color:#4ade80;color:#15803d}
+.sc-blue{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}
+.sc-amber{background:var(--al);border-color:var(--a);color:#92400e}
+.sc-gray{background:#f3f4f6;border-color:#d1d5db;color:#6b7280}
+.sc-num{font-size:17px;line-height:1}
+.sc-pct{font-size:10px;line-height:1}
+.card-bd{display:none;border-top:1px solid var(--bd);padding:16px 18px}
+.card-bd.on{display:block}
+.match-bars{margin-bottom:14px}
+.mb-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.mb-lbl{width:100px;font-size:12px;color:var(--mu);flex-shrink:0}
+.mb-track{flex:1;height:5px;background:var(--bg);border-radius:99px;overflow:hidden}
+.mb-fill{height:100%;border-radius:99px;transition:width .8s ease-out}
+.mf-p{background:var(--g)}
+.mf-r{background:#3b82f6}
+.mf-g{background:var(--a)}
+.mb-val{font-size:11px;font-weight:700;width:28px;text-align:right}
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px}
+.ri{font-size:12px;display:flex;gap:5px;align-items:flex-start;line-height:1.4}
+.ri .ic{flex-shrink:0;margin-top:1px}
+.rm-toggle{display:flex;align-items:center;gap:6px;padding:9px 13px;background:var(--gl);border-radius:10px;cursor:pointer;border:none;width:100%;text-align:left;font-size:13px;font-weight:600;color:var(--g);margin-bottom:8px}
+.rm-toggle svg{margin-left:auto;transition:transform .25s}
+.rm-toggle.on svg{transform:rotate(180deg)}
+.rm-body{display:none;padding:12px;background:var(--bg);border-radius:10px;margin-bottom:10px}
+.rm-body.on{display:block}
+.rm-step{display:flex;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.rm-step:last-child{margin-bottom:0;padding-bottom:0;border:none}
+.rm-dot{width:24px;height:24px;border-radius:50%;background:var(--g);color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.rm-text{font-size:12px;line-height:1.5}
+.rm-text strong{display:block;font-weight:700;margin-bottom:2px}
+.card-actions{display:flex;gap:8px;margin-top:10px}
+.btn-cat{flex:1;padding:10px;background:var(--g);color:white;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;text-align:center}
+.btn-cat:hover{background:var(--gm)}
+.btn-save{padding:10px 14px;background:transparent;border:2px solid var(--bd);border-radius:10px;font-size:13px;color:var(--mu);cursor:pointer}
+.btn-save:hover{border-color:var(--g);color:var(--g)}
+.btn-save.saved{border-color:#86efac;color:#059669}
+.show-more{text-align:center;margin-top:14px}
+.btn-more{padding:12px 32px;background:var(--wh);border:2px solid var(--bd);border-radius:var(--r);font-size:14px;font-weight:600;color:var(--mu);cursor:pointer}
+.btn-more:hover{border-color:var(--g);color:var(--g)}
+
+/* CATEGORY EXPLORE */
+.cat-explore{margin-top:24px;background:var(--wh);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
+.cat-explore h3{font-size:16px;font-weight:800;color:var(--g);margin-bottom:4px}
+.cat-explore p{font-size:13px;color:var(--mu);margin-bottom:14px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px}
+.cat-card{display:flex;flex-direction:column;align-items:center;padding:14px 10px;background:var(--bg);border-radius:12px;border:2px solid var(--bd);cursor:pointer;transition:all .18s;text-decoration:none}
+.cat-card:hover{border-color:var(--g);background:var(--gl)}
+.cat-card .icon{font-size:24px;margin-bottom:6px}
+.cat-card .name{font-size:12px;font-weight:700;color:var(--tx);text-align:center;margin-bottom:2px}
+.cat-card .cnt{font-size:11px;color:var(--mu)}
+
+/* NEXT STEPS */
+.next{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #86efac;border-radius:var(--r);padding:20px 22px;margin-top:18px;text-align:center}
+.next h3{font-size:17px;font-weight:800;color:var(--g);margin-bottom:6px}
+.next p{font-size:13px;color:var(--mu);margin-bottom:14px}
+.next-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.btn-sol{padding:11px 22px;background:var(--g);color:white;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none}
+.btn-redo{padding:11px 18px;background:transparent;border:2px solid var(--g);border-radius:12px;font-size:13px;font-weight:600;color:var(--g);cursor:pointer}
+
+@media(max-width:560px){
+  .rg{grid-template-columns:1fr}
+  .pc-top{flex-direction:column;gap:10px}
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+<script src="/sol-ui.js"></script>
+<link rel="canonical" href="https://huongdi.sol.vn/la-ban-huong-di/">
+</head>
+<body data-sol-page="p3">
+
+<div class="hdr">
+  <div class="hdr-r">
+    <a href="/p2.html" class="btn-sm">← Sửa P2</a>
+    <a href="/p1.html" class="btn-sm">← Làm lại P1</a>
+  </div>
+</div>
+
+<!-- NO DATA -->
+<div class="scr on" id="s-nodata">
+<div class="nodata">
+  <div class="ico">🗺️</div>
+  <h2>Chưa đủ dữ liệu để phân tích</h2>
+  <p>Cần kết quả P1 và P2 để tìm hướng đi phù hợp nhất cho bạn.</p>
+  <!-- Show partial results if any step done -->
+  <div id="sol-p1-summary" style="text-align:left;margin-bottom:12px"></div>
+  <div id="sol-p2-summary" style="text-align:left;margin-bottom:12px"></div>
+  <div class="nd-steps" id="nd-steps"></div>
+  <a href="/p1.html" class="btn-go" id="nd-cta">Bắt đầu từ P1 →</a>
+</div>
+</div>
+
+<!-- LOADING -->
+<div class="scr" id="s-loading">
+<div class="loading">
+  <div class="spin"></div>
+  <h2>Đang phân tích hướng đi...</h2>
+  <p>So khớp DNA của bạn với 37 mô hình tạo thu nhập</p>
+</div>
+</div>
+
+<!-- RESULTS -->
+<div class="scr" id="s-results">
+<div class="res">
+
+  <div class="profile-card">
+    <div class="pc-top">
+      <div class="pc-block">
+        <div class="pc-label">🧬 DNA của bạn</div>
+        <div class="dna-bars" id="dnaBars"></div>
+      </div>
+      <div class="pc-block">
+        <div class="pc-label">⚙️ Nguồn lực nổi bật</div>
+        <div class="res-chips" id="resChips"></div>
+      </div>
+    </div>
+    <div class="pc-bottom">
+      <div>
+        <div class="pc-title" id="pcTitle">🎯 Kết quả hướng đi phù hợp</div>
+        <div class="pc-sub" id="pcSub"></div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <button class="pc-edit" onclick="SOL&&SOL.resetP2()" title="Khai báo lại nguồn lực P2">↺ P2</button>
+        <button class="pc-edit" onclick="SOL&&SOL.resetP1()" style="background:rgba(255,255,255,.15)" title="Làm lại bài trắc nghiệm DNA P1">↺ P1</button>
+        <button class="pc-edit" onclick="location.href='/p2.html'" style="background:rgba(255,255,255,.1)">Chỉnh sửa →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <div class="cat-tabs">
+      <button class="cat-tab on" onclick="filterCat(this,'all')">🏆 Tất cả</button>
+      <button class="cat-tab" onclick="filterCat(this,'chuyenmon')">🧠 Chuyên Môn</button>
+      <button class="cat-tab" onclick="filterCat(this,'daotao')">🏫 Đào Tạo</button>
+      <button class="cat-tab" onclick="filterCat(this,'noidungso')">🎬 Nội Dung Số</button>
+      <button class="cat-tab" onclick="filterCat(this,'kinhdoanh')">🛍️ Kinh Doanh</button>
+      <button class="cat-tab" onclick="filterCat(this,'daily')">🤝 Đại Lý</button>
+      <button class="cat-tab" onclick="filterCat(this,'dichvu')">🌿 Dịch Vụ</button>
+      <button class="cat-tab" onclick="filterCat(this,'dauthu')">💰 Đầu Tư</button>
+    </div>
+    <div class="sort-row">
+      <span class="sort-label">Sắp xếp:</span>
+      <button class="sort-btn on" onclick="setSort(this,'score')">Phù hợp nhất</button>
+      <button class="sort-btn" onclick="setSort(this,'income')">Thu nhập cao</button>
+      <button class="sort-btn" onclick="setSort(this,'risk')">Rủi ro thấp</button>
+      <button class="sort-btn" onclick="setSort(this,'speed')">Thu nhập nhanh</button>
+    </div>
+  </div>
+
+  <div class="res-hdr">
+    <h1>🎯 Hướng đi phù hợp với bạn</h1>
+    <p id="resSubtitle">Đang tính toán...</p>
+  </div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="show-more" id="showMoreWrap" style="display:none">
+    <button class="btn-more" onclick="showAll()">Xem thêm hướng đi →</button>
+  </div>
+
+  <div class="cat-explore">
+    <h3>🗂 Khám phá theo nhóm ngành</h3>
+    <p>Tìm hiểu chi tiết từng nhóm — roadmap, yêu cầu, và ví dụ thực tế.</p>
+    <div class="cat-grid">
+      <a href="/p3-chuyenmon.html" class="cat-card"><div class="icon">🧠</div><div class="name">Chuyên Môn & Tư Vấn</div><div class="cnt">9 hướng</div></a>
+      <a href="/p3-daotao.html" class="cat-card"><div class="icon">🏫</div><div class="name">Đào Tạo & Chia Sẻ</div><div class="cnt">5 hướng</div></a>
+      <a href="/p3-noidungso.html" class="cat-card"><div class="icon">🎬</div><div class="name">Nội Dung Số</div><div class="cnt">5 hướng</div></a>
+      <a href="/p3-kinhdoanh.html" class="cat-card"><div class="icon">🛍️</div><div class="name">Kinh Doanh</div><div class="cnt">6 hướng</div></a>
+      <a href="/p3-daily.html" class="cat-card"><div class="icon">🤝</div><div class="name">Đại Lý & Kết Nối</div><div class="cnt">4 hướng</div></a>
+      <a href="/p3-dichvu.html" class="cat-card"><div class="icon">🌿</div><div class="name">Dịch Vụ Cá Nhân</div><div class="cnt">4 hướng</div></a>
+      <a href="/p3-dauthu.html" class="cat-card"><div class="icon">💰</div><div class="name">Đầu Tư & Thụ Động</div><div class="cnt">3 hướng</div></a>
+    </div>
+  </div>
+
+  <div class="next">
+    <h3>Bước tiếp theo</h3>
+    <p>Chọn 1–2 hướng đi tiềm năng nhất và bắt đầu Roadmap 30 ngày đầu tiên.</p>
+    <div class="next-btns">
+      <a href="https://sol.vn" class="btn-sol" target="_blank">Đọc bài viết chuyên sâu tại Sol.vn →</a>
+      <button class="btn-redo" onclick="location.reload()">↺ Tính lại</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+const DB=[
+// CHUYÊN MÔN
+{id:'freelancer-ke-toan',title:'Freelancer Kế Toán & Thuế',emoji:'📊',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:false,desc:'Cung cấp dịch vụ kế toán, báo cáo tài chính và tư vấn thuế cho SME theo hợp đồng tháng.',p:{people:35,expert:95,builder:30,independent:85},r:{capital:10,time:35,technology:50,network:40,risk:15,energy:35},b:{income_speed:75},income:{min:8,max:35},timeline:'2–4 tháng',roadmap:[{w:'T1',t:'Kiểm kê năng lực & định giá',d:'Liệt kê 5 dịch vụ tự tin nhất. Tạo 3 gói giá: 3-5tr, 6-10tr, 12-20tr/tháng.'},{w:'T2',t:'Xây hồ sơ dịch vụ',d:'CV dịch vụ 1 trang, LinkedIn profile, mẫu hợp đồng chuẩn.'},{w:'T3',t:'Tiếp cận mạng lưới cũ',d:'Liên hệ 15-20 người quen có SME hoặc quen giám đốc.'},{w:'T4',t:'Chốt hợp đồng đầu tiên',d:'1-2 khách thử nghiệm giá ưu đãi 30%. Thu feedback và testimonial.'}],reasons:['Tận dụng 95% kinh nghiệm','Nhu cầu ổn định quanh năm','Vốn gần 0, bắt đầu ngay','Rủi ro thấp']},
+{id:'freelancer-marketing',title:'Freelancer Marketing Digital',emoji:'📣',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:false,desc:'Digital marketing, content, SEO, quảng cáo Facebook/Google cho SME. AI tools tăng năng suất 2-3x.',p:{people:55,expert:80,builder:45,independent:80},r:{capital:10,time:40,technology:65,network:50,risk:15,energy:50},b:{income_speed:70},income:{min:8,max:40},timeline:'2–4 tháng',roadmap:[{w:'T1',t:'Chọn chuyên môn hẹp',d:'1-2 kênh/ngành: Facebook Ads cho F&B, hay SEO cho BDS.'},{w:'T2',t:'Xây portfolio kết quả',d:'2-3 case study với số liệu cụ thể (CTR, ROAS, traffic).'},{w:'T3',t:'Chào hàng chủ động',d:'10 SME đang chạy quảng cáo kém. Phân tích điểm yếu, gửi đề xuất.'},{w:'T4',t:'Kết quả đo được',d:'Chốt 1 khách, chạy 2 tuần, báo cáo số liệu.'}],reasons:['AI tools tăng năng suất 2-3x','Nhu cầu cao từ SME','Thu nhập linh hoạt theo dự án']},
+{id:'freelancer-thiet-ke',title:'Freelancer Thiết Kế Đồ Họa',emoji:'🎨',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:false,desc:'Logo, brand identity, UI/UX, ấn phẩm truyền thông. Có thể nhận khách quốc tế qua Fiverr.',p:{people:40,expert:85,builder:50,independent:80},r:{capital:15,time:40,technology:75,network:40,risk:15,energy:45},b:{income_speed:70},income:{min:8,max:40},timeline:'1–3 tháng',roadmap:[{w:'T1',t:'Portfolio Behance/Dribbble',d:'Upload 5-8 tác phẩm tốt với mockup đẹp.'},{w:'T2',t:'Đăng ký nền tảng freelance',d:'Fiverr/Upwork với keyword cụ thể. Giá thấp ban đầu để build reviews.'},{w:'T3',t:'Tiếp cận khách trực tiếp',d:'10 SME có logo/website xấu. Gửi redesign concept miễn phí.'},{w:'T4',t:'Hệ thống giá & quy trình',d:'Bảng giá theo gói rõ ràng.'}],reasons:['Thu nhập USD từ Fiverr','AI tools tăng tốc 3x','Nhu cầu toàn cầu']},
+{id:'freelancer-it',title:'Freelancer IT & Lập Trình',emoji:'💻',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:false,desc:'Phát triển website, app, tự động hóa quy trình. Thu nhập cao nhất nhóm chuyên môn.',p:{people:30,expert:90,builder:60,independent:85},r:{capital:10,time:45,technology:85,network:35,risk:10,energy:50},b:{income_speed:75},income:{min:12,max:60},timeline:'1–3 tháng',roadmap:[{w:'T1',t:'Xác định stack chuyên sâu',d:'1-2 công nghệ mũi nhọn: WordPress, React, Python automation.'},{w:'T2',t:'GitHub portfolio',d:'3-5 project với README chi tiết và live demo.'},{w:'T3',t:'Upwork/Fiverr profile',d:'Keyword cụ thể. Giá thấp để lấy 3 review đầu.'},{w:'T4',t:'Khách hàng trực tiếp',d:'SME địa phương cần website/app. Trả cao hơn nền tảng 30-50%.'}],reasons:['Thu nhập 12-60 triệu/tháng','AI coding tools tăng năng suất 3x','Nhu cầu không bao giờ giảm']},
+{id:'tu-van-kinh-doanh',title:'Tư Vấn Chiến Lược Kinh Doanh',emoji:'🧭',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:false,desc:'Tư vấn chiến lược, tái cơ cấu, mở rộng thị trường cho SME. Tận dụng kinh nghiệm cao nhất.',p:{people:60,expert:90,builder:55,independent:80},r:{capital:10,time:30,technology:40,network:65,risk:20,energy:50},b:{income_speed:50},income:{min:15,max:100},timeline:'3–6 tháng',roadmap:[{w:'T1',t:'Định vị chuyên môn',d:'1-2 ngành hiểu sâu nhất. Viết "thesis tư vấn".'},{w:'T2',t:'Viết case study kinh nghiệm',d:'3 tình huống đã giải quyết thành công (ẩn tên).'},{w:'T3',t:'Mạng lưới giới thiệu',d:'Liên hệ 10 người từng làm cùng. 70-80% khách đến qua referral.'},{w:'T4',t:'Discovery call đầu tiên',d:'3-5 buổi khám phá miễn phí 45 phút.'}],reasons:['Thu nhập 15-100 triệu/tháng','Tận dụng 97% kinh nghiệm','Linh hoạt thời gian']},
+{id:'tu-van-nhan-su',title:'Tư Vấn Nhân Sự & Headhunting',emoji:'👥',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:false,desc:'Xây dựng đội ngũ, quy trình HR, headhunting cho SME. Phù hợp người có mạng lưới rộng.',p:{people:80,expert:75,builder:40,independent:70},r:{capital:10,time:35,technology:45,network:70,risk:15,energy:55},b:{income_speed:65},income:{min:10,max:60},timeline:'2–4 tháng',roadmap:[{w:'T1',t:'Xác định phân khúc',d:'C-level cho startup hay sales manager cho FMCG?'},{w:'T2',t:'LinkedIn & database',d:'LinkedIn Premium + kết nối 50 HR manager.'},{w:'T3',t:'Tiếp cận doanh nghiệp',d:'10 CEO/HR Director SME.'},{w:'T4',t:'Đối tác hợp tác',d:'Làm đối tác với 1-2 công ty headhunting lớn, chia phí 50/50.'}],reasons:['Headhunting fee: 15-25% lương năm','Network = tài sản chính']},
+{id:'tu-van-phap-ly',title:'Tư Vấn Pháp Lý Doanh Nghiệp',emoji:'📜',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:false,desc:'Tư vấn hợp đồng, thành lập doanh nghiệp, sở hữu trí tuệ cho SME.',p:{people:55,expert:90,builder:30,independent:80},r:{capital:15,time:35,technology:35,network:55,risk:20,energy:40},b:{income_speed:55},income:{min:10,max:70},timeline:'3–6 tháng',roadmap:[{w:'T1',t:'Chuyên môn hẹp',d:'Pháp lý doanh nghiệp, SHTT hay lao động?'},{w:'T2',t:'Content chứng minh chuyên môn',d:'3-5 bài về lỗi pháp lý phổ biến của SME.'},{w:'T3',t:'Network kế toán & kiểm toán',d:'Giới thiệu chéo với nhau.'},{w:'T4',t:'Review hợp đồng miễn phí',d:'30 phút cho 5 SME. Chuyển đổi miễn phí → trả tiền: 30-50%.'}],reasons:['Ít cạnh tranh SME','Thu nhập 10-70 triệu','Tận dụng 97% kinh nghiệm pháp lý']},
+{id:'freelancer-bien-dich',title:'Freelancer Biên/Phiên Dịch',emoji:'🌐',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:true,desc:'Dịch tài liệu kỹ thuật, phiên dịch sự kiện. AI tools cho phép làm nhanh 3-5x và nhận khách quốc tế.',p:{people:30,expert:85,builder:25,independent:90},r:{capital:5,time:35,technology:55,network:30,risk:10,energy:35},b:{income_speed:75},income:{min:8,max:45},timeline:'1–3 tháng',roadmap:[{w:'T1',t:'Chọn niche chuyên môn',d:'Pháp lý, y tế, kỹ thuật hay tài chính?'},{w:'T2',t:'Profile & mẫu dịch',d:'Tạo profile Proz.com. Chuẩn bị 3-5 mẫu dịch chất lượng cao.'},{w:'T3',t:'Đăng ký nền tảng',d:'Gengo, Upwork, Fiverr.'},{w:'T4',t:'Khách trực tiếp',d:'Công ty luật, phòng khám quốc tế, công ty XNK.'}],reasons:['Vốn gần 0','AI tăng năng suất 3-5x','Khách quốc tế thanh toán USD/EUR']},
+{id:'tu-van-xuat-nhap-khau',title:'Tư Vấn Xuất Nhập Khẩu',emoji:'🚢',cat:'chuyenmon',catLbl:'Chuyên Môn',isNew:true,desc:'Tư vấn quy trình, thủ tục, tối ưu chi phí XNK cho SME. Ít người làm, nhu cầu cao.',p:{people:60,expert:85,builder:45,independent:75},r:{capital:15,time:40,technology:45,network:60,risk:25,energy:50},b:{income_speed:45},income:{min:15,max:80},timeline:'3–8 tháng',roadmap:[{w:'T1',t:'Chuyên môn theo ngành',d:'XNK ngành dệt may, điện tử hay thực phẩm?'},{w:'T2',t:'Case study kinh nghiệm',d:'3 trường hợp đã giúp khách tiết kiệm hoặc giải quyết vấn đề.'},{w:'T3',t:'Network hiệp hội ngành',d:'VCCI, VASEP, VITAS.'},{w:'T4',t:'Free audit XNK',d:'Đánh giá quy trình 1 SME miễn phí, chỉ ra 3-5 điểm tiết kiệm.'}],reasons:['Ít cạnh tranh','Kinh nghiệm ngành = tài sản khó copy','1 dự án = 15-80 triệu']},
+// ĐÀO TẠO
+{id:'coaching-ca-nhan',title:'Coaching Cá Nhân (1-1)',emoji:'🎯',cat:'daotao',catLbl:'Đào Tạo',isNew:false,desc:'Huấn luyện 1-1 giúp người khác đạt mục tiêu sự nghiệp, kinh doanh, cuộc sống.',p:{people:90,expert:65,builder:40,independent:70},r:{capital:15,time:45,technology:30,network:60,risk:20,energy:75},b:{income_speed:55},income:{min:8,max:60},timeline:'3–8 tháng',roadmap:[{w:'T1',t:'Xác định niche coaching',d:'Ai bạn giúp tốt nhất?'},{w:'T2',t:'Framework coaching',d:'Xây phương pháp 4-6 bước dựa trên kinh nghiệm.'},{w:'T3',t:'3 khách thử nghiệm',d:'Miễn phí/giảm giá 70% để test phương pháp.'},{w:'T4',t:'Đặt giá chuẩn',d:'1 khách hài lòng = trung bình giới thiệu 2 người.'}],reasons:['Ít vốn nhất nhóm đào tạo','Dùng 100% kinh nghiệm sống','500K-2tr/giờ khi có uy tín']},
+{id:'workshop-chuyen-mon',title:'Workshop & Đào Tạo Nhóm',emoji:'🏫',cat:'daotao',catLbl:'Đào Tạo',isNew:false,desc:'Đào tạo nhóm cho doanh nghiệp (B2B) hoặc public. B2B training cao hơn B2C 3-5x.',p:{people:80,expert:85,builder:50,independent:65},r:{capital:20,time:50,technology:45,network:55,risk:20,energy:70},b:{income_speed:60},income:{min:10,max:70},timeline:'3–6 tháng',roadmap:[{w:'T1',t:'Thiết kế chương trình',d:'Chương trình 4-8 giờ. Framework: Vấn đề → Insight → Giải pháp → Thực hành.'},{w:'T2',t:'Pilot workshop miễn phí',d:'Test với 10-15 người quen.'},{w:'T3',t:'Đề xuất B2B',d:'Proposal cho HR/L&D của 5 SME.'},{w:'T4',t:'Public workshop có phí',d:'20-30 người, vé 500K-2 triệu.'}],reasons:['1 hợp đồng B2B = 20-70 triệu','Tận dụng 90% kinh nghiệm']},
+{id:'gia-su-chuyen-mon',title:'Gia Sư & Dạy Kèm Chuyên Môn',emoji:'📚',cat:'daotao',catLbl:'Đào Tạo',isNew:false,desc:'Dạy kèm 1-1 hoặc nhóm nhỏ về kỹ năng chuyên môn, ngoại ngữ. Bắt đầu nhanh nhất.',p:{people:75,expert:80,builder:25,independent:65},r:{capital:5,time:40,technology:30,network:45,risk:10,energy:60},b:{income_speed:85},income:{min:5,max:25},timeline:'2–4 tuần',roadmap:[{w:'T1',t:'Xác định môn & giá',d:'Giá thị trường: 300K-1.5tr/giờ tùy chuyên môn.'},{w:'T2',t:'Đăng tin tuyển học viên',d:'Facebook, Zalo groups.'},{w:'T3',t:'Buổi học mẫu ấn tượng',d:'Học viên hài lòng buổi 1 = giới thiệu ngay.'},{w:'T4',t:'Mở rộng & tăng giá',d:'3-4 học viên ổn định → mở lớp nhóm 5-8 người.'}],reasons:['Thu nhập trong 2-4 tuần','Rủi ro cực thấp','Bắt đầu ngay không cần vốn']},
+{id:'khoa-hoc-online',title:'Khóa Học Online (Video)',emoji:'🖥️',cat:'daotao',catLbl:'Đào Tạo',isNew:false,desc:'Đóng gói kiến thức thành video tự học. Tạo 1 lần bán nhiều lần.',p:{people:50,expert:85,builder:70,independent:75},r:{capital:20,time:65,technology:65,network:40,risk:20,energy:60},b:{income_speed:30},income:{min:5,max:120},timeline:'4–9 tháng',roadmap:[{w:'T1',t:'Validate idea trước khi làm',d:'Pre-sell trước khi quay. 10 người sẵn sàng trả → proceed.'},{w:'T2',t:'Outline & script',d:'5-8 module, 3-5 video/module.'},{w:'T3',t:'Setup & nền tảng',d:'Micro + ring light (2-3 triệu). Udemy, Teachable, hoặc WordPress.'},{w:'T4',t:'Quay module đầu tiên',d:'Mời pre-sale xem trước. Feedback → cải thiện trước khi quay tiếp.'}],reasons:['Tạo 1 lần, bán mãi mãi','Tiềm năng cao nhất nhóm đào tạo']},
+{id:'corporate-training',title:'Đào Tạo Doanh Nghiệp (B2B)',emoji:'🏢',cat:'daotao',catLbl:'Đào Tạo',isNew:true,desc:'Thiết kế và triển khai chương trình đào tạo in-house cho doanh nghiệp. 1 hợp đồng = 20-120 triệu.',p:{people:75,expert:90,builder:55,independent:60},r:{capital:10,time:40,technology:50,network:70,risk:15,energy:65},b:{income_speed:55},income:{min:15,max:120},timeline:'3–9 tháng',roadmap:[{w:'T1',t:'Signature program',d:'1 chương trình đặc trưng 4-8 giờ về chủ đề giỏi nhất.'},{w:'T2',t:'Demo day miễn phí',d:'2 giờ demo cho 5-10 HR manager/CEO quen.'},{w:'T3',t:'Proposal B2B chuyên nghiệp',d:'Slide deck: pain points, program overview, trainer bio, pricing.'},{w:'T4',t:'Hợp đồng đầu tiên',d:'1 công ty dù nhỏ → case study + referral.'}],reasons:['1 hợp đồng = 20-120 triệu','Uy tín lan nhanh qua B2B referral']},
+// NỘI DUNG SỐ
+{id:'blog-chuyen-nganh',title:'Blog Chuyên Ngành',emoji:'✍️',cat:'noidungso',catLbl:'Nội Dung Số',isNew:false,desc:'Blog SEO chuyên sâu. Thu nhập từ AdSense, affiliate, sponsored posts.',p:{people:30,expert:80,builder:65,independent:85},r:{capital:5,time:50,technology:55,network:25,risk:10,energy:45},b:{income_speed:20},income:{min:2,max:60},timeline:'9–24 tháng',roadmap:[{w:'T1',t:'Chọn niche & domain',d:'Niche đủ hẹp để nổi bật, đủ rộng để có 100 bài.'},{w:'T2',t:'10 bài pillar content',d:'Bài dài 1500-3000 từ về chủ đề cốt lõi.'},{w:'T3',t:'SEO cơ bản',d:'Google Keyword Planner. Tối ưu on-page: title, H2, meta.'},{w:'T4',t:'Lịch đăng đều đặn',d:'2-4 bài/tuần trong 6 tháng đầu.'}],reasons:['Vốn cực thấp','AI viết nhanh 3x','Thu nhập thụ động dài hạn']},
+{id:'youtube-podcast',title:'Kênh YouTube / Podcast',emoji:'🎬',cat:'noidungso',catLbl:'Nội Dung Số',isNew:false,desc:'Kênh video/podcast chia sẻ kiến thức chuyên ngành. Audience rất trung thành.',p:{people:65,expert:70,builder:65,independent:80},r:{capital:25,time:65,technology:70,network:35,risk:15,energy:65},b:{income_speed:15},income:{min:2,max:100},timeline:'12–24 tháng',roadmap:[{w:'T1',t:'Format & niche',d:'Xem 20 kênh cùng niche để tìm gap chưa ai làm.'},{w:'T2',t:'Setup thiết bị',d:'Micro tốt > camera đắt. Rode NT-USB (2tr) là đủ cho podcast.'},{w:'T3',t:'4 video đầu tiên',d:'Upload 1/tuần. Tiêu đề: "Cách [kết quả] trong [thời gian]".'},{w:'T4',t:'Phân tích & điều chỉnh',d:'Video nào giữ người xem lâu? Làm thêm tương tự.'}],reasons:['Tiềm năng thu nhập rất lớn','Audience trung thành nhất']},
+{id:'ebook-tai-lieu-so',title:'Ebook & Tài Liệu Số',emoji:'📖',cat:'noidungso',catLbl:'Nội Dung Số',isNew:false,desc:'Đóng gói kiến thức thành ebook, template, checklist bán online. Dễ bắt đầu nhất.',p:{people:25,expert:85,builder:60,independent:85},r:{capital:5,time:45,technology:45,network:25,risk:5,energy:40},b:{income_speed:35},income:{min:2,max:50},timeline:'2–5 tháng',roadmap:[{w:'T1',t:'Validate ý tưởng',d:'Người hay hỏi bạn gì nhất? Post câu hỏi Facebook để đo nhu cầu.'},{w:'T2',t:'Viết bản thảo',d:'5.000-15.000 từ. Cấu trúc: Vấn đề → Framework → Hướng dẫn.'},{w:'T3',t:'Thiết kế & định giá',d:'Canva Pro → PDF. Giá: 99K-499K. Landing page Carrd.co.'},{w:'T4',t:'Ra mắt & kênh bán',d:'Gumroad (hoa hồng 10%). Mục tiêu: 30-50 bản đầu.'}],reasons:['Vốn gần 0','AI hỗ trợ viết nhanh 3x','Tạo 1 lần bán mãi']},
+{id:'newsletter',title:'Newsletter Chuyên Môn',emoji:'📧',cat:'noidungso',catLbl:'Nội Dung Số',isNew:false,desc:'Bản tin email hàng tuần. Direct audience — không phụ thuộc algorithm.',p:{people:40,expert:80,builder:55,independent:85},r:{capital:5,time:35,technology:40,network:30,risk:5,energy:40},b:{income_speed:25},income:{min:2,max:40},timeline:'9–18 tháng',roadmap:[{w:'T1',t:'Setup Substack & niche',d:'Substack miễn phí. Viết 3 số đầu trước khi launch.'},{w:'T2',t:'50 subscriber đầu',d:'Email cá nhân cho 50-100 người quen.'},{w:'T3',t:'Lịch viết cố định',d:'1 số/tuần, cùng ngày giờ.'},{w:'T4',t:'Tăng trưởng organic',d:'Thread Facebook tóm tắt số hay nhất.'}],reasons:['Direct audience','Vốn gần 0','AI viết nhanh 3x']},
+{id:'smm-freelancer',title:'Quản Lý Mạng Xã Hội (SMM)',emoji:'📱',cat:'noidungso',catLbl:'Nội Dung Số',isNew:true,desc:'Quản lý fanpage, tạo content, chạy quảng cáo cho SME theo hợp đồng tháng.',p:{people:60,expert:70,builder:50,independent:75},r:{capital:5,time:45,technology:65,network:45,risk:10,energy:55},b:{income_speed:75},income:{min:5,max:30},timeline:'1–3 tháng',roadmap:[{w:'T1',t:'Chọn niche ngành',d:'SMM cho F&B, beauty hay BDS?'},{w:'T2',t:'Case study portfolio',d:'Content miễn phí cho 1 SME quen 2 tuần. Chụp số liệu engagement.'},{w:'T3',t:'Chào hàng 10 SME',d:'SME chưa có fanpage hoặc hoạt động kém.'},{w:'T4',t:'Hợp đồng đầu tiên',d:'3-5 triệu/tháng khách đầu. Deliver xuất sắc → testimonial.'}],reasons:['Vốn bằng 0','AI tạo content nhanh 3x','Thu nhập trong 4-6 tuần']},
+// KINH DOANH
+{id:'kinh-doanh-online',title:'Kinh Doanh Online (Resell)',emoji:'🛍️',cat:'kinhdoanh',catLbl:'Kinh Doanh',isNew:false,desc:'Mua sỉ hoặc dropship để bán lẻ qua Facebook, Shopee, TikTok Shop.',p:{people:55,expert:40,builder:70,independent:70},r:{capital:40,time:55,technology:60,network:45,risk:45,energy:60},b:{income_speed:60},income:{min:5,max:45},timeline:'2–5 tháng',roadmap:[{w:'T1',t:'Test nhỏ 3-5 sản phẩm',d:'Nhập 5-10 cái mỗi loại. Kênh đầu: Facebook Marketplace miễn phí.'},{w:'T2',t:'Nghiên cứu đối thủ',d:'5 shop tương tự. Học điểm tốt, tránh lỗi.'},{w:'T3',t:'Ảnh & listing tốt',d:'Ảnh đẹp bằng điện thoại. Mô tả nhấn lợi ích.'},{w:'T4',t:'Chạy quảng cáo test',d:'100-200K/ngày. Sản phẩm bán được → nhập thêm.'}],reasons:['Dễ test nhiều sản phẩm nhanh','Thu nhập trong 2-5 tháng']},
+{id:'thuc-pham-dac-san',title:'Thực Phẩm & Đặc Sản Vùng Miền',emoji:'🍱',cat:'kinhdoanh',catLbl:'Kinh Doanh',isNew:false,desc:'Kinh doanh thực phẩm chế biến, đặc sản, ăn vặt. Phù hợp có công thức gia truyền.',p:{people:65,expert:50,builder:70,independent:60},r:{capital:35,time:65,technology:35,network:55,risk:50,energy:70},b:{income_speed:65},income:{min:5,max:40},timeline:'2–5 tháng',roadmap:[{w:'T1',t:'Định vị 1-2 sản phẩm cốt lõi',d:'Tại sao mua của tôi chứ không phải siêu thị?'},{w:'T2',t:'Test với 20 người quen',d:'Tặng sample, yêu cầu feedback thật.'},{w:'T3',t:'Bao bì & thủ tục',d:'Đăng ký ATTP nếu cần. Ảnh đẹp > bao bì đắt.'},{w:'T4',t:'Kênh bán đầu tiên',d:'Zalo OA, Facebook group địa phương, Shopee Food.'}],reasons:['Tận dụng đặc sản địa phương','Khách hàng trung thành cao']},
+{id:'nong-san-sach',title:'Nông Sản Sạch & Organic',emoji:'🌱',cat:'kinhdoanh',catLbl:'Kinh Doanh',isNew:false,desc:'Kết nối nông trại với người tiêu dùng đô thị. Phù hợp người có mạng lưới nông thôn.',p:{people:55,expert:55,builder:65,independent:65},r:{capital:45,time:70,technology:30,network:50,risk:55,energy:75},b:{income_speed:55},income:{min:5,max:40},timeline:'3–6 tháng',roadmap:[{w:'T1',t:'Kết nối nguồn cung',d:'2-3 nhà vườn đáng tin cậy.'},{w:'T2',t:'Nhóm Zalo thử nghiệm',d:'30-50 người quen quan tâm. Bán 1 lần/tuần.'},{w:'T3',t:'Quy trình giao nhận',d:'Đặt T2, nhập T3, giao T4-T5.'},{w:'T4',t:'Gói đăng ký tháng',d:'20+ đơn/tuần → mở gói đăng ký tháng.'}],reasons:['Xu hướng organic tăng mạnh','Khách hàng cực trung thành']},
+{id:'dich-vu-dia-phuong',title:'Dịch Vụ Địa Phương',emoji:'🏪',cat:'kinhdoanh',catLbl:'Kinh Doanh',isNew:false,desc:'Giặt ủi, giao nhận, vệ sinh, chăm sóc cây cảnh, thú cưng. Nhu cầu ổn định.',p:{people:70,expert:45,builder:75,independent:55},r:{capital:60,time:70,technology:35,network:55,risk:60,energy:75},b:{income_speed:70},income:{min:8,max:40},timeline:'2–4 tháng',roadmap:[{w:'T1',t:'Chọn 1 dịch vụ cụ thể',d:'Phục vụ tốt 1 thứ > phục vụ tệ 5 thứ.'},{w:'T2',t:'Giá & phạm vi phục vụ',d:'Gói tháng hoặc theo giờ. Phạm vi 3-5km.'},{w:'T3',t:'5 khách đầu tiên',d:'Giá ưu đãi 30% đổi lấy review.'},{w:'T4',t:'Hệ thống đặt lịch',d:'Zalo OA hoặc Google Form.'}],reasons:['Nhu cầu ổn định quanh năm','Khách trung thành cao']},
+{id:'kinh-doanh-fb',title:'Kinh Doanh F&B Nhỏ',emoji:'☕',cat:'kinhdoanh',catLbl:'Kinh Doanh',isNew:true,desc:'Cafe nhỏ, bánh mì, cơm văn phòng take-away. Dòng tiền tốt nếu chọn đúng concept.',p:{people:70,expert:50,builder:80,independent:65},r:{capital:80,time:80,technology:35,network:50,risk:75,energy:80},b:{income_speed:65},income:{min:5,max:50},timeline:'3–8 tháng',roadmap:[{w:'T1',t:'Concept & vị trí',d:'Vị trí quyết định 50% thành bại. Khảo sát 10-15 địa điểm.'},{w:'T2',t:'Menu test & giấy phép',d:'Test 5-8 món cốt lõi. Xin phép kinh doanh + ATTP.'},{w:'T3',t:'Soft launch',d:'Mở cửa với giá ưu đãi 1 tháng.'},{w:'T4',t:'Tối ưu vận hành',d:'Track doanh thu hàng ngày. Break-even là mục tiêu tháng 3-4.'}],reasons:['Dòng tiền thực ngay khi hoạt động']},
+{id:'dropshipping',title:'Dropshipping / Print on Demand',emoji:'📦',cat:'kinhdoanh',catLbl:'Kinh Doanh',isNew:true,desc:'Bán sản phẩm không cần kho. Supplier giao thẳng đến khách.',p:{people:35,expert:50,builder:65,independent:85},r:{capital:10,time:45,technology:70,network:25,risk:25,energy:40},b:{income_speed:40},income:{min:3,max:40},timeline:'4–9 tháng',roadmap:[{w:'T1',t:'Chọn niche & supplier',d:'Niche cụ thể + supplier uy tín. Kiểm tra chất lượng trước.'},{w:'T2',t:'Setup store',d:'Shopify hoặc WooCommerce. Product page với ảnh đẹp.'},{w:'T3',t:'Test traffic nhỏ',d:'Facebook Ads 100-200K/ngày. Test 3-5 creative.'},{w:'T4',t:'Scale sản phẩm tốt',d:'1-2 sản phẩm bán được → tăng budget.'}],reasons:['Vốn cực thấp (10 triệu)','Không rủi ro tồn kho']},
+// ĐẠI LÝ
+{id:'dai-ly-bao-hiem',title:'Đại Lý Bảo Hiểm',emoji:'🛡️',cat:'daily',catLbl:'Đại Lý & Kết Nối',isNew:false,desc:'Tư vấn và bán bảo hiểm nhân thọ/phi nhân thọ. Thu nhập residual hàng năm.',p:{people:90,expert:50,builder:40,independent:60},r:{capital:10,time:50,technology:40,network:75,risk:20,energy:70},b:{income_speed:45},income:{min:5,max:80},timeline:'4–12 tháng',roadmap:[{w:'T1',t:'Chọn công ty bảo hiểm',d:'So sánh 3 công ty: sản phẩm, hoa hồng, training, danh tiếng.'},{w:'T2',t:'Hoàn thiện chứng chỉ',d:'Thi chứng chỉ đại lý. Học kỹ sản phẩm cốt lõi.'},{w:'T3',t:'List 100 người tiếp cận',d:'Ưu tiên: thu nhập ổn định, có gia đình.'},{w:'T4',t:'Hợp đồng đầu tiên',d:'3-5 cuộc gặp/tuần. Hợp đồng đầu từ người thân/bạn bè.'}],reasons:['Thu nhập residual mỗi năm','Không cần vốn']},
+{id:'moi-gioi-bat-dong-san',title:'Môi Giới Bất Động Sản',emoji:'🏠',cat:'daily',catLbl:'Đại Lý & Kết Nối',isNew:false,desc:'Kết nối người mua và bán BDS. Hoa hồng cao nhưng cần kiên nhẫn 3-9 tháng đầu.',p:{people:85,expert:55,builder:45,independent:70},r:{capital:15,time:60,technology:50,network:80,risk:30,energy:75},b:{income_speed:30},income:{min:0,max:150},timeline:'4–9 tháng',roadmap:[{w:'T1',t:'Chọn sàn & phân khúc',d:'Sàn uy tín để học nghề. Phân khúc: nhà phố, chung cư hay đất?'},{w:'T2',t:'Thực địa & nghiên cứu',d:'Đi 20-30 dự án/khu vực. Biết giá từng đường = lợi thế cạnh tranh.'},{w:'T3',t:'Build danh sách buyer & seller',d:'50 người quen về nhu cầu nhà ở/đầu tư.'},{w:'T4',t:'Giao dịch cho thuê trước',d:'Chu kỳ 2-4 tuần. Build kinh nghiệm nhanh nhất.'}],reasons:['Thu nhập không giới hạn','1 giao dịch = thu nhập lớn']},
+{id:'sales-b2b',title:'Sales B2B Độc Lập',emoji:'🤝',cat:'daily',catLbl:'Đại Lý & Kết Nối',isNew:false,desc:'Đại diện bán hàng độc lập cho 1-3 công ty B2B. Hoa hồng 10-25% doanh số.',p:{people:80,expert:60,builder:40,independent:75},r:{capital:10,time:45,technology:45,network:70,risk:25,energy:70},b:{income_speed:55},income:{min:8,max:90},timeline:'3–6 tháng',roadmap:[{w:'T1',t:'Chọn sản phẩm phù hợp network',d:'Ngành bạn có sẵn network = lợi thế lớn.'},{w:'T2',t:'Học sản phẩm chuyên sâu',d:'Vấn đề gì nó giải quyết, ai cần nhất, quy trình ra quyết định.'},{w:'T3',t:'Mapping 50 prospects',d:'Warm intro hiệu quả hơn cold call 10x.'},{w:'T4',t:'Pipeline đầu tiên',d:'20 leads → 5 meetings → 1-2 hợp đồng.'}],reasons:['Hoa hồng 10-25%','Tận dụng network','Tự quản lý thời gian']},
+{id:'ctv-tiep-thi',title:'Cộng Tác Viên Tiếp Thị',emoji:'💼',cat:'daily',catLbl:'Đại Lý & Kết Nối',isNew:false,desc:'Giới thiệu khách cho dịch vụ/sản phẩm và nhận hoa hồng. Bắt đầu nhanh nhất, rủi ro thấp nhất.',p:{people:70,expert:40,builder:40,independent:70},r:{capital:5,time:35,technology:40,network:65,risk:10,energy:45},b:{income_speed:55},income:{min:3,max:25},timeline:'2–4 tuần',roadmap:[{w:'T1',t:'Chọn 2-3 sản phẩm tin tưởng',d:'Giới thiệu thứ mình tin tưởng và thích dùng.'},{w:'T2',t:'Học sâu sản phẩm',d:'5 lợi ích chính và 3 objection phổ biến.'},{w:'T3',t:'Chia sẻ trong context tự nhiên',d:'Chia sẻ khi phù hợp, không bán hàng.'},{w:'T4',t:'Track & tối ưu',d:'Theo dõi ai đăng ký qua link.'}],reasons:['Vốn bằng 0','Thu nhập trong 2-4 tuần','Rủi ro cực thấp']},
+// DỊCH VỤ
+{id:'dich-vu-suc-khoe',title:'Dịch Vụ Sức Khỏe & Wellness',emoji:'🌿',cat:'dichvu',catLbl:'Dịch Vụ',isNew:false,desc:'Yoga, dinh dưỡng, thiền, thể hình tại nhà. Nhu cầu tăng mạnh sau COVID.',p:{people:80,expert:65,builder:40,independent:65},r:{capital:25,time:50,technology:35,network:55,risk:20,energy:70},b:{income_speed:65},income:{min:8,max:50},timeline:'2–5 tháng',roadmap:[{w:'T1',t:'Chứng chỉ & định vị',d:'Yoga, dinh dưỡng hay thể hình? Chứng chỉ 1-3 tháng (2-5 triệu).'},{w:'T2',t:'Niche & đối tượng',d:'Yoga cho người đi làm căng thẳng? Niche rõ = phí cao.'},{w:'T3',t:'5 buổi thử nghiệm',d:'Mời 5-10 người quen tham gia miễn phí.'},{w:'T4',t:'Gói thành viên tháng',d:'Lịch cố định T2, T4, T6 sáng.'}],reasons:['Nhu cầu tăng mạnh sau COVID','Khách hàng trung thành cao']},
+{id:'sua-chua-bao-tri',title:'Sửa Chữa & Bảo Trì Nhà',emoji:'🔧',cat:'dichvu',catLbl:'Dịch Vụ',isNew:false,desc:'Sửa điện, nước, đồ gỗ, thiết bị gia dụng. Bắt đầu nhanh nhất trong nhóm dịch vụ.',p:{people:50,expert:75,builder:55,independent:70},r:{capital:20,time:55,technology:35,network:45,risk:25,energy:70},b:{income_speed:85},income:{min:8,max:40},timeline:'2–4 tuần',roadmap:[{w:'T1',t:'Dịch vụ cốt lõi 1-2 thứ',d:'Chỉ nhận việc tự tin làm được.'},{w:'T2',t:'Album ảnh before/after',d:'5-10 công việc cũ. Ảnh đẹp = công cụ bán hàng mạnh nhất.'},{w:'T3',t:'Đăng trên các nền tảng',d:'Facebook group "Cần thợ" địa phương.'},{w:'T4',t:'Gói bảo trì định kỳ',d:'200-500K/lần kiểm tra tháng với khách cũ.'}],reasons:['Thu nhập trong 2-4 tuần','Nhu cầu ổn định quanh năm']},
+{id:'cham-soc-lam-dep',title:'Chăm Sóc & Làm Đẹp Tại Nhà',emoji:'💆',cat:'dichvu',catLbl:'Dịch Vụ',isNew:false,desc:'Cắt tóc, nail, massage, chăm sóc da tại nhà khách. Chi phí cố định thấp.',p:{people:80,expert:60,builder:55,independent:60},r:{capital:50,time:65,technology:30,network:55,risk:45,energy:70},b:{income_speed:70},income:{min:8,max:35},timeline:'2–4 tháng',roadmap:[{w:'T1',t:'Chứng chỉ & dụng cụ',d:'Trường nghề 1-3 tháng. Dụng cụ cơ bản 3-8 triệu.'},{w:'T2',t:'Thực hành với người thân',d:'10-15 người miễn phí. Chụp ảnh kết quả.'},{w:'T3',t:'Chào hàng trong cộng đồng',d:'Facebook groups khu vực. Giá ra mắt ưu đãi 30%.'},{w:'T4',t:'Khách hàng trung thành',d:'"Lần thứ 5 miễn phí".'}],reasons:['Chi phí cố định thấp','Khách hàng rất trung thành']},
+{id:'nhiep-anh-quay-phim',title:'Nhiếp Ảnh & Quay Phim Dịch Vụ',emoji:'📸',cat:'dichvu',catLbl:'Dịch Vụ',isNew:true,desc:'Chụp ảnh sự kiện, cưới, profile doanh nghiệp. 1 dự án = 5-25 triệu.',p:{people:55,expert:75,builder:60,independent:75},r:{capital:40,time:45,technology:70,network:50,risk:25,energy:65},b:{income_speed:70},income:{min:8,max:45},timeline:'2–4 tháng',roadmap:[{w:'T1',t:'Portfolio 10 ảnh tốt nhất',d:'Tạo Behance/Instagram với tên chuyên nghiệp.'},{w:'T2',t:'Thiết bị & pricing',d:'Camera entry-level + lens 50mm. Bảng giá theo package.'},{w:'T3',t:'Network wedding/event',d:'Kết nối nhà tổ chức sự kiện, wedding planner.'},{w:'T4',t:'Dự án đầu tiên',d:'Chụp miễn phí/giảm giá mạnh 1 event.'}],reasons:['AI editing nhanh hơn 2x','Nhu cầu events tăng liên tục']},
+// ĐẦU TƯ
+{id:'affiliate-marketing',title:'Affiliate Marketing',emoji:'🔗',cat:'dauthu',catLbl:'Đầu Tư & Thụ Động',isNew:false,desc:'Giới thiệu sản phẩm qua link affiliate và nhận hoa hồng tự động.',p:{people:40,expert:55,builder:60,independent:90},r:{capital:5,time:50,technology:65,network:35,risk:10,energy:40},b:{income_speed:20},income:{min:1,max:70},timeline:'9–24 tháng',roadmap:[{w:'T1',t:'Chọn niche & mạng affiliate',d:'Accesstrade VN, Lazada, Shopee, Amazon Associates.'},{w:'T2',t:'Chọn kênh traffic',d:'Blog SEO, YouTube, hay TikTok? Chọn 1 và kiên trì.'},{w:'T3',t:'Content review thật',d:'Honest review = trust = conversion cao.'},{w:'T4',t:'SEO & consistency',d:'2 bài/tuần đều đặn. 6-12 tháng để thấy thu nhập đáng kể.'}],reasons:['Automation 85%','Vốn cực thấp','Scalability 95%']},
+{id:'cho-thue-tai-san',title:'Cho Thuê Tài Sản',emoji:'🏡',cat:'dauthu',catLbl:'Đầu Tư & Thụ Động',isNew:false,desc:'Cho thuê phòng, căn hộ, xe, thiết bị. Thu nhập thụ động nhất nếu đã có tài sản.',p:{people:35,expert:45,builder:55,independent:85},r:{capital:80,time:20,technology:30,network:30,risk:40,energy:20},b:{income_speed:45},income:{min:3,max:60},timeline:'1–3 tháng',roadmap:[{w:'T1',t:'Đánh giá tài sản hiện có',d:'Phòng trống, xe, thiết bị chuyên ngành? Tính ROI từng loại.'},{w:'T2',t:'Nghiên cứu giá thị trường',d:'Xem giá tương đương trên Airbnb, ChoTot.'},{w:'T3',t:'Chuẩn bị & đăng tin',d:'Sửa chữa nhỏ. Ảnh đẹp. Mô tả trung thực.'},{w:'T4',t:'Sàng lọc khách & hợp đồng',d:'Hợp đồng rõ ràng. Thu cọc 1-2 tháng.'}],reasons:['Effort thấp nhất','Thu nhập thụ động','Tận dụng tài sản sẵn có']},
+{id:'thiet-ke-noi-that',title:'Thiết Kế Nội Thất Freelancer',emoji:'🏗️',cat:'dauthu',catLbl:'Đầu Tư & Thụ Động',isNew:true,desc:'Tư vấn và thiết kế nội thất cho gia đình, văn phòng. AI tools tạo 3D render ấn tượng.',p:{people:55,expert:85,builder:70,independent:75},r:{capital:20,time:45,technology:65,network:50,risk:20,energy:60},b:{income_speed:60},income:{min:10,max:60},timeline:'3–6 tháng',roadmap:[{w:'T1',t:'Portfolio từ dự án cũ',d:'10 ảnh tốt nhất + AI renders bằng Midjourney.'},{w:'T2',t:'Pricing theo m2 & package',d:'Tư vấn: 500K-1tr/m2; thiết kế đầy đủ: 2-4tr/m2.'},{w:'T3',t:'Network xây dựng & trang trí',d:'Kết nối nhà thầu, showroom nội thất.'},{w:'T4',t:'Dự án thử nghiệm',d:'1 phòng/căn hộ nhỏ giá ưu đãi 30%.'}],reasons:['AI tools giảm barrier','1 dự án 60-100m2 = 15-40 triệu']}
+];
+
+function getP1(){try{const d=JSON.parse(localStorage.getItem('p1_result')||'null');if(!d||!d.scores)return null;const norm=d.scores_normalized||{};if(!norm.people)Object.entries(d.scores).forEach(([k,v])=>{norm[k]=Math.round(Math.max(0,Math.min(100,(v-20)/80*100)));});return{norm,raw:d.scores,meta:d};}catch(e){return null;}}
+function getP2(){try{const d=JSON.parse(localStorage.getItem('p2_result')||'null');if(!d||!d.scores)return null;const sc=d.scores;return{capital:sc.capScore||0,time:sc.timeScore||0,technology:sc.techScore||0,network:sc.netScore||0,risk:sc.riskScore||0,energy:sc.energyScore||0,experience:sc.expScore||0,incomeGoal:(d.S&&d.S.incIdeal)?d.S.incIdeal:10};}catch(e){return null;}}
+function pMatch(norm,dp){const dims=['people','expert','builder','independent'];const tot=dims.reduce((s,d)=>s+dp[d],0)||1;let ws=0;dims.forEach(d=>{const u=norm[d]||0,req=dp[d];ws+=(u>=req?100:Math.max(0,100-(req-u)*1.3))*(req/tot);});return Math.min(100,Math.round(ws));}
+function rMatch(p2,dr){const map=[['capital','capital'],['time','time'],['technology','technology'],['network','network'],['risk','risk'],['energy','energy']];let tot=0,ex=0;map.forEach(([pk,dk])=>{const u=p2[pk]||0,req=dr[pk]||0;if(!req){tot+=100;return;}const s=u>=req?100:Math.max(0,(u/req)*100);tot+=s;if(u/req<0.45&&req>=40)ex+=12;});const eb=((p2.experience-50)/50)*0.7*18;return Math.max(0,Math.min(100,Math.round(tot/map.length+eb-ex)));}
+function gMatch(goal,dir){const g=goal||10,mn=dir.income.min,mx=dir.income.max;if(g>=mn&&g<=mx)return 95;if(g<mn)return 82;if(g<=mx*1.5)return 62;return 38;}
+function scClass(s){return s>=90?'sc-gold':s>=80?'sc-green':s>=70?'sc-blue':s>=60?'sc-amber':'sc-gray';}
+function riskLbl(r){return r<=20?'🟢 Rủi ro thấp':r<=50?'🟡 Rủi ro TB':'🔴 Rủi ro cao';}
+function riskCls(r){return r<=20?'cb-risk-lo':r<=50?'cb-risk-md':'cb-risk-hi';}
+const DIM={people:'Kết Nối',expert:'Chuyên Môn',builder:'Xây Dựng',independent:'Tự Chủ'};
+const CAT_URL={chuyenmon:'/p3-chuyenmon.html',daotao:'/p3-daotao.html',noidungso:'/p3-noidungso.html',kinhdoanh:'/p3-kinhdoanh.html',daily:'/p3-daily.html',dichvu:'/p3-dichvu.html',dauthu:'/p3-dauthu.html'};
+let ALL=[],curCat='all',curSort='score',showN=6;
+
+function scr(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');}
+function renderProfile(p1,p2){
+  const rank=p1.meta.ranking||Object.keys(p1.raw).sort((a,b)=>p1.raw[b]-p1.raw[a]);
+  document.getElementById('dnaBars').innerHTML=rank.map(d=>`<div class="dna-row"><span class="dna-name">${DIM[d]||d}</span><div class="dna-track"><div class="dna-fill" style="width:${p1.norm[d]||0}%"></div></div><span class="dna-val">${p1.norm[d]||0}</span></div>`).join('');
+  const res=[['Kinh nghiệm',p2.experience],['Vốn',p2.capital],['Mạng lưới',p2.network],['Thời gian',p2.time]];
+  document.getElementById('resChips').innerHTML=res.map(([l,v])=>`<span class="res-chip">${l}: ${v}</span>`).join('');
+  const dna=p1.meta.dna||{};
+  document.getElementById('pcTitle').textContent=`🎯 ${p1.meta.title||'Kết quả hướng đi'}`;
+  document.getElementById('pcSub').textContent=`DNA chính: ${DIM[dna.primary]||''} · ${DIM[dna.secondary]||''}`;
+}
+function buildCard(r,rank){
+  const {dir,score,pm,rm,gm}=r;
+  const rl=rank===0?'rb1':rank===1?'rb2':rank===2?'rb3':'';
+  const rlbl=rank===0?'🥇 Phù hợp nhất':rank===1?'🥈 Rất phù hợp':rank===2?'🥉 Phù hợp cao':'';
+  const rm_html=dir.roadmap.map((w,i)=>`<div class="rm-step"><div class="rm-dot">${i+1}</div><div class="rm-text"><strong>${w.w} — ${w.t}</strong>${w.d}</div></div>`).join('');
+  const reasons_html=(dir.reasons||[]).map(s=>`<div class="ri"><span class="ic">✅</span><span>${s}</span></div>`).join('');
+  return `<div class="card-hd" onclick="toggleCard(this)">
+    <div class="card-emoji">${dir.emoji}</div>
+    <div class="card-meta">
+      ${rlbl?`<span class="rank-badge ${rl}">${rlbl}</span>`:''}
+      <div class="card-title">${dir.title}${dir.isNew?' <span class="cbadge cb-new">MỚI</span>':''}</div>
+      <div class="card-badges"><span class="cbadge cb-${dir.cat}">${dir.catLbl}</span><span class="cbadge cb-income">💰 ${dir.income.min}–${dir.income.max}tr</span><span class="cbadge cb-time">⏱ ${dir.timeline}</span><span class="cbadge ${riskCls(dir.r.risk)}">${riskLbl(dir.r.risk)}</span></div>
+      <div class="card-desc">${dir.desc}</div>
+    </div>
+    <div class="sc ${scClass(score)}"><div class="sc-num">${score}</div><div class="sc-pct">%</div></div>
+  </div>
+  <div class="card-bd" id="bd-${dir.id}">
+    <div class="match-bars">
+      <div class="mb-row"><span class="mb-lbl">🧬 Tính cách</span><div class="mb-track"><div class="mb-fill mf-p" data-w="${pm}" style="width:0"></div></div><span class="mb-val">${pm}%</span></div>
+      <div class="mb-row"><span class="mb-lbl">⚙️ Nguồn lực</span><div class="mb-track"><div class="mb-fill mf-r" data-w="${rm}" style="width:0"></div></div><span class="mb-val">${rm}%</span></div>
+      <div class="mb-row"><span class="mb-lbl">💰 Thu nhập</span><div class="mb-track"><div class="mb-fill mf-g" data-w="${gm}" style="width:0"></div></div><span class="mb-val">${gm}%</span></div>
+    </div>
+    <div class="rg">${reasons_html}</div>
+    <button class="rm-toggle" onclick="toggleRm(this,'rm-${dir.id}')">📅 Roadmap 30 ngày <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="rm-body" id="rm-${dir.id}">${rm_html}</div>
+    <div class="card-actions">
+      <a class="btn-cat" href="${CAT_URL[dir.cat]||'#'}">Xem thêm nhóm ${dir.catLbl} →</a>
+      <button class="btn-save" id="sv-${dir.id}" onclick="saveDir(event,'${dir.id}')">💾 Lưu</button>
+    </div>
+  </div>`;
+}
+function renderCards(list,from,to){
+  const wrap=document.getElementById('cards');
+  if(from===0)wrap.innerHTML='';
+  list.slice(from,to).forEach((r,i)=>{
+    const el=document.createElement('div');
+    el.className='card'+(from+i<3?' top3':'');
+    el.innerHTML=buildCard(r,from+i);
+    wrap.appendChild(el);
+    setTimeout(()=>el.querySelectorAll('.mb-fill[data-w]').forEach(b=>b.style.width=b.dataset.w+'%'),200+(from+i)*60);
+  });
+  document.getElementById('showMoreWrap').style.display=to<list.length?'block':'none';
+}
+function getFiltered(){
+  let list=[...ALL];
+  if(curCat!=='all')list=list.filter(r=>r.dir.cat===curCat);
+  if(curSort==='income')list.sort((a,b)=>b.dir.income.max-a.dir.income.max);
+  else if(curSort==='risk')list.sort((a,b)=>a.dir.r.risk-b.dir.r.risk);
+  else if(curSort==='speed')list.sort((a,b)=>b.dir.b.income_speed-a.dir.b.income_speed);
+  else list.sort((a,b)=>b.score-a.score);
+  return list;
+}
+function filterCat(btn,cat){document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');curCat=cat;showN=6;renderCards(getFiltered(),0,showN);}
+function setSort(btn,sort){document.querySelectorAll('.sort-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');curSort=sort;showN=6;renderCards(getFiltered(),0,showN);}
+function showAll(){const list=getFiltered();renderCards(list,0,list.length);}
+function toggleCard(hd){const bd=hd.nextElementSibling;const open=bd.classList.toggle('on');if(open)setTimeout(()=>bd.querySelectorAll('.mb-fill[data-w]').forEach(b=>{b.style.width='0';setTimeout(()=>b.style.width=b.dataset.w+'%',30);}),10);}
+function toggleRm(btn,id){document.getElementById(id).classList.toggle('on');btn.classList.toggle('on');}
+function saveDir(e,id){e.stopPropagation();const saved=JSON.parse(localStorage.getItem('p3_saved')||'[]');if(!saved.includes(id)){saved.push(id);localStorage.setItem('p3_saved',JSON.stringify(saved));}const btn=document.getElementById('sv-'+id);btn.textContent='✅ Đã lưu';btn.classList.add('saved');}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const p1=getP1(),p2=getP2();
+  if(!p1||!p2){
+    const steps=document.getElementById('nd-steps');
+    const st=[{done:!!p1,lbl:'P1 — Khám phá bản thân',sub:'20 câu hỏi về cách bạn tạo giá trị',href:'/p1.html'},{done:!!p2,lbl:'P2 — Khai báo nguồn lực',sub:'Vốn, thời gian, kinh nghiệm, mạng lưới',href:'/p2.html'}];
+    steps.innerHTML=st.map(s=>`<div class="nd-step${s.done?' done':''}"><span class="nd-step-ico">${s.done?'✅':'⭕'}</span><div class="nd-step-info"><strong>${s.lbl}</strong><span>${s.sub}</span></div><span class="nd-badge ${s.done?'ndb-done':'ndb-todo'}">${s.done?'Hoàn thành':'Chưa làm'}</span></div>`).join('');
+    const cta=document.getElementById('nd-cta');
+    if(p1&&!p2){cta.href='/p2.html';cta.textContent='Tiếp tục P2: Khai báo nguồn lực →';}
+    scr('s-nodata');return;
+  }
+  scr('s-loading');
+  setTimeout(()=>{
+    renderProfile(p1,p2);
+    ALL=DB.map(dir=>{
+      const pm=pMatch(p1.norm,dir.p);
+      const rm=rMatch(p2,dir.r);
+      const gm=gMatch(p2.incomeGoal,dir);
+      const score=Math.round(pm*0.50+rm*0.35+gm*0.15);
+      return{dir,score,pm,rm,gm};
+    }).sort((a,b)=>b.score-a.score);
+    const top=ALL[0];
+    document.getElementById('resSubtitle').textContent=`Tìm thấy ${ALL.length} hướng đi. Phù hợp nhất: "${top.dir.title}" với ${top.score}%.`;
+    const saved=JSON.parse(localStorage.getItem('p3_saved')||'[]');
+    renderCards(getFiltered(),0,showN);
+    setTimeout(()=>saved.forEach(id=>{const btn=document.getElementById('sv-'+id);if(btn){btn.textContent='✅ Đã lưu';btn.classList.add('saved');}}),300);
+    scr('s-results');
+  },900);
+});
+</script>
+<script src="/sol-flow.js"></script>
+</body>
+</html>

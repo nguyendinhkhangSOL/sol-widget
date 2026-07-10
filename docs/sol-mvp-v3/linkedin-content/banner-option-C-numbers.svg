@@ -1,0 +1,49 @@
+<svg viewBox="0 0 1584 396" width="1584" height="396" xmlns="http://www.w3.org/2000/svg">
+  <title>Sol La Bàn - Option C Big Numbers Impact</title>
+
+  <!-- Navy background -->
+  <rect width="1584" height="396" fill="#0F172A"/>
+
+  <!-- Amber accent bar left -->
+  <rect x="0" y="0" width="12" height="396" fill="#F59E0B"/>
+
+  <!-- Small tag top -->
+  <text x="440" y="85" font-family="'Inter', Arial, sans-serif" font-size="18" fill="#F59E0B" font-weight="700" letter-spacing="4">
+    SOL LA BÀN · TÁI KHỞI NGHIỆP ĐÚNG HƯỚNG
+  </text>
+
+  <!-- 3 big numbers -->
+  <g transform="translate(440, 200)">
+    <!-- 37 -->
+    <text x="0" y="0" font-family="Georgia, 'Lora', serif" font-size="120" font-weight="800" fill="#F59E0B">37</text>
+    <text x="0" y="45" font-family="'Inter', sans-serif" font-size="16" fill="#CBD5E1" font-weight="700" letter-spacing="2">MÔ HÌNH THU NHẬP</text>
+    <text x="0" y="70" font-family="'Inter', sans-serif" font-size="13" fill="#94A3B8">Thực chiến cho Việt Nam</text>
+
+    <line x1="250" y1="-70" x2="250" y2="70" stroke="#334155" stroke-width="1"/>
+
+    <!-- 90 -->
+    <text x="300" y="0" font-family="Georgia, 'Lora', serif" font-size="120" font-weight="800" fill="#F59E0B">90</text>
+    <text x="300" y="45" font-family="'Inter', sans-serif" font-size="16" fill="#CBD5E1" font-weight="700" letter-spacing="2">NGÀY LỘ TRÌNH</text>
+    <text x="300" y="70" font-family="'Inter', sans-serif" font-size="13" fill="#94A3B8">Cá nhân hoá theo DNA</text>
+
+    <line x1="530" y1="-70" x2="530" y2="70" stroke="#334155" stroke-width="1"/>
+
+    <!-- 5 -->
+    <text x="580" y="0" font-family="Georgia, 'Lora', serif" font-size="120" font-weight="800" fill="#F59E0B">5</text>
+    <text x="580" y="45" font-family="'Inter', sans-serif" font-size="16" fill="#CBD5E1" font-weight="700" letter-spacing="2">BƯỚC VIỆT HÓA</text>
+    <text x="580" y="70" font-family="'Inter', sans-serif" font-size="13" fill="#94A3B8">Nhận diện đến thực thi</text>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="440" y="345" font-family="Georgia, 'Lora', serif" font-size="20" fill="#F59E0B" font-style="italic">
+    Đúng hướng · Đúng bước · Đúng tương lai
+  </text>
+  <text x="440" y="375" font-family="'Inter', Arial, sans-serif" font-size="14" fill="#64748B" font-weight="600" letter-spacing="2">
+    NGUYỄN ĐÌNH KHANG · SOL.VN
+  </text>
+
+  <!-- Sol S logo right -->
+  <circle cx="1430" cy="198" r="85" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.4"/>
+  <circle cx="1430" cy="198" r="65" fill="#F59E0B" opacity="0.1"/>
+  <text x="1430" y="228" font-family="Georgia, 'Lora', serif" font-size="75" font-weight="800" fill="#F59E0B" text-anchor="middle">S</text>
+</svg>

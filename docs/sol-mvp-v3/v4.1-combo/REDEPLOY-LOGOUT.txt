@@ -1,0 +1,36 @@
+═══════════════════════════════════════════════════════════
+REDEPLOY prompts-builder.html — Bổ sung nút Đăng xuất
+═══════════════════════════════════════════════════════════
+
+BƯỚC 1 — Terminal LOCAL (PowerShell, không phải VPS):
+
+scp C:\BOTHUOCLA\sol-widget\docs\sol-mvp-v3\prompt-database\prompts-builder.html sol-vps:/tmp/
+
+
+BƯỚC 2 — SSH VPS:
+
+ssh sol-vps
+
+
+BƯỚC 3 — Trên VPS:
+
+sudo mv /tmp/prompts-builder.html /var/www/huongdi/public/prompts/index.html && \
+sudo chown www-data:www-data /var/www/huongdi/public/prompts/index.html && \
+echo "✅ LOGOUT DEPLOYED"
+
+
+═══════════════════════════════════════════════════════════
+TEST NÚT ĐĂNG XUẤT
+═══════════════════════════════════════════════════════════
+
+1. Kích hoạt: https://huongdi.sol.vn/prompts/?activate=SOL-ACTIVE-DEMO123
+   → URL tự clean → góc phải trên xuất hiện chip "✓ Sol Active [Đăng xuất]"
+
+2. Click "Đăng xuất" → xác nhận → chip biến mất → prompts locked lại
+
+3. Hoặc dùng URL: https://huongdi.sol.vn/prompts/?deactivate=1
+   → Alert "👋 Đã đăng xuất"
+
+4. Test Founder: https://huongdi.sol.vn/prompts/?activate=SOL-FOUNDER-VIP001
+   → Chip đổi thành "🌟 Sol Founder" (màu tím)
+═══════════════════════════════════════════════════════════

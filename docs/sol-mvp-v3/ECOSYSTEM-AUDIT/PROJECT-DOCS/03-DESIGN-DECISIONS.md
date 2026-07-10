@@ -379,3 +379,51 @@ File: `huongdi-public/ai-studio/index.html`
 - HTML `<select id="tabs-mobile" onchange="switchTabMobile(this.value)">`
 - JS `switchTabMobile(val)` + sync trong `switchTab()` + `clearFilters()`
 
+
+
+---
+
+## ADR-012: Adopt schema đối tác làm base — Sol wraps thay vì refactor lại
+
+**Date:** 2026-07-08
+**Decision by:** Khang Sol
+**Status:** ✅ Locked — chờ ship code
+
+### Context
+Đối tác đã bàn giao 3 file quan trọng:
+1. 8 mô hình rich content 16-20KB/bộ (chất lượng cao)
+2. Schema DB Postgres/Supabase production-ready (versioning, immutable, section gating, journey system chuyên nghiệp)
+3. SQL seed 38 mô hình + lộ trình biên soạn 3 đợt (P1-P3)
+
+Có 3 phương án tích hợp: (A) Adopt hoàn toàn 38 đối tác bỏ 37 Sol, (B) Merge chọn lọc giữ cả 2, (C) Đối tác làm base — migrate Sol vào.
+
+### Decision
+**Chọn phương án C — Đối tác làm schema base.**
+
+Lý do chiến lược: cần đối tác cho các bản cập nhật sau này. Nếu Sol tự chế schema riêng → mỗi lần đối tác biên soạn thêm nghề mới, Sol phải refactor. Nếu Sol adopt schema đối tác → mỗi lần cập nhật = chạy 1 SQL seed.
+
+### Consequences
+- ✅ Long-term partnership benefit — đối tác dễ push update
+- ✅ Kiến trúc thuần 1 nguồn (models + model_versions + model_sections + journeys...)
+- ✅ Không có "Sol format" vs "đối tác format" — chỉ 1 format
+- ✅ Đối tác đã suy nghĩ đầy đủ về versioning, immutable, RLS, journey system
+- ⚠️ Effort refactor 37 direction Sol (~1 tuần) — migrate vào MH-201 → MH-223
+- ⚠️ Archive 2 direction Sol trùng nghề đối tác đã LOẠI (#17 dau-tu-tai-chinh + #22 cham-soc-suc-khoe-tai-nha)
+
+### Implementation
+- Prisma migration adopt full schema đối tác
+- SQL seed 38 mô hình đối tác chạy trực tiếp
+- Migrate 37 direction Sol → MH-201-223 giữ user FK (SavedDirection, JourneyDay)
+- Sol contribute layer: `model_scores` (21 vector) làm bảng riêng — không nằm trong `model_versions` immutable
+
+### 2 nghề nhạy cảm archive
+- Sol #17 dau-tu-tai-chinh — trùng "đầu tư CK" mà đối tác đã loại vì tư vấn tài chính không phép
+- Sol #22 cham-soc-suc-khoe-tai-nha — trùng "đồng hành người cao tuổi" mà đối tác đã loại vì trách nhiệm sức khoẻ
+
+Đây là YMYL topic — tôn trọng phán đoán chuyên môn đối tác.
+
+### Combo biên soạn 30 mô hình mới
+- Đợt 1 P1 (6 mô hình): MH-113/115/121/125/129/133 — đối tác biên soạn nếu có scope, hoặc Sol Claude API
+- Đợt 2 P2 (10 mô hình): Sol Claude API + Master Prompt đối tác
+- Đợt 3 P3 (14 mô hình): Sol Claude API
+

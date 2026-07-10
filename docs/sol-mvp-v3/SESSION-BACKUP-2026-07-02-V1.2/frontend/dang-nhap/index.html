@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập Sol — sol.vn</title>
+  <meta name="robots" content="noindex,nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber: #F59E0B; --amber-dark: #D97706; --amber-light: #FCD34D;
+      --navy: #0F172A; --navy-2: #1E293B; --navy-3: #334155;
+      --slate: #64748B; --slate-2: #94A3B8; --slate-3: #CBD5E1;
+      --slate-4: #E2E8F0; --slate-5: #F1F5F9;
+      --green: #16A34A; --red: #DC2626; --white: #FFFFFF;
+    }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+      color: var(--slate-5);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      max-width: 460px; width: 100%;
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 24px;
+      padding: 40px 36px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, transparent 65%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .logo { text-align: center; margin-bottom: 20px; position: relative; }
+    .logo-icon { font-size: 44px; margin-bottom: 6px; }
+    .logo-text {
+      font-family: 'Lora', serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--amber); letter-spacing: 0.5px;
+    }
+    .logo-sub {
+      font-size: 11px; color: var(--slate-2);
+      letter-spacing: 2px; text-transform: uppercase; margin-top: 4px;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: 26px; font-weight: 700;
+      color: var(--white);
+      text-align: center; margin: 24px 0 8px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      color: var(--slate-3); font-size: 14.5px;
+      text-align: center; margin-bottom: 24px;
+    }
+
+    .form-group { margin-bottom: 16px; position: relative; }
+    .form-label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: var(--slate-3); margin-bottom: 6px;
+    }
+    .form-input {
+      width: 100%; padding: 13px 14px; font-size: 15px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1.5px solid var(--navy-3);
+      border-radius: 10px;
+      color: var(--white); font-family: inherit;
+      transition: border-color 0.15s;
+    }
+    .form-input:focus {
+      outline: none; border-color: var(--amber);
+      background: rgba(15, 23, 42, 0.8);
+    }
+    .form-input::placeholder { color: var(--slate); }
+
+    .forgot-link {
+      display: block; text-align: right;
+      font-size: 13px; color: var(--amber-light);
+      text-decoration: none; font-weight: 500;
+      margin-top: 6px;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+
+    .btn-submit {
+      width: 100%; padding: 15px 20px;
+      background: linear-gradient(135deg, var(--amber) 0%, var(--amber-dark) 100%);
+      color: var(--white);
+      border: none; border-radius: 12px;
+      font-weight: 700; font-size: 16px;
+      cursor: pointer; margin-top: 20px;
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+      transition: transform 0.15s;
+      font-family: inherit;
+    }
+    .btn-submit:hover:not(:disabled) { transform: translateY(-2px); }
+    .btn-submit:disabled {
+      opacity: 0.6; cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .error-box {
+      display: none;
+      background: rgba(220, 38, 38, 0.15);
+      border-left: 3px solid var(--red);
+      color: #FCA5A5;
+      padding: 14px 16px; border-radius: 8px;
+      margin-bottom: 16px; font-size: 14px;
+      line-height: 1.5;
+    }
+    .error-box.active { display: block; }
+    .error-box a {
+      color: #FCD34D; text-decoration: underline; font-weight: 600;
+    }
+
+    .divider {
+      margin: 24px 0 20px;
+      position: relative;
+      text-align: center;
+      color: var(--slate-2);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ''; position: absolute;
+      top: 50%; width: calc(50% - 40px); height: 1px;
+      background: rgba(148, 163, 184, 0.2);
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+
+    .signup-cta {
+      display: block; width: 100%;
+      text-align: center; padding: 12px 20px;
+      background: transparent;
+      border: 1.5px solid rgba(245,158,11,0.4);
+      color: var(--amber-light);
+      border-radius: 12px;
+      font-weight: 600; font-size: 14.5px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .signup-cta:hover {
+      background: rgba(245,158,11,0.1);
+      border-color: var(--amber);
+    }
+
+    .footer-note {
+      margin-top: 24px; padding-top: 18px;
+      border-top: 1px solid rgba(148,163,184,0.15);
+      color: var(--slate-2); font-size: 12px; text-align: center;
+      line-height: 1.6;
+    }
+    .footer-note a { color: var(--amber-light); text-decoration: none; }
+
+    @media (max-width: 480px) {
+      .card { padding: 32px 24px; }
+      h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">🧭</div>
+      <div class="logo-text">Sol La Bàn</div>
+      <div class="logo-sub">Đăng nhập</div>
+    </div>
+
+    <h1>Đăng nhập Sol</h1>
+    <p class="subtitle">Vào tài khoản Sol Active của anh/chị</p>
+
+    <div class="error-box" id="error-box"></div>
+
+    <div class="form-group">
+      <label class="form-label" for="identifier">Số điện thoại hoặc Email</label>
+      <input type="text" class="form-input" id="identifier" placeholder="0912345678 hoặc email@..." autocomplete="username">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="password">Mật khẩu</label>
+      <input type="password" class="form-input" id="password" placeholder="Nhập mật khẩu" autocomplete="current-password">
+      <a href="/quen-mat-khau/" class="forgot-link">Quên mật khẩu?</a>
+    </div>
+
+    <button class="btn-submit" id="btn-submit">🔓 Đăng nhập</button>
+
+    <div class="divider">Chưa có tài khoản?</div>
+
+    <a href="/thanh-toan/" class="signup-cta">
+      🚀 Đăng ký Sol Active 499k/năm →
+    </a>
+
+    <div class="footer-note">
+      Có gì không rõ, nhắn Zalo <a href="https://zalo.me/0912727381">0912727381</a>.<br>
+      — <b>Khang Sol</b> · Founder sol.vn
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var API_BASE = 'https://huongdi.sol.vn';
+      var HUONGDI_URL = 'https://huongdi.sol.vn/';
+
+      var $ = function (id) { return document.getElementById(id); };
+      function showError(html) {
+        var box = $('error-box');
+        box.innerHTML = html;
+        box.classList.add('active');
+      }
+      function hideError() { $('error-box').classList.remove('active'); }
+
+      var identifierInput = $('identifier');
+      var pwdInput = $('password');
+      var btn = $('btn-submit');
+
+      async function doLogin() {
+        hideError();
+        var ident = identifierInput.value.trim();
+        var pwd = pwdInput.value;
+
+        if (!ident) {
+          showError('Vui lòng nhập SDT hoặc Email.');
+          identifierInput.focus();
+          return;
+        }
+        if (!pwd) {
+          showError('Vui lòng nhập mật khẩu.');
+          pwdInput.focus();
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = '⏳ Đang xác thực...';
+
+        try {
+          var res = await fetch(API_BASE + '/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ identifier: ident, password: pwd })
+          });
+          var data = await res.json();
+
+          if (!data.success) {
+            var msg = data.message || 'Đăng nhập thất bại.';
+            if (data.code === 'PASSWORD_NOT_SET') {
+              msg = 'Anh/chị chưa đặt mật khẩu. Vui lòng dùng <b>link kích hoạt</b> đã nhận qua Zalo/Email để đặt mật khẩu lần đầu, hoặc <a href="https://zalo.me/0912727381" target="_blank">nhắn Zalo Khang</a> xin link.';
+            } else if (data.code === 'NOT_FOUND') {
+              msg = 'SDT/Email chưa đăng ký. <a href="/thanh-toan/">Đăng ký Sol Active →</a>';
+            } else if (data.code === 'EXPIRED') {
+              msg = 'Gói đã hết hạn. Vui lòng <a href="/thanh-toan/">gia hạn</a>.';
+            } else if (data.code === 'CANCELLED') {
+              msg = 'Tài khoản đã bị huỷ. Liên hệ Zalo <a href="https://zalo.me/0912727381">0912727381</a>.';
+            } else if (data.code === 'PENDING_PAYMENT') {
+              msg = 'Đơn của anh/chị đang chờ chuyển khoản. Vui lòng CK theo memo đã cấp.';
+            }
+            showError(msg);
+            btn.disabled = false;
+            btn.textContent = '🔓 Đăng nhập';
+            return;
+          }
+
+          // Success — save session
+          try {
+            localStorage.setItem('sol_session_token', data.token);
+            localStorage.setItem('sol_tier',          data.tier);
+            localStorage.setItem('sol_ten',           data.ten);
+            localStorage.setItem('sol_expires_at',    data.expires_at || '');
+            localStorage.setItem('sol_activated_at',  new Date().toISOString());
+            localStorage.setItem('sol_active',        'true');
+            if (data.tier === 'founder') {
+              localStorage.setItem('sol_founder', 'true');
+            } else {
+              localStorage.removeItem('sol_founder');
+            }
+          } catch (e) { /* ignore */ }
+
+          btn.textContent = '✅ Đăng nhập thành công';
+
+          // Redirect huongdi với welcome handshake
+          setTimeout(function () {
+            var handoffParams = new URLSearchParams({
+              welcome: '1',
+              tier: data.tier,
+              ten: data.ten,
+              expires: data.expires_at || '',
+              token: data.token.substring(0, 12),
+              jwt: data.token
+            });
+            window.location.href = HUONGDI_URL + '?' + handoffParams.toString();
+          }, 800);
+        } catch (err) {
+          console.error(err);
+          showError('Không kết nối được máy chủ. Vui lòng thử lại hoặc Zalo <a href="https://zalo.me/0912727381">0912727381</a>.');
+          btn.disabled = false;
+          btn.textContent = '🔓 Đăng nhập';
+        }
+      }
+
+      btn.addEventListener('click', doLogin);
+
+      // Enter to submit
+      pwdInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') doLogin();
+      });
+      identifierInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') pwdInput.focus();
+      });
+
+      // Auto-focus identifier
+      identifierInput.focus();
+    })();
+  </script>
+</body>
+</html>

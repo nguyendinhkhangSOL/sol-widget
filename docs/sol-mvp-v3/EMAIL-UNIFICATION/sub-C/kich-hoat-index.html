@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kích hoạt tài khoản Sol La Bàn</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --amber-500: #F59E0B;
+    --amber-600: #D97706;
+    --amber-700: #B45309;
+    --navy: #0F172A;
+    --slate-600: #475569;
+    --slate-100: #F1F5F9;
+    --red-500: #DC2626;
+    --green-500: #10B981;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Inter, Roboto, sans-serif;
+    background: linear-gradient(135deg, #FEF3C7 0%, #FFFFFF 100%);
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    color: var(--navy);
+  }
+  .container {
+    max-width: 480px; width: 100%;
+    background: white; border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    padding: 40px 32px;
+  }
+  .logo { text-align: center; margin-bottom: 24px; }
+  .logo-icon {
+    display: inline-block; width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--amber-500), var(--amber-700));
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 28px;
+  }
+  h1 { font-size: 24px; text-align: center; margin-bottom: 8px; }
+  .subtitle { text-align: center; color: var(--slate-600); font-size: 14px; margin-bottom: 24px; }
+  .info-box {
+    background: #FEF3C7; border: 1px solid var(--amber-500);
+    border-radius: 10px; padding: 16px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+  .info-box .label { color: var(--slate-600); font-size: 12px; margin-bottom: 4px; }
+  .info-box .value { font-weight: 600; color: var(--navy); }
+  .info-box .tier-badge {
+    display: inline-block; padding: 2px 10px; border-radius: 999px;
+    background: var(--amber-500); color: white; font-size: 12px; font-weight: 700;
+    margin-left: 8px;
+  }
+  form { display: flex; flex-direction: column; gap: 16px; }
+  .field label {
+    display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--navy);
+  }
+  .field input {
+    width: 100%; padding: 12px 14px; font-size: 15px;
+    border: 1px solid #E2E8F0; border-radius: 8px;
+    transition: border 0.2s;
+  }
+  .field input:focus {
+    outline: none; border-color: var(--amber-500);
+    box-shadow: 0 0 0 3px rgba(245,158,11,0.15);
+  }
+  .field .hint { font-size: 12px; color: var(--slate-600); margin-top: 4px; }
+  button.submit {
+    width: 100%; padding: 14px 20px;
+    background: linear-gradient(135deg, var(--amber-500), var(--amber-700));
+    color: white; font-weight: 700; font-size: 15px;
+    border: none; border-radius: 10px;
+    cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+  }
+  button.submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(245,158,11,0.35);
+  }
+  button.submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .message {
+    padding: 12px 14px; border-radius: 8px; font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .message.error {
+    background: #FEF2F2; border: 1px solid var(--red-500); color: var(--red-500);
+  }
+  .message.success {
+    background: #ECFDF5; border: 1px solid var(--green-500); color: #065F46;
+  }
+  .footer-link { text-align: center; margin-top: 20px; font-size: 13px; }
+  .footer-link a { color: var(--slate-600); text-decoration: none; }
+  .footer-link a:hover { color: var(--amber-600); }
+  .loading {
+    display: inline-block; width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,0.3); border-top-color: white;
+    border-radius: 50%; animation: spin 0.8s linear infinite;
+    vertical-align: middle; margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo">
+    <div class="logo-icon">🧭</div>
+    <h1>Kích hoạt tài khoản</h1>
+    <p class="subtitle">Sol La Bàn — Đặt mật khẩu để bắt đầu</p>
+  </div>
+
+  <div id="verify-loading" class="message" style="background:#F1F5F9; color:var(--slate-600); text-align:center;">
+    <span class="loading" style="border-color:rgba(15,23,42,0.2); border-top-color:var(--navy);"></span>
+    Đang xác minh link kích hoạt...
+  </div>
+
+  <div id="verify-error" class="message error hidden"></div>
+
+  <div id="verify-success" class="hidden">
+    <div class="info-box">
+      <div class="label">Tài khoản</div>
+      <div class="value" id="user-email">—</div>
+      <div class="value" id="user-name" style="font-weight:400; color:var(--slate-600); font-size:13px; margin-top:2px;">—</div>
+      <div style="margin-top:8px;">
+        <span class="label">Gói:</span>
+        <span class="tier-badge" id="user-tier">—</span>
+      </div>
+    </div>
+
+    <form id="activate-form">
+      <div class="field">
+        <label for="password">Đặt mật khẩu mới</label>
+        <input type="password" id="password" name="password" required minlength="6" autocomplete="new-password" placeholder="Tối thiểu 6 ký tự">
+        <div class="hint">Dùng để đăng nhập lần sau tại /dang-nhap/</div>
+      </div>
+
+      <div class="field">
+        <label for="password2">Xác nhận mật khẩu</label>
+        <input type="password" id="password2" name="password2" required minlength="6" autocomplete="new-password">
+      </div>
+
+      <div id="form-error" class="message error hidden"></div>
+      <div id="form-success" class="message success hidden"></div>
+
+      <button type="submit" class="submit" id="submit-btn">
+        Kích hoạt và đăng nhập →
+      </button>
+    </form>
+  </div>
+
+  <div class="footer-link">
+    <a href="https://huongdi.sol.vn/">← Về trang chủ</a>
+    &nbsp;·&nbsp;
+    <a href="https://zalo.me/0912727381">💬 Cần hỗ trợ? Zalo Khang</a>
+  </div>
+</div>
+
+<script>
+(async function() {
+  const params = new URLSearchParams(location.search);
+  const token = params.get('token');
+
+  const $loading = document.getElementById('verify-loading');
+  const $error = document.getElementById('verify-error');
+  const $success = document.getElementById('verify-success');
+  const $form = document.getElementById('activate-form');
+  const $formError = document.getElementById('form-error');
+  const $formSuccess = document.getElementById('form-success');
+  const $submitBtn = document.getElementById('submit-btn');
+
+  if (!token) {
+    $loading.classList.add('hidden');
+    $error.textContent = 'Link kích hoạt không hợp lệ. Vui lòng dùng link từ email Sol gửi.';
+    $error.classList.remove('hidden');
+    return;
+  }
+
+  // ─── Step 1: Verify token ────
+  try {
+    const res = await fetch('/api/activate?token=' + encodeURIComponent(token));
+    const data = await res.json();
+
+    if (!data.success) {
+      $loading.classList.add('hidden');
+      $error.textContent = data.message || 'Link không hợp lệ hoặc đã hết hạn.';
+      $error.classList.remove('hidden');
+      return;
+    }
+
+    if (!data.password_required) {
+      // Đã có password → redirect đăng nhập
+      $loading.classList.add('hidden');
+      $error.textContent = 'Tài khoản này đã được kích hoạt. Đang chuyển sang trang đăng nhập...';
+      $error.classList.remove('hidden');
+      setTimeout(() => { location.href = '/dang-nhap/'; }, 2000);
+      return;
+    }
+
+    // Show form set password
+    $loading.classList.add('hidden');
+    document.getElementById('user-email').textContent = data.email || '—';
+    document.getElementById('user-name').textContent = data.ten || '';
+    document.getElementById('user-tier').textContent = (data.tier || 'ACTIVE').toUpperCase();
+    $success.classList.remove('hidden');
+  } catch (err) {
+    console.error(err);
+    $loading.classList.add('hidden');
+    $error.textContent = 'Lỗi kết nối. Vui lòng thử lại.';
+    $error.classList.remove('hidden');
+    return;
+  }
+
+  // ─── Step 2: Submit set password ────
+  $form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $formError.classList.add('hidden');
+    $formSuccess.classList.add('hidden');
+
+    const password = document.getElementById('password').value;
+    const password2 = document.getElementById('password2').value;
+
+    if (password.length < 6) {
+      $formError.textContent = 'Mật khẩu tối thiểu 6 ký tự.';
+      $formError.classList.remove('hidden');
+      return;
+    }
+    if (password !== password2) {
+      $formError.textContent = 'Mật khẩu xác nhận không khớp.';
+      $formError.classList.remove('hidden');
+      return;
+    }
+
+    $submitBtn.disabled = true;
+    $submitBtn.innerHTML = '<span class="loading"></span>Đang kích hoạt...';
+
+    try {
+      const res = await fetch('/api/activate/set-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, password }),
+      });
+      const data = await res.json();
+
+      if (!data.success) {
+        $formError.textContent = data.message || 'Kích hoạt thất bại.';
+        $formError.classList.remove('hidden');
+        $submitBtn.disabled = false;
+        $submitBtn.innerHTML = 'Kích hoạt và đăng nhập →';
+        return;
+      }
+
+      // Save JWT + redirect
+      localStorage.setItem('sol_jwt', data.token);
+      localStorage.setItem('sol_user', JSON.stringify(data.user));
+
+      $formSuccess.textContent = data.message || '🎉 Kích hoạt thành công! Đang chuyển sang Dashboard...';
+      $formSuccess.classList.remove('hidden');
+
+      setTimeout(() => {
+        location.href = '/toi/';
+      }, 1500);
+    } catch (err) {
+      console.error(err);
+      $formError.textContent = 'Lỗi kết nối. Vui lòng thử lại.';
+      $formError.classList.remove('hidden');
+      $submitBtn.disabled = false;
+      $submitBtn.innerHTML = 'Kích hoạt và đăng nhập →';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

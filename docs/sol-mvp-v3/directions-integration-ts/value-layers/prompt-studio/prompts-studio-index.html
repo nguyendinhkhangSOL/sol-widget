@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Studio — Sol La Bàn</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --amber:#F59E0B; --amber-light:#FEF3C7; --amber-dark:#B45309;
+    --navy:#0F172A; --navy-2:#1E293B; --slate:#64748B; --slate-light:#94A3B8;
+    --border:#E2E8F0; --bg:#F8FAFC; --white:#FFFFFF;
+    --success:#16A34A; --purple:#8B5CF6;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:'Inter', 'Segoe UI', -apple-system, sans-serif;
+    background:var(--bg); color:var(--navy); line-height:1.6;
+  }
+  .top-bar { background:var(--white); border-bottom:1px solid var(--border); padding:12px 24px; display:flex; align-items:center; justify-content:space-between; }
+  .top-bar a { color:var(--navy); text-decoration:none; font-size:14px; }
+  .container { max-width:1000px; margin:0 auto; padding:24px; }
+
+  h1 { font-size:26px; font-weight:700; margin-bottom:6px; }
+  .subtitle { color:var(--slate); font-size:14px; margin-bottom:24px; }
+
+  /* Step tabs */
+  .step-tabs { display:flex; gap:6px; margin-bottom:20px; overflow-x:auto; padding-bottom:6px; }
+  .step-tab {
+    padding:10px 16px; background:var(--white); border:2px solid var(--border);
+    border-radius:8px; cursor:pointer; font-size:13px; font-weight:600;
+    white-space:nowrap; color:var(--slate); transition:all 0.15s;
+  }
+  .step-tab.active { background:var(--amber); border-color:var(--amber); color:var(--navy); }
+  .step-tab:hover:not(.active) { border-color:var(--amber); color:var(--amber-dark); }
+
+  /* Template grid */
+  .templates { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:12px; }
+  .tpl-card {
+    background:var(--white); border:2px solid var(--border); border-radius:10px;
+    padding:16px; cursor:pointer; transition:all 0.15s; position:relative;
+  }
+  .tpl-card:hover { border-color:var(--amber); transform:translateY(-2px); }
+  .tpl-card.locked { opacity:0.7; }
+  .tpl-card.locked::after {
+    content:'🔒 Active'; position:absolute; top:12px; right:12px;
+    background:var(--navy); color:var(--amber); padding:3px 10px;
+    border-radius:999px; font-size:11px; font-weight:700;
+  }
+  .tpl-title { font-size:16px; font-weight:700; margin-bottom:6px; padding-right:60px; }
+  .tpl-desc { font-size:13px; color:var(--slate); line-height:1.5; }
+
+  /* Builder modal */
+  .builder {
+    display:none; position:fixed; top:0; left:0; right:0; bottom:0;
+    background:rgba(15,23,42,0.6); z-index:1000; overflow-y:auto; padding:20px;
+  }
+  .builder.active { display:flex; align-items:flex-start; justify-content:center; }
+  .builder-box {
+    background:var(--white); border-radius:12px; max-width:800px; width:100%;
+    padding:32px; margin:40px auto;
+  }
+  .builder-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+  .builder-close { background:none; border:none; font-size:28px; cursor:pointer; color:var(--slate); }
+  .builder-title { font-size:22px; font-weight:700; }
+  .builder-desc { color:var(--slate); font-size:14px; margin-bottom:20px; }
+
+  .field { margin-bottom:16px; }
+  .field label { display:block; font-size:13px; font-weight:600; margin-bottom:6px; color:var(--navy); }
+  .field small { color:var(--slate); font-weight:400; }
+  .field input, .field textarea, .field select {
+    width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:6px;
+    font-size:14px; font-family:inherit; background:var(--bg);
+  }
+  .field textarea { min-height:70px; resize:vertical; }
+  .field input:focus, .field textarea:focus { outline:none; border-color:var(--amber); background:var(--white); }
+
+  .auto-field {
+    background:var(--amber-light); border:1px dashed var(--amber);
+    padding:10px 14px; border-radius:6px; font-size:13px; color:var(--amber-dark);
+  }
+
+  /* Preview + copy */
+  .preview {
+    background:var(--navy); color:var(--amber-light); border-radius:10px;
+    padding:18px 20px; font-family:'Menlo', 'Consolas', monospace; font-size:13px;
+    line-height:1.6; white-space:pre-wrap; margin:20px 0; max-height:280px; overflow-y:auto;
+  }
+  .actions { display:flex; gap:10px; flex-wrap:wrap; }
+  .btn {
+    padding:12px 20px; border:none; border-radius:6px; font-size:14px;
+    font-weight:600; cursor:pointer; transition:opacity 0.15s;
+  }
+  .btn:hover { opacity:0.9; }
+  .btn-amber { background:var(--amber); color:var(--navy); }
+  .btn-navy { background:var(--navy); color:white; }
+  .btn-light { background:var(--bg); color:var(--navy); border:1px solid var(--border); }
+
+  /* Paywall banner */
+  .paywall {
+    background:linear-gradient(135deg, var(--purple), #6D28D9); color:white;
+    padding:20px 24px; border-radius:12px; margin-bottom:24px;
+    display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .paywall h3 { font-size:16px; margin-bottom:4px; }
+  .paywall p { font-size:13px; opacity:0.9; }
+  .paywall .btn { background:white; color:var(--purple); }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="/toi/">← Về dashboard</a>
+  <div id="tierBadge" style="font-size:13px;">─</div>
+</div>
+
+<div class="container">
+  <h1>🎨 Prompt Studio</h1>
+  <p class="subtitle">Không phải template cứng nhắc — mà công cụ giúp anh chị <strong>tự tạo 40 prompt AI cá nhân hoá</strong> cho nghề mình. Chọn 1 template → điền context riêng → copy sang ChatGPT/Claude/Gemini.</p>
+
+  <!-- Paywall banner nếu FREE -->
+  <div class="paywall" id="paywallBanner" style="display:none;">
+    <div>
+      <h3>Đang xem 5 template Free · Còn 35 template Active</h3>
+      <p>Mở khoá full 40 prompt + AI auto-generate riêng cho nghề anh chị (499k/năm)</p>
+    </div>
+    <a href="/thanh-toan/" class="btn">Nâng cấp Active →</a>
+  </div>
+
+  <!-- Step tabs -->
+  <div class="step-tabs" id="stepTabs">
+    <div class="step-tab active" data-step="all">Tất cả</div>
+    <div class="step-tab" data-step="P1">1️⃣ Khám phá</div>
+    <div class="step-tab" data-step="P2">2️⃣ Kiểm kê</div>
+    <div class="step-tab" data-step="P3">3️⃣ La bàn</div>
+    <div class="step-tab" data-step="P4">4️⃣ Roadmap</div>
+    <div class="step-tab" data-step="P5">5️⃣ An toàn</div>
+  </div>
+
+  <!-- Templates grid -->
+  <div class="templates" id="templates"></div>
+</div>
+
+<!-- Builder modal -->
+<div class="builder" id="builder">
+  <div class="builder-box">
+    <div class="builder-header">
+      <div>
+        <div class="builder-title" id="bTitle">─</div>
+        <div class="builder-desc" id="bDesc">─</div>
+      </div>
+      <button class="builder-close" onclick="closeBuilder()">×</button>
+    </div>
+
+    <div id="bFields"></div>
+
+    <div style="margin-top:20px;">
+      <div style="font-size:13px; font-weight:600; margin-bottom:6px;">📝 Prompt sinh ra:</div>
+      <div class="preview" id="bPreview">─</div>
+
+      <div class="actions">
+        <button class="btn btn-amber" onclick="copyPrompt()">📋 Copy Prompt</button>
+        <button class="btn btn-navy" onclick="openInChatGPT()">🚀 Mở ChatGPT</button>
+        <button class="btn btn-light" onclick="closeBuilder()">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const API_BASE = window.SOL_API_BASE || 'https://huongdi.sol.vn/api';
+  const jwt = localStorage.getItem('sol_jwt');
+  const user = (() => { try { return JSON.parse(localStorage.getItem('sol_user') || 'null'); } catch { return null; } })();
+
+  const isPaid = user && (user.tier === 'ACTIVE' || user.tier === 'FOUNDER');
+  let userP1 = null, userP2 = null;
+
+  // ─── Template Database ─────────────────────────────────
+  const TEMPLATES = [
+    // ─── P1 — Khám phá bản thân (2 templates)
+    {
+      id: 'p1-1', step: 'P1', tier: 'FREE',
+      title: 'Phân tích DNA 4 chiều nghề nghiệp',
+      desc: 'Dựa vào profile của bạn, AI phân tích 3 loại công việc phù hợp nhất.',
+      fields: [
+        { key:'age', label:'Tuổi', type:'number', default:45 },
+        { key:'current_job', label:'Nghề hiện tại', type:'text', placeholder:'VD: Kế toán trưởng' },
+        { key:'years', label:'Số năm kinh nghiệm', type:'number', default:15 },
+        { key:'love_task', label:'Task nào bạn yêu thích nhất', type:'textarea', placeholder:'VD: Phân tích dữ liệu tài chính, tư vấn CEO...' },
+      ],
+      template: `Tôi là chuyên gia {{age}} tuổi, nghề {{current_job}}, {{years}} năm kinh nghiệm ở Việt Nam. Task tôi yêu thích: {{love_task}}. DNA 4 chiều của tôi: {{dna}}.
+
+Nhiệm vụ của bạn:
+1. Phân tích strengths chính từ DNA + nghề hiện tại
+2. Đề xuất 3 hướng đi mới phù hợp cho tôi trong 3 năm tới (AI 2026)
+3. Với mỗi hướng, giải thích: WHY match, task hàng ngày sẽ là gì, thu nhập kỳ vọng (VND/tháng)
+4. Cảnh báo 2 rủi ro chính
+
+Trả lời tiếng Việt, format bullet list dễ đọc.`
+    },
+    {
+      id: 'p1-2', step: 'P1', tier: 'FREE',
+      title: 'Câu hỏi đào sâu passion nghề nghiệp',
+      desc: 'AI đặt 10 câu hỏi personalized để bạn tự khám phá passion thật sự.',
+      fields: [
+        { key:'age', label:'Tuổi', type:'number', default:45 },
+        { key:'career', label:'Sơ lược sự nghiệp 20 năm', type:'textarea', placeholder:'VD: 10 năm CNTT, 5 năm quản lý, 5 năm freelance' },
+        { key:'block', label:'Điều gì ngăn bạn thay đổi', type:'text', placeholder:'VD: Sợ mất thu nhập' },
+      ],
+      template: `Bạn là coach chuyên gia chuyển đổi nghề nghiệp cho người 40-60. Tôi {{age}} tuổi, sự nghiệp: {{career}}. Rào cản chính: {{block}}.
+
+Nhiệm vụ:
+1. Đặt 10 câu hỏi để tôi tự khám phá passion thật sự (không câu hỏi chung chung)
+2. Sau mỗi câu, giải thích tại sao câu đó quan trọng
+3. Cuối cùng, gợi ý 1 bài tập viết 30 phút để tôi tự trả lời
+
+Tiếng Việt, tone empathetic không phán xét.`
+    },
+
+    // ─── P2 — Kiểm kê nguồn lực (2 templates)
+    {
+      id: 'p2-1', step: 'P2', tier: 'FREE',
+      title: 'Audit 7 nguồn lực trước khi chuyển nghề',
+      desc: 'Đánh giá thật 7 nguồn lực: kinh nghiệm, vốn, thời gian, công nghệ, network, rủi ro, năng lượng.',
+      fields: [
+        { key:'goal', label:'Mục tiêu 12 tháng tới', type:'text', placeholder:'VD: Thu nhập 30tr/tháng độc lập' },
+        { key:'current_income', label:'Thu nhập hiện tại', type:'text', placeholder:'VD: 25tr/tháng lương cứng' },
+        { key:'family', label:'Trách nhiệm gia đình', type:'text', placeholder:'VD: Vợ + 2 con nhỏ, còn nợ mua nhà' },
+      ],
+      template: `Tôi 45+ tuổi, mục tiêu 12 tháng: {{goal}}. Thu nhập hiện tại: {{current_income}}. Trách nhiệm: {{family}}. Nguồn lực 7 vector của tôi: {{p2}}.
+
+Nhiệm vụ:
+1. Chấm điểm 7 nguồn lực (0-100): kinh nghiệm, vốn, thời gian, công nghệ, network, khẩu vị rủi ro, năng lượng
+2. Chỉ ra 2 nguồn lực yếu nhất — cần build 3-6 tháng tới
+3. Đề xuất chiến lược safe transition (không nghỉ việc đột ngột)
+4. Timeline cụ thể + milestone tháng 1, 3, 6
+
+Tone thực tế, không lạc quan giả tạo.`
+    },
+    {
+      id: 'p2-2', step: 'P2', tier: 'ACTIVE',
+      title: 'Chiến lược tận dụng network 20 năm',
+      desc: 'Biến LinkedIn/Zalo của bạn thành nguồn khách hàng đầu tiên trong 90 ngày.',
+      fields: [
+        { key:'connections', label:'Số connection LinkedIn hiện tại', type:'number' },
+        { key:'industry', label:'Ngành chính', type:'text' },
+        { key:'top_contacts', label:'5 người có thể help bạn nhất', type:'textarea' },
+      ],
+      template: `[Template ACTIVE tier — chỉ có ở gói 499k/năm]`
+    },
+
+    // ─── P3 — La bàn hướng đi (2 templates)
+    {
+      id: 'p3-1', step: 'P3', tier: 'FREE',
+      title: 'So sánh 3 hướng đi phù hợp cho tôi',
+      desc: 'AI so sánh 3 direction Sol La Bàn đã match cho bạn theo 5 tiêu chí.',
+      fields: [
+        { key:'dir1', label:'Hướng đi #1 (top match)', type:'text' },
+        { key:'dir2', label:'Hướng đi #2', type:'text' },
+        { key:'dir3', label:'Hướng đi #3', type:'text' },
+        { key:'priority', label:'Ưu tiên #1 của bạn', type:'select',
+          options:['Thu nhập nhanh', 'Ít rủi ro', 'Có passion', 'Ít cạnh tranh', 'Growth potential'] },
+      ],
+      template: `Tôi đang phân vân giữa 3 hướng đi: {{dir1}}, {{dir2}}, {{dir3}}. Ưu tiên #1: {{priority}}.
+
+Nhiệm vụ:
+1. So sánh 3 hướng theo 5 tiêu chí: (a) Thời gian tới thu nhập đầu tiên, (b) Vốn cần, (c) Rủi ro, (d) Growth 3 năm, (e) Fit với ưu tiên của tôi
+2. Chấm điểm mỗi tiêu chí 1-10
+3. Recommend 1 hướng phù hợp nhất + 3 lý do cụ thể
+4. Cảnh báo 2 rủi ro chính của hướng đó
+
+Format table + bullet.`
+    },
+    {
+      id: 'p3-2', step: 'P3', tier: 'ACTIVE',
+      title: 'Case study anonymized — người đã đi hướng này',
+      desc: 'AI viết case study cụ thể của 1 chuyên gia 40+ đã đi hướng bạn chọn.',
+      fields: [
+        { key:'direction', label:'Hướng đi bạn muốn xem case', type:'text' },
+      ],
+      template: `[Template ACTIVE tier]`
+    },
+
+    // ─── P4 — Roadmap 90 ngày (2 templates)
+    {
+      id: 'p4-1', step: 'P4', tier: 'FREE',
+      title: 'Roadmap 90 ngày cho hướng đi đã chọn',
+      desc: 'Sinh roadmap chi tiết 30/60/90 ngày với milestone cụ thể.',
+      fields: [
+        { key:'direction', label:'Hướng đi bạn chọn', type:'text', placeholder:'VD: Freelance Chuyên môn' },
+        { key:'hours_per_week', label:'Số giờ mỗi tuần bạn dành', type:'number', default:15 },
+        { key:'goal_income', label:'Thu nhập mục tiêu ngày 90', type:'text', placeholder:'VD: 15tr/tháng' },
+      ],
+      template: `Tôi 45+, hướng đi: {{direction}}. Dành {{hours_per_week}} giờ/tuần. Mục tiêu ngày 90: {{goal_income}}.
+
+Nhiệm vụ tạo roadmap 90 ngày CỰC KỲ CỤ THỂ:
+- Ngày 1-30: Xác định thị trường + audience → 5 milestone check-in hàng tuần
+- Ngày 31-60: Build sản phẩm/dịch vụ MVP → 5 milestone
+- Ngày 61-90: Launch + get 5 khách đầu → 5 milestone
+
+Với mỗi milestone: (a) task cần làm, (b) KPI đo lường, (c) rủi ro chính, (d) plan B nếu miss.
+
+Format table 3 cột: Tuần | Task | KPI. Tiếng Việt.`
+    },
+    {
+      id: 'p4-2', step: 'P4', tier: 'ACTIVE',
+      title: 'Pricing strategy cho dịch vụ đầu tiên',
+      desc: 'AI đề xuất pricing tier + positioning cho dịch vụ mới của bạn.',
+      fields: [
+        { key:'service', label:'Dịch vụ bạn cung cấp', type:'text' },
+        { key:'target', label:'Khách hàng target', type:'text' },
+      ],
+      template: `[Template ACTIVE tier]`
+    },
+
+    // ─── P5 — An toàn bền vững (2 templates)
+    {
+      id: 'p5-1', step: 'P5', tier: 'FREE',
+      title: 'Build moat cá nhân — 3 yếu tố AI không copy',
+      desc: 'Chiến lược build brand + relationship + expertise chống AI 2026.',
+      fields: [
+        { key:'expertise', label:'Chuyên môn sâu nhất bạn có', type:'text' },
+        { key:'brand_status', label:'Brand cá nhân hiện tại', type:'select',
+          options:['Chưa có', 'LinkedIn cơ bản', 'LinkedIn active', 'Có blog', 'Có audience 1000+'] },
+      ],
+      template: `Chuyên môn sâu: {{expertise}}. Brand cá nhân: {{brand_status}}.
+
+Nhiệm vụ:
+1. Phân tích tại sao AI 2026 không thay được 3 yếu tố này: (a) trust cá nhân, (b) empathy, (c) judgment liên ngành
+2. Roadmap 12 tháng để build moat cá nhân
+3. 5 hoạt động cụ thể mỗi tuần
+4. Cảnh báo: đừng phân tán vào 5 platform — chọn 1 kênh chính
+
+Format bullet + timeline.`
+    },
+    {
+      id: 'p5-2', step: 'P5', tier: 'ACTIVE',
+      title: 'Content pillar 12 tháng cho brand cá nhân',
+      desc: 'AI sinh content calendar 52 tuần với topic + format cụ thể.',
+      fields: [
+        { key:'niche', label:'Ngách chuyên môn', type:'text' },
+      ],
+      template: `[Template ACTIVE tier]`
+    },
+  ];
+
+  // ─── Init ──────────────────────────────────────────────
+  document.getElementById('tierBadge').innerHTML = user
+    ? `<span style="background:${isPaid?'#FEF3C7':'#E2E8F0'}; color:${isPaid?'#B45309':'#475569'}; padding:3px 12px; border-radius:999px; font-size:11px; font-weight:700;">${user.tier}</span> ${user.displayName}`
+    : '<a href="/dang-nhap/" style="color:var(--amber-dark);">Đăng nhập →</a>';
+
+  if (!isPaid) document.getElementById('paywallBanner').style.display = 'flex';
+
+  // Fetch user context
+  if (jwt) {
+    fetch(API_BASE + '/user/dashboard', { headers: { 'Authorization': 'Bearer ' + jwt } })
+      .then(r => r.json())
+      .then(d => {
+        if (d.success && d.summary) {
+          userP1 = d.summary.p1;
+          userP2 = d.summary.p2;
+        }
+      })
+      .catch(() => {});
+  }
+
+  // Render templates
+  let currentStep = 'all';
+  function render() {
+    const list = currentStep === 'all' ? TEMPLATES : TEMPLATES.filter(t => t.step === currentStep);
+    document.getElementById('templates').innerHTML = list.map(t => {
+      const locked = t.tier === 'ACTIVE' && !isPaid;
+      return `<div class="tpl-card ${locked ? 'locked' : ''}" onclick="openBuilder('${t.id}')">
+        <div class="tpl-title">${t.title}</div>
+        <div class="tpl-desc">${t.desc}</div>
+      </div>`;
+    }).join('');
+  }
+  render();
+
+  // Step tabs
+  document.querySelectorAll('.step-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.step-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentStep = tab.dataset.step;
+      render();
+    });
+  });
+
+  // ─── Builder ────────────────────────────────────────
+  let currentTpl = null;
+  window.openBuilder = function(tplId) {
+    const tpl = TEMPLATES.find(t => t.id === tplId);
+    if (!tpl) return;
+
+    if (tpl.tier === 'ACTIVE' && !isPaid) {
+      if (confirm(`Template "${tpl.title}" chỉ có ở gói Active (499k/năm). Mở trang thanh toán?`)) {
+        location.href = '/thanh-toan/';
+      }
+      return;
+    }
+
+    currentTpl = tpl;
+    document.getElementById('bTitle').textContent = tpl.title;
+    document.getElementById('bDesc').textContent = tpl.desc;
+
+    // Render fields
+    document.getElementById('bFields').innerHTML = tpl.fields.map(f => {
+      const val = f.default || '';
+      if (f.type === 'textarea') {
+        return `<div class="field"><label>${f.label}</label><textarea data-key="${f.key}" placeholder="${f.placeholder||''}" oninput="updatePreview()">${val}</textarea></div>`;
+      }
+      if (f.type === 'select') {
+        return `<div class="field"><label>${f.label}</label><select data-key="${f.key}" onchange="updatePreview()">
+          ${f.options.map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select></div>`;
+      }
+      return `<div class="field"><label>${f.label}</label><input type="${f.type}" data-key="${f.key}" placeholder="${f.placeholder||''}" value="${val}" oninput="updatePreview()"></div>`;
+    }).join('') + `
+      <div class="auto-field">
+        <strong>Tự động chèn từ profile:</strong>
+        ${userP1 ? `DNA (${userP1.rank1}, ${userP1.rank2})` : '⚠ Chưa làm P1'} ·
+        ${userP2 ? `Top nguồn lực: ${userP2.topResource}` : '⚠ Chưa làm P2'}
+      </div>
+    `;
+
+    document.getElementById('builder').classList.add('active');
+    updatePreview();
+  };
+
+  window.closeBuilder = function() {
+    document.getElementById('builder').classList.remove('active');
+  };
+
+  window.updatePreview = function() {
+    if (!currentTpl) return;
+    let result = currentTpl.template;
+
+    // Replace user inputs
+    document.querySelectorAll('#bFields [data-key]').forEach(el => {
+      const key = el.dataset.key;
+      const val = el.value || `[${key}]`;
+      result = result.replace(new RegExp(`{{${key}}}`, 'g'), val);
+    });
+
+    // Auto-inject P1/P2
+    const dnaStr = userP1 ? `${userP1.rank1} (${userP1.scores?.[userP1.rank1] || '?'}), ${userP1.rank2} (${userP1.scores?.[userP1.rank2] || '?'})` : '(chưa có P1)';
+    const p2Str = userP2 ? Object.entries(userP2.scores).map(([k,v]) => `${k}:${v}`).join(', ') : '(chưa có P2)';
+    result = result.replace(/{{dna}}/g, dnaStr).replace(/{{p2}}/g, p2Str);
+
+    document.getElementById('bPreview').textContent = result;
+  };
+
+  window.copyPrompt = function() {
+    const text = document.getElementById('bPreview').textContent;
+    navigator.clipboard.writeText(text).then(() => alert('✅ Đã copy prompt!\nPaste vào ChatGPT/Claude/Gemini nhé.'));
+  };
+
+  window.openInChatGPT = function() {
+    const text = document.getElementById('bPreview').textContent;
+    navigator.clipboard.writeText(text);
+    window.open('https://chat.openai.com/', '_blank');
+    setTimeout(() => alert('Đã copy prompt — paste vào ChatGPT (Ctrl+V)'), 500);
+  };
+})();
+</script>
+</body>
+</html>

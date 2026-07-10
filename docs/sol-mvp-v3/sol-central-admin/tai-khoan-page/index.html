@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài khoản của tôi — Sol La Bàn</title>
+  <meta name="description" content="Thông tin gói Sol Active/Founder của bạn — Sol La Bàn.">
+  <meta name="robots" content="noindex,nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --amber-50:#FFFBEB; --amber-100:#FEF3C7; --amber-400:#FBBF24;
+      --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+      --navy-50:#F8FAFC; --navy-100:#F1F5F9; --navy-200:#E2E8F0;
+      --navy-300:#CBD5E1; --navy-400:#94A3B8; --navy-500:#64748B;
+      --navy-700:#334155; --navy-800:#1E293B; --navy-900:#0F172A;
+      --emerald-500:#10B981; --emerald-600:#059669;
+      --purple-500:#8B5CF6; --purple-600:#7C3AED;
+      --red-500:#EF4444; --red-600:#DC2626; --red-700:#B91C1C;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family:'Inter',-apple-system,sans-serif;
+      background:linear-gradient(135deg,var(--navy-50),#fff);
+      color:var(--navy-700); line-height:1.6;
+      min-height:100vh;
+    }
+
+    .container { max-width:640px; margin:0 auto; padding:40px 20px; }
+
+    .header {
+      text-align:center; margin-bottom:32px;
+    }
+    .header a.back {
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:14px; color:var(--navy-500); text-decoration:none;
+      padding:8px 14px; border-radius:20px;
+      background:#fff; border:1px solid var(--navy-200);
+    }
+    .header a.back:hover { border-color:var(--amber-500); color:var(--amber-700); }
+
+    .page-title {
+      font-family:'Lora',serif;
+      font-size:32px; font-weight:800;
+      color:var(--navy-900);
+      margin: 24px 0 8px; text-align:center;
+      line-height:1.2;
+    }
+    .page-subtitle {
+      text-align:center; color:var(--navy-500);
+      font-size:15px; margin-bottom:32px;
+    }
+
+    /* ═══════════════ CARD ═══════════════ */
+    .card {
+      background:#fff; border:1px solid var(--navy-200);
+      border-radius:20px; padding:32px 28px;
+      box-shadow:0 8px 32px rgba(15,23,42,0.06);
+      margin-bottom:20px;
+    }
+
+    /* ═══════════════ ACTIVE state ═══════════════ */
+    .tier-header {
+      display:flex; align-items:center; gap:14px;
+      padding-bottom:20px; margin-bottom:20px;
+      border-bottom:2px dashed var(--navy-100);
+    }
+    .tier-avatar {
+      width:56px; height:56px; border-radius:14px;
+      background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+      color:#fff; display:flex; align-items:center; justify-content:center;
+      font-size:26px; font-weight:800;
+      box-shadow:0 8px 20px rgba(245,158,11,0.3);
+    }
+    .tier-avatar.founder {
+      background:linear-gradient(135deg,var(--purple-500),var(--purple-600));
+      box-shadow:0 8px 20px rgba(139,92,246,0.35);
+    }
+    .tier-info { flex:1; }
+    .tier-name {
+      font-size:20px; font-weight:800;
+      color:var(--navy-900);
+      line-height:1.2;
+    }
+    .tier-label {
+      display:inline-block;
+      padding:3px 10px; border-radius:12px;
+      font-size:11px; font-weight:700; letter-spacing:1px;
+      background:var(--amber-100); color:var(--amber-700);
+      text-transform:uppercase; margin-top:4px;
+    }
+    .tier-label.founder {
+      background:#F5F3FF; color:var(--purple-600);
+    }
+
+    .info-list { display:grid; grid-template-columns:1fr; gap:14px; }
+    .info-row {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px 14px; border-radius:10px;
+      background:var(--navy-50);
+    }
+    .info-label {
+      font-size:13px; color:var(--navy-500);
+      font-weight:500; letter-spacing:0.3px;
+    }
+    .info-value {
+      font-size:15px; font-weight:700; color:var(--navy-900);
+    }
+    .info-value.expiry {
+      color:var(--emerald-600);
+    }
+    .info-value.expiry.warn {
+      color:var(--amber-600);
+    }
+    .info-value.expiry.danger {
+      color:var(--red-600);
+    }
+
+    .days-left {
+      margin-top:20px;
+      padding:18px 20px; border-radius:12px;
+      background:linear-gradient(135deg,var(--emerald-500),var(--emerald-600));
+      color:#fff; text-align:center;
+    }
+    .days-left.warn {
+      background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+    }
+    .days-left.danger {
+      background:linear-gradient(135deg,var(--red-500),var(--red-600));
+    }
+    .days-left__num {
+      font-size:36px; font-weight:800; line-height:1;
+    }
+    .days-left__label {
+      font-size:14px; opacity:0.95; margin-top:4px;
+    }
+
+    /* ═══════════════ ACTIONS ═══════════════ */
+    .actions {
+      display:grid; grid-template-columns:1fr; gap:12px;
+      margin-top:8px;
+    }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px; padding:14px 20px; border-radius:12px;
+      font-weight:700; font-size:15px; text-decoration:none;
+      cursor:pointer; border:none;
+      font-family:inherit;
+      transition:all 0.15s;
+    }
+    .btn-primary {
+      background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+      color:#fff;
+      box-shadow:0 8px 20px rgba(245,158,11,0.3);
+    }
+    .btn-primary:hover { transform:translateY(-2px); }
+    .btn-secondary {
+      background:#fff; color:var(--navy-700);
+      border:1px solid var(--navy-200);
+    }
+    .btn-secondary:hover { border-color:var(--amber-500); color:var(--amber-700); }
+    .btn-danger {
+      background:#fff; color:var(--red-600);
+      border:1px solid var(--red-500);
+    }
+    .btn-danger:hover {
+      background:var(--red-500); color:#fff;
+    }
+
+    /* ═══════════════ EMPTY state (chưa Active) ═══════════════ */
+    .empty-state {
+      text-align:center; padding:32px 20px;
+    }
+    .empty-icon {
+      font-size:64px; margin-bottom:12px;
+      opacity:0.85;
+    }
+    .empty-title {
+      font-family:'Lora',serif;
+      font-size:24px; font-weight:700;
+      color:var(--navy-900);
+      margin-bottom:8px;
+    }
+    .empty-desc {
+      color:var(--navy-500); font-size:15px;
+      margin-bottom:24px; line-height:1.6;
+    }
+    .empty-cta {
+      display:inline-flex; align-items:center; gap:8px;
+      background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+      color:#fff; padding:16px 32px; border-radius:12px;
+      font-weight:700; text-decoration:none; font-size:15px;
+      box-shadow:0 8px 20px rgba(245,158,11,0.3);
+    }
+    .empty-cta:hover { transform:translateY(-2px); }
+    .empty-tips {
+      margin-top:24px; padding:16px 20px;
+      background:var(--amber-50);
+      border-left:3px solid var(--amber-500);
+      border-radius:8px;
+      font-size:14px; color:var(--navy-700);
+      text-align:left; line-height:1.7;
+    }
+    .empty-tips b { color:var(--amber-700); }
+
+    /* ═══════════════ FOOTER note ═══════════════ */
+    .footer-note {
+      text-align:center; margin-top:24px;
+      padding-top:20px; border-top:1px solid var(--navy-100);
+      color:var(--navy-500); font-size:13px; line-height:1.7;
+    }
+    .footer-note a {
+      color:var(--amber-600); text-decoration:none; font-weight:600;
+    }
+    .footer-note a:hover { text-decoration:underline; }
+
+    @media (max-width: 640px) {
+      .container { padding:24px 16px; }
+      .page-title { font-size:26px; }
+      .card { padding:24px 20px; }
+      .tier-name { font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Back link -->
+    <div class="header">
+      <a href="/" class="back">← Về Sol La Bàn</a>
+    </div>
+
+    <h1 class="page-title">Tài khoản của tôi</h1>
+    <p class="page-subtitle" id="subtitle">Đang tải thông tin...</p>
+
+    <!-- ════════ ACTIVE state ════════ -->
+    <div class="card" id="state-active" style="display:none;">
+      <div class="tier-header">
+        <div class="tier-avatar" id="tier-avatar">🎯</div>
+        <div class="tier-info">
+          <div class="tier-name" id="tier-name">Sol Active</div>
+          <div class="tier-label" id="tier-label">ĐANG DÙNG</div>
+        </div>
+      </div>
+
+      <div class="info-list">
+        <div class="info-row">
+          <span class="info-label">Họ tên</span>
+          <span class="info-value" id="info-ten">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Ngày kích hoạt</span>
+          <span class="info-value" id="info-activated">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Ngày hết hạn</span>
+          <span class="info-value expiry" id="info-expires">—</span>
+        </div>
+      </div>
+
+      <div class="days-left" id="days-left" style="display:none;">
+        <div class="days-left__num" id="days-num">—</div>
+        <div class="days-left__label" id="days-label">ngày còn lại</div>
+      </div>
+
+      <div class="actions" style="margin-top:24px;">
+        <a href="/kham-pha-ban-than/" class="btn btn-primary">
+          🧭 Vào Sol La Bàn — Bước 1
+        </a>
+        <a href="/prompts/" class="btn btn-secondary">
+          🤖 Thư viện 40 câu hỏi AI
+        </a>
+        <button class="btn btn-danger" id="btn-logout">
+          🚪 Đăng xuất
+        </button>
+      </div>
+    </div>
+
+    <!-- ════════ EMPTY state (chưa Active) ════════ -->
+    <div class="card" id="state-empty" style="display:none;">
+      <div class="empty-state">
+        <div class="empty-icon">🔓</div>
+        <div class="empty-title">Chưa có tài khoản Sol Active</div>
+        <div class="empty-desc">
+          Anh/chị đang dùng bản Free. Nâng cấp Active để mở khóa <b>đầy đủ 37 mô hình</b>, <b>40 câu hỏi AI</b>, <b>Sổ Hành Trình 90 ngày</b>.
+        </div>
+        <a href="/thanh-toan/" class="empty-cta">
+          🚀 Nâng cấp Sol Active 499k/năm →
+        </a>
+
+        <div class="empty-tips">
+          💡 <b>Đã thanh toán rồi?</b> Vui lòng kiểm tra Zalo/Email đã nhận link kích hoạt từ Sol chưa. Nếu chưa, nhắn Khang qua Zalo <a href="https://zalo.me/0912727381" target="_blank" style="color:var(--amber-700);"><b>0912727381</b></a> em xử lý trong 5 phút.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Có gì không rõ, nhắn Zalo <a href="https://zalo.me/0912727381">0912727381</a> em xử lý trong 5 phút.<br>
+      — <b>Khang Sol</b> · Founder sol.vn
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      var $ = function (id) { return document.getElementById(id); };
+
+      function fmtDate(iso) {
+        if (!iso) return '—';
+        try {
+          var d = new Date(iso);
+          if (isNaN(d)) return iso;
+          var pad = function (n) { return String(n).padStart(2, '0'); };
+          return pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear();
+        } catch (e) { return iso; }
+      }
+
+      function daysBetween(fromIso, toIso) {
+        try {
+          var d1 = new Date(fromIso).getTime();
+          var d2 = new Date(toIso).getTime();
+          if (isNaN(d1) || isNaN(d2)) return null;
+          return Math.floor((d2 - d1) / (1000 * 60 * 60 * 24));
+        } catch (e) { return null; }
+      }
+
+      var tier      = localStorage.getItem('sol_tier');
+      var ten       = localStorage.getItem('sol_ten');
+      var expires   = localStorage.getItem('sol_expires_at');
+      var activated = localStorage.getItem('sol_activated_at');
+
+      if (!tier || tier === 'free' || !ten) {
+        // Chưa Active → show empty state
+        $('subtitle').textContent = 'Anh/chị chưa kích hoạt Sol Active. Nâng cấp để dùng đầy đủ.';
+        $('state-empty').style.display = 'block';
+        return;
+      }
+
+      // ═══ Active state ═══
+      $('subtitle').textContent = 'Chào ' + ten + '! Đây là thông tin tài khoản của anh/chị.';
+      $('state-active').style.display = 'block';
+
+      var isFounder = (tier.toLowerCase() === 'founder');
+      $('tier-avatar').textContent = isFounder ? '⭐' : '🎯';
+      if (isFounder) $('tier-avatar').classList.add('founder');
+      $('tier-name').textContent = isFounder ? 'Sol Founder Edition' : 'Sol Active';
+      $('tier-label').textContent = isFounder ? 'FOUNDER · TRỌN ĐỜI' : 'ACTIVE · ĐANG DÙNG';
+      if (isFounder) $('tier-label').classList.add('founder');
+
+      $('info-ten').textContent = ten;
+      $('info-activated').textContent = fmtDate(activated) || fmtDate(new Date().toISOString());
+
+      // Founder trọn đời — không có hết hạn
+      if (isFounder) {
+        $('info-expires').textContent = '∞ Trọn đời';
+        $('info-expires').style.color = 'var(--purple-600)';
+        $('days-left').style.display = 'none';
+      } else {
+        $('info-expires').textContent = fmtDate(expires);
+        var daysLeft = daysBetween(new Date().toISOString(), expires);
+        if (daysLeft !== null) {
+          $('days-num').textContent = daysLeft;
+          $('days-label').textContent = 'ngày còn lại';
+          $('days-left').style.display = 'block';
+          if (daysLeft < 30) {
+            $('days-left').classList.add('danger');
+            $('info-expires').classList.add('danger');
+            $('days-label').textContent = 'ngày còn lại — sắp hết hạn!';
+          } else if (daysLeft < 90) {
+            $('days-left').classList.add('warn');
+            $('info-expires').classList.add('warn');
+          }
+          if (daysLeft <= 0) {
+            $('days-num').textContent = 'Hết hạn';
+            $('days-label').textContent = 'Vui lòng gia hạn';
+            $('days-left').classList.add('danger');
+          }
+        }
+      }
+
+      // ═══ Logout button ═══
+      $('btn-logout').addEventListener('click', function () {
+        var ok = confirm(
+          'Đăng xuất khỏi Sol?\n\n' +
+          'Anh/chị sẽ bị xóa khỏi máy này. Có thể vào lại bằng link kích hoạt cũ (nếu còn trong Zalo/Email).\n\n' +
+          'Tiếp tục?'
+        );
+        if (!ok) return;
+
+        try {
+          localStorage.removeItem('sol_tier');
+          localStorage.removeItem('sol_ten');
+          localStorage.removeItem('sol_expires_at');
+          localStorage.removeItem('sol_activated_at');
+          localStorage.removeItem('sol_token_prefix');
+          localStorage.removeItem('sol_pending_payment');
+        } catch (e) { console.warn('logout localStorage:', e); }
+
+        alert('✅ Đã đăng xuất. Chuyển về trang chủ...');
+        window.location.href = '/';
+      });
+    })();
+  </script>
+</body>
+</html>

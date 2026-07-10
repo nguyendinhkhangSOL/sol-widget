@@ -1,0 +1,169 @@
+// ═══════════════════════════════════════════════════════════════
+// SOL CRM Master — Phase 2 Schema Additions
+// APPEND vào /var/www/huongdi/backend/prisma/schema.prisma
+// (paste vào cuối file, sau model cuối cùng)
+// ═══════════════════════════════════════════════════════════════
+//
+// 4 tables mới:
+//   1. CustomerNote — Admin ghi chú per user/lead
+//   2. CustomerTag  — Tag flexible (VIP, hot-lead, ...)
+//   3. FollowUp     — CRM tasks + reminders
+//   4. EmailCampaign — Bulk email tracking
+//
+// Cần THÊM vào model User + Lead (relations):
+//
+//   model User {
+//     ... existing fields ...
+//     notes       CustomerNote[]  @relation("UserNotes")
+//     tags        CustomerTag[]   @relation("UserTags")
+//     followUps   FollowUp[]      @relation("UserFollowUps")
+//   }
+//
+//   model Lead {
+//     ... existing fields ...
+//     notes       CustomerNote[]  @relation("LeadNotes")
+//     tags        CustomerTag[]   @relation("LeadTags")
+//     followUps   FollowUp[]      @relation("LeadFollowUps")
+//   }
+//
+// ═══════════════════════════════════════════════════════════════
+
+// ─── ENUMS ─────────────────────────────────────────────────────
+
+enum NoteCategory {
+  GENERAL
+  CALL
+  MEETING
+  ISSUE
+  OPPORTUNITY
+  SUPPORT
+}
+
+enum FollowUpStatus {
+  PENDING
+  IN_PROGRESS
+  DONE
+  SNOOZED
+  CANCELLED
+}
+
+enum CampaignStatus {
+  DRAFT
+  SCHEDULED
+  SENDING
+  SENT
+  ARCHIVED
+}
+
+// ─── CUSTOMER NOTE ─────────────────────────────────────────────
+
+model CustomerNote {
+  id          Int          @id @default(autoincrement())
+
+  userId      String?      @map("user_id")
+  user        User?        @relation("UserNotes", fields: [userId], references: [id], onDelete: Cascade)
+
+  leadId      Int?         @map("lead_id")
+  lead        Lead?        @relation("LeadNotes", fields: [leadId], references: [id], onDelete: Cascade)
+
+  content     String       @db.Text
+  category    NoteCategory @default(GENERAL)
+  isPrivate   Boolean      @default(false)                         @map("is_private")
+
+  authorId    String                                                @map("author_id")
+
+  createdAt   DateTime     @default(now())                          @map("created_at")
+  updatedAt   DateTime     @updatedAt                               @map("updated_at")
+
+  @@index([userId, createdAt(sort: Desc)])
+  @@index([leadId, createdAt(sort: Desc)])
+  @@index([authorId])
+  @@map("customer_notes")
+}
+
+// ─── CUSTOMER TAG ──────────────────────────────────────────────
+
+model CustomerTag {
+  id          Int      @id @default(autoincrement())
+
+  userId      String?  @map("user_id")
+  user        User?    @relation("UserTags", fields: [userId], references: [id], onDelete: Cascade)
+
+  leadId      Int?     @map("lead_id")
+  lead        Lead?    @relation("LeadTags", fields: [leadId], references: [id], onDelete: Cascade)
+
+  tag         String   // "vip", "hot-lead", "churned", "founder-target", ...
+
+  addedById   String   @map("added_by_id")
+
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@unique([userId, tag], name: "user_tag_unique")
+  @@unique([leadId, tag], name: "lead_tag_unique")
+  @@index([tag])
+  @@index([userId])
+  @@index([leadId])
+  @@map("customer_tags")
+}
+
+// ─── FOLLOW-UP TASK ────────────────────────────────────────────
+
+model FollowUp {
+  id             Int             @id @default(autoincrement())
+
+  userId         String?         @map("user_id")
+  user           User?           @relation("UserFollowUps", fields: [userId], references: [id], onDelete: Cascade)
+
+  leadId         Int?            @map("lead_id")
+  lead           Lead?           @relation("LeadFollowUps", fields: [leadId], references: [id], onDelete: Cascade)
+
+  title          String
+  description    String?         @db.Text
+  dueAt          DateTime                                            @map("due_at")
+  status         FollowUpStatus  @default(PENDING)
+  completedAt    DateTime?                                           @map("completed_at")
+
+  assignedToId   String?                                             @map("assigned_to_id")
+  createdById    String                                              @map("created_by_id")
+
+  createdAt      DateTime        @default(now())                     @map("created_at")
+  updatedAt      DateTime        @updatedAt                          @map("updated_at")
+
+  @@index([status, dueAt])
+  @@index([assignedToId, status])
+  @@index([userId])
+  @@index([leadId])
+  @@map("follow_ups")
+}
+
+// ─── EMAIL CAMPAIGN ────────────────────────────────────────────
+
+model EmailCampaign {
+  id             Int             @id @default(autoincrement())
+
+  name           String
+  subject        String
+  bodyHtml       String          @db.Text                             @map("body_html")
+
+  // Filter mô tả target segment (VD: {tier: "FREE", tag: "hot-lead"})
+  segmentFilter  Json?                                                @map("segment_filter")
+
+  totalTargets   Int             @default(0)                          @map("total_targets")
+  sentCount      Int             @default(0)                          @map("sent_count")
+  failedCount    Int             @default(0)                          @map("failed_count")
+  openedCount    Int             @default(0)                          @map("opened_count")
+  clickedCount   Int             @default(0)                          @map("clicked_count")
+
+  status         CampaignStatus  @default(DRAFT)
+  scheduledAt    DateTime?                                            @map("scheduled_at")
+  sentAt         DateTime?                                            @map("sent_at")
+
+  createdById    String                                               @map("created_by_id")
+
+  createdAt      DateTime        @default(now())                      @map("created_at")
+  updatedAt      DateTime        @updatedAt                           @map("updated_at")
+
+  @@index([status, scheduledAt])
+  @@index([createdById])
+  @@map("email_campaigns")
+}

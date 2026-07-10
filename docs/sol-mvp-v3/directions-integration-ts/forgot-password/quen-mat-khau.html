@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quên mật khẩu — Sol La Bàn</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --amber:#F59E0B; --amber-dark:#B45309; --amber-light:#FEF3C7;
+    --navy:#0F172A; --slate:#64748B; --border:#E2E8F0; --bg:#F8FAFC;
+    --white:#FFFFFF; --success:#16A34A; --error:#DC2626;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:-apple-system, 'Segoe UI', Roboto, Inter, sans-serif;
+    background:var(--bg); color:var(--navy); min-height:100vh;
+    display:flex; align-items:center; justify-content:center; padding:20px;
+  }
+  .card {
+    background:var(--white); border:1px solid var(--border);
+    border-radius:16px; padding:40px; width:100%; max-width:420px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.08);
+  }
+  .logo { font-size:28px; margin-bottom:4px; text-align:center; }
+  h1 { font-size:22px; margin-bottom:8px; text-align:center; }
+  .subtitle { color:var(--slate); font-size:14px; margin-bottom:24px; text-align:center; }
+  .field { margin-bottom:18px; }
+  label { display:block; font-size:13px; color:var(--slate); margin-bottom:6px; font-weight:500; }
+  input {
+    width:100%; padding:12px 14px; background:var(--bg); color:var(--navy);
+    border:1px solid var(--border); border-radius:8px; font-size:15px;
+  }
+  input:focus { outline:none; border-color:var(--amber); background:var(--white); }
+  .btn {
+    width:100%; padding:14px; background:var(--amber); color:var(--navy);
+    border:none; border-radius:8px; font-size:15px; font-weight:600; cursor:pointer;
+  }
+  .btn:hover { opacity:0.9; }
+  .btn:disabled { opacity:0.5; cursor:not-allowed; }
+  .msg { padding:12px; border-radius:8px; font-size:14px; margin-bottom:18px; display:none; }
+  .msg.error { background:#FEF2F2; color:var(--error); border:1px solid var(--error); display:block; }
+  .msg.success { background:#F0FDF4; color:var(--success); border:1px solid var(--success); display:block; }
+  .footer { text-align:center; margin-top:24px; padding-top:24px; border-top:1px solid var(--border); font-size:13px; color:var(--slate); }
+  .footer a { color:var(--amber-dark); text-decoration:none; font-weight:500; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">🧭</div>
+  <h1>Quên mật khẩu?</h1>
+  <p class="subtitle">Nhập email — chúng tôi sẽ gửi link đặt lại mật khẩu.</p>
+
+  <div id="msg" class="msg"></div>
+
+  <form id="forgotForm">
+    <div class="field">
+      <label for="email">Email đăng ký</label>
+      <input type="email" id="email" name="email" placeholder="ban@email.com" required autofocus>
+    </div>
+    <button type="submit" class="btn" id="submitBtn">Gửi link đặt lại →</button>
+  </form>
+
+  <div class="footer">
+    <a href="/dang-nhap/">← Quay lại đăng nhập</a>
+  </div>
+</div>
+
+<script>
+(function() {
+  const API_BASE = window.SOL_API_BASE || 'https://huongdi.sol.vn/api';
+  const form = document.getElementById('forgotForm');
+  const msg = document.getElementById('msg');
+  const btn = document.getElementById('submitBtn');
+
+  function showMsg(text, type) {
+    msg.textContent = text;
+    msg.className = 'msg ' + type;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.className = 'msg';
+    btn.disabled = true;
+    btn.textContent = 'Đang gửi...';
+
+    try {
+      const res = await fetch(API_BASE + '/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: form.email.value.trim() }),
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        showMsg(data.message || 'Đã gửi email. Kiểm tra hộp thư (kể cả Spam).', 'success');
+        btn.textContent = '✅ Đã gửi';
+        // Không reset form — để user thấy email đã điền
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.textContent = 'Gửi lại';
+        }, 5000);
+      } else {
+        showMsg(data.message || 'Có lỗi. Thử lại sau.', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Gửi link đặt lại →';
+      }
+    } catch (err) {
+      showMsg('Không kết nối được máy chủ. Thử lại.', 'error');
+      btn.disabled = false;
+      btn.textContent = 'Gửi link đặt lại →';
+    }
+  });
+})();
+</script>
+</body>
+</html>

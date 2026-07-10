@@ -1,0 +1,250 @@
+// ═══════════════════════════════════════════════════════════════
+// SOL LA BÀN — Directions Core (Batch 1)
+// APPEND vào /var/www/huongdi/backend/prisma/schema.prisma
+// (paste vào cuối file, sau model LeadNotification)
+// ═══════════════════════════════════════════════════════════════
+
+// ============================================================
+// ENUMS
+// ============================================================
+
+enum DirectionStatus {
+  DRAFT           // đang biên tập
+  REVIEW          // chờ Khang duyệt
+  PUBLISHED       // live trên huongdi.sol.vn
+  ARCHIVED        // ẩn khỏi list
+}
+
+enum CaseStudyTier {
+  REAL_ANON       // 🟢 Nhân vật thực đã ẩn danh
+  COMPOSITE       // 🟡 Composite từ nhiều trải nghiệm
+  REASONING       // 🔵 Dựa trên nghiên cứu + mô phỏng
+}
+
+enum ArticleCategory {
+  PILLAR          // 7 pillar pages
+  CLUSTER         // Cluster archetype
+  SEO             // SEO content articles
+  YMYL            // YMYL disclaimer / trust pages
+  CASE_STUDY      // Case study HTML wrapper
+}
+
+enum ContentStatus {
+  DRAFT
+  REVIEW
+  PUBLISHED
+  ARCHIVED
+}
+
+// ============================================================
+// DIRECTION — 37 hướng đi khởi nghiệp
+// ============================================================
+
+model Direction {
+  // ─── IDENTITY ────────────────────────────────────────────
+  id                    String              @id                    // "freelancer-ke-toan"
+  slug                  String              @unique                // URL slug
+  title                 String                                     // Tên tiếng Việt
+  emoji                 String                                     // 📊
+  cluster               String                                     // "A" - "F" (6 archetype)
+  category              String                                     // chuyenmon | daotao | ...
+  categoryLabel         String              @map("category_label") // "Chuyên Môn"
+  isNew                 Boolean             @default(false)        @map("is_new")
+  desc                  String              @db.Text
+
+  // ─── LEGACY 14 FIELDS (từ buoc3.html — BẢO TOÀN) ────────
+  pFit                  Json                @map("p_fit")          // {people, expert, builder, independent}
+  rReq                  Json                @map("r_req")          // {capital, time, tech, network, risk, energy}
+  bonus                 Json                                       // {income_speed}
+  income                Json                                       // {min, max}
+  timeline              String                                     // "2–4 tháng"
+  reasons               Json                                       // 3-4 lý do
+  roadmap4Tuan          Json                @map("roadmap_4_tuan") // Legacy quick preview
+
+  // ─── NHÓM 1: TAG & FILTER (5 fields) ────────────────────
+  tags                  String[]            @default([])           // "AI-friendly", "quiet-work"...
+  keywords              String[]            @default([])           // SEO keywords
+  industryVerticals     Json?               @map("industry_verticals") // {"F&B":90, "Giáo dục":85...}
+  regionSuitability     Json?               @map("region_suitability") // {"HN":90, "HCM":95, "DaNang":70}
+  genderTilt            String              @default("neutral")    @map("gender_tilt")
+
+  // ─── NHÓM 2: USER MATCHING (4 fields) ───────────────────
+  nangKhieuUuTien       Json?               @map("nang_khieu_uu_tien")  // {writing, speaking, teaching, sales, tech}
+  tinhCachPhaHop        Json?               @map("tinh_cach_phu_hop")   // {introvert_score, planner_vs_improviser}
+  mucDoHocHoi           String              @default("medium")     @map("muc_do_hoc_hoi")     // easy | medium | hard
+  mucDoRuiRoDauTu       String              @default("moderate")   @map("muc_do_rui_ro_dau_tu") // conservative | moderate | aggressive
+
+  // ─── NHÓM 3: BUSINESS MODEL (5 fields) ──────────────────
+  businessType          String              @default("B2C")        @map("business_type")  // B2B | B2C | B2B2C
+  revenueModel          String[]            @default([])           @map("revenue_model")  // ["one-time", "subscription"]
+  scaleType             String              @default("solo")       @map("scale_type")     // solo | small-team-2-5 | team-required
+  remotePossibility     Int                 @default(50)           @map("remote_possibility")  // 0-100
+  travelRequired        Int                 @default(20)           @map("travel_required")     // 0-100
+
+  // ─── NHÓM 4: TIME / SUCCESS / PREREQUISITES (6 fields) ─
+  hoursPerWeek          Json?               @map("hours_per_week")     // {min, max, typical}
+  timeToFirstRevenue    String?             @map("time_to_first_revenue") // "1-3 tháng"
+  timeToStableIncome    String?             @map("time_to_stable_income") // "6-12 tháng"
+  chiSoThanhCong        Json?               @map("chi_so_thanh_cong")   // 5 chỉ số cụ thể
+  chiSoThatBai          Json?               @map("chi_so_that_bai")     // 5 dấu hiệu thất bại
+  thietBiPhanMem        Json?               @map("thiet_bi_phan_mem")   // {devices, software, ai_tools}
+
+  // ─── NHÓM 5: CROSS-LINK + MARKET (5 fields) ─────────────
+  caseStudyIds          String[]            @default([])           @map("case_study_ids")
+  articleIds            String[]            @default([])           @map("article_ids")
+  promptIds             String[]            @default([])           @map("prompt_ids")
+  mucDoCanhTranh        String              @default("medium")     @map("muc_do_canh_tranh") // low | medium | high | saturated
+  xuHuongThiTruong      String              @default("stable")     @map("xu_huong_thi_truong") // growing | stable | declining
+
+  // ─── VN REALITY (10 fields — extended từ session) ───────
+  soNamNgheToiThieu     Int?                @map("so_nam_nghe_toi_thieu")
+  ketQuaCuTheYeuCau     Json?               @map("ket_qua_cu_the_yeu_cau")
+  bufferThang           Int?                @map("buffer_thang")
+  phapLyMaNganh         String?             @map("phap_ly_ma_nganh")   // "6920" cho kế toán
+  thueKhoanPercent      Float?              @map("thue_khoan_percent") // 1.5
+  chungChiBatBuoc       String?             @map("chung_chi_bat_buoc") // VACPA / ICF / CFA
+  chiPhiVnDiaChi        Json?               @map("chi_phi_vn_dia_chi") // [{ten, gia, dia_chi}]
+  rangBuocGiaDinh       Json?               @map("rang_buoc_gia_dinh") // {vo_chong, con, bo_me, suc_khoe}
+  vanHoaBanHangVn       Json?               @map("van_hoa_ban_hang_vn")
+  ruiRoTuoi40_60        Json?               @map("rui_ro_tuoi_40_60")  // Burnout risks đặc thù
+
+  // ─── ROADMAP 12 TUẦN (thay roadmap_4_tuan legacy) ───────
+  roadmap12Tuan         Json?               @map("roadmap_12_tuan")
+  giaiDoan3TieuDe       Json?               @map("giai_doan_3_tieu_de") // ["Định vị", "Momentum", "Khách #1"]
+
+  // ─── SAI LẦM + FRAMEWORK SOL ACTIVE ─────────────────────
+  saiLam5               Json?               @map("sai_lam_5")             // 5 sai lầm phổ biến
+  solActiveFramework    Json?               @map("sol_active_framework")  // 6 framework không copy-paste
+  congCu10              Json?               @map("cong_cu_10")            // 10 tool VN với giá
+
+  // ─── AI 2026 (3 fields) ─────────────────────────────────
+  aiDaNuot              Json?               @map("ai_da_nuot")        // ["Ebook AI generic", "Newsletter"...]
+  aiChuaNuot            Json?               @map("ai_chua_nuot")      // ["Workshop offline", "Coaching sâu"...]
+  aiMoatScore           Int?                @map("ai_moat_score")     // 1-10
+
+  // ─── SCIENTIFIC DATA AUDIT TRAIL (4 fields) ─────────────
+  nguonDataFounder      String?             @db.Text  @map("nguon_data_founder")
+  nguonDataPublic       String?             @db.Text  @map("nguon_data_public")
+  discountFactorFormula String?             @map("discount_factor_formula")
+  networkConfirmedBy    String?             @map("network_confirmed_by")
+
+  // ─── EDITORIAL WORKFLOW ─────────────────────────────────
+  status                DirectionStatus     @default(DRAFT)
+  version               Int                 @default(1)
+  publishedAt           DateTime?           @map("published_at")
+  lastEditedBy          String?             @map("last_edited_by")
+  changeNote            String?             @db.Text  @map("change_note")
+
+  createdAt             DateTime            @default(now())        @map("created_at")
+  updatedAt             DateTime            @updatedAt             @map("updated_at")
+
+  // ─── RELATIONS ──────────────────────────────────────────
+  revisions             DirectionRevision[]
+
+  @@index([category, status])
+  @@index([cluster])
+  @@index([publishedAt(sort: Desc)])
+  @@index([status, publishedAt])
+  @@map("directions")
+}
+
+// ============================================================
+// DIRECTION REVISION — Version control
+// ============================================================
+
+model DirectionRevision {
+  id            Int         @id @default(autoincrement())
+  directionId   String                                                 @map("direction_id")
+  direction     Direction   @relation(fields: [directionId], references: [id], onDelete: Cascade)
+
+  versionNum    Int                                                    @map("version_num")
+  snapshot      Json                                                   // Full direction snapshot at this version
+  editedBy      String                                                 @map("edited_by")
+  changeNote    String?     @db.Text                                   @map("change_note")
+
+  editedAt      DateTime    @default(now())                            @map("edited_at")
+
+  @@index([directionId, versionNum])
+  @@map("direction_revisions")
+}
+
+// ============================================================
+// CASE STUDY — Nhân vật thực chiến gắn với Direction
+// ============================================================
+
+model CaseStudy {
+  id                String            @id                                // "01", "02", "03"...
+  directionId       String?           @unique                            @map("direction_id")
+
+  // ─── PERSONA ─────────────────────────────────────────────
+  personaName       String                                               @map("persona_name")   // "Anh Đức 48 tuổi..."
+  personaAge        Int?                                                 @map("persona_age")
+  personaBg         String?           @db.Text                           @map("persona_bg")     // Background story
+
+  // ─── CONTENT ─────────────────────────────────────────────
+  tier              CaseStudyTier     @default(COMPOSITE)                // 🟢 REAL_ANON | 🟡 COMPOSITE | 🔵 REASONING
+  contentHtml       String            @db.Text                           @map("content_html")
+  contentSummary    String?           @db.Text                           @map("content_summary") // Short 200-word abstract
+  wordCount         Int?                                                 @map("word_count")
+  imageUrl          String?                                              @map("image_url")
+
+  // ─── METRICS (denormalized cho display) ──────────────────
+  personaRevenue    String?                                              @map("persona_revenue")    // "75 triệu/tháng"
+  personaTimeToWin  String?                                              @map("persona_time_to_win") // "12 tháng"
+
+  // ─── EDITORIAL WORKFLOW ──────────────────────────────────
+  status            ContentStatus     @default(DRAFT)
+  publishedAt       DateTime?                                            @map("published_at")
+  authorId          String            @default("khang-sol")              @map("author_id")
+
+  createdAt         DateTime          @default(now())                    @map("created_at")
+  updatedAt         DateTime          @updatedAt                         @map("updated_at")
+
+  @@index([directionId])
+  @@index([status, publishedAt])
+  @@index([tier])
+  @@map("case_studies")
+}
+
+// ============================================================
+// ARTICLE — Pillar pages + SEO content
+// ============================================================
+
+model Article {
+  id                String            @id @default(cuid())
+  slug              String            @unique
+  title             String
+  category          ArticleCategory                                      // PILLAR | CLUSTER | SEO | YMYL | CASE_STUDY
+
+  // ─── CROSS-LINK ──────────────────────────────────────────
+  directionIds      String[]          @default([])                       @map("direction_ids")  // Multi-link
+
+  // ─── CONTENT ─────────────────────────────────────────────
+  contentMd         String?           @db.Text                           @map("content_md")
+  contentHtml       String            @db.Text                           @map("content_html")
+  imageUrl          String?                                              @map("image_url")
+  metaDescription   String?                                              @map("meta_description")
+  keywords          String[]          @default([])
+
+  // ─── WORDPRESS INTEGRATION ───────────────────────────────
+  wpPostId          Int?                                                 @map("wp_post_id")
+  wpUrl             String?                                              @map("wp_url")
+
+  // ─── GSC ANALYTICS (cached) ──────────────────────────────
+  gscImpressions    Int               @default(0)                        @map("gsc_impressions")
+  gscClicks         Int               @default(0)                        @map("gsc_clicks")
+  gscLastSync       DateTime?                                            @map("gsc_last_sync")
+
+  // ─── EDITORIAL ───────────────────────────────────────────
+  status            ContentStatus     @default(DRAFT)
+  publishedAt       DateTime?                                            @map("published_at")
+  authorId          String            @default("khang-sol")              @map("author_id")
+
+  createdAt         DateTime          @default(now())                    @map("created_at")
+  updatedAt         DateTime          @updatedAt                         @map("updated_at")
+
+  @@index([category, status])
+  @@index([slug])
+  @@index([publishedAt(sort: Desc)])
+  @@map("articles")
+}
