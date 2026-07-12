@@ -1,0 +1,284 @@
+import { Router } from 'express';
+import bcrypt from 'bcryptjs';
+import { z } from 'zod';
+import { DirCategory, DirStatus, Confidence } from '@prisma/client';
+import { prisma } from '../utils/db';
+import { requireAuth, requireAdmin, requireSuperAdmin } from '../middleware/auth';
+import { AppError } from '../middleware/errorHandler';
+
+export const adminRouter = Router();
+
+// All admin routes require auth + admin role
+adminRouter.use(requireAuth, requireAdmin);
+
+// ── GET /api/admin/dashboard ──────────────────────────────
+adminRouter.get('/dashboard', async (_req, res, next) => {
+  try {
+    const [
+      totalUsers,
+      totalDirections,
+      totalP1,
+      totalP2,
+      recentEvents,
+      topDirections,
+    ] = await Promise.all([
+      prisma.user.count(),
+      prisma.direction.count({ where: { status: 'PUBLISHED' } }),
+      prisma.p1Result.count(),
+      prisma.p2Result.count(),
+      prisma.userEvent.groupBy({
+        by: ['eventType'],
+        _count: { id: true },
+        orderBy: { _count: { id: 'desc' } },
+        take: 10,
+      }),
+      prisma.savedDirection.groupBy({
+        by: ['directionId'],
+        _count: { id: true },
+        orderBy: { _count: { id: 'desc' } },
+        take: 5,
+      }),
+    ]);
+
+    // Funnel: P1 → P2 → P3 conversion
+    const p3Views = await prisma.userEvent.count({ where: { eventType: 'P3_VIEW' } });
+
+    res.json({
+      totalUsers,
+      totalDirections,
+      totalP1,
+      totalP2,
+      p3Views,
+      funnel: {
+        p1: totalP1,
+        p2: totalP2,
+        p3: p3Views,
+        p1ToP2: totalP1 > 0 ? Math.round((totalP2 / totalP1) * 100) : 0,
+        p2ToP3: totalP2 > 0 ? Math.round((p3Views / totalP2) * 100) : 0,
+      },
+      eventBreakdown: recentEvents,
+      topSavedDirections: topDirections,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ── DIRECTIONS CRUD ───────────────────────────────────────
+
+const DirUpsertSchema = z.object({
+  name: z.string().min(1),
+  slug: z.string().min(1).regex(/^[a-z0-9-]+$/),
+  tagline: z.string().optional(),
+  category: z.nativeEnum(DirCategory),
+  status: z.nativeEnum(DirStatus).default('DRAFT'),
+  confidence: z.nativeEnum(Confidence).default('LOW'),
+  sortOrder: z.number().default(0),
+  // Vector P
+  vpPeople: z.number().min(0).max(100),
+  vpExpert: z.number().min(0).max(100),
+  vpBuilder: z.number().min(0).max(100),
+  vpIndependent: z.number().min(0).max(100),
+  // Vector R
+  vrCapital: z.number().min(0).max(100),
+  vrTime: z.number().min(0).max(100),
+  vrTech: z.number().min(0).max(100),
+  vrNetwork: z.number().min(0).max(100),
+  vrRisk: z.number().min(0).max(100),
+  vrEnergy: z.number().min(0).max(100),
+  // Vector B
+  vbIncomeSpeed: z.number().min(0).max(100),
+  vbIncomePot: z.number().min(0).max(100),
+  vbScalability: z.number().min(0).max(100),
+  vbAiLeverage: z.number().min(0).max(100),
+  // Vector S
+  vsExpLeverage: z.number().min(0).max(100),
+  vsRelLeverage: z.number().min(0).max(100),
+  vsLearningDiff: z.number().min(0).max(100),
+  vsHealthReq: z.number().min(0).max(100),
+  // Content
+  description: z.string().optional(),
+  whyFit: z.string().optional(),
+  barriers: z.array(z.string()).optional(),
+  solArticleUrl: z.string().url().optional().or(z.literal('')),
+  ebookUrl: z.string().url().optional().or(z.literal('')),
+  roadmap30: z.any().optional(),
+  roadmap90: z.any().optional(),
+  roadmap180: z.any().optional(),
+});
+
+adminRouter.get('/directions', async (_req, res, next) => {
+  try {
+    const dirs = await prisma.direction.findMany({
+      orderBy: [{ category: 'asc' }, { sortOrder: 'asc' }],
+      include: { _count: { select: { savedBy: true, caseStudies: true } } },
+    });
+    res.json(dirs);
+  } catch (err) {
+    next(err);
+  }
+});
+
+adminRouter.post('/directions', async (req, res, next) => {
+  try {
+    const body = DirUpsertSchema.parse(req.body);
+    const dir = await prisma.direction.create({
+      data: {
+        ...body,
+        barriers: body.barriers ?? [],
+        createdById: req.user!.userId,
+        publishedAt: body.status === 'PUBLISHED' ? new Date() : null,
+      },
+    });
+    res.status(201).json(dir);
+  } catch (err) {
+    next(err);
+  }
+});
+
+adminRouter.get('/directions/:id', async (req, res, next) => {
+  try {
+    const dir = await prisma.direction.findUnique({
+      where: { id: req.params.id as string },
+      include: { caseStudies: true },
+    });
+    if (!dir) throw new AppError(404, 'Direction not found', 'NOT_FOUND');
+    res.json(dir);
+  } catch (err) {
+    next(err);
+  }
+});
+
+adminRouter.put('/directions/:id', async (req, res, next) => {
+  try {
+    const body = DirUpsertSchema.parse(req.body);
+    const existing = await prisma.direction.findUnique({ where: { id: req.params.id as string } });
+    if (!existing) throw new AppError(404, 'Direction not found', 'NOT_FOUND');
+
+    const wasUnpublished = existing.status !== 'PUBLISHED';
+    const nowPublished = body.status === 'PUBLISHED';
+
+    const dir = await prisma.direction.update({
+      where: { id: req.params.id as string },
+      data: {
+        ...body,
+        barriers: body.barriers ?? [],
+        version: { increment: 1 },
+        publishedAt: wasUnpublished && nowPublished ? new Date() : existing.publishedAt,
+      },
+    });
+    res.json(dir);
+  } catch (err) {
+    next(err);
+  }
+});
+
+adminRouter.delete('/directions/:id', requireSuperAdmin, async (req, res, next) => {
+  try {
+    await prisma.direction.update({
+      where: { id: req.params.id as string },
+      data: { status: 'ARCHIVED' },
+    });
+    res.status(204).end();
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ── Live Match Preview ────────────────────────────────────
+// Admin enters direction vectors → instant match % against sample P1/P2
+adminRouter.post('/directions/preview-match', async (req, res, next) => {
+  try {
+    const body = z.object({
+      // Direction vectors being tested
+      vpPeople: z.number(), vpExpert: z.number(), vpBuilder: z.number(), vpIndependent: z.number(),
+      vrCapital: z.number(), vrTime: z.number(), vrTech: z.number(),
+      vrNetwork: z.number(), vrRisk: z.number(), vrEnergy: z.number(),
+      vbIncomeSpeed: z.number(), vbIncomePot: z.number(), vbScalability: z.number(), vbAiLeverage: z.number(),
+      // User vectors to test against
+      p1: z.object({ people: z.number(), expert: z.number(), builder: z.number(), independent: z.number() }),
+      p2: z.object({ experience: z.number(), capital: z.number(), time: z.number(), technology: z.number(), network: z.number(), risk: z.number(), energy: z.number() }),
+    }).parse(req.body);
+
+    const pm = cosineSim(
+      [body.p1.people, body.p1.expert, body.p1.builder, body.p1.independent],
+      [body.vpPeople, body.vpExpert, body.vpBuilder, body.vpIndependent]
+    );
+    const rm = cosineSim(
+      [body.p2.experience, body.p2.capital, body.p2.time, body.p2.technology, body.p2.network, body.p2.risk, body.p2.energy],
+      [body.vrCapital, body.vrTime, body.vrTech, body.vrNetwork, body.vrRisk, body.vrEnergy, body.vrCapital]
+    );
+    const gm = (body.vbIncomeSpeed + body.vbIncomePot + body.vbScalability + body.vbAiLeverage) / 400;
+    const score = Math.min(Math.round((pm * 0.5 + rm * 0.35 + gm * 0.15) * 100), 99);
+
+    res.json({ matchScore: score, pm: Math.round(pm * 100), rm: Math.round(rm * 100), gm: Math.round(gm * 100) });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ── USERS ─────────────────────────────────────────────────
+adminRouter.get('/users', async (req, res, next) => {
+  try {
+    const page = Number(req.query.page || 1);
+    const limit = 50;
+    const [users, total] = await Promise.all([
+      prisma.user.findMany({
+        orderBy: { createdAt: 'desc' },
+        take: limit,
+        skip: (page - 1) * limit,
+        select: {
+          id: true, email: true, zaloId: true, displayName: true, avatarUrl: true,
+          role: true, isActive: true, lastSeenAt: true, createdAt: true,
+          _count: { select: { p1Results: true, p2Results: true, savedDirs: true } },
+        },
+      }),
+      prisma.user.count(),
+    ]);
+    res.json({ users, total, page, pages: Math.ceil(total / limit) });
+  } catch (err) {
+    next(err);
+  }
+});
+
+adminRouter.patch('/users/:id/role', requireSuperAdmin, async (req, res, next) => {
+  try {
+    const { role } = z.object({ role: z.string() }).parse(req.body);
+    const user = await prisma.user.update({
+      where: { id: req.params.id as string },
+      data: { role: role as any },
+    });
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ── ADMIN USERS ───────────────────────────────────────────
+adminRouter.post('/admins', requireSuperAdmin, async (req, res, next) => {
+  try {
+    const body = z.object({
+      email: z.string().email(),
+      password: z.string().min(10),
+      displayName: z.string(),
+      role: z.string(),
+    }).parse(req.body);
+
+    const passwordHash = await bcrypt.hash(body.password, 12);
+    const admin = await prisma.adminUser.create({
+      data: { email: body.email, passwordHash, displayName: body.displayName, role: body.role as any },
+    });
+    res.status(201).json({ id: admin.id, email: admin.email, displayName: admin.displayName, role: admin.role });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ── Helpers ───────────────────────────────────────────────
+function cosineSim(a: number[], b: number[]): number {
+  const dot = a.reduce((sum, v, i) => sum + v * (b[i] ?? 0), 0);
+  const magA = Math.sqrt(a.reduce((s, v) => s + v * v, 0));
+  const magB = Math.sqrt(b.reduce((s, v) => s + v * v, 0));
+  if (magA === 0 || magB === 0) return 0;
+  return dot / (magA * magB);
+}

@@ -1,0 +1,494 @@
+// ============================================================
+// HUONGDI.SOL.VN — Prisma Schema
+// DB: huongdi_prod (PostgreSQL 16)
+// Run: npx prisma migrate deploy
+// ============================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// ENUMS
+// ============================================================
+
+enum UserRole {
+  USER
+  RESEARCH_EDITOR
+  CONTENT_EDITOR
+  ANALYST
+  SUPER_ADMIN
+}
+
+enum AuthProvider {
+  EMAIL
+  ZALO
+  GOOGLE
+}
+
+enum DirCategory {
+  CHUYEN_MON    // Chuyên môn & tư vấn
+  DAO_TAO       // Đào tạo & coaching
+  NOI_DUNG_SO   // Nội dung số & creator
+  KINH_DOANH    // Kinh doanh nhỏ
+  DAILY         // Dịch vụ hàng ngày
+  DICH_VU       // Dịch vụ chuyên biệt
+  DAU_TU        // Đầu tư & tài sản
+}
+
+enum DirStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum Confidence {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum EventType {
+  P1_START
+  P1_COMPLETE
+  P2_COMPLETE
+  P3_VIEW
+  DIRECTION_SAVE
+  DIRECTION_UNSAVE
+  ROADMAP_VIEW
+  ROADMAP_START
+  EBOOK_CLICK
+  WORKSHOP_CLICK
+  COACHING_CLICK
+  MEMBERSHIP_CLICK
+}
+
+enum OutcomeLevel {
+  NONE
+  VERY_LOW
+  LOW
+  MEDIUM
+  HIGH
+  VERY_HIGH
+}
+
+enum CheckpointDay {
+  D30
+  D90
+  D180
+}
+
+// ============================================================
+// USER
+// ============================================================
+
+model User {
+  id          String       @id @default(uuid())
+  email       String?      @unique
+  zaloId      String?      @unique @map("zalo_id")
+  displayName String?      @map("display_name")
+  avatarUrl   String?      @map("avatar_url")
+  phone       String?
+  provider    AuthProvider @default(EMAIL)
+  role        UserRole     @default(USER)
+  isActive    Boolean      @default(true) @map("is_active")
+  lastSeenAt  DateTime?    @map("last_seen_at")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  // Relations
+  p1Results      P1Result[]
+  p2Results      P2Result[]
+  savedDirs      SavedDirection[]
+  outcomes       UserOutcome[]
+  events         UserEvent[]
+  // ─── BATCH A — Tier gating (2026-07-04) ────────────────
+  tier              UserTier   @default(FREE)
+  tierStartedAt     DateTime?  @map("tier_started_at")
+  tierExpiresAt     DateTime?  @map("tier_expires_at")
+  activeLeadId      Int?       @unique @map("active_lead_id")
+  activeLead        Lead?      @relation("ActiveLeadUser", fields: [activeLeadId], references: [id])
+
+
+  @@map("users")
+}
+
+// ============================================================
+// P1 RESULT — Discovery Engine DNA
+// ============================================================
+
+model P1Result {
+  id          String   @id @default(uuid())
+  userId      String?  @map("user_id")
+  sessionId   String   @map("session_id") // anonymous tracking
+  // 4 axis scores (0-100)
+  people      Int
+  expert      Int
+  builder     Int
+  independent Int
+  // Ranked order (1=strongest)
+  rank1       String   @map("rank_1")
+  rank2       String   @map("rank_2")
+  rank3       String   @map("rank_3")
+  rank4       String   @map("rank_4")
+  // Raw answers stored for audit/re-scoring
+  rawAnswers  Json     @map("raw_answers")
+  version     Int      @default(1) // P1 quiz version
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([sessionId])
+  @@map("p1_results")
+}
+
+// ============================================================
+// P2 RESULT — Resource Engine
+// ============================================================
+
+model P2Result {
+  id          String   @id @default(uuid())
+  userId      String?  @map("user_id")
+  sessionId   String   @map("session_id")
+  // Resource scores (0-100)
+  experience  Int
+  capital     Int
+  time        Int
+  technology  Int
+  network     Int
+  risk        Int      // risk tolerance
+  energy      Int
+  // Income goal (label string: "2-5tr", "5-15tr", "15-30tr", "30tr+")
+  incomeGoal  String   @map("income_goal")
+  // Raw answers
+  rawAnswers  Json     @map("raw_answers")
+  version     Int      @default(1)
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([sessionId])
+  @@map("p2_results")
+}
+
+// ============================================================
+// DIRECTION — P3 Direction Database
+// ============================================================
+
+model Direction {
+  id          String      @id @default(uuid())
+  name        String
+  slug        String      @unique
+  tagline     String?
+  category    DirCategory
+  status      DirStatus   @default(DRAFT)
+  confidence  Confidence  @default(LOW)
+  sortOrder   Int         @default(0) @map("sort_order")
+
+  // ── Vector P: Personality match (P1 alignment) ──
+  vpPeople      Int @map("vp_people")       // 0-100
+  vpExpert      Int @map("vp_expert")
+  vpBuilder     Int @map("vp_builder")
+  vpIndependent Int @map("vp_independent")
+
+  // ── Vector R: Resource match (P2 alignment) ──
+  vrCapital   Int @map("vr_capital")        // 0-100 (yêu cầu vốn)
+  vrTime      Int @map("vr_time")
+  vrTech      Int @map("vr_tech")
+  vrNetwork   Int @map("vr_network")
+  vrRisk      Int @map("vr_risk")           // mức rủi ro
+  vrEnergy    Int @map("vr_energy")
+
+  // ── Vector B: Business characteristics ──
+  vbIncomeSpeed Int @map("vb_income_speed") // tốc độ tạo thu nhập
+  vbIncomePot   Int @map("vb_income_pot")   // tiềm năng thu nhập
+  vbScalability Int @map("vb_scalability")  // khả năng mở rộng
+  vbAiLeverage  Int @map("vb_ai_leverage")  // ứng dụng AI
+
+  // ── Vector S: Sol content linkage ──
+  vsExpLeverage   Int @map("vs_exp_leverage")   // tận dụng kinh nghiệm
+  vsRelLeverage   Int @map("vs_rel_leverage")   // tận dụng quan hệ
+  vsLearningDiff  Int @map("vs_learning_diff")  // độ khó học
+  vsHealthReq     Int @map("vs_health_req")     // yêu cầu sức khoẻ
+
+  // Content
+  description   String?
+  whyFit        String? @map("why_fit")
+  barriers      Json?   // array of barrier strings
+  solArticleUrl String? @map("sol_article_url")
+  ebookUrl      String? @map("ebook_url")
+
+  // Roadmap stored as JSON (30/90/180 day milestones)
+  roadmap30   Json? @map("roadmap_30")
+  roadmap90   Json? @map("roadmap_90")
+  roadmap180  Json? @map("roadmap_180")
+
+  // Meta
+  version     Int      @default(1)
+  createdById String?  @map("created_by_id")
+  publishedAt DateTime? @map("published_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  caseStudies   CaseStudy[]
+  savedBy       SavedDirection[]
+  outcomes      UserOutcome[]
+
+  @@index([category, status])
+  @@index([slug])
+  @@map("directions")
+}
+
+// ============================================================
+// CASE STUDY
+// ============================================================
+
+model CaseStudy {
+  id          String    @id @default(uuid())
+  directionId String    @map("direction_id")
+  title       String
+  location    String?   // vùng địa lý
+  ageRange    String?   @map("age_range")  // "45-55"
+  background  String?
+  story       String
+  outcome     String?
+  timeToFirst String?   @map("time_to_first") // "3 tháng"
+  incomeLevel OutcomeLevel @default(NONE) @map("income_level")
+  isPublished Boolean   @default(false) @map("is_published")
+  solPostUrl  String?   @map("sol_post_url")
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  direction   Direction @relation(fields: [directionId], references: [id], onDelete: Cascade)
+
+  @@index([directionId])
+  @@map("case_studies")
+}
+
+// ============================================================
+// SAVED DIRECTION (user bookmarks)
+// ============================================================
+
+model SavedDirection {
+  id          String    @id @default(uuid())
+  userId      String    @map("user_id")
+  directionId String    @map("direction_id")
+  matchScore  Int?      @map("match_score")  // snapshot at save time
+  notes       String?
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  direction   Direction @relation(fields: [directionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, directionId])
+  @@index([userId])
+  @@map("saved_directions")
+}
+
+// ============================================================
+// USER OUTCOME — 30/90/180 day checkpoints
+// ============================================================
+
+model UserOutcome {
+  id            String        @id @default(uuid())
+  userId        String        @map("user_id")
+  directionId   String        @map("direction_id")
+  checkpoint    CheckpointDay
+  started       Boolean       @default(false)
+  firstClient   Boolean       @default(false) @map("first_client")
+  firstRevenue  Boolean       @default(false) @map("first_revenue")
+  revenueLevel  OutcomeLevel  @default(NONE) @map("revenue_level")
+  satisfaction  Int?          // 1-5
+  blockers      Json?         // array of blocker strings
+  notes         String?
+  createdAt     DateTime      @default(now()) @map("created_at")
+
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  direction     Direction     @relation(fields: [directionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, directionId, checkpoint])
+  @@index([directionId])
+  @@map("user_outcomes")
+}
+
+// ============================================================
+// USER EVENT — Analytics funnel
+// ============================================================
+
+model UserEvent {
+  id          BigInt    @id @default(autoincrement())
+  userId      String?   @map("user_id")
+  sessionId   String    @map("session_id")
+  eventType   EventType @map("event_type")
+  directionId String?   @map("direction_id")
+  utmSource   String?   @map("utm_source")
+  utmMedium   String?   @map("utm_medium")
+  utmCampaign String?   @map("utm_campaign")
+  meta        Json?     // extra data per event
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  user        User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([sessionId])
+  @@index([eventType])
+  @@index([createdAt])
+  @@map("user_events")
+}
+
+// ============================================================
+// ADMIN USER (separate from public users)
+// ============================================================
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  displayName  String   @map("display_name")
+  role         UserRole @default(ANALYST)
+  isActive     Boolean  @default(true) @map("is_active")
+  lastLoginAt  DateTime? @map("last_login_at")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("admin_users")
+}
+
+// ============================================================
+// REFRESH TOKEN (JWT rotation)
+// ============================================================
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  token     String   @unique
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@index([token])
+  @@map("refresh_tokens")
+}
+
+// ═══════════════════════════════════════════════════════════════
+// APPEND vào /var/www/huongdi/backend/prisma/schema.prisma
+// (paste vào cuối file, sau model RefreshToken)
+// ═══════════════════════════════════════════════════════════════
+
+// ============================================================
+// ENUMS mới cho Lead
+// ============================================================
+enum LeadPackage {
+  ACTIVE      // 499k/năm
+  FOUNDER     // 1999k trọn đời
+  RENEWAL     // renew 499k
+}
+
+enum LeadStatus {
+  PENDING     // chưa CK
+  PAID        // Khang đã confirm CK, đã tạo magic token
+  ACTIVATED   // user đã click magic link
+  EXPIRED     // hết 365 ngày
+  CANCELLED   // huỷ / spam
+}
+
+enum NotifyChannel {
+  EMAIL_KHANG
+  SMS_KHANG
+  EMAIL_USER
+  ZALO_USER
+}
+
+enum NotifyStatus {
+  SENT
+  FAILED
+  SKIPPED
+}
+
+// ============================================================
+// LEAD — User Management V1
+// ============================================================
+model Lead {
+  id             Int          @id @default(autoincrement())
+
+  // Từ form /thanh-toan/
+  ten            String
+  sdt            String
+  email          String?
+  zalo           String?
+
+  // Gói + số tiền
+  goi            LeadPackage
+  amount         Int          // VNĐ
+
+  // Workflow
+  paymentStatus  LeadStatus   @default(PENDING) @map("payment_status")
+
+  // Magic link
+  magicToken     String?      @unique @map("magic_token")
+  magicSentAt    DateTime?    @map("magic_sent_at")
+  activatedAt    DateTime?    @map("activated_at")
+  expiresAt      DateTime?    @map("expires_at")
+
+  // Admin
+  notes          String?
+  approvedBy     String?      @map("approved_by")
+  cancelReason   String?      @map("cancel_reason")
+
+  // Metadata
+  ipAddress      String?      @map("ip_address")
+  userAgent      String?      @map("user_agent") @db.Text
+  referer        String?      @db.Text
+
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt      @map("updated_at")
+  passwordHash   String?      @map("password_hash")
+  passwordSetAt  DateTime?    @map("password_set_at")
+  lastLoginAt    DateTime?    @map("last_login_at")
+
+
+  notifications  LeadNotification[]
+  activatedUser  User?  @relation("ActiveLeadUser")
+
+
+  @@index([sdt])
+  @@index([email])
+  @@index([paymentStatus])
+  @@index([magicToken])
+  @@index([createdAt(sort: Desc)])
+  @@map("leads")
+}
+
+// ============================================================
+// LEAD NOTIFICATION LOG
+// ============================================================
+model LeadNotification {
+  id            Int           @id @default(autoincrement())
+  leadId        Int           @map("lead_id")
+  channel       NotifyChannel
+  status        NotifyStatus
+  errorMessage  String?       @map("error_message") @db.Text
+  sentAt        DateTime      @default(now()) @map("sent_at")
+
+  lead          Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+  @@map("lead_notifications")
+}
+
+// ═══════════════════════════════════════════════════════════════
+// BATCH A — User Tier System (2026-07-04)
+// ═══════════════════════════════════════════════════════════════
+enum UserTier {
+  FREE
+  ACTIVE
+  FOUNDER
+  EXPIRED
+}

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dịch Vụ Cá Nhân — Hướng Đi P3 | Huongdi.sol.vn</title>
+<style>
+:root{--g:#1a6b4a;--gm:#2e8b63;--gl:#e8f5ee;--a:#f59e0b;--al:#fef3c7;--tx:#1a202c;--mu:#6b7280;--bd:#e5e7eb;--bg:#f9fafb;--wh:#fff;--sh:0 2px 12px rgba(0,0,0,.08);--r:14px;--cat:#065f46;--catl:#d1fae5;--catd:#022c22;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--tx);font-size:15px;line-height:1.6}
+a{text-decoration:none}
+.hdr{background:var(--wh);border-bottom:1px solid var(--bd);padding:11px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200}
+.logo{font-weight:800;font-size:15px;color:var(--g)}.logo em{color:var(--a);font-style:normal}
+.btn-sm{font-size:12px;color:var(--mu);background:transparent;border:1px solid var(--bd);padding:5px 12px;border-radius:99px;cursor:pointer}
+.btn-sm:hover{border-color:var(--g);color:var(--g)}
+.hero{background:linear-gradient(135deg,var(--catd) 0%,var(--cat) 60%,#059669 100%);padding:32px 20px 28px;text-align:center;color:white}
+.hero-icon{font-size:44px;margin-bottom:8px}
+.hero h1{font-size:24px;font-weight:900;margin-bottom:6px}
+.hero p{font-size:14px;opacity:.85;max-width:500px;margin:0 auto 14px}
+.hero-meta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hm{font-size:12px;font-weight:600;padding:4px 12px;background:rgba(255,255,255,.15);border-radius:99px;border:1px solid rgba(255,255,255,.25)}
+.score-bar{background:var(--wh);border-bottom:1px solid var(--bd);padding:12px 20px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center}
+.sb-num{font-size:20px;font-weight:800;color:var(--cat)}.sb-lbl{font-size:11px;color:var(--mu)}
+.wrap{max-width:760px;margin:0 auto;padding:18px 14px 60px}
+.section-hdr{margin-bottom:14px}
+.section-hdr h2{font-size:18px;font-weight:800;color:var(--g);margin-bottom:3px}
+.section-hdr p{font-size:13px;color:var(--mu)}
+.cards{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--wh);border-radius:var(--r);box-shadow:var(--sh);border:2px solid transparent;overflow:hidden;transition:border-color .18s}
+.card:hover{border-color:#6ee7b7}.card.best{border-color:#34d399}
+.card-hd{padding:16px 18px;cursor:pointer;display:flex;align-items:flex-start;gap:12px}
+.card-emoji{font-size:26px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-meta{flex:1;min-width:0}
+.card-title{font-size:15px;font-weight:800;margin-bottom:5px;line-height:1.3}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:5px}
+.b{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px}
+.b-cat{background:var(--catl);color:var(--cat)}.b-income{background:#f0fdf4;color:#15803d;border:1px solid #86efac}
+.b-time{background:var(--bg);color:var(--mu);border:1px solid var(--bd)}.b-risk-lo{background:#f0fdf4;color:#15803d}
+.b-risk-md{background:var(--al);color:#92400e}.b-new{background:#fed7aa;color:#c2410c}
+.card-desc{font-size:13px;color:var(--mu);line-height:1.5}
+.sc{flex-shrink:0;width:58px;height:58px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;border:3px solid}
+.sc-gold{background:#fef9c3;border-color:#fbbf24;color:#713f12}.sc-green{background:#dcfce7;border-color:#4ade80;color:#15803d}
+.sc-blue{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}.sc-em{background:var(--catl);border-color:#34d399;color:var(--cat)}
+.sc-gray{background:#f3f4f6;border-color:#d1d5db;color:#6b7280}
+.sc-num{font-size:17px;line-height:1}.sc-pct{font-size:10px;line-height:1}.sc-na{font-size:11px;font-weight:600;color:var(--mu)}
+.card-bd{display:none;border-top:1px solid var(--bd);padding:16px 18px}.card-bd.on{display:block}
+.mb-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.mb-lbl{width:100px;font-size:12px;color:var(--mu);flex-shrink:0}
+.mb-track{flex:1;height:5px;background:var(--bg);border-radius:99px;overflow:hidden}
+.mb-fill{height:100%;border-radius:99px;transition:width .8s ease-out}
+.mf-p{background:var(--cat)}.mf-r{background:#3b82f6}
+.mb-val{font-size:11px;font-weight:700;width:28px;text-align:right}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.info-box{background:var(--catl);border-radius:10px;padding:10px 12px}
+.info-box h4{font-size:11px;font-weight:700;color:var(--cat);text-transform:uppercase;letter-spacing:.3px;margin-bottom:5px}
+.info-list li{font-size:12px;display:flex;gap:5px;margin-bottom:3px}
+.info-box2{background:#f0fdf4;border-radius:10px;padding:10px 12px}
+.info-box2 h4{font-size:11px;font-weight:700;color:#065f46;text-transform:uppercase;letter-spacing:.3px;margin-bottom:5px}
+.tools-row{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}
+.tool-chip{font-size:11px;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--bg);border:1px solid var(--bd)}
+.rm-toggle{display:flex;align-items:center;gap:6px;padding:9px 13px;background:var(--catl);border-radius:10px;cursor:pointer;border:none;width:100%;text-align:left;font-size:13px;font-weight:600;color:var(--cat);margin:10px 0 8px}
+.rm-toggle svg{margin-left:auto;transition:transform .25s}.rm-toggle.on svg{transform:rotate(180deg)}
+.rm-body{display:none;padding:12px;background:var(--bg);border-radius:10px;margin-bottom:10px}.rm-body.on{display:block}
+.rm-step{display:flex;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.rm-step:last-child{margin:0;padding:0;border:none}
+.rm-dot{width:26px;height:26px;border-radius:50%;background:var(--cat);color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.rm-text{font-size:12px;line-height:1.5}.rm-text strong{display:block;font-weight:700;margin-bottom:2px}
+.card-actions{display:flex;gap:8px;margin-top:10px}
+.btn-save{flex:1;padding:10px;background:var(--cat);color:white;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer}
+.btn-save.saved{background:#059669}
+.btn-back{padding:10px 16px;background:transparent;border:2px solid var(--bd);border-radius:10px;font-size:13px;color:var(--mu);cursor:pointer}
+.comp-table{margin-top:24px;background:var(--wh);border-radius:var(--r);padding:18px;box-shadow:var(--sh);overflow-x:auto}
+.comp-table h3{font-size:16px;font-weight:800;color:var(--g);margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:var(--catl);color:var(--cat);font-weight:700;padding:8px 10px;text-align:left;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid var(--bd)}
+tr:last-child td{border:none}tr:hover td{background:var(--bg)}td:first-child{font-weight:700}
+.cta-box{margin-top:16px;background:linear-gradient(135deg,var(--catl),#d1fae5);border:2px solid #34d399;border-radius:var(--r);padding:20px;text-align:center}
+.cta-box h3{font-size:16px;font-weight:800;color:var(--cat);margin-bottom:6px}
+.cta-box p{font-size:13px;color:var(--mu);margin-bottom:12px}
+.btn-cta{display:inline-block;padding:12px 28px;background:var(--g);color:white;border:none;border-radius:12px;font-size:14px;font-weight:700;text-decoration:none}
+@media(max-width:560px){.info-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- SOL-HEADER-START -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL HEADER — Đồng nhất 3 sản phẩm sol.vn / bothuocla / huongdi
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào sau <body> mỗi HTML file của huongdi.sol.vn
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-header-styles">
+  /* Reset cho header — không phá CSS gốc của page */
+  #sol-header * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  }
+  #sol-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .sol-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sol-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .sol-logo img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+  .sol-logo span {
+    color: #1a1a1a;
+  }
+  .sol-logo strong {
+    color: #d97706;
+    font-weight: 800;
+  }
+
+  /* Nav 3 trụ */
+  .sol-nav-pillars {
+    display: flex;
+    gap: 2px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 3px;
+  }
+  .sol-nav-pillars a {
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .sol-nav-pillars a:hover {
+    color: #1a1a1a;
+    background: #fff;
+  }
+  .sol-nav-pillars a.active {
+    background: #fff;
+    color: #d97706;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Nav huongdi specific */
+  .sol-nav-huongdi {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .sol-nav-huongdi a {
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .sol-nav-huongdi a:hover {
+    color: #d97706;
+  }
+  .sol-nav-huongdi a.current {
+    color: #d97706;
+    font-weight: 700;
+  }
+
+  /* CTA button */
+  .sol-cta {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    color: #fff !important;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(217, 119, 6, 0.3);
+    white-space: nowrap;
+  }
+  .sol-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-header-inner {
+      padding: 8px 12px;
+      gap: 8px;
+    }
+    .sol-nav-pillars a {
+      padding: 5px 8px;
+      font-size: 12px;
+    }
+    .sol-nav-huongdi {
+      display: none; /* Ẩn nav phụ trên mobile, dùng menu burger sau */
+    }
+    .sol-logo span {
+      display: none; /* Chỉ giữ icon trên mobile */
+    }
+    .sol-cta {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-nav-pillars {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Dark mode (nếu page có) */
+  @media (prefers-color-scheme: dark) {
+    #sol-header {
+      background: rgba(20, 20, 20, 0.92);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-logo, .sol-logo span {
+      color: #f3f4f6;
+    }
+    .sol-nav-pillars {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .sol-nav-pillars a {
+      color: #9ca3af;
+    }
+    .sol-nav-pillars a.active {
+      background: #1a1a1a;
+      color: #f59e0b;
+    }
+    .sol-nav-huongdi a {
+      color: #d1d5db;
+    }
+  }
+</style>
+
+<header id="sol-header" role="banner" aria-label="Sol — Hệ sinh thái 3 trụ">
+  <div class="sol-header-inner">
+
+    <!-- Logo + brand -->
+    <a href="https://sol.vn/" class="sol-logo" aria-label="Sol — Đi Cùng Sol">
+      <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png"
+           alt="Logo Sol"
+           width="28" height="28"
+           loading="eager">
+      <span>Đi Cùng <strong>Sol</strong></span>
+    </a>
+
+    <!-- Nav 3 trụ Thân-Tâm-Trí -->
+    <nav class="sol-nav-pillars" aria-label="3 trụ Sol">
+      <a href="https://bothuocla.sol.vn/" title="Sức khoẻ — bothuocla.sol.vn">Thân</a>
+      <a href="https://sol.vn/tam/" title="Tinh thần — sol.vn/tam">Tâm</a>
+      <a href="https://huongdi.sol.vn/" class="active" aria-current="page" title="Sự nghiệp — huongdi.sol.vn">Trí</a>
+    </nav>
+
+    <!-- Nav huongdi -->
+    <nav class="sol-nav-huongdi" aria-label="Huongdi navigation">
+      <a href="/p1.html" data-huongdi-link="p1">P1 Khám phá</a>
+      <a href="/p2.html" data-huongdi-link="p2">P2 Nguồn lực</a>
+      <a href="/p3.html" data-huongdi-link="p3">37 Hướng đi</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="/p1.html" class="sol-cta">Bắt đầu →</a>
+
+  </div>
+</header>
+
+<script id="sol-header-script">
+  // Auto-highlight current page in sub-nav
+  (function() {
+    var path = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+    var matchKey = null;
+    if (path === '/p1' || path.endsWith('/p1')) matchKey = 'p1';
+    else if (path === '/p2' || path.endsWith('/p2')) matchKey = 'p2';
+    else if (path.startsWith('/p3')) matchKey = 'p3';
+    if (matchKey) {
+      var links = document.querySelectorAll('.sol-nav-huongdi a[data-huongdi-link="' + matchKey + '"]');
+      links.forEach(function(a) { a.classList.add('current'); });
+    }
+  })();
+</script>
+<!-- SOL-HEADER-END -->
+
+<div class="hdr">
+  <a href="/index.html" class="logo">huongdi<em>.sol.vn</em></a>
+  <a href="/p3.html" class="btn-sm">← Kết quả P3</a>
+</div>
+
+<div class="hero">
+  <div class="hero-icon">🌿</div>
+  <h1>Dịch Vụ Cá Nhân</h1>
+  <p>Cung cấp dịch vụ trực tiếp đến người dùng cuối. Phù hợp người thích làm việc tay chân, chăm sóc người khác và thấy kết quả rõ ràng ngay.</p>
+  <div class="hero-meta">
+    <span class="hm">4 hướng đi</span>
+    <span class="hm">💰 8–50 triệu/tháng</span>
+    <span class="hm">⏱ Bắt đầu: 2 tuần – 5 tháng</span>
+    <span class="hm">🟢 Rủi ro thấp</span>
+  </div>
+</div>
+
+<div class="score-bar" id="scoreBar" style="display:none">
+  <div><div class="sb-num" id="avgScore">—</div><div class="sb-lbl">Điểm TB nhóm</div></div>
+  <div><div class="sb-num" id="topScore">—</div><div class="sb-lbl">Hướng tốt nhất</div></div>
+  <div><div class="sb-num" id="topName" style="font-size:13px">—</div><div class="sb-lbl">Tên hướng đi</div></div>
+</div>
+
+<div class="wrap">
+  <div class="section-hdr">
+    <h2>4 Hướng Đi Dịch Vụ Cá Nhân</h2>
+    <p id="subHdr">Dịch vụ trực tiếp có rào cản gia nhập thấp nhất — bắt đầu nhanh, khách hàng trung thành cao, và không bị cạnh tranh bởi AI.</p>
+  </div>
+  <div class="cards" id="cards"></div>
+
+  <div class="comp-table">
+    <h3>📊 So Sánh 4 Hướng Đi</h3>
+    <table>
+      <thead><tr><th>Hướng đi</th><th>Thu nhập</th><th>Vốn ban đầu</th><th>Tốc độ</th><th>Tính mở rộng</th><th>Rủi ro</th></tr></thead>
+      <tbody>
+        <tr><td>Wellness & Sức Khỏe</td><td>8–50tr</td><td>🟡 TB (2-5tr)</td><td>🟡 TB</td><td>🟡 TB</td><td>🟢 Thấp</td></tr>
+        <tr><td>Sửa Chữa & Bảo Trì</td><td>8–40tr</td><td>🟢 Thấp</td><td>🟢 Rất nhanh</td><td>🔴 Thấp</td><td>🟢 Thấp</td></tr>
+        <tr><td>Làm Đẹp Tại Nhà</td><td>8–35tr</td><td>🟡 TB (3-8tr)</td><td>🟡 TB</td><td>🔴 Thấp</td><td>🟡 TB</td></tr>
+        <tr><td>Nhiếp Ảnh & Quay Phim</td><td>8–45tr</td><td>🟡 TB (10-25tr)</td><td>🟡 TB</td><td>🔴 Thấp</td><td>🟢 Thấp</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cta-box">
+    <h3>Xem đầy đủ tất cả 37 hướng đi</h3>
+    <p>Quay lại trang P3 để xem kết quả so khớp toàn bộ với DNA của bạn.</p>
+    <a href="/p3.html" class="btn-cta">← Về trang kết quả P3</a>
+  </div>
+</div>
+
+<script>
+const DIRS=[
+{id:'dich-vu-suc-khoe',title:'Dịch Vụ Sức Khỏe & Wellness',emoji:'🌿',isNew:false,risk:'Thấp',riskCls:'b-risk-lo',
+ desc:'Yoga, dinh dưỡng cá nhân, thiền, personal training. Nhu cầu tăng mạnh sau COVID. Khách hàng trung thành cao nhất trong nhóm dịch vụ.',
+ requirements:'Chứng chỉ trong lĩnh vực chọn (yoga, dinh dưỡng, PT) — 1-3 tháng, 2-5 triệu. Kinh nghiệm thực tế áp dụng cho bản thân là lợi thế để kể chuyện chân thật.',
+ strengths:['Khách hàng trung thành cao — 1 khách tốt = 3-5 năm','Nhu cầu tăng trưởng mạnh và bền vững','Gói tháng = doanh thu ổn định','Dễ upsell: 1-1 → nhóm → khóa học online'],
+ barriers:['Cần chứng chỉ để thu phí cao','Phụ thuộc sức khỏe và năng lượng bản thân','Khó mở rộng vì giới hạn thời gian'],
+ tools:['Zoom (dạy online)','Canva (thực đơn, lịch tập)','Zalo OA (nhóm học viên)','MyFitnessPal (track dinh dưỡng)','Calendly (đặt lịch)'],
+ income:{min:8,max:50},timeline:'2–5 tháng',
+ p:{people:80,expert:65,builder:40,independent:65},r:{capital:25,time:50,technology:35,network:55,risk:20,energy:70},
+ roadmap:[{w:'Tuần 1-2',t:'Chứng chỉ & xác định niche',d:'Yoga, dinh dưỡng hay thể hình? Niche rõ = phí cao hơn và dễ marketing hơn. Ví dụ: "Yoga cho phụ nữ trung niên giảm stress" vs chỉ "dạy yoga".'},
+  {w:'Tuần 3-4',t:'5 buổi thử nghiệm',d:'Mời 5-10 người quen tham gia miễn phí. Ghi chép phản hồi chi tiết. Chỉnh sửa phương pháp trước khi thu phí. 1 người hài lòng = giới thiệu 2-3 người mới.'},
+  {w:'Tuần 5-6',t:'Gói dịch vụ rõ ràng',d:'Starter: 4 buổi/tháng (thử). Standard: 8 buổi/tháng. Premium: 12 buổi + meal plan + check-in hàng tuần. Giá rõ = khách quyết định nhanh hơn.'},
+  {w:'Tuần 7-8',t:'Lịch cố định & mở rộng',d:'Lịch cố định T2, T4, T6 sáng hoặc tối. Sau 10+ khách ổn định: mở lớp nhóm 4-6 người cùng giờ = tăng thu nhập mà không tăng thời gian.'}]
+},
+{id:'sua-chua-bao-tri',title:'Sửa Chữa & Bảo Trì Nhà',emoji:'🔧',isNew:false,risk:'Thấp',riskCls:'b-risk-lo',
+ desc:'Sửa điện, nước, đồ gỗ, thiết bị gia dụng tại nhà khách. Bắt đầu nhanh nhất trong nhóm dịch vụ — có thể nhận việc ngay tuần đầu.',
+ requirements:'Tay nghề thực tế trong ít nhất 1-2 lĩnh vực: điện, nước, mộc, điện lạnh. Không cần bằng cấp. Cần dụng cụ cơ bản (2-5 triệu) và uy tín cá nhân.',
+ strengths:['Thu nhập trong 1-2 tuần — nhanh nhất nhóm','Nhu cầu quanh năm, không theo mùa vụ','Khách hàng trung thành — một lần hài lòng = gọi mãi','Gói bảo trì định kỳ = doanh thu ổn định'],
+ barriers:['Thu nhập giới hạn bởi thời gian làm việc','Phụ thuộc sức khỏe thể chất','Cần dụng cụ và di chuyển'],
+ tools:['Zalo (nhận đặt lịch)','Facebook Groups "Cần thợ"','App sửa chữa: Taskrabbit VN','Google Maps (quản lý phạm vi dịch vụ)'],
+ income:{min:8,max:40},timeline:'2–4 tuần',
+ p:{people:50,expert:75,builder:55,independent:70},r:{capital:20,time:55,technology:35,network:45,risk:25,energy:70},
+ roadmap:[{w:'Tuần 1',t:'Xác định dịch vụ cốt lõi',d:'Chỉ nhận 1-2 việc tự tin làm tốt 100%. Tốt 1 thứ = khách giới thiệu. Tệ 5 thứ = mất uy tín. Uy tín = tài sản dài hạn không mua được.'},
+  {w:'Tuần 2',t:'Dụng cụ & portfolio',d:'Dụng cụ cần thiết cho dịch vụ chọn: 2-5 triệu. Chụp ảnh 5-10 công việc đã làm tốt (nhà mình, người thân). Ảnh before/after rõ ràng.'},
+  {w:'Tuần 3',t:'Đăng tin & mạng lưới đầu tiên',d:'Facebook groups "Cần thợ sửa nhà [tên quận]". Nhờ 10-20 người quen giới thiệu. Zalo Status với ảnh công việc. Báo giá rõ ràng và minh bạch.'},
+  {w:'Tuần 4',t:'5 khách đầu tiên',d:'Giá ưu đãi 20-30% cho khách đầu để lấy review và ảnh. 1 khách hài lòng = giới thiệu 2-3 người. Đúng giờ + sạch sẽ sau làm = yếu tố khác biệt nhất.'}]
+},
+{id:'cham-soc-lam-dep',title:'Chăm Sóc & Làm Đẹp Tại Nhà',emoji:'💆',isNew:false,risk:'Trung bình',riskCls:'b-risk-md',
+ desc:'Cắt tóc, nail, massage, chăm sóc da tại nhà khách hoặc tại nhà mình. Chi phí cố định thấp hơn salon. Khách hàng nữ rất trung thành.',
+ requirements:'Chứng chỉ nghề (1-3 tháng tại trường nghề, 2-5 triệu). Dụng cụ cơ bản (3-8 triệu). Vị trí: có thể đến nhà khách hoặc setup góc nhỏ tại nhà.',
+ strengths:['Chi phí cố định thấp hơn salon 80%','Khách hàng nữ rất trung thành — có thể theo hàng năm','Linh hoạt thời gian theo ý muốn','Upsell dễ: cắt tóc → thuốc nhuộm → chăm sóc da'],
+ barriers:['Cần đầu tư vào chứng chỉ và dụng cụ ban đầu','Vệ sinh và an toàn hóa chất quan trọng','Cạnh tranh với salon giá rẻ'],
+ tools:['Zalo (đặt lịch & giữ khách)','Facebook Groups phụ nữ địa phương','Canva (menu dịch vụ & giá)','App quản lý lịch đơn giản'],
+ income:{min:8,max:35},timeline:'2–4 tháng',
+ p:{people:80,expert:60,builder:55,independent:60},r:{capital:50,time:65,technology:30,network:55,risk:45,energy:70},
+ roadmap:[{w:'Tuần 1-2',t:'Chứng chỉ & dụng cụ',d:'Trường nghề 1-3 tháng (2-5 triệu). Dụng cụ cơ bản 3-8 triệu — đừng mua đắt trước khi có 10+ khách ổn định. Học thêm qua YouTube để nâng kỹ thuật.'},
+  {w:'Tuần 3-4',t:'Thực hành với người thân',d:'10-15 người miễn phí. Chụp ảnh kết quả đẹp nhất (trước/sau). Portfolio chân thật quan trọng hơn portfolio "photoshop". Thu feedback cụ thể.'},
+  {w:'Tuần 5-6',t:'Launch trong cộng đồng',d:'Facebook groups phụ nữ, phụ huynh, cư dân khu vực. Giá ra mắt ưu đãi 30% trong tháng đầu. Kèm ảnh trước/sau thật và điều kiện rõ ràng.'},
+  {w:'Tuần 7-8',t:'Hệ thống khách trung thành',d:'"Dịch vụ lần 5 miễn phí" — giữ khách lâu dài. Gửi nhắc nhở Zalo khi đến hẹn. Hỏi thêm về nhu cầu khác để upsell tự nhiên.'}]
+},
+{id:'nhiep-anh-quay-phim',title:'Nhiếp Ảnh & Quay Phim Dịch Vụ',emoji:'📸',isNew:true,risk:'Thấp',riskCls:'b-risk-lo',
+ desc:'Chụp ảnh sự kiện, cưới, profile doanh nghiệp, sản phẩm. Quay video TVC, reels, corporate. AI editing giảm 50% thời gian hậu kỳ. 1 sự kiện = 5-25 triệu.',
+ requirements:'Kỹ năng nhiếp ảnh/quay phim cơ bản — có thể tự học online 2-3 tháng. Camera entry-level + lens tốt (10-25 triệu) là đủ bắt đầu. Portfolio từ 5-10 tác phẩm tốt nhất.',
+ strengths:['1 sự kiện cưới = 15-30 triệu','AI editing (Lightroom AI, CapCut) tiết kiệm 50% thời gian hậu kỳ','Nhu cầu events tăng liên tục','Khách tốt = giới thiệu theo mạng cưới/sự kiện'],
+ barriers:['Đầu tư thiết bị ban đầu 10-25 triệu','Cạnh tranh cao ở phân khúc cưới','Thời gian hậu kỳ nhiều'],
+ tools:['Lightroom (edit ảnh)','CapCut/Premiere (edit video)','Instagram/Behance (portfolio)','Canva (media kit)','Google Drive (giao file)'],
+ income:{min:8,max:45},timeline:'2–4 tháng',
+ p:{people:55,expert:75,builder:60,independent:75},r:{capital:40,time:45,technology:70,network:50,risk:25,energy:65},
+ roadmap:[{w:'Tuần 1-2',t:'Portfolio 10 tác phẩm tốt nhất',d:'Chọn 10 ảnh/video đẹp nhất đã chụp (từ bất kỳ nguồn nào). Tạo Instagram + Behance với tên chuyên nghiệp. Ảnh đẹp = đơn hàng. Không cần 100 ảnh — cần 10 ảnh WOW.'},
+  {w:'Tuần 3-4',t:'Thiết bị & pricing',d:'Camera entry-level Sony/Fuji + 1 lens tốt: 10-20 triệu. Bảng giá theo package rõ ràng. Ví dụ: Portrait 500K/giờ, Event half-day 5tr, Cưới full-day 15-25tr.'},
+  {w:'Tuần 5-6',t:'Network wedding/event industry',d:'Kết nối: wedding planner, florist, MC sự kiện, nhà hàng tiệc cưới. Họ giới thiệu chéo cho bạn = nguồn khách ổn định nhất và không mất phí quảng cáo.'},
+  {w:'Tuần 7-8',t:'Dự án đầu tiên để build portfolio',d:'Chụp miễn phí hoặc giảm giá 50% 1-2 sự kiện nhỏ. Xin phép dùng ảnh làm portfolio + review. Đây là investment — không phải mất tiền.'}]
+}
+];
+
+function getP1(){try{const d=JSON.parse(localStorage.getItem('p1_result')||'null');if(!d||!d.scores)return null;const norm=d.scores_normalized||{};if(!norm.people)Object.entries(d.scores).forEach(([k,v])=>{norm[k]=Math.round(Math.max(0,Math.min(100,(v-20)/80*100)));});return norm;}catch(e){return null;}}
+function getP2(){try{const d=JSON.parse(localStorage.getItem('p2_result')||'null');if(!d||!d.scores)return null;const sc=d.scores;return{capital:sc.capScore||0,time:sc.timeScore||0,technology:sc.techScore||0,network:sc.netScore||0,risk:sc.riskScore||0,energy:sc.energyScore||0,experience:sc.expScore||0};}catch(e){return null;}}
+function pMatch(norm,dp){const dims=['people','expert','builder','independent'];const tot=dims.reduce((s,d)=>s+dp[d],0)||1;let ws=0;dims.forEach(d=>{const u=norm[d]||0,req=dp[d];ws+=(u>=req?100:Math.max(0,100-(req-u)*1.3))*(req/tot);});return Math.min(100,Math.round(ws));}
+function rMatch(p2,dr){const map=[['capital','capital'],['time','time'],['technology','technology'],['network','network'],['risk','risk'],['energy','energy']];let tot=0,ex=0;map.forEach(([pk,dk])=>{const u=p2[pk]||0,req=dr[pk]||0;if(!req){tot+=100;return;}const s=u>=req?100:Math.max(0,(u/req)*100);tot+=s;if(u/req<0.45&&req>=40)ex+=12;});const eb=((p2.experience-50)/50)*0.7*18;return Math.max(0,Math.min(100,Math.round(tot/map.length+eb-ex)));}
+function scClass(s){return s>=90?'sc-gold':s>=80?'sc-green':s>=70?'sc-blue':s>=60?'sc-em':'sc-gray';}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const p1=getP1(),p2=getP2();
+  const saved=JSON.parse(localStorage.getItem('p3_saved')||'[]');
+  let sorted=[...DIRS];
+  if(p1&&p2){
+    sorted=DIRS.map(d=>({...d,_pm:pMatch(p1,d.p),_rm:rMatch(p2,d.r)})).map(d=>({...d,_score:Math.round(d._pm*0.5+d._rm*0.35+82*0.15)})).sort((a,b)=>b._score-a._score);
+    document.getElementById('scoreBar').style.display='flex';
+    const avg=Math.round(sorted.reduce((s,d)=>s+d._score,0)/sorted.length);
+    document.getElementById('avgScore').textContent=avg+'%';
+    document.getElementById('topScore').textContent=sorted[0]._score+'%';
+    document.getElementById('topName').textContent=sorted[0].title;
+    document.getElementById('subHdr').textContent=`Điểm phù hợp nhóm này: TB ${avg}%. Hướng tốt nhất: ${sorted[0].title} (${sorted[0]._score}%).`;
+  }
+  const cards=document.getElementById('cards');
+  sorted.forEach((dir,i)=>{
+    const s=dir._score,pm=dir._pm||null,rm=dir._rm||null;
+    const isBest=i===0&&p1&&p2;
+    const el=document.createElement('div');
+    el.className='card'+(isBest?' best':'');
+    const scHtml=s?`<div class="sc ${scClass(s)}"><div class="sc-num">${s}</div><div class="sc-pct">%</div></div>`:'<div class="sc sc-gray"><span class="sc-na">—</span></div>';
+    const mbHtml=pm!=null?`<div class="mb-row"><span class="mb-lbl">🧬 Tính cách</span><div class="mb-track"><div class="mb-fill mf-p" data-w="${pm}" style="width:0"></div></div><span class="mb-val">${pm}%</span></div><div class="mb-row"><span class="mb-lbl">⚙️ Nguồn lực</span><div class="mb-track"><div class="mb-fill mf-r" data-w="${rm}" style="width:0"></div></div><span class="mb-val">${rm}%</span></div>`:'<p style="font-size:12px;color:var(--mu);margin-bottom:10px">Hoàn thành P1+P2 để xem điểm phân tích chi tiết.</p>';
+    el.innerHTML=`<div class="card-hd" onclick="toggleCard(this)">
+      <div class="card-emoji">${dir.emoji}</div>
+      <div class="card-meta">
+        ${isBest?'<span class="b b-new">⭐ Phù hợp nhất nhóm này</span>':''}
+        <div class="card-title">${dir.title}${dir.isNew?' <span class="b b-new">MỚI</span>':''}</div>
+        <div class="badges"><span class="b b-cat">Dịch Vụ</span><span class="b b-income">💰 ${dir.income.min}–${dir.income.max}tr</span><span class="b b-time">⏱ ${dir.timeline}</span><span class="b ${dir.riskCls}">🟢 ${dir.risk}</span></div>
+        <div class="card-desc">${dir.desc}</div>
+      </div>${scHtml}
+    </div>
+    <div class="card-bd" id="bd-${dir.id}">
+      <div style="margin-bottom:12px">${mbHtml}</div>
+      <div class="info-grid">
+        <div class="info-box"><h4>✅ Điểm mạnh</h4><ul class="info-list">${dir.strengths.map(s=>`<li><span>•</span><span>${s}</span></li>`).join('')}</ul></div>
+        <div class="info-box2"><h4>⚡ Rào cản</h4><ul class="info-list">${dir.barriers.map(b=>`<li><span>•</span><span>${b}</span></li>`).join('')}</ul></div>
+      </div>
+      <div style="background:var(--bg);border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:12px"><strong style="display:block;margin-bottom:4px;color:var(--cat)">📋 Yêu cầu:</strong>${dir.requirements}</div>
+      <div><span style="font-size:12px;font-weight:700;color:var(--mu)">🛠 Công cụ:</span><div class="tools-row">${dir.tools.map(t=>`<span class="tool-chip">${t}</span>`).join('')}</div></div>
+      <button class="rm-toggle" onclick="toggleRm(this,'rm-${dir.id}')">📅 Roadmap 30 ngày <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="rm-body" id="rm-${dir.id}">${dir.roadmap.map((w,n)=>`<div class="rm-step"><div class="rm-dot">${n+1}</div><div class="rm-text"><strong>${w.w} — ${w.t}</strong>${w.d}</div></div>`).join('')}</div>
+      <div class="card-actions">
+        <button class="btn-save ${saved.includes(dir.id)?'saved':''}" id="sv-${dir.id}" onclick="saveDir(event,'${dir.id}')">${saved.includes(dir.id)?'✅ Đã lưu':'💾 Lưu hướng này'}</button>
+        <button class="btn-back" onclick="location.href='/p3.html'">← Xem tất cả</button>
+      </div>
+    </div>`;
+    cards.appendChild(el);
+    setTimeout(()=>el.querySelectorAll('.mb-fill[data-w]').forEach(b=>b.style.width=b.dataset.w+'%'),200+i*80);
+  });
+});
+function toggleCard(hd){const bd=hd.nextElementSibling;const open=bd.classList.toggle('on');if(open)setTimeout(()=>bd.querySelectorAll('.mb-fill[data-w]').forEach(b=>{b.style.width='0';setTimeout(()=>b.style.width=b.dataset.w+'%',30);}),10);}
+function toggleRm(btn,id){document.getElementById(id).classList.toggle('on');btn.classList.toggle('on');}
+function saveDir(e,id){e.stopPropagation();const saved=JSON.parse(localStorage.getItem('p3_saved')||'[]');if(!saved.includes(id)){saved.push(id);localStorage.setItem('p3_saved',JSON.stringify(saved));}const btn=document.getElementById('sv-'+id);btn.textContent='✅ Đã lưu';btn.classList.add('saved');}
+</script>
+<script src="/sol-flow.js"></script>
+<!-- SOL-FOOTER-START -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL FOOTER — Master Footer EEAT + YMYL Finance disclaimer
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào trước </body> mỗi HTML file của huongdi.sol.vn
+     Cross-link 3 sản phẩm + Author info (EEAT) + YMYL disclaimer
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-footer-styles">
+  #sol-footer * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif;
+  }
+  #sol-footer {
+    margin-top: 60px;
+    background: linear-gradient(180deg, #fafaf9 0%, #f5f5f4 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 48px 16px 24px;
+    color: #44403c;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+  .sol-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* 4 cols grid */
+  .sol-footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+  .sol-footer-col h4 {
+    color: #1c1917;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sol-footer-col ul {
+    list-style: none;
+  }
+  .sol-footer-col li {
+    margin-bottom: 8px;
+  }
+  .sol-footer-col a {
+    color: #57534e;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .sol-footer-col a:hover {
+    color: #d97706;
+  }
+  .sol-footer-col .pillar-icon {
+    display: inline-block;
+    width: 18px;
+    margin-right: 4px;
+    text-align: center;
+  }
+
+  /* EEAT Author block */
+  .sol-eeat-block {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .sol-eeat-block img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #fde68a;
+  }
+  .sol-eeat-text {
+    flex: 1;
+    font-size: 13px;
+    color: #57534e;
+  }
+  .sol-eeat-text strong {
+    color: #1c1917;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .sol-eeat-text a {
+    color: #d97706;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .sol-eeat-text a:hover {
+    text-decoration: underline;
+  }
+
+  /* YMYL Disclaimer */
+  .sol-ymyl-disclaimer {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: #78350f;
+    line-height: 1.6;
+  }
+  .sol-ymyl-disclaimer strong {
+    color: #92400e;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  /* Bottom row — copyright + social */
+  .sol-footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #78716c;
+  }
+  .sol-footer-bottom .social {
+    display: flex;
+    gap: 12px;
+  }
+  .sol-footer-bottom .social a {
+    color: #78716c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .sol-footer-bottom .social a:hover {
+    color: #d97706;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-footer-cols {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .sol-eeat-block {
+      flex-direction: column;
+      text-align: center;
+    }
+    .sol-eeat-block img {
+      align-self: center;
+    }
+    .sol-footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-footer-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    #sol-footer {
+      background: linear-gradient(180deg, #1c1917 0%, #0c0a09 100%);
+      color: #d6d3d1;
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-footer-col h4,
+    .sol-eeat-text strong {
+      color: #f5f5f4;
+    }
+    .sol-footer-col a,
+    .sol-eeat-text {
+      color: #a8a29e;
+    }
+    .sol-eeat-block {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-ymyl-disclaimer {
+      background: rgba(245, 158, 11, 0.08);
+      color: #fcd34d;
+    }
+    .sol-ymyl-disclaimer strong {
+      color: #fbbf24;
+    }
+    .sol-footer-bottom {
+      border-top-color: rgba(255, 255, 255, 0.08);
+      color: #78716c;
+    }
+  }
+</style>
+
+<footer id="sol-footer" role="contentinfo">
+  <div class="sol-footer-inner">
+
+    <!-- 4 columns -->
+    <div class="sol-footer-cols">
+
+      <!-- Col 1: Sol Ecosystem 3 trụ -->
+      <div class="sol-footer-col">
+        <h4>Sol — 3 Trụ</h4>
+        <ul>
+          <li><a href="https://bothuocla.sol.vn/" rel="noopener"><span class="pillar-icon">🌿</span>Thân — Sức khoẻ</a></li>
+          <li><a href="https://sol.vn/tam/" rel="noopener"><span class="pillar-icon">🧘</span>Tâm — Tinh thần</a></li>
+          <li><a href="https://huongdi.sol.vn/" rel="noopener"><span class="pillar-icon">🎯</span>Trí — Sự nghiệp</a></li>
+          <li><a href="https://sol.vn/" rel="noopener"><span class="pillar-icon">🏠</span>Sol.vn — Trang chính</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Huongdi -->
+      <div class="sol-footer-col">
+        <h4>Huongdi</h4>
+        <ul>
+          <li><a href="/p1.html">P1 — DNA Test (20 câu)</a></li>
+          <li><a href="/p2.html">P2 — Bản đồ nguồn lực</a></li>
+          <li><a href="/p3.html">P3 — 37 Hướng đi</a></li>
+          <li><a href="/p3-chuyenmon.html">Freelancer Chuyên Môn</a></li>
+          <li><a href="/p3-daotao.html">Coaching & Đào Tạo</a></li>
+          <li><a href="/p3-noidungso.html">Content Creator</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Về Sol -->
+      <div class="sol-footer-col">
+        <h4>Về Sol</h4>
+        <ul>
+          <li><a href="https://sol.vn/khang-sol/" rel="noopener">Khang Sol — Founder</a></li>
+          <li><a href="https://sol.vn/cau-chuyen-sol/" rel="noopener">Câu chuyện Sol</a></li>
+          <li><a href="https://sol.vn/lien-he/" rel="noopener">Liên hệ</a></li>
+          <li><a href="https://sol.vn/chinh-sach-rieng-tu/" rel="noopener">Chính sách bảo mật</a></li>
+          <li><a href="https://sol.vn/dieu-khoan/" rel="noopener">Điều khoản</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Cộng đồng -->
+      <div class="sol-footer-col">
+        <h4>Cộng đồng</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener nofollow" target="_blank">LinkedIn Khang</a></li>
+          <li><a href="https://web.facebook.com/nguyendinhkhang" rel="noopener nofollow" target="_blank">Facebook Khang</a></li>
+          <li><a href="https://zalo.me/sol" rel="noopener nofollow" target="_blank">Zalo OA Sol</a></li>
+          <li><a href="mailto:contact@sol.vn">Email: contact@sol.vn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- EEAT Author block -->
+    <div class="sol-eeat-block">
+      <img src="https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg"
+           alt="Khang Sol — Founder Đi Cùng Sol"
+           loading="lazy"
+           width="56" height="56">
+      <div class="sol-eeat-text">
+        <strong>Tác giả: Khang Sol (Nguyễn Đình Khang)</strong>
+        Founder Đi Cùng Sol — 20+ năm CNTT, từng làm PM dự án Internet quốc gia, tái khởi nghiệp tuổi 45+ tập trung vào hỗ trợ đàn ông Việt 40-65 tuổi tìm hướng đi mới. Mình chia sẻ kinh nghiệm thật, không phải tư vấn tài chính có giấy phép.
+        <br><br>
+        <a href="https://sol.vn/khang-sol/" rel="author">Xem profile đầy đủ →</a>
+      </div>
+    </div>
+
+    <!-- YMYL Finance Disclaimer -->
+    <div class="sol-ymyl-disclaimer" role="note" aria-label="Thông báo về tài chính">
+      <strong>⚠️ Tuyên bố miễn trừ trách nhiệm (YMYL — Finance)</strong>
+      Thông tin trên huongdi.sol.vn mang tính <em>tham khảo và chia sẻ kinh nghiệm</em> từ Khang Sol và cộng đồng — KHÔNG phải tư vấn tài chính, đầu tư hoặc thuế chuyên nghiệp. Trước khi quyết định khởi nghiệp, đầu tư vốn, hoặc thay đổi nghề nghiệp lớn, anh nên tham khảo chuyên gia tài chính / luật sư / kế toán có giấy phép tại Việt Nam.
+    </div>
+
+    <!-- Bottom row -->
+    <div class="sol-footer-bottom">
+      <div>
+        © 2025–2026 <strong>Đi Cùng Sol</strong> · All rights reserved · Made with ❤️ at Việt Nam
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="https://web.facebook.com/nguyendinhkhang" rel="noopener" target="_blank">Facebook</a>
+        <a href="https://zalo.me/sol" rel="noopener" target="_blank">Zalo</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- SOL-FOOTER-END -->
+</body>
+</html>

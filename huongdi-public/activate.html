@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kích Hoạt Đồng Hành 12 Tháng — Huongdi.sol.vn</title>
+<style>
+  :root {
+    --bg: #0b0f1a;
+    --surface: #141929;
+    --border: #242b45;
+    --accent: #6c63ff;
+    --gold: #f5a623;
+    --green: #4caf82;
+    --text: #e8eaf6;
+    --text2: #8b92b8;
+    --radius: 16px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+  }
+
+  .icon { font-size: 48px; margin-bottom: 16px; }
+
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .subtitle { color: var(--text2); font-size: 15px; margin-bottom: 32px; line-height: 1.6; }
+
+  /* Benefits list */
+  .benefits {
+    background: rgba(108, 99, 255, 0.08);
+    border: 1px solid rgba(108, 99, 255, 0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+  .benefits p {
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .benefits ul { list-style: none; }
+  .benefits li {
+    font-size: 14px;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .benefits li::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+  /* Code input */
+  .code-label {
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .code-input-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .code-prefix {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+  .code-sep {
+    font-size: 18px;
+    color: var(--border);
+    font-weight: 300;
+  }
+  .code-block {
+    width: 68px;
+    padding: 12px 8px;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: border-color .2s;
+    font-family: 'Courier New', monospace;
+  }
+  .code-block:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  /* Paste hint */
+  .paste-hint {
+    font-size: 12px;
+    color: var(--text2);
+    margin-bottom: 24px;
+  }
+  .paste-hint a { color: var(--accent); cursor: pointer; text-decoration: underline; }
+
+  /* Button */
+  .btn-activate {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s;
+    letter-spacing: .3px;
+  }
+  .btn-activate:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(108,99,255,.4); }
+  .btn-activate:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+  /* States */
+  .msg {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none;
+  }
+  .msg.error { background: rgba(229,115,115,.15); border: 1px solid rgba(229,115,115,.3); color: #ef9a9a; }
+  .msg.success { background: rgba(76,175,130,.15); border: 1px solid rgba(76,175,130,.3); color: #80cbc4; }
+
+  /* Success screen */
+  .success-screen {
+    display: none;
+    text-align: center;
+  }
+  .success-screen .big-icon { font-size: 64px; margin-bottom: 16px; }
+  .success-screen h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .success-screen .expiry {
+    color: var(--text2); font-size: 14px; margin-bottom: 8px;
+  }
+  .success-screen .expiry strong { color: var(--gold); }
+  .days-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 12px 0 24px;
+  }
+  .btn-goto {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--green);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .btn-goto:hover { background: #3da870; }
+
+  /* Login required */
+  .login-required { display: none; }
+  .btn-login {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background: var(--accent);
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* Confetti */
+  .confetti-wrap {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 100; overflow: hidden;
+  }
+  .confetti-piece {
+    position: absolute; top: -10px;
+    width: 8px; height: 8px; border-radius: 2px;
+    animation: fall linear forwards;
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 28px 20px; }
+    .code-block { width: 58px; font-size: 15px; }
+  }
+</style>
+<script src="/sol-ui.js"></script>
+</head>
+<body data-sol-page="activate">
+
+<div class="confetti-wrap" id="confettiWrap"></div>
+
+<div class="card">
+
+  <!-- Login required state -->
+  <div class="login-required" id="loginRequired">
+    <div class="icon">🔐</div>
+    <h1>Đăng nhập để kích hoạt</h1>
+    <p class="subtitle">Bạn cần có tài khoản huongdi.sol.vn để nhập mã kích hoạt từ ebook.</p>
+    <a href="/p1.html" class="btn-login">Tạo tài khoản miễn phí →</a>
+  </div>
+
+  <!-- Activation form -->
+  <div id="activateForm">
+    <div class="icon">⭐</div>
+    <h1>Kích Hoạt Đồng Hành 12 Tháng</h1>
+    <p class="subtitle">
+      Nhập mã từ ebook của bạn để mở khoá toàn bộ 37 hướng đi,<br>
+      Roadmap cá nhân hoá và AI Coach trong 12 tháng.
+    </p>
+
+    <div class="benefits">
+      <p>Bạn sẽ nhận được</p>
+      <ul>
+        <li>Phân tích chi tiết 37 hướng đi phù hợp với bạn</li>
+        <li>Roadmap hành động 30 / 90 / 180 ngày</li>
+        <li>AI Coach hỗ trợ quyết định</li>
+        <li>Template, checklist tải về theo từng hướng</li>
+        <li>Cập nhật nội dung mới trong 12 tháng</li>
+      </ul>
+    </div>
+
+    <p class="code-label">Nhập mã kích hoạt từ ebook (trang cuối hoặc email xác nhận):</p>
+    <div class="code-input-group">
+      <span class="code-prefix">HD</span>
+      <span class="code-sep">-</span>
+      <input class="code-block" id="b1" maxlength="4" placeholder="XXXX" autocomplete="off" spellcheck="false">
+      <span class="code-sep">-</span>
+      <input class="code-block" id="b2" maxlength="4" placeholder="XXXX" autocomplete="off" spellcheck="false">
+      <span class="code-sep">-</span>
+      <input class="code-block" id="b3" maxlength="4" placeholder="XXXX" autocomplete="off" spellcheck="false">
+    </div>
+
+    <p class="paste-hint">
+      Có thể <a onclick="pasteCode()">dán mã trực tiếp</a> nếu bạn copy từ email.
+    </p>
+
+    <button class="btn-activate" id="activateBtn" onclick="doActivate()">
+      Kích Hoạt Ngay →
+    </button>
+
+    <div class="msg error" id="errMsg"></div>
+    <div class="msg success" id="successMsg"></div>
+  </div>
+
+  <!-- Success screen -->
+  <div class="success-screen" id="successScreen">
+    <div class="big-icon">🎉</div>
+    <h2>Đã kích hoạt thành công!</h2>
+    <div class="days-badge">⭐ Đồng Hành Premium · 365 ngày</div>
+    <p class="expiry" id="expiryText"></p>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:24px;line-height:1.6">
+      Tất cả 37 hướng đi, Roadmap cá nhân hoá và AI Coach<br>
+      đã được mở khoá cho tài khoản của bạn.
+    </p>
+    <a href="/p3.html" class="btn-goto">Khám phá 37 hướng đi của bạn →</a>
+  </div>
+
+</div>
+
+<script src="/sol-flow.js"></script>
+<script>
+const API = '/api';
+
+// ── Auth check ────────────────────────────────────────────
+const token = localStorage.getItem('sol_token');
+if (!token) {
+  document.getElementById('loginRequired').style.display = 'block';
+  document.getElementById('activateForm').style.display = 'none';
+}
+
+// ── Auto-tab between blocks ───────────────────────────────
+['b1','b2','b3'].forEach((id, i, arr) => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', (e) => {
+    e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,'');
+    if (e.target.value.length === 4 && i < arr.length - 1) {
+      document.getElementById(arr[i+1]).focus();
+    }
+  });
+  el.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && e.target.value === '' && i > 0) {
+      document.getElementById(arr[i-1]).focus();
+    }
+    if (e.key === 'Enter') doActivate();
+  });
+});
+
+// ── Paste full code ───────────────────────────────────────
+async function pasteCode() {
+  try {
+    const text = await navigator.clipboard.readText();
+    const clean = text.toUpperCase().replace(/[^A-Z0-9HD-]/g,'').replace('HD-','');
+    const parts = clean.split('-');
+    if (parts.length >= 3) {
+      document.getElementById('b1').value = parts[0].slice(0,4);
+      document.getElementById('b2').value = parts[1].slice(0,4);
+      document.getElementById('b3').value = parts[2].slice(0,4);
+    }
+  } catch { /* clipboard blocked */ }
+}
+
+// Detect paste on any input
+document.addEventListener('paste', (e) => {
+  const text = (e.clipboardData || window.clipboardData).getData('text');
+  if (text.includes('HD-') || text.length > 8) {
+    e.preventDefault();
+    const clean = text.toUpperCase();
+    const match = clean.match(/HD-([A-Z0-9]{4})-([A-Z0-9]{4})-([A-Z0-9]{4})/);
+    if (match) {
+      document.getElementById('b1').value = match[1];
+      document.getElementById('b2').value = match[2];
+      document.getElementById('b3').value = match[3];
+      document.getElementById('b3').focus();
+    }
+  }
+});
+
+// ── Activate ──────────────────────────────────────────────
+async function doActivate() {
+  const b1 = document.getElementById('b1').value.trim();
+  const b2 = document.getElementById('b2').value.trim();
+  const b3 = document.getElementById('b3').value.trim();
+
+  if (b1.length < 4 || b2.length < 4 || b3.length < 4) {
+    showError('Vui lòng nhập đầy đủ mã 12 ký tự.');
+    return;
+  }
+
+  const code = `HD-${b1}-${b2}-${b3}`;
+  const btn = document.getElementById('activateBtn');
+  btn.disabled = true;
+  btn.textContent = 'Đang xử lý...';
+  hideMessages();
+
+  try {
+    const res = await fetch(`${API}/activate`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        code,
+        sessionId: localStorage.getItem('sol_session') || 'unknown',
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      const msgs = {
+        CODE_INVALID: 'Mã kích hoạt không đúng. Vui lòng kiểm tra lại.',
+        CODE_USED: 'Mã này đã được sử dụng rồi. Nếu bạn nghĩ đây là lỗi, hãy liên hệ hỗ trợ.',
+        UNAUTHORIZED: 'Phiên đăng nhập hết hạn. Vui lòng đăng nhập lại.',
+      };
+      throw new Error(msgs[data.code] || data.error || 'Có lỗi xảy ra, vui lòng thử lại.');
+    }
+
+    // Success
+    showSuccessScreen(data.premiumUntil);
+    fireConfetti();
+
+  } catch (err) {
+    showError(err.message);
+    btn.disabled = false;
+    btn.textContent = 'Kích Hoạt Ngay →';
+  }
+}
+
+function showSuccessScreen(premiumUntil) {
+  document.getElementById('activateForm').style.display = 'none';
+  const screen = document.getElementById('successScreen');
+  screen.style.display = 'block';
+
+  const expiry = new Date(premiumUntil);
+  const formatted = expiry.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  document.getElementById('expiryText').innerHTML =
+    `Đồng Hành của bạn có hiệu lực đến <strong>${formatted}</strong>`;
+}
+
+function showError(msg) {
+  const el = document.getElementById('errMsg');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function hideMessages() {
+  document.getElementById('errMsg').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'none';
+}
+
+// ── Confetti ──────────────────────────────────────────────
+function fireConfetti() {
+  const wrap = document.getElementById('confettiWrap');
+  const colors = ['#6c63ff','#f5a623','#4caf82','#ff6b6b','#fff','#ffd700'];
+  for (let i = 0; i < 80; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.width = (Math.random() * 8 + 4) + 'px';
+    el.style.height = (Math.random() * 8 + 4) + 'px';
+    el.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+    el.style.animationDelay = (Math.random() * 0.8) + 's';
+    el.style.opacity = Math.random() * 0.8 + 0.2;
+    wrap.appendChild(el);
+    el.addEventListener('animationend', () => el.remove());
+  }
+}
+</script>
+</body>
+</html>

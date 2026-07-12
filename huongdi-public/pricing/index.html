@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bảng giá Sol Active — Đầu tư 499k/năm cho hành trình tái khởi nghiệp | Sol La Bàn</title>
+<meta name="description" content="Sol Active 499k/năm — 40 câu hỏi AI + 37 mô hình + Sổ Hành Trình + Cộng đồng Zalo. Sol Founder 1.999k trọn đời (100 slot, đóng vĩnh viễn sau 2 tuần).">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://huongdi.sol.vn/pricing/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --amber-50:#FFFBEB; --amber-100:#FEF3C7; --amber-200:#FDE68A;
+  --amber-400:#FBBF24; --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+  --navy-50:#F8FAFC; --navy-100:#F1F5F9; --navy-200:#E2E8F0;
+  --navy-400:#94A3B8; --navy-500:#64748B; --navy-700:#334155;
+  --navy-800:#1E293B; --navy-900:#0F172A;
+  --emerald-500:#10B981; --emerald-600:#059669; --emerald-700:#047857;
+  --purple-500:#8B5CF6; --purple-600:#7C3AED;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Inter',-apple-system,sans-serif;
+  background:var(--navy-50); color:var(--navy-700); line-height:1.65;
+}
+a { color:var(--amber-600); text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+.container { max-width:1200px; margin:0 auto; padding:40px 24px; }
+
+/* Hero */
+.hero { text-align:center; margin-bottom:56px; }
+.hero-eyebrow {
+  font-size:13px; letter-spacing:3px; text-transform:uppercase;
+  font-weight:800; color:var(--amber-600); margin-bottom:14px;
+}
+.hero-title {
+  font-family:'Lora',Georgia,serif;
+  font-size:44px; font-weight:800; color:var(--navy-900);
+  line-height:1.2; margin-bottom:18px;
+}
+.hero-subtitle {
+  font-size:19px; color:var(--navy-500);
+  max-width:760px; margin:0 auto 24px;
+}
+.hero-badges {
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:12px;
+}
+.hero-badge {
+  background:#fff; border:1px solid var(--navy-200);
+  padding:10px 18px; border-radius:22px;
+  font-size:13.5px; font-weight:600; color:var(--navy-700);
+  display:inline-flex; align-items:center; gap:6px;
+}
+
+/* Countdown banner */
+.countdown-banner {
+  background:linear-gradient(135deg,var(--navy-900),var(--navy-800));
+  color:#fff; border-radius:16px; padding:20px 28px;
+  margin-bottom:48px; text-align:center;
+  border:2px solid var(--amber-500);
+}
+.countdown-banner__label {
+  font-size:12px; letter-spacing:2px; font-weight:700;
+  color:var(--amber-400); margin-bottom:8px;
+}
+.countdown-banner__text {
+  font-size:16px; color:#fff; line-height:1.5;
+}
+.countdown-banner__text strong { color:var(--amber-400); }
+
+/* Pricing cards */
+.pricing-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:28px; margin-bottom:64px;
+}
+.pricing-card {
+  background:#fff; border:2px solid var(--navy-200);
+  border-radius:20px; padding:36px 32px;
+  position:relative; display:flex; flex-direction:column;
+}
+.pricing-card--featured {
+  border-color:var(--amber-500);
+  box-shadow:0 20px 50px rgba(245,158,11,0.15);
+  transform:translateY(-8px);
+}
+.pricing-badge {
+  position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+  color:#fff; padding:6px 20px; border-radius:20px;
+  font-size:12px; font-weight:800; letter-spacing:1.5px;
+  white-space:nowrap;
+}
+.pricing-badge--purple {
+  background:linear-gradient(135deg,var(--purple-500),var(--purple-600));
+}
+.pricing-card__tier {
+  font-size:13px; letter-spacing:2px; font-weight:700;
+  color:var(--amber-600); margin-bottom:8px; text-transform:uppercase;
+}
+.pricing-card__title {
+  font-family:'Lora',serif; font-size:32px; font-weight:800;
+  color:var(--navy-900); margin-bottom:8px;
+}
+.pricing-card__tagline {
+  font-size:15px; color:var(--navy-500); margin-bottom:24px;
+  min-height:44px;
+}
+.pricing-card__price {
+  display:flex; align-items:baseline; gap:8px; margin-bottom:6px;
+}
+.pricing-card__amount {
+  font-family:'Lora',serif; font-size:52px; font-weight:800;
+  color:var(--navy-900);
+}
+.pricing-card__period {
+  font-size:16px; color:var(--navy-500); font-weight:600;
+}
+.pricing-card__equivalent {
+  font-size:13.5px; color:var(--emerald-600); font-weight:600;
+  margin-bottom:24px;
+}
+.pricing-card__features {
+  list-style:none; padding:0; margin:0 0 32px; flex:1;
+}
+.pricing-card__features li {
+  padding:10px 0; font-size:14.5px; color:var(--navy-700);
+  border-bottom:1px solid var(--navy-100);
+  display:flex; align-items:flex-start; gap:10px;
+}
+.pricing-card__features li:last-child { border-bottom:none; }
+.pricing-card__features .check {
+  color:var(--emerald-600); font-weight:800; flex-shrink:0;
+  font-size:16px;
+}
+.pricing-card__features .cross {
+  color:var(--navy-400); font-weight:800; flex-shrink:0;
+}
+.pricing-card__features strong { color:var(--navy-900); }
+
+.pricing-card__cta {
+  display:block; text-align:center;
+  padding:16px 24px; border-radius:12px;
+  font-size:15.5px; font-weight:800; text-decoration:none;
+  transition:all .2s; margin-bottom:12px;
+}
+.cta-primary {
+  background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+  color:#fff;
+}
+.cta-primary:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,158,11,0.35); text-decoration:none; }
+.cta-purple {
+  background:linear-gradient(135deg,var(--purple-500),var(--purple-600));
+  color:#fff;
+}
+.cta-purple:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(139,92,246,0.35); text-decoration:none; }
+.pricing-card__note {
+  text-align:center; font-size:12.5px; color:var(--navy-500);
+  font-style:italic;
+}
+
+/* Comparison table */
+.section-title {
+  font-family:'Lora',serif; font-size:32px; font-weight:800;
+  color:var(--navy-900); text-align:center; margin-bottom:12px;
+}
+.section-subtitle {
+  font-size:16px; color:var(--navy-500); text-align:center;
+  max-width:640px; margin:0 auto 40px;
+}
+
+.comparison-table {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:16px; overflow:hidden; margin-bottom:64px;
+  width:100%; border-collapse:collapse;
+}
+.comparison-table th, .comparison-table td {
+  padding:16px 20px; text-align:center; font-size:14px;
+  border-bottom:1px solid var(--navy-100);
+}
+.comparison-table th {
+  background:var(--navy-50); font-weight:800; color:var(--navy-900);
+  font-size:13px; letter-spacing:1px;
+}
+.comparison-table td:first-child, .comparison-table th:first-child {
+  text-align:left; font-weight:600; color:var(--navy-800);
+}
+.comparison-table tr:last-child td { border-bottom:none; }
+.comparison-table .check { color:var(--emerald-600); font-weight:800; font-size:18px; }
+.comparison-table .cross { color:var(--navy-400); font-weight:600; }
+.comparison-table .amber { color:var(--amber-600); font-weight:700; }
+
+/* Free tier callout */
+.free-callout {
+  background:#fff; border:2px dashed var(--navy-300); border-color:var(--emerald-500);
+  border-radius:16px; padding:28px 32px; margin-bottom:56px;
+  text-align:center;
+}
+.free-callout h3 {
+  font-family:'Lora',serif; font-size:22px; font-weight:700;
+  color:var(--navy-900); margin-bottom:10px;
+}
+.free-callout p {
+  font-size:15px; color:var(--navy-700); margin-bottom:14px;
+  max-width:640px; margin-left:auto; margin-right:auto;
+}
+.free-callout__cta {
+  display:inline-block; margin-top:8px;
+  padding:12px 24px; border-radius:10px;
+  background:var(--emerald-500); color:#fff;
+  font-size:14.5px; font-weight:700; text-decoration:none;
+}
+.free-callout__cta:hover { background:var(--emerald-600); text-decoration:none; }
+
+/* Payment section */
+.payment-section {
+  background:linear-gradient(135deg,var(--navy-900),var(--navy-800));
+  color:#fff; border-radius:20px; padding:48px 40px;
+  margin-bottom:56px; text-align:center;
+}
+.payment-section h2 {
+  font-family:'Lora',serif; font-size:28px; font-weight:800;
+  color:#fff; margin-bottom:16px;
+}
+.payment-section p { color:#CBD5E1; font-size:15px; margin-bottom:24px; }
+.payment-steps {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:20px; max-width:900px; margin:0 auto 24px;
+}
+.payment-step {
+  background:rgba(255,255,255,0.05); border:1px solid rgba(245,158,11,0.3);
+  border-radius:12px; padding:24px 20px; text-align:left;
+}
+.payment-step__num {
+  font-family:'Lora',serif; font-size:32px; font-weight:800;
+  color:var(--amber-400); margin-bottom:8px;
+}
+.payment-step__title {
+  font-size:16px; font-weight:700; color:#fff; margin-bottom:8px;
+}
+.payment-step__desc {
+  font-size:13.5px; color:#CBD5E1; line-height:1.5;
+}
+.bank-box {
+  background:rgba(245,158,11,0.1); border:1px solid var(--amber-500);
+  border-radius:12px; padding:20px 24px; max-width:500px;
+  margin:0 auto; text-align:left;
+}
+.bank-box__label {
+  font-size:11px; letter-spacing:2px; color:var(--amber-400);
+  font-weight:700; margin-bottom:8px;
+}
+.bank-box__row {
+  display:flex; justify-content:space-between; padding:6px 0;
+  font-size:14px; color:#fff;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.bank-box__row:last-child { border-bottom:none; }
+.bank-box__row strong { color:var(--amber-400); font-weight:700; }
+
+/* FAQ */
+.faq-list { max-width:820px; margin:0 auto 64px; }
+.faq-item {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:12px; margin-bottom:12px; overflow:hidden;
+}
+.faq-question {
+  padding:20px 24px; cursor:pointer;
+  font-size:15px; font-weight:700; color:var(--navy-900);
+  display:flex; justify-content:space-between; align-items:center;
+  transition:background .15s;
+}
+.faq-question:hover { background:var(--navy-50); }
+.faq-question::after {
+  content:'+'; font-size:24px; color:var(--amber-500);
+  font-weight:400; transition:transform .2s;
+}
+.faq-item.open .faq-question::after { transform:rotate(45deg); }
+.faq-answer {
+  max-height:0; overflow:hidden; transition:max-height .3s ease;
+  padding:0 24px;
+}
+.faq-item.open .faq-answer {
+  max-height:400px; padding:0 24px 20px;
+}
+.faq-answer p {
+  font-size:14.5px; color:var(--navy-700); line-height:1.7;
+}
+
+/* Disclaimer */
+.disclaimer {
+  background:var(--navy-100); border-radius:12px;
+  padding:20px 24px; font-size:13px; color:var(--navy-500);
+  line-height:1.6; margin-bottom:20px;
+}
+.disclaimer strong { color:var(--navy-700); }
+
+/* Responsive */
+@media (max-width:768px) {
+  .container { padding:24px 16px; }
+  .hero-title { font-size:30px; }
+  .hero-subtitle { font-size:16px; }
+  .pricing-grid { grid-template-columns:1fr; gap:20px; }
+  .pricing-card--featured { transform:none; }
+  .payment-steps { grid-template-columns:1fr; }
+  .section-title { font-size:26px; }
+  .comparison-table th, .comparison-table td { padding:12px 10px; font-size:13px; }
+}
+</style>
+</head>
+<body data-sol-page="pricing">
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">SOL LA BÀN · BẢNG GIÁ</div>
+    <h1 class="hero-title">Đầu tư 499.000đ/năm<br>cho hành trình tái khởi nghiệp đúng hướng</h1>
+    <p class="hero-subtitle">
+      Không có coach 1-1 đắt tiền. Không có consultant thu phí giờ.
+      Chỉ có <strong>công cụ + framework + cộng đồng</strong> để anh chị tự đi đúng hướng — tiết kiệm 5 năm thử sai.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge">🎯 40 câu hỏi AI đã soạn sẵn</span>
+      <span class="hero-badge">📚 37 mô hình hướng đi</span>
+      <span class="hero-badge">👥 Cộng đồng Zalo riêng</span>
+    </div>
+  </div>
+
+  <!-- Countdown banner cho Founder -->
+  <div class="countdown-banner">
+    <div class="countdown-banner__label">🔥 SOL FOUNDER LAUNCH — GIỚI HẠN 100 SLOT</div>
+    <div class="countdown-banner__text">
+      Sol Founder Edition <strong>1.999.000đ trọn đời</strong> — mở đăng ký <strong>2 tuần nữa</strong>.
+      Chỉ 100 người đầu tiên. Đóng vĩnh viễn sau khi đủ. <a href="#founder" style="color:var(--amber-400); text-decoration:underline;">Xem chi tiết →</a>
+    </div>
+  </div>
+
+  <!-- PRICING CARDS -->
+  <div class="pricing-grid">
+
+    <!-- SOL ACTIVE -->
+    <div class="pricing-card pricing-card--featured">
+      <div class="pricing-badge">PHỔ BIẾN NHẤT</div>
+      <div class="pricing-card__tier">SOL ACTIVE</div>
+      <h2 class="pricing-card__title">Active</h2>
+      <p class="pricing-card__tagline">Bộ công cụ đầy đủ cho hành trình 5 Bước Sol La Bàn.</p>
+
+      <div class="pricing-card__price">
+        <span class="pricing-card__amount">499k</span>
+        <span class="pricing-card__period">/năm</span>
+      </div>
+      <div class="pricing-card__equivalent">≈ 42.000đ/tháng · rẻ hơn 1 tách cà phê Highlands</div>
+
+      <ul class="pricing-card__features">
+        <li><span class="check">✓</span> <span><strong>40 câu hỏi AI</strong> — đủ 5 Bước Sol La Bàn (Thấu Hiểu → An Toàn)</span></li>
+        <li><span class="check">✓</span> <span><strong>37 mô hình hướng đi</strong> — full database cho người 40-60</span></li>
+        <li><span class="check">✓</span> <span><strong>5 Bước Sol La Bàn</strong> — quy trình interactive từng bước</span></li>
+        <li><span class="check">✓</span> <span><strong>Sổ Hành Trình</strong> — tự lưu prompts + tiến độ cá nhân</span></li>
+        <li><span class="check">✓</span> <span><strong>Zalo Group Active</strong> — cộng đồng cùng ngách 40-60</span></li>
+        <li><span class="check">✓</span> <span><strong>Sol Weekly</strong> — bản tin email hàng tuần độc quyền</span></li>
+        <li><span class="check">✓</span> <span><strong>Cập nhật cả năm</strong> — thêm prompt + mô hình mới liên tục</span></li>
+        <li><span class="check">✓</span> <span><strong>Email hỗ trợ</strong> — phản hồi 48-72 giờ</span></li>
+      </ul>
+
+      <a href="/thanh-toan/?tier=active" class="pricing-card__cta cta-primary">Đăng ký Sol Active →</a>
+      <p class="pricing-card__note">Hoàn tiền 100% trong 7 ngày nếu không phù hợp</p>
+    </div>
+
+    <!-- SOL FOUNDER -->
+    <div class="pricing-card" id="founder">
+      <div class="pricing-badge pricing-badge--purple">CHỈ 100 SLOT — LIFETIME</div>
+      <div class="pricing-card__tier" style="color:var(--purple-600);">SOL FOUNDER</div>
+      <h2 class="pricing-card__title">Founder</h2>
+      <p class="pricing-card__tagline">Truy cập trọn đời + đặc quyền vĩnh viễn. Đóng slot sau tuần thứ 2.</p>
+
+      <div class="pricing-card__price">
+        <span class="pricing-card__amount">1.999k</span>
+        <span class="pricing-card__period">/ trọn đời</span>
+      </div>
+      <div class="pricing-card__equivalent">Trả 1 lần · không bao giờ tăng giá · không renew</div>
+
+      <ul class="pricing-card__features">
+        <li><span class="check">✓</span> <span><strong>Toàn bộ Sol Active TRỌN ĐỜI</strong> — không hết hạn, không renew</span></li>
+        <li><span class="check">✓</span> <span><strong>Early access</strong> — dùng tính năng mới trước 30 ngày</span></li>
+        <li><span class="check">✓</span> <span><strong>Vote roadmap</strong> — quyết định Sol build tính năng nào tiếp</span></li>
+        <li><span class="check">✓</span> <span><strong>Contributor badge</strong> — đóng góp prompt/case → featured với tên</span></li>
+        <li><span class="check">✓</span> <span><strong>Sách bản in ký tặng</strong> "Tái Khởi Nghiệp Đúng Hướng" (in batch khi đủ 20 Founder)</span></li>
+        <li><span class="check">✓</span> <span><strong>Truy cập mọi sản phẩm tương lai</strong> — ebook, course, template pack</span></li>
+        <li><span class="check">✓</span> <span><strong>Founder Chat Zalo</strong> — nhóm 100 người kín cùng nhau xây</span></li>
+        <li><span class="check">✓</span> <span><strong>Featured trên homepage Sol</strong> — logo/tên trong "Founders Wall"</span></li>
+      </ul>
+
+      <a href="/thanh-toan/?tier=founder" class="pricing-card__cta cta-purple">Giữ chỗ Founder →</a>
+      <p class="pricing-card__note">Sau khi đủ 100 slot, không mở lại vĩnh viễn</p>
+    </div>
+  </div>
+
+  <!-- FREE tier callout -->
+  <div class="free-callout">
+    <h3>🎁 Chưa sẵn sàng mua? Thử miễn phí trước</h3>
+    <p>
+      Không cần đăng ký, không cần email. Truy cập ngay <strong>5 câu hỏi AI</strong> phổ dụng nhất,
+      xem <strong>5 mô hình hướng đi</strong>, đọc <strong>5 Bước Sol La Bàn</strong> overview, và tham gia
+      <strong>FB Group "Đi Cùng Sol"</strong> để kết nối với cộng đồng.
+    </p>
+    <a href="/prompts/" class="free-callout__cta">Thử miễn phí ngay →</a>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <h2 class="section-title">So sánh chi tiết 3 gói</h2>
+  <p class="section-subtitle">
+    Free để trải nghiệm · Active cho người 40-60 nghiêm túc · Founder cho người tin Sol từ ngày đầu.
+  </p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th style="width:40%;">Tính năng</th>
+        <th>Free</th>
+        <th class="amber">Active<br><span style="font-size:11px; font-weight:600;">499k/năm</span></th>
+        <th style="color:var(--purple-600);">Founder<br><span style="font-size:11px; font-weight:600;">1.999k trọn đời</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🤖 Câu hỏi AI (Prompt Library)</td>
+        <td>5 mẫu</td>
+        <td class="amber">Đủ 40 mẫu</td>
+        <td class="amber">40 + Contributor</td>
+      </tr>
+      <tr>
+        <td>📚 Mô hình hướng đi</td>
+        <td>5 mô hình</td>
+        <td class="amber">Đủ 37 mô hình</td>
+        <td class="amber">37 + tương lai</td>
+      </tr>
+      <tr>
+        <td>🧭 5 Bước Sol La Bàn</td>
+        <td>Overview</td>
+        <td><span class="check">✓</span> Full workflow</td>
+        <td><span class="check">✓</span> Full + Early</td>
+      </tr>
+      <tr>
+        <td>📓 Sổ Hành Trình</td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="check">✓</span></td>
+      </tr>
+      <tr>
+        <td>👥 Cộng đồng</td>
+        <td>FB Group public</td>
+        <td>+ Zalo Active</td>
+        <td>+ Founder Chat</td>
+      </tr>
+      <tr>
+        <td>✉️ Sol Weekly newsletter</td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="check">✓</span></td>
+      </tr>
+      <tr>
+        <td>🚀 Early access tính năng mới</td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="check">✓</span> 30 ngày trước</td>
+      </tr>
+      <tr>
+        <td>🗳️ Vote roadmap</td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="check">✓</span></td>
+      </tr>
+      <tr>
+        <td>🏆 Contributor badge</td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="check">✓</span></td>
+      </tr>
+      <tr>
+        <td>📕 Sách bản in ký tặng</td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="cross">✗</span></td>
+        <td><span class="check">✓</span></td>
+      </tr>
+      <tr>
+        <td>🎁 Sản phẩm tương lai</td>
+        <td><span class="cross">✗</span></td>
+        <td>Mua riêng</td>
+        <td><span class="check">✓</span> Miễn phí</td>
+      </tr>
+      <tr>
+        <td>❓ Email hỗ trợ</td>
+        <td><span class="cross">✗</span></td>
+        <td>48-72h</td>
+        <td>48-72h</td>
+      </tr>
+      <tr>
+        <td>♾️ Thời hạn</td>
+        <td>Vĩnh viễn</td>
+        <td>12 tháng</td>
+        <td class="amber">TRỌN ĐỜI</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PAYMENT SECTION -->
+  <div class="payment-section" id="thanh-toan">
+    <h2>Thanh toán trong 3 bước · 5 phút</h2>
+    <p>Chuyển khoản → nhận email → bắt đầu ngay. Không cần chờ đợi.</p>
+
+    <div class="payment-steps">
+      <div class="payment-step">
+        <div class="payment-step__num">1</div>
+        <div class="payment-step__title">Chuyển khoản đúng nội dung</div>
+        <div class="payment-step__desc">
+          Chuyển đúng số tiền + ghi nội dung: <br>
+          <strong style="color:#F59E0B;">"SOL [email của anh]"</strong>
+        </div>
+      </div>
+      <div class="payment-step">
+        <div class="payment-step__num">2</div>
+        <div class="payment-step__title">Nhận email trong 24h</div>
+        <div class="payment-step__desc">
+          Sol xác nhận thanh toán + gửi magic link kích hoạt tài khoản qua email.
+        </div>
+      </div>
+      <div class="payment-step">
+        <div class="payment-step__num">3</div>
+        <div class="payment-step__title">Bắt đầu ngay</div>
+        <div class="payment-step__desc">
+          Click magic link → auto login → truy cập full 40 prompt + 37 mô hình + Zalo.
+        </div>
+      </div>
+    </div>
+
+    <div class="bank-box">
+      <div class="bank-box__label">🏦 THÔNG TIN CHUYỂN KHOẢN</div>
+      <div class="bank-box__row"><span>Ngân hàng:</span> <strong>Techcombank</strong></div>
+      <div class="bank-box__row"><span>Số tài khoản:</span> <strong>11522026076011</strong></div>
+      <div class="bank-box__row"><span>Chủ tài khoản:</span> <strong>CÔNG TY CỔ PHẦN VINET</strong></div>
+      <div class="bank-box__row"><span>Nội dung:</span> <strong>SOL [email của anh]</strong></div>
+      <div class="bank-box__row"><span>Số tiền:</span> <strong style="color:#F59E0B;">499.000đ (Active) / 1.999.000đ (Founder)</strong></div>
+    </div>
+
+    <p style="margin-top:20px; font-size:13px;">
+      Sau khi chuyển khoản, gửi email đến <a href="mailto:hello@sol.vn" style="color:#F59E0B;">hello@sol.vn</a> với ảnh biên lai.
+      Sol phản hồi trong 24 giờ (thường trong 2-4 giờ giờ hành chính).
+    </p>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="section-title">Câu hỏi thường gặp</h2>
+  <p class="section-subtitle">Nếu chưa có câu trả lời anh cần, email <a href="mailto:hello@sol.vn">hello@sol.vn</a> — Sol phản hồi trong 48h.</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Sol Active có phù hợp với tôi không?</div>
+      <div class="faq-answer">
+        <p>
+          Sol phù hợp nếu anh chị: (1) đang ở độ tuổi 40-60, (2) muốn chuyển hướng nghề nghiệp hoặc khởi nghiệp lại,
+          (3) sẵn sàng tự học + tự làm (không cần coach 1-1).
+        </p>
+        <p>
+          Sol KHÔNG phù hợp nếu anh chị: (1) muốn được cầm tay chỉ việc, (2) mong đợi có coach cá nhân,
+          (3) cần "làm giàu nhanh". Sol là công cụ + framework, không phải magic pill.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Có được hoàn tiền nếu không phù hợp?</div>
+      <div class="faq-answer">
+        <p>
+          <strong>Sol Active:</strong> Hoàn tiền 100% trong 7 ngày đầu, không cần lý do. Sau 7 ngày không hoàn tiền
+          nhưng anh chị vẫn được dùng đến hết năm.
+        </p>
+        <p>
+          <strong>Sol Founder:</strong> Vì đây là gói trọn đời + có sách bản in kèm theo, chỉ hoàn tiền trước khi
+          sách được in (tức là trước khi Sol đạt 20 Founder). Sau đó không hoàn tiền.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Sol có coach 1-1 không?</div>
+      <div class="faq-answer">
+        <p>
+          <strong>Không có coach 1-1.</strong> Sol được thiết kế là công cụ tự học có hướng dẫn. Điều này giúp Sol giữ giá thấp
+          (chỉ 499k/năm — 1/10 chi phí coach thông thường) và anh chị có thể học theo tốc độ của mình.
+        </p>
+        <p>
+          Thay vào đó, anh chị có: (1) 40 câu hỏi AI để tự tạo output chất lượng, (2) cộng đồng Zalo Active để hỏi peer,
+          (3) email hỗ trợ 48h cho câu hỏi kỹ thuật, (4) 37 mô hình + 5 Bước có hướng dẫn từng bước.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Sol Founder có gì khác Active?</div>
+      <div class="faq-answer">
+        <p>
+          Founder = Active <strong>TRỌN ĐỜI</strong> + đặc quyền cho người tin Sol từ ngày đầu.
+        </p>
+        <p>
+          <strong>Khác biệt chính:</strong> (1) Không renew — mua 1 lần dùng mãi mãi, (2) Early access 30 ngày trước,
+          (3) Vote roadmap, (4) Contributor status, (5) Sách bản in ký tặng, (6) Truy cập mọi sản phẩm tương lai
+          (ebook, course, template) miễn phí, (7) Founder Chat Zalo kín.
+        </p>
+        <p>
+          Founder <strong>giới hạn 100 slot</strong> — sau khi đủ, đóng vĩnh viễn không mở lại.
+          Đây là cách Sol trân trọng những người đầu tiên tin vào chúng tôi.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Khi nào Founder mở đăng ký?</div>
+      <div class="faq-answer">
+        <p>
+          <strong>2 tuần nữa</strong> tính từ hôm nay. Sol đang hoàn thiện: (1) hệ thống payment tự động,
+          (2) email nurture flow, (3) Founder Chat Zalo group. Anh chị có thể để lại email để nhận thông báo khi mở.
+        </p>
+        <p>
+          Nếu anh chị muốn chắc chắn có slot Founder, có thể đăng ký "waitlist" bằng cách gửi email
+          <a href="mailto:hello@sol.vn?subject=Đăng ký waitlist Sol Founder">hello@sol.vn</a> với tiêu đề "Waitlist Founder".
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Zalo Group Active hoạt động như thế nào?</div>
+      <div class="faq-answer">
+        <p>
+          Zalo Group Active là nơi các thành viên Sol Active trao đổi peer-to-peer: kinh nghiệm dùng prompt,
+          câu chuyện thực tế, feedback về framework. <strong>Sol không coach trực tiếp trong group</strong> — đây là
+          không gian cộng đồng cho các anh chị cùng ngách 40-60.
+        </p>
+        <p>
+          Zalo Group sẽ được tạo khi Sol có 10 Active members đầu tiên (để có sinh khí). Trong thời gian chờ,
+          anh chị có thể join FB Group "Đi Cùng Sol" (public) để làm quen cộng đồng.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Sol có gia hạn tự động không?</div>
+      <div class="faq-answer">
+        <p>
+          <strong>Không.</strong> Sol không auto-renew để tôn trọng anh chị. 30 ngày trước khi Active hết hạn,
+          Sol gửi email nhắc + link thanh toán năm mới. Anh chị chủ động quyết định có gia hạn hay không.
+        </p>
+        <p>
+          Với Founder: không có khái niệm gia hạn — mua 1 lần dùng mãi mãi.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Sol có xuất hoá đơn VAT không?</div>
+      <div class="faq-answer">
+        <p>
+          Có. Nếu anh chị cần hoá đơn VAT cho doanh nghiệp, vui lòng gửi thông tin công ty
+          (tên, MST, địa chỉ) đến <a href="mailto:hello@sol.vn">hello@sol.vn</a> sau khi chuyển khoản.
+          Sol xuất hoá đơn VAT trong vòng 5 ngày làm việc.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Nếu tôi mất tài khoản/email đăng ký?</div>
+      <div class="faq-answer">
+        <p>
+          Gửi email <a href="mailto:hello@sol.vn">hello@sol.vn</a> với ảnh biên lai chuyển khoản + email cũ (nếu nhớ).
+          Sol khôi phục truy cập trong 24 giờ. Chúng tôi lưu lịch sử đăng ký để hỗ trợ trường hợp này.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <p>
+      <strong>Lưu ý:</strong> Sol La Bàn là công cụ hỗ trợ tự đánh giá và định hướng nghề nghiệp cho người 40-60.
+      Nội dung Sol chia sẻ mang tính kinh nghiệm cá nhân và khung phương pháp — không thay thế tư vấn chuyên nghiệp
+      (luật sư, bác sĩ, kế toán, tư vấn tài chính có chứng chỉ). Trước khi ra quyết định lớn, anh chị nên đánh giá
+      phù hợp với hoàn cảnh cụ thể của mình. Xem đầy đủ tại <a href="https://sol.vn/tuyen-bo-mien-tru/">Tuyên bố miễn trừ</a>.
+    </p>
+  </div>
+
+</div>
+
+<!-- Sol shared header/footer -->
+<script src="/sol-ui.js"></script>
+
+<script>
+function toggleFAQ(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

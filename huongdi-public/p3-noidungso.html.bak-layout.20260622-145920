@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nội Dung Số — Huongdi.sol.vn</title>
+<style>
+:root{
+  --primary:#1a6b4a;--pm:#2e8b63;--pl:#e8f5ee;
+  --accent:#f59e0b;--al:#fef3c7;
+  --text:#1a202c;--muted:#6b7280;--border:#e5e7eb;--bg:#f9fafb;--white:#fff;
+  --shadow:0 2px 12px rgba(0,0,0,.08);--r:14px;
+  --green:#10b981;--blue:#3b82f6;--purple:#8b5cf6;--red:#ef4444;--orange:#f97316;
+  --hero:#be185d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+
+/* HEADER */
+.hdr{background:var(--white);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-weight:800;font-size:15px;color:var(--primary);text-decoration:none}
+.logo em{color:var(--accent);font-style:normal}
+.hdr-right{display:flex;gap:10px;align-items:center}
+.btn-nav{font-size:12px;color:var(--muted);background:transparent;border:1px solid var(--border);padding:5px 12px;border-radius:99px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn-nav:hover{border-color:var(--primary);color:var(--primary)}
+
+/* HERO */
+.hero{background:var(--hero);padding:40px 20px 36px;text-align:center;color:#fff}
+.hero-icon{font-size:52px;margin-bottom:14px;display:block}
+.hero h1{font-size:26px;font-weight:800;margin-bottom:10px;line-height:1.2}
+.hero p{font-size:15px;opacity:.85;max-width:520px;margin:0 auto 18px}
+.hero-chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hero-chip{font-size:12px;font-weight:600;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);color:#fff;padding:4px 12px;border-radius:99px}
+
+/* MAIN */
+.main{max-width:780px;margin:0 auto;padding:28px 14px 60px}
+
+/* SECTION TITLE */
+.sec-title{font-size:19px;font-weight:800;color:var(--primary);margin-bottom:16px}
+.sec-sub{font-size:14px;color:var(--muted);margin-top:4px;margin-bottom:20px}
+
+/* DIRECTION CARDS */
+.dir-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+
+.dir-card{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;border:2px solid transparent;transition:border-color .2s}
+.dir-card:hover{border-color:var(--primary)}
+
+.card-head{padding:18px 20px;cursor:pointer;display:flex;align-items:flex-start;gap:14px;user-select:none}
+.card-emoji{font-size:26px;flex-shrink:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--bg);border-radius:10px}
+.card-info{flex:1;min-width:0}
+.card-title-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap}
+.card-title{font-size:16px;font-weight:800;color:var(--text);line-height:1.3}
+.badge-new{font-size:10px;font-weight:700;background:var(--orange);color:#fff;padding:2px 7px;border-radius:99px;letter-spacing:.3px}
+.card-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.cmeta{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px}
+.cmeta-income{background:#fce7f3;color:#9d174d}
+.cmeta-time{background:#dbeafe;color:#1e40af}
+.cmeta-risk-low{background:#d1fae5;color:#065f46}
+.card-desc-short{font-size:13px;color:var(--muted);line-height:1.5}
+.card-toggle{margin-left:auto;flex-shrink:0;color:var(--muted);font-size:18px;transition:transform .25s;margin-top:4px}
+.card-head[aria-expanded="true"] .card-toggle{transform:rotate(180deg)}
+
+/* SCORE CIRCLE */
+.score-circle{flex-shrink:0;width:56px;height:56px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;border:3px solid #d1d5db;background:#f3f4f6;color:var(--muted)}
+.sc-gold{background:#fef9c3;border-color:#fbbf24;color:#713f12}
+.sc-green{background:#dcfce7;border-color:#4ade80;color:#15803d}
+.sc-blue{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}
+.sc-yellow{background:var(--al);border-color:var(--accent);color:#92400e}
+.sc-gray{background:#f3f4f6;border-color:#d1d5db;color:var(--muted)}
+.sc-num{font-size:17px;line-height:1}
+.sc-pct{font-size:9px;line-height:1.2}
+
+/* CARD BODY */
+.card-body{display:none;border-top:1px solid var(--border)}
+.card-body.open{display:block}
+.card-body-inner{padding:18px 20px}
+
+/* STRENGTHS / BARRIERS */
+.sb-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.sb-box{background:var(--bg);border-radius:10px;padding:12px 14px}
+.sb-box h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px}
+.sb-green h4{color:#059669}
+.sb-orange h4{color:#c2410c}
+.sb-item{font-size:13px;display:flex;gap:6px;align-items:flex-start;margin-bottom:5px;line-height:1.4}
+.sb-item:last-child{margin-bottom:0}
+.si-icon{flex-shrink:0;font-size:13px;margin-top:1px}
+
+/* REQUIREMENTS */
+.req-box{background:#fdf2f8;border-left:3px solid var(--hero);border-radius:0 10px 10px 0;padding:12px 14px;margin-bottom:14px;font-size:13px;color:var(--text)}
+.req-box strong{display:block;font-size:12px;font-weight:700;color:var(--hero);margin-bottom:4px}
+
+/* TOOLS */
+.tools-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tool-tag{font-size:12px;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:3px 10px;border-radius:6px;font-weight:500}
+
+/* MATCH BARS */
+.match-bars{margin-bottom:16px}
+.mb-row{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.mb-label{width:130px;font-size:12px;color:var(--muted);flex-shrink:0}
+.mb-track{flex:1;height:6px;background:var(--bg);border-radius:99px;overflow:hidden;border:1px solid var(--border)}
+.mb-fill{height:100%;border-radius:99px;transition:width 1s ease-out}
+.fill-pm{background:var(--hero)}
+.fill-rm{background:var(--blue)}
+.fill-gm{background:var(--accent)}
+.mb-val{font-size:11px;font-weight:700;width:28px;text-align:right;color:var(--muted)}
+
+/* ROADMAP */
+.roadmap-section{margin-bottom:16px}
+.roadmap-toggle{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#fdf2f8;border-radius:10px;cursor:pointer;border:none;width:100%;text-align:left;font-size:14px;font-weight:600;color:var(--hero)}
+.roadmap-toggle svg{transition:transform .25s;flex-shrink:0}
+.roadmap-toggle.open svg{transform:rotate(180deg)}
+.roadmap-content{display:none;padding:16px 0 4px}
+.roadmap-content.open{display:block}
+.timeline{position:relative;padding-left:36px}
+.timeline::before{content:'';position:absolute;left:12px;top:4px;bottom:4px;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-36px;top:1px;width:24px;height:24px;border-radius:50%;background:var(--hero);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tl-content strong{display:block;font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px}
+.tl-content p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* INCOME INFO */
+.income-row{display:flex;align-items:center;gap:12px;background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;flex-wrap:wrap}
+.income-item{text-align:center}
+.income-item .val{font-size:18px;font-weight:800;color:var(--hero)}
+.income-item .lbl{font-size:11px;color:var(--muted);margin-top:1px}
+.income-sep{color:var(--border);font-size:20px}
+
+/* COMPARISON TABLE */
+.cmp-section{margin-bottom:40px}
+.cmp-title{font-size:17px;font-weight:800;color:var(--primary);margin-bottom:14px}
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cmp-table{width:100%;border-collapse:collapse;min-width:560px;font-size:13px}
+.cmp-table th{background:var(--hero);color:#fff;padding:10px 12px;text-align:center;font-size:12px;font-weight:700}
+.cmp-table th:first-child{text-align:left}
+.cmp-table td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:center;vertical-align:middle}
+.cmp-table td:first-child{text-align:left;font-weight:600;color:var(--text)}
+.cmp-table tr:hover td{background:#fdf2f8}
+.cmp-table tr:last-child td{border-bottom:none}
+.cmp-val{font-size:12px;font-weight:600}
+.cmp-high{color:#059669}
+.cmp-mid{color:#d97706}
+.cmp-low{color:var(--muted)}
+
+/* PHASES SECTION */
+.phases-section{margin-bottom:40px}
+.phases-title{font-size:17px;font-weight:800;color:var(--primary);margin-bottom:18px}
+.phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.phase-card{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);padding:20px;border-top:4px solid}
+.phase-1{border-color:var(--hero)}
+.phase-2{border-color:var(--purple)}
+.phase-3{border-color:var(--primary)}
+.phase-icon{font-size:28px;margin-bottom:10px}
+.phase-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:4px}
+.phase-title{font-size:15px;font-weight:800;color:var(--text);margin-bottom:8px}
+.phase-period{font-size:12px;font-weight:600;padding:2px 10px;border-radius:99px;display:inline-block;margin-bottom:10px}
+.p1-period{background:#fce7f3;color:#9d174d}
+.p2-period{background:#ede9fe;color:#5b21b6}
+.p3-period{background:#d1fae5;color:#065f46}
+.phase-items{list-style:none;display:flex;flex-direction:column;gap:5px}
+.phase-items li{font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:flex-start;line-height:1.4}
+.phase-items li::before{content:'→';color:var(--muted);flex-shrink:0;margin-top:1px}
+
+/* CTA BOTTOM */
+.cta-bottom{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);padding:24px;text-align:center;margin-bottom:32px}
+.cta-bottom h3{font-size:18px;font-weight:800;color:var(--primary);margin-bottom:8px}
+.cta-bottom p{font-size:14px;color:var(--muted);margin-bottom:18px}
+.cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-primary{padding:12px 26px;background:var(--primary);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--pm)}
+.btn-outline{padding:12px 22px;background:transparent;border:2px solid var(--primary);border-radius:12px;font-size:14px;font-weight:600;color:var(--primary);text-decoration:none;display:inline-block}
+.btn-outline:hover{background:var(--pl)}
+
+/* FOOTER */
+.footer{background:var(--white);border-top:1px solid var(--border);padding:24px 20px;text-align:center}
+.footer-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.footer-links a{font-size:13px;color:var(--muted);text-decoration:none}
+.footer-links a:hover{color:var(--primary)}
+.footer-copy{font-size:12px;color:var(--muted)}
+
+/* NO SCORE PLACEHOLDER */
+.score-placeholder{flex-shrink:0;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f3f4f6;border:3px dashed #d1d5db;font-size:18px;color:var(--muted)}
+
+@media(max-width:640px){
+  .phases-grid{grid-template-columns:1fr}
+  .hero h1{font-size:20px}
+  .sb-grid{grid-template-columns:1fr}
+  .card-head{gap:10px}
+  .income-row{justify-content:center}
+  .cta-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <a href="/index.html" class="logo">huongdi<em>.sol.vn</em></a>
+  <div class="hdr-right">
+    <a href="/p3.html" class="btn-nav">← Xem kết quả</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-icon">🎬</span>
+  <h1>Nội Dung Số</h1>
+  <p>Xây audience và thu nhập bền vững từ kiến thức chia sẻ trực tuyến</p>
+  <div class="hero-chips">
+    <span class="hero-chip">5 hướng đi</span>
+    <span class="hero-chip">AI-Powered</span>
+    <span class="hero-chip">Thu nhập thụ động</span>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <h2 class="sec-title">5 Hướng Đi Trong Lĩnh Vực Nội Dung Số</h2>
+  <p class="sec-sub">Nội dung số cho phép bạn tạo một lần, phân phối mãi mãi. Điểm phù hợp được tính tự động nếu bạn đã hoàn thành P1 + P2.</p>
+
+  <!-- DIRECTION CARDS -->
+  <div class="dir-cards" id="dirCards">
+
+    <!-- CARD 1: Blog Chuyên Ngành -->
+    <div class="dir-card" id="card-blog">
+      <div class="card-head" onclick="toggleCard('blog')" role="button" aria-expanded="false" aria-controls="body-blog">
+        <div class="card-emoji">✍️</div>
+        <div class="card-info">
+          <div class="card-title-row">
+            <span class="card-title">Blog Chuyên Ngành</span>
+          </div>
+          <div class="card-meta">
+            <span class="cmeta cmeta-income">2–60 triệu/tháng</span>
+            <span class="cmeta cmeta-time">9–24 tháng</span>
+            <span class="cmeta cmeta-risk-low">Rủi ro rất thấp</span>
+          </div>
+          <p class="card-desc-short">Blog SEO chuyên sâu về ngành. Thu nhập từ quảng cáo AdSense, affiliate links, sponsored posts. "Base camp" tốt nhất để xây các nguồn thu nhập khác.</p>
+        </div>
+        <div id="score-blog" class="score-placeholder">?</div>
+        <div class="card-toggle">▼</div>
+      </div>
+      <div class="card-body" id="body-blog">
+        <div class="card-body-inner">
+          <div class="sb-grid">
+            <div class="sb-box sb-green">
+              <h4>✅ Điểm mạnh</h4>
+              <div class="sb-item"><span class="si-icon">💵</span><span>Vốn gần bằng 0 — domain + hosting ~1tr/năm</span></div>
+              <div class="sb-item"><span class="si-icon">🔍</span><span>SEO = traffic thụ động từ Google</span></div>
+              <div class="sb-item"><span class="si-icon">🏗️</span><span>Base camp xây audience bền vững</span></div>
+              <div class="sb-item"><span class="si-icon">🤖</span><span>AI hỗ trợ viết nhanh gấp 3–5x</span></div>
+            </div>
+            <div class="sb-box sb-orange">
+              <h4>⚠️ Rào cản</h4>
+              <div class="sb-item"><span class="si-icon">⏳</span><span>Cần 9–18 tháng để thấy thu nhập đáng kể</span></div>
+              <div class="sb-item"><span class="si-icon">📝</span><span>Cần viết đều đặn 2–4 bài/tháng</span></div>
+              <div class="sb-item"><span class="si-icon">🔎</span><span>Cần học SEO cơ bản (keyword research)</span></div>
+            </div>
+          </div>
+          <div class="income-row">
+            <div class="income-item"><div class="val">2tr</div><div class="lbl">Thu nhập tối thiểu</div></div>
+            <div class="income-sep">→</div>
+            <div class="income-item"><div class="val">60tr</div><div class="lbl">Thu nhập tiềm năng</div></div>
+            <div class="income-sep">|</div>
+            <div class="income-item"><div class="val">9–24 tháng</div><div class="lbl">Timeline</div></div>
+          </div>
+          <div class="match-bars" id="bars-blog"></div>
+          <div class="roadmap-section">
+            <button class="roadmap-toggle" id="rt-blog" onclick="toggleRoadmap('blog')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+              🗺️ Roadmap 30 ngày
+            </button>
+            <div class="roadmap-content" id="rc-blog">
+              <div class="timeline">
+                <div class="tl-item"><div class="tl-dot">1</div><div class="tl-content"><strong>Tuần 1 — Chọn niche & domain</strong><p>Chọn chủ đề bạn có thể viết 100+ bài trong 2 năm. Mua domain (.vn hoặc .com). Setup WordPress hoặc Ghost (~500K/tháng hosting).</p></div></div>
+                <div class="tl-item"><div class="tl-dot">2</div><div class="tl-content"><strong>Tuần 2 — 10 bài pillar content</strong><p>Lên outline 10 bài "trụ cột" về các chủ đề lớn trong niche. Mỗi bài 1.500+ từ, có keyword rõ ràng. Dùng AI để mở rộng ý tưởng.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">3</div><div class="tl-content"><strong>Tuần 3 — SEO cơ bản</strong><p>Cài Yoast SEO (miễn phí). Nghiên cứu keyword bằng Google Search Console + Ubersuggest. Mỗi bài phải nhắm đúng 1 từ khóa chính.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">4</div><div class="tl-content"><strong>Tuần 4 — Lịch đăng đều đặn</strong><p>Cam kết 2 bài/tuần trong 6 tháng đầu. Chia sẻ lên LinkedIn/Facebook để có traffic ban đầu trước khi SEO có hiệu quả.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: YouTube / Podcast -->
+    <div class="dir-card" id="card-youtube">
+      <div class="card-head" onclick="toggleCard('youtube')" role="button" aria-expanded="false" aria-controls="body-youtube">
+        <div class="card-emoji">🎬</div>
+        <div class="card-info">
+          <div class="card-title-row">
+            <span class="card-title">Kênh YouTube / Podcast</span>
+          </div>
+          <div class="card-meta">
+            <span class="cmeta cmeta-income">2–100 triệu/tháng</span>
+            <span class="cmeta cmeta-time">12–24 tháng</span>
+            <span class="cmeta cmeta-risk-low">Rủi ro thấp</span>
+          </div>
+          <p class="card-desc-short">Kênh video/podcast chia sẻ kiến thức chuyên ngành. Cần kiên nhẫn 12–24 tháng nhưng revenue tiềm năng rất lớn và audience rất trung thành.</p>
+        </div>
+        <div id="score-youtube" class="score-placeholder">?</div>
+        <div class="card-toggle">▼</div>
+      </div>
+      <div class="card-body" id="body-youtube">
+        <div class="card-body-inner">
+          <div class="sb-grid">
+            <div class="sb-box sb-green">
+              <h4>✅ Điểm mạnh</h4>
+              <div class="sb-item"><span class="si-icon">❤️</span><span>Audience trung thành nhất mọi kênh</span></div>
+              <div class="sb-item"><span class="si-icon">🎯</span><span>YouTube = công cụ tìm kiếm số 2 thế giới</span></div>
+              <div class="sb-item"><span class="si-icon">💸</span><span>Đa dạng doanh thu: AdSense + sponsor + membership</span></div>
+              <div class="sb-item"><span class="si-icon">🤖</span><span>AI làm script, phụ đề, thumbnail nhanh</span></div>
+            </div>
+            <div class="sb-box sb-orange">
+              <h4>⚠️ Rào cản</h4>
+              <div class="sb-item"><span class="si-icon">⏱️</span><span>Cần 1–2 năm để đạt 1.000 subscriber</span></div>
+              <div class="sb-item"><span class="si-icon">🎥</span><span>Cần đầu tư thiết bị quay/mic tối thiểu</span></div>
+              <div class="sb-item"><span class="si-icon">😰</span><span>Nhiều người ngại xuất hiện trên camera</span></div>
+            </div>
+          </div>
+          <div class="income-row">
+            <div class="income-item"><div class="val">2tr</div><div class="lbl">Thu nhập tối thiểu</div></div>
+            <div class="income-sep">→</div>
+            <div class="income-item"><div class="val">100tr</div><div class="lbl">Thu nhập tiềm năng</div></div>
+            <div class="income-sep">|</div>
+            <div class="income-item"><div class="val">12–24 tháng</div><div class="lbl">Timeline</div></div>
+          </div>
+          <div class="match-bars" id="bars-youtube"></div>
+          <div class="roadmap-section">
+            <button class="roadmap-toggle" id="rt-youtube" onclick="toggleRoadmap('youtube')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+              🗺️ Roadmap 30 ngày
+            </button>
+            <div class="roadmap-content" id="rc-youtube">
+              <div class="timeline">
+                <div class="tl-item"><div class="tl-dot">1</div><div class="tl-content"><strong>Tuần 1 — Format & niche</strong><p>Chọn format: talking head, screencast, animation? Chọn niche hẹp: không phải "tài chính" mà "đầu tư chứng khoán cho người mới 30+". Nghiên cứu 10 kênh đối thủ.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">2</div><div class="tl-content"><strong>Tuần 2 — Setup thiết bị</strong><p>Tối thiểu: điện thoại iPhone/Samsung gần đây + tripod + mic cài áo Boya (~400K) + ánh sáng tự nhiên. Dùng CapCut hoặc DaVinci Resolve (miễn phí) để edit.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">3</div><div class="tl-content"><strong>Tuần 3 — 4 video đầu</strong><p>Quay và đăng 4 video trong 2 tuần. Không cần hoàn hảo — consistency quan trọng hơn quality ở giai đoạn đầu. Tập trung vào giá trị nội dung.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">4</div><div class="tl-content"><strong>Tuần 4 — Phân tích & điều chỉnh</strong><p>Xem YouTube Analytics: video nào có watch time cao nhất? Thumbnail nào click nhiều nhất? Nhân đôi những gì đang hoạt động, bỏ những gì không.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Ebook & Tài Liệu Số -->
+    <div class="dir-card" id="card-ebook">
+      <div class="card-head" onclick="toggleCard('ebook')" role="button" aria-expanded="false" aria-controls="body-ebook">
+        <div class="card-emoji">📖</div>
+        <div class="card-info">
+          <div class="card-title-row">
+            <span class="card-title">Ebook & Tài Liệu Số</span>
+          </div>
+          <div class="card-meta">
+            <span class="cmeta cmeta-income">2–50 triệu/tháng</span>
+            <span class="cmeta cmeta-time">2–5 tháng</span>
+            <span class="cmeta cmeta-risk-low">Rủi ro rất thấp</span>
+          </div>
+          <p class="card-desc-short">Đóng gói kiến thức thành ebook, template, checklist bán online. Dễ bắt đầu nhất trong nhóm nội dung số. Bán trên Gumroad, Shopee, hoặc tự host.</p>
+        </div>
+        <div id="score-ebook" class="score-placeholder">?</div>
+        <div class="card-toggle">▼</div>
+      </div>
+      <div class="card-body" id="body-ebook">
+        <div class="card-body-inner">
+          <div class="sb-grid">
+            <div class="sb-box sb-green">
+              <h4>✅ Điểm mạnh</h4>
+              <div class="sb-item"><span class="si-icon">⚡</span><span>Dễ bắt đầu nhất trong nhóm nội dung số</span></div>
+              <div class="sb-item"><span class="si-icon">💵</span><span>Vốn gần bằng 0 (5 triệu)</span></div>
+              <div class="sb-item"><span class="si-icon">🤖</span><span>AI hỗ trợ viết và thiết kế</span></div>
+              <div class="sb-item"><span class="si-icon">📦</span><span>Template/checklist bán chạy hơn ebook dài</span></div>
+            </div>
+            <div class="sb-box sb-orange">
+              <h4>⚠️ Rào cản</h4>
+              <div class="sb-item"><span class="si-icon">📣</span><span>Cần audience sẵn có để bán nhanh</span></div>
+              <div class="sb-item"><span class="si-icon">💰</span><span>Giá bán thấp (99–499K) — cần volume cao</span></div>
+            </div>
+          </div>
+          <div class="income-row">
+            <div class="income-item"><div class="val">2tr</div><div class="lbl">Thu nhập tối thiểu</div></div>
+            <div class="income-sep">→</div>
+            <div class="income-item"><div class="val">50tr</div><div class="lbl">Thu nhập tiềm năng</div></div>
+            <div class="income-sep">|</div>
+            <div class="income-item"><div class="val">2–5 tháng</div><div class="lbl">Timeline</div></div>
+          </div>
+          <div class="match-bars" id="bars-ebook"></div>
+          <div class="roadmap-section">
+            <button class="roadmap-toggle" id="rt-ebook" onclick="toggleRoadmap('ebook')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+              🗺️ Roadmap 30 ngày
+            </button>
+            <div class="roadmap-content" id="rc-ebook">
+              <div class="timeline">
+                <div class="tl-item"><div class="tl-dot">1</div><div class="tl-content"><strong>Tuần 1 — Chọn chủ đề & validate</strong><p>Đăng poll trên Facebook/LinkedIn: "Bạn muốn đọc về chủ đề nào?". Chủ đề có 50+ reaction = có người mua. Pre-sell 10 bản trước khi viết.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">2</div><div class="tl-content"><strong>Tuần 2 — Viết bản thảo</strong><p>Dùng AI (ChatGPT/Claude) để outline và expand nội dung. Bạn là expert review và chỉnh sửa. Ebook 30–50 trang thường bán tốt hơn 100+ trang.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">3</div><div class="tl-content"><strong>Tuần 3 — Thiết kế & định giá</strong><p>Dùng Canva Pro để thiết kế bìa và layout đẹp. Định giá: ebook kiến thức 99–299K, template/toolkit 199–499K, bundle combo tăng thêm 30–50%.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">4</div><div class="tl-content"><strong>Tuần 4 — Ra mắt</strong><p>Đăng lên Gumroad (0 phí) hoặc Shopee. Bán qua link trực tiếp cho mạng lưới trước. Sau 10 bản đầu: viết case study → tăng giá 30%.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Newsletter -->
+    <div class="dir-card" id="card-newsletter">
+      <div class="card-head" onclick="toggleCard('newsletter')" role="button" aria-expanded="false" aria-controls="body-newsletter">
+        <div class="card-emoji">📧</div>
+        <div class="card-info">
+          <div class="card-title-row">
+            <span class="card-title">Newsletter Chuyên Môn</span>
+          </div>
+          <div class="card-meta">
+            <span class="cmeta cmeta-income">2–40 triệu/tháng</span>
+            <span class="cmeta cmeta-time">9–18 tháng</span>
+            <span class="cmeta cmeta-risk-low">Rủi ro rất thấp</span>
+          </div>
+          <p class="card-desc-short">Bản tin email hàng tuần chia sẻ insight chuyên ngành. Direct audience = không phụ thuộc algorithm. Thu nhập từ sponsorship + paid tier.</p>
+        </div>
+        <div id="score-newsletter" class="score-placeholder">?</div>
+        <div class="card-toggle">▼</div>
+      </div>
+      <div class="card-body" id="body-newsletter">
+        <div class="card-body-inner">
+          <div class="sb-grid">
+            <div class="sb-box sb-green">
+              <h4>✅ Điểm mạnh</h4>
+              <div class="sb-item"><span class="si-icon">🔒</span><span>Không phụ thuộc algorithm mạng xã hội</span></div>
+              <div class="sb-item"><span class="si-icon">💌</span><span>Direct connection với reader</span></div>
+              <div class="sb-item"><span class="si-icon">💵</span><span>Substack/beehiiv miễn phí để bắt đầu</span></div>
+              <div class="sb-item"><span class="si-icon">📈</span><span>Open rate email 40–60% vs. social 2–5%</span></div>
+            </div>
+            <div class="sb-box sb-orange">
+              <h4>⚠️ Rào cản</h4>
+              <div class="sb-item"><span class="si-icon">⏳</span><span>Cần 9–18 tháng để có 1.000+ subscribers</span></div>
+              <div class="sb-item"><span class="si-icon">📝</span><span>Cần viết đều đặn — mỗi tuần không được bỏ lỡ</span></div>
+            </div>
+          </div>
+          <div class="income-row">
+            <div class="income-item"><div class="val">2tr</div><div class="lbl">Thu nhập tối thiểu</div></div>
+            <div class="income-sep">→</div>
+            <div class="income-item"><div class="val">40tr</div><div class="lbl">Thu nhập tiềm năng</div></div>
+            <div class="income-sep">|</div>
+            <div class="income-item"><div class="val">9–18 tháng</div><div class="lbl">Timeline</div></div>
+          </div>
+          <div class="match-bars" id="bars-newsletter"></div>
+          <div class="roadmap-section">
+            <button class="roadmap-toggle" id="rt-newsletter" onclick="toggleRoadmap('newsletter')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+              🗺️ Roadmap 30 ngày
+            </button>
+            <div class="roadmap-content" id="rc-newsletter">
+              <div class="timeline">
+                <div class="tl-item"><div class="tl-dot">1</div><div class="tl-content"><strong>Tuần 1 — Setup Substack + niche</strong><p>Tạo tài khoản Substack hoặc beehiiv (miễn phí). Đặt tên newsletter gợi nhớ và mô tả rõ: "Mỗi thứ Ba, 1 insight về [chủ đề]". Viết issue #0 giới thiệu bản thân.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">2</div><div class="tl-content"><strong>Tuần 2 — 50 subscribers đầu</strong><p>Nhờ 50 người quen subscribe thủ công. Import danh sách email cũ (nếu có sự đồng ý). 50 người đầu = feedback loop đủ để cải thiện nội dung.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">3</div><div class="tl-content"><strong>Tuần 3 — Lịch viết cố định</strong><p>Cam kết 1 issue/tuần vào cùng ngày. Template cố định: Insight chính → Ví dụ thực tế → 1 action cụ thể → Link tài nguyên. Nhất quán quan trọng hơn hoàn hảo.</p></div></div>
+                <div class="tl-item"><div class="tl-dot">4</div><div class="tl-content"><strong>Tuần 4 — Tăng trưởng organic</strong><p>Chia sẻ snippet từ newsletter lên LinkedIn/Facebook mỗi tuần. Cộng tác với newsletter khác (cross-promotion). Mục tiêu: 200 subscribers sau 3 tháng.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: SMM Freelancer (NEW) -->
+    <div class="dir-card" id="card-smm">
+      <div class="card-head" onclick="toggleCard('smm')" role="button" aria-expanded="false" aria-controls="body-smm">
+        <div class="card-emoji">📱</div>
+        <div class="card-info">
+          <div class="card-title-row">
+            <span class="card-title">Quản Lý Mạng Xã Hội (SMM Freelancer)</span>
+            <span class="badge-new">MỚI</span>
+          </div>
+          <div class="card-meta">
+            <span class="cmeta cmeta-income">5–30 triệu/tháng</span>
+            <span class="cmeta cmeta-time">1–3 tháng</span>
+            <span class="cmeta cmeta-risk-low">Rủi ro rất thấp</span>
+          </div>
+          <p class="card-desc-short">Quản lý fanpage, tạo content, chạy quảng cáo cho doanh nghiệp theo hợp đồng tháng. 3–5 khách cùng lúc = 10–40 triệu/tháng. AI tạo content nhanh gấp 3x.</p>
+        </div>
+        <div id="score-smm" class="score-placeholder">?</div>
+        <div class="card-toggle">▼</div>
+      </div>
+      <div class="card-body" id="body-smm">
+        <div class="card-body-inner">
+          <div class="req-box">
+            <strong>Yêu cầu chính:</strong>
+            Biết Facebook/Instagram Ads cơ bản, content writing, Canva. Không cần bằng cấp — portfolio thực tế quan trọng hơn.
+          </div>
+          <div class="sb-grid">
+            <div class="sb-box sb-green">
+              <h4>✅ Điểm mạnh</h4>
+              <div class="sb-item"><span class="si-icon">💰</span><span>Vốn bằng 0 — công cụ đều có free tier</span></div>
+              <div class="sb-item"><span class="si-icon">⚡</span><span>Thu nhập trong 4–6 tuần</span></div>
+              <div class="sb-item"><span class="si-icon">🤖</span><span>AI tạo content nhanh gấp 3x</span></div>
+              <div class="sb-item"><span class="si-icon">🔄</span><span>Mỗi khách = recurring revenue hàng tháng</span></div>
+            </div>
+            <div class="sb-box sb-orange">
+              <h4>⚠️ Rào cản</h4>
+              <div class="sb-item"><span class="si-icon">🔄</span><span>Cần cập nhật liên tục theo thuật toán</span></div>
+              <div class="sb-item"><span class="si-icon">💸</span><span>Khó tăng giá sau khi đã ký hợp đồng thấp</span></div>
+            </div>
+          </div>
+          <div class="income-row">
+            <div class="income-item"><div class="val">5tr</div><div class="lbl">Thu nhập tối thiểu</div></div>
+            <div class="income-sep">→</div>
+            <div class="income-item"><div class="val">30tr</div><div class="lbl">Thu nhập tiềm năng</div></div>
+            <div class="income-sep">|</div>
+            <div class="income-item"><div class="val">1–3 tháng</div><div class="lbl">Timeline</div></div>
+          </div>
+          <div class="tools-row">
+            <span class="tool-tag">📘 Meta Business Suite</span>
+            <span class="tool-tag">🎨 Canva</span>
+            <span class="tool-tag">📅 Buffer/Hootsuite</span>
+            <span class="tool-tag">🤖 ChatGPT</span>
+            <span class="tool-tag">🎬 CapCut</span>
+          </div>
+          <div class="match-bars" id="bars-smm"></div>
+          <div class="roadmap-section">
+            <button class="roadmap-toggle" id="rt-smm" onclick="toggleRoadmap('smm')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+              🗺️ Roadmap 30 ngày
+            </button>
+            <div class="roadmap-content" id="rc-smm">
+              <div class="timeline">
+                <div class="tl-item">
+                  <div class="tl-dot">1</div>
+                  <div class="tl-content">
+                    <strong>Tuần 1 — Chọn niche ngành</strong>
+                    <p>Quản lý MXH cho F&B, beauty, hay bất động sản? Hiểu sâu 1 ngành = content tốt hơn, tính phí cao hơn, dễ giới thiệu trong cùng ngành.</p>
+                  </div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot">2</div>
+                  <div class="tl-content">
+                    <strong>Tuần 2 — Case study & portfolio</strong>
+                    <p>Làm content miễn phí cho 1 SME quen trong 2 tuần. Chụp màn hình số liệu (reach, engagement, follower growth). Đây là portfolio đầu tiên của bạn.</p>
+                  </div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot">3</div>
+                  <div class="tl-content">
+                    <strong>Tuần 3 — Chào hàng chủ động</strong>
+                    <p>Tìm 10 SME chưa có fanpage hoặc fanpage hoạt động kém. Email/DM đề xuất cụ thể: "Tôi sẽ giúp tăng engagement 50% trong 30 ngày — nếu không đạt, miễn phí tháng sau."</p>
+                  </div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot">4</div>
+                  <div class="tl-content">
+                    <strong>Tuần 4 — Hợp đồng đầu tiên</strong>
+                    <p>3–5 triệu/tháng cho khách đầu. Deliver xuất sắc → xin testimonial + referral. 1 khách tốt = 2–3 khách tiếp theo qua giới thiệu.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /dir-cards -->
+
+  <!-- PHASES SECTION -->
+  <div class="phases-section">
+    <h3 class="phases-title">🗺️ Lộ Trình Xây Nội Dung Số Bền Vững</h3>
+    <div class="phases-grid">
+      <div class="phase-card phase-1">
+        <div class="phase-icon">🌱</div>
+        <div class="phase-num">Giai đoạn 1</div>
+        <div class="phase-title">Xây nền tảng</div>
+        <span class="phase-period p1-period">Tháng 1–3</span>
+        <ul class="phase-items">
+          <li>Chọn 1 kênh và 1 niche duy nhất</li>
+          <li>Đăng đều đặn không quan tâm số liệu</li>
+          <li>Thu thập feedback từ reader/viewer</li>
+          <li>Học SEO và content marketing cơ bản</li>
+        </ul>
+      </div>
+      <div class="phase-card phase-2">
+        <div class="phase-icon">🌿</div>
+        <div class="phase-num">Giai đoạn 2</div>
+        <div class="phase-title">Tăng trưởng</div>
+        <span class="phase-period p2-period">Tháng 4–12</span>
+        <ul class="phase-items">
+          <li>Double down vào nội dung hoạt động tốt</li>
+          <li>Thêm kênh phân phối thứ hai</li>
+          <li>Ra mắt sản phẩm số đầu tiên (ebook/template)</li>
+          <li>Xây email list song song</li>
+        </ul>
+      </div>
+      <div class="phase-card phase-3">
+        <div class="phase-icon">🌳</div>
+        <div class="phase-num">Giai đoạn 3</div>
+        <div class="phase-title">Đa dạng hóa</div>
+        <span class="phase-period p3-period">Tháng 12+</span>
+        <ul class="phase-items">
+          <li>Thêm khóa học online / coaching</li>
+          <li>Sponsorship và đối tác thương hiệu</li>
+          <li>Cộng đồng trả phí (membership)</li>
+          <li>Tự động hóa quy trình tạo content</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="cmp-section">
+    <h3 class="cmp-title">📊 So Sánh 5 Hướng Nội Dung Số</h3>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Hướng đi</th>
+            <th>Vốn</th>
+            <th>Thu nhập/tháng</th>
+            <th>Rủi ro</th>
+            <th>Tốc độ</th>
+            <th>Scale</th>
+            <th>AI Leverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>✍️ Blog chuyên ngành</td>
+            <td><span class="cmp-val cmp-high">5tr</span></td>
+            <td><span class="cmp-val">2–60tr</span></td>
+            <td><span class="cmp-val cmp-high">Rất thấp</span></td>
+            <td><span class="cmp-val cmp-low">9–24 tháng</span></td>
+            <td><span class="cmp-val cmp-high">Xuất sắc</span></td>
+            <td><span class="cmp-val cmp-high">Cao</span></td>
+          </tr>
+          <tr>
+            <td>🎬 YouTube / Podcast</td>
+            <td><span class="cmp-val cmp-mid">25tr</span></td>
+            <td><span class="cmp-val">2–100tr</span></td>
+            <td><span class="cmp-val cmp-high">Thấp</span></td>
+            <td><span class="cmp-val cmp-low">12–24 tháng</span></td>
+            <td><span class="cmp-val cmp-high">Xuất sắc</span></td>
+            <td><span class="cmp-val cmp-mid">Trung bình</span></td>
+          </tr>
+          <tr>
+            <td>📖 Ebook & tài liệu số</td>
+            <td><span class="cmp-val cmp-high">5tr</span></td>
+            <td><span class="cmp-val">2–50tr</span></td>
+            <td><span class="cmp-val cmp-high">Rất thấp</span></td>
+            <td><span class="cmp-val cmp-mid">2–5 tháng</span></td>
+            <td><span class="cmp-val cmp-mid">Tốt</span></td>
+            <td><span class="cmp-val cmp-high">Rất cao</span></td>
+          </tr>
+          <tr>
+            <td>📧 Newsletter chuyên môn</td>
+            <td><span class="cmp-val cmp-high">0tr</span></td>
+            <td><span class="cmp-val">2–40tr</span></td>
+            <td><span class="cmp-val cmp-high">Rất thấp</span></td>
+            <td><span class="cmp-val cmp-low">9–18 tháng</span></td>
+            <td><span class="cmp-val cmp-mid">Tốt</span></td>
+            <td><span class="cmp-val cmp-high">Cao</span></td>
+          </tr>
+          <tr>
+            <td>📱 SMM Freelancer <span class="badge-new" style="font-size:9px">MỚI</span></td>
+            <td><span class="cmp-val cmp-high">0tr</span></td>
+            <td><span class="cmp-val">5–30tr</span></td>
+            <td><span class="cmp-val cmp-high">Rất thấp</span></td>
+            <td><span class="cmp-val cmp-high">1–3 tháng</span></td>
+            <td><span class="cmp-val cmp-low">Giới hạn</span></td>
+            <td><span class="cmp-val cmp-high">Rất cao</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CTA BOTTOM -->
+  <div class="cta-bottom">
+    <h3>Sẵn sàng xem tất cả hướng đi phù hợp nhất?</h3>
+    <p>Quay lại trang kết quả để xem điểm phù hợp đầy đủ dựa trên DNA và nguồn lực của bạn.</p>
+    <div class="cta-btns">
+      <a href="/p3.html" class="btn-primary">← Xem tất cả kết quả</a>
+      <a href="/p3-daotao.html" class="btn-outline">Xem Đào Tạo →</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/index.html">Trang chủ</a>
+    <a href="/p1.html">P1 — Khám phá DNA</a>
+    <a href="/p2.html">P2 — Nguồn lực</a>
+    <a href="/p3.html">P3 — Kết quả</a>
+    <a href="/p3-daotao.html">Đào Tạo</a>
+    <a href="/p3-noidungso.html">Nội Dung Số</a>
+  </div>
+  <div class="footer-copy">© 2024 Huongdi.sol.vn — Tìm hướng đi phù hợp với bạn</div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════
+// SCORE FUNCTIONS (from spec)
+// ═══════════════════════════════════════
+function getP1(){try{const d=JSON.parse(localStorage.getItem('p1_result')||'null');if(!d||!d.scores)return null;const norm=d.scores_normalized||{};if(!norm.people)Object.entries(d.scores).forEach(([k,v])=>{norm[k]=Math.round(Math.max(0,Math.min(100,(v-20)/80*100)));});return{norm,raw:d.scores};}catch(e){return null;}}
+function getP2(){try{const d=JSON.parse(localStorage.getItem('p2_result')||'null');if(!d||!d.scores)return null;return d.scores;}catch(e){return null;}}
+function pm(norm,dp){const dims=['people','expert','builder','independent'];const tot=dims.reduce((s,d)=>s+dp[d],0)||1;let ws=0;dims.forEach(d=>{const u=norm[d]||0,req=dp[d];ws+=(u>=req?100:Math.max(0,100-(req-u)*1.3))*(req/tot);});return Math.min(100,Math.round(ws));}
+function rm(sc,dr,el){const map=[['capScore','capital'],['timeScore','time'],['techScore','technology'],['netScore','network'],['riskScore','risk'],['energyScore','energy']];let tot=0,ex=0;map.forEach(([pk,dk])=>{const u=sc[pk]||0,req=dr[dk]||0;if(!req){tot+=100;return;}const s=u>=req?100:Math.max(0,(u/req)*100);tot+=s;if(u/req<0.45&&req>=40)ex+=12;});const eb=(((sc.expScore||50)-50)/50)*(el/100)*18;return Math.max(0,Math.min(100,Math.round(tot/map.length+eb-ex)));}
+function calcScore(dir){const p1=getP1(),p2=getP2();if(!p1||!p2)return null;return Math.round(pm(p1.norm,dir.p)*0.5+rm(p2,dir.r,dir.exp_lev)*0.35+82*0.15);}
+
+// ═══════════════════════════════════════
+// DIRECTION DATA
+// ═══════════════════════════════════════
+const DIRS = {
+  blog: {
+    p:{people:30,expert:80,builder:65,independent:85},
+    r:{capital:5,time:50,technology:55,network:25,risk:10,energy:45},
+    exp_lev:80
+  },
+  youtube: {
+    p:{people:65,expert:70,builder:65,independent:80},
+    r:{capital:25,time:65,technology:70,network:35,risk:15,energy:65},
+    exp_lev:65
+  },
+  ebook: {
+    p:{people:25,expert:85,builder:60,independent:85},
+    r:{capital:5,time:45,technology:45,network:25,risk:5,energy:40},
+    exp_lev:90
+  },
+  newsletter: {
+    p:{people:40,expert:80,builder:55,independent:85},
+    r:{capital:5,time:35,technology:40,network:30,risk:5,energy:40},
+    exp_lev:80
+  },
+  smm: {
+    p:{people:60,expert:70,builder:50,independent:75},
+    r:{capital:5,time:45,technology:65,network:45,risk:10,energy:55},
+    exp_lev:60
+  }
+};
+
+// ═══════════════════════════════════════
+// SCORE CIRCLE
+// ═══════════════════════════════════════
+function scoreClass(s){
+  if(s>=80)return'sc-gold';
+  if(s>=65)return'sc-green';
+  if(s>=50)return'sc-blue';
+  if(s>=35)return'sc-yellow';
+  return'sc-gray';
+}
+
+function renderScores(){
+  const p1=getP1(), p2=getP2();
+  if(!p1||!p2) return;
+
+  Object.entries(DIRS).forEach(([key,dir])=>{
+    const sc=calcScore(dir);
+    if(sc===null) return;
+    const el=document.getElementById('score-'+key);
+    if(!el) return;
+    el.className='score-circle '+scoreClass(sc);
+    el.innerHTML=`<span class="sc-num">${sc}</span><span class="sc-pct">phù hợp</span>`;
+
+    // render match bars
+    const barsEl=document.getElementById('bars-'+key);
+    if(barsEl){
+      const pmScore=pm(p1.norm,dir.p);
+      const rmScore=rm(p2,dir.r,dir.exp_lev);
+      barsEl.innerHTML=`
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Phân tích điểm phù hợp</div>
+        <div class="mb-row">
+          <span class="mb-label">DNA cá nhân (P1)</span>
+          <div class="mb-track"><div class="mb-fill fill-pm" style="width:0%" data-w="${pmScore}"></div></div>
+          <span class="mb-val">${pmScore}</span>
+        </div>
+        <div class="mb-row">
+          <span class="mb-label">Nguồn lực (P2)</span>
+          <div class="mb-track"><div class="mb-fill fill-rm" style="width:0%" data-w="${rmScore}"></div></div>
+          <span class="mb-val">${rmScore}</span>
+        </div>
+        <div class="mb-row">
+          <span class="mb-label">Tổng điểm</span>
+          <div class="mb-track"><div class="mb-fill fill-gm" style="width:0%" data-w="${sc}"></div></div>
+          <span class="mb-val">${sc}</span>
+        </div>`;
+    }
+  });
+
+  // Animate bars when visible
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.mb-fill[data-w]').forEach(bar=>{
+          bar.style.width = bar.dataset.w + '%';
+        });
+        observer.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+
+  document.querySelectorAll('.match-bars').forEach(el=>observer.observe(el));
+}
+
+// ═══════════════════════════════════════
+// TOGGLE CARD
+// ═══════════════════════════════════════
+function toggleCard(key){
+  const body=document.getElementById('body-'+key);
+  const head=body.previousElementSibling;
+  const isOpen=body.classList.contains('open');
+  body.classList.toggle('open',!isOpen);
+  head.setAttribute('aria-expanded',String(!isOpen));
+  if(!isOpen){
+    setTimeout(()=>{
+      const fills=body.querySelectorAll('.mb-fill[data-w]');
+      fills.forEach(f=>{ f.style.width=f.dataset.w+'%'; });
+    },50);
+  }
+}
+
+// ═══════════════════════════════════════
+// TOGGLE ROADMAP
+// ═══════════════════════════════════════
+function toggleRoadmap(key){
+  const content=document.getElementById('rc-'+key);
+  const toggle=document.getElementById('rt-'+key);
+  const isOpen=content.classList.contains('open');
+  content.classList.toggle('open',!isOpen);
+  toggle.classList.toggle('open',!isOpen);
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+document.addEventListener('DOMContentLoaded', renderScores);
+</script>
+<script src="/sol-flow.js"></script>
+</body>
+</html>

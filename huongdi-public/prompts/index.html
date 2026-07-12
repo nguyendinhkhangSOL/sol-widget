@@ -1,0 +1,5654 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kho câu hỏi AI cho người Việt 40-60 — Sol La Bàn</title>
+<meta name="description" content="10 mẫu câu hỏi AI đã soạn sẵn cho người Việt 40-60. Trang giới thiệu, bài LinkedIn, email tiếp cận, bảng giá... Điền câu hỏi ngắn → nhận câu hỏi AI hoàn chỉnh dùng với ChatGPT hoặc Claude.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://huongdi.sol.vn/prompts/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --amber-50:#FFFBEB; --amber-100:#FEF3C7; --amber-200:#FDE68A;
+  --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+  --navy-50:#F8FAFC; --navy-100:#F1F5F9; --navy-200:#E2E8F0;
+  --navy-400:#94A3B8; --navy-500:#64748B; --navy-700:#334155;
+  --navy-800:#1E293B; --navy-900:#0F172A;
+  --emerald-500:#10B981; --emerald-700:#047857;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Inter',-apple-system,sans-serif;
+  background:var(--navy-50);
+  color:var(--navy-700);
+  line-height:1.65;
+}
+a { color:var(--amber-600); text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/* Container */
+.container {
+  max-width:1200px; margin:0 auto; padding:40px 24px;
+}
+
+/* Hero */
+.hero {
+  text-align:center; margin-bottom:56px;
+}
+.hero-eyebrow {
+  font-size:13px; letter-spacing:3px; text-transform:uppercase;
+  font-weight:800; color:var(--amber-600); margin-bottom:14px;
+}
+.hero-title {
+  font-family:'Lora',Georgia,serif;
+  font-size:40px; font-weight:800; color:var(--navy-900);
+  line-height:1.2; margin-bottom:16px;
+}
+.hero-subtitle {
+  font-size:18px; color:var(--navy-500);
+  max-width:720px; margin:0 auto 24px;
+}
+.hero-badges {
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+}
+.hero-badge {
+  background:#fff; border:1px solid var(--navy-200);
+  padding:10px 18px; border-radius:22px;
+  font-size:13.5px; font-weight:600; color:var(--navy-700);
+  display:inline-flex; align-items:center; gap:6px;
+}
+
+/* Helper section — bình dân hoá AI */
+.helper-box {
+  background:#fff; border:1px solid var(--amber-200);
+  border-left:4px solid var(--amber-500);
+  border-radius:12px; padding:24px 28px; margin-bottom:40px;
+}
+.helper-box h3 {
+  font-family:'Lora',serif; font-size:20px; font-weight:700;
+  color:var(--navy-900); margin-bottom:10px;
+  display:flex; align-items:center; gap:10px;
+}
+.helper-box p {
+  font-size:15px; color:var(--navy-700); margin-bottom:8px;
+}
+.helper-box p:last-child { margin-bottom:0; }
+.helper-box strong { color:var(--navy-900); }
+
+/* Tabs + Search */
+.tabs-wrapper {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:16px; padding:20px; margin-bottom:24px;
+  position:sticky; top:0; z-index:10;
+}
+.search-box {
+  width:100%; padding:14px 18px;
+  border:2px solid var(--navy-200); border-radius:10px;
+  font-size:15px; margin-bottom:14px;
+  background:var(--navy-50);
+  transition:border-color .2s; font-family:inherit;
+}
+.search-box:focus { outline:none; border-color:var(--amber-500); background:#fff; }
+.tabs {
+  display:flex; gap:8px; flex-wrap:wrap;
+}
+.tab {
+  padding:10px 18px; border:2px solid var(--navy-200);
+  border-radius:22px; cursor:pointer;
+  font-size:13px; font-weight:700; color:var(--navy-700);
+  background:#fff; transition:all .15s;
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:inherit;
+}
+.tab:hover { border-color:var(--amber-400); }
+.tab.active {
+  background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+  border-color:var(--amber-600); color:#fff;
+}
+.tab-count {
+  background:rgba(0,0,0,0.15); color:inherit;
+  padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700;
+}
+.tab.active .tab-count { background:rgba(255,255,255,0.3); }
+
+/* Group header */
+.buoc-header {
+  grid-column:1/-1;
+  padding:24px 0 8px; margin-top:16px;
+  border-bottom:2px solid var(--amber-200);
+}
+.buoc-header:first-child { margin-top:0; }
+.buoc-header__label {
+  font-size:11px; letter-spacing:2px; font-weight:700;
+  color:var(--amber-600); margin-bottom:4px;
+}
+.buoc-header__title {
+  font-family:'Lora',serif; font-size:22px; font-weight:700;
+  color:var(--navy-900);
+}
+.buoc-header__desc {
+  font-size:14px; color:var(--navy-500); margin-top:4px;
+}
+
+.no-results {
+  grid-column:1/-1;
+  text-align:center; padding:60px 20px;
+  color:var(--navy-500);
+}
+.no-results h3 {
+  font-family:'Lora',serif; font-size:22px; color:var(--navy-700);
+  margin-bottom:10px;
+}
+
+/* Grid */
+.prompts-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:24px;
+}
+.prompt-card {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:16px; padding:28px;
+  cursor:pointer; transition:all .2s;
+  display:flex; flex-direction:column;
+}
+.prompt-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(15,23,42,0.12);
+  border-color:var(--amber-500);
+}
+.prompt-card__id {
+  font-size:11px; letter-spacing:1.5px; font-weight:700;
+  color:var(--amber-600); margin-bottom:10px;
+}
+.prompt-card__icon {
+  font-size:36px; margin-bottom:14px;
+}
+.prompt-card__title {
+  font-family:'Lora',serif; font-size:19px; font-weight:700;
+  color:var(--navy-900); margin-bottom:10px; line-height:1.3;
+}
+.prompt-card__desc {
+  font-size:14px; color:var(--navy-500); flex:1; margin-bottom:16px;
+}
+.prompt-card__meta {
+  display:flex; gap:12px; font-size:12px; color:var(--navy-400);
+  padding-top:14px; border-top:1px solid var(--navy-100);
+}
+.prompt-card__meta span { display:flex; align-items:center; gap:4px; }
+
+/* Form view */
+.form-view { display:none; }
+.form-view.active { display:block; }
+
+.form-header {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:16px; padding:28px 32px; margin-bottom:24px;
+  display:flex; align-items:flex-start; gap:20px;
+}
+.form-header__icon { font-size:44px; }
+.form-header__body { flex:1; }
+.form-header__id {
+  font-size:11px; letter-spacing:1.5px; font-weight:700;
+  color:var(--amber-600); margin-bottom:6px;
+}
+.form-header__title {
+  font-family:'Lora',serif; font-size:26px; font-weight:800;
+  color:var(--navy-900); margin-bottom:8px;
+}
+.form-header__desc {
+  font-size:15px; color:var(--navy-500);
+}
+.form-header__back {
+  background:none; border:1px solid var(--navy-200);
+  padding:8px 14px; border-radius:8px;
+  font-size:13px; font-weight:600; color:var(--navy-700);
+  cursor:pointer;
+}
+.form-header__back:hover { background:var(--navy-50); }
+
+.form-questions {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:16px; padding:32px;
+}
+.form-group { margin-bottom:26px; }
+.form-label {
+  display:block; font-size:14.5px; font-weight:700;
+  color:var(--navy-900); margin-bottom:8px;
+}
+.form-required { color:var(--amber-600); }
+.form-hint {
+  font-size:12.5px; color:var(--navy-500); margin-top:6px;
+  font-style:italic;
+}
+.form-input, .form-textarea, .form-select {
+  width:100%; padding:12px 14px;
+  border:2px solid var(--navy-200); border-radius:10px;
+  font-family:inherit; font-size:14px;
+  background:#fff; color:var(--navy-900);
+  transition:border-color .2s;
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  outline:none; border-color:var(--amber-500);
+}
+.form-input::placeholder, .form-textarea::placeholder {
+  color:var(--navy-400); font-style:italic;
+}
+.form-textarea { min-height:120px; resize:vertical; line-height:1.6; }
+.form-radio-group {
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.form-radio {
+  padding:10px 16px; border:2px solid var(--navy-200);
+  border-radius:8px; cursor:pointer;
+  font-size:13px; font-weight:600; color:var(--navy-700);
+  background:#fff;
+  transition:all .15s;
+}
+.form-radio.active {
+  border-color:var(--amber-500); background:var(--amber-50);
+  color:var(--amber-700);
+}
+
+/* Lock badge on card */
+.prompt-card__lock {
+  position:absolute; top:14px; right:14px;
+  background:linear-gradient(135deg,#8B5CF6,#7C3AED);
+  color:#fff; padding:4px 10px; border-radius:12px;
+  font-size:10px; font-weight:800; letter-spacing:1px;
+}
+.prompt-card__free {
+  position:absolute; top:14px; right:14px;
+  background:linear-gradient(135deg,#10B981,#059669);
+  color:#fff; padding:4px 10px; border-radius:12px;
+  font-size:10px; font-weight:800; letter-spacing:1px;
+}
+.prompt-card { position:relative; }
+.prompt-card--locked { opacity:0.85; }
+.prompt-card--locked:hover { border-color:#8B5CF6; }
+
+/* Paywall modal */
+.paywall-overlay {
+  position:fixed; inset:0; background:rgba(15,23,42,0.75);
+  backdrop-filter:blur(4px);
+  display:none; align-items:center; justify-content:center;
+  z-index:1000; padding:20px;
+}
+.paywall-overlay.active { display:flex; animation:fadeIn .2s; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.paywall-modal {
+  background:#fff; border-radius:20px; max-width:520px; width:100%;
+  padding:40px 36px; position:relative;
+  animation:slideUp .3s;
+  max-height:90vh; overflow-y:auto;
+}
+@keyframes slideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.paywall-close {
+  position:absolute; top:16px; right:16px;
+  width:36px; height:36px; border-radius:50%;
+  background:var(--navy-100); border:none; cursor:pointer;
+  font-size:20px; color:var(--navy-500);
+  display:flex; align-items:center; justify-content:center;
+}
+.paywall-close:hover { background:var(--navy-200); }
+.paywall-icon { font-size:48px; margin-bottom:16px; text-align:center; }
+.paywall-title {
+  font-family:'Lora',serif; font-size:24px; font-weight:800;
+  color:var(--navy-900); text-align:center; margin-bottom:8px;
+}
+.paywall-prompt-name {
+  font-size:14px; color:var(--navy-500);
+  text-align:center; margin-bottom:24px;
+}
+.paywall-prompt-name strong { color:var(--amber-600); }
+.paywall-benefits {
+  background:linear-gradient(135deg,var(--amber-50),#FFF);
+  border:1px solid var(--amber-200); border-radius:12px;
+  padding:20px 24px; margin-bottom:24px;
+}
+.paywall-benefits__title {
+  font-size:13px; font-weight:800; color:var(--amber-700);
+  letter-spacing:1px; margin-bottom:12px;
+}
+.paywall-benefits ul { list-style:none; padding:0; }
+.paywall-benefits li {
+  padding:6px 0; font-size:14px; color:var(--navy-700);
+  display:flex; gap:10px;
+}
+.paywall-benefits li::before { content:'✓'; color:#10B981; font-weight:800; flex-shrink:0; }
+.paywall-benefits strong { color:var(--navy-900); }
+
+.paywall-price {
+  text-align:center; margin-bottom:24px;
+}
+.paywall-price__amount {
+  font-family:'Lora',serif; font-size:36px; font-weight:800;
+  color:var(--navy-900);
+}
+.paywall-price__period {
+  font-size:15px; color:var(--navy-500); margin-left:6px;
+}
+.paywall-price__equiv {
+  font-size:13px; color:#059669; font-weight:600; margin-top:4px;
+}
+.paywall-actions {
+  display:flex; flex-direction:column; gap:10px;
+}
+.paywall-btn {
+  padding:14px 24px; border-radius:10px;
+  font-size:15px; font-weight:800; cursor:pointer;
+  border:none; font-family:inherit; text-decoration:none;
+  text-align:center; transition:all .2s;
+}
+.paywall-btn-primary {
+  background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+  color:#fff;
+}
+.paywall-btn-primary:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(245,158,11,0.35);
+  color:#fff; text-decoration:none;
+}
+.paywall-btn-purple {
+  background:linear-gradient(135deg,#8B5CF6,#7C3AED);
+  color:#fff;
+}
+.paywall-btn-purple:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(139,92,246,0.35);
+  color:#fff; text-decoration:none;
+}
+.paywall-btn-secondary {
+  background:transparent; color:var(--navy-700);
+  border:2px solid var(--navy-200);
+}
+.paywall-btn-secondary:hover { background:var(--navy-50); }
+
+/* Active badge in nav (subtle) */
+.active-badge {
+  display:inline-block; padding:4px 10px; border-radius:10px;
+  background:#10B981; color:#fff; font-size:11px; font-weight:800;
+  letter-spacing:1px; margin-left:8px;
+}
+
+/* Active status indicator (top right corner khi đã login) */
+.sol-status-bar {
+  position:fixed; top:12px; right:12px;
+  z-index:900;
+  background:#fff; border:1px solid var(--emerald-500);
+  border-radius:22px; padding:8px 14px 8px 10px;
+  box-shadow:0 4px 12px rgba(15,23,42,0.1);
+  display:none; align-items:center; gap:10px;
+  font-size:12.5px;
+}
+.sol-status-bar.active { display:inline-flex; }
+.sol-status-bar__dot {
+  width:8px; height:8px; border-radius:50%;
+  background:#10B981;
+  box-shadow:0 0 0 3px rgba(16,185,129,0.2);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { box-shadow:0 0 0 3px rgba(16,185,129,0.2); }
+  50% { box-shadow:0 0 0 6px rgba(16,185,129,0.05); }
+}
+.sol-status-bar__label {
+  font-weight:700; color:var(--emerald-700);
+}
+.sol-status-bar__label--founder { color:#7C3AED; }
+.sol-status-bar__logout {
+  background:none; border:none; cursor:pointer;
+  color:var(--navy-500); font-size:11.5px; font-weight:600;
+  padding:2px 6px; border-radius:4px;
+  border-left:1px solid var(--navy-200); padding-left:10px;
+  font-family:inherit;
+}
+.sol-status-bar__logout:hover {
+  color:#DC2626; background:var(--navy-50);
+}
+
+@media (max-width:600px) {
+  .sol-status-bar {
+    top:auto; bottom:12px; right:12px;
+    padding:6px 12px 6px 8px;
+  }
+}
+
+.form-actions {
+  display:flex; gap:12px; margin-top:32px;
+}
+.btn {
+  padding:14px 24px; border-radius:10px;
+  font-size:15px; font-weight:700; cursor:pointer;
+  border:none; font-family:inherit;
+  transition:all .2s;
+}
+.btn-primary {
+  background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+  color:#fff; flex:1;
+}
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,158,11,0.3); }
+.btn-secondary {
+  background:transparent; color:var(--navy-700);
+  border:2px solid var(--navy-200);
+}
+.btn-secondary:hover { background:var(--navy-50); }
+
+/* Result view */
+.result-view {
+  background:#fff; border:2px solid var(--emerald-500);
+  border-radius:16px; padding:32px; margin-top:24px;
+  animation:slideIn .3s ease;
+}
+@keyframes slideIn {
+  from { opacity:0; transform:translateY(-10px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.result-title {
+  color:var(--emerald-700); font-size:17px; font-weight:800;
+  margin-bottom:12px; display:flex; align-items:center; gap:8px;
+}
+.result-help {
+  background:var(--amber-50); border-radius:8px; padding:14px 18px;
+  margin-bottom:16px; font-size:13.5px; color:var(--navy-700);
+}
+.result-help strong { color:var(--navy-900); }
+.result-textarea {
+  width:100%; min-height:400px;
+  padding:20px; background:var(--navy-50);
+  border:1px solid var(--navy-200); border-radius:10px;
+  font-family:'Courier New',monospace; font-size:13px;
+  color:var(--navy-900); line-height:1.7;
+  resize:vertical;
+}
+.result-actions {
+  display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;
+}
+.result-actions .btn { flex:0 0 auto; }
+
+/* Responsive */
+@media (max-width:600px) {
+  .container { padding:24px 16px; }
+  .hero-title { font-size:28px; }
+  .hero-subtitle { font-size:15px; }
+  .form-header { flex-direction:column; }
+  .form-actions { flex-direction:column; }
+  .btn { width:100%; }
+}
+
+/* Body class cho sol-ui.js */
+body.sol-ui-loaded { padding-top:0; }
+</style>
+</head>
+<body data-sol-page="prompts">
+
+<div class="container">
+
+  <!-- GRID VIEW -->
+  <div id="grid-view">
+    <div class="hero">
+      <div class="hero-eyebrow">SOL LA BÀN · KHO CÂU HỎI AI</div>
+      <h1 class="hero-title">40 mẫu câu hỏi AI đã soạn sẵn<br>cho 5 Bước Sol La Bàn</h1>
+      <p class="hero-subtitle">
+        Đầy đủ vũ khí AI cho toàn hành trình tái khởi nghiệp — từ Thấu Hiểu bản thân,
+        Khai Phá mô hình, Chọn Hướng, Hành Động, đến An Toàn Bền Vững.
+        Chọn mẫu → điền vài câu hỏi → nhận câu hỏi AI hoàn chỉnh dùng với ChatGPT/Claude.
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge">🧭 40 mẫu · 5 Bước</span>
+        <span class="hero-badge">🎯 Soạn cho người Việt 40-60</span>
+        <span class="hero-badge">⏱ 10-25 phút mỗi mẫu</span>
+      </div>
+    </div>
+
+    <!-- Hướng dẫn bình dân -->
+    <div class="helper-box">
+      <h3>💡 Chưa từng dùng AI (ChatGPT / Claude)? Không sao.</h3>
+      <p><strong>AI như một trợ lý biết viết văn rất giỏi.</strong> Nhưng để nó viết đúng thứ anh chị cần, phải "ra đề" cho nó rất kỹ. "Ra đề" đó gọi là câu hỏi AI (hay <em>prompt</em>).</p>
+      <p><strong>Sol làm gì:</strong> Chúng tôi soạn sẵn 40 mẫu câu hỏi AI cho toàn bộ 5 Bước Sol La Bàn — từ đánh giá bản thân đến thực thi + duy trì bền vững. Chỉ cần chọn mẫu → điền câu hỏi ngắn → nhận câu hỏi AI hoàn chỉnh.</p>
+      <p><strong>Cách dùng:</strong> Chọn tab theo Bước bạn đang ở → chọn mẫu → điền form → sao chép sang ChatGPT hoặc Claude → nhận kết quả chất lượng cao trong 30-60 giây.</p>
+    </div>
+
+    <!-- Tabs + Search -->
+    <div class="tabs-wrapper">
+      <input type="text" class="search-box" id="search-box" placeholder="🔍 Tìm mẫu theo tên hoặc chủ đề..." oninput="filterPrompts()">
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-buoc="0" onclick="switchTab(this,0)">Tất cả <span class="tab-count" id="count-0">40</span></button>
+        <button class="tab" data-buoc="1" onclick="switchTab(this,1)">🌱 Bước 1 · Thấu Hiểu <span class="tab-count" id="count-1">5</span></button>
+        <button class="tab" data-buoc="2" onclick="switchTab(this,2)">🔭 Bước 2 · Khai Phá <span class="tab-count" id="count-2">5</span></button>
+        <button class="tab" data-buoc="3" onclick="switchTab(this,3)">🧭 Bước 3 · Chọn Hướng <span class="tab-count" id="count-3">5</span></button>
+        <button class="tab" data-buoc="4" onclick="switchTab(this,4)">🚀 Bước 4 · Hành Động <span class="tab-count" id="count-4">20</span></button>
+        <button class="tab" data-buoc="5" onclick="switchTab(this,5)">🛡️ Bước 5 · An Toàn <span class="tab-count" id="count-5">5</span></button>
+      </div>
+    </div>
+
+    <div class="prompts-grid" id="prompts-grid">
+      <!-- Cards render via JS -->
+    </div>
+  </div>
+
+  <!-- FORM VIEW -->
+  <div id="form-view" class="form-view">
+    <div class="form-header">
+      <div class="form-header__icon" id="form-icon">🎯</div>
+      <div class="form-header__body">
+        <div class="form-header__id" id="form-id"></div>
+        <h2 class="form-header__title" id="form-title"></h2>
+        <p class="form-header__desc" id="form-desc"></p>
+      </div>
+      <button class="form-header__back" onclick="showGrid()">← Quay lại</button>
+    </div>
+
+    <div class="form-questions" id="form-questions">
+      <!-- Questions render via JS -->
+    </div>
+
+    <div id="result-container"></div>
+  </div>
+</div>
+
+<!-- STATUS BAR (hiển thị khi đã Active/Founder) -->
+<div class="sol-status-bar" id="sol-status-bar">
+  <div class="sol-status-bar__dot"></div>
+  <span class="sol-status-bar__label" id="sol-status-label">Sol Active</span>
+  <button class="sol-status-bar__logout" onclick="deactivateSol()" title="Đăng xuất khỏi thiết bị này">Đăng xuất</button>
+</div>
+
+<!-- PAYWALL MODAL -->
+<div class="paywall-overlay" id="paywall-modal" onclick="if(event.target===this)closePaywall()">
+  <div class="paywall-modal">
+    <button class="paywall-close" onclick="closePaywall()">✕</button>
+    <div class="paywall-icon">🔒</div>
+    <h3 class="paywall-title">Mẫu này dành cho Sol Active</h3>
+    <p class="paywall-prompt-name" id="paywall-prompt-name"></p>
+
+    <div class="paywall-benefits">
+      <div class="paywall-benefits__title">🎯 SOL ACTIVE MỞ KHOÁ</div>
+      <ul>
+        <li><strong>35 mẫu còn lại</strong> — đủ 5 Bước Sol La Bàn (Thấu Hiểu → An Toàn)</li>
+        <li><strong>37 mô hình hướng đi</strong> — full database cho người 40-60</li>
+        <li><strong>Sổ Hành Trình</strong> — lưu prompt + tiến độ cá nhân</li>
+        <li><strong>Zalo Group Active</strong> — cộng đồng peer cùng ngách</li>
+        <li><strong>Sol Weekly</strong> — bản tin email hàng tuần</li>
+      </ul>
+    </div>
+
+    <div class="paywall-price">
+      <span class="paywall-price__amount">499.000đ</span>
+      <span class="paywall-price__period">/năm</span>
+      <div class="paywall-price__equiv">≈ 42.000đ/tháng — rẻ hơn 1 tách cà phê</div>
+    </div>
+
+    <div class="paywall-actions">
+      <a href="/pricing/" class="paywall-btn paywall-btn-primary">💎 Đăng ký Sol Active →</a>
+      <a href="/founder/" class="paywall-btn paywall-btn-purple">🌟 Xem Sol Founder (trọn đời, 100 slot)</a>
+      <button class="paywall-btn paywall-btn-secondary" onclick="closePaywall()">Dùng 5 mẫu miễn phí</button>
+    </div>
+
+    <p style="text-align:center; font-size:12px; color:var(--navy-500); margin-top:16px;">
+      💡 Đã là Active? <a href="#" onclick="activateSol();return false;" style="color:var(--amber-600);">Kích hoạt truy cập</a>
+    </p>
+  </div>
+</div>
+
+<!-- Sol shared header/footer -->
+<script src="/sol-ui.js"></script>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// KHO CÂU HỎI AI — 10 mẫu soạn sẵn cho người Việt 40-60
+// ═══════════════════════════════════════════════════════════
+const PROMPTS = [
+  {
+    id: 'AI-001', buoc: 4,
+    icon: '🎯',
+    category: 'Bán hàng',
+    title: 'Viết trang giới thiệu dịch vụ tư vấn',
+    description: 'Tạo trang web giới thiệu dịch vụ tư vấn/huấn luyện cho khách doanh nghiệp vừa và nhỏ. Chuyên nghiệp, dễ đọc, thuyết phục.',
+    time: '10 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'niche',
+        label: 'Bạn tư vấn cho ai? Trong ngành nào?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Tôi tư vấn tài chính cho chủ chuỗi nhà hàng nhỏ có 5-15 chi nhánh',
+        hint: 'Càng cụ thể ngành nghề và quy mô càng tốt. Đừng viết chung chung "SME".'
+      },
+      {
+        id: 'target_role',
+        label: 'Người quyết định thuê bạn là ai?',
+        type: 'select',
+        options: ['Giám đốc/Chủ tịch (CEO)', 'Giám đốc tài chính (CFO)', 'Giám đốc vận hành (COO)', 'Người sáng lập (Founder)', 'Giám đốc marketing', 'Giám đốc nhân sự', 'Chủ doanh nghiệp gia đình', 'Khác'],
+        required: true
+      },
+      {
+        id: 'pain_point',
+        label: 'Khách của bạn đang gặp khó khăn gì? Hãy kể như đang tâm sự với đồng nghiệp.',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi nhà hàng đang mở thêm chi nhánh nhưng không biết chính xác chi nhánh nào có lãi, chi nhánh nào lỗ. Báo cáo cuối tháng chỉ cho tổng số. Không biết nên đóng chi nhánh cũ hay mở thêm chi nhánh mới. Ngủ không ngon vì lo tiền.',
+        hint: 'Viết như đang kể một câu chuyện thật. AI sẽ biến thành lời văn thuyết phục.'
+      },
+      {
+        id: 'outcome',
+        label: 'Sau khi thuê bạn, khách nhận được gì cụ thể?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Sau 90 ngày, chủ nhà hàng có báo cáo chi tiết từng chi nhánh + biết chính xác nên đóng hay mở nơi nào để lợi nhuận tăng 15-25%',
+        hint: 'Con số cụ thể và thời gian cụ thể. Đừng hứa quá.'
+      },
+      {
+        id: 'proof',
+        label: 'Bạn đã giúp khách nào tương tự? (không bắt buộc)',
+        type: 'textarea',
+        required: false,
+        placeholder: 'VD: Anh Tuấn 48 tuổi, chủ chuỗi 8 nhà hàng ở TP.HCM. Sau 3 tháng tư vấn, anh phát hiện 3 chi nhánh lỗ và đóng, đầu tư vào 2 chi nhánh có tiềm năng. Lợi nhuận tăng 22% trong 6 tháng tiếp theo.',
+        hint: 'Nếu có câu chuyện thật thì tốt. Nếu chưa có, để trống cũng được.'
+      },
+      {
+        id: 'pricing_model',
+        label: 'Bạn tính phí như thế nào?',
+        type: 'select',
+        options: ['Trả theo tháng (cố định)', 'Trả theo dự án (1 lần)', 'Trả theo kết quả (thành công phí)', 'Chưa quyết định'],
+        required: true
+      },
+      {
+        id: 'tone',
+        label: 'Giọng văn bạn muốn?',
+        type: 'select',
+        options: ['Chuyên nghiệp trang trọng (như luật sư)', 'Thân thiện cân bằng (như đồng nghiệp)', 'Táo bạo khác biệt (như chuyên gia có chính kiến)'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết nội dung marketing cho các dịch vụ tư vấn/huấn luyện tại Việt Nam. Hãy viết trang web giới thiệu dịch vụ dựa trên thông tin sau.
+
+═══════════════════════════════════════════
+THÔNG TIN DỊCH VỤ
+═══════════════════════════════════════════
+
+Đối tượng khách hàng: {{niche}}
+Người quyết định thuê: {{target_role}}
+
+Khó khăn khách đang gặp:
+{{pain_point}}
+
+Kết quả cam kết mang lại:
+{{outcome}}
+
+Câu chuyện khách đã giúp (nếu có):
+{{proof}}
+
+Cách tính phí: {{pricing_model}}
+
+═══════════════════════════════════════════
+CẤU TRÚC TRANG WEB (800-1200 từ)
+═══════════════════════════════════════════
+
+1. TIÊU ĐỀ CHÍNH (100 từ)
+   - Câu tiêu đề lớn: nói về khó khăn khách + kết quả nhận được
+   - Câu phụ: nói rõ AI làm cho ai, bằng cách nào
+   - Chữ trên nút bấm CTA
+
+2. VẤN ĐỀ (150 từ)
+   - 3 khó khăn cụ thể mà {{target_role}} đang gặp
+   - Mô tả thực tế, không thổi phồng
+
+3. GIẢI PHÁP (150 từ)
+   - 3-4 điểm khác biệt của bạn
+   - Kết nối với kết quả cam kết
+
+4. QUY TRÌNH LÀM VIỆC (200 từ)
+   - 3-4 bước cụ thể khách sẽ trải qua
+   - Thời gian dự kiến mỗi bước
+
+5. CÂU CHUYỆN THỰC TẾ (150 từ)
+   - Dùng câu chuyện đã cung cấp
+   - Cấu trúc: hoàn cảnh → hành động → kết quả
+
+6. BẢNG GIÁ (100 từ)
+   - Trình bày cách tính phí minh bạch
+   - 1-2 lựa chọn gói
+
+7. CÂU HỎI THƯỜNG GẶP (200 từ)
+   - 5 câu hỏi khách hay lo lắng
+   - Trả lời rõ ràng, không né tránh
+
+8. LỜI KÊU GỌI HÀNH ĐỘNG (50 từ)
+   - Nhắc lại kết quả
+   - Tạo cảm giác cần hành động (nhưng không cường điệu)
+
+═══════════════════════════════════════════
+GIỌNG VĂN
+═══════════════════════════════════════════
+{{tone}}
+
+═══════════════════════════════════════════
+QUY TẮC BẮT BUỘC
+═══════════════════════════════════════════
+- Viết bằng tiếng Việt tự nhiên (không phải Việt hoá máy dịch)
+- KHÔNG dùng "10x", "growth hack", "disruption", "revolutionary"
+- Số tiền dùng VNĐ (không dùng USD)
+- Nhắm đến thị trường doanh nghiệp vừa và nhỏ Việt Nam
+- KHÔNG hứa hẹn quá đáng (tuân thủ pháp luật quảng cáo)
+
+Xuất ra: Định dạng Markdown với tiêu đề rõ ràng.`
+  },
+  {
+    id: 'AI-002', buoc: 4,
+    icon: '💼',
+    category: 'Cá nhân',
+    title: 'Viết bài LinkedIn khẳng định chuyên môn',
+    description: 'Bài LinkedIn thu hút để khẳng định vị thế chuyên gia. Kể một câu chuyện + rút ra bài học, không quảng cáo lộ liễu.',
+    time: '5 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'expertise',
+        label: 'Bạn đang làm nghề gì?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Cố vấn tài chính cho chuỗi nhà hàng vừa và nhỏ'
+      },
+      {
+        id: 'insight',
+        label: 'Bạn muốn chia sẻ nhận xét gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Đa số chủ nhà hàng nghĩ chi nhánh nhiều = lãi nhiều. Sự thật ngược lại: 40% chuỗi nhà hàng ở Việt Nam thất bại vì mở quá nhanh, không biết chi nhánh nào lỗ.',
+        hint: 'Một câu hoặc hai câu ngắn gọn.'
+      },
+      {
+        id: 'story_hook',
+        label: 'Kể một câu chuyện thật để minh hoạ.',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tuần trước tôi ngồi với anh Tuấn - chủ 8 nhà hàng. Anh khoe doanh thu tổng tăng 30%. Nhưng khi tôi làm báo cáo chi tiết, 3 chi nhánh đang lỗ nặng, kéo lợi nhuận thật xuống chỉ còn 5%.',
+        hint: 'Không cần tên thật. Kể như đang tâm sự với bạn.'
+      },
+      {
+        id: 'takeaway',
+        label: '3 bài học rút ra?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Doanh thu tổng che giấu sự thật. Phải xem lãi/lỗ từng chi nhánh.\n2. Mở thêm chi nhánh khi chi nhánh cũ lỗ = làm lỗ thêm.\n3. Đóng chi nhánh lỗ không phải thất bại - là chiến lược thông minh.',
+        hint: 'Mỗi bài học 1-2 dòng ngắn gọn.'
+      },
+      {
+        id: 'cta_type',
+        label: 'Cuối bài muốn gì ở người đọc?',
+        type: 'select',
+        options: ['Bình luận thảo luận', 'Nhắn tin riêng để trao đổi', 'Theo dõi để đọc bài tiếp', 'Không cần lời kêu gọi'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết bài LinkedIn cho các chuyên gia cấp cao 40-60 tuổi tại Việt Nam.
+
+Viết bài LinkedIn theo cấu trúc kể chuyện + rút bài học, dựa trên thông tin sau:
+
+═══════════════════════════════════════════
+THÔNG TIN
+═══════════════════════════════════════════
+Người viết: {{expertise}}
+
+Nhận xét muốn chia sẻ:
+{{insight}}
+
+Câu chuyện thực tế:
+{{story_hook}}
+
+3 bài học:
+{{takeaway}}
+
+Cuối bài kêu gọi: {{cta_type}}
+
+═══════════════════════════════════════════
+CẤU TRÚC BÀI VIẾT (300-500 từ)
+═══════════════════════════════════════════
+
+Dòng 1-2: MỞ BÀI GÂY TÒ MÒ
+- Một câu tuyên bố khác thường
+- Hoặc câu hỏi khiến người đọc dừng lại
+
+Dòng 3-5: CÂU CHUYỆN NỀN
+- Giới thiệu ngắn tình huống
+- Không đi ngay vào bài học
+
+Dòng 6-8: BƯỚC NGOẶT
+- Điểm bất ngờ trong câu chuyện
+- Sự thật ngược với đám đông
+
+Dòng 9-15: BÀI HỌC
+- Liệt kê 3 bài học rõ ràng
+- Mỗi bài 2-3 dòng
+- Có ví dụ cụ thể
+
+Dòng 16-18: TỔNG KẾT
+- Rút ra ý nghĩa lớn hơn
+- Kết nối với người đọc
+
+Dòng 19-20: LỜI KÊU GỌI
+- {{cta_type}}
+- Chữ ký ngắn
+
+═══════════════════════════════════════════
+QUY TẮC BẮT BUỘC KHI VIẾT LINKEDIN VIỆT NAM
+═══════════════════════════════════════════
+
+- Ngắt dòng nhiều (để đọc dễ trên điện thoại)
+- Icon (emoji) rất ít (0-2 là đủ)
+- Dùng dấu — (em dash) để tách phần
+- KHÔNG dùng thẻ hashtag ở đầu bài
+- Xưng "anh chị" (đối tượng cao cấp)
+- Câu văn có thể dài, có mạch suy nghĩ rõ
+- KHÔNG dùng các từ tiếng Anh không cần thiết
+- Số tiền dùng VNĐ
+
+Xuất ra: Bài LinkedIn hoàn chỉnh, sẵn sàng sao chép để đăng.`
+  },
+  {
+    id: 'AI-003', buoc: 4,
+    icon: '📧',
+    category: 'Bán hàng',
+    title: 'Viết email tiếp cận khách doanh nghiệp',
+    description: 'Email lần đầu gửi cho khách hàng doanh nghiệp cấp cao. Tôn trọng thời gian, không bán lộ liễu, thể hiện chuyên môn.',
+    time: '5 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'target_company',
+        label: 'Bạn muốn gửi email cho công ty nào?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Chuỗi nhà hàng có 5-15 chi nhánh ở Hà Nội và TP.HCM'
+      },
+      {
+        id: 'target_person',
+        label: 'Người nhận email là ai? Đang trong tình huống nào?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi nhà hàng đang mở rộng từ 5 lên 15 chi nhánh trong 12 tháng qua'
+      },
+      {
+        id: 'observed_pain',
+        label: 'Bạn quan sát được khó khăn gì của họ? (Cụ thể, có căn cứ)',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tôi thấy Fanpage anh đăng bài mới mở chi nhánh liên tục 6 tháng qua. Trong ngành F&B, tốc độ mở nhanh thường đi kèm nguy cơ mất kiểm soát chi phí. Đặc biệt khi thiếu hệ thống báo cáo lãi/lỗ chi tiết từng chi nhánh.',
+        hint: 'Đừng đoán mò. Hãy dựa vào điều bạn đã thấy trên Facebook, LinkedIn của họ, hoặc thông tin ngành.'
+      },
+      {
+        id: 'your_offer',
+        label: 'Bạn muốn đề nghị gì với họ?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Buổi trò chuyện 30 phút miễn phí về cách xây báo cáo tài chính chi tiết cho chuỗi nhà hàng'
+      },
+      {
+        id: 'social_proof',
+        label: 'Bạn đã giúp khách nào tương tự? (không bắt buộc)',
+        type: 'textarea',
+        required: false,
+        placeholder: 'VD: Trong 2 năm qua tôi đã tư vấn cho 8 chủ chuỗi F&B, giúp họ tăng lợi nhuận trung bình 15-25% nhờ tối ưu chi nhánh.',
+        hint: 'Có thì viết. Không có thì để trống.'
+      }
+    ],
+    template: `Bạn là chuyên gia viết email tiếp cận khách doanh nghiệp cấp cao (B2B) tại Việt Nam.
+
+Viết email lần đầu gửi tới:
+
+═══════════════════════════════════════════
+THÔNG TIN NGƯỜI NHẬN
+═══════════════════════════════════════════
+Công ty: {{target_company}}
+Người nhận: {{target_person}}
+
+Khó khăn quan sát được:
+{{observed_pain}}
+
+Đề nghị: {{your_offer}}
+
+Câu chuyện thành công (nếu có):
+{{social_proof}}
+
+═══════════════════════════════════════════
+YÊU CẦU
+═══════════════════════════════════════════
+
+Viết 2 phiên bản email khác nhau:
+
+Phiên bản A - CHUYÊN NGHIỆP (200-250 từ):
+- Tiêu đề: gợi tò mò về khó khăn cụ thể
+- Mở đầu: tôn trọng thời gian người nhận
+- Giữa: chia sẻ quan sát + hiểu biết ngành
+- Đề nghị: nhẹ nhàng, không ép mua
+- Kết: một câu kêu gọi hành động đơn giản
+
+Phiên bản B - KHÁC BIỆT (150-200 từ):
+- Tiêu đề: đưa ra tuyên bố táo bạo
+- Mở đầu: khẳng định mạnh về vấn đề
+- Giữa: nhìn khó khăn theo góc mới
+- Đề nghị: buổi trò chuyện 15 phút
+- Kết: kèm ghi chú P.S. về câu chuyện thành công
+
+═══════════════════════════════════════════
+QUY TẮC BẮT BUỘC
+═══════════════════════════════════════════
+- KHÔNG dùng "Best regards", "Kính gửi anh/chị"
+- Ngắn, mỗi đoạn 1-2 câu
+- KHÔNG hứa hẹn quá (tuân thủ pháp luật)
+- KHÔNG dùng mẫu "just following up"
+- Cá nhân hoá theo khó khăn cụ thể
+- Ký tên chỉ dùng tên riêng
+- Tiếng Việt tự nhiên
+
+Xuất ra: 2 phiên bản email với tiêu đề + nội dung.`
+  },
+  {
+    id: 'AI-004', buoc: 4,
+    icon: '💰',
+    category: 'Bán hàng',
+    title: 'Thiết kế bảng giá 3 gói dịch vụ',
+    description: 'Xây 3 gói giá cho dịch vụ dựa trên giá trị (không tính giờ). Có gói giới thiệu, gói phổ biến, gói cao cấp.',
+    time: '10 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'service_desc',
+        label: 'Bạn cung cấp dịch vụ gì? Cho ai? Giải quyết vấn đề gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tôi tư vấn tài chính cho chủ chuỗi nhà hàng có 5-15 chi nhánh. Giúp họ biết chính xác chi nhánh nào lãi/lỗ để đưa ra quyết định mở/đóng chi nhánh đúng lúc.'
+      },
+      {
+        id: 'target_outcome',
+        label: 'Kết quả cụ thể khách nhận được?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Sau 90 ngày, chủ nhà hàng có: (1) Báo cáo chi tiết lãi/lỗ từng chi nhánh, (2) Kế hoạch tối ưu chi phí giảm 15-25%, (3) Biết chính xác nên mở/đóng chi nhánh nào.',
+        hint: 'Con số, thời gian cụ thể.'
+      },
+      {
+        id: 'competitor_ranges',
+        label: 'Đối thủ trên thị trường đang tính giá bao nhiêu? (nếu biết)',
+        type: 'text',
+        required: false,
+        placeholder: 'VD: Các công ty tư vấn lớn tính 20-50 triệu/tháng. Cá nhân tư vấn khác tính 5-15 triệu/tháng.'
+      },
+      {
+        id: 'delivery_time',
+        label: 'Mỗi tháng bạn dành bao nhiêu thời gian cho một khách?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: 4-6 giờ mỗi tháng cho mỗi khách'
+      },
+      {
+        id: 'preferred_range',
+        label: 'Bạn muốn tính giá trong khoảng nào?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: 15-50 triệu VNĐ mỗi tháng, tuỳ gói'
+      }
+    ],
+    template: `Bạn là chuyên gia xây dựng bảng giá dựa trên giá trị (value-based pricing) cho các dịch vụ tư vấn/huấn luyện tại Việt Nam.
+
+Thiết kế bảng giá 3 gói cho dịch vụ sau:
+
+═══════════════════════════════════════════
+THÔNG TIN DỊCH VỤ
+═══════════════════════════════════════════
+Mô tả: {{service_desc}}
+
+Kết quả mang lại: {{target_outcome}}
+
+Giá thị trường tham khảo: {{competitor_ranges}}
+Thời gian đầu tư/khách: {{delivery_time}}
+Khoảng giá mong muốn: {{preferred_range}}
+
+═══════════════════════════════════════════
+YÊU CẦU: THIẾT KẾ 3 GÓI GIÁ
+═══════════════════════════════════════════
+
+Gói 1 - KHỞI ĐẦU (khoảng 50% giá mong muốn):
+- Đủ giá trị để khách thử
+- Định vị: "trải nghiệm ban đầu"
+- Hạn chế rõ ràng
+
+Gói 2 - PHỔ BIẾN (100% giá mong muốn) ⭐ NỔI BẬT:
+- Tỷ lệ giá trị/giá tốt nhất
+- 80% tính năng
+- Gói bán tốt nhất
+- Định vị: "đủ cho hầu hết nhu cầu"
+
+Gói 3 - CAO CẤP (khoảng 2-3 lần giá mong muốn):
+- Dịch vụ VIP, phản hồi ưu tiên
+- Định vị: "làm cùng khách"
+- Làm gói phổ biến trông hợp lý
+
+═══════════════════════════════════════════
+MỖI GÓI CẦN CÓ
+═══════════════════════════════════════════
+- Tên gói (bằng tiếng Việt tự nhiên)
+- Giá (VNĐ, theo tháng + theo năm)
+- Phần trăm giảm nếu trả năm
+- 5-8 tính năng (dấu ✓)
+- Câu định vị (1 câu)
+- Phù hợp cho ai (hình dung khách)
+
+═══════════════════════════════════════════
+NGUYÊN TẮC BẮT BUỘC
+═══════════════════════════════════════════
+- Tính theo giá trị, KHÔNG tính theo giờ
+- Số tròn (không dùng .999)
+- Tiền VNĐ
+- Gói giữa phải là gói NỔI BẬT mặc định
+- Phân biệt rõ 3 gói (không lẫn lộn)
+- Có ghi chú "Cam kết hoàn tiền 14 ngày"
+
+Xuất ra: Bảng giá dạng Markdown + đoạn giới thiệu cho mỗi gói.`
+  },
+  {
+    id: 'AI-005', buoc: 4,
+    icon: '❓',
+    category: 'Nội dung',
+    title: 'Viết câu hỏi thường gặp cho website',
+    description: 'Tạo mục Q&A chuyên nghiệp cho website. Giải đáp lo lắng của khách trước khi họ hỏi.',
+    time: '5 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'business',
+        label: 'Bạn cung cấp dịch vụ gì?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Tư vấn tài chính cho chủ chuỗi nhà hàng vừa và nhỏ'
+      },
+      {
+        id: 'target_audience',
+        label: 'Đối tượng khách hàng chính?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi nhà hàng có 5-15 chi nhánh tại các thành phố lớn'
+      },
+      {
+        id: 'known_objections',
+        label: 'Khách hay lo lắng, băn khoăn gì trước khi thuê bạn?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. "Tôi chưa từng thuê tư vấn - có thực sự cần không?"\n2. "Anh biết ngành F&B của tôi không?"\n3. "Nếu tôi thuê mà không thấy hiệu quả thì sao?"\n4. "Mất bao lâu tôi mới thấy kết quả?"',
+        hint: 'Ghi ra những câu khách thường hỏi hoặc còn ngần ngại.'
+      },
+      {
+        id: 'unique_edge',
+        label: 'Điểm khác biệt của bạn so với các nơi khác?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tôi từng vận hành chuỗi 12 nhà hàng của mình trong 8 năm. Biết cả kế toán lẫn thực tế vận hành bếp. Không phải tư vấn thuần lý thuyết.'
+      }
+    ],
+    template: `Bạn là chuyên gia viết mục Câu Hỏi Thường Gặp (FAQ) cho website dịch vụ B2B tại Việt Nam.
+
+Tạo mục FAQ cho:
+
+Dịch vụ: {{business}}
+Đối tượng: {{target_audience}}
+
+Băn khoăn khách hay có:
+{{known_objections}}
+
+Điểm khác biệt: {{unique_edge}}
+
+═══════════════════════════════════════════
+YÊU CẦU
+═══════════════════════════════════════════
+
+Viết 8-10 câu hỏi FAQ chia thành 3 nhóm:
+
+Nhóm 1 - PHÙ HỢP KHÔNG (Ai nên dùng?):
+- "Dịch vụ này phù hợp cho ai?"
+- "Tôi có phù hợp không nếu [tình huống cụ thể]?"
+- "Có phù hợp cho doanh nghiệp mới khởi nghiệp không?"
+
+Nhóm 2 - BĂN KHOĂN (Khách lo lắng):
+- Giải đáp từng băn khoăn đã liệt kê
+- Trả lời có căn cứ, không né tránh
+- Có thể biến ngần ngại thành lợi thế
+
+Nhóm 3 - QUY TRÌNH (Sau khi thuê?):
+- "Sau khi đăng ký, chuyện gì xảy ra tiếp?"
+- "Bao lâu tôi mới thấy kết quả?"
+- "Nếu tôi không hài lòng thì sao?" (bảo hành)
+
+═══════════════════════════════════════════
+NGUYÊN TẮC VIẾT
+═══════════════════════════════════════════
+- Câu hỏi: ngắn (tối đa 12 từ), như khách tự hỏi
+- Trả lời: 2-4 câu, cụ thể, có bằng chứng
+- Giọng văn: chuyên nghiệp, tôn trọng
+- KHÔNG dùng lời quảng cáo cường điệu
+- KHÔNG né tránh câu khó
+- Con số cụ thể khi có thể
+
+Xuất ra: FAQ dạng Markdown với H3 câu hỏi + P câu trả lời.`
+  },
+  {
+    id: 'AI-006', buoc: 4,
+    icon: '🎤',
+    category: 'Tìm hiểu khách',
+    title: 'Viết câu hỏi phỏng vấn khách hàng',
+    description: '10 câu để phỏng vấn tìm hiểu ngách + kiểm chứng khó khăn của khách. Dùng cho Bước 4 Roadmap.',
+    time: '5 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'niche',
+        label: 'Ngách khách hàng bạn muốn tìm hiểu?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi nhà hàng có 5-15 chi nhánh tại Hà Nội và TP.HCM'
+      },
+      {
+        id: 'hypothesis',
+        label: 'Bạn nghĩ khó khăn chính của họ là gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tôi nghĩ họ đang không biết chi nhánh nào lãi/lỗ, không có báo cáo tài chính chi tiết, và ngần ngại quyết định đóng chi nhánh lỗ.',
+        hint: 'Đây chỉ là giả thuyết. Phỏng vấn sẽ kiểm chứng đúng hay sai.'
+      },
+      {
+        id: 'my_offer',
+        label: 'Bạn định thử cung cấp giải pháp gì?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Dịch vụ tư vấn 3 tháng giúp xây báo cáo tài chính chi tiết + quyết định mở/đóng chi nhánh'
+      }
+    ],
+    template: `Bạn là chuyên gia tìm hiểu thị trường (user researcher) cho các dịch vụ B2B tại Việt Nam.
+
+Soạn 10 câu hỏi phỏng vấn để tìm hiểu:
+
+Đối tượng: {{niche}}
+Giả thuyết ban đầu: {{hypothesis}}
+Giải pháp muốn thử: {{my_offer}}
+
+═══════════════════════════════════════════
+CẤU TRÚC PHỎNG VẤN 60 PHÚT
+═══════════════════════════════════════════
+
+Phần A - BỐI CẢNH (Câu 1-3, 10 phút):
+- Hiểu tình hình kinh doanh hiện tại
+- Tránh câu hỏi dẫn dắt
+
+Phần B - TÌM KHÓ KHĂN THẬT (Câu 4-6, 20 phút):
+- Đào sâu vào những việc thực sự khó
+- Hỏi "Kể tôi nghe lần gần nhất..."
+- Đo mức độ nghiêm trọng của khó khăn
+
+Phần C - KIỂM CHỨNG GIẢI PHÁP (Câu 7-8, 15 phút):
+- Trình bày giải pháp
+- Xem phản ứng thật, không dẫn dắt
+- Dấu hiệu sẵn sàng trả tiền
+
+Phần D - MẠNG LƯỚI (Câu 9-10, 15 phút):
+- "Còn ai khác cũng gặp vấn đề này?"
+- "Anh biết ai đã thử [giải pháp]?"
+- Câu hỏi giới thiệu
+
+═══════════════════════════════════════════
+NGUYÊN TẮC QUAN TRỌNG
+═══════════════════════════════════════════
+- KHÔNG hỏi "anh có mua không?"
+- KHÔNG mô tả ý tưởng rồi hỏi cảm nhận
+- HỎI về hành vi đã làm, KHÔNG hỏi tương lai
+- Tìm cam kết bằng tiền (đã chi tiền cho vấn đề này chưa?)
+- Theo dõi bằng "Kể tôi nghe cụ thể"
+
+═══════════════════════════════════════════
+XUẤT RA
+═══════════════════════════════════════════
+1. 10 câu hỏi (số thứ tự rõ)
+2. Mẫu ghi chú khi phỏng vấn
+3. Danh sách "dấu hiệu đỏ" cần chú ý
+4. Cách kết thúc buổi phỏng vấn`
+  },
+  {
+    id: 'AI-007', buoc: 4,
+    icon: '📖',
+    category: 'Nội dung',
+    title: 'Viết câu chuyện thực tế từ khách cũ',
+    description: 'Biến kinh nghiệm giúp khách cũ thành câu chuyện marketing. Tăng uy tín, thuyết phục khách mới.',
+    time: '8 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'client_context',
+        label: 'Khách hàng đó là ai? Trong ngành gì? Quy mô?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Anh Tuấn, 48 tuổi, chủ chuỗi 8 nhà hàng lẩu Trung Hoa tại TP.HCM. Doanh thu năm 2024 khoảng 25 tỷ.'
+      },
+      {
+        id: 'their_problem',
+        label: 'Trước khi làm việc với bạn, họ gặp khó khăn gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Doanh thu tổng tăng 30% nhưng lợi nhuận cuối năm chỉ 5%. Anh Tuấn không biết chi nhánh nào lỗ. Vừa mở thêm 3 chi nhánh mới thì phát hiện 4 chi nhánh cũ đang lỗ nặng.'
+      },
+      {
+        id: 'your_approach',
+        label: 'Bạn đã làm gì cho họ? (3-5 bước)',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Tháng 1: Xây báo cáo tài chính chi tiết từng chi nhánh\n2. Tháng 2: Phân tích lãi/lỗ, chi phí ẩn của từng nơi\n3. Tháng 3: Lập kế hoạch đóng 3 chi nhánh lỗ, tối ưu 5 chi nhánh còn lại'
+      },
+      {
+        id: 'outcomes',
+        label: 'Kết quả CỤ THỂ (con số + thời gian)?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Sau 6 tháng: đóng 3 chi nhánh lỗ, tiết kiệm 1.2 tỷ/năm. Lợi nhuận tăng từ 5% lên 22% (tăng 340%). Anh Tuấn có thể ngủ ngon và bắt đầu lên kế hoạch mở rộng bền vững.'
+      },
+      {
+        id: 'anonymize',
+        label: 'Có cần ẩn tên không?',
+        type: 'select',
+        options: ['Có (dùng anh A, chị B)', 'Không (dùng tên thật)'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết câu chuyện thực tế (case study) cho các dịch vụ tư vấn/huấn luyện B2B tại Việt Nam.
+
+Viết câu chuyện thực tế dựa trên thông tin sau:
+
+═══════════════════════════════════════════
+THÔNG TIN
+═══════════════════════════════════════════
+Bối cảnh khách hàng:
+{{client_context}}
+
+Khó khăn trước khi thuê bạn:
+{{their_problem}}
+
+Cách bạn giải quyết:
+{{your_approach}}
+
+Kết quả cụ thể:
+{{outcomes}}
+
+Yêu cầu ẩn danh: {{anonymize}}
+
+═══════════════════════════════════════════
+CẤU TRÚC CÂU CHUYỆN (600-800 từ)
+═══════════════════════════════════════════
+
+1. TIÊU ĐỀ (10-15 từ)
+   Định dạng: [Kết quả cụ thể] trong [thời gian]
+   VD: "Tăng lợi nhuận từ 5% lên 22% trong 6 tháng"
+
+2. GIỚI THIỆU KHÁCH (50 từ)
+   - Ngành + quy mô + vai trò
+   - 1 câu về "họ là ai"
+
+3. THỬ THÁCH (150 từ)
+   - Tình huống trước
+   - Nguyên nhân dẫn đến khó khăn
+   - Đã thử làm gì mà không thành công
+   - Nói bằng ngôn ngữ của khách
+
+4. GIẢI PHÁP (200 từ)
+   - Quy trình 3-5 bước bạn làm
+   - Không dùng từ chuyên môn khó hiểu
+   - Nhấn mạnh phương pháp riêng của bạn
+
+5. KẾT QUẢ (150 từ)
+   - Con số chính (3-4 số cụ thể)
+   - Thời gian đạt được
+   - Lợi ích ngoài dự kiến
+
+6. LỜI KHÁCH NÓI (50 từ)
+   - Ngôn ngữ tự nhiên khách sẽ dùng
+   - Nhấn vào sự thay đổi
+   - Không quá cường điệu
+
+7. BÀI HỌC RÚT RA (100 từ)
+   - 3 điều học được
+   - Áp dụng được cho khách tương tự
+
+═══════════════════════════════════════════
+NGUYÊN TẮC + GIỌNG VĂN
+═══════════════════════════════════════════
+- Show, don't tell (kể, không thuyết trình)
+- Có căn cứ số liệu
+- Đồng cảm với tình huống khách
+- KHÔNG dùng "kỳ diệu", "thay đổi cuộc đời"
+- Ghi rõ giới hạn thực tế
+- Ẩn danh theo yêu cầu
+
+Xuất ra: Câu chuyện thực tế dạng Markdown đầy đủ.`
+  },
+  {
+    id: 'AI-008', buoc: 4,
+    icon: '📮',
+    category: 'Nội dung',
+    title: 'Viết bản tin chuyên ngành hàng tuần',
+    description: 'Bản tin (newsletter) cho chuyên gia. Build khán giả 40-60 chuyên nghiệp qua chia sẻ đều đặn.',
+    time: '10 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'topic_niche',
+        label: 'Bản tin về chủ đề gì?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Tài chính vận hành cho chuỗi nhà hàng vừa và nhỏ'
+      },
+      {
+        id: 'weekly_focus',
+        label: 'Nội dung chính tuần này?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Phân tích tại sao 40% chuỗi nhà hàng thất bại sau 2 năm mở rộng. Chia sẻ 3 dấu hiệu cảnh báo mà chủ nên chú ý trước khi mở thêm chi nhánh.',
+        hint: 'Một điểm nhấn/câu chuyện chính tuần này.'
+      },
+      {
+        id: 'target_reader',
+        label: 'Ai đọc bản tin?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi nhà hàng có 3-20 chi nhánh, tuổi 40-55, kinh doanh ở các thành phố lớn'
+      },
+      {
+        id: 'call_action',
+        label: 'Cuối bản tin muốn gì?',
+        type: 'select',
+        options: ['Trả lời email để trao đổi', 'Nhắn tin riêng', 'Đặt lịch trò chuyện 30 phút', 'Chia sẻ với bạn bè trong ngành', 'Không cần lời kêu gọi'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết bản tin (newsletter) chuyên ngành cho đối tượng doanh nghiệp 40-60 tuổi tại Việt Nam.
+
+Viết bản tin tuần này cho:
+
+═══════════════════════════════════════════
+THÔNG TIN BẢN TIN
+═══════════════════════════════════════════
+Chủ đề chung: {{topic_niche}}
+Đối tượng đọc: {{target_reader}}
+
+Nội dung chính tuần này:
+{{weekly_focus}}
+
+Cuối bản tin: {{call_action}}
+
+═══════════════════════════════════════════
+CẤU TRÚC (800-1200 từ)
+═══════════════════════════════════════════
+
+TIÊU ĐỀ EMAIL: Gây tò mò + hứa lợi ích cụ thể (10-12 từ)
+DÒNG XEM TRƯỚC: 1 câu tạo tò mò (không tiết lộ)
+
+MỞ BÀI (100 từ):
+- Khoảnh khắc cá nhân thật
+- Câu chuyện thu hút
+- Giới thiệu ý chính
+
+NỘI DUNG CHÍNH (400-500 từ):
+- Đào sâu vào chủ đề
+- 1-2 ví dụ cụ thể
+- Con số + bối cảnh
+
+KHUNG PHƯƠNG PHÁP / BÀI HỌC (200-300 từ):
+- 3-5 điểm áp dụng được ngay
+- Mỗi điểm có ví dụ
+- Có thể làm ngay hôm nay
+
+Ý LỚN (100 từ):
+- Nhìn rộng ra
+- Ý nghĩa cho người đọc
+- Bài học lớn hơn
+
+Q&A HOẶC CỘNG ĐỒNG (100 từ):
+- Nêu 1-2 câu hỏi từ người đọc tuần trước
+- Trả lời cá nhân
+
+KẾT BÀI (50 từ):
+- {{call_action}}
+- Chữ ký
+
+═══════════════════════════════════════════
+NGUYÊN TẮC
+═══════════════════════════════════════════
+- Xưng "anh chị" (đối tượng 40-60)
+- Đoạn văn ngắn (2-3 câu)
+- Chữ in đậm cho ý quan trọng
+- 1-2 biểu tượng cảm xúc tối đa
+- Giọng văn cá nhân, không như công ty
+- Con số cụ thể + dữ liệu
+
+Xuất ra: Bản tin hoàn chỉnh dạng Markdown.`
+  },
+  {
+    id: 'AI-009', buoc: 4,
+    icon: '📋',
+    category: 'Vận hành',
+    title: 'Viết quy trình chào đón khách hàng mới',
+    description: 'Quy trình chuẩn (SOP) khi có khách mới. Hệ thống hoá để mở rộng, không phụ thuộc trí nhớ.',
+    time: '10 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'service_type',
+        label: 'Bạn cung cấp dịch vụ gì?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Tư vấn tài chính 1-1 gói 3 tháng cho chuỗi nhà hàng'
+      },
+      {
+        id: 'onboard_timeline',
+        label: 'Từ lúc ký hợp đồng đến buổi đầu tiên là bao lâu?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: 7-10 ngày'
+      },
+      {
+        id: 'key_touchpoints',
+        label: 'Các điểm tiếp xúc chính với khách trong giai đoạn chào đón?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- Email chào mừng ngay sau ký\n- Gửi tài liệu chuẩn bị (câu hỏi khảo sát)\n- Cuộc gọi kick-off 60 phút\n- Thu thập dữ liệu tài chính hiện tại\n- Buổi đầu tiên: Trình bày kế hoạch 3 tháng'
+      },
+      {
+        id: 'tools_used',
+        label: 'Công cụ bạn dùng?',
+        type: 'text',
+        required: false,
+        placeholder: 'VD: Google Docs, Zalo, Zoom, Excel'
+      }
+    ],
+    template: `Bạn là chuyên gia thiết kế quy trình vận hành cho dịch vụ 1-1.
+
+Tạo Quy Trình Chuẩn (SOP) chào đón khách hàng mới cho:
+
+═══════════════════════════════════════════
+THÔNG TIN
+═══════════════════════════════════════════
+Dịch vụ: {{service_type}}
+Thời gian chào đón: {{onboard_timeline}}
+Các điểm tiếp xúc: {{key_touchpoints}}
+Công cụ: {{tools_used}}
+
+═══════════════════════════════════════════
+CẤU TRÚC QUY TRÌNH
+═══════════════════════════════════════════
+
+ĐẦU TÀI LIỆU:
+- Phiên bản + Ngày cập nhật
+- Mục đích (1 dòng)
+- Ai thực hiện (vai trò)
+- Tiêu chí thành công (đo bằng gì)
+
+GIAI ĐOẠN 1 - CHUẨN BỊ (Ngày 0)
+Trong 24 giờ sau ký hợp đồng:
+- [ ] Việc cụ thể
+- [ ] Sản phẩm bàn giao
+- [ ] Thời hạn
+- [ ] Mẫu (đường dẫn/đính kèm)
+
+GIAI ĐOẠN 2 - THIẾT LẬP KỲ VỌNG (Ngày 1-3)
+- [ ] Nội dung cuộc gọi chào mừng
+- [ ] Tài liệu gửi khách
+- [ ] Cấp quyền truy cập
+- [ ] Thoả thuận cách liên lạc
+
+GIAI ĐOẠN 3 - THU THẬP DỮ LIỆU (Ngày 3-5)
+- [ ] Form khảo sát
+- [ ] Đánh giá hiện tại
+- [ ] Xem xét lịch sử
+
+GIAI ĐOẠN 4 - LẬP KẾ HOẠCH (Ngày 5-7)
+- [ ] Bản nháp lộ trình
+- [ ] Định nghĩa chỉ số thành công
+- [ ] Các cột mốc quan trọng
+
+GIAI ĐOẠN 5 - BUỔI ĐẦU TIÊN (Ngày 7)
+- [ ] Checklist chuẩn bị
+- [ ] Khung buổi trò chuyện
+- [ ] Email theo dõi sau
+- [ ] Bước tiếp theo
+
+═══════════════════════════════════════════
+MỖI VIỆC CẦN CÓ
+═══════════════════════════════════════════
+- Thời gian ước tính
+- Ai làm (bạn/khách/cả hai)
+- Công cụ dùng
+- Mẫu/ví dụ tham khảo
+- Sai lầm hay gặp
+- Dấu hiệu thành công
+
+CUỐI TÀI LIỆU:
+- Quy trình xử lý sự cố
+- Ngày rà soát tiếp theo
+
+Xuất ra: Quy trình chuẩn dạng Markdown với checkbox.`
+  },
+  {
+    id: 'AI-010', buoc: 4,
+    icon: '📊',
+    category: 'Sổ Hành Trình',
+    title: 'Đánh giá tuần theo lộ trình 90 ngày',
+    description: 'Mẫu đánh giá cuối tuần theo phương pháp 5-1-1 của Sol. Theo dõi tiến độ + điều chỉnh khi cần.',
+    time: '5 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'week_number',
+        label: 'Tuần thứ mấy trong 90 ngày?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Tuần 5'
+      },
+      {
+        id: 'goal_this_week',
+        label: 'Mục tiêu tuần này (đã đặt từ trước)?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Phỏng vấn 5 chủ chuỗi nhà hàng để kiểm chứng giả thuyết + hoàn thành trang giới thiệu dịch vụ'
+      },
+      {
+        id: 'actual_progress',
+        label: 'Thực tế đã làm được gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Phỏng vấn 3/5 người. Trang giới thiệu xong 70% (còn phần Câu hỏi thường gặp). Tuần này bận đón khách quốc tế, mất 2 ngày.'
+      },
+      {
+        id: 'blockers',
+        label: 'Có gì đang kẹt lại? (nếu có)',
+        type: 'textarea',
+        required: false,
+        placeholder: 'VD: 2 người phỏng vấn còn lại hẹn tuần sau. Chưa quyết định giọng văn phần FAQ nên viết mãi không xong.'
+      },
+      {
+        id: 'wins',
+        label: 'Điều tốt/nhận xét mới tuần này? (nếu có)',
+        type: 'textarea',
+        required: false,
+        placeholder: 'VD: 3 người phỏng vấn đều xác nhận vấn đề - giả thuyết đúng. 1 người muốn thuê ngay - có thể chốt hợp đồng đầu tiên tuần sau!'
+      }
+    ],
+    template: `Bạn là chuyên gia huấn luyện năng suất theo phương pháp 5-1-1 của Sol La Bàn.
+
+Viết đánh giá tuần cho:
+
+═══════════════════════════════════════════
+THÔNG TIN
+═══════════════════════════════════════════
+Tuần: {{week_number}}
+Mục tiêu ban đầu: {{goal_this_week}}
+Thực tế: {{actual_progress}}
+Đang kẹt: {{blockers}}
+Điều tốt: {{wins}}
+
+═══════════════════════════════════════════
+CẤU TRÚC ĐÁNH GIÁ
+═══════════════════════════════════════════
+
+1. TÓM TẮT (50 từ)
+   - 1 câu về tuần
+   - Đèn tín hiệu: 🟢 Đúng lộ trình / 🟡 Có vấn đề / 🔴 Chệch hướng
+
+2. THEO DÕI 4 TRỤ (100 từ)
+   Chấm điểm 0-10:
+   - Tài chính (tiến độ đến mục tiêu doanh thu)
+   - Năng lực (kỹ năng học được)
+   - Quan hệ (mạng lưới mở rộng)
+   - Năng lượng (thể chất + tinh thần)
+
+3. ĐIỀU LÀM TỐT (100 từ)
+   3 điều tuần này làm được:
+   - Hành động cụ thể
+   - Kết quả đạt được
+   - Vì sao work (rút ra pattern)
+
+4. ĐIỀU CHƯA LÀM (100 từ)
+   3 điều chưa làm được:
+   - Việc bị kẹt
+   - Nguyên nhân
+   - Bài học rút ra
+
+5. NHẬN XÉT MỚI (100 từ)
+   1-2 nhận xét lớn:
+   - Về công việc kinh doanh
+   - Về quy trình làm việc
+   - Về bản thân
+
+6. KẾ HOẠCH TUẦN TỚI (150 từ)
+   - Top 3 ưu tiên
+   - Không thoả hiệp (phải làm)
+   - Có thời gian thì làm
+   - Chia thời gian cho từng ưu tiên
+
+7. NHÌN LẠI QUÝ (nếu cuối tháng)
+   - Còn đúng lộ trình 90 ngày không?
+   - Cần chuyển hướng không?
+   - Nên tăng gấp đôi vào đâu?
+
+═══════════════════════════════════════════
+XUẤT RA
+═══════════════════════════════════════════
+Định dạng Markdown có cấu trúc, sẵn sàng lưu vào Sổ Hành Trình.
+Bao gồm bảng chỉ số 4 trục.
+Kết thúc với việc cần làm sáng thứ Hai.`
+  }
+// ═══ BƯỚC 1 · THẤU HIỂU BẢN THÂN (5 mẫu) ═══
+  ,{
+    id: 'AI-011', buoc: 1,
+    icon: '🔍',
+    category: 'Thấu hiểu',
+    title: 'Đánh giá 5 năng lực cốt lõi của bạn',
+    description: 'AI giúp bạn nhìn lại 20 năm sự nghiệp và chấm điểm 5 năng lực cốt lõi. Kết quả: bảng năng lực + minh chứng + đề xuất phát triển.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'vai_tro',
+        label: 'Vai trò gần nhất của bạn là gì?',
+        type: 'select',
+        options: ['Giám đốc tài chính (CFO)', 'Giám đốc điều hành (CEO)', 'Giám đốc vận hành (COO)', 'Trưởng phòng / Quản lý cấp trung', 'Chuyên gia độc lập', 'Chủ doanh nghiệp', 'Cựu quản lý cấp cao', 'Khác'],
+        required: true
+      },
+      {
+        id: 'so_nam',
+        label: 'Số năm kinh nghiệm trong ngành?',
+        type: 'select',
+        options: ['Dưới 10 năm', '10-15 năm', '15-20 năm', '20-25 năm', 'Trên 25 năm'],
+        required: true
+      },
+      {
+        id: 'viec_gioi',
+        label: '3 việc bạn thấy mình làm giỏi nhất — hãy kể cụ thể',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Vực dậy 3 chi nhánh lỗ trong 6 tháng — tăng doanh thu 40%, cắt chi phí 25%\n2. Phân tích P&L nhanh — nhìn báo cáo 15 phút là thấy vấn đề chính\n3. Coach team 30 người từ mới đến độc lập trong 12 tháng',
+        hint: 'Càng cụ thể càng tốt — có số liệu, thời gian, ngữ cảnh.'
+      },
+      {
+        id: 'viec_ngai',
+        label: '3 việc bạn không thích làm dù có thể làm được',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Bán hàng — thấy ngại khi phải "chào bán" bản thân\n2. Làm content trên mạng xã hội — không quen thể hiện\n3. Đàm phán giá — hay để khách trả giá'
+      },
+      {
+        id: 'linh_vuc',
+        label: 'Lĩnh vực chuyên môn chính của bạn?',
+        type: 'select',
+        options: ['Tài chính / Kế toán', 'Vận hành / Sản xuất', 'Bán hàng / Kinh doanh', 'Marketing / Truyền thông', 'Nhân sự / Đào tạo', 'Công nghệ / IT', 'Sản phẩm / Dịch vụ', 'Chiến lược / Tư vấn', 'Khác'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia coach nghề nghiệp cho người Việt độ tuổi 40-60 đang chuyển hướng sự nghiệp. Tôi cần bạn giúp tôi đánh giá 5 năng lực cốt lõi của bản thân dựa trên trải nghiệm thực tế.
+
+BỐI CẢNH VỀ TÔI:
+- Vai trò gần nhất: {{vai_tro}}
+- Kinh nghiệm: {{so_nam}}
+- Lĩnh vực chuyên môn: {{linh_vuc}}
+
+3 VIỆC TÔI LÀM GIỎI NHẤT:
+{{viec_gioi}}
+
+3 VIỆC TÔI KHÔNG THÍCH LÀM DÙ LÀM ĐƯỢC:
+{{viec_ngai}}
+
+YÊU CẦU:
+1. Từ dữ liệu trên, hãy phân tích và xác định 5 NĂNG LỰC CỐT LÕI của tôi. Chấm điểm mỗi năng lực 1-10.
+
+2. Với mỗi năng lực:
+   - Định nghĩa ngắn gọn (1 câu)
+   - 2-3 MINH CHỨNG cụ thể từ dữ liệu tôi cung cấp
+   - Cách tôi có thể VẬN DỤNG năng lực này khi pivot sự nghiệp
+   - 1 GỢI Ý PHÁT TRIỂN cụ thể trong 90 ngày tới
+
+3. Kết thúc bằng NHẬN XÉT TỔNG THỂ:
+   - Combo năng lực nào của tôi là DUY NHẤT (không phải ai cũng có)?
+   - Có "câu chuyện xuyên suốt" nào từ 3 việc tôi làm giỏi không?
+   - 3 hướng nghề nghiệp phù hợp nhất dựa trên combo năng lực này
+
+XUẤT RA:
+Định dạng Markdown có heading rõ ràng. Ngôn ngữ tiếng Việt tự nhiên, không dịch máy. Giọng chuyên nghiệp nhưng thân thiện. Đừng dùng thuật ngữ Anh trừ khi không có từ Việt tương đương.`
+  },
+  {
+    id: 'AI-012', buoc: 1,
+    icon: '💎',
+    category: 'Thấu hiểu',
+    title: 'Tìm 3 giá trị cốt lõi định hướng nghề nghiệp',
+    description: 'AI phân tích các quyết định nghề nghiệp lớn của bạn để tìm ra 3 giá trị cốt lõi — kim chỉ nam để chọn hướng đi mới.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'vai_tro',
+        label: 'Vai trò gần nhất của bạn?',
+        type: 'select',
+        options: ['Giám đốc tài chính (CFO)', 'Giám đốc điều hành (CEO)', 'Giám đốc vận hành (COO)', 'Trưởng phòng / Quản lý cấp trung', 'Chuyên gia độc lập', 'Chủ doanh nghiệp', 'Cựu quản lý cấp cao', 'Khác'],
+        required: true
+      },
+      {
+        id: 'quyet_dinh',
+        label: '3 quyết định nghề nghiệp quan trọng bạn đã đưa ra — vì sao chọn thế?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Năm 2010: Từ chối chức GĐ tài chính công ty lớn để về làm CFO chuỗi F&B nhỏ hơn — vì tôi thích thấy tác động rõ hơn\n2. Năm 2018: Chọn ở lại F&B dù chứng khoán bùng nổ — vì tôi tin ngành thực phẩm bền vững hơn\n3. Năm 2024: Xin nghỉ khi tập đoàn tái cấu trúc thay vì lên tổng — vì tôi muốn tự chủ, không muốn cày đêm nữa'
+      },
+      {
+        id: 'tu_choi',
+        label: '3 lần bạn từ chối cơ hội hấp dẫn — vì sao từ chối?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Từ chối lên GĐ tổng tập đoàn vì phải chuyển gia đình ra nước ngoài\n2. Từ chối cổ phần startup vì thấy CEO không trung thực\n3. Từ chối làm CFO công ty tài chính cho vay vì thấy sản phẩm hại người dùng'
+      },
+      {
+        id: 'sep_nguong_mo',
+        label: 'Người sếp/đồng nghiệp bạn ngưỡng mộ nhất — vì lý do gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Anh Minh — cựu GĐ tôi 5 năm đầu. Anh luôn giải thích lý do trước khi ra lệnh. Sẵn sàng nhận sai công khai. Đưa tiền thưởng cho team khi công ty lời to. Đó là kiểu lãnh đạo tôi muốn học.'
+      },
+      {
+        id: 'giu_gi',
+        label: 'Nếu chỉ được giữ 5 điều trong nghề, bạn giữ gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Sự trung thực với khách/đối tác\n2. Được làm việc với con số và phân tích sâu\n3. Quyền tự quyết lịch làm việc của mình\n4. Cảm giác giúp người khác hiểu và ra quyết định tốt hơn\n5. Ngưỡng thu nhập đủ cho gia đình + tiết kiệm hưu'
+      }
+    ],
+    template: `Bạn là chuyên gia coach về giá trị cốt lõi cho người Việt độ tuổi 40-60. Nhiệm vụ: phân tích các quyết định nghề nghiệp lớn của tôi để tìm ra 3 GIÁ TRỊ CỐT LÕI — kim chỉ nam cho việc chọn hướng đi mới.
+
+BỐI CẢNH:
+- Vai trò gần nhất: {{vai_tro}}
+
+3 QUYẾT ĐỊNH LỚN:
+{{quyet_dinh}}
+
+3 CƠ HỘI TÔI ĐÃ TỪ CHỐI:
+{{tu_choi}}
+
+NGƯỜI TÔI NGƯỠNG MỘ:
+{{sep_nguong_mo}}
+
+5 ĐIỀU TÔI MUỐN GIỮ:
+{{giu_gi}}
+
+YÊU CẦU:
+
+1. Từ dữ liệu, hãy PHÁT HIỆN 3 GIÁ TRỊ CỐT LÕI thực sự đang chi phối tôi (không phải giá trị tôi tự nói, mà giá trị thể hiện qua HÀNH ĐỘNG).
+
+2. Với mỗi giá trị:
+   - Tên gọi ngắn (1-2 từ, VD: "Trung thực", "Tự chủ", "Tác động")
+   - Định nghĩa cụ thể (giá trị này với TÔI nghĩa là gì)
+   - 2-3 MINH CHỨNG từ dữ liệu tôi cung cấp
+   - Nếu tôi PHẢN BỘI giá trị này thì hậu quả gì (giúp tôi nhận ra dấu hiệu sớm)
+
+3. ÁP DỤNG VÀO CHỌN HƯỚNG ĐI MỚI:
+   - 3 loại công việc/hướng đi PHÙ HỢP với combo 3 giá trị này
+   - 3 loại công việc/hướng đi TUYỆT ĐỐI TRÁNH (dù có kiếm được nhiều tiền)
+   - Câu hỏi tự kiểm tra khi cân nhắc cơ hội mới
+
+4. LỜI KHUYÊN CUỐI:
+   - Điều nghịch lý gì trong 3 giá trị này? (VD: vừa muốn tự chủ vừa muốn tác động cộng đồng — cân bằng thế nào?)
+   - 1 bài tập 15 phút để tôi khắc sâu 3 giá trị này
+
+XUẤT RA:
+Định dạng Markdown. Tiếng Việt tự nhiên, giọng chuyên nghiệp nhưng ấm áp. Không dùng thuật ngữ tâm lý học hàn lâm — dùng ngôn ngữ đời thường.`
+  },
+  {
+    id: 'AI-013', buoc: 1,
+    icon: '🏆',
+    category: 'Thấu hiểu',
+    title: 'Phân tích 3 khoảnh khắc đỉnh cao sự nghiệp',
+    description: 'AI phân tích 3 thời điểm bạn tự hào nhất để tìm ra "công thức thành công" của bản thân — pattern mà bạn có thể lặp lại.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'khoanh_khac_1',
+        label: 'Khoảnh khắc 1: Bạn đã làm gì? Kết quả ra sao?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Năm 2015, tôi được giao vực dậy 3 chi nhánh lỗ nặng của tập đoàn F&B. Trong 6 tháng, tôi phân tích P&L từng chi nhánh, tái cấu trúc menu, đào tạo lại team, đàm phán lại với nhà cung cấp. Kết quả: 3 chi nhánh chuyển từ lỗ 800tr/tháng sang lời 300tr/tháng.'
+      },
+      {
+        id: 'khoanh_khac_2',
+        label: 'Khoảnh khắc 2: Bạn đã làm gì? Kết quả ra sao?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Năm 2018, dẫn team 30 người triển khai hệ thống ERP mới trong 4 tháng. Trước đó 2 lần đã thất bại. Tôi thay đổi cách: chia nhỏ giai đoạn, để nhân viên tự chọn tính năng ưu tiên, họp 15 phút mỗi sáng. Đi live thành công đúng hạn.'
+      },
+      {
+        id: 'khoanh_khac_3',
+        label: 'Khoảnh khắc 3: Bạn đã làm gì? Kết quả ra sao?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Năm 2022, cứu deal M&A trị giá 100 tỷ khi bên mua đòi hạ giá 30% ở phút chót. Tôi ngồi lại phân tích lo lắng thật của họ, đưa ra 3 phương án linh hoạt (earn-out, seller financing, escrow). Đóng deal ở mức chỉ giảm 8%.'
+      },
+      {
+        id: 'mau_so_chung',
+        label: 'Bạn thấy có điểm chung gì giữa 3 khoảnh khắc?',
+        type: 'select',
+        options: ['Đều liên quan đến giải quyết vấn đề khó', 'Đều có yếu tố dẫn dắt con người', 'Đều liên quan đến phân tích số liệu', 'Đều là tình huống khủng hoảng cần bình tĩnh', 'Đều là sáng tạo giải pháp mới', 'Chưa rõ — nhờ AI tìm giúp'],
+        required: true
+      },
+      {
+        id: 'cam_giac',
+        label: 'Cảm giác của bạn khi ở đỉnh cao đó thế nào?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tập trung cao độ, quên cả thời gian. Không cần ai thúc giục. Ngủ ít mà tỉnh táo. Ý tưởng đến liên tục. Muốn tiếp tục làm mãi.'
+      }
+    ],
+    template: `Bạn là chuyên gia coach về "peak performance" — giúp người 40-60 khám phá "công thức thành công" cá nhân từ những khoảnh khắc đỉnh cao trong quá khứ.
+
+3 KHOẢNH KHẮC ĐỈNH CAO CỦA TÔI:
+
+KHOẢNH KHẮC 1:
+{{khoanh_khac_1}}
+
+KHOẢNH KHẮC 2:
+{{khoanh_khac_2}}
+
+KHOẢNH KHẮC 3:
+{{khoanh_khac_3}}
+
+ĐIỂM CHUNG TÔI NHẬN THẤY: {{mau_so_chung}}
+CẢM GIÁC LÚC ĐÓ: {{cam_giac}}
+
+YÊU CẦU PHÂN TÍCH:
+
+1. NHẬN DIỆN PATTERN (mẫu số chung):
+   - Loại vấn đề tôi giỏi giải quyết (kỹ thuật/con người/chiến lược/sáng tạo?)
+   - Điều kiện KÍCH HOẠT năng lực đỉnh cao của tôi (áp lực? tự chủ? có team? một mình?)
+   - Nguồn năng lượng chính (được thử thách? được tin tưởng? có ý nghĩa?)
+
+2. RÚT RA "CÔNG THỨC THÀNH CÔNG" CÁ NHÂN:
+   - 3-5 yếu tố cần có để tôi thể hiện tốt nhất
+   - 3 yếu tố NÊN TRÁNH vì chúng làm giảm hiệu suất tôi
+
+3. ÁP DỤNG VÀO CHỌN HƯỚNG ĐI MỚI:
+   - 3 loại công việc/dự án tương lai sẽ CÓ những yếu tố kích hoạt này
+   - 3 loại dự án THIẾU yếu tố kích hoạt (dù có tiền nhưng tôi sẽ chán)
+   - Câu hỏi phỏng vấn để tôi dùng khi đánh giá cơ hội mới
+
+4. THIẾT KẾ NGÀY LÀM VIỆC LÝ TƯỞNG:
+   - Sáng: nên làm việc gì?
+   - Chiều: nên làm việc gì?
+   - Cuối tuần: hoạt động nào giúp "sạc pin"?
+
+XUẤT RA:
+Định dạng Markdown. Tiếng Việt tự nhiên. Giọng cảm hứng nhưng thực tế — giúp tôi hiểu bản thân, không nịnh nọt.`
+  },
+  {
+    id: 'AI-014', buoc: 1,
+    icon: '⚠️',
+    category: 'Thấu hiểu',
+    title: 'Phân tích 3 điểm yếu + cách bù đắp thông minh',
+    description: 'Thay vì cố sửa điểm yếu, AI giúp bạn tìm cách BÙ ĐẮP — tận dụng nguồn lực có sẵn để yếu vẫn thành công.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'ne_tranh',
+        label: '3 việc bạn né tránh dù biết nên làm — vì sao né?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Đăng bài LinkedIn — thấy ngại thể hiện, sợ bị đánh giá\n2. Gọi điện cho khách hàng cũ chào dịch vụ mới — sợ bị từ chối\n3. Học công cụ digital marketing — thấy phức tạp, không biết bắt đầu từ đâu'
+      },
+      {
+        id: 'feedback_xau',
+        label: 'Feedback tiêu cực nhất bạn từng nhận — cụ thể là gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Sếp cũ nói "Anh giỏi phân tích nhưng thiếu quyết đoán khi cần đóng deal." Nhân viên nói "Anh giao việc không rõ deadline nên team hay bị deadline chồng chéo."'
+      },
+      {
+        id: 'nguon_luc',
+        label: 'Nguồn lực bạn có thể tận dụng để bù đắp điểm yếu?',
+        type: 'select',
+        options: ['Mạng đồng nghiệp cũ 20 năm', 'Đối tác kinh doanh cũ', 'Con cái Gen Z hiểu digital', 'Vợ/chồng làm nghề bổ sung', 'Bạn bè có kỹ năng khác', 'Tiền tiết kiệm để thuê chuyên gia', 'Thời gian rảnh nhiều để học', 'Cộng đồng chuyên ngành hiện có'],
+        required: true
+      },
+      {
+        id: 'da_thu',
+        label: 'Bạn đã thử cách nào để khắc phục điểm yếu chưa? Kết quả?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Đã thử đọc sách "How to Sell" nhưng không áp dụng được. Đã thuê coach 6 tháng nhưng không hiệu quả — vì không có case thực tế để luyện.'
+      }
+    ],
+    template: `Bạn là chuyên gia strategy về "leverage weakness" — giúp người 40-60 KHÔNG PHẢI cố sửa điểm yếu (tốn thời gian, ít hiệu quả) mà tìm cách BÙ ĐẮP thông minh.
+
+VỀ TÔI:
+
+3 VIỆC TÔI NÉ TRÁNH:
+{{ne_tranh}}
+
+FEEDBACK TIÊU CỰC NHẤT:
+{{feedback_xau}}
+
+NGUỒN LỰC TÔI CÓ THỂ TẬN DỤNG: {{nguon_luc}}
+
+TÔI ĐÃ THỬ:
+{{da_thu}}
+
+YÊU CẦU PHÂN TÍCH:
+
+1. PHÂN LOẠI ĐIỂM YẾU:
+   Chia 3 điểm yếu thành 3 nhóm:
+   - Nhóm "PHẢI SỬA" — không sửa thì không thể tiến (VD: giao tiếp với khách)
+   - Nhóm "NÊN BÙ ĐẮP" — thuê/ghép cặp với người khác giỏi hơn
+   - Nhóm "BỎ QUA" — không quan trọng cho hướng đi mới
+
+2. VỚI NHÓM "PHẢI SỬA":
+   - 1 kỹ năng tối thiểu cần đạt (mức 6/10 là đủ, không cần 9/10)
+   - Cách học ngắn nhất (dưới 30 ngày)
+   - Cách đo lường tiến bộ hàng tuần
+
+3. VỚI NHÓM "NÊN BÙ ĐẮP":
+   Dựa trên nguồn lực tôi có ({{nguon_luc}}), gợi ý 3 cách bù đắp cụ thể:
+   - Thuê ai? Chi phí bao nhiêu?
+   - Ghép cặp với ai trong mạng của tôi?
+   - Dùng công cụ/AI nào để tự động hoá?
+
+4. VỚI NHÓM "BỎ QUA":
+   - Vì sao có thể bỏ qua?
+   - Cấu trúc hướng đi mới thế nào để tránh phải làm những việc này?
+
+5. CHIẾN LƯỢC 90 NGÀY:
+   - 30 ngày đầu: tập trung "PHẢI SỬA" gì?
+   - 30-60 ngày: setup "BÙ ĐẮP" thế nào?
+   - 60-90 ngày: kiểm tra kết quả — dấu hiệu tốt/xấu?
+
+XUẤT RA:
+Định dạng Markdown. Ngôn ngữ tự nhiên, thực tế. Không nói kiểu "hãy tự tin lên" mà phải có action items cụ thể.`
+  },
+  {
+    id: 'AI-015', buoc: 1,
+    icon: '📖',
+    category: 'Thấu hiểu',
+    title: 'Viết bản tóm tắt hành trình sự nghiệp cá nhân',
+    description: 'AI viết bản tóm tắt sự nghiệp 500-700 từ dùng cho website, LinkedIn, hoặc giới thiệu bản thân khi tiếp cận khách hàng mới.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'nganh',
+        label: 'Ngành bạn đã làm 20 năm qua?',
+        type: 'select',
+        options: ['F&B (Nhà hàng, cà phê, chuỗi)', 'Giáo dục / Đào tạo', 'Tài chính / Ngân hàng', 'Bán lẻ / Thương mại', 'Bất động sản', 'Y tế / Chăm sóc sức khoẻ', 'Công nghệ / IT', 'Marketing / Truyền thông', 'Xây dựng / Kiến trúc', 'Sản xuất', 'Dịch vụ chuyên nghiệp', 'Du lịch / Khách sạn', 'Logistics / Vận tải', 'Nông nghiệp', 'Khác'],
+        required: true
+      },
+      {
+        id: 'cot_moc',
+        label: '3-5 cột mốc quan trọng nhất trong sự nghiệp bạn',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n2004: Tốt nghiệp ĐH Kinh tế, vào Big 4 làm audit\n2010: Chuyển sang chuỗi F&B nhỏ làm Trưởng phòng tài chính, quy mô 5 nhà hàng\n2015: Lên GĐ tài chính, chuỗi phát triển thành 30 nhà hàng, doanh thu 300 tỷ\n2020: Dẫn team turn around 3 chi nhánh lỗ, tiết kiệm 20 tỷ/năm\n2024: Xin nghỉ khi tập đoàn tái cấu trúc, chuẩn bị pivot tư vấn'
+      },
+      {
+        id: 'bai_hoc',
+        label: 'Bài học lớn nhất bạn rút ra từ 20 năm sự nghiệp?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Trong F&B, tài chính không chỉ là kế toán — nó là câu chuyện về mô hình kinh doanh, con người, và thời gian phản ứng. Chủ chuỗi thành công là người biết đọc số liệu như đọc câu chuyện, không chỉ đọc con số.'
+      },
+      {
+        id: 'huong_moi',
+        label: 'Bạn đang muốn chuyển hướng đến đâu?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tôi muốn làm CFO thời vụ (fractional CFO) cho các chuỗi F&B nhỏ 5-15 chi nhánh. Chia thời gian cho 3-5 khách/năm. Giúp họ dựng hệ thống báo cáo tài chính chuẩn + coach chủ chuỗi ra quyết định.'
+      },
+      {
+        id: 'dung_cho',
+        label: 'Bản tóm tắt này dùng cho mục đích gì?',
+        type: 'select',
+        options: ['Trang giới thiệu website cá nhân', 'Phần "Giới thiệu" trên LinkedIn', 'Bio để đăng bài trên các nền tảng', 'Đơn xin việc vị trí mới', 'Slide giới thiệu khi tiếp cận khách hàng', 'Bio cho podcast/video phỏng vấn'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết profile chuyên nghiệp cho người Việt độ tuổi 40-60. Nhiệm vụ: viết bản TÓM TẮT HÀNH TRÌNH SỰ NGHIỆP dùng cho {{dung_cho}}.
+
+VỀ TÔI:
+- Ngành: {{nganh}}
+- Hướng đi mới: {{huong_moi}}
+
+3-5 CỘT MỐC:
+{{cot_moc}}
+
+BÀI HỌC LỚN NHẤT:
+{{bai_hoc}}
+
+YÊU CẦU:
+
+1. VIẾT BẢN TÓM TẮT 500-700 TỪ có cấu trúc 3 phần:
+
+PHẦN 1 · MỞ ĐẦU (100 từ):
+- Câu 1: Một câu định vị mạnh (tôi là ai, làm gì cho ai)
+- 2-3 câu: Kể ngắn về quá khứ để tạo credibility
+
+PHẦN 2 · HÀNH TRÌNH (300-400 từ):
+- Kể chuyện các cột mốc theo dòng thời gian
+- KHÔNG chỉ liệt kê chức vụ — kể VÌ SAO tôi chọn mỗi bước, tôi HỌC được gì
+- Nhấn mạnh 1-2 khoảnh khắc thay đổi tư duy
+- Kết bằng bài học lớn nhất tôi rút ra
+
+PHẦN 3 · HIỆN TẠI VÀ TƯƠNG LAI (100-150 từ):
+- Vì sao tôi chọn hướng đi mới bây giờ
+- Tôi muốn giúp ai, giải quyết vấn đề gì
+- Lời mời hành động phù hợp mục đích {{dung_cho}}
+
+2. GIỌNG VĂN:
+- Tiếng Việt tự nhiên, không phải dịch máy
+- Chuyên nghiệp nhưng ấm áp — không kiêu ngạo
+- Ngôi thứ nhất "tôi", không phải "chúng tôi"
+- Câu ngắn xen câu dài, tạo nhịp điệu
+- Tránh sáo mòn ("passionate", "innovative", "game-changer")
+
+3. LƯU Ý:
+- Không dùng số liệu quá cụ thể có thể lộ danh tính cty cũ
+- Nhấn giá trị và bài học, không chỉ chức vụ
+- Không nói xấu công ty/sếp cũ
+- Kết thúc bằng câu MỜI GỌI phù hợp: gọi tư vấn, kết nối LinkedIn, đọc thêm...
+
+XUẤT RA:
+Bản tóm tắt hoàn chỉnh sẵn để copy-paste. Kèm 2-3 phiên bản tiêu đề (headline) để tôi chọn.`
+  }// ═══ BƯỚC 2 · KHAI PHÁ (5 mẫu) ═══
+  ,{
+    id: 'AI-016', buoc: 2,
+    icon: '🔭',
+    category: 'Khai phá',
+    title: 'Khám phá 10 mô hình kinh doanh phù hợp bạn',
+    description: 'AI phân tích năng lực + nguồn lực của bạn và đề xuất 10 mô hình kinh doanh phù hợp nhất — có bảng so sánh + ví dụ thực.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'nang_luc',
+        label: 'Năng lực/chuyên môn chính của bạn?',
+        type: 'select',
+        options: ['Tài chính / Kế toán', 'Vận hành / Sản xuất', 'Bán hàng / Kinh doanh', 'Marketing / Truyền thông', 'Nhân sự / Đào tạo', 'Công nghệ / IT', 'Chiến lược / Tư vấn', 'Sáng tạo / Thiết kế', 'Kỹ thuật chuyên ngành', 'Khác'],
+        required: true
+      },
+      {
+        id: 'nganh',
+        label: 'Ngành bạn hiểu sâu?',
+        type: 'select',
+        options: ['F&B (Nhà hàng, cà phê)', 'Giáo dục / Đào tạo', 'Tài chính / Ngân hàng', 'Bán lẻ / Thương mại', 'Bất động sản', 'Y tế / Sức khoẻ', 'Công nghệ / IT', 'Marketing', 'Xây dựng', 'Sản xuất', 'Dịch vụ chuyên nghiệp', 'Du lịch / Khách sạn', 'Logistics', 'Nông nghiệp', 'Khác'],
+        required: true
+      },
+      {
+        id: 'von',
+        label: 'Số vốn khởi động sẵn có?',
+        type: 'select',
+        options: ['Dưới 100 triệu', '100-500 triệu', '500 triệu - 2 tỷ', '2-5 tỷ', 'Trên 5 tỷ'],
+        required: true
+      },
+      {
+        id: 'thu_nhap',
+        label: 'Mức thu nhập mục tiêu / tháng (sau 12 tháng)?',
+        type: 'select',
+        options: ['20-50 triệu', '50-100 triệu', '100-200 triệu', '200-500 triệu', 'Trên 500 triệu'],
+        required: true
+      },
+      {
+        id: 'phong_cach',
+        label: 'Bạn muốn làm việc theo phong cách nào? (chọn 1)',
+        type: 'select',
+        options: ['Làm 1 mình (solopreneur)', 'Có team nhỏ 3-5 người', 'Có công ty 10-30 người', 'Digital first (online chủ đạo)', 'Offline first (gặp mặt chủ đạo)', 'Kết hợp online + offline'],
+        required: true
+      },
+      {
+        id: 'khong_muon',
+        label: 'Điều bạn KHÔNG muốn trong hướng đi mới?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- Không muốn cày đêm như trước\n- Không muốn quản lý người\n- Không muốn tồn kho hàng hoá\n- Không muốn phụ thuộc 1-2 khách lớn'
+      }
+    ],
+    template: `Bạn là chuyên gia tư vấn chiến lược kinh doanh, chuyên giúp người Việt độ tuổi 40-60 tìm mô hình phù hợp khi pivot sự nghiệp.
+
+VỀ TÔI:
+- Năng lực chính: {{nang_luc}}
+- Ngành am hiểu: {{nganh}}
+- Vốn: {{von}}
+- Mục tiêu thu nhập/tháng: {{thu_nhap}}
+- Phong cách: {{phong_cach}}
+
+TÔI KHÔNG MUỐN:
+{{khong_muon}}
+
+YÊU CẦU:
+
+1. ĐỀ XUẤT 10 MÔ HÌNH KINH DOANH phù hợp nhất với tôi. Sắp xếp theo độ phù hợp (1 = phù hợp nhất).
+
+2. VỚI MỖI MÔ HÌNH, cung cấp:
+   - Tên mô hình + mô tả 1-2 câu
+   - Độ phù hợp với tôi: 1-10 điểm + lý do
+   - Thu nhập tiềm năng: mức khởi đầu → mức đỉnh (sau 3-5 năm)
+   - Vốn khởi động cần thiết
+   - Thời gian ramp-up (bao lâu có khách đầu tiên)
+   - Rủi ro chính (2-3 điểm)
+   - Ví dụ thực tế 1 người Việt hoặc quốc tế đang làm mô hình này thành công
+
+3. BẢNG SO SÁNH TỔNG:
+   Định dạng bảng Markdown 10 dòng × 5 cột:
+   Mô hình | Điểm phù hợp | Thu nhập/tháng | Vốn cần | Thời gian ramp-up
+
+4. TOP 3 ĐỀ XUẤT:
+   - Chọn 3 mô hình phù hợp nhất
+   - Vì sao chính là 3 mô hình này (không phải 7 mô hình còn lại)?
+   - Câu hỏi tôi cần trả lời trước khi chọn 1 trong 3
+
+5. LƯU Ý ĐẶC BIỆT:
+   Cảnh báo 2-3 "cái bẫy" phổ biến của người 40-60 khi chọn mô hình.
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng. Tiếng Việt tự nhiên. Ví dụ cụ thể, không chung chung.`
+  },
+  {
+    id: 'AI-017', buoc: 2,
+    icon: '👥',
+    category: 'Khai phá',
+    title: 'Nghiên cứu 5 chuyên gia thành công cùng ngách',
+    description: 'AI phân tích 5 chuyên gia đã thành công trong ngách bạn quan tâm — tìm bài học có thể áp dụng cho bản thân.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'ngach',
+        label: 'Ngách hẹp bạn quan tâm là gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tư vấn tài chính cho chuỗi F&B nhỏ 5-15 chi nhánh tại Việt Nam. Tập trung vào báo cáo P&L từng chi nhánh, tối ưu chi phí nhân sự, cash flow management.'
+      },
+      {
+        id: 'ngon_ngu',
+        label: 'Bạn tham khảo được nguồn tiếng nào?',
+        type: 'select',
+        options: ['Chỉ tiếng Việt', 'Tiếng Việt + Anh cơ bản', 'Tiếng Việt + Anh thành thạo', 'Cả tiếng Việt + Anh + Trung/khác'],
+        required: true
+      },
+      {
+        id: 'da_biet',
+        label: '2-3 người bạn đã biết trong ngách hoặc muốn tìm hiểu?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Anh Nguyễn Thanh Sơn - CFO cũ chuỗi Highlands Coffee, giờ tư vấn độc lập cho các chuỗi cà phê\n2. Justin Welsh (US) - cựu CRO tech, giờ solopreneur newsletter về solo consulting\n3. Chị Bùi Thu Hằng - cựu GĐ tài chính KFC VN, giờ CFO fractional cho startup F&B'
+      },
+      {
+        id: 'muon_hoc',
+        label: 'Bạn muốn học điều gì ở họ nhất? (chọn nhiều)',
+        type: 'select',
+        options: ['Chiến lược nội dung + xây audience', 'Cách định giá dịch vụ', 'Cách tiếp cận và bán hàng', 'Quản lý thời gian - work life balance', 'Xây thương hiệu cá nhân', 'Cách hệ thống hoá dịch vụ', 'Cách xây pipeline khách hàng bền vững'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia nghiên cứu competitor + benchmark cho người Việt 40-60 pivot sự nghiệp.
+
+NGÁCH TÔI QUAN TÂM:
+{{ngach}}
+
+TÔI ĐỌC ĐƯỢC: {{ngon_ngu}}
+
+MỘT SỐ NGƯỜI TÔI ĐÃ BIẾT:
+{{da_biet}}
+
+TÔI MUỐN HỌC: {{muon_hoc}}
+
+YÊU CẦU:
+
+1. NGHIÊN CỨU 5 CHUYÊN GIA THÀNH CÔNG trong ngách này. Ưu tiên:
+   - 3 người Việt Nam (nếu có)
+   - 2 người quốc tế (nếu tôi đọc được tiếng Anh)
+   Bao gồm những người tôi đã nhắc + tìm thêm.
+
+2. VỚI MỖI NGƯỜI:
+   - Tên + vị trí hiện tại
+   - Nền tảng họ đến từ đâu (background)
+   - Sản phẩm/dịch vụ chính họ đang bán (cụ thể, có giá nếu công khai)
+   - Kênh chính họ xây audience (LinkedIn/Newsletter/YouTube/Podcast?)
+   - Điểm ĐỘC ĐÁO trong positioning của họ
+   - Bài học quan trọng nhất tôi có thể học
+
+3. PHÂN TÍCH PATTERN:
+   - 3 điểm CHUNG giữa 5 người này (họ đều làm gì để thành công?)
+   - 3 điểm KHÁC BIỆT giữa 5 người (họ chọn con đường khác nhau ra sao?)
+   - Yếu tố "unfair advantage" của mỗi người là gì?
+
+4. ÁP DỤNG CHO TÔI:
+   - 3 chiến lược tôi CÓ THỂ ÁP DỤNG NGAY từ những gì họ đang làm
+   - 3 điều tôi KHÔNG NÊN SAO CHÉP (vì hoàn cảnh khác)
+   - 1 "positioning" độc đáo tôi có thể chiếm lấy (không ai trong 5 người đang có)
+
+5. NGUỒN THAM KHẢO:
+   Với mỗi người, cho tôi:
+   - LinkedIn/website chính thức
+   - 1-2 bài viết/podcast tiêu biểu nhất
+   - Sách/khoá học của họ (nếu có)
+
+XUẤT RA:
+Định dạng Markdown. Tiếng Việt tự nhiên. Nếu tên người không chắc chắn, hãy nói rõ "cần kiểm tra" thay vì bịa.
+
+LƯU Ý QUAN TRỌNG:
+Nếu bạn (AI) không có thông tin về ngách quá đặc thù ở Việt Nam, hãy nói thẳng và đề xuất framework để tôi tự nghiên cứu, thay vì bịa tên người.`
+  },
+  {
+    id: 'AI-018', buoc: 2,
+    icon: '📈',
+    category: 'Khai phá',
+    title: 'Phân tích 3 xu hướng ngành 5 năm tới',
+    description: 'AI phân tích 3 xu hướng lớn của ngành bạn trong 5 năm tới + cơ hội cụ thể bạn có thể chiếm lấy.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'nganh',
+        label: 'Ngành bạn quan tâm?',
+        type: 'select',
+        options: ['F&B', 'Giáo dục / Đào tạo', 'Tài chính', 'Bán lẻ', 'Bất động sản', 'Y tế / Sức khoẻ', 'Công nghệ', 'Marketing', 'Xây dựng', 'Sản xuất', 'Dịch vụ chuyên nghiệp', 'Du lịch', 'Logistics', 'Nông nghiệp', 'Khác'],
+        required: true
+      },
+      {
+        id: 'thi_truong',
+        label: 'Thị trường mục tiêu?',
+        type: 'select',
+        options: ['Việt Nam - Toàn quốc', 'Việt Nam - Miền Bắc', 'Việt Nam - Miền Nam', 'Việt Nam - Đô thị lớn (HN, HCM)', 'Việt Nam - Tỉnh thành nhỏ', 'Đông Nam Á', 'Toàn cầu (English)', 'Việt kiều nước ngoài'],
+        required: true
+      },
+      {
+        id: 'vi_tri',
+        label: 'Bạn muốn đứng ở vị trí nào trong xu hướng?',
+        type: 'select',
+        options: ['Người tiên phong (early adopter, chấp nhận rủi ro cao)', 'Người theo sau sớm (early majority, có bằng chứng rồi mới vào)', 'Người theo sau muộn (an toàn, sao chép mô hình đã chứng minh)'],
+        required: true
+      },
+      {
+        id: 'nguon_luc_nghien_cuu',
+        label: 'Bạn có bao nhiêu ngân sách + thời gian nghiên cứu học tập/năm?',
+        type: 'select',
+        options: ['Dưới 20 triệu + <100 giờ', '20-50 triệu + 100-200 giờ', '50-100 triệu + 200-500 giờ', 'Trên 100 triệu + 500+ giờ (full-time)'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia phân tích xu hướng ngành cho thị trường Việt Nam. Nhiệm vụ: giúp tôi (người 40-60 pivot sự nghiệp) hiểu 3 xu hướng lớn của ngành trong 5 năm tới.
+
+BỐI CẢNH:
+- Ngành: {{nganh}}
+- Thị trường: {{thi_truong}}
+- Vị trí muốn đứng: {{vi_tri}}
+- Ngân sách nghiên cứu: {{nguon_luc_nghien_cuu}}
+
+YÊU CẦU:
+
+1. NHẬN DIỆN 3 XU HƯỚNG LỚN NHẤT trong ngành {{nganh}} tại {{thi_truong}} giai đoạn 2025-2030:
+
+   Với mỗi xu hướng:
+   - Tên xu hướng (ngắn, dễ nhớ)
+   - Tại sao xu hướng này đang xảy ra (3 driver chính)
+   - Bằng chứng cụ thể (số liệu, ví dụ đã có)
+   - Timeline dự kiến: bùng nổ vào năm nào?
+   - Độ chắc chắn: 1-10 (10 = gần như chắc chắn xảy ra)
+
+2. PHÂN TÍCH SÂU 1 XU HƯỚNG PHÙ HỢP NHẤT với vị trí {{vi_tri}} của tôi:
+
+   - 5 mô hình kinh doanh mới nổi lên từ xu hướng này
+   - 3 nghề mới sẽ có nhu cầu cao
+   - 3 nghề cũ sẽ suy giảm (cần tránh)
+   - 5 kỹ năng cần học để tận dụng xu hướng
+
+3. CƠ HỘI CỤ THỂ CHO TÔI:
+   - 3 vai trò/mô hình phù hợp với người 40-60 có kinh nghiệm sâu ngành
+   - Vì sao người 40-60 có LỢI THẾ đặc biệt trong xu hướng này (không phải Gen Z)
+   - Timeline vào cuộc: nên bắt đầu KHI NÀO là tối ưu?
+
+4. LỘ TRÌNH 12 THÁNG:
+   - Tháng 1-3: nghiên cứu + học kỹ năng gì?
+   - Tháng 4-6: thử nghiệm + xây tín nhiệm?
+   - Tháng 7-12: scale hay chuyển hướng?
+
+5. DẤU HIỆU CẢNH BÁO:
+   - 3 dấu hiệu cho thấy xu hướng đang chậm lại (nên rút)
+   - 3 dấu hiệu cho thấy xu hướng bùng nổ (nên tăng gấp đôi)
+
+XUẤT RA:
+Định dạng Markdown. Tiếng Việt tự nhiên. Số liệu cụ thể có nguồn (Statista, McKinsey, VNExpress, etc.) nếu có. Nếu không chắc, nói "cần kiểm tra" thay vì bịa.`
+  },
+  {
+    id: 'AI-019', buoc: 2,
+    icon: '🗺️',
+    category: 'Khai phá',
+    title: 'Bản đồ 20 cơ hội trong ngách hẹp',
+    description: 'AI liệt kê 20 cơ hội cụ thể trong ngách bạn chọn — có đánh giá độ khó + tiềm năng để bạn chọn 3 cơ hội đầu tiên.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'ngach',
+        label: 'Ngách hẹp cụ thể của bạn?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Dịch vụ tư vấn tài chính cho chủ chuỗi F&B nhỏ (5-15 chi nhánh) tại HN + HCM. Tập trung vào chuỗi cà phê, trà sữa, quán ăn nhanh Việt.'
+      },
+      {
+        id: 'nguon_luc',
+        label: 'Nguồn lực bạn có sẵn?',
+        type: 'select',
+        options: ['Mạng LinkedIn 1000+ kết nối', 'Mạng đồng nghiệp ngành 20 năm', 'Website + audience nhỏ (<1k)', 'Chưa có gì', 'Vốn tự thân + thời gian rảnh', 'Có team hỗ trợ 1-3 người', 'Có đối tác chiến lược', 'Có sản phẩm/công cụ sẵn'],
+        required: true
+      },
+      {
+        id: 'doi_tuong_khach',
+        label: 'Đối tượng khách hàng bạn muốn phục vụ?',
+        type: 'select',
+        options: ['Chủ SME (Doanh nghiệp vừa và nhỏ)', 'Chuyên gia độc lập khác', 'Doanh nghiệp gia đình', 'Startup 3-5 năm tuổi', 'Cá nhân chuyên nghiệp', 'Chuỗi/hệ thống nhỏ', 'Đại lý/nhà phân phối', 'Tổ chức phi lợi nhuận'],
+        required: true
+      },
+      {
+        id: 'nhac_lai',
+        label: 'Bạn đã có ý tưởng cơ hội nào chưa? (nếu có)',
+        type: 'textarea',
+        placeholder: 'VD: Đang nghĩ tới: dịch vụ CFO thời vụ, khoá học 3 ngày về đọc P&L, sách "Chuỗi F&B thành công", podcast phỏng vấn chủ chuỗi... Chưa biết nên bắt đầu từ đâu.'
+      }
+    ],
+    template: `Bạn là chuyên gia mapping cơ hội kinh doanh. Nhiệm vụ: liệt kê 20 cơ hội CỤ THỂ trong ngách của tôi và giúp tôi ưu tiên.
+
+NGÁCH CỦA TÔI:
+{{ngach}}
+
+NGUỒN LỰC: {{nguon_luc}}
+KHÁCH HÀNG MỤC TIÊU: {{doi_tuong_khach}}
+Ý TƯỞNG BAN ĐẦU: {{nhac_lai}}
+
+YÊU CẦU:
+
+1. LIỆT KÊ 20 CƠ HỘI CỤ THỂ trong ngách này. Chia thành 5 nhóm (mỗi nhóm 4 cơ hội):
+
+NHÓM A · DỊCH VỤ TƯ VẤN TRỰC TIẾP
+- 1-1 consulting
+- Dự án ngắn hạn
+- Retainer dài hạn
+- Coaching cá nhân
+
+NHÓM B · SẢN PHẨM SỐ (DIGITAL PRODUCTS)
+- Khoá học online
+- Ebook / sách
+- Template / công cụ
+- Cộng đồng trả phí
+
+NHÓM C · NỘI DUNG + AUDIENCE
+- Newsletter
+- Podcast
+- YouTube
+- LinkedIn creator
+
+NHÓM D · SỰ KIỆN + ĐÀO TẠO
+- Workshop 1 ngày
+- Bootcamp nhiều ngày
+- Sự kiện networking
+- Retreat/master class
+
+NHÓM E · MÔ HÌNH DOANH THU KHÁC
+- Affiliate/agency
+- SaaS/công cụ
+- Đầu tư/M&A
+- Đại lý phân phối
+
+2. VỚI MỖI CƠ HỘI (20 cơ hội):
+   - Tên cụ thể (VD: "Khoá học 'Đọc P&L cho chủ chuỗi F&B' 3 buổi online")
+   - Giá bán dự kiến (VNĐ)
+   - Độ khó: 1-10 (10 = rất khó)
+   - Tiềm năng thu nhập/năm: mức khiêm tốn → tốt → tuyệt vời
+   - Thời gian ramp-up (bao lâu có khách đầu tiên)
+   - 1 câu về "vì sao NGÁCH này cần cơ hội này"
+
+3. BẢNG XẾP HẠNG TOP 5:
+   Chọn 5 cơ hội TỐT NHẤT cho tôi (dựa trên nguồn lực + đối tượng khách):
+
+   Cơ hội | Độ khó | Tiềm năng | Time to first client | Điểm tổng
+
+4. 3 CƠ HỘI ĐẦU TIÊN TÔI NÊN THỬ:
+   - Cơ hội #1: Vì sao ưu tiên số 1? Bước đầu tiên tuần này?
+   - Cơ hội #2: Vì sao thứ 2? Chờ điều kiện gì?
+   - Cơ hội #3: Vì sao thứ 3? Là "insurance" cho trường hợp 2 cái trên fail
+
+5. CẢNH BÁO:
+   - 3 cơ hội trong 20 mà tôi NÊN TRÁNH (dù nghe hấp dẫn)
+   - Lý do tại sao tránh
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng. Tiếng Việt tự nhiên. Ví dụ cụ thể cho ngách của tôi, không chung chung.`
+  },
+  {
+    id: 'AI-020', buoc: 2,
+    icon: '📚',
+    category: 'Khai phá',
+    title: 'Đánh giá 5 kỹ năng cần học tiếp theo',
+    description: 'AI phân tích khoảng cách kỹ năng giữa vị trí hiện tại và vị trí mục tiêu — đề xuất 5 kỹ năng ưu tiên + lộ trình học.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'vai_tro_muc_tieu',
+        label: 'Vai trò mục tiêu bạn muốn đạt được?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: CFO thời vụ (fractional CFO) cho 3-5 chuỗi F&B nhỏ đồng thời. Mỗi khách 10-20 giờ/tháng. Doanh thu 200-300 triệu/tháng.'
+      },
+      {
+        id: 'ky_nang_hien_co',
+        label: 'Kỹ năng hiện tại của bạn (chọn tất cả có)?',
+        type: 'select',
+        options: ['Chuyên môn kỹ thuật (kế toán, tài chính, IT, kỹ sư...)', 'Lãnh đạo + quản lý team', 'Bán hàng B2B', 'Bán hàng B2C', 'Content marketing / viết lách', 'Digital marketing / quảng cáo online', 'Public speaking / thuyết trình', 'Đàm phán + closing deal', 'Coaching / mentoring', 'Data analytics', 'Chưa có kỹ năng digital nào'],
+        required: true
+      },
+      {
+        id: 'thoi_gian_hoc',
+        label: 'Thời gian bạn có thể dành cho học tập?',
+        type: 'select',
+        options: ['Dưới 5 giờ/tuần', '5-10 giờ/tuần', '10-20 giờ/tuần', 'Trên 20 giờ/tuần (full-time)'],
+        required: true
+      },
+      {
+        id: 'cach_hoc',
+        label: 'Cách học ưa thích của bạn?',
+        type: 'select',
+        options: ['Xem video (YouTube, khoá online)', 'Đọc sách + bài viết', 'Học từ coach 1-1', 'Học nhóm / cohort', 'Thực chiến - vừa làm vừa học', 'Kết hợp nhiều cách'],
+        required: true
+      },
+      {
+        id: 'ngan_sach',
+        label: 'Ngân sách bạn sẵn sàng đầu tư học tập trong 12 tháng tới?',
+        type: 'select',
+        options: ['Dưới 10 triệu', '10-30 triệu', '30-100 triệu', 'Trên 100 triệu'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia coach về phát triển kỹ năng cho người 40-60 đang pivot sự nghiệp.
+
+VAI TRÒ MỤC TIÊU CỦA TÔI:
+{{vai_tro_muc_tieu}}
+
+KỸ NĂNG HIỆN CÓ: {{ky_nang_hien_co}}
+THỜI GIAN HỌC: {{thoi_gian_hoc}}
+CÁCH HỌC ƯA THÍCH: {{cach_hoc}}
+NGÂN SÁCH: {{ngan_sach}}
+
+YÊU CẦU:
+
+1. PHÂN TÍCH KHOẢNG CÁCH KỸ NĂNG:
+   - Liệt kê 10-12 kỹ năng cần cho vai trò mục tiêu
+   - Chấm điểm hiện tại của tôi cho từng kỹ năng (dựa trên dữ liệu tôi cung cấp): 1-10
+   - Xác định 5 KHOẢNG CÁCH LỚN NHẤT
+
+2. ƯU TIÊN 5 KỸ NĂNG PHẢI HỌC (theo thứ tự ưu tiên):
+
+   Với mỗi kỹ năng:
+   - Tên kỹ năng + mô tả (1-2 câu)
+   - Điểm hiện tại của tôi → mức cần đạt
+   - Vì sao đây là ưu tiên (không phải 6 kỹ năng còn lại)
+   - Nếu không có kỹ năng này thì hậu quả gì
+
+3. LỘ TRÌNH HỌC TỪNG KỸ NĂNG:
+
+   Với mỗi kỹ năng, đề xuất:
+   - Nguồn học tốt nhất phù hợp {{cach_hoc}} của tôi:
+     * 2-3 khoá học/sách/kênh cụ thể
+     * Nếu là VN: người/kênh Việt Nam
+     * Nếu là quốc tế: kèm tên coach/tác giả
+   - Thời gian dự kiến: bao nhiêu giờ tổng?
+   - Chi phí ước tính (nằm trong ngân sách {{ngan_sach}})
+   - Cách "chứng minh" đã học được (tạo output gì để đánh giá)
+
+4. LỘ TRÌNH 90 NGÀY ĐẦU:
+   - Tháng 1: học kỹ năng nào? Bao nhiêu giờ/tuần?
+   - Tháng 2: học kỹ năng nào? Bắt đầu áp dụng thực tế ra sao?
+   - Tháng 3: học kỹ năng nào? Đo lường tiến bộ thế nào?
+
+5. TRÁNH BẪY LỚN:
+   - 3 "cái bẫy" người 40-60 hay mắc khi học kỹ năng mới:
+     * Học lan man (không đủ sâu)
+     * Học lý thuyết mà không thực chiến
+     * Tự học một mình không có phản hồi
+   - Cách tránh mỗi bẫy
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng. Tiếng Việt tự nhiên. Nguồn học cụ thể có link (nếu biết chắc), nếu không thì nói "tìm trên...".`
+  }// ═══ BƯỚC 3 · CHỌN HƯỚNG (5 mẫu) ═══
+  ,{
+    id: 'AI-021', buoc: 3,
+    icon: '⚖️',
+    category: 'Chọn hướng',
+    title: 'So sánh 3 hướng đi bằng ma trận 4 tiêu chí',
+    description: 'AI so sánh 3 hướng đi bạn đang cân nhắc theo 4 tiêu chí quan trọng nhất — kết quả: ma trận + điểm số + khuyến nghị.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'huong_1',
+        label: 'Hướng đi 1 - mô tả cụ thể',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Làm CFO thời vụ (fractional CFO) cho 3-5 chuỗi F&B nhỏ. Chia thời gian 10-20 giờ/tháng mỗi khách. Doanh thu mục tiêu 200-300 triệu/tháng.'
+      },
+      {
+        id: 'huong_2',
+        label: 'Hướng đi 2 - mô tả cụ thể',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Mở khoá học online "Tài chính cho chủ chuỗi F&B" - 8 tuần, giá 8 triệu/khoá, mục tiêu 5 khoá/năm với 50 học viên/khoá. Doanh thu 2 tỷ/năm.'
+      },
+      {
+        id: 'huong_3',
+        label: 'Hướng đi 3 - mô tả cụ thể',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Về làm lại vị trí GĐ tài chính công ty khác (không tự kinh doanh). Lương 100-150 triệu/tháng. An toàn nhưng lặp lại điều tôi đã chán.'
+      },
+      {
+        id: 'tieu_chi',
+        label: '4 tiêu chí quan trọng nhất với bạn khi chọn hướng đi?',
+        type: 'select',
+        options: ['Thu nhập cao ổn định', 'Thời gian tự do (không phải cày đêm)', 'Ý nghĩa xã hội / giúp ích người khác', 'Rủi ro thấp (an toàn tài chính)', 'Khả năng mở rộng (scale được)', 'Phù hợp năng lực chuyên môn', 'Bảo vệ sức khoẻ (không stress cao)', 'Cân bằng với gia đình', 'Được học điều mới', 'Có team đồng đội', 'Được sáng tạo'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia coach chiến lược cho người Việt 40-60 đang quyết định hướng đi mới. Nhiệm vụ: so sánh 3 hướng đi bằng ma trận 4 tiêu chí và giúp tôi ra quyết định.
+
+3 HƯỚNG ĐI TÔI ĐANG CÂN NHẮC:
+
+HƯỚNG 1:
+{{huong_1}}
+
+HƯỚNG 2:
+{{huong_2}}
+
+HƯỚNG 3:
+{{huong_3}}
+
+TÔI QUAN TÂM 4 TIÊU CHÍ NÀY NHẤT: {{tieu_chi}}
+
+YÊU CẦU:
+
+1. XÂY MA TRẬN SO SÁNH (bảng Markdown):
+
+   Tiêu chí | Hướng 1 | Hướng 2 | Hướng 3
+   ---------|---------|---------|--------
+   [Tiêu chí 1] | Điểm 1-10 + giải thích ngắn | ... | ...
+   [Tiêu chí 2] | ... | ... | ...
+   [Tiêu chí 3] | ... | ... | ...
+   [Tiêu chí 4] | ... | ... | ...
+   **TỔNG** | Tổng điểm | Tổng điểm | Tổng điểm
+
+2. PHÂN TÍCH SÂU MỖI HƯỚNG:
+
+   HƯỚNG 1:
+   - 3 ĐIỂM MẠNH lớn nhất (với 4 tiêu chí tôi quan tâm)
+   - 3 ĐIỂM YẾU / rủi ro
+   - Điều kiện gì phải có để hướng này thành công?
+
+   HƯỚNG 2: (tương tự)
+
+   HƯỚNG 3: (tương tự)
+
+3. KHUYẾN NGHỊ:
+   - Dựa trên ma trận + phân tích, hướng nào PHÙ HỢP NHẤT?
+   - Vì sao? Bằng chứng cụ thể từ ma trận
+   - Có "kịch bản kết hợp" nào không? (VD: bắt đầu Hướng 1 → 12 tháng sau chuyển Hướng 2)
+
+4. 3 CÂU HỎI TÔI CẦN TỰ TRẢ LỜI TRƯỚC KHI QUYẾT:
+   - Câu hỏi 1: [câu hỏi trung thực về giá trị/mong muốn thật]
+   - Câu hỏi 2: [câu hỏi về rủi ro tài chính]
+   - Câu hỏi 3: [câu hỏi về cam kết cá nhân]
+
+5. LƯU Ý CUỐI:
+   - Điều gì có thể LÀM TÔI HỐI TIẾC nếu chọn sai?
+   - Cái giá của việc TRÌ HOÃN quyết định là gì?
+   - Trong 10 năm tới, hướng nào tôi sẽ tự hào đã chọn?
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng. Tiếng Việt tự nhiên. Không nịnh nọt — nói thẳng nếu có hướng nào rõ ràng không phù hợp.`
+  },
+  {
+    id: 'AI-022', buoc: 3,
+    icon: '🎯',
+    category: 'Chọn hướng',
+    title: 'Phân tích SWOT chi tiết cho hướng đã chọn',
+    description: 'Sau khi chọn 1 hướng đi, AI làm phân tích SWOT chi tiết + action items từ mỗi ô — không chỉ liệt kê chung chung.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'huong',
+        label: 'Hướng đi bạn đang cân nhắc',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Làm CFO thời vụ cho 3-5 chuỗi F&B nhỏ đồng thời. Cung cấp: báo cáo P&L từng chi nhánh, tối ưu chi phí, coach chủ chuỗi ra quyết định. Doanh thu 250 triệu/tháng.'
+      },
+      {
+        id: 'nguon_luc',
+        label: 'Nguồn lực bạn có sẵn (kể càng chi tiết càng tốt)',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- 20 năm kinh nghiệm F&B\n- Mạng lưới: 50+ chủ chuỗi F&B từng gặp qua công việc cũ\n- Vốn: 2 tỷ tiết kiệm + căn nhà không nợ\n- Kỹ năng: excel, phân tích P&L, tiếng Anh giao tiếp\n- Chưa có: website, LinkedIn active, chưa từng bán dịch vụ độc lập'
+      },
+      {
+        id: 'nganh',
+        label: 'Ngành/thị trường bạn định vào',
+        type: 'select',
+        options: ['F&B', 'Giáo dục / Đào tạo', 'Tài chính', 'Bán lẻ', 'Bất động sản', 'Y tế / Sức khoẻ', 'Công nghệ', 'Marketing', 'Xây dựng', 'Sản xuất', 'Dịch vụ chuyên nghiệp', 'Du lịch', 'Khác'],
+        required: true
+      },
+      {
+        id: 'am_hieu',
+        label: 'Mức độ am hiểu ngành',
+        type: 'select',
+        options: ['Rất am hiểu - đã làm 15+ năm', 'Am hiểu vừa - làm 5-15 năm', 'Am hiểu ít - làm dưới 5 năm', 'Là người mới - vừa nghiên cứu'],
+        required: true
+      },
+      {
+        id: 'canh_tranh',
+        label: 'Bạn đã biết những đối thủ cạnh tranh nào chưa?',
+        type: 'textarea',
+        placeholder: 'VD: Có 3-5 CFO fractional VN đang làm rồi (anh A, chị B, công ty C). Ngoài ra Big 4 cũng có dịch vụ tương tự nhưng giá cao gấp 3-5 lần.'
+      }
+    ],
+    template: `Bạn là chuyên gia phân tích chiến lược. Nhiệm vụ: làm phân tích SWOT SÂU cho hướng đi tôi đã chọn, KÈM ACTION ITEMS cụ thể từ mỗi ô — không chỉ liệt kê.
+
+HƯỚNG ĐI CỦA TÔI:
+{{huong}}
+
+NGUỒN LỰC:
+{{nguon_luc}}
+
+NGÀNH: {{nganh}}
+MỨC AM HIỂU: {{am_hieu}}
+ĐỐI THỦ ĐÃ BIẾT:
+{{canh_tranh}}
+
+YÊU CẦU:
+
+1. PHÂN TÍCH SWOT 4 Ô CHI TIẾT:
+
+STRENGTHS (Điểm mạnh) - Nội tại tích cực:
+- Liệt kê 5-7 điểm mạnh CỤ THỂ dựa trên nguồn lực tôi có
+- Với mỗi điểm mạnh: mức độ quan trọng 1-10 + có phải "unfair advantage" không
+- 3 CÁCH KHAI THÁC TỐI ĐA những điểm mạnh này
+
+WEAKNESSES (Điểm yếu) - Nội tại tiêu cực:
+- Liệt kê 5-7 điểm yếu THẬT (không sáo mòn)
+- Với mỗi điểm yếu: mức độ đe doạ 1-10
+- 3 CÁCH BÙ ĐẮP thông minh (không phải "cố gắng khắc phục" mà là leverage nguồn khác)
+
+OPPORTUNITIES (Cơ hội) - Ngoại cảnh tích cực:
+- Liệt kê 5-7 cơ hội cụ thể trong thị trường {{nganh}} 2025-2030
+- Với mỗi cơ hội: timeline (khi nào tận dụng?) + độ chắc chắn
+- 3 CƠ HỘI TÔI NÊN CHỚP NGAY trong 90 ngày tới
+
+THREATS (Rủi ro) - Ngoại cảnh tiêu cực:
+- Liệt kê 5-7 rủi ro thật (kinh tế, cạnh tranh, chính sách, công nghệ)
+- Với mỗi rủi ro: xác suất xảy ra + mức độ thiệt hại
+- 3 KẾ HOẠCH PHÒNG NGỪA cụ thể
+
+2. MA TRẬN SO/ST/WO/WT (chiến lược ứng phó):
+
+SO (Điểm mạnh × Cơ hội): 3 chiến lược TĂNG TỐC
+ST (Điểm mạnh × Rủi ro): 3 chiến lược PHÒNG THỦ CHỦ ĐỘNG
+WO (Điểm yếu × Cơ hội): 3 chiến lược CẢI THIỆN
+WT (Điểm yếu × Rủi ro): 3 điều PHẢI TRÁNH LÀM
+
+3. ĐÁNH GIÁ TỔNG THỂ:
+   - Cho điểm 1-100 mức độ khả thi của hướng đi này
+   - 3 điều kiện quan trọng nhất để thành công
+   - 1 dấu hiệu cảnh báo "phải bỏ hoặc chuyển hướng"
+
+4. 10 ACTION ITEMS ĐẦU TIÊN (theo thứ tự ưu tiên):
+   Từ SWOT trên, đưa ra 10 việc cụ thể tôi nên làm trong 90 ngày tới.
+   Định dạng: [Việc] - [Timeline: tuần 1/2/... nào] - [Kết quả kỳ vọng]
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng SWOT + action list. Tiếng Việt tự nhiên. Cụ thể, không chung chung.`
+  },
+  {
+    id: 'AI-023', buoc: 3,
+    icon: '💬',
+    category: 'Chọn hướng',
+    title: 'Kiểm chứng ý tưởng bằng 10 câu phỏng vấn khách',
+    description: 'AI soạn 10 câu hỏi phỏng vấn khách hàng tiềm năng theo phương pháp "Mom Test" — hỏi về hành vi thật, không hỏi ý định.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'y_tuong',
+        label: 'Ý tưởng dịch vụ/sản phẩm bạn muốn kiểm chứng',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Dịch vụ "CFO cho chuỗi F&B" - làm việc 10-20h/tháng cho mỗi khách, giá 15-25 triệu/tháng. Cung cấp: báo cáo P&L từng chi nhánh + coach chủ chuỗi.'
+      },
+      {
+        id: 'khach_muc_tieu',
+        label: 'Đối tượng khách hàng cụ thể bạn muốn phục vụ?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi F&B tại VN có 5-15 chi nhánh, doanh thu 30-100 tỷ/năm, chưa có CFO nội bộ, đang gặp khó khăn về P&L từng chi nhánh và cash flow.'
+      },
+      {
+        id: 'muon_tim_hieu',
+        label: 'Bạn muốn tìm hiểu điều gì nhất qua phỏng vấn?',
+        type: 'select',
+        options: ['Vấn đề khách đang thực sự gặp', 'Giải pháp hiện tại họ đang dùng', 'Mức độ sẵn sàng trả tiền', 'Kênh họ tìm mua dịch vụ tương tự', 'Ai là người quyết định thuê dịch vụ này', 'Tất cả các điều trên'],
+        required: true
+      },
+      {
+        id: 'ngu_canh_phong_van',
+        label: 'Cách bạn dự định phỏng vấn?',
+        type: 'select',
+        options: ['Gặp mặt cà phê 30 phút', 'Video call Zoom 30 phút', 'Điện thoại 15-20 phút', 'Khảo sát Google Form + gặp riêng người quan tâm', 'Tận dụng cơ hội gặp sự kiện ngành'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia customer research theo phương pháp "The Mom Test" của Rob Fitzpatrick.
+
+Ý TƯỞNG TÔI MUỐN KIỂM CHỨNG:
+{{y_tuong}}
+
+KHÁCH HÀNG MỤC TIÊU:
+{{khach_muc_tieu}}
+
+TÔI MUỐN TÌM HIỂU: {{muon_tim_hieu}}
+CÁCH PHỎNG VẤN: {{ngu_canh_phong_van}}
+
+YÊU CẦU:
+
+1. NGUYÊN TẮC "MOM TEST" TÔI PHẢI TUÂN:
+   Nhắc lại 3 nguyên tắc:
+   - Hỏi về HÀNH VI ĐÃ CÓ, không hỏi ý định tương lai
+   - Hỏi CỤ THỂ (tuần trước làm gì), không hỏi chung chung
+   - KHÔNG BAO GIỜ nói ý tưởng của tôi cho họ trong 20 phút đầu
+
+2. SOẠN 10 CÂU HỎI PHỎNG VẤN theo cấu trúc 3 phần:
+
+PHẦN A · KHỞI ĐỘNG + BỐI CẢNH (Câu 1-3):
+- Câu 1: Hỏi về cuộc sống/công việc thường ngày để "warm up"
+- Câu 2: Hỏi về mảng liên quan đến vấn đề tôi định giải quyết
+- Câu 3: Hỏi về 1 tuần/tháng gần đây cụ thể
+
+PHẦN B · KHÁM PHÁ VẤN ĐỀ (Câu 4-7):
+- Câu 4: "Điều khó khăn nhất tuần trước..." (không hỏi có khó khăn không)
+- Câu 5: "Anh/chị đã giải quyết điều đó thế nào?" (behavioral)
+- Câu 6: "Điều gì làm cho việc đó khó?" (dig deeper)
+- Câu 7: "Nếu bỏ qua vấn đề đó thì hậu quả gì?" (impact)
+
+PHẦN C · GIẢI PHÁP HIỆN TẠI + CHI PHÍ (Câu 8-10):
+- Câu 8: "Ai đang giúp anh/chị xử lý vấn đề này?" (tìm competitor)
+- Câu 9: "Trong 12 tháng qua, anh/chị đã chi bao nhiêu cho việc này?"
+- Câu 10: "Nếu có 1 công cụ/dịch vụ giúp giải quyết, anh/chị sẵn sàng trả bao nhiêu để có?"
+
+3. VỚI MỖI CÂU HỎI:
+   - Câu hỏi hoàn chỉnh (tiếng Việt tự nhiên)
+   - Vì sao câu hỏi này quan trọng (mục tiêu tìm gì)
+   - "Follow-up questions" - 2-3 câu hỏi phụ để đào sâu
+   - CẢNH BÁO: câu trả lời nào là "compliment" (khen nịnh, không đáng tin), câu trả lời nào là "signal" (có giá trị)
+
+4. HƯỚNG DẪN CÁCH DẪN DẮT:
+   - Cách mở đầu cuộc phỏng vấn (30 giây đầu)
+   - Cách xử lý khi khách "nói lan man"
+   - Cách xử lý khi khách "khen nịnh ý tưởng của bạn"
+   - Cách kết thúc + xin phép follow-up
+
+5. TIÊU CHÍ ĐÁNH GIÁ SAU 5-10 CUỘC PHỎNG VẤN:
+   - Signal MẠNH (5 dấu hiệu bạn nên tiếp tục):
+   - Signal YẾU (5 dấu hiệu bạn nên pivot):
+
+XUẤT RA:
+Định dạng Markdown có heading rõ ràng. Tiếng Việt tự nhiên, câu hỏi có thể đọc thẳng cho khách. Tránh thuật ngữ startup tiếng Anh.`
+  },
+  {
+    id: 'AI-024', buoc: 3,
+    icon: '📊',
+    category: 'Chọn hướng',
+    title: 'Tính điểm khả thi 90 ngày cho ý tưởng',
+    description: 'AI đánh giá khả thi của ý tưởng trong 90 ngày đầu — điểm 0-100 + 5 rủi ro chính + mốc kiểm tra hàng tuần.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'y_tuong',
+        label: 'Ý tưởng cụ thể bạn muốn thử',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Bắt đầu dịch vụ CFO thời vụ cho 2 chuỗi F&B nhỏ đầu tiên trong 90 ngày. Doanh thu mục tiêu tháng 3: 30 triệu/tháng.'
+      },
+      {
+        id: 'nguon_luc',
+        label: 'Nguồn lực bạn có ngay bây giờ',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- 20 năm F&B, 50 chủ chuỗi biết mặt\n- Vốn 2 tỷ dùng được cho pivot\n- Thời gian: full-time (đã nghỉ việc)\n- Kỹ năng thiếu: bán hàng, LinkedIn, digital marketing\n- Chưa có website, chưa có case study public'
+      },
+      {
+        id: 'kinh_nghiem',
+        label: 'Bạn đã có kinh nghiệm liên quan tới ý tưởng này chưa?',
+        type: 'select',
+        options: ['Rất giàu - đã làm chính công việc này 5+ năm', 'Có - đã làm 1 phần công việc này', 'Ít - biết chuyên môn nhưng chưa làm độc lập', 'Không - hoàn toàn mới'],
+        required: true
+      },
+      {
+        id: 'nganh',
+        label: 'Ngành mục tiêu',
+        type: 'select',
+        options: ['F&B', 'Giáo dục', 'Tài chính', 'Bán lẻ', 'Bất động sản', 'Y tế', 'Công nghệ', 'Marketing', 'Xây dựng', 'Sản xuất', 'Dịch vụ chuyên nghiệp', 'Khác'],
+        required: true
+      },
+      {
+        id: 'muc_tieu_90',
+        label: 'Mục tiêu cụ thể trong 90 ngày?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Kết thúc 90 ngày: có 2 khách trả tiền, doanh thu 30 triệu/tháng, 1 case study công khai, 500 LinkedIn follower.'
+      }
+    ],
+    template: `Bạn là chuyên gia đánh giá tính khả thi dự án cho người 40-60 pivot sự nghiệp.
+
+Ý TƯỞNG TÔI MUỐN THỬ:
+{{y_tuong}}
+
+NGUỒN LỰC HIỆN CÓ:
+{{nguon_luc}}
+
+KINH NGHIỆM LIÊN QUAN: {{kinh_nghiem}}
+NGÀNH: {{nganh}}
+
+MỤC TIÊU 90 NGÀY:
+{{muc_tieu_90}}
+
+YÊU CẦU:
+
+1. CHẤM ĐIỂM KHẢ THI TỔNG THỂ: 0-100
+
+   Chia thành 5 tiêu chí, mỗi tiêu chí 20 điểm:
+   - Kinh nghiệm phù hợp: __/20
+   - Nguồn lực đủ: __/20
+   - Thị trường sẵn sàng: __/20
+   - Mục tiêu thực tế: __/20
+   - Cam kết cá nhân: __/20
+   - TỔNG: __/100
+
+   Kèm giải thích chi tiết cho mỗi điểm.
+
+2. PHÂN TÍCH 5 RỦI RO LỚN NHẤT trong 90 ngày:
+
+   Với mỗi rủi ro:
+   - Mô tả rủi ro
+   - Xác suất xảy ra: 1-10
+   - Mức độ thiệt hại nếu xảy ra: 1-10
+   - Dấu hiệu cảnh báo sớm (trigger)
+   - Kế hoạch phòng ngừa/ứng phó
+
+3. LỘ TRÌNH 90 NGÀY REALISTIC:
+
+TUẦN 1-2: Nền tảng
+- 3-5 việc cụ thể phải làm xong
+- Deliverable đo lường được
+
+TUẦN 3-4: Ra mắt thị trường
+- ...
+
+TUẦN 5-8: Chinh phục khách đầu tiên
+- ...
+
+TUẦN 9-12: Củng cố + mở rộng
+- ...
+
+4. 5 MỐC KIỂM TRA (TRÊN LÝ THUYẾT):
+
+Ngày 15: Nếu chưa đạt X → cần điều chỉnh gì?
+Ngày 30: Nếu chưa đạt Y → cần chuyển hướng ở đâu?
+Ngày 45: Nếu chưa đạt Z → cần thuê ai/mua gì?
+Ngày 60: Nếu chưa đạt W → có nên dừng không?
+Ngày 90: Đánh giá tổng - tiếp tục/scale/pivot/dừng?
+
+5. KHUYẾN NGHỊ:
+   - Nếu điểm khả thi >= 70: nên triển khai NGAY. Ưu tiên gì?
+   - Nếu điểm khả thi 50-70: cần bổ sung gì trước khi triển khai?
+   - Nếu điểm khả thi < 50: nên điều chỉnh ý tưởng theo hướng nào?
+
+6. 3 QUESTION CHO TÔI TỰ HỎI:
+   - Câu hỏi về mục tiêu thật (có phải mục tiêu này quan trọng nhất?)
+   - Câu hỏi về giá phải trả (chấp nhận đánh đổi gì?)
+   - Câu hỏi về plan B (nếu 90 ngày này thất bại thì làm gì tiếp?)
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng chấm điểm. Tiếng Việt tự nhiên. Trung thực - không tô hồng.`
+  },
+  {
+    id: 'AI-025', buoc: 3,
+    icon: '📄',
+    category: 'Chọn hướng',
+    title: 'Viết One-page business plan cho hướng đã chọn',
+    description: 'AI viết kế hoạch kinh doanh 1 trang gọn theo template chuẩn — sẵn sàng share với đối tác/đầu tư/vợ chồng.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'y_tuong',
+        label: 'Ý tưởng dịch vụ/sản phẩm',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: CFO thời vụ (Fractional CFO) cho chuỗi F&B nhỏ tại VN.'
+      },
+      {
+        id: 'khach_hang',
+        label: 'Khách hàng mục tiêu cụ thể',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi F&B 5-15 chi nhánh, doanh thu 30-100 tỷ/năm, chưa có CFO nội bộ, đang khó khăn về P&L từng chi nhánh + cash flow. Tập trung HN + HCM. Ước tính 500-800 chuỗi phù hợp tại VN.'
+      },
+      {
+        id: 'gia_ban',
+        label: 'Giá bán dự kiến',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Gói cơ bản: 15 triệu/tháng (8 giờ). Gói tiêu chuẩn: 25 triệu/tháng (15 giờ). Gói mở rộng: 40 triệu/tháng (25 giờ + coach founder).'
+      },
+      {
+        id: 'muc_tieu_nam_1',
+        label: 'Mục tiêu năm đầu tiên',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- 5 khách retainer\n- Doanh thu 150 triệu/tháng (1.8 tỷ/năm)\n- Lợi nhuận 80% (thuê 1 trợ lý tối thiểu)\n- 3 case study công khai\n- Xây audience LinkedIn 3000 follower'
+      },
+      {
+        id: 'the_manh',
+        label: 'Lợi thế cạnh tranh chính (unfair advantage)',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: 20 năm F&B trong tập đoàn 200 nhà hàng. Đã turn around 3 chi nhánh lỗ. Mạng 50 chủ chuỗi từng gặp. Người duy nhất kết hợp CFO + F&B insider hiểu ngành sâu.'
+      },
+      {
+        id: 'kenh_marketing',
+        label: 'Kênh tiếp cận khách chính',
+        type: 'select',
+        options: ['Referral từ mạng cũ', 'LinkedIn + Content marketing', 'Hội nhóm ngành offline', 'Sự kiện ngành + speaking', 'Podcast + PR', 'SEO + Google Ads', 'Cộng đồng chuyên môn', 'Kết hợp nhiều kênh'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết business plan cho SME + solopreneur Việt Nam.
+
+Ý TƯỞNG: {{y_tuong}}
+
+KHÁCH HÀNG:
+{{khach_hang}}
+
+GIÁ BÁN:
+{{gia_ban}}
+
+MỤC TIÊU NĂM 1:
+{{muc_tieu_nam_1}}
+
+LỢI THẾ:
+{{the_manh}}
+
+KÊNH TIẾP CẬN: {{kenh_marketing}}
+
+YÊU CẦU:
+
+Viết ONE-PAGE BUSINESS PLAN theo template 10 mục sau. Mỗi mục 2-4 câu ngắn gọn, đầy đủ thông tin quan trọng. Toàn bộ vừa trong 1 trang A4.
+
+═══ SOL LA BÀN · ONE-PAGE BUSINESS PLAN ═══
+
+**Tên doanh nghiệp/dự án:** [gợi ý 3 tên phù hợp cho tôi chọn]
+
+**1. TẦM NHÌN (Vision)** — 1 câu (20-30 từ)
+Điều bạn muốn thay đổi/tạo ra cho ngành trong 5-10 năm
+
+**2. VẤN ĐỀ (Problem)** — 2-3 câu
+Vấn đề CỤ THỂ của khách hàng, có bằng chứng, không chung chung
+
+**3. GIẢI PHÁP (Solution)** — 2-3 câu
+Sản phẩm/dịch vụ của bạn giải quyết vấn đề đó THẾ NÀO, khác giải pháp hiện tại ra sao
+
+**4. KHÁCH HÀNG MỤC TIÊU** — 3-4 dòng
+- Nhóm khách chính (1 câu định vị)
+- Chân dung: tuổi, vị trí, ngành, size công ty
+- Ước tính quy mô thị trường tại VN (con số)
+
+**5. LỢI THẾ CẠNH TRANH** — 3-4 dòng
+- "Unfair advantage" của bạn (điều KHÔNG ai có được)
+- Tại sao BÂY GIỜ là thời điểm đúng (timing)
+- 2-3 competitor + bạn khác họ thế nào
+
+**6. MÔ HÌNH DOANH THU** — 3-4 dòng
+- Loại doanh thu (retainer/dự án/khoá học/subscribe)
+- Bảng giá 2-3 gói
+- Doanh thu trung bình/khách/tháng
+- Số lượng khách tối đa để đạt mục tiêu
+
+**7. KÊNH TIẾP CẬN KHÁCH** — 3-4 dòng
+- Kênh chính + kênh phụ
+- Chiến lược tuần 1-4
+- Chiến lược tháng 2-3
+- Chiến lược tháng 4-12
+
+**8. MỤC TIÊU 12 THÁNG** — 4-5 gạch đầu dòng
+- Doanh thu mục tiêu
+- Số khách hàng
+- Nhân sự (nếu có)
+- Cột mốc quan trọng nhất (case study, sách, khoá học...)
+- Chỉ số phi tài chính (audience, brand)
+
+**9. NGUỒN LỰC CẦN CÓ** — 3-4 dòng
+- Vốn: bao nhiêu? dùng cho gì?
+- Thời gian: bao nhiêu giờ/tuần
+- Con người: mình + ai hỗ trợ
+- Công cụ: 3-5 công cụ chính
+
+**10. 3 RỦI RO LỚN NHẤT + CÁCH XỬ LÝ** — 3 dòng
+
+═══════════════════════════════════════════════
+
+Sau one-page plan, bổ sung:
+
+**PHỤ LỤC A:** Timeline 12 tháng (bảng theo quý)
+
+**PHỤ LỤC B:** Ngân sách dự kiến (bảng chi phí + doanh thu 12 tháng)
+
+**PHỤ LỤC C:** 5 điều tôi nên trao đổi với vợ/chồng/đối tác trước khi bắt đầu
+
+XUẤT RA:
+Định dạng Markdown. Tiếng Việt tự nhiên, chuyên nghiệp. Có thể copy paste vào Word/PDF để share.`
+  }// ═══ BƯỚC 4 · HÀNH ĐỘNG (10 mẫu bổ sung, AI-026 → AI-035) ═══
+  ,{
+    id: 'AI-026', buoc: 4,
+    icon: '📝',
+    category: 'Nội dung',
+    title: 'Viết bài blog SEO 1500 từ cho ngách hẹp',
+    description: 'AI viết bài blog dài chuẩn SEO cho website chuyên môn của bạn — tối ưu keyword + có tiêu đề phụ + kèm CTA.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'chu_de',
+        label: 'Chủ đề bài viết',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: 5 cách chủ chuỗi F&B nhỏ tại VN có thể giảm 20% chi phí nhân sự mà không giảm chất lượng dịch vụ.'
+      },
+      {
+        id: 'keyword',
+        label: 'Từ khoá SEO chính bạn muốn ranking?',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: giảm chi phí nhân sự F&B'
+      },
+      {
+        id: 'doi_tuong',
+        label: 'Ai sẽ đọc bài này?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi F&B 5-15 chi nhánh tại VN. Người đã có 5+ năm kinh nghiệm ngành. Đang cảm thấy tỷ lệ chi phí nhân sự cao (>35% doanh thu).'
+      },
+      {
+        id: 'goc_do',
+        label: 'Góc độ độc đáo của bạn?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Là cựu CFO tập đoàn F&B 200 nhà hàng, tôi đã áp dụng cách này giúp 3 chuỗi tiết kiệm 800tr-2.5 tỷ/năm. Không phải cắt lương mà là tái cấu trúc ca kíp + chấm công thông minh.'
+      },
+      {
+        id: 'cta',
+        label: 'Bạn muốn người đọc làm gì sau khi đọc xong?',
+        type: 'select',
+        options: ['Đăng ký nhận newsletter', 'Tải checklist/template miễn phí', 'Đặt lịch tư vấn 30 phút miễn phí', 'Đọc thêm bài viết liên quan', 'Đăng ký khoá học', 'Follow LinkedIn'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết bài blog SEO tiếng Việt cho website chuyên môn của người 40-60.
+
+CHỦ ĐỀ: {{chu_de}}
+TỪ KHOÁ SEO CHÍNH: {{keyword}}
+ĐỐI TƯỢNG ĐỌC: {{doi_tuong}}
+
+GÓC ĐỘ ĐỘC ĐÁO CỦA TÔI:
+{{goc_do}}
+
+CALL-TO-ACTION MONG MUỐN: {{cta}}
+
+YÊU CẦU:
+
+1. VIẾT BÀI BLOG 1500-1800 TỪ theo cấu trúc SEO chuẩn:
+
+- Tiêu đề chính (H1): chứa keyword, 55-60 ký tự, hấp dẫn
+- Meta description: 150-155 ký tự, chứa keyword, khiêu khích click
+- Mở bài (intro): 3-4 đoạn, hook mạnh + đưa ra vấn đề + hứa hẹn kết quả
+- Thân bài: 5-7 tiêu đề phụ (H2), mỗi phần 200-300 từ
+- Kết bài: tóm tắt + CTA rõ ràng
+
+2. YÊU CẦU SEO:
+- Keyword "{{keyword}}" xuất hiện: title, meta, H1, intro, 2-3 H2, kết bài
+- Mật độ keyword tự nhiên (0.5-1%)
+- Liên kết nội bộ gợi ý: 2-3 topic liên quan
+- Alt text cho 1-2 hình ảnh minh hoạ
+- FAQ 3-4 câu ở cuối bài (schema-friendly)
+
+3. GIỌNG VĂN:
+- Tiếng Việt tự nhiên, không dịch máy
+- Ngôi "tôi" - giọng cá nhân, credibility từ kinh nghiệm 20 năm
+- Câu ngắn xen câu dài
+- Không dùng thuật ngữ tiếng Anh trừ khi không có từ Việt tương đương
+- Không sáo mòn "trong thời đại 4.0", "chuyển đổi số"...
+- Câu chuyện thực tế + số liệu cụ thể
+
+4. TỐI THIỂU PHẢI CÓ:
+- 1 câu chuyện thực tế (từ kinh nghiệm của tôi hoặc case study)
+- 2-3 số liệu cụ thể (không chung chung "nhiều", "đáng kể")
+- 1 mistake phổ biến + cách tránh
+- 1 lời khuyên hành động ngay hôm nay
+- 3-5 gạch đầu dòng key takeaways
+
+5. CTA CUỐI BÀI:
+Phù hợp mục tiêu "{{cta}}", CTA phải:
+- Rõ ràng, cụ thể
+- Không hard sell
+- Có giá trị trao đổi rõ ràng
+
+XUẤT RA:
+Bài blog hoàn chỉnh định dạng Markdown, sẵn sàng copy-paste vào WordPress. Kèm meta title + meta description tách riêng đầu bài.`
+  },
+  {
+    id: 'AI-027', buoc: 4,
+    icon: '🎥',
+    category: 'Nội dung',
+    title: 'Viết kịch bản video LinkedIn 90 giây',
+    description: 'AI viết kịch bản video ngắn cho LinkedIn — có hook 3 giây, thân bài, kết + shot list quay đơn giản.',
+    time: '10 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'chu_de',
+        label: 'Chủ đề video',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: 1 lỗi P&L mà 80% chủ chuỗi F&B đang mắc - và cách sửa trong 15 phút.'
+      },
+      {
+        id: 'muc_tieu',
+        label: 'Mục tiêu video',
+        type: 'select',
+        options: ['Tăng nhận biết thương hiệu cá nhân', 'Đưa người xem về website', 'Thu email đăng ký', 'Bán khoá học/dịch vụ', 'Xây credibility trong ngách hẹp', 'Kết nối với các chuyên gia cùng ngành'],
+        required: true
+      },
+      {
+        id: 'style',
+        label: 'Phong cách video bạn muốn?',
+        type: 'select',
+        options: ['Talking head - nói thẳng vào camera', 'Ngồi bàn làm việc + slide/whiteboard', 'Đi bộ + kể chuyện (walk and talk)', 'Behind the scenes - kể chuyện thực tế', 'Screen recording + narration'],
+        required: true
+      },
+      {
+        id: 'cta',
+        label: 'Call-to-action cuối video?',
+        type: 'select',
+        options: ['Bình luận suy nghĩ của bạn', 'Follow tôi để xem tiếp', 'Truy cập link trong bio', 'Đăng ký nhận newsletter', 'Chia sẻ với bạn bè', 'Save video để xem sau'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết kịch bản video ngắn cho LinkedIn dành cho chuyên gia Việt 40-60.
+
+CHỦ ĐỀ: {{chu_de}}
+MỤC TIÊU: {{muc_tieu}}
+STYLE: {{style}}
+CTA: {{cta}}
+
+YÊU CẦU:
+
+1. VIẾT KỊCH BẢN VIDEO 90 GIÂY (khoảng 180-200 từ) cấu trúc:
+
+═══ 0:00-0:03 · HOOK (2-3 câu) ═══
+- Câu 1: STOP THE SCROLL - câu tuyên bố mạnh hoặc câu hỏi khiêu khích
+- Câu 2: Cụ thể hoá vấn đề - ai đang mắc phải?
+- Câu 3: Hứa hẹn giá trị - trong 90 giây bạn sẽ biết gì?
+
+═══ 0:03-0:60 · THÂN BÀI (nội dung chính) ═══
+- Trình bày 1 insight/lesson/case study duy nhất
+- Có 1 câu chuyện thực tế (hoặc số liệu)
+- Nhấn mạnh 3 điểm cụ thể (dễ nhớ)
+- Ngôn ngữ đơn giản, câu ngắn 8-15 từ
+
+═══ 0:60-0:80 · CHỐT (call-to-action indirect) ═══
+- Tóm tắt lại 1 key takeaway
+- Đưa ra 1 câu hỏi cho người xem suy nghĩ
+- Không hard sell
+
+═══ 0:80-0:90 · CTA + OUTRO ═══
+- CTA rõ ràng: {{cta}}
+- Hashtag 3-5 cái (tiếng Việt + Anh)
+
+2. SHOT LIST cho việc quay:
+
+Nếu style = "Talking head":
+- Vị trí camera, khoảng cách
+- Ánh sáng
+- Background
+- Quần áo phù hợp
+
+Nếu style khác:
+- 3-5 shot chính cần quay
+- Với mỗi shot: mô tả cảnh + thời lượng
+
+3. HƯỚNG DẪN QUAY:
+- Nên/không nên chỉnh sửa gì
+- Volume, tốc độ nói
+- 3 mẹo giúp người 40-60 quay video tự nhiên (không cứng)
+
+4. CAPTION LINKEDIN kèm theo video:
+- Dòng 1: Hook thu hút click "See more"
+- 5-7 dòng ngắn (mỗi dòng 1 câu)
+- Bullet 3 key takeaways
+- CTA
+- 5 hashtag
+
+5. TITLE + THUMBNAIL SUGGESTION:
+- 3 title đề xuất
+- Mô tả thumbnail (text + màu + emoji)
+
+XUẤT RA:
+Định dạng Markdown có heading rõ ràng. Kịch bản phải đọc được thoải mái trong 90 giây - test bằng cách bấm đồng hồ đọc thử.`
+  },
+  {
+    id: 'AI-028', buoc: 4,
+    icon: '📜',
+    category: 'Kinh doanh',
+    title: 'Viết hợp đồng dịch vụ mẫu (đơn giản, VN)',
+    description: 'AI viết hợp đồng dịch vụ 3-5 trang đơn giản, đúng luật VN, dễ hiểu — dùng ngay cho khách đầu tiên.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'loai_dich_vu',
+        label: 'Loại dịch vụ bạn cung cấp?',
+        type: 'select',
+        options: ['Tư vấn theo giờ', 'Tư vấn theo dự án (fixed fee)', 'Retainer hàng tháng (định kỳ)', 'Coach 1-1 (chương trình 3-6 tháng)', 'Đào tạo (workshop/khoá học)', 'Dịch vụ chuyên môn khác'],
+        required: true
+      },
+      {
+        id: 'noi_dung',
+        label: 'Nội dung dịch vụ cụ thể',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- Rà soát hệ thống báo cáo tài chính hiện tại (2 tuần đầu)\n- Xây báo cáo P&L tách theo từng chi nhánh (tuần 3-4)\n- Coach chủ chuỗi đọc báo cáo + ra quyết định (họp 2h/tuần)\n- Cung cấp analyses ad-hoc khi cần'
+      },
+      {
+        id: 'thoi_han',
+        label: 'Thời hạn hợp đồng',
+        type: 'select',
+        options: ['1 tháng', '3 tháng (retainer ngắn)', '6 tháng (retainer trung)', '12 tháng (retainer dài)', 'Theo dự án cụ thể (fixed timeline)', 'Không giới hạn - review 3 tháng/lần'],
+        required: true
+      },
+      {
+        id: 'phi',
+        label: 'Cấu trúc phí',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- Phí retainer: 25 triệu VND/tháng\n- Thanh toán: đầu mỗi tháng, chuyển khoản 100%\n- Tối đa 15 giờ/tháng. Vượt giờ: 1.5tr/giờ\n- Không hoàn tiền phần đã sử dụng\n- Có thể tạm dừng 1 tháng/năm với thông báo 30 ngày'
+      },
+      {
+        id: 'dieu_khoan_dac_biet',
+        label: 'Điều khoản đặc biệt bạn muốn có?',
+        type: 'select',
+        options: ['NDA - bảo mật thông tin', 'Non-compete - không cạnh tranh trực tiếp', 'IP - quyền sở hữu tài liệu tạo ra', 'Testimonial - quyền sử dụng logo/case study', 'Termination - điều kiện chấm dứt sớm', 'Tất cả các điều trên'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia soạn hợp đồng dịch vụ đơn giản đúng pháp luật Việt Nam.
+
+LOẠI DỊCH VỤ: {{loai_dich_vu}}
+NỘI DUNG:
+{{noi_dung}}
+
+THỜI HẠN: {{thoi_han}}
+PHÍ:
+{{phi}}
+
+ĐIỀU KHOẢN ĐẶC BIỆT: {{dieu_khoan_dac_biet}}
+
+YÊU CẦU:
+
+Viết HỢP ĐỒNG DỊCH VỤ 3-5 TRANG theo cấu trúc chuẩn VN:
+
+═══ CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM ═══
+Độc lập - Tự do - Hạnh phúc
+
+**HỢP ĐỒNG DỊCH VỤ TƯ VẤN**
+Số: [số hợp đồng]
+
+- Căn cứ Bộ luật Dân sự 2015
+- Căn cứ nhu cầu và khả năng hai bên
+- Ngày ... tháng ... năm ...
+
+═══ CÁC BÊN ═══
+
+BÊN A (Khách hàng):
+- Tên/Công ty:
+- Địa chỉ:
+- Đại diện:
+- MST/Mã DN:
+
+BÊN B (Bên cung cấp dịch vụ):
+- Tên/Công ty:
+- Địa chỉ:
+- Đại diện:
+- MST/Mã DN:
+
+Hai bên thoả thuận:
+
+**ĐIỀU 1: NỘI DUNG DỊCH VỤ**
+- Chi tiết cụ thể theo dữ liệu tôi cung cấp
+- Deliverable rõ ràng, đo được
+- Loại trừ ra khỏi phạm vi (không làm)
+
+**ĐIỀU 2: THỜI HẠN**
+- Ngày bắt đầu
+- Ngày kết thúc/gia hạn
+
+**ĐIỀU 3: PHÍ + THANH TOÁN**
+- Cấu trúc phí
+- Lịch thanh toán
+- Phương thức
+- Hoá đơn VAT
+
+**ĐIỀU 4: QUYỀN + NGHĨA VỤ BÊN A**
+- 4-5 điều rõ ràng
+- Bao gồm: cung cấp thông tin, thanh toán đúng hạn, feedback trong X ngày
+
+**ĐIỀU 5: QUYỀN + NGHĨA VỤ BÊN B**
+- 4-5 điều rõ ràng
+- Bao gồm: chất lượng, thời hạn, giao tiếp
+
+**ĐIỀU 6: BẢO MẬT (NDA)**
+- Thông tin bí mật
+- Thời hạn bảo mật
+- Ngoại lệ
+
+**ĐIỀU 7: QUYỀN SỞ HỮU TRÍ TUỆ**
+- Ai sở hữu deliverable?
+- Ai sở hữu framework/tool của bên B?
+- Quyền dùng testimonial
+
+**ĐIỀU 8: CHẤM DỨT HỢP ĐỒNG**
+- Chấm dứt bình thường
+- Chấm dứt sớm (bên A/B)
+- Xử lý phần dở dang
+
+**ĐIỀU 9: GIẢI QUYẾT TRANH CHẤP**
+- Thương lượng trước
+- Trọng tài/toà án
+- Luật áp dụng: VN
+
+**ĐIỀU 10: ĐIỀU KHOẢN CHUNG**
+- Sửa đổi bằng văn bản
+- Điều khoản vô hiệu 1 phần
+- Số bản có giá trị pháp lý
+
+═══ CHỮ KÝ ═══
+BÊN A                    BÊN B
+
+YÊU CẦU:
+
+1. Ngôn ngữ tiếng Việt hành chính chuẩn, không dịch máy
+2. Điều khoản cân bằng, không thiên vị bên B (mình)
+3. Bao gồm tất cả điều khoản đặc biệt tôi yêu cầu: {{dieu_khoan_dac_biet}}
+4. Định dạng chuyên nghiệp, dễ đọc
+5. Có phần "Điều khoản hai bên thoả thuận thêm" để linh hoạt
+
+LƯU Ý CUỐI:
+Kèm 3 CẢNH BÁO: hợp đồng này là mẫu tham khảo, không thay thế tư vấn luật sư. Trước khi ký giá trị lớn, nên có luật sư review.
+
+XUẤT RA:
+Định dạng Markdown chuyên nghiệp. Có thể copy sang Word in ký.`
+  },
+  {
+    id: 'AI-029', buoc: 4,
+    icon: '🎓',
+    category: 'Đào tạo',
+    title: 'Thiết kế masterclass 1-3 ngày',
+    description: 'AI thiết kế chương trình masterclass chi tiết theo giờ + tài liệu học viên + slide + bài tập thực hành.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'chu_de',
+        label: 'Chủ đề masterclass',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: "Tài chính cho chủ chuỗi F&B" - từ đọc P&L đến ra quyết định mở rộng.'
+      },
+      {
+        id: 'thoi_luong',
+        label: 'Thời lượng',
+        type: 'select',
+        options: ['1 buổi (4 giờ)', '1 ngày (8 giờ)', '2 ngày cuối tuần', '3 ngày liên tục', '3 buổi tối trong tuần (mỗi buổi 3h)', 'Online 8 buổi × 90 phút'],
+        required: true
+      },
+      {
+        id: 'so_hoc_vien',
+        label: 'Số lượng học viên tối đa',
+        type: 'select',
+        options: ['1-3 người (VIP, giá cao)', '5-8 người (intimate)', '10-15 người (workshop)', '20-30 người (cohort)', '50+ người (masterclass online)'],
+        required: true
+      },
+      {
+        id: 'ket_qua',
+        label: 'Kết quả cụ thể học viên đạt được',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Đọc được báo cáo P&L của mình + tìm ra 3 vấn đề chính\n2. Xây được template báo cáo P&L cho chuỗi của mình\n3. Biết cách ra quyết định mở rộng dựa trên số liệu\n4. Có network với 10-15 chủ chuỗi F&B khác'
+      },
+      {
+        id: 'gia',
+        label: 'Giá bán dự kiến',
+        type: 'select',
+        options: ['Dưới 1 triệu (introduction)', '1-3 triệu', '3-8 triệu', '8-20 triệu (premium)', '20-50 triệu (VIP)', 'Miễn phí (lead magnet)'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia thiết kế masterclass cho chuyên gia Việt 40-60.
+
+CHỦ ĐỀ: {{chu_de}}
+THỜI LƯỢNG: {{thoi_luong}}
+SỐ HỌC VIÊN: {{so_hoc_vien}}
+KẾT QUẢ HỌC VIÊN ĐẠT ĐƯỢC:
+{{ket_qua}}
+GIÁ: {{gia}}
+
+YÊU CẦU:
+
+1. THIẾT KẾ CHƯƠNG TRÌNH CHI TIẾT THEO GIỜ:
+
+Với mỗi buổi/ngày:
+- Mục tiêu buổi (1-2 câu)
+- 4-6 module con
+- Với mỗi module:
+  * Thời gian (phút)
+  * Nội dung chính (3-5 gạch đầu dòng)
+  * Hình thức (lecture / discussion / exercise / case study)
+  * Deliverable học viên có được sau module
+
+2. CẤU TRÚC HỌC ĐA DẠNG:
+- Lecture (thuyết giảng): 40%
+- Case study: 20%
+- Exercise cá nhân/nhóm: 25%
+- Q&A / discussion: 10%
+- Break: 5%
+
+3. TÀI LIỆU HỌC VIÊN (Workbook):
+Liệt kê nội dung workbook 30-50 trang:
+- Chương 1: [nội dung]
+- Chương 2: [nội dung]
+- ...
+- Phần bài tập
+- Phần checklist
+- Phần template tools
+
+4. SLIDES (số lượng + nội dung chính):
+- Tổng số slide dự kiến
+- 5-10 slide "milestone" quan trọng nhất
+- Style thiết kế: minimalism / rich visual / data-driven?
+
+5. BÀI TẬP THỰC HÀNH:
+- 3-5 bài tập chính học viên làm trong lớp
+- 2-3 "pre-work" học viên chuẩn bị trước khi đến lớp
+- 3-5 "post-work" học viên làm sau lớp trong 30 ngày
+
+6. HỖ TRỢ SAU KHOÁ HỌC:
+- Cộng đồng riêng học viên (Zalo/FB Group?)
+- 1-2 buổi follow-up sau 30-60 ngày
+- Tài liệu tham khảo bổ sung
+- Cách theo dõi kết quả học viên
+
+7. MARKETING PACKAGE:
+- 3 tiêu đề bán (headline)
+- 5-7 điểm bullet USP (bán được vì sao?)
+- 3-5 objection thường gặp + phản hồi
+- Testimonial format (câu hỏi cho học viên cũ)
+
+8. VẬN HÀNH:
+- Địa điểm/nền tảng phù hợp {{so_hoc_vien}}
+- Chi phí ước tính (thuê phòng, catering, in ấn, marketing)
+- Timeline 8 tuần chuẩn bị trước ngày khai giảng
+
+XUẤT RA:
+Định dạng Markdown có heading + timetable + bảng. Đầy đủ + có thể triển khai ngay.`
+  },
+  {
+    id: 'AI-030', buoc: 4,
+    icon: '📥',
+    category: 'Marketing',
+    title: 'Thiết kế landing page thu email đăng ký',
+    description: 'AI viết nội dung + cấu trúc landing page tối ưu conversion thu email — có hook, benefit, social proof, CTA.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'lead_magnet',
+        label: 'Nội dung miễn phí bạn tặng (lead magnet)',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Ebook 30 trang "5 cách đọc P&L chuỗi F&B trong 15 phút" + template Excel báo cáo P&L chuẩn cho chuỗi nhỏ.'
+      },
+      {
+        id: 'doi_tuong',
+        label: 'Ai sẽ đăng ký nhận?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi F&B 5-15 chi nhánh tại VN, doanh thu 30-100 tỷ/năm, chưa có CFO, đang tự đọc báo cáo tài chính nhưng không hiểu rõ.'
+      },
+      {
+        id: 'benefit',
+        label: '3 lợi ích chính khi họ nhận lead magnet?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Hiểu được 5 chỉ số quan trọng nhất trong P&L chuỗi F&B (mà 80% chủ chuỗi bỏ qua)\n2. Template Excel sẵn sàng dùng - chỉ điền số\n3. Nhận email hàng tuần "Tài chính cho chủ chuỗi" chia sẻ case study thực tế'
+      },
+      {
+        id: 'thoi_gian_luu',
+        label: 'Bạn muốn hoặc đã có kênh nào để nurture người đăng ký?',
+        type: 'select',
+        options: ['Email newsletter hàng tuần', 'Chuỗi 5 email nurture', 'FB Group riêng', 'Zalo Broadcast', 'Chỉ tặng ebook một lần', 'Kết hợp email + community'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia viết landing page conversion cao cho market Việt Nam.
+
+LEAD MAGNET:
+{{lead_magnet}}
+
+ĐỐI TƯỢNG:
+{{doi_tuong}}
+
+3 LỢI ÍCH:
+{{benefit}}
+
+KÊNH NURTURE: {{thoi_gian_luu}}
+
+YÊU CẦU:
+
+Thiết kế landing page HOÀN CHỈNH với 9 khối theo thứ tự:
+
+═══ KHỐI 1: HERO SECTION (above the fold) ═══
+
+- Eyebrow (13-18 ký tự, uppercase): [gợi ý 3 option]
+- Headline chính (H1, 8-12 từ, chứa từ khoá + benefit lớn nhất): [gợi ý 3 option]
+- Sub-headline (1-2 câu, cụ thể hoá benefit): [nội dung]
+- CTA Button #1 (5-8 từ, action-oriented): [gợi ý 3 option]
+- Hình ảnh gợi ý: [mô tả]
+
+═══ KHỐI 2: SOCIAL PROOF NHANH ═══
+
+- Số liệu 1: "X người đã nhận" hoặc "được download X lần"
+- Số liệu 2 nếu có
+- Logo/tên 3-5 công ty/media đã featured (nếu có)
+
+═══ KHỐI 3: 3 LỢI ÍCH CHÍNH ═══
+
+Với mỗi lợi ích:
+- Icon suggested (emoji)
+- Tiêu đề ngắn (3-5 từ)
+- Mô tả (1-2 câu, cụ thể có số liệu)
+
+═══ KHỐI 4: BÊN TRONG LEAD MAGNET CÓ GÌ ═══
+
+Liệt kê 5-8 chi tiết cụ thể (bullet list):
+- Trang 1-5: [gì]
+- Trang 6-10: [gì]
+- Template Excel gồm: [gì]
+
+═══ KHỐI 5: VỀ TÁC GIẢ (Credibility) ═══
+
+- 1 câu positioning (ai + làm gì)
+- 3 credentials chính (số liệu, kinh nghiệm)
+- Ảnh chân dung gợi ý (mô tả)
+
+═══ KHỐI 6: TESTIMONIAL ═══
+
+Viết 3 testimonial mẫu (giả định):
+- Testimonial ngắn (1-2 câu, có cảm xúc + kết quả cụ thể)
+- Người nói: tên, chức vụ, công ty (nếu có)
+
+═══ KHỐI 7: FAQ (5 câu) ═══
+
+5 câu FAQ + trả lời:
+1. Lead magnet này có mất phí không?
+2. Tôi sẽ nhận email quảng cáo spam?
+3. Có phù hợp cho [đối tượng khác] không?
+4. Bao lâu tôi nhận được?
+5. Có support không nếu có câu hỏi?
+
+═══ KHỐI 8: CTA CUỐI ═══
+
+- Đảo lại benefit lớn nhất
+- CTA button #2 (khác #1 để test)
+- Đảm bảo "risk-free" (miễn phí, không spam, unsubscribe dễ)
+
+═══ KHỐI 9: FORM ĐĂNG KÝ ═══
+
+- Chỉ hỏi email (nếu muốn conversion cao)
+- Hoặc: email + tên + công ty (nếu muốn qualify)
+- Privacy statement 1 dòng
+
+YÊU CẦU CUỐI:
+
+1. Toàn bộ ngôn ngữ tiếng Việt tự nhiên
+2. Giọng: chuyên nghiệp + friendly, không hard sell
+3. Ngắn gọn - toàn bộ landing dưới 800 từ
+4. Mobile-first (nhớ heading ngắn)
+5. Bao gồm 3 A/B test suggestions cuối bài
+
+XUẤT RA:
+Định dạng Markdown mô phỏng cấu trúc landing page. Kèm hướng dẫn ngắn về cách triển khai (WordPress? Systeme? Notion?).`
+  },
+  {
+    id: 'AI-031', buoc: 4,
+    icon: '📧',
+    category: 'Marketing',
+    title: 'Viết chuỗi 5 email nurture cho khách mới đăng ký',
+    description: 'AI viết chuỗi 5 email tự động gửi cho người mới đăng ký — chuyển họ từ lạ → tin tưởng → khách trả tiền.',
+    time: '25 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'lead_magnet',
+        label: 'Họ vừa đăng ký nhận gì?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Ebook "5 cách đọc P&L chuỗi F&B" + template Excel'
+      },
+      {
+        id: 'doi_tuong',
+        label: 'Ai là người đăng ký?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi F&B 5-15 chi nhánh tại VN. Đang tự làm tài chính, muốn hiểu chuyên sâu hơn.'
+      },
+      {
+        id: 'muc_tieu_cuoi',
+        label: 'Mục tiêu cuối chuỗi email?',
+        type: 'select',
+        options: ['Đặt lịch tư vấn 30 phút miễn phí', 'Mua khoá học online', 'Đăng ký retainer dịch vụ', 'Tham gia workshop offline', 'Follow LinkedIn và tương tác lâu dài', 'Nurture đến khi họ tự chủ động contact'],
+        required: true
+      },
+      {
+        id: 'so_ngay',
+        label: 'Thời gian giữa các email',
+        type: 'select',
+        options: ['Ngày 1 - 3 - 5 - 7 - 10 (dồn dập)', 'Ngày 1 - 4 - 7 - 14 - 21 (thoải mái)', 'Ngày 1 - 7 - 14 - 21 - 30 (rải dài)', 'Tuần 1-5 (email chủ nhật hàng tuần)'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia email marketing cho SME + chuyên gia độc lập Việt Nam.
+
+VỀ CHUỖI EMAIL NÀY:
+- Người nhận vừa đăng ký: {{lead_magnet}}
+- Đối tượng: {{doi_tuong}}
+- Mục tiêu cuối: {{muc_tieu_cuoi}}
+- Cadence: {{so_ngay}}
+
+YÊU CẦU:
+
+Viết CHUỖI 5 EMAIL theo cấu trúc "value-first, sell-last":
+
+═══ EMAIL 1: WELCOME + DELIVER LEAD MAGNET ═══
+
+Ngày 1, ngay khi đăng ký.
+
+Cấu trúc:
+- Subject line: 3 gợi ý
+- Preview text: 1 câu
+- Body 200-300 từ:
+  * Chào mừng cá nhân hoá
+  * Link download lead magnet ngay
+  * Giới thiệu bản thân 3 câu (credibility)
+  * Cho biết sẽ nhận thêm email gì (set expectation)
+  * P.S: 1 tip nhanh có thể dùng ngay hôm nay
+
+═══ EMAIL 2: STORY + INSIGHT ═══
+
+Cấu trúc:
+- Subject line: 3 gợi ý
+- Body 300-400 từ:
+  * Câu chuyện thực tế của 1 khách hàng/chính bạn
+  * Rút ra 1 insight cụ thể (không phải tổng quan)
+  * Kết bằng câu hỏi cho reader suy nghĩ
+  * Không CTA bán hàng
+
+═══ EMAIL 3: FRAMEWORK + PRACTICAL TOOL ═══
+
+Cấu trúc:
+- Subject line: 3 gợi ý
+- Body 350-450 từ:
+  * Giới thiệu 1 framework/checklist/công cụ MÀ BẠN DÙNG
+  * 5-7 bullet cụ thể
+  * Ví dụ áp dụng thực tế
+  * Link tới bài blog/tài liệu chi tiết hơn
+  * CTA nhẹ: reply cho tôi biết bạn dùng nó thế nào
+
+═══ EMAIL 4: CASE STUDY + OBJECTION HANDLING ═══
+
+Cấu trúc:
+- Subject line: 3 gợi ý
+- Body 400-500 từ:
+  * Case study 1 khách đã dùng dịch vụ/kiến thức của bạn
+  * Trước - Trong - Sau (with numbers)
+  * Giải thích 2-3 objection thường gặp + phản hồi
+  * CTA mềm: "Đây có phải câu chuyện bạn cũng đang gặp?"
+
+═══ EMAIL 5: CTA CHÍNH ═══
+
+Cấu trúc:
+- Subject line: 3 gợi ý (cụ thể mạnh)
+- Body 250-350 từ:
+  * Tóm tắt hành trình 4 email trước
+  * Đề nghị bước tiếp theo (mục tiêu {{muc_tieu_cuoi}})
+  * Chi tiết cụ thể (giá, thời gian, kết quả)
+  * 2 CTA button (primary + secondary)
+  * Deadline hoặc scarcity (nếu phù hợp)
+  * P.S: nếu chưa sẵn sàng, reply email cho tôi biết bạn cần gì
+
+═══ HƯỚNG DẪN CHUNG ═══
+
+Cho toàn bộ 5 email:
+
+1. NGÔN NGỮ:
+- Tiếng Việt tự nhiên, ngôi "tôi/bạn"
+- Câu ngắn, đoạn ngắn (2-3 câu/đoạn)
+- Có emoji (1-2 email tối đa)
+- Không sáo mòn, không "kính chào quý khách"
+
+2. FORMAT:
+- Subject: dưới 50 ký tự, mở với câu hỏi hoặc số
+- Preview text: bổ sung subject, không lặp lại
+- Không header/footer nặng nề
+- Signature ngắn: tên + 1 câu định vị + link
+
+3. MOBILE-FRIENDLY:
+- Câu ngắn
+- Không dài quá 500 từ
+- Link/button rõ ràng
+
+4. A/B TEST SUGGESTIONS:
+- Cuối bài, đưa ra 3 điều đáng test (subject line, CTA, timing)
+
+XUẤT RA:
+Định dạng Markdown. Mỗi email có "═══ EMAIL X ═══" rõ ràng. Kèm hướng dẫn cách set up trong Mailchimp/ConvertKit/Sendinblue.`
+  },
+  {
+    id: 'AI-032', buoc: 4,
+    icon: '📞',
+    category: 'Bán hàng',
+    title: 'Viết script cold call điện thoại',
+    description: 'AI viết script gọi điện tiếp cận khách hàng doanh nghiệp — có mở đầu 30 giây + handling objection + kết thúc.',
+    time: '15 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'nguoi_goi',
+        label: 'Bạn gọi cho ai?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi F&B nhỏ tại VN có 5-15 chi nhánh. Là founder hoặc CEO. Thường bận, ít nghe điện thoại lạ.'
+      },
+      {
+        id: 'nguon_biet',
+        label: 'Bạn biết họ qua đâu?',
+        type: 'select',
+        options: ['Referral từ đồng nghiệp/khách cũ', 'Gặp qua sự kiện ngành', 'LinkedIn - đã tương tác qua bài viết', 'Nhìn thấy tin họ trên báo/mạng xã hội', 'Cold - hoàn toàn không biết gì trước', 'Đã email trước nhưng không phản hồi'],
+        required: true
+      },
+      {
+        id: 'muc_tieu',
+        label: 'Mục tiêu cuộc gọi',
+        type: 'select',
+        options: ['Đặt lịch gặp mặt/Zoom 30 phút', 'Đặt lịch demo dịch vụ', 'Mời tham gia sự kiện', 'Thăm dò vấn đề họ đang gặp', 'Giới thiệu lead magnet miễn phí', 'Nhắc lại email đã gửi'],
+        required: true
+      },
+      {
+        id: 'gia_tri',
+        label: 'Giá trị bạn có thể cung cấp cho họ?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tôi đã giúp 3 chuỗi F&B tương tự tiết kiệm 800tr-2.5 tỷ/năm bằng cách tái cấu trúc P&L. Kinh nghiệm 20 năm CFO tập đoàn 200 nhà hàng.'
+      }
+    ],
+    template: `Bạn là chuyên gia bán hàng B2B cho thị trường Việt Nam.
+
+VỀ CUỘC GỌI NÀY:
+- Người nhận: {{nguoi_goi}}
+- Nguồn biết: {{nguon_biet}}
+- Mục tiêu: {{muc_tieu}}
+- Giá trị tôi cung cấp:
+{{gia_tri}}
+
+YÊU CẦU:
+
+Viết SCRIPT CUỘC GỌI 3-5 phút theo cấu trúc:
+
+═══ PHẦN 1: OPENING 30 GIÂY ═══
+
+Cấu trúc:
+- Chào hỏi (5 giây): tên + xin phép 30 giây
+- Pattern interrupt (10 giây): câu tuyên bố khiêu khích/ngạc nhiên (KHÔNG phải "làm phiền anh chị")
+- Định vị bản thân (10 giây): tôi là ai + đã giúp ai
+- Câu hỏi mở (5 giây): xin phép hỏi 1 câu
+
+Viết 3 phiên bản OPENING khác nhau:
+- Phiên bản A: Warm (nếu nguồn biết là referral)
+- Phiên bản B: Curious (câu hỏi khiêu khích)
+- Phiên bản C: Direct (nói rõ mục đích)
+
+═══ PHẦN 2: DISCOVERY 60-90 GIÂY ═══
+
+3-5 câu hỏi để hiểu tình hình họ:
+1. Câu về hiện trạng
+2. Câu về vấn đề đang gặp
+3. Câu về hậu quả nếu không giải quyết
+4. Câu về giải pháp đang dùng
+5. Câu về mức độ ưu tiên
+
+Với mỗi câu:
+- Câu hỏi cụ thể (tiếng Việt tự nhiên)
+- Mục đích tìm gì
+- Câu trả lời khả thi + cách phản hồi
+
+═══ PHẦN 3: OFFER 60-90 GIÂY ═══
+
+Trình bày:
+- 1 câu tóm tắt điều bạn nghe được
+- Đề xuất bước tiếp theo cụ thể (đáp ứng mục tiêu {{muc_tieu}})
+- Lý do tại sao NÊN làm điều này ngay
+- Yêu cầu commitment cụ thể
+
+═══ PHẦN 4: OBJECTION HANDLING ═══
+
+Chuẩn bị phản hồi cho 6 objection phổ biến:
+
+1. "Tôi đang bận, hẹn lúc khác"
+2. "Chúng tôi đã có [đối thủ]"
+3. "Gửi email cho tôi thông tin"
+4. "Tôi cần bàn với đối tác"
+5. "Đắt quá / Không có ngân sách"
+6. "Không có nhu cầu"
+
+Với mỗi objection:
+- Câu phản hồi (không đối đầu)
+- Câu chuyển hướng cuộc trò chuyện
+
+═══ PHẦN 5: CLOSING ═══
+
+- Nếu YES: xác nhận meeting + gửi calendar + kết thúc lịch sự
+- Nếu MAYBE: xin phép follow up sau X ngày qua Y kênh
+- Nếu NO: cảm ơn + xin lời khuyên (họ nên gọi ai khác không?)
+
+═══ HƯỚNG DẪN NÓI ═══
+
+1. Tone: bình tĩnh, chậm rãi, tự tin
+2. Speed: 150-180 từ/phút (không nhanh)
+3. Pause: sau câu hỏi PHẢI im lặng 3-5 giây
+4. Smile: giọng có "smile" (thực sự cười khi nói)
+5. Kịch bản chỉ là guide - KHÔNG đọc như robot
+
+═══ TIP TÂM LÝ ═══
+
+5 tip tâm lý cho người 40-60 (thường ngại cold call):
+- Cách "warm up" trước khi bấm số
+- Cách phản ứng khi bị từ chối liên tiếp
+- Cách track kết quả để cải thiện
+- Cách nhận biết "hot lead" từ giọng nói
+- Số cuộc gọi/ngày realistic
+
+XUẤT RA:
+Định dạng Markdown có heading + dialog dạng "Bạn: ... / Khách: ...". Tiếng Việt tự nhiên.`
+  },
+  {
+    id: 'AI-033', buoc: 4,
+    icon: '📋',
+    category: 'Nghiên cứu',
+    title: 'Thiết kế khảo sát khách hàng cũ (NPS + open)',
+    description: 'AI thiết kế khảo sát 10 câu — có NPS + câu mở để hiểu vì sao khách hài lòng/không, feedback để cải thiện.',
+    time: '10 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'dich_vu',
+        label: 'Dịch vụ/sản phẩm bạn đã cung cấp cho khách',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Dịch vụ CFO thời vụ - retainer 6 tháng. Bao gồm: xây báo cáo P&L, coach founder ra quyết định, phân tích ad-hoc khi cần.'
+      },
+      {
+        id: 'so_khach',
+        label: 'Số khách hàng bạn sẽ gửi khảo sát',
+        type: 'select',
+        options: ['1-5 khách (in-depth interview format)', '5-20 khách (survey ngắn)', '20-50 khách (survey chuẩn)', '50+ khách (public survey)'],
+        required: true
+      },
+      {
+        id: 'muc_tieu',
+        label: 'Bạn muốn học được điều gì từ khảo sát?',
+        type: 'select',
+        options: ['Cải thiện dịch vụ hiện tại', 'Nghiên cứu để mở sản phẩm mới', 'Thu testimonial cho marketing', 'Tìm cơ hội upsell', 'Tính NPS + benchmark', 'Tất cả các điều trên'],
+        required: true
+      },
+      {
+        id: 'kenh',
+        label: 'Kênh gửi khảo sát',
+        type: 'select',
+        options: ['Email (Google Form/Typeform)', 'Zalo (link form)', 'SMS (link form)', 'In-person interview 30 phút', 'Video call 1-1 30 phút', 'Kết hợp: form + follow-up call cho người quan tâm'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia customer research + NPS survey design cho SME Việt Nam.
+
+VỀ KHẢO SÁT NÀY:
+- Dịch vụ đã cung cấp: {{dich_vu}}
+- Số khách: {{so_khach}}
+- Mục tiêu: {{muc_tieu}}
+- Kênh: {{kenh}}
+
+YÊU CẦU:
+
+Thiết kế KHẢO SÁT 10 CÂU HỎI theo cấu trúc:
+
+═══ EMAIL/MESSAGE MỞ ĐẦU ═══
+
+Viết 1 email/tin nhắn ngắn (150-200 từ) gửi khách:
+- Chủ đề (subject line)
+- Lý do khảo sát (thẳng thắn, chân thành)
+- Thời gian dự kiến (5-7 phút)
+- Ưu đãi/thank you gift (nếu có)
+- Link khảo sát
+
+═══ CÂU 1: NPS CHUẨN ═══
+
+"Trên thang 0-10, bạn có sẵn sàng giới thiệu [dịch vụ] cho đồng nghiệp/bạn bè cùng ngành không?"
+- Scale 0-10
+- 0 = "Chắc chắn không"
+- 10 = "Chắc chắn có"
+
+═══ CÂU 2-3: FOLLOW-UP NPS ═══
+
+Câu 2 (nếu điểm 9-10 = Promoter):
+"Điều gì làm bạn hài lòng nhất về dịch vụ?"
+
+Câu 3 (nếu điểm 0-8 = Passive/Detractor):
+"Chúng tôi có thể cải thiện điều gì để bạn cho điểm 10?"
+
+═══ CÂU 4-6: ĐO LƯỜNG GIÁ TRỊ ═══
+
+Câu 4: "Kết quả cụ thể nào bạn đạt được sau khi dùng dịch vụ?"
+(Open-ended, khuyến khích số liệu)
+
+Câu 5: "Điều gì bạn có thể đạt được KHÔNG PHẢI nhờ dịch vụ này?"
+(Chấm điểm 1-10 để phân biệt correlation vs causation)
+
+Câu 6: "Bạn đã giới thiệu dịch vụ cho ai chưa? Kết quả ra sao?"
+(Multiple choice: Đã giới thiệu / Đang cân nhắc / Chưa nghĩ tới / Không muốn giới thiệu)
+
+═══ CÂU 7-8: HÀNH TRÌNH KHÁCH HÀNG ═══
+
+Câu 7: "Trước khi biết đến dịch vụ, bạn đã thử giải pháp nào khác?"
+(Open-ended)
+
+Câu 8: "Điều gì khiến bạn CUỐI CÙNG quyết định dùng dịch vụ này?"
+(Chọn 1: Referral / Nội dung LinkedIn / Bài viết blog / Cuộc gặp offline / Khác)
+
+═══ CÂU 9: UPSELL DISCOVERY ═══
+
+"Nếu chúng tôi mở rộng dịch vụ, điều gì bạn muốn có thêm?"
+- 5-7 option (dựa vào dịch vụ hiện tại)
+- + Option "Khác - vui lòng ghi rõ"
+
+═══ CÂU 10: FEEDBACK MỞ ═══
+
+"Bạn có góp ý gì để chúng tôi phục vụ tốt hơn không?"
+(Open-ended, không bắt buộc)
+
+═══ TESTIMONIAL PERMISSION ═══
+
+"Cho phép chúng tôi trích dẫn câu trả lời của bạn (ẩn danh hoặc có tên) để chia sẻ trên website/mạng xã hội?"
+- Có, dùng tên đầy đủ + logo công ty
+- Có, dùng tên đầy đủ nhưng không logo
+- Có, dùng tên viết tắt (ví dụ "Anh N.V.A")
+- Có, dùng ẩn danh
+- Không
+
+═══ EMAIL/MESSAGE CẢM ƠN ═══
+
+Sau khi khách hoàn thành:
+- Cảm ơn ngắn gọn
+- Cho biết bạn sẽ dùng feedback thế nào
+- Gift (nếu có)
+
+═══ HƯỚNG DẪN PHÂN TÍCH KẾT QUẢ ═══
+
+Sau khi thu 10+ phản hồi:
+
+1. TÍNH NPS:
+- Công thức: % Promoter (9-10) - % Detractor (0-6)
+- Benchmark ngành B2B: >30 = tốt, >50 = xuất sắc
+
+2. PHÂN TÍCH ĐỊNH TÍNH:
+- Đọc câu trả lời open-ended, tìm 3-5 pattern
+- Highlight quote đáng dùng cho marketing
+- Nhận diện 2-3 vấn đề lớn cần cải thiện
+
+3. HÀNH ĐỘNG NGAY:
+- Với Promoter (9-10): xin referral + testimonial
+- Với Passive (7-8): xin feedback cụ thể để nâng lên Promoter
+- Với Detractor (0-6): 1-1 call để hiểu vấn đề + phục hồi
+
+XUẤT RA:
+Định dạng Markdown + email templates. Tiếng Việt tự nhiên. Kèm link/hướng dẫn setup Google Form/Typeform.`
+  },
+  {
+    id: 'AI-034', buoc: 4,
+    icon: '🎤',
+    category: 'Kinh doanh',
+    title: 'Viết pitch deck 10 slide cho nhà đầu tư/đối tác',
+    description: 'AI viết outline 10 slide pitch deck chuẩn Silicon Valley — cùng talking points cho từng slide.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'du_an',
+        label: 'Mô tả ngắn dự án/công ty bạn muốn pitch',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Sol.vn - platform giúp người Việt 40-60 tái khởi nghiệp đúng hướng. Đã có sách + hệ thống 5 Bước + 10 case study + cộng đồng 500 thành viên.'
+      },
+      {
+        id: 'muc_tieu_pitch',
+        label: 'Mục tiêu buổi pitch',
+        type: 'select',
+        options: ['Gọi vốn đầu tư angel (100-500 triệu)', 'Gọi vốn đầu tư seed (1-5 tỷ)', 'Tìm đồng sáng lập/CTO', 'Bán ý tưởng cho đối tác chiến lược', 'Xin sponsorship/partnership', 'Thuyết trình nội bộ (báo cáo hội đồng)', 'Ứng tuyển accelerator/incubator'],
+        required: true
+      },
+      {
+        id: 'thoi_luong',
+        label: 'Thời lượng pitch',
+        type: 'select',
+        options: ['3 phút (elevator)', '5 phút (demo day)', '10 phút (chuẩn)', '15-20 phút (investor meeting)', 'Không giới hạn - thảo luận nhiều'],
+        required: true
+      },
+      {
+        id: 'giai_doan',
+        label: 'Giai đoạn hiện tại của dự án',
+        type: 'select',
+        options: ['Chỉ có ý tưởng - chưa có gì', 'MVP - có sản phẩm nhưng chưa có khách', 'Có 1-10 khách đầu (early traction)', 'Có 10-100 khách (product-market fit)', 'Có traction rõ + đang scale', 'Đã có doanh thu ổn định'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia coach pitch deck cho founder Việt Nam. Nhiệm vụ: viết pitch deck 10 slide theo template Sequoia/YC.
+
+DỰ ÁN:
+{{du_an}}
+
+MỤC TIÊU PITCH: {{muc_tieu_pitch}}
+THỜI LƯỢNG: {{thoi_luong}}
+GIAI ĐOẠN: {{giai_doan}}
+
+YÊU CẦU:
+
+Viết OUTLINE 10 SLIDE + talking points chi tiết:
+
+═══ SLIDE 1: TITLE ═══
+
+- Tên dự án (font lớn, memorable)
+- 1 câu định vị (tagline 8-12 từ)
+- Tên bạn + chức vụ + ngày pitch
+- Logo + hình ảnh nhẹ
+
+Talking points (30 giây): Chào + giới thiệu bản thân ngắn + hứa hẹn buổi pitch sẽ trình bày gì.
+
+═══ SLIDE 2: PROBLEM ═══
+
+- 1 câu tuyên bố vấn đề TO
+- 2-3 gạch đầu dòng cụ thể hoá
+- 1 số liệu shock (nếu có)
+- Hình ảnh minh hoạ
+
+Talking points (60 giây): Kể câu chuyện thực tế của 1 khách/người quen. Đưa ra số liệu để chứng minh vấn đề lớn. Kết bằng "và đây là điều đang xảy ra hàng ngày".
+
+═══ SLIDE 3: SOLUTION ═══
+
+- 1 câu tuyên bố giải pháp
+- 3 điểm chính (product features)
+- Ảnh screenshot/mockup
+
+Talking points (60 giây): Giới thiệu giải pháp KHÔNG PHẢI features - mà là OUTCOME khách đạt được.
+
+═══ SLIDE 4: MARKET SIZE ═══
+
+- TAM / SAM / SOM (bảng)
+- Nguồn số liệu
+- Timeline market growth
+
+Talking points (45 giây): Giải thích cách tính TAM/SAM/SOM cho VN. Nhấn xu hướng tăng trưởng.
+
+═══ SLIDE 5: PRODUCT ═══
+
+- Screenshot/demo (3-5 hình)
+- 3 differentiator chính
+- User journey ngắn gọn
+
+Talking points (60 giây): Demo nhanh (nếu có). Nhấn 3 điểm khác biệt so với đối thủ.
+
+═══ SLIDE 6: TRACTION ═══
+
+Với {{giai_doan}}:
+- Nếu có traction: số liệu tăng trưởng (bảng/biểu đồ)
+- Nếu chưa: dấu hiệu sớm (customer interview, waitlist, LOI)
+- Testimonial/case study
+
+Talking points (60 giây): Kể "why now" và bằng chứng thị trường đang sẵn sàng.
+
+═══ SLIDE 7: BUSINESS MODEL ═══
+
+- Cách kiếm tiền (revenue streams)
+- Bảng giá (nếu có)
+- Unit economics (LTV, CAC, gross margin)
+
+Talking points (45 giây): Giải thích flywheel/monetization. Show economics khả thi.
+
+═══ SLIDE 8: COMPETITION ═══
+
+- Matrix so sánh với 3-5 đối thủ (2 trục)
+- Vị trí của bạn
+- 3 unfair advantages
+
+Talking points (45 giây): Không hạ đối thủ. Nói rõ bạn khác BIỆT ở đâu.
+
+═══ SLIDE 9: TEAM ═══
+
+- Ảnh + tên + chức vụ + credentials
+- Advisor board (nếu có)
+- Lý do team này win
+
+Talking points (45 giây): Kể tại sao đúng team này giải quyết đúng vấn đề này.
+
+═══ SLIDE 10: THE ASK ═══
+
+- Cụ thể mục tiêu {{muc_tieu_pitch}}
+- Số tiền/nguồn lực xin
+- Use of fund (nếu gọi vốn)
+- Timeline
+
+Talking points (60 giây): Thẳng thắn. Kết bằng câu mở cho Q&A.
+
+═══ BONUS SLIDES (nếu có Q&A) ═══
+
+- Slide 11: Financial projections 3 năm
+- Slide 12: Roadmap product 12 tháng
+- Slide 13: Cap table (nếu gọi vốn)
+- Slide 14: Case studies chi tiết
+- Slide 15: Team org chart mở rộng
+
+═══ HƯỚNG DẪN THIẾT KẾ ═══
+
+1. Style: minimalism, 1 idea/slide
+2. Font: sans-serif (Inter, Helvetica)
+3. Màu: tối đa 3 màu (primary + accent + neutral)
+4. Text: dưới 30 từ/slide (trừ team)
+5. Format: 16:9
+
+═══ HƯỚNG DẪN THUYẾT TRÌNH ═══
+
+- Practice: 10 lần trước khi pitch thật
+- Ghi âm + nghe lại
+- Time từng slide
+- Chuẩn bị 20 câu Q&A khả thi
+- Storytelling: cảm xúc + số liệu
+
+XUẤT RA:
+Định dạng Markdown có 10 slide detailed. Kèm 3 CẢNH BÁO thường gặp khi pitch VN (khác Silicon Valley).`
+  },
+  {
+    id: 'AI-035', buoc: 4,
+    icon: '📃',
+    category: 'Bán hàng',
+    title: 'Viết hồ sơ năng lực cho khách doanh nghiệp',
+    description: 'AI viết hồ sơ năng lực (company profile) 5-7 trang chuyên nghiệp — dùng gửi khách B2B qua email.',
+    time: '25 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'ten_dv',
+        label: 'Tên dịch vụ/công ty bạn',
+        type: 'text',
+        required: true,
+        placeholder: 'VD: Khang Sol Consulting (hoặc chỉ tên cá nhân)'
+      },
+      {
+        id: 'linh_vuc',
+        label: 'Lĩnh vực chuyên môn',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tư vấn tài chính cho chuỗi F&B nhỏ + vừa tại VN. Chuyên: xây báo cáo P&L, tối ưu chi phí, coach ra quyết định.'
+      },
+      {
+        id: 'kinh_nghiem',
+        label: 'Kinh nghiệm + credential quan trọng',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- 20 năm F&B (10 năm CFO tập đoàn 200 nhà hàng)\n- Đã turn around 5 chi nhánh lỗ thành lời\n- MBA + CFA Level 2\n- Đã coach 15 chủ chuỗi F&B trong 3 năm qua'
+      },
+      {
+        id: 'khach_muc_tieu',
+        label: 'Khách hàng B2B mục tiêu',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Chủ chuỗi F&B tại VN có 5-20 chi nhánh, doanh thu 30-150 tỷ/năm. Có nhu cầu về CFO nhưng chưa muốn thuê full-time. Có budget 15-50 triệu/tháng cho tư vấn tài chính.'
+      },
+      {
+        id: 'case_study',
+        label: 'Có case study/testimonial nào chia sẻ được?',
+        type: 'textarea',
+        placeholder: 'VD: Chuỗi X (5 chi nhánh): giúp phát hiện lỗ hổng cost 800tr/tháng, tiết kiệm 9 tỷ/năm. Chị Y - chủ chuỗi: "Anh Khang giúp tôi hiểu số liệu như đọc câu chuyện."'
+      }
+    ],
+    template: `Bạn là chuyên gia viết hồ sơ năng lực (company profile) cho tư vấn B2B Việt Nam.
+
+VỀ TÔI:
+- Tên: {{ten_dv}}
+- Lĩnh vực: {{linh_vuc}}
+
+KINH NGHIỆM + CREDENTIAL:
+{{kinh_nghiem}}
+
+KHÁCH HÀNG MỤC TIÊU:
+{{khach_muc_tieu}}
+
+CASE STUDY:
+{{case_study}}
+
+YÊU CẦU:
+
+Viết HỒ SƠ NĂNG LỰC 5-7 TRANG theo cấu trúc:
+
+═══ TRANG BÌA ═══
+
+- Logo (nếu có)
+- Tên công ty/cá nhân
+- Tagline (1 câu định vị)
+- Ngày cập nhật
+- Người liên hệ + email + phone
+
+═══ TRANG 1: THƯ NGỎ (Cover Letter) ═══
+
+Viết thư ngỏ 200-300 từ:
+- Chào khách (personalize được nếu biết tên)
+- Giới thiệu bản thân 2-3 câu
+- Vì sao gửi hồ sơ này
+- Điều khách sẽ đọc trong hồ sơ
+- Đề xuất bước tiếp theo (call 30 phút?)
+- Signature chuyên nghiệp
+
+═══ TRANG 2: GIỚI THIỆU CHUNG ═══
+
+3 phần:
+1. VỀ CHÚNG TÔI (150 từ):
+   - Tôi/công ty làm gì
+   - Cho ai
+   - Kết quả cụ thể đã đạt được
+   - Điều KHÁC BIỆT
+
+2. TẦM NHÌN + SỨ MỆNH (100 từ):
+   - Tầm nhìn 5 năm
+   - Sứ mệnh cụ thể
+
+3. GIÁ TRỊ CỐT LÕI (5 giá trị):
+   - Mỗi giá trị: tên + 1 câu định nghĩa
+
+═══ TRANG 3: DỊCH VỤ CHÚNG TÔI CUNG CẤP ═══
+
+Chia thành 3-4 dịch vụ chính. Với mỗi dịch vụ:
+- Tên gói (VD: "CFO Retainer Standard")
+- Ai phù hợp (2-3 câu)
+- Nội dung chi tiết (5-7 gạch đầu dòng)
+- Deliverable cụ thể
+- Timeline (2-4 tuần / hàng tháng)
+- Không bao gồm (giới hạn phạm vi)
+- Giá tham khảo (khoảng)
+
+═══ TRANG 4: QUY TRÌNH LÀM VIỆC ═══
+
+Sơ đồ 4-6 bước quy trình từ khi khách contact → kết thúc dự án:
+- Bước 1: Meeting 30 phút miễn phí
+- Bước 2: Proposal + timeline
+- Bước 3: Onboarding
+- Bước 4: Thực thi
+- Bước 5: Review + report định kỳ
+- Bước 6: Handover + hỗ trợ sau
+
+Với mỗi bước: mô tả 1-2 câu + timeline.
+
+═══ TRANG 5: CASE STUDIES ═══
+
+Trình bày 2-3 case study cụ thể theo template STAR:
+- Situation: khách gặp vấn đề gì
+- Task: bạn được giao gì
+- Action: bạn đã làm gì (3-5 việc chính)
+- Result: kết quả cụ thể có số liệu
+
+Kèm testimonial trực tiếp từ khách (1-2 câu).
+
+═══ TRANG 6: VỀ ĐỘI NGŨ ═══
+
+- Founder/main consultant: ảnh + tên + credentials
+- Team (nếu có): 2-3 người chính
+- Advisor (nếu có)
+
+═══ TRANG 7: LIÊN HỆ + BƯỚC TIẾP THEO ═══
+
+- 3 cách liên hệ (email, phone, LinkedIn)
+- Đề xuất bước tiếp theo cụ thể:
+  * Option 1: Meeting 30 phút miễn phí (link Calendly)
+  * Option 2: Nhận proposal chi tiết (form)
+  * Option 3: Follow LinkedIn / Newsletter
+
+- Câu kết chuyên nghiệp
+
+═══ YÊU CẦU CHUNG ═══
+
+1. NGÔN NGỮ:
+- Tiếng Việt hành chính chuyên nghiệp
+- Ngôi "chúng tôi" nếu là công ty, "tôi" nếu cá nhân
+- Câu ngắn, súc tích
+- Không sáo mòn
+
+2. FORMAT:
+- Định dạng có thể xuất PDF gọn gàng
+- Có thể sang Word/Powerpoint
+- Font: Inter, Roboto, hoặc Times New Roman
+- Màu: 2-3 màu, không sặc sỡ
+
+3. SEO NGƯỢC:
+- Bao gồm 5-10 keyword ngành để khách search email tìm ra
+- Tags/metadata gợi ý
+
+XUẤT RA:
+Định dạng Markdown hoàn chỉnh. Đủ nội dung để làm PDF chuyên nghiệp.`
+  }// ═══ BƯỚC 5 · AN TOÀN BỀN VỮNG (5 mẫu) ═══
+  ,{
+    id: 'AI-036', buoc: 5,
+    icon: '📊',
+    category: 'Đánh giá',
+    title: 'Đánh giá quý theo 4 trục (TC-NL-QH-NL)',
+    description: 'AI phân tích quý vừa qua theo 4 trục: Tài chính, Năng lực, Quan hệ, Năng lượng — kèm điều chỉnh cho quý tới.',
+    time: '30 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'quy',
+        label: 'Quý bạn đang đánh giá?',
+        type: 'select',
+        options: ['Q1 (Tháng 1-3)', 'Q2 (Tháng 4-6)', 'Q3 (Tháng 7-9)', 'Q4 (Tháng 10-12)'],
+        required: true
+      },
+      {
+        id: 'tai_chinh',
+        label: 'TÀI CHÍNH - kết quả quý qua so với mục tiêu?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- Mục tiêu doanh thu: 500tr - Đạt: 380tr (76%)\n- Mục tiêu tiết kiệm: 50tr/tháng - Đạt: 30tr/tháng (60%)\n- Đã có 3 khách retainer (mục tiêu 5)\n- Cash flow dương 2/3 tháng\n- Chi phí vượt dự kiến: thuê văn phòng + marketing'
+      },
+      {
+        id: 'nang_luc',
+        label: 'NĂNG LỰC - kỹ năng/kiến thức bạn học/áp dụng được?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- Học được LinkedIn content strategy (30 giờ)\n- Áp dụng: đăng đều 2 bài/tuần, follower tăng từ 500 → 1200\n- Chưa có thời gian học SEO như dự kiến\n- Tự nhận thấy yếu: closing deal, đàm phán giá'
+      },
+      {
+        id: 'quan_he',
+        label: 'QUAN HỆ - network + gia đình quý qua?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- Network: Kết nối được 15 chủ chuỗi F&B mới qua sự kiện, gặp mặt được 8 người\n- Gia đình: Bù đắp được thời gian với vợ (3 chuyến ngắn), 2 con vẫn ít gặp\n- Bạn bè cũ: 2-3 lần cà phê ngắn, không sâu sắc\n- Coach/mentor: Bắt đầu học với 1 mentor (2 buổi/tháng)'
+      },
+      {
+        id: 'nang_luong',
+        label: 'NĂNG LƯỢNG - sức khoẻ + tinh thần?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- Sức khoẻ: Tập gym đều đặn 3 buổi/tuần, huyết áp ổn định. Vẫn 78kg (mục tiêu 75kg).\n- Ngủ: Trung bình 6-7 giờ/đêm, chưa đủ 8 giờ như dự kiến\n- Tinh thần: Có tuần rất động lực, có tuần thấy nản khi không có khách mới\n- Sở thích: Đọc sách được 2 cuốn (mục tiêu 3), leo núi 1 lần (mục tiêu 2)'
+      },
+      {
+        id: 'quy_toi',
+        label: 'Điều bạn muốn thay đổi trong quý tới?',
+        type: 'textarea',
+        placeholder: 'VD: Muốn tăng doanh thu lên 700tr/quý. Học SEO trong 20 giờ. Gặp con nhiều hơn (1 bữa/tuần). Giảm 2kg.'
+      }
+    ],
+    template: `Bạn là chuyên gia coach quarterly review cho người 40-60 pivot sự nghiệp, đặc biệt sử dụng framework "4 trục cân bằng" của Sol La Bàn.
+
+QUÝ ĐÁNH GIÁ: {{quy}}
+
+TÀI CHÍNH:
+{{tai_chinh}}
+
+NĂNG LỰC:
+{{nang_luc}}
+
+QUAN HỆ:
+{{quan_he}}
+
+NĂNG LƯỢNG:
+{{nang_luong}}
+
+ĐIỀU MUỐN THAY ĐỔI Q TỚI: {{quy_toi}}
+
+YÊU CẦU:
+
+1. CHẤM ĐIỂM 4 TRỤC (mỗi trục 0-10):
+
+Với mỗi trục:
+- Điểm: __/10
+- Bằng chứng cụ thể cho điểm số này
+- So sánh với quý trước (giả sử đang tăng/giảm/ổn định)
+
+Tổng điểm quý: __/40
+Xu hướng: cải thiện / duy trì / suy giảm
+
+2. PHÂN TÍCH SÂU MỖI TRỤC:
+
+TRỤC 1 · TÀI CHÍNH:
+- 3 điểm tốt: [cụ thể]
+- 3 điểm cần cải thiện: [cụ thể]
+- Nguyên nhân sâu xa (không phải triệu chứng): [phân tích]
+- 1 metric quan trọng nhất Q tới: [chỉ số]
+
+TRỤC 2 · NĂNG LỰC:
+- Kỹ năng đã master: [liệt kê]
+- Kỹ năng đang dở dang: [liệt kê]
+- Kỹ năng chưa bắt đầu (nhưng cần): [liệt kê]
+- 1 kỹ năng ưu tiên Q tới + lộ trình 90 ngày
+
+TRỤC 3 · QUAN HỆ:
+- Network mới có giá trị: [phân tích]
+- Gia đình - dấu hiệu tích cực/tiêu cực: [phân tích]
+- Bạn bè cũ - có bị bỏ quên?
+- 1 mối quan hệ cần đầu tư Q tới
+
+TRỤC 4 · NĂNG LƯỢNG:
+- Sức khoẻ thể chất: [đánh giá]
+- Sức khoẻ tinh thần: [đánh giá]
+- Sở thích + niềm vui: [đánh giá]
+- 1 thói quen cần thay đổi Q tới
+
+3. NHẬN DIỆN PATTERN NGUY HIỂM:
+
+Kiểm tra 5 dấu hiệu:
+- Có trục nào bị "hy sinh" liên tục vì trục khác không? (VD: sức khoẻ → tài chính)
+- Có xu hướng "burnout" không? (làm nhiều - kết quả ít)
+- Có "self-sabotage" không? (không hoàn thành điều đã cam kết)
+- Có "comparison trap" không? (so bì với người khác)
+- Có "isolation" không? (làm 1 mình quá lâu)
+
+4. 5 QUYẾT ĐỊNH CHO Q TỚI:
+
+- Quyết định 1: KEEP - Việc gì đang work tốt, tiếp tục không đổi
+- Quyết định 2: STOP - Việc gì không tạo kết quả, dừng ngay
+- Quyết định 3: START - Việc gì chưa làm nhưng phải bắt đầu
+- Quyết định 4: MORE - Việc gì cần đầu tư gấp đôi
+- Quyết định 5: LESS - Việc gì cần giảm bớt (không dừng hẳn)
+
+5. MỤC TIÊU 4 TRỤC Q TỚI:
+
+Với mỗi trục, đặt 1 mục tiêu SMART:
+- TC: [số cụ thể]
+- NL: [kỹ năng + mức]
+- QH: [số cuộc gặp/chất lượng]
+- NL: [chỉ số sức khoẻ]
+
+Ưu tiên: nếu chỉ đạt được 1 trong 4, chọn cái nào?
+
+6. LỜI KHUYÊN CUỐI:
+
+- 1 câu ghi nhớ cho Q tới
+- 1 câu tránh (KHÔNG được làm)
+- 1 lời khuyên khi cảm thấy nản
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng chấm điểm. Tiếng Việt tự nhiên, giọng như coach thân thiết - trung thực nhưng ấm áp.`
+  },
+  {
+    id: 'AI-037', buoc: 5,
+    icon: '💰',
+    category: 'Tài chính',
+    title: 'Lộ trình tiết kiệm 30% thu nhập trong 12 tháng',
+    description: 'AI thiết kế kế hoạch tiết kiệm 30% thu nhập/tháng - có ngân sách chi tiết + đầu tư an toàn cho người 40-60.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'thu_nhap',
+        label: 'Thu nhập trung bình/tháng của bạn?',
+        type: 'select',
+        options: ['30-50 triệu', '50-100 triệu', '100-200 triệu', '200-500 triệu', 'Trên 500 triệu'],
+        required: true
+      },
+      {
+        id: 'gia_dinh',
+        label: 'Số người phụ thuộc?',
+        type: 'select',
+        options: ['Chỉ 1 mình', 'Vợ/chồng (không con hoặc con đã tự lập)', 'Vợ/chồng + 1 con', 'Vợ/chồng + 2 con', 'Vợ/chồng + 2 con + bố mẹ già', 'Khác'],
+        required: true
+      },
+      {
+        id: 'no',
+        label: 'Bạn đang có khoản nợ nào không?',
+        type: 'select',
+        options: ['Không có nợ', 'Nợ nhỏ (<200tr) - trả trong 6 tháng', 'Nợ vừa (200tr-1tỷ) - trả trong 1-3 năm', 'Nợ lớn (>1 tỷ) - dài hạn (mortgage, xe)', 'Đang khó khăn tài chính'],
+        required: true
+      },
+      {
+        id: 'chi_hien_tai',
+        label: 'Bạn đang tiết kiệm bao nhiêu %/tháng?',
+        type: 'select',
+        options: ['Chưa tiết kiệm được', '<10%', '10-20%', '20-30%', '>30% (đã đạt rồi, muốn tối ưu)'],
+        required: true
+      },
+      {
+        id: 'muc_dich',
+        label: 'Mục đích chính của khoản tiết kiệm?',
+        type: 'select',
+        options: ['Quỹ khẩn cấp (6-12 tháng chi phí)', 'Nghỉ hưu (retire early)', 'Đầu tư sinh lời dài hạn', 'Bảo vệ gia đình (bảo hiểm)', 'Chuyển giao thế hệ (di sản)', 'Kết hợp nhiều mục đích'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia tư vấn tài chính cá nhân cho người Việt 40-60, chuyên về "an toàn tài chính bền vững".
+
+VỀ TÔI:
+- Thu nhập/tháng: {{thu_nhap}}
+- Người phụ thuộc: {{gia_dinh}}
+- Nợ: {{no}}
+- Tiết kiệm hiện tại: {{chi_hien_tai}}
+- Mục đích tiết kiệm: {{muc_dich}}
+
+YÊU CẦU:
+
+1. NGÂN SÁCH CHI TIẾT THEO NGUYÊN TẮC 50-20-30:
+
+Dựa vào thu nhập {{thu_nhap}}, chia:
+
+CHI TIÊU CẦN THIẾT (50% - Needs):
+- Nhà ở + tiện ích: bao nhiêu?
+- Ăn uống hằng ngày: bao nhiêu?
+- Đi lại: bao nhiêu?
+- Bảo hiểm: bao nhiêu?
+- Giáo dục con (nếu có): bao nhiêu?
+- Y tế: bao nhiêu?
+- Nợ tối thiểu: bao nhiêu?
+
+TIẾT KIỆM + ĐẦU TƯ (30% - Save):
+- Quỹ khẩn cấp: X%
+- Nghỉ hưu: X%
+- Đầu tư: X%
+- Giáo dục con dài hạn: X%
+
+CHI CHO CUỘC SỐNG (20% - Wants):
+- Ăn hàng, giải trí: bao nhiêu?
+- Du lịch: bao nhiêu?
+- Sở thích: bao nhiêu?
+- Quà biếu: bao nhiêu?
+
+CHÚ Ý: Với mục đích {{muc_dich}}, có thể cần điều chỉnh tỷ lệ.
+
+2. LỘ TRÌNH 12 THÁNG - LÊN 30% TIẾT KIỆM:
+
+Với người đang tiết kiệm {{chi_hien_tai}}, đề xuất tăng dần:
+
+Tháng 1-2: Ổn định ở mức hiện tại, tracking chi tiêu
+Tháng 3-4: Cắt X% từ mục A, tiết kiệm __%
+Tháng 5-6: Tối ưu mục B, tiết kiệm __%
+Tháng 7-9: Tăng thu nhập từ nguồn C, tiết kiệm __%
+Tháng 10-12: Đạt 30%, bắt đầu đầu tư
+
+Với mỗi giai đoạn:
+- Hành động cụ thể
+- Số tiền tiết kiệm mục tiêu
+- Rủi ro có thể gặp
+- Cách vượt qua
+
+3. CHIẾN LƯỢC ĐẦU TƯ AN TOÀN CHO NGƯỜI 40-60:
+
+Phân bổ danh mục theo tuổi:
+- Tiết kiệm ngân hàng: __%
+- Trái phiếu chính phủ/an toàn: __%
+- Vàng: __%
+- Chứng khoán bluechip VN: __%
+- Bất động sản (nếu có vốn lớn): __%
+- Đầu tư nước ngoài (nếu có): __%
+
+Với mỗi loại:
+- Vì sao phù hợp
+- Cách bắt đầu (ngân hàng nào, sàn nào, giá bắt đầu)
+- Rủi ro cần biết
+- % lợi nhuận thực tế kỳ vọng (không hứa hẹn)
+
+4. XỬ LÝ NỢ (nếu có):
+
+Nếu tôi có {{no}}:
+- Ưu tiên trả nợ nào trước? (interest highest?)
+- Có nên vay để đầu tư? (thường KHÔNG)
+- Chiến lược avalanche vs snowball?
+
+5. BẢO HIỂM CẦN THIẾT:
+
+Cho người {{gia_dinh}}:
+- Bảo hiểm nhân thọ: gói nào phù hợp?
+- Bảo hiểm sức khoẻ: bổ sung ngoài BHXH?
+- Bảo hiểm tai nạn?
+- Bảo hiểm hưu trí bổ sung?
+
+Ước tính chi phí bảo hiểm/tháng.
+
+6. QUỸ KHẨN CẤP:
+
+- Mục tiêu: 6-12 tháng chi phí (tùy mức độ ổn định thu nhập)
+- Nên để ở đâu? (savings account, money market)
+- Cách xây dần trong 6-12 tháng
+- Khi nào dùng - khi nào không dùng?
+
+7. CẢNH BÁO SAI LẦM PHỔ BIẾN:
+
+5 sai lầm người 40-60 hay mắc:
+- Đầu tư "hot tip" từ bạn bè
+- Cho con vay/tặng quá nhiều
+- Bỏ hết vào 1 chỗ (bất động sản, chứng khoán)
+- Không có bảo hiểm sức khoẻ đủ
+- Nghĩ "còn khoẻ, chưa cần lo hưu"
+
+8. CHECKLIST HÀNG THÁNG:
+
+10 việc phải làm mỗi đầu tháng:
+- Kiểm tra chi tiêu tháng trước
+- Chuyển khoản tiết kiệm tự động
+- Review đầu tư
+- Trả nợ đúng hạn
+- ...
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng ngân sách. Tiếng Việt tự nhiên. Kết bằng CẢNH BÁO: đây là kế hoạch tham khảo, không thay thế tư vấn tài chính cá nhân từ chuyên gia có chứng chỉ.`
+  },
+  {
+    id: 'AI-038', buoc: 5,
+    icon: '💪',
+    category: 'Sức khoẻ',
+    title: 'Kế hoạch bảo vệ sức khoẻ + năng lượng 12 tháng',
+    description: 'AI thiết kế lộ trình sức khoẻ cho người 40-60 - có kiểm tra định kỳ + chế độ ăn + tập luyện + phòng bệnh mãn tính.',
+    time: '20 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'tuoi',
+        label: 'Tuổi của bạn?',
+        type: 'select',
+        options: ['40-45', '45-50', '50-55', '55-60', '60+'],
+        required: true
+      },
+      {
+        id: 'gioi',
+        label: 'Giới tính',
+        type: 'select',
+        options: ['Nam', 'Nữ'],
+        required: true
+      },
+      {
+        id: 'benh_ly',
+        label: 'Vấn đề sức khoẻ hiện có / có nguy cơ?',
+        type: 'select',
+        options: ['Không có / khoẻ mạnh', 'Huyết áp cao', 'Tiểu đường / tiền tiểu đường', 'Mỡ máu cao / gan nhiễm mỡ', 'Đau lưng / xương khớp', 'Mất ngủ mãn tính', 'Stress mãn tính / lo âu', 'Nhiều vấn đề cùng lúc'],
+        required: true
+      },
+      {
+        id: 'thoi_gian_tap',
+        label: 'Thời gian bạn có thể tập luyện/tuần?',
+        type: 'select',
+        options: ['<3 giờ/tuần', '3-5 giờ/tuần', '5-7 giờ/tuần', 'Trên 7 giờ/tuần'],
+        required: true
+      },
+      {
+        id: 'muc_tieu',
+        label: 'Mục tiêu sức khoẻ 12 tháng?',
+        type: 'select',
+        options: ['Duy trì hiện trạng, phòng bệnh', 'Giảm cân (5-15kg)', 'Tăng sức bền + năng lượng', 'Kiểm soát bệnh mãn tính', 'Chuẩn bị cho công việc mới đòi hỏi thể lực', 'Chuẩn bị hưu trí khoẻ mạnh'],
+        required: true
+      },
+      {
+        id: 'ngan_sach',
+        label: 'Ngân sách y tế + sức khoẻ/tháng?',
+        type: 'select',
+        options: ['<2 triệu', '2-5 triệu', '5-10 triệu', '10-20 triệu', '>20 triệu'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia sức khoẻ tổng quát cho người Việt 40-60, chuyên về "healthy aging + longevity".
+
+VỀ TÔI:
+- Tuổi: {{tuoi}}
+- Giới: {{gioi}}
+- Sức khoẻ hiện tại: {{benh_ly}}
+- Thời gian tập/tuần: {{thoi_gian_tap}}
+- Mục tiêu 12 tháng: {{muc_tieu}}
+- Ngân sách sức khoẻ: {{ngan_sach}}
+
+YÊU CẦU:
+
+1. ĐÁNH GIÁ RỦI RO SỨC KHOẺ theo độ tuổi + giới tính:
+
+Ở tuổi {{tuoi}} + {{gioi}}, các bệnh lý rủi ro cao:
+- Bệnh 1: xác suất __%
+- Bệnh 2: xác suất __%
+- Bệnh 3: xác suất __%
+
+Kèm 5 dấu hiệu cảnh báo sớm bạn phải chú ý.
+
+2. LỊCH KIỂM TRA SỨC KHOẺ ĐỊNH KỲ:
+
+3 THÁNG:
+- Kiểm tra huyết áp tại nhà (nếu có nguy cơ)
+- Cân nặng, chỉ số BMI
+- Đo eo/hông
+
+6 THÁNG:
+- Khám tổng quát + xét nghiệm máu cơ bản
+- Kiểm tra mỡ máu, đường huyết
+- Kiểm tra mắt
+
+12 THÁNG:
+- Khám tổng quát chi tiết
+- Xét nghiệm chuyên sâu (tuỳ độ tuổi + giới)
+- Nội soi (nếu >45 tuổi)
+- Với nữ: khám phụ khoa + tầm soát ung thư vú
+- Với nam: khám tuyến tiền liệt (>50 tuổi)
+
+Kèm chi phí ước tính cho từng loại.
+
+3. CHẾ ĐỘ ĂN PHÙ HỢP:
+
+Nguyên tắc chung theo tuổi {{tuoi}}:
+- Ưu tiên: [5 nhóm thực phẩm]
+- Hạn chế: [5 loại thực phẩm]
+- Bỏ hẳn: [3 thứ nguy hiểm]
+
+Menu mẫu 1 tuần:
+- Sáng: 3 gợi ý
+- Trưa: 3 gợi ý
+- Tối: 3 gợi ý
+- Snack: 3 gợi ý
+
+Nhấn mạnh:
+- Đủ đạm cho người 40-60 (chống sarcopenia)
+- Đủ canxi + D3 (chống loãng xương)
+- Đủ chất xơ (tiêu hoá + tim mạch)
+- Ít đường + muối (ngừa tiểu đường + huyết áp)
+
+Với bệnh lý {{benh_ly}}: điều chỉnh gì?
+
+4. KẾ HOẠCH TẬP LUYỆN:
+
+Với thời gian {{thoi_gian_tap}}, đề xuất:
+
+Tuần lý tưởng:
+- Cardio (đi bộ nhanh, bơi, đạp xe): X buổi × Y phút
+- Sức mạnh (tạ, kháng lực): X buổi × Y phút
+- Linh hoạt (yoga, stretching): X buổi × Y phút
+- Cân bằng (thái cực, dance): X buổi × Y phút
+
+Với bệnh lý {{benh_ly}}: điều chỉnh gì?
+
+5. GIẤC NGỦ + STRESS:
+
+Ngủ chất lượng:
+- 7-8 giờ/đêm
+- 5 quy tắc "sleep hygiene"
+- Cách xử lý nếu mất ngủ
+
+Quản lý stress:
+- 3 kỹ thuật thư giãn (thiền, thở, journal)
+- 3 dấu hiệu stress cần đi khám
+- Khi nào cần tâm lý tư vấn?
+
+6. BỔ SUNG (SUPPLEMENTS) - CẨN THẬN:
+
+Với tuổi {{tuoi}} + {{gioi}} + bệnh lý {{benh_ly}}:
+- Cần thiết: [danh sách - VD Vitamin D3, Omega 3]
+- Có thể xem xét: [danh sách - VD Coenzyme Q10, Curcumin]
+- KHÔNG cần: [danh sách - các thứ marketing quảng cáo]
+
+Kèm liều lượng + thương hiệu uy tín tại VN.
+
+7. KHÁM CHUYÊN KHOA - KHI NÀO CẦN?
+
+10 dấu hiệu cụ thể để đi khám ngay:
+- Ví dụ: đau ngực > 15 phút, khó thở khi nằm...
+
+8. CHECKLIST HÀNG THÁNG:
+
+10 việc kiểm tra sức khoẻ tự làm:
+- Cân nặng
+- Huyết áp
+- Vòng eo
+- Chất lượng giấc ngủ
+- ...
+
+9. NGÂN SÁCH Y TẾ HÀNG THÁNG:
+
+Phân bổ {{ngan_sach}}/tháng:
+- Bảo hiểm: __%
+- Kiểm tra định kỳ: __%
+- Tập luyện (phòng gym, coach): __%
+- Dinh dưỡng chất lượng cao: __%
+- Bổ sung: __%
+- Quỹ y tế dự phòng: __%
+
+10. LỜI KHUYÊN CUỐI:
+
+- 3 thói quen quan trọng nhất (nếu chỉ chọn 3)
+- 3 thứ tuyệt đối tránh
+- 1 mindset chính cho tuổi 40-60
+
+CẢNH BÁO CUỐI:
+Đây là kế hoạch tham khảo. Không thay thế tư vấn y khoa cá nhân. Trước khi thay đổi chế độ ăn/tập/uống thuốc, PHẢI tham khảo bác sĩ.
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng. Tiếng Việt tự nhiên. Cụ thể cho VN (không chép từ US health guidelines).`
+  },
+  {
+    id: 'AI-039', buoc: 5,
+    icon: '🎁',
+    category: 'Kế thừa',
+    title: 'Kế hoạch chuyển giao nghề cho người kế nhiệm',
+    description: 'AI thiết kế lộ trình 12 tháng chuyển giao công việc/business cho con/team kế nhiệm - có milestones + rủi ro.',
+    time: '25 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'noi_dung',
+        label: 'Bạn muốn chuyển giao gì?',
+        type: 'select',
+        options: ['Business/công ty (làm chủ)', 'Vai trò chuyên môn (làm thuê cấp cao)', 'Cả 2 (business + skill)', 'Chỉ hệ thống kiến thức', 'Chỉ mạng lưới quan hệ', 'Tài sản đầu tư'],
+        required: true
+      },
+      {
+        id: 'nguoi_ke',
+        label: 'Người kế nhiệm là ai?',
+        type: 'select',
+        options: ['Con ruột (đã trong nghề)', 'Con ruột (chưa quen ngành)', 'Nhân viên senior nội bộ', 'Người ngoài (thuê CEO)', 'Đối tác kinh doanh', 'Bán/thoái vốn cho bên ngoài', 'Chưa xác định'],
+        required: true
+      },
+      {
+        id: 'tuoi_nguoi_ke',
+        label: 'Tuổi + kinh nghiệm người kế nhiệm?',
+        type: 'select',
+        options: ['<25 tuổi, chưa kinh nghiệm', '25-30 tuổi, kinh nghiệm dưới 5 năm', '30-35 tuổi, kinh nghiệm 5-10 năm', '35-45 tuổi, kinh nghiệm 10+ năm', '45+ tuổi, có kinh nghiệm quản lý'],
+        required: true
+      },
+      {
+        id: 'thoi_gian',
+        label: 'Timeline chuyển giao mong muốn?',
+        type: 'select',
+        options: ['6 tháng (nhanh)', '12 tháng (chuẩn)', '2 năm (rộng rãi)', '3-5 năm (từ từ)', 'Không rõ, tuỳ tình hình'],
+        required: true
+      },
+      {
+        id: 'thach_thuc',
+        label: 'Thách thức lớn nhất bạn dự đoán?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Con chưa có kinh nghiệm quản lý team - từng làm nhân viên chưa quản ai\n2. Khách hàng lâu năm chỉ quen làm việc với tôi\n3. Team cũ có thể không phục người mới\n4. Bí quyết ngành nằm trong đầu tôi - chưa document\n5. Tôi khó "buông tay" - hay can thiệp'
+      }
+    ],
+    template: `Bạn là chuyên gia coach về "succession planning" (kế hoạch chuyển giao) cho SME + chuyên gia Việt Nam.
+
+VỀ TÔI:
+- Chuyển giao: {{noi_dung}}
+- Người kế nhiệm: {{nguoi_ke}}
+- Tuổi + kinh nghiệm người kế: {{tuoi_nguoi_ke}}
+- Timeline: {{thoi_gian}}
+
+THÁCH THỨC LỚN NHẤT:
+{{thach_thuc}}
+
+YÊU CẦU:
+
+1. ĐÁNH GIÁ ĐỘ SẴN SÀNG:
+
+Chấm điểm 1-10 cho 5 yếu tố:
+- Người kế đã sẵn sàng: __/10 (dựa trên tuổi + kinh nghiệm)
+- Hệ thống đã document: __/10
+- Team + khách hàng chuẩn bị tâm lý: __/10
+- Bạn (người chuyển) sẵn sàng "buông": __/10
+- Tài chính/pháp lý cấu trúc: __/10
+
+Tổng: __/50. Diagnosis: sẵn sàng / cần chuẩn bị / chưa nên.
+
+2. LỘ TRÌNH {{thoi_gian}} CHI TIẾT:
+
+Nếu {{thoi_gian}} = 12 tháng, chia thành 4 quý:
+
+═══ Q1 (Tháng 1-3): AUDIT + DOCUMENT ═══
+
+Mục tiêu: Chuyển kiến thức ngầm thành hệ thống rõ ràng
+
+Việc cụ thể:
+- Document 5-10 quy trình quan trọng nhất
+- Mapping 20-30 mối quan hệ khách hàng key
+- List 10 quyết định người kế cần học ra
+- Đánh giá gap kỹ năng người kế
+- Bắt đầu shadow (người kế theo bạn)
+
+Milestone Q1:
+- 80% quy trình đã document
+- Người kế đã ngồi 50+ giờ với bạn
+
+═══ Q2 (Tháng 4-6): TRANSFER CƠ BẢN ═══
+
+Mục tiêu: Người kế bắt đầu chủ động ở 30% việc
+
+Việc cụ thể:
+- Người kế lead 3-5 dự án nhỏ (có bạn support)
+- Giới thiệu người kế cho 10 khách hàng key
+- Bắt đầu coach 1-1 hàng tuần
+- Nhận diện team member ủng hộ + phản đối
+- Xử lý resistance từ team cũ
+
+Milestone Q2:
+- Người kế đã lead 3+ dự án thành công
+- 30% quyết định hàng ngày người kế tự làm
+
+═══ Q3 (Tháng 7-9): TRANSFER TRUNG BÌNH ═══
+
+Mục tiêu: Người kế chủ động 60% việc, bạn advisor
+
+Việc cụ thể:
+- Người kế thành CEO/lead role chính thức
+- Bạn chuyển sang advisor role (2-3 buổi/tuần)
+- Chuyển ownership 20-30% khách key
+- Xử lý crisis (test bằng tình huống thực)
+- Setup governance mới (nếu là business)
+
+Milestone Q3:
+- Người kế lead 60% việc
+- Khách chấp nhận người kế
+- Team ổn định dưới lãnh đạo mới
+
+═══ Q4 (Tháng 10-12): TRANSFER HOÀN TẤT ═══
+
+Mục tiêu: Bạn "step back", người kế chủ động 90%
+
+Việc cụ thể:
+- Chuyển hết 90% việc
+- Bạn chỉ can thiệp khi được yêu cầu
+- Chuyển ownership pháp lý (nếu business)
+- Public announcement (nếu cần)
+- Post-mortem: review lessons learned
+
+Milestone Q4:
+- Người kế fully independent
+- Bạn đã có "life 2.0"
+
+3. 5 RỦI RO LỚN NHẤT + XỬ LÝ:
+
+Với thách thức {{thach_thuc}}, phân tích 5 rủi ro:
+
+Rủi ro 1: [từ thách thức của bạn]
+- Xác suất: __%
+- Thiệt hại: [scenario]
+- Phòng ngừa: [action]
+- Backup plan: [action]
+
+Rủi ro 2-5: tương tự
+
+4. XỬ LÝ TỪNG THÁCH THỨC BẠN NÊU:
+
+Với mỗi thách thức trong {{thach_thuc}}, đưa ra:
+- Chiến lược cụ thể
+- Timeline
+- Nguồn lực cần
+
+5. VẤN ĐỀ TÂM LÝ - CỦA BẠN:
+
+Người chuyển thường gặp 5 vấn đề tâm lý:
+- "Ai làm tốt hơn tôi?"
+- "Mình có còn giá trị không?"
+- "Nếu người kế thất bại thì sao?"
+- "Đời mình sẽ làm gì tiếp?"
+- "Có phải mình đã sẵn sàng thật không?"
+
+Với mỗi vấn đề: cách nhận diện + cách xử lý.
+
+6. VẤN ĐỀ TÂM LÝ - CỦA NGƯỜI KẾ:
+
+Người kế thường gặp:
+- "Áp lực làm bằng người tiền nhiệm"
+- "Sợ thay đổi làm hỏng di sản"
+- "Team không tôn trọng"
+- "Khách hàng vẫn tin người cũ hơn"
+- "Không được tin để ra quyết định"
+
+Cách bạn hỗ trợ mỗi vấn đề.
+
+7. CẤU TRÚC PHÁP LÝ + TÀI CHÍNH (nếu business):
+
+- Chuyển cổ phần: earn-out vs mua đứt vs tặng?
+- Hợp đồng kế nhiệm
+- Điều khoản "handover support" 6-12 tháng
+- Chia lợi nhuận giai đoạn chuyển
+- Cảnh báo: nên có luật sư review
+
+8. CUỘC SỐNG SAU CHUYỂN GIAO:
+
+Bạn cần chuẩn bị "life 2.0":
+- 3 vai trò mới có thể đảm nhận (mentor? advisor? investor?)
+- 3 sở thích/dự án cá nhân
+- Cân bằng "giữ liên lạc" vs "không can thiệp"
+
+XUẤT RA:
+Định dạng Markdown có heading + timeline + bảng. Tiếng Việt tự nhiên. Đủ chi tiết để triển khai ngay.`
+  },
+  {
+    id: 'AI-040', buoc: 5,
+    icon: '🛡️',
+    category: 'Rủi ro',
+    title: 'Hệ thống backup nghề nghiệp (Plan B)',
+    description: 'AI thiết kế Plan B - dự phòng nghề nghiệp nếu ngành/mô hình hiện tại sụp đổ (kinh tế, công nghệ, chính sách).',
+    time: '25 phút',
+    ai: 'ChatGPT / Claude',
+    questions: [
+      {
+        id: 'nghe_hien_tai',
+        label: 'Nghề/mô hình chính của bạn hiện tại?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD: Tư vấn tài chính (CFO thời vụ) cho chuỗi F&B tại VN. Doanh thu 200-300 triệu/tháng. 5-7 khách retainer.'
+      },
+      {
+        id: 'lo_ngai',
+        label: '3 rủi ro lớn nhất bạn lo ngại?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n1. Kinh tế suy thoái - chủ chuỗi F&B cắt chi phí tư vấn đầu tiên\n2. AI thay thế nhiều công việc phân tích tài chính\n3. Cá nhân: sức khoẻ suy giảm không thể làm việc liên tục\n4. Chính sách thuế thay đổi khiến ngành F&B khó khăn'
+      },
+      {
+        id: 'nguon_luc_khac',
+        label: 'Kỹ năng/nguồn lực khác bạn có (ngoài nghề chính)?',
+        type: 'textarea',
+        required: true,
+        placeholder: 'VD:\n- MBA + CFA - có thể trở lại làm CFO công ty lớn\n- Tiếng Anh giỏi - có thể tư vấn cho khách nước ngoài\n- Đã viết 30 bài LinkedIn - có audience nhỏ\n- Có bất động sản cho thuê - thu nhập 30tr/tháng\n- Có kinh nghiệm giảng dạy 5 năm (có thể dạy học)'
+      },
+      {
+        id: 'thoi_gian_du',
+        label: 'Bao lâu bạn muốn có Plan B sẵn sàng?',
+        type: 'select',
+        options: ['3 tháng (khẩn cấp)', '6 tháng', '12 tháng', '2-3 năm (từ từ chuẩn bị)', 'Sẵn sàng ngay bây giờ'],
+        required: true
+      },
+      {
+        id: 'tai_chinh_du_phong',
+        label: 'Tài chính dự phòng hiện có (đủ sống bao lâu)?',
+        type: 'select',
+        options: ['Dưới 3 tháng', '3-6 tháng', '6-12 tháng', '1-2 năm', 'Trên 2 năm (financial independence)'],
+        required: true
+      }
+    ],
+    template: `Bạn là chuyên gia risk management + career planning cho người 40-60. Nhiệm vụ: thiết kế Plan B (backup) nghề nghiệp cho tôi.
+
+NGHỀ CHÍNH HIỆN TẠI:
+{{nghe_hien_tai}}
+
+3 RỦI RO LỚN NHẤT:
+{{lo_ngai}}
+
+NGUỒN LỰC KHÁC:
+{{nguon_luc_khac}}
+
+TIMELINE CHUẨN BỊ: {{thoi_gian_du}}
+TÀI CHÍNH DỰ PHÒNG: {{tai_chinh_du_phong}}
+
+YÊU CẦU:
+
+1. PHÂN TÍCH RỦI RO NGHIÊM TÚC:
+
+Với mỗi rủi ro trong {{lo_ngai}}:
+- Xác suất xảy ra 5 năm tới: __%
+- Nếu xảy ra, thu nhập giảm bao nhiêu %?
+- Timeline xảy ra: nhanh (dưới 6 tháng) / trung bình (6-24 tháng) / chậm (2-5 năm)
+- Dấu hiệu cảnh báo sớm: 3 dấu hiệu cụ thể
+- Nếu xảy ra kết hợp 2-3 rủi ro cùng lúc: thảm hoạ thế nào?
+
+2. THIẾT KẾ 3 PLAN B:
+
+═══ PLAN B1: PIVOT NHẸ ═══
+(Dùng khi rủi ro TRUNG BÌNH xảy ra)
+
+- Nghề: Tôi vẫn dùng skill hiện tại nhưng chuyển ngành/khách khác
+- Ví dụ cụ thể (dựa trên nguồn lực khác của tôi)
+- Thu nhập kỳ vọng
+- Thời gian ramp up: 1-3 tháng
+- Chi phí chuyển đổi: thấp
+
+═══ PLAN B2: PIVOT TRUNG BÌNH ═══
+(Dùng khi rủi ro LỚN xảy ra)
+
+- Nghề: Kết hợp skill hiện tại + skill khác
+- Ví dụ cụ thể
+- Thu nhập kỳ vọng
+- Thời gian ramp up: 3-6 tháng
+- Chi phí chuyển đổi: trung bình
+
+═══ PLAN B3: PIVOT TOÀN DIỆN ═══
+(Dùng khi rủi ro CATASTROPHIC xảy ra)
+
+- Nghề: Hoàn toàn mới, dùng những kỹ năng ẩn của tôi
+- Ví dụ cụ thể (dựa trên {{nguon_luc_khac}})
+- Thu nhập kỳ vọng
+- Thời gian ramp up: 6-18 tháng
+- Chi phí chuyển đổi: cao
+
+3. CHIẾN LƯỢC "OPTIONALITY":
+
+Nassim Taleb "antifragile" - tạo optionality thay vì tránh rủi ro:
+
+Trong timeline {{thoi_gian_du}}, làm 5 việc:
+
+Tháng 1-2:
+- Việc 1: Tạo 1 kênh thu nhập thứ 2 (side income)
+- Việc 2: Xây network trong ngành khác
+
+Tháng 3-4:
+- Việc 3: Học 1 skill mới có thể sinh income
+- Việc 4: Xây audience/reputation trong niche khác
+
+Tháng 5-6:
+- Việc 5: Thử nghiệm mô hình Plan B với 10% thời gian
+
+4. QUỸ DỰ PHÒNG:
+
+Với tài chính hiện tại {{tai_chinh_du_phong}}:
+- Nếu <6 tháng: cấp bách xây quỹ khẩn cấp
+- Nếu 6-12 tháng: chuyển sang optimize
+- Nếu >12 tháng: đầu tư vào skill mới
+
+Mục tiêu: 12-24 tháng chi phí trong quỹ khẩn cấp.
+
+5. DẤU HIỆU KÍCH HOẠT PLAN B:
+
+Với mỗi Plan B, đưa ra 5 dấu hiệu bạn nên chuyển sang plan đó:
+- Plan B1 kích hoạt khi: [5 dấu hiệu]
+- Plan B2 kích hoạt khi: [5 dấu hiệu]
+- Plan B3 kích hoạt khi: [5 dấu hiệu]
+
+6. DIVERSIFICATION - KHÔNG BỎ HẾT VÀO 1 CHỖ:
+
+Chiến lược multi-stream income cho người 40-60:
+- Nguồn 1: Nghề chính (60-70%)
+- Nguồn 2: Passive income (10-20%) - bất động sản/đầu tư
+- Nguồn 3: Side skill (10-15%) - dạy/viết/coach
+- Nguồn 4: Digital asset (5-10%) - khoá học/newsletter/book
+
+Với nguồn lực của tôi ({{nguon_luc_khac}}):
+- Mỗi nguồn cụ thể là gì?
+- Bắt đầu từ đâu?
+- Thu nhập kỳ vọng?
+
+7. LÁ CHẮN CUỐI CÙNG:
+
+Nếu ALL PLANS THẤT BẠI, còn gì?
+- Xuống ngưỡng chi tiêu 40%: cần điều chỉnh gì?
+- Nghề "cứu cánh" - luôn có thu nhập: có 2-3 options
+- Cộng đồng/gia đình support
+- Bảo hiểm tối thiểu
+
+8. CHECKLIST HÀNG QUÝ:
+
+10 câu hỏi review:
+- Nghề chính còn ổn không?
+- Kênh thu nhập phụ có tăng?
+- Skill mới có tiến bộ?
+- Network mới có mở rộng?
+- Quỹ dự phòng có tăng?
+- ...
+
+9. TÂM LÝ:
+
+3 tâm lý phải giữ:
+- Không paranoid - không sống trong sợ hãi
+- Không complacent - không chủ quan
+- Actionable - luôn có action nhỏ mỗi tuần
+
+XUẤT RA:
+Định dạng Markdown có heading + bảng. Tiếng Việt tự nhiên. Kết bằng câu quote cảm hứng về "resilience" cho người 40-60.`
+  }];
+
+// ═══════════════════════════════════════════════════════════
+// PAYWALL — 5 free / 35 lock
+// ═══════════════════════════════════════════════════════════
+// 5 prompt FREE - phổ dụng nhất, viral nhất (Bước 4)
+const FREE_PROMPT_IDS = ['AI-001','AI-002','AI-003','AI-011','AI-012','AI-016','AI-017','AI-021','AI-022','AI-026','AI-036','AI-037'];
+
+function isPromptFree(id) {
+  return FREE_PROMPT_IDS.includes(id) || isSolActive();
+}
+
+function isSolActive() {
+  // Check localStorage for Active/Founder access
+  return localStorage.getItem('sol_active') === 'true' ||
+         localStorage.getItem('sol_founder') === 'true';
+}
+
+function showPaywall(prompt) {
+  const modal = document.getElementById('paywall-modal');
+  document.getElementById('paywall-prompt-name').innerHTML =
+    `<strong>${prompt.id}</strong> · ${prompt.title}`;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePaywall() {
+  document.getElementById('paywall-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ═══════════════════════════════════════════════════════════
+// TABS + SEARCH + RENDER
+// ═══════════════════════════════════════════════════════════
+
+const BUOC_INFO = {
+  1: { label:'BƯỚC 1', title:'🌱 Thấu Hiểu Bản Thân', desc:'Đánh giá năng lực, giá trị cốt lõi, điểm mạnh yếu — nền tảng cho mọi quyết định.' },
+  2: { label:'BƯỚC 2', title:'🔭 Khai Phá', desc:'Nghiên cứu mô hình kinh doanh, chuyên gia thành công, xu hướng ngành.' },
+  3: { label:'BƯỚC 3', title:'🧭 Chọn Hướng', desc:'So sánh, kiểm chứng, ra quyết định về hướng đi mới.' },
+  4: { label:'BƯỚC 4', title:'🚀 Hành Động', desc:'Thực thi cụ thể: nội dung marketing, bán hàng, kinh doanh, đào tạo.' },
+  5: { label:'BƯỚC 5', title:'🛡️ An Toàn Bền Vững', desc:'Đánh giá, duy trì, phòng ngừa rủi ro, chuẩn bị dài hạn.' }
+};
+
+let activeBuoc = 0; // 0 = all
+let searchQuery = '';
+
+function switchTab(el, buoc) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  activeBuoc = buoc;
+  renderGrid();
+  window.scrollTo({top: document.querySelector('.tabs-wrapper').offsetTop - 20, behavior: 'smooth'});
+}
+
+function filterPrompts() {
+  searchQuery = document.getElementById('search-box').value.trim().toLowerCase();
+  renderGrid();
+}
+
+function getFilteredPrompts() {
+  return PROMPTS.filter(p => {
+    const matchBuoc = activeBuoc === 0 || p.buoc === activeBuoc;
+    const matchSearch = !searchQuery ||
+      p.title.toLowerCase().includes(searchQuery) ||
+      p.description.toLowerCase().includes(searchQuery) ||
+      p.category.toLowerCase().includes(searchQuery) ||
+      p.id.toLowerCase().includes(searchQuery);
+    return matchBuoc && matchSearch;
+  });
+}
+
+function updateTabCounts() {
+  document.getElementById('count-0').textContent = PROMPTS.length;
+  for (let b = 1; b <= 5; b++) {
+    const cnt = PROMPTS.filter(p => p.buoc === b).length;
+    const el = document.getElementById('count-' + b);
+    if (el) el.textContent = cnt;
+  }
+}
+
+function renderGrid() {
+  const grid = document.getElementById('prompts-grid');
+  const filtered = getFilteredPrompts();
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="no-results">
+        <h3>🔍 Không tìm thấy mẫu phù hợp</h3>
+        <p>Thử từ khoá khác hoặc chọn tab khác. Hoặc <a href="#" onclick="clearFilters();return false;">xem tất cả 40 mẫu</a>.</p>
+      </div>`;
+    return;
+  }
+
+  // Group by Bước when "Tất cả"
+  let html = '';
+  if (activeBuoc === 0 && !searchQuery) {
+    for (let b = 1; b <= 5; b++) {
+      const group = filtered.filter(p => p.buoc === b);
+      if (group.length === 0) continue;
+      const info = BUOC_INFO[b];
+      html += `
+        <div class="buoc-header">
+          <div class="buoc-header__label">${info.label} · ${group.length} MẪU</div>
+          <div class="buoc-header__title">${info.title}</div>
+          <div class="buoc-header__desc">${info.desc}</div>
+        </div>`;
+      html += group.map(renderCard).join('');
+    }
+  } else {
+    html = filtered.map(renderCard).join('');
+  }
+  grid.innerHTML = html;
+}
+
+function renderCard(p) {
+  const isFree = FREE_PROMPT_IDS.includes(p.id);
+  const unlocked = isPromptFree(p.id);
+  const badge = isFree
+    ? '<div class="prompt-card__free">MIỄN PHÍ</div>'
+    : (isSolActive()
+        ? '<div class="prompt-card__free">✓ ACTIVE</div>'
+        : '<div class="prompt-card__lock">🔒 ACTIVE</div>');
+  const cardClass = unlocked ? 'prompt-card' : 'prompt-card prompt-card--locked';
+  return `
+    <div class="${cardClass}" onclick="openForm('${p.id}')">
+      ${badge}
+      <div class="prompt-card__id">${p.id} · ${p.category}</div>
+      <div class="prompt-card__icon">${p.icon}</div>
+      <h3 class="prompt-card__title">${p.title}</h3>
+      <p class="prompt-card__desc">${p.description}</p>
+      <div class="prompt-card__meta">
+        <span>⏱ ${p.time}</span>
+        <span>🤖 ${p.ai}</span>
+      </div>
+    </div>
+  `;
+}
+
+function clearFilters() {
+  activeBuoc = 0;
+  searchQuery = '';
+  document.getElementById('search-box').value = '';
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.tab[data-buoc="0"]').classList.add('active');
+  renderGrid();
+}
+
+let currentPrompt = null;
+
+function openForm(id) {
+  currentPrompt = PROMPTS.find(p => p.id === id);
+  if (!currentPrompt) return;
+
+  // PAYWALL CHECK: locked prompts require Sol Active/Founder
+  if (!isPromptFree(currentPrompt.id)) {
+    showPaywall(currentPrompt);
+    return;
+  }
+
+  document.getElementById('grid-view').style.display = 'none';
+  document.getElementById('form-view').classList.add('active');
+  document.getElementById('result-container').innerHTML = '';
+
+  document.getElementById('form-icon').textContent = currentPrompt.icon;
+  document.getElementById('form-id').textContent = currentPrompt.id + ' · ' + currentPrompt.category;
+  document.getElementById('form-title').textContent = currentPrompt.title;
+  document.getElementById('form-desc').textContent = currentPrompt.description;
+
+  const questionsHTML = currentPrompt.questions.map((q, i) => {
+    const requiredMark = q.required ? '<span class="form-required">*</span>' : '';
+    let inputHTML = '';
+
+    if (q.type === 'text') {
+      inputHTML = `<input type="text" class="form-input" id="q-${q.id}" placeholder="${q.placeholder || ''}"${q.required ? ' required' : ''}>`;
+    } else if (q.type === 'textarea') {
+      inputHTML = `<textarea class="form-textarea" id="q-${q.id}" placeholder="${q.placeholder || ''}"${q.required ? ' required' : ''}></textarea>`;
+    } else if (q.type === 'select') {
+      inputHTML = `<div class="form-radio-group">${q.options.map(opt => `
+        <div class="form-radio" data-q="${q.id}" data-value="${opt}" onclick="selectRadio(this)">${opt}</div>
+      `).join('')}</div>`;
+    }
+
+    return `
+      <div class="form-group">
+        <label class="form-label">${i + 1}. ${q.label} ${requiredMark}</label>
+        ${inputHTML}
+        ${q.hint ? `<div class="form-hint">💡 ${q.hint}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById('form-questions').innerHTML = questionsHTML + `
+    <div class="form-actions">
+      <button class="btn btn-primary" onclick="generatePrompt()">🎯 Tạo câu hỏi AI</button>
+      <button class="btn btn-secondary" onclick="showGrid()">Huỷ</button>
+    </div>
+  `;
+
+  window.scrollTo(0, 0);
+}
+
+function selectRadio(el) {
+  const q = el.dataset.q;
+  document.querySelectorAll(`[data-q="${q}"]`).forEach(r => r.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function showGrid() {
+  document.getElementById('grid-view').style.display = 'block';
+  document.getElementById('form-view').classList.remove('active');
+  currentPrompt = null;
+  window.scrollTo(0, 0);
+}
+
+function generatePrompt() {
+  if (!currentPrompt) return;
+
+  const values = {};
+  let hasError = false;
+
+  currentPrompt.questions.forEach(q => {
+    if (q.type === 'select') {
+      const selected = document.querySelector(`[data-q="${q.id}"].active`);
+      values[q.id] = selected ? selected.dataset.value : '';
+    } else {
+      const input = document.getElementById(`q-${q.id}`);
+      values[q.id] = input ? input.value.trim() : '';
+    }
+
+    if (q.required && !values[q.id]) {
+      hasError = true;
+    }
+  });
+
+  if (hasError) {
+    alert('Vui lòng điền các câu có dấu *');
+    return;
+  }
+
+  // Fill template
+  let prompt = currentPrompt.template;
+  Object.keys(values).forEach(key => {
+    const regex = new RegExp('{{' + key + '}}', 'g');
+    prompt = prompt.replace(regex, values[key] || '(không có)');
+  });
+
+  // Show result
+  const resultHTML = `
+    <div class="result-view">
+      <div class="result-title">✅ Câu hỏi AI đã sẵn sàng!</div>
+      <div class="result-help">
+        <strong>Cách dùng:</strong> Nhấn nút "Sao chép" bên dưới → Mở ChatGPT hoặc Claude → Dán vào ô nhập → Bấm gửi. AI sẽ trả kết quả ngay trong 30-60 giây.
+      </div>
+      <textarea class="result-textarea" id="result-text" readonly>${prompt}</textarea>
+      <div class="result-actions">
+        <button class="btn btn-primary" onclick="copyResult()">📋 Sao chép câu hỏi</button>
+        <button class="btn btn-secondary" onclick="openChatGPT()">🚀 Mở ChatGPT</button>
+        <button class="btn btn-secondary" onclick="saveToJournal()">💾 Lưu vào Sổ Hành Trình</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('result-container').innerHTML = resultHTML;
+  document.getElementById('result-container').scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyResult() {
+  const text = document.getElementById('result-text').value;
+  navigator.clipboard.writeText(text).then(() => {
+    alert('✅ Đã sao chép! Giờ dán vào ChatGPT hoặc Claude.');
+  }).catch(() => {
+    document.getElementById('result-text').select();
+    document.execCommand('copy');
+    alert('✅ Đã sao chép!');
+  });
+}
+
+function openChatGPT() {
+  copyResult();
+  setTimeout(() => {
+    window.open('https://chat.openai.com', '_blank');
+  }, 500);
+}
+
+function saveToJournal() {
+  if (!currentPrompt) return;
+  const text = document.getElementById('result-text').value;
+  const entry = {
+    id: 'prompt-' + Date.now(),
+    prompt_id: currentPrompt.id,
+    prompt_name: currentPrompt.title,
+    generated_prompt: text,
+    saved_at: new Date().toISOString()
+  };
+
+  const existing = JSON.parse(localStorage.getItem('sol_journal_prompts') || '[]');
+  existing.unshift(entry);
+  localStorage.setItem('sol_journal_prompts', JSON.stringify(existing.slice(0, 50)));
+
+  alert(`💾 Đã lưu vào Sổ Hành Trình!\n\nBạn có ${existing.length} câu hỏi AI đã lưu.`);
+}
+
+// ═══════════════════════════════════════════════════════════
+// SOL ACTIVE / FOUNDER — STATUS BAR + LOGOUT
+// ═══════════════════════════════════════════════════════════
+function renderStatusBar() {
+  const bar = document.getElementById('sol-status-bar');
+  const label = document.getElementById('sol-status-label');
+  if (!bar || !label) return;
+
+  if (localStorage.getItem('sol_founder') === 'true') {
+    bar.classList.add('active');
+    label.classList.add('sol-status-bar__label--founder');
+    label.textContent = '🌟 Sol Founder';
+  } else if (localStorage.getItem('sol_active') === 'true') {
+    bar.classList.add('active');
+    label.classList.remove('sol-status-bar__label--founder');
+    label.textContent = '✓ Sol Active';
+  } else {
+    bar.classList.remove('active');
+  }
+}
+
+function deactivateSol() {
+  const isFounder = localStorage.getItem('sol_founder') === 'true';
+  const tier = isFounder ? 'Sol Founder' : 'Sol Active';
+  if (!confirm(`Đăng xuất khỏi ${tier} trên thiết bị này?\n\nAnh chị có thể kích hoạt lại bằng mã đã nhận qua email.`)) return;
+
+  localStorage.removeItem('sol_active');
+  localStorage.removeItem('sol_founder');
+  localStorage.removeItem('sol_active_code');
+  localStorage.removeItem('sol_founder_code');
+  localStorage.removeItem('sol_activation_code');
+
+  renderStatusBar();
+  renderGrid();
+  alert(`👋 Đã đăng xuất ${tier}. Quay lại chế độ dùng thử 5 mẫu miễn phí.`);
+}
+
+// ═══════════════════════════════════════════════════════════
+// SOL ACTIVE ACTIVATION
+// ═══════════════════════════════════════════════════════════
+function activateSol() {
+  const code = prompt('Nhập mã kích hoạt Sol Active (gửi qua email sau khi thanh toán):');
+  if (!code) return;
+  // Simple activation check - production sẽ verify với server
+  // MVP: hash check với secret
+  const trimmed = code.trim().toUpperCase();
+  if (trimmed.startsWith('SOL-ACTIVE-') && trimmed.length >= 15) {
+    localStorage.setItem('sol_active', 'true');
+    localStorage.setItem('sol_active_code', trimmed);
+    alert('✅ Kích hoạt thành công! Toàn bộ 40 mẫu đã mở khoá.');
+    closePaywall();
+    renderGrid();
+  } else if (trimmed.startsWith('SOL-FOUNDER-') && trimmed.length >= 16) {
+    localStorage.setItem('sol_founder', 'true');
+    localStorage.setItem('sol_active', 'true');
+    localStorage.setItem('sol_founder_code', trimmed);
+    alert('🌟 Chào mừng Sol Founder! Toàn bộ đặc quyền trọn đời đã mở khoá.');
+    closePaywall();
+    renderGrid();
+  } else {
+    alert('❌ Mã không đúng. Kiểm tra lại email hoặc liên hệ hello@sol.vn');
+  }
+}
+
+// URL-based auto-activation + deactivation
+(function checkMagicLink() {
+  const params = new URLSearchParams(window.location.search);
+
+  // ACTIVATE via ?activate=SOL-ACTIVE-XXX
+  const code = params.get('activate');
+  if (code) {
+    const trimmed = code.trim().toUpperCase();
+    if (trimmed.startsWith('SOL-ACTIVE-') || trimmed.startsWith('SOL-FOUNDER-')) {
+      if (trimmed.startsWith('SOL-FOUNDER-')) {
+        localStorage.setItem('sol_founder', 'true');
+      }
+      localStorage.setItem('sol_active', 'true');
+      localStorage.setItem('sol_activation_code', trimmed);
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }
+
+  // DEACTIVATE via ?deactivate=1
+  if (params.get('deactivate') === '1') {
+    localStorage.removeItem('sol_active');
+    localStorage.removeItem('sol_founder');
+    localStorage.removeItem('sol_active_code');
+    localStorage.removeItem('sol_founder_code');
+    localStorage.removeItem('sol_activation_code');
+    window.history.replaceState({}, '', window.location.pathname);
+    setTimeout(() => alert('👋 Đã đăng xuất khỏi Sol Active/Founder.'), 100);
+  }
+})();
+
+// ═══════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════
+updateTabCounts();
+renderStatusBar();
+renderGrid();
+</script>
+
+    <script src="/js/sol-user-nav.js?v=1783225472"></script>
+</body>
+</html>

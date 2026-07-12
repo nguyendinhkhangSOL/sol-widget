@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bản đồ hướng đi của tôi — Sol La Bàn</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --amber:#F59E0B; --amber-light:#FEF3C7; --amber-dark:#B45309;
+    --navy:#0F172A; --navy-2:#1E293B; --slate:#64748B; --slate-light:#94A3B8;
+    --border:#E2E8F0; --bg:#F8FAFC; --white:#FFFFFF;
+    --success:#16A34A;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:'Inter', 'Segoe UI', -apple-system, sans-serif;
+    background:var(--bg); color:var(--navy); line-height:1.5;
+  }
+
+  /* Top bar (screen only) */
+  .top-bar {
+    background:var(--white); border-bottom:1px solid var(--border);
+    padding:12px 24px; display:flex; align-items:center; justify-content:space-between;
+    position:sticky; top:0; z-index:100;
+  }
+  .top-bar a { color:var(--navy); text-decoration:none; font-size:14px; }
+  .btn-print {
+    background:var(--amber); color:var(--navy); border:none; padding:10px 20px;
+    border-radius:6px; font-weight:600; cursor:pointer; font-size:14px;
+  }
+  .btn-print:hover { background:var(--amber-dark); color:white; }
+
+  /* Print A4 page */
+  .page {
+    max-width:210mm; margin:20px auto; padding:20mm 18mm;
+    background:var(--white); box-shadow:0 4px 30px rgba(0,0,0,0.08);
+    min-height:297mm;
+  }
+
+  /* Header */
+  .doc-header {
+    display:flex; align-items:center; justify-content:space-between;
+    padding-bottom:16px; border-bottom:3px solid var(--amber); margin-bottom:24px;
+  }
+  .brand-name { font-size:24px; font-weight:800; color:var(--navy); }
+  .brand-name .amber { color:var(--amber); }
+  .doc-date { text-align:right; font-size:12px; color:var(--slate); }
+
+  /* User info */
+  .user-block {
+    background:linear-gradient(135deg, var(--amber-light) 0%, #FDE68A 100%);
+    padding:20px 24px; border-radius:12px; margin-bottom:24px;
+    border-left:6px solid var(--amber);
+  }
+  .user-name { font-size:26px; font-weight:800; color:var(--navy); margin-bottom:4px; }
+  .user-meta { font-size:14px; color:var(--amber-dark); font-weight:500; }
+  .tier-tag {
+    display:inline-block; padding:3px 10px; border-radius:999px; font-size:11px;
+    font-weight:700; letter-spacing:1px; background:var(--navy); color:var(--amber);
+    margin-left:8px;
+  }
+
+  /* Section */
+  .section { margin-bottom:22px; }
+  .section-title {
+    font-size:15px; font-weight:700; color:var(--amber-dark); text-transform:uppercase;
+    letter-spacing:1.5px; margin-bottom:10px; display:flex; align-items:center; gap:8px;
+  }
+  .section-title-num {
+    display:inline-block; width:24px; height:24px; background:var(--amber);
+    color:var(--white); border-radius:50%; text-align:center; line-height:24px;
+    font-size:13px; font-weight:800;
+  }
+
+  /* DNA 4 chiều */
+  .dna-grid {
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:10px;
+  }
+  .dna-card {
+    background:var(--bg); border:2px solid var(--border); border-radius:10px;
+    padding:14px 12px; text-align:center; position:relative;
+  }
+  .dna-card.top1 { border-color:var(--amber); background:var(--amber-light); }
+  .dna-card.top2 { border-color:var(--slate); }
+  .dna-rank {
+    position:absolute; top:-8px; right:-8px; background:var(--amber); color:white;
+    width:24px; height:24px; border-radius:50%; font-size:12px; font-weight:800;
+    line-height:24px;
+  }
+  .dna-card.top1 .dna-rank { background:var(--amber-dark); }
+  .dna-icon { font-size:24px; margin-bottom:6px; }
+  .dna-name { font-size:12px; color:var(--slate); font-weight:600; margin-bottom:4px; }
+  .dna-score { font-size:24px; font-weight:800; color:var(--navy); }
+
+  /* P2 Resources */
+  .res-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:6px; }
+  .res-item {
+    display:flex; align-items:center; gap:10px;
+    background:var(--bg); padding:8px 12px; border-radius:6px;
+    font-size:13px;
+  }
+  .res-label { flex:0 0 130px; color:var(--slate); font-weight:500; }
+  .res-bar-wrap { flex:1; background:var(--border); border-radius:999px; height:8px; overflow:hidden; }
+  .res-bar { height:100%; background:linear-gradient(90deg, var(--amber), var(--amber-dark)); border-radius:999px; }
+  .res-val { flex:0 0 32px; text-align:right; font-weight:700; font-size:13px; color:var(--navy); }
+
+  /* Top 3 Directions */
+  .dir-list { display:flex; flex-direction:column; gap:10px; }
+  .dir-card {
+    display:flex; gap:14px; padding:14px 16px;
+    background:var(--white); border:2px solid var(--border); border-radius:10px;
+  }
+  .dir-card.top1 { border-color:var(--amber); background:#FFFBEB; }
+  .dir-rank {
+    flex:0 0 40px; height:40px; background:var(--navy); color:var(--amber);
+    border-radius:50%; text-align:center; line-height:40px; font-size:18px; font-weight:800;
+  }
+  .dir-card.top1 .dir-rank { background:var(--amber); color:var(--navy); }
+  .dir-body { flex:1; }
+  .dir-name { font-size:16px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+  .dir-match { font-size:12px; color:var(--amber-dark); font-weight:600; margin-bottom:4px; }
+  .dir-desc { font-size:12px; color:var(--slate); line-height:1.5; }
+  .dir-reason {
+    font-size:11px; color:var(--navy-2); font-style:italic; margin-top:6px;
+    padding-top:6px; border-top:1px dashed var(--border);
+  }
+
+  /* Roadmap preview */
+  .roadmap-preview {
+    background:var(--bg); border-radius:10px; padding:14px 18px;
+  }
+  .roadmap-stages { display:flex; gap:8px; margin-top:10px; }
+  .stage {
+    flex:1; text-align:center; padding:8px 4px; background:var(--white);
+    border:1px solid var(--border); border-radius:6px; font-size:11px;
+  }
+  .stage-day { font-weight:700; color:var(--amber-dark); font-size:10px; }
+  .stage-title { color:var(--navy); margin-top:2px; line-height:1.3; }
+  .stage.locked { opacity:0.4; background:#F1F5F9; }
+  .stage.locked::after {
+    content:'🔒'; display:block; font-size:12px; margin-top:4px;
+  }
+
+  /* Footer */
+  .doc-footer {
+    margin-top:32px; padding-top:16px; border-top:2px solid var(--border);
+    display:flex; align-items:center; justify-content:space-between;
+    font-size:11px; color:var(--slate);
+  }
+  .qr-block { display:flex; gap:12px; align-items:center; }
+  .qr-code {
+    width:70px; height:70px; background:var(--white); border:1px solid var(--border);
+    border-radius:6px; padding:4px;
+  }
+  .qr-code img { width:100%; height:100%; }
+  .qr-text { font-size:11px; color:var(--slate); max-width:220px; }
+  .founder-note { text-align:right; font-size:11px; color:var(--slate); max-width:280px; }
+  .founder-note strong { color:var(--navy); }
+
+  /* Skeleton loading */
+  .skeleton { background:linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size:200% 100%; animation:skel 1.4s infinite; border-radius:8px; height:20px; }
+  @keyframes skel { 0%{background-position:200% 0;} 100%{background-position:-200% 0;} }
+
+  /* PRINT rules — hide screen chrome */
+  @media print {
+    body { background:white; }
+    .top-bar, .btn-print, .no-print { display:none !important; }
+    .page { max-width:100%; margin:0; padding:15mm; box-shadow:none; }
+    .dir-card, .dna-card, .stage { break-inside:avoid; }
+    @page { size:A4; margin:0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar (screen only) -->
+<div class="top-bar no-print">
+  <a href="/toi/">← Về dashboard</a>
+  <div>
+    <button class="btn-print" onclick="window.print()">🖨 In / Lưu PDF</button>
+    <button class="btn-print" onclick="shareLink()" style="background:var(--navy); color:var(--amber); margin-left:8px;">🔗 Chia sẻ</button>
+  </div>
+</div>
+
+<!-- Print page -->
+<div class="page" id="page">
+  <div class="doc-header">
+    <div>
+      <div class="brand-name">🧭 Sol <span class="amber">La Bàn</span></div>
+      <div style="font-size:12px; color:var(--slate); margin-top:2px;">Bản đồ hướng đi cá nhân hoá</div>
+    </div>
+    <div class="doc-date">
+      <div id="issueDate">─</div>
+      <div style="margin-top:2px; font-size:10px;">sol.vn/huong-di</div>
+    </div>
+  </div>
+
+  <!-- User block -->
+  <div class="user-block">
+    <div class="user-name" id="userName">─</div>
+    <div class="user-meta">
+      <span id="userMeta">Sol Member</span>
+      <span class="tier-tag" id="userTier">FREE</span>
+    </div>
+  </div>
+
+  <!-- Section 1: DNA -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-title-num">1</span>
+      DNA nghề nghiệp — 4 chiều
+    </div>
+    <div class="dna-grid" id="dnaGrid">
+      <div class="skeleton" style="height:110px;"></div>
+      <div class="skeleton" style="height:110px;"></div>
+      <div class="skeleton" style="height:110px;"></div>
+      <div class="skeleton" style="height:110px;"></div>
+    </div>
+  </div>
+
+  <!-- Section 2: Nguồn lực -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-title-num">2</span>
+      Nguồn lực hiện có — 7 vector
+    </div>
+    <div class="res-grid" id="resGrid">
+      <div class="skeleton"></div><div class="skeleton"></div>
+      <div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </div>
+
+  <!-- Section 3: Top 3 Directions -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-title-num">3</span>
+      Top 3 hướng đi phù hợp nhất
+    </div>
+    <div class="dir-list" id="dirList">
+      <div class="skeleton" style="height:80px;"></div>
+      <div class="skeleton" style="height:80px;"></div>
+      <div class="skeleton" style="height:80px;"></div>
+    </div>
+  </div>
+
+  <!-- Section 4: Roadmap preview -->
+  <div class="section" id="roadmapSection" style="display:none;">
+    <div class="section-title">
+      <span class="section-title-num">4</span>
+      Roadmap 90 ngày — hướng đi #1
+    </div>
+    <div class="roadmap-preview">
+      <div style="font-size:12px; color:var(--slate);">5 giai đoạn triển khai:</div>
+      <div class="roadmap-stages" id="roadmapStages"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <div class="qr-block">
+      <div class="qr-code" id="qrCode">
+        <img id="qrImg" src="" alt="QR Sol La Bàn" style="display:none;">
+      </div>
+      <div class="qr-text">
+        Scan QR để xem bản đồ online + roadmap chi tiết.<br>
+        Đăng ký free tại <strong>sol.vn/huong-di</strong>
+      </div>
+    </div>
+    <div class="founder-note">
+      <strong>Khang Sol</strong> — Founder Sol La Bàn<br>
+      Hệ thống 5 bước cho chuyên gia 40+ VN<br>
+      <em>Bản đồ này là bức tranh khởi đầu. Đường đi thực sự do anh chị vẽ.</em>
+    </div>
+  </div>
+</div>
+
+<!-- QRCode removed (CSP blocks CDN) — show text URL instead -->
+<script>
+(function() {
+  const API_BASE = window.SOL_API_BASE || 'https://huongdi.sol.vn/api';
+  function getJwt() { return localStorage.getItem('sol_jwt'); }
+
+  const jwt = getJwt();
+  if (!jwt) { alert('Đăng nhập trước'); location.href = '/dang-nhap/'; return; }
+
+  // Fetch dashboard + match-v2 song song
+  Promise.all([
+    fetch(API_BASE + '/user/dashboard', { headers: { 'Authorization': 'Bearer ' + jwt } }).then(r => r.json()),
+    fetch(API_BASE + '/user/me', { headers: { 'Authorization': 'Bearer ' + jwt } }).then(r => r.json()),
+  ])
+    .then(async ([dash, me]) => {
+      if (!dash.success) throw new Error('Dashboard load fail');
+
+      const user = dash.user;
+      const p1 = dash.summary?.p1;
+      const p2 = dash.summary?.p2;
+
+      // Render user info
+      document.getElementById('userName').textContent = user.displayName || 'Sol Member';
+      document.getElementById('userMeta').textContent = `Hành trình bắt đầu ${new Date(me.user?.createdAt || Date.now()).toLocaleDateString('vi-VN')}`;
+      document.getElementById('userTier').textContent = user.tier;
+      document.getElementById('issueDate').textContent = 'Ngày phát hành: ' + new Date().toLocaleDateString('vi-VN');
+
+      // Render DNA
+      if (p1) renderDNA(p1);
+      else document.getElementById('dnaGrid').innerHTML = '<div style="grid-column:1/-1; color:var(--slate); text-align:center; padding:20px;">Chưa làm Bước 1 — <a href="/kham-pha-ban-than/" style="color:var(--amber-dark);">bắt đầu ngay</a></div>';
+
+      // Render P2
+      if (p2) renderP2(p2);
+      else document.getElementById('resGrid').innerHTML = '<div style="grid-column:1/-1; color:var(--slate); text-align:center; padding:20px;">Chưa làm Bước 2 — <a href="/kiem-ke-nguon-luc/" style="color:var(--amber-dark);">bắt đầu ngay</a></div>';
+
+      // Fetch match-v2 if have P1+P2
+      if (p1 && p2) {
+        const matchRes = await fetch(API_BASE + '/directions/match-v2', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt },
+          body: JSON.stringify({ p1: p1.scores, p2: p2.scores, limit: 3 })
+        }).then(r => r.json());
+        if (matchRes.success) renderMatches(matchRes.matches, user.tier);
+      } else {
+        document.getElementById('dirList').innerHTML = '<div style="color:var(--slate); text-align:center; padding:20px;">Hoàn thành Bước 1 + 2 để xem Top 3 hướng đi</div>';
+      }
+
+      // QR code — show text URL only (CDN QRCode blocked by CSP)
+      const qrBox = document.getElementById('qrCode');
+      if (qrBox) {
+        qrBox.innerHTML = '<div style="text-align:center; padding:8px; font-size:9px; line-height:1.3; color:var(--slate);">SCAN<br><strong style="font-size:11px; color:var(--navy);">sol.vn</strong><br>/toi/</div>';
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      // Silent fail — không alert cản UX
+    });
+
+  function renderDNA(p1) {
+    const items = [
+      { key:'people', label:'Người', icon:'👥', score: p1.scores.people },
+      { key:'expert', label:'Chuyên môn', icon:'🎓', score: p1.scores.expert },
+      { key:'builder', label:'Xây dựng', icon:'🔨', score: p1.scores.builder },
+      { key:'independent', label:'Độc lập', icon:'🚀', score: p1.scores.independent },
+    ].sort((a,b) => b.score - a.score);
+
+    document.getElementById('dnaGrid').innerHTML = items.map((it, idx) => `
+      <div class="dna-card ${idx===0?'top1':idx===1?'top2':''}">
+        ${idx<2 ? `<div class="dna-rank">#${idx+1}</div>` : ''}
+        <div class="dna-icon">${it.icon}</div>
+        <div class="dna-name">${it.label}</div>
+        <div class="dna-score">${it.score}</div>
+      </div>
+    `).join('');
+  }
+
+  function renderP2(p2) {
+    const items = [
+      { key:'experience', label:'Kinh nghiệm', val: p2.scores.experience },
+      { key:'capital', label:'Vốn', val: p2.scores.capital },
+      { key:'time', label:'Thời gian', val: p2.scores.time },
+      { key:'technology', label:'Công nghệ', val: p2.scores.technology },
+      { key:'network', label:'Network', val: p2.scores.network },
+      { key:'risk', label:'Khẩu vị rủi ro', val: p2.scores.risk },
+      { key:'energy', label:'Năng lượng', val: p2.scores.energy },
+    ];
+
+    document.getElementById('resGrid').innerHTML = items.map(it => `
+      <div class="res-item">
+        <div class="res-label">${it.label}</div>
+        <div class="res-bar-wrap"><div class="res-bar" style="width:${it.val}%"></div></div>
+        <div class="res-val">${it.val}</div>
+      </div>
+    `).join('');
+  }
+
+  function renderMatches(matches, tier) {
+    const isPaid = tier === 'ACTIVE' || tier === 'FOUNDER';
+
+    document.getElementById('dirList').innerHTML = matches.slice(0, 3).map((m, idx) => `
+      <div class="dir-card ${idx===0?'top1':''}">
+        <div class="dir-rank">${idx+1}</div>
+        <div class="dir-body">
+          <div class="dir-name">${m.name}</div>
+          <div class="dir-match">${m.matchScore}% phù hợp</div>
+          <div class="dir-desc">${m.shortDescription || ''}</div>
+          ${m.matchReasons?.[0] ? `<div class="dir-reason">💡 ${m.matchReasons[0].humanText}</div>` : ''}
+        </div>
+      </div>
+    `).join('');
+
+    // Show roadmap for top 1
+    if (matches[0]?.roadmapPreview) {
+      document.getElementById('roadmapSection').style.display = 'block';
+      const stages = matches[0].roadmapPreview.stages;
+      document.getElementById('roadmapStages').innerHTML = stages.map(s => `
+        <div class="stage ${s.locked ? 'locked' : ''}">
+          <div class="stage-day">${s.day}</div>
+          <div class="stage-title">${s.title}</div>
+        </div>
+      `).join('');
+    }
+  }
+
+  window.shareLink = function() {
+    const url = 'https://huongdi.sol.vn/toi/';
+    if (navigator.share) {
+      navigator.share({ title: 'Bản đồ hướng đi Sol La Bàn', url });
+    } else {
+      navigator.clipboard.writeText(url).then(() => alert('Đã copy link!'));
+    }
+  };
+})();
+</script>
+<script src="/js/sol-user-nav.js?v=3" async></script>
+</body>
+</html>

@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --primary:#1a6b4a;--pm:#2e8b63;--pl:#e8f5ee;
+  --accent:#f59e0b;--al:#fef3c7;
+  --text:#1a202c;--muted:#6b7280;--border:#e5e7eb;--bg:#f9fafb;--white:#fff;
+  --shadow:0 2px 12px rgba(0,0,0,.08);--r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;min-height:100vh}
+
+/* HEADER */
+.hdr{background:var(--white);border-bottom:1px solid var(--border);padding:13px 20px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100}
+.logo{font-weight:800;font-size:15px;color:var(--primary);text-decoration:none;flex-shrink:0}
+.logo em{color:var(--accent);font-style:normal}
+.prog-wrap{flex:1;max-width:240px}
+.prog-lbl{font-size:11px;color:var(--muted);text-align:right;margin-bottom:3px}
+.prog-bar{height:5px;background:var(--border);border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;background:var(--primary);border-radius:99px;transition:width .4s}
+
+/* SCREENS */
+.screen{display:none}.screen.active{display:block}
+
+/* WELCOME */
+.welcome{max-width:600px;margin:0 auto;padding:40px 20px}
+.welcome h1{font-size:26px;font-weight:800;color:var(--primary);margin-bottom:8px}
+.welcome h1 em{color:var(--accent);font-style:normal}
+.welcome .sub{font-size:15px;color:var(--muted);margin-bottom:24px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.badge{background:var(--pl);color:var(--primary);font-size:13px;font-weight:600;padding:5px 14px;border-radius:99px}
+.info-card{background:var(--white);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);margin-bottom:20px}
+.info-card h3{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:12px}
+.block-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.block-row:last-child{margin-bottom:0}
+.bnum{width:34px;height:34px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
+.block-row .txt strong{display:block;font-size:15px}
+.block-row .txt span{font-size:13px;color:var(--muted)}
+.sci-note{background:var(--al);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:13px 16px;font-size:13px;color:#92400e;margin-bottom:24px}
+.btn-start{width:100%;padding:17px;background:var(--primary);color:white;border:none;border-radius:var(--r);font-size:17px;font-weight:700;cursor:pointer;transition:background .2s}
+.btn-start:hover{background:var(--pm)}
+
+/* BLOCK INTRO */
+.block-intro{max-width:600px;margin:0 auto;padding:40px 20px;text-align:center}
+.bi-icon{width:72px;height:72px;background:var(--pl);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 18px}
+.block-intro h2{font-size:22px;font-weight:800;color:var(--primary);margin-bottom:8px}
+.block-intro p{font-size:15px;color:var(--muted);margin-bottom:6px}
+.block-intro .sci{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:28px}
+.btn-go{padding:15px 40px;background:var(--primary);color:white;border:none;border-radius:var(--r);font-size:16px;font-weight:700;cursor:pointer}
+.btn-go:hover{background:var(--pm)}
+
+/* QUESTION */
+.q-wrap{max-width:600px;margin:0 auto;padding:24px 16px}
+.q-dim-tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--primary);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.q-dim-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--primary);display:inline-block}
+.q-card{background:var(--white);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);margin-bottom:14px}
+.q-num{font-size:12px;color:var(--muted);margin-bottom:8px}
+.q-stmt{font-size:19px;font-weight:700;line-height:1.4;color:var(--text);margin-bottom:8px}
+.q-hint{font-size:14px;color:var(--muted);line-height:1.5}
+/* Likert */
+.likert{display:flex;gap:8px;margin-top:4px}
+.lk-btn{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:12px 4px;border:2px solid var(--border);border-radius:12px;
+  cursor:pointer;transition:all .18s;background:var(--white);
+}
+.lk-btn:hover{border-color:var(--primary);background:var(--pl)}
+.lk-btn.sel{border-color:var(--primary);background:var(--pl)}
+.lk-num{font-size:18px;font-weight:800;color:var(--muted);transition:color .18s}
+.lk-btn.sel .lk-num{color:var(--primary)}
+.lk-lbl{font-size:10px;color:var(--muted);text-align:center;line-height:1.2}
+.lk-emoji{font-size:18px}
+/* Support Q options */
+.supp-opts{display:flex;flex-direction:column;gap:10px}
+.supp-opt{
+  background:var(--white);border:2px solid var(--border);border-radius:12px;
+  padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:12px;
+  font-size:15px;transition:all .18s;
+}
+.supp-opt:hover{border-color:var(--primary);background:var(--pl)}
+.supp-opt.sel{border-color:var(--primary);background:var(--pl)}
+.supp-opt .ol{min-width:26px;height:26px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--muted);transition:all .18s}
+.supp-opt.sel .ol{background:var(--primary);border-color:var(--primary);color:white}
+/* nav */
+.q-nav{display:flex;gap:10px;margin-top:10px}
+.btn-back{padding:13px 22px;background:transparent;border:2px solid var(--border);border-radius:12px;font-size:15px;color:var(--muted);cursor:pointer}
+.btn-next{flex:1;padding:13px;background:var(--primary);color:white;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;transition:background .2s}
+.btn-next:disabled{background:#9ca3af;cursor:not-allowed}
+.btn-next:not(:disabled):hover{background:var(--pm)}
+
+/* BLOCK SUMMARY */
+.blk-sum{max-width:600px;margin:0 auto;padding:40px 20px;text-align:center}
+.blk-sum .icon{font-size:48px;margin-bottom:14px}
+.blk-sum h2{font-size:22px;font-weight:800;color:var(--primary);margin-bottom:12px}
+.blk-sum .insight-box{background:var(--white);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);margin-bottom:24px;text-align:left}
+.blk-sum .insight-box p{font-size:15px;line-height:1.8;color:var(--text)}
+.mini-bars-wrap{margin-bottom:20px}
+.mb-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.mb-lbl{width:110px;font-size:13px;font-weight:600;color:var(--text);flex-shrink:0}
+.mb-track{flex:1;height:7px;background:var(--border);border-radius:99px;overflow:hidden}
+.mb-fill{height:100%;border-radius:99px;transition:width .8s ease-out}
+.mb-val{font-size:13px;font-weight:700;width:28px;text-align:right}
+
+/* RESULTS */
+.results{max-width:680px;margin:0 auto;padding:32px 16px 60px}
+.res-h1{font-size:26px;font-weight:800;color:var(--primary);margin-bottom:6px}
+.res-sub{font-size:15px;color:var(--muted);margin-bottom:24px}
+
+.dna-card{background:linear-gradient(135deg,var(--primary),var(--pm));color:white;border-radius:var(--r);padding:24px;margin-bottom:20px}
+.dna-card .role{font-size:12px;font-weight:600;opacity:.75;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.dna-card h2{font-size:24px;font-weight:800;margin-bottom:10px}
+.dna-card .dna-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.dna-tag{background:rgba(255,255,255,.2);padding:4px 12px;border-radius:99px;font-size:13px;font-weight:600}
+.dna-tag.primary{background:rgba(255,255,255,.4)}
+.conf-badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:12px;font-weight:700}
+.conf-high{background:#dcfce7;color:#166534}
+.conf-mid{background:var(--al);color:#92400e}
+.conf-low{background:#f3f4f6;color:#6b7280}
+
+.score-card{background:var(--white);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+.score-card h3{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:16px}
+.sc-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sc-row:last-child{margin-bottom:0}
+.sc-icon{font-size:18px;width:26px;flex-shrink:0}
+.sc-lbl{width:120px;font-size:14px;font-weight:600;flex-shrink:0}
+.sc-track{flex:1;height:10px;background:var(--border);border-radius:99px;overflow:hidden}
+.sc-fill{height:100%;border-radius:99px;transition:width 1.2s ease-out}
+.sc-val{width:32px;text-align:right;font-size:13px;font-weight:800}
+.dna-pos{font-size:11px;padding:2px 8px;border-radius:99px;font-weight:700;margin-left:4px;flex-shrink:0}
+.pos-1{background:#fef08a;color:#713f12}
+.pos-2{background:#e0f2fe;color:#075985}
+.pos-3{background:#f3f4f6;color:#374151}
+.pos-4{background:#fce7f3;color:#9d174d}
+
+.narrative-card{background:var(--white);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+.narrative-card h3{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:14px}
+.narrative-card p{font-size:15px;line-height:1.8;color:var(--text);margin-bottom:12px}
+.narrative-card p:last-child{margin-bottom:0}
+
+.sd-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.sd-box{background:var(--white);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.sd-box h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.sd-box.str h4{color:#166534}
+.sd-box.drn h4{color:#be123c}
+.sd-item{font-size:14px;padding:5px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.sd-item:last-child{border-bottom:none;padding-bottom:0}
+
+.model-card{background:var(--white);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+.model-card h3{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:14px}
+.model-row{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+.model-row:last-child{margin-bottom:0}
+.model-fit{font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;flex-shrink:0;margin-top:2px}
+.fit-high{background:#dcfce7;color:#166534}
+.fit-mid{background:var(--al);color:#92400e}
+.model-name{font-size:15px;font-weight:700}
+.model-why{font-size:13px;color:var(--muted)}
+
+.bridge{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #86efac;border-radius:var(--r);padding:22px;margin-bottom:18px;text-align:center}
+.bridge h3{font-size:20px;font-weight:800;color:var(--primary);margin-bottom:8px}
+.bridge p{font-size:15px;color:var(--muted);margin-bottom:18px}
+.btn-p2{display:inline-block;padding:15px 36px;background:var(--primary);color:white;border:none;border-radius:var(--r);font-size:16px;font-weight:700;cursor:pointer;text-decoration:none}
+.btn-p2:hover{background:var(--pm)}
+
+.share-row{display:flex;gap:10px;margin-bottom:18px}
+.btn-share{flex:1;padding:12px;border:2px solid var(--primary);border-radius:12px;font-size:14px;font-weight:600;color:var(--primary);background:transparent;cursor:pointer}
+.btn-retake{padding:12px 20px;border:2px solid var(--border);border-radius:12px;font-size:14px;color:var(--muted);background:transparent;cursor:pointer}
+
+.sci-footer{background:var(--white);border-radius:var(--r);padding:18px;font-size:12px;color:var(--muted);line-height:1.8}
+.sci-footer strong{color:var(--primary)}
+
+@media(max-width:480px){
+  .likert{gap:5px}.lk-btn{padding:10px 2px}.sd-grid{grid-template-columns:1fr}
+}
+</style>
+  <!-- ═══════ SEO META (injected by inject-seo.js) ═══════ -->
+  <title>Khám phá bản thân (P1) — DNA Test 20 câu cho người Việt 40-60 · Đi Cùng Sol</title>
+  <meta name="description" content="Khám phá bản thân (P1) — Bài DNA Test 20 câu cho người Việt 40-60 tìm hướng tái khởi nghiệp. Founder Khang Sol, 20+ năm CNTT. Miễn phí.">
+  <meta name="keywords" content="trắc nghiệm khởi nghiệp, DNA hướng đi, test tính cách khởi nghiệp, trắc nghiệm tái khởi nghiệp tuổi 40">
+  <link rel="canonical" href="https://huongdi.sol.vn/p1">
+  <meta name="author" content="Khang Sol">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="language" content="vi-VN">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DNA Hướng Đi 40-60 — Trắc Nghiệm 20 Câu Khám Phá Bản Thân">
+  <meta property="og:description" content="Khám phá 4 trục DNA (Người · Chuyên gia · Nhà xây dựng · Tự lập). 20 câu hỏi, 5 phút, miễn phí. Founder Khang Sol — 20+ năm CNTT, tái khởi nghiệp tuổi 45.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://huongdi.sol.vn/p1">
+  <meta property="og:image" content="https://huongdi.sol.vn/og/p1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Đi Cùng Sol — Hướng Đi 40-60">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DNA Hướng Đi 40-60 — Trắc Nghiệm 20 Câu Khám Phá Bản Thân">
+  <meta name="twitter:description" content="Khám phá 4 trục DNA (Người · Chuyên gia · Nhà xây dựng · Tự lập). 20 câu hỏi, 5 phút, miễn phí. Founder Khang Sol — 20+ năm CNTT, tái khởi nghiệp tuổi 45.">
+  <meta name="twitter:image" content="https://huongdi.sol.vn/og/p1.jpg">
+  <meta name="twitter:site" content="@solvn">
+
+  <!-- JSON-LD Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Đi Cùng Sol",
+    "alternateName": "Sol",
+    "url": "https://sol.vn/",
+    "logo": "https://sol.vn/wp-content/uploads/2025/05/Icon_2.png",
+    "description": "Hệ sinh thái Đi Cùng Sol — Thân (sức khoẻ), Tâm (tinh thần), Trí (sự nghiệp) cho người Việt 40-60 tuổi",
+    "founder": {
+      "@type": "Person",
+      "name": "Khang Sol",
+      "alternateName": "Nguyễn Đình Khang",
+      "url": "https://sol.vn/khang-sol/",
+      "image": "https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg",
+      "jobTitle": "Founder, Đi Cùng Sol",
+      "sameAs": [
+        "https://www.linkedin.com/in/vietnaminternet/",
+        "https://web.facebook.com/nguyendinhkhang"
+      ],
+      "knowsAbout": [
+        "Mid-life career transition",
+        "Lean startup",
+        "IT project management",
+        "Vietnamese SME entrepreneurship",
+        "Tái khởi nghiệp tuổi 45",
+        "Khởi nghiệp tinh gọn"
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/vietnaminternet/",
+      "https://web.facebook.com/nguyendinhkhang"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Huongdi — Tìm Hướng Đi 40-60",
+    "url": "https://huongdi.sol.vn/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Đi Cùng Sol",
+      "url": "https://sol.vn/"
+    },
+    "inLanguage": "vi-VN",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Đàn ông Việt 40-60 tuổi"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "Trắc Nghiệm DNA Hướng Đi 40-60",
+    "description": "20 câu hỏi khám phá 4 trục DNA: Người, Chuyên gia, Nhà xây dựng, Tự lập — giúp đàn ông 40-60 tuổi tìm hướng tái khởi nghiệp phù hợp",
+    "educationalLevel": "Adult",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Đàn ông Việt 40-60 tuổi muốn tái khởi nghiệp"
+    },
+    "timeRequired": "PT5M",
+    "isAccessibleForFree": true,
+    "inLanguage": "vi-VN",
+    "creator": {
+      "@type": "Person",
+      "name": "Khang Sol",
+      "url": "https://sol.vn/khang-sol/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Trang chủ",
+        "item": "https://huongdi.sol.vn/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Khám phá bản thân (P1)",
+        "item": "https://huongdi.sol.vn/p1"
+      }
+    ]
+  }
+  </script>
+  <!-- ═══════ /SEO META ═══════ -->
+</head>
+<body>
+<!-- SOL-HEADER-START -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL HEADER — Đồng nhất 3 sản phẩm sol.vn / bothuocla / huongdi
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào sau <body> mỗi HTML file của huongdi.sol.vn
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-header-styles">
+  /* Reset cho header — không phá CSS gốc của page */
+  #sol-header * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  }
+  #sol-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .sol-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sol-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .sol-logo img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+  .sol-logo span {
+    color: #1a1a1a;
+  }
+  .sol-logo strong {
+    color: #d97706;
+    font-weight: 800;
+  }
+
+  /* Nav 3 trụ Thân-Tâm-Trí */
+  .sol-nav-pillars {
+    display: flex;
+    gap: 6px;
+    background: #f5f5f4;
+    border-radius: 12px;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+  }
+  .sol-nav-pillars a {
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 22px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    min-width: 56px;
+    text-align: center;
+  }
+  .sol-nav-pillars a:hover {
+    color: #1a1a1a;
+    background: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+  .sol-nav-pillars a.active {
+    background: linear-gradient(135deg, #fff 0%, #fef3c7 100%);
+    color: #d97706;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.18);
+    border: 1px solid rgba(217, 119, 6, 0.15);
+  }
+
+  /* Nav huongdi specific */
+  .sol-nav-huongdi {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .sol-nav-huongdi a {
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .sol-nav-huongdi a:hover {
+    color: #d97706;
+  }
+  .sol-nav-huongdi a.current {
+    color: #d97706;
+    font-weight: 700;
+  }
+
+  /* CTA button */
+  .sol-cta {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    color: #fff !important;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(217, 119, 6, 0.3);
+    white-space: nowrap;
+  }
+  .sol-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-header-inner {
+      padding: 8px 12px;
+      gap: 8px;
+    }
+    .sol-nav-pillars {
+      gap: 4px;
+      padding: 4px;
+    }
+    .sol-nav-pillars a {
+      padding: 6px 14px;
+      font-size: 13px;
+      min-width: 48px;
+    }
+    .sol-nav-huongdi {
+      display: none; /* Ẩn nav phụ trên mobile, dùng menu burger sau */
+    }
+    .sol-logo span {
+      display: none; /* Chỉ giữ icon trên mobile */
+    }
+    .sol-cta {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-nav-pillars {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Dark mode (nếu page có) */
+  @media (prefers-color-scheme: dark) {
+    #sol-header {
+      background: rgba(20, 20, 20, 0.92);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-logo, .sol-logo span {
+      color: #f3f4f6;
+    }
+    .sol-nav-pillars {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .sol-nav-pillars a {
+      color: #9ca3af;
+    }
+    .sol-nav-pillars a.active {
+      background: #1a1a1a;
+      color: #f59e0b;
+    }
+    .sol-nav-huongdi a {
+      color: #d1d5db;
+    }
+  }
+</style>
+
+<header id="sol-header" role="banner" aria-label="Sol — Hệ sinh thái 3 trụ">
+  <div class="sol-header-inner">
+
+    <!-- Logo + brand -->
+    <a href="https://sol.vn/" class="sol-logo" aria-label="Sol — Đi Cùng Sol">
+      <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png"
+           alt="Logo Sol"
+           width="28" height="28"
+           loading="eager">
+      <span>Đi Cùng <strong>Sol</strong></span>
+    </a>
+
+    <!-- Nav 3 trụ Thân-Tâm-Trí -->
+    <nav class="sol-nav-pillars" aria-label="3 trụ Sol">
+      <a href="https://bothuocla.sol.vn/" title="Sức khoẻ — bothuocla.sol.vn">Thân</a>
+      <a href="https://sol.vn/ngam/" title="Tinh thần — sol.vn/ngam">Tâm</a>
+      <a href="https://huongdi.sol.vn/" class="active" aria-current="page" title="Sự nghiệp — huongdi.sol.vn">Trí</a>
+    </nav>
+
+    <!-- Nav huongdi -->
+    <nav class="sol-nav-huongdi" aria-label="Huongdi navigation">
+      <a href="/kham-pha-ban-than/" data-huongdi-link="p1">Khám phá bản thân</a>
+      <a href="/kiem-ke-nguon-luc/" data-huongdi-link="p2">Kiểm kê nguồn lực</a>
+      <a href="/la-ban-huong-di/" data-huongdi-link="p3">La bàn hướng đi</a>
+      <a href="https://sol.vn/huong-di/" rel="noopener">Bài viết</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="/kham-pha-ban-than/" class="sol-cta">Bắt đầu →</a>
+
+  </div>
+</header>
+
+<script id="sol-header-script">
+  // Auto-highlight current page in sub-nav
+  (function() {
+    var path = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+    var matchKey = null;
+    if (path === '/p1' || path.endsWith('/p1')) matchKey = 'p1';
+    else if (path === '/p2' || path.endsWith('/p2')) matchKey = 'p2';
+    else if (path.startsWith('/p3')) matchKey = 'p3';
+    if (matchKey) {
+      var links = document.querySelectorAll('.sol-nav-huongdi a[data-huongdi-link="' + matchKey + '"]');
+      links.forEach(function(a) { a.classList.add('current'); });
+    }
+  })();
+</script>
+<!-- SOL-HEADER-END -->
+
+<div class="hdr">
+  <a href="/" class="logo">huongdi<em>.sol.vn</em></a>
+  <div class="prog-wrap">
+    <div class="prog-lbl" id="progLbl">Câu 0 / 20</div>
+    <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  </div>
+</div>
+
+<!-- ════ WELCOME ════ -->
+<div class="screen active" id="s-welcome">
+<div class="welcome">
+  <h1>Anh tạo ra giá trị <em>theo cách nào?</em></h1>
+  <p class="sub">20 câu hỏi · 5–7 phút · Không phân loại tính cách — chỉ xếp hạng các năng lực tạo giá trị của anh.</p>
+
+  <div class="badges">
+    <span class="badge">📚 Có cơ sở khoa học</span>
+    <span class="badge">⏱ 5–7 phút</span>
+    <span class="badge">🔒 Riêng tư</span>
+  </div>
+
+  <div class="info-card">
+    <h3>Bài trắc nghiệm gồm 4 nhóm câu hỏi:</h3>
+    <div class="block-row"><div class="bnum">1</div><div class="txt"><strong>Kết Nối — People</strong><span>Tạo giá trị qua con người, quan hệ, ảnh hưởng</span></div></div>
+    <div class="block-row"><div class="bnum">2</div><div class="txt"><strong>Chuyên Môn — Expert</strong><span>Tạo giá trị qua kiến thức, kinh nghiệm, giải quyết vấn đề</span></div></div>
+    <div class="block-row"><div class="bnum">3</div><div class="txt"><strong>Xây Dựng — Builder</strong><span>Tạo giá trị qua hệ thống, sản phẩm, tài sản dài hạn</span></div></div>
+    <div class="block-row"><div class="bnum">4</div><div class="txt"><strong>Tự Chủ — Independent</strong><span>Nhu cầu tự quyết, tự chịu trách nhiệm, tự quản lý</span></div></div>
+  </div>
+
+  <div class="sci-note">📖 Căn cứ khoa học: <strong>Big Five Personality Model</strong> · <strong>Self-Determination Theory</strong> (Deci & Ryan) · <strong>Person-Environment Fit Theory</strong> — được chuyển hóa thành 4 trục phù hợp với bài toán tạo thu nhập và tái khởi nghiệp tuổi trung niên.</div>
+
+  <button class="btn-start" onclick="show('s-block1-intro')">Bắt đầu khám phá →</button>
+</div>
+</div>
+
+<!-- ════ BLOCK INTROS ════ -->
+<div class="screen" id="s-block1-intro">
+<div class="block-intro">
+  <div class="bi-icon">🤝</div>
+  <h2>Nhóm 1: Kết Nối — People</h2>
+  <p>Anh tạo ra giá trị như thế nào khi làm việc với người khác?</p>
+  <p class="sci">Căn cứ: Big Five (Extraversion · Agreeableness) · SDT — Relatedness</p>
+  <p style="font-size:14px;color:#6b7280;margin-bottom:28px">Đánh giá mức độ <em>giống anh</em> từ 1 (rất không giống) đến 5 (rất giống). Không có câu trả lời đúng hay sai.</p>
+  <button class="btn-go" onclick="showQ(0)">Bắt đầu nhóm 1 →</button>
+</div>
+</div>
+
+<div class="screen" id="s-block2-intro">
+<div class="block-intro">
+  <div class="bi-icon">🧠</div>
+  <h2>Nhóm 2: Chuyên Môn — Expert</h2>
+  <p>Anh tạo ra giá trị như thế nào qua kiến thức và kinh nghiệm?</p>
+  <p class="sci">Căn cứ: Big Five (Openness · Conscientiousness) · Human Capital Theory</p>
+  <p style="font-size:14px;color:#6b7280;margin-bottom:28px">Tiếp tục đánh giá từ 1 đến 5. Nhớ rằng không có trục nào "tốt hơn" trục nào — mỗi người có DNA riêng.</p>
+  <button class="btn-go" onclick="showQ(4)">Tiếp tục →</button>
+</div>
+</div>
+
+<div class="screen" id="s-block3-intro">
+<div class="block-intro">
+  <div class="bi-icon">🏗️</div>
+  <h2>Nhóm 3: Xây Dựng — Builder</h2>
+  <p>Anh tạo ra giá trị như thế nào qua việc xây dựng và tổ chức?</p>
+  <p class="sci">Căn cứ: Big Five (Conscientiousness) · Effectuation Theory (Sarasvathy)</p>
+  <p style="font-size:14px;color:#6b7280;margin-bottom:28px">Gần xong rồi — còn 8 câu nữa sau nhóm này.</p>
+  <button class="btn-go" onclick="showQ(8)">Tiếp tục →</button>
+</div>
+</div>
+
+<div class="screen" id="s-block4-intro">
+<div class="block-intro">
+  <div class="bi-icon">🦅</div>
+  <h2>Nhóm 4: Tự Chủ — Independent</h2>
+  <p>Anh làm việc hiệu quả nhất trong điều kiện như thế nào?</p>
+  <p class="sci">Căn cứ: Career Anchors (Schein, 1990) · SDT — Autonomy (Deci & Ryan)</p>
+  <p style="font-size:14px;color:#6b7280;margin-bottom:28px">4 câu cuối trong nhóm đánh giá chính. Sau đó là 4 câu hỗ trợ ngắn.</p>
+  <button class="btn-go" onclick="showQ(12)">Câu cuối →</button>
+</div>
+</div>
+
+<div class="screen" id="s-supp-intro">
+<div class="block-intro">
+  <div class="bi-icon">💡</div>
+  <h2>4 Câu Hỗ Trợ</h2>
+  <p>Không tính điểm — giúp hệ thống hiểu anh sâu hơn để tạo kết quả chính xác hơn.</p>
+  <p class="sci">Dùng để tinh chỉnh diễn giải DNA và gợi ý mô hình thu nhập phù hợp</p>
+  <p style="font-size:14px;color:#6b7280;margin-bottom:28px">Chọn câu đúng nhất — không cần suy nghĩ quá lâu.</p>
+  <button class="btn-go" onclick="showQ(16)">Tiếp tục →</button>
+</div>
+</div>
+
+<!-- ════ QUESTION ════ -->
+<div class="screen" id="s-q">
+<div class="q-wrap">
+  <div class="q-dim-tag"><span class="dot"></span><span id="qDimTag">People</span></div>
+  <div class="q-card">
+    <div class="q-num" id="qNum">Câu 1 / 20</div>
+    <div class="q-stmt" id="qStmt"></div>
+    <div class="q-hint" id="qHint"></div>
+  </div>
+  <div id="qBody"></div>
+  <div class="q-nav">
+    <button class="btn-back" id="btnBack" onclick="goBack()" style="display:none">← Quay lại</button>
+    <button class="btn-next" id="btnNext" onclick="goNext()" disabled>Tiếp →</button>
+  </div>
+</div>
+</div>
+
+<!-- BLOCK SUMMARY SCREENS -->
+<div class="screen" id="s-sum1">
+<div class="blk-sum">
+  <div class="icon">🤝</div>
+  <h2>Hoàn thành Nhóm 1: Kết Nối</h2>
+  <div class="insight-box" id="sum1box"></div>
+  <button class="btn-go" onclick="show('s-block2-intro')">Tiếp tục →</button>
+</div>
+</div>
+<div class="screen" id="s-sum2">
+<div class="blk-sum">
+  <div class="icon">🧠</div>
+  <h2>Hoàn thành Nhóm 2: Chuyên Môn</h2>
+  <div class="insight-box" id="sum2box"></div>
+  <button class="btn-go" onclick="show('s-block3-intro')">Tiếp tục →</button>
+</div>
+</div>
+<div class="screen" id="s-sum3">
+<div class="blk-sum">
+  <div class="icon">🏗️</div>
+  <h2>Hoàn thành Nhóm 3: Xây Dựng</h2>
+  <div class="insight-box" id="sum3box"></div>
+  <button class="btn-go" onclick="show('s-block4-intro')">Tiếp tục →</button>
+</div>
+</div>
+
+<!-- ════ RESULTS ════ -->
+<div class="screen" id="s-results">
+<div class="results">
+  <div class="res-h1">DNA Hướng Đi của anh</div>
+  <div class="res-sub" id="resSub"></div>
+
+  <!-- DNA Card -->
+  <div class="dna-card">
+    <div class="role">ĐỊNH DANH NĂNG LỰC</div>
+    <h2 id="dnaTitle">—</h2>
+    <div class="dna-row" id="dnaRow"></div>
+    <div id="confBadge"></div>
+  </div>
+
+  <!-- Scores -->
+  <div class="score-card">
+    <h3>📊 Điểm 4 trục (0–100)</h3>
+    <div id="scoreRows"></div>
+  </div>
+
+  <!-- Narrative -->
+  <div class="narrative-card">
+    <h3>🪞 Đây là anh</h3>
+    <div id="narrativeText"></div>
+  </div>
+
+  <!-- Strengths & Drains -->
+  <div class="sd-grid">
+    <div class="sd-box str"><h4>✅ Điểm mạnh tự nhiên</h4><div id="strengthList"></div></div>
+    <div class="sd-box drn"><h4>⚡ Điều dễ mất năng lượng</h4><div id="drainList"></div></div>
+  </div>
+
+  <!-- Income Models -->
+  <div class="model-card">
+    <h3>💡 Mô hình tạo thu nhập tiềm năng</h3>
+    <div id="modelList"></div>
+  </div>
+
+  <!-- Bridge -->
+  <div class="bridge">
+    <h3>Bước tiếp theo →</h3>
+    <p>Anh vừa biết <strong>anh là ai</strong>. Phần tiếp theo sẽ xác định <strong>anh đang có gì</strong> để chọn hướng đi khả thi nhất.</p>
+    <a href="/kiem-ke-nguon-luc/" class="btn-p2">Tiếp tục: Kiểm kê nguồn lực →</a>
+  </div>
+
+  <div class="share-row">
+    <button class="btn-share" onclick="copyResult()">📋 Sao chép kết quả</button>
+    <button class="btn-retake" onclick="retake()">↺ Làm lại</button>
+  </div>
+
+  <div class="sci-footer">
+    <strong>Nền tảng khoa học:</strong> Big Five Personality Model (Costa & McCrae, 1992) · Self-Determination Theory — Autonomy & Relatedness (Deci & Ryan, 2000) · Person-Environment Fit Theory (Holland, 1997) · Career Anchors — Autonomy (Schein, 1990). P1 không đánh giá tính cách và không xếp loại nghề nghiệp — P1 chỉ xếp hạng năng lực tạo giá trị theo thứ tự mạnh → yếu để làm đầu vào cho P3 Matching Engine.
+  </div>
+</div>
+</div>
+
+<!-- ════════════════ JAVASCRIPT ENGINE ════════════════ -->
+<script>
+// ═══════════════════════════════════════════════════
+// DATA: 20 QUESTIONS
+// Q1-16: Likert 1-5 scoring
+// Q17-20: Multiple choice (support, no scoring)
+// ═══════════════════════════════════════════════════
+const QS = [
+  // ── PEOPLE (0-3) ──
+  { dim:'people', dimLabel:'Nhóm 1: Kết Nối — People',
+    stmt:'Tôi cảm thấy có năng lượng hơn sau khi gặp gỡ và trao đổi với nhiều người.',
+    hint:'Nghĩ về những lần anh dự họp, gặp anh bè, hay tham gia sự kiện — cảm giác sau đó là gì?' },
+  { dim:'people', dimLabel:'Nhóm 1: Kết Nối — People',
+    stmt:'Người khác thường tìm đến tôi để xin lời khuyên hoặc chia sẻ vấn đề.',
+    hint:'Không phải vì anh có chức vụ — mà vì họ tin tưởng anh.' },
+  { dim:'people', dimLabel:'Nhóm 1: Kết Nối — People',
+    stmt:'Tôi thích xây dựng các mối quan hệ lâu dài hơn là có nhiều quen biết ngắn hạn.',
+    hint:'Chất lượng quan hệ quan trọng hơn số lượng với anh.' },
+  { dim:'people', dimLabel:'Nhóm 1: Kết Nối — People',
+    stmt:'Tôi thích làm việc với con người hơn là làm việc với hệ thống, số liệu hoặc máy móc.',
+    hint:'Không phải anh không thể làm — mà là anh thích cái nào hơn một cách tự nhiên.' },
+
+  // ── EXPERT (4-7) ──
+  { dim:'expert', dimLabel:'Nhóm 2: Chuyên Môn — Expert',
+    stmt:'Tôi thích đào sâu vào một lĩnh vực để trở thành người có chuyên môn thực sự cao.',
+    hint:'Anh có xu hướng "đi sâu" hơn là "đi rộng" — muốn thật sự giỏi một thứ.' },
+  { dim:'expert', dimLabel:'Nhóm 2: Chuyên Môn — Expert',
+    stmt:'Tôi thường được đánh giá cao nhờ kiến thức hoặc kinh nghiệm trong lĩnh vực của mình.',
+    hint:'Người khác nhìn nhận anh như người có chuyên môn — dù anh có chủ động thể hiện hay không.' },
+  { dim:'expert', dimLabel:'Nhóm 2: Chuyên Môn — Expert',
+    stmt:'Tôi thích giải quyết các vấn đề phức tạp — càng khó càng thu hút tôi.',
+    hint:'Câu đố khó, tình huống chưa có tiền lệ — anh thấy thú vị hơn là ngại.' },
+  { dim:'expert', dimLabel:'Nhóm 2: Chuyên Môn — Expert',
+    stmt:'Tôi thích chia sẻ kiến thức hoặc hướng dẫn người khác từ kinh nghiệm thực tế của mình.',
+    hint:'Không chỉ biết — anh muốn truyền đạt để người khác cũng giỏi được.' },
+
+  // ── BUILDER (8-11) ──
+  { dim:'builder', dimLabel:'Nhóm 3: Xây Dựng — Builder',
+    stmt:'Tôi thích tạo ra thứ gì đó có thể tồn tại lâu dài sau khi tôi không còn ở đó nữa.',
+    hint:'Một quy trình, một sản phẩm, một thương hiệu — thứ tiếp tục vận hành mà không cần anh can thiệp liên tục.' },
+  { dim:'builder', dimLabel:'Nhóm 3: Xây Dựng — Builder',
+    stmt:'Tôi thích xây dựng quy trình hoặc hệ thống để mọi việc chạy trơn tru hơn.',
+    hint:'Anh tự nhiên nghĩ đến cách cải thiện cách mọi thứ được tổ chức và vận hành.' },
+  { dim:'builder', dimLabel:'Nhóm 3: Xây Dựng — Builder',
+    stmt:'Tôi sẵn sàng đầu tư thời gian và công sức hôm nay để nhận kết quả trong tương lai.',
+    hint:'Anh chấp nhận delayed gratification — không cần thấy kết quả ngay mới chịu làm.' },
+  { dim:'builder', dimLabel:'Nhóm 3: Xây Dựng — Builder',
+    stmt:'Tôi thích tạo ra sản phẩm, dịch vụ hoặc thương hiệu của riêng mình.',
+    hint:'Muốn có "cái của tôi" — không chỉ đóng góp vào cái của người khác.' },
+
+  // ── INDEPENDENT (12-15) ──
+  { dim:'independent', dimLabel:'Nhóm 4: Tự Chủ — Independent',
+    stmt:'Tôi làm việc hiệu quả nhất khi được tự quyết định cách thực hiện — không bị ràng buộc quy trình cứng.',
+    hint:'Không phải anh không kỷ luật — anh kỷ luật tốt hơn khi tự đặt ra kỷ luật.' },
+  { dim:'independent', dimLabel:'Nhóm 4: Tự Chủ — Independent',
+    stmt:'Tôi không thích bị giám sát hoặc kiểm tra quá chặt trong khi đang làm việc.',
+    hint:'Micromanagement làm anh mất hứng và hiệu quả — kể cả khi anh đang làm đúng.' },
+  { dim:'independent', dimLabel:'Nhóm 4: Tự Chủ — Independent',
+    stmt:'Tôi sẵn sàng chịu trách nhiệm hoàn toàn cho kết quả của mình — thắng hay thua.',
+    hint:'Tự chủ đi kèm với tự chịu trách nhiệm — anh chấp nhận điều này.' },
+  { dim:'independent', dimLabel:'Nhóm 4: Tự Chủ — Independent',
+    stmt:'Tôi thích làm việc theo nhịp độ và thứ tự ưu tiên do chính mình đặt ra.',
+    hint:'Anh hoạt động tốt nhất khi lịch trình là của anh, không phải của người khác.' },
+
+  // ── SUPPORT (16-19): multiple choice, no scoring ──
+  { dim:'support', dimLabel:'Câu hỗ trợ (không tính điểm)',
+    stmt:'Người khác thường khen anh điều gì nhất?',
+    hint:'Chọn điều xuất hiện nhiều nhất — không phải điều anh muốn được khen.',
+    type:'choice',
+    opts:['🗣 Khả năng giao tiếp và kết nối người với người','🧠 Kiến thức, chuyên môn và lời giải thích rõ ràng','⚙️ Tổ chức, lên kế hoạch và làm việc hiệu quả','🎨 Sáng tạo và cách nhìn mới khác biệt'],
+    key:'praise' },
+  { dim:'support', dimLabel:'Câu hỗ trợ (không tính điểm)',
+    stmt:'Khi gặp vấn đề hoàn toàn mới, anh thường làm gì đầu tiên?',
+    hint:'Phản ứng tự nhiên — không phải cách anh nghĩ mình nên làm.',
+    type:'choice',
+    opts:['💬 Hỏi người đã từng gặp tình huống tương tự','📚 Tự tìm hiểu, đọc và nghiên cứu một mình','📋 Lập kế hoạch và phân chia thành các bước nhỏ','🚀 Thử ngay và học từ kết quả thực tế'],
+    key:'approach' },
+  { dim:'support', dimLabel:'Câu hỗ trợ (không tính điểm)',
+    stmt:'Điều nào dưới đây làm anh MẤT NĂNG LƯỢNG nhiều nhất?',
+    hint:'Không phải điều anh không làm được — mà là điều làm anh kiệt sức sau khi làm.',
+    type:'choice',
+    opts:['👥 Gặp gỡ và tương tác với quá nhiều người liên tục','📖 Phải học liên tục thứ mới mà không có thời gian tiêu hóa','👔 Quản lý và điều phối đội nhóm','📏 Làm việc theo quy trình cứng nhắc mà không được linh hoạt'],
+    key:'drain' },
+  { dim:'support', dimLabel:'Câu hỗ trợ (không tính điểm)',
+    stmt:'Nếu có thể chọn hoàn toàn tự do, anh muốn dành phần lớn thời gian làm việc cho điều gì?',
+    hint:'Câu trả lời thật nhất — không phải câu trả lời "đúng".',
+    type:'choice',
+    opts:['🤝 Làm việc với và vì con người','🔬 Đào sâu kiến thức và giải quyết vấn đề phức tạp','🏗️ Xây dựng sản phẩm, hệ thống hoặc thương hiệu riêng','🦅 Tự do làm việc theo cách và thời gian của mình'],
+    key:'ideal' },
+];
+
+// ═══════════════════════════════════════════════════
+// INTERPRETATION MATRIX — 12 Primary×Secondary combos
+// Key: "primary_secondary" (abbreviated)
+// ═══════════════════════════════════════════════════
+const DNA_MATRIX = {
+  // EXPERT primary
+  expert_independent:{
+    title:'Chuyên Gia Độc Lập',
+    desc:'Anh tạo ra giá trị tốt nhất khi kết hợp chiều sâu kiến thức với quyền tự quyết hoàn toàn. 20 năm kinh nghiệm là tài sản — và anh làm việc hiệu quả nhất khi không ai micromanage cách anh dùng tài sản đó.',
+    desc2:'Đây là DNA phổ biến nhất của những người thành công với mô hình Freelancer cao cấp hoặc Tư vấn độc lập. Anh không cần đội nhóm lớn để tạo ra giá trị lớn.',
+    strengths:['Phân tích sâu vấn đề phức tạp','Tự quản lý không cần nhắc nhở','Kỷ luật tự thân cao','Chuyên môn được tích lũy qua thời gian'],
+    drains:['Họp hành liên tục mà không cần thiết','Bị micromanage khi đang làm tốt','Công việc lặp lại không có chiều sâu'],
+    models:[{name:'Freelancer Chuyên Môn Cao Cấp',fit:'high',why:'Kết hợp hoàn hảo giữa Expert và Independent'},{name:'Tư Vấn Độc Lập',fit:'high',why:'Bán kiến thức theo giờ hoặc dự án, tự quyết lịch trình'},{name:'Coaching 1-1',fit:'mid',why:'Tận dụng chuyên môn, phù hợp nếu thích hướng dẫn người khác'}],
+  },
+  expert_people:{
+    title:'Chuyên Gia Có Tầm Ảnh Hưởng',
+    desc:'Anh không chỉ giỏi về chuyên môn — anh còn có khả năng truyền đạt và ảnh hưởng đến người khác qua kiến thức đó. Đây là combo hiếm và có giá trị cao.',
+    desc2:'Người có DNA này thường trở thành những trainer, speaker, hay tư vấn được nhớ đến không chỉ vì "biết nhiều" mà vì "giải thích được và truyền cảm hứng được".',
+    strengths:['Giải thích phức tạp thành đơn giản','Xây dựng uy tín qua chuyên môn','Tạo quan hệ bền vững qua sự tin tưởng'],
+    drains:['Công việc đơn độc quá lâu','Làm việc với dữ liệu thuần túy không có yếu tố con người'],
+    models:[{name:'Đào Tạo / Workshop',fit:'high',why:'Kết hợp Expert + People — dạy nhóm người'},{name:'Tư Vấn Nhóm',fit:'high',why:'Ảnh hưởng nhiều người cùng lúc qua chuyên môn'},{name:'Nội Dung Chuyên Môn (Blog/Video)',fit:'mid',why:'Ảnh hưởng rộng hơn qua kênh số'}],
+  },
+  expert_builder:{
+    title:'Kiến Trúc Sư Kiến Thức',
+    desc:'Anh không chỉ muốn biết — anh muốn xây dựng thứ gì đó từ kiến thức đó. Khóa học, hệ thống, framework, phương pháp luận — những thứ tồn tại lâu dài sau khi anh không còn trực tiếp làm nữa.',
+    desc2:'DNA này rất phù hợp với thời đại số — nơi kiến thức được đóng gói thành sản phẩm và phân phối với chi phí biên gần bằng 0.',
+    strengths:['Chuyển kiến thức thành hệ thống','Tư duy có cấu trúc và logic','Xây dựng tài sản trí tuệ dài hạn'],
+    drains:['Công việc không có kết quả cụ thể, đo được','Làm việc theo cảm tính không có quy trình'],
+    models:[{name:'Tạo Khóa Học Online',fit:'high',why:'Đóng gói Expert → sản phẩm Builder'},{name:'Viết Ebook / Tài Liệu',fit:'high',why:'Tài sản trí tuệ bán nhiều lần'},{name:'Tư Vấn Có Hệ Thống',fit:'mid',why:'Tư vấn kèm framework có thể nhân rộng'}],
+  },
+  // PEOPLE primary
+  people_expert:{
+    title:'Mentor Có Chuyên Môn',
+    desc:'Anh kết hợp khả năng kết nối con người với nền tảng kiến thức thực tế. Không phải chỉ "tốt với người" — anh có cái để chia sẻ và người ta tin tưởng bởi cả hai yếu tố đó.',
+    desc2:'DNA này tạo ra những người mentor, coach, hay tư vấn mà khách hàng không chỉ quay lại mà còn giới thiệu cho người khác.',
+    strengths:['Xây dựng quan hệ tin cậy sâu','Truyền đạt kiến thức theo cách người khác tiếp nhận được','Đọc được nhu cầu thực sự của người khác'],
+    drains:['Làm việc một mình quá lâu','Công việc thuần kỹ thuật không có tương tác người'],
+    models:[{name:'Coaching / Mentoring',fit:'high',why:'Kết hợp hoàn hảo giữa People + Expert'},{name:'Dịch Vụ Tư Vấn 1-1',fit:'high',why:'Quan hệ sâu + kiến thức chuyên môn'},{name:'Cộng Đồng / Community',fit:'mid',why:'Tạo không gian học hỏi qua kết nối người với người'}],
+  },
+  people_builder:{
+    title:'Người Xây Dựng Qua Con Người',
+    desc:'Anh tạo ra giá trị tốt nhất khi xây dựng điều gì đó có con người ở trung tâm — cộng đồng, đội nhóm, mạng lưới, thương hiệu cá nhân. Anh không xây hệ thống vô hồn — anh xây hệ thống để phục vụ người.',
+    desc2:'Một trong những DNA hiếm và có giá trị nhất trong thời đại mạng xã hội, nơi "người dẫn dắt cộng đồng" tạo ra ảnh hưởng lớn hơn nhiều so với quảng cáo.',
+    strengths:['Tạo cộng đồng và giữ người gắn kết','Xây dựng thương hiệu cá nhân tự nhiên','Lãnh đạo qua truyền cảm hứng, không phải quyền lực'],
+    drains:['Công việc đơn độc không có phản hồi từ người khác','Làm theo quy trình cứng nhắc không linh hoạt'],
+    models:[{name:'Cộng Đồng / Group Online',fit:'high',why:'Xây dựng + nuôi dưỡng người — đúng DNA'},{name:'Agency / Dịch Vụ Nhóm',fit:'mid',why:'Xây đội nhóm nhỏ phục vụ khách hàng'},{name:'Thương Hiệu Cá Nhân',fit:'mid',why:'Ảnh hưởng qua kết nối, không phải chuyên môn thuần túy'}],
+  },
+  people_independent:{
+    title:'Người Kết Nối Tự Do',
+    desc:'Anh thích làm việc với người — nhưng theo cách của anh, trong không gian của anh, với tốc độ của anh. Không phải Networker kiểu truyền thống đi dự sự kiện theo lịch — anh xây quan hệ sâu và có chọn lọc.',
+    desc2:'DNA này phù hợp với những người làm đại lý độc lập, môi giới, hay tư vấn tự do — nơi mạng lưới quan hệ là tài sản chính và anh không cần phải báo cáo ai.',
+    strengths:['Mạng lưới quan hệ chất lượng cao','Tự quản lý thời gian và ưu tiên','Biết người và biết cơ hội'],
+    drains:['Môi trường công ty có nhiều quy định và giám sát','Làm việc với dữ liệu, hệ thống thuần túy'],
+    models:[{name:'Môi Giới / Đại Lý Độc Lập',fit:'high',why:'Kết nối người mua - người bán, tự làm chủ'},{name:'Affiliate / Tiếp Thị Liên Kết',fit:'mid',why:'Dùng quan hệ để giới thiệu sản phẩm'},{name:'Tư Vấn Mạng Lưới',fit:'mid',why:'Kết nối người với cơ hội phù hợp'}],
+  },
+  // BUILDER primary
+  builder_expert:{
+    title:'Chuyên Gia Xây Dựng',
+    desc:'Anh không chỉ muốn biết — anh muốn ứng dụng. Không chỉ ứng dụng — anh muốn xây dựng thứ gì đó bền vững từ kiến thức đó. Đây là DNA của người tạo ra sản phẩm hoặc dịch vụ có chiều sâu thực sự.',
+    desc2:'Khác với Expert thuần túy, anh không thoải mái nếu chỉ biết mà không làm ra được gì. Khác với Builder thuần túy, anh cần nền tảng kiến thức vững để xây.',
+    strengths:['Xây dựng sản phẩm/dịch vụ có chất lượng thực chất','Giải quyết vấn đề bằng hệ thống','Kiên nhẫn với quá trình build lâu dài'],
+    drains:['Công việc chỉ cần giao tiếp, không cần tư duy','Áp lực xã hội và networking liên tục'],
+    models:[{name:'Sản Phẩm Số / Course / Ebook',fit:'high',why:'Builder + Expert = sản phẩm kiến thức'},{name:'Dịch Vụ Cao Cấp Có Hệ Thống',fit:'high',why:'Xây dựng quy trình dịch vụ có thể nhân rộng'},{name:'Blog / Kênh Nội Dung Chuyên Sâu',fit:'mid',why:'Build tài sản nội dung từ Expert'}],
+  },
+  builder_independent:{
+    title:'Doanh Nhân Solo',
+    desc:'Anh muốn xây dựng thứ gì đó của mình — không phải cho ai khác, không phải trong tổ chức của người khác. Solo founder là hình thức phù hợp nhất với DNA của anh.',
+    desc2:'Anh không cần đội nhóm lớn để bắt đầu. Anh cần quyền tự quyết và không gian để xây. Điều đó có thể bắt đầu rất nhỏ — và mở rộng theo thời gian.',
+    strengths:['Tự vận hành không cần nhắc nhở','Nhìn thấy cơ hội để xây từ điều còn thiếu','Kiên trì với mục tiêu dài hạn'],
+    drains:['Làm việc trong cấu trúc tổ chức cứng nhắc','Nhiệm vụ chỉ phục vụ mục tiêu của người khác'],
+    models:[{name:'Kinh Doanh Online Solo',fit:'high',why:'Builder + Independent = one-person business'},{name:'Dropshipping / Thương Mại Điện Tử',fit:'high',why:'Xây hệ thống tự vận hành'},{name:'Agency Nhỏ / Studio',fit:'mid',why:'Xây dựng dịch vụ với đội nhỏ'}],
+  },
+  builder_people:{
+    title:'Nhà Xây Dựng Cộng Đồng',
+    desc:'Anh xây dựng không chỉ sản phẩm hay hệ thống — anh xây dựng không gian cho người. Cộng đồng, phong trào, thương hiệu có cảm xúc — những thứ tồn tại vì con người chứ không chỉ vì công nghệ hay quy trình.',
+    desc2:'Đây là DNA của những người tạo ra "nơi chốn" — dù là online hay offline — mà người khác muốn thuộc về.',
+    strengths:['Kết nối builder mindset với empathy thực sự','Tạo ra môi trường người khác muốn quay lại','Lãnh đạo qua ví dụ và xây dựng'],
+    drains:['Công việc đơn độc hoàn toàn','Làm việc thuần kỹ thuật không có con người'],
+    models:[{name:'Cộng Đồng Có Trả Phí',fit:'high',why:'Build nơi chốn + nuôi dưỡng quan hệ'},{name:'Dịch Vụ Địa Phương',fit:'mid',why:'Xây dựng uy tín qua phục vụ cộng đồng địa phương'},{name:'Franchise / Nhượng Quyền',fit:'mid',why:'Build hệ thống + quản lý quan hệ đối tác'}],
+  },
+  // INDEPENDENT primary
+  independent_expert:{
+    title:'Freelancer Chuyên Môn',
+    desc:'Anh muốn tự do — và anh có đủ kiến thức để kiếm sống từ sự tự do đó. Không phải freelancer theo nghĩa "không có việc làm ổn định" — mà là freelancer theo nghĩa "chọn ai làm việc cùng, chọn cách làm, chọn khi nào làm".',
+    desc2:'Đây là DNA lý tưởng nhất cho mô hình Freelancer chuyên môn cao cấp — nơi anh bán kiến thức và thời gian với giá trị cao, không phải giá thấp.',
+    strengths:['Kỷ luật tự thân để vận hành độc lập','Chiều sâu chuyên môn là tài sản chính','Không cần cơ sở hạ tầng lớn để bắt đầu'],
+    drains:['Làm việc trong môi trường chính trị công ty','Bị yêu cầu theo quy trình không hợp lý'],
+    models:[{name:'Freelancer Chuyên Môn',fit:'high',why:'DNA cốt lõi — tự chủ + kiến thức'},{name:'Tư Vấn Độc Lập',fit:'high',why:'Bán giải pháp, không phải thời gian'},{name:'Giảng Dạy / Chia Sẻ',fit:'mid',why:'Chuyển kiến thức thành thu nhập passive'}],
+  },
+  independent_builder:{
+    title:'Entrepreneur Độc Lập',
+    desc:'Anh muốn xây dựng — và anh muốn làm điều đó hoàn toàn theo cách của mình. Không phải co-founder hay team player — anh là người tạo ra thứ gì đó từ tầm nhìn của anh.',
+    desc2:'Điều quan trọng nhất với anh không phải là lớn nhanh hay có đội lớn — mà là giữ được quyền kiểm soát và hướng đi theo ý chí của mình.',
+    strengths:['Tự vận hành với kỷ luật cao','Không phụ thuộc vào người khác để ra quyết định','Xây dựng từng bước theo tốc độ của mình'],
+    drains:['Phải xin phép hay báo cáo quá nhiều','Làm việc trong môi trường đòi hỏi đồng thuận tập thể'],
+    models:[{name:'One-Person Business',fit:'high',why:'Independent + Builder = solo enterprise'},{name:'Kinh Doanh Nhỏ Tự Quản',fit:'high',why:'Xây dựng hệ thống tự vận hành'},{name:'Đầu Tư Tạo Thu Nhập Thụ Động',fit:'mid',why:'Xây tài sản sinh lợi mà không cần có mặt'}],
+  },
+  independent_people:{
+    title:'Networker Tự Do',
+    desc:'Anh có mạng lưới quan hệ tốt và anh quản lý nó hoàn toàn theo cách của mình. Không phải vì nghĩa vụ — mà vì anh chọn ai anh muốn làm việc cùng và loại bỏ ai không phù hợp.',
+    desc2:'DNA này phù hợp với người làm môi giới, đại lý, kết nối cơ hội — nơi mạng lưới là tài sản và tự chủ là không thể thương lượng.',
+    strengths:['Mạng lưới có chọn lọc và chất lượng cao','Tự quản lý thời gian và năng lượng','Nhìn thấy cơ hội kết nối giữa người và người'],
+    drains:['Bị ép tham gia sự kiện hay gặp gỡ không có ý nghĩa','Công việc thuần kỹ thuật không có tương tác người'],
+    models:[{name:'Kết Nối Cơ Hội / Môi Giới',fit:'high',why:'Dùng quan hệ để kết nối, tự quyết cách làm'},{name:'Đại Lý Độc Lập',fit:'high',why:'Bán qua mạng lưới, không cần văn phòng'},{name:'Affiliate Marketing',fit:'mid',why:'Kết nối người mua với sản phẩm qua uy tín'}],
+  },
+};
+
+// ═══════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════
+let cur = 0;
+const ANS = {}; // { qIndex: value }  value: 1-5 for Likert, 0-3 for support
+const TOTAL = QS.length;
+
+// ═══════════════════════════════════════════════════
+// SCORING
+// ═══════════════════════════════════════════════════
+function score() {
+  // Core: Q0-15 (Likert 1-5)
+  // Formula from spec: Score = sum(q1..q4) / 20 * 100
+  const groups = {people:[0,1,2,3], expert:[4,5,6,7], builder:[8,9,10,11], independent:[12,13,14,15]};
+  const sc = {};
+  Object.entries(groups).forEach(([dim, idxs]) => {
+    const vals = idxs.map(i => ANS[i] || 3); // default 3 if unanswered
+    const sum = vals.reduce((a,b)=>a+b,0);
+    sc[dim] = Math.round(sum / 20 * 100);
+  });
+  return sc;
+}
+
+function rankScores(sc) {
+  return Object.entries(sc).sort((a,b)=>b[1]-a[1]).map(e=>e[0]);
+}
+
+function confidence(sc) {
+  const vals = Object.values(sc).sort((a,b)=>b-a);
+  const spread = vals[0] - vals[vals.length-1];
+  if (spread >= 35) return {level:'High', label:'Cao', cls:'conf-high'};
+  if (spread >= 20) return {level:'Medium', label:'Trung bình', cls:'conf-mid'};
+  return {level:'Low', label:'Cân bằng', cls:'conf-low'};
+}
+
+// ═══════════════════════════════════════════════════
+// RENDER QUESTION
+// ═══════════════════════════════════════════════════
+const LIKERT_LABELS = ['Rất không giống','Không giống','Trung lập','Giống tôi','Rất giống tôi'];
+const LIKERT_EMOJI = ['😕','🤔','😐','🙂','😊'];
+
+function showQ(idx) {
+  cur = idx;
+  const q = QS[idx];
+  document.getElementById('qDimTag').textContent = q.dimLabel;
+  document.getElementById('qNum').textContent = 'Câu ' + (idx+1) + ' / ' + TOTAL;
+  document.getElementById('qStmt').textContent = q.stmt;
+  document.getElementById('qHint').textContent = q.hint || '';
+
+  const body = document.getElementById('qBody');
+
+  if (!q.type) {
+    // Likert
+    const curVal = ANS[idx];
+    body.innerHTML = `<div class="likert" id="likertRow"></div>`;
+    const row = document.getElementById('likertRow');
+    for (let v=1; v<=5; v++) {
+      const btn = document.createElement('div');
+      btn.className = 'lk-btn' + (curVal===v?' sel':'');
+      btn.innerHTML = `<span class="lk-emoji">${LIKERT_EMOJI[v-1]}</span><span class="lk-num">${v}</span><span class="lk-lbl">${LIKERT_LABELS[v-1]}</span>`;
+      btn.onclick = () => pickLikert(v);
+      row.appendChild(btn);
+    }
+  } else {
+    // Support choice
+    const curVal = ANS[idx];
+    body.innerHTML = `<div class="supp-opts" id="suppOpts"></div>`;
+    const wrap = document.getElementById('suppOpts');
+    q.opts.forEach((opt, i) => {
+      const div = document.createElement('div');
+      div.className = 'supp-opt' + (curVal===i?' sel':'');
+      div.innerHTML = `<span class="ol">${['A','B','C','D'][i]}</span><span>${opt}</span>`;
+      div.onclick = () => pickSupp(i);
+      wrap.appendChild(div);
+    });
+  }
+
+  document.getElementById('btnNext').disabled = ANS[idx] === undefined;
+  document.getElementById('btnBack').style.display = idx === 0 ? 'none' : '';
+  show('s-q');
+  updateProg();
+}
+
+function pickLikert(v) {
+  ANS[cur] = v;
+  document.querySelectorAll('.lk-btn').forEach((b,i) => b.classList.toggle('sel', i===v-1));
+  document.getElementById('btnNext').disabled = false;
+  updateProg();
+}
+
+function pickSupp(i) {
+  ANS[cur] = i;
+  document.querySelectorAll('.supp-opt').forEach((b,j) => b.classList.toggle('sel', j===i));
+  document.getElementById('btnNext').disabled = false;
+  updateProg();
+}
+
+function goNext() {
+  const next = cur + 1;
+  // Block summaries after each group
+  if (cur === 3) { showBlockSum(1); return; }
+  if (cur === 7) { showBlockSum(2); return; }
+  if (cur === 11) { showBlockSum(3); return; }
+  if (cur === 15) { show('s-supp-intro'); return; }
+  if (next >= TOTAL) { computeAndRender(); return; }
+  showQ(next);
+}
+
+function goBack() {
+  if (cur === 0) return;
+  showQ(cur - 1);
+}
+
+// Block summaries
+const SUM_INSIGHTS = {
+  1: (sc) => {
+    const v = sc.people;
+    if (v >= 70) return `Điểm Kết Nối của anh <strong>cao (${v}/100)</strong> — anh tự nhiên tạo ra năng lượng qua con người. Đây là tài sản đặc biệt có thể chuyển hóa thành giá trị kinh doanh thực sự.`;
+    if (v >= 45) return `Điểm Kết Nối của anh <strong>trung bình (${v}/100)</strong> — anh thoải mái với con người nhưng đây không phải nguồn năng lượng chính của anh.`;
+    return `Điểm Kết Nối của anh <strong>thấp hơn (${v}/100)</strong> — anh không cần con người liên tục để có năng lượng. Đây không phải điểm yếu — nhiều hướng đi thành công nhất không đòi hỏi nhiều tương tác xã hội.`;
+  },
+  2: (sc) => {
+    const v = sc.expert;
+    if (v >= 70) return `Điểm Chuyên Môn của anh <strong>cao (${v}/100)</strong> — 20+ năm kinh nghiệm đang là tài sản thực sự. Người khác sẵn sàng trả tiền để tiếp cận kiến thức này nếu anh biết cách đóng gói.`;
+    if (v >= 45) return `Điểm Chuyên Môn của anh <strong>trung bình (${v}/100)</strong> — anh có kiến thức thực tế nhưng chưa thấy mình là "chuyên gia" theo nghĩa truyền thống. Điều thú vị: thị trường thường đánh giá kinh nghiệm thực chiến cao hơn bằng cấp.`;
+    return `Điểm Chuyên Môn của anh <strong>thấp hơn (${v}/100)</strong> — anh không cảm thấy "mạnh" ở chiều sâu kiến thức. Không sao — nhiều hướng đi phù hợp hơn với điểm mạnh khác của anh.`;
+  },
+  3: (sc) => {
+    const v = sc.builder;
+    if (v >= 70) return `Điểm Xây Dựng của anh <strong>cao (${v}/100)</strong> — anh có tư duy của người tạo ra tài sản dài hạn. Đây là điều hiếm và quý giá trong bối cảnh mọi người muốn kết quả ngay lập tức.`;
+    if (v >= 45) return `Điểm Xây Dựng của anh <strong>trung bình (${v}/100)</strong> — anh có thể build nếu cần nhưng đây không phải động lực tự nhiên nhất của anh.`;
+    return `Điểm Xây Dựng của anh <strong>thấp hơn (${v}/100)</strong> — anh không tự nhiên nghĩ đến việc xây dựng hệ thống hay tài sản dài hạn. Anh thích kết quả có thể thấy nhanh hơn.`;
+  },
+};
+
+function showBlockSum(blk) {
+  const sc = score();
+  const id = 's-sum' + blk;
+  const boxId = 'sum' + blk + 'box';
+  const insight = SUM_INSIGHTS[blk] ? SUM_INSIGHTS[blk](sc) : '';
+  const box = document.getElementById(boxId);
+  if (box) box.innerHTML = `<p>${insight}</p>`;
+  show(id);
+  updateProg();
+}
+
+// ═══════════════════════════════════════════════════
+// COMPUTE & RENDER RESULTS
+// ═══════════════════════════════════════════════════
+const DIM_META = {
+  people:      {icon:'🤝', label:'Kết Nối',   color:'#3b82f6'},
+  expert:      {icon:'🧠', label:'Chuyên Môn', color:'#10b981'},
+  builder:     {icon:'🏗️', label:'Xây Dựng',  color:'#f59e0b'},
+  independent: {icon:'🦅', label:'Tự Chủ',    color:'#8b5cf6'},
+};
+const POS_NAMES = ['Primary DNA','Secondary DNA','Supporting DNA','Weak DNA'];
+const POS_CLS = ['pos-1','pos-2','pos-3','pos-4'];
+
+function computeAndRender() {
+  const sc = score();
+  const rank = rankScores(sc);
+  const conf = confidence(sc);
+  const p = rank[0], s = rank[1];
+  const key = p + '_' + s;
+  const matrix = DNA_MATRIX[key] || DNA_MATRIX['expert_independent'];
+
+  // Support answer context
+  const suppCtx = {};
+  [{idx:16,key:'praise'},{idx:17,key:'approach'},{idx:18,key:'drain'},{idx:19,key:'ideal'}].forEach(q=>{
+    suppCtx[q.key] = ANS[q.idx];
+  });
+
+  // DNA card
+  document.getElementById('dnaTitle').textContent = matrix.title;
+  const dnaRow = document.getElementById('dnaRow');
+  dnaRow.innerHTML = '';
+  rank.forEach((dim,i) => {
+    const tag = document.createElement('span');
+    tag.className = 'dna-tag' + (i===0?' primary':'');
+    tag.textContent = DIM_META[dim].label + ' (' + sc[dim] + ')';
+    dnaRow.appendChild(tag);
+  });
+  const confEl = document.getElementById('confBadge');
+  confEl.innerHTML = `<span class="conf-badge ${conf.cls}">Độ tin cậy: ${conf.label}</span>`;
+
+  document.getElementById('resSub').textContent =
+    'DNA chính: ' + DIM_META[p].label + ' → ' + DIM_META[s].label +
+    ' → ' + DIM_META[rank[2]].label + ' → ' + DIM_META[rank[3]].label;
+
+  // Score rows
+  const scoreEl = document.getElementById('scoreRows');
+  scoreEl.innerHTML = '';
+  rank.forEach((dim,i) => {
+    const m = DIM_META[dim];
+    const row = document.createElement('div');
+    row.className = 'sc-row';
+    row.innerHTML = `
+      <span class="sc-icon">${m.icon}</span>
+      <span class="sc-lbl">${m.label}</span>
+      <div class="sc-track"><div class="sc-fill" style="width:0%;background:${m.color}" data-val="${sc[dim]}"></div></div>
+      <span class="sc-val" style="color:${m.color}">${sc[dim]}</span>
+      <span class="dna-pos ${POS_CLS[i]}">${POS_NAMES[i]}</span>`;
+    scoreEl.appendChild(row);
+  });
+
+  // Narrative
+  const narEl = document.getElementById('narrativeText');
+  narEl.innerHTML = `<p>${matrix.desc}</p><p>${matrix.desc2}</p>`;
+
+  // Strengths
+  const strEl = document.getElementById('strengthList');
+  strEl.innerHTML = matrix.strengths.map(s => `<div class="sd-item">✅ ${s}</div>`).join('');
+
+  // Drains (combine matrix + support Q18)
+  const drainEl = document.getElementById('drainList');
+  let drains = [...matrix.drains];
+  drainEl.innerHTML = drains.map(d => `<div class="sd-item">⚡ ${d}</div>`).join('');
+
+  // Income models
+  const modelEl = document.getElementById('modelList');
+  modelEl.innerHTML = matrix.models.map(m => `
+    <div class="model-row">
+      <span class="model-fit ${m.fit==='high'?'fit-high':'fit-mid'}">${m.fit==='high'?'✅ Rất phù hợp':'⚡ Có thể phù hợp'}</span>
+      <div><div class="model-name">${m.name}</div><div class="model-why">${m.why}</div></div>
+    </div>`).join('');
+
+  // API output to localStorage
+  try {
+    // Normalize P1 scores 20-100 → 0-100 for P3 Matching Engine
+    const scNorm = {};
+    Object.entries(sc).forEach(([k,v]) => {
+      scNorm[k] = Math.round(Math.max(0, Math.min(100, (v - 20) / 80 * 100)));
+    });
+    const output = {
+      scores: sc,
+      scores_normalized: scNorm,
+      ranking: rank,
+      dna: {primary: p, secondary: s, supporting: rank[2], weak: rank[3]},
+      title: matrix.title,
+      strengths: matrix.strengths,
+      drains: matrix.drains,
+      income_models: matrix.models.map(m=>m.name),
+      confidence: conf.level,
+      support: suppCtx,
+      date: new Date().toISOString(),
+      p1Rank: rank, p1: sc,
+    };
+    localStorage.setItem('p1_result', JSON.stringify(output));
+  } catch(e){}
+
+  show('s-results');
+  updateProg(true);
+
+  setTimeout(() => {
+    document.querySelectorAll('.sc-fill').forEach(el => {
+      el.style.width = el.dataset.val + '%';
+    });
+  }, 350);
+}
+
+// ═══════════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════════
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function updateProg(done) {
+  const filled = Object.keys(ANS).filter(k => k < 20).length;
+  const pct = done ? 100 : Math.round(filled / TOTAL * 100);
+  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('progLbl').textContent = done ? 'Hoàn thành!' : `Câu ${filled} / ${TOTAL}`;
+}
+
+function retake() {
+  Object.keys(ANS).forEach(k => delete ANS[k]);
+  cur = 0;
+  updateProg();
+  show('s-welcome');
+}
+
+function copyResult() {
+  try {
+    const r = JSON.parse(localStorage.getItem('p1_result') || '{}');
+    if (!r.scores) { alert('Chưa có kết quả.'); return; }
+    const dim = {people:'Kết Nối',expert:'Chuyên Môn',builder:'Xây Dựng',independent:'Tự Chủ'};
+    const lines = r.ranking.map((k,i) => ['Primary','Secondary','Supporting','Weak'][i]+': '+dim[k]+' ('+r.scores[k]+')').join('\n');
+    const text = `DNA Hướng Đi — Huongdi.sol.vn\n\n${r.title}\n\n${lines}\n\nĐộ tin cậy: ${r.confidence}\nMô hình phù hợp: ${(r.income_models||[]).join(', ')}\n\nTìm hướng đi phù hợp: https://huongdi.sol.vn`;
+    navigator.clipboard.writeText(text).then(()=>alert('Đã sao chép!'));
+  } catch(e){ alert('Không thể sao chép. Vui lòng chụp màn hình.'); }
+}
+</script>
+<script src="/sol-flow.js"></script>
+<!-- SOL-FOOTER-START -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL FOOTER — Master Footer EEAT + YMYL Finance disclaimer
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào trước     <script src="/js/sol-api-sync.js?v=202607040701"></script>
+</body> mỗi HTML file của huongdi.sol.vn
+     Cross-link 3 sản phẩm + Author info (EEAT) + YMYL disclaimer
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-footer-styles">
+  #sol-footer * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif;
+  }
+  #sol-footer {
+    margin-top: 60px;
+    background: linear-gradient(180deg, #fafaf9 0%, #f5f5f4 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 48px 16px 24px;
+    color: #44403c;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+  .sol-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* 4 cols grid */
+  .sol-footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+  .sol-footer-col h4 {
+    color: #1c1917;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sol-footer-col ul {
+    list-style: none;
+  }
+  .sol-footer-col li {
+    margin-bottom: 8px;
+  }
+  .sol-footer-col a {
+    color: #57534e;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .sol-footer-col a:hover {
+    color: #d97706;
+  }
+  .sol-footer-col .pillar-icon {
+    display: inline-block;
+    width: 18px;
+    margin-right: 4px;
+    text-align: center;
+  }
+
+  /* EEAT Author block */
+  .sol-eeat-block {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .sol-eeat-block img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #fde68a;
+  }
+  .sol-eeat-text {
+    flex: 1;
+    font-size: 13px;
+    color: #57534e;
+  }
+  .sol-eeat-text strong {
+    color: #1c1917;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .sol-eeat-text a {
+    color: #d97706;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .sol-eeat-text a:hover {
+    text-decoration: underline;
+  }
+
+  /* YMYL Disclaimer */
+  .sol-ymyl-disclaimer {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: #78350f;
+    line-height: 1.6;
+  }
+  .sol-ymyl-disclaimer strong {
+    color: #92400e;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  /* Bottom row — copyright + social */
+  .sol-footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #78716c;
+  }
+  .sol-footer-bottom .social {
+    display: flex;
+    gap: 12px;
+  }
+  .sol-footer-bottom .social a {
+    color: #78716c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .sol-footer-bottom .social a:hover {
+    color: #d97706;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-footer-cols {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .sol-eeat-block {
+      flex-direction: column;
+      text-align: center;
+    }
+    .sol-eeat-block img {
+      align-self: center;
+    }
+    .sol-footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-footer-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    #sol-footer {
+      background: linear-gradient(180deg, #1c1917 0%, #0c0a09 100%);
+      color: #d6d3d1;
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-footer-col h4,
+    .sol-eeat-text strong {
+      color: #f5f5f4;
+    }
+    .sol-footer-col a,
+    .sol-eeat-text {
+      color: #a8a29e;
+    }
+    .sol-eeat-block {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-ymyl-disclaimer {
+      background: rgba(245, 158, 11, 0.08);
+      color: #fcd34d;
+    }
+    .sol-ymyl-disclaimer strong {
+      color: #fbbf24;
+    }
+    .sol-footer-bottom {
+      border-top-color: rgba(255, 255, 255, 0.08);
+      color: #78716c;
+    }
+  }
+</style>
+
+<footer id="sol-footer" role="contentinfo">
+  <div class="sol-footer-inner">
+
+    <!-- 4 columns -->
+    <div class="sol-footer-cols">
+
+      <!-- Col 1: Sol Ecosystem 3 trụ -->
+      <div class="sol-footer-col">
+        <h4>Sol — 3 Trụ</h4>
+        <ul>
+          <li><a href="https://bothuocla.sol.vn/" rel="noopener"><span class="pillar-icon">🌿</span>Thân — Sức khoẻ</a></li>
+          <li><a href="https://sol.vn/ngam/" rel="noopener"><span class="pillar-icon">🧘</span>Tâm — Tinh thần</a></li>
+          <li><a href="https://huongdi.sol.vn/" rel="noopener"><span class="pillar-icon">🎯</span>Trí — Sự nghiệp</a></li>
+          <li><a href="https://sol.vn/" rel="noopener"><span class="pillar-icon">🏠</span>Sol.vn — Trang chính</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Hướng Nghiệp Tools + Content Hub -->
+      <div class="sol-footer-col">
+        <h4>Hướng Nghiệp</h4>
+        <ul>
+          <li><a href="/kham-pha-ban-than/">Khám phá bản thân (P1) — DNA Test 20 câu</a></li>
+          <li><a href="/kiem-ke-nguon-luc/">Kiểm kê nguồn lực (P2) — Bản đồ vốn-network-sức</a></li>
+          <li><a href="/la-ban-huong-di/">La bàn hướng đi (P3) — Match top 5/37 hướng</a></li>
+          <li><a href="https://sol.vn/huong-di/" rel="noopener">Tất cả bài viết hướng đi →</a></li>
+          <li><a href="https://sol.vn/huong-di/freelancer-chuyen-mon-tuoi-45/" rel="noopener">Freelancer Chuyên Môn</a></li>
+          <li><a href="https://sol.vn/huong-di/coaching-dao-tao-tuoi-45/" rel="noopener">Coaching & Đào Tạo</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Về Sol -->
+      <div class="sol-footer-col">
+        <h4>Về Sol</h4>
+        <ul>
+          <li><a href="https://sol.vn/khang-sol/" rel="noopener">Khang Sol — Founder</a></li>
+          <li><a href="https://sol.vn/cau-chuyen-sol/" rel="noopener">Câu chuyện Sol</a></li>
+          <li><a href="https://sol.vn/lien-he/" rel="noopener">Liên hệ</a></li>
+          <li><a href="https://sol.vn/chinh-sach-rieng-tu/" rel="noopener">Chính sách bảo mật</a></li>
+          <li><a href="https://sol.vn/dieu-khoan/" rel="noopener">Điều khoản</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Cộng đồng -->
+      <div class="sol-footer-col">
+        <h4>Cộng đồng</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener nofollow" target="_blank">LinkedIn Khang</a></li>
+          <li><a href="https://web.facebook.com/nguyendinhkhang" rel="noopener nofollow" target="_blank">Facebook Khang</a></li>
+          <li><a href="https://zalo.me/sol" rel="noopener nofollow" target="_blank">Zalo OA Sol</a></li>
+          <li><a href="mailto:contact@sol.vn">Email: contact@sol.vn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- EEAT Author block -->
+    <div class="sol-eeat-block">
+      <img src="https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg"
+           alt="Khang Sol — Founder Đi Cùng Sol"
+           loading="lazy"
+           width="56" height="56">
+      <div class="sol-eeat-text">
+        <strong>Tác giả: Khang Sol (Nguyễn Đình Khang)</strong>
+        Founder Đi Cùng Sol — 20+ năm CNTT, từng làm PM dự án Internet quốc gia, tái khởi nghiệp tuổi 40-60 tập trung vào hỗ trợ người Việt 40-60 tuổi tìm hướng đi mới. Mình chia sẻ kinh nghiệm thật, không phải tư vấn tài chính có giấy phép.
+        <br><br>
+        <a href="https://sol.vn/khang-sol/" rel="author">Xem profile đầy đủ →</a>
+      </div>
+    </div>
+
+    <!-- YMYL Finance Disclaimer -->
+    <div class="sol-ymyl-disclaimer" role="note" aria-label="Thông báo về tài chính">
+      <strong>⚠️ Tuyên bố miễn trừ trách nhiệm (YMYL — Finance)</strong>
+      Thông tin trên huongdi.sol.vn mang tính <em>tham khảo và chia sẻ kinh nghiệm</em> từ Khang Sol và cộng đồng — KHÔNG phải tư vấn tài chính, đầu tư hoặc thuế chuyên nghiệp. Trước khi quyết định khởi nghiệp, đầu tư vốn, hoặc thay đổi nghề nghiệp lớn, anh nên tham khảo chuyên gia tài chính / luật sư / kế toán có giấy phép tại Việt Nam.
+    </div>
+
+    <!-- Bottom row -->
+    <div class="sol-footer-bottom">
+      <div>
+        © 2025–2026 <strong>Đi Cùng Sol</strong> · All rights reserved · Made with ❤️ at Việt Nam
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="https://web.facebook.com/nguyendinhkhang" rel="noopener" target="_blank">Facebook</a>
+        <a href="https://zalo.me/sol" rel="noopener" target="_blank">Zalo</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- SOL-FOOTER-END -->
+    <script src="/js/sol-api-sync.js?v=202607040701"></script>
+</body>
+</html>

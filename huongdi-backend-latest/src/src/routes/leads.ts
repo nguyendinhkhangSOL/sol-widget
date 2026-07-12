@@ -1,0 +1,220 @@
+/**
+ * Public API: POST /api/leads
+ * Nhận form từ sol.vn/thanh-toan/ → save DB + notify Khang
+ *
+ * File: /var/www/huongdi/backend/src/routes/leads.ts
+ */
+
+import { Router, Request, Response } from 'express';
+import { PrismaClient } from '@prisma/client';
+import { notifyKhang } from '../services/notification';
+
+const router = Router();
+const prisma = new PrismaClient();
+
+// Rate limit: max 5 submissions per SDT per 24h
+const submissions = new Map<string, number[]>();
+
+function isRateLimited(sdt: string): boolean {
+  const now = Date.now();
+  const day = 24 * 60 * 60 * 1000;
+  const arr = (submissions.get(sdt) || []).filter(t => now - t < day);
+  submissions.set(sdt, arr);
+  return arr.length >= 5;
+}
+
+function recordSubmission(sdt: string): void {
+  const arr = submissions.get(sdt) || [];
+  arr.push(Date.now());
+  submissions.set(sdt, arr);
+}
+
+function isValidPhone(sdt: string): boolean {
+  return /^0\d{9}$/.test(String(sdt).replace(/[.\s-]/g, ''));
+}
+
+function normalizePhone(sdt: string): string {
+  return String(sdt).replace(/[.\s-]/g, '');
+}
+
+const PACKAGE_AMOUNTS: Record<string, number> = {
+  active:  499000,
+  founder: 1999000,
+  renewal: 499000,
+};
+
+interface LeadPayload {
+  ten:    string;
+  sdt:    string;
+  email?: string;
+  zalo?:  string;
+  goi:    string;
+}
+
+router.post('/leads', async (req: Request, res: Response) => {
+  try {
+    const { ten, sdt, email, zalo, goi } = req.body as LeadPayload;
+
+    if (!ten || !sdt || !goi) {
+      return res.status(400).json({
+        success: false,
+        message: 'Vui lòng điền đủ Tên, SĐT, và Gói.'
+      });
+    }
+
+    if (!isValidPhone(sdt)) {
+      return res.status(400).json({
+        success: false,
+        message: 'SĐT không hợp lệ. Định dạng: 09xxxxxxxx (10 số)'
+      });
+    }
+
+    if (!PACKAGE_AMOUNTS[goi]) {
+      return res.status(400).json({
+        success: false,
+        message: 'Gói không hợp lệ.'
+      });
+    }
+
+    const cleanSdt = normalizePhone(sdt);
+
+    if (isRateLimited(cleanSdt)) {
+      return res.status(429).json({
+        success: false,
+        message: 'Quá nhiều lần submit. Vui lòng thử lại sau 24h.'
+      });
+    }
+
+    const amount = PACKAGE_AMOUNTS[goi];
+    const ip = String(req.headers['x-forwarded-for'] || req.socket.remoteAddress || '');
+    const ua = String(req.headers['user-agent'] || '');
+    const ref = String(req.headers['referer'] || '');
+
+    const lead = await prisma.lead.create({
+      data: {
+        ten:       ten.trim(),
+        sdt:       cleanSdt,
+        email:     email ? email.trim().toLowerCase() : null,
+        zalo:      zalo ? normalizePhone(zalo) : null,
+        goi: goi.toUpperCase() as any,
+        amount,
+        ipAddress: ip,
+        userAgent: ua,
+        referer:   ref,
+      }
+    });
+
+    recordSubmission(cleanSdt);
+
+    // Async notify Khang
+    setImmediate(() => {
+      notifyKhang(lead).catch(err => {
+        console.error('[leads] notifyKhang failed:', err);
+      });
+    });
+
+    return res.json({
+      success: true,
+      lead_id: lead.id,
+      message: `Đã ghi nhận đơn của anh/chị ${ten}. Chuyển khoản xong, chúng tôi kích hoạt trong 2-4 giờ và gửi Zalo/Email link kích hoạt.`,
+      payment_info: {
+        bank:          'Techcombank',
+        account:       '11522026076011',
+        account_name:  'CONG TY CO PHAN VINET',
+        amount,
+        transfer_note: `SOL ${cleanSdt}`,
+      }
+    });
+  } catch (err: any) {
+    console.error('[POST /leads] error:', err);
+    return res.status(500).json({
+      success: false,
+      message: 'Lỗi hệ thống. Vui lòng liên hệ Zalo 0912727381.'
+    });
+  }
+});
+
+/**
+ * GET /api/activate?token=xxx
+ * Public — verify magic link + update status=activated
+ */
+router.get('/activate', async (req: Request, res: Response) => {
+  const token = String(req.query.token || '');
+  if (!token || token.length < 20) {
+    return res.status(400).json({ success: false, message: 'Token không hợp lệ.' });
+  }
+
+  const lead = await prisma.lead.findUnique({ where: { magicToken: token } });
+  if (!lead) {
+    return res.status(404).json({ success: false, message: 'Link không tồn tại.' });
+  }
+  if (lead.paymentStatus === 'CANCELLED') {
+    return res.status(400).json({ success: false, message: 'Đơn đã bị huỷ.' });
+  }
+  if (lead.expiresAt && lead.expiresAt < new Date()) {
+    return res.status(400).json({ success: false, message: 'Link đã hết hạn. LH Zalo 0912727381.' });
+  }
+
+  const firstActivation = lead.paymentStatus !== 'ACTIVATED';
+  if (firstActivation) {
+    // Update lead status
+    await prisma.lead.update({
+      where: { id: lead.id },
+      data:  { paymentStatus: 'ACTIVATED', activatedAt: new Date() }
+    });
+
+    // BATCH A — Create/upsert User account linked to Lead
+    try {
+      const tier: 'ACTIVE' | 'FOUNDER' = lead.goi === 'FOUNDER' ? 'FOUNDER' : 'ACTIVE';
+      const tierStartedAt = new Date();
+      const tierExpiresAt = lead.goi === 'FOUNDER' ? null : lead.expiresAt;
+
+      // Try upsert by phone (unique-ish). Fallback: findFirst by phone.
+      const existing = await prisma.user.findFirst({
+        where: { OR: [ { phone: lead.sdt }, ...(lead.email ? [{ email: lead.email }] : []) ] },
+      });
+
+      if (existing) {
+        await prisma.user.update({
+          where: { id: existing.id },
+          data: {
+            tier: tier as any,
+            tierStartedAt,
+            tierExpiresAt,
+            activeLeadId: lead.id,
+            displayName: existing.displayName || lead.ten,
+            email: existing.email || lead.email || undefined,
+            phone: existing.phone || lead.sdt,
+            lastSeenAt: new Date(),
+          },
+        });
+      } else {
+        await prisma.user.create({
+          data: {
+            phone: lead.sdt,
+            email: lead.email || null,
+            displayName: lead.ten,
+            tier: tier as any,
+            tierStartedAt,
+            tierExpiresAt,
+            activeLeadId: lead.id,
+            lastSeenAt: new Date(),
+          },
+        });
+      }
+    } catch (userErr: any) {
+      console.error('[activate] User upsert error (non-fatal):', userErr?.message);
+    }
+  }
+
+  return res.json({
+    success: true,
+    tier:            lead.goi === 'FOUNDER' ? 'founder' : 'active',
+    ten:             lead.ten,
+    expires_at:      lead.expiresAt,
+    first_activation: firstActivation,
+    password_required: !lead.passwordHash,
+  });
+});
+
+export default router;

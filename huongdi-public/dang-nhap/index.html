@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng nhập — Sol La Bàn</title>
+<meta name="description" content="Đăng nhập vào tài khoản Sol La Bàn để xem lại roadmap và tiếp tục hành trình.">
+<link rel="canonical" href="https://huongdi.sol.vn/dang-nhap/">
+<style>
+  :root {
+    --gold: #C9A961;
+    --dark: #0f1419;
+    --panel: #1a1f26;
+    --border: #2a3138;
+    --text: #e8ecef;
+    --muted: #8b949e;
+    --error: #f85149;
+    --success: #3fb950;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--dark); color: var(--text);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px; width: 100%; max-width: 400px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .logo { font-size: 28px; margin-bottom: 4px; }
+  h1 { font-size: 24px; margin-bottom: 8px; color: var(--gold); font-weight: 600; }
+  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
+
+  .field { margin-bottom: 18px; }
+  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
+  input {
+    width: 100%; padding: 12px 14px; background: var(--dark); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px; font-size: 15px;
+  }
+  input:focus { outline: none; border-color: var(--gold); }
+
+  .btn {
+    width: 100%; padding: 14px; background: var(--gold); color: var(--dark);
+    border: none; border-radius: 8px; font-size: 15px; font-weight: 600;
+    cursor: pointer;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .msg { padding: 12px; border-radius: 8px; font-size: 14px; margin-bottom: 18px; display: none; }
+  .msg.error { background: rgba(248,81,73,0.1); color: var(--error); border: 1px solid var(--error); display: block; }
+  .msg.success { background: rgba(63,185,80,0.1); color: var(--success); border: 1px solid var(--success); display: block; }
+
+  .footer {
+    text-align: center; margin-top: 24px; padding-top: 24px;
+    border-top: 1px solid var(--border); font-size: 13px; color: var(--muted);
+  }
+  .footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">🧭</div>
+  <h1>Đăng nhập</h1>
+  <p class="subtitle">Vào lại tài khoản để tiếp tục hành trình.</p>
+
+  <div id="msg" class="msg"></div>
+
+  <form id="loginForm">
+    <div class="field">
+      <label for="identifier">Số điện thoại hoặc Email</label>
+      <input type="text" id="identifier" name="identifier" placeholder="0912345678 hoặc ban@email.com" required autofocus>
+    </div>
+
+    <div class="field">
+      <label for="password">Mật khẩu</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+
+    <button type="submit" class="btn" id="submitBtn">Đăng nhập</button>
+  </form>
+
+  <div class="footer">
+    <a href="/quen-mat-khau/" style="color:#B45309;">Quên mật khẩu?</a><br>
+    Chưa có tài khoản? <a href="/dang-ky/">Đăng ký Free</a><br>
+    <a href="/thanh-toan/">Nâng cấp Sol Active</a>
+  </div>
+</div>
+
+<script>
+(function() {
+  const API_BASE = window.SOL_API_BASE || 'https://huongdi.sol.vn/api';
+  const form = document.getElementById('loginForm');
+  const msg = document.getElementById('msg');
+  const btn = document.getElementById('submitBtn');
+
+  function showMsg(text, type) {
+    msg.textContent = text;
+    msg.className = 'msg ' + type;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.className = 'msg';
+    btn.disabled = true;
+    btn.textContent = 'Đang đăng nhập...';
+
+    const payload = {
+      identifier: form.identifier.value.trim(),
+      password: form.password.value,
+    };
+
+    try {
+      const res = await fetch(API_BASE + '/auth/login-v2', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        showMsg(data.message || 'Đăng nhập thất bại', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Đăng nhập';
+        return;
+      }
+
+      localStorage.setItem('sol_jwt', data.token);
+      localStorage.setItem('sol_user', JSON.stringify(data.user));
+      // Legacy paywall flags (backward compat)
+      if (data.user.tier === 'ACTIVE' || data.user.tier === 'FOUNDER') {
+        localStorage.setItem('sol_active', 'true');
+      }
+      localStorage.setItem('sol_tier', data.user.tier);
+
+      // Merge anonymous session vào user (nếu có sessionId)
+      const sessionId = localStorage.getItem('sol_session_id');
+      if (sessionId) {
+        try {
+          await fetch(API_BASE + '/user/link-session', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + data.token,
+            },
+            body: JSON.stringify({ sessionId }),
+          });
+        } catch (_) { /* silent */ }
+      }
+
+      showMsg('Đăng nhập thành công!', 'success');
+
+      // Redirect: luôn về /toi/ (dashboard user).
+      // Admin có thể tự vào adminhuongdi.sol.vn qua nav link nếu cần.
+      let dest = '/toi/';
+      setTimeout(() => { location.href = dest; }, 600);
+
+    } catch (err) {
+      showMsg('Không thể kết nối máy chủ. Thử lại sau.', 'error');
+      btn.disabled = false;
+      btn.textContent = 'Đăng nhập';
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sol La Bàn — Hệ thống tái khởi nghiệp cho người Việt 40-60 | huongdi.sol.vn</title>
+<meta name="description" content="40 câu hỏi AI + 37 mô hình + 5 Bước Sol La Bàn. Bộ công cụ tự chủ cho người Việt 40-60 tái khởi nghiệp đúng hướng. Miễn phí bước đầu — Active 499k/năm.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://huongdi.sol.vn/">
+
+<meta property="og:title" content="Sol La Bàn — Hệ thống tái khởi nghiệp đúng hướng">
+<meta property="og:description" content="40 câu hỏi AI · 37 mô hình · 5 Bước Sol La Bàn — Cho người Việt 40-60.">
+<meta property="og:image" content="https://huongdi.sol.vn/assets/og-image.png">
+<meta property="og:url" content="https://huongdi.sol.vn/">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --amber-50:#FFFBEB; --amber-100:#FEF3C7; --amber-200:#FDE68A;
+  --amber-400:#FBBF24; --amber-500:#F59E0B; --amber-600:#D97706; --amber-700:#B45309;
+  --navy-50:#F8FAFC; --navy-100:#F1F5F9; --navy-200:#E2E8F0;
+  --navy-400:#94A3B8; --navy-500:#64748B; --navy-700:#334155;
+  --navy-800:#1E293B; --navy-900:#0F172A;
+  --emerald-500:#10B981; --emerald-600:#059669; --emerald-700:#047857;
+  --purple-500:#8B5CF6; --purple-600:#7C3AED;
+  --red-500:#EF4444;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Inter',-apple-system,sans-serif;
+  background:var(--navy-50); color:var(--navy-700); line-height:1.65;
+}
+a { color:var(--amber-600); text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+.container { max-width:1200px; margin:0 auto; padding:0 24px; }
+section { padding:64px 0; }
+section:first-of-type { padding-top:40px; }
+
+/* ═══ HERO ═══ */
+.hero {
+  padding:60px 0 40px;
+  text-align:center;
+}
+.hero-eyebrow {
+  font-size:13px; letter-spacing:3px; text-transform:uppercase;
+  font-weight:800; color:var(--amber-600); margin-bottom:16px;
+}
+.hero-title {
+  font-family:'Lora',Georgia,serif;
+  font-size:52px; font-weight:800; color:var(--navy-900);
+  line-height:1.15; margin-bottom:20px;
+  max-width:900px; margin-left:auto; margin-right:auto;
+}
+.hero-title__accent {
+  color:var(--amber-600); font-style:italic;
+}
+.hero-subtitle {
+  font-size:19px; color:var(--navy-500);
+  max-width:760px; margin:0 auto 32px;
+}
+.hero-subtitle strong { color:var(--navy-700); }
+.hero-stats {
+  display:inline-flex; gap:20px; align-items:center;
+  background:#fff; border:1px solid var(--navy-200);
+  padding:16px 28px; border-radius:16px; margin-bottom:24px;
+  flex-wrap:wrap; justify-content:center;
+}
+.hero-stat { text-align:center; }
+.hero-stat__num {
+  font-family:'Lora',serif; font-size:28px; font-weight:800;
+  color:var(--amber-600); line-height:1;
+}
+.hero-stat__label {
+  font-size:12px; color:var(--navy-500); font-weight:600;
+  margin-top:4px;
+}
+.hero-stat__divider {
+  width:1px; height:36px; background:var(--navy-200);
+}
+.hero-ctas {
+  display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.btn {
+  display:inline-block; padding:16px 28px; border-radius:12px;
+  font-size:15.5px; font-weight:800; text-decoration:none;
+  transition:all .2s; border:none; cursor:pointer; font-family:inherit;
+}
+.btn-primary {
+  background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+  color:#fff;
+}
+.btn-primary:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(245,158,11,0.35);
+  color:#fff; text-decoration:none;
+}
+.btn-secondary {
+  background:#fff; color:var(--navy-800);
+  border:2px solid var(--navy-200);
+}
+.btn-secondary:hover {
+  border-color:var(--amber-500); text-decoration:none;
+}
+.btn-purple {
+  background:linear-gradient(135deg,var(--purple-500),var(--purple-600));
+  color:#fff;
+}
+.btn-purple:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(139,92,246,0.35);
+  color:#fff; text-decoration:none;
+}
+.hero-trust {
+  font-size:13.5px; color:var(--navy-500);
+  display:flex; gap:24px; justify-content:center; flex-wrap:wrap;
+}
+.hero-trust span { display:flex; align-items:center; gap:6px; }
+
+/* ═══ FOUNDER COUNTDOWN BANNER ═══ */
+.founder-banner {
+  background:linear-gradient(135deg,var(--navy-900),var(--navy-800));
+  color:#fff; border-radius:16px; padding:20px 32px;
+  margin:20px auto 0; max-width:960px;
+  border:2px solid var(--amber-500);
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; flex-wrap:wrap;
+}
+.founder-banner__label {
+  font-size:11px; letter-spacing:2px; font-weight:800;
+  color:var(--amber-400); margin-bottom:4px;
+}
+.founder-banner__text {
+  color:#fff; font-size:15px;
+}
+.founder-banner__text strong { color:var(--amber-400); }
+.founder-banner__cta {
+  padding:10px 20px; border-radius:10px;
+  background:var(--amber-500); color:var(--navy-900);
+  font-size:13px; font-weight:800; text-decoration:none;
+  white-space:nowrap;
+}
+.founder-banner__cta:hover {
+  background:var(--amber-400); text-decoration:none;
+}
+
+/* ═══ SECTION HEADERS ═══ */
+.section-eyebrow {
+  font-size:12px; letter-spacing:3px; text-transform:uppercase;
+  font-weight:800; color:var(--amber-600);
+  text-align:center; margin-bottom:14px;
+}
+.section-title {
+  font-family:'Lora',serif; font-size:38px; font-weight:800;
+  color:var(--navy-900); text-align:center;
+  line-height:1.2; margin-bottom:16px;
+  max-width:820px; margin-left:auto; margin-right:auto;
+}
+.section-subtitle {
+  font-size:17px; color:var(--navy-500);
+  text-align:center; max-width:720px; margin:0 auto 48px;
+}
+
+/* ═══ 3 PAIN POINTS ═══ */
+.pains-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.pain-card {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:16px; padding:28px 26px;
+  transition:all .2s;
+}
+.pain-card:hover {
+  border-color:var(--red-500);
+  transform:translateY(-4px);
+}
+.pain-card__icon { font-size:36px; margin-bottom:14px; }
+.pain-card__title {
+  font-family:'Lora',serif; font-size:20px; font-weight:700;
+  color:var(--navy-900); margin-bottom:10px;
+}
+.pain-card__desc {
+  font-size:14.5px; color:var(--navy-700); line-height:1.7;
+}
+
+/* ═══ 3 CORE ASSETS ═══ */
+.assets-section {
+  background:#fff;
+  border-top:1px solid var(--navy-200);
+  border-bottom:1px solid var(--navy-200);
+}
+.assets-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.asset-card {
+  padding:24px;
+  text-align:center;
+}
+.asset-card__icon-box {
+  width:80px; height:80px; margin:0 auto 20px;
+  background:linear-gradient(135deg,var(--amber-100),var(--amber-200));
+  border-radius:20px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:40px;
+}
+.asset-card__num {
+  font-family:'Lora',serif; font-size:44px; font-weight:800;
+  color:var(--amber-600); line-height:1; margin-bottom:8px;
+}
+.asset-card__title {
+  font-family:'Lora',serif; font-size:22px; font-weight:700;
+  color:var(--navy-900); margin-bottom:10px;
+}
+.asset-card__desc {
+  font-size:14.5px; color:var(--navy-500); line-height:1.7;
+  margin-bottom:18px;
+}
+.asset-card__link {
+  font-size:14px; font-weight:700; color:var(--amber-600);
+}
+
+/* ═══ 5 BƯỚC SOL LA BÀN ═══ */
+.steps-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.step-card {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:14px; padding:24px 22px;
+  position:relative; transition:all .2s;
+}
+.step-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(15,23,42,0.08);
+  border-color:var(--amber-500);
+}
+.step-card__num {
+  position:absolute; top:-14px; left:20px;
+  background:var(--amber-500); color:#fff;
+  width:32px; height:32px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Lora',serif; font-weight:800; font-size:15px;
+}
+.step-card__icon { font-size:28px; margin-bottom:12px; }
+.step-card__label {
+  font-size:11px; letter-spacing:1.5px; font-weight:700;
+  color:var(--amber-600); margin-bottom:4px;
+}
+.step-card__title {
+  font-family:'Lora',serif; font-size:18px; font-weight:700;
+  color:var(--navy-900); margin-bottom:10px;
+}
+.step-card__desc {
+  font-size:13.5px; color:var(--navy-500); line-height:1.6;
+  margin-bottom:14px;
+}
+.step-card__link {
+  font-size:13px; font-weight:700; color:var(--amber-600);
+}
+.step-card--pending .step-card__num {
+  background:var(--navy-400);
+}
+.step-card__badge {
+  display:inline-block; background:var(--navy-100);
+  color:var(--navy-500); padding:3px 10px; border-radius:10px;
+  font-size:11px; font-weight:700;
+}
+.step-card--live .step-card__badge {
+  background:var(--emerald-100); color:var(--emerald-700);
+}
+
+/* ═══ DIRECTIONDB 37 ═══ */
+.directions-section {
+  background:linear-gradient(135deg,var(--navy-900),var(--navy-800));
+  color:#fff; margin:64px -24px;
+  padding:80px 24px; border-radius:24px;
+}
+.directions-section .section-eyebrow { color:var(--amber-400); }
+.directions-section .section-title { color:#fff; }
+.directions-section .section-subtitle { color:#CBD5E1; }
+.directions-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px; margin-bottom:32px;
+}
+.direction-cat {
+  background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px; padding:20px;
+  transition:all .2s;
+}
+.direction-cat:hover {
+  border-color:var(--amber-500);
+  background:rgba(245,158,11,0.05);
+}
+.direction-cat__count {
+  font-family:'Lora',serif; font-size:32px; font-weight:800;
+  color:var(--amber-400); margin-bottom:4px;
+}
+.direction-cat__name {
+  font-size:15px; font-weight:700; color:#fff; margin-bottom:6px;
+}
+.direction-cat__desc {
+  font-size:12.5px; color:#94A3B8; line-height:1.5;
+}
+.directions-total {
+  text-align:center; margin-top:32px;
+}
+.directions-total__num {
+  font-family:'Lora',serif; font-size:64px; font-weight:900;
+  color:var(--amber-400); line-height:1;
+}
+.directions-total__label {
+  font-size:14px; color:#CBD5E1; margin:6px 0 20px;
+}
+
+/* ═══ CASE STUDIES ═══ */
+.cases-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.case-card {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:16px; padding:28px 26px;
+}
+.case-card__quote {
+  font-family:'Lora',serif; font-size:15.5px;
+  color:var(--navy-700); line-height:1.7; font-style:italic;
+  margin-bottom:20px;
+}
+.case-card__author {
+  border-top:1px solid var(--navy-100); padding-top:16px;
+}
+.case-card__name {
+  font-weight:700; color:var(--navy-900); font-size:15px;
+  margin-bottom:4px;
+}
+.case-card__meta {
+  font-size:12.5px; color:var(--navy-500);
+}
+
+/* ═══ FOUNDER (KHANG SOL) ═══ */
+.founder-section {
+  display:grid; grid-template-columns:280px 1fr;
+  gap:48px; align-items:center;
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:20px; padding:40px;
+}
+.founder-portrait {
+  width:100%; aspect-ratio:1; border-radius:16px;
+  object-fit:cover;
+}
+.founder-content .section-eyebrow { text-align:left; }
+.founder-content .section-title {
+  text-align:left; font-size:28px; margin-bottom:14px;
+}
+.founder-quote {
+  font-family:'Lora',serif; font-size:16px;
+  color:var(--navy-700); line-height:1.7;
+  font-style:italic; margin-bottom:20px;
+  padding-left:16px; border-left:3px solid var(--amber-500);
+}
+.founder-creds {
+  list-style:none; margin-bottom:20px;
+}
+.founder-creds li {
+  padding:6px 0; font-size:14.5px; color:var(--navy-700);
+  display:flex; gap:10px;
+}
+.founder-creds li::before { content:'✓'; color:var(--emerald-600); font-weight:800; }
+.founder-creds strong { color:var(--navy-900); }
+
+/* ═══ PRICING V4.1 ═══ */
+.pricing-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.pricing-card {
+  background:#fff; border:2px solid var(--navy-200);
+  border-radius:20px; padding:32px 28px;
+  position:relative; display:flex; flex-direction:column;
+}
+.pricing-card--featured {
+  border-color:var(--amber-500);
+  box-shadow:0 20px 40px rgba(245,158,11,0.12);
+  transform:translateY(-8px);
+}
+.pricing-card--founder { border-color:var(--purple-500); }
+.pricing-badge {
+  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+  padding:5px 16px; border-radius:16px;
+  font-size:11px; font-weight:800; letter-spacing:1.5px; color:#fff;
+  white-space:nowrap;
+}
+.pricing-badge--amber { background:linear-gradient(135deg,var(--amber-500),var(--amber-600)); }
+.pricing-badge--purple { background:linear-gradient(135deg,var(--purple-500),var(--purple-600)); }
+.pricing-card__tier {
+  font-size:12px; letter-spacing:2px; font-weight:800;
+  text-transform:uppercase; margin-bottom:8px;
+}
+.pricing-card__title {
+  font-family:'Lora',serif; font-size:28px; font-weight:800;
+  color:var(--navy-900); margin-bottom:8px;
+}
+.pricing-card__tagline {
+  font-size:14px; color:var(--navy-500); margin-bottom:20px;
+  min-height:40px;
+}
+.pricing-card__price {
+  display:flex; align-items:baseline; gap:6px; margin-bottom:4px;
+}
+.pricing-card__amount {
+  font-family:'Lora',serif; font-size:42px; font-weight:800;
+  color:var(--navy-900);
+}
+.pricing-card__period {
+  font-size:14px; color:var(--navy-500); font-weight:600;
+}
+.pricing-card__equiv {
+  font-size:12.5px; color:var(--emerald-600); font-weight:600;
+  margin-bottom:20px;
+}
+.pricing-card__features {
+  list-style:none; padding:0; margin:0 0 24px; flex:1;
+}
+.pricing-card__features li {
+  padding:8px 0; font-size:13.5px; color:var(--navy-700);
+  border-bottom:1px solid var(--navy-100);
+  display:flex; align-items:flex-start; gap:8px;
+}
+.pricing-card__features li:last-child { border-bottom:none; }
+.pricing-card__features .check { color:var(--emerald-600); font-weight:800; flex-shrink:0; }
+.pricing-card__features .cross { color:var(--navy-400); font-weight:800; flex-shrink:0; }
+.pricing-card__cta {
+  display:block; text-align:center;
+  padding:14px 20px; border-radius:10px;
+  font-size:14.5px; font-weight:800; text-decoration:none;
+  transition:all .2s;
+}
+
+/* ═══ FAQ ═══ */
+.faq-list { max-width:820px; margin:0 auto; }
+.faq-item {
+  background:#fff; border:1px solid var(--navy-200);
+  border-radius:12px; margin-bottom:12px; overflow:hidden;
+}
+.faq-question {
+  padding:20px 24px; cursor:pointer;
+  font-size:15px; font-weight:700; color:var(--navy-900);
+  display:flex; justify-content:space-between; align-items:center;
+  transition:background .15s;
+}
+.faq-question:hover { background:var(--navy-50); }
+.faq-question::after {
+  content:'+'; font-size:22px; color:var(--amber-500);
+  transition:transform .2s;
+}
+.faq-item.open .faq-question::after { transform:rotate(45deg); }
+.faq-answer {
+  max-height:0; overflow:hidden; transition:max-height .3s ease;
+  padding:0 24px;
+}
+.faq-item.open .faq-answer { max-height:400px; padding:0 24px 20px; }
+.faq-answer p { font-size:14.5px; color:var(--navy-700); line-height:1.7; }
+
+/* ═══ FINAL CTA ═══ */
+.final-cta {
+  background:linear-gradient(135deg,var(--amber-500),var(--amber-600));
+  color:#fff; border-radius:24px; padding:56px 40px;
+  text-align:center; margin:56px 0;
+}
+.final-cta h2 {
+  font-family:'Lora',serif; font-size:34px; font-weight:800;
+  color:#fff; margin-bottom:14px;
+}
+.final-cta p {
+  font-size:17px; color:rgba(255,255,255,0.9);
+  max-width:600px; margin:0 auto 28px;
+}
+.final-cta .btn {
+  background:#fff; color:var(--amber-700);
+}
+.final-cta .btn:hover {
+  background:var(--navy-900); color:#fff;
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:900px) {
+  .founder-section { grid-template-columns:1fr; gap:24px; }
+  .founder-portrait { max-width:220px; margin:0 auto; }
+}
+@media (max-width:768px) {
+  .hero-title { font-size:32px; }
+  .hero-subtitle { font-size:16px; }
+  .section-title { font-size:26px; }
+  .pains-grid, .assets-grid, .cases-grid, .pricing-grid {
+    grid-template-columns:1fr; gap:16px;
+  }
+  .pricing-card--featured { transform:none; }
+  .directions-section { margin-left:-16px; margin-right:-16px; padding:48px 20px; }
+  .directions-total__num { font-size:48px; }
+  .hero-stats { flex-direction:column; gap:12px; }
+  .hero-stat__divider { display:none; }
+  .founder-banner { flex-direction:column; text-align:center; }
+  .founder-section { padding:24px; }
+}
+</style>
+</head>
+<body data-sol-page="home">
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">SOL LA BÀN · TÁI KHỞI NGHIỆP ĐÚNG HƯỚNG</div>
+    <h1 class="hero-title">
+      Người Việt <span class="hero-title__accent">40-60</span> tái khởi nghiệp<br>
+      đúng hướng — không phải thử-sai
+    </h1>
+    <p class="hero-subtitle">
+      Không phải coach 1-1 đắt tiền. Không phải khoá học chung chung.
+      Là <strong>bộ công cụ + framework có hệ thống</strong> để anh chị tự đi đúng hướng — trong 90 ngày, không phải 3 năm.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat__num">40</div>
+        <div class="hero-stat__label">Câu hỏi AI</div>
+      </div>
+      <div class="hero-stat__divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat__num">37</div>
+        <div class="hero-stat__label">Mô hình hướng đi</div>
+      </div>
+      <div class="hero-stat__divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat__num">5</div>
+        <div class="hero-stat__label">Bước Sol La Bàn</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="/prompts/" class="btn btn-primary">🤖 Thử miễn phí 5 câu hỏi AI →</a>
+      <a href="/pricing/" class="btn btn-secondary">💎 Xem bảng giá</a>
+    </div>
+
+    <div class="hero-trust">
+      <span>✓ Miễn phí bước đầu</span>
+      <span>✓ Không cần đăng ký</span>
+      <span>✓ Bảo mật tuyệt đối</span>
+    </div>
+
+    <!-- Founder countdown banner -->
+    <div class="founder-banner">
+      <div>
+        <div class="founder-banner__label">🔥 SOL FOUNDER EDITION</div>
+        <div class="founder-banner__text">
+          <strong>100 slot lifetime</strong> mở đăng ký trong <strong>2 tuần nữa</strong>. Đóng vĩnh viễn sau khi đủ.
+        </div>
+      </div>
+      <a href="/founder/" class="founder-banner__cta">Xem chi tiết →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     3 NỖI ĐAU
+═══════════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Vấn đề</div>
+    <h2 class="section-title">Đến 45 tuổi — đa số chúng ta gặp 3 nỗi đau giống nhau</h2>
+
+    <div class="pains-grid">
+      <div class="pain-card">
+        <div class="pain-card__icon">⚡</div>
+        <h3 class="pain-card__title">Sự nghiệp đang loãng</h3>
+        <p class="pain-card__desc">
+          Khởi nghiệp không biết bắt đầu từ đâu. Corporate ngại nhận. Freelance không biết bán cho ai.
+          Kinh nghiệm 20 năm nhưng không biết monetize thế nào.
+        </p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">🌫️</div>
+        <h3 class="pain-card__title">Không biết hướng nào phù hợp</h3>
+        <p class="pain-card__desc">
+          Sách thì nói chung chung. Coach nước ngoài thì dành cho 25-35 tuổi.
+          Không ai nói riêng cho người Việt 40-60 với hoàn cảnh gia đình, tài chính, sức khoẻ đặc thù.
+        </p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">📍</div>
+        <h3 class="pain-card__title">Không có bản đồ cụ thể</h3>
+        <p class="pain-card__desc">
+          Chỉ có cảm xúc và lo lắng. Không có roadmap 90 ngày, không có framework,
+          không có anh chị em cùng ngách để đi cùng — dễ bỏ cuộc giữa chừng.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     3 CORE ASSETS (Sol có gì)
+═══════════════════════════════════════════════════════════ -->
+<section class="assets-section">
+  <div class="container">
+    <div class="section-eyebrow">Bộ công cụ Sol</div>
+    <h2 class="section-title">3 vũ khí đầy đủ cho hành trình 40-60</h2>
+    <p class="section-subtitle">
+      Không phải hứa hẹn tương lai — Sol đã có sẵn 3 công cụ này ngay hôm nay.
+    </p>
+
+    <div class="assets-grid">
+      <div class="asset-card">
+        <div class="asset-card__icon-box">🤖</div>
+        <div class="asset-card__num">40</div>
+        <h3 class="asset-card__title">Câu hỏi AI đã soạn sẵn</h3>
+        <p class="asset-card__desc">
+          Đủ 5 Bước Sol La Bàn — từ đánh giá năng lực đến viết trang giới thiệu.
+          Dùng với ChatGPT/Claude để tự tạo nội dung chất lượng cao trong 30-60 giây.
+        </p>
+        <a href="/prompts/" class="asset-card__link">Thử ngay 5 mẫu miễn phí →</a>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-card__icon-box">📚</div>
+        <div class="asset-card__num">37</div>
+        <h3 class="asset-card__title">Mô hình hướng đi</h3>
+        <p class="asset-card__desc">
+          Database mô hình kinh doanh cho người Việt 40-60 — chuyên môn, đào tạo, nội dung số,
+          SME nhỏ, dịch vụ B2B. Mỗi mô hình có case study + roadmap.
+        </p>
+        <a href="/chon-huong/" class="asset-card__link">Xem la bàn hướng đi →</a>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-card__icon-box">🧭</div>
+        <div class="asset-card__num">5</div>
+        <h3 class="asset-card__title">Bước Sol La Bàn</h3>
+        <p class="asset-card__desc">
+          Framework có hệ thống: Thấu Hiểu → Khai Phá → Chọn Hướng → Hành Động → An Toàn.
+          Đi qua từng bước với hướng dẫn cụ thể + template.
+        </p>
+        <a href="/thau-hieu/" class="asset-card__link">Bắt đầu Bước 1 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     5 BƯỚC SOL LA BÀN
+═══════════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Hệ thống</div>
+    <h2 class="section-title">5 Bước Sol La Bàn</h2>
+    <p class="section-subtitle">
+      Framework có hệ thống — không phải khoá học đắt tiền. Anh chị tự đi với dữ liệu cá nhân của riêng mình.
+    </p>
+
+    <div class="steps-grid">
+      <div class="step-card step-card--live">
+        <div class="step-card__num">1</div>
+        <div class="step-card__icon">🌱</div>
+        <div class="step-card__label">BƯỚC 1</div>
+        <h3 class="step-card__title">THẤU HIỂU</h3>
+        <p class="step-card__desc">
+          Bài đánh giá 20 câu về DNA nghề nghiệp. 5 phút để hiểu anh chị mạnh ở đâu.
+        </p>
+        <span class="step-card__badge">Miễn phí</span>
+        <div style="margin-top:10px;">
+          <a href="/thau-hieu/" class="step-card__link">Bắt đầu →</a>
+        </div>
+      </div>
+
+      <div class="step-card step-card--live">
+        <div class="step-card__num">2</div>
+        <div class="step-card__icon">🔭</div>
+        <div class="step-card__label">BƯỚC 2</div>
+        <h3 class="step-card__title">KHAI PHÁ</h3>
+        <p class="step-card__desc">
+          8 trục kiểm kê thực tế: vốn, thời gian, kinh nghiệm, network, sức khoẻ, gia đình.
+        </p>
+        <span class="step-card__badge">Miễn phí</span>
+        <div style="margin-top:10px;">
+          <a href="/khai-pha/" class="step-card__link">Bắt đầu →</a>
+        </div>
+      </div>
+
+      <div class="step-card step-card--live">
+        <div class="step-card__num">3</div>
+        <div class="step-card__icon">🧭</div>
+        <div class="step-card__label">BƯỚC 3</div>
+        <h3 class="step-card__title">CHỌN HƯỚNG</h3>
+        <p class="step-card__desc">
+          37 mô hình so khớp với DNA + nguồn lực của anh chị. Xếp hạng theo % phù hợp.
+        </p>
+        <span class="step-card__badge">Miễn phí</span>
+        <div style="margin-top:10px;">
+          <a href="/chon-huong/" class="step-card__link">Xem la bàn →</a>
+        </div>
+      </div>
+
+      <div class="step-card step-card--live">
+        <div class="step-card__num">4</div>
+        <div class="step-card__icon">🚀</div>
+        <div class="step-card__label">BƯỚC 4</div>
+        <h3 class="step-card__title">HÀNH ĐỘNG</h3>
+        <p class="step-card__desc">
+          40 câu hỏi AI + template roadmap 90 ngày. Việc gì cần làm, việc gì không.
+        </p>
+        <span class="step-card__badge">Cần Active</span>
+        <div style="margin-top:10px;">
+          <a href="/prompts/" class="step-card__link">Xem kho AI →</a>
+        </div>
+      </div>
+
+      <div class="step-card step-card--live">
+        <div class="step-card__num">5</div>
+        <div class="step-card__icon">🛡️</div>
+        <div class="step-card__label">BƯỚC 5</div>
+        <h3 class="step-card__title">AN TOÀN BỀN VỮNG</h3>
+        <p class="step-card__desc">
+          Đánh giá quý theo 4 trục. Kế hoạch tài chính, sức khoẻ, chuyển giao dài hạn.
+        </p>
+        <span class="step-card__badge">Cần Active</span>
+        <div style="margin-top:10px;">
+          <a href="/pricing/" class="step-card__link">Nâng cấp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DIRECTIONDB 37 HƯỚNG
+═══════════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="directions-section">
+      <div class="section-eyebrow">Database Mô Hình</div>
+      <h2 class="section-title">37 hướng đi — không trùng cái nào trên Google</h2>
+      <p class="section-subtitle">
+        Hầu hết list "10 ý tưởng kinh doanh" trên mạng đều copy-paste cho mọi lứa tuổi.
+        Database Mô Hình được build riêng cho <strong style="color:var(--amber-400);">người Việt 40-60</strong>.
+      </p>
+
+      <div class="directions-grid">
+        <div class="direction-cat">
+          <div class="direction-cat__count">8</div>
+          <div class="direction-cat__name">Chuyên môn</div>
+          <div class="direction-cat__desc">Freelance, tư vấn, chuyên gia theo yêu cầu</div>
+        </div>
+        <div class="direction-cat">
+          <div class="direction-cat__count">5</div>
+          <div class="direction-cat__name">Đào tạo</div>
+          <div class="direction-cat__desc">Coach, mentor, khoá học chuyên ngành</div>
+        </div>
+        <div class="direction-cat">
+          <div class="direction-cat__count">6</div>
+          <div class="direction-cat__name">Nội dung số</div>
+          <div class="direction-cat__desc">Blog, podcast, YouTube, sách</div>
+        </div>
+        <div class="direction-cat">
+          <div class="direction-cat__count">7</div>
+          <div class="direction-cat__name">Kinh doanh nhỏ</div>
+          <div class="direction-cat__desc">SME, F&B nhỏ, dịch vụ tinh gọn</div>
+        </div>
+        <div class="direction-cat">
+          <div class="direction-cat__count">5</div>
+          <div class="direction-cat__name">Dịch vụ hàng ngày</div>
+          <div class="direction-cat__desc">Đại lý, phân phối, B2C</div>
+        </div>
+        <div class="direction-cat">
+          <div class="direction-cat__count">4</div>
+          <div class="direction-cat__name">Dịch vụ chuyên biệt</div>
+          <div class="direction-cat__desc">B2B service, ngách hẹp</div>
+        </div>
+        <div class="direction-cat">
+          <div class="direction-cat__count">2</div>
+          <div class="direction-cat__name">Đầu tư & tài sản</div>
+          <div class="direction-cat__desc">B2B contract, monetize network</div>
+        </div>
+      </div>
+
+      <div class="directions-total">
+        <div class="directions-total__num">37</div>
+        <div class="directions-total__label">Tổng số mô hình hướng đi trong Database Sol</div>
+        <a href="/chon-huong/" class="btn btn-primary">Xem 37 hướng phù hợp với anh chị →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CASE STUDIES
+═══════════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Câu chuyện thật</div>
+    <h2 class="section-title">Anh chị em 40-60 đã tìm được hướng đi qua Sol</h2>
+    <p class="section-subtitle">
+      Câu chuyện anonymized để bảo vệ quyền riêng tư. Số liệu thật, kết quả thật.
+    </p>
+
+    <div class="cases-grid">
+      <div class="case-card">
+        <p class="case-card__quote">
+          "Mình 47 tuổi, cựu PM corporate 15 năm. Làm Bước 1 thấy mình mạnh ở Chuyên gia + Tự lập.
+          Bước 2 cho thấy có vốn nhỏ + network rộng. Bước 3 gợi ý <strong>Freelance Tech Consulting</strong>.
+          Sau 6 tháng có 3 khách B2B, thu nhập ổn 80 triệu/tháng."
+        </p>
+        <div class="case-card__author">
+          <div class="case-card__name">Anh N. — 47 tuổi</div>
+          <div class="case-card__meta">Hà Nội · Cựu PM Tech</div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <p class="case-card__quote">
+          "Mình bỏ corporate năm 50 tuổi. Vào Sol làm bài Bước 1 thấy mạnh Người + Xây dựng.
+          Bước 2 thấy có time + kinh nghiệm nhưng vốn thấp. Bước 3 gợi <strong>Mentor cho founder trẻ</strong>.
+          Bây giờ 5 mentee, charge 3 triệu/tháng mỗi người."
+        </p>
+        <div class="case-card__author">
+          <div class="case-card__name">Anh T. — 51 tuổi</div>
+          <div class="case-card__meta">TP.HCM · Cựu Sales Director</div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <p class="case-card__quote">
+          "45 tuổi ngồi không biết làm gì. Bạn share Sol. Làm 5 phút Bước 1 ngộ ra: hợp với
+          <strong>Nội dung số</strong> — Xây dựng + Tự lập. Bước 3 gợi YouTube niche về xe hơi cũ.
+          4 tháng sau channel có 8.000 subs."
+        </p>
+        <div class="case-card__author">
+          <div class="case-card__name">Anh M. — 46 tuổi</div>
+          <div class="case-card__meta">Đà Nẵng · Kỹ sư cơ khí</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     KHANG SOL FOUNDER
+═══════════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="founder-section">
+      <img src="https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg"
+           alt="Khang Sol — Founder Sol.vn" class="founder-portrait">
+      <div class="founder-content">
+        <div class="section-eyebrow">Người sáng lập</div>
+        <h2 class="section-title">Khang Sol — 20+ năm sáng lập, 46 tuổi</h2>
+        <blockquote class="founder-quote">
+          "Mình tạo Sol vì 3 năm trước, 43 tuổi mình ngồi cạnh giường và không biết bước tiếp theo là gì.
+          Không có sách nào cho người Việt 40-60. Không có coach nào hiểu context. Mình quyết định tự xây —
+          cho mình và cho anh chị em cùng tuổi."
+        </blockquote>
+        <ul class="founder-creds">
+          <li><strong>Sáng lập + GĐ CTY CNTT 20+ năm</strong> (đang vận hành)</li>
+          <li><strong>Sáng lập DN TMĐT 8 năm</strong> (đang vận hành)</li>
+          <li><strong>Cố vấn cá nhân 50+ founder Việt 40-50</strong> (2024-2026)</li>
+        </ul>
+        <a href="https://sol.vn/khang-sol/" class="btn btn-secondary">Xem profile đầy đủ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRICING V4.1
+═══════════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Bảng giá</div>
+    <h2 class="section-title">3 gói — chọn phù hợp với mình</h2>
+    <p class="section-subtitle">
+      Free để trải nghiệm · Active cho người nghiêm túc · Founder cho người tin Sol từ ngày đầu.
+    </p>
+
+    <div class="pricing-grid">
+      <!-- FREE -->
+      <div class="pricing-card">
+        <div class="pricing-card__tier" style="color:var(--emerald-600);">MIỄN PHÍ</div>
+        <h3 class="pricing-card__title">Free</h3>
+        <p class="pricing-card__tagline">Thử ngay, không cần đăng ký.</p>
+
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount">0đ</span>
+          <span class="pricing-card__period">mãi mãi</span>
+        </div>
+        <div class="pricing-card__equiv">Không giới hạn thời gian</div>
+
+        <ul class="pricing-card__features">
+          <li><span class="check">✓</span> <span>5 câu hỏi AI Bước 4</span></li>
+          <li><span class="check">✓</span> <span>5 mô hình hướng đi</span></li>
+          <li><span class="check">✓</span> <span>5 Bước Sol La Bàn overview</span></li>
+          <li><span class="check">✓</span> <span>FB Group "Đi Cùng Sol" public</span></li>
+          <li><span class="cross">✗</span> <span style="color:var(--navy-400);">35 câu hỏi AI còn lại</span></li>
+          <li><span class="cross">✗</span> <span style="color:var(--navy-400);">32 mô hình còn lại</span></li>
+        </ul>
+
+        <a href="/prompts/" class="pricing-card__cta btn-secondary" style="border:2px solid var(--emerald-500); color:var(--emerald-700);">
+          Thử miễn phí →
+        </a>
+      </div>
+
+      <!-- ACTIVE (featured) -->
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-badge pricing-badge--amber">PHỔ BIẾN NHẤT</div>
+        <div class="pricing-card__tier" style="color:var(--amber-600);">SOL ACTIVE</div>
+        <h3 class="pricing-card__title">Active</h3>
+        <p class="pricing-card__tagline">Đầy đủ 40 câu hỏi + 37 mô hình + cộng đồng Zalo.</p>
+
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount">499k</span>
+          <span class="pricing-card__period">/năm</span>
+        </div>
+        <div class="pricing-card__equiv">≈ 42k/tháng · rẻ hơn 1 tách cà phê</div>
+
+        <ul class="pricing-card__features">
+          <li><span class="check">✓</span> <span><strong>40 câu hỏi AI</strong> — full 5 Bước</span></li>
+          <li><span class="check">✓</span> <span><strong>37 mô hình hướng đi</strong> — full database</span></li>
+          <li><span class="check">✓</span> <span>Sổ Hành Trình lưu tiến độ</span></li>
+          <li><span class="check">✓</span> <span>Zalo Group Active</span></li>
+          <li><span class="check">✓</span> <span>Sol Weekly newsletter</span></li>
+          <li><span class="check">✓</span> <span>Email hỗ trợ 48-72h</span></li>
+        </ul>
+
+        <a href="/pricing/" class="pricing-card__cta btn-primary">
+          Xem chi tiết Active →
+        </a>
+      </div>
+
+      <!-- FOUNDER -->
+      <div class="pricing-card pricing-card--founder">
+        <div class="pricing-badge pricing-badge--purple">CHỈ 100 SLOT</div>
+        <div class="pricing-card__tier" style="color:var(--purple-600);">SOL FOUNDER</div>
+        <h3 class="pricing-card__title">Founder</h3>
+        <p class="pricing-card__tagline">Truy cập trọn đời + đặc quyền vĩnh viễn.</p>
+
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount">1.999k</span>
+          <span class="pricing-card__period">/ trọn đời</span>
+        </div>
+        <div class="pricing-card__equiv">Trả 1 lần · không renew · không tăng giá</div>
+
+        <ul class="pricing-card__features">
+          <li><span class="check">✓</span> <span><strong>Toàn bộ Active TRỌN ĐỜI</strong></span></li>
+          <li><span class="check">✓</span> <span>Early access 30 ngày trước</span></li>
+          <li><span class="check">✓</span> <span>Vote roadmap Sol</span></li>
+          <li><span class="check">✓</span> <span>Contributor badge + featured</span></li>
+          <li><span class="check">✓</span> <span>Sách bản in ký tặng</span></li>
+          <li><span class="check">✓</span> <span>Truy cập mọi sản phẩm tương lai</span></li>
+        </ul>
+
+        <a href="/founder/" class="pricing-card__cta btn-purple">
+          Giữ chỗ Founder →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Câu hỏi thường gặp</div>
+    <h2 class="section-title">Anh chị đang phân vân điều gì?</h2>
+    <p class="section-subtitle">Nếu chưa có câu trả lời, email <a href="mailto:hello@sol.vn">hello@sol.vn</a> — Sol phản hồi 48h.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Sol có phù hợp với tôi không?</div>
+        <div class="faq-answer">
+          <p>
+            Sol phù hợp nếu anh chị: (1) đang ở tuổi 40-60, (2) muốn chuyển hướng nghề nghiệp hoặc khởi nghiệp lại,
+            (3) sẵn sàng tự học + tự làm (không cần cầm tay chỉ việc).
+          </p>
+          <p>
+            Sol KHÔNG phù hợp nếu: muốn coach 1-1, mong đợi "làm giàu nhanh", hoặc không có thời gian tự đọc + làm.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Sol khác gì với coaching thông thường?</div>
+        <div class="faq-answer">
+          <p>
+            <strong>Coach 1-1:</strong> 2-5 triệu/buổi, phụ thuộc coach, không scale được.<br>
+            <strong>Sol La Bàn:</strong> 499k/năm cho full ecosystem — tự chủ đi với công cụ + framework + cộng đồng peer.
+          </p>
+          <p>
+            Sol không thay thế coach — nếu anh chị cần coach thực sự nên thuê riêng (2-5tr/buổi). Sol là hệ thống để tự đi trước khi cần coach.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">40 câu hỏi AI hoạt động thế nào?</div>
+        <div class="faq-answer">
+          <p>
+            Anh chị chọn mẫu (VD: "Viết trang giới thiệu dịch vụ tư vấn") → điền vài câu hỏi ngắn về ngữ cảnh
+            → Sol ghép thành prompt hoàn chỉnh → copy sang ChatGPT/Claude → nhận kết quả chất lượng trong 30-60 giây.
+          </p>
+          <p>
+            Không cần biết viết prompt phức tạp. 40 mẫu cover đủ 5 Bước Sol La Bàn: từ đánh giá bản thân đến viết
+            landing page, email tiếp cận, bảng giá, FAQ.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Có được hoàn tiền không?</div>
+        <div class="faq-answer">
+          <p>
+            <strong>Active:</strong> Hoàn 100% trong 7 ngày đầu.<br>
+            <strong>Founder:</strong> Hoàn 100% trong 14 ngày đầu (trước khi Sol chốt in sách batch đầu).
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Dữ liệu của tôi có an toàn không?</div>
+        <div class="faq-answer">
+          <p>
+            Kết quả lưu trên trình duyệt (localStorage) — Sol không thu thập danh tính. Khi anh chị đăng ký Active,
+            Sol chỉ lưu email + trạng thái thanh toán. KHÔNG bán dữ liệu cho bên thứ 3.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Sol Founder đóng slot khi nào?</div>
+        <div class="faq-answer">
+          <p>
+            Mở đăng ký <strong>2 tuần nữa</strong>. Giới hạn <strong>100 slot lifetime</strong>. Khi đủ 100 người,
+            đóng vĩnh viễn không mở lại. Anh chị có thể đăng ký waitlist tại
+            <a href="mailto:hello@sol.vn?subject=Waitlist Sol Founder">hello@sol.vn</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Sol có phải MLM hay cam kết lợi nhuận?</div>
+        <div class="faq-answer">
+          <p>
+            <strong>KHÔNG.</strong> Sol KHÔNG MLM, KHÔNG ponzi, KHÔNG referral cấp. Sol KHÔNG cam kết lợi nhuận.
+            Case study là dữ liệu tham khảo — quá khứ không phản ánh tương lai.
+          </p>
+          <p>
+            Xem đầy đủ tại <a href="https://sol.vn/tuyen-bo-mien-tru/">Tuyên bố miễn trừ</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="final-cta">
+      <h2>Bắt đầu hành trình 40-60 của anh chị — ngay hôm nay</h2>
+      <p>5 phút thử 5 câu hỏi AI đầu tiên. Miễn phí. Không cần đăng ký. Không cần credit card.</p>
+      <a href="/prompts/" class="btn">🤖 Thử miễn phí ngay →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sol shared header/footer -->
+<script src="/sol-ui.js"></script>
+
+<script>
+function toggleFAQ(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

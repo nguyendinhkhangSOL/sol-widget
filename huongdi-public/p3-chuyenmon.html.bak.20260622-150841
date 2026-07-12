@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chuyên Môn & Tư Vấn — Huongdi.sol.vn</title>
+<style>
+:root{
+  --primary:#1a6b4a;--pm:#2e8b63;--pl:#e8f5ee;
+  --accent:#f59e0b;--al:#fef3c7;
+  --text:#1a202c;--muted:#6b7280;--border:#e5e7eb;--bg:#f9fafb;--white:#fff;
+  --shadow:0 2px 12px rgba(0,0,0,.08);--r:14px;
+  --green:#10b981;--blue:#3b82f6;--red:#ef4444;--orange:#f97316;
+  --hero:#134e3a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+
+/* HEADER */
+.hdr{background:var(--white);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;gap:12px;flex-wrap:wrap}
+.hdr-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.logo{font-weight:800;font-size:15px;color:var(--primary);text-decoration:none;white-space:nowrap}
+.logo em{color:var(--accent);font-style:normal}
+.sep{color:var(--border);font-size:14px}
+.breadcrumb{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--primary)}
+.btn-back{font-size:13px;color:var(--primary);background:transparent;border:1.5px solid var(--primary);padding:6px 14px;border-radius:99px;cursor:pointer;text-decoration:none;white-space:nowrap;font-weight:600;transition:background .15s,color .15s}
+.btn-back:hover{background:var(--primary);color:#fff}
+
+/* HERO */
+.hero{background:var(--hero);padding:48px 20px 40px;text-align:center;color:#fff}
+.hero-icon{font-size:52px;line-height:1;margin-bottom:16px}
+.hero h1{font-size:clamp(24px,5vw,36px);font-weight:800;margin-bottom:10px}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.78);max-width:560px;margin:0 auto 28px}
+.stat-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:7px 18px;font-size:13px;color:#fff;display:flex;align-items:center;gap:6px}
+.chip strong{font-weight:700;color:var(--accent)}
+
+/* MAIN */
+.main{max-width:860px;margin:0 auto;padding:32px 16px 60px}
+
+/* SECTION TITLE */
+.sec-title{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* DIRECTION CARDS */
+.cards{display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
+.dir-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.dir-card.expanded{border-color:var(--primary);box-shadow:0 4px 24px rgba(26,107,74,.12)}
+.card-head{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;-webkit-user-select:none}
+.card-head:hover .card-title{color:var(--primary)}
+.card-emoji{font-size:28px;flex-shrink:0;width:44px;text-align:center}
+.card-meta{flex:1;min-width:0}
+.card-title-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-title{font-size:16px;font-weight:700;color:var(--text);transition:color .2s}
+.badge-new{background:#f97316;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0}
+.card-income{font-size:12px;color:var(--muted);margin-top:2px}
+.card-income strong{color:var(--green);font-weight:700}
+.card-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.score-circle{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;border:3px solid var(--border);background:var(--bg);flex-shrink:0}
+.score-circle.gold{border-color:#fbbf24;background:#fef9c3;color:#713f12}
+.score-circle.green{border-color:var(--green);background:#d1fae5;color:#065f46}
+.score-circle.blue{border-color:var(--blue);background:#dbeafe;color:#1e40af}
+.score-circle.amber{border-color:var(--accent);background:var(--al);color:#92400e}
+.score-circle.gray{border-color:var(--border);background:var(--bg);color:var(--muted)}
+.score-circle.hidden{display:none}
+.chevron{color:var(--muted);font-size:18px;transition:transform .25s;flex-shrink:0}
+.dir-card.expanded .chevron{transform:rotate(180deg)}
+
+.card-body{display:none;padding:0 18px 20px;border-top:1px solid var(--border)}
+.dir-card.expanded .card-body{display:block}
+
+.card-desc{color:var(--muted);font-size:14px;margin:14px 0 16px;line-height:1.65}
+.req-box{background:var(--pl);border-left:3px solid var(--primary);border-radius:6px;padding:10px 14px;font-size:13px;margin-bottom:16px}
+.req-box span{color:var(--primary);font-weight:700}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:540px){.two-col{grid-template-columns:1fr}}
+.info-block h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+.tag-list{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:3px 9px;color:var(--text)}
+.tag.green{background:#d1fae5;border-color:#6ee7b7;color:#065f46}
+.tag.red{background:#fee2e2;border-color:#fca5a5;color:#991b1b}
+
+.tools-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tool-tag{font-size:12px;background:#f0f9ff;border:1px solid #bae6fd;color:#0369a1;border-radius:6px;padding:3px 10px}
+
+/* ROADMAP */
+.roadmap-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.roadmap-title::before{content:'🗺️';font-size:14px}
+.roadmap{display:flex;flex-direction:column;gap:0}
+.rm-item{display:flex;gap:14px;position:relative}
+.rm-left{display:flex;flex-direction:column;align-items:center;width:28px;flex-shrink:0}
+.rm-dot{width:12px;height:12px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:4px;z-index:1}
+.rm-line{flex:1;width:2px;background:var(--border);margin:4px 0}
+.rm-item:last-child .rm-line{display:none}
+.rm-content{padding-bottom:16px;flex:1}
+.rm-week{font-size:11px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
+.rm-task{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px}
+.rm-detail{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* COMPARISON TABLE */
+.comp-wrap{overflow-x:auto;margin-bottom:48px;border-radius:var(--r);border:1.5px solid var(--border);background:var(--white)}
+.comp-table{width:100%;border-collapse:collapse;min-width:680px}
+.comp-table thead th{background:var(--hero);color:#fff;font-size:12px;font-weight:700;padding:12px 14px;text-align:left;white-space:nowrap;position:sticky;top:0}
+.comp-table thead th:first-child{min-width:180px}
+.comp-table tbody tr:nth-child(even){background:#f8fffe}
+.comp-table tbody tr:hover{background:var(--pl)}
+.comp-table td{font-size:13px;padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:middle}
+.comp-table td:first-child{font-weight:600;color:var(--text)}
+.comp-table tbody tr:last-child td{border-bottom:none}
+.ind{font-size:15px;text-align:center}
+
+/* CTA */
+.cta-box{background:var(--hero);border-radius:var(--r);padding:36px 24px;text-align:center;color:#fff;margin-bottom:20px}
+.cta-box h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.cta-box p{color:rgba(255,255,255,.75);font-size:14px;margin-bottom:22px}
+.btn-cta{display:inline-block;background:var(--accent);color:#1a202c;font-weight:700;font-size:15px;padding:13px 32px;border-radius:99px;text-decoration:none;transition:background .15s,transform .1s}
+.btn-cta:hover{background:#e08d00;transform:translateY(-1px)}
+
+/* SCORE LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;padding:12px 16px;background:var(--white);border-radius:10px;border:1px solid var(--border)}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted)}
+.legend-dot{width:12px;height:12px;border-radius:50%}
+
+/* SCORE SECTION HEADER */
+.score-header{background:var(--al);border:1.5px solid #fbbf24;border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:14px;display:none}
+.score-header.visible{display:flex;align-items:center;gap:10px}
+.score-header-icon{font-size:22px}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hdr{padding:10px 14px}
+  .hero{padding:36px 16px 32px}
+  .main{padding:24px 12px 48px}
+  .card-head{padding:14px}
+  .card-body{padding:0 14px 16px}
+}
+</style>
+</head>
+<body>
+<!-- SOL-HEADER-START -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL HEADER — Đồng nhất 3 sản phẩm sol.vn / bothuocla / huongdi
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào sau <body> mỗi HTML file của huongdi.sol.vn
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-header-styles">
+  /* Reset cho header — không phá CSS gốc của page */
+  #sol-header * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  }
+  #sol-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .sol-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sol-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .sol-logo img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+  .sol-logo span {
+    color: #1a1a1a;
+  }
+  .sol-logo strong {
+    color: #d97706;
+    font-weight: 800;
+  }
+
+  /* Nav 3 trụ */
+  .sol-nav-pillars {
+    display: flex;
+    gap: 2px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 3px;
+  }
+  .sol-nav-pillars a {
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .sol-nav-pillars a:hover {
+    color: #1a1a1a;
+    background: #fff;
+  }
+  .sol-nav-pillars a.active {
+    background: #fff;
+    color: #d97706;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Nav huongdi specific */
+  .sol-nav-huongdi {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .sol-nav-huongdi a {
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .sol-nav-huongdi a:hover {
+    color: #d97706;
+  }
+  .sol-nav-huongdi a.current {
+    color: #d97706;
+    font-weight: 700;
+  }
+
+  /* CTA button */
+  .sol-cta {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    color: #fff !important;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(217, 119, 6, 0.3);
+    white-space: nowrap;
+  }
+  .sol-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-header-inner {
+      padding: 8px 12px;
+      gap: 8px;
+    }
+    .sol-nav-pillars a {
+      padding: 5px 8px;
+      font-size: 12px;
+    }
+    .sol-nav-huongdi {
+      display: none; /* Ẩn nav phụ trên mobile, dùng menu burger sau */
+    }
+    .sol-logo span {
+      display: none; /* Chỉ giữ icon trên mobile */
+    }
+    .sol-cta {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-nav-pillars {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Dark mode (nếu page có) */
+  @media (prefers-color-scheme: dark) {
+    #sol-header {
+      background: rgba(20, 20, 20, 0.92);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-logo, .sol-logo span {
+      color: #f3f4f6;
+    }
+    .sol-nav-pillars {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .sol-nav-pillars a {
+      color: #9ca3af;
+    }
+    .sol-nav-pillars a.active {
+      background: #1a1a1a;
+      color: #f59e0b;
+    }
+    .sol-nav-huongdi a {
+      color: #d1d5db;
+    }
+  }
+</style>
+
+<header id="sol-header" role="banner" aria-label="Sol — Hệ sinh thái 3 trụ">
+  <div class="sol-header-inner">
+
+    <!-- Logo + brand -->
+    <a href="https://sol.vn/" class="sol-logo" aria-label="Sol — Đi Cùng Sol">
+      <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png"
+           alt="Logo Sol"
+           width="28" height="28"
+           loading="eager">
+      <span>Đi Cùng <strong>Sol</strong></span>
+    </a>
+
+    <!-- Nav 3 trụ Thân-Tâm-Trí -->
+    <nav class="sol-nav-pillars" aria-label="3 trụ Sol">
+      <a href="https://bothuocla.sol.vn/" title="Sức khoẻ — bothuocla.sol.vn">Thân</a>
+      <a href="https://sol.vn/tam/" title="Tinh thần — sol.vn/tam">Tâm</a>
+      <a href="https://huongdi.sol.vn/" class="active" aria-current="page" title="Sự nghiệp — huongdi.sol.vn">Trí</a>
+    </nav>
+
+    <!-- Nav huongdi -->
+    <nav class="sol-nav-huongdi" aria-label="Huongdi navigation">
+      <a href="/p1.html" data-huongdi-link="p1">P1 Khám phá</a>
+      <a href="/p2.html" data-huongdi-link="p2">P2 Nguồn lực</a>
+      <a href="/p3.html" data-huongdi-link="p3">37 Hướng đi</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="/p1.html" class="sol-cta">Bắt đầu →</a>
+
+  </div>
+</header>
+
+<script id="sol-header-script">
+  // Auto-highlight current page in sub-nav
+  (function() {
+    var path = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+    var matchKey = null;
+    if (path === '/p1' || path.endsWith('/p1')) matchKey = 'p1';
+    else if (path === '/p2' || path.endsWith('/p2')) matchKey = 'p2';
+    else if (path.startsWith('/p3')) matchKey = 'p3';
+    if (matchKey) {
+      var links = document.querySelectorAll('.sol-nav-huongdi a[data-huongdi-link="' + matchKey + '"]');
+      links.forEach(function(a) { a.classList.add('current'); });
+    }
+  })();
+</script>
+<!-- SOL-HEADER-END -->
+
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-left">
+    <a class="logo" href="/index.html">huongdi<em>.sol.vn</em></a>
+    <span class="sep">›</span>
+    <span class="breadcrumb">
+      <a href="/p3.html">Kết quả</a> › <strong>Chuyên Môn &amp; Tư Vấn</strong>
+    </span>
+  </div>
+  <a class="btn-back" href="/p3.html">← Xem kết quả</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-icon">🧠</div>
+  <h1>Chuyên Môn &amp; Tư Vấn</h1>
+  <p class="hero-sub">Tận dụng kiến thức chuyên sâu và kinh nghiệm tích lũy để tạo thu nhập độc lập — không cần văn phòng, không cần vốn lớn.</p>
+  <div class="stat-chips">
+    <div class="chip">⚡ <strong>9</strong> hướng đi cụ thể</div>
+    <div class="chip">💰 Thu nhập <strong>8–100 triệu/tháng</strong></div>
+    <div class="chip">🎯 Vốn khởi đầu <strong>gần bằng 0</strong></div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- SCORE INFO BANNER -->
+  <div class="score-header" id="scoreBanner">
+    <span class="score-header-icon">🎯</span>
+    <div>Điểm phù hợp đã được tính dựa trên kết quả khảo sát của bạn. <strong>Vòng tròn màu xanh/vàng</strong> bên phải mỗi hướng cho thấy mức độ phù hợp cá nhân.</div>
+  </div>
+
+  <!-- SCORE LEGEND -->
+  <div class="legend" id="scoreLegend" style="display:none">
+    <span style="font-size:12px;font-weight:700;color:var(--text);margin-right:4px">Điểm phù hợp:</span>
+    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div> ≥90 Rất cao</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> ≥80 Cao</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> ≥70 Khá</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> ≥60 Trung bình</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9ca3af"></div> &lt;60 Thấp</div>
+  </div>
+
+  <p class="sec-title">9 hướng đi chuyên môn</p>
+
+  <!-- CARDS CONTAINER -->
+  <div class="cards" id="cardsContainer"></div>
+
+  <!-- COMPARISON TABLE -->
+  <p class="sec-title">So sánh tổng quan</p>
+  <div class="comp-wrap">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Hướng đi</th>
+          <th>Vốn</th>
+          <th>Thu nhập max</th>
+          <th>Rủi ro</th>
+          <th>Tốc độ</th>
+          <th>Tận dụng KN</th>
+          <th>AI</th>
+        </tr>
+      </thead>
+      <tbody id="compBody"></tbody>
+    </table>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>Sẵn sàng chọn hướng đi của bạn?</h2>
+    <p>Xem lại tất cả nhóm ngành và bắt đầu lộ trình hành động cụ thể ngay hôm nay.</p>
+    <a class="btn-cta" href="/p3.html">← Quay lại kết quả đầy đủ</a>
+  </div>
+
+</main>
+
+<script>
+const DIRECTIONS = [
+  {
+    id:'freelancer-ke-toan', emoji:'📊', title:'Freelancer Kế Toán & Thuế', isNew:false,
+    desc:'Cung cấp dịch vụ kế toán, lập báo cáo tài chính và tư vấn thuế cho SME theo hợp đồng tháng. Làm việc từ xa hoàn toàn, không cần văn phòng. Đây là một trong những hướng freelance phổ biến và ổn định nhất cho người có kinh nghiệm tài chính.',
+    requirements:'Chứng chỉ kế toán/kiểm toán hoặc 5+ năm kinh nghiệm thực tế',
+    strengths:['Nhu cầu ổn định quanh năm','Khách hàng trung thành (ký hợp đồng tháng)','Làm việc remote hoàn toàn','Ít bị ảnh hưởng bởi AI trong ngắn hạn'],
+    barriers:['Cần chứng chỉ hoặc kinh nghiệm chứng minh','Cạnh tranh với phần mềm kế toán'],
+    tools:['MISA Accounting','Excel/Google Sheets','Zalo Business','Fast Accounting'],
+    p:{people:35,expert:95,builder:30,independent:85},
+    r:{capital:10,time:35,technology:50,network:40,risk:15,energy:35},
+    exp_lev:95, income:{min:8,max:35}, timeline:'2–4 tháng',
+    comp:{von:'🟢',thuNhap:'🟡',ruiro:'🟢',tocdo:'🟡',tanDung:'🟢',ai:'🟡'},
+    roadmap:[
+      {w:'Tuần 1',t:'Kiểm kê năng lực & xác định niche',d:'Liệt kê 5 dịch vụ kế toán bạn tự tin nhất. Chọn phân khúc SME mục tiêu (quy mô 5-50 nhân viên, ngành thương mại hoặc dịch vụ). Tính giá theo gói tháng: starter 3-5 triệu, standard 6-10 triệu, premium 12-20 triệu.'},
+      {w:'Tuần 2',t:'Xây hồ sơ dịch vụ',d:'Tạo CV dịch vụ 1 trang. Liệt kê rõ: dịch vụ cụ thể, đối tượng khách hàng, giá, quy trình làm việc. Tạo LinkedIn profile chuyên nghiệp. Chuẩn bị mẫu hợp đồng dịch vụ.'},
+      {w:'Tuần 3',t:'Tiếp cận mạng lưới cũ',d:'Liên hệ 15-20 người quen có SME hoặc quen giám đốc/kế toán trưởng. Ưu tiên giới thiệu qua người thứ 3 thay vì tiếp cận lạnh. 1 email cá nhân hiệu quả hơn 10 tin nhắn mass.'},
+      {w:'Tuần 4',t:'Chốt hợp đồng đầu tiên',d:'Mục tiêu: 1-2 khách hàng thử nghiệm với giá ưu đãi 30% trong tháng đầu. Thu thập feedback chi tiết và 1 testimonial bằng văn bản. Khách đầu = social proof để chốt khách thứ 2 nhanh hơn.'},
+    ]
+  },
+  {
+    id:'freelancer-marketing', emoji:'📣', title:'Freelancer Marketing Digital', isNew:false,
+    desc:'Cung cấp dịch vụ digital marketing, content marketing, SEO, quảng cáo Facebook/Google cho doanh nghiệp vừa và nhỏ. AI tools giúp tăng năng suất 2-3x so với 5 năm trước.',
+    requirements:'Kinh nghiệm chạy quảng cáo hoặc làm content ít nhất 2 năm',
+    strengths:['Nhu cầu rất cao từ SME','AI tăng năng suất 2-3x','Thu nhập theo dự án linh hoạt','Có thể xây thành agency nhỏ'],
+    barriers:['Cần portfolio kết quả cụ thể (số liệu)','Cạnh tranh nhiều'],
+    tools:['Meta Ads Manager','Google Ads','Canva','ChatGPT','Buffer'],
+    p:{people:55,expert:80,builder:45,independent:80},
+    r:{capital:10,time:40,technology:65,network:50,risk:15,energy:50},
+    exp_lev:80, income:{min:8,max:40}, timeline:'2–4 tháng',
+    comp:{von:'🟢',thuNhap:'🟡',ruiro:'🟢',tocdo:'🟡',tanDung:'🟡',ai:'🟢'},
+    roadmap:[
+      {w:'Tuần 1',t:'Chọn chuyên môn hẹp',d:'Không nên làm tất cả. Chọn 1-2 kênh/ngành cụ thể: Facebook Ads cho F&B, SEO cho BDS, hay content cho ngành giáo dục. Hẹp = dễ nổi bật và tính phí cao hơn.'},
+      {w:'Tuần 2',t:'Xây portfolio kết quả',d:'Tổng hợp 2-3 case study từ dự án cũ với số liệu cụ thể (CTR, ROAS, traffic tăng %). Nếu chưa có: chạy test nhỏ với budget 500K-1tr để có data thật.'},
+      {w:'Tuần 3',t:'Chào hàng chủ động',d:'Tìm 10 SME đang chạy quảng cáo kém hiệu quả (ít like, engagement thấp). Phân tích điểm yếu cụ thể, gửi email/DM với đề xuất cải thiện cụ thể — đây là cách tiếp cận hiệu quả nhất.'},
+      {w:'Tuần 4',t:'Kết quả đo được',d:'Chốt 1 khách, chạy thử 2 tuần, báo cáo số liệu mỗi tuần. Kết quả tốt = case study mới + xin giới thiệu. Đây là growth engine quan trọng nhất của freelancer marketing.'},
+    ]
+  },
+  {
+    id:'freelancer-thiet-ke', emoji:'🎨', title:'Freelancer Thiết Kế Đồ Họa', isNew:false,
+    desc:'Thiết kế logo, brand identity, UI/UX, ấn phẩm truyền thông. AI tools (Midjourney, Adobe Firefly) đang thay đổi ngành nhưng cũng mở ra cơ hội mới cho người biết kết hợp.',
+    requirements:'Thành thạo Adobe suite hoặc Figma; portfolio ít nhất 5-8 tác phẩm tốt',
+    strengths:['Làm việc toàn cầu (Upwork, Fiverr)','AI tools tăng tốc 3x','Thu nhập USD nếu có client quốc tế'],
+    barriers:['AI đang thay thế thiết kế cơ bản','Cần portfolio đẹp trước khi có khách'],
+    tools:['Adobe Illustrator','Figma','Canva Pro','Midjourney','Smartmockups'],
+    p:{people:40,expert:85,builder:50,independent:80},
+    r:{capital:15,time:40,technology:75,network:40,risk:15,energy:45},
+    exp_lev:85, income:{min:8,max:40}, timeline:'1–3 tháng',
+    comp:{von:'🟢',thuNhap:'🟡',ruiro:'🟢',tocdo:'🟢',tanDung:'🟡',ai:'🟢'},
+    roadmap:[
+      {w:'Tuần 1',t:'Xây Behance/Dribbble portfolio',d:'Upload 5-8 tác phẩm tốt nhất với mockup đẹp từ Smartmockups (miễn phí). Portfolio đẹp = khách hàng tự tìm đến. Chú trọng variety: logo, brand kit, UI, print.'},
+      {w:'Tuần 2',t:'Đăng ký nền tảng freelance',d:'Tạo profile Fiverr hoặc Upwork với keyword cụ thể. Đặt giá thấp giai đoạn đầu để lấy 5 review đầu tiên. 5 review 5 sao = tăng giá 50-100% được ngay.'},
+      {w:'Tuần 3',t:'Tiếp cận khách trực tiếp',d:'Tìm 10 SME có logo/website xấu (dễ tìm trên Google Maps). Gửi redesign concept miễn phí kèm đề xuất làm việc. Tỷ lệ chuyển đổi từ cách này: 20-30%.'},
+      {w:'Tuần 4',t:'Hệ thống giá & quy trình',d:'Tạo bảng giá theo gói rõ ràng. Viết quy trình làm việc 5 bước để khách hàng biết gì sẽ xảy ra. Professionalism = khách sẵn sàng trả cao hơn 30-50%.'},
+    ]
+  },
+  {
+    id:'freelancer-it', emoji:'💻', title:'Freelancer IT & Lập Trình', isNew:false,
+    desc:'Phát triển website, app, tự động hóa quy trình với AI. Thu nhập cao nhất trong nhóm chuyên môn. Với GitHub Copilot và ChatGPT, một lập trình viên trung bình có thể làm việc nhanh gấp 2-3x.',
+    requirements:'Thành thạo ít nhất 1 ngôn ngữ/stack: Python, JavaScript/React, PHP/WordPress',
+    strengths:['Thu nhập USD trên Upwork/Fiverr','AI coding tools tăng năng suất 3x','Nhu cầu không bao giờ giảm'],
+    barriers:['Cần cập nhật liên tục theo công nghệ mới','AI đang đảm nhận code đơn giản'],
+    tools:['GitHub Copilot','ChatGPT/Claude','VS Code','Upwork','Fiverr'],
+    p:{people:30,expert:90,builder:60,independent:85},
+    r:{capital:10,time:45,technology:85,network:35,risk:10,energy:50},
+    exp_lev:90, income:{min:12,max:60}, timeline:'1–3 tháng',
+    comp:{von:'🟢',thuNhap:'🟢',ruiro:'🟢',tocdo:'🟢',tanDung:'🟡',ai:'🟢'},
+    roadmap:[
+      {w:'Tuần 1',t:'Xác định stack chuyên sâu',d:'Chọn 1-2 công nghệ làm mũi nhọn: WordPress + WooCommerce, React + Node, Python automation, hoặc no-code (Bubble/Webflow). Chuyên sâu 1 thứ > biết hết mọi thứ ở mức trung bình.'},
+      {w:'Tuần 2',t:'GitHub portfolio',d:'Push 3-5 project lên GitHub với README chi tiết: mô tả, screenshot, tech stack, live demo (dùng Vercel/Netlify miễn phí). Nếu chưa có project: làm 1 tool nhỏ giải quyết vấn đề thực tế.'},
+      {w:'Tuần 3',t:'Upwork/Fiverr profile',d:'Tạo profile với keyword cụ thể. Đặt giá thấp ban đầu ($15-20/giờ) để lấy 3 review đầu. 3 review tốt = leverage tăng lên $30-50/giờ. Với Upwork: apply 10 job/ngày trong tuần đầu.'},
+      {w:'Tuần 4',t:'Khách hàng trực tiếp',d:'Tiếp cận SME địa phương cần website/app. 1 website chuẩn: 10-25 triệu. Khách trực tiếp trả cao hơn nền tảng freelance 30-50% vì không có phí hoa hồng.'},
+    ]
+  },
+  {
+    id:'tu-van-kinh-doanh', emoji:'🧭', title:'Tư Vấn Chiến Lược Kinh Doanh', isNew:false,
+    desc:'Tư vấn chiến lược, tái cơ cấu, mở rộng thị trường cho SME. Hướng đi tận dụng kinh nghiệm cao nhất — 20 năm làm CEO/GM = 20 năm kinh nghiệm tư vấn tiềm năng.',
+    requirements:'Ít nhất 10 năm kinh nghiệm quản lý cấp cao hoặc điều hành doanh nghiệp',
+    strengths:['Thu nhập cao nhất: 15-100 triệu/tháng','Tận dụng 100% kinh nghiệm cũ','1 hợp đồng = vài tháng thu nhập'],
+    barriers:['Cần network uy tín sẵn có','3-6 tháng đầu chưa có thu nhập ổn định'],
+    tools:['Notion','Zoom','LinkedIn','PowerPoint','Miro'],
+    p:{people:60,expert:90,builder:55,independent:80},
+    r:{capital:10,time:30,technology:40,network:65,risk:20,energy:50},
+    exp_lev:97, income:{min:15,max:100}, timeline:'3–6 tháng',
+    comp:{von:'🟢',thuNhap:'🟢',ruiro:'🟡',tocdo:'🔴',tanDung:'🟢',ai:'🟡'},
+    roadmap:[
+      {w:'Tuần 1',t:'Định vị chuyên môn',d:'Xác định 1-2 ngành bạn hiểu sâu nhất. Viết "thesis tư vấn": góc nhìn riêng của bạn về vấn đề lớn nhất của ngành đó và cách giải quyết. Đây là cái khiến bạn khác với 1000 tư vấn khác.'},
+      {w:'Tuần 2',t:'Viết case study kinh nghiệm',d:'Tổng hợp 3 tình huống thực tế đã giải quyết thành công (ẩn tên khách hàng). Định dạng: Tình huống → Thách thức → Giải pháp → Kết quả cụ thể. Đây là portfolio của tư vấn.'},
+      {w:'Tuần 3',t:'Mạng lưới giới thiệu',d:'Liên hệ 10 người từng làm việc cùng bạn. Nói rõ bạn đang nhận dự án tư vấn độc lập. 70-80% khách tư vấn đến qua referral — đây là kênh quan trọng nhất.'},
+      {w:'Tuần 4',t:'Discovery call đầu tiên',d:'Lên lịch 3-5 buổi "tư vấn khám phá miễn phí 45 phút". Mục tiêu buổi này: hiểu vấn đề, không phải bán. Từ discovery → proposal: tỷ lệ chuyển đổi 30-50% nếu đúng nhu cầu.'},
+    ]
+  },
+  {
+    id:'tu-van-nhan-su', emoji:'👥', title:'Tư Vấn Nhân Sự & Headhunting', isNew:false,
+    desc:'Tư vấn xây dựng đội ngũ, quy trình HR, headhunting cho SME và startup. Phù hợp người có mạng lưới rộng và từng làm HR hoặc quản lý team lớn.',
+    requirements:'Network rộng trong ngành, kinh nghiệm tuyển dụng hoặc quản lý đội ngũ',
+    strengths:['Headhunting fee cao: 15-25% lương năm','Network = tài sản chính','Nhu cầu không bao giờ giảm'],
+    barriers:['Cần database ứng viên và khách hàng','Chu kỳ bán hàng dài (2-4 tháng)'],
+    tools:['LinkedIn Recruiter','Google Sheets','Zalo','Notion CRM'],
+    p:{people:80,expert:75,builder:40,independent:70},
+    r:{capital:10,time:35,technology:45,network:70,risk:15,energy:55},
+    exp_lev:85, income:{min:10,max:60}, timeline:'2–4 tháng',
+    comp:{von:'🟢',thuNhap:'🟢',ruiro:'🟢',tocdo:'🟡',tanDung:'🟢',ai:'🟡'},
+    roadmap:[
+      {w:'Tuần 1',t:'Xác định phân khúc headhunting',d:'Chọn ngành/level cụ thể: C-level cho startup công nghệ, hay sales manager cho FMCG? Chuyên sâu 1 ngành = hiểu sâu thị trường lương, skills, culture fit.'},
+      {w:'Tuần 2',t:'LinkedIn & database ứng viên',d:'Nâng cấp LinkedIn Premium (300K/tháng — đáng đầu tư). Kết nối thêm 50 HR manager và 30 hiring manager. Bắt đầu database ứng viên passive (người không đang tìm việc nhưng mở nghe cơ hội).'},
+      {w:'Tuần 3',t:'Tiếp cận doanh nghiệp',d:'Gọi điện/email 10 CEO/HR Director SME với thông điệp: "Tôi có danh sách ứng viên phù hợp với nhu cầu tuyển dụng của bạn". Đề xuất phí retainer (3-5 triệu/tháng) hoặc success fee (15-25% lương năm).'},
+      {w:'Tuần 4',t:'Kết nối đơn vị hợp tác',d:'Hợp tác với 1-2 công ty headhunting lớn hơn làm đối tác giới thiệu — chia phí 50/50. Đây là cách nhanh nhất có doanh thu trong giai đoạn đầu chưa có tên tuổi riêng.'},
+    ]
+  },
+  {
+    id:'tu-van-phap-ly', emoji:'📜', title:'Tư Vấn Pháp Lý Doanh Nghiệp', isNew:false,
+    desc:'Tư vấn hợp đồng, thành lập doanh nghiệp, sở hữu trí tuệ, lao động cho SME. Không cần là luật sư — nhiều người có kinh nghiệm làm việc với hợp đồng/pháp lý 10+ năm cũng tư vấn hiệu quả.',
+    requirements:'Nền tảng pháp lý hoặc 10+ năm làm việc với hợp đồng thương mại',
+    strengths:['Ít cạnh tranh ở phân khúc SME','Khách hàng cần liên tục','Thu nhập cao, thời gian linh hoạt'],
+    barriers:['Trách nhiệm pháp lý nếu tư vấn sai','Cần cập nhật văn bản pháp luật thường xuyên'],
+    tools:['LegalZoom VN','Word','Zoom','LuatVietnam.vn'],
+    p:{people:55,expert:90,builder:30,independent:80},
+    r:{capital:15,time:35,technology:35,network:55,risk:20,energy:40},
+    exp_lev:97, income:{min:10,max:70}, timeline:'3–6 tháng',
+    comp:{von:'🟢',thuNhap:'🟢',ruiro:'🟡',tocdo:'🔴',tanDung:'🟢',ai:'🟡'},
+    roadmap:[
+      {w:'Tuần 1',t:'Xác định chuyên môn hẹp',d:'Pháp lý doanh nghiệp (thành lập, góp vốn), hợp đồng thương mại, sở hữu trí tuệ, hay lao động? Chuyên 1 lĩnh vực = dễ tính phí cao và nổi bật.'},
+      {w:'Tuần 2',t:'Content chứng minh chuyên môn',d:'Viết 3-5 bài ngắn (500-800 từ) về lỗi pháp lý phổ biến của SME đăng LinkedIn/Facebook. Đây là cách hiệu quả nhất để khách hàng tiềm năng "khám phá" bạn.'},
+      {w:'Tuần 3',t:'Network kế toán & kiểm toán',d:'Kế toán và kiểm toán viên thường gặp khách cần tư vấn pháp lý. Xây quan hệ giới thiệu chéo — bạn giới thiệu kế toán cho họ, họ giới thiệu pháp lý cho bạn.'},
+      {w:'Tuần 4',t:'Buổi tư vấn khám phá',d:'Offer "review hợp đồng miễn phí 30 phút" cho 5 SME. Tỷ lệ chuyển đổi từ miễn phí → trả tiền: 30-50% nếu bạn tạo được giá trị thật trong 30 phút đó.'},
+    ]
+  },
+  {
+    id:'freelancer-bien-dich', emoji:'🌐', title:'Freelancer Biên/Phiên Dịch', isNew:true,
+    desc:'Dịch văn bản, tài liệu kỹ thuật, phiên dịch hội họp/sự kiện. AI translation tools (DeepL, ChatGPT) đang thay đổi ngành nhưng cũng mở ra cơ hội: biên dịch viên giỏi dùng AI để làm việc nhanh gấp 3-5x.',
+    requirements:'Thành thạo ít nhất 1 ngoại ngữ ở mức chuyên nghiệp (C1+), ưu tiên Anh, Nhật, Hàn, Trung',
+    strengths:['Vốn gần như bằng 0','AI tăng năng suất 3-5x','Khách hàng quốc tế thanh toán USD/EUR','Làm việc remote hoàn toàn'],
+    barriers:['AI đang áp lực giảm giá dịch thuật cơ bản','Cần chuyên sâu vào 1 lĩnh vực để tính phí cao'],
+    tools:['DeepL Pro','ChatGPT','Trados Studio','SDL','Memoq'],
+    p:{people:30,expert:85,builder:25,independent:90},
+    r:{capital:5,time:35,technology:55,network:30,risk:10,energy:35},
+    exp_lev:88, income:{min:8,max:45}, timeline:'1–3 tháng',
+    comp:{von:'🟢',thuNhap:'🟡',ruiro:'🟢',tocdo:'🟢',tanDung:'🟡',ai:'🟢'},
+    roadmap:[
+      {w:'Tuần 1',t:'Chọn niche chuyên môn',d:'Đừng dịch tất cả — chuyên 1 lĩnh vực: pháp lý, y tế, kỹ thuật, tài chính, hay marketing? Phí dịch thuật chuyên ngành cao hơn phổ thông 2-3x. Đây là quyết định quan trọng nhất.'},
+      {w:'Tuần 2',t:'Profile & mẫu dịch',d:'Tạo profile Proz.com (cộng đồng dịch thuật lớn nhất thế giới). Chuẩn bị 3-5 mẫu dịch thuật chất lượng cao trong niche của bạn. Đây là portfolio thực tế.'},
+      {w:'Tuần 3',t:'Đăng ký nền tảng',d:'Gengo, One Hour Translation, Upwork, Fiverr. Nền tảng Việt Nam: dichthuatcongchung.com, hanoitranslation.com. Đặt giá cạnh tranh ban đầu để build reviews.'},
+      {w:'Tuần 4',t:'Khách trực tiếp',d:'Tiếp cận công ty luật, phòng khám quốc tế, công ty xuất nhập khẩu — họ cần dịch thuật thường xuyên và sẵn sàng trả gấp đôi nền tảng để có người tin cậy lâu dài.'},
+    ]
+  },
+  {
+    id:'tu-van-xuat-nhap-khau', emoji:'🚢', title:'Tư Vấn Xuất Nhập Khẩu', isNew:true,
+    desc:'Tư vấn quy trình, thủ tục, tối ưu chi phí xuất nhập khẩu cho SME. Đây là lĩnh vực ít người làm nhưng nhu cầu rất cao — đặc biệt khi Việt Nam ngày càng hội nhập sâu vào chuỗi cung ứng toàn cầu.',
+    requirements:'5+ năm kinh nghiệm trong ngành XNK, logistics, hoặc chuỗi cung ứng',
+    strengths:['Ít cạnh tranh','Kinh nghiệm ngành = tài sản cực kỳ khó copy','Thu nhập cao, 1 dự án = 15-80 triệu'],
+    barriers:['Cần network doanh nghiệp XNK','Kiến thức pháp lý/thuế XNK cần cập nhật liên tục'],
+    tools:['Customs declaration software','Excel','Zoom','LinkedIn'],
+    p:{people:60,expert:85,builder:45,independent:75},
+    r:{capital:15,time:40,technology:45,network:60,risk:25,energy:50},
+    exp_lev:92, income:{min:15,max:80}, timeline:'3–8 tháng',
+    comp:{von:'🟢',thuNhap:'🟢',ruiro:'🟡',tocdo:'🔴',tanDung:'🟢',ai:'🟡'},
+    roadmap:[
+      {w:'Tuần 1',t:'Xác định chuyên môn cụ thể',d:'XNK cho ngành nào? Dệt may, điện tử, thực phẩm, hay hàng tiêu dùng? Chuyên 1 ngành = biết rõ HS code, quy định, nhà vận chuyển uy tín — đây là giá trị thực của bạn.'},
+      {w:'Tuần 2',t:'Case study kinh nghiệm',d:'Viết 3 trường hợp bạn giúp khách hàng tiết kiệm hoặc giải quyết vấn đề XNK (ẩn tên nếu cần). Đây là bằng chứng năng lực thuyết phục hơn mọi lý thuyết.'},
+      {w:'Tuần 3',t:'Network hiệp hội ngành',d:'Tham gia VCCI, VASEP, VITAS hoặc hiệp hội ngành liên quan. Đây là nơi SME tìm tư vấn XNK. 1 tháng networking = nhiều lead hơn 3 tháng cold outreach.'},
+      {w:'Tuần 4',t:'Dự án thử nghiệm',d:'Offer audit XNK miễn phí cho 1 SME: đánh giá quy trình hiện tại, chỉ ra 3-5 điểm có thể tiết kiệm chi phí. Từ free audit → consulting contract: tỷ lệ 40-60%.'},
+    ]
+  },
+];
+
+// ---- SCORING ----
+function getP1() {
+  try {
+    const d = JSON.parse(localStorage.getItem('p1_result') || 'null');
+    if (!d || !d.scores) return null;
+    const norm = d.scores_normalized || {};
+    if (!norm.people) {
+      Object.entries(d.scores).forEach(([k, v]) => {
+        norm[k] = Math.round(Math.max(0, Math.min(100, (v - 20) / 80 * 100)));
+      });
+    }
+    return { norm, raw: d.scores };
+  } catch(e) { return null; }
+}
+function getP2() {
+  try {
+    const d = JSON.parse(localStorage.getItem('p2_result') || 'null');
+    if (!d || !d.scores) return null;
+    return d.scores;
+  } catch(e) { return null; }
+}
+function personalityMatch(norm, dp) {
+  const dims = ['people','expert','builder','independent'];
+  const total = dims.reduce((s, d) => s + dp[d], 0) || 1;
+  let ws = 0;
+  dims.forEach(d => {
+    const u = norm[d] || 0, req = dp[d];
+    ws += (u >= req ? 100 : Math.max(0, 100 - (req - u) * 1.3)) * (req / total);
+  });
+  return Math.min(100, Math.round(ws));
+}
+function resourceMatch(sc, dr, exp_lev) {
+  const map = [
+    ['capScore','capital'],['timeScore','time'],['techScore','technology'],
+    ['netScore','network'],['riskScore','risk'],['energyScore','energy']
+  ];
+  let tot = 0, excl = 0;
+  map.forEach(([pk, dk]) => {
+    const u = sc[pk] || 0, req = dr[dk] || 0;
+    if (!req) { tot += 100; return; }
+    const s = u >= req ? 100 : Math.max(0, (u / req) * 100);
+    tot += s;
+    if (u / req < 0.45 && req >= 40) excl += 12;
+  });
+  const expBonus = (((sc.expScore || 50) - 50) / 50) * (exp_lev / 100) * 18;
+  return Math.max(0, Math.min(100, Math.round(tot / map.length + expBonus - excl)));
+}
+function calcScore(dir) {
+  const p1 = getP1(), p2 = getP2();
+  if (!p1 || !p2) return null;
+  const pm = personalityMatch(p1.norm, dir.p);
+  const rm = resourceMatch(p2, dir.r, dir.exp_lev);
+  return Math.round(pm * 0.5 + rm * 0.35 + 82 * 0.15);
+}
+function scoreClass(s) {
+  if (s >= 90) return 'gold';
+  if (s >= 80) return 'green';
+  if (s >= 70) return 'blue';
+  if (s >= 60) return 'amber';
+  return 'gray';
+}
+
+// ---- RENDER ----
+function renderCard(dir) {
+  const score = calcScore(dir);
+  const hasScore = score !== null;
+
+  const circleHTML = hasScore
+    ? `<div class="score-circle ${scoreClass(score)}" title="Điểm phù hợp">${score}</div>`
+    : `<div class="score-circle hidden"></div>`;
+
+  const strengthsHTML = dir.strengths.map(s => `<span class="tag green">${s}</span>`).join('');
+  const barriersHTML = dir.barriers.map(b => `<span class="tag red">${b}</span>`).join('');
+  const toolsHTML = dir.tools.map(t => `<span class="tool-tag">${t}</span>`).join('');
+
+  const roadmapHTML = dir.roadmap.map(step => `
+    <div class="rm-item">
+      <div class="rm-left">
+        <div class="rm-dot"></div>
+        <div class="rm-line"></div>
+      </div>
+      <div class="rm-content">
+        <div class="rm-week">${step.w}</div>
+        <div class="rm-task">${step.t}</div>
+        <div class="rm-detail">${step.d}</div>
+      </div>
+    </div>
+  `).join('');
+
+  return `
+  <div class="dir-card" id="card-${dir.id}">
+    <div class="card-head" onclick="toggleCard('${dir.id}')">
+      <div class="card-emoji">${dir.emoji}</div>
+      <div class="card-meta">
+        <div class="card-title-row">
+          <span class="card-title">${dir.title}</span>
+          ${dir.isNew ? '<span class="badge-new">Mới</span>' : ''}
+        </div>
+        <div class="card-income">Thu nhập: <strong>${dir.income.min}–${dir.income.max} triệu/tháng</strong> &nbsp;·&nbsp; ${dir.timeline}</div>
+      </div>
+      <div class="card-right">
+        ${circleHTML}
+        <span class="chevron">▾</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">${dir.desc}</p>
+      <div class="req-box"><span>Yêu cầu:</span> ${dir.requirements}</div>
+      <div class="two-col">
+        <div class="info-block">
+          <h4>Điểm mạnh</h4>
+          <div class="tag-list">${strengthsHTML}</div>
+        </div>
+        <div class="info-block">
+          <h4>Thách thức</h4>
+          <div class="tag-list">${barriersHTML}</div>
+        </div>
+      </div>
+      <div class="info-block" style="margin-bottom:16px">
+        <h4>Công cụ chính</h4>
+        <div class="tools-row">${toolsHTML}</div>
+      </div>
+      <div class="roadmap-title">Lộ trình 4 tuần đầu</div>
+      <div class="roadmap">${roadmapHTML}</div>
+    </div>
+  </div>`;
+}
+
+function toggleCard(id) {
+  const card = document.getElementById('card-' + id);
+  if (!card) return;
+  const isOpen = card.classList.contains('expanded');
+  // Close all
+  document.querySelectorAll('.dir-card.expanded').forEach(c => c.classList.remove('expanded'));
+  // Open clicked if was closed
+  if (!isOpen) card.classList.add('expanded');
+}
+
+function renderComparison() {
+  const rows = DIRECTIONS.map(dir => {
+    const score = calcScore(dir);
+    const scoreCell = score !== null
+      ? `<td><span class="score-circle ${scoreClass(score)}" style="width:36px;height:36px;font-size:12px;display:inline-flex">${score}</span></td>`
+      : '';
+    const c = dir.comp;
+    return `<tr>
+      <td>${dir.emoji} ${dir.title}</td>
+      <td class="ind">${c.von}</td>
+      <td class="ind">${c.thuNhap} ${dir.income.min}–${dir.income.max}tr</td>
+      <td class="ind">${c.ruiro}</td>
+      <td class="ind">${c.tocdo} ${dir.timeline}</td>
+      <td class="ind">${c.tanDung}</td>
+      <td class="ind">${c.ai}</td>
+    </tr>`;
+  });
+  document.getElementById('compBody').innerHTML = rows.join('');
+}
+
+function init() {
+  const container = document.getElementById('cardsContainer');
+  container.innerHTML = DIRECTIONS.map(renderCard).join('');
+
+  renderComparison();
+
+  const hasData = getP1() !== null && getP2() !== null;
+  if (hasData) {
+    document.getElementById('scoreBanner').classList.add('visible');
+    document.getElementById('scoreLegend').style.display = 'flex';
+  }
+
+  // Sort cards by score if available
+  if (hasData) {
+    const scored = DIRECTIONS.map(d => ({ dir: d, score: calcScore(d) || 0 }))
+      .sort((a, b) => b.score - a.score);
+    container.innerHTML = scored.map(s => renderCard(s.dir)).join('');
+  }
+
+  // Auto-expand first card
+  const first = container.querySelector('.dir-card');
+  if (first) first.classList.add('expanded');
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+<script src="/sol-flow.js"></script>
+<!-- SOL-FOOTER-START -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL FOOTER — Master Footer EEAT + YMYL Finance disclaimer
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào trước </body> mỗi HTML file của huongdi.sol.vn
+     Cross-link 3 sản phẩm + Author info (EEAT) + YMYL disclaimer
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-footer-styles">
+  #sol-footer * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif;
+  }
+  #sol-footer {
+    margin-top: 60px;
+    background: linear-gradient(180deg, #fafaf9 0%, #f5f5f4 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 48px 16px 24px;
+    color: #44403c;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+  .sol-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* 4 cols grid */
+  .sol-footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+  .sol-footer-col h4 {
+    color: #1c1917;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sol-footer-col ul {
+    list-style: none;
+  }
+  .sol-footer-col li {
+    margin-bottom: 8px;
+  }
+  .sol-footer-col a {
+    color: #57534e;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .sol-footer-col a:hover {
+    color: #d97706;
+  }
+  .sol-footer-col .pillar-icon {
+    display: inline-block;
+    width: 18px;
+    margin-right: 4px;
+    text-align: center;
+  }
+
+  /* EEAT Author block */
+  .sol-eeat-block {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .sol-eeat-block img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #fde68a;
+  }
+  .sol-eeat-text {
+    flex: 1;
+    font-size: 13px;
+    color: #57534e;
+  }
+  .sol-eeat-text strong {
+    color: #1c1917;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .sol-eeat-text a {
+    color: #d97706;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .sol-eeat-text a:hover {
+    text-decoration: underline;
+  }
+
+  /* YMYL Disclaimer */
+  .sol-ymyl-disclaimer {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: #78350f;
+    line-height: 1.6;
+  }
+  .sol-ymyl-disclaimer strong {
+    color: #92400e;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  /* Bottom row — copyright + social */
+  .sol-footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #78716c;
+  }
+  .sol-footer-bottom .social {
+    display: flex;
+    gap: 12px;
+  }
+  .sol-footer-bottom .social a {
+    color: #78716c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .sol-footer-bottom .social a:hover {
+    color: #d97706;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-footer-cols {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .sol-eeat-block {
+      flex-direction: column;
+      text-align: center;
+    }
+    .sol-eeat-block img {
+      align-self: center;
+    }
+    .sol-footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-footer-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    #sol-footer {
+      background: linear-gradient(180deg, #1c1917 0%, #0c0a09 100%);
+      color: #d6d3d1;
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-footer-col h4,
+    .sol-eeat-text strong {
+      color: #f5f5f4;
+    }
+    .sol-footer-col a,
+    .sol-eeat-text {
+      color: #a8a29e;
+    }
+    .sol-eeat-block {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-ymyl-disclaimer {
+      background: rgba(245, 158, 11, 0.08);
+      color: #fcd34d;
+    }
+    .sol-ymyl-disclaimer strong {
+      color: #fbbf24;
+    }
+    .sol-footer-bottom {
+      border-top-color: rgba(255, 255, 255, 0.08);
+      color: #78716c;
+    }
+  }
+</style>
+
+<footer id="sol-footer" role="contentinfo">
+  <div class="sol-footer-inner">
+
+    <!-- 4 columns -->
+    <div class="sol-footer-cols">
+
+      <!-- Col 1: Sol Ecosystem 3 trụ -->
+      <div class="sol-footer-col">
+        <h4>Sol — 3 Trụ</h4>
+        <ul>
+          <li><a href="https://bothuocla.sol.vn/" rel="noopener"><span class="pillar-icon">🌿</span>Thân — Sức khoẻ</a></li>
+          <li><a href="https://sol.vn/tam/" rel="noopener"><span class="pillar-icon">🧘</span>Tâm — Tinh thần</a></li>
+          <li><a href="https://huongdi.sol.vn/" rel="noopener"><span class="pillar-icon">🎯</span>Trí — Sự nghiệp</a></li>
+          <li><a href="https://sol.vn/" rel="noopener"><span class="pillar-icon">🏠</span>Sol.vn — Trang chính</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Huongdi -->
+      <div class="sol-footer-col">
+        <h4>Huongdi</h4>
+        <ul>
+          <li><a href="/p1.html">P1 — DNA Test (20 câu)</a></li>
+          <li><a href="/p2.html">P2 — Bản đồ nguồn lực</a></li>
+          <li><a href="/p3.html">P3 — 37 Hướng đi</a></li>
+          <li><a href="/p3-chuyenmon.html">Freelancer Chuyên Môn</a></li>
+          <li><a href="/p3-daotao.html">Coaching & Đào Tạo</a></li>
+          <li><a href="/p3-noidungso.html">Content Creator</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Về Sol -->
+      <div class="sol-footer-col">
+        <h4>Về Sol</h4>
+        <ul>
+          <li><a href="https://sol.vn/khang-sol/" rel="noopener">Khang Sol — Founder</a></li>
+          <li><a href="https://sol.vn/cau-chuyen-sol/" rel="noopener">Câu chuyện Sol</a></li>
+          <li><a href="https://sol.vn/lien-he/" rel="noopener">Liên hệ</a></li>
+          <li><a href="https://sol.vn/chinh-sach-rieng-tu/" rel="noopener">Chính sách bảo mật</a></li>
+          <li><a href="https://sol.vn/dieu-khoan/" rel="noopener">Điều khoản</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Cộng đồng -->
+      <div class="sol-footer-col">
+        <h4>Cộng đồng</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener nofollow" target="_blank">LinkedIn Khang</a></li>
+          <li><a href="https://web.facebook.com/nguyendinhkhang" rel="noopener nofollow" target="_blank">Facebook Khang</a></li>
+          <li><a href="https://zalo.me/sol" rel="noopener nofollow" target="_blank">Zalo OA Sol</a></li>
+          <li><a href="mailto:contact@sol.vn">Email: contact@sol.vn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- EEAT Author block -->
+    <div class="sol-eeat-block">
+      <img src="https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg"
+           alt="Khang Sol — Founder Đi Cùng Sol"
+           loading="lazy"
+           width="56" height="56">
+      <div class="sol-eeat-text">
+        <strong>Tác giả: Khang Sol (Nguyễn Đình Khang)</strong>
+        Founder Đi Cùng Sol — 20+ năm CNTT, từng làm PM dự án Internet quốc gia, tái khởi nghiệp tuổi 45+ tập trung vào hỗ trợ đàn ông Việt 40-65 tuổi tìm hướng đi mới. Mình chia sẻ kinh nghiệm thật, không phải tư vấn tài chính có giấy phép.
+        <br><br>
+        <a href="https://sol.vn/khang-sol/" rel="author">Xem profile đầy đủ →</a>
+      </div>
+    </div>
+
+    <!-- YMYL Finance Disclaimer -->
+    <div class="sol-ymyl-disclaimer" role="note" aria-label="Thông báo về tài chính">
+      <strong>⚠️ Tuyên bố miễn trừ trách nhiệm (YMYL — Finance)</strong>
+      Thông tin trên huongdi.sol.vn mang tính <em>tham khảo và chia sẻ kinh nghiệm</em> từ Khang Sol và cộng đồng — KHÔNG phải tư vấn tài chính, đầu tư hoặc thuế chuyên nghiệp. Trước khi quyết định khởi nghiệp, đầu tư vốn, hoặc thay đổi nghề nghiệp lớn, anh nên tham khảo chuyên gia tài chính / luật sư / kế toán có giấy phép tại Việt Nam.
+    </div>
+
+    <!-- Bottom row -->
+    <div class="sol-footer-bottom">
+      <div>
+        © 2025–2026 <strong>Đi Cùng Sol</strong> · All rights reserved · Made with ❤️ at Việt Nam
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="https://web.facebook.com/nguyendinhkhang" rel="noopener" target="_blank">Facebook</a>
+        <a href="https://zalo.me/sol" rel="noopener" target="_blank">Zalo</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- SOL-FOOTER-END -->
+</body>
+</html>

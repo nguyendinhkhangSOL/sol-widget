@@ -1,0 +1,58 @@
+# ═══════════════════════════════════════════════════════════════════════
+# huongdi.sol.vn — Robots policy
+# ═══════════════════════════════════════════════════════════════════════
+# Allow tất cả search engines + AI bots (cho GEO — Generative Engine
+# Optimization), disallow API + admin internal paths.
+# ═══════════════════════════════════════════════════════════════════════
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /*.bak.*
+Disallow: /tmp/
+
+# ── AI bots — quan trọng cho GEO 2026+ ─────────────────────────────────
+# Cho phép Claude, ChatGPT, Gemini, Perplexity, You.com index nội dung
+# → khi user hỏi AI về "khởi nghiệp tuổi 45", AI có thể trích nguồn huongdi
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ── AI bots DISALLOWED (scrape thương mại không có giá trị SEO) ────────
+User-agent: CCBot
+Disallow: /
+
+# ── Sitemap ────────────────────────────────────────────────────────────
+Sitemap: https://huongdi.sol.vn/sitemap.xml

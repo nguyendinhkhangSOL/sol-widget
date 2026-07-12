@@ -1,0 +1,721 @@
+/**
+ * ═══════════════════════════════════════════════════════════
+ * Sol Auth — Tier Gating Library V1.0
+ * ═══════════════════════════════════════════════════════════
+ *
+ * Localstorage-based tier system cho Sol Ecosystem.
+ * Không cần login/password — magic link activation.
+ *
+ * TIER LEVELS:
+ *   - free    (default): xem preview + 5 prompts + 5 mô hình + Bước 1+2 full
+ *   - active  (499k/năm): mở khoá 40 prompts + 37 mô hình + Sổ Hành Trình
+ *   - founder (1.999k lifetime): tất cả Active + trọn đời + early access
+ *
+ * USAGE:
+ *   Include: <script src="/sol-auth.js"></script>
+ *
+ *   Check tier:
+ *     SolAuth.getTier()          → "free" | "active" | "founder"
+ *     SolAuth.isPaid()           → true if active or founder
+ *     SolAuth.isFounder()        → true only if founder
+ *
+ *   Gate content:
+ *     if (!SolAuth.requireActive({ feature: "37 mô hình" })) return;
+ *     // → tự động show paywall nếu chưa Active
+ *
+ *   Manual paywall:
+ *     SolAuth.showPaywall({ feature: "Sổ Hành Trình" });
+ *
+ *   Activate/Deactivate (magic link):
+ *     SolAuth.activate("SOL-ACTIVE-ABCD1234");
+ *     SolAuth.deactivate();
+ *
+ * MAGIC LINK URL SCHEME:
+ *   ?activate=SOL-ACTIVE-XXX  → tier = active
+ *   ?activate=SOL-FOUNDER-XXX → tier = founder
+ *   ?deactivate=1             → tier = free (logout)
+ *
+ * ═══════════════════════════════════════════════════════════
+ */
+
+(function(window) {
+  'use strict';
+
+  const STORAGE_KEYS = {
+    active: 'sol_active',
+    founder: 'sol_founder',
+    code: 'sol_activation_code',
+    email: 'sol_user_email',
+    tier: 'sol_tier',
+    ten: 'sol_ten',
+    expiresAt: 'sol_expires_at',
+    activatedAt: 'sol_activated_at',
+    tokenPrefix: 'sol_token_prefix',
+    pendingPayment: 'sol_pending_payment'
+  };
+
+  const TIER_CONFIG = {
+    active: {
+      name: 'Sol Active',
+      price: '499.000đ',
+      period: '/năm',
+      equiv: '≈ 42.000đ/tháng — rẻ hơn 1 tách cà phê Highlands',
+      cta: '💎 Đăng ký Sol Active →',
+      color: '#F59E0B',
+      icon: '⭐'
+    },
+    founder: {
+      name: 'Sol Founder',
+      price: '1.999.000đ',
+      period: '/ trọn đời',
+      equiv: 'Chỉ 100 slot. Trọn đời truy cập + đặc quyền vĩnh viễn.',
+      cta: '🌟 Xem Sol Founder (100 slot)',
+      color: '#8B5CF6',
+      icon: '👑'
+    }
+  };
+
+  const SolAuth = {
+    /**
+     * Trả về tier hiện tại: "free" | "active" | "founder"
+     */
+    getTier() {
+      if (localStorage.getItem(STORAGE_KEYS.founder) === 'true') return 'founder';
+      if (localStorage.getItem(STORAGE_KEYS.active) === 'true') return 'active';
+      return 'free';
+    },
+
+    isPaid() {
+      return this.getTier() !== 'free';
+    },
+
+    isActive() {
+      const t = this.getTier();
+      return t === 'active' || t === 'founder';
+    },
+
+    isFounder() {
+      return this.getTier() === 'founder';
+    },
+
+    getEmail() {
+      return localStorage.getItem(STORAGE_KEYS.email) || '';
+    },
+
+    /**
+     * Kích hoạt tier từ mã magic link
+     * Format: SOL-ACTIVE-XXXXX hoặc SOL-FOUNDER-XXXXX
+     */
+    activate(code) {
+      if (!code) return false;
+      const trimmed = code.trim().toUpperCase();
+
+      if (trimmed.startsWith('SOL-FOUNDER-') && trimmed.length >= 16) {
+        localStorage.setItem(STORAGE_KEYS.founder, 'true');
+        localStorage.setItem(STORAGE_KEYS.active, 'true');
+        localStorage.setItem(STORAGE_KEYS.code, trimmed);
+        this._notifyChange();
+        return 'founder';
+      }
+
+      if (trimmed.startsWith('SOL-ACTIVE-') && trimmed.length >= 15) {
+        localStorage.setItem(STORAGE_KEYS.active, 'true');
+        localStorage.setItem(STORAGE_KEYS.code, trimmed);
+        this._notifyChange();
+        return 'active';
+      }
+
+      return false;
+    },
+
+    /**
+     * Đăng xuất — clear tier localStorage
+     */
+    deactivate() {
+      const tier = this.getTier();
+      if (tier === 'free') return;
+
+      Object.values(STORAGE_KEYS).forEach(k => localStorage.removeItem(k));
+      this._notifyChange();
+      return tier;
+    },
+
+    /**
+     * Gate function: nếu chưa Active, show paywall.
+     * @return true if user is Active/Founder (proceed), false if paywall shown
+     */
+    requireActive(config = {}) {
+      if (this.isActive()) return true;
+      this.showPaywall(config);
+      return false;
+    },
+
+    requireFounder(config = {}) {
+      if (this.isFounder()) return true;
+      this.showPaywall({ ...config, tier: 'founder' });
+      return false;
+    },
+
+    /**
+     * Show paywall modal.
+     * @param config { feature, tier, message, benefits, onClose }
+     */
+    showPaywall(config = {}) {
+      const tier = config.tier || 'active';
+      const cfg = TIER_CONFIG[tier];
+      const feature = config.feature || 'Tính năng này';
+      const benefits = config.benefits || this._defaultBenefits(tier);
+
+      // Remove existing modal
+      const existing = document.getElementById('sol-paywall-modal');
+      if (existing) existing.remove();
+
+      const modal = document.createElement('div');
+      modal.id = 'sol-paywall-modal';
+      modal.innerHTML = this._buildModalHTML(feature, tier, cfg, benefits);
+
+      document.body.appendChild(modal);
+      document.body.style.overflow = 'hidden';
+
+      // Click backdrop to close
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) this.closePaywall();
+      });
+
+      // ESC to close
+      const escHandler = (e) => {
+        if (e.key === 'Escape') {
+          this.closePaywall();
+          document.removeEventListener('keydown', escHandler);
+        }
+      };
+      document.addEventListener('keydown', escHandler);
+
+      if (config.onClose) modal._onClose = config.onClose;
+    },
+
+    closePaywall() {
+      const modal = document.getElementById('sol-paywall-modal');
+      if (!modal) return;
+      if (modal._onClose) modal._onClose();
+      modal.remove();
+      document.body.style.overflow = '';
+    },
+
+    /**
+     * Render status bar (dot xanh + tên tier + nút đăng xuất)
+     * Chèn vào body nếu chưa có.
+     */
+    renderStatusBar() {
+      let bar = document.getElementById('sol-status-bar');
+      if (this.getTier() === 'free') {
+        if (bar) bar.remove();
+        return;
+      }
+
+      if (!bar) {
+        bar = document.createElement('div');
+        bar.id = 'sol-status-bar';
+        bar.innerHTML = `
+          <div class="sol-status-bar__dot"></div>
+          <span class="sol-status-bar__label" id="sol-status-label"></span>
+          <button class="sol-status-bar__logout" title="Đăng xuất">Đăng xuất</button>
+        `;
+        document.body.appendChild(bar);
+        bar.querySelector('.sol-status-bar__logout').addEventListener('click', () => {
+          if (confirm('Đăng xuất Sol? Anh chị có thể kích hoạt lại bằng mã đã nhận qua email.')) {
+            this.deactivate();
+            alert('👋 Đã đăng xuất.');
+            location.reload();
+          }
+        });
+      }
+
+      const label = document.getElementById('sol-status-label');
+      const isFounder = this.isFounder();
+      label.textContent = isFounder ? '🌟 Sol Founder' : '✓ Sol Active';
+      label.classList.toggle('sol-status-bar__label--founder', isFounder);
+    },
+
+    // ═══════════════════════════════════════════════════════
+    // INTERNAL
+    // ═══════════════════════════════════════════════════════
+
+    _defaultBenefits(tier) {
+      if (tier === 'founder') {
+        return [
+          'Toàn bộ Sol Active <strong>TRỌN ĐỜI</strong> — không renew',
+          'Early access 30 ngày trước',
+          'Vote roadmap + Contributor badge',
+          'Sách bản in ký tặng',
+          'Truy cập mọi sản phẩm tương lai',
+          'Founder Chat Zalo kín'
+        ];
+      }
+      return [
+        '<strong>40 câu hỏi AI</strong> — đủ 5 Bước Sol La Bàn',
+        '<strong>37 mô hình hướng đi</strong> — full database',
+        'Sổ Hành Trình lưu tiến độ',
+        'Zalo Group Active — cộng đồng peer',
+        'Sol Weekly newsletter',
+        'Email hỗ trợ 48-72h'
+      ];
+    },
+
+    _buildModalHTML(feature, tier, cfg, benefits) {
+      const benefitsHTML = benefits.map(b => `<li>${b}</li>`).join('');
+      const otherTierCTA = tier === 'active'
+        ? `<a href="/founder/" class="sol-paywall__btn sol-paywall__btn--purple">🌟 Xem Sol Founder (100 slot lifetime)</a>`
+        : `<a href="/pricing/" class="sol-paywall__btn sol-paywall__btn--secondary">💎 Xem gói Active</a>`;
+
+      return `
+        <div class="sol-paywall">
+          <button class="sol-paywall__close" onclick="SolAuth.closePaywall()">✕</button>
+          <div class="sol-paywall__icon">🔒</div>
+          <h3 class="sol-paywall__title">${feature} dành cho ${cfg.name}</h3>
+          <p class="sol-paywall__sub">
+            Nâng cấp để mở khoá toàn bộ hệ sinh thái Sol.
+          </p>
+
+          <div class="sol-paywall__benefits">
+            <div class="sol-paywall__benefits-title">${cfg.icon} ${cfg.name.toUpperCase()} MỞ KHOÁ</div>
+            <ul>${benefitsHTML}</ul>
+          </div>
+
+          <div class="sol-paywall__price">
+            <span class="sol-paywall__amount">${cfg.price}</span>
+            <span class="sol-paywall__period">${cfg.period}</span>
+            <div class="sol-paywall__equiv">${cfg.equiv}</div>
+          </div>
+
+          <div class="sol-paywall__actions">
+            <a href="/pricing/" class="sol-paywall__btn sol-paywall__btn--primary">
+              ${cfg.cta}
+            </a>
+            ${otherTierCTA}
+            <button class="sol-paywall__btn sol-paywall__btn--secondary" onclick="SolAuth.closePaywall()">
+              Tiếp tục dùng bản miễn phí
+            </button>
+          </div>
+
+          <p class="sol-paywall__note">
+            💡 Đã có mã kích hoạt? <a href="#" onclick="SolAuth._promptActivate();return false;">Nhập mã</a>
+          </p>
+        </div>
+      `;
+    },
+
+    _promptActivate() {
+      const code = prompt('Nhập mã kích hoạt Sol (từ email sau khi thanh toán):');
+      if (!code) return;
+      const result = this.activate(code);
+      if (result === 'founder') {
+        alert('🌟 Chào mừng Sol Founder! Toàn bộ đặc quyền trọn đời đã mở khoá.');
+        this.closePaywall();
+        location.reload();
+      } else if (result === 'active') {
+        alert('✅ Kích hoạt Sol Active thành công!');
+        this.closePaywall();
+        location.reload();
+      } else {
+        alert('❌ Mã không đúng. Kiểm tra lại email hoặc liên hệ hello@sol.vn');
+      }
+    },
+
+    _notifyChange() {
+      window.dispatchEvent(new CustomEvent('sol-auth-change', {
+        detail: { tier: this.getTier() }
+      }));
+    },
+
+    _injectCSS() {
+      if (document.getElementById('sol-auth-css')) return;
+      const style = document.createElement('style');
+      style.id = 'sol-auth-css';
+      style.textContent = SOL_AUTH_CSS;
+      document.head.appendChild(style);
+    }
+  };
+
+  // ═══════════════════════════════════════════════════════
+  // CSS (inline để không phụ thuộc external)
+  // ═══════════════════════════════════════════════════════
+  const SOL_AUTH_CSS = `
+    #sol-paywall-modal {
+      position: fixed; inset: 0; z-index: 10000;
+      background: rgba(15,23,42,0.75); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px; animation: solPaywallFadeIn .2s;
+    }
+    @keyframes solPaywallFadeIn { from { opacity:0 } to { opacity:1 } }
+    @keyframes solPaywallSlide {
+      from { opacity:0; transform: translateY(20px) }
+      to { opacity:1; transform: translateY(0) }
+    }
+    .sol-paywall {
+      background: #fff; border-radius: 20px;
+      max-width: 520px; width: 100%;
+      padding: 40px 36px; position: relative;
+      max-height: 90vh; overflow-y: auto;
+      font-family: 'Inter', -apple-system, sans-serif;
+      animation: solPaywallSlide .3s;
+      color: #334155;
+    }
+    .sol-paywall__close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #F1F5F9; border: none; cursor: pointer;
+      font-size: 20px; color: #64748B;
+    }
+    .sol-paywall__close:hover { background: #E2E8F0; color: #0F172A; }
+    .sol-paywall__icon {
+      font-size: 48px; margin-bottom: 16px; text-align: center;
+    }
+    .sol-paywall__title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 24px; font-weight: 800;
+      color: #0F172A; text-align: center;
+      margin: 0 0 8px;
+    }
+    .sol-paywall__sub {
+      font-size: 14px; color: #64748B;
+      text-align: center; margin: 0 0 24px;
+    }
+    .sol-paywall__benefits {
+      background: linear-gradient(135deg,#FFFBEB,#FFF);
+      border: 1px solid #FDE68A; border-radius: 12px;
+      padding: 20px 24px; margin-bottom: 24px;
+    }
+    .sol-paywall__benefits-title {
+      font-size: 13px; font-weight: 800; color: #B45309;
+      letter-spacing: 1px; margin-bottom: 12px;
+    }
+    .sol-paywall__benefits ul { list-style: none; padding: 0; margin: 0; }
+    .sol-paywall__benefits li {
+      padding: 6px 0; font-size: 14px; color: #334155;
+      display: flex; gap: 10px;
+    }
+    .sol-paywall__benefits li::before {
+      content: '✓'; color: #10B981; font-weight: 800; flex-shrink: 0;
+    }
+    .sol-paywall__benefits strong { color: #0F172A; }
+    .sol-paywall__price {
+      text-align: center; margin-bottom: 24px;
+    }
+    .sol-paywall__amount {
+      font-family: 'Lora', serif; font-size: 36px; font-weight: 800;
+      color: #0F172A;
+    }
+    .sol-paywall__period { font-size: 15px; color: #64748B; margin-left: 6px; }
+    .sol-paywall__equiv {
+      font-size: 13px; color: #059669; font-weight: 600; margin-top: 4px;
+    }
+    .sol-paywall__actions {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .sol-paywall__btn {
+      padding: 14px 24px; border-radius: 10px;
+      font-size: 15px; font-weight: 800; cursor: pointer;
+      border: none; font-family: inherit; text-decoration: none;
+      text-align: center; transition: all .2s;
+      display: block;
+    }
+    .sol-paywall__btn--primary {
+      background: linear-gradient(135deg,#F59E0B,#D97706); color: #fff;
+    }
+    .sol-paywall__btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245,158,11,0.35);
+      color: #fff; text-decoration: none;
+    }
+    .sol-paywall__btn--purple {
+      background: linear-gradient(135deg,#8B5CF6,#7C3AED); color: #fff;
+    }
+    .sol-paywall__btn--purple:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(139,92,246,0.35);
+      color: #fff; text-decoration: none;
+    }
+    .sol-paywall__btn--secondary {
+      background: transparent; color: #334155;
+      border: 2px solid #E2E8F0;
+    }
+    .sol-paywall__btn--secondary:hover { background: #F8FAFC; }
+    .sol-paywall__note {
+      text-align: center; font-size: 12.5px; color: #64748B;
+      margin: 16px 0 0;
+    }
+    .sol-paywall__note a { color: #D97706; font-weight: 600; }
+
+    /* Status bar */
+    #sol-status-bar {
+      position: fixed; top: 12px; right: 12px; z-index: 900;
+      background: #fff; border: 1px solid #10B981;
+      border-radius: 22px; padding: 8px 14px 8px 10px;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.1);
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12.5px; font-family: 'Inter', -apple-system, sans-serif;
+    }
+    .sol-status-bar__dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16,185,129,0.2);
+      animation: solPulse 2s infinite;
+    }
+    @keyframes solPulse {
+      0%,100% { box-shadow: 0 0 0 3px rgba(16,185,129,0.2); }
+      50% { box-shadow: 0 0 0 6px rgba(16,185,129,0.05); }
+    }
+    .sol-status-bar__label {
+      font-weight: 700; color: #047857;
+    }
+    .sol-status-bar__label--founder { color: #7C3AED; }
+    .sol-status-bar__logout {
+      background: none; border: none; cursor: pointer;
+      color: #64748B; font-size: 11.5px; font-weight: 600;
+      padding: 2px 6px; border-radius: 4px;
+      border-left: 1px solid #E2E8F0; padding-left: 10px;
+      font-family: inherit;
+    }
+    .sol-status-bar__logout:hover { color: #DC2626; background: #F8FAFC; }
+    @media (max-width: 600px) {
+      #sol-status-bar {
+        top: auto; bottom: 12px; right: 12px;
+        padding: 6px 12px 6px 8px;
+      }
+    }
+
+    /* Lock overlay cho locked cards */
+    .sol-locked {
+      position: relative;
+      cursor: pointer;
+      transition: transform .15s;
+    }
+    .sol-locked:hover { transform: translateY(-2px); }
+    .sol-locked::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(2px);
+      border-radius: inherit;
+      z-index: 2;
+    }
+    .sol-locked::after {
+      content: '🔒 Cần Sol Active';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg,#F59E0B,#D97706);
+      color: #fff;
+      padding: 8px 16px; border-radius: 20px;
+      font-size: 13px; font-weight: 800;
+      letter-spacing: 0.5px;
+      box-shadow: 0 8px 20px rgba(245,158,11,0.3);
+      z-index: 3;
+      white-space: nowrap;
+    }
+  `;
+
+  // ═══════════════════════════════════════════════════════
+  // AUTO-INIT
+  // ═══════════════════════════════════════════════════════
+
+  function init() {
+    SolAuth._injectCSS();
+
+    // Xử lý URL params
+    const params = new URLSearchParams(window.location.search);
+    const activateCode = params.get('activate');
+    if (activateCode) {
+      const result = SolAuth.activate(activateCode);
+      if (result) {
+        window.history.replaceState({}, '', window.location.pathname);
+        // Show welcome message
+        setTimeout(() => {
+          const name = result === 'founder' ? '🌟 Sol Founder' : '✓ Sol Active';
+          alert(`Chào mừng ${name}! Toàn bộ tính năng đã mở khoá.`);
+        }, 100);
+      }
+    }
+
+    if (params.get('deactivate') === '1') {
+      SolAuth.deactivate();
+      window.history.replaceState({}, '', window.location.pathname);
+      setTimeout(() => alert('👋 Đã đăng xuất khỏi Sol.'), 100);
+    }
+
+    // Render status bar
+    SolAuth.renderStatusBar();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Export
+  window.SolAuth = SolAuth;
+
+})(window);
+
+// ═══════════════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════════════════════
+// SOL STATUS BAR — Universal (cho cả sol.vn + huongdi.sol.vn)
+// Deploy: paste vào WPCode global header của sol.vn
+//         hoặc append /var/www/huongdi/public/sol-auth.js
+// ═══════════════════════════════════════════════════════════════
+
+(function () {
+  var SOL_VN = 'https://sol.vn';
+  var HUONGDI = 'https://huongdi.sol.vn';
+
+  function readTier() {
+    try {
+      var tier = localStorage.getItem('sol_tier');
+      var active = localStorage.getItem('sol_active');
+      var founder = localStorage.getItem('sol_founder');
+      if (tier === 'founder' || founder === 'true') return 'founder';
+      if (tier === 'active' || active === 'true') return 'active';
+      return 'free';
+    } catch (e) { return 'free'; }
+  }
+
+  function readTen() {
+    try { return localStorage.getItem('sol_ten') || ''; } catch (e) { return ''; }
+  }
+
+  function doLogout() {
+    if (!confirm('Đăng xuất khỏi Sol?')) return;
+    try {
+      ['sol_tier','sol_ten','sol_expires_at','sol_activated_at','sol_token_prefix',
+       'sol_active','sol_founder','sol_session_token','sol_pending_payment',
+       'sol_activation_code','sol_user_email'].forEach(function(k){
+        localStorage.removeItem(k);
+      });
+    } catch (e) {}
+    alert('👋 Đã đăng xuất.');
+    window.location.href = SOL_VN + '/';
+  }
+
+  function injectStyle() {
+    if (document.getElementById('sol-status-bar-style')) return;
+    var style = document.createElement('style');
+    style.id = 'sol-status-bar-style';
+    style.textContent = [
+      '.sol-status-bar-v2 {',
+      '  position: fixed; top: 0; right: 0; z-index: 9998;',
+      '  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);',
+      '  color: #F1F5F9;',
+      '  padding: 8px 16px 8px 18px;',
+      '  border-radius: 0 0 0 12px;',
+      '  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3);',
+      '  font-family: Inter, -apple-system, sans-serif;',
+      '  font-size: 12.5px; font-weight: 500;',
+      '  display: flex; align-items: center; gap: 10px;',
+      '  border-left: 1px solid rgba(148, 163, 184, 0.15);',
+      '  border-bottom: 1px solid rgba(148, 163, 184, 0.15);',
+      '  line-height: 1.4;',
+      '}',
+      '.sol-status-bar-v2__dot {',
+      '  width: 8px; height: 8px; border-radius: 50%;',
+      '  background: #16A34A; box-shadow: 0 0 8px rgba(22, 163, 74, 0.6);',
+      '  display: inline-block;',
+      '}',
+      '.sol-status-bar-v2__dot--free { background: #64748B; box-shadow: none; }',
+      '.sol-status-bar-v2__label { color: #F1F5F9; font-weight: 600; }',
+      '.sol-status-bar-v2__label--free { color: #94A3B8; font-weight: 500; }',
+      '.sol-status-bar-v2__label--founder {',
+      '  color: #FCD34D;',
+      '  text-shadow: 0 0 12px rgba(252, 211, 77, 0.4);',
+      '}',
+      '.sol-status-bar-v2__sep { color: #475569; }',
+      '.sol-status-bar-v2__link {',
+      '  color: #F1F5F9; text-decoration: none; font-weight: 600;',
+      '  padding: 3px 10px; border-radius: 6px;',
+      '  transition: background 0.15s; cursor: pointer;',
+      '  border: none; background: none; font-family: inherit; font-size: inherit;',
+      '}',
+      '.sol-status-bar-v2__link:hover { background: rgba(255, 255, 255, 0.08); }',
+      '.sol-status-bar-v2__link--amber {',
+      '  background: linear-gradient(135deg, #F59E0B, #D97706);',
+      '  color: #FFFFFF !important;',
+      '  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);',
+      '}',
+      '.sol-status-bar-v2__link--amber:hover {',
+      '  background: linear-gradient(135deg, #D97706, #B45309);',
+      '}',
+      '.sol-status-bar-v2__link--logout {',
+      '  color: #FCA5A5;',
+      '  border-left: 1px solid rgba(148, 163, 184, 0.2);',
+      '  margin-left: 4px; padding-left: 10px;',
+      '}',
+      '.sol-status-bar-v2__link--logout:hover {',
+      '  background: rgba(220, 38, 38, 0.15); color: #FEE2E2;',
+      '}',
+      '@media (max-width: 640px) {',
+      '  .sol-status-bar-v2 { font-size: 11.5px; padding: 6px 12px; gap: 6px; }',
+      '  .sol-status-bar-v2__label--free { display: none; }',
+      '}',
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+
+  function removeExistingBar() {
+    // Remove existing bar (sol-free-bar, sol-status-bar from sol-auth.js v1)
+    ['.sol-free-bar', '.sol-status-bar', '.sol-status-bar-v2'].forEach(function(sel){
+      var el = document.querySelector(sel);
+      if (el) el.remove();
+    });
+  }
+
+  function renderBar() {
+    removeExistingBar();
+    injectStyle();
+
+    var tier = readTier();
+    var ten = readTen();
+
+    var bar = document.createElement('div');
+    bar.className = 'sol-status-bar-v2';
+
+    if (tier === 'free') {
+      bar.innerHTML =
+        '<span class="sol-status-bar-v2__dot sol-status-bar-v2__dot--free"></span>' +
+        '<span class="sol-status-bar-v2__label sol-status-bar-v2__label--free">Chưa đăng nhập</span>' +
+        '<a href="' + SOL_VN + '/dang-nhap/" class="sol-status-bar-v2__link">Đăng nhập</a>' +
+        '<span class="sol-status-bar-v2__sep">·</span>' +
+        '<a href="' + SOL_VN + '/thanh-toan/" class="sol-status-bar-v2__link sol-status-bar-v2__link--amber">Đăng ký</a>';
+    } else {
+      // Active or Founder
+      var isFounder = (tier === 'founder');
+      var labelText = isFounder ? '🌟 Sol Founder' : '✓ Sol Active';
+      var labelClass = isFounder ? 'sol-status-bar-v2__label--founder' : '';
+
+      bar.innerHTML =
+        '<span class="sol-status-bar-v2__dot"></span>' +
+        '<span class="sol-status-bar-v2__label ' + labelClass + '">' + labelText + '</span>' +
+        '<a href="' + HUONGDI + '/tai-khoan/" class="sol-status-bar-v2__link" title="' + (ten ? 'Tài khoản của ' + ten : 'Tài khoản') + '">Tài khoản</a>' +
+        '<button class="sol-status-bar-v2__link sol-status-bar-v2__link--logout" id="sol-status-logout-v2">Đăng xuất</button>';
+
+      // Attach logout after render
+      setTimeout(function() {
+        var btn = document.getElementById('sol-status-logout-v2');
+        if (btn) btn.addEventListener('click', doLogout);
+      }, 10);
+    }
+
+    document.body.appendChild(bar);
+  }
+
+  function init() {
+    setTimeout(renderBar, 250);
+  }
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    init();
+  } else {
+    document.addEventListener('DOMContentLoaded', init);
+  }
+})();

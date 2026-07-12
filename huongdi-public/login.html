@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng nhập — Huongdi.sol.vn</title>
+<style>
+:root {
+  --bg: #090d1a; --surface: #111827; --border: #1e2d47;
+  --accent: #6c63ff; --green: #4caf82; --red: #ef4444;
+  --text: #e8edf8; --text2: #7d8aaa; --text3: #4a5578;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg); color: var(--text); font-size: 15px;
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 40px; width: 100%; max-width: 400px;
+}
+.logo { font-weight: 800; font-size: 20px; margin-bottom: 24px; }
+.logo span { color: var(--accent); }
+h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.sub { color: var(--text2); font-size: 14px; margin-bottom: 28px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 13px; color: var(--text2); margin-bottom: 6px; }
+.form-group input {
+  width: 100%; padding: 12px 14px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); font-size: 15px; font-family: inherit;
+  transition: border-color .2s;
+}
+.form-group input:focus { outline: none; border-color: var(--accent); }
+.btn {
+  width: 100%; padding: 14px; background: var(--accent); color: #fff;
+  border: none; border-radius: 8px; font-size: 15px; font-weight: 700;
+  cursor: pointer; transition: background .2s; margin-top: 8px;
+}
+.btn:hover:not(:disabled) { background: #7b73ff; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.error-msg {
+  background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3);
+  border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #fca5a5;
+  margin-bottom: 16px; display: none;
+}
+.divider { text-align: center; color: var(--text3); font-size: 13px; margin: 20px 0; }
+.link { color: var(--accent); font-size: 14px; text-align: center; display: block; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">Sol<span>.</span>vn</div>
+  <h1>Đăng nhập</h1>
+  <p class="sub">Đăng nhập để tiếp tục hành trình của bạn.</p>
+
+  <div class="error-msg" id="errMsg"></div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" id="email" placeholder="email@gmail.com" autocomplete="email">
+  </div>
+  <div class="form-group">
+    <label>Mật khẩu</label>
+    <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()">
+  </div>
+  <button class="btn" id="loginBtn" onclick="login()">Đăng nhập</button>
+
+  <div class="divider">hoặc</div>
+  <a href="/" class="link">← Về trang chủ</a>
+  <a href="/p1.html" class="link" style="margin-top:8px;">Thử miễn phí không cần tài khoản</a>
+</div>
+
+<script>
+// If already logged in, go to dashboard
+if (localStorage.getItem('sol_token')) {
+  window.location.href = '/dashboard.html';
+}
+
+async function login() {
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const btn = document.getElementById('loginBtn');
+  const err = document.getElementById('errMsg');
+
+  if (!email || !password) {
+    showErr('Vui lòng nhập email và mật khẩu.');
+    return;
+  }
+
+  btn.disabled = true; btn.textContent = 'Đang đăng nhập...';
+  err.style.display = 'none';
+
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (res.ok && data.token) {
+      localStorage.setItem('sol_token', data.token);
+      window.location.href = '/dashboard.html';
+    } else {
+      showErr(data.error || 'Email hoặc mật khẩu không đúng.');
+    }
+  } catch(_) {
+    showErr('Lỗi kết nối. Vui lòng thử lại.');
+  }
+
+  btn.disabled = false; btn.textContent = 'Đăng nhập';
+}
+
+function showErr(msg) {
+  const el = document.getElementById('errMsg');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+</script>
+</body>
+</html>

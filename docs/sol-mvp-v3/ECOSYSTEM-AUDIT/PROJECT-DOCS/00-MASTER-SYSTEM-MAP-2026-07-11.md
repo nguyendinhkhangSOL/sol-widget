@@ -36,7 +36,10 @@
 | `/thanh-toan/` | Form mua → VietQR + Zalo (thủ công) | /api/leads |
 | `/founder/` | Landing gói Founder | — |
 | `/lien-he/` | Liên hệ | — |
-| `/ai-studio/`, `/tao-prompts-ca-nhan/`, `/prompts/`, `/prompts-studio/` | AI Studio + Prompt tools | — |
+| `/ai-studio/` | 🤖 **AI STUDIO** (CANONICAL) — thư viện ~37 prompt mẫu (ChatGPT/Claude/Gemini) + nút Copy | tĩnh (prompt inline) |
+| `/tao-prompts-ca-nhan/` | ✍️ **TẠO PROMPT CÁ NHÂN** (CANONICAL) — điền thông tin → sinh prompt cá nhân hoá + Copy | tĩnh |
+| `/prompts/` | ⚠️ redirect → `/ai-studio/` | — |
+| `/prompts-studio/` | ⚠️ redirect → `/tao-prompts-ca-nhan/` | — |
 
 ### 2.2. Khu vực user `/toi/*` (đăng nhập)
 | Trang | Vai trò | API |
@@ -111,6 +114,42 @@ Landing (sol.vn / huongdi.sol.vn)
 
 ---
 
+## 5B. 🤖 HỆ PHỤ PROMPT & AI (mảng riêng — trước đây thiếu trong hồ sơ)
+
+Sol có **3 công cụ AI** phục vụ persona chị Nga tự dùng ChatGPT/Claude/Gemini mà không biết viết prompt:
+
+| Công cụ | Trang | Loại | Nội dung/Nguồn | Gate |
+|---------|-------|------|----------------|------|
+| **AI Studio** | `/ai-studio/` | Tĩnh (không cần login) | ~37 prompt mẫu viết sẵn theo hướng đi, 3 phiên bản (ChatGPT/Claude/Gemini), nút Copy 1 chạm | Free (công khai) |
+| **Tạo Prompt Cá Nhân** | `/tao-prompts-ca-nhan/` | Tĩnh | Điền tên/nghề/mục tiêu → ghép vào ~26 template → prompt cá nhân hoá + Copy | Free |
+| **Sol Đồng Hành AI** | `/toi/sol-dong-hanh/` | Chat động (cần login) | Trợ lý hội thoại, có bộ nhớ hội thoại (`sol_chat_*`) | Theo tier, có quota |
+
+### Sol Đồng Hành AI — chi tiết kỹ thuật
+- **API:** `/api/sol-dong-hanh` (chat, state, conversations). Bảng: `sol_chat_conversations, sol_chat_messages, sol_chat_quota`.
+- **Multi-provider (env `PROVIDER` chuyển được):** Gemini `gemini-2.5-flash` · OpenAI `gpt-4o-mini` · Anthropic `claude-3-5-haiku`. Đổi provider chỉ qua biến môi trường — không sửa code.
+- **Quota tin nhắn/tháng:** ACTIVE **30** · FOUNDER **500** (Free: giới hạn thấp/không có — cần rà xác nhận con số Free).
+- Chi phí token có bảng giá input/output từng model để theo dõi.
+
+### Nguồn nội dung prompt — ⚠️ ĐÃ XÁC MINH: CÓ 2 NGUỒN SONG SONG, ĐÃ LỆCH
+Điều tra 2026-07-11 (grep toàn repo):
+- **Nguồn A — LIVE:** `/ai-studio/index.html` (5.669 dòng) chứa **~24 prompt INLINE hardcode**. KHÔNG fetch, KHÔNG API, KHÔNG đọc file ngoài. Đây là cái user THỰC SỰ thấy.
+- **Nguồn B — KHO RỜI:** `content/prompts/*.md` = **37 file + INDEX.md** (commit gốc 2026-07-07). **Không trang nào, không backend nào nạp chúng.** (Các slug trùng chỉ xuất hiện ở trang legacy p1/p3/la-ban hub — không phải đọc file .md.)
+- **Hệ quả:** 2 kho lệch nhau (37 file kho vs ~24 prompt inline). Sửa file .md → site KHÔNG đổi. Sửa AI Studio → kho .md KHÔNG đổi. Kho .md hiện là **"tồn kho chết"**.
+- **Quyết định cần chốt (1 trong 2):**
+  (a) Nối AI Studio đọc `content/prompts` (1 nguồn, sửa 1 nơi) — nhiều việc hơn; hoặc
+  (b) Coi AI Studio inline là canonical, **archive/xoá** kho .md để hết nhầm — nhanh, gọn.
+  → Khuyến nghị **(b)** trước mắt (MVP), làm (a) khi cần CMS hoá prompt.
+- `tao-prompts-ca-nhan/`: template inline + 1 lệnh `fetch` (lưu lead/cá nhân hoá) — không liên quan kho .md.
+
+### Canonical/deprecated mảng AI
+| Chức năng | ✅ CANONICAL | ⚠️ DEPRECATED |
+|-----------|-------------|---------------|
+| Thư viện prompt | `/ai-studio/` | `/prompts/` (redirect) |
+| Prompt cá nhân | `/tao-prompts-ca-nhan/` | `/prompts-studio/` (redirect) |
+| Chat AI | `/toi/sol-dong-hanh/` + `/api/sol-dong-hanh` | — |
+
+---
+
 ## 6. YÊU CẦU NGHIỆP VỤ ĐÓNG GÓI (nguyên tắc bất khả xâm phạm)
 
 1. **Ecosystem lock:** sol.vn = marketing (WP), huongdi = product (Node), admin = adminhuongdi. Không trộn.
@@ -122,6 +161,62 @@ Landing (sol.vn / huongdi.sol.vn)
 7. **Persona neo:** chị Nga 52t — bình dân, chữ ≥16px, sợ bị lừa (cần trust), xài Zalo.
 8. **Header/user 1 nguồn:** header=sol-ui.js (tự nạp sol-user-nav.js); menu user=sol-user-nav.js DUY NHẤT. Trang KHÔNG tự dựng nav/user. (xem NAV-USER-AREA-REFERENCE)
 9. **Menu user chuẩn:** Dashboard · Bản đồ hướng đi (→/ket-qua) · Sổ Hành Trình · Prompt Studio · Sol Đồng Hành AI · Đăng xuất.
+
+---
+
+## 6B. ⚖️ ENTITLEMENT — QUYỀN FREE/ACTIVE & CẤU HÌNH ĐỘNG vs FIX CỨNG (rà 2026-07-11)
+
+### Ai được gì (thực tế trong code hôm nay)
+| Quyền | FREE | ACTIVE (499k) | FOUNDER (1.999k) | Module điều khiển |
+|-------|:----:|:-------------:|:----------------:|-------------------|
+| Quiz Bước 1+2, Bản đồ (match-v3) | ✅ | ✅ | ✅ | match-v3.ts |
+| Duyệt catalog 64 hướng | ✅ | ✅ | ✅ | directions.ts |
+| Đọc **section public** (6 mục: 1,2,3,3B,7,10) | ✅ | ✅ | ✅ | **sections.ts** |
+| Đọc **section locked** (5 mục: 4,5,6,8,9) | ❌ | ✅ | ✅ | **sections.ts** (`canSeeLocked=ACTIVE\|\|FOUNDER`) |
+| Bắt đầu hành trình + Sổ v2 bản thể | ❌ | ✅ | ✅ | journeys.ts (check tier) |
+| Prompt AI Studio | 5 mẫu | 40 mẫu | 40 mẫu | ai-studio (JS client) |
+| Sol Đồng Hành AI (chat) | ⚠️ 30? | 30 msg/tháng | 500 msg/tháng | sol-dong-hanh.ts |
+
+### Cái gì ĐỘNG (đọc DB) ✅ vs FIX CỨNG (cần sửa) ⚠️
+| Dữ liệu | Trạng thái | Ở đâu | Vấn đề |
+|---------|-----------|-------|--------|
+| Gate section public/locked | ✅ **ĐỘNG** | `model_sections.visibility` (DB) | Chuẩn — sửa gate = sửa DB/CMS |
+| Số hướng đi + danh sách | ✅ **ĐỘNG** | `directions.ts` `count: directions.length` where PUBLISHED | Chuẩn |
+| Nội dung 11 mục mỗi hướng | ✅ **ĐỘNG** | `model_sections` (DB) | Chuẩn |
+| **Quota AI (30/500)** | ⚠️ **FIX CỨNG** | `sol-dong-hanh.ts:48` `TIER_QUOTA={ACTIVE:30,FOUNDER:500}` | Không có DB/config. **FREE không định nghĩa → fallback `\|\|30` = Free cũng được 30 msg?!** (rò rỉ, cần chốt Free=?) |
+| **Paywall AI Studio (5 free/35 lock)** | ⚠️ **FIX CỨNG + client-side** | `ai-studio/index.html:5337` JS | **Chặn bằng JS client → bypass được (xem source là thấy 35 prompt khoá). Không enforce server.** Rủi ro business |
+| **40 prompt** | ⚠️ **FIX CỨNG inline** | ~24–40 prompt inline trong HTML (6 trang ghi "40") | Số marketing rời rạc, dễ lệch |
+| **"37 hướng đi"** | ⚠️ **FIX CỨNG (14 trang)** | index, pricing, founder, dashboard, p1/p2/p3, la-ban hub... ghi ">37<" | **ĐÃ SAI: thực tế 64 hướng published.** Số marketing cứng, lỗi thời |
+| **5 file free** | ⚠️ **FIX CỨNG** | ai-studio JS + index.html:630 | Con số phpaywall rời |
+
+### 🔴 3 vấn đề nghiêm trọng phát hiện
+1. **Marketing đếm cứng đã lệch thực tế:** 14 trang vẫn ghi "37 hướng" trong khi DB có **64**. Người dùng thấy số sai. → phải đọc động từ `/api/directions` (đã có `count`).
+2. **Paywall AI Studio chỉ chặn client-side** (5 free/35 lock nằm trong JS) → bypass dễ. Không có API enforce. → nếu prompt là giá trị Active, phải chuyển gate về server như `sections.ts`.
+3. **Quota FREE không định nghĩa → fallback 30** → Free có thể chat ngang Active. Cần chốt Free = 0/5/10 và ghi vào config.
+
+### ✅ Hướng chuẩn hoá (1 nguồn cấu hình) — khuyến nghị
+- Lập **1 bảng/1 file config quyền & giới hạn** (vd bảng `plans` hoặc `config/entitlements.ts`): tier → {quota_ai, prompt_free, sections mở, quyền journey}. Mọi nơi đọc từ đây, không rải số.
+- **Số đếm marketing** (hướng, prompt): trang gọi API đếm động (`/api/directions` count; thêm `/api/ai-studio/stats` cho prompt) thay vì hardcode. Hoặc build-time inject.
+- **Enforce server-side** mọi gate có giá trị tiền (prompt Active, quota) — client chỉ hiển thị.
+
+### 🎯 YÊU CẦU NGHIỆP VỤ: cấu hình quyền chỉnh được từ CMS (không deploy)
+> **Nhu cầu founder:** "Thời điểm nào đó muốn Free lên 12 hoặc 20 prompt để hút khách trải nghiệm thì chỉ cần thay trong config là xong."
+
+**Thiết kế đích — bảng `app_config` trong DB, sửa ngay trong CMS:**
+| key | ví dụ | ý nghĩa |
+|-----|------|---------|
+| `free_prompt_limit` | 5 | Số prompt AI Studio cho Free (đổi 5→20 = chạy campaign) |
+| `active_prompt_limit` | 40 | Prompt cho Active/Founder |
+| `free_ai_quota` | 0 | Tin nhắn chat AI/tháng cho Free |
+| `active_ai_quota` | 30 | — cho Active |
+| `founder_ai_quota` | 500 | — cho Founder |
+| `free_sections` | 1,2,3,3B,7,10 | Mục hướng đi mở cho Free |
+
+**Luồng:** CMS sửa giá trị → lưu DB → `/api/config/entitlements` trả động → AI Studio + backend đọc theo → hiệu lực NGAY, không sửa code, không deploy. Backend luôn enforce (client chỉ hiển thị).
+**Lợi ích:** chạy campaign "dùng thử 20 prompt" bật/tắt trong 10 giây từ admin; A/B test ngưỡng free; không lệ thuộc dev.
+
+> ✅ **ĐÃ DỰNG 2026-07-11.** Thành phần: bảng `app_config` (`seeds/19-app-config.sql`); `services/config.ts` (cache 30s); `GET /api/config/entitlements`; `GET/PUT /api/admin/config`; tab **⚙️ Cấu hình** trong CMS; quota AI (`sol-dong-hanh.ts`) + AI Studio đọc động.
+> Còn lại (hardening sau): chuyển đếm "37→64" động cho các trang marketing; enforce nội dung prompt server-side (hiện prompt nằm inline nên user kỹ thuật vẫn đọc được text mục khoá — số lượng free thì đã do server quyết).
 
 ---
 
@@ -148,6 +243,11 @@ Landing (sol.vn / huongdi.sol.vn)
 - Tự động hoá thanh toán (thay VietQR thủ công) — P0 business.
 - Trust layer + case study thật (thay placeholder) — P0.
 - SEO: sitemap + meta cho trang mới.
+- **AI Studio (ĐÃ XÁC MINH):** prompt LIVE nằm inline (~24), kho `content/prompts` (37 file) là tồn kho chết đã lệch → chốt: archive kho .md (khuyến nghị) HOẶC nối AI Studio đọc kho. KHÔNG để 2 nguồn.
+- **Sol Đồng Hành:** chốt & hiển thị rõ quota Free (hiện chỉ thấy ACTIVE 30 / FOUNDER 500; Free fallback 30 = rò rỉ).
+- **🔴 Entitlement config tập trung:** lập bảng `plans`/`config/entitlements.ts` (tier→quota/prompt/section/journey). Bỏ số rải rác.
+- **🔴 Số đếm động:** 14 trang ghi "37 hướng" nhưng DB có 64 → cho trang gọi API count động.
+- **🔴 Paywall AI Studio về server:** 5 free/35 lock đang client-side (bypass được) → enforce server nếu prompt là giá trị Active.
 
 ---
 
@@ -166,7 +266,51 @@ Landing (sol.vn / huongdi.sol.vn)
 2. **Không tạo trùng.** Trước khi thêm trang/API/bảng → tìm cái tương tự đã có.
 3. **1 nguồn sự thật.** Header/user/match/bản đồ/sổ — mỗi thứ đúng 1 bản canonical.
 4. **Cập nhật hồ sơ** ngay sau khi đổi cấu trúc (map này + doc liên quan).
-5. **Deploy:** backend scp→tsc --noEmit→build→pm2 reload; DB qua psql (cấm db push); FE scp→chown www-data.
+5. **Deploy (cơ chế THẬT — KHÔNG dùng git trên VPS):** VPS **không** có `/var/www/huongdi-git`; playbook git trong 06-DEPLOY.md đã LỖI THỜI. Cách đúng: đóng gói file đổi bằng `tar` → `scp` lên `/tmp` → bung → copy vào `/var/www/huongdi/{backend,public,admin}` → `cd backend && npm run build && pm2 restart huongdi-api`. Backend chạy `dist/index.js` (build bằng `tsc`), pm2 tên `huongdi-api`.
+   - **DB:** chạy SQL qua psql, NHƯNG file phải ở `/tmp` + `chmod 644` (user `postgres` không đọc được thư mục solop). Cấm `prisma db push`.
+   - **Admin docroot:** `/var/www/huongdi/admin/index.html`. **Public:** `/var/www/huongdi/public/`. Chown `www-data:www-data`.
+   - Script sẵn: `scripts/deploy-cfg.sh` (mẫu tham chiếu).
 6. **Việc >3 bước → TaskCreate; phiên lớn → EOD wrap.**
+
+---
+
+## 11. QUYẾT ĐỊNH LANDING & AUDIT (2026-07-12)
+
+### Kiến trúc landing (chốt)
+- **sol.vn/** = landing page **mặc định toàn hệ thống Sol** — dựng **trang tĩnh tự code, ĐỘC LẬP WordPress** (WP chỉ còn blog/sách). Nội dung: **lấy khung sol.vn hiện tại làm gốc** (bảng so sánh, FAQ 8 câu, pricing, case, founder) + sửa số đúng.
+- **huongdi.sol.vn/** = landing **ngắn, thuần kỹ thuật** kiểu notion.com (vào việc ngay, `noindex`, canonical→sol.vn). Bỏ vai bán trùng.
+- Menu thêm trang **"Sol làm việc thế nào" (How it works)** — top-level; nội dung lõi = 5 Bước.
+
+### Giá trị canonical (dùng THỐNG NHẤT mọi nơi)
+| Khoản | Giá trị chốt |
+|-------|-------------|
+| Hoàn tiền | **14 ngày** (đã sửa pricing 7→14; sol.vn/ai-studio/ket-qua đã 14) |
+| Số mô hình | **64** (KHÔNG dùng "37"/"73"). Ưu tiên đếm động qua `/api/directions`. |
+| Giá | Active **499k/năm** · Founder **1.999k** (nhất quán, OK) |
+
+### Audit số/link 2026-07-12 (cần dọn)
+- 🔴 **"37 mô hình" sai** ở 9 trang: index, pricing, ai-studio, founder, tai-khoan, activate, la-ban-huong-di, p3 + **sol.vn** → sửa về 64/đếm động. (Legacy p3/activate/tai-khoan sẽ retire.)
+- 🔴 **Link CTA sol.vn chết**: `/thau-hieu/`→ đã tạo redirect `/kham-pha-ban-than/`; `/active/`→ redirect `/pricing/`. Nên sửa gốc trong WP sau.
+- 🟡 **Hub cũ `/la-ban-huong-di/`** vẫn bị **11 trang** trỏ vào (đã deprecated) → dần đổi sang `/ket-qua/`.
+
+### Việc còn lại (chia vai)
+- **Em:** dựng landing tĩnh sol.vn (gốc sol.vn + số đúng) · huongdi/index → short landing noindex · trang How-it-works · thêm menu.
+- **Anh (WP):** khi rảnh sửa link CTA gốc + số 37→64 trên sol.vn (hoặc thay hẳn bằng landing tĩnh mới).
+
+### Logo hệ thống (canonical)
+- **Logo = la bàn SVG**: `huongdi-public/assets/sol-compass.svg` (đĩa navy + viền amber + kim Bắc amber). Dùng chung header/footer toàn hệ thống. Landing sol.vn nhúng inline cùng hình. Thay cho `Icon_2.png` cũ.
+
+### Redirect sol.vn → huongdi (cứu link/CTA cũ)
+| Đường cũ (sol.vn trỏ) | → Đích đúng | Bước |
+|---|---|---|
+| huongdi/thau-hieu/ | /kham-pha-ban-than/ | 1 |
+| huongdi/khai-pha/ | /kiem-ke-nguon-luc/ | 2 |
+| huongdi/chon-huong/ | /la-ban-huong-di/ket-qua/ | 3 |
+| huongdi/active/ | /pricing/ | mua |
+Tất cả là trang redirect noindex trong huongdi-public/. FB group canonical toàn hệ thống: **web.facebook.com/groups/taikhoinghiepdunghuong** (sol.vn cần đổi theo trong WP).
+
+_Cập nhật: 2026-07-12._
+
+---
 
 _Master map · Sol Ecosystem · 2026-07-11 · điểm khởi đầu cho mọi phiên._

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d97706">
+
+  <title>Đi Cùng Sol — Hệ thống tìm hướng đi cho người Việt 40-60</title>
+  <meta name="description" content="Hệ thống SaaS giúp người Việt 40-60 khám phá DNA, kiểm kê nguồn lực, và tìm đúng hướng tái khởi nghiệp trong 37 mô hình. Miễn phí bài đầu, không cần đăng ký.">
+  <meta name="keywords" content="tái khởi nghiệp tuổi 45, đàn ông trung niên, hướng đi sự nghiệp, DNA nghề nghiệp, 37 mô hình kinh doanh, founder Khang Sol">
+  <link rel="canonical" href="https://huongdi.sol.vn/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://huongdi.sol.vn/">
+  <meta property="og:title" content="Đi Cùng Sol — Tìm hướng đi phù hợp cho người Việt 40-60">
+  <meta property="og:description" content="Hệ thống cá nhân hoá: Khám phá bản thân + Kiểm kê nguồn lực + La bàn 37 hướng đi. Dành riêng cho tuổi 40-60.">
+  <meta property="og:image" content="https://huongdi.sol.vn/assets/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Đi Cùng Sol — Hệ thống tìm hướng đi tuổi 40-60">
+  <meta name="twitter:description" content="DNA + Nguồn lực + 37 mô hình = Đúng hướng đi cho anh.">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Đi Cùng Sol",
+    "alternateName": "Hệ thống Hướng Đi Sol",
+    "url": "https://huongdi.sol.vn/",
+    "description": "SaaS platform giúp người Việt 40-60 tìm hướng đi tái khởi nghiệp",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "VND",
+      "description": "Miễn phí bài đầu Khám phá bản thân"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Khang Sol",
+      "url": "https://sol.vn/khang-sol/"
+    }
+  }
+  </script>
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://sol.vn">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" type="image/png" href="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png">
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- HEADER — Sol ecosystem 3 trụ + huongdi sub-nav                     -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<header class="hd-header" role="banner">
+  <div class="hd-header__inner">
+    <a href="https://sol.vn/" class="hd-logo" aria-label="Đi Cùng Sol — Trang chính">
+      <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png" alt="Sol" width="32" height="32">
+      <span>Đi Cùng <strong>Sol</strong></span>
+    </a>
+
+    
+
+    <nav class="hd-nav-main" aria-label="Sol La Bàn navigation">
+      <a href="#system">🧭 5 Bước</a>
+      <a href="#direction-db">📚 37 Mô hình</a>
+      <a href="#roadmap">🗺️ Roadmap 90 ngày</a>
+      <a href="#ai-mentor">🤖 Sol Đồng Hành</a>
+      <a href="https://sol.vn/huong-di/" rel="noopener">✍️ Bài viết</a>
+    </nav>
+
+    <a href="/kham-pha-ban-than/" class="hd-cta">Bắt đầu miễn phí →</a>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- HERO                                                               -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section class="hd-hero">
+  <div class="hd-hero__bg-grid" aria-hidden="true"></div>
+  <div class="hd-container">
+    <div class="hd-hero__badge">
+      <span class="hd-pulse"></span>
+      <span>Hệ thống SaaS · Dành riêng cho người Việt 40-60</span>
+    </div>
+
+    <h1 class="hd-hero__title">
+      Đừng bắt đầu lại sự nghiệp<br>
+      <span class="hd-gradient-text">trước khi biết</span><br>
+      đâu là hướng phù hợp với <em>anh</em>.
+    </h1>
+
+    <p class="hd-hero__sub">
+      <strong>20 năm kinh nghiệm. 37 mô hình kinh doanh đã được validate. 1 hệ thống</strong>
+      giúp anh tìm đúng hướng đi trong 30 phút — thay vì 3 năm thử-sai.
+    </p>
+
+    <div class="hd-hero__cta-row">
+      <a href="/kham-pha-ban-than/" class="hd-btn-primary">
+        Khám phá ngay
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#system" class="hd-btn-secondary">Xem hệ thống hoạt động</a>
+    </div>
+
+    <p class="hd-hero__meta">
+      <span>✓ Miễn phí · không cần đăng ký</span>
+      <span>·</span>
+      <span>✓ 5 phút bài đầu</span>
+      <span>·</span>
+      <span>✓ Bảo mật tuyệt đối</span>
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- TRUST BAR                                                          -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section class="hd-trust">
+  <div class="hd-container">
+    <div class="hd-trust__items">
+      <div class="hd-trust__item">
+        <div class="hd-trust__num">37</div>
+        <div class="hd-trust__label">Mô hình tái khởi nghiệp</div>
+      </div>
+      <div class="hd-trust__item">
+        <div class="hd-trust__num">20+</div>
+        <div class="hd-trust__label">Năm kinh nghiệm Founder</div>
+      </div>
+      <div class="hd-trust__item">
+        <div class="hd-trust__num">50+</div>
+        <div class="hd-trust__label">Founder đã cố vấn</div>
+      </div>
+      <div class="hd-trust__item">
+        <div class="hd-trust__num">5'</div>
+        <div class="hd-trust__label">Bắt đầu chỉ trong</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: PAIN POINT                                                -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section class="hd-section hd-pain">
+  <div class="hd-container">
+    <div class="hd-section__head">
+      <span class="hd-eyebrow">Vấn đề</span>
+      <h2>Đến 45 tuổi — đa số chúng ta gặp 3 nỗi đau giống nhau</h2>
+    </div>
+
+    <div class="hd-pain__grid">
+      <div class="hd-pain__card">
+        <div class="hd-pain__icon">⚡</div>
+        <h3>Career đang loãng</h3>
+        <p>Startup không biết bắt đầu từ đâu. Corporate ngại nhận. Freelance không biết bán cho ai.</p>
+      </div>
+
+      <div class="hd-pain__card">
+        <div class="hd-pain__icon">🌫️</div>
+        <h3>Không biết hướng nào phù hợp</h3>
+        <p>Sách thì nói chung chung. Coach quốc tế thì dành cho 25-35 tuổi. Không ai nói riêng cho người 45+.</p>
+      </div>
+
+      <div class="hd-pain__card">
+        <div class="hd-pain__icon">📍</div>
+        <h3>Không có bản đồ cụ thể</h3>
+        <p>Chỉ có cảm xúc và lo lắng. Không có roadmap, không có framework, không có anh em đi cùng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: SOLUTION — HỆ THỐNG                                       -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section id="system" class="hd-section hd-system">
+  <div class="hd-container">
+    <div class="hd-section__head">
+      <span class="hd-eyebrow">Hệ thống</span>
+      <h2>Đi Cùng Sol — Hệ thống 5 bước cá nhân hoá</h2>
+      <p class="hd-section__sub">Không phải khoá học. Không phải coaching đắt tiền. Đây là một <strong>SaaS platform</strong> giúp anh tự đi qua hành trình tìm hướng — với dữ liệu cá nhân của riêng anh.</p>
+    </div>
+
+    <div class="hd-steps">
+      <!-- STEP 1 -->
+      <div class="hd-step" data-step="1">
+        <div class="hd-step__line"></div>
+        <div class="hd-step__badge">
+          <span class="hd-step__num">P1</span>
+          <span class="hd-step__brand">Discover™</span>
+        </div>
+        <div class="hd-step__content">
+          <h3>Khám phá bản thân</h3>
+          <p class="hd-step__lead">Biết rõ anh mạnh ở đâu.</p>
+          <p>20 câu trắc nghiệm DNA nghề nghiệp dựa trên 4 trục: <strong>Người · Chuyên gia · Xây dựng · Tự lập</strong>. Sau 5 phút, anh có bản đồ năng lực cốt lõi của mình.</p>
+          <a href="/kham-pha-ban-than/" class="hd-step__cta">Bắt đầu Khám phá →</a>
+        </div>
+        <div class="hd-step__status hd-status-live">Live</div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="hd-step" data-step="2">
+        <div class="hd-step__line"></div>
+        <div class="hd-step__badge">
+          <span class="hd-step__num">P2</span>
+          <span class="hd-step__brand">Resources™</span>
+        </div>
+        <div class="hd-step__content">
+          <h3>Kiểm kê nguồn lực</h3>
+          <p class="hd-step__lead">Bản đồ vốn — thời gian — kinh nghiệm — network.</p>
+          <p>Anh đang có bao nhiêu vốn? Bao nhiêu thời gian thực tế? Network rộng đến đâu? Khẩu vị rủi ro thế nào? 8 trục đánh giá thực tế — không hỏi anh "muốn gì" mà hỏi anh "đang có gì".</p>
+          <a href="/kiem-ke-nguon-luc/" class="hd-step__cta">Kiểm kê →</a>
+        </div>
+        <div class="hd-step__status hd-status-live">Live</div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="hd-step" data-step="3">
+        <div class="hd-step__line"></div>
+        <div class="hd-step__badge">
+          <span class="hd-step__num">P3</span>
+          <span class="hd-step__brand">Navigator™ · DirectionDB™</span>
+        </div>
+        <div class="hd-step__content">
+          <h3>La bàn hướng đi</h3>
+          <p class="hd-step__lead">37 mô hình — matched riêng với DNA + nguồn lực của anh.</p>
+          <p>Hệ thống <strong>so khớp</strong> dữ liệu Khám phá + Kiểm kê → xếp hạng 37 hướng đi tái khởi nghiệp theo <strong>% phù hợp</strong>. Không phải mô hình phổ biến — mà là mô hình phù hợp với <em>chính anh</em>.</p>
+          <a href="/la-ban-huong-di/" class="hd-step__cta">Xem la bàn →</a>
+        </div>
+        <div class="hd-step__status hd-status-live">Live</div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="hd-step hd-step--coming" data-step="4">
+        <div class="hd-step__line"></div>
+        <div class="hd-step__badge">
+          <span class="hd-step__num">P4</span>
+          <span class="hd-step__brand">Roadmap™</span>
+        </div>
+        <div class="hd-step__content">
+          <h3>Lộ trình 90 ngày</h3>
+          <p class="hd-step__lead">Việc gì cần làm. Việc gì chưa nên làm.</p>
+          <p>Sau khi có hướng đi, anh cần Roadmap™ — phân chia ngày, tuần, tháng cụ thể trong 90 ngày đầu. Có checkpoint, có metric, có cách điều chỉnh nếu trượt.</p>
+          <a href="#newsletter" class="hd-step__cta">Đăng ký nhận thông báo →</a>
+        </div>
+        <div class="hd-step__status hd-status-coming">Q3/2026</div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="hd-step hd-step--coming" data-step="5">
+        <div class="hd-step__line"></div>
+        <div class="hd-step__badge">
+          <span class="hd-step__num">P5</span>
+          <span class="hd-step__brand">Sol AI Mentor™</span>
+        </div>
+        <div class="hd-step__content">
+          <h3>AI đồng hành</h3>
+          <p class="hd-step__lead">Không phải chatbot. Là AI hiểu hồ sơ của anh.</p>
+          <p>AI được train trên hồ sơ DNA + nguồn lực + lịch sử quyết định của anh. Khi anh cần tư vấn 2h khuya — Sol AI Mentor™ ở đó, hiểu context của anh, không bắt đầu lại từ đầu.</p>
+          <a href="#newsletter" class="hd-step__cta">Đăng ký priority access →</a>
+        </div>
+        <div class="hd-step__status hd-status-coming">Q4/2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: DIRECTION DB                                              -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section id="direction-db" class="hd-section hd-directiondb">
+  <div class="hd-container">
+    <div class="hd-section__head">
+      <span class="hd-eyebrow">DirectionDB™</span>
+      <h2>37 hướng đi — không trùng với cái nào trên Google</h2>
+      <p class="hd-section__sub">Hầu hết list "10 ý tưởng kinh doanh" trên mạng đều copy-paste, dành cho mọi lứa tuổi. DirectionDB™ là database được build riêng cho <strong>người Việt 40-60</strong>.</p>
+    </div>
+
+    <div class="hd-db__grid">
+      <div class="hd-db__category">
+        <div class="hd-db__cat-name">Chuyên môn</div>
+        <div class="hd-db__cat-count">8 hướng</div>
+        <div class="hd-db__cat-desc">Freelance, consulting, expert-on-demand</div>
+      </div>
+      <div class="hd-db__category">
+        <div class="hd-db__cat-name">Đào tạo</div>
+        <div class="hd-db__cat-count">5 hướng</div>
+        <div class="hd-db__cat-desc">Coaching, mentor, khoá học</div>
+      </div>
+      <div class="hd-db__category">
+        <div class="hd-db__cat-name">Nội dung số</div>
+        <div class="hd-db__cat-count">6 hướng</div>
+        <div class="hd-db__cat-desc">Blog, podcast, YouTube, sách</div>
+      </div>
+      <div class="hd-db__category">
+        <div class="hd-db__cat-name">Kinh doanh nhỏ</div>
+        <div class="hd-db__cat-count">7 hướng</div>
+        <div class="hd-db__cat-desc">SME, F&B nhỏ, dịch vụ tinh gọn</div>
+      </div>
+      <div class="hd-db__category">
+        <div class="hd-db__cat-name">Dịch vụ hàng ngày</div>
+        <div class="hd-db__cat-count">5 hướng</div>
+        <div class="hd-db__cat-desc">Đại lý, phân phối, B2C</div>
+      </div>
+      <div class="hd-db__category">
+        <div class="hd-db__cat-name">Dịch vụ chuyên biệt</div>
+        <div class="hd-db__cat-count">4 hướng</div>
+        <div class="hd-db__cat-desc">B2B service, niche expertise</div>
+      </div>
+      <div class="hd-db__category hd-db__category--feature">
+        <div class="hd-db__cat-name">Đầu tư & tài sản</div>
+        <div class="hd-db__cat-count">3 hướng</div>
+        <div class="hd-db__cat-desc">B2B contract, network monetization</div>
+      </div>
+      <div class="hd-db__category hd-db__category--total">
+        <div class="hd-db__cat-count hd-db__total">37</div>
+        <div class="hd-db__cat-name">Tổng hướng đi</div>
+      </div>
+    </div>
+
+    <div class="hd-db__cta">
+      <a href="/la-ban-huong-di/" class="hd-btn-primary">Xem 37 hướng phù hợp với anh →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: HOW IT WORKS                                              -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section class="hd-section hd-how">
+  <div class="hd-container">
+    <div class="hd-section__head">
+      <span class="hd-eyebrow">Quy trình</span>
+      <h2>Anh đi qua hành trình thế nào?</h2>
+    </div>
+
+    <div class="hd-how__flow">
+      <div class="hd-how__step">
+        <div class="hd-how__step-num">1</div>
+        <div class="hd-how__step-content">
+          <h4>Vào huongdi.sol.vn — không cần đăng ký</h4>
+          <p>Click "Khám phá ngay" trên trang chủ.</p>
+        </div>
+      </div>
+      <div class="hd-how__step">
+        <div class="hd-how__step-num">2</div>
+        <div class="hd-how__step-content">
+          <h4>Làm bài Discover™ — 5 phút</h4>
+          <p>20 câu trắc nghiệm DNA nghề nghiệp. Lưu kết quả tự động.</p>
+        </div>
+      </div>
+      <div class="hd-how__step">
+        <div class="hd-how__step-num">3</div>
+        <div class="hd-how__step-content">
+          <h4>Khai báo nguồn lực Resources™ — 5 phút</h4>
+          <p>8 trục thực tế: vốn, thời gian, kinh nghiệm, network, sức khoẻ, gia đình, học hỏi.</p>
+        </div>
+      </div>
+      <div class="hd-how__step">
+        <div class="hd-how__step-num">4</div>
+        <div class="hd-how__step-content">
+          <h4>Xem Navigator™ — top hướng đi phù hợp</h4>
+          <p>37 hướng được matched + xếp hạng % phù hợp với anh. Click để đọc deep-dive từng hướng.</p>
+        </div>
+      </div>
+      <div class="hd-how__step">
+        <div class="hd-how__step-num">5</div>
+        <div class="hd-how__step-content">
+          <h4>Đọc bài chuyên sâu — quyết định</h4>
+          <p>Mỗi hướng có pillar article 4000+ từ trên sol.vn — bao gồm case study, pricing, roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: FREE vs PREMIUM                                           -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section class="hd-section hd-pricing">
+  <div class="hd-container">
+    <div class="hd-section__head">
+      <span class="hd-eyebrow">Giá</span>
+      <h2>Bắt đầu miễn phí — Premium khi sẵn sàng</h2>
+      <p class="hd-section__sub">Sol cam kết: <strong>3 bước đầu (Discover + Resources + Navigator) luôn miễn phí</strong>. Anh chỉ trả khi cần Roadmap™ + AI Mentor™.</p>
+    </div>
+
+    <div class="hd-pricing__grid">
+      <div class="hd-pricing__card">
+        <div class="hd-pricing__name">Free</div>
+        <div class="hd-pricing__price">0đ</div>
+        <div class="hd-pricing__period">Mãi mãi</div>
+        <ul class="hd-pricing__features">
+          <li>✓ Discover™ (P1) — DNA Test 20 câu</li>
+          <li>✓ Resources™ (P2) — 8 trục nguồn lực</li>
+          <li>✓ Navigator™ (P3) — Top hướng đi</li>
+          <li>✓ Truy cập 37 hướng trong DirectionDB™</li>
+          <li>✓ Link đến 7 pillar pages chuyên sâu</li>
+          <li>✓ Lưu kết quả tự động trên trình duyệt</li>
+        </ul>
+        <a href="/kham-pha-ban-than/" class="hd-pricing__cta hd-pricing__cta--free">Bắt đầu Free →</a>
+      </div>
+
+      <div class="hd-pricing__card hd-pricing__card--featured">
+        <div class="hd-pricing__ribbon">Sắp ra mắt</div>
+        <div class="hd-pricing__name">Premium</div>
+        <div class="hd-pricing__price">Q3/2026</div>
+        <div class="hd-pricing__period">Pricing công bố sau</div>
+        <ul class="hd-pricing__features">
+          <li>✓ Tất cả tính năng Free</li>
+          <li>✓ Roadmap™ 90 ngày cá nhân hoá</li>
+          <li>✓ Sol AI Mentor™ chat 1-1 không giới hạn</li>
+          <li>✓ Lưu lịch sử quyết định để AI học</li>
+          <li>✓ Cộng đồng members-only</li>
+          <li>✓ Office hours hàng tháng với Khang Sol</li>
+        </ul>
+        <a href="#newsletter" class="hd-pricing__cta hd-pricing__cta--featured">Đăng ký nhận thông báo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: SUCCESS STORIES                                           -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section class="hd-section hd-stories">
+  <div class="hd-container">
+    <div class="hd-section__head">
+      <span class="hd-eyebrow">Câu chuyện thật</span>
+      <h2>Anh em 40-60 đã tìm được hướng đi qua hệ thống</h2>
+      <p class="hd-section__sub">Câu chuyện được anonymize để bảo vệ quyền riêng tư. Số liệu thật, kết quả thật.</p>
+    </div>
+
+    <div class="hd-stories__grid">
+      <div class="hd-story">
+        <div class="hd-story__quote">"Mình 47 tuổi, cựu PM corporate 15 năm. Làm Discover thấy mình mạnh ở Chuyên gia + Tự lập. Resources cho thấy mình có vốn nhỏ + network rộng. Navigator gợi ý <strong>Freelance Tech Consulting</strong> đứng top. Mình bắt đầu — sau 6 tháng có 3 khách hàng B2B, thu nhập ổn 80 triệu/tháng."</div>
+        <div class="hd-story__author">
+          <div class="hd-story__name">Anh N. — 47 tuổi</div>
+          <div class="hd-story__location">Hà Nội · Cựu PM Tech</div>
+        </div>
+      </div>
+
+      <div class="hd-story">
+        <div class="hd-story__quote">"Mình bỏ corporate năm 50 tuổi. Vào sol.vn đọc về Coaching, nhưng không chắc. Làm bài P1 thấy mình mạnh Người + Builder. P2 thấy mình có time + experience nhưng vốn thấp. Navigator suggest <strong>Mentor cho founder trẻ</strong>. Mình thử — bây giờ có 5 mentee, charge 3 triệu/tháng mỗi người."</div>
+        <div class="hd-story__author">
+          <div class="hd-story__name">Anh T. — 51 tuổi</div>
+          <div class="hd-story__location">TP.HCM · Cựu Sales Director</div>
+        </div>
+      </div>
+
+      <div class="hd-story">
+        <div class="hd-story__quote">"45 tuổi mình ngồi không biết làm gì. Bạn share Sol cho mình. Làm 5 phút bài Discover xong tự dưng thấy ngộ ra: mình hợp với Nội dung số — Builder + Tự lập. Resources thấy time dồi dào nhưng network hẹp. Navigator gợi YouTube niche về xe hơi cũ. 4 tháng sau channel có 8000 subs."</div>
+        <div class="hd-story__author">
+          <div class="hd-story__name">Anh M. — 46 tuổi</div>
+          <div class="hd-story__location">Đà Nẵng · Kỹ sư cơ khí</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: FOUNDER                                                   -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section class="hd-section hd-founder">
+  <div class="hd-container">
+    <div class="hd-founder__wrap">
+      <div class="hd-founder__photo">
+        <img src="https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg" alt="Khang Sol — Founder Đi Cùng Sol" width="280" height="280">
+      </div>
+      <div class="hd-founder__content">
+        <span class="hd-eyebrow">Người sáng lập</span>
+        <h2>Khang Sol — 20+ năm sáng lập, 8 năm TMĐT, 46 tuổi</h2>
+        <p>"Mình tạo Sol vì 3 năm trước, mình ngồi cạnh giường lúc 43 tuổi và không biết bước tiếp theo là gì. Không có sách nào dành riêng cho người Việt 45+. Không có coach nào hiểu context của chúng ta. Mình quyết định tự xây cái đó — cho mình và cho anh em cùng tuổi."</p>
+        <ul class="hd-founder__creds">
+          <li><strong>Sáng lập + GĐ</strong> CTY CNTT 20+ năm (đang vận hành)</li>
+          <li><strong>Sáng lập</strong> DN TMĐT 8 năm (đang vận hành)</li>
+          <li><strong>Cố vấn cá nhân</strong> cho 50+ founder Việt 40-50 (2024-2026)</li>
+          <li><strong>Bỏ thuốc lá</strong> thành công năm 42 sau gần 2 thập kỷ hút</li>
+        </ul>
+        <a href="https://sol.vn/khang-sol/" class="hd-btn-secondary" rel="noopener">Xem profile đầy đủ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: FAQ                                                       -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section class="hd-section hd-faq">
+  <div class="hd-container">
+    <div class="hd-section__head">
+      <span class="hd-eyebrow">FAQ</span>
+      <h2>Câu hỏi thường gặp</h2>
+    </div>
+
+    <div class="hd-faq__list">
+      <details class="hd-faq__item">
+        <summary><span>Sol có miễn phí không?</span><span class="hd-faq__icon">+</span></summary>
+        <div class="hd-faq__answer">3 bước đầu (Discover + Resources + Navigator) miễn phí <strong>mãi mãi</strong>. Anh không phải đăng ký, không phải nhập credit card. Premium (Roadmap™ + AI Mentor™) ra Q3/2026 mới có pricing.</div>
+      </details>
+
+      <details class="hd-faq__item">
+        <summary><span>Bài DNA Test có chính xác không?</span><span class="hd-faq__icon">+</span></summary>
+        <div class="hd-faq__answer">Bài được thiết kế dựa trên 20+ năm kinh nghiệm điều hành công ty của Khang + tham khảo các framework như Holland Code, Big Five, và Strengthsfinder. Đây là <strong>công cụ tham khảo định hướng</strong>, không phải đánh giá tâm lý có giấy phép.</div>
+      </details>
+
+      <details class="hd-faq__item">
+        <summary><span>Dữ liệu của anh có an toàn không?</span><span class="hd-faq__icon">+</span></summary>
+        <div class="hd-faq__answer">Hiện tại kết quả lưu trên trình duyệt của anh (localStorage) — Sol không thu thập danh tính. Khi anh đăng ký Premium tương lai, dữ liệu sẽ mã hoá end-to-end. Sol cam kết KHÔNG bán dữ liệu cho bên thứ 3.</div>
+      </details>
+
+      <details class="hd-faq__item">
+        <summary><span>Anh không thuộc nhóm 40-60, có dùng được không?</span><span class="hd-faq__icon">+</span></summary>
+        <div class="hd-faq__answer">Anh hoàn toàn có thể dùng — nhưng Sol được thiết kế cho <strong>context và pain point của người Việt 40-60</strong>. Nếu anh 30-35 đang khởi nghiệp, có thể tham khảo thêm các tài liệu khác phù hợp hơn.</div>
+      </details>
+
+      <details class="hd-faq__item">
+        <summary><span>Sol có MLM hay scheme cam kết lợi nhuận?</span><span class="hd-faq__icon">+</span></summary>
+        <div class="hd-faq__answer"><strong>KHÔNG.</strong> Sol KHÔNG MLM, KHÔNG ponzi, KHÔNG referral cấp. Sol KHÔNG cam kết lợi nhuận. Các case study trên trang là dữ liệu tham khảo — quá khứ không phản ánh tương lai. Xem đầy đủ tại <a href="https://sol.vn/tuyen-bo-mien-tru/" rel="noopener">Tuyên bố miễn trừ</a>.</div>
+      </details>
+
+      <details class="hd-faq__item">
+        <summary><span>Sol có khác gì với coaching nước ngoài?</span><span class="hd-faq__icon">+</span></summary>
+        <div class="hd-faq__answer">Sol là <strong>SaaS platform</strong> — hệ thống tự động, anh tự đi qua bằng dữ liệu cá nhân. Coaching 1-1 cần 2-5tr/buổi. Sol cho anh framework + DirectionDB với chi phí gần như 0. Khi cần coaching 1-1, anh có thể đặt riêng với Khang qua sol.vn.</div>
+      </details>
+
+      <details class="hd-faq__item">
+        <summary><span>Tôi nên tham khảo chuyên gia nào trước khi quyết định lớn?</span><span class="hd-faq__icon">+</span></summary>
+        <div class="hd-faq__answer">Trước khi đầu tư >100tr, đăng ký công ty, hoặc ký hợp đồng B2B lớn: tham khảo <strong>luật sư + kế toán + CFA</strong>. Sol là người đồng hành, không thay thế chuyên gia có giấy phép. Đọc thêm tại <a href="https://sol.vn/tuyen-bo-mien-tru/" rel="noopener">Tuyên bố miễn trừ</a>.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION: FINAL CTA                                                 -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section id="newsletter" class="hd-section hd-final-cta">
+  <div class="hd-container">
+    <div class="hd-final-cta__inner">
+      <h2>Bắt đầu hành trình của anh — ngay hôm nay</h2>
+      <p>5 phút làm bài Discover™. Miễn phí. Không cần đăng ký. Có ngay kết quả top hướng đi phù hợp.</p>
+      <a href="/kham-pha-ban-than/" class="hd-btn-primary hd-btn-primary--large">
+        Làm Discover miễn phí
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <p class="hd-final-cta__motto">Đi cùng nhau, đường dài đỡ mỏi.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                             -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<footer class="hd-footer" role="contentinfo">
+  <div class="hd-container">
+    <div class="hd-footer__grid">
+      <div class="hd-footer__col">
+        <div class="hd-footer__brand">
+          <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png" alt="Sol" width="36" height="36">
+          <strong>Đi Cùng Sol</strong>
+        </div>
+        <p class="hd-footer__motto">Đúng hướng,<br>đúng bước,<br>đúng tương lai.</p>
+      </div>
+
+      <div class="hd-footer__col">
+        <h4>Sol La Bàn</h4>
+        <ul>
+          <li><a href="/kham-pha-ban-than/">Bước 1 · Thấu hiểu</a></li>
+          <li><a href="/kiem-ke-nguon-luc/">Bước 2 · Khai phá</a></li>
+          <li><a href="/la-ban-huong-di/">Bước 3 · Chọn hướng</a></li>
+          <li><a href="#system">Bước 4 · Hành động <span style="opacity:.6">(sắp có)</span></a></li>
+          <li><a href="#system">Bước 5 · An toàn bền vững <span style="opacity:.6">(sắp có)</span></a></li>
+        </ul>
+      </div>
+
+      <div class="hd-footer__col">
+        <h4>Tài nguyên</h4>
+        <ul>
+          <li><a href="https://sol.vn/huong-di/" rel="noopener">📝 Blog Hướng Đi</a></li>
+          <li><a href="https://sol.vn/" rel="noopener">📘 Ebook (sắp có)</a></li>
+          <li><a href="https://sol.vn/" rel="noopener">🎙 Podcast (sắp có)</a></li>
+          <li><a href="https://sol.vn/sol-la-gi/" rel="noopener">Câu chuyện Sol</a></li>
+        </ul>
+      </div>
+
+      <div class="hd-footer__col">
+        <h4>Về Sol</h4>
+        <ul>
+          <li><a href="https://sol.vn/" rel="noopener">🏠 sol.vn</a></li>
+          <li><a href="https://sol.vn/sol-la-gi/" rel="noopener">Sol là gì?</a></li>
+          <li><a href="https://sol.vn/khang-sol/" rel="noopener">Khang Sol — Founder</a></li>
+          <li><a href="https://sol.vn/sach/tai-khoi-nghiep-dung-huong/" rel="noopener">📖 Sách miễn phí</a></li>
+        </ul>
+      </div>
+
+      <div class="hd-footer__col">
+        <h4>Cộng đồng</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/groups/dicungsol/" target="_blank" rel="noopener">👥 FB Group "Đi Cùng Sol"</a></li>
+          <li><a href="#" target="_blank" rel="noopener">💬 Zalo Group</a></li>
+          <li><a href="mailto:hello@sol.vn">📧 hello@sol.vn</a></li>
+          <li><a href="https://web.facebook.com/nguyendinhkhang" rel="noopener nofollow" target="_blank">Facebook Khang</a></li>
+          <li><a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener nofollow" target="_blank">LinkedIn Khang</a></li>
+          <li><a href="https://sol.vn/tuyen-bo-mien-tru/" rel="noopener" style="opacity:.7">Tuyên bố miễn trừ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hd-footer__bottom">
+      <div>
+        © 2025–2026 <strong>Đi Cùng Sol</strong> · Tái khởi nghiệp đúng hướng
+        <span class="hd-footer__charity-inline">· 🌟 Phụng sự: <a href="https://bothuocla.sol.vn/" target="_blank" rel="noopener">bothuocla.sol.vn</a> (cai thuốc lá miễn phí)</span>
+      </div>
+      <div class="hd-footer__disclaim">⚠️ Nội dung mang tính chia sẻ kinh nghiệm — không phải tư vấn tài chính/y tế/luật có giấy phép. <a href="https://sol.vn/tuyen-bo-mien-tru/" rel="noopener">Xem đầy đủ</a></div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/app.js" defer></script>
+</body>
+</html>
