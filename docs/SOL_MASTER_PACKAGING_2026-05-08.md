@@ -52,7 +52,7 @@ Sol = **relapse-safe environment** — đây là moat thật.
 - **Email funnel 14 templates** Day 0-88
 - **Anonymous-first onboarding** (không cần SĐT)
 - **Cross-domain widget** sol.vn → bothuocla.sol.vn
-- **Wiki content** 41 bài + Ngẫm category
+- **Wiki content** 41 bài + Tâm category
 - **Khang's Story** đầy đủ 5 lần fail
 - **Lapse-friendly UX concept** (chưa wire code)
 - **Refund policy** (chưa formalize đủ)

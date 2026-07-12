@@ -50,7 +50,7 @@
 - ☐ Voice Khang Day 0 + Day 7 (2 voice MP3)
 - ☐ AI chat 5 msg/ngày
 - ☐ Cộng đồng Zalo public "Sol Khám Phá"
-- ☐ Wiki + Ngẫm tự do
+- ☐ Wiki + Tâm tự do
 - ☐ Lapse-friendly UX (đã wire khi trên free tier cũng có)
 
 ## Checklist user đạt được sau Day 7 — measurable

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" xml:lang="vi">
+  <title>AI 2026 thay thế nghề nào? Framework 5+5 dấu hiệu cho chuyên gia 40+</title>
+  <desc>Featured image cho bài pillar Sol La Bàn về AI 2026 và nghề nghiệp chuyên gia 40+</desc>
+
+  <defs>
+    <!-- Background gradient — navy dark -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="60%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- Amber glow accent -->
+    <radialGradient id="glowAmber" cx="85%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.28"/>
+      <stop offset="70%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Danger bar gradient -->
+    <linearGradient id="dangerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+
+    <!-- Safe bar gradient -->
+    <linearGradient id="safeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+
+    <!-- Subtle grid pattern for tech feel -->
+    <pattern id="gridPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#F59E0B" stroke-width="0.5" opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <!-- ═══ Background layers ═══ -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#gridPattern)"/>
+  <rect width="1200" height="630" fill="url(#glowAmber)"/>
+
+  <!-- Left accent stripe -->
+  <rect x="0" y="0" width="10" height="630" fill="#F59E0B"/>
+
+  <!-- ═══ Header: Brand line ═══ -->
+  <g font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="80" y="82" font-size="20" font-weight="600" fill="#F59E0B" letter-spacing="5">
+      SOL LA BÀN
+    </text>
+    <text x="252" y="82" font-size="20" font-weight="400" fill="#94A3B8" letter-spacing="3">
+      · HƯỚNG ĐI NGHỀ NGHIỆP
+    </text>
+
+    <!-- Divider line -->
+    <line x1="80" y1="105" x2="180" y2="105" stroke="#F59E0B" stroke-width="3"/>
+
+    <!-- ═══ Main title ═══ -->
+    <text x="80" y="215" font-size="96" font-weight="800" fill="#FFFFFF" letter-spacing="-2">
+      AI 2026
+    </text>
+
+    <text x="80" y="305" font-size="56" font-weight="700" fill="#FFFFFF" letter-spacing="-1">
+      Thay thế nghề nào?
+    </text>
+
+    <!-- ═══ Subtitle ═══ -->
+    <text x="80" y="365" font-size="28" font-weight="500" fill="#CBD5E1">
+      Framework 5+5 dấu hiệu cho chuyên gia 40+
+    </text>
+
+    <!-- ═══ Data visualization: 70/30 bar ═══ -->
+    <g transform="translate(80, 420)">
+      <!-- Label above bar -->
+      <text x="0" y="-14" font-size="16" font-weight="500" fill="#94A3B8" letter-spacing="1">
+        AI THAY <tspan font-weight="800" fill="#FCD34D">TASK</tspan> — KHÔNG THAY <tspan font-weight="800" fill="#FCD34D">NGHỀ</tspan>
+      </text>
+
+      <!-- Bar background -->
+      <rect x="0" y="0" width="900" height="52" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+
+      <!-- 70% Danger (red) -->
+      <rect x="2" y="2" width="626" height="48" rx="6" fill="url(#dangerGrad)"/>
+      <text x="20" y="34" font-size="20" font-weight="700" fill="#FFFFFF">
+        70% TASK LẶP
+      </text>
+      <text x="180" y="34" font-size="15" font-weight="500" fill="#FEE2E2">
+        (AI ăn dần trong 2-3 năm)
+      </text>
+
+      <!-- 30% Safe (green) -->
+      <rect x="632" y="2" width="266" height="48" rx="6" fill="url(#safeGrad)"/>
+      <text x="650" y="34" font-size="18" font-weight="700" fill="#FFFFFF">
+        30% QUYẾT ĐỊNH
+      </text>
+    </g>
+
+    <!-- ═══ Bottom row ═══ -->
+
+    <!-- URL prominent -->
+    <text x="80" y="555" font-size="22" font-weight="600" fill="#F59E0B">
+      → sol.vn/huong-di/
+    </text>
+
+    <!-- Author right side -->
+    <text x="1120" y="555" font-size="16" font-weight="500" fill="#94A3B8" text-anchor="end">
+      Khang Sol · Founder Sol La Bàn
+    </text>
+
+    <!-- Reading time badge -->
+    <g transform="translate(80, 580)">
+      <rect x="0" y="0" width="200" height="26" rx="13" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <text x="16" y="18" font-size="13" font-weight="500" fill="#CBD5E1">
+        ⏱ 12 phút đọc + bài tập
+      </text>
+    </g>
+  </g>
+
+  <!-- ═══ Right side: Compass icon ═══ -->
+  <g transform="translate(1020, 200)" opacity="0.85">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="0" cy="0" r="75" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+
+    <!-- Compass needle -->
+    <polygon points="0,-70 -10,0 0,70 10,0" fill="#F59E0B"/>
+    <polygon points="0,-70 -10,0 0,0" fill="#FCD34D"/>
+
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="6" fill="#0F172A" stroke="#F59E0B" stroke-width="2"/>
+
+    <!-- Cardinal marks -->
+    <text x="0" y="-100" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#F59E0B" text-anchor="middle">N</text>
+    <text x="0" y="115" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#94A3B8" text-anchor="middle">S</text>
+    <text x="-105" y="6" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#94A3B8" text-anchor="middle">W</text>
+    <text x="105" y="6" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#94A3B8" text-anchor="middle">E</text>
+  </g>
+</svg>

@@ -349,7 +349,7 @@ Hypothesis của Khang là gì? Không phải hypothesis của em hay đối tá
 - Voice mới hàng tuần
 - Trả lời community Zalo
 - Phỏng vấn user mỗi tuần
-- Viết content Ngẫm
+- Viết content Tâm
 
 → Khang chỉ chọn 1-2. Sol build xung quanh đó.
 

@@ -13,10 +13,10 @@
 ### Background trước hôm nay
 
 - **Sol** = sản phẩm của Khang Sol cho người Việt 45+ bỏ thuốc lá
-- **bothuocla.sol.vn** = app dashboard, **sol.vn** = trang chủ + wiki + Ngẫm
+- **bothuocla.sol.vn** = app dashboard, **sol.vn** = trang chủ + wiki + Tâm
 - **admin.sol.vn** = admin console (đã tách project)
 - **Tech stack đã có**: dashboard React/Vite, backend Node + Prisma, AI multi-provider (Anthropic, OpenAI, Gemini), email funnel scheduler, cross-domain widget JWT transfer
-- **Content đã có**: 41 wiki posts, Ngẫm category, Khang's Story 5 lần fail, 5 landing HTML, hub `/bo-thuoc-la`
+- **Content đã có**: 41 wiki posts, Tâm category, Khang's Story 5 lần fail, 5 landing HTML, hub `/bo-thuoc-la`
 - **Pricing trước session**: 4 tier (Mở Đầu free / Khởi Động 70k / Tự Do 140k / Trọn Vẹn 210k)
 
 ### Tài liệu kế thừa
@@ -167,7 +167,7 @@ Theo thứ tự thời gian, mỗi document build trên cái trước:
 | 5 | Pricing 4 tier với outcome list cụ thể + "Phù hợp" | Pricing |
 | 6 | FAQ rewrite: "Sol có cam kết bỏ thuốc?" + "Hút lại thì sao?" + "Hoàn tiền thế nào?" | FAQ |
 | 7 | Khang's Story thêm "Lần thứ tư - vợ con + nước súc miệng" | Khang's Story |
-| 8 | Footer Ngẫm link `/category/ngam/` | Footer |
+| 8 | Footer Tâm link `/category/ngam/` | Footer |
 
 ### Landing `02-14-ngay-be-thoi-quen.html`
 
@@ -273,7 +273,7 @@ CÓ → build. KHÔNG hoặc không chắc → defer.
 - Refund routes + admin approval flow
 - Email funnel 14 templates Day 0-88
 - 5 landing HTML hoàn chỉnh
-- 41 wiki posts + Ngẫm category live trên sol.vn
+- 41 wiki posts + Tâm category live trên sol.vn
 - Sol Widget script trên toàn sol.vn
 - Workbook Identity Reframe + Pledges Replay UI
 - SEO audit script (Node.js)
@@ -360,7 +360,7 @@ Khang ngồi 30 phút trả lời 5 câu này — câu trả lời định hình
    - F. Khác
 
 2. **Khang sẵn sàng làm gì 5h/tuần forever?**
-   - Voice mới hàng tuần / Trả lời community Zalo / Phỏng vấn user / Viết Ngẫm
+   - Voice mới hàng tuần / Trả lời community Zalo / Phỏng vấn user / Viết Tâm
 
 3. **Khang chấp nhận 50% Day 30 churn pilot được không?**
 

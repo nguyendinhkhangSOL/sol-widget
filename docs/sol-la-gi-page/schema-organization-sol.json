@@ -1,0 +1,71 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://sol.vn/#organization",
+  "name": "Đi Cùng Sol",
+  "alternateName": ["Sol", "Sol Vietnam"],
+  "url": "https://sol.vn/",
+  "logo": "https://sol.vn/wp-content/uploads/2025/05/Icon_2.png",
+  "image": "https://sol.vn/wp-content/uploads/2025/05/Icon_2.png",
+  "description": "Hệ sinh thái Thân (sức khoẻ) · Tâm (tinh thần) · Trí (sự nghiệp) dành riêng cho đàn ông Việt Nam 40-65 tuổi đang ở giai đoạn tái thiết. Sáng lập bởi Khang Sol, 2024.",
+  "foundingDate": "2024",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://sol.vn/khang-sol/#person",
+    "name": "Khang Sol",
+    "alternateName": "Nguyễn Đình Khang",
+    "url": "https://sol.vn/khang-sol/",
+    "jobTitle": "Founder Đi Cùng Sol · Sáng lập Công ty CNTT · Sáng lập Doanh nghiệp TMĐT"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Vietnam"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Đàn ông Việt Nam 40-65 tuổi đang tái thiết Thân-Tâm-Trí"
+  },
+  "knowsAbout": [
+    "Mid-life transition for Vietnamese men aged 40-65",
+    "Smoking cessation (bỏ thuốc lá)",
+    "Mid-life mental health and mindfulness (sức khoẻ tinh thần tuổi trung niên)",
+    "Career reinvention and entrepreneurship for U45 (tái khởi nghiệp)",
+    "Lean Startup methodology",
+    "Vietnamese SME entrepreneurship"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/vietnaminternet/",
+    "https://web.facebook.com/nguyendinhkhang",
+    "https://zalo.me/sol"
+  ],
+  "subOrganization": [
+    {
+      "@type": "WebSite",
+      "name": "Bothuocla — Trụ Thân (Sức khoẻ thể chất)",
+      "url": "https://bothuocla.sol.vn/",
+      "description": "Hệ thống công cụ + cộng đồng giúp đàn ông Việt bỏ thuốc lá, vận động trở lại, ngủ tốt hơn."
+    },
+    {
+      "@type": "WebSite",
+      "name": "Trụ Tâm (Tinh thần & Chiêm nghiệm)",
+      "url": "https://sol.vn/ngam/",
+      "description": "Thiền chánh niệm, self-talk journaling, framework đối mặt khủng hoảng tuổi trung niên cho đàn ông U45."
+    },
+    {
+      "@type": "WebSite",
+      "name": "Huongdi — Trụ Trí (Sự nghiệp & Tái khởi nghiệp)",
+      "url": "https://huongdi.sol.vn/",
+      "description": "Hệ thống 37 hướng đi tái khởi nghiệp cho đàn ông Việt 40-65 với P1/P2/P3 tools + roadmap 30/90/180 ngày."
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contact@sol.vn",
+      "availableLanguage": ["Vietnamese", "English"]
+    }
+  ],
+  "slogan": "Đi cùng nhau, đường dài đỡ mỏi",
+  "mission": "Đồng hành đàn ông Việt 40-65 tái thiết Thân-Tâm-Trí, để bước sang 20 năm tiếp theo của cuộc đời với sức khoẻ, sự an yên và một hướng đi rõ."
+}

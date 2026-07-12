@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <circle cx="100" cy="100" r="120" fill="#d97706" opacity="0.06"/>
+  <circle cx="1100" cy="550" r="160" fill="#92400e" opacity="0.06"/>
+  <rect x="60" y="50" width="14" height="48" rx="2" fill="#d97706"/>
+  <text x="90" y="86" font-family="Lato Black, sans-serif" font-weight="900" font-size="22" fill="#92400e">ĐI CÙNG SOL</text>
+  <text x="240" y="86" font-family="Lato, sans-serif" font-weight="500" font-size="18" fill="#78716c">· sol.vn</text>
+  <text x="60" y="200" font-family="Lato Black, sans-serif" font-weight="900" font-size="96" fill="#1c1917">Sol Là Gì?</text>
+  <rect x="60" y="225" width="100" height="6" rx="3" fill="#d97706"/>
+  <text x="60" y="290" font-family="Lato Black, sans-serif" font-weight="900" font-size="36" fill="#b45309">Hệ Sinh Thái 3 Trụ</text>
+  <g transform="translate(60, 340)">
+    <rect x="0" y="0" width="340" height="180" rx="16" fill="#ffffff" opacity="0.95" stroke="#22c55e" stroke-width="3"/>
+    <circle cx="56" cy="56" r="34" fill="#22c55e"/>
+    <text x="56" y="68" font-family="Lato Black, sans-serif" font-weight="900" font-size="40" fill="#ffffff" text-anchor="middle">T</text>
+    <text x="106" y="50" font-family="Lato Black, sans-serif" font-weight="900" font-size="36" fill="#1c1917">Thân</text>
+    <text x="106" y="80" font-family="Lato, sans-serif" font-weight="600" font-size="16" fill="#15803d">Sức khoẻ thể chất</text>
+    <text x="22" y="125" font-family="Lato Black, sans-serif" font-weight="900" font-size="14" fill="#92400e">bothuocla.sol.vn</text>
+    <text x="22" y="150" font-family="Lato, sans-serif" font-weight="400" font-size="14" fill="#57534e">Bỏ thuốc · Vận động</text>
+    <text x="22" y="170" font-family="Lato, sans-serif" font-weight="400" font-size="14" fill="#57534e">Ngủ tốt · Dinh dưỡng</text>
+  </g>
+  <g transform="translate(430, 340)">
+    <rect x="0" y="0" width="340" height="180" rx="16" fill="#ffffff" opacity="0.95" stroke="#6366f1" stroke-width="3"/>
+    <circle cx="56" cy="56" r="34" fill="#6366f1"/>
+    <text x="56" y="68" font-family="Lato Black, sans-serif" font-weight="900" font-size="40" fill="#ffffff" text-anchor="middle">T</text>
+    <text x="106" y="50" font-family="Lato Black, sans-serif" font-weight="900" font-size="36" fill="#1c1917">Tâm</text>
+    <text x="106" y="80" font-family="Lato, sans-serif" font-weight="600" font-size="16" fill="#4338ca">Tinh thần · Chiêm nghiệm</text>
+    <text x="22" y="125" font-family="Lato Black, sans-serif" font-weight="900" font-size="14" fill="#92400e">sol.vn/ngam</text>
+    <text x="22" y="150" font-family="Lato, sans-serif" font-weight="400" font-size="14" fill="#57534e">Chánh niệm · An yên</text>
+    <text x="22" y="170" font-family="Lato, sans-serif" font-weight="400" font-size="14" fill="#57534e">Vượt khủng hoảng U45</text>
+  </g>
+  <g transform="translate(800, 340)">
+    <rect x="0" y="0" width="340" height="180" rx="16" fill="#ffffff" opacity="0.95" stroke="#d97706" stroke-width="3"/>
+    <circle cx="56" cy="56" r="34" fill="#d97706"/>
+    <text x="56" y="68" font-family="Lato Black, sans-serif" font-weight="900" font-size="40" fill="#ffffff" text-anchor="middle">T</text>
+    <text x="106" y="50" font-family="Lato Black, sans-serif" font-weight="900" font-size="36" fill="#1c1917">Trí</text>
+    <text x="106" y="80" font-family="Lato, sans-serif" font-weight="600" font-size="16" fill="#92400e">Sự nghiệp · Tái khởi nghiệp</text>
+    <text x="22" y="125" font-family="Lato Black, sans-serif" font-weight="900" font-size="14" fill="#92400e">huongdi.sol.vn</text>
+    <text x="22" y="150" font-family="Lato, sans-serif" font-weight="400" font-size="14" fill="#57534e">P1 · P2 · P3 Tools</text>
+    <text x="22" y="170" font-family="Lato, sans-serif" font-weight="400" font-size="14" fill="#57534e">37 hướng đi tuổi 45+</text>
+  </g>
+  <rect x="60" y="555" width="720" height="44" rx="22" fill="#1c1917"/>
+  <text x="84" y="584" font-family="Lato Black, sans-serif" font-weight="900" font-size="18" fill="#ffffff">Cho Đàn Ông Việt 40-65 Trên Hành Trình Tái Thiết</text>
+  <g transform="translate(960, 555)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#d97706"/>
+    <circle cx="22" cy="22" r="14" fill="#ffffff"/>
+    <text x="22" y="28" font-family="Lato Black, sans-serif" font-weight="900" font-size="16" fill="#d97706" text-anchor="middle">K</text>
+    <text x="46" y="20" font-family="Lato Black, sans-serif" font-weight="900" font-size="14" fill="#ffffff">Khang Sol</text>
+    <text x="46" y="35" font-family="Lato, sans-serif" font-weight="500" font-size="11" fill="#fed7aa">Founder 2024</text>
+  </g>
+</svg>

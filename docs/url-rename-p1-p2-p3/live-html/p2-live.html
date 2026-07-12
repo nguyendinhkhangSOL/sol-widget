@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root {
+  --primary:#1a6b4a;--primary-light:#e8f5ee;--primary-mid:#2e8b63;
+  --accent:#f59e0b;--accent-light:#fef3c7;
+  --text:#1a202c;--muted:#6b7280;--border:#e5e7eb;--bg:#f9fafb;--white:#fff;
+  --shadow:0 2px 12px rgba(0,0,0,.08);--radius:14px;
+  --green:#10b981;--yellow:#f59e0b;--red:#ef4444;--blue:#3b82f6;--purple:#8b5cf6;--cyan:#06b6d4;--orange:#f97316;--teal:#14b8a6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
+
+/* HEADER */
+.hdr{background:var(--white);border-bottom:1px solid var(--border);padding:13px 20px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:200}
+.logo{font-weight:800;font-size:15px;color:var(--primary);text-decoration:none;flex-shrink:0}
+.logo span{color:var(--accent)}
+.prog-wrap{flex:1;max-width:240px}
+.prog-lbl{font-size:11px;color:var(--muted);text-align:right;margin-bottom:3px}
+.prog-track{height:5px;background:var(--border);border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .4s}
+
+/* SCREENS */
+.screen{display:none}.screen.active{display:block}
+
+/* WELCOME */
+.welcome{max-width:620px;margin:0 auto;padding:36px 20px}
+.p1-badge{background:var(--primary-light);border:1px solid #86efac;border-radius:var(--radius);padding:14px 18px;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.p1-badge .ico{font-size:22px}
+.p1-badge strong{display:block;font-size:15px;color:var(--primary)}
+.p1-badge p{font-size:13px;color:var(--muted)}
+.welcome h1{font-size:26px;font-weight:800;color:var(--primary);margin-bottom:8px}
+.welcome h1 em{color:var(--accent);font-style:normal}
+.welcome .sub{font-size:15px;color:var(--muted);margin-bottom:24px}
+.why-box{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:22px}
+.why-box h3{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:12px}
+.why-item{display:flex;gap:10px;margin-bottom:8px;font-size:14px;align-items:flex-start}
+.why-item:last-child{margin-bottom:0}
+.why-item .ck{color:var(--green);font-size:16px;flex-shrink:0;margin-top:1px}
+.sci-note{background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;padding:13px 16px;font-size:13px;color:#92400e;margin-bottom:24px}
+.btn-start{width:100%;padding:17px;background:var(--accent);color:var(--white);border:none;border-radius:var(--radius);font-size:17px;font-weight:700;cursor:pointer}
+.btn-start:hover{background:#d97706}
+
+/* ═══ CANVAS LAYOUT ═══ */
+.canvas-wrap{display:grid;grid-template-columns:1fr 340px;gap:20px;max-width:1060px;margin:0 auto;padding:20px 16px 60px;align-items:start}
+@media(max-width:800px){.canvas-wrap{grid-template-columns:1fr}}
+
+/* LEFT: CONTROLS */
+.controls{}
+.section-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+.sec-header{display:flex;align-items:center;gap:10px;padding:16px 20px;cursor:pointer;user-select:none;border-bottom:1px solid transparent;transition:border-color .2s}
+.sec-header.open{border-bottom-color:var(--border)}
+.sec-icon{font-size:22px;width:32px;flex-shrink:0}
+.sec-title{flex:1}
+.sec-title h3{font-size:16px;font-weight:700;color:var(--text)}
+.sec-title p{font-size:12px;color:var(--muted)}
+.sec-status{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px}
+.status-done{background:#dcfce7;color:#166534}
+.status-todo{background:var(--border);color:var(--muted)}
+.sec-chevron{font-size:18px;color:var(--muted);transition:transform .25s}
+.sec-header.open .sec-chevron{transform:rotate(180deg)}
+.sec-body{display:none;padding:20px}
+.sec-body.open{display:block}
+
+/* RESOURCE ROW */
+.res-row{margin-bottom:20px}
+.res-row:last-child{margin-bottom:0}
+.res-label{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.res-label span{font-size:13px;font-weight:400;color:var(--muted)}
+
+/* SLIDERS */
+.slider-wrap{position:relative;margin-bottom:6px}
+input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:99px;background:var(--border);outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--primary);border:3px solid white;box-shadow:0 1px 4px rgba(0,0,0,.2);cursor:pointer}
+input[type=range].accent-slider::-webkit-slider-thumb{background:var(--accent)}
+.range-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:3px}
+.dual-range{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dual-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+.now-lbl{color:var(--primary)}
+.max-lbl{color:var(--accent)}
+.val-display{font-size:18px;font-weight:800;color:var(--primary);margin-bottom:2px}
+.val-display.accent{color:var(--accent)}
+
+/* STAR RATING */
+.star-row{display:flex;gap:6px;margin-top:6px}
+.star{font-size:24px;cursor:pointer;color:#d1d5db;transition:color .15s;line-height:1}
+.star.on{color:var(--accent)}
+.star-hint{font-size:12px;color:var(--muted);margin-top:4px;min-height:16px}
+
+/* TOOL CHECKBOXES */
+.tool-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tool-chip{padding:6px 14px;border:2px solid var(--border);border-radius:99px;font-size:13px;cursor:pointer;color:var(--muted);transition:all .15s;user-select:none}
+.tool-chip.on{border-color:var(--primary);background:var(--primary-light);color:var(--primary);font-weight:600}
+
+/* MONTH PILLS */
+.month-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.mpill{padding:8px 16px;border:2px solid var(--border);border-radius:99px;font-size:14px;cursor:pointer;color:var(--muted);transition:all .15s}
+.mpill.on{border-color:var(--primary);background:var(--primary);color:white;font-weight:700}
+
+/* INCOME SLIDERS */
+.income-dual{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+
+/* ENERGY TRIO */
+.energy-trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.e-item p{font-size:13px;color:var(--muted);margin-bottom:4px}
+
+/* ═══ RIGHT: LIVE BỨC TRANH ═══ */
+.picture-panel{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);position:sticky;top:73px}
+.picture-hdr{background:linear-gradient(135deg,var(--primary),var(--primary-mid));border-radius:var(--radius) var(--radius) 0 0;padding:16px 20px;color:white}
+.picture-hdr h3{font-size:15px;font-weight:800;margin-bottom:2px}
+.picture-hdr p{font-size:12px;opacity:.8}
+.picture-body{padding:16px 18px}
+
+/* Resource mini bars */
+.mini-bars{margin-bottom:18px}
+.mini-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.mini-icon{font-size:14px;width:20px;flex-shrink:0}
+.mini-label{font-size:12px;width:90px;flex-shrink:0;color:var(--muted)}
+.mini-bar-wrap{flex:1;height:7px;background:var(--border);border-radius:99px;overflow:hidden}
+.mini-fill{height:100%;border-radius:99px;transition:width .5s ease-out}
+.mini-val{font-size:12px;font-weight:700;width:28px;text-align:right}
+
+/* Assets & Constraints */
+.ac-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.ac-box{border-radius:10px;padding:12px}
+.ac-box.asset{background:#f0fdf4}
+.ac-box.constraint{background:#fff1f2}
+.ac-box h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+.ac-box.asset h4{color:#166534}
+.ac-box.constraint h4{color:#be123c}
+.ac-tag{font-size:13px;font-weight:600;display:block;margin-bottom:3px}
+.ac-tag:last-child{margin-bottom:0}
+.ac-box.asset .ac-tag{color:#15803d}
+.ac-box.constraint .ac-tag{color:#dc2626}
+
+/* Directions */
+.dir-section h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px}
+.dir-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;margin-bottom:6px;background:var(--bg)}
+.dir-icon{font-size:16px;flex-shrink:0}
+.dir-info{flex:1;min-width:0}
+.dir-name{font-size:13px;font-weight:600;color:var(--text)}
+.dir-reason{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dir-badge{font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;flex-shrink:0}
+.badge-now{background:#dcfce7;color:#166534}
+.badge-soon{background:#fef3c7;color:#92400e}
+.badge-later{background:#fee2e2;color:#991b1b}
+
+/* Income target display */
+.income-display{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:10px;padding:12px;margin-bottom:14px;display:flex;gap:16px}
+.income-box{flex:1;text-align:center}
+.income-box .lbl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.income-box .val{font-size:16px;font-weight:800;color:var(--primary)}
+
+/* Save button */
+.btn-save{width:100%;padding:14px;background:var(--primary);color:var(--white);border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;margin-top:16px}
+.btn-save:hover{background:var(--primary-mid)}
+
+/* RESULTS */
+.results{max-width:700px;margin:0 auto;padding:32px 16px 60px}
+.res-h1{font-size:24px;font-weight:800;color:var(--primary);margin-bottom:6px}
+.res-sub{font-size:15px;color:var(--muted);margin-bottom:24px}
+.dna-card{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:18px}
+.dna-card h3{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:18px}
+.dna-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.dna-row:last-child{margin-bottom:0}
+.dna-icon{font-size:18px;width:26px;flex-shrink:0}
+.dna-lbl{width:130px;font-size:14px;font-weight:600;flex-shrink:0}
+.dna-bar-wrap{flex:1;height:10px;background:var(--border);border-radius:99px;overflow:hidden}
+.dna-fill{height:100%;border-radius:99px;transition:width 1.2s ease-out}
+.dna-val{width:32px;text-align:right;font-size:13px;font-weight:700}
+.dna-tag{font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;margin-left:4px;flex-shrink:0}
+.t-asset{background:#dcfce7;color:#166534}
+.t-mid{background:#fef3c7;color:#92400e}
+.t-constraint{background:#fee2e2;color:#991b1b}
+
+.primary-card{background:linear-gradient(135deg,var(--primary),var(--primary-mid));color:white;border-radius:var(--radius);padding:22px;margin-bottom:18px}
+.primary-card .role{font-size:12px;font-weight:600;opacity:.75;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.primary-card h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.primary-card p{font-size:14px;opacity:.9;line-height:1.7}
+
+.insight-card{background:var(--white);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+.insight-card h3{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:14px}
+.insight-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.insight-row:last-child{border-bottom:none;padding-bottom:0}
+.insight-ico{font-size:22px;flex-shrink:0}
+.insight-row h4{font-size:15px;font-weight:700;margin-bottom:3px}
+.insight-row p{font-size:14px;color:var(--muted);line-height:1.6}
+
+.direction-result-card{background:var(--white);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+.direction-result-card h3{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:14px}
+.dr-item{border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.dr-item:last-child{margin-bottom:0}
+.dr-left{flex:1}
+.dr-name{font-size:16px;font-weight:700;margin-bottom:3px}
+.dr-meta{font-size:13px;color:var(--muted)}
+.dr-right{text-align:right;flex-shrink:0}
+.dr-score{font-size:22px;font-weight:800;color:var(--primary)}
+.dr-badge{font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px}
+
+.bridge-card{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #86efac;border-radius:var(--radius);padding:24px;margin-bottom:18px;text-align:center}
+.bridge-card h3{font-size:20px;font-weight:800;color:var(--primary);margin-bottom:8px}
+.bridge-card p{font-size:15px;color:var(--muted);margin-bottom:18px}
+.btn-p3{display:inline-block;padding:15px 36px;background:var(--primary);color:white;border:none;border-radius:var(--radius);font-size:16px;font-weight:700;cursor:pointer;text-decoration:none}
+
+.sci-footer{background:var(--white);border-radius:var(--radius);padding:18px;font-size:12px;color:var(--muted);line-height:1.8;margin-top:18px}
+.sci-footer strong{color:var(--primary)}
+</style>
+  <!-- ═══════ SEO META (injected by inject-seo.js) ═══════ -->
+  <title>Bản Đồ Nguồn Lực U45 — 8 Trục Kinh Nghiệm, Vốn, Thời Gian</title>
+  <meta name="description" content="Đánh giá 8 nguồn lực anh đang có: kinh nghiệm, vốn, thời gian, công nghệ, network, sức khoẻ, gia đình, học hỏi. 5 phút có bản đồ rõ.">
+  <meta name="keywords" content="đánh giá nguồn lực khởi nghiệp, vốn khởi nghiệp tuổi 45, kinh nghiệm khởi nghiệp U45">
+  <link rel="canonical" href="https://huongdi.sol.vn/p2">
+  <meta name="author" content="Khang Sol">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="language" content="vi-VN">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bản Đồ Nguồn Lực U45 — 8 Trục Kinh Nghiệm, Vốn, Thời Gian">
+  <meta property="og:description" content="Đánh giá 8 nguồn lực anh đang có: kinh nghiệm, vốn, thời gian, công nghệ, network, sức khoẻ, gia đình, học hỏi. 5 phút có bản đồ rõ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://huongdi.sol.vn/p2">
+  <meta property="og:image" content="https://huongdi.sol.vn/og/p2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Đi Cùng Sol — Hướng Đi U45">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bản Đồ Nguồn Lực U45 — 8 Trục Kinh Nghiệm, Vốn, Thời Gian">
+  <meta name="twitter:description" content="Đánh giá 8 nguồn lực anh đang có: kinh nghiệm, vốn, thời gian, công nghệ, network, sức khoẻ, gia đình, học hỏi. 5 phút có bản đồ rõ.">
+  <meta name="twitter:image" content="https://huongdi.sol.vn/og/p2.jpg">
+  <meta name="twitter:site" content="@solvn">
+
+  <!-- JSON-LD Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Đi Cùng Sol",
+    "alternateName": "Sol",
+    "url": "https://sol.vn/",
+    "logo": "https://sol.vn/wp-content/uploads/2025/05/Icon_2.png",
+    "description": "Hệ sinh thái Đi Cùng Sol — Thân (sức khoẻ), Tâm (tinh thần), Trí (sự nghiệp) cho đàn ông Việt 40-65 tuổi",
+    "founder": {
+      "@type": "Person",
+      "name": "Khang Sol",
+      "alternateName": "Nguyễn Đình Khang",
+      "url": "https://sol.vn/khang-sol/",
+      "image": "https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg",
+      "jobTitle": "Founder, Đi Cùng Sol",
+      "sameAs": [
+        "https://www.linkedin.com/in/vietnaminternet/",
+        "https://web.facebook.com/nguyendinhkhang"
+      ],
+      "knowsAbout": [
+        "Mid-life career transition",
+        "Lean startup",
+        "IT project management",
+        "Vietnamese SME entrepreneurship",
+        "Tái khởi nghiệp tuổi 45",
+        "Khởi nghiệp tinh gọn"
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/vietnaminternet/",
+      "https://web.facebook.com/nguyendinhkhang"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Huongdi — Tìm Hướng Đi U45",
+    "url": "https://huongdi.sol.vn/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Đi Cùng Sol",
+      "url": "https://sol.vn/"
+    },
+    "inLanguage": "vi-VN",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Đàn ông Việt 40-65 tuổi"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bản Đồ Nguồn Lực U45",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires modern browser with JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "VND"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Khang Sol"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Trang chủ",
+        "item": "https://huongdi.sol.vn/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "P2 — Nguồn Lực",
+        "item": "https://huongdi.sol.vn/p2"
+      }
+    ]
+  }
+  </script>
+  <!-- ═══════ /SEO META ═══════ -->
+</head>
+<body>
+<!-- SOL-HEADER-START -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL HEADER — Đồng nhất 3 sản phẩm sol.vn / bothuocla / huongdi
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào sau <body> mỗi HTML file của huongdi.sol.vn
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-header-styles">
+  /* Reset cho header — không phá CSS gốc của page */
+  #sol-header * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  }
+  #sol-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .sol-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sol-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .sol-logo img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+  .sol-logo span {
+    color: #1a1a1a;
+  }
+  .sol-logo strong {
+    color: #d97706;
+    font-weight: 800;
+  }
+
+  /* Nav 3 trụ Thân-Tâm-Trí */
+  .sol-nav-pillars {
+    display: flex;
+    gap: 6px;
+    background: #f5f5f4;
+    border-radius: 12px;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+  }
+  .sol-nav-pillars a {
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 22px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    min-width: 56px;
+    text-align: center;
+  }
+  .sol-nav-pillars a:hover {
+    color: #1a1a1a;
+    background: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+  .sol-nav-pillars a.active {
+    background: linear-gradient(135deg, #fff 0%, #fef3c7 100%);
+    color: #d97706;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.18);
+    border: 1px solid rgba(217, 119, 6, 0.15);
+  }
+
+  /* Nav huongdi specific */
+  .sol-nav-huongdi {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .sol-nav-huongdi a {
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .sol-nav-huongdi a:hover {
+    color: #d97706;
+  }
+  .sol-nav-huongdi a.current {
+    color: #d97706;
+    font-weight: 700;
+  }
+
+  /* CTA button */
+  .sol-cta {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    color: #fff !important;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(217, 119, 6, 0.3);
+    white-space: nowrap;
+  }
+  .sol-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-header-inner {
+      padding: 8px 12px;
+      gap: 8px;
+    }
+    .sol-nav-pillars {
+      gap: 4px;
+      padding: 4px;
+    }
+    .sol-nav-pillars a {
+      padding: 6px 14px;
+      font-size: 13px;
+      min-width: 48px;
+    }
+    .sol-nav-huongdi {
+      display: none; /* Ẩn nav phụ trên mobile, dùng menu burger sau */
+    }
+    .sol-logo span {
+      display: none; /* Chỉ giữ icon trên mobile */
+    }
+    .sol-cta {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-nav-pillars {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Dark mode (nếu page có) */
+  @media (prefers-color-scheme: dark) {
+    #sol-header {
+      background: rgba(20, 20, 20, 0.92);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-logo, .sol-logo span {
+      color: #f3f4f6;
+    }
+    .sol-nav-pillars {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .sol-nav-pillars a {
+      color: #9ca3af;
+    }
+    .sol-nav-pillars a.active {
+      background: #1a1a1a;
+      color: #f59e0b;
+    }
+    .sol-nav-huongdi a {
+      color: #d1d5db;
+    }
+  }
+</style>
+
+<header id="sol-header" role="banner" aria-label="Sol — Hệ sinh thái 3 trụ">
+  <div class="sol-header-inner">
+
+    <!-- Logo + brand -->
+    <a href="https://sol.vn/" class="sol-logo" aria-label="Sol — Đi Cùng Sol">
+      <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png"
+           alt="Logo Sol"
+           width="28" height="28"
+           loading="eager">
+      <span>Đi Cùng <strong>Sol</strong></span>
+    </a>
+
+    <!-- Nav 3 trụ Thân-Tâm-Trí -->
+    <nav class="sol-nav-pillars" aria-label="3 trụ Sol">
+      <a href="https://bothuocla.sol.vn/" title="Sức khoẻ — bothuocla.sol.vn">Thân</a>
+      <a href="https://sol.vn/ngam/" title="Tinh thần — sol.vn/ngam">Tâm</a>
+      <a href="https://huongdi.sol.vn/" class="active" aria-current="page" title="Sự nghiệp — huongdi.sol.vn">Trí</a>
+    </nav>
+
+    <!-- Nav huongdi -->
+    <nav class="sol-nav-huongdi" aria-label="Huongdi navigation">
+      <a href="/p1.html" data-huongdi-link="p1">P1 Khám phá</a>
+      <a href="/p2.html" data-huongdi-link="p2">P2 Nguồn lực</a>
+      <a href="/p3.html" data-huongdi-link="p3">P3 Kết quả</a>
+      <a href="https://sol.vn/huong-di/" rel="noopener">Bài viết</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="/p1.html" class="sol-cta">Bắt đầu →</a>
+
+  </div>
+</header>
+
+<script id="sol-header-script">
+  // Auto-highlight current page in sub-nav
+  (function() {
+    var path = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+    var matchKey = null;
+    if (path === '/p1' || path.endsWith('/p1')) matchKey = 'p1';
+    else if (path === '/p2' || path.endsWith('/p2')) matchKey = 'p2';
+    else if (path.startsWith('/p3')) matchKey = 'p3';
+    if (matchKey) {
+      var links = document.querySelectorAll('.sol-nav-huongdi a[data-huongdi-link="' + matchKey + '"]');
+      links.forEach(function(a) { a.classList.add('current'); });
+    }
+  })();
+</script>
+<!-- SOL-HEADER-END -->
+
+<div class="hdr">
+  <a href="/" class="logo">huongdi<span>.sol.vn</span></a>
+  <div class="prog-wrap">
+    <div class="prog-lbl" id="progLbl">Hoàn thành 0 / 4 mục</div>
+    <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  </div>
+</div>
+
+<!-- ═══════ WELCOME ═══════ -->
+<div class="screen active" id="screen-welcome">
+<div class="welcome">
+  <!-- P1 Result Summary (rendered by sol-flow.js) -->
+  <div id="sol-p1-summary"></div>
+  <h1>Bạn đang có <em>gì</em> trong tay?</h1>
+  <p class="sub">P2 không hỏi bạn muốn gì — P2 hỏi bạn đang có gì. Đây là bộ lọc thực tế quyết định hướng đi nào khả thi <em>ngay bây giờ</em>.</p>
+
+  <div class="why-box">
+    <h3>Tại sao P2 quan trọng hơn P1?</h3>
+    <div class="why-item"><span class="ck">✓</span><span>Nhiều người <strong>phù hợp với Coaching</strong> (P1) nhưng <strong>không có thời gian, mạng lưới và năng lượng</strong> để bắt đầu ngay</span></div>
+    <div class="why-item"><span class="ck">✓</span><span>P1 nói bạn <em>phù hợp</em> với điều gì — P2 nói điều đó có <em>khả thi</em> không với hoàn cảnh hiện tại</span></div>
+    <div class="why-item"><span class="ck">✓</span><span>Trên thị trường có rất nhiều bài test tính cách. Hiếm có hệ thống hỏi: "<strong>Bạn còn bao nhiêu thời gian? Bao nhiêu năng lượng? Bao nhiêu vốn?</strong>"</span></div>
+  </div>
+
+  <div class="sci-note">📖 Căn cứ: <strong>Effectuation Theory</strong> (Sarasvathy, 2001) — doanh nhân giỏi bắt đầu từ "tôi đang có gì?" và làm việc ra ngoài từ điểm đó, không phải ngược lại. Nguồn lực là điểm xuất phát, không phải kết quả.</div>
+
+  <button class="btn-start" onclick="startCanvas()">Khai báo nguồn lực →</button>
+</div>
+</div>
+
+<!-- ═══════ MAIN CANVAS ═══════ -->
+<div class="screen" id="screen-canvas">
+<div class="canvas-wrap">
+
+  <!-- ── LEFT: CONTROLS ── -->
+  <div class="controls">
+
+    <!-- SECTION 1: Vốn cứng -->
+    <div class="section-card">
+      <div class="sec-header open" onclick="toggleSec(this)">
+        <div class="sec-icon">💰</div>
+        <div class="sec-title"><h3>Vốn & Kinh nghiệm</h3><p>Hai nguồn lực không thể giả vờ có qua đêm</p></div>
+        <span class="sec-status status-todo" id="s1status">Chưa điền</span>
+        <span class="sec-chevron">⌄</span>
+      </div>
+      <div class="sec-body open" id="s1body">
+
+        <!-- Capital -->
+        <div class="res-row">
+          <div class="res-label">Vốn sẵn sàng đầu tư <span id="capNowLbl">0 triệu</span></div>
+          <div class="dual-range">
+            <div>
+              <div class="dual-label now-lbl">📌 Có ngay</div>
+              <div class="val-display" id="capNowVal">0 triệu</div>
+              <input type="range" min="0" max="500" step="5" value="0" id="capNow" oninput="onCapNow(this.value)">
+              <div class="range-labels"><span>0</span><span>100M</span><span>300M</span><span>500M+</span></div>
+            </div>
+            <div>
+              <div class="dual-label max-lbl">🔓 Có thể huy động</div>
+              <div class="val-display accent" id="capMaxVal">0 triệu</div>
+              <input type="range" min="0" max="1000" step="10" value="0" id="capMax" class="accent-slider" oninput="onCapMax(this.value)">
+              <div class="range-labels"><span>0</span><span>300M</span><span>700M</span><span>1 tỷ</span></div>
+            </div>
+          </div>
+          <div class="res-label" style="margin-top:12px">Nếu mất toàn bộ số vốn này, bạn có chịu được?</div>
+          <div class="star-row" id="capLoss"></div>
+          <div class="star-hint" id="capLossHint">Chưa đánh giá</div>
+        </div>
+
+        <!-- Experience -->
+        <div class="res-row">
+          <div class="res-label">Số năm kinh nghiệm trong lĩnh vực chính</div>
+          <div class="month-pills" id="expYears">
+            <div class="mpill" onclick="pickExpYear(this,'0')">Dưới 1 năm</div>
+            <div class="mpill" onclick="pickExpYear(this,'2')">1–3 năm</div>
+            <div class="mpill" onclick="pickExpYear(this,'4')">3–5 năm</div>
+            <div class="mpill" onclick="pickExpYear(this,'7')">5–10 năm</div>
+            <div class="mpill on" onclick="pickExpYear(this,'10')">10+ năm</div>
+          </div>
+          <div class="res-label" style="margin-top:12px">Người khác sẵn sàng trả tiền cho kinh nghiệm của bạn?</div>
+          <div class="star-row" id="expMkt"></div>
+          <div class="star-hint" id="expMktHint">Chưa đánh giá</div>
+          <div class="res-label" style="margin-top:12px">Bạn tự tin kinh nghiệm này vẫn tạo ra giá trị hiện tại?</div>
+          <div class="star-row" id="expConf"></div>
+          <div class="star-hint" id="expConfHint">Chưa đánh giá</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 2: Vốn bản thân -->
+    <div class="section-card">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon">⚡</div>
+        <div class="sec-title"><h3>Thời gian & Năng lượng</h3><p>Nguồn lực cạn kiệt nhanh nhất trong năm đầu</p></div>
+        <span class="sec-status status-todo" id="s2status">Chưa điền</span>
+        <span class="sec-chevron">⌄</span>
+      </div>
+      <div class="sec-body" id="s2body">
+
+        <!-- Time -->
+        <div class="res-row">
+          <div class="res-label">Giờ mỗi tuần có thể dành cho hướng đi mới</div>
+          <div class="dual-range">
+            <div>
+              <div class="dual-label now-lbl">📌 Hiện tại</div>
+              <div class="val-display" id="timeNowVal">10 giờ/tuần</div>
+              <input type="range" min="0" max="60" step="5" value="10" id="timeNow" oninput="onTimeNow(this.value)">
+              <div class="range-labels"><span>0h</span><span>20h</span><span>40h</span><span>60h</span></div>
+            </div>
+            <div>
+              <div class="dual-label max-lbl">🔓 Tối đa nếu cần</div>
+              <div class="val-display accent" id="timeMaxVal">10 giờ/tuần</div>
+              <input type="range" min="0" max="60" step="5" value="10" id="timeMax" class="accent-slider" oninput="onTimeMax(this.value)">
+              <div class="range-labels"><span>0h</span><span>20h</span><span>40h</span><span>Full-time</span></div>
+            </div>
+          </div>
+          <div class="res-label" style="margin-top:12px">Có thể duy trì trong 6 tháng liên tục?</div>
+          <div class="star-row" id="timeSust"></div>
+          <div class="star-hint" id="timeSustHint">Chưa đánh giá</div>
+        </div>
+
+        <!-- Energy -->
+        <div class="res-row">
+          <div class="res-label">Năng lượng hiện tại (đánh giá 3 chiều)</div>
+          <div class="energy-trio">
+            <div class="e-item">
+              <p>🏃 Thể chất</p>
+              <div class="star-row" id="enPhys"></div>
+            </div>
+            <div class="e-item">
+              <p>🧠 Tinh thần</p>
+              <div class="star-row" id="enMind"></div>
+            </div>
+            <div class="e-item">
+              <p>💪 Phục hồi</p>
+              <div class="star-row" id="enRes"></div>
+            </div>
+          </div>
+          <div class="star-hint" id="energyHint" style="margin-top:6px">Chưa đánh giá</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 3: Vốn kết nối -->
+    <div class="section-card">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon">🌐</div>
+        <div class="sec-title"><h3>Mạng lưới & Công nghệ</h3><p>Tài sản vô hình nhưng đo được</p></div>
+        <span class="sec-status status-todo" id="s3status">Chưa điền</span>
+        <span class="sec-chevron">⌄</span>
+      </div>
+      <div class="sec-body" id="s3body">
+
+        <!-- Network -->
+        <div class="res-row">
+          <div class="res-label">Người có thể hỗ trợ/giới thiệu công việc mới</div>
+          <div class="month-pills" id="netSize">
+            <div class="mpill" onclick="pickNet(this,'0')">Gần như không có</div>
+            <div class="mpill on" onclick="pickNet(this,'20')">Dưới 10 người</div>
+            <div class="mpill" onclick="pickNet(this,'50')">10–50 người</div>
+            <div class="mpill" onclick="pickNet(this,'75')">50–200 người</div>
+            <div class="mpill" onclick="pickNet(this,'100')">Trên 200</div>
+          </div>
+          <div class="res-label" style="margin-top:12px">Bạn thường xuyên giữ liên lạc và đầu tư cho quan hệ này?</div>
+          <div class="star-row" id="netMaint"></div>
+          <div class="star-hint" id="netMaintHint">Chưa đánh giá</div>
+        </div>
+
+        <!-- Technology -->
+        <div class="res-row">
+          <div class="res-label">Công cụ số bạn đang dùng thành thạo</div>
+          <div class="tool-grid" id="toolGrid">
+            <div class="tool-chip" onclick="toggleTool(this,'email')">📧 Email</div>
+            <div class="tool-chip" onclick="toggleTool(this,'excel')">📊 Excel/Sheets</div>
+            <div class="tool-chip" onclick="toggleTool(this,'canva')">🎨 Canva</div>
+            <div class="tool-chip" onclick="toggleTool(this,'fb')">📱 Facebook Page</div>
+            <div class="tool-chip" onclick="toggleTool(this,'zalo')">💬 Zalo OA</div>
+            <div class="tool-chip" onclick="toggleTool(this,'video')">🎥 Video/Reels</div>
+            <div class="tool-chip" onclick="toggleTool(this,'ai')">🤖 AI (ChatGPT...)</div>
+            <div class="tool-chip" onclick="toggleTool(this,'website')">🌐 Website/Blog</div>
+            <div class="tool-chip" onclick="toggleTool(this,'ads')">📢 Quảng cáo FB/Google</div>
+          </div>
+          <div class="res-label" style="margin-top:12px">Mức độ thành thạo tổng thể</div>
+          <div class="star-row" id="techLevel"></div>
+          <div class="star-hint" id="techHint">Chưa đánh giá</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 4: Khẩu vị & Mục tiêu -->
+    <div class="section-card">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon">🎯</div>
+        <div class="sec-title"><h3>Rủi ro & Mục tiêu thu nhập</h3><p>Khẩu vị thực tế và đích đến mong muốn</p></div>
+        <span class="sec-status status-todo" id="s4status">Chưa điền</span>
+        <span class="sec-chevron">⌄</span>
+      </div>
+      <div class="sec-body" id="s4body">
+
+        <!-- Risk: months without income -->
+        <div class="res-row">
+          <div class="res-label">Bạn có thể chịu đựng bao lâu không có thu nhập từ hướng mới?</div>
+          <div class="month-pills" id="riskMonths">
+            <div class="mpill" onclick="pickRisk(this,'5')">1 tháng</div>
+            <div class="mpill on" onclick="pickRisk(this,'20')">3 tháng</div>
+            <div class="mpill" onclick="pickRisk(this,'45')">6 tháng</div>
+            <div class="mpill" onclick="pickRisk(this,'70')">12 tháng</div>
+            <div class="mpill" onclick="pickRisk(this,'100')">Không giới hạn</div>
+          </div>
+        </div>
+
+        <!-- Income goal: min + ideal -->
+        <div class="res-row">
+          <div class="res-label">Mục tiêu thu nhập từ hướng đi mới (triệu/tháng)</div>
+          <div class="income-dual">
+            <div>
+              <div class="dual-label now-lbl">📌 Tối thiểu cần</div>
+              <div class="val-display" id="incMinVal">5 triệu</div>
+              <input type="range" min="1" max="100" step="1" value="5" id="incMin" oninput="onIncMin(this.value)">
+              <div class="range-labels"><span>1M</span><span>25M</span><span>50M</span><span>100M</span></div>
+            </div>
+            <div>
+              <div class="dual-label max-lbl">🌟 Lý tưởng</div>
+              <div class="val-display accent" id="incIdealVal">15 triệu</div>
+              <input type="range" min="1" max="200" step="1" value="15" id="incIdeal" class="accent-slider" oninput="onIncIdeal(this.value)">
+              <div class="range-labels"><span>1M</span><span>50M</span><span>100M</span><span>200M+</span></div>
+            </div>
+          </div>
+          <div class="res-label" style="margin-top:12px">Mức độ cấp bách — bạn cần thu nhập này sớm đến mức nào?</div>
+          <div class="star-row" id="incUrgency"></div>
+          <div class="star-hint" id="incUrgencyHint">Chưa đánh giá</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end controls -->
+
+  <!-- ── RIGHT: LIVE BỨC TRANH ── -->
+  <div class="picture-panel">
+    <div class="picture-hdr">
+      <h3>Bức tranh nguồn lực</h3>
+      <p>Cập nhật tức thời theo khai báo của bạn</p>
+    </div>
+    <div class="picture-body">
+
+      <!-- Income display -->
+      <div class="income-display">
+        <div class="income-box">
+          <div class="lbl">Tối thiểu</div>
+          <div class="val" id="incMinDisp">5 tr/tháng</div>
+        </div>
+        <div class="income-box">
+          <div class="lbl">Lý tưởng</div>
+          <div class="val" id="incIdealDisp">15 tr/tháng</div>
+        </div>
+      </div>
+
+      <!-- Mini resource bars -->
+      <div class="mini-bars" id="miniBars"></div>
+
+      <!-- Assets & Constraints -->
+      <div class="ac-grid">
+        <div class="ac-box asset">
+          <h4>✅ Tài sản</h4>
+          <div id="assetList"><span class="ac-tag" style="color:#9ca3af;font-size:12px">Đang cập nhật...</span></div>
+        </div>
+        <div class="ac-box constraint">
+          <h4>⚠ Rào cản</h4>
+          <div id="constraintList"><span class="ac-tag" style="color:#9ca3af;font-size:12px">Đang cập nhật...</span></div>
+        </div>
+      </div>
+
+      <!-- Direction feasibility -->
+      <div class="dir-section">
+        <h4>Hướng đi trong tầm tay</h4>
+        <div id="dirList"></div>
+      </div>
+
+      <button class="btn-save" onclick="saveAndShowResults()">Xem kết quả đầy đủ →</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════ RESULTS ═══════ -->
+<div class="screen" id="screen-results">
+<div class="results">
+
+  <div class="res-h1" id="resH1">Bản đồ nguồn lực của bạn</div>
+  <div class="res-sub" id="resSub"></div>
+
+  <!-- Primary resource -->
+  <div class="primary-card">
+    <div class="role">TÀI SẢN LỚN NHẤT CỦA BẠN</div>
+    <h2 id="primaryTitle">—</h2>
+    <p id="primaryDesc">—</p>
+  </div>
+
+  <!-- DNA bars -->
+  <div class="dna-card">
+    <h3>📊 Resource DNA — 8 chiều nguồn lực</h3>
+    <div id="dnaBars"></div>
+  </div>
+
+  <!-- Insights -->
+  <div class="insight-card">
+    <h3>🔍 Nhận định chính</h3>
+    <div id="insightRows"></div>
+  </div>
+
+  <!-- Direction results -->
+  <div class="direction-result-card">
+    <h3>🗺 Hướng đi theo mức độ khả thi</h3>
+    <div id="dirResults"></div>
+  </div>
+
+  <!-- Bridge -->
+  <div class="bridge-card">
+    <h3>P1 + P2 → Tìm hướng đi</h3>
+    <p>Hệ thống đã có đủ dữ liệu về <strong>con người</strong> và <strong>nguồn lực</strong> của bạn. Bước tiếp theo: xem hướng đi nào phù hợp <em>và</em> khả thi nhất.</p>
+    <a href="/p3.html" class="btn-p3">Xem hướng đi phù hợp →</a>
+  </div>
+
+  <div class="sci-footer">
+    <strong>Nền tảng khoa học:</strong> Effectuation Theory (Sarasvathy, 2001) · Human Capital Theory (Becker, 1964) · Social Capital Theory (Putnam/Bourdieu) · Prospect Theory (Kahneman & Tversky, 1979) · Energy Management (Loehr & Schwartz, 2003) · Financial Bootstrapping (Winborg & Landström, 2001)
+  </div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════
+     JAVASCRIPT ENGINE
+════════════════════════════════════ -->
+<script>
+// ═══ STATE ═══
+const S = {
+  capNow:0, capMax:0, capLoss:0,
+  expYears:10, expMkt:0, expConf:0,
+  timeNow:10, timeMax:10, timeSust:0,
+  enPhys:0, enMind:0, enRes:0,
+  netSize:20, netMaint:0,
+  tools:[], techLevel:0,
+  riskMonths:20,
+  incMin:5, incIdeal:15, incUrgency:0,
+  secDone:[false,false,false,false]
+};
+
+// ═══ DIRECTIONS DATABASE ═══
+const DIRECTIONS = [
+  { name:'Freelancer Chuyên Môn', emoji:'💼',
+    req:{cap:0,time:15,exp:70,net:30,tech:30,energy:50,risk:20},
+    maxInc:35, minInc:8, timeline:'2–5 tháng' },
+  { name:'Tư Vấn Độc Lập', emoji:'🧭',
+    req:{cap:0,time:10,exp:80,net:60,tech:20,energy:40,risk:15},
+    maxInc:60, minInc:10, timeline:'2–6 tháng' },
+  { name:'Coaching / Đào Tạo', emoji:'🎓',
+    req:{cap:10,time:20,exp:60,net:40,tech:30,energy:70,risk:20},
+    maxInc:30, minInc:8, timeline:'3–8 tháng' },
+  { name:'Blog / Content Chuyên Môn', emoji:'✍️',
+    req:{cap:0,time:20,exp:50,net:20,tech:60,energy:50,risk:30},
+    maxInc:20, minInc:3, timeline:'8–18 tháng' },
+  { name:'Affiliate / Tiếp Thị Liên Kết', emoji:'🔗',
+    req:{cap:10,time:15,exp:30,net:20,tech:60,energy:40,risk:20},
+    maxInc:20, minInc:3, timeline:'6–12 tháng' },
+  { name:'Kinh Doanh Online', emoji:'🛒',
+    req:{cap:50,time:30,exp:30,net:30,tech:60,energy:70,risk:50},
+    maxInc:50, minInc:10, timeline:'4–10 tháng' },
+  { name:'Dịch Vụ Địa Phương', emoji:'🏪',
+    req:{cap:50,time:40,exp:30,net:40,tech:20,energy:70,risk:40},
+    maxInc:30, minInc:8, timeline:'3–6 tháng' },
+  { name:'Đại Lý / Nhượng Quyền', emoji:'🤝',
+    req:{cap:200,time:40,exp:20,net:40,tech:20,energy:60,risk:70},
+    maxInc:60, minInc:15, timeline:'3–12 tháng' },
+];
+
+// ═══ SCORING ═══
+function computeScores() {
+  const capScore = Math.min(100, Math.round(
+    (S.capNow/100*40) + (S.capMax/200*30) + (S.capLoss/5*30)
+  ));
+  const expScore = Math.min(100, Math.round(
+    (S.expYears/10*40) + (S.expMkt/5*30) + (S.expConf/5*30)
+  ));
+  const timeScore = Math.min(100, Math.round(
+    (S.timeNow/40*50) + (S.timeSust/5*30) + (S.timeMax/60*20)
+  ));
+  const energyScore = Math.min(100, Math.round(
+    ((S.enPhys + S.enMind + S.enRes) / 15 * 100)
+  ));
+  const netScore = Math.min(100, Math.round(
+    (S.netSize*0.6) + (S.netMaint/5*40)
+  ));
+  const techScore = Math.min(100, Math.round(
+    (S.tools.length/9*50) + (S.techLevel/5*50)
+  ));
+  const riskScore = S.riskMonths;
+  const incomeScore = Math.min(100, Math.round(S.incIdeal/100*100));
+
+  return { capScore, expScore, timeScore, energyScore, netScore, techScore, riskScore, incomeScore };
+}
+
+function getDirectionFeasibility(sc) {
+  // Use max (flexible) capital and time for "possible" calculation
+  const capAvail = Math.max(S.capNow, S.capMax * 0.5);
+  const timeAvail = Math.max(S.timeNow, S.timeMax);
+  const capNow = S.capNow;
+  const timeNow = S.timeNow;
+
+  return DIRECTIONS.map(d => {
+    // NOW feasibility (current resources only)
+    const nowFit = [
+      capNow >= d.req.cap ? 1 : capNow / d.req.cap,
+      sc.expScore >= d.req.exp ? 1 : sc.expScore / d.req.exp,
+      timeNow >= d.req.time ? 1 : timeNow / d.req.time,
+      sc.netScore >= d.req.net ? 1 : sc.netScore / d.req.net,
+      sc.techScore >= d.req.tech ? 1 : sc.techScore / d.req.tech,
+      sc.energyScore >= d.req.energy ? 1 : sc.energyScore / d.req.energy,
+      sc.riskScore >= d.req.risk ? 1 : sc.riskScore / d.req.risk,
+    ];
+    const nowScore = Math.round(nowFit.reduce((a,b)=>a+b,0)/nowFit.length*100);
+
+    // POTENTIAL feasibility (with mobilizable resources)
+    const potFit = [
+      capAvail >= d.req.cap ? 1 : capAvail / d.req.cap,
+      sc.expScore >= d.req.exp ? 1 : sc.expScore / d.req.exp,
+      timeAvail >= d.req.time ? 1 : timeAvail / d.req.time,
+      sc.netScore >= d.req.net ? 1 : sc.netScore / d.req.net,
+      sc.techScore >= d.req.tech ? 1 : sc.techScore / d.req.tech,
+      sc.energyScore >= d.req.energy ? 1 : sc.energyScore / d.req.energy,
+      sc.riskScore >= d.req.risk ? 1 : sc.riskScore / d.req.risk,
+    ];
+    const potScore = Math.round(potFit.reduce((a,b)=>a+b,0)/potFit.length*100);
+
+    // Income compatibility
+    const incomeOk = d.maxInc >= S.incMin;
+
+    // Status
+    let status = 'later', badge = '❌', badgeCls = 'badge-later';
+    if (nowScore >= 75 && incomeOk) { status='now'; badge='✅ Ngay bây giờ'; badgeCls='badge-now'; }
+    else if (potScore >= 70 && incomeOk) { status='soon'; badge='⏳ Với tối đa'; badgeCls='badge-soon'; }
+
+    // Why not
+    let reason = '';
+    if (status !== 'now') {
+      const gaps = [];
+      if (capNow < d.req.cap) gaps.push(`vốn cần ${d.req.cap}M`);
+      if (sc.expScore < d.req.exp) gaps.push('cần kinh nghiệm hơn');
+      if (timeNow < d.req.time) gaps.push(`cần ${d.req.time}h/tuần`);
+      if (sc.netScore < d.req.net) gaps.push('cần mạng lưới hơn');
+      reason = gaps.slice(0,2).join(', ');
+    }
+
+    return { ...d, nowScore, potScore, status, badge, badgeCls, reason, incomeOk };
+  }).sort((a,b) => b.nowScore - a.nowScore);
+}
+
+// ═══ LIVE UPDATE ═══
+const DIM_META = [
+  {key:'expScore',  icon:'🎯', label:'Kinh nghiệm', color:'#10b981'},
+  {key:'timeScore', icon:'⏰', label:'Thời gian',   color:'#3b82f6'},
+  {key:'energyScore',icon:'⚡',label:'Năng lượng',  color:'#ef4444'},
+  {key:'capScore',  icon:'💰', label:'Vốn',          color:'#f59e0b'},
+  {key:'netScore',  icon:'🤝', label:'Mạng lưới',   color:'#8b5cf6'},
+  {key:'techScore', icon:'💻', label:'Công nghệ',   color:'#06b6d4'},
+  {key:'riskScore', icon:'🎲', label:'Rủi ro',       color:'#f97316'},
+];
+
+function liveUpdate() {
+  const sc = computeScores();
+
+  // Mini bars
+  const mb = document.getElementById('miniBars');
+  mb.innerHTML = '';
+  DIM_META.forEach(m => {
+    const v = sc[m.key];
+    const row = document.createElement('div');
+    row.className = 'mini-row';
+    row.innerHTML = `
+      <span class="mini-icon">${m.icon}</span>
+      <span class="mini-label">${m.label}</span>
+      <div class="mini-bar-wrap"><div class="mini-fill" style="width:${v}%;background:${m.color}"></div></div>
+      <span class="mini-val" style="color:${m.color}">${v}</span>`;
+    mb.appendChild(row);
+  });
+
+  // Ranked
+  const ranked = DIM_META.map(m => ({...m, val:sc[m.key]})).sort((a,b)=>b.val-a.val);
+  const top3 = ranked.slice(0,3);
+  const bot2 = ranked.slice(-2);
+
+  // Assets
+  document.getElementById('assetList').innerHTML = top3.map(m =>
+    `<span class="ac-tag">${m.icon} ${m.label} (${m.val})</span>`).join('');
+  document.getElementById('constraintList').innerHTML = bot2.map(m =>
+    `<span class="ac-tag">${m.icon} ${m.label} (${m.val})</span>`).join('');
+
+  // Directions
+  const dirs = getDirectionFeasibility(sc);
+  const top4 = dirs.slice(0,5);
+  const dl = document.getElementById('dirList');
+  dl.innerHTML = '';
+  top4.forEach(d => {
+    if (!d.incomeOk) return;
+    const item = document.createElement('div');
+    item.className = 'dir-item';
+    item.innerHTML = `
+      <span class="dir-icon">${d.emoji}</span>
+      <div class="dir-info">
+        <div class="dir-name">${d.name}</div>
+        <div class="dir-reason">${d.reason || d.timeline}</div>
+      </div>
+      <span class="dir-badge ${d.badgeCls}">${d.badge}</span>`;
+    dl.appendChild(item);
+  });
+
+  // Income display
+  document.getElementById('incMinDisp').textContent = S.incMin + ' tr/tháng';
+  document.getElementById('incIdealDisp').textContent = S.incIdeal + ' tr/tháng';
+
+  // Progress
+  const done = S.secDone.filter(Boolean).length;
+  document.getElementById('progLbl').textContent = `Hoàn thành ${done} / 4 mục`;
+  document.getElementById('progFill').style.width = (done/4*100)+'%';
+
+  // Store for results
+  window._sc = sc;
+  window._dirs = dirs;
+}
+
+// ═══ INPUT HANDLERS ═══
+function onCapNow(v){ S.capNow=+v; document.getElementById('capNowVal').textContent=v+' triệu'; checkSec1(); liveUpdate(); }
+function onCapMax(v){ S.capMax=+v; document.getElementById('capMaxVal').textContent=v+' triệu'; liveUpdate(); }
+function onTimeNow(v){ S.timeNow=+v; document.getElementById('timeNowVal').textContent=v+' giờ/tuần'; if(+v>S.timeMax){S.timeMax=+v;document.getElementById('timeMax').value=v;document.getElementById('timeMaxVal').textContent=v+' giờ/tuần';} checkSec2(); liveUpdate(); }
+function onTimeMax(v){ S.timeMax=+v; document.getElementById('timeMaxVal').textContent=v+' giờ/tuần'; liveUpdate(); }
+function onIncMin(v){ S.incMin=+v; document.getElementById('incMinVal').textContent=v+' triệu'; if(+v>S.incIdeal){S.incIdeal=+v;document.getElementById('incIdeal').value=v;document.getElementById('incIdealVal').textContent=v+' triệu';} checkSec4(); liveUpdate(); }
+function onIncIdeal(v){ S.incIdeal=+v; document.getElementById('incIdealVal').textContent=v+' triệu'; liveUpdate(); }
+
+function pickExpYear(el,v){ S.expYears=+v; pickOne('#expYears',el); checkSec1(); liveUpdate(); }
+function pickNet(el,v){ S.netSize=+v; pickOne('#netSize',el); checkSec3(); liveUpdate(); }
+function pickRisk(el,v){ S.riskMonths=+v; pickOne('#riskMonths',el); checkSec4(); liveUpdate(); }
+function pickOne(sel,el){ document.querySelectorAll(sel+' .mpill').forEach(e=>e.classList.remove('on')); el.classList.add('on'); }
+
+function toggleTool(el,key){ el.classList.toggle('on'); if(el.classList.contains('on')) S.tools.push(key); else S.tools=S.tools.filter(t=>t!==key); checkSec3(); liveUpdate(); }
+
+// Star ratings
+function makeStars(containerId, stateKey, hints, onChange) {
+  const container = document.getElementById(containerId);
+  const hintEl = document.getElementById(containerId+'Hint');
+  container.innerHTML = '';
+  for(let i=1;i<=5;i++){
+    const star = document.createElement('span');
+    star.className='star'+(S[stateKey]>=i?' on':'');
+    star.textContent='★';
+    star.onclick = () => {
+      S[stateKey] = i;
+      container.querySelectorAll('.star').forEach((s,idx)=>s.classList.toggle('on',idx<i));
+      if(hintEl && hints) hintEl.textContent = hints[i-1];
+      if(onChange) onChange();
+      liveUpdate();
+    };
+    container.appendChild(star);
+  }
+}
+
+// Section completion checks
+function checkSec1(){ S.secDone[0]=(S.capLoss>0&&S.expMkt>0&&S.expConf>0); updateSecStatus('s1status',S.secDone[0]); }
+function checkSec2(){ S.secDone[1]=(S.timeSust>0&&S.enPhys>0&&S.enMind>0&&S.enRes>0); updateSecStatus('s2status',S.secDone[1]); }
+function checkSec3(){ S.secDone[2]=(S.netMaint>0&&S.techLevel>0); updateSecStatus('s3status',S.secDone[2]); }
+function checkSec4(){ S.secDone[3]=(S.riskMonths>0&&S.incUrgency>0); updateSecStatus('s4status',S.secDone[3]); }
+function updateSecStatus(id, done){ const el=document.getElementById(id); if(!el)return; el.textContent=done?'✓ Hoàn thành':'Chưa điền'; el.className='sec-status '+(done?'status-done':'status-todo'); }
+
+// Section toggle
+function toggleSec(header){
+  const isOpen=header.classList.contains('open');
+  header.classList.toggle('open',!isOpen);
+  header.nextElementSibling.classList.toggle('open',!isOpen);
+}
+
+// ═══ INIT ═══
+function initStars(){
+  const capLossHints=['Rất đau','Khó khăn','Chịu được','Không sao','Đã chuẩn bị'];
+  const expHints=['Gần như không','Ít người','Một số','Nhiều người','Chắc chắn'];
+  const confHints=['Không tự tin','Hơi lo','Khá tự tin','Tự tin','Rất tự tin'];
+  const sustHints=['Không chắc','Có thể','Khá được','Được','Chắc chắn'];
+  const energyHints=['Rất thấp','Thấp','Trung bình','Tốt','Rất tốt'];
+  const netHints=['Hầu như không','Thỉnh thoảng','Đôi khi','Thường xuyên','Luôn luôn'];
+  const techHints=['Mới bắt đầu','Cơ bản','Trung bình','Khá giỏi','Thành thạo'];
+  const incHints=['Không gấp','Hơi gấp','Khá gấp','Gấp','Rất gấp'];
+
+  makeStars('capLoss','capLoss',capLossHints, checkSec1);
+  makeStars('expMkt','expMkt',expHints, checkSec1);
+  makeStars('expConf','expConf',confHints, checkSec1);
+  makeStars('timeSust','timeSust',sustHints, checkSec2);
+  makeStars('enPhys','enPhys',energyHints, ()=>{ checkSec2(); updateEnergyHint(); });
+  makeStars('enMind','enMind',energyHints, ()=>{ checkSec2(); updateEnergyHint(); });
+  makeStars('enRes','enRes',energyHints, ()=>{ checkSec2(); updateEnergyHint(); });
+  makeStars('netMaint','netMaint',netHints, checkSec3);
+  makeStars('techLevel','techLevel',techHints, checkSec3);
+  makeStars('incUrgency','incUrgency',incHints, checkSec4);
+}
+
+function updateEnergyHint(){
+  const avg=((S.enPhys+S.enMind+S.enRes)/3).toFixed(1);
+  const msg=avg>=4?'Năng lượng tốt':avg>=3?'Năng lượng trung bình':'Năng lượng thấp — nên ưu tiên hướng đi nhẹ nhàng hơn';
+  document.getElementById('energyHint').textContent=msg;
+}
+
+function startCanvas(){
+  show('canvas');
+  initStars();
+  liveUpdate();
+}
+
+// ═══ RESULTS ═══
+function saveAndShowResults(){
+  const sc = window._sc || computeScores();
+  const dirs = window._dirs || getDirectionFeasibility(sc);
+
+  // Ranked
+  const ranked = DIM_META.map(m=>({...m,val:sc[m.key]})).sort((a,b)=>b.val-a.val);
+  const top1 = ranked[0];
+  const top3 = ranked.slice(0,3);
+  const bot2 = ranked.slice(-2);
+
+  // Primary card
+  const primaryDescs = {
+    expScore:'Bạn sở hữu kiến thức và kinh nghiệm mà người trẻ mất nhiều năm mới có được. Đây là thứ không thể copy qua đêm — và thị trường sẵn sàng trả tiền cho nó nếu bạn biết cách đóng gói.',
+    timeScore:'Thời gian tự chủ là nguồn lực quý giá mà nhiều người không có. Với thời gian dồi dào, bạn có thể thử nghiệm, học hỏi và điều chỉnh — điều mà người vừa đi làm vừa khởi nghiệp không thể làm được.',
+    energyScore:'Năng lượng và sức khỏe tốt là nền tảng của mọi hướng đi. Hãy bảo vệ và khai thác nguồn lực này — nó là thứ duy nhất không thể mua lại khi đã mất.',
+    capScore:'Vốn đủ mạnh mở ra nhiều lựa chọn hơn, bao gồm những hướng đi có barrier to entry cao và ít cạnh tranh hơn. Nhưng hãy validate nhỏ trước khi đầu tư lớn.',
+    netScore:'Mạng lưới rộng là tài sản chiến lược. 85% cơ hội kinh doanh đến qua quan hệ — không phải quảng cáo. Bạn đang có đòn bẩy lớn so với người mới bắt đầu.',
+    techScore:'Kỹ năng số tốt giúp bạn vận hành với chi phí thấp hơn và scale nhanh hơn. Đặc biệt với AI tools — người biết dùng đang có lợi thế tương đương thuê thêm 2-3 nhân viên.',
+    riskScore:'Khẩu vị rủi ro cao cho phép bạn chọn hướng đi dài hơi hơn — những hướng có thời gian build lâu nhưng ceiling cao hơn. Đây là lợi thế không phải ai cũng có.',
+  };
+  document.getElementById('primaryTitle').textContent = top1.label;
+  document.getElementById('primaryDesc').textContent = primaryDescs[top1.key] || '';
+  document.getElementById('resSub').textContent = 'Tài sản chính: '+top3.map(m=>m.label).join(' · ') + ' · Rào cản: '+bot2.map(m=>m.label).join(', ');
+
+  // DNA bars
+  const dnaBarsEl = document.getElementById('dnaBars');
+  dnaBarsEl.innerHTML = '';
+  ranked.forEach((m,i) => {
+    const tag = m.val>=70?{cls:'t-asset',lbl:'Tài sản'}:m.val>=35?{cls:'t-mid',lbl:'Trung bình'}:{cls:'t-constraint',lbl:'Rào cản'};
+    const row = document.createElement('div');
+    row.className = 'dna-row';
+    row.innerHTML = `
+      <span class="dna-icon">${m.icon}</span>
+      <span class="dna-lbl">${m.label}</span>
+      <div class="dna-bar-wrap"><div class="dna-fill" style="width:0%;background:${m.color}" data-val="${m.val}"></div></div>
+      <span class="dna-val" style="color:${m.color}">${m.val}</span>
+      <span class="dna-tag ${tag.cls}">${tag.lbl}</span>`;
+    dnaBarsEl.appendChild(row);
+  });
+  setTimeout(()=>{document.querySelectorAll('.dna-fill').forEach(el=>{el.style.width=el.dataset.val+'%';});},300);
+
+  // Insights
+  const insightEl = document.getElementById('insightRows');
+  insightEl.innerHTML = '';
+  const insights = [
+    {ico:'💡', title:'Tài sản lớn nhất: '+top1.label, desc:primaryDescs[top1.key]},
+    {ico:'⚠', title:'Rào cản lớn nhất: '+bot2[0].label, desc:getConstraintDesc(bot2[0].key)},
+    {ico:'🎯', title:'Mục tiêu thu nhập: '+S.incMin+'–'+S.incIdeal+' triệu/tháng', desc:getIncomeInsight()},
+  ];
+  insights.forEach(i=>{
+    const row=document.createElement('div'); row.className='insight-row';
+    row.innerHTML=`<span class="insight-ico">${i.ico}</span><div><h4>${i.title}</h4><p>${i.desc}</p></div>`;
+    insightEl.appendChild(row);
+  });
+
+  // Direction results
+  const drEl = document.getElementById('dirResults');
+  drEl.innerHTML = '';
+  dirs.filter(d=>d.incomeOk).slice(0,6).forEach(d=>{
+    const item=document.createElement('div'); item.className='dr-item';
+    const scoreColor=d.nowScore>=75?'#16a34a':d.nowScore>=50?'#d97706':'#dc2626';
+    item.innerHTML=`
+      <div class="dr-left">
+        <div class="dr-name">${d.emoji} ${d.name}</div>
+        <div class="dr-meta">Thu nhập: ${d.minInc}–${d.maxInc} tr/tháng · ${d.timeline}</div>
+        ${d.reason?`<div class="dr-meta" style="color:#dc2626">Cần thêm: ${d.reason}</div>`:''}
+      </div>
+      <div class="dr-right">
+        <div class="dr-score" style="color:${scoreColor}">${d.nowScore}%</div>
+        <span class="dr-badge ${d.badgeCls}">${d.badge}</span>
+      </div>`;
+    drEl.appendChild(item);
+  });
+
+  // Save
+  try{ localStorage.setItem('p2_result', JSON.stringify({scores:sc, S:S, ranked:ranked.map(m=>({key:m.key,val:m.val,label:m.label})), date:new Date().toISOString()})); }catch(e){}
+
+  show('results');
+  setTimeout(()=>{document.querySelectorAll('.dna-fill').forEach(el=>{el.style.width=el.dataset.val+'%';});},400);
+}
+
+function getConstraintDesc(key){
+  const descs={
+    capScore:'Vốn hạn chế → ưu tiên hướng không cần vốn lớn ban đầu (freelancer, tư vấn, content). Validate bằng 1 khách hàng trả tiền trước khi đầu tư.',
+    timeScore:'Thời gian ít → chọn hướng có thể bắt đầu 10–15h/tuần và scale dần. Đừng chọn hướng đòi hỏi toàn thời gian ngay từ đầu.',
+    energyScore:'Năng lượng thấp → đây là tín hiệu quan trọng. Ưu tiên hướng linh hoạt, không áp lực deadline và không đòi hỏi gặp gỡ nhiều người liên tục.',
+    netScore:'Mạng lưới hạn chế → đầu tư 30 phút/ngày cho networking trong 3 tháng trước khi bắt đầu. Hoặc chọn hướng không phụ thuộc vào mạng lưới có sẵn (content, affiliate).',
+    techScore:'Kỹ năng số thấp → dành 2-4 tuần học 2-3 công cụ cơ bản nhất (Canva, Zalo OA, ChatGPT). Chi phí này sẽ tiết kiệm rất nhiều sau này.',
+    riskScore:'Khẩu vị rủi ro thấp → ưu tiên hướng tạo thu nhập nhanh (2-4 tháng), đầu tư nhỏ và có thể thử song song với công việc hiện tại.',
+  };
+  return descs[key]||'Cần bổ sung thêm nguồn lực này trước khi bắt đầu hướng đi đòi hỏi cao ở chiều này.';
+}
+
+function getIncomeInsight(){
+  if(S.incMin<=5) return 'Mục tiêu thu nhập bổ sung thấp → nhiều hướng đi trong tầm tay, kể cả các hướng cần build lâu hơn như content/affiliate.';
+  if(S.incMin<=15) return 'Mục tiêu thu nhập hợp lý → phù hợp với freelancer, tư vấn, dịch vụ địa phương. Cần 3-6 tháng để đạt được ổn định.';
+  if(S.incMin<=30) return 'Mục tiêu thu nhập cao → cần hướng đi có biên lợi nhuận tốt (tư vấn cao cấp, coaching, kinh doanh có hệ thống). Thời gian build 6-12 tháng.';
+  return 'Mục tiêu thu nhập rất cao → đây là hành trình 12-24 tháng. Cần vốn, mạng lưới và kinh nghiệm đủ mạnh. Có thể bắt đầu với mục tiêu thấp hơn và tăng dần.';
+}
+
+// ═══ UTILS ═══
+function show(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById('screen-'+id).classList.add('active'); window.scrollTo(0,0); }
+
+// initP1Badge() replaced by sol-flow.js auto-init
+// sol-flow.js detects #sol-p1-summary and renders full P1 card automatically
+</script>
+<script src="/sol-flow.js"></script>
+<!-- SOL-FOOTER-START -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL FOOTER — Master Footer EEAT + YMYL Finance disclaimer
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào trước </body> mỗi HTML file của huongdi.sol.vn
+     Cross-link 3 sản phẩm + Author info (EEAT) + YMYL disclaimer
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-footer-styles">
+  #sol-footer * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif;
+  }
+  #sol-footer {
+    margin-top: 60px;
+    background: linear-gradient(180deg, #fafaf9 0%, #f5f5f4 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 48px 16px 24px;
+    color: #44403c;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+  .sol-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* 4 cols grid */
+  .sol-footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+  .sol-footer-col h4 {
+    color: #1c1917;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sol-footer-col ul {
+    list-style: none;
+  }
+  .sol-footer-col li {
+    margin-bottom: 8px;
+  }
+  .sol-footer-col a {
+    color: #57534e;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .sol-footer-col a:hover {
+    color: #d97706;
+  }
+  .sol-footer-col .pillar-icon {
+    display: inline-block;
+    width: 18px;
+    margin-right: 4px;
+    text-align: center;
+  }
+
+  /* EEAT Author block */
+  .sol-eeat-block {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .sol-eeat-block img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #fde68a;
+  }
+  .sol-eeat-text {
+    flex: 1;
+    font-size: 13px;
+    color: #57534e;
+  }
+  .sol-eeat-text strong {
+    color: #1c1917;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .sol-eeat-text a {
+    color: #d97706;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .sol-eeat-text a:hover {
+    text-decoration: underline;
+  }
+
+  /* YMYL Disclaimer */
+  .sol-ymyl-disclaimer {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: #78350f;
+    line-height: 1.6;
+  }
+  .sol-ymyl-disclaimer strong {
+    color: #92400e;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  /* Bottom row — copyright + social */
+  .sol-footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #78716c;
+  }
+  .sol-footer-bottom .social {
+    display: flex;
+    gap: 12px;
+  }
+  .sol-footer-bottom .social a {
+    color: #78716c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .sol-footer-bottom .social a:hover {
+    color: #d97706;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-footer-cols {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .sol-eeat-block {
+      flex-direction: column;
+      text-align: center;
+    }
+    .sol-eeat-block img {
+      align-self: center;
+    }
+    .sol-footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-footer-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    #sol-footer {
+      background: linear-gradient(180deg, #1c1917 0%, #0c0a09 100%);
+      color: #d6d3d1;
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-footer-col h4,
+    .sol-eeat-text strong {
+      color: #f5f5f4;
+    }
+    .sol-footer-col a,
+    .sol-eeat-text {
+      color: #a8a29e;
+    }
+    .sol-eeat-block {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-ymyl-disclaimer {
+      background: rgba(245, 158, 11, 0.08);
+      color: #fcd34d;
+    }
+    .sol-ymyl-disclaimer strong {
+      color: #fbbf24;
+    }
+    .sol-footer-bottom {
+      border-top-color: rgba(255, 255, 255, 0.08);
+      color: #78716c;
+    }
+  }
+</style>
+
+<footer id="sol-footer" role="contentinfo">
+  <div class="sol-footer-inner">
+
+    <!-- 4 columns -->
+    <div class="sol-footer-cols">
+
+      <!-- Col 1: Sol Ecosystem 3 trụ -->
+      <div class="sol-footer-col">
+        <h4>Sol — 3 Trụ</h4>
+        <ul>
+          <li><a href="https://bothuocla.sol.vn/" rel="noopener"><span class="pillar-icon">🌿</span>Thân — Sức khoẻ</a></li>
+          <li><a href="https://sol.vn/ngam/" rel="noopener"><span class="pillar-icon">🧘</span>Tâm — Tinh thần</a></li>
+          <li><a href="https://huongdi.sol.vn/" rel="noopener"><span class="pillar-icon">🎯</span>Trí — Sự nghiệp</a></li>
+          <li><a href="https://sol.vn/" rel="noopener"><span class="pillar-icon">🏠</span>Sol.vn — Trang chính</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Hướng Nghiệp Tools + Content Hub -->
+      <div class="sol-footer-col">
+        <h4>Hướng Nghiệp</h4>
+        <ul>
+          <li><a href="/p1.html">P1 — DNA Test (20 câu)</a></li>
+          <li><a href="/p2.html">P2 — Bản đồ nguồn lực</a></li>
+          <li><a href="/p3.html">P3 — Kết quả 37 hướng</a></li>
+          <li><a href="https://sol.vn/huong-di/" rel="noopener">Tất cả bài viết hướng đi →</a></li>
+          <li><a href="https://sol.vn/huong-di/freelancer-chuyen-mon-tuoi-45/" rel="noopener">Freelancer Chuyên Môn</a></li>
+          <li><a href="https://sol.vn/huong-di/coaching-dao-tao-tuoi-45/" rel="noopener">Coaching & Đào Tạo</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Về Sol -->
+      <div class="sol-footer-col">
+        <h4>Về Sol</h4>
+        <ul>
+          <li><a href="https://sol.vn/khang-sol/" rel="noopener">Khang Sol — Founder</a></li>
+          <li><a href="https://sol.vn/cau-chuyen-sol/" rel="noopener">Câu chuyện Sol</a></li>
+          <li><a href="https://sol.vn/lien-he/" rel="noopener">Liên hệ</a></li>
+          <li><a href="https://sol.vn/chinh-sach-rieng-tu/" rel="noopener">Chính sách bảo mật</a></li>
+          <li><a href="https://sol.vn/dieu-khoan/" rel="noopener">Điều khoản</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Cộng đồng -->
+      <div class="sol-footer-col">
+        <h4>Cộng đồng</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener nofollow" target="_blank">LinkedIn Khang</a></li>
+          <li><a href="https://web.facebook.com/nguyendinhkhang" rel="noopener nofollow" target="_blank">Facebook Khang</a></li>
+          <li><a href="https://zalo.me/sol" rel="noopener nofollow" target="_blank">Zalo OA Sol</a></li>
+          <li><a href="mailto:contact@sol.vn">Email: contact@sol.vn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- EEAT Author block -->
+    <div class="sol-eeat-block">
+      <img src="https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg"
+           alt="Khang Sol — Founder Đi Cùng Sol"
+           loading="lazy"
+           width="56" height="56">
+      <div class="sol-eeat-text">
+        <strong>Tác giả: Khang Sol (Nguyễn Đình Khang)</strong>
+        Founder Đi Cùng Sol — 20+ năm CNTT, từng làm PM dự án Internet quốc gia, tái khởi nghiệp tuổi 45+ tập trung vào hỗ trợ đàn ông Việt 40-65 tuổi tìm hướng đi mới. Mình chia sẻ kinh nghiệm thật, không phải tư vấn tài chính có giấy phép.
+        <br><br>
+        <a href="https://sol.vn/khang-sol/" rel="author">Xem profile đầy đủ →</a>
+      </div>
+    </div>
+
+    <!-- YMYL Finance Disclaimer -->
+    <div class="sol-ymyl-disclaimer" role="note" aria-label="Thông báo về tài chính">
+      <strong>⚠️ Tuyên bố miễn trừ trách nhiệm (YMYL — Finance)</strong>
+      Thông tin trên huongdi.sol.vn mang tính <em>tham khảo và chia sẻ kinh nghiệm</em> từ Khang Sol và cộng đồng — KHÔNG phải tư vấn tài chính, đầu tư hoặc thuế chuyên nghiệp. Trước khi quyết định khởi nghiệp, đầu tư vốn, hoặc thay đổi nghề nghiệp lớn, anh nên tham khảo chuyên gia tài chính / luật sư / kế toán có giấy phép tại Việt Nam.
+    </div>
+
+    <!-- Bottom row -->
+    <div class="sol-footer-bottom">
+      <div>
+        © 2025–2026 <strong>Đi Cùng Sol</strong> · All rights reserved · Made with ❤️ at Việt Nam
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="https://web.facebook.com/nguyendinhkhang" rel="noopener" target="_blank">Facebook</a>
+        <a href="https://zalo.me/sol" rel="noopener" target="_blank">Zalo</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- SOL-FOOTER-END -->
+</body>
+</html>

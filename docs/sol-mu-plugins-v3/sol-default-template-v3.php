@@ -1,0 +1,533 @@
+<?php
+/**
+ * Plugin Name: Sol Default — Page Standard Template (v3 — Sách + Hệ thống)
+ * Description: Template chuẩn cho page tĩnh với Sol V2.2 design.
+ *              Header sticky focus Sách + Hệ thống huongdi + Bài viết + Khang Sol.
+ *              Footer Sản phẩm + Tài nguyên + Về Sol + Dự án liên quan +
+ *              Emergency hotlines + YMYL warnings.
+ *              KHÔNG còn pillar nav Thân/Tâm/Trí (đã de-emphasize theo strategy V2.2).
+ * Version:     3.0.0
+ * Author:      Khang Sol
+ * Updated:     2026-06-27
+ *
+ * Cài đặt:
+ *   1. Backup file cũ:
+ *      cp /var/www/sol.vn/wp-content/mu-plugins/sol-default-template.php \
+ *         /var/www/sol.vn/wp-content/mu-plugins/sol-default-template.php.bak-2026-06-27
+ *   2. Upload file này thay thế (qua cPanel File Manager hoặc FTP):
+ *      → /var/www/sol.vn/wp-content/mu-plugins/sol-default-template.php
+ *   3. Mu-plugins tự active — KHÔNG cần Activate trong WP Admin
+ *   4. Verify: mở 1 page tĩnh (vd /khang-sol/) → header + footer V2.2 hiện
+ *
+ * Rollback nếu lỗi:
+ *   mv sol-default-template.php sol-default-template-v3.php.broken
+ *   mv sol-default-template.php.bak-2026-06-27 sol-default-template.php
+ *
+ * Thay đổi so với v2:
+ *   ✅ Header: Logo + 📘 Sách + Hệ thống + Bài viết + Khang Sol + Đặt sách CTA
+ *   ❌ Bỏ pillar nav 3 trụ (Thân/Tâm/Trí) khỏi header
+ *   ✅ Footer: 5 cột — Brand + Sản phẩm + Tài nguyên + Về Sol + Dự án liên quan
+ *   ❌ Bỏ 5-col Pillar Nav Thân/Tâm/Trí trong footer
+ *   ✅ Giữ Emergency hotlines (4 số khẩn cấp)
+ *   ✅ Giữ 4 YMYL warnings (Y khoa + Tinh thần + Tài chính + tổng)
+ *   ❌ Bỏ Regulatory line (Luật An ninh mạng) — đã có trong /tuyen-bo-mien-tru/
+ *   ✅ CSS palette: amber + navy (V2.2 design)
+ *
+ *   ✓ Giữ nguyên: Plugin pattern, JWT cross-domain script, Schema WebPage +
+ *     Breadcrumb, Be Vietnam Pro font, mobile responsive
+ */
+
+if (!defined('ABSPATH')) exit;
+
+class Sol_Default_Template {
+    const TEMPLATE_KEY = 'sol-default-page.php';
+    const TEMPLATE_NAME = 'Sol Default — Page Standard (v3)';
+
+    public function __construct() {
+        add_filter('theme_page_templates', [$this, 'add_template']);
+        add_filter('template_include', [$this, 'load_template'], 99);
+    }
+
+    public function add_template($templates) {
+        $templates[self::TEMPLATE_KEY] = self::TEMPLATE_NAME;
+        return $templates;
+    }
+
+    public function load_template($template) {
+        if (!is_singular('page')) return $template;
+
+        $page_template = get_post_meta(get_the_ID(), '_wp_page_template', true);
+        if ($page_template !== self::TEMPLATE_KEY) return $template;
+
+        $tmp = sys_get_temp_dir() . '/sol-default-' . get_the_ID() . '.php';
+        $content = $this->page_html();
+        file_put_contents($tmp, $content);
+        return $tmp;
+    }
+
+    private function page_html() {
+        return <<<'PHP'
+<?php
+the_post();
+$content = get_the_content();
+$title = get_the_title();
+$meta_desc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true);
+if (empty($meta_desc)) {
+    $meta_desc = get_post_meta(get_the_ID(), 'rank_math_description', true);
+}
+$og_image = get_the_post_thumbnail_url(get_the_ID(), 'large');
+$page_title = $title . ' | Đi Cùng Sol';
+?>
+<!DOCTYPE html>
+<html lang="vi" <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo('charset'); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#d97706">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+<title><?php echo esc_html($page_title); ?></title>
+<?php if ($meta_desc): ?>
+<meta name="description" content="<?php echo esc_attr($meta_desc); ?>">
+<?php endif; ?>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="<?php echo esc_attr($title); ?>">
+<?php if ($meta_desc): ?>
+<meta property="og:description" content="<?php echo esc_attr($meta_desc); ?>">
+<?php endif; ?>
+<meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>">
+<?php if ($og_image): ?>
+<meta property="og:image" content="<?php echo esc_url($og_image); ?>">
+<?php endif; ?>
+
+<?php
+$site_url = home_url();
+$page_schema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'WebPage',
+    'name' => $title,
+    'url' => get_permalink(),
+    'description' => $meta_desc,
+    'publisher' => [
+        '@type' => 'Organization',
+        'name' => 'Đi Cùng Sol',
+        'url' => $site_url,
+        'logo' => 'https://sol.vn/wp-content/uploads/2025/05/Icon_2.png',
+        'sameAs' => [
+            'https://www.linkedin.com/in/vietnaminternet/',
+            'https://web.facebook.com/nguyendinhkhang',
+        ],
+        'founder' => [
+            '@type' => 'Person',
+            'name' => 'Khang Sol',
+            'alternateName' => 'Nguyễn Đình Khang',
+            'url' => 'https://sol.vn/khang-sol/',
+            'image' => 'https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg',
+            'email' => 'contact@sol.vn',
+            'telephone' => '+84-24-3993-1800',
+            'jobTitle' => 'Người sáng lập, Đi Cùng Sol',
+            'sameAs' => [
+                'https://www.linkedin.com/in/vietnaminternet/',
+                'https://web.facebook.com/nguyendinhkhang',
+            ],
+            'knowsAbout' => [
+                'Tái khởi nghiệp tuổi 45+',
+                'Hệ thống Hướng Đi',
+                'Lean startup',
+                'IT project management',
+                'Founder coaching',
+            ],
+        ],
+    ],
+];
+
+$post = get_post();
+$crumbs = [['@type' => 'ListItem', 'position' => 1, 'name' => 'Trang chủ', 'item' => $site_url]];
+$position = 2;
+$ancestors = array_reverse(get_post_ancestors($post));
+foreach ($ancestors as $aid) {
+    $crumbs[] = ['@type' => 'ListItem', 'position' => $position++, 'name' => get_the_title($aid), 'item' => get_permalink($aid)];
+}
+$crumbs[] = ['@type' => 'ListItem', 'position' => $position, 'name' => $title];
+$breadcrumb_schema = ['@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $crumbs];
+?>
+<script type="application/ld+json"><?php echo wp_json_encode($page_schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
+<script type="application/ld+json"><?php echo wp_json_encode($breadcrumb_schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
+
+<?php do_action('wp_head'); ?>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   Sol V2.2 Design Tokens
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --sol-amber-50:  #fffbeb;
+  --sol-amber-100: #fef3c7;
+  --sol-amber-200: #fde68a;
+  --sol-amber-300: #fcd34d;
+  --sol-amber-400: #fbbf24;
+  --sol-amber-500: #f59e0b;
+  --sol-amber-600: #d97706;
+  --sol-amber-700: #b45309;
+  --sol-amber-800: #92400e;
+  --sol-amber-900: #78350f;
+  --sol-navy-100: #f1f5f9;
+  --sol-navy-200: #e2e8f0;
+  --sol-navy-300: #cbd5e1;
+  --sol-navy-400: #94a3b8;
+  --sol-navy-500: #64748b;
+  --sol-navy-600: #475569;
+  --sol-navy-700: #334155;
+  --sol-navy-800: #1e293b;
+  --sol-navy-900: #0f172a;
+  --sol-text:      #1c1917;
+  --sol-text-soft: #44403c;
+  --sol-text-muted:#78716c;
+  --sol-bg:        #ffffff;
+  --sol-bg-soft:   #fafaf9;
+  --sol-border:    rgba(0, 0, 0, 0.08);
+  --sol-success:   #16a34a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--sol-text);
+  background: var(--sol-bg);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--sol-amber-600); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEADER V2.2 — Sách focus, KHÔNG còn 3 trụ pills
+   ═══════════════════════════════════════════════════════════════════ */
+.sol-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--sol-border);
+}
+.sol-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.sol-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--sol-text);
+  text-decoration: none;
+}
+.sol-logo strong { color: var(--sol-amber-600); font-weight: 800; }
+.sol-logo img { width: 36px; height: 36px; border-radius: 8px; }
+.sol-nav-main {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+  align-items: center;
+}
+.sol-nav-main a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sol-text-soft);
+  text-decoration: none;
+  transition: color .2s;
+}
+.sol-nav-main a:hover { color: var(--sol-amber-600); text-decoration: none; }
+.sol-nav__featured {
+  color: var(--sol-amber-700) !important;
+  font-weight: 700 !important;
+}
+.sol-cta-header {
+  background: linear-gradient(135deg, var(--sol-amber-600), var(--sol-amber-500));
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none !important;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, .18);
+  transition: transform .2s;
+  display: inline-block;
+}
+.sol-cta-header:hover { transform: translateY(-1px); }
+@media (max-width: 1024px) {
+  .sol-nav-main { gap: 14px; }
+  .sol-nav-main a { font-size: 13px; }
+}
+@media (max-width: 768px) {
+  .sol-header__inner { gap: 12px; padding: 10px 12px; }
+  .sol-logo span { display: none; }
+  .sol-nav-main { display: none; }
+  .sol-cta-header { padding: 8px 14px; font-size: 13px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PAGE CONTENT
+   ═══════════════════════════════════════════════════════════════════ */
+.sol-page-content {
+  max-width: 760px;
+  margin: 60px auto 80px;
+  padding: 0 1.25rem;
+}
+.sol-page-content h1, .sol-page-content h2, .sol-page-content h3 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--sol-navy-900);
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.sol-page-content h1 { font-size: 2.25rem; line-height: 1.2; }
+.sol-page-content h2 { font-size: 1.75rem; line-height: 1.25; }
+.sol-page-content h3 { font-size: 1.4rem; line-height: 1.3; }
+.sol-page-content p { margin-bottom: 18px; color: var(--sol-text-soft); }
+.sol-page-content ul, .sol-page-content ol { margin: 0 0 18px 24px; }
+.sol-page-content li { margin-bottom: 8px; color: var(--sol-text-soft); }
+.sol-page-content blockquote {
+  border-left: 4px solid var(--sol-amber-400);
+  padding: 12px 0 12px 20px;
+  margin: 24px 0;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--sol-text-soft);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER V2.2 — 5 cols Sản phẩm/Tài nguyên/Về Sol/Dự án liên quan
+   ═══════════════════════════════════════════════════════════════════ */
+.sol-footer {
+  background: var(--sol-navy-900);
+  color: var(--sol-navy-300);
+  padding: 80px 0 32px;
+  font-family: 'Inter', sans-serif;
+}
+.sol-footer .sol-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.sol-footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.sol-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+.sol-footer__brand img { width: 40px; height: 40px; border-radius: 8px; }
+.sol-footer__brand strong { font-size: 18px; color: white; font-weight: 800; }
+.sol-footer__motto {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--sol-amber-300);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+.sol-footer__brand-pitch {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--sol-navy-400);
+  margin: 0;
+}
+.sol-footer__col h4 {
+  color: white;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+.sol-footer__col ul { list-style: none; padding: 0; margin: 0; }
+.sol-footer__col li { margin-bottom: 8px; font-size: 14px; }
+.sol-footer__col a {
+  color: var(--sol-navy-300);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color .2s;
+}
+.sol-footer__col a:hover { color: var(--sol-amber-400); text-decoration: none; }
+.sol-footer__col small {
+  font-size: 11px;
+  color: var(--sol-navy-400);
+  line-height: 1.4;
+  display: block;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+.sol-footer__bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--sol-navy-700);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--sol-navy-400);
+}
+.sol-footer__bottom strong { color: white; }
+.sol-footer__disclaim {
+  max-width: 480px;
+  color: var(--sol-navy-400);
+}
+.sol-footer__disclaim a {
+  color: var(--sol-amber-400);
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .sol-footer__grid { grid-template-columns: repeat(3, 1fr); }
+  .sol-footer__brand-col { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .sol-footer { padding: 60px 0 24px; }
+  .sol-footer__grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .sol-footer__bottom { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body <?php body_class('sol-page-body'); ?>>
+
+<!-- ─── HEADER V2.2 — Sách focus ──────────────────────────────────── -->
+<header class="sol-header" role="banner">
+  <div class="sol-header__inner">
+    <a href="https://sol.vn/" class="sol-logo">
+      <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png" alt="Sol" width="36" height="36">
+      <span>Đi Cùng <strong>Sol</strong></span>
+    </a>
+    <nav class="sol-nav-main" aria-label="Menu chính">
+      <a href="/sach/" class="sol-nav__featured">📘 Sách</a>
+      <a href="https://huongdi.sol.vn/">Hệ thống</a>
+      <a href="/huong-di/">Bài viết</a>
+      <a href="/khang-sol/">Khang Sol</a>
+    </nav>
+    <a href="/sach/tai-khoi-nghiep-dung-huong/" class="sol-cta-header">Đặt sách →</a>
+  </div>
+</header>
+
+<!-- ─── PAGE CONTENT ─────────────────────────────────────────────── -->
+<main class="sol-page-content">
+  <?php echo apply_filters('the_content', $content); ?>
+</main>
+
+<!-- ─── FOOTER V2.2 SIMPLE (đồng nhất với homepage) ─────────────────── -->
+<footer class="sol-footer" role="contentinfo">
+  <div class="sol-container">
+
+    <div class="sol-footer__grid">
+
+      <div class="sol-footer__brand-col">
+        <a href="/" class="sol-footer__brand">
+          <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png" alt="Sol" width="40" height="40">
+          <strong>Đi Cùng Sol</strong>
+        </a>
+        <p class="sol-footer__motto">Đúng hướng,<br>đúng bước,<br>đúng tương lai.</p>
+        <p class="sol-footer__brand-pitch">
+          Sách <strong>"Tái Khởi Nghiệp Đúng Hướng"</strong> + Hệ thống <strong>huongdi.sol.vn</strong> dành riêng cho đàn ông Việt 40-65.
+        </p>
+      </div>
+
+      <div class="sol-footer__col">
+        <h4>Sản phẩm</h4>
+        <ul>
+          <li><a href="/sach/tai-khoi-nghiep-dung-huong/">📘 Sách "Tái Khởi Nghiệp Đúng Hướng"</a></li>
+          <li><a href="https://huongdi.sol.vn/">🎯 Hệ thống huongdi.sol.vn</a></li>
+          <li><a href="https://huongdi.sol.vn/kham-pha-ban-than/">Khám phá bản thân (P1)</a></li>
+          <li><a href="https://huongdi.sol.vn/kiem-ke-nguon-luc/">Kiểm kê nguồn lực (P2)</a></li>
+          <li><a href="https://huongdi.sol.vn/la-ban-huong-di/">La bàn hướng đi (P3)</a></li>
+        </ul>
+      </div>
+
+      <div class="sol-footer__col">
+        <h4>Tài nguyên miễn phí</h4>
+        <ul>
+          <li><a href="/huong-di/">📝 Bài viết Hướng Đi</a></li>
+          <li><a href="#newsletter">📧 Bản tin Sol Cuối Tuần</a></li>
+          <li><a href="/podcast/">🎙 Podcast (sắp có)</a></li>
+        </ul>
+      </div>
+
+      <div class="sol-footer__col">
+        <h4>Về Sol</h4>
+        <ul>
+          <li><a href="/khang-sol/">Khang Sol — Người sáng lập</a></li>
+          <li><a href="/sol-la-gi/">Sol Là Gì?</a></li>
+          <li><a href="/cau-hoi/">Câu hỏi thường gặp</a></li>
+          <li><a href="/lien-he/">Liên hệ</a></li>
+        </ul>
+      </div>
+
+      <div class="sol-footer__col">
+        <h4>Liên kết</h4>
+        <ul>
+          <li><a href="mailto:contact@sol.vn">📧 contact@sol.vn</a></li>
+          <li><a href="tel:02439931800">📞 024 3993 1800</a></li>
+          <li><a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener nofollow" target="_blank">LinkedIn Khang</a></li>
+          <li><a href="https://web.facebook.com/nguyendinhkhang" rel="noopener nofollow" target="_blank">Facebook Khang</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom: copyright + disclaimer link -->
+    <div class="sol-footer__bottom">
+      <div>© 2025–<?php echo date('Y'); ?> <strong>Đi Cùng Sol</strong> · Tái khởi nghiệp đúng hướng</div>
+      <div class="sol-footer__disclaim">⚠️ Nội dung là chia sẻ kinh nghiệm cá nhân — không phải tư vấn tài chính / y tế / pháp luật có giấy phép. <a href="/tuyen-bo-mien-tru/">Xem đầy đủ</a></div>
+    </div>
+
+  </div>
+</footer>
+
+<?php do_action('wp_footer'); ?>
+
+<!-- JWT transfer cross-domain (giữ từ v2) -->
+<script>
+(function() {
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="bothuocla.sol.vn"], a[href*="huongdi.sol.vn"]');
+    if (!link) return;
+    try {
+      var token = localStorage.getItem('sol_token');
+      var deviceUid = localStorage.getItem('sol_device_uid');
+      if (!token) return;
+      var url = new URL(link.href);
+      if (url.searchParams.has('sol_token')) return;
+      url.searchParams.set('sol_token', token);
+      if (deviceUid) url.searchParams.set('sol_device_uid', deviceUid);
+      link.href = url.toString();
+    } catch (err) {}
+  }, true);
+})();
+</script>
+
+</body>
+</html>
+PHP;
+    }
+}
+
+new Sol_Default_Template();

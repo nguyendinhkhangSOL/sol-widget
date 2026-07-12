@@ -1,0 +1,288 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   SOL FOOTER GLOBAL CSS
+   Apply trên TOÀN BỘ pages (không scope body.home)
+   Paste vào Customize → Additional CSS (REPLACE phần CSS footer hiện tại)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FOOTER — Global styles (no body.home scope)
+   ═══════════════════════════════════════════════════════════════════════ */
+.sol-footer {
+  background: var(--sol-navy-900, #0f172a) !important;
+  color: var(--sol-navy-300, #cbd5e1) !important;
+  padding: 80px 0 32px !important;
+  display: block !important;
+  margin-top: 0 !important;
+  font-family: var(--sol-font-sans, "Inter", -apple-system, sans-serif);
+}
+
+.sol-footer * { box-sizing: border-box; }
+
+.sol-footer .sol-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ── 5-column grid ────────────────────────────────────────────────── */
+.sol-footer__grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.sol-footer__brand {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  text-decoration: none !important;
+}
+.sol-footer__brand img { width: 40px; height: 40px; border-radius: 8px; }
+.sol-footer__brand strong {
+  font-size: 18px;
+  color: white !important;
+  font-weight: 800;
+}
+.sol-footer__motto {
+  font-family: var(--sol-font-serif, "Lora", Georgia, serif) !important;
+  font-style: italic !important;
+  color: var(--sol-amber-300, #fcd34d) !important;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+.sol-footer__brand-pitch {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--sol-navy-400, #94a3b8) !important;
+  margin: 0;
+}
+
+.sol-footer__col h4 {
+  color: white !important;
+  font-size: 13px !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 16px !important;
+  font-weight: 700;
+}
+.sol-footer__col ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.sol-footer__col li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.sol-footer__col a {
+  color: var(--sol-navy-300, #cbd5e1) !important;
+  font-size: 14px;
+  text-decoration: none !important;
+  transition: color .2s;
+  display: inline-block;
+}
+.sol-footer__col a:hover {
+  color: var(--sol-amber-400, #fbbf24) !important;
+}
+.sol-footer__col small {
+  font-size: 11px;
+  color: var(--sol-navy-400, #94a3b8);
+  line-height: 1.4;
+  display: block;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+/* ── Emergency Bar ────────────────────────────────────────────────── */
+.sol-footer__emergency {
+  background: rgba(220, 38, 38, 0.08);
+  border-left: 3px solid #ef4444;
+  border-radius: 10px;
+  padding: 18px 24px;
+  margin: 32px 0;
+}
+.sol-footer__emergency-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fca5a5 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.sol-footer__emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 24px;
+}
+.sol-footer__emergency-item {
+  font-size: 13px;
+  color: var(--sol-navy-300, #cbd5e1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sol-footer__emergency-item a {
+  color: var(--sol-amber-300, #fcd34d) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+.sol-footer__emergency-tel {
+  font-family: var(--sol-font-mono, "SF Mono", Monaco, monospace);
+  font-weight: 700 !important;
+}
+
+.sol-footer__tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.sol-footer__tag--than {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+.sol-footer__tag--tam {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+}
+.sol-footer__tag--tri {
+  background: rgba(217, 119, 6, 0.2);
+  color: var(--sol-amber-300, #fcd34d);
+}
+
+/* ── Disclaimer ───────────────────────────────────────────────────── */
+.sol-footer__disclaimer {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--sol-navy-400, #94a3b8);
+  padding: 24px 0;
+  border-top: 1px solid var(--sol-navy-700, #334155);
+  border-bottom: 1px solid var(--sol-navy-700, #334155);
+}
+.sol-footer__disclaimer p {
+  margin: 0 0 8px;
+}
+.sol-footer__disclaimer strong {
+  color: var(--sol-navy-200, #e2e8f0);
+}
+.sol-footer__warn {
+  display: inline-block;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+.sol-footer__warn--than {
+  background: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+}
+.sol-footer__warn--tam {
+  background: rgba(139, 92, 246, 0.15);
+  color: #c4b5fd;
+}
+.sol-footer__warn--tri {
+  background: rgba(217, 119, 6, 0.15);
+  color: var(--sol-amber-300, #fcd34d);
+}
+
+/* ── Bottom: copyright + links ────────────────────────────────────── */
+.sol-footer__bottom {
+  padding-top: 24px;
+  font-size: 13px;
+  color: var(--sol-navy-400, #94a3b8);
+}
+.sol-footer__trustlinks {
+  margin-bottom: 12px;
+}
+.sol-footer__trustlinks a {
+  color: var(--sol-navy-300, #cbd5e1) !important;
+  text-decoration: none !important;
+}
+.sol-footer__trustlinks a:hover {
+  color: var(--sol-amber-400, #fbbf24) !important;
+}
+.sol-footer__copyright {
+  margin-bottom: 6px;
+}
+.sol-footer__copyright strong {
+  color: white !important;
+}
+.sol-footer__copyright a {
+  color: var(--sol-amber-400, #fbbf24) !important;
+  font-weight: 600;
+}
+.sol-footer__regulatory {
+  font-size: 11px;
+  color: var(--sol-navy-500, #64748b);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .sol-footer__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sol-footer__brand-col {
+    grid-column: 1 / -1;
+  }
+  .sol-footer__emergency-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sol-footer {
+    padding: 60px 0 24px !important;
+  }
+  .sol-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sol-footer__emergency {
+    padding: 14px 16px;
+  }
+  .sol-footer__emergency-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   IMPORTANT: Hide old theme footer styles
+   Theme dùng .sol-footer-inner (single dash) — chỉ apply nếu vẫn còn
+   ═══════════════════════════════════════════════════════════════════════ */
+.sol-footer-inner {
+  display: none !important;
+}
+footer.sol-footer:has(.sol-footer-inner) > .sol-footer-inner {
+  display: none !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Fix WP entry-content wrapper trên all pages (not just homepage)
+   Đảm bảo footer không bị wrap bởi theme content padding
+   ═══════════════════════════════════════════════════════════════════════ */
+.sol-footer ~ * {
+  display: none !important;
+}
+
+/* Sol footer KHÔNG được wrap trong .entry-content */
+.entry-content > .sol-footer,
+.site-content > .sol-footer {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: 100vw;
+  width: 100vw;
+}

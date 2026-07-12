@@ -1,0 +1,100 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://sol.vn/khang-sol/#person",
+  "name": "Khang Sol",
+  "alternateName": "Nguyễn Đình Khang",
+  "url": "https://sol.vn/khang-sol/",
+  "image": "https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg",
+  "jobTitle": "Founder Đi Cùng Sol · Sáng lập Công ty CNTT · Sáng lập Doanh nghiệp TMĐT",
+  "description": "Khang Sol (Nguyễn Đình Khang) — Founder Đi Cùng Sol. Sáng lập & Giám đốc Công ty CNTT 20 năm, sáng lập Doanh nghiệp TMĐT 8 năm. Lĩnh vực: tư vấn đầu tư, khởi nghiệp sáng tạo, quản trị dự án. Đồng hành với đàn ông Việt 40-65 trên 3 trụ Thân-Tâm-Trí.",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Đi Cùng Sol",
+    "url": "https://sol.vn/",
+    "logo": "https://sol.vn/wp-content/uploads/2025/05/Icon_2.png",
+    "foundingDate": "2024"
+  },
+  "knowsAbout": [
+    "Mid-life career transition (tái khởi nghiệp tuổi 40-60)",
+    "Lean Startup methodology for Vietnamese market",
+    "IT project management",
+    "Founder & CEO leadership (20+ năm điều hành Công ty CNTT)",
+    "Vietnamese e-commerce business operations (8 năm điều hành DN TMĐT)",
+    "Vietnamese SME entrepreneurship",
+    "Investment advisory for mid-career professionals (tư vấn đầu tư cho cá nhân U45)",
+    "Innovation and creative entrepreneurship (khởi nghiệp sáng tạo)",
+    "Smoking cessation and behavior change (kinh nghiệm cá nhân)",
+    "Mid-life mental health for men (sức khoẻ tinh thần đàn ông trung niên)",
+    "Vietnamese cultural context in business and life transition"
+  ],
+  "knowsLanguage": ["vi", "en"],
+  "nationality": {
+    "@type": "Country",
+    "name": "Vietnam"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Trường Đại học chuyên ngành Công nghệ Thông tin"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/vietnaminternet/",
+    "https://web.facebook.com/nguyendinhkhang",
+    "https://zalo.me/sol"
+  ],
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Founder & Director — IT Company",
+      "occupationLocation": { "@type": "Country", "name": "Vietnam" },
+      "skills": "Company founding, IT project management, business operations, team leadership"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Founder — E-commerce Business",
+      "occupationLocation": { "@type": "Country", "name": "Vietnam" },
+      "skills": "E-commerce operations, B2C business, digital marketing, supply chain"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Investment Advisor & Startup Mentor",
+      "occupationLocation": { "@type": "Country", "name": "Vietnam" },
+      "skills": "Investment advisory, innovation consulting, mentoring Vietnamese founders aged 40-50"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Founder Đi Cùng Sol",
+      "occupationLocation": { "@type": "Country", "name": "Vietnam" },
+      "skills": "Mid-life career coaching, men's health support, content creation, community building"
+    }
+  ],
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Đi Cùng Sol Community",
+      "url": "https://sol.vn/"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "name": "Đi Cùng Sol — Hệ sinh thái Thân-Tâm-Trí",
+      "url": "https://sol.vn/"
+    },
+    {
+      "@type": "WebSite",
+      "name": "Bothuocla — Trụ Thân (Sức khoẻ)",
+      "url": "https://bothuocla.sol.vn/"
+    },
+    {
+      "@type": "WebSite",
+      "name": "Trụ Tâm (Tinh thần)",
+      "url": "https://sol.vn/ngam/"
+    },
+    {
+      "@type": "WebSite",
+      "name": "Huongdi — Trụ Trí (Sự nghiệp)",
+      "url": "https://huongdi.sol.vn/"
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SOL FOOTER — Master Footer EEAT + YMYL Finance disclaimer
+     ═══════════════════════════════════════════════════════════════════════
+     Inject vào trước </body> mỗi HTML file của huongdi.sol.vn
+     Cross-link 3 sản phẩm + Author info (EEAT) + YMYL disclaimer
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style id="sol-footer-styles">
+  #sol-footer * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", Arial, sans-serif;
+  }
+  #sol-footer {
+    margin-top: 60px;
+    background: linear-gradient(180deg, #fafaf9 0%, #f5f5f4 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 48px 16px 24px;
+    color: #44403c;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+  .sol-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* 4 cols grid */
+  .sol-footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+  .sol-footer-col h4 {
+    color: #1c1917;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sol-footer-col ul {
+    list-style: none;
+  }
+  .sol-footer-col li {
+    margin-bottom: 8px;
+  }
+  .sol-footer-col a {
+    color: #57534e;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .sol-footer-col a:hover {
+    color: #d97706;
+  }
+  .sol-footer-col .pillar-icon {
+    display: inline-block;
+    width: 18px;
+    margin-right: 4px;
+    text-align: center;
+  }
+
+  /* EEAT Author block */
+  .sol-eeat-block {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .sol-eeat-block img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #fde68a;
+  }
+  .sol-eeat-text {
+    flex: 1;
+    font-size: 13px;
+    color: #57534e;
+  }
+  .sol-eeat-text strong {
+    color: #1c1917;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .sol-eeat-text a {
+    color: #d97706;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .sol-eeat-text a:hover {
+    text-decoration: underline;
+  }
+
+  /* YMYL Disclaimer */
+  .sol-ymyl-disclaimer {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: #78350f;
+    line-height: 1.6;
+  }
+  .sol-ymyl-disclaimer strong {
+    color: #92400e;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  /* Bottom row — copyright + social */
+  .sol-footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #78716c;
+  }
+  .sol-footer-bottom .social {
+    display: flex;
+    gap: 12px;
+  }
+  .sol-footer-bottom .social a {
+    color: #78716c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .sol-footer-bottom .social a:hover {
+    color: #d97706;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .sol-footer-cols {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .sol-eeat-block {
+      flex-direction: column;
+      text-align: center;
+    }
+    .sol-eeat-block img {
+      align-self: center;
+    }
+    .sol-footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (max-width: 480px) {
+    .sol-footer-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    #sol-footer {
+      background: linear-gradient(180deg, #1c1917 0%, #0c0a09 100%);
+      color: #d6d3d1;
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-footer-col h4,
+    .sol-eeat-text strong {
+      color: #f5f5f4;
+    }
+    .sol-footer-col a,
+    .sol-eeat-text {
+      color: #a8a29e;
+    }
+    .sol-eeat-block {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .sol-ymyl-disclaimer {
+      background: rgba(245, 158, 11, 0.08);
+      color: #fcd34d;
+    }
+    .sol-ymyl-disclaimer strong {
+      color: #fbbf24;
+    }
+    .sol-footer-bottom {
+      border-top-color: rgba(255, 255, 255, 0.08);
+      color: #78716c;
+    }
+  }
+</style>
+
+<footer id="sol-footer" role="contentinfo">
+  <div class="sol-footer-inner">
+
+    <!-- 4 columns -->
+    <div class="sol-footer-cols">
+
+      <!-- Col 1: Sol Ecosystem 3 trụ -->
+      <div class="sol-footer-col">
+        <h4>Sol — 3 Trụ</h4>
+        <ul>
+          <li><a href="https://bothuocla.sol.vn/" rel="noopener"><span class="pillar-icon">🌿</span>Thân — Sức khoẻ</a></li>
+          <li><a href="https://sol.vn/ngam/" rel="noopener"><span class="pillar-icon">🧘</span>Tâm — Tinh thần</a></li>
+          <li><a href="https://huongdi.sol.vn/" rel="noopener"><span class="pillar-icon">🎯</span>Trí — Sự nghiệp</a></li>
+          <li><a href="https://sol.vn/" rel="noopener"><span class="pillar-icon">🏠</span>Sol.vn — Trang chính</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Hướng Nghiệp Tools + Content Hub -->
+      <div class="sol-footer-col">
+        <h4>Hướng Nghiệp</h4>
+        <ul>
+          <li><a href="/kham-pha-ban-than/">Khám phá bản thân (P1) — DNA Test</a></li>
+          <li><a href="/kiem-ke-nguon-luc/">Kiểm kê nguồn lực (P2) — Vốn-Network-Sức</a></li>
+          <li><a href="/la-ban-huong-di/">La bàn hướng đi (P3) — Match 37 hướng</a></li>
+          <li><a href="https://sol.vn/huong-di/" rel="noopener">Tất cả bài viết hướng đi →</a></li>
+          <li><a href="https://sol.vn/huong-di/freelancer-chuyen-mon-tuoi-45/" rel="noopener">Freelancer Chuyên Môn</a></li>
+          <li><a href="https://sol.vn/huong-di/huan-luyen-dao-tao-tuoi-45/" rel="noopener">Huấn luyện & Đào Tạo</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Về Sol -->
+      <div class="sol-footer-col">
+        <h4>Về Sol</h4>
+        <ul>
+          <li><a href="https://sol.vn/khang-sol/" rel="noopener">Khang Sol — Founder</a></li>
+          <li><a href="https://sol.vn/cau-chuyen-sol/" rel="noopener">Câu chuyện Sol</a></li>
+          <li><a href="https://sol.vn/lien-he/" rel="noopener">Liên hệ</a></li>
+          <li><a href="https://sol.vn/chinh-sach-rieng-tu/" rel="noopener">Chính sách bảo mật</a></li>
+          <li><a href="https://sol.vn/dieu-khoan/" rel="noopener">Điều khoản</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Cộng đồng -->
+      <div class="sol-footer-col">
+        <h4>Cộng đồng</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener nofollow" target="_blank">LinkedIn Khang</a></li>
+          <li><a href="https://web.facebook.com/nguyendinhkhang" rel="noopener nofollow" target="_blank">Facebook Khang</a></li>
+          <li><a href="https://zalo.me/sol" rel="noopener nofollow" target="_blank">Zalo OA Sol</a></li>
+          <li><a href="mailto:contact@sol.vn">Email: contact@sol.vn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- EEAT Author block -->
+    <div class="sol-eeat-block">
+      <img src="https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg"
+           alt="Khang Sol — Founder Đi Cùng Sol"
+           loading="lazy"
+           width="56" height="56">
+      <div class="sol-eeat-text">
+        <strong>Tác giả: Khang Sol (Nguyễn Đình Khang)</strong>
+        Founder Đi Cùng Sol — 20+ năm CNTT, từng làm PM dự án Internet quốc gia, tái khởi nghiệp tuổi 45+ tập trung vào hỗ trợ đàn ông Việt 40-65 tuổi tìm hướng đi mới. Mình chia sẻ kinh nghiệm thật, không phải tư vấn tài chính có giấy phép.
+        <br><br>
+        <a href="https://sol.vn/khang-sol/" rel="author">Xem profile đầy đủ →</a>
+      </div>
+    </div>
+
+    <!-- YMYL Finance Disclaimer -->
+    <div class="sol-ymyl-disclaimer" role="note" aria-label="Thông báo về tài chính">
+      <strong>⚠️ Tuyên bố miễn trừ trách nhiệm (YMYL — Finance)</strong>
+      Thông tin trên huongdi.sol.vn mang tính <em>tham khảo và chia sẻ kinh nghiệm</em> từ Khang Sol và cộng đồng — KHÔNG phải tư vấn tài chính, đầu tư hoặc thuế chuyên nghiệp. Trước khi quyết định khởi nghiệp, đầu tư vốn, hoặc thay đổi nghề nghiệp lớn, anh nên tham khảo chuyên gia tài chính / luật sư / kế toán có giấy phép tại Việt Nam.
+    </div>
+
+    <!-- Bottom row -->
+    <div class="sol-footer-bottom">
+      <div>
+        © 2025–2026 <strong>Đi Cùng Sol</strong> · All rights reserved · Made with ❤️ at Việt Nam
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/vietnaminternet/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="https://web.facebook.com/nguyendinhkhang" rel="noopener" target="_blank">Facebook</a>
+        <a href="https://zalo.me/sol" rel="noopener" target="_blank">Zalo</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

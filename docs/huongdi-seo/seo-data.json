@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "site_name": "Đi Cùng Sol — Hướng Đi U45",
+    "base_url": "https://huongdi.sol.vn",
+    "default_image": "https://huongdi.sol.vn/og/default.jpg",
+    "twitter_handle": "@solvn",
+    "author": "Khang Sol",
+    "language": "vi-VN"
+  },
+  "pages": {
+    "index.html": {
+      "title": "Đi Cùng Sol — Tìm Hướng Đi Cho Đàn Ông U45 Tái Khởi Nghiệp",
+      "description": "37 hướng đi tái khởi nghiệp dành riêng cho đàn ông Việt 40-65 tuổi. Trắc nghiệm 5 phút khám phá DNA + nguồn lực → roadmap 30/90/180 ngày. Miễn phí.",
+      "keywords": "khởi nghiệp tuổi 40, tái khởi nghiệp U45, hướng đi U45, kinh doanh tuổi trung niên, làm thêm tuổi 45",
+      "canonical": "/",
+      "og_image": "/og/home.jpg",
+      "schemas": ["organization", "website", "breadcrumb_home"]
+    },
+    "p1.html": {
+      "title": "DNA Hướng Đi U45 — Trắc Nghiệm 20 Câu Khám Phá Bản Thân",
+      "description": "Khám phá 4 trục DNA (Người · Chuyên gia · Nhà xây dựng · Tự lập). 20 câu hỏi, 5 phút, miễn phí. Founder Khang Sol — 20+ năm CNTT, tái khởi nghiệp tuổi 45.",
+      "keywords": "trắc nghiệm khởi nghiệp, DNA hướng đi, test tính cách khởi nghiệp, trắc nghiệm tái khởi nghiệp tuổi 40",
+      "canonical": "/p1",
+      "og_image": "/og/p1.jpg",
+      "schemas": ["organization", "website", "quiz", "breadcrumb_p1"]
+    },
+    "p2.html": {
+      "title": "Bản Đồ Nguồn Lực U45 — 8 Trục Kinh Nghiệm, Vốn, Thời Gian",
+      "description": "Đánh giá 8 nguồn lực anh đang có: kinh nghiệm, vốn, thời gian, công nghệ, network, sức khoẻ, gia đình, học hỏi. 5 phút có bản đồ rõ.",
+      "keywords": "đánh giá nguồn lực khởi nghiệp, vốn khởi nghiệp tuổi 45, kinh nghiệm khởi nghiệp U45",
+      "canonical": "/p2",
+      "og_image": "/og/p2.jpg",
+      "schemas": ["organization", "website", "webapp", "breadcrumb_p2"]
+    },
+    "p3.html": {
+      "title": "37 Hướng Đi Khởi Nghiệp U45 — Xếp Theo % Phù Hợp",
+      "description": "Hệ thống so khớp DNA + nguồn lực → 37 hướng đi tái khởi nghiệp xếp hạng % phù hợp với anh. Roadmap 30/90/180 ngày cụ thể.",
+      "keywords": "37 hướng đi khởi nghiệp, kinh doanh phù hợp tuổi 45, gợi ý khởi nghiệp U45",
+      "canonical": "/p3",
+      "og_image": "/og/p3.jpg",
+      "schemas": ["organization", "website", "itemlist_37", "breadcrumb_p3"]
+    },
+    "p3-chuyenmon.html": {
+      "title": "Freelancer Chuyên Môn Tuổi 45+ — 7 Hướng Từ Kinh Nghiệm",
+      "description": "7 hướng freelance chuyên môn cho người 40-65: tư vấn IT, kế toán, pháp lý, marketing, HR. Tận dụng 20-30 năm kinh nghiệm, không sợ tuyển dụng lại.",
+      "keywords": "freelancer chuyên môn, tư vấn IT tuổi 40, freelance tuổi 45, làm chuyên gia tự do U45",
+      "canonical": "/p3-chuyenmon",
+      "og_image": "/og/chuyenmon.jpg",
+      "schemas": ["organization", "website", "collection_chuyenmon", "breadcrumb_chuyenmon"]
+    },
+    "p3-daotao.html": {
+      "title": "Coaching & Đào Tạo Tuổi 45+ — Truyền Kinh Nghiệm Có Thu Nhập",
+      "description": "5 hướng đào tạo cho người trung niên: coach 1-1, training doanh nghiệp, viết course online, mentor startup. Biến kinh nghiệm thành thu nhập bền vững.",
+      "keywords": "coaching tuổi 45, đào tạo doanh nghiệp, mentor startup, dạy online tuổi trung niên",
+      "canonical": "/p3-daotao",
+      "og_image": "/og/daotao.jpg",
+      "schemas": ["organization", "website", "collection_daotao", "breadcrumb_daotao"]
+    },
+    "p3-noidungso.html": {
+      "title": "Content Creator U45 — Blog, YouTube, Podcast Tuổi Trung Niên",
+      "description": "6 hướng nội dung số cho U45: blog chuyên môn, YouTube chia sẻ, podcast, viết sách. Xây dựng tài sản số bền vững từ kinh nghiệm thật.",
+      "keywords": "content creator tuổi 40, blog tuổi trung niên, youtuber tuổi 45, podcast U45, viết sách tuổi 50",
+      "canonical": "/p3-noidungso",
+      "og_image": "/og/noidungso.jpg",
+      "schemas": ["organization", "website", "collection_noidungso", "breadcrumb_noidungso"]
+    },
+    "p3-kinhdoanh.html": {
+      "title": "Khởi Nghiệp Kinh Doanh Tuổi 45+ — SME Tinh Gọn Ít Vốn",
+      "description": "5 hướng kinh doanh tinh gọn cho U45: bán hàng online, SME B2B, dropshipping, cửa hàng nhỏ, dịch vụ. Chiến lược Lean Startup phù hợp tuổi trung niên.",
+      "keywords": "kinh doanh tuổi 45, SME tinh gọn, lean startup U45, bán hàng online tuổi 40, khởi nghiệp ít vốn tuổi trung niên",
+      "canonical": "/p3-kinhdoanh",
+      "og_image": "/og/kinhdoanh.jpg",
+      "schemas": ["organization", "website", "collection_kinhdoanh", "breadcrumb_kinhdoanh"]
+    },
+    "p3-daily.html": {
+      "title": "Đại Lý Phân Phối Tuổi U45 — Vận Dụng Quan Hệ + Trust",
+      "description": "4 hướng đại lý cho người trung niên: phân phối B2B, FMCG cấp 2, sản phẩm chuyên ngành, dropship B2B. Tận dụng network 20 năm + uy tín cá nhân.",
+      "keywords": "đại lý phân phối, làm đại lý tuổi 45, distributor U45, đại lý B2B",
+      "canonical": "/p3-daily",
+      "og_image": "/og/daily.jpg",
+      "schemas": ["organization", "website", "collection_daily", "breadcrumb_daily"]
+    },
+    "p3-dichvu.html": {
+      "title": "Dịch Vụ Tuổi 45+ — 5 Hướng Kinh Doanh Service Từ Kỹ Năng Có Sẵn",
+      "description": "5 hướng dịch vụ cho người trung niên: kỹ thuật, chăm sóc, tư vấn cá nhân, outsource. Biến kỹ năng đã có thành business service tạo dòng tiền ổn định.",
+      "keywords": "dịch vụ tuổi 45, kinh doanh service U45, business service tuổi trung niên",
+      "canonical": "/p3-dichvu",
+      "og_image": "/og/dichvu.jpg",
+      "schemas": ["organization", "website", "collection_dichvu", "breadcrumb_dichvu"]
+    },
+    "p3-dauthu.html": {
+      "title": "Đấu Thầu & Hợp Đồng Tuổi 45+ — Kiếm Tiền Từ Network",
+      "description": "5 hướng đấu thầu & hợp đồng cho U45: government, B2B sales, freelance contract, RFP, vendor list. Tận dụng quan hệ + chuyên môn để có hợp đồng giá trị cao.",
+      "keywords": "đấu thầu tuổi 45, hợp đồng B2B, freelance contract, bid tuổi trung niên, government contract",
+      "canonical": "/p3-dauthu",
+      "og_image": "/og/dauthu.jpg",
+      "schemas": ["organization", "website", "collection_dauthu", "breadcrumb_dauthu"]
+    }
+  }
+}

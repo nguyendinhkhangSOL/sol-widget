@@ -1,0 +1,77 @@
+# ═══════════════════════════════════════════════════════════════════════
+# HUONGDI.SOL.VN — Environment Variables Template
+# ═══════════════════════════════════════════════════════════════════════
+#
+# Cài đặt:
+#   1. Copy: cp 04-env.example.huongdi /var/www/huongdi/backend/.env
+#   2. Edit từng giá trị bên dưới (thay <PLACEHOLDER>)
+#   3. chmod 600 /var/www/huongdi/backend/.env (chỉ owner đọc được)
+#
+# ⚠️ KHÔNG commit file .env vào git
+# ═══════════════════════════════════════════════════════════════════════
+
+# ── Runtime ──────────────────────────────────────────────────────────
+NODE_ENV=production
+PORT=4001
+PUBLIC_ORIGIN=https://huongdi.sol.vn
+
+# ── Database ─────────────────────────────────────────────────────────
+# Format: postgresql://<user>:<password>@<host>:<port>/<db>?schema=public
+# Password phải đúng với password đã tạo ở Bước 2 (PostgreSQL)
+DATABASE_URL="postgresql://huongdi_user:<DB_PASSWORD>@localhost:5432/huongdi_prod?schema=public&connection_limit=20"
+
+# ── Auth ─────────────────────────────────────────────────────────────
+# Sinh JWT_SECRET random 64 chars hex:
+#   openssl rand -hex 64
+JWT_SECRET=<RANDOM_64_CHARS_HEX>
+JWT_EXPIRES_IN=30d
+
+# ── CORS ─────────────────────────────────────────────────────────────
+# Frontend domains được phép gọi API (comma-separated)
+CORS_ORIGINS=https://huongdi.sol.vn,https://adminhuongdi.sol.vn
+
+# ── Zalo OAuth (dùng chung với bothuocla) ────────────────────────────
+# Lấy từ admin Khang Sol — credentials Zalo OA của Sol
+# Tạo Zalo App tại: https://developers.zalo.me/createapp
+ZALO_APP_ID=<ZALO_APP_ID_19_DIGITS>
+ZALO_APP_SECRET=<ZALO_APP_SECRET_32_CHARS>
+ZALO_REDIRECT_URI=https://huongdi.sol.vn/api/auth/zalo/callback
+ZALO_FRONTEND_URL=https://huongdi.sol.vn
+
+# ── Brevo SMTP (dùng chung với bothuocla) ────────────────────────────
+# Login: https://app.brevo.com → SMTP & API → SMTP credentials
+SMTP_HOST=smtp-relay.brevo.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=<BREVO_SMTP_USER>@smtp-brevo.com
+SMTP_PASS=<BREVO_SMTP_KEY_32_CHARS>
+SMTP_FROM=noreply@sol.vn
+
+# ── Anthropic AI ─────────────────────────────────────────────────────
+# ⚠️ Em recommend tạo SUB-ORG riêng cho huongdi để cách ly quota
+# với bothuocla (đỡ rủi ro 1 app abuse → đốt quota app kia)
+# Console: https://console.anthropic.com → Settings → Organizations
+ANTHROPIC_API_KEY=sk-ant-api03-<YOUR_KEY>
+CLAUDE_MODEL_PRIMARY=claude-sonnet-4-6
+CLAUDE_MODEL_ESCALATED=claude-opus-4-6
+AI_DAILY_QUOTA_MSGS=30
+AI_MAX_OUTPUT_TOKENS=400
+
+# ── Admin Seed ───────────────────────────────────────────────────────
+# Password cho tài khoản admin@sol.vn tạo tự động lúc seed
+# Đổi ngay sau lần login đầu!
+ADMIN_SEED_EMAIL=admin@sol.vn
+ADMIN_SEED_PASSWORD=<STRONG_PASSWORD_12_PLUS_CHARS>
+
+# ── Web Push VAPID (optional, cho push notification) ─────────────────
+# Sinh keys: npx web-push generate-vapid-keys
+# VAPID_PUBLIC_KEY=<87_CHARS_BASE64URL>
+# VAPID_PRIVATE_KEY=<43_CHARS_BASE64URL>
+# VAPID_SUBJECT=mailto:contact@sol.vn
+
+# ── Scheduler ────────────────────────────────────────────────────────
+# Bật cron jobs in-process (notification daily, etc.)
+ENABLE_SCHEDULER=true
+
+# ── Dev only (KHÔNG bật trên production) ─────────────────────────────
+# OTP_DEV_MODE=false

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đi Cùng Sol — Tái thiết U45 theo Thân · Tâm · Trí</title>
+<meta name="description" content="Sol đồng hành đàn ông Việt 45+ trên 3 trụ cột Thân–Tâm–Trí: cai thuốc, sức khoẻ tinh thần, và tìm hướng tái khởi nghiệp. Founder Khang Sol: 30 năm hút, 5 năm tự do, 20 năm CNTT.">
+<meta name="theme-color" content="#B25C2C">
+
+<!-- ═══ SCHEMA.ORG — Organization + Person + WebSite ═════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Đi Cùng Sol",
+  "alternateName": "Sol",
+  "url": "https://sol.vn/",
+  "logo": "https://sol.vn/wp-content/uploads/2025/05/Icon_2.png",
+  "description": "Hệ sinh thái đồng hành đàn ông Việt 45+ trên 3 trụ cột Thân–Tâm–Trí: sức khoẻ thể chất (bỏ thuốc lá), sức khoẻ tinh thần (chuyên mục Tâm), và trí tuệ sự nghiệp (tìm hướng tái khởi nghiệp).",
+  "founder": {
+    "@type": "Person",
+    "name": "Khang Sol",
+    "alternateName": "Nguyễn Đình Khang",
+    "url": "https://sol.vn/khang-sol/",
+    "image": "https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg",
+    "jobTitle": "Founder, Đi Cùng Sol",
+    "sameAs": [
+      "https://www.linkedin.com/in/vietnaminternet/",
+      "https://web.facebook.com/nguyendinhkhang"
+    ],
+    "knowsAbout": [
+      "Smoking cessation",
+      "Nicotine dependence (FTND)",
+      "Mid-life mental wellness",
+      "Vietnamese mid-life philosophy",
+      "Lean startup",
+      "IT project management",
+      "Vietnamese SME"
+    ]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/vietnaminternet/",
+    "https://web.facebook.com/nguyendinhkhang"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+84-24-3993-1800",
+    "email": "contact@sol.vn",
+    "contactType": "customer service",
+    "availableLanguage": "Vietnamese"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Đi Cùng Sol",
+  "url": "https://sol.vn/",
+  "publisher": { "@type": "Organization", "name": "Đi Cùng Sol", "url": "https://sol.vn/" },
+  "inLanguage": "vi-VN"
+}
+</script>
+
+<style>
+:root {
+  --sol-cream: #FBF7F0;
+  --sol-peach: #F5DDD9;
+  --sol-sand: #F5E6DE;
+  --sol-sun: #E8924A;
+  --sol-clay: #B25C2C;
+  --sol-clay-dark: #6B3318;
+  --sol-earth: #5C3A1E;
+  --sol-ink: #2A2620;
+  --sol-ink-2: #5A5650;
+  --sol-ink-3: #8A857C;
+  --sol-line: #E8DCCA;
+  --sol-than-green: #388e3c;     /* Thân — sức khoẻ thể chất */
+  --sol-than-soft: #DCFCE7;
+  --sol-tam-sun: #E8924A;        /* Tâm — bình tâm, ấm áp */
+  --sol-tam-soft: #FFF3E0;
+  --sol-tri-clay: #B25C2C;       /* Trí — hành động */
+  --sol-tri-soft: #FBE8DA;
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--sol-ink);
+  background: var(--sol-cream);
+  margin: 0;
+  line-height: 1.6;
+}
+.sol-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* ═══ HERO ═══════════════════════════════════════════════════════ */
+.sol-hero {
+  background: linear-gradient(135deg, #FBF7F0 0%, #F5DDD9 60%, #E8924A 100%);
+  color: var(--sol-ink);
+  padding: 60px 40px;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 20px rgba(178, 92, 44, 0.10);
+  position: relative;
+  overflow: hidden;
+}
+.sol-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(232,146,74,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.sol-hero-sun { font-size: 56px; margin-bottom: 12px; }
+.sol-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--sol-clay-dark);
+}
+.sol-hero-tagline {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: 0 auto 36px auto;
+  color: var(--sol-ink-2);
+}
+.sol-hero-tagline strong { color: var(--sol-clay-dark); }
+
+.sol-hero-ctas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto 24px auto;
+  position: relative;
+  z-index: 1;
+}
+.sol-hero-cta {
+  display: block;
+  text-decoration: none;
+  padding: 22px 24px;
+  border-radius: 12px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: #ffffff;
+  border-top: 4px solid;
+}
+.sol-hero-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+.sol-hero-cta-emoji { font-size: 32px; display: block; margin-bottom: 8px; }
+.sol-hero-cta-pillar {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+.sol-hero-cta-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--sol-ink);
+  margin-bottom: 4px;
+}
+.sol-hero-cta-desc {
+  font-size: 0.88rem;
+  color: var(--sol-ink-2);
+  line-height: 1.5;
+}
+.sol-hero-cta-arrow { font-size: 0.92rem; font-weight: 700; margin-top: 12px; }
+
+.sol-hero-cta--than { border-top-color: var(--sol-than-green); }
+.sol-hero-cta--than .sol-hero-cta-pillar,
+.sol-hero-cta--than .sol-hero-cta-arrow { color: var(--sol-than-green); }
+.sol-hero-cta--tam { border-top-color: var(--sol-tam-sun); }
+.sol-hero-cta--tam .sol-hero-cta-pillar,
+.sol-hero-cta--tam .sol-hero-cta-arrow { color: var(--sol-tam-sun); }
+.sol-hero-cta--tri { border-top-color: var(--sol-tri-clay); }
+.sol-hero-cta--tri .sol-hero-cta-pillar,
+.sol-hero-cta--tri .sol-hero-cta-arrow { color: var(--sol-tri-clay); }
+
+.sol-hero-secondary {
+  font-size: 0.9rem;
+  color: var(--sol-ink-2);
+  margin-top: 18px;
+}
+.sol-hero-secondary a {
+  color: var(--sol-clay);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--sol-clay);
+}
+
+/* ═══ NARRATIVE ══════════════════════════════════════════════════ */
+.sol-narrative {
+  max-width: 820px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.sol-narrative-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--sol-clay-dark);
+}
+.sol-narrative-body {
+  font-size: 1.05rem;
+  color: var(--sol-ink);
+  line-height: 1.75;
+}
+.sol-narrative-body strong { color: var(--sol-clay-dark); }
+.sol-narrative-body em {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--sol-ink-2);
+  font-style: italic;
+}
+
+/* ═══ 3 TRỤ CỘT ═══════════════════════════════════════════════════ */
+.sol-pillars-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--sol-ink);
+  letter-spacing: -0.02em;
+}
+.sol-pillars-sub {
+  text-align: center;
+  color: var(--sol-ink-2);
+  margin-bottom: 32px;
+  font-size: 1.02rem;
+}
+.sol-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+.sol-pillar-card {
+  border: 1px solid var(--sol-line);
+  padding: 30px;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top-width: 4px;
+}
+.sol-pillar-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); }
+.sol-pillar-emoji { font-size: 44px; margin-bottom: 14px; }
+.sol-pillar-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.sol-pillar-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+.sol-pillar-subtitle {
+  font-size: 0.95rem;
+  color: var(--sol-ink-2);
+  font-style: italic;
+  margin: 0 0 16px 0;
+}
+.sol-pillar-desc {
+  font-size: 0.98rem;
+  color: var(--sol-ink-2);
+  line-height: 1.65;
+  margin: 0 0 18px 0;
+}
+.sol-pillar-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px 0;
+  flex-grow: 1;
+}
+.sol-pillar-bullets li {
+  padding: 6px 0 6px 24px;
+  position: relative;
+  font-size: 0.93rem;
+  color: var(--sol-ink);
+}
+.sol-pillar-bullets li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+.sol-pillar-cta {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  transition: opacity 0.2s;
+}
+.sol-pillar-cta:hover { opacity: 0.9; }
+.sol-pillar-status {
+  font-size: 0.75rem;
+  color: var(--sol-ink-3);
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Trụ Thân (xanh) */
+.sol-pillar--than { border-top-color: var(--sol-than-green); }
+.sol-pillar--than .sol-pillar-eyebrow,
+.sol-pillar--than .sol-pillar-title { color: var(--sol-than-green); }
+.sol-pillar--than .sol-pillar-bullets li::before { color: var(--sol-than-green); }
+.sol-pillar--than .sol-pillar-cta { background: var(--sol-than-green); color: white; }
+
+/* Trụ Tâm (sun) */
+.sol-pillar--tam { border-top-color: var(--sol-tam-sun); }
+.sol-pillar--tam .sol-pillar-eyebrow,
+.sol-pillar--tam .sol-pillar-title { color: var(--sol-tam-sun); }
+.sol-pillar--tam .sol-pillar-bullets li::before { color: var(--sol-tam-sun); }
+.sol-pillar--tam .sol-pillar-cta { background: var(--sol-tam-sun); color: white; }
+
+/* Trụ Trí (clay) */
+.sol-pillar--tri { border-top-color: var(--sol-tri-clay); }
+.sol-pillar--tri .sol-pillar-eyebrow,
+.sol-pillar--tri .sol-pillar-title { color: var(--sol-tri-clay); }
+.sol-pillar--tri .sol-pillar-bullets li::before { color: var(--sol-tri-clay); }
+.sol-pillar--tri .sol-pillar-cta { background: var(--sol-tri-clay); color: white; }
+
+/* ═══ DISCOVERY ══════════════════════════════════════════════════ */
+.sol-discovery {
+  background: var(--sol-sand);
+  border: 1px solid var(--sol-line);
+  padding: 36px;
+  border-radius: 14px;
+  margin-bottom: 50px;
+}
+.sol-discovery-head { text-align: center; margin-bottom: 24px; }
+.sol-discovery h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--sol-clay-dark);
+}
+.sol-discovery-sub { margin: 0; color: var(--sol-ink-2); font-size: 0.98rem; }
+.sol-discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.sol-discovery-chip {
+  display: block;
+  text-align: center;
+  background: white;
+  border: 2px solid var(--sol-line);
+  color: var(--sol-ink);
+  padding: 16px 12px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+.sol-discovery-chip:hover { border-color: var(--sol-clay); color: var(--sol-clay); transform: translateY(-2px); }
+.sol-discovery-chip-vnd { display: block; font-size: 1.1rem; margin-bottom: 4px; }
+.sol-discovery-chip-action { display: block; font-size: 0.82rem; font-weight: 500; color: var(--sol-ink-3); }
+.sol-discovery-note {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: var(--sol-ink-3);
+  font-style: italic;
+}
+
+/* ═══ FOUNDER ════════════════════════════════════════════════════ */
+.sol-founder {
+  background: linear-gradient(135deg, #2A2620 0%, #5C3A1E 50%, #6B3318 100%);
+  color: #FBF7F0;
+  padding: 50px 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.sol-founder::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, rgba(232,146,74,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.sol-founder-photo { flex: 0 0 auto; width: 200px; height: 240px; position: relative; z-index: 1; }
+.sol-founder-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid #FBF7F0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.sol-founder-photo-fallback {
+  width: 100%; height: 100%;
+  background: var(--sol-sand);
+  border-radius: 12px;
+  border: 4px solid #FBF7F0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+}
+.sol-founder-content { flex: 1; min-width: 280px; position: relative; z-index: 1; }
+.sol-founder-eyebrow {
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--sol-sun); margin-bottom: 8px;
+}
+.sol-founder h2 { font-size: 1.7rem; font-weight: 800; margin: 0 0 6px 0; color: #FBF7F0; }
+.sol-founder-role { font-size: 0.95rem; color: #E8DCCA; font-style: italic; margin: 0 0 18px 0; }
+.sol-founder-body p { margin: 0 0 12px 0; line-height: 1.7; color: #FBF7F0; font-size: 1rem; }
+.sol-founder-body strong { color: var(--sol-sun); }
+
+.sol-founder-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 18px 0;
+}
+.sol-founder-pillar {
+  background: rgba(232,146,74,0.12);
+  border: 1px solid rgba(232,146,74,0.3);
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+.sol-founder-pillar-icon { font-size: 22px; margin-bottom: 4px; }
+.sol-founder-pillar-name { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; color: var(--sol-sun); margin-bottom: 4px; }
+.sol-founder-pillar-cred { font-size: 0.82rem; color: #E8DCCA; line-height: 1.4; }
+
+.sol-founder-link {
+  display: inline-block;
+  color: var(--sol-sun);
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 4px;
+  font-size: 0.95rem;
+  border-bottom: 1px dotted var(--sol-sun);
+}
+
+/* ═══ COMMUNITY ══════════════════════════════════════════════════ */
+.sol-community {
+  background: #ffffff;
+  border: 1px solid var(--sol-line);
+  padding: 36px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.sol-community h3 { font-size: 1.35rem; font-weight: 700; margin: 0 0 8px 0; color: var(--sol-ink); }
+.sol-community-sub { font-size: 1rem; color: var(--sol-ink-2); margin: 0 0 22px 0; }
+.sol-community-btn {
+  display: inline-block;
+  background: var(--sol-clay);
+  color: white;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+/* ═══ TRUST FOOTER (inline mini) ═════════════════════════════════ */
+.sol-trust-inline {
+  background: var(--sol-cream);
+  border-top: 1px solid var(--sol-line);
+  padding: 24px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: var(--sol-ink-3);
+  text-align: center;
+}
+.sol-trust-inline p { margin: 4px 0; }
+.sol-trust-inline a { color: var(--sol-clay); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .sol-hero { padding: 40px 20px; }
+  .sol-hero h1 { font-size: 1.9rem; }
+  .sol-pillars-grid { grid-template-columns: 1fr; }
+  .sol-founder { flex-direction: column; }
+  .sol-founder-pillars { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="sol-container">
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- BLOCK 1: HERO — 3 TRỤ CỘT THÂN-TÂM-TRÍ                            -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="sol-hero">
+    <div class="sol-hero-sun" aria-hidden="true">🌅</div>
+    <h1>Đi Cùng Sol — Tái thiết U45<br>theo Thân · Tâm · Trí</h1>
+    <p class="sol-hero-tagline">
+      Đồng hành đàn ông Việt 45+ trên <strong>3 trụ cột</strong>:
+      Thân (sức khoẻ thể chất), Tâm (sức khoẻ tinh thần), Trí (hướng đi sự nghiệp).
+      Không hô hào — chọn 1 trụ để bắt đầu hôm nay.
+    </p>
+
+    <div class="sol-hero-ctas">
+      <a href="https://bothuocla.sol.vn/test-ftnd?utm_source=sol_homepage&utm_medium=hero&utm_campaign=than"
+         class="sol-hero-cta sol-hero-cta--than">
+        <span class="sol-hero-cta-emoji" aria-hidden="true">🌱</span>
+        <span class="sol-hero-cta-pillar">Trụ THÂN</span>
+        <div class="sol-hero-cta-title">Bỏ thuốc lá</div>
+        <div class="sol-hero-cta-desc">Đo Mức Lệ Thuộc Nicotin · 90 giây · 6 câu</div>
+        <div class="sol-hero-cta-arrow">Bắt đầu →</div>
+      </a>
+
+      <a href="/category/ngam/?utm_source=sol_homepage&utm_medium=hero&utm_campaign=tam"
+         class="sol-hero-cta sol-hero-cta--tam">
+        <span class="sol-hero-cta-emoji" aria-hidden="true">💭</span>
+        <span class="sol-hero-cta-pillar">Trụ TÂM</span>
+        <div class="sol-hero-cta-title">Bình tâm U45</div>
+        <div class="sol-hero-cta-desc">Đọc Tâm · Sức khoẻ tinh thần · Định nghĩa lại bản thân</div>
+        <div class="sol-hero-cta-arrow">Khám phá →</div>
+      </a>
+
+      <a href="https://huongdi.sol.vn/p1?utm_source=sol_homepage&utm_medium=hero&utm_campaign=tri"
+         class="sol-hero-cta sol-hero-cta--tri">
+        <span class="sol-hero-cta-emoji" aria-hidden="true">🚀</span>
+        <span class="sol-hero-cta-pillar">Trụ TRÍ</span>
+        <div class="sol-hero-cta-title">Tìm hướng đi</div>
+        <div class="sol-hero-cta-desc">DNA hướng đi · 20 câu · 5 phút · 37 hướng</div>
+        <div class="sol-hero-cta-arrow">Bắt đầu →</div>
+      </a>
+    </div>
+
+    <p class="sol-hero-secondary">
+      Mới biết Sol? <a href="/ve-sol/">Đọc Sol làm gì cho anh →</a>
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- BLOCK 2: NARRATIVE — VÌ SAO THÂN-TÂM-TRÍ                          -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="sol-narrative">
+    <h2 class="sol-narrative-title">Vì sao Thân · Tâm · Trí — 1 người đi trước</h2>
+    <p class="sol-narrative-body">
+      Ở tuổi U45, mình nhận ra: không thể chỉ chữa <strong>Thân</strong> mà bỏ qua
+      <strong>Tâm</strong>, cũng không thể chỉ làm <strong>Trí</strong> mà thân tâm
+      kiệt quệ. Ba thứ ràng với nhau như kiềng 3 chân.<br><br>
+
+      Mình đi qua cả ba:
+      <strong>Thân</strong> — 30 năm hút Vinataba, 5 năm Tự do.
+      <strong>Tâm</strong> — 5 năm đó, mình hiểu thêm về định nghĩa lại bản thân.
+      <strong>Trí</strong> — 20+ năm CNTT, giờ tái khởi nghiệp lại.<br><br>
+
+      Sol không chia 3 sản phẩm rời rạc — Sol đi cùng anh em qua từng giai đoạn của 1 con người.
+      <em>— Khang Sol, người sáng lập</em>
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- BLOCK 3: 3 TRỤ CỘT — chi tiết                                     -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <h2 class="sol-pillars-title">3 trụ cột — Cho 3 hành trình</h2>
+  <p class="sol-pillars-sub">Chọn trụ cột phù hợp với giai đoạn hiện tại của anh.</p>
+
+  <div class="sol-pillars-grid">
+
+    <!-- ─── Trụ THÂN ─── -->
+    <article class="sol-pillar-card sol-pillar--than">
+      <div class="sol-pillar-emoji">🌱</div>
+      <div class="sol-pillar-eyebrow">Trụ Thân — Sức khoẻ thể chất</div>
+      <h3 class="sol-pillar-title">Bothuocla.sol.vn</h3>
+      <p class="sol-pillar-subtitle">Bỏ thuốc lá khoa học cho U45</p>
+      <p class="sol-pillar-desc">
+        Lộ trình cai thuốc cá nhân hoá theo Mức Lệ Thuộc Nicotin (FTND).
+        3 cohort 35/52/65 ngày tuỳ độ nặng.
+      </p>
+      <ul class="sol-pillar-bullets">
+        <li>Voice Khang Sol đọc thật — không bot</li>
+        <li>Nhật ký + check-in qua Zalo OA</li>
+        <li>Sổ Lưu Niệm khi hoàn thành</li>
+        <li>Cộng đồng cùng cai</li>
+      </ul>
+      <a href="https://bothuocla.sol.vn/test-ftnd?utm_source=sol_homepage&utm_medium=pillar_than"
+         class="sol-pillar-cta">Đo FTND miễn phí →</a>
+      <p class="sol-pillar-status">App đang chạy · 35-65 ngày cohort</p>
+    </article>
+
+    <!-- ─── Trụ TÂM ─── -->
+    <article class="sol-pillar-card sol-pillar--tam">
+      <div class="sol-pillar-emoji">💭</div>
+      <div class="sol-pillar-eyebrow">Trụ Tâm — Sức khoẻ tinh thần</div>
+      <h3 class="sol-pillar-title">Tâm.sol.vn</h3>
+      <p class="sol-pillar-subtitle">Bình tâm và định nghĩa lại bản thân</p>
+      <p class="sol-pillar-desc">
+        Bài viết về sức khoẻ tinh thần, stress trung niên, mindfulness,
+        triết lý đời thường. Kế thừa kinh nghiệm thật của Khang.
+      </p>
+      <ul class="sol-pillar-bullets">
+        <li>Stress &amp; cái bẫy khói thuốc</li>
+        <li>Khẳng định bản thân tuổi 40+</li>
+        <li>5 năm Tự do — học được gì</li>
+        <li>Đối thoại với chính mình (sắp ra)</li>
+      </ul>
+      <a href="/category/ngam/?utm_source=sol_homepage&utm_medium=pillar_tam"
+         class="sol-pillar-cta">Đọc chuyên mục Tâm →</a>
+      <p class="sol-pillar-status">Content cluster · App riêng sẽ phát triển sau</p>
+    </article>
+
+    <!-- ─── Trụ TRÍ ─── -->
+    <article class="sol-pillar-card sol-pillar--tri">
+      <div class="sol-pillar-emoji">🚀</div>
+      <div class="sol-pillar-eyebrow">Trụ Trí — Hướng đi sự nghiệp</div>
+      <h3 class="sol-pillar-title">Huongdi.sol.vn</h3>
+      <p class="sol-pillar-subtitle">Tìm hướng tái khởi nghiệp U45</p>
+      <p class="sol-pillar-desc">
+        Direction Discovery Engine. Trắc nghiệm DNA cá nhân + nguồn lực
+        → 37 hướng đi xếp hạng theo % phù hợp.
+      </p>
+      <ul class="sol-pillar-bullets">
+        <li>P1: 20 câu DNA cá nhân (4 trục)</li>
+        <li>P2: Nguồn lực hiện tại (8 trục)</li>
+        <li>P3: 37 hướng đi xếp hạng</li>
+        <li>Roadmap 30/90/180 ngày</li>
+      </ul>
+      <a href="https://huongdi.sol.vn/p1?utm_source=sol_homepage&utm_medium=pillar_tri"
+         class="sol-pillar-cta">Khám phá DNA — 5 phút →</a>
+      <p class="sol-pillar-status">App sắp ra mắt · 37 hướng đi</p>
+    </article>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- BLOCK 4: KHÁM PHÁ THEO VỐN (con của Trụ Trí)                       -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="sol-discovery">
+    <div class="sol-discovery-head">
+      <h2>🚀 Trụ Trí: Khám phá hướng đi phù hợp với vốn</h2>
+      <p class="sol-discovery-sub">
+        Chọn mốc vốn — Sol gợi ý hướng đi phù hợp (không cam kết thu nhập):
+      </p>
+    </div>
+
+    <div class="sol-discovery-grid">
+      <a href="/khoi-nghiep-trung-nien/von-100-trieu/" class="sol-discovery-chip">
+        <span class="sol-discovery-chip-vnd">💰 Vốn 100 triệu</span>
+        <span class="sol-discovery-chip-action">Khám phá hướng →</span>
+      </a>
+      <a href="/khoi-nghiep-trung-nien/von-300-trieu/" class="sol-discovery-chip">
+        <span class="sol-discovery-chip-vnd">💰 Vốn 300 triệu</span>
+        <span class="sol-discovery-chip-action">Khám phá hướng →</span>
+      </a>
+      <a href="/khoi-nghiep-trung-nien/von-500-trieu/" class="sol-discovery-chip">
+        <span class="sol-discovery-chip-vnd">💰 Vốn 500 triệu</span>
+        <span class="sol-discovery-chip-action">Khám phá hướng →</span>
+      </a>
+      <a href="/khoi-nghiep-trung-nien/von-1-ty/" class="sol-discovery-chip">
+        <span class="sol-discovery-chip-vnd">💰 Vốn 1 tỷ+</span>
+        <span class="sol-discovery-chip-action">Khám phá hướng →</span>
+      </a>
+    </div>
+
+    <p class="sol-discovery-note">
+      ⚠️ Sol không phải nhà tư vấn tài chính có giấy phép. Bài phục vụ giáo dục.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- BLOCK 5: FOUNDER — 3 trụ trong 1 người                             -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="sol-founder">
+    <div class="sol-founder-photo">
+      <img src="https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg"
+           alt="Khang Sol — đứng trước đỉnh Ngọc Long Tuyết Sơn"
+           onerror="this.outerHTML='<div class=&quot;sol-founder-photo-fallback&quot;>📷</div>'">
+    </div>
+
+    <div class="sol-founder-content">
+      <div class="sol-founder-eyebrow">Người sáng lập · 3 trụ cùng 1 con người</div>
+      <h2>Khang Sol</h2>
+      <p class="sol-founder-role">Founder, Đi Cùng Sol — Nguyễn Đình Khang</p>
+
+      <div class="sol-founder-body">
+        <p>
+          Mình không phải bác sĩ. Cũng không phải nhà tư vấn tài chính.
+          Mình là <strong>người đi trước</strong> — đã sống qua cả 3 trụ.
+        </p>
+      </div>
+
+      <div class="sol-founder-pillars">
+        <div class="sol-founder-pillar">
+          <div class="sol-founder-pillar-icon">🌱</div>
+          <div class="sol-founder-pillar-name">THÂN</div>
+          <div class="sol-founder-pillar-cred">30 năm hút Vinataba<br>5 năm Tự do từ 22/12/2020</div>
+        </div>
+        <div class="sol-founder-pillar">
+          <div class="sol-founder-pillar-icon">💭</div>
+          <div class="sol-founder-pillar-name">TÂM</div>
+          <div class="sol-founder-pillar-cred">5 năm học định nghĩa<br>lại bản thân hậu thuốc lá</div>
+        </div>
+        <div class="sol-founder-pillar">
+          <div class="sol-founder-pillar-icon">🚀</div>
+          <div class="sol-founder-pillar-name">TRÍ</div>
+          <div class="sol-founder-pillar-cred">20+ năm CNTT/SME<br>Khởi nghiệp Sol 2026</div>
+        </div>
+      </div>
+
+      <a href="/khang-sol/" class="sol-founder-link">
+        Đọc câu chuyện đầy đủ về Khang →
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- BLOCK 6: COMMUNITY                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="sol-community">
+    <h3>💬 Cộng đồng Sol — Sòng phẳng &amp; Tử tế</h3>
+    <p class="sol-community-sub">
+      Zalo group cho anh em U45 đang đi trên 1 trong 3 trụ cột.<br>
+      Không spam, không nhậu khuya, không khoe khoang. Chỉ chia sẻ thật.
+    </p>
+    <a href="https://zalo.me/g/your_group_id" class="sol-community-btn" target="_blank">
+      🔗 Tham gia Cộng đồng Sol
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- BLOCK 7: NOTE — Master Footer được render bởi theme footer.php    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!--
+    Production: Block 7 không có ở đây.
+    Master Footer (4 zone: Brand · Nav · Safety+Disclaimer · Copyright)
+    được render tự động qua get_footer() trong WordPress theme.
+
+    File source: docs/footer-sol-vn-master-v3-preview.html
+    File production: theme-sol/footer.php
+  -->
+  <div style="background: #FBF7F0; border: 1px dashed var(--sol-clay); padding: 24px; border-radius: 12px; text-align: center; color: var(--sol-ink-3); font-size: 0.88rem; margin-top: 30px;">
+    📎 <strong>Preview note:</strong> Master Footer sẽ render ở đây trong production.<br>
+    Mở <code>docs/footer-sol-vn-master-v3-preview.html</code> để xem full footer.
+  </div>
+
+</div>
+
+</body>
+</html>

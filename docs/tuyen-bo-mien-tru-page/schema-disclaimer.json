@@ -1,0 +1,105 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sol.vn/tuyen-bo-mien-tru/#webpage",
+      "url": "https://sol.vn/tuyen-bo-mien-tru/",
+      "name": "Tuyên Bố Miễn Trừ Trách Nhiệm — Đi Cùng Sol",
+      "description": "Tuyên bố miễn trừ trách nhiệm toàn diện cho hệ sinh thái Sol — bao gồm cả 3 trụ Thân (sức khoẻ), Tâm (tinh thần), Trí (tài chính/sự nghiệp). YMYL compliance cho đàn ông Việt 40-65.",
+      "inLanguage": "vi-VN",
+      "isPartOf": {
+        "@id": "https://sol.vn/#website"
+      },
+      "datePublished": "2026-06-23T00:00:00+07:00",
+      "dateModified": "2026-06-23T00:00:00+07:00",
+      "author": {
+        "@id": "https://sol.vn/khang-sol/#person"
+      },
+      "publisher": {
+        "@id": "https://sol.vn/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sol.vn/tuyen-bo-mien-tru/#breadcrumb"
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Sol có phải là tư vấn y tế chuyên môn không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KHÔNG. Sol không phải bác sĩ, y tá, dược sĩ hay nhà tư vấn dinh dưỡng có chứng chỉ. Nội dung Sol về sức khoẻ (bothuocla.sol.vn) chỉ mang tính chia sẻ kinh nghiệm cá nhân. Anh CẦN tham khảo bác sĩ chuyên khoa trước khi bỏ thuốc nếu có bệnh nền, dùng dược phẩm bỏ thuốc, hoặc bắt đầu chế độ tập luyện mới."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Sol có phải là trị liệu tâm lý chuyên môn không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KHÔNG. Sol không phải bác sĩ tâm thần, nhà trị liệu tâm lý có chứng chỉ hay counsellor có license. Nội dung trên sol.vn/ngam/ về khủng hoảng tuổi trung niên, stress, cô đơn là chia sẻ trải nghiệm cá nhân + framework. Nếu anh có ý nghĩ tự tử, trầm cảm kéo dài, hoặc khủng hoảng tâm lý cấp tính, gọi đường dây nóng 1800 599 920 hoặc đến bệnh viện tâm thần."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Sol có phải là tư vấn tài chính chuyên môn không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KHÔNG. Sol không phải broker chứng khoán, nhà tư vấn tài chính có CFA/CFP, kế toán CPA hay luật sư. Nội dung trên huongdi.sol.vn về 37 hướng đi tái khởi nghiệp, pricing thị trường, roadmap là gợi ý dựa trên kinh nghiệm cộng đồng Sol. Anh CẦN tham khảo chuyên gia có giấy phép trước khi đầu tư >100 triệu VND, đăng ký công ty, hoặc ký hợp đồng B2B giá trị lớn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Sol có nhận tài trợ hoặc affiliate không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hiện tại (T6/2026): Sol KHÔNG có sponsored content, KHÔNG có affiliate link, KHÔNG nhận tài trợ promote sản phẩm. Sol tự kiếm tiền qua coaching 1-1, cohort program, consulting B2B, và sách+course tương lai. Nếu trong tương lai có affiliate hoặc sponsored, Sol sẽ ghi rõ ngay đầu bài."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Sol có MLM hay scheme đầu tư cam kết lợi nhuận không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KHÔNG. Sol KHÔNG MLM, KHÔNG ponzi, KHÔNG referral cấp, KHÔNG cam kết lợi nhuận đầu tư. Bất kỳ nội dung Sol nào nhắc đến doanh thu 50-500 triệu/tháng đều là dữ liệu tham khảo cá nhân, KHÔNG phải lời hứa của Sol. Quyết định đầu tư là trách nhiệm cá nhân của anh."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tôi có thể copy nội dung Sol đăng lại không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Anh ĐƯỢC PHÉP đọc/lưu/in cá nhân, share link bài viết qua mạng xã hội kèm credit, và quote 1-2 câu với link nguồn. Anh KHÔNG ĐƯỢC PHÉP copy toàn bộ bài viết đăng lại trên blog khác, sử dụng nội dung cho mục đích thương mại, hoặc screenshot FB Group ra ngoài. Nếu muốn sử dụng nội dung Sol cho mục đích thương mại, liên hệ contact@sol.vn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tôi nên liên hệ ai khi cần tư vấn chuyên môn?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Triệu chứng y khoa cấp tính → 115/Bệnh viện. Trầm cảm kéo dài → Bác sĩ tâm thần. Ý nghĩ tự tử → 1800 599 920. Đầu tư >100tr → CFA/CFP. Đăng ký công ty → Luật sư SME + Kế toán CPA. Ký hợp đồng B2B → Luật sư chuyên ngành. M&A → M&A advisor có chứng chỉ. Crypto/Securities → Broker có giấy phép từ UBCK."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sol.vn/tuyen-bo-mien-tru/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Đi Cùng Sol",
+          "item": "https://sol.vn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tuyên Bố Miễn Trừ"
+        }
+      ]
+    }
+  ]
+}

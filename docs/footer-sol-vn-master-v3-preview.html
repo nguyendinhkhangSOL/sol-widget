@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sol.vn — Master Footer v3 (Thân–Tâm–Trí)</title>
+<style>
+:root {
+  --sol-cream: #FBF7F0;
+  --sol-sun: #E8924A;
+  --sol-clay: #B25C2C;
+  --sol-clay-dark: #6B3318;
+  --sol-earth: #5C3A1E;
+  --sol-ink-night: #1F1A14;
+  --sol-ink: #2A2620;
+  --sol-than-green: #388e3c;
+  --sol-tam-sun: #E8924A;
+  --sol-tri-clay: #B25C2C;
+  --sol-red: #C62828;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--sol-cream); margin: 0; color: var(--sol-ink); }
+.demo-page { max-width: 1200px; margin: 0 auto; padding: 60px 20px; text-align: center; color: #8A857C; }
+
+/* ═══ MASTER FOOTER v3 ═════════════════════════════════════════ */
+.sol-footer {
+  background: linear-gradient(180deg, #2A2620 0%, #1F1A14 100%);
+  color: #FBF7F0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+}
+.sol-footer::before {
+  content: '';
+  position: absolute;
+  top: -1px; right: 5%;
+  width: 200px; height: 4px;
+  background: linear-gradient(90deg, transparent, var(--sol-sun), transparent);
+}
+.sol-footer-inner { max-width: 1200px; margin: 0 auto; padding: 50px 20px 24px 20px; }
+
+/* ─── ZONE 1: BRAND BLOCK ─── */
+.sol-footer-brand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(232, 220, 202, 0.15);
+  margin-bottom: 36px;
+}
+.sol-footer-brand-left { display: flex; align-items: center; gap: 16px; }
+.sol-footer-logo {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sol-sun) 0%, var(--sol-clay) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 2px 12px rgba(232, 146, 74, 0.4);
+}
+.sol-footer-brand-text strong { display: block; font-size: 1.25rem; font-weight: 800; color: #FBF7F0; }
+.sol-footer-brand-text span { font-size: 0.88rem; color: var(--sol-sun); font-style: italic; }
+.sol-footer-brand-pitch {
+  flex: 1 1 360px;
+  min-width: 280px;
+  font-size: 0.94rem;
+  color: #E8DCCA;
+  line-height: 1.6;
+}
+.sol-footer-brand-pitch strong { color: var(--sol-sun); }
+
+/* ─── ZONE 2: 5-COLUMN NAV (3 trụ + Về Sol + Liên hệ) ─── */
+.sol-footer-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 30px;
+  margin-bottom: 38px;
+}
+.sol-footer-col h4 {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(232, 146, 74, 0.25);
+}
+.sol-footer-col--than h4 { color: var(--sol-than-green); border-bottom-color: rgba(56,142,60,0.35); }
+.sol-footer-col--tam h4 { color: var(--sol-tam-sun); border-bottom-color: rgba(232,146,74,0.35); }
+.sol-footer-col--tri h4 { color: var(--sol-tri-clay); border-bottom-color: rgba(178,92,44,0.4); }
+.sol-footer-col--about h4,
+.sol-footer-col--contact h4 { color: var(--sol-sun); }
+
+.sol-footer-col ul { list-style: none; padding: 0; margin: 0; }
+.sol-footer-col li { margin-bottom: 8px; }
+.sol-footer-col a {
+  color: #E8DCCA;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.sol-footer-col a:hover { color: var(--sol-sun); }
+
+.sol-footer-contact-line {
+  display: block;
+  color: #E8DCCA;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+.sol-footer-contact-line strong {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--sol-sun);
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+/* ─── ZONE 3 (MERGED): SAFETY + YMYL DISCLAIMER ─── */
+.sol-footer-disclaimer {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--sol-sun);
+  padding: 24px 28px;
+  border-radius: 6px;
+  margin-bottom: 32px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #C6BFB1;
+}
+.sol-footer-disclaimer p { margin: 0 0 10px 0; }
+.sol-footer-disclaimer p:last-child { margin-bottom: 0; }
+.sol-footer-disclaimer strong { color: #FBF7F0; }
+.sol-footer-disclaimer-warn-than { color: var(--sol-than-green); font-weight: 700; }
+.sol-footer-disclaimer-warn-tam { color: var(--sol-tam-sun); font-weight: 700; }
+.sol-footer-disclaimer-warn-tri { color: var(--sol-tri-clay); font-weight: 700; }
+
+/* Safety hotlines block (in merged ZONE 3) */
+.sol-footer-safety { margin-bottom: 14px; }
+.sol-footer-safety-title {
+  display: block;
+  color: var(--sol-red);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.sol-footer-safety-lines {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 6px 18px;
+}
+.sol-footer-safety-lines > span {
+  color: #E8DCCA;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+.sol-footer-safety-lines a {
+  color: var(--sol-sun);
+  text-decoration: none;
+  font-weight: 700;
+}
+.sol-footer-safety-lines a:hover { text-decoration: underline; }
+
+.sol-footer-tag-than,
+.sol-footer-tag-tam,
+.sol-footer-tag-tri {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+.sol-footer-tag-than { background: rgba(56,142,60,0.18); color: var(--sol-than-green); }
+.sol-footer-tag-tam { background: rgba(232,146,74,0.18); color: var(--sol-tam-sun); }
+.sol-footer-tag-tri { background: rgba(178,92,44,0.22); color: var(--sol-tri-clay); }
+
+.sol-footer-divider {
+  border: none;
+  border-top: 1px solid rgba(232,220,202,0.15);
+  margin: 16px 0 14px 0;
+}
+
+/* ─── ZONE 5: TRUST PAGES + COPYRIGHT ─── */
+.sol-footer-bottom {
+  border-top: 1px solid rgba(232, 220, 202, 0.15);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #8A857C;
+}
+.sol-footer-trustlinks { margin-bottom: 14px; }
+.sol-footer-trustlinks a { color: #C6BFB1; text-decoration: none; margin: 0 6px; font-weight: 500; }
+.sol-footer-trustlinks a:hover { color: var(--sol-sun); }
+.sol-footer-trustlinks span { color: #8A857C; }
+.sol-footer-copyright { color: #8B7F6E; margin: 0 0 6px 0; }
+.sol-footer-sources { margin-top: 12px; font-size: 0.78rem; color: #6B6354; }
+.sol-footer-sources strong { color: var(--sol-sun); margin-right: 6px; }
+
+@media (max-width: 640px) {
+  .sol-footer-inner { padding: 40px 16px 20px 16px; }
+  .sol-footer-brand { flex-direction: column; align-items: flex-start; gap: 18px; }
+}
+</style>
+</head>
+<body>
+
+<div class="demo-page">
+  <h2 style="font-weight: 500;">[Nội dung page ở đây]</h2>
+  <p>Master Footer v3 — 3 trụ Thân · Tâm · Trí — dùng cho TOÀN BỘ sol.vn.</p>
+</div>
+
+<footer class="sol-footer" role="contentinfo">
+  <div class="sol-footer-inner">
+
+    <!-- ─── ZONE 1: BRAND BLOCK ─── -->
+    <div class="sol-footer-brand">
+      <div class="sol-footer-brand-left">
+        <div class="sol-footer-logo" aria-hidden="true">🌅</div>
+        <div class="sol-footer-brand-text">
+          <strong>Đi Cùng Sol</strong>
+          <span>sol.vn · 3 trụ Thân · Tâm · Trí</span>
+        </div>
+      </div>
+      <p class="sol-footer-brand-pitch">
+        Sol đồng hành đàn ông Việt 45+ trên 3 trụ cột:
+        <strong>Thân</strong> (sức khoẻ thể chất) ·
+        <strong>Tâm</strong> (sức khoẻ tinh thần) ·
+        <strong>Trí</strong> (hướng đi sự nghiệp).
+        Đi qua từng giai đoạn của 1 con người — không hô hào, không giáo điều.
+      </p>
+    </div>
+
+    <!-- ─── ZONE 2: 5-COLUMN NAV ─── -->
+    <nav class="sol-footer-nav" aria-label="Sol footer navigation">
+
+      <div class="sol-footer-col sol-footer-col--than">
+        <h4>🌱 Trụ Thân</h4>
+        <ul>
+          <li><a href="https://bothuocla.sol.vn/test-ftnd"><strong>Đo FTND</strong></a></li>
+          <li><a href="/lo-trinh-cai-thuoc-la-khoa-hoc-7-ngay/">Lộ trình 7 ngày</a></li>
+          <li><a href="/tai-sao-cai-thuoc-la-lai-bi-ho-co-dom/">Ho có đờm khi cai</a></li>
+          <li><a href="/tac-hai-thuoc-la-thu-dong-doi-voi-tre-nho/">Hút thụ động</a></li>
+          <li><a href="/category/wiki-bo-thuoc-la/">Wiki Bỏ thuốc</a></li>
+          <li><a href="https://bothuocla.sol.vn/">→ App bothuocla</a></li>
+        </ul>
+      </div>
+
+      <div class="sol-footer-col sol-footer-col--tam">
+        <h4>💭 Trụ Tâm</h4>
+        <ul>
+          <li><a href="/category/ngam/"><strong>Đọc chuyên mục Tâm</strong></a></li>
+          <li><a href="/stress-tuoi-trung-nien-va-cai-bay-khoi-thuoc/">Stress &amp; khói thuốc</a></li>
+          <li><a href="/khoi-nghiep-tuoi-40-khang-dinh-ban-than/">Khẳng định bản thân 40+</a></li>
+          <li><a href="/khang-sol/#chuong-4">5 năm Tự do học được gì</a></li>
+          <li><a href="/category/ngam/">Wiki Tâm an U45</a></li>
+          <li><em>(App riêng sẽ phát triển)</em></li>
+        </ul>
+      </div>
+
+      <div class="sol-footer-col sol-footer-col--tri">
+        <h4>🚀 Trụ Trí</h4>
+        <ul>
+          <li><a href="https://huongdi.sol.vn/p1"><strong>Khám phá DNA</strong></a></li>
+          <li><a href="/tuong-kinh-doanh-it-von-nguoi-trung-nien/">Kinh doanh ít vốn U45</a></li>
+          <li><a href="/khoi-nghiep-tinh-gon-tuoi-trung-nien-it-von/">Khởi nghiệp tinh gọn</a></li>
+          <li><a href="/khoi-nghiep-trung-nien/von-100-trieu/">Khám phá vốn 100M</a></li>
+          <li><a href="/category/khoi-nghiep/">Wiki Khởi nghiệp</a></li>
+          <li><a href="https://huongdi.sol.vn/">→ App huongdi</a></li>
+        </ul>
+      </div>
+
+      <div class="sol-footer-col sol-footer-col--about">
+        <h4>📖 Về Sol</h4>
+        <ul>
+          <li><a href="/khang-sol/"><strong>Câu chuyện Khang Sol</strong></a></li>
+          <li><a href="/ve-sol/">Về dự án Sol</a></li>
+          <li><a href="/sol-la-gi/">Sol làm gì cho anh</a></li>
+          <li><a href="/cau-hoi/">21 câu hỏi thường gặp</a></li>
+          <li><a href="/gia/">Bảng giá Sol Premium</a></li>
+          <li><a href="/cong-dong/">Cộng đồng Sol</a></li>
+        </ul>
+      </div>
+
+      <div class="sol-footer-col sol-footer-col--contact">
+        <h4>📞 Liên hệ</h4>
+        <span class="sol-footer-contact-line">
+          <strong>Điện thoại</strong>
+          <a href="tel:02439931800">024 3993 1800</a>
+        </span>
+        <span class="sol-footer-contact-line">
+          <strong>Email</strong>
+          <a href="mailto:contact@sol.vn">contact@sol.vn</a>
+        </span>
+        <span class="sol-footer-contact-line">
+          <strong>Cộng đồng Zalo</strong>
+          <a href="https://zalo.me/g/your_group_id" target="_blank">Zalo group Sol</a>
+        </span>
+        <span class="sol-footer-contact-line">
+          <strong>Mạng xã hội</strong>
+          <a href="https://linkedin.com/in/vietnaminternet" target="_blank">LinkedIn</a> ·
+          <a href="https://web.facebook.com/nguyendinhkhang" target="_blank">Facebook</a>
+        </span>
+      </div>
+
+    </nav>
+
+    <!-- ─── ZONE 3 (MERGED): SAFETY + TRIPLE YMYL DISCLAIMER ─── -->
+    <div class="sol-footer-disclaimer">
+
+      <!-- Safety hotlines block -->
+      <div class="sol-footer-safety">
+        <strong class="sol-footer-safety-title">🚨 Thông tin khẩn cấp</strong>
+        <div class="sol-footer-safety-lines">
+          <span><span class="sol-footer-tag-than">🌱 Thân</span> Cấp cứu y tế → <a href="tel:115">115</a></span>
+          <span><span class="sol-footer-tag-than">🌱 Thân</span> Cai thuốc BV Bạch Mai → <a href="tel:0888008866">0888-008-866</a></span>
+          <span><span class="sol-footer-tag-tam">💭 Tâm</span> Khủng hoảng tâm lý → Ngày Mai <a href="tel:1900599958">1900 599958</a></span>
+          <span><span class="sol-footer-tag-tri">🚀 Trí</span> Hỗ trợ DN → <a href="https://startup.gov.vn" target="_blank" rel="noopener">startup.gov.vn</a> · MPI 024 3845 5298</span>
+        </div>
+      </div>
+
+      <hr class="sol-footer-divider">
+
+      <p>
+        <strong>Sol là dự án cá nhân của Khang Sol (Nguyễn Đình Khang).</strong>
+        Sol KHÔNG kê đơn y khoa, KHÔNG điều trị tâm lý, KHÔNG cam kết thu nhập kinh doanh.
+      </p>
+      <p>
+        <span class="sol-footer-disclaimer-warn-than">⚠️ Thân (Y khoa):</span>
+        Khang Sol KHÔNG phải bác sĩ. Triệu chứng nặng → gọi 115 hoặc đi khám BS chuyên khoa hô hấp.
+      </p>
+      <p>
+        <span class="sol-footer-disclaimer-warn-tam">⚠️ Tâm (Tinh thần):</span>
+        Sol KHÔNG phải nhà trị liệu tâm lý có giấy phép. Trầm cảm, lo âu nặng, ý nghĩ tự hại →
+        gọi Ngày Mai 1900 599958 hoặc đến BV chuyên khoa tâm thần kinh.
+      </p>
+      <p>
+        <span class="sol-footer-disclaimer-warn-tri">⚠️ Trí (Tài chính):</span>
+        Khang Sol KHÔNG phải nhà tư vấn tài chính có giấy phép, không kê khai trước Uỷ ban
+        Chứng khoán Nhà nước. Sol KHÔNG cam kết thu nhập. Tham vấn chuyên gia tài chính,
+        luật sư DN, kế toán viên trước khi đầu tư.
+      </p>
+    </div>
+
+    <!-- ─── ZONE 5: TRUST PAGES + COPYRIGHT ─── -->
+    <div class="sol-footer-bottom">
+      <div class="sol-footer-trustlinks">
+        <a href="/chinh-sach-bao-mat/">Chính sách bảo mật</a>
+        <span>·</span>
+        <a href="/dieu-khoan-su-dung/">Điều khoản sử dụng</a>
+        <span>·</span>
+        <a href="/tuyen-bo-mien-tru/">Tuyên bố miễn trừ</a>
+        <span>·</span>
+        <a href="/chinh-sach-cookie/">Chính sách Cookie</a>
+        <span>·</span>
+        <a href="/lien-he/">Liên hệ</a>
+        <span>·</span>
+        <a href="/khang-sol/">Khang Sol</a>
+      </div>
+
+      <p class="sol-footer-copyright">© 2026 Sol — Khang Sol (Nguyễn Đình Khang) · sol.vn</p>
+      <p class="sol-footer-copyright">
+        Sol đăng ký tại Việt Nam. Tuân thủ Luật An ninh mạng 2018, Nghị định 13/2023/NĐ-CP về Bảo vệ dữ liệu cá nhân.
+      </p>
+
+      <div class="sol-footer-sources">
+        <strong>Nguồn tham khảo &amp; uy tín:</strong>
+        CDC · NHS UK · U.S. Surgeon General · WHO Mental Health · Bộ Y tế Việt Nam ·
+        BV Tâm thần TW · APA · Eric Ries · Harvard Business Review · MPI Việt Nam
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

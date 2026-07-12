@@ -110,7 +110,7 @@ Sol KHÔNG cần làm cả 4 cùng lúc. **Stream 1 (Membership) trước**. Str
 - Voice Khang Day 0 (psychoeducation withdrawal) + voice Day 7 (báo cáo)
 - AI chat 5 msg/ngày
 - Cộng đồng Zalo public (Khang ghé thăm hàng tuần)
-- Wiki + Ngẫm tự do
+- Wiki + Tâm tự do
 
 **Sol KHÔNG hứa:** dẫn anh tới Q-Day.
 

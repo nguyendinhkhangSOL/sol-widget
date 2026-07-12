@@ -241,7 +241,7 @@
 
 **Đề xuất:**
 1. **Day 30, 60, 88, 180, 365 milestones** — Sol gửi voice Khang ngắn từng mốc, không cần dày.
-2. **Tái Sinh tinh thần (Phase 2)**: Sol mở chủ đề khác — stress, giấc ngủ, cha-con (đã có Ngẫm). User trả phí lifetime nhỏ để stay (vd: 50k/tháng cho Ngẫm + Khang voice mới hàng tháng).
+2. **Tái Sinh tinh thần (Phase 2)**: Sol mở chủ đề khác — stress, giấc ngủ, cha-con (đã có Tâm). User trả phí lifetime nhỏ để stay (vd: 50k/tháng cho Tâm + Khang voice mới hàng tháng).
 3. **Alumni community**: 100 anh em đầu thành "ban cố vấn" — tự dẫn dắt newcomer. Sol facilitates không cần host.
 
 ---
@@ -336,8 +336,8 @@ Nhưng nếu fail (giả sử 70% fail):
 
 1. ✅ **Cultural fit** — Khang là người Việt 45+ thật, không phải "guru" Tây.
 2. ✅ **Anonymous + low barrier** — không cần SĐT, 7 ngày miễn phí, 100% money-back.
-3. ✅ **Cross-domain widget** — gặp user ở chính sol.vn nơi họ đọc Ngẫm.
-4. ✅ **Long-tail SEO** — 100+ wiki + Ngẫm sẽ kéo organic traffic dài hạn.
+3. ✅ **Cross-domain widget** — gặp user ở chính sol.vn nơi họ đọc Tâm.
+4. ✅ **Long-tail SEO** — 100+ wiki + Tâm sẽ kéo organic traffic dài hạn.
 
 ### Sol yếu ở đâu?
 
@@ -408,7 +408,7 @@ Sol bán câu chuyện Khang (n=1). User 45+ không tin n=1 mãi được.
 - Khang voice "Ổn. Tiếp." auto-play khi lapse 1-2 điếu
 
 **Bước 4 — Phase 2 Tái Sinh planning (đề cương)**
-- Day 30-88 thêm bài tuần Sleep, Stress, Cha-con (kết hợp Ngẫm)
+- Day 30-88 thêm bài tuần Sleep, Stress, Cha-con (kết hợp Tâm)
 - 88+ Phase: subscription nhỏ 50k/tháng giữ alumni
 
 **Bước 5 — Launch nhỏ**

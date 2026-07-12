@@ -1,0 +1,418 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Sol Homepage V2.1 — Additional CSS
+   Add these styles AFTER existing sol-homepage.css + css-additions.css (V2)
+
+   What's new V2.1:
+   - Section 4: 3 highlights với visual hierarchy
+     • Sách card lớn 50%, side cards 25% mỗi cái (desktop)
+     • Sách card có badge + amber gradient
+     • Side cards subtle background
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Section 4: 3 HIGHLIGHTS ──────────────────────────────────────── */
+.sol-highlights {
+  background: linear-gradient(180deg, var(--sol-bg-soft), white);
+}
+
+.sol-highlights__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;  /* Center card bigger */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Base card */
+.sol-highlight {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid var(--sol-border);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s var(--sol-ease);
+}
+
+.sol-highlight:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sol-shadow-lg);
+}
+
+/* Step indicator */
+.sol-highlight__step {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--sol-text-muted);
+  padding: 4px 10px;
+  background: rgba(0,0,0,.04);
+  border-radius: 999px;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.sol-highlight__icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.sol-highlight h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.sol-highlight__lead {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sol-amber-700);
+  margin-bottom: 18px;
+}
+
+.sol-highlight__features {
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.sol-highlight__features li {
+  padding: 6px 0 6px 18px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--sol-text-soft);
+}
+
+.sol-highlight__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--sol-amber-600);
+  font-weight: 800;
+}
+
+.sol-highlight__features li strong {
+  color: var(--sol-text);
+  font-weight: 700;
+}
+
+/* Price section */
+.sol-highlight__price {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sol-highlight__price-tag {
+  display: inline-block;
+  background: var(--sol-success);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.sol-highlight__price-tag--included {
+  background: var(--sol-navy-700);
+}
+
+.sol-highlight__price-old {
+  font-size: 14px;
+  color: var(--sol-text-muted);
+}
+
+.sol-highlight__price-old s {
+  text-decoration: line-through;
+}
+
+.sol-highlight__price-new {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--sol-amber-600);
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.sol-highlight__price-note {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sol-amber-700);
+}
+
+/* CTAs */
+.sol-highlight__cta {
+  display: block;
+  text-align: center;
+  padding: 12px 20px;
+  border: 1.5px solid var(--sol-amber-600);
+  color: var(--sol-amber-700);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.sol-highlight__cta:hover {
+  background: var(--sol-amber-50);
+  border-color: var(--sol-amber-700);
+}
+
+.sol-highlight__cta--primary {
+  background: linear-gradient(135deg, var(--sol-amber-600), var(--sol-amber-500));
+  color: white;
+  border: none;
+  box-shadow: var(--sol-shadow-amber);
+}
+
+.sol-highlight__cta--primary:hover {
+  background: linear-gradient(135deg, var(--sol-amber-700), var(--sol-amber-600));
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(217,119,6,.3);
+}
+
+.sol-highlight__cta-secondary {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  padding: 8px;
+  color: var(--sol-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+
+.sol-highlight__cta-secondary:hover {
+  color: var(--sol-amber-700);
+}
+
+/* ── BLOG CARD (left) ─────────────────────────────────────────────── */
+.sol-highlight--blog {
+  background: linear-gradient(180deg, #f0fdf4 0%, white 70%);
+  border-color: #86efac;
+}
+
+.sol-highlight--blog .sol-highlight__step {
+  background: rgba(34, 197, 94, 0.1);
+  color: #15803d;
+}
+
+.sol-highlight--blog .sol-highlight__lead {
+  color: #15803d;
+}
+
+.sol-highlight--blog .sol-highlight__features li::before {
+  color: #16a34a;
+}
+
+.sol-highlight--blog .sol-highlight__cta {
+  border-color: #16a34a;
+  color: #15803d;
+}
+
+.sol-highlight--blog .sol-highlight__cta:hover {
+  background: #f0fdf4;
+}
+
+/* ── BOOK CARD (center, FEATURED) ─────────────────────────────────── */
+.sol-highlight--featured {
+  background: linear-gradient(180deg, var(--sol-amber-50), white 80%);
+  border: 2px solid var(--sol-amber-400);
+  box-shadow: var(--sol-shadow-xl);
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+.sol-highlight--featured:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+
+.sol-highlight__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--sol-amber-600), var(--sol-amber-500));
+  color: white;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: var(--sol-shadow-amber);
+}
+
+.sol-highlight--featured .sol-highlight__step {
+  background: var(--sol-amber-100);
+  color: var(--sol-amber-800);
+}
+
+.sol-highlight--featured h3 {
+  font-size: 1.6rem;
+  color: var(--sol-navy-900);
+}
+
+.sol-highlight--featured .sol-highlight__icon {
+  font-size: 56px;
+}
+
+/* ── SYSTEM CARD (right) ──────────────────────────────────────────── */
+.sol-highlight--system {
+  background: linear-gradient(180deg, #faf5ff 0%, white 70%);
+  border-color: #c4b5fd;
+}
+
+.sol-highlight--system .sol-highlight__step {
+  background: rgba(139, 92, 246, 0.1);
+  color: #6d28d9;
+}
+
+.sol-highlight--system .sol-highlight__lead {
+  color: #6d28d9;
+}
+
+.sol-highlight--system .sol-highlight__features li::before {
+  color: #7c3aed;
+}
+
+.sol-highlight--system .sol-highlight__cta {
+  border-color: #7c3aed;
+  color: #6d28d9;
+}
+
+.sol-highlight--system .sol-highlight__cta:hover {
+  background: #faf5ff;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .sol-highlights__grid {
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 16px;
+  }
+  .sol-highlight {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 880px) {
+  .sol-highlights__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sol-highlight--featured {
+    transform: none;
+    order: -1;  /* Featured card hiển thị đầu tiên trên mobile */
+  }
+  .sol-highlight--featured:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* ── Existing sol-system section styles (kept from V2) ────────────── */
+.sol-system {
+  background: white;
+}
+
+.sol-steps {
+  display: grid;
+  gap: 24px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.sol-step {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  padding: 32px 28px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--sol-border);
+  transition: all 0.25s var(--sol-ease);
+  align-items: center;
+}
+
+.sol-step:hover {
+  border-color: var(--sol-amber-300);
+  box-shadow: var(--sol-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.sol-step__badge {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sol-step__num {
+  font-family: var(--sol-font-mono, "SF Mono", Monaco, monospace);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--sol-amber-600);
+  line-height: 1;
+}
+
+.sol-step__brand {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sol-navy-700);
+  letter-spacing: -0.01em;
+}
+
+.sol-step__content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.sol-step__content p {
+  color: var(--sol-text-soft);
+  line-height: 1.65;
+}
+
+.sol-system__cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .sol-step {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+}
+
+/* ── Header V2.1 ──────────────────────────────────────────────────── */
+.sol-nav__featured {
+  color: var(--sol-amber-700) !important;
+  font-weight: 700 !important;
+}
+
+.sol-nav-main {
+  margin-left: auto;
+}
+
+@media (max-width: 1024px) {
+  .sol-nav-main { display: none; }
+}
+
+/* ── Footer V2.1 ──────────────────────────────────────────────────── */
+.sol-footer__col small {
+  font-size: 11px;
+  color: var(--sol-navy-400);
+  line-height: 1.4;
+  display: block;
+  margin-top: 2px;
+}

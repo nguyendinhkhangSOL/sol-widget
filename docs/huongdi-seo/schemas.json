@@ -1,0 +1,243 @@
+{
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Đi Cùng Sol",
+    "alternateName": "Sol",
+    "url": "https://sol.vn/",
+    "logo": "https://sol.vn/wp-content/uploads/2025/05/Icon_2.png",
+    "description": "Hệ sinh thái Đi Cùng Sol — Thân (sức khoẻ), Tâm (tinh thần), Trí (sự nghiệp) cho đàn ông Việt 40-65 tuổi",
+    "founder": {
+      "@type": "Person",
+      "name": "Khang Sol",
+      "alternateName": "Nguyễn Đình Khang",
+      "url": "https://sol.vn/khang-sol/",
+      "image": "https://sol.vn/wp-content/uploads/2026/05/khang-portrait-yulong-mountain.jpg",
+      "jobTitle": "Founder, Đi Cùng Sol",
+      "sameAs": [
+        "https://www.linkedin.com/in/vietnaminternet/",
+        "https://web.facebook.com/nguyendinhkhang"
+      ],
+      "knowsAbout": [
+        "Mid-life career transition",
+        "Lean startup",
+        "IT project management",
+        "Vietnamese SME entrepreneurship",
+        "Tái khởi nghiệp tuổi 45",
+        "Khởi nghiệp tinh gọn"
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/vietnaminternet/",
+      "https://web.facebook.com/nguyendinhkhang"
+    ]
+  },
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Huongdi — Tìm Hướng Đi U45",
+    "url": "https://huongdi.sol.vn/",
+    "publisher": { "@type": "Organization", "name": "Đi Cùng Sol", "url": "https://sol.vn/" },
+    "inLanguage": "vi-VN",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Đàn ông Việt 40-65 tuổi"
+    }
+  },
+  "quiz": {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "Trắc Nghiệm DNA Hướng Đi U45",
+    "description": "20 câu hỏi khám phá 4 trục DNA: Người, Chuyên gia, Nhà xây dựng, Tự lập — giúp đàn ông 40-65 tuổi tìm hướng tái khởi nghiệp phù hợp",
+    "educationalLevel": "Adult",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Đàn ông Việt 40-65 tuổi muốn tái khởi nghiệp"
+    },
+    "timeRequired": "PT5M",
+    "isAccessibleForFree": true,
+    "inLanguage": "vi-VN",
+    "creator": {
+      "@type": "Person",
+      "name": "Khang Sol",
+      "url": "https://sol.vn/khang-sol/"
+    }
+  },
+  "webapp": {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bản Đồ Nguồn Lực U45",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires modern browser with JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "VND" },
+    "creator": { "@type": "Person", "name": "Khang Sol" }
+  },
+  "itemlist_37": {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "37 Hướng Đi Tái Khởi Nghiệp Tuổi 45+",
+    "description": "37 hướng đi cụ thể cho đàn ông Việt 40-65 tuổi muốn tái khởi nghiệp, phân vào 7 nhóm theo nguồn lực + DNA",
+    "numberOfItems": 37,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Freelancer Chuyên Môn (7 hướng)", "url": "https://huongdi.sol.vn/p3-chuyenmon" },
+      { "@type": "ListItem", "position": 2, "name": "Coaching & Đào Tạo (5 hướng)", "url": "https://huongdi.sol.vn/p3-daotao" },
+      { "@type": "ListItem", "position": 3, "name": "Content Creator (6 hướng)", "url": "https://huongdi.sol.vn/p3-noidungso" },
+      { "@type": "ListItem", "position": 4, "name": "Kinh Doanh Tinh Gọn (5 hướng)", "url": "https://huongdi.sol.vn/p3-kinhdoanh" },
+      { "@type": "ListItem", "position": 5, "name": "Đại Lý Phân Phối (4 hướng)", "url": "https://huongdi.sol.vn/p3-daily" },
+      { "@type": "ListItem", "position": 6, "name": "Dịch Vụ (5 hướng)", "url": "https://huongdi.sol.vn/p3-dichvu" },
+      { "@type": "ListItem", "position": 7, "name": "Đấu Thầu & Hợp Đồng (5 hướng)", "url": "https://huongdi.sol.vn/p3-dauthu" }
+    ]
+  },
+  "collection_chuyenmon": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Freelancer Chuyên Môn Tuổi 45+",
+    "description": "7 hướng freelance chuyên môn cho đàn ông 40-65 tuổi từ kinh nghiệm IT, kế toán, pháp lý, marketing",
+    "url": "https://huongdi.sol.vn/p3-chuyenmon",
+    "isPartOf": { "@type": "WebSite", "name": "Huongdi", "url": "https://huongdi.sol.vn/" },
+    "about": { "@type": "Thing", "name": "Freelancing for mid-career professionals" }
+  },
+  "collection_daotao": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Coaching & Đào Tạo Tuổi 45+",
+    "description": "5 hướng coaching, đào tạo, mentoring cho người trung niên",
+    "url": "https://huongdi.sol.vn/p3-daotao",
+    "isPartOf": { "@type": "WebSite", "name": "Huongdi", "url": "https://huongdi.sol.vn/" }
+  },
+  "collection_noidungso": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Content Creator U45",
+    "description": "6 hướng nội dung số: blog, YouTube, podcast, sách cho người trung niên",
+    "url": "https://huongdi.sol.vn/p3-noidungso",
+    "isPartOf": { "@type": "WebSite", "name": "Huongdi", "url": "https://huongdi.sol.vn/" }
+  },
+  "collection_kinhdoanh": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Khởi Nghiệp Kinh Doanh Tuổi 45+",
+    "description": "5 hướng kinh doanh tinh gọn cho U45",
+    "url": "https://huongdi.sol.vn/p3-kinhdoanh",
+    "isPartOf": { "@type": "WebSite", "name": "Huongdi", "url": "https://huongdi.sol.vn/" }
+  },
+  "collection_daily": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Đại Lý Phân Phối Tuổi U45",
+    "description": "4 hướng đại lý B2B, FMCG, dropshipping",
+    "url": "https://huongdi.sol.vn/p3-daily",
+    "isPartOf": { "@type": "WebSite", "name": "Huongdi", "url": "https://huongdi.sol.vn/" }
+  },
+  "collection_dichvu": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Dịch Vụ Tuổi 45+",
+    "description": "5 hướng kinh doanh service từ kỹ năng có sẵn",
+    "url": "https://huongdi.sol.vn/p3-dichvu",
+    "isPartOf": { "@type": "WebSite", "name": "Huongdi", "url": "https://huongdi.sol.vn/" }
+  },
+  "collection_dauthu": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Đấu Thầu & Hợp Đồng Tuổi 45+",
+    "description": "5 hướng đấu thầu, hợp đồng B2B, government",
+    "url": "https://huongdi.sol.vn/p3-dauthu",
+    "isPartOf": { "@type": "WebSite", "name": "Huongdi", "url": "https://huongdi.sol.vn/" }
+  },
+  "breadcrumb_home": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" }
+    ]
+  },
+  "breadcrumb_p1": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "P1 — DNA Test", "item": "https://huongdi.sol.vn/p1" }
+    ]
+  },
+  "breadcrumb_p2": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "P2 — Nguồn Lực", "item": "https://huongdi.sol.vn/p2" }
+    ]
+  },
+  "breadcrumb_p3": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "P3 — 37 Hướng Đi", "item": "https://huongdi.sol.vn/p3" }
+    ]
+  },
+  "breadcrumb_chuyenmon": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "37 Hướng Đi", "item": "https://huongdi.sol.vn/p3" },
+      { "@type": "ListItem", "position": 3, "name": "Chuyên Môn", "item": "https://huongdi.sol.vn/p3-chuyenmon" }
+    ]
+  },
+  "breadcrumb_daotao": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "37 Hướng Đi", "item": "https://huongdi.sol.vn/p3" },
+      { "@type": "ListItem", "position": 3, "name": "Đào Tạo", "item": "https://huongdi.sol.vn/p3-daotao" }
+    ]
+  },
+  "breadcrumb_noidungso": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "37 Hướng Đi", "item": "https://huongdi.sol.vn/p3" },
+      { "@type": "ListItem", "position": 3, "name": "Nội Dung Số", "item": "https://huongdi.sol.vn/p3-noidungso" }
+    ]
+  },
+  "breadcrumb_kinhdoanh": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "37 Hướng Đi", "item": "https://huongdi.sol.vn/p3" },
+      { "@type": "ListItem", "position": 3, "name": "Kinh Doanh", "item": "https://huongdi.sol.vn/p3-kinhdoanh" }
+    ]
+  },
+  "breadcrumb_daily": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "37 Hướng Đi", "item": "https://huongdi.sol.vn/p3" },
+      { "@type": "ListItem", "position": 3, "name": "Đại Lý", "item": "https://huongdi.sol.vn/p3-daily" }
+    ]
+  },
+  "breadcrumb_dichvu": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "37 Hướng Đi", "item": "https://huongdi.sol.vn/p3" },
+      { "@type": "ListItem", "position": 3, "name": "Dịch Vụ", "item": "https://huongdi.sol.vn/p3-dichvu" }
+    ]
+  },
+  "breadcrumb_dauthu": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://huongdi.sol.vn/" },
+      { "@type": "ListItem", "position": 2, "name": "37 Hướng Đi", "item": "https://huongdi.sol.vn/p3" },
+      { "@type": "ListItem", "position": 3, "name": "Đấu Thầu", "item": "https://huongdi.sol.vn/p3-dauthu" }
+    ]
+  }
+}

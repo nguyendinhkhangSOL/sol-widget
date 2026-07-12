@@ -1,0 +1,174 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   SOL HEADER GLOBAL CSS
+   Apply trên TOÀN BỘ pages của sol.vn (không scope body.home)
+   Paste vào Customize → Additional CSS (sau CSS cũ)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PART 1: HIDE theme header default (theme cũ có thể có header khác)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Hide tất cả theme header styles không phải Sol V2.2 */
+.sol-header-inner,
+.sol-header-brand:not(.sol-header__inner *),
+.sol-header-nav:not(.sol-header__inner *) {
+  display: none !important;
+}
+
+/* Hide theme header containing inner wrapper (theme dùng .sol-header-inner) */
+header.sol-header:has(.sol-header-inner) > .sol-header-inner {
+  display: none !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PART 2: SOL V2.2 HEADER — Global styles
+   Apply trên MỌI page (không cần body.home)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.sol-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--sol-border, rgba(0, 0, 0, 0.08));
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--sol-font-sans, "Inter", -apple-system, sans-serif);
+}
+
+.sol-header * {
+  box-sizing: border-box;
+}
+
+.sol-header__inner {
+  display: flex !important;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 1.25rem !important;
+  max-width: 1200px;
+  margin: 0 auto !important;
+}
+
+.sol-logo {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--sol-text, #1c1917) !important;
+  text-decoration: none !important;
+  font-family: inherit;
+}
+.sol-logo strong {
+  color: var(--sol-amber-600, #d97706) !important;
+  font-weight: 800;
+}
+.sol-logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: block;
+}
+
+.sol-nav-main {
+  display: flex !important;
+  gap: 20px;
+  margin-left: auto;
+  align-items: center;
+}
+.sol-nav-main a {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: var(--sol-text-soft, #44403c) !important;
+  text-decoration: none !important;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+.sol-nav-main a:hover {
+  color: var(--sol-amber-600, #d97706) !important;
+}
+.sol-nav__featured {
+  color: var(--sol-amber-700, #b45309) !important;
+  font-weight: 700 !important;
+}
+
+.sol-cta-header {
+  background: linear-gradient(135deg, var(--sol-amber-600, #d97706), var(--sol-amber-500, #f59e0b)) !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-shadow: var(--sol-shadow-amber, 0 8px 24px rgba(217, 119, 6, .18));
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.sol-cta-header:hover {
+  transform: translateY(-1px);
+  color: white !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PART 3: Responsive
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sol-nav-main {
+    gap: 14px;
+  }
+  .sol-nav-main a {
+    font-size: 13px !important;
+  }
+}
+
+/* Mobile — ẩn nav, chỉ giữ logo + CTA */
+@media (max-width: 768px) {
+  .sol-header__inner {
+    gap: 12px;
+    padding: 10px 12px !important;
+  }
+  .sol-logo span {
+    display: none;
+  }
+  .sol-nav-main {
+    display: none !important;
+  }
+  .sol-cta-header {
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PART 4: Đảm bảo content KHÔNG bị header sticky che mất
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Đẩy first section của page xuống dưới header sticky height */
+body:not(.home) .sol-header + main,
+body:not(.home) .sol-header + #content,
+body:not(.home) .sol-header + .site-content,
+body:not(.home) .sol-header + article {
+  margin-top: 0 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PART 5: Override theme tags cũ nếu vẫn còn (sol-header-inner pattern)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Hide subtitle "THÂN · TÂM · TRÍ CHO U45 VIỆT" của theme nếu vẫn render */
+.sol-header-tagline,
+.sol-header-subtitle,
+.sol-header-pitch,
+.site-title-tagline {
+  display: none !important;
+}

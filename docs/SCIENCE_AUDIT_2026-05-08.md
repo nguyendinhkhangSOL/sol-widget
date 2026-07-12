@@ -393,7 +393,7 @@ Em chia 3 nhóm:
 ### P2 — 1-2 tháng
 8. **Pilot 100 anh em đầu** (60 ngày) — đo metrics thật.
 9. **Wiki "Đi nhậu" playbook** — Marlatt high-risk situation analysis (Khang viết tay, dựa kinh nghiệm thật).
-10. **Day 30-88 retention content** — bài tuần Sleep, Stress, Cha-con (kết hợp Ngẫm).
+10. **Day 30-88 retention content** — bài tuần Sleep, Stress, Cha-con (kết hợp Tâm).
 
 ### P3 — 3+ tháng
 11. **Phase 2 "Đời sạch"** — alumni community, monthly subscription.
