@@ -1,0 +1,202 @@
+enum ProfileFieldSource { CV PHONG_VAN BAI_TEST KHACH_KHAI HE_SUY_RA }
+enum ProfileFieldStatus { DA_XAC_NHAN CHUA_XAC_NHAN CON_TRONG }
+enum ConsentKind { CV_READ VOICE LABAN_TRANSFER }
+enum ApplyVia { TRANG_TUYEN_DUNG NGUOI_QUEN }
+enum BuildStatus { DANG_LAM XONG BO_DO }
+enum AnswerSource { GO_TAY CHON_GOI_Y GIONG_NOI }
+enum InterviewStatus { DANG_TAP XONG BO_DO }
+enum QSource { TU_JD HANH_VI KHOANG_TRONG }
+
+model JobProfile {
+  id          String   @id @default(uuid())
+  userId      String   @unique @map("user_id")
+  user        User     @relation("UserJobProfile", fields: [userId], references: [id], onDelete: Cascade)
+  targetTitle String?  @map("target_title")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  fields      ProfileField[]
+  skills      ProfileSkill[]
+  cvDocuments CvDocument[]       @relation("ProfileCvs")
+  jobTargets  JobTarget[]        @relation("ProfileTargets")
+  builds      BuildSession[]     @relation("ProfileBuilds")
+  interviews  InterviewSession[] @relation("ProfileInterviews")
+  letters     CoverLetter[]      @relation("ProfileLetters")
+  modelRuns   ModelMatchRun[]    @relation("ProfileModelRuns")
+  @@map("job_profiles")
+}
+
+model ProfileField {
+  id         String              @id @default(uuid())
+  profileId  String              @map("profile_id")
+  profile    JobProfile          @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  fieldCode  String              @map("field_code")
+  blockNo    Int                 @map("block_no")
+  value      String?
+  source     ProfileFieldSource?
+  status     ProfileFieldStatus  @default(CON_TRONG)
+  updatedAt  DateTime            @updatedAt @map("updated_at")
+  @@unique([profileId, fieldCode])
+  @@index([profileId, status])
+  @@map("profile_fields")
+}
+
+model ProfileSkill {
+  id         String              @id @default(uuid())
+  profileId  String              @map("profile_id")
+  profile    JobProfile          @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  skillCode  String              @map("skill_code")
+  source     ProfileFieldSource?
+  status     ProfileFieldStatus  @default(CHUA_XAC_NHAN)
+  createdAt  DateTime            @default(now()) @map("created_at")
+  @@unique([profileId, skillCode])
+  @@map("profile_skills")
+}
+
+model DataConsent {
+  id         String      @id @default(uuid())
+  userId     String      @map("user_id")
+  user       User        @relation("UserDataConsents", fields: [userId], references: [id], onDelete: Cascade)
+  kind       ConsentKind
+  granted    Boolean     @default(false)
+  grantedAt  DateTime?   @map("granted_at")
+  revokedAt  DateTime?   @map("revoked_at")
+  evidence   Json?
+  createdAt  DateTime    @default(now()) @map("created_at")
+  updatedAt  DateTime    @updatedAt @map("updated_at")
+  @@unique([userId, kind])
+  @@map("data_consents")
+}
+
+model CvDocument {
+  id          String     @id @default(uuid())
+  profileId   String     @map("profile_id")
+  profile     JobProfile @relation("ProfileCvs", fields: [profileId], references: [id], onDelete: Cascade)
+  label       String?
+  isOriginal  Boolean    @default(false) @map("is_original")
+  fileUrl     String?    @map("file_url")
+  parsedText  String?    @map("parsed_text")
+  createdAt   DateTime   @default(now()) @map("created_at")
+  @@index([profileId, isOriginal])
+  @@map("cv_documents")
+}
+
+model JobTarget {
+  id          String     @id @default(uuid())
+  profileId   String     @map("profile_id")
+  profile     JobProfile @relation("ProfileTargets", fields: [profileId], references: [id], onDelete: Cascade)
+  title       String?
+  jdRaw       String     @map("jd_raw")
+  applyVia    ApplyVia?  @map("apply_via")
+  required    Json
+  createdAt   DateTime   @default(now()) @map("created_at")
+  runs        MatchRun[]
+  letters     CoverLetter[]      @relation("TargetLetters")
+  interviews  InterviewSession[]
+  @@map("job_targets")
+}
+
+model MatchRun {
+  id          String    @id @default(uuid())
+  targetId    String    @map("target_id")
+  target      JobTarget @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  scoreFirst  Int       @map("score_first")
+  scoreNow    Int       @map("score_now")
+  checklist   Json
+  chieu2      Json
+  createdAt   DateTime  @default(now()) @map("created_at")
+  @@index([targetId, createdAt])
+  @@map("match_runs")
+}
+
+model BuildSession {
+  id          String       @id @default(uuid())
+  profileId   String       @map("profile_id")
+  profile     JobProfile   @relation("ProfileBuilds", fields: [profileId], references: [id], onDelete: Cascade)
+  status      BuildStatus  @default(DANG_LAM)
+  stepNo      Int          @default(0) @map("step_no")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+  answers     BuildAnswer[]
+  @@index([profileId, status])
+  @@map("build_sessions")
+}
+
+model BuildAnswer {
+  id           String       @id @default(uuid())
+  sessionId    String       @map("session_id")
+  session      BuildSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  questionCode String       @map("question_code")
+  fieldCode    String?      @map("field_code")
+  answerText   String       @map("answer_text")
+  source       AnswerSource @default(GO_TAY)
+  extracted    Json         @default("[]")
+  createdAt    DateTime     @default(now()) @map("created_at")
+  @@index([sessionId, questionCode])
+  @@map("build_answers")
+}
+
+model InterviewSession {
+  id          String          @id @default(uuid())
+  profileId   String          @map("profile_id")
+  profile     JobProfile      @relation("ProfileInterviews", fields: [profileId], references: [id], onDelete: Cascade)
+  targetId    String?         @map("target_id")
+  target      JobTarget?      @relation(fields: [targetId], references: [id], onDelete: SetNull)
+  status      InterviewStatus @default(DANG_TAP)
+  createdAt   DateTime        @default(now()) @map("created_at")
+  questions   InterviewQuestion[]
+  @@index([profileId, status])
+  @@map("interview_sessions")
+}
+
+model InterviewQuestion {
+  id          String           @id @default(uuid())
+  sessionId   String           @map("session_id")
+  session     InterviewSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  orderNo     Int              @map("order_no")
+  qSource     QSource          @map("q_source")
+  refCode     String?          @map("ref_code")
+  text        String
+  goiY        String?          @map("goi_y")
+  answer      InterviewAnswer?
+  @@index([sessionId, orderNo])
+  @@map("interview_questions")
+}
+
+model InterviewAnswer {
+  id          String            @id @default(uuid())
+  questionId  String            @unique @map("question_id")
+  question    InterviewQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  audioUrl    String?           @map("audio_url")
+  transcript  String?
+  seconds     Int?
+  selfNote    String?           @map("self_note")
+  feedback    Json?
+  createdAt   DateTime          @default(now()) @map("created_at")
+  @@map("interview_answers")
+}
+
+model CoverLetter {
+  id          String     @id @default(uuid())
+  profileId   String     @map("profile_id")
+  profile     JobProfile @relation("ProfileLetters", fields: [profileId], references: [id], onDelete: Cascade)
+  targetId    String     @map("target_id")
+  target      JobTarget  @relation("TargetLetters", fields: [targetId], references: [id], onDelete: Cascade)
+  toName      String?    @map("to_name")
+  body        String
+  edited      Boolean    @default(false)
+  createdAt   DateTime   @default(now()) @map("created_at")
+  updatedAt   DateTime   @updatedAt @map("updated_at")
+  @@index([profileId, targetId])
+  @@map("cover_letters")
+}
+
+model ModelMatchRun {
+  id          String     @id @default(uuid())
+  profileId   String     @map("profile_id")
+  profile     JobProfile @relation("ProfileModelRuns", fields: [profileId], references: [id], onDelete: Cascade)
+  results     Json
+  topMhId     String?    @map("top_mh_id")
+  createdAt   DateTime   @default(now()) @map("created_at")
+  @@index([profileId, createdAt])
+  @@map("model_match_runs")
+}
