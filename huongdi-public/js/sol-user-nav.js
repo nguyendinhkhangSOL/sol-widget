@@ -128,22 +128,18 @@
 
     /* ─── Brand CTA button (anonymous on sol.vn) ─── */
     #sol-nav-cta {
-      display: flex; align-items: center; gap: 6px;
-      padding: 12px 20px;
-      background: linear-gradient(135deg, #F59E0B, #B45309);
+      display: flex; align-items: center; gap: 5px;
+      padding: 8px 15px;
+      background: #F59E0B;
       color: white;
-      border-radius: 999px;
+      border-radius: 10px;
       text-decoration: none;
-      font-size: 14px; font-weight: 700;
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
-      min-height: 48px;
-      transition: transform 0.15s, box-shadow 0.15s;
+      font-size: 14px; font-weight: 700; line-height: 1;
+      box-shadow: none;
+      transition: background 0.15s;
     }
-    #sol-nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(245, 158, 11, 0.45);
-    }
-    .sol-nav-cta-arrow { font-size: 16px; transition: transform 0.2s; }
+    #sol-nav-cta:hover { background: #D97706; }
+    .sol-nav-cta-arrow { font-size: 14px; transition: transform 0.2s; }
     #sol-nav-cta:hover .sol-nav-cta-arrow { transform: translateX(3px); }
 
     /* ─── Menu dropdown ─── */
