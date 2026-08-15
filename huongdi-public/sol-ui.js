@@ -102,7 +102,7 @@
   function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
   var CSS = ''
-    + '.hd-header,.hd-footer,#sol-header,#sol-footer{display:none!important}'  /* ẩn header/footer cũ (nếu còn sót) */
+    + '.hd-header,.hd-footer,#sol-header,#sol-footer,.sol-header,.sol-footer{display:none!important}'  /* ẩn header/footer cũ (app: hd-/#sol- ; WordPress sol.vn: .sol-header/.sol-footer) */
     + '.solc-h{background:#0F172A;color:#fff;font-family:Inter,system-ui,sans-serif;position:relative;z-index:2000}'
     + '.solc-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 18px}'
     + '.solc-b{display:flex;align-items:center;gap:9px;font-weight:700;font-size:17px;color:#fff;text-decoration:none;white-space:nowrap}'
@@ -312,8 +312,12 @@
 (function(){
   if (window.__solUserNavReq) return; window.__solUserNavReq = 1;
   if (document.querySelector('script[src*="sol-user-nav"]')) return; // trang đã tự nạp
+  // Lấy đúng gốc app (để chạy được cả khi sol-ui.js được nhúng từ sol.vn)
+  var base = '';
+  try { var cs = document.currentScript; if (cs && cs.src) base = new URL(cs.src).origin; } catch (e) {}
+  if (base && base.indexOf('huongdi.sol.vn') < 0) base = 'https://huongdi.sol.vn';
   var s = document.createElement('script');
-  s.src = '/js/sol-user-nav.js';
+  s.src = base + '/js/sol-user-nav.js';
   s.defer = true;
   document.head.appendChild(s);
 })();
