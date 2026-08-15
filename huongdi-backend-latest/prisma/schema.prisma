@@ -707,6 +707,21 @@ model ProfileSkill {
   @@map("profile_skills")
 }
 
+// Bộ nhớ "hoàn thiện ngược": việc cần làm để CV qua được JD
+model HoSoHoanThien {
+  id         String   @id @default(uuid())
+  profileId  String   @map("profile_id")
+  targetId   String?  @map("target_id")
+  skillCode  String   @map("skill_code")
+  kind       String   // THEM_CV = thêm vào CV · NANG_CAO = làm rõ/ví dụ · HOC = nên học
+  goiY       String?  @map("goi_y") // dòng CV để dán / gợi ý cụ thể (AI theo JD)
+  status     String   @default("CHUA_LAM") // CHUA_LAM | DA_LAM
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  @@unique([profileId, skillCode])
+  @@map("ho_so_hoan_thien")
+}
+
 model DataConsent {
   id         String      @id @default(uuid())
   userId     String      @map("user_id")

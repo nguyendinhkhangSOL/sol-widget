@@ -29,12 +29,24 @@ open(p,'w',encoding='utf-8').write(t)
 print('   ✓ đã thêm cvParseRouter')
 PY
 
-echo "▶ 3) Thêm cột muc_do vào profile_skills (an toàn, IF NOT EXISTS)"
+echo "▶ 3) Migration an toàn: cột muc_do + bảng ho_so_hoan_thien (IF NOT EXISTS)"
 cd "$BE"
-cat > /tmp/sol_muc_do.sql <<'SQL'
+cat > /tmp/sol_hoanthien.sql <<'SQL'
 ALTER TABLE profile_skills ADD COLUMN IF NOT EXISTS muc_do text;
+CREATE TABLE IF NOT EXISTS ho_so_hoan_thien (
+  id text PRIMARY KEY,
+  profile_id text NOT NULL,
+  target_id text,
+  skill_code text NOT NULL,
+  kind text NOT NULL,
+  goi_y text,
+  status text NOT NULL DEFAULT 'CHUA_LAM',
+  created_at timestamp(3) NOT NULL DEFAULT now(),
+  updated_at timestamp(3) NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ho_so_hoan_thien_profile_skill_uq ON ho_so_hoan_thien(profile_id, skill_code);
 SQL
-npx prisma db execute --file /tmp/sol_muc_do.sql --schema prisma/schema.prisma && echo "   ✓ cột muc_do OK"
+npx prisma db execute --file /tmp/sol_hoanthien.sql --schema prisma/schema.prisma && echo "   ✓ migration OK"
 
 echo "▶ 4) Vá schema.prisma (thêm field mucDo nếu chưa có)"
 python3 - "$BE/prisma/schema.prisma" <<'PY'
@@ -55,6 +67,31 @@ else:
         open(p,'w',encoding='utf-8').write(t); print('   ✓ đã thêm mucDo (neo lỏng)')
     else:
         print('   ⚠ KHÔNG thấy neo skill_code — kiểm tra thủ công'); sys.exit(1)
+PY
+
+echo "▶ 4b) Thêm model HoSoHoanThien vào schema.prisma (nếu chưa có)"
+python3 - "$BE/prisma/schema.prisma" <<'PY'
+import sys
+p=sys.argv[1]; t=open(p,encoding='utf-8').read()
+if 'HoSoHoanThien' in t:
+    print('   đã có model HoSoHoanThien'); sys.exit(0)
+block='''
+model HoSoHoanThien {
+  id         String   @id @default(uuid())
+  profileId  String   @map("profile_id")
+  targetId   String?  @map("target_id")
+  skillCode  String   @map("skill_code")
+  kind       String
+  goiY       String?  @map("goi_y")
+  status     String   @default("CHUA_LAM")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  @@unique([profileId, skillCode])
+  @@map("ho_so_hoan_thien")
+}
+'''
+open(p,'a',encoding='utf-8').write(block)
+print('   ✓ đã thêm model HoSoHoanThien')
 PY
 
 echo "▶ 5) prisma generate + Build backend + khởi động lại"

@@ -102,7 +102,7 @@ function loadProfile(){ api('/profile').then(function(p){PROFILE=p;render()}).ca
 function render(){
   if(!PROFILE)return; stepper();
   var s=document.getElementById('screen');
-  if(cur===0) s.innerHTML=scrHoSo();
+  if(cur===0){ s.innerHTML=scrHoSo(); loadCompletion(); }
   else if(cur===1) s.innerHTML=scrCham();
   else if(cur===2) s.innerHTML=scrLaBan();
   else if(cur===3) s.innerHTML=scrThu();
@@ -136,6 +136,7 @@ function scrHoSo(){
    +'<div class="blk"><h3>⭐ Kỹ năng của tôi</h3><div id="skchips">'+sk+'</div>'
    +'<div class="ac"><input class="in" id="skin" placeholder="Gõ để tìm kỹ năng… (vd: bán hàng, kế toán)" oninput="acSkill(this.value)" autocomplete="off"><div id="acbox"></div></div>'
    +'<div class="msg" id="m1"></div></div>'
+   +'<div class="blk"><h3>📋 Hồ sơ cần hoàn thiện <span id="htCount" class="badge b-empty"></span></h3><div id="htPanel"><div class="note">Đang tải…</div></div></div>'
    +'<div class="note">Thêm kỹ năng xong, sang bước 2 dán tin tuyển dụng để máy chấm mức khớp thật.</div>'
    +'<button class="btn" onclick="go(1)">Tiếp: Chấm CV × JD →</button></div>';
 }
@@ -209,6 +210,28 @@ function delSkill(ma){ /* xoá mềm: hiện chưa có endpoint xoá skill — b
   msg('m1','ok','(Bản này chưa có nút xoá kỹ năng — sẽ bổ sung sau)');
 }
 
+/* ---- Bộ nhớ hoàn thiện hồ sơ ---- */
+function kindMeta(k){ return k==='THEM_CV'?{ic:'📝',t:'Thêm vào CV'}:k==='NANG_CAO'?{ic:'✍️',t:'Làm rõ / ví dụ'}:{ic:'📚',t:'Nên học'}; }
+function loadCompletion(){
+  var panel=document.getElementById('htPanel'); if(!panel)return;
+  api('/profile/completion').then(function(list){
+    var todo=list.filter(function(x){return x.status!=='DA_LAM'});
+    var done=list.filter(function(x){return x.status==='DA_LAM'});
+    var cnt=document.getElementById('htCount'); if(cnt) cnt.textContent=list.length?(todo.length?todo.length+' việc':'đã xong'):'';
+    if(!list.length){ panel.innerHTML='<div class="note">Chưa có việc nào. Sau khi chấm 1 tin tuyển dụng (bước 2) và tự đánh giá, các việc hoàn thiện CV sẽ hiện ở đây.</div>'; return; }
+    var h=todo.map(function(x){var m=kindMeta(x.kind);
+      return '<div class="ck miss" style="display:block"><div><span>'+m.ic+'</span> <b>'+esc(x.nhan)+'</b> <span class="badge b-empty">'+m.t+'</span></div>'
+        +(x.goiY?'<div class="note" style="margin-top:4px;white-space:pre-line;background:#fffbeb;border-left:3px solid var(--amber);padding:6px 10px">'+esc(x.goiY)+'</div>':'')
+        +'<button class="btn sec mini" style="margin-top:6px" onclick="htDone(\''+x.id+'\')">✓ Đã bổ sung vào CV</button></div>';
+    }).join('');
+    if(done.length) h+='<div class="note" style="margin-top:8px">✅ Đã hoàn thiện: '+done.map(function(x){return esc(x.nhan)}).join(', ')+'</div>';
+    panel.innerHTML=h;
+  }).catch(function(e){ panel.innerHTML='<div class="note">Không tải được danh sách: '+esc(e.message)+'</div>'; });
+}
+function htDone(id){
+  api('/profile/completion/'+id+'/done',{method:'POST',body:'{}'}).then(function(){ loadProfile(); }).catch(function(e){alert(e.message);});
+}
+
 /* ---- LÁT 2 ---- */
 function scrCham(){
   var body='<div class="card"><span class="pill">LÁT 2 · CỬA A</span><h2 style="margin-top:8px">Chấm CV × JD</h2>'
@@ -266,11 +289,17 @@ function renderCham(run){
                      +'<div class="note" style="margin-top:6px">Chọn "Đã có" cho việc anh/chị làm được (chỉ chưa ghi vào CV) → điểm sẽ lên và Sol nhắc anh/chị bổ sung vào CV.</div>' : '';
   var kn=(run.chieu2&&run.chieu2.khuyen_nghi)||'';
   var knHtml=kn? '<div class="blk"><h3>💡 Sol khuyên hoàn thiện</h3><div class="note" style="white-space:pre-line">'+esc(kn)+'</div></div>':'';
+  var ht=(run.hoan_thien||[]).filter(function(x){return x.status!=='DA_LAM'});
+  var htList=ht.length? '<div class="blk"><h3>📋 Việc cần làm để CV qua JD này</h3>'+ht.map(function(x){var m=kindMeta(x.kind);
+      return '<div class="ck miss" style="display:block"><div><span>'+m.ic+'</span> <b>'+esc(x.nhan)+'</b> <span class="badge b-empty">'+m.t+'</span></div>'
+        +(x.goiY?'<div class="note" style="margin-top:4px;white-space:pre-line;background:#fffbeb;border-left:3px solid var(--amber);padding:6px 10px">'+esc(x.goiY)+'</div>':'')+'</div>';
+    }).join('')+'<div class="note">Các việc này đã lưu vào <b>"Hồ sơ cần hoàn thiện"</b> ở Bước 1 — bổ sung xong thì đánh dấu để Sol thôi nhắc.</div></div>':'';
   document.getElementById('chamKq').innerHTML=
      '<div class="blk"><div class="score"><div class="big">'+run.scoreNow+'%</div><div style="font-size:13px;color:var(--slate)">mức khớp</div></div>'
     +'<div class="bar"><i style="width:'+run.scoreNow+'%"></i></div>'
     +'<div class="cmp"><span>lần đầu <b style="color:var(--slate)">'+run.scoreFirst+'%</b></span><span>→</span><span>giờ <b class="amber">'+run.scoreNow+'%</b></span></div></div>'
     +'<div class="blk"><h3>✅ Đối chiếu yêu cầu</h3>'+rows+htBtn+'</div>'
+    +htList
     +knHtml
     +'<button class="btn" onclick="go(2)">Xem La Bàn hướng đi →</button>';
 }

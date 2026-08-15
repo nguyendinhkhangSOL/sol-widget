@@ -146,6 +146,39 @@ YÊU CẦU:
   return parts.join('\n');
 }
 
+// ── AI sinh việc hoàn thiện CV theo từng mục (dòng CV để dán / ví dụ / cách học) ──
+const KIND_OF: Record<string, string> = { DA_CO: 'THEM_CV', BIET_IT: 'NANG_CAO', CHUA_BIET: 'HOC' };
+async function goiYTungMuc(title: string | null, rows: Array<{ code: string; nhan: string; kind: string }>): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  if (!rows.length) return out;
+  const moTa: Record<string, string> = { THEM_CV: 'ĐÃ CÓ nhưng CV chưa ghi', NANG_CAO: 'BIẾT MỘT ÍT', HOC: 'CHƯA BIẾT' };
+  try {
+    const list = rows.map((r, i) => `${i + 1}. [${r.kind}] ${r.nhan} — ${moTa[r.kind]}`).join('\n');
+    const prompt = `Vị trí ứng tuyển: "${title || 'này'}". Giúp người 40–60 tuổi hoàn thiện CV để QUA vòng lọc tin tuyển dụng. Với mỗi mục:
+- [THEM_CV]: viết SẴN 1 gạch đầu dòng (bullet) tiếng Việt để họ DÁN THẲNG vào CV — thể hiện kỹ năng đó qua việc/kết quả cụ thể, tự nhiên, không khoe lố.
+- [NANG_CAO]: gợi ý 1 ví dụ hoặc con số nên bổ sung để chứng minh mức thành thạo.
+- [HOC]: 1 câu ngắn — học nhanh ở đâu, hoặc nói thẳng nếu không hợp thì bỏ qua việc này.
+Xưng "anh/chị", đời thường, KHÔNG thuật ngữ Tây khó hiểu.
+Trả về DUY NHẤT JSON: {"items":[{"i":<số thứ tự>,"goi_y":"..."}]}. Chỉ JSON.
+DANH SÁCH:
+${list}`;
+    const d = _json(await _ai(prompt));
+    const arr = Array.isArray(d.items) ? d.items : [];
+    for (const it of arr) {
+      const idx = parseInt(it.i, 10) - 1;
+      if (rows[idx] && it.goi_y) out.set(rows[idx].code, String(it.goi_y).trim());
+    }
+    if (out.size) return out;
+  } catch (e) { console.error('[goiYTungMuc] AI lỗi:', (e as any)?.message); }
+  // dự phòng tĩnh
+  for (const r of rows) {
+    if (r.kind === 'THEM_CV') out.set(r.code, `• Thêm 1 dòng cho "${r.nhan}": nêu một việc/kết quả cụ thể anh/chị từng làm liên quan đến kỹ năng này.`);
+    else if (r.kind === 'NANG_CAO') out.set(r.code, `Bổ sung 1 ví dụ hoặc con số cho "${r.nhan}" để chứng minh mức thành thạo.`);
+    else out.set(r.code, `"${r.nhan}" hiện chưa có — cân nhắc học thêm, hoặc chọn việc gần thế mạnh hơn.`);
+  }
+  return out;
+}
+
 async function getProfile(userId: string) {
   const p = await prisma.jobProfile.findUnique({ where: { userId }, include: { skills: true, fields: true } });
   if (!p) throw new AppError(400, 'Chưa có hồ sơ — làm Lát 1 trước');
@@ -226,7 +259,20 @@ jobTargetRouter.post('/target/:id/hoan-thien', async (req: any, res, next) => {
       added++;
     }
 
-    // 2) chấm lại (đọc hồ sơ mới) → tạo phiên bản mới
+    // 2) LƯU "việc hoàn thiện ngược" + AI viết dòng CV theo JD
+    const rows = b.answers.map((a) => ({ code: a.code, nhan: nhanCua(a.code), kind: KIND_OF[a.muc_do] }));
+    const goiYMap = await goiYTungMuc(target.title, rows);
+    for (const r of rows) {
+      await prisma.hoSoHoanThien.upsert({
+        where: { profileId_skillCode: { profileId: p.id, skillCode: r.code } },
+        update: { targetId: target.id, kind: r.kind, goiY: goiYMap.get(r.code) || null, status: 'CHUA_LAM' },
+        create: { profileId: p.id, targetId: target.id, skillCode: r.code, kind: r.kind, goiY: goiYMap.get(r.code) || null },
+      });
+    }
+    const htRows = await prisma.hoSoHoanThien.findMany({ where: { profileId: p.id }, orderBy: [{ status: 'asc' }, { createdAt: 'desc' }] });
+    const hoan_thien = htRows.map((it: any) => ({ id: it.id, skillCode: it.skillCode, nhan: nhanCua(it.skillCode), kind: it.kind, goiY: it.goiY, status: it.status }));
+
+    // 3) chấm lại (đọc hồ sơ mới) → tạo phiên bản mới
     const p2 = await getProfile(req.user.userId);
     const haveLevel = new Map<string, string | null | undefined>(p2.skills.map((s: any) => [s.skillCode, s.mucDo]));
     const sonamField = p2.fields.find((f) => f.fieldCode === 'K1.sonam');
@@ -235,7 +281,31 @@ jobTargetRouter.post('/target/:id/hoan-thien', async (req: any, res, next) => {
     (chieu2 as any).khuyen_nghi = await goiYHoanThien(target.title, missing, partial);
     const scoreFirst = target.runs[0]?.scoreFirst ?? score;
     const run = await prisma.matchRun.create({ data: { targetId: target.id, scoreFirst, scoreNow: score, checklist, chieu2 } });
-    res.json({ ...run, added });
+    res.json({ ...run, added, hoan_thien });
+  } catch (e) { next(e); }
+});
+
+// ── GET /api/profile/completion ─ danh sách việc hoàn thiện hồ sơ (thường trực) ──
+jobTargetRouter.get('/completion', async (req: any, res, next) => {
+  try {
+    const p = await getProfile(req.user.userId);
+    const items = await prisma.hoSoHoanThien.findMany({ where: { profileId: p.id }, orderBy: [{ status: 'asc' }, { createdAt: 'desc' }] });
+    res.json(items.map((it: any) => ({ id: it.id, skillCode: it.skillCode, nhan: nhanCua(it.skillCode), kind: it.kind, goiY: it.goiY, status: it.status })));
+  } catch (e) { next(e); }
+});
+
+// ── POST /api/profile/completion/:id/done ─ đánh dấu đã bổ sung ──
+jobTargetRouter.post('/completion/:id/done', async (req: any, res, next) => {
+  try {
+    const p = await getProfile(req.user.userId);
+    const it = await prisma.hoSoHoanThien.findFirst({ where: { id: req.params.id, profileId: p.id } });
+    if (!it) throw new AppError(404, 'Không thấy việc này');
+    await prisma.hoSoHoanThien.update({ where: { id: it.id }, data: { status: 'DA_LAM' } });
+    // Nếu là "thêm vào CV" → coi như CV đã chứng thực kỹ năng (đổi nguồn KHÁCH KHAI → CV)
+    if (it.kind === 'THEM_CV') {
+      await prisma.profileSkill.updateMany({ where: { profileId: p.id, skillCode: it.skillCode }, data: { source: 'CV' } });
+    }
+    res.json({ ok: true });
   } catch (e) { next(e); }
 });
 
