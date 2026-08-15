@@ -45,7 +45,11 @@ function buildPrompt(cv: string) {
 }
 
 QUY TẮC:
-- "skills" CHỈ được chọn từ danh sách MÃ dưới đây, không tự bịa mã. Chọn tối đa 8 mã đúng nhất với CV.
+- "skills" CHỈ được chọn từ danh sách MÃ dưới đây, không tự bịa mã. Chọn tối đa 12 mã đúng nhất với CV.
+- Đọc hiểu ngữ nghĩa, KHÔNG chỉ dò từ khoá. Bắt cả:
+  · Kỹ năng liệt kê ở mục KỸ NĂNG/NGÔN NGỮ (ví dụ "Write"→soạn thảo văn bản, "Sales"→bán hàng, "Leader"→lãnh đạo/quản lý).
+  · Công cụ văn phòng (Excel/Word/PowerPoint), nhập & quản lý dữ liệu, làm việc với dữ liệu — nếu CV thể hiện qua mô tả công việc dù không ghi thẳng tên công cụ.
+  · Kỹ năng suy ra từ chức danh + mô tả (CEO/Giám đốc → quản lý điều hành, vận hành, quản lý dự án).
 - Thiếu thông tin nào thì để "" hoặc null.
 - Chỉ trả JSON.
 
