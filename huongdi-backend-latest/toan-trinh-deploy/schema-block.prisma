@@ -1,11 +1,44 @@
-enum ProfileFieldSource { CV PHONG_VAN BAI_TEST KHACH_KHAI HE_SUY_RA }
-enum ProfileFieldStatus { DA_XAC_NHAN CHUA_XAC_NHAN CON_TRONG }
-enum ConsentKind { CV_READ VOICE LABAN_TRANSFER }
-enum ApplyVia { TRANG_TUYEN_DUNG NGUOI_QUEN }
-enum BuildStatus { DANG_LAM XONG BO_DO }
-enum AnswerSource { GO_TAY CHON_GOI_Y GIONG_NOI }
-enum InterviewStatus { DANG_TAP XONG BO_DO }
-enum QSource { TU_JD HANH_VI KHOANG_TRONG }
+enum ProfileFieldSource {
+  CV
+  PHONG_VAN
+  BAI_TEST
+  KHACH_KHAI
+  HE_SUY_RA
+}
+enum ProfileFieldStatus {
+  DA_XAC_NHAN
+  CHUA_XAC_NHAN
+  CON_TRONG
+}
+enum ConsentKind {
+  CV_READ
+  VOICE
+  LABAN_TRANSFER
+}
+enum ApplyVia {
+  TRANG_TUYEN_DUNG
+  NGUOI_QUEN
+}
+enum BuildStatus {
+  DANG_LAM
+  XONG
+  BO_DO
+}
+enum AnswerSource {
+  GO_TAY
+  CHON_GOI_Y
+  GIONG_NOI
+}
+enum InterviewStatus {
+  DANG_TAP
+  XONG
+  BO_DO
+}
+enum QSource {
+  TU_JD
+  HANH_VI
+  KHOANG_TRONG
+}
 
 model JobProfile {
   id          String   @id @default(uuid())
