@@ -191,7 +191,9 @@
   }
 
   function mount() {
-    if (window.__solcMounted) return; window.__solcMounted = true;   // chống nạp 2 lần
+    // chống nạp 2 lần: kiểm tra cả cờ LẪN DOM (chắc chắn dù nạp mấy lần, thứ tự nào)
+    if (window.__solcMounted || document.querySelector('header.solc-h')) { window.__solcMounted = true; return; }
+    window.__solcMounted = true;
     if (skip()) return;
     var st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
     var h = document.createElement('div'); h.innerHTML = headerHtml(); document.body.insertBefore(h.firstChild, document.body.firstChild);
