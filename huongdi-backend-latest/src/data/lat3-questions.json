@@ -1,0 +1,83 @@
+{
+  "_doc": "Bộ câu hỏi Cửa B — hỏi từng câu, ngôn ngữ chị Nga 52. Đặt vào src/data/lat3-questions.json. fieldCode khớp LAT1-field-dictionary.json. mic=true CHỈ câu kể chuyện.",
+  "questions": [
+    {
+      "code": "Q.viec_gan_nhat",
+      "fieldCode": null,
+      "hoi": "Anh/chị kể giúp em công việc gần nhất mình làm — làm ở đâu, làm gì, trong bao lâu ạ?",
+      "kieu": "ke_chuyen",
+      "mic": true,
+      "goi_y": false,
+      "ghi_chu": "Ô tự do. Máy đọc để GỢI Ý ngành + kỹ năng (khách vẫn duyệt lại). Mic tùy chọn, cần đồng ý VOICE."
+    },
+    {
+      "code": "Q.nganh",
+      "fieldCode": "K1.nganh",
+      "hoi": "Việc đó thuộc ngành nào ạ? (gõ vài chữ, em gợi ý cho)",
+      "kieu": "chon_ma",
+      "mic": false,
+      "goi_y": true,
+      "goi_y_tu": "nganh"
+    },
+    {
+      "code": "Q.chuc_danh",
+      "fieldCode": "K1.chucdanh",
+      "hoi": "Chức danh/vị trí của mình khi đó là gì ạ?",
+      "kieu": "van_ban",
+      "mic": false,
+      "goi_y": false
+    },
+    {
+      "code": "Q.sonam",
+      "fieldCode": "K1.sonam",
+      "hoi": "Mình làm việc này (hoặc nghề này) khoảng bao nhiêu năm rồi ạ?",
+      "kieu": "so",
+      "mic": false,
+      "goi_y": false
+    },
+    {
+      "code": "Q.ky_nang",
+      "fieldCode": null,
+      "hoi": "Những việc anh/chị làm tốt nhất là gì? Bấm chọn giúp em vài cái ạ (chọn tối đa 5).",
+      "kieu": "chon_nhieu_ma",
+      "mic": false,
+      "goi_y": true,
+      "goi_y_tu": "ky_nang",
+      "ghi_chu": "Lưu vào profile_skills (mã KN.*). Đề xuất sẵn từ câu Q.viec_gan_nhat."
+    },
+    {
+      "code": "Q.thanh_qua",
+      "fieldCode": "K1.quymo",
+      "hoi": "Có kết quả nào mình tự hào không ạ? (vd: quản lý mấy người, doanh số bao nhiêu, giữ khách ra sao)",
+      "kieu": "van_ban",
+      "mic": false,
+      "goi_y": false,
+      "ghi_chu": "Con số ở đây làm CV mạnh hơn nhiều — nhắc khéo khách điền số."
+    },
+    {
+      "code": "Q.dia_ban",
+      "fieldCode": "K3.tinh",
+      "hoi": "Anh/chị đang ở khu vực nào ạ? (tỉnh/thành)",
+      "kieu": "van_ban",
+      "mic": false,
+      "goi_y": false
+    },
+    {
+      "code": "Q.di_chuyen",
+      "fieldCode": "K3.banklinh",
+      "hoi": "Mình có sẵn sàng đi làm xa nhà không, hay muốn gần thôi ạ?",
+      "kieu": "chon_1",
+      "chon": ["Gần nhà thôi", "Trong tỉnh/thành", "Đi tỉnh khác cũng được"],
+      "mic": false,
+      "goi_y": false
+    },
+    {
+      "code": "Q.hoc_van",
+      "fieldCode": "K2.bangcap",
+      "hoi": "Bằng cấp/chứng chỉ cao nhất của mình là gì ạ? (nếu không có cũng không sao)",
+      "kieu": "van_ban",
+      "mic": false,
+      "goi_y": false
+    }
+  ]
+}

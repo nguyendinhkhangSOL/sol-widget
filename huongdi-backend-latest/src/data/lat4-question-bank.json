@@ -1,0 +1,14 @@
+{
+  "_doc": "Ngân hàng câu phỏng vấn Cửa Lát 4. Đặt vào src/data/lat4-question-bank.json. Giọng người phỏng vấn thân thiện, hợp U40–60.",
+  "hanh_vi": [
+    { "text": "Anh/chị giới thiệu ngắn gọn về mình và công việc gần nhất ạ?", "goi_y": "Nói 30–60 giây: tên, nghề, số năm, một kết quả có con số." },
+    { "text": "Điểm mạnh lớn nhất của anh/chị trong công việc là gì?", "goi_y": "Chọn 1 điểm + 1 ví dụ thật, đừng liệt kê nhiều." },
+    { "text": "Có việc nào từng làm chưa tốt và anh/chị đã sửa thế nào?", "goi_y": "Thành thật + rút ra bài học, kết bằng điều tích cực." },
+    { "text": "Vì sao anh/chị muốn làm ở vị trí này ạ?", "goi_y": "Nối kinh nghiệm cũ với việc mới, tránh nói 'vì cần tiền'." }
+  ],
+  "khoang_trong": [
+    { "text": "Em thấy anh/chị có thời gian không đi làm công ty — giai đoạn đó anh/chị làm gì ạ?", "goi_y": "Nói thật + nêu việc mình vẫn giữ tay nghề (làm tự do, chăm gia đình, học thêm)." },
+    { "text": "Tuổi tác có làm anh/chị lo khi quay lại đi làm không? Anh/chị nghĩ sao?", "goi_y": "Biến thành lợi thế: điềm tĩnh, kinh nghiệm, đáng tin, ít nhảy việc." }
+  ],
+  "tu_jd_mau": "Vị trí này cần {nhan}. Anh/chị kể một lần mình đã dùng {nhan} trong công việc ạ?"
+}

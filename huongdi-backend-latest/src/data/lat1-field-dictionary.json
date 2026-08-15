@@ -1,0 +1,110 @@
+{
+  "note": "Từ điển 4 khối Hồ sơ chung — dùng để khởi tạo profile_fields rỗng. block_no=khối. ai_dung: 1=máy chấm việc, 2=La Bàn map, 1+2=cả hai. cv_lap=CV thường điền được (khởi tạo source=CV, status=CHUA_XAC_NHAN); còn lại status=CON_TRONG.",
+  "fields": [
+    {
+      "field_code": "K1.nganh",
+      "block_no": 1,
+      "label": "Ngành đã làm",
+      "ai_dung": "1+2",
+      "cv_lap": true
+    },
+    {
+      "field_code": "K1.chucdanh",
+      "block_no": 1,
+      "label": "Chức danh gần nhất",
+      "ai_dung": "1+2",
+      "cv_lap": true
+    },
+    {
+      "field_code": "K1.capbac",
+      "block_no": 1,
+      "label": "Cấp bậc",
+      "ai_dung": "1+2",
+      "cv_lap": true
+    },
+    {
+      "field_code": "K1.sonam",
+      "block_no": 1,
+      "label": "Số năm nghề",
+      "ai_dung": "1+2",
+      "cv_lap": true
+    },
+    {
+      "field_code": "K1.quymo",
+      "block_no": 1,
+      "label": "Quy mô từng quản (người/tiền)",
+      "ai_dung": "1+2",
+      "cv_lap": false
+    },
+    {
+      "field_code": "K1.tunglamchu",
+      "block_no": 1,
+      "label": "Từng tự kinh doanh",
+      "ai_dung": "2",
+      "cv_lap": false
+    },
+    {
+      "field_code": "K2.donghe",
+      "block_no": 2,
+      "label": "Đồ nghề / máy móc còn giữ",
+      "ai_dung": "2",
+      "cv_lap": false
+    },
+    {
+      "field_code": "K2.matbang",
+      "block_no": 2,
+      "label": "Mặt bằng / xưởng / xe",
+      "ai_dung": "2",
+      "cv_lap": false
+    },
+    {
+      "field_code": "K2.bangcap",
+      "block_no": 2,
+      "label": "Bằng cấp / chứng chỉ",
+      "ai_dung": "1+2",
+      "cv_lap": true
+    },
+    {
+      "field_code": "K2.tienmat",
+      "block_no": 2,
+      "label": "Vốn tiền có thể dùng",
+      "ai_dung": "2",
+      "cv_lap": false
+    },
+    {
+      "field_code": "K3.tinh",
+      "block_no": 3,
+      "label": "Tỉnh/thành hiện tại",
+      "ai_dung": "1+2",
+      "cv_lap": true
+    },
+    {
+      "field_code": "K3.banklinh",
+      "block_no": 3,
+      "label": "Đi làm được bán kính",
+      "ai_dung": "1+2",
+      "cv_lap": true
+    },
+    {
+      "field_code": "K4.congtycu",
+      "block_no": 4,
+      "label": "Công ty cũ (danh sách)",
+      "ai_dung": "1+2",
+      "cv_lap": true
+    },
+    {
+      "field_code": "K4.nganhcu",
+      "block_no": 4,
+      "label": "Ngành cũ / mối quan hệ",
+      "ai_dung": "2",
+      "cv_lap": false
+    },
+    {
+      "field_code": "K4.khachcu",
+      "block_no": 4,
+      "label": "Khách / đối tác cũ còn liên lạc",
+      "ai_dung": "2",
+      "cv_lap": false
+    }
+  ]
+}

@@ -21,6 +21,13 @@ import matchV2Routes from './routes/match-v2';
 import journeyRoutes from './routes/journey';
 import solDongHanhRoutes from './routes/sol-dong-hanh';
 import passwordResetRoutes from './routes/password-reset';
+// ─── Toàn Trình U40–60 (Lát 1→6) ───
+import { jobProfileRouter } from './routes/profile-hoso';
+import { jobTargetRouter } from './routes/profile-target';
+import { buildRouter } from './routes/profile-build';
+import { interviewRouter } from './routes/profile-interview';
+import { letterRouter } from './routes/profile-letter';
+import { labanRouter } from './routes/profile-laban';
 
 const app = express();
 app.set('trust proxy', 1);  // behind nginx
@@ -84,6 +91,13 @@ app.use('/api/events', eventsRouter);
 app.use('/api/saved', savedRouter);
 app.use('/api/directions', directionsRouter);
 app.use('/api/admin', adminRouter);
+// ─── Toàn Trình U40–60 ───
+app.use('/api/profile', jobProfileRouter);
+app.use('/api/profile', jobTargetRouter);
+app.use('/api/profile/build', buildRouter);
+app.use('/api/profile/interview', interviewRouter);
+app.use('/api/profile/letter', letterRouter);
+app.use('/api/profile/laban', labanRouter);
 
 // ── Error handler ─────────────────────────────────────────
 app.use(errorHandler);

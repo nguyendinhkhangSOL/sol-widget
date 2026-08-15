@@ -1,0 +1,2124 @@
+{
+  "nganh": [
+    {
+      "ma": "NG.fmcg",
+      "nhan": "Hàng tiêu dùng nhanh (FMCG)"
+    },
+    {
+      "ma": "NG.banle",
+      "nhan": "Bán lẻ"
+    },
+    {
+      "ma": "NG.bds",
+      "nhan": "Bất động sản"
+    },
+    {
+      "ma": "NG.xaydung",
+      "nhan": "Xây dựng"
+    },
+    {
+      "ma": "NG.sanxuat",
+      "nhan": "Sản xuất"
+    },
+    {
+      "ma": "NG.logistics",
+      "nhan": "Kho vận – Logistics"
+    },
+    {
+      "ma": "NG.tcnh",
+      "nhan": "Tài chính – Ngân hàng"
+    },
+    {
+      "ma": "NG.baohiem",
+      "nhan": "Bảo hiểm"
+    },
+    {
+      "ma": "NG.giaoduc",
+      "nhan": "Giáo dục – Đào tạo"
+    },
+    {
+      "ma": "NG.yte",
+      "nhan": "Y tế – Chăm sóc sức khoẻ"
+    },
+    {
+      "ma": "NG.fnb",
+      "nhan": "Nhà hàng – Ẩm thực (F&B)"
+    },
+    {
+      "ma": "NG.dulich",
+      "nhan": "Du lịch – Khách sạn"
+    },
+    {
+      "ma": "NG.congnghe",
+      "nhan": "Công nghệ thông tin"
+    },
+    {
+      "ma": "NG.detmay",
+      "nhan": "Dệt may – Da giày"
+    },
+    {
+      "ma": "NG.nongnghiep",
+      "nhan": "Nông nghiệp – Thực phẩm"
+    },
+    {
+      "ma": "NG.oto",
+      "nhan": "Ô tô – Xe máy"
+    },
+    {
+      "ma": "NG.lamdep",
+      "nhan": "Mỹ phẩm – Làm đẹp"
+    },
+    {
+      "ma": "NG.truyenthong",
+      "nhan": "Truyền thông – Quảng cáo"
+    },
+    {
+      "ma": "NG.hokd",
+      "nhan": "Hộ kinh doanh / tự doanh"
+    }
+  ],
+  "nhom_ky_nang": [
+    {
+      "ma": "ban",
+      "nhan": "Bán hàng & thị trường"
+    },
+    {
+      "ma": "ql",
+      "nhan": "Quản lý & điều hành"
+    },
+    {
+      "ma": "tc",
+      "nhan": "Tài chính – Kế toán"
+    },
+    {
+      "ma": "kt",
+      "nhan": "Kỹ thuật & tay nghề"
+    },
+    {
+      "ma": "so",
+      "nhan": "Số hoá & công cụ"
+    },
+    {
+      "ma": "dt",
+      "nhan": "Đào tạo & tư vấn"
+    },
+    {
+      "ma": "dv",
+      "nhan": "Dịch vụ tại chỗ"
+    },
+    {
+      "ma": "hc",
+      "nhan": "Hành chính – văn phòng"
+    },
+    {
+      "ma": "ns",
+      "nhan": "Nhân sự"
+    },
+    {
+      "ma": "sx",
+      "nhan": "Sản xuất – kho vận"
+    },
+    {
+      "ma": "mkt",
+      "nhan": "Marketing – nội dung"
+    },
+    {
+      "ma": "nn",
+      "nhan": "Ngoại ngữ"
+    }
+  ],
+  "ky_nang": [
+    {
+      "ma": "KN.ban.b2b",
+      "nhan": "Bán hàng doanh nghiệp (B2B)",
+      "alias": [
+        "b2b",
+        "bán hàng doanh nghiệp",
+        "khách doanh nghiệp",
+        "sale b2b"
+      ]
+    },
+    {
+      "ma": "KN.ban.le",
+      "nhan": "Bán lẻ (B2C)",
+      "alias": [
+        "bán lẻ",
+        "b2c",
+        "bán hàng trực tiếp",
+        "cửa hàng"
+      ]
+    },
+    {
+      "ma": "KN.ban.kenh",
+      "nhan": "Xây & quản lý kênh phân phối",
+      "alias": [
+        "kênh phân phối",
+        "đại lý",
+        "nhà phân phối",
+        "distribution",
+        "phát triển kênh"
+      ]
+    },
+    {
+      "ma": "KN.ban.cskh",
+      "nhan": "Chăm sóc khách hàng",
+      "alias": [
+        "cskh",
+        "chăm sóc khách hàng",
+        "customer service",
+        "hậu mãi"
+      ]
+    },
+    {
+      "ma": "KN.ban.telesale",
+      "nhan": "Bán qua điện thoại (telesale)",
+      "alias": [
+        "telesale",
+        "telesales",
+        "gọi điện bán hàng"
+      ]
+    },
+    {
+      "ma": "KN.ban.online",
+      "nhan": "Bán hàng online",
+      "alias": [
+        "bán online",
+        "bán hàng online",
+        "sàn tmđt",
+        "shopee",
+        "lazada",
+        "tiktok shop"
+      ]
+    },
+    {
+      "ma": "KN.ql.doingu",
+      "nhan": "Quản lý đội ngũ",
+      "alias": [
+        "quản lý đội",
+        "quản lý nhân sự bán hàng",
+        "quản lý team",
+        "dẫn dắt đội",
+        "leadership"
+      ]
+    },
+    {
+      "ma": "KN.ql.vanhanh",
+      "nhan": "Quản lý vận hành",
+      "alias": [
+        "vận hành",
+        "operations",
+        "quản lý cửa hàng",
+        "quản lý chi nhánh"
+      ]
+    },
+    {
+      "ma": "KN.ql.ngansach",
+      "nhan": "Quản lý ngân sách / doanh thu-chi phí",
+      "alias": [
+        "ngân sách",
+        "budget",
+        "p&l",
+        "quản lý chi phí",
+        "kiểm soát chi phí"
+      ]
+    },
+    {
+      "ma": "KN.ql.duan",
+      "nhan": "Quản lý dự án",
+      "alias": [
+        "quản lý dự án",
+        "project management",
+        "pmp"
+      ]
+    },
+    {
+      "ma": "KN.ql.quytrinh",
+      "nhan": "Xây dựng quy trình",
+      "alias": [
+        "quy trình",
+        "sop",
+        "chuẩn hoá quy trình"
+      ]
+    },
+    {
+      "ma": "KN.tc.sosach",
+      "nhan": "Kế toán sổ sách",
+      "alias": [
+        "sổ sách",
+        "kế toán tổng hợp",
+        "ghi sổ",
+        "hạch toán"
+      ]
+    },
+    {
+      "ma": "KN.tc.thue",
+      "nhan": "Kê khai thuế",
+      "alias": [
+        "thuế",
+        "kê khai thuế",
+        "quyết toán thuế",
+        "hoá đơn điện tử"
+      ]
+    },
+    {
+      "ma": "KN.tc.baocao",
+      "nhan": "Báo cáo tài chính",
+      "alias": [
+        "báo cáo tài chính",
+        "bctc",
+        "báo cáo thuế"
+      ]
+    },
+    {
+      "ma": "KN.tc.congno",
+      "nhan": "Quản lý công nợ",
+      "alias": [
+        "công nợ",
+        "thu hồi công nợ",
+        "phải thu phải trả"
+      ]
+    },
+    {
+      "ma": "KN.tc.luong",
+      "nhan": "Tính lương",
+      "alias": [
+        "tính lương",
+        "bảng lương",
+        "payroll"
+      ]
+    },
+    {
+      "ma": "KN.tc.phanmem",
+      "nhan": "Phần mềm kế toán",
+      "alias": [
+        "misa",
+        "fast",
+        "phần mềm kế toán",
+        "bravo",
+        "sap fico"
+      ]
+    },
+    {
+      "ma": "KN.kt.suachua",
+      "nhan": "Sửa chữa – bảo trì",
+      "alias": [
+        "sửa chữa",
+        "bảo trì",
+        "bảo dưỡng",
+        "maintenance"
+      ]
+    },
+    {
+      "ma": "KN.kt.dien",
+      "nhan": "Điện – điện lạnh",
+      "alias": [
+        "điện",
+        "điện lạnh",
+        "điện nước",
+        "thợ điện"
+      ]
+    },
+    {
+      "ma": "KN.kt.cokhi",
+      "nhan": "Cơ khí",
+      "alias": [
+        "cơ khí",
+        "tiện",
+        "phay",
+        "hàn",
+        "gia công"
+      ]
+    },
+    {
+      "ma": "KN.kt.xaydung",
+      "nhan": "Xây dựng – hoàn thiện",
+      "alias": [
+        "thi công",
+        "hoàn thiện",
+        "thợ xây",
+        "giám sát công trình"
+      ]
+    },
+    {
+      "ma": "KN.kt.vanhanhmay",
+      "nhan": "Vận hành máy móc",
+      "alias": [
+        "vận hành máy",
+        "đứng máy",
+        "vận hành thiết bị"
+      ]
+    },
+    {
+      "ma": "KN.so.excel",
+      "nhan": "Excel / bảng tính",
+      "alias": [
+        "excel",
+        "google sheet",
+        "bảng tính",
+        "hàm excel",
+        "pivot"
+      ]
+    },
+    {
+      "ma": "KN.so.word",
+      "nhan": "Soạn thảo văn bản",
+      "alias": [
+        "word",
+        "soạn thảo",
+        "văn bản"
+      ]
+    },
+    {
+      "ma": "KN.so.crm",
+      "nhan": "Phần mềm CRM",
+      "alias": [
+        "crm",
+        "salesforce",
+        "hubspot",
+        "quản lý khách hàng bằng phần mềm"
+      ]
+    },
+    {
+      "ma": "KN.so.canva",
+      "nhan": "Thiết kế cơ bản (Canva)",
+      "alias": [
+        "canva",
+        "thiết kế cơ bản",
+        "làm ảnh"
+      ]
+    },
+    {
+      "ma": "KN.so.ai",
+      "nhan": "Dùng công cụ AI",
+      "alias": [
+        "ai",
+        "chatgpt",
+        "trí tuệ nhân tạo",
+        "công cụ ai"
+      ]
+    },
+    {
+      "ma": "KN.so.mxh",
+      "nhan": "Quản lý mạng xã hội",
+      "alias": [
+        "mạng xã hội",
+        "facebook",
+        "fanpage",
+        "zalo oa",
+        "social media"
+      ]
+    },
+    {
+      "ma": "KN.dt.kem",
+      "nhan": "Kèm / dạy 1-1",
+      "alias": [
+        "kèm",
+        "dạy kèm",
+        "gia sư",
+        "coaching"
+      ]
+    },
+    {
+      "ma": "KN.dt.tuvan",
+      "nhan": "Tư vấn chuyên môn",
+      "alias": [
+        "tư vấn",
+        "consulting",
+        "cố vấn"
+      ]
+    },
+    {
+      "ma": "KN.dt.giangday",
+      "nhan": "Giảng dạy / đứng lớp",
+      "alias": [
+        "giảng dạy",
+        "đứng lớp",
+        "đào tạo nội bộ",
+        "trainer"
+      ]
+    },
+    {
+      "ma": "KN.dv.amthuc",
+      "nhan": "Ẩm thực / bếp",
+      "alias": [
+        "nấu ăn",
+        "bếp",
+        "ẩm thực",
+        "đầu bếp",
+        "làm bánh"
+      ]
+    },
+    {
+      "ma": "KN.dv.chamsoc",
+      "nhan": "Chăm sóc (người/bệnh/trẻ)",
+      "alias": [
+        "chăm sóc",
+        "điều dưỡng",
+        "giúp việc",
+        "chăm bệnh"
+      ]
+    },
+    {
+      "ma": "KN.dv.lamdep",
+      "nhan": "Làm đẹp / spa",
+      "alias": [
+        "làm đẹp",
+        "spa",
+        "nail",
+        "tóc",
+        "thẩm mỹ"
+      ]
+    },
+    {
+      "ma": "KN.dv.vanchuyen",
+      "nhan": "Vận chuyển / giao nhận",
+      "alias": [
+        "vận chuyển",
+        "giao hàng",
+        "tài xế",
+        "giao nhận"
+      ]
+    },
+    {
+      "ma": "KN.hc.vanthu",
+      "nhan": "Văn thư – hành chính",
+      "alias": [
+        "hành chính",
+        "văn thư",
+        "thư ký",
+        "hồ sơ giấy tờ"
+      ]
+    },
+    {
+      "ma": "KN.hc.lettan",
+      "nhan": "Lễ tân – tiếp đón",
+      "alias": [
+        "lễ tân",
+        "tiếp tân",
+        "tiếp đón"
+      ]
+    },
+    {
+      "ma": "KN.hc.dulieu",
+      "nhan": "Nhập & quản lý dữ liệu",
+      "alias": [
+        "nhập liệu",
+        "data entry",
+        "quản lý dữ liệu"
+      ]
+    },
+    {
+      "ma": "KN.hc.muahang",
+      "nhan": "Mua hàng – thu mua",
+      "alias": [
+        "mua hàng",
+        "thu mua",
+        "purchasing",
+        "procurement"
+      ]
+    },
+    {
+      "ma": "KN.ns.tuyendung",
+      "nhan": "Tuyển dụng",
+      "alias": [
+        "tuyển dụng",
+        "recruitment",
+        "headhunt"
+      ]
+    },
+    {
+      "ma": "KN.ns.cb",
+      "nhan": "Lương thưởng – phúc lợi (C&B)",
+      "alias": [
+        "c&b",
+        "lương thưởng",
+        "phúc lợi",
+        "bhxh"
+      ]
+    },
+    {
+      "ma": "KN.ns.daotao",
+      "nhan": "Đào tạo & phát triển nhân sự",
+      "alias": [
+        "đào tạo nhân sự",
+        "l&d",
+        "phát triển nhân sự"
+      ]
+    },
+    {
+      "ma": "KN.sx.qc",
+      "nhan": "Kiểm soát chất lượng (QC)",
+      "alias": [
+        "qc",
+        "kcs",
+        "kiểm phẩm",
+        "chất lượng"
+      ]
+    },
+    {
+      "ma": "KN.sx.kho",
+      "nhan": "Quản lý kho",
+      "alias": [
+        "kho",
+        "warehouse",
+        "quản lý kho",
+        "xuất nhập kho"
+      ]
+    },
+    {
+      "ma": "KN.sx.cungung",
+      "nhan": "Chuỗi cung ứng",
+      "alias": [
+        "chuỗi cung ứng",
+        "supply chain",
+        "cung ứng"
+      ]
+    },
+    {
+      "ma": "KN.sx.dieudo",
+      "nhan": "Điều độ sản xuất",
+      "alias": [
+        "điều độ",
+        "kế hoạch sản xuất",
+        "planning sản xuất"
+      ]
+    },
+    {
+      "ma": "KN.mkt.noidung",
+      "nhan": "Sáng tạo nội dung",
+      "alias": [
+        "nội dung",
+        "content",
+        "viết bài",
+        "copywriting"
+      ]
+    },
+    {
+      "ma": "KN.mkt.quangcao",
+      "nhan": "Chạy quảng cáo",
+      "alias": [
+        "quảng cáo",
+        "ads",
+        "facebook ads",
+        "google ads",
+        "chạy ads"
+      ]
+    },
+    {
+      "ma": "KN.mkt.thuonghieu",
+      "nhan": "Xây thương hiệu",
+      "alias": [
+        "thương hiệu",
+        "branding",
+        "marketing tổng"
+      ]
+    },
+    {
+      "ma": "KN.mkt.sukien",
+      "nhan": "Tổ chức sự kiện",
+      "alias": [
+        "sự kiện",
+        "event",
+        "tổ chức chương trình"
+      ]
+    },
+    {
+      "ma": "KN.nn.anh",
+      "nhan": "Tiếng Anh",
+      "alias": [
+        "tiếng anh",
+        "english",
+        "toeic",
+        "ielts"
+      ]
+    },
+    {
+      "ma": "KN.nn.trung",
+      "nhan": "Tiếng Trung",
+      "alias": [
+        "tiếng trung",
+        "hoa ngữ",
+        "hsk"
+      ]
+    },
+    {
+      "ma": "KN.nn.han",
+      "nhan": "Tiếng Hàn",
+      "alias": [
+        "tiếng hàn",
+        "topik"
+      ]
+    },
+    {
+      "ma": "KN.nn.nhat",
+      "nhan": "Tiếng Nhật",
+      "alias": [
+        "tiếng nhật",
+        "jlpt"
+      ]
+    }
+  ],
+  "ats": {
+    "sections": [
+      "Thông tin liên hệ",
+      "Giới thiệu bản thân (Tóm tắt)",
+      "Kinh nghiệm làm việc",
+      "Học vấn",
+      "Chứng chỉ",
+      "Kỹ năng"
+    ],
+    "optional": [
+      "Thành tích nổi bật",
+      "Người tham chiếu"
+    ],
+    "dong_tu": [
+      "Quản lý",
+      "Điều hành",
+      "Xây dựng",
+      "Phát triển",
+      "Triển khai",
+      "Phụ trách",
+      "Giám sát",
+      "Đào tạo",
+      "Tuyển dụng",
+      "Đàm phán",
+      "Ký kết",
+      "Tăng trưởng",
+      "Tối ưu",
+      "Tiết kiệm",
+      "Đạt",
+      "Vượt",
+      "Dẫn dắt",
+      "Thiết lập",
+      "Vận hành",
+      "Kiểm soát",
+      "Lập kế hoạch",
+      "Phân tích",
+      "Chăm sóc",
+      "Mở rộng",
+      "Cắt giảm",
+      "Chuẩn hoá",
+      "Thu hồi",
+      "Cải tiến"
+    ],
+    "nen": [
+      "Một cột, tiêu đề mục rõ ràng",
+      "Mỗi gạch đầu dòng bắt đầu bằng động từ + có con số",
+      "Chèn từ khoá lấy đúng từ tin tuyển dụng",
+      "Lưu file Word/PDF dạng chữ (không phải ảnh)"
+    ],
+    "khong_nen": [
+      "Ảnh, logo, khung màu",
+      "Bảng biểu, chia 2–3 cột",
+      "Ảnh chụp/scan CV",
+      "Chữ nằm trong header/footer"
+    ]
+  },
+  "jd_tu_khoa_map": [
+    {
+      "tu_khoa": "b2b",
+      "ma": "KN.ban.b2b"
+    },
+    {
+      "tu_khoa": "bán hàng doanh nghiệp",
+      "ma": "KN.ban.b2b"
+    },
+    {
+      "tu_khoa": "khách doanh nghiệp",
+      "ma": "KN.ban.b2b"
+    },
+    {
+      "tu_khoa": "sale b2b",
+      "ma": "KN.ban.b2b"
+    },
+    {
+      "tu_khoa": "bán lẻ",
+      "ma": "KN.ban.le"
+    },
+    {
+      "tu_khoa": "b2c",
+      "ma": "KN.ban.le"
+    },
+    {
+      "tu_khoa": "bán hàng trực tiếp",
+      "ma": "KN.ban.le"
+    },
+    {
+      "tu_khoa": "cửa hàng",
+      "ma": "KN.ban.le"
+    },
+    {
+      "tu_khoa": "kênh phân phối",
+      "ma": "KN.ban.kenh"
+    },
+    {
+      "tu_khoa": "đại lý",
+      "ma": "KN.ban.kenh"
+    },
+    {
+      "tu_khoa": "nhà phân phối",
+      "ma": "KN.ban.kenh"
+    },
+    {
+      "tu_khoa": "distribution",
+      "ma": "KN.ban.kenh"
+    },
+    {
+      "tu_khoa": "phát triển kênh",
+      "ma": "KN.ban.kenh"
+    },
+    {
+      "tu_khoa": "cskh",
+      "ma": "KN.ban.cskh"
+    },
+    {
+      "tu_khoa": "chăm sóc khách hàng",
+      "ma": "KN.ban.cskh"
+    },
+    {
+      "tu_khoa": "customer service",
+      "ma": "KN.ban.cskh"
+    },
+    {
+      "tu_khoa": "hậu mãi",
+      "ma": "KN.ban.cskh"
+    },
+    {
+      "tu_khoa": "telesale",
+      "ma": "KN.ban.telesale"
+    },
+    {
+      "tu_khoa": "telesales",
+      "ma": "KN.ban.telesale"
+    },
+    {
+      "tu_khoa": "gọi điện bán hàng",
+      "ma": "KN.ban.telesale"
+    },
+    {
+      "tu_khoa": "bán online",
+      "ma": "KN.ban.online"
+    },
+    {
+      "tu_khoa": "bán hàng online",
+      "ma": "KN.ban.online"
+    },
+    {
+      "tu_khoa": "sàn tmđt",
+      "ma": "KN.ban.online"
+    },
+    {
+      "tu_khoa": "shopee",
+      "ma": "KN.ban.online"
+    },
+    {
+      "tu_khoa": "lazada",
+      "ma": "KN.ban.online"
+    },
+    {
+      "tu_khoa": "tiktok shop",
+      "ma": "KN.ban.online"
+    },
+    {
+      "tu_khoa": "quản lý đội",
+      "ma": "KN.ql.doingu"
+    },
+    {
+      "tu_khoa": "quản lý nhân sự bán hàng",
+      "ma": "KN.ql.doingu"
+    },
+    {
+      "tu_khoa": "quản lý team",
+      "ma": "KN.ql.doingu"
+    },
+    {
+      "tu_khoa": "dẫn dắt đội",
+      "ma": "KN.ql.doingu"
+    },
+    {
+      "tu_khoa": "leadership",
+      "ma": "KN.ql.doingu"
+    },
+    {
+      "tu_khoa": "vận hành",
+      "ma": "KN.ql.vanhanh"
+    },
+    {
+      "tu_khoa": "operations",
+      "ma": "KN.ql.vanhanh"
+    },
+    {
+      "tu_khoa": "quản lý cửa hàng",
+      "ma": "KN.ql.vanhanh"
+    },
+    {
+      "tu_khoa": "quản lý chi nhánh",
+      "ma": "KN.ql.vanhanh"
+    },
+    {
+      "tu_khoa": "ngân sách",
+      "ma": "KN.ql.ngansach"
+    },
+    {
+      "tu_khoa": "budget",
+      "ma": "KN.ql.ngansach"
+    },
+    {
+      "tu_khoa": "p&l",
+      "ma": "KN.ql.ngansach"
+    },
+    {
+      "tu_khoa": "quản lý chi phí",
+      "ma": "KN.ql.ngansach"
+    },
+    {
+      "tu_khoa": "kiểm soát chi phí",
+      "ma": "KN.ql.ngansach"
+    },
+    {
+      "tu_khoa": "quản lý dự án",
+      "ma": "KN.ql.duan"
+    },
+    {
+      "tu_khoa": "project management",
+      "ma": "KN.ql.duan"
+    },
+    {
+      "tu_khoa": "pmp",
+      "ma": "KN.ql.duan"
+    },
+    {
+      "tu_khoa": "quy trình",
+      "ma": "KN.ql.quytrinh"
+    },
+    {
+      "tu_khoa": "sop",
+      "ma": "KN.ql.quytrinh"
+    },
+    {
+      "tu_khoa": "chuẩn hoá quy trình",
+      "ma": "KN.ql.quytrinh"
+    },
+    {
+      "tu_khoa": "sổ sách",
+      "ma": "KN.tc.sosach"
+    },
+    {
+      "tu_khoa": "kế toán tổng hợp",
+      "ma": "KN.tc.sosach"
+    },
+    {
+      "tu_khoa": "ghi sổ",
+      "ma": "KN.tc.sosach"
+    },
+    {
+      "tu_khoa": "hạch toán",
+      "ma": "KN.tc.sosach"
+    },
+    {
+      "tu_khoa": "thuế",
+      "ma": "KN.tc.thue"
+    },
+    {
+      "tu_khoa": "kê khai thuế",
+      "ma": "KN.tc.thue"
+    },
+    {
+      "tu_khoa": "quyết toán thuế",
+      "ma": "KN.tc.thue"
+    },
+    {
+      "tu_khoa": "hoá đơn điện tử",
+      "ma": "KN.tc.thue"
+    },
+    {
+      "tu_khoa": "báo cáo tài chính",
+      "ma": "KN.tc.baocao"
+    },
+    {
+      "tu_khoa": "bctc",
+      "ma": "KN.tc.baocao"
+    },
+    {
+      "tu_khoa": "báo cáo thuế",
+      "ma": "KN.tc.baocao"
+    },
+    {
+      "tu_khoa": "công nợ",
+      "ma": "KN.tc.congno"
+    },
+    {
+      "tu_khoa": "thu hồi công nợ",
+      "ma": "KN.tc.congno"
+    },
+    {
+      "tu_khoa": "phải thu phải trả",
+      "ma": "KN.tc.congno"
+    },
+    {
+      "tu_khoa": "tính lương",
+      "ma": "KN.tc.luong"
+    },
+    {
+      "tu_khoa": "bảng lương",
+      "ma": "KN.tc.luong"
+    },
+    {
+      "tu_khoa": "payroll",
+      "ma": "KN.tc.luong"
+    },
+    {
+      "tu_khoa": "misa",
+      "ma": "KN.tc.phanmem"
+    },
+    {
+      "tu_khoa": "fast",
+      "ma": "KN.tc.phanmem"
+    },
+    {
+      "tu_khoa": "phần mềm kế toán",
+      "ma": "KN.tc.phanmem"
+    },
+    {
+      "tu_khoa": "bravo",
+      "ma": "KN.tc.phanmem"
+    },
+    {
+      "tu_khoa": "sap fico",
+      "ma": "KN.tc.phanmem"
+    },
+    {
+      "tu_khoa": "sửa chữa",
+      "ma": "KN.kt.suachua"
+    },
+    {
+      "tu_khoa": "bảo trì",
+      "ma": "KN.kt.suachua"
+    },
+    {
+      "tu_khoa": "bảo dưỡng",
+      "ma": "KN.kt.suachua"
+    },
+    {
+      "tu_khoa": "maintenance",
+      "ma": "KN.kt.suachua"
+    },
+    {
+      "tu_khoa": "điện",
+      "ma": "KN.kt.dien"
+    },
+    {
+      "tu_khoa": "điện lạnh",
+      "ma": "KN.kt.dien"
+    },
+    {
+      "tu_khoa": "điện nước",
+      "ma": "KN.kt.dien"
+    },
+    {
+      "tu_khoa": "thợ điện",
+      "ma": "KN.kt.dien"
+    },
+    {
+      "tu_khoa": "cơ khí",
+      "ma": "KN.kt.cokhi"
+    },
+    {
+      "tu_khoa": "tiện",
+      "ma": "KN.kt.cokhi"
+    },
+    {
+      "tu_khoa": "phay",
+      "ma": "KN.kt.cokhi"
+    },
+    {
+      "tu_khoa": "hàn",
+      "ma": "KN.kt.cokhi"
+    },
+    {
+      "tu_khoa": "gia công",
+      "ma": "KN.kt.cokhi"
+    },
+    {
+      "tu_khoa": "thi công",
+      "ma": "KN.kt.xaydung"
+    },
+    {
+      "tu_khoa": "hoàn thiện",
+      "ma": "KN.kt.xaydung"
+    },
+    {
+      "tu_khoa": "thợ xây",
+      "ma": "KN.kt.xaydung"
+    },
+    {
+      "tu_khoa": "giám sát công trình",
+      "ma": "KN.kt.xaydung"
+    },
+    {
+      "tu_khoa": "vận hành máy",
+      "ma": "KN.kt.vanhanhmay"
+    },
+    {
+      "tu_khoa": "đứng máy",
+      "ma": "KN.kt.vanhanhmay"
+    },
+    {
+      "tu_khoa": "vận hành thiết bị",
+      "ma": "KN.kt.vanhanhmay"
+    },
+    {
+      "tu_khoa": "excel",
+      "ma": "KN.so.excel"
+    },
+    {
+      "tu_khoa": "google sheet",
+      "ma": "KN.so.excel"
+    },
+    {
+      "tu_khoa": "bảng tính",
+      "ma": "KN.so.excel"
+    },
+    {
+      "tu_khoa": "hàm excel",
+      "ma": "KN.so.excel"
+    },
+    {
+      "tu_khoa": "pivot",
+      "ma": "KN.so.excel"
+    },
+    {
+      "tu_khoa": "word",
+      "ma": "KN.so.word"
+    },
+    {
+      "tu_khoa": "soạn thảo",
+      "ma": "KN.so.word"
+    },
+    {
+      "tu_khoa": "văn bản",
+      "ma": "KN.so.word"
+    },
+    {
+      "tu_khoa": "crm",
+      "ma": "KN.so.crm"
+    },
+    {
+      "tu_khoa": "salesforce",
+      "ma": "KN.so.crm"
+    },
+    {
+      "tu_khoa": "hubspot",
+      "ma": "KN.so.crm"
+    },
+    {
+      "tu_khoa": "quản lý khách hàng bằng phần mềm",
+      "ma": "KN.so.crm"
+    },
+    {
+      "tu_khoa": "canva",
+      "ma": "KN.so.canva"
+    },
+    {
+      "tu_khoa": "thiết kế cơ bản",
+      "ma": "KN.so.canva"
+    },
+    {
+      "tu_khoa": "làm ảnh",
+      "ma": "KN.so.canva"
+    },
+    {
+      "tu_khoa": "ai",
+      "ma": "KN.so.ai"
+    },
+    {
+      "tu_khoa": "chatgpt",
+      "ma": "KN.so.ai"
+    },
+    {
+      "tu_khoa": "trí tuệ nhân tạo",
+      "ma": "KN.so.ai"
+    },
+    {
+      "tu_khoa": "công cụ ai",
+      "ma": "KN.so.ai"
+    },
+    {
+      "tu_khoa": "mạng xã hội",
+      "ma": "KN.so.mxh"
+    },
+    {
+      "tu_khoa": "facebook",
+      "ma": "KN.so.mxh"
+    },
+    {
+      "tu_khoa": "fanpage",
+      "ma": "KN.so.mxh"
+    },
+    {
+      "tu_khoa": "zalo oa",
+      "ma": "KN.so.mxh"
+    },
+    {
+      "tu_khoa": "social media",
+      "ma": "KN.so.mxh"
+    },
+    {
+      "tu_khoa": "kèm",
+      "ma": "KN.dt.kem"
+    },
+    {
+      "tu_khoa": "dạy kèm",
+      "ma": "KN.dt.kem"
+    },
+    {
+      "tu_khoa": "gia sư",
+      "ma": "KN.dt.kem"
+    },
+    {
+      "tu_khoa": "coaching",
+      "ma": "KN.dt.kem"
+    },
+    {
+      "tu_khoa": "tư vấn",
+      "ma": "KN.dt.tuvan"
+    },
+    {
+      "tu_khoa": "consulting",
+      "ma": "KN.dt.tuvan"
+    },
+    {
+      "tu_khoa": "cố vấn",
+      "ma": "KN.dt.tuvan"
+    },
+    {
+      "tu_khoa": "giảng dạy",
+      "ma": "KN.dt.giangday"
+    },
+    {
+      "tu_khoa": "đứng lớp",
+      "ma": "KN.dt.giangday"
+    },
+    {
+      "tu_khoa": "đào tạo nội bộ",
+      "ma": "KN.dt.giangday"
+    },
+    {
+      "tu_khoa": "trainer",
+      "ma": "KN.dt.giangday"
+    },
+    {
+      "tu_khoa": "nấu ăn",
+      "ma": "KN.dv.amthuc"
+    },
+    {
+      "tu_khoa": "bếp",
+      "ma": "KN.dv.amthuc"
+    },
+    {
+      "tu_khoa": "ẩm thực",
+      "ma": "KN.dv.amthuc"
+    },
+    {
+      "tu_khoa": "đầu bếp",
+      "ma": "KN.dv.amthuc"
+    },
+    {
+      "tu_khoa": "làm bánh",
+      "ma": "KN.dv.amthuc"
+    },
+    {
+      "tu_khoa": "chăm sóc",
+      "ma": "KN.dv.chamsoc"
+    },
+    {
+      "tu_khoa": "điều dưỡng",
+      "ma": "KN.dv.chamsoc"
+    },
+    {
+      "tu_khoa": "giúp việc",
+      "ma": "KN.dv.chamsoc"
+    },
+    {
+      "tu_khoa": "chăm bệnh",
+      "ma": "KN.dv.chamsoc"
+    },
+    {
+      "tu_khoa": "làm đẹp",
+      "ma": "KN.dv.lamdep"
+    },
+    {
+      "tu_khoa": "spa",
+      "ma": "KN.dv.lamdep"
+    },
+    {
+      "tu_khoa": "nail",
+      "ma": "KN.dv.lamdep"
+    },
+    {
+      "tu_khoa": "tóc",
+      "ma": "KN.dv.lamdep"
+    },
+    {
+      "tu_khoa": "thẩm mỹ",
+      "ma": "KN.dv.lamdep"
+    },
+    {
+      "tu_khoa": "vận chuyển",
+      "ma": "KN.dv.vanchuyen"
+    },
+    {
+      "tu_khoa": "giao hàng",
+      "ma": "KN.dv.vanchuyen"
+    },
+    {
+      "tu_khoa": "tài xế",
+      "ma": "KN.dv.vanchuyen"
+    },
+    {
+      "tu_khoa": "giao nhận",
+      "ma": "KN.dv.vanchuyen"
+    },
+    {
+      "tu_khoa": "hành chính",
+      "ma": "KN.hc.vanthu"
+    },
+    {
+      "tu_khoa": "văn thư",
+      "ma": "KN.hc.vanthu"
+    },
+    {
+      "tu_khoa": "thư ký",
+      "ma": "KN.hc.vanthu"
+    },
+    {
+      "tu_khoa": "hồ sơ giấy tờ",
+      "ma": "KN.hc.vanthu"
+    },
+    {
+      "tu_khoa": "lễ tân",
+      "ma": "KN.hc.lettan"
+    },
+    {
+      "tu_khoa": "tiếp tân",
+      "ma": "KN.hc.lettan"
+    },
+    {
+      "tu_khoa": "tiếp đón",
+      "ma": "KN.hc.lettan"
+    },
+    {
+      "tu_khoa": "nhập liệu",
+      "ma": "KN.hc.dulieu"
+    },
+    {
+      "tu_khoa": "data entry",
+      "ma": "KN.hc.dulieu"
+    },
+    {
+      "tu_khoa": "quản lý dữ liệu",
+      "ma": "KN.hc.dulieu"
+    },
+    {
+      "tu_khoa": "mua hàng",
+      "ma": "KN.hc.muahang"
+    },
+    {
+      "tu_khoa": "thu mua",
+      "ma": "KN.hc.muahang"
+    },
+    {
+      "tu_khoa": "purchasing",
+      "ma": "KN.hc.muahang"
+    },
+    {
+      "tu_khoa": "procurement",
+      "ma": "KN.hc.muahang"
+    },
+    {
+      "tu_khoa": "tuyển dụng",
+      "ma": "KN.ns.tuyendung"
+    },
+    {
+      "tu_khoa": "recruitment",
+      "ma": "KN.ns.tuyendung"
+    },
+    {
+      "tu_khoa": "headhunt",
+      "ma": "KN.ns.tuyendung"
+    },
+    {
+      "tu_khoa": "c&b",
+      "ma": "KN.ns.cb"
+    },
+    {
+      "tu_khoa": "lương thưởng",
+      "ma": "KN.ns.cb"
+    },
+    {
+      "tu_khoa": "phúc lợi",
+      "ma": "KN.ns.cb"
+    },
+    {
+      "tu_khoa": "bhxh",
+      "ma": "KN.ns.cb"
+    },
+    {
+      "tu_khoa": "đào tạo nhân sự",
+      "ma": "KN.ns.daotao"
+    },
+    {
+      "tu_khoa": "l&d",
+      "ma": "KN.ns.daotao"
+    },
+    {
+      "tu_khoa": "phát triển nhân sự",
+      "ma": "KN.ns.daotao"
+    },
+    {
+      "tu_khoa": "qc",
+      "ma": "KN.sx.qc"
+    },
+    {
+      "tu_khoa": "kcs",
+      "ma": "KN.sx.qc"
+    },
+    {
+      "tu_khoa": "kiểm phẩm",
+      "ma": "KN.sx.qc"
+    },
+    {
+      "tu_khoa": "chất lượng",
+      "ma": "KN.sx.qc"
+    },
+    {
+      "tu_khoa": "kho",
+      "ma": "KN.sx.kho"
+    },
+    {
+      "tu_khoa": "warehouse",
+      "ma": "KN.sx.kho"
+    },
+    {
+      "tu_khoa": "quản lý kho",
+      "ma": "KN.sx.kho"
+    },
+    {
+      "tu_khoa": "xuất nhập kho",
+      "ma": "KN.sx.kho"
+    },
+    {
+      "tu_khoa": "chuỗi cung ứng",
+      "ma": "KN.sx.cungung"
+    },
+    {
+      "tu_khoa": "supply chain",
+      "ma": "KN.sx.cungung"
+    },
+    {
+      "tu_khoa": "cung ứng",
+      "ma": "KN.sx.cungung"
+    },
+    {
+      "tu_khoa": "điều độ",
+      "ma": "KN.sx.dieudo"
+    },
+    {
+      "tu_khoa": "kế hoạch sản xuất",
+      "ma": "KN.sx.dieudo"
+    },
+    {
+      "tu_khoa": "planning sản xuất",
+      "ma": "KN.sx.dieudo"
+    },
+    {
+      "tu_khoa": "nội dung",
+      "ma": "KN.mkt.noidung"
+    },
+    {
+      "tu_khoa": "content",
+      "ma": "KN.mkt.noidung"
+    },
+    {
+      "tu_khoa": "viết bài",
+      "ma": "KN.mkt.noidung"
+    },
+    {
+      "tu_khoa": "copywriting",
+      "ma": "KN.mkt.noidung"
+    },
+    {
+      "tu_khoa": "quảng cáo",
+      "ma": "KN.mkt.quangcao"
+    },
+    {
+      "tu_khoa": "ads",
+      "ma": "KN.mkt.quangcao"
+    },
+    {
+      "tu_khoa": "facebook ads",
+      "ma": "KN.mkt.quangcao"
+    },
+    {
+      "tu_khoa": "google ads",
+      "ma": "KN.mkt.quangcao"
+    },
+    {
+      "tu_khoa": "chạy ads",
+      "ma": "KN.mkt.quangcao"
+    },
+    {
+      "tu_khoa": "thương hiệu",
+      "ma": "KN.mkt.thuonghieu"
+    },
+    {
+      "tu_khoa": "branding",
+      "ma": "KN.mkt.thuonghieu"
+    },
+    {
+      "tu_khoa": "marketing tổng",
+      "ma": "KN.mkt.thuonghieu"
+    },
+    {
+      "tu_khoa": "sự kiện",
+      "ma": "KN.mkt.sukien"
+    },
+    {
+      "tu_khoa": "event",
+      "ma": "KN.mkt.sukien"
+    },
+    {
+      "tu_khoa": "tổ chức chương trình",
+      "ma": "KN.mkt.sukien"
+    },
+    {
+      "tu_khoa": "tiếng anh",
+      "ma": "KN.nn.anh"
+    },
+    {
+      "tu_khoa": "english",
+      "ma": "KN.nn.anh"
+    },
+    {
+      "tu_khoa": "toeic",
+      "ma": "KN.nn.anh"
+    },
+    {
+      "tu_khoa": "ielts",
+      "ma": "KN.nn.anh"
+    },
+    {
+      "tu_khoa": "tiếng trung",
+      "ma": "KN.nn.trung"
+    },
+    {
+      "tu_khoa": "hoa ngữ",
+      "ma": "KN.nn.trung"
+    },
+    {
+      "tu_khoa": "hsk",
+      "ma": "KN.nn.trung"
+    },
+    {
+      "tu_khoa": "tiếng hàn",
+      "ma": "KN.nn.han"
+    },
+    {
+      "tu_khoa": "topik",
+      "ma": "KN.nn.han"
+    },
+    {
+      "tu_khoa": "tiếng nhật",
+      "ma": "KN.nn.nhat"
+    },
+    {
+      "tu_khoa": "jlpt",
+      "ma": "KN.nn.nhat"
+    },
+    {
+      "tu_khoa": "quản lý 20+",
+      "ma": "KN.ql.doingu"
+    },
+    {
+      "tu_khoa": "quản lý đội ngũ bán hàng",
+      "ma": "KN.ql.doingu"
+    },
+    {
+      "tu_khoa": "kế toán thuế",
+      "ma": "KN.tc.thue"
+    },
+    {
+      "tu_khoa": "chăm sóc khách hàng lớn",
+      "ma": "KN.ban.cskh"
+    }
+  ],
+  "autocomplete": {
+    "K1.nganh": [
+      "Hàng tiêu dùng nhanh (FMCG)",
+      "Bán lẻ",
+      "Bất động sản",
+      "Xây dựng",
+      "Sản xuất",
+      "Kho vận – Logistics",
+      "Tài chính – Ngân hàng",
+      "Bảo hiểm",
+      "Giáo dục – Đào tạo",
+      "Y tế – Chăm sóc sức khoẻ",
+      "Nhà hàng – Ẩm thực (F&B)",
+      "Du lịch – Khách sạn",
+      "Công nghệ thông tin",
+      "Dệt may – Da giày",
+      "Nông nghiệp – Thực phẩm",
+      "Ô tô – Xe máy",
+      "Mỹ phẩm – Làm đẹp",
+      "Truyền thông – Quảng cáo",
+      "Hộ kinh doanh / tự doanh"
+    ],
+    "K1.chucdanh": [
+      "Giám đốc Kinh doanh",
+      "Trưởng phòng Kinh doanh",
+      "Nhân viên Kinh doanh",
+      "Kế toán trưởng",
+      "Kế toán tổng hợp",
+      "Quản lý cửa hàng",
+      "Trưởng ca sản xuất",
+      "Thợ điện",
+      "Đầu bếp",
+      "Trợ lý Giám đốc",
+      "Trưởng phòng Nhân sự",
+      "Quản lý kho",
+      "Giám sát bán hàng",
+      "Chuyên viên Marketing"
+    ],
+    "K2.bangcap": [
+      "Chứng chỉ hành nghề kế toán",
+      "Chứng chỉ Đại lý thuế",
+      "Chứng chỉ Kế toán trưởng",
+      "Chứng chỉ An toàn lao động",
+      "Bằng lái xe hạng B2",
+      "Bằng lái xe hạng C",
+      "Chứng chỉ nghề Điện",
+      "Chứng chỉ nghề Hàn",
+      "TOEIC",
+      "IELTS",
+      "Cử nhân Đại học",
+      "Cao đẳng nghề"
+    ],
+    "skills": [
+      {
+        "nhom": "Bán hàng & thị trường",
+        "ma": "KN.ban.b2b",
+        "nhan": "Bán hàng doanh nghiệp (B2B)"
+      },
+      {
+        "nhom": "Bán hàng & thị trường",
+        "ma": "KN.ban.le",
+        "nhan": "Bán lẻ (B2C)"
+      },
+      {
+        "nhom": "Bán hàng & thị trường",
+        "ma": "KN.ban.kenh",
+        "nhan": "Xây & quản lý kênh phân phối"
+      },
+      {
+        "nhom": "Bán hàng & thị trường",
+        "ma": "KN.ban.cskh",
+        "nhan": "Chăm sóc khách hàng"
+      },
+      {
+        "nhom": "Bán hàng & thị trường",
+        "ma": "KN.ban.telesale",
+        "nhan": "Bán qua điện thoại (telesale)"
+      },
+      {
+        "nhom": "Bán hàng & thị trường",
+        "ma": "KN.ban.online",
+        "nhan": "Bán hàng online"
+      },
+      {
+        "nhom": "Quản lý & điều hành",
+        "ma": "KN.ql.doingu",
+        "nhan": "Quản lý đội ngũ"
+      },
+      {
+        "nhom": "Quản lý & điều hành",
+        "ma": "KN.ql.vanhanh",
+        "nhan": "Quản lý vận hành"
+      },
+      {
+        "nhom": "Quản lý & điều hành",
+        "ma": "KN.ql.ngansach",
+        "nhan": "Quản lý ngân sách / doanh thu-chi phí"
+      },
+      {
+        "nhom": "Quản lý & điều hành",
+        "ma": "KN.ql.duan",
+        "nhan": "Quản lý dự án"
+      },
+      {
+        "nhom": "Quản lý & điều hành",
+        "ma": "KN.ql.quytrinh",
+        "nhan": "Xây dựng quy trình"
+      },
+      {
+        "nhom": "Tài chính – Kế toán",
+        "ma": "KN.tc.sosach",
+        "nhan": "Kế toán sổ sách"
+      },
+      {
+        "nhom": "Tài chính – Kế toán",
+        "ma": "KN.tc.thue",
+        "nhan": "Kê khai thuế"
+      },
+      {
+        "nhom": "Tài chính – Kế toán",
+        "ma": "KN.tc.baocao",
+        "nhan": "Báo cáo tài chính"
+      },
+      {
+        "nhom": "Tài chính – Kế toán",
+        "ma": "KN.tc.congno",
+        "nhan": "Quản lý công nợ"
+      },
+      {
+        "nhom": "Tài chính – Kế toán",
+        "ma": "KN.tc.luong",
+        "nhan": "Tính lương"
+      },
+      {
+        "nhom": "Tài chính – Kế toán",
+        "ma": "KN.tc.phanmem",
+        "nhan": "Phần mềm kế toán"
+      },
+      {
+        "nhom": "Kỹ thuật & tay nghề",
+        "ma": "KN.kt.suachua",
+        "nhan": "Sửa chữa – bảo trì"
+      },
+      {
+        "nhom": "Kỹ thuật & tay nghề",
+        "ma": "KN.kt.dien",
+        "nhan": "Điện – điện lạnh"
+      },
+      {
+        "nhom": "Kỹ thuật & tay nghề",
+        "ma": "KN.kt.cokhi",
+        "nhan": "Cơ khí"
+      },
+      {
+        "nhom": "Kỹ thuật & tay nghề",
+        "ma": "KN.kt.xaydung",
+        "nhan": "Xây dựng – hoàn thiện"
+      },
+      {
+        "nhom": "Kỹ thuật & tay nghề",
+        "ma": "KN.kt.vanhanhmay",
+        "nhan": "Vận hành máy móc"
+      },
+      {
+        "nhom": "Số hoá & công cụ",
+        "ma": "KN.so.excel",
+        "nhan": "Excel / bảng tính"
+      },
+      {
+        "nhom": "Số hoá & công cụ",
+        "ma": "KN.so.word",
+        "nhan": "Soạn thảo văn bản"
+      },
+      {
+        "nhom": "Số hoá & công cụ",
+        "ma": "KN.so.crm",
+        "nhan": "Phần mềm CRM"
+      },
+      {
+        "nhom": "Số hoá & công cụ",
+        "ma": "KN.so.canva",
+        "nhan": "Thiết kế cơ bản (Canva)"
+      },
+      {
+        "nhom": "Số hoá & công cụ",
+        "ma": "KN.so.ai",
+        "nhan": "Dùng công cụ AI"
+      },
+      {
+        "nhom": "Số hoá & công cụ",
+        "ma": "KN.so.mxh",
+        "nhan": "Quản lý mạng xã hội"
+      },
+      {
+        "nhom": "Đào tạo & tư vấn",
+        "ma": "KN.dt.kem",
+        "nhan": "Kèm / dạy 1-1"
+      },
+      {
+        "nhom": "Đào tạo & tư vấn",
+        "ma": "KN.dt.tuvan",
+        "nhan": "Tư vấn chuyên môn"
+      },
+      {
+        "nhom": "Đào tạo & tư vấn",
+        "ma": "KN.dt.giangday",
+        "nhan": "Giảng dạy / đứng lớp"
+      },
+      {
+        "nhom": "Dịch vụ tại chỗ",
+        "ma": "KN.dv.amthuc",
+        "nhan": "Ẩm thực / bếp"
+      },
+      {
+        "nhom": "Dịch vụ tại chỗ",
+        "ma": "KN.dv.chamsoc",
+        "nhan": "Chăm sóc (người/bệnh/trẻ)"
+      },
+      {
+        "nhom": "Dịch vụ tại chỗ",
+        "ma": "KN.dv.lamdep",
+        "nhan": "Làm đẹp / spa"
+      },
+      {
+        "nhom": "Dịch vụ tại chỗ",
+        "ma": "KN.dv.vanchuyen",
+        "nhan": "Vận chuyển / giao nhận"
+      },
+      {
+        "nhom": "Hành chính – văn phòng",
+        "ma": "KN.hc.vanthu",
+        "nhan": "Văn thư – hành chính"
+      },
+      {
+        "nhom": "Hành chính – văn phòng",
+        "ma": "KN.hc.lettan",
+        "nhan": "Lễ tân – tiếp đón"
+      },
+      {
+        "nhom": "Hành chính – văn phòng",
+        "ma": "KN.hc.dulieu",
+        "nhan": "Nhập & quản lý dữ liệu"
+      },
+      {
+        "nhom": "Hành chính – văn phòng",
+        "ma": "KN.hc.muahang",
+        "nhan": "Mua hàng – thu mua"
+      },
+      {
+        "nhom": "Nhân sự",
+        "ma": "KN.ns.tuyendung",
+        "nhan": "Tuyển dụng"
+      },
+      {
+        "nhom": "Nhân sự",
+        "ma": "KN.ns.cb",
+        "nhan": "Lương thưởng – phúc lợi (C&B)"
+      },
+      {
+        "nhom": "Nhân sự",
+        "ma": "KN.ns.daotao",
+        "nhan": "Đào tạo & phát triển nhân sự"
+      },
+      {
+        "nhom": "Sản xuất – kho vận",
+        "ma": "KN.sx.qc",
+        "nhan": "Kiểm soát chất lượng (QC)"
+      },
+      {
+        "nhom": "Sản xuất – kho vận",
+        "ma": "KN.sx.kho",
+        "nhan": "Quản lý kho"
+      },
+      {
+        "nhom": "Sản xuất – kho vận",
+        "ma": "KN.sx.cungung",
+        "nhan": "Chuỗi cung ứng"
+      },
+      {
+        "nhom": "Sản xuất – kho vận",
+        "ma": "KN.sx.dieudo",
+        "nhan": "Điều độ sản xuất"
+      },
+      {
+        "nhom": "Marketing – nội dung",
+        "ma": "KN.mkt.noidung",
+        "nhan": "Sáng tạo nội dung"
+      },
+      {
+        "nhom": "Marketing – nội dung",
+        "ma": "KN.mkt.quangcao",
+        "nhan": "Chạy quảng cáo"
+      },
+      {
+        "nhom": "Marketing – nội dung",
+        "ma": "KN.mkt.thuonghieu",
+        "nhan": "Xây thương hiệu"
+      },
+      {
+        "nhom": "Marketing – nội dung",
+        "ma": "KN.mkt.sukien",
+        "nhan": "Tổ chức sự kiện"
+      },
+      {
+        "nhom": "Ngoại ngữ",
+        "ma": "KN.nn.anh",
+        "nhan": "Tiếng Anh"
+      },
+      {
+        "nhom": "Ngoại ngữ",
+        "ma": "KN.nn.trung",
+        "nhan": "Tiếng Trung"
+      },
+      {
+        "nhom": "Ngoại ngữ",
+        "ma": "KN.nn.han",
+        "nhan": "Tiếng Hàn"
+      },
+      {
+        "nhom": "Ngoại ngữ",
+        "ma": "KN.nn.nhat",
+        "nhan": "Tiếng Nhật"
+      }
+    ]
+  },
+  "ho_so_mau": [
+    {
+      "ho_ten": "Trần Văn Minh",
+      "muc_tieu": "Trưởng/Giám đốc Kinh doanh",
+      "K1": {
+        "nganh": "NG.fmcg",
+        "chucdanh": "Giám đốc Kinh doanh",
+        "capbac": "giám đốc",
+        "sonam": 18,
+        "quymo": "40 người · ~200 tỷ/năm",
+        "tunglamchu": false
+      },
+      "K2": {
+        "donghe": null,
+        "matbang": null,
+        "bangcap": [
+          "Cử nhân QTKD"
+        ],
+        "tienmat": null,
+        "_trangthai": "còn trống"
+      },
+      "K3": {
+        "tinh": "TP.HCM",
+        "banklinh": "~15km"
+      },
+      "K4": {
+        "congtycu": [
+          "Công ty Sữa ABC",
+          "Công ty XYZ"
+        ],
+        "nganhcu": [
+          "NG.fmcg"
+        ],
+        "khachcu": null,
+        "_trangthai": "còn trống một phần"
+      },
+      "ky_nang": [
+        "KN.ban.b2b",
+        "KN.ban.kenh",
+        "KN.ban.cskh",
+        "KN.ql.doingu",
+        "KN.ql.ngansach",
+        "KN.so.excel",
+        "KN.nn.anh"
+      ],
+      "nhan": {
+        "nguon": "CV + phỏng vấn",
+        "trang_thai": "đã xác nhận (Khối 1,3) · còn trống (Khối 2,4)"
+      }
+    },
+    {
+      "ho_ten": "Nguyễn Thị Nga",
+      "muc_tieu": "Kế toán tổng hợp / Kế toán trưởng",
+      "K1": {
+        "nganh": "NG.sanxuat",
+        "chucdanh": "Kế toán trưởng",
+        "capbac": "quản lý",
+        "sonam": 15,
+        "quymo": "nhóm 4 kế toán",
+        "tunglamchu": false
+      },
+      "K2": {
+        "donghe": null,
+        "matbang": null,
+        "bangcap": [
+          "Chứng chỉ Kế toán trưởng",
+          "Chứng chỉ Đại lý thuế"
+        ],
+        "tienmat": null,
+        "_trangthai": "còn trống"
+      },
+      "K3": {
+        "tinh": "Bình Dương",
+        "banklinh": "~20km"
+      },
+      "K4": {
+        "congtycu": [
+          "Công ty Nhựa DEF"
+        ],
+        "nganhcu": [
+          "NG.sanxuat"
+        ],
+        "khachcu": null,
+        "_trangthai": "còn trống"
+      },
+      "ky_nang": [
+        "KN.tc.sosach",
+        "KN.tc.thue",
+        "KN.tc.baocao",
+        "KN.tc.congno",
+        "KN.tc.phanmem",
+        "KN.so.excel",
+        "KN.hc.dulieu"
+      ],
+      "nhan": {
+        "nguon": "CV",
+        "trang_thai": "đã xác nhận (Khối 1,3) · còn trống (Khối 2,4)"
+      }
+    }
+  ],
+  "jd_mau": [
+    {
+      "vi_tri": "Trưởng phòng Kinh doanh",
+      "nganh": "NG.fmcg",
+      "yeu_cau": [
+        {
+          "nhan": "Kinh nghiệm bán hàng B2B",
+          "ma": "KN.ban.b2b",
+          "loai": "lõi",
+          "diem": 18
+        },
+        {
+          "nhan": "Xây & quản lý kênh phân phối",
+          "ma": "KN.ban.kenh",
+          "loai": "lõi",
+          "diem": 18
+        },
+        {
+          "nhan": "Quản lý đội ngũ 20+ (ghi rõ con số)",
+          "ma": "KN.ql.doingu",
+          "loai": "lõi",
+          "diem": 17
+        },
+        {
+          "nhan": "Thành thạo Salesforce CRM",
+          "ma": "KN.so.crm",
+          "loai": "lõi",
+          "diem": 20
+        },
+        {
+          "nhan": "Tiếng Anh giao tiếp",
+          "ma": "KN.nn.anh",
+          "loai": "phụ",
+          "diem": 12
+        },
+        {
+          "nhan": "Tối thiểu 8 năm kinh nghiệm",
+          "ma": "ATTR.sonam>=8",
+          "loai": "điều kiện",
+          "diem": 6
+        },
+        {
+          "nhan": "Quản lý ngân sách vùng",
+          "ma": "KN.ql.ngansach",
+          "loai": "phụ",
+          "diem": 9
+        }
+      ]
+    },
+    {
+      "vi_tri": "Kế toán tổng hợp",
+      "nganh": "NG.sanxuat",
+      "yeu_cau": [
+        {
+          "nhan": "Kế toán tổng hợp / sổ sách",
+          "ma": "KN.tc.sosach",
+          "loai": "lõi",
+          "diem": 25
+        },
+        {
+          "nhan": "Kê khai & quyết toán thuế",
+          "ma": "KN.tc.thue",
+          "loai": "lõi",
+          "diem": 25
+        },
+        {
+          "nhan": "Lập báo cáo tài chính",
+          "ma": "KN.tc.baocao",
+          "loai": "lõi",
+          "diem": 20
+        },
+        {
+          "nhan": "Thành thạo phần mềm MISA",
+          "ma": "KN.tc.phanmem",
+          "loai": "lõi",
+          "diem": 20
+        },
+        {
+          "nhan": "Excel tốt",
+          "ma": "KN.so.excel",
+          "loai": "phụ",
+          "diem": 10
+        }
+      ]
+    }
+  ],
+  "cham_mau": {
+    "tong": 100,
+    "lan_dau": 54,
+    "gio": 71,
+    "con_viet_lai": [
+      {
+        "nhan": "Quản lý ngân sách vùng",
+        "ma": "KN.ql.ngansach",
+        "diem": 9
+      }
+    ],
+    "con_phai_hoc": [
+      {
+        "nhan": "Thành thạo Salesforce CRM",
+        "ma": "KN.so.crm",
+        "diem": 20
+      }
+    ]
+  },
+  "mo_hinh_mau": {
+    "ma": "MH.ketoan_thue_hokd",
+    "ten": "Dịch vụ kế toán – thuế – hoá đơn cho hộ kinh doanh",
+    "ky_nang_can": [
+      {
+        "ma": "KN.tc.sosach",
+        "loai": "lõi"
+      },
+      {
+        "ma": "KN.tc.thue",
+        "loai": "lõi"
+      },
+      {
+        "ma": "KN.tc.baocao",
+        "loai": "lõi"
+      },
+      {
+        "ma": "KN.tc.phanmem",
+        "loai": "lõi"
+      },
+      {
+        "ma": "KN.ban.cskh",
+        "loai": "phụ (đi chào dịch vụ)"
+      }
+    ],
+    "von_can": "thấp",
+    "dia_ban": "tại chỗ / theo tỉnh"
+  },
+  "mo_hinh_map": {
+    "khop": [
+      "KN.tc.sosach",
+      "KN.tc.thue",
+      "KN.tc.baocao",
+      "KN.tc.phanmem"
+    ],
+    "thieu": [
+      "KN.ban.cskh"
+    ]
+  }
+}
