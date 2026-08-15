@@ -53,6 +53,8 @@
   .msg{font-size:13px;padding:9px 12px;border-radius:10px;margin:8px 0;display:none}.msg.err{background:#FEE2E2;color:#991B1B;display:block}.msg.ok{background:#DCFCE7;color:#166534;display:block}
   .center{text-align:center;padding:40px 16px}
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 </head>
 <body>
 <header><div class="hd">
@@ -125,15 +127,46 @@ function scrHoSo(){
    +'<div class="blk"><h3>📍 Khối 3 · Ở đâu</h3>'+fRows(k[3])+'</div>'
    +'<div class="blk"><h3>🎒 Khối 2 · Còn sẵn gì <span class="badge b-empty">CV không chứa</span></h3>'+fRows(k[2])+'</div>'
    +'<div class="blk"><h3>🤝 Khối 4 · Quen ai <span class="badge b-empty">CV không chứa</span></h3>'+fRows(k[4])+'</div>'
-   +'<div class="blk"><h3>📄 Dán CV để gợi ý kỹ năng</h3>'
-   +'<textarea class="in" id="cvText" placeholder="Dán nội dung CV của anh chị (kinh nghiệm, kỹ năng, phần mềm…). Hệ tự tìm kỹ năng khớp để anh chị tick."></textarea>'
-   +'<button class="btn sec mini" onclick="bocCV()">✨ Bóc tách kỹ năng từ CV</button>'
+   +'<div class="blk"><h3>📄 Tải CV để AI tự điền hồ sơ</h3>'
+   +'<input type="file" accept=".pdf,.docx,.txt" onchange="onCVFile(event)" style="margin:6px 0;font-size:13px;width:100%">'
+   +'<textarea class="in" id="cvText" placeholder="…hoặc copy chữ trong CV rồi dán vào đây"></textarea>'
+   +'<button class="btn" id="btnAI" onclick="aiParse()">✨ AI bóc tách đầy đủ (ngành · chức danh · số năm · kỹ năng)</button>'
+   +'<button class="btn sec mini" onclick="bocCV()">Hoặc chỉ gợi ý kỹ năng (không cần AI)</button>'
    +'<div id="cvSug" style="margin-top:10px"></div></div>'
    +'<div class="blk"><h3>⭐ Kỹ năng của tôi</h3><div id="skchips">'+sk+'</div>'
    +'<div class="ac"><input class="in" id="skin" placeholder="Gõ để tìm kỹ năng… (vd: bán hàng, kế toán)" oninput="acSkill(this.value)" autocomplete="off"><div id="acbox"></div></div>'
    +'<div class="msg" id="m1"></div></div>'
    +'<div class="note">Thêm kỹ năng xong, sang bước 2 dán tin tuyển dụng để máy chấm mức khớp thật.</div>'
    +'<button class="btn" onclick="go(1)">Tiếp: Chấm CV × JD →</button></div>';
+}
+function extractPDF(file){ return file.arrayBuffer().then(function(buf){
+  if(window.pdfjsLib){ try{ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; }catch(e){} }
+  return pdfjsLib.getDocument({data:buf}).promise.then(function(pdf){
+    var chain=Promise.resolve(''); for(var p=1;p<=pdf.numPages;p++){ (function(pn){ chain=chain.then(function(acc){ return pdf.getPage(pn).then(function(pg){return pg.getTextContent();}).then(function(tc){ return acc+tc.items.map(function(i){return i.str;}).join(' ')+'\n'; }); }); })(p); }
+    return chain;
+  });
+}); }
+function extractDOCX(file){ return file.arrayBuffer().then(function(buf){ return mammoth.extractRawText({arrayBuffer:buf}).then(function(r){return r.value;}); }); }
+function onCVFile(e){
+  var f=e.target.files&&e.target.files[0]; if(!f)return;
+  var nm=f.name.toLowerCase(), ta=document.getElementById('cvText'), sug=document.getElementById('cvSug');
+  ta.value='Đang đọc file…'; sug.innerHTML='';
+  var done=function(txt){ ta.value=(txt||'').trim(); sug.innerHTML='<div class="note">Đã đọc xong CV. Bấm "AI bóc tách đầy đủ" để tự điền hồ sơ.</div>'; };
+  var fail=function(){ ta.value=''; sug.innerHTML='<div class="note">Không đọc được file — anh chị copy chữ trong CV rồi dán vào ô.</div>'; };
+  if(nm.slice(-4)==='.txt') f.text().then(done).catch(fail);
+  else if(nm.slice(-4)==='.pdf'){ if(!window.pdfjsLib){fail();return;} extractPDF(f).then(done).catch(fail); }
+  else if(nm.slice(-5)==='.docx'){ if(!window.mammoth){fail();return;} extractDOCX(f).then(done).catch(fail); }
+  else if(nm.slice(-4)==='.doc') sug.innerHTML='<div class="note">File .doc cũ khó đọc — lưu thành .docx hoặc PDF, hoặc copy chữ dán vào ô.</div>';
+  else fail();
+}
+function aiParse(){
+  var t=(document.getElementById('cvText').value||'').trim();
+  if(t.length<30){msg('m1','err','Tải CV hoặc dán nội dung CV trước nhé.');return;}
+  var b=document.getElementById('btnAI'); b.disabled=true; b.textContent='AI đang đọc CV…';
+  api('/profile/cv/parse',{method:'POST',body:JSON.stringify({text:t})}).then(function(r){
+    PROFILE=r.profile; render();
+    setTimeout(function(){var s=document.getElementById('cvSug'); if(s) s.innerHTML='<div class="msg ok" style="display:block">✓ AI đã điền '+r.filled+' ô hồ sơ + '+r.skillsAdded+' kỹ năng từ CV. Anh chị rà lại rồi sang bước Chấm.</div>';},60);
+  }).catch(function(e){msg('m1','err','AI bóc tách lỗi: '+e.message); b.disabled=false; b.textContent='✨ AI bóc tách đầy đủ (ngành · chức danh · số năm · kỹ năng)';});
 }
 function bocCV(){
   var t=(document.getElementById('cvText').value||'').toLowerCase();

@@ -28,6 +28,7 @@ import { buildRouter } from './routes/profile-build';
 import { interviewRouter } from './routes/profile-interview';
 import { letterRouter } from './routes/profile-letter';
 import { labanRouter } from './routes/profile-laban';
+import { cvParseRouter } from './routes/profile-cv';
 
 const app = express();
 app.set('trust proxy', 1);  // behind nginx
@@ -98,6 +99,7 @@ app.use('/api/profile/build', buildRouter);
 app.use('/api/profile/interview', interviewRouter);
 app.use('/api/profile/letter', letterRouter);
 app.use('/api/profile/laban', labanRouter);
+app.use('/api/profile', cvParseRouter);
 
 // ── Error handler ─────────────────────────────────────────
 app.use(errorHandler);
