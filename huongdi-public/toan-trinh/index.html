@@ -102,7 +102,7 @@ function loadProfile(){ api('/profile').then(function(p){PROFILE=p;render()}).ca
 function render(){
   if(!PROFILE)return; stepper();
   var s=document.getElementById('screen');
-  if(cur===0){ s.innerHTML=scrHoSo(); loadCompletion(); }
+  if(cur===0){ s.innerHTML=scrHoSo(); loadCompletion(); loadCVs(); }
   else if(cur===1) s.innerHTML=scrCham();
   else if(cur===2) s.innerHTML=scrLaBan();
   else if(cur===3) s.innerHTML=scrThu();
@@ -137,6 +137,7 @@ function scrHoSo(){
    +'<div class="ac"><input class="in" id="skin" placeholder="Gõ để tìm kỹ năng… (vd: bán hàng, kế toán)" oninput="acSkill(this.value)" autocomplete="off"><div id="acbox"></div></div>'
    +'<div class="msg" id="m1"></div></div>'
    +'<div class="blk"><h3>📋 Hồ sơ cần hoàn thiện <span id="htCount" class="badge b-empty"></span></h3><div id="htPanel"><div class="note">Đang tải…</div></div></div>'
+   +'<div class="blk"><h3>📄 CV của tôi</h3><div id="cvPanel"><div class="note">Đang tải…</div></div></div>'
    +'<div class="note">Thêm kỹ năng xong, sang bước 2 dán tin tuyển dụng để máy chấm mức khớp thật.</div>'
    +'<button class="btn" onclick="go(1)">Tiếp: Chấm CV × JD →</button></div>';
 }
@@ -232,6 +233,54 @@ function htDone(id){
   api('/profile/completion/'+id+'/done',{method:'POST',body:'{}'}).then(function(){ loadProfile(); }).catch(function(e){alert(e.message);});
 }
 
+/* ---- CV của tôi (Dashboard) ---- */
+function loadCVs(){
+  var panel=document.getElementById('cvPanel'); if(!panel)return;
+  api('/profile/cv/list').then(function(list){
+    var goc=list.filter(function(x){return x.isOriginal;})[0];
+    var hts=list.filter(function(x){return !x.isOriginal;});
+    var h='<div class="ck have" style="display:block"><div><b>📌 Bản gốc</b> <span class="badge b-ok">giữ nguyên</span></div>';
+    if(goc){
+      h+='<textarea class="in" id="cvGocText" style="min-height:120px">'+esc(goc.parsedText||'')+'</textarea>'
+        +'<button class="btn sec mini" onclick="cvSaveGoc(\''+goc.id+'\')">💾 Lưu bản gốc</button> '
+        +'<button class="btn sec mini" onclick="cvCopyGoc()">📋 Copy</button>';
+    } else {
+      h+='<div class="note">Chưa có CV gốc — tải CV lên ở mục trên để tạo, hoặc tạo bản hoàn thiện rồi "đặt làm gốc".</div>';
+    }
+    h+='</div>';
+    if(hts.length){
+      h+='<div style="margin:8px 0 4px"><b>✨ Bản hoàn thiện theo JD</b> <span class="badge b-empty">'+hts.length+'</span></div>';
+      h+=hts.map(function(x){
+        return '<div class="ck miss" style="display:block"><div><b>'+esc(x.label||'CV hoàn thiện')+'</b></div>'
+          +'<textarea class="in" style="min-height:100px">'+esc(x.parsedText||'')+'</textarea>'
+          +'<button class="btn sec mini" onclick="cvCopyNear(this)">📋 Copy</button> '
+          +'<button class="btn sec mini" onclick="cvDatGoc(\''+x.id+'\')">⭐ Đặt làm bản gốc</button></div>';
+      }).join('');
+    } else {
+      h+='<div class="note" style="margin-top:6px">Chưa có bản hoàn thiện. Chấm 1 tin tuyển dụng (bước 2) rồi bấm "📄 Tạo CV hoàn thiện cho JD này".</div>';
+    }
+    panel.innerHTML=h;
+  }).catch(function(e){ panel.innerHTML='<div class="note">Không tải được CV: '+esc(e.message)+'</div>'; });
+}
+function cvSaveGoc(id){
+  var t=(document.getElementById('cvGocText')||{}).value||'';
+  api('/profile/cv/'+id,{method:'PUT',body:JSON.stringify({parsedText:t})}).then(function(){ msg('m1','ok','Đã lưu bản gốc.'); }).catch(function(e){alert(e.message);});
+}
+function cvDatGoc(id){
+  if(!confirm('Lấy bản hoàn thiện này GHI ĐÈ lên bản gốc? (Bản gốc cũ sẽ bị thay — đây là quyết định của anh/chị)')) return;
+  api('/profile/cv/'+id+'/dat-goc',{method:'POST',body:'{}'}).then(function(){ loadCVs(); msg('m1','ok','Đã đặt làm bản gốc.'); }).catch(function(e){alert(e.message);});
+}
+function cvCopyGoc(){ var el=document.getElementById('cvGocText'); if(el){el.select(); try{document.execCommand('copy');}catch(e){} msg('m1','ok','Đã copy bản gốc.'); } }
+function cvCopyNear(btn){ var ta=btn.parentNode.getElementsByTagName('textarea')[0]; if(ta){ta.select(); try{document.execCommand('copy');}catch(e){}} }
+function cvTaoHoanThien(){
+  if(!TARGET){alert('Hãy chấm 1 tin tuyển dụng trước.');return;}
+  var b=document.getElementById('btnCvHT'); if(b){b.disabled=true;b.textContent='Đang dựng CV…';}
+  api('/profile/cv/hoan-thien',{method:'POST',body:JSON.stringify({targetId:TARGET.id})}).then(function(d){
+    if(b){b.disabled=false;b.textContent='📄 Tạo CV hoàn thiện cho JD này';}
+    alert('Đã tạo "'+(d.label||'CV hoàn thiện')+'" và lưu vào "📄 CV của tôi" ở Bước 1. Mở Bước 1 để xem, sửa, copy, hoặc đặt làm bản gốc.');
+  }).catch(function(e){ if(b){b.disabled=false;b.textContent='📄 Tạo CV hoàn thiện cho JD này';} alert('Lỗi tạo CV: '+e.message);});
+}
+
 /* ---- LÁT 2 ---- */
 function scrCham(){
   var body='<div class="card"><span class="pill">LÁT 2 · CỬA A</span><h2 style="margin-top:8px">Chấm CV × JD</h2>'
@@ -301,6 +350,7 @@ function renderCham(run){
     +'<div class="blk"><h3>✅ Đối chiếu yêu cầu</h3>'+rows+htBtn+'</div>'
     +htList
     +knHtml
+    +'<button class="btn sec" id="btnCvHT" onclick="cvTaoHoanThien()" style="margin-bottom:8px">📄 Tạo CV hoàn thiện cho JD này</button>'
     +'<button class="btn" onclick="go(2)">Xem La Bàn hướng đi →</button>';
 }
 

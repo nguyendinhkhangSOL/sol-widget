@@ -745,6 +745,7 @@ model CvDocument {
   isOriginal  Boolean    @default(false) @map("is_original")
   fileUrl     String?    @map("file_url")
   parsedText  String?    @map("parsed_text")
+  targetId    String?    @map("target_id") // bản hoàn thiện thuộc JD nào (null = bản gốc)
   createdAt   DateTime   @default(now()) @map("created_at")
   @@index([profileId, isOriginal])
   @@map("cv_documents")

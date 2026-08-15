@@ -33,6 +33,7 @@ echo "▶ 3) Migration an toàn: cột muc_do + bảng ho_so_hoan_thien (IF NOT 
 cd "$BE"
 cat > /tmp/sol_hoanthien.sql <<'SQL'
 ALTER TABLE profile_skills ADD COLUMN IF NOT EXISTS muc_do text;
+ALTER TABLE cv_documents  ADD COLUMN IF NOT EXISTS target_id text;
 CREATE TABLE IF NOT EXISTS ho_so_hoan_thien (
   id text PRIMARY KEY,
   profile_id text NOT NULL,
@@ -92,6 +93,24 @@ model HoSoHoanThien {
 '''
 open(p,'a',encoding='utf-8').write(block)
 print('   ✓ đã thêm model HoSoHoanThien')
+PY
+
+echo "▶ 4c) Thêm field targetId vào model CvDocument (nếu chưa có)"
+python3 - "$BE/prisma/schema.prisma" <<'PY'
+import sys,re
+p=sys.argv[1]; t=open(p,encoding='utf-8').read()
+m=re.search(r'model CvDocument \{[\s\S]*?\n\}', t)
+if not m:
+    print('   ⚠ không thấy model CvDocument — bỏ qua'); sys.exit(0)
+if 'targetId' in m.group(0):
+    print('   đã có targetId (CvDocument)'); sys.exit(0)
+anchor='  parsedText  String?    @map("parsed_text")'
+if anchor in m.group(0):
+    blk=m.group(0).replace(anchor, anchor+'\n  targetId    String?    @map("target_id")',1)
+    t=t[:m.start()]+blk+t[m.end():]
+    open(p,'w',encoding='utf-8').write(t); print('   ✓ đã thêm targetId (CvDocument)')
+else:
+    print('   ⚠ không thấy neo parsed_text — kiểm tra thủ công')
 PY
 
 echo "▶ 5) prisma generate + Build backend + khởi động lại"

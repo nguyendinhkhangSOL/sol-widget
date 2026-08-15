@@ -132,10 +132,98 @@ cvParseRouter.post('/cv/parse', async (req: any, res, next) => {
       });
     }
 
+    // 2b) LƯU CV GỐC (text vừa dán) vào Dashboard — 1 bản gốc/hồ sơ
+    const goc = await prisma.cvDocument.findFirst({ where: { profileId: profile.id, isOriginal: true } });
+    if (goc) await prisma.cvDocument.update({ where: { id: goc.id }, data: { parsedText: text, label: goc.label || 'CV gốc' } });
+    else await prisma.cvDocument.create({ data: { profileId: profile.id, isOriginal: true, label: 'CV gốc', parsedText: text } });
+
     // 3) trả hồ sơ mới (gom 4 khối) để FE vẽ lại
     const full = await prisma.jobProfile.findUnique({ where: { id: profile.id }, include: { fields: true, skills: true } });
     const khoi: Record<number, any[]> = { 1: [], 2: [], 3: [], 4: [] };
     for (const f of full!.fields) khoi[f.blockNo]?.push(f);
     res.json({ ok: true, filled, skillsAdded: skills.length, profile: { id: full!.id, khoi, skills: full!.skills } });
+  } catch (e) { next(e); }
+});
+
+// ============================================================
+// CV trong Dashboard: 1 bản GỐC + N bản HOÀN THIỆN theo JD
+// ============================================================
+const NHAN_SKILL: Record<string, string> = Object.fromEntries(KY_NANG.map((k) => [k.ma, k.nhan]));
+
+async function composeCV(opts: { title?: string | null; goc?: string | null; fields: any[]; skills: string[]; bullets: string[] }): Promise<string> {
+  const fieldLine = opts.fields.filter((f) => f.value).map((f) => `${f.fieldCode}: ${f.value}`).join('\n');
+  const skillLine = opts.skills.map((c) => NHAN_SKILL[c] || c).join(', ');
+  try {
+    const prompt = `Viết một CV tiếng Việt gọn gàng, chuyên nghiệp để nộp cho vị trí "${opts.title || 'ứng tuyển'}", dựa trên thông tin dưới đây. Người dùng 40–60 tuổi. Trình bày rõ các mục: THÔNG TIN LIÊN HỆ (nếu có), MỤC TIÊU NGHỀ NGHIỆP, KINH NGHIỆM & THẾ MẠNH, KỸ NĂNG. Lồng TỰ NHIÊN các điểm cần làm nổi bật để hợp vị trí. TUYỆT ĐỐI KHÔNG bịa số liệu hay công ty. Trả về VĂN BẢN THUẦN (không markdown, không giải thích).
+--- HỒ SƠ ---
+${fieldLine || '(chưa có)'}
+KỸ NĂNG: ${skillLine || '(chưa có)'}
+--- ĐIỂM CẦN LÀM NỔI BẬT CHO VỊ TRÍ NÀY ---
+${opts.bullets.join('\n') || '(không)'}
+${opts.goc ? '--- CV GỐC (tham khảo văn phong & dữ kiện có thật) ---\n' + opts.goc.slice(0, 6000) : ''}`;
+    const t = (await callAI(prompt)).trim();
+    if (t) return t;
+  } catch (e) { console.error('[composeCV] AI lỗi:', (e as any)?.message); }
+  // dự phòng cơ học
+  const parts: string[] = [];
+  if (fieldLine) parts.push(fieldLine);
+  if (skillLine) parts.push('KỸ NĂNG: ' + skillLine);
+  if (opts.bullets.length) parts.push('ĐIỂM NỔI BẬT:\n' + opts.bullets.join('\n'));
+  if (opts.goc) parts.push('--- CV GỐC ---\n' + opts.goc);
+  return parts.join('\n\n');
+}
+
+// GET /api/profile/cv/list ─ danh sách CV (gốc trước, rồi các bản hoàn thiện)
+cvParseRouter.get('/cv/list', async (req: any, res, next) => {
+  try {
+    const profile = await prisma.jobProfile.findUnique({ where: { userId: req.user.userId } });
+    if (!profile) throw new AppError(400, 'Chưa có hồ sơ');
+    const docs = await prisma.cvDocument.findMany({ where: { profileId: profile.id }, orderBy: [{ isOriginal: 'desc' }, { createdAt: 'desc' }] });
+    res.json(docs.map((d: any) => ({ id: d.id, label: d.label, isOriginal: d.isOriginal, targetId: d.targetId, parsedText: d.parsedText, createdAt: d.createdAt })));
+  } catch (e) { next(e); }
+});
+
+// POST /api/profile/cv/hoan-thien {targetId} ─ tạo bản CV hoàn thiện theo JD
+cvParseRouter.post('/cv/hoan-thien', async (req: any, res, next) => {
+  try {
+    const { targetId } = z.object({ targetId: z.string() }).parse(req.body);
+    const profile = await prisma.jobProfile.findUnique({ where: { userId: req.user.userId }, include: { fields: true, skills: true } });
+    if (!profile) throw new AppError(400, 'Chưa có hồ sơ');
+    const target = await prisma.jobTarget.findFirst({ where: { id: targetId, profileId: profile.id } });
+    if (!target) throw new AppError(404, 'Không thấy tin tuyển dụng');
+    const goc = await prisma.cvDocument.findFirst({ where: { profileId: profile.id, isOriginal: true } });
+    const hts = await prisma.hoSoHoanThien.findMany({ where: { profileId: profile.id } });
+    const bullets = hts.filter((h: any) => h.goiY).map((h: any) => String(h.goiY));
+    const text = await composeCV({ title: target.title, goc: goc?.parsedText, fields: profile.fields, skills: profile.skills.map((s: any) => s.skillCode), bullets });
+    const label = 'CV hoàn thiện · ' + (target.title || 'vị trí');
+    const doc = await prisma.cvDocument.create({ data: { profileId: profile.id, isOriginal: false, targetId, label, parsedText: text } });
+    res.json({ id: doc.id, label: doc.label, parsedText: doc.parsedText });
+  } catch (e) { next(e); }
+});
+
+// POST /api/profile/cv/:id/dat-goc ─ khách QUYẾT ĐỊNH lấy bản này ghi đè bản gốc
+cvParseRouter.post('/cv/:id/dat-goc', async (req: any, res, next) => {
+  try {
+    const profile = await prisma.jobProfile.findUnique({ where: { userId: req.user.userId } });
+    if (!profile) throw new AppError(400, 'Chưa có hồ sơ');
+    const doc = await prisma.cvDocument.findFirst({ where: { id: req.params.id, profileId: profile.id } });
+    if (!doc) throw new AppError(404, 'Không thấy CV');
+    const goc = await prisma.cvDocument.findFirst({ where: { profileId: profile.id, isOriginal: true } });
+    if (goc) await prisma.cvDocument.update({ where: { id: goc.id }, data: { parsedText: doc.parsedText } });
+    else await prisma.cvDocument.create({ data: { profileId: profile.id, isOriginal: true, label: 'CV gốc', parsedText: doc.parsedText } });
+    res.json({ ok: true });
+  } catch (e) { next(e); }
+});
+
+// PUT /api/profile/cv/:id ─ sửa nội dung / đổi tên bản CV
+cvParseRouter.put('/cv/:id', async (req: any, res, next) => {
+  try {
+    const b = z.object({ parsedText: z.string().optional(), label: z.string().optional() }).parse(req.body);
+    const profile = await prisma.jobProfile.findUnique({ where: { userId: req.user.userId } });
+    if (!profile) throw new AppError(400, 'Chưa có hồ sơ');
+    const doc = await prisma.cvDocument.findFirst({ where: { id: req.params.id, profileId: profile.id } });
+    if (!doc) throw new AppError(404, 'Không thấy CV');
+    await prisma.cvDocument.update({ where: { id: doc.id }, data: { parsedText: b.parsedText ?? doc.parsedText, label: b.label ?? doc.label } });
+    res.json({ ok: true });
   } catch (e) { next(e); }
 });
