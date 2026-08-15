@@ -98,7 +98,7 @@
 
   var CSS = ''
     + '.hd-header,.hd-footer,#sol-header,#sol-footer{display:none!important}'  /* ẩn header/footer cũ (nếu còn sót) */
-    + '.solc-h{background:#0F172A;color:#fff;font-family:Inter,system-ui,sans-serif}'
+    + '.solc-h{background:#0F172A;color:#fff;font-family:Inter,system-ui,sans-serif;position:relative;z-index:2000}'
     + '.solc-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 18px}'
     + '.solc-b{display:flex;align-items:center;gap:9px;font-weight:700;font-size:17px;color:#fff;text-decoration:none;white-space:nowrap}'
     + '.solc-b img{width:28px;height:28px;border-radius:7px}.solc-b .a{color:#F59E0B}'
@@ -106,7 +106,7 @@
     + '.solc-it{position:relative}'
     + '.solc-it>a,.solc-it>button{color:#E2E8F0;background:none;border:0;font:inherit;font-size:14.5px;font-weight:500;padding:8px 10px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px;border-radius:8px}'
     + '.solc-it>a:hover,.solc-it>button:hover{background:#1E293B;color:#fff}'
-    + '.solc-dd{display:none;position:absolute;left:0;top:100%;background:#fff;min-width:230px;border-radius:12px;box-shadow:0 12px 34px rgba(2,6,23,.28);padding:6px;z-index:60}'
+    + '.solc-dd{display:none;position:absolute;left:0;top:100%;background:#fff;min-width:230px;border-radius:12px;box-shadow:0 12px 34px rgba(2,6,23,.28);padding:6px;z-index:2001}'
     + '.solc-it.open>.solc-dd{display:block}'
     + '.solc-dd a{display:block;color:#0F172A;text-decoration:none;font-size:14px;padding:9px 11px;border-radius:8px}'
     + '.solc-dd a:hover{background:#FEF3C7;color:#B45309}'
