@@ -282,9 +282,9 @@
     // sol.vn brand domain → CTA to product
     widgetHtml = `
       <div id="sol-nav-v3">
-        <a href="${REGISTER_URL}" id="sol-nav-cta" aria-label="Vào Sol La Bàn">
+        <a href="${PRODUCT_URL}/kham-pha-ban-than/" id="sol-nav-cta" aria-label="Dùng thử miễn phí">
           <span>🧭</span>
-          <span>Vào Sol La Bàn</span>
+          <span>Dùng thử miễn phí</span>
           <span class="sol-nav-cta-arrow">→</span>
         </a>
       </div>
