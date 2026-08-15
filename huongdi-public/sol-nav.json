@@ -45,7 +45,7 @@
   ],
   "footer": {
     "tagline": "Đúng hướng, đúng bước, đúng tương lai.",
-    "blurb": "Hệ thống Sol La Bàn + Sách \"Tái Khởi Nghiệp Đúng Hướng\" cho người 40–60.",
+    "blurb": "Nền tảng giúp người 40–60 tái khởi nghiệp & tìm việc đúng hướng.",
     "cols": [
       { "title": "Sản phẩm & Dịch vụ", "links": [
         { "label": "💼 Hồ sơ & Việc làm", "url": "https://huongdi.sol.vn/ho-so-viec-lam/tao-cv/" },
@@ -77,6 +77,11 @@
         { "label": "💬 Zalo Group", "url": "https://zalo.me/g/iutty6omizdrpogdgdop" },
         { "label": "📱 Nhắn riêng Khang", "url": "https://zalo.me/0912727381" }
       ]}
+    ],
+    "legalLinks": [
+      { "label": "Tuyên bố miễn trừ", "url": "https://sol.vn/tuyen-bo-mien-tru/" },
+      { "label": "Chính sách bảo mật", "url": "https://sol.vn/chinh-sach-bao-mat/" },
+      { "label": "Điều khoản sử dụng", "url": "https://sol.vn/dieu-khoan-su-dung/" }
     ],
     "legal": "Vận hành bởi CÔNG TY CỔ PHẦN VINET · MST 0104127836 · © 2025–2026 Đi Cùng Sol"
   }

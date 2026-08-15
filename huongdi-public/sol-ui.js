@@ -57,7 +57,7 @@
     ],
     footer: {
       tagline: 'Đúng hướng, đúng bước, đúng tương lai.',
-      blurb: 'Hệ thống Sol La Bàn + Sách "Tái Khởi Nghiệp Đúng Hướng" cho người 40–60.',
+      blurb: 'Nền tảng giúp người 40–60 tái khởi nghiệp & tìm việc đúng hướng.',
       cols: [
         { title: 'Sản phẩm & Dịch vụ', links: [
           { label: '💼 Hồ sơ & Việc làm', url: 'https://huongdi.sol.vn/ho-so-viec-lam/tao-cv/' },
@@ -89,6 +89,11 @@
           { label: '💬 Zalo Group', url: 'https://zalo.me/g/iutty6omizdrpogdgdop' },
           { label: '📱 Nhắn riêng Khang', url: 'https://zalo.me/0912727381' }
         ] }
+      ],
+      legalLinks: [
+        { label: 'Tuyên bố miễn trừ', url: 'https://sol.vn/tuyen-bo-mien-tru/' },
+        { label: 'Chính sách bảo mật', url: 'https://sol.vn/chinh-sach-bao-mat/' },
+        { label: 'Điều khoản sử dụng', url: 'https://sol.vn/dieu-khoan-su-dung/' }
       ],
       legal: 'Vận hành bởi CÔNG TY CỔ PHẦN VINET · MST 0104127836 · © 2025–2026 Đi Cùng Sol'
     }
@@ -123,7 +128,10 @@
     + '.solc-f a{display:block;color:#CBD5E1;text-decoration:none;font-size:13px;padding:3px 0}.solc-f a:hover{color:#F59E0B}'
     + '.solc-tag{font-family:Lora,serif;color:#F59E0B;font-size:14px}.solc-blb{font-size:12.5px;color:#94A3B8;margin-top:6px;max-width:250px}'
     + '.solc-fb{color:#fff;font-weight:700;font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:7px}.solc-fb img{width:24px;height:24px;border-radius:6px}'
-    + '.solc-leg{border-top:1px solid #1E293B;margin-top:20px;padding-top:13px;text-align:center;font-size:11.5px;color:#64748B}'
+    + '.solc-legrow{border-top:1px solid #1E293B;margin-top:20px;padding-top:13px;text-align:center;font-size:12.5px}'
+    + '.solc-legrow a{display:inline;color:#CBD5E1;text-decoration:none;padding:0 4px}.solc-legrow a:hover{color:#F59E0B;text-decoration:underline}'
+    + '.solc-legrow .solc-dot{color:#475569}'
+    + '.solc-leg{margin-top:6px;padding-top:0;text-align:center;font-size:11.5px;color:#64748B}'
     + '@media(max-width:900px){.solc-ham{display:block}.solc-nav{display:none;flex-direction:column;align-items:stretch;width:100%;order:3;gap:0}.solc-nav.show{display:flex}.solc-it>a,.solc-it>button{width:100%;justify-content:flex-start}.solc-dd{position:static;box-shadow:none;display:block;background:#0B1220;padding:0 0 6px 14px}.solc-dd a{color:#CBD5E1}.solc-ft{grid-template-columns:1fr 1fr}}';
 
   function menuHtml() {
@@ -162,7 +170,9 @@
     }).join('');
     return '<footer class="solc-f"><div class="solc-fin"><div class="solc-ft">'
       + '<div><div class="solc-fb"><img src="' + esc(NAV.brand.logo) + '" alt="Sol">Đi Cùng <span class="a" style="color:#F59E0B">Sol</span></div><div class="solc-tag">' + esc(f.tagline) + '</div><div class="solc-blb">' + esc(f.blurb) + '</div></div>'
-      + cols + '</div><div class="solc-leg">' + esc(f.legal) + '</div></div></footer>';
+      + cols + '</div>'
+      + '<div class="solc-legrow">' + (f.legalLinks || []).map(function (l) { return '<a href="' + esc(l.url) + '">' + esc(l.label) + '</a>'; }).join('<span class="solc-dot">·</span>') + '</div>'
+      + '<div class="solc-leg">' + esc(f.legal) + '</div></div></footer>';
   }
 
   window.__solcToggle = function (i) {
