@@ -137,11 +137,8 @@
     }).join('');
   }
   function rightHtml() {
-    if (TOKEN) {
-      var acc = NAV.account.map(function (a) { return '<a href="' + esc(a.url) + '">' + esc(a.label) + '</a>'; }).join('');
-      return '<div class="solc-it solc-acc" data-i="acc"><button onclick="__solcToggle(\'acc\')"><span class="dot">☺</span> Tài khoản ▾</button><div class="solc-dd" style="right:0;left:auto">' + acc + '</div></div>';
-    }
-    return '<a class="solc-cta" href="' + esc(NAV.cta.url) + '">' + esc(NAV.cta.label) + '</a>';
+    // Tài khoản + CTA do js/sol-user-nav.js (chip nổi góc phải) lo — không vẽ ở đây để khỏi trùng.
+    return '';
   }
   function brandHtml(small) {
     return '<a class="solc-b" href="' + esc(NAV.brand.home) + '"><img src="' + esc(NAV.brand.logo) + '" alt="Sol">' + (small ? '<span class="a">Sol</span>' : '<span>Đi Cùng <span class="a">Sol</span></span>') + '</a>';
@@ -304,6 +301,16 @@
   if (window.__solAvatarReq) return; window.__solAvatarReq = 1;
   var s = document.createElement('script');
   s.src = '/sol-avatar-icon.js';
+  s.defer = true;
+  document.head.appendChild(s);
+})();
+
+// Chip tài khoản (tên + hạng) — nạp nếu trang CHƯA có sẵn để trang nào cũng có tài khoản
+(function(){
+  if (window.__solUserNavReq) return; window.__solUserNavReq = 1;
+  if (document.querySelector('script[src*="sol-user-nav"]')) return; // trang đã tự nạp
+  var s = document.createElement('script');
+  s.src = '/js/sol-user-nav.js';
   s.defer = true;
   document.head.appendChild(s);
 })();
