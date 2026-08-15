@@ -1,0 +1,83 @@
+{
+  "_note": "NGUỒN MENU CHUẨN — sửa ở đây, sol-chrome.js (app) + mu-plugin (sol.vn) đọc theo. Đừng sửa header/footer trong từng trang.",
+  "brand": { "name": "Đi Cùng Sol", "logo": "https://sol.vn/wp-content/uploads/2025/05/Icon_2.png", "home": "https://sol.vn/" },
+  "menu": [
+    { "label": "Hồ sơ & Việc làm", "icon": "💼", "children": [
+      { "label": "📄 Tạo lập CV chuẩn ATS", "url": "https://huongdi.sol.vn/ho-so-viec-lam/tao-cv/" },
+      { "label": "🎯 Chấm CV × JD", "url": "https://huongdi.sol.vn/ho-so-viec-lam/cham/" },
+      { "label": "📊 Đánh giá CV & Kỹ năng", "url": "https://huongdi.sol.vn/ho-so-viec-lam/danh-gia/" },
+      { "label": "✉️ Viết thư ứng tuyển", "url": "https://huongdi.sol.vn/ho-so-viec-lam/thu/" },
+      { "label": "🎤 Phỏng vấn thử", "url": "https://huongdi.sol.vn/ho-so-viec-lam/phong-van/" }
+    ]},
+    { "label": "Hướng đi riêng", "icon": "🗺️", "children": [
+      { "label": "Bước 1 · Hiểu chính mình", "url": "https://huongdi.sol.vn/kham-pha-ban-than/" },
+      { "label": "Bước 2 · Biết mình có gì", "url": "https://huongdi.sol.vn/kiem-ke-nguon-luc/" },
+      { "label": "Bước 3 · Chọn hướng đi", "url": "https://huongdi.sol.vn/la-ban-huong-di/ket-qua/" },
+      { "label": "Bước 4 · Thử làm nhỏ", "url": "https://huongdi.sol.vn/la-ban-huong-di/kiem-thu/" },
+      { "label": "Bước 5 · Ra làm thật", "url": "https://huongdi.sol.vn/la-ban-huong-di/lam-ho-so/" },
+      { "label": "📚 Thư viện hướng đi", "url": "https://huongdi.sol.vn/la-ban-huong-di/tat-ca/" }
+    ]},
+    { "label": "La Bàn Sol", "icon": "🧭", "children": [
+      { "label": "La Bàn Sol là gì?", "url": "https://sol.vn/la-ban-sol/" },
+      { "label": "💎 La Bàn Sol Active — Giá dịch vụ", "url": "https://huongdi.sol.vn/pricing/" }
+    ]},
+    { "label": "Tài nguyên miễn phí", "icon": "📚", "children": [
+      { "label": "📝 Bài viết hướng đi", "url": "https://sol.vn/huong-di/" },
+      { "label": "🗺️ Thư viện mô hình", "url": "https://huongdi.sol.vn/la-ban-huong-di/tat-ca/" },
+      { "label": "📖 Sách tái khởi nghiệp", "url": "https://sol.vn/sach/tai-khoi-nghiep-dung-huong/" },
+      { "label": "🤖 Thư viện AI mẫu", "url": "https://huongdi.sol.vn/ai-studio/" },
+      { "label": "✏️ Tự tạo câu lệnh riêng", "url": "https://huongdi.sol.vn/tao-prompts-ca-nhan/" }
+    ]},
+    { "label": "Về Sol", "icon": "✨", "children": [
+      { "label": "Sol là gì?", "url": "https://sol.vn/sol-la-gi/" },
+      { "label": "Sol làm việc thế nào?", "url": "https://huongdi.sol.vn/sol-lam-viec-the-nao/" },
+      { "label": "La Bàn Sol là gì?", "url": "https://sol.vn/la-ban-sol/" },
+      { "label": "Người sáng lập", "url": "https://sol.vn/khang-sol/" },
+      { "label": "Liên hệ", "url": "https://sol.vn/lien-he/" }
+    ]}
+  ],
+  "cta": { "label": "Dùng thử miễn phí", "url": "https://huongdi.sol.vn/kham-pha-ban-than/" },
+  "account": [
+    { "label": "📄 Tạo lập CV chuẩn ATS", "url": "https://huongdi.sol.vn/ho-so-viec-lam/tao-cv/" },
+    { "label": "📊 Đánh giá CV & Kỹ năng", "url": "https://huongdi.sol.vn/ho-so-viec-lam/danh-gia/" },
+    { "label": "Sổ Hành Trình", "url": "https://huongdi.sol.vn/so-hanh-trinh/" },
+    { "label": "Đăng xuất", "url": "https://huongdi.sol.vn/dang-xuat/" }
+  ],
+  "footer": {
+    "tagline": "Đúng hướng, đúng bước, đúng tương lai.",
+    "blurb": "Hệ thống Sol La Bàn + Sách \"Tái Khởi Nghiệp Đúng Hướng\" cho người 40–60.",
+    "cols": [
+      { "title": "Sản phẩm & Dịch vụ", "links": [
+        { "label": "💼 Hồ sơ & Việc làm", "url": "https://huongdi.sol.vn/ho-so-viec-lam/tao-cv/" },
+        { "label": "🗺️ Hướng đi riêng", "url": "https://huongdi.sol.vn/kham-pha-ban-than/" },
+        { "label": "🧭 La Bàn Sol", "url": "https://huongdi.sol.vn/toi/sol-dong-hanh/" },
+        { "label": "📚 Tài nguyên miễn phí", "url": "https://sol.vn/huong-di/" },
+        { "label": "💎 La Bàn Sol Active — giá dịch vụ", "url": "https://huongdi.sol.vn/pricing/" }
+      ]},
+      { "title": "Tài nguyên miễn phí", "links": [
+        { "label": "📝 Bài viết hướng đi", "url": "https://sol.vn/huong-di/" },
+        { "label": "🗺️ Thư viện mô hình", "url": "https://huongdi.sol.vn/la-ban-huong-di/tat-ca/" },
+        { "label": "📖 Sách tái khởi nghiệp", "url": "https://sol.vn/sach/tai-khoi-nghiep-dung-huong/" },
+        { "label": "🤖 Thư viện AI mẫu", "url": "https://huongdi.sol.vn/ai-studio/" },
+        { "label": "✏️ Tự tạo câu lệnh riêng", "url": "https://huongdi.sol.vn/tao-prompts-ca-nhan/" }
+      ]},
+      { "title": "Về Sol", "links": [
+        { "label": "Khang Sol", "url": "https://sol.vn/khang-sol/" },
+        { "label": "Ngồi với Khang một buổi", "url": "https://huongdi.sol.vn/lam-viec-cung-khang/" },
+        { "label": "Sol Là Gì?", "url": "https://sol.vn/sol-la-gi/" },
+        { "label": "Phương pháp chấm điểm", "url": "https://sol.vn/phuong-phap-dinh-vi-huong-di-sol/" },
+        { "label": "Câu hỏi thường gặp", "url": "https://sol.vn/cau-hoi/" },
+        { "label": "Liên hệ", "url": "https://sol.vn/lien-he/" }
+      ]},
+      { "title": "Cộng đồng", "links": [
+        { "label": "▶️ YouTube", "url": "https://www.youtube.com/@Sol.Taisinh" },
+        { "label": "🎵 TikTok", "url": "https://www.tiktok.com/@sol.taisinh" },
+        { "label": "📘 Fanpage", "url": "https://web.facebook.com/Dicungsol/" },
+        { "label": "👥 FB Group", "url": "https://web.facebook.com/groups/taikhoinghiepdunghuong" },
+        { "label": "💬 Zalo Group", "url": "https://zalo.me/g/iutty6omizdrpogdgdop" },
+        { "label": "📱 Nhắn riêng Khang", "url": "https://zalo.me/0912727381" }
+      ]}
+    ],
+    "legal": "Vận hành bởi CÔNG TY CỔ PHẦN VINET · MST 0104127836 · © 2025–2026 Đi Cùng Sol"
+  }
+}

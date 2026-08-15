@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kế thừa chrome LIVE "Đi Cùng Sol" → port sang app</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --amber:#F59E0B; --amber-d:#B45309; --navy:#0F172A; --slate:#475569; --line:#E2E8F0; --bg:#F8FAFC; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:'Inter',sans-serif; color:var(--navy); background:var(--bg); line-height:1.55; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:24px 16px 60px; }
+  .lead{ text-align:center; margin-bottom:6px; }
+  .lead h1{ font-family:'Lora',serif; font-size:24px; }
+  .lead p{ color:var(--slate); font-size:14px; }
+  .tagbar{ text-align:center; font-size:13px; color:var(--amber-d); background:#FEF3C7; border:1px solid #FDE68A; border-radius:10px; padding:8px 12px; margin:14px 0; }
+  .caption{ font-size:12px; font-weight:600; color:var(--amber-d); text-transform:uppercase; letter-spacing:.04em; margin:24px 0 8px; display:flex; align-items:center; gap:8px; }
+  .caption .pill{ background:#FEF3C7; color:var(--amber-d); border-radius:999px; padding:2px 10px; font-size:12px; letter-spacing:0; text-transform:none; }
+  .demo{ border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(15,23,42,.06); background:#fff; }
+  .hd{ display:flex; align-items:center; gap:18px; padding:11px 18px; background:#fff; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  .brand{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:16px; white-space:nowrap; }
+  .brand img{ width:26px; height:26px; }
+  .brand .sol{ color:var(--amber); }
+  .nav{ display:flex; align-items:center; gap:16px; flex:1; }
+  .nav .item{ font-size:14px; font-weight:500; color:var(--navy); white-space:nowrap; }
+  .nav .item.active{ color:var(--amber-d); border-bottom:2px solid var(--amber); padding-bottom:3px; }
+  .btn{ border-radius:10px; padding:8px 15px; font-size:13px; font-weight:600; white-space:nowrap; border:none; }
+  .btn.primary{ background:var(--amber); color:#fff; }
+  .acct{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; background:#F1F5F9; border-radius:10px; padding:6px 11px; }
+  .acct .dot{ width:24px; height:24px; border-radius:50%; background:var(--amber); color:#fff; display:flex; align-items:center; justify-content:center; font-size:12px; }
+  .back{ color:var(--slate); font-size:13px; }
+  .prog{ flex:1; text-align:center; font-size:13px; color:var(--slate); }
+  .prog b{ color:var(--amber-d); }
+  .drop{ background:#FFFBEB; border-top:1px dashed #FDE68A; padding:10px 18px; font-size:13px; color:var(--slate); }
+  .drop b{ color:var(--navy); }
+  .body-demo{ padding:18px; color:var(--slate); font-size:13px; text-align:center; }
+  /* footer */
+  .ft{ background:var(--navy); color:#CBD5E1; padding:26px 22px 16px; }
+  .ft-top{ display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr 1fr; gap:18px; }
+  .ft .brand{ color:#fff; margin-bottom:6px; font-size:15px; }
+  .ft .tag{ font-family:'Lora',serif; color:var(--amber); font-size:14px; }
+  .ft p.note{ font-size:12px; color:#94A3B8; margin-top:6px; }
+  .ft h4{ color:#fff; font-size:13px; margin-bottom:8px; font-weight:600; }
+  .ft a{ display:block; color:#CBD5E1; text-decoration:none; font-size:12.5px; padding:2px 0; }
+  .ft a:hover{ color:var(--amber); }
+  .ft-bot{ border-top:1px solid #1E293B; margin-top:18px; padding-top:12px; font-size:11.5px; color:#64748B; text-align:center; }
+  .note-box{ font-size:13px; color:var(--slate); margin-top:10px; }
+  @media(max-width:820px){ .nav .item:nth-child(n+4){ display:none; } .ft-top{ grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lead">
+    <h1>Kế thừa nguyên bộ chrome LIVE "Đi Cùng Sol"</h1>
+    <p>Giữ y hệt sol.vn đang chạy · chỉ bê sang app + thêm 2 biến thể</p>
+  </div>
+  <div class="tagbar">✅ Đây là menu/footer <b>đang Live trên sol.vn</b> — không đổi thiết kế. Việc cần làm: đưa nguyên xi sang <b>huongdi.sol.vn</b>.</div>
+
+  <div class="caption"><span class="pill">Header LIVE</span> Khách vãng lai (giống hệt sol.vn hiện tại)</div>
+  <div class="demo">
+    <div class="hd">
+      <div class="brand"><img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png" alt="Sol"><span>Đi Cùng <span class="sol">Sol</span></span></div>
+      <div class="nav">
+        <span class="item">💼 Hồ sơ &amp; Việc làm ▾</span>
+        <span class="item">🗺️ Hướng đi riêng ▾</span>
+        <span class="item">🧭 La Bàn Sol</span>
+        <span class="item">🧰 Công cụ AI ▾</span>
+        <span class="item">📖 Kiến thức ▾</span>
+        <span class="item">✨ Về Sol ▾</span>
+      </div>
+      <button class="btn primary">Dùng thử miễn phí</button>
+    </div>
+    <div class="drop"><b style="color:var(--amber-d)">💼 Hồ sơ &amp; Việc làm (Hướng 1 · đi làm lại · dễ trước):</b> Hồ sơ của tôi · Chấm CV × JD (so khớp + cảnh báo) · CV của tôi · Thư ứng tuyển · Phỏng vấn thử<br>
+    <b>🗺️ Hướng đi riêng (Hướng 2 · tự khởi nghiệp · khó hơn):</b> Bước 1→5 · 📚 Thư viện hướng đi</div>
+  </div>
+
+  <div class="caption"><span class="pill">Biến thể 1 · MỚI cho app</span> Đã đăng nhập</div>
+  <div class="demo">
+    <div class="hd">
+      <div class="brand"><img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png" alt="Sol"><span>Đi Cùng <span class="sol">Sol</span></span></div>
+      <div class="nav">
+        <span class="item active">💼 Hồ sơ &amp; Việc làm ▾</span>
+        <span class="item">🗺️ Hướng đi riêng ▾</span>
+        <span class="item">🧭 La Bàn Sol</span>
+        <span class="item">🧰 Công cụ AI ▾</span>
+        <span class="item">📖 Kiến thức ▾</span>
+        <span class="item">✨ Về Sol ▾</span>
+      </div>
+      <span class="acct"><span class="dot">N</span> Chị Nga ▾</span>
+    </div>
+    <div class="body-demo">Chỉ đổi <b>nút phải</b>: [Dùng thử miễn phí] → tài khoản (Hồ sơ · CV của tôi · Sổ Hành Trình · Đăng xuất). Menu giữ nguyên.</div>
+  </div>
+
+  <div class="caption"><span class="pill">Biến thể 2 · MỚI cho app</span> Trang công cụ sâu — header gọn</div>
+  <div class="demo">
+    <div class="hd">
+      <div class="brand"><img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png" alt="Sol"><span class="sol">Sol</span></div>
+      <span class="back">← Về trang chủ</span>
+      <div class="prog">Hồ sơ &amp; Việc làm · <b>Bước 2/4</b> — Chấm CV × JD</div>
+      <span class="acct"><span class="dot">N</span></span>
+    </div>
+    <div class="body-demo">Khi đang làm Bước / thanh toán → ẩn menu giữa, chỉ logo + tiến trình + tài khoản (khỏi phân tán).</div>
+  </div>
+
+  <div class="caption"><span class="pill">Footer LIVE</span> Giống hệt sol.vn hiện tại</div>
+  <div class="demo">
+    <div class="ft">
+      <div class="ft-top">
+        <div>
+          <div class="brand">🧭 Đi Cùng <span class="sol">Sol</span></div>
+          <div class="tag">Đúng hướng, đúng bước, đúng tương lai.</div>
+          <p class="note">Hệ thống Sol La Bàn + Sách "Tái Khởi Nghiệp Đúng Hướng" cho người 40–60.</p>
+        </div>
+        <div><h4>Sol La Bàn</h4><a>Bước 1 · Hiểu chính mình</a><a>Bước 2 · Biết mình có gì</a><a>Bước 3 · Chọn hướng đi</a><a>Bước 4 · Thử làm nhỏ</a><a>Bước 5 · Ra làm thật</a><a>💎 Sol Active</a><a>📖 Sách miễn phí</a></div>
+        <div><h4>Tài nguyên miễn phí</h4><a>🎯 Kiểm tra 3 phút</a><a>🤖 Kho prompt AI</a><a>📝 Bài viết Hướng Đi</a><a>📚 Sách</a></div>
+        <div><h4>Về Sol</h4><a>Khang Sol</a><a>Ngồi với Khang một buổi</a><a>Sol Là Gì?</a><a>Phương pháp chấm điểm</a><a>Câu hỏi thường gặp</a><a>Liên hệ</a></div>
+        <div><h4>Cộng đồng</h4><a>▶️ YouTube</a><a>🎵 TikTok</a><a>📘 Fanpage</a><a>👥 FB Group</a><a>💬 Zalo Group</a><a>📱 Nhắn riêng Khang</a></div>
+      </div>
+      <div class="ft-bot">Vận hành bởi CÔNG TY CỔ PHẦN VINET · MST 0104127836 &nbsp;·&nbsp; © 2025–2026 Đi Cùng Sol</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <b>Cách làm (kế thừa, không đổi thiết kế):</b> WordPress <code>sol.vn</code> giữ nguyên mu-plugin đang chạy. App <code>huongdi.sol.vn</code> nhận <b>1 file <code>sol-chrome.js</code></b> dựng đúng bộ header/footer này, chèn vào 20+ trang, tự đổi nút theo đăng nhập + biến thể gọn. Menu items lấy từ <code>sol-nav.json</code> (1 nguồn) để sau này 2 bên khỏi lệch.
+  </div>
+</div>
+</body>
+</html>

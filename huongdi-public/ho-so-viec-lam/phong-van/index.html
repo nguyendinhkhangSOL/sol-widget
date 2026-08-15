@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Phỏng vấn thử · Đi Cùng Sol</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap"><div id="gate"></div><div id="page" style="display:none">
+  <div id="sub"></div>
+  <h1 class="pt">🎤 Phỏng vấn thử</h1>
+  <p class="lead">Sol hỏi những câu nhà tuyển dụng hay hỏi — anh chị trả lời (gõ chữ), Sol gợi ý cách nói cho chắc.</p>
+  <div id="screen"></div>
+</div></div>
+<script src="/sol-chrome.js" defer></script>
+<script src="/ho-so-viec-lam/tt-core.js"></script>
+<script>
+var SESSION=null;
+if(TT.gate()){ document.getElementById('page').style.display='block'; document.getElementById('sub').innerHTML=TT.subnav('phong-van'); intro(); }
+function intro(){ document.getElementById('screen').innerHTML='<div class="card">'
+  +'<div class="note">Bộ câu gồm: 1 câu giới thiệu + tối đa 3 câu theo tin tuyển dụng gần nhất + 1 câu điểm mạnh + 1 câu khoảng trống. Anh chị trả lời bằng cách gõ; Sol không ghi âm ở bản này.</div>'
+  +'<div class="msg" id="m"></div>'
+  +'<button class="btn" id="btnStart" onclick="start()">🎤 Bắt đầu phỏng vấn thử</button></div>'; }
+function start(){ var b=document.getElementById('btnStart'); if(b){b.disabled=true;b.textContent='Đang chuẩn bị…';}
+  TT.api('/profile/interview/start',{method:'POST',body:JSON.stringify({})})
+   .then(function(s){ SESSION=s; renderQs(); })
+   .catch(function(e){ if(b){b.disabled=false;b.textContent='🎤 Bắt đầu phỏng vấn thử';}
+     if(/giọng nói|đồng ý|consent|VOICE/i.test(e.message)) askConsent(); else TT.msg('m','err',e.message); }); }
+function askConsent(){ document.getElementById('screen').innerHTML='<div class="card"><h3 style="font-size:15px">Cho phép luyện phỏng vấn</h3>'
+  +'<div class="note">Theo Luật 91/2025, phần luyện phỏng vấn cần anh chị đồng ý. Bản này chỉ luyện bằng chữ (không ghi âm), nhưng vẫn xin phép cho đúng luật.</div>'
+  +'<label style="display:flex;gap:8px;align-items:flex-start;font-size:14px;margin:8px 0"><input type="checkbox" id="ck" style="margin-top:3px"> Tôi đồng ý dùng tính năng luyện phỏng vấn của Sol.</label>'
+  +'<div class="msg" id="m"></div><button class="btn" id="btnC" onclick="grantConsent()">Đồng ý & bắt đầu</button></div>'; }
+function grantConsent(){ if(!document.getElementById('ck').checked){TT.msg('m','err','Anh chị tích ô đồng ý trước nhé.');return;}
+  var b=document.getElementById('btnC'); b.disabled=true; b.textContent='Đang lưu…';
+  TT.api('/profile/consent',{method:'POST',body:JSON.stringify({kind:'VOICE'})}).then(function(){ intro(); setTimeout(start,50); })
+   .catch(function(e){ b.disabled=false; b.textContent='Đồng ý & bắt đầu'; TT.msg('m','err',e.message); }); }
+function renderQs(){ var qs=(SESSION.questions||[]);
+  var h='<div class="card">';
+  qs.forEach(function(q,i){ var fb=q.answer&&q.answer.feedback;
+    h+='<div class="blk"><h3>Câu '+(i+1)+'/'+qs.length+'</h3>'
+      +'<div style="font-size:15px;font-weight:600;margin-bottom:4px">'+TT.esc(q.text)+'</div>'
+      +(q.goiY?'<div class="note">💡 '+TT.esc(q.goiY)+'</div>':'')
+      +'<textarea class="in" id="a_'+q.id+'" placeholder="Gõ câu trả lời của anh chị…">'+TT.esc((q.answer&&q.answer.transcript)||'')+'</textarea>'
+      +'<button class="btn sec mini" onclick="ans(\''+q.id+'\')">Nhận gợi ý</button>'
+      +'<div id="fb_'+q.id+'">'+(fb?fbHtml(fb):'')+'</div></div>';
+  });
+  h+='<div class="msg" id="m"></div><button class="btn" onclick="finish()">✓ Kết thúc buổi luyện</button></div>';
+  document.getElementById('screen').innerHTML=h;
+}
+function fbHtml(fb){ var g=(fb&&fb.goi_y)||[]; return g.length?'<div class="note" style="background:#fffbeb;border-left:3px solid #F59E0B">'+g.map(function(x){return '• '+TT.esc(x);}).join('<br>')+'</div>':''; }
+function ans(qid){ var t=(document.getElementById('a_'+qid)||{}).value||''; if(t.trim().length<3){alert('Gõ câu trả lời trước nhé.');return;}
+  TT.api('/profile/interview/answer',{method:'PUT',body:JSON.stringify({questionId:qid,transcript:t})}).then(function(a){ var el=document.getElementById('fb_'+qid); if(el)el.innerHTML=fbHtml(a.feedback); }).catch(function(e){alert(e.message);}); }
+function finish(){ TT.api('/profile/interview/finish',{method:'POST',body:JSON.stringify({sessionId:SESSION.id})}).then(function(){ document.getElementById('screen').innerHTML='<div class="card center"><h2>Xong buổi luyện 🎉</h2><p class="lead">Anh chị luyện lại bất cứ lúc nào. Đừng quên hoàn thiện CV ở các bước trước.</p><a class="btn" style="text-decoration:none;max-width:280px;margin:0 auto" href="/ho-so-viec-lam/tao-cv/">← Về Tạo lập CV</a></div>'; }).catch(function(e){TT.msg('m','err',e.message);}); }
+</script>
+</body>
+</html>

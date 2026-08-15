@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Chấm CV × JD · Đi Cùng Sol</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap"><div id="gate"></div><div id="page" style="display:none">
+  <div id="sub"></div>
+  <h1 class="pt">🎯 Chấm CV × JD</h1>
+  <p class="lead">Dán nguyên văn tin tuyển dụng. AI đọc hiểu yêu cầu rồi so với hồ sơ của anh chị — kèm cảnh báo chỗ lệch.</p>
+  <div class="card">
+    <input class="in" id="jdTitle" placeholder="Tên vị trí (vd: Trưởng phòng Kinh doanh)">
+    <textarea class="in" id="jdText" placeholder="Dán mô tả công việc / yêu cầu tuyển dụng vào đây…"></textarea>
+    <div class="msg" id="m2"></div>
+    <button class="btn" id="btnCham" onclick="doCham()">⚙️ Chấm điểm khớp</button>
+    <div id="kq"></div>
+  </div>
+</div></div>
+<script src="/sol-chrome.js" defer></script>
+<script src="/ho-so-viec-lam/tt-core.js"></script>
+<script>
+var TARGET=null, SELF={};
+if(TT.gate()){ document.getElementById('page').style.display='block'; document.getElementById('sub').innerHTML=TT.subnav('cham'); }
+function doCham(){ var t=document.getElementById('jdText').value.trim(); if(t.length<10){TT.msg('m2','err','Dán mô tả công việc dài hơn chút nhé.');return;}
+  var title=document.getElementById('jdTitle').value.trim(); var b=document.getElementById('btnCham'); b.disabled=true; b.textContent='Đang chấm…';
+  TT.api('/profile/target',{method:'POST',body:JSON.stringify({title:title,jdRaw:t})})
+   .then(function(tg){TARGET=tg; return TT.api('/profile/target/'+tg.id+'/run',{method:'POST',body:JSON.stringify({})});})
+   .then(function(run){ renderCham(run); b.disabled=false; b.textContent='⚙️ Chấm lại'; })
+   .catch(function(e){ TT.msg('m2','err',e.message); b.disabled=false; b.textContent='⚙️ Chấm điểm khớp'; }); }
+function labCua(c){ return c.nhan||TT.LABEL[c.code]||(String(c.code).indexOf('ATTR.sonam')>=0?('Kinh nghiệm '+String(c.code).split('>=')[1]+'+ năm'):c.code); }
+function selfBtn(code,val,txt){ var on=SELF[code]===val; var st='border:1px solid '+(on?'#F59E0B':'#e2e8f0')+';border-radius:8px;padding:6px 11px;margin:5px 5px 0 0;background:'+(on?'#F59E0B':'#fff')+';color:'+(on?'#fff':'#0F172A')+';cursor:pointer;font-size:13px;font-weight:600';
+  return '<button type="button" style="'+st+'" onclick="setSelf(\''+code+'\',\''+val+'\',this)">'+txt+'</button>'; }
+function setSelf(code,val,btn){ SELF[code]=val; var bs=btn.parentNode.getElementsByTagName('button'); for(var i=0;i<bs.length;i++){bs[i].style.background='#fff';bs[i].style.color='#0F172A';bs[i].style.borderColor='#e2e8f0';} btn.style.background='#F59E0B';btn.style.color='#fff';btn.style.borderColor='#F59E0B'; }
+function submitHT(){ var ans=[]; for(var k in SELF){if(SELF[k])ans.push({code:k,muc_do:SELF[k]});} if(!ans.length){TT.msg('m2','err','Chọn mức (Đã có / Biết một ít / Chưa biết) cho ít nhất 1 mục nhé.');return;}
+  var b=document.getElementById('btnHT'); if(b){b.disabled=true;b.textContent='Đang cập nhật…';}
+  TT.api('/profile/target/'+TARGET.id+'/hoan-thien',{method:'POST',body:JSON.stringify({answers:ans})}).then(function(run){ SELF={}; renderCham(run); }).catch(function(e){TT.msg('m2','err',e.message); if(b){b.disabled=false;b.textContent='💪 Cập nhật hồ sơ & chấm lại';}}); }
+function renderCham(run){ var items=(run.checklist||[]);
+  var rows=items.map(function(c){ var lab=labCua(c);
+    if(c.state==='DA_CO') return '<div class="ck have"><span class="ic">✓</span><span>'+TT.esc(lab)+' — <b>đã có</b></span></div>';
+    if(c.state==='CO_BAN') return '<div class="ck have" style="border-left:3px solid #F59E0B;background:#fffbeb"><span class="ic" style="background:#F59E0B">◐</span><span>'+TT.esc(lab)+' — <b>biết một ít</b> (nửa điểm)</span></div>';
+    var code=String(c.code); return '<div class="ck miss" style="display:block"><div><span class="ic">!</span> <b>'+TT.esc(lab)+'</b> — JD cần, hồ sơ chưa thấy. Thực tế anh/chị:</div><div style="margin-top:2px">'+selfBtn(code,'DA_CO','✅ Đã có')+selfBtn(code,'BIET_IT','🟡 Biết một ít')+selfBtn(code,'CHUA_BIET','⬜ Chưa biết')+'</div></div>';
+  }).join('')||'<div class="note">JD này không tách được mã nào — thử dán chi tiết hơn.</div>';
+  var miss=0; items.forEach(function(c){if(c.state==='CON_THIEU')miss++;});
+  var htBtn=miss?'<button class="btn" id="btnHT" onclick="submitHT()" style="margin-top:12px">💪 Cập nhật hồ sơ & chấm lại</button><div class="note" style="margin-top:6px">Chọn "Đã có" cho việc anh/chị làm được (chỉ chưa ghi vào CV) → điểm sẽ lên và Sol nhắc bổ sung vào CV.</div>':'';
+  var ht=(run.hoan_thien||[]).filter(function(x){return x.status!=='DA_LAM';});
+  var htList=ht.length?'<div class="blk"><h3>📋 Việc cần làm để CV qua JD này</h3>'+ht.map(function(x){var m=x.kind==='THEM_CV'?'📝 Thêm vào CV':x.kind==='NANG_CAO'?'✍️ Làm rõ':'📚 Nên học'; return '<div class="ck miss" style="display:block"><div><b>'+TT.esc(x.nhan)+'</b> <span class="badge b-empty">'+m+'</span></div>'+(x.goiY?'<div class="note" style="white-space:pre-line">'+TT.esc(x.goiY)+'</div>':'')+'</div>';}).join('')+'<div class="note">Đã lưu vào "📊 Đánh giá CV & Kỹ năng".</div></div>':'';
+  var kn=(run.chieu2&&run.chieu2.khuyen_nghi)||''; var knH=kn?'<div class="blk"><h3>💡 Sol khuyên hoàn thiện</h3><div class="note" style="white-space:pre-line">'+TT.esc(kn)+'</div></div>':'';
+  document.getElementById('kq').innerHTML=
+     '<div class="blk"><div class="score"><div class="big">'+run.scoreNow+'%</div><div style="font-size:13px;color:#475569">mức khớp</div></div>'
+    +'<div class="bar"><i style="width:'+run.scoreNow+'%"></i></div>'
+    +'<div class="cmp"><span>lần đầu <b style="color:#475569">'+run.scoreFirst+'%</b></span><span>→</span><span>giờ <b style="color:#B45309">'+run.scoreNow+'%</b></span></div></div>'
+    +'<div class="blk"><h3>✅ Đối chiếu yêu cầu</h3>'+rows+htBtn+'</div>'+htList+knH
+    +'<button class="btn sec" id="btnCV" onclick="taoCV()" style="margin-bottom:8px">📄 Tạo CV hoàn thiện cho JD này</button>';
+}
+function taoCV(){ if(!TARGET){alert('Hãy chấm 1 tin trước.');return;} var b=document.getElementById('btnCV'); if(b){b.disabled=true;b.textContent='Đang dựng CV…';}
+  TT.api('/profile/cv/hoan-thien',{method:'POST',body:JSON.stringify({targetId:TARGET.id})}).then(function(d){ if(b){b.disabled=false;b.textContent='📄 Tạo CV hoàn thiện cho JD này';} alert('Đã tạo "'+(d.label||'CV hoàn thiện')+'" và lưu vào "Tạo lập CV". Mở trang đó để xem/sửa/đặt làm gốc.'); }).catch(function(e){ if(b){b.disabled=false;b.textContent='📄 Tạo CV hoàn thiện cho JD này';} alert('Lỗi: '+e.message); }); }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Viết thư ứng tuyển · Đi Cùng Sol</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap"><div id="gate"></div><div id="page" style="display:none">
+  <div id="sub"></div>
+  <h1 class="pt">✉️ Viết thư ứng tuyển</h1>
+  <p class="lead">Dán tin tuyển dụng → Sol soạn thư từ hồ sơ + kỹ năng khớp. Sửa vài chữ rồi gửi kèm CV.</p>
+  <div class="card">
+    <div class="blk"><h3>✍️ Soạn thư mới</h3>
+      <input class="in" id="jdTitle" placeholder="Tên vị trí (vd: Chuyên viên Kế toán)">
+      <input class="in" id="toName" placeholder="Kính gửi (vd: Anh/Chị phòng Nhân sự) — không bắt buộc">
+      <textarea class="in" id="jdText" placeholder="Dán mô tả công việc / yêu cầu tuyển dụng…"></textarea>
+      <div class="msg" id="m"></div>
+      <button class="btn" id="btn" onclick="gen()">✍️ Soạn thư cho tôi</button>
+    </div>
+    <div id="new"></div>
+    <div class="blk"><h3>📚 Thư đã tạo</h3><div id="list"><div class="note">Đang tải…</div></div></div>
+  </div>
+</div></div>
+<script src="/sol-chrome.js" defer></script>
+<script src="/ho-so-viec-lam/tt-core.js"></script>
+<script>
+if(TT.gate()){ document.getElementById('page').style.display='block'; document.getElementById('sub').innerHTML=TT.subnav('thu'); loadList(); }
+function gen(){ var t=document.getElementById('jdText').value.trim(); if(t.length<10){TT.msg('m','err','Dán mô tả công việc dài hơn chút nhé.');return;}
+  var title=document.getElementById('jdTitle').value.trim(), toName=document.getElementById('toName').value.trim();
+  var b=document.getElementById('btn'); b.disabled=true; b.textContent='Đang soạn…';
+  TT.api('/profile/target',{method:'POST',body:JSON.stringify({title:title,jdRaw:t})})
+   .then(function(tg){ return TT.api('/profile/letter',{method:'POST',body:JSON.stringify({targetId:tg.id,toName:toName||undefined})}); })
+   .then(function(l){ b.disabled=false; b.textContent='✍️ Soạn thư cho tôi';
+     document.getElementById('new').innerHTML='<div class="blk"><h3>✅ Thư vừa soạn</h3>'+letterBox(l)+'</div>'; loadList(); })
+   .catch(function(e){ TT.msg('m','err',e.message); b.disabled=false; b.textContent='✍️ Soạn thư cho tôi'; }); }
+function letterBox(l){ return '<textarea class="in" id="lt_'+l.id+'" style="min-height:220px">'+TT.esc(l.body||'')+'</textarea>'
+  +'<button class="btn sec mini" onclick="save(\''+l.id+'\')">💾 Lưu</button> <button class="btn sec mini" onclick="cp(\'lt_'+l.id+'\')">📋 Copy</button>'; }
+function loadList(){ var el=document.getElementById('list'); TT.api('/profile/letter').then(function(list){
+    el.innerHTML=list.length? list.map(function(l){ return '<div class="ck miss" style="display:block"><div><b>'+TT.esc((l.target&&l.target.title)||l.toName||'Thư ứng tuyển')+'</b>'+(l.edited?' <span class="badge b-ok">đã sửa</span>':'')+'</div>'+letterBox(l)+'</div>'; }).join('') : '<div class="note">Chưa có thư nào — soạn ở trên.</div>';
+  }).catch(function(e){ el.innerHTML='<div class="note">Không tải được: '+TT.esc(e.message)+'</div>'; }); }
+function save(id){ var t=(document.getElementById('lt_'+id)||{}).value||''; TT.api('/profile/letter/'+id,{method:'PUT',body:JSON.stringify({body:t})}).then(function(){TT.msg('m','ok','Đã lưu thư.');}).catch(function(e){alert(e.message);}); }
+function cp(id){ var el=document.getElementById(id); if(el){el.select();try{document.execCommand('copy');}catch(e){}TT.msg('m','ok','Đã copy.');} }
+</script>
+</body>
+</html>

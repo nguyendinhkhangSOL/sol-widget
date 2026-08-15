@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tạo lập CV chuẩn ATS · Đi Cùng Sol</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+</head>
+<body>
+<div class="wrap"><div id="gate"></div><div id="page" style="display:none">
+  <div id="sub"></div>
+  <h1 class="pt">📄 Tạo lập CV chuẩn ATS</h1>
+  <p class="lead">Khai hồ sơ một lần — dùng chung cả chấm việc và La Bàn hướng đi. Tải CV để AI tự điền.</p>
+  <div id="screen"></div>
+</div></div>
+<script src="/sol-chrome.js" defer></script>
+<script src="/ho-so-viec-lam/tt-core.js"></script>
+<script>
+var PROFILE=null;
+if(TT.gate()){ document.getElementById('page').style.display='block'; document.getElementById('sub').innerHTML=TT.subnav('tao-cv'); loadProfile(); }
+function loadProfile(){ TT.api('/profile').then(function(p){PROFILE=p;render();loadCVs();}).catch(function(e){document.getElementById('screen').innerHTML='<div class="card center"><h2>Không tải được hồ sơ</h2><p class="lead">'+TT.esc(e.message)+'</p><a class="btn" href="/dang-nhap/">Đăng nhập lại</a></div>';}); }
+function fRows(arr){ if(!arr||!arr.length) return '<div class="row"><span class="k" style="color:#94A3B8">— chưa có ô nào —</span></div>';
+  return arr.map(function(f){ var has=f.value!=null&&String(f.value).trim()!=='';
+    var b=f.status==='CON_TRONG'?'<span class="badge b-empty">còn trống</span>':(has?(f.source?'<span class="badge b-src">'+TT.esc(f.source)+'</span> ':'')+'<span class="badge b-ok">đã có</span>':'<span class="badge b-empty" style="background:#FEF3C7;color:#B45309">cần điền</span>');
+    return '<div class="row"><span class="k">'+TT.esc(TT.FLD[f.fieldCode]||f.fieldCode)+'</span><span class="v">'+TT.esc(has?f.value:'—')+' &nbsp;'+b+'</span></div>'; }).join(''); }
+function render(){ var k=PROFILE.khoi||{};
+  var sk=(PROFILE.skills||[]).map(function(s){return '<span class="chip">'+TT.esc(TT.LABEL[s.skillCode]||s.skillCode)+'<span class="x" onclick="delSkill(\''+s.skillCode+'\')">✕</span></span>';}).join('')||'<span style="color:#94A3B8;font-size:13px">Chưa có kỹ năng — thêm bên dưới ↓</span>';
+  document.getElementById('screen').innerHTML='<div class="card">'
+   +'<div class="blk"><h3>🧰 Khối 1 · Đã làm gì</h3>'+fRows(k[1])+'</div>'
+   +'<div class="blk"><h3>📍 Khối 3 · Ở đâu</h3>'+fRows(k[3])+'</div>'
+   +'<div class="blk"><h3>🎒 Khối 2 · Còn sẵn gì <span class="badge b-empty">CV không chứa</span></h3>'+fRows(k[2])+'</div>'
+   +'<div class="blk"><h3>🤝 Khối 4 · Quen ai <span class="badge b-empty">CV không chứa</span></h3>'+fRows(k[4])+'</div>'
+   +'<div class="blk"><h3>📄 Tải CV để AI tự điền hồ sơ</h3>'
+   +'<input type="file" accept=".pdf,.docx,.txt" onchange="onCVFile(event)" style="margin:6px 0;font-size:13px;width:100%">'
+   +'<textarea class="in" id="cvText" placeholder="…hoặc copy chữ trong CV rồi dán vào đây"></textarea>'
+   +'<button class="btn" id="btnAI" onclick="aiParse()">✨ AI bóc tách đầy đủ (ngành · chức danh · số năm · kỹ năng)</button>'
+   +'<div id="cvSug" style="margin-top:10px"></div></div>'
+   +'<div class="blk"><h3>⭐ Kỹ năng của tôi</h3><div id="skchips">'+sk+'</div>'
+   +'<div class="ac"><input class="in" id="skin" placeholder="Gõ để tìm kỹ năng… (vd: bán hàng, kế toán)" oninput="acS(this.value)" autocomplete="off"><div id="acbox"></div></div>'
+   +'<div class="msg" id="m1"></div></div>'
+   +'<div class="blk"><h3>📁 CV của tôi (bản gốc + bản hoàn thiện)</h3><div id="cvPanel"><div class="note">Đang tải…</div></div></div>'
+   +'<div class="note">Xong rồi? Sang <b>Chấm CV × JD</b> để so khớp với tin tuyển dụng.</div>'
+   +'<a class="btn" style="text-decoration:none" href="/ho-so-viec-lam/cham/">Tiếp: Chấm CV × JD →</a></div>';
+}
+function extractPDF(f){ return f.arrayBuffer().then(function(buf){ try{pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';}catch(e){}
+  return pdfjsLib.getDocument({data:buf}).promise.then(function(pdf){ var ch=Promise.resolve(''); for(var p=1;p<=pdf.numPages;p++){(function(pn){ch=ch.then(function(a){return pdf.getPage(pn).then(function(pg){return pg.getTextContent();}).then(function(tc){return a+tc.items.map(function(i){return i.str;}).join(' ')+'\n';});});})(p);} return ch; }); }); }
+function extractDOCX(f){ return f.arrayBuffer().then(function(buf){ return mammoth.extractRawText({arrayBuffer:buf}).then(function(r){return r.value;}); }); }
+function onCVFile(e){ var f=e.target.files&&e.target.files[0]; if(!f)return; var nm=f.name.toLowerCase(),ta=document.getElementById('cvText'),su=document.getElementById('cvSug');
+  ta.value='Đang đọc file…'; su.innerHTML='';
+  var ok=function(t){ta.value=(t||'').trim();su.innerHTML='<div class="note">Đã đọc xong CV. Bấm "AI bóc tách đầy đủ" để tự điền hồ sơ.</div>';};
+  var bad=function(){ta.value='';su.innerHTML='<div class="note">Không đọc được file — copy chữ trong CV rồi dán vào ô.</div>';};
+  if(nm.slice(-4)==='.txt')f.text().then(ok).catch(bad);
+  else if(nm.slice(-4)==='.pdf'){if(!window.pdfjsLib){bad();return;}extractPDF(f).then(ok).catch(bad);}
+  else if(nm.slice(-5)==='.docx'){if(!window.mammoth){bad();return;}extractDOCX(f).then(ok).catch(bad);}
+  else bad(); }
+function aiParse(){ var t=(document.getElementById('cvText').value||'').trim(); if(t.length<30){TT.msg('m1','err','Tải CV hoặc dán nội dung CV trước nhé.');return;}
+  var b=document.getElementById('btnAI'); b.disabled=true; b.textContent='AI đang đọc CV…';
+  TT.api('/profile/cv/parse',{method:'POST',body:JSON.stringify({text:t})}).then(function(r){ PROFILE=r.profile; render(); loadCVs();
+    setTimeout(function(){ var s=document.getElementById('cvSug'); if(!s)return; var k=(r.profile&&r.profile.khoi)||{}; var need=[];
+      (k[1]||[]).concat(k[3]||[]).forEach(function(f){ if(!(f.value!=null&&String(f.value).trim()!=='')) need.push(TT.FLD[f.fieldCode]||f.fieldCode); });
+      var sup=need.length?'<div class="note" style="margin-top:8px">📝 <b>CV chưa nói rõ mấy điều này</b> — bổ sung giúp (điền tay ở ô trên hoặc thêm kỹ năng): '+TT.esc(need.join(', '))+'.</div>':'';
+      s.innerHTML='<div class="msg ok" style="display:block">✓ AI đã điền '+r.filled+' ô hồ sơ + '+r.skillsAdded+' kỹ năng. Rà lại — kỹ năng nào CV chưa ghi mà mình làm được thì thêm bên dưới.</div>'+sup; },60);
+  }).catch(function(e){ TT.msg('m1','err','AI bóc tách lỗi: '+e.message); b.disabled=false; b.textContent='✨ AI bóc tách đầy đủ (ngành · chức danh · số năm · kỹ năng)'; }); }
+function acS(q){ var have={}; (PROFILE.skills||[]).forEach(function(s){have[s.skillCode]=1;}); TT.acSkill(q,'acbox',have,function(ma){addSkill(ma);}); }
+function addSkill(ma){ TT.api('/profile/skills',{method:'POST',body:JSON.stringify({codes:[ma]})}).then(function(){ var i=document.getElementById('skin'); if(i)i.value=''; loadProfile(); }).catch(function(e){TT.msg('m1','err',e.message);}); }
+function delSkill(ma){ TT.api('/profile/skills/'+encodeURIComponent(ma),{method:'DELETE'}).then(function(){loadProfile();}).catch(function(){ TT.msg('m1','ok','(Bản này chưa hỗ trợ xoá — bỏ qua nhẹ)'); }); }
+function loadCVs(){ var panel=document.getElementById('cvPanel'); if(!panel)return;
+  TT.api('/profile/cv/list').then(function(list){ var goc=list.filter(function(x){return x.isOriginal;})[0]; var hts=list.filter(function(x){return !x.isOriginal;});
+    var h='<div class="ck have" style="display:block"><div><b>📌 Bản gốc</b> <span class="badge b-ok">giữ nguyên</span></div>';
+    if(goc){ h+='<textarea class="in" id="cvGoc" style="min-height:120px">'+TT.esc(goc.parsedText||'')+'</textarea><button class="btn sec mini" onclick="cvSave(\''+goc.id+'\')">💾 Lưu bản gốc</button> <button class="btn sec mini" onclick="cvCopy(\'cvGoc\')">📋 Copy</button>'; }
+    else h+='<div class="note">Chưa có CV gốc — tải CV lên ở trên để tạo.</div>';
+    h+='</div>';
+    if(hts.length){ h+='<div style="margin:8px 0 4px"><b>✨ Bản hoàn thiện theo JD</b> <span class="badge b-empty">'+hts.length+'</span></div>';
+      h+=hts.map(function(x){ return '<div class="ck miss" style="display:block"><div><b>'+TT.esc(x.label||'CV hoàn thiện')+'</b></div><textarea class="in" style="min-height:100px">'+TT.esc(x.parsedText||'')+'</textarea><button class="btn sec mini" onclick="cvCopyNear(this)">📋 Copy</button> <button class="btn sec mini" onclick="cvDatGoc(\''+x.id+'\')">⭐ Đặt làm gốc</button></div>'; }).join(''); }
+    else h+='<div class="note" style="margin-top:6px">Bản hoàn thiện tạo ở trang <b>Chấm CV × JD</b> (sau khi chấm 1 tin).</div>';
+    panel.innerHTML=h;
+  }).catch(function(e){ panel.innerHTML='<div class="note">Không tải được CV: '+TT.esc(e.message)+'</div>'; }); }
+function cvSave(id){ var t=(document.getElementById('cvGoc')||{}).value||''; TT.api('/profile/cv/'+id,{method:'PUT',body:JSON.stringify({parsedText:t})}).then(function(){TT.msg('m1','ok','Đã lưu bản gốc.');}).catch(function(e){alert(e.message);}); }
+function cvDatGoc(id){ if(!confirm('Lấy bản hoàn thiện này GHI ĐÈ lên bản gốc? (quyết định của anh/chị)'))return; TT.api('/profile/cv/'+id+'/dat-goc',{method:'POST',body:'{}'}).then(function(){loadCVs();TT.msg('m1','ok','Đã đặt làm bản gốc.');}).catch(function(e){alert(e.message);}); }
+function cvCopy(id){ var el=document.getElementById(id); if(el){el.select();try{document.execCommand('copy');}catch(e){}TT.msg('m1','ok','Đã copy.');} }
+function cvCopyNear(btn){ var ta=btn.parentNode.getElementsByTagName('textarea')[0]; if(ta){ta.select();try{document.execCommand('copy');}catch(e){}} }
+</script>
+</body>
+</html>

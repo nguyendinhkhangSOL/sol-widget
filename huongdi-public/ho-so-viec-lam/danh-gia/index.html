@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Đánh giá CV & Kỹ năng · Đi Cùng Sol</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap"><div id="gate"></div><div id="page" style="display:none">
+  <div id="sub"></div>
+  <h1 class="pt">📊 Đánh giá CV & Kỹ năng</h1>
+  <p class="lead">Xem kỹ năng mình có, và danh sách việc cần hoàn thiện để CV mạnh hơn (gom từ các lần chấm JD).</p>
+  <div id="screen"><div class="card"><div class="note">Đang tải…</div></div></div>
+</div></div>
+<script src="/sol-chrome.js" defer></script>
+<script src="/ho-so-viec-lam/tt-core.js"></script>
+<script>
+if(TT.gate()){ document.getElementById('page').style.display='block'; document.getElementById('sub').innerHTML=TT.subnav('danh-gia'); load(); }
+function load(){ Promise.all([TT.api('/profile'), TT.api('/profile/completion').catch(function(){return [];})]).then(function(res){ render(res[0],res[1]); })
+  .catch(function(e){ document.getElementById('screen').innerHTML='<div class="card center"><h2>Không tải được</h2><p class="lead">'+TT.esc(e.message)+'</p></div>'; }); }
+function kindMeta(k){ return k==='THEM_CV'?{ic:'📝',t:'Thêm vào CV'}:k==='NANG_CAO'?{ic:'✍️',t:'Làm rõ / ví dụ'}:{ic:'📚',t:'Nên học'}; }
+function render(profile, list){
+  var sk=(profile.skills||[]); var thanh=sk.filter(function(s){return s.mucDo!=='CO_BAN';}); var cb=sk.filter(function(s){return s.mucDo==='CO_BAN';});
+  var chip=function(arr,cls){ return arr.map(function(s){return '<span class="chip"'+(cls?' style="background:#fffbeb"':'')+'>'+TT.esc(TT.LABEL[s.skillCode]||s.skillCode)+'</span>';}).join('')||'<span style="color:#94A3B8;font-size:13px">—</span>'; };
+  var todo=(list||[]).filter(function(x){return x.status!=='DA_LAM';}); var done=(list||[]).filter(function(x){return x.status==='DA_LAM';});
+  var htH=todo.length? todo.map(function(x){ var m=kindMeta(x.kind);
+      return '<div class="ck miss" style="display:block"><div><span>'+m.ic+'</span> <b>'+TT.esc(x.nhan)+'</b> <span class="badge b-empty">'+m.t+'</span></div>'+(x.goiY?'<div class="note" style="white-space:pre-line;background:#fffbeb;border-left:3px solid #F59E0B;padding:6px 10px">'+TT.esc(x.goiY)+'</div>':'')+'<button class="btn sec mini" style="margin-top:6px" onclick="htDone(\''+x.id+'\')">✓ Đã bổ sung vào CV</button></div>'; }).join('')
+    : '<div class="note">Chưa có việc nào. Chấm 1 tin ở "Chấm CV × JD" và tự đánh giá → việc hoàn thiện sẽ hiện ở đây.</div>';
+  if(done.length) htH+='<div class="note" style="margin-top:8px">✅ Đã hoàn thiện: '+done.map(function(x){return TT.esc(x.nhan);}).join(', ')+'</div>';
+  document.getElementById('screen').innerHTML='<div class="card">'
+   +'<div class="blk"><h3>⭐ Kỹ năng thành thạo <span class="badge b-ok">'+thanh.length+'</span></h3>'+chip(thanh)+'</div>'
+   +(cb.length?'<div class="blk"><h3>◐ Biết một ít <span class="badge b-empty">'+cb.length+'</span></h3>'+chip(cb,1)+'</div>':'')
+   +'<div class="blk"><h3>📋 Hồ sơ cần hoàn thiện <span class="badge b-empty">'+todo.length+' việc</span></h3>'+htH+'</div>'
+   +'<div class="note">Kỹ năng thêm/sửa ở trang <b>Tạo lập CV</b>. Mỗi việc hoàn thiện có gợi ý cách viết vào CV.</div></div>';
+}
+function htDone(id){ TT.api('/profile/completion/'+id+'/done',{method:'POST',body:'{}'}).then(function(){load();}).catch(function(e){alert(e.message);}); }
+</script>
+</body>
+</html>
