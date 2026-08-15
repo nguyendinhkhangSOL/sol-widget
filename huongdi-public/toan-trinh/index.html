@@ -76,7 +76,7 @@ var LABEL = {}; SKILLS.forEach(function(s){LABEL[s.ma]=s.nhan});
 var FLD = {"K1.nganh":"Ngành đã làm","K1.chucdanh":"Chức danh gần nhất","K1.capbac":"Cấp bậc","K1.sonam":"Số năm nghề","K1.quymo":"Quy mô từng quản (người/tiền)","K1.tunglamchu":"Từng tự kinh doanh","K2.donghe":"Đồ nghề / máy móc còn giữ","K2.matbang":"Mặt bằng / xưởng / xe","K2.bangcap":"Bằng cấp / chứng chỉ","K2.tienmat":"Vốn tiền có thể dùng","K3.tinh":"Tỉnh/thành hiện tại","K3.banklinh":"Đi làm được bán kính","K4.congtycu":"Công ty cũ (danh sách)","K4.nganhcu":"Ngành cũ / mối quan hệ","K4.khachcu":"Khách / đối tác cũ còn liên lạc"};
 var KW = [["quản lý khách hàng bằng phần mềm", "KN.so.crm"], ["quản lý nhân sự bán hàng", "KN.ql.doingu"], ["quản lý đội ngũ bán hàng", "KN.ql.doingu"], ["chăm sóc khách hàng lớn", "KN.ban.cskh"], ["bán hàng doanh nghiệp", "KN.ban.b2b"], ["tổ chức chương trình", "KN.mkt.sukien"], ["chăm sóc khách hàng", "KN.ban.cskh"], ["chuẩn hoá quy trình", "KN.ql.quytrinh"], ["giám sát công trình", "KN.kt.xaydung"], ["khách doanh nghiệp", "KN.ban.b2b"], ["bán hàng trực tiếp", "KN.ban.le"], ["project management", "KN.ql.duan"], ["phát triển nhân sự", "KN.ns.daotao"], ["gọi điện bán hàng", "KN.ban.telesale"], ["quản lý chi nhánh", "KN.ql.vanhanh"], ["kiểm soát chi phí", "KN.ql.ngansach"], ["báo cáo tài chính", "KN.tc.baocao"], ["phải thu phải trả", "KN.tc.congno"], ["vận hành thiết bị", "KN.kt.vanhanhmay"], ["kế hoạch sản xuất", "KN.sx.dieudo"], ["planning sản xuất", "KN.sx.dieudo"], ["customer service", "KN.ban.cskh"], ["quản lý cửa hàng", "KN.ql.vanhanh"], ["kế toán tổng hợp", "KN.tc.sosach"], ["phần mềm kế toán", "KN.tc.phanmem"], ["trí tuệ nhân tạo", "KN.so.ai"], ["phát triển kênh", "KN.ban.kenh"], ["bán hàng online", "KN.ban.online"], ["quản lý chi phí", "KN.ql.ngansach"], ["quyết toán thuế", "KN.tc.thue"], ["hoá đơn điện tử", "KN.tc.thue"], ["thu hồi công nợ", "KN.tc.congno"], ["thiết kế cơ bản", "KN.so.canva"], ["quản lý dữ liệu", "KN.hc.dulieu"], ["đào tạo nhân sự", "KN.ns.daotao"], ["kênh phân phối", "KN.ban.kenh"], ["đào tạo nội bộ", "KN.dt.giangday"], ["chuỗi cung ứng", "KN.sx.cungung"], ["marketing tổng", "KN.mkt.thuonghieu"], ["nhà phân phối", "KN.ban.kenh"], ["quản lý dự án", "KN.ql.duan"], ["hồ sơ giấy tờ", "KN.hc.vanthu"], ["xuất nhập kho", "KN.sx.kho"], ["distribution", "KN.ban.kenh"], ["quản lý team", "KN.ql.doingu"], ["kê khai thuế", "KN.tc.thue"], ["báo cáo thuế", "KN.tc.baocao"], ["vận hành máy", "KN.kt.vanhanhmay"], ["google sheet", "KN.so.excel"], ["social media", "KN.so.mxh"], ["lương thưởng", "KN.ns.cb"], ["supply chain", "KN.sx.cungung"], ["facebook ads", "KN.mkt.quangcao"], ["kế toán thuế", "KN.tc.thue"], ["tiktok shop", "KN.ban.online"], ["quản lý đội", "KN.ql.doingu"], ["dẫn dắt đội", "KN.ql.doingu"], ["maintenance", "KN.kt.suachua"], ["mạng xã hội", "KN.so.mxh"], ["procurement", "KN.hc.muahang"], ["recruitment", "KN.ns.tuyendung"], ["quản lý kho", "KN.sx.kho"], ["copywriting", "KN.mkt.noidung"], ["thương hiệu", "KN.mkt.thuonghieu"], ["tiếng trung", "KN.nn.trung"], ["quản lý 20+", "KN.ql.doingu"], ["bán online", "KN.ban.online"], ["leadership", "KN.ql.doingu"], ["operations", "KN.ql.vanhanh"], ["tính lương", "KN.tc.luong"], ["bảng lương", "KN.tc.luong"], ["hoàn thiện", "KN.kt.xaydung"], ["salesforce", "KN.so.crm"], ["công cụ ai", "KN.so.ai"], ["consulting", "KN.dt.tuvan"], ["điều dưỡng", "KN.dv.chamsoc"], ["vận chuyển", "KN.dv.vanchuyen"], ["hành chính", "KN.hc.vanthu"], ["data entry", "KN.hc.dulieu"], ["purchasing", "KN.hc.muahang"], ["tuyển dụng", "KN.ns.tuyendung"], ["chất lượng", "KN.sx.qc"], ["google ads", "KN.mkt.quangcao"], ["tiếng nhật", "KN.nn.nhat"], ["telesales", "KN.ban.telesale"], ["ngân sách", "KN.ql.ngansach"], ["quy trình", "KN.ql.quytrinh"], ["hạch toán", "KN.tc.sosach"], ["bảo dưỡng", "KN.kt.suachua"], ["điện lạnh", "KN.kt.dien"], ["điện nước", "KN.kt.dien"], ["bảng tính", "KN.so.excel"], ["hàm excel", "KN.so.excel"], ["soạn thảo", "KN.so.word"], ["giảng dạy", "KN.dt.giangday"], ["giúp việc", "KN.dv.chamsoc"], ["chăm bệnh", "KN.dv.chamsoc"], ["giao hàng", "KN.dv.vanchuyen"], ["giao nhận", "KN.dv.vanchuyen"], ["nhập liệu", "KN.hc.dulieu"], ["kiểm phẩm", "KN.sx.qc"], ["warehouse", "KN.sx.kho"], ["quảng cáo", "KN.mkt.quangcao"], ["tiếng anh", "KN.nn.anh"], ["tiếng hàn", "KN.nn.han"], ["sale b2b", "KN.ban.b2b"], ["cửa hàng", "KN.ban.le"], ["telesale", "KN.ban.telesale"], ["sàn tmđt", "KN.ban.online"], ["vận hành", "KN.ql.vanhanh"], ["sap fico", "KN.tc.phanmem"], ["sửa chữa", "KN.kt.suachua"], ["thợ điện", "KN.kt.dien"], ["gia công", "KN.kt.cokhi"], ["thi công", "KN.kt.xaydung"], ["đứng máy", "KN.kt.vanhanhmay"], ["facebook", "KN.so.mxh"], ["coaching", "KN.dt.kem"], ["đứng lớp", "KN.dt.giangday"], ["làm bánh", "KN.dv.amthuc"], ["chăm sóc", "KN.dv.chamsoc"], ["tiếp tân", "KN.hc.lettan"], ["tiếp đón", "KN.hc.lettan"], ["mua hàng", "KN.hc.muahang"], ["headhunt", "KN.ns.tuyendung"], ["phúc lợi", "KN.ns.cb"], ["cung ứng", "KN.sx.cungung"], ["nội dung", "KN.mkt.noidung"], ["viết bài", "KN.mkt.noidung"], ["chạy ads", "KN.mkt.quangcao"], ["branding", "KN.mkt.thuonghieu"], ["hậu mãi", "KN.ban.cskh"], ["sổ sách", "KN.tc.sosach"], ["công nợ", "KN.tc.congno"], ["payroll", "KN.tc.luong"], ["bảo trì", "KN.kt.suachua"], ["thợ xây", "KN.kt.xaydung"], ["văn bản", "KN.so.word"], ["hubspot", "KN.so.crm"], ["làm ảnh", "KN.so.canva"], ["chatgpt", "KN.so.ai"], ["fanpage", "KN.so.mxh"], ["zalo oa", "KN.so.mxh"], ["dạy kèm", "KN.dt.kem"], ["trainer", "KN.dt.giangday"], ["ẩm thực", "KN.dv.amthuc"], ["đầu bếp", "KN.dv.amthuc"], ["làm đẹp", "KN.dv.lamdep"], ["thẩm mỹ", "KN.dv.lamdep"], ["văn thư", "KN.hc.vanthu"], ["thu mua", "KN.hc.muahang"], ["điều độ", "KN.sx.dieudo"], ["content", "KN.mkt.noidung"], ["sự kiện", "KN.mkt.sukien"], ["english", "KN.nn.anh"], ["hoa ngữ", "KN.nn.trung"], ["bán lẻ", "KN.ban.le"], ["đại lý", "KN.ban.kenh"], ["shopee", "KN.ban.online"], ["lazada", "KN.ban.online"], ["budget", "KN.ql.ngansach"], ["ghi sổ", "KN.tc.sosach"], ["cơ khí", "KN.kt.cokhi"], ["gia sư", "KN.dt.kem"], ["tư vấn", "KN.dt.tuvan"], ["cố vấn", "KN.dt.tuvan"], ["nấu ăn", "KN.dv.amthuc"], ["tài xế", "KN.dv.vanchuyen"], ["thư ký", "KN.hc.vanthu"], ["lễ tân", "KN.hc.lettan"], ["bravo", "KN.tc.phanmem"], ["excel", "KN.so.excel"], ["pivot", "KN.so.excel"], ["canva", "KN.so.canva"], ["event", "KN.mkt.sukien"], ["toeic", "KN.nn.anh"], ["ielts", "KN.nn.anh"], ["topik", "KN.nn.han"], ["cskh", "KN.ban.cskh"], ["thuế", "KN.tc.thue"], ["bctc", "KN.tc.baocao"], ["misa", "KN.tc.phanmem"], ["fast", "KN.tc.phanmem"], ["điện", "KN.kt.dien"], ["tiện", "KN.kt.cokhi"], ["phay", "KN.kt.cokhi"], ["word", "KN.so.word"], ["nail", "KN.dv.lamdep"], ["bhxh", "KN.ns.cb"], ["jlpt", "KN.nn.nhat"], ["b2b", "KN.ban.b2b"], ["b2c", "KN.ban.le"], ["p&l", "KN.ql.ngansach"], ["pmp", "KN.ql.duan"], ["sop", "KN.ql.quytrinh"], ["hàn", "KN.kt.cokhi"], ["crm", "KN.so.crm"], ["kèm", "KN.dt.kem"], ["bếp", "KN.dv.amthuc"], ["spa", "KN.dv.lamdep"], ["tóc", "KN.dv.lamdep"], ["c&b", "KN.ns.cb"], ["l&d", "KN.ns.daotao"], ["kcs", "KN.sx.qc"], ["kho", "KN.sx.kho"], ["ads", "KN.mkt.quangcao"], ["hsk", "KN.nn.trung"], ["ai", "KN.so.ai"], ["qc", "KN.sx.qc"]];
 var STEPS=["1 · Hồ sơ","2 · Chấm CV×JD","3 · La Bàn","4 · Thư"];
-var cur=0, PROFILE=null, TARGET=null, RUN=null;
+var cur=0, PROFILE=null, TARGET=null, RUN=null, SELF={};
 
 function api(path, opts){
   opts=opts||{}; opts.headers=Object.assign({'Content-Type':'application/json','Authorization':'Bearer '+TOKEN}, opts.headers||{});
@@ -165,7 +165,15 @@ function aiParse(){
   var b=document.getElementById('btnAI'); b.disabled=true; b.textContent='AI đang đọc CV…';
   api('/profile/cv/parse',{method:'POST',body:JSON.stringify({text:t})}).then(function(r){
     PROFILE=r.profile; render();
-    setTimeout(function(){var s=document.getElementById('cvSug'); if(s) s.innerHTML='<div class="msg ok" style="display:block">✓ AI đã điền '+r.filled+' ô hồ sơ + '+r.skillsAdded+' kỹ năng từ CV. Anh chị rà lại rồi sang bước Chấm.</div>';},60);
+    setTimeout(function(){var s=document.getElementById('cvSug'); if(!s)return;
+      // Liệt kê ô quan trọng CV chưa nói rõ để anh chị tự bổ sung
+      var k=(r.profile&&r.profile.khoi)||{}; var need=[];
+      (k[1]||[]).concat(k[3]||[]).forEach(function(f){
+        var has=f.value!=null&&String(f.value).trim()!==''; if(!has) need.push(FLD[f.fieldCode]||f.fieldCode);
+      });
+      var sup = need.length? '<div class="note" style="margin-top:8px;border-left:3px solid var(--amber);padding-left:10px">📝 <b>CV chưa nói rõ mấy điều này</b> — anh chị bổ sung giúp (điền tay ở các ô trên hoặc thêm kỹ năng bên dưới): '+esc(need.join(', '))+'.</div>' : '';
+      s.innerHTML='<div class="msg ok" style="display:block">✓ AI đã điền '+r.filled+' ô hồ sơ + '+r.skillsAdded+' kỹ năng từ CV. Anh chị rà lại — nếu có kỹ năng nào CV chưa ghi mà mình vẫn làm được, thêm ở "⭐ Kỹ năng của tôi" bên dưới.</div>'+sup;
+    },60);
   }).catch(function(e){msg('m1','err','AI bóc tách lỗi: '+e.message); b.disabled=false; b.textContent='✨ AI bóc tách đầy đủ (ngành · chức danh · số năm · kỹ năng)';});
 }
 function bocCV(){
@@ -221,19 +229,49 @@ function doCham(){
    .then(function(run){RUN=run; renderCham(run); b.disabled=false; b.textContent='⚙️ Chấm lại';})
    .catch(function(e){msg('m2','err',e.message); b.disabled=false; b.textContent='⚙️ Chấm điểm khớp';});
 }
+function labCua(c){ return c.nhan || LABEL[c.code] || (String(c.code).indexOf('ATTR.sonam')>=0?('Kinh nghiệm '+String(c.code).split('>=')[1]+'+ năm'):c.code); }
+function selfBtn(code,val,txt){
+  var on=SELF[code]===val;
+  var st='border:1px solid '+(on?'var(--amber)':'#e2e8f0')+';border-radius:8px;padding:6px 11px;margin:5px 5px 0 0;background:'+(on?'var(--amber)':'#fff')+';color:'+(on?'#fff':'var(--navy)')+';cursor:pointer;font-size:13px;font-weight:600';
+  return '<button type="button" style="'+st+'" onclick="setSelf(\''+code+'\',\''+val+'\',this)">'+txt+'</button>';
+}
+function setSelf(code,val,btn){
+  SELF[code]=val;
+  var bs=btn.parentNode.getElementsByTagName('button');
+  for(var i=0;i<bs.length;i++){bs[i].style.background='#fff';bs[i].style.color='var(--navy)';bs[i].style.borderColor='#e2e8f0';}
+  btn.style.background='var(--amber)';btn.style.color='#fff';btn.style.borderColor='var(--amber)';
+}
+function submitHoanThien(){
+  var ans=[]; for(var k in SELF){ if(SELF[k]) ans.push({code:k,muc_do:SELF[k]}); }
+  if(!ans.length){msg('m2','err','Anh/chị chọn mức (Đã có / Biết một ít / Chưa biết) cho ít nhất 1 mục nhé.');return}
+  var b=document.getElementById('btnHT'); if(b){b.disabled=true;b.textContent='Đang cập nhật…';}
+  api('/profile/target/'+TARGET.id+'/hoan-thien',{method:'POST',body:JSON.stringify({answers:ans})})
+   .then(function(run){RUN=run; SELF={}; renderCham(run);
+     var s=document.getElementById('chamKq'); if(s){window.scrollTo(0,s.offsetTop-20);} })
+   .catch(function(e){msg('m2','err',e.message); if(b){b.disabled=false;b.textContent='💪 Cập nhật hồ sơ & chấm lại';}});
+}
 function renderCham(run){
-  var ck=(run.checklist||[]).map(function(c){
-    var lab=LABEL[c.code]|| (String(c.code).indexOf('ATTR.sonam')>=0?('Kinh nghiệm '+String(c.code).split('>=')[1]+'+ năm'):c.code);
-    var ok=c.state==='DA_CO';
-    return '<div class="ck '+(ok?'have':'miss')+'"><span class="ic">'+(ok?'✓':'!')+'</span><span>'+esc(lab)+' — <b>'+(ok?'đã có':'còn thiếu')+'</b></span></div>';
+  var items=(run.checklist||[]);
+  var rows=items.map(function(c){
+    var lab=labCua(c);
+    if(c.state==='DA_CO') return '<div class="ck have"><span class="ic">✓</span><span>'+esc(lab)+' — <b>đã có</b></span></div>';
+    if(c.state==='CO_BAN') return '<div class="ck have" style="border-left-color:var(--amber);background:#fffbeb"><span class="ic" style="color:var(--amber)">◐</span><span>'+esc(lab)+' — <b>biết một ít</b> (nửa điểm)</span></div>';
+    var code=String(c.code);
+    return '<div class="ck miss" style="display:block">'
+      +'<div><span class="ic">!</span> <b>'+esc(lab)+'</b> — JD cần, hồ sơ chưa thấy. Thực tế anh/chị:</div>'
+      +'<div style="margin-top:2px">'+selfBtn(code,'DA_CO','✅ Đã có')+selfBtn(code,'BIET_IT','🟡 Biết một ít')+selfBtn(code,'CHUA_BIET','⬜ Chưa biết')+'</div></div>';
   }).join('') || '<div class="note">JD này không tách được mã nào — thử dán chi tiết hơn.</div>';
-  var hoc=((run.chieu2&&run.chieu2.phai_hoc)||[]).map(function(x){return '<div class="row"><span class="k">📚 Phải học</span><span class="v" style="max-width:62%">'+esc(LABEL[x.code]||x.code)+'</span></div>'}).join('');
+  var missCount=0; items.forEach(function(c){if(c.state==='CON_THIEU')missCount++;});
+  var htBtn=missCount? '<button class="btn" id="btnHT" onclick="submitHoanThien()" style="margin-top:12px">💪 Cập nhật hồ sơ & chấm lại</button>'
+                     +'<div class="note" style="margin-top:6px">Chọn "Đã có" cho việc anh/chị làm được (chỉ chưa ghi vào CV) → điểm sẽ lên và Sol nhắc anh/chị bổ sung vào CV.</div>' : '';
+  var kn=(run.chieu2&&run.chieu2.khuyen_nghi)||'';
+  var knHtml=kn? '<div class="blk"><h3>💡 Sol khuyên hoàn thiện</h3><div class="note" style="white-space:pre-line">'+esc(kn)+'</div></div>':'';
   document.getElementById('chamKq').innerHTML=
      '<div class="blk"><div class="score"><div class="big">'+run.scoreNow+'%</div><div style="font-size:13px;color:var(--slate)">mức khớp</div></div>'
     +'<div class="bar"><i style="width:'+run.scoreNow+'%"></i></div>'
     +'<div class="cmp"><span>lần đầu <b style="color:var(--slate)">'+run.scoreFirst+'%</b></span><span>→</span><span>giờ <b class="amber">'+run.scoreNow+'%</b></span></div></div>'
-    +'<div class="blk"><h3>✅ Đối chiếu yêu cầu</h3>'+ck+'</div>'
-    +(hoc?'<div class="blk"><h3>🛠️ Chiều 2 — cần bổ sung</h3>'+hoc+'</div>':'')
+    +'<div class="blk"><h3>✅ Đối chiếu yêu cầu</h3>'+rows+htBtn+'</div>'
+    +knHtml
     +'<button class="btn" onclick="go(2)">Xem La Bàn hướng đi →</button>';
 }
 

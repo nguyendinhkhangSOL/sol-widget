@@ -701,6 +701,7 @@ model ProfileSkill {
   skillCode  String              @map("skill_code")
   source     ProfileFieldSource?
   status     ProfileFieldStatus  @default(CHUA_XAC_NHAN)
+  mucDo      String?             @map("muc_do") // null/THANH_THAO = đủ điểm · CO_BAN = biết một ít (nửa điểm)
   createdAt  DateTime            @default(now()) @map("created_at")
   @@unique([profileId, skillCode])
   @@map("profile_skills")

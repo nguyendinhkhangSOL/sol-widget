@@ -29,12 +29,40 @@ open(p,'w',encoding='utf-8').write(t)
 print('   ✓ đã thêm cvParseRouter')
 PY
 
-echo "▶ 3) Build backend + khởi động lại"
+echo "▶ 3) Thêm cột muc_do vào profile_skills (an toàn, IF NOT EXISTS)"
 cd "$BE"
+cat > /tmp/sol_muc_do.sql <<'SQL'
+ALTER TABLE profile_skills ADD COLUMN IF NOT EXISTS muc_do text;
+SQL
+npx prisma db execute --file /tmp/sol_muc_do.sql --schema prisma/schema.prisma && echo "   ✓ cột muc_do OK"
+
+echo "▶ 4) Vá schema.prisma (thêm field mucDo nếu chưa có)"
+python3 - "$BE/prisma/schema.prisma" <<'PY'
+import sys
+p=sys.argv[1]; t=open(p,encoding='utf-8').read()
+if 'muc_do' in t:
+    print('   đã có mucDo rồi'); sys.exit(0)
+anchor='  skillCode  String              @map("skill_code")'
+if anchor in t:
+    t=t.replace(anchor, anchor+'\n  mucDo      String?             @map("muc_do")',1)
+    open(p,'w',encoding='utf-8').write(t); print('   ✓ đã thêm mucDo')
+else:
+    # dự phòng: neo lỏng hơn
+    import re
+    m=re.search(r'(skillCode\s+String\s+@map\("skill_code"\))', t)
+    if m:
+        t=t[:m.end()]+'\n  mucDo      String?             @map("muc_do")'+t[m.end():]
+        open(p,'w',encoding='utf-8').write(t); print('   ✓ đã thêm mucDo (neo lỏng)')
+    else:
+        print('   ⚠ KHÔNG thấy neo skill_code — kiểm tra thủ công'); sys.exit(1)
+PY
+
+echo "▶ 5) prisma generate + Build backend + khởi động lại"
+npx prisma generate
 npm run build
 pm2 restart huongdi-api
 
-echo "▶ 4) Cập nhật trang FE (Toàn Trình)"
+echo "▶ 6) Cập nhật trang FE (Toàn Trình)"
 sudo cp "$ROOT/huongdi-public/toan-trinh/index.html" /var/www/huongdi/public/toan-trinh/index.html
 
 echo "✅ XONG — mở lại https://huongdi.sol.vn/toan-trinh/ (F5). Nếu ▶3 build đỏ: web vẫn chạy bản cũ, chụp cho em."

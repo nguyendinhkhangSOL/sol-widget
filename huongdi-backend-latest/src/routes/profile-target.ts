@@ -82,30 +82,68 @@ ${text.slice(0, 10000)}`;
   return out;
 }
 
-// ── CHẤM: hồ sơ (mã kỹ năng) × JD (mã yêu cầu) → % + checklist + chiều 2 ──
+// ── nhãn kỹ năng để hiện chữ (không lộ mã) ──
+const NHAN: Record<string, string> = Object.fromEntries(KY.map((k) => [k.ma, k.nhan]));
+const nhanCua = (code: string) =>
+  code.startsWith('ATTR.sonam>=') ? `Kinh nghiệm ${code.split('>=')[1]}+ năm` : (NHAN[code] || code);
+
+// ── CHẤM: hồ sơ (mã kỹ năng + mức độ) × JD (mã yêu cầu) → % + checklist + chiều 2 ──
+// haveLevel: Map mã → mức độ ('CO_BAN' = biết một ít → nửa điểm · khác/undefined-có = đủ điểm)
 export function scoreProfile(
-  have: Set<string>,
+  haveLevel: Map<string, string | null | undefined>,
   required: Array<{ code: string; loai: string; diem: number }>,
   sonam?: number,
 ) {
   let total = 0, matched = 0;
   const checklist: any[] = [];
-  const missing: any[] = [];
+  const missing: any[] = [];   // chưa có → phải học
+  const partial: any[] = [];   // biết một ít → nâng cao
   for (const r of required) {
     total += r.diem;
-    let ok = false;
     if (r.code.startsWith('ATTR.sonam>=')) {
       const need = parseInt(r.code.split('>=')[1], 10);
-      ok = (sonam ?? 0) >= need;
-    } else ok = have.has(r.code);
-    if (ok) { matched += r.diem; checklist.push({ code: r.code, state: 'DA_CO' }); }
-    else    { checklist.push({ code: r.code, state: 'CON_THIEU' }); missing.push(r); }
+      const ok = (sonam ?? 0) >= need;
+      if (ok) { matched += r.diem; checklist.push({ code: r.code, nhan: nhanCua(r.code), state: 'DA_CO' }); }
+      else { checklist.push({ code: r.code, nhan: nhanCua(r.code), state: 'CON_THIEU' }); missing.push(r); }
+      continue;
+    }
+    const has = haveLevel.has(r.code);
+    const lvl = haveLevel.get(r.code);
+    if (!has) { checklist.push({ code: r.code, nhan: nhanCua(r.code), state: 'CON_THIEU' }); missing.push(r); }
+    else if (lvl === 'CO_BAN') {
+      const half = Math.round(r.diem / 2); matched += half;
+      checklist.push({ code: r.code, nhan: nhanCua(r.code), state: 'CO_BAN' }); partial.push(r);
+    } else { matched += r.diem; checklist.push({ code: r.code, nhan: nhanCua(r.code), state: 'DA_CO' }); }
   }
   const score = total ? Math.round((matched / total) * 100) : 0;
-  // Chiều 2: mặc định xếp missing vào "phải đi học". Dev tinh chỉnh:
-  // - nếu khách CÓ kỹ năng nhưng CV chưa nêu số/không viết → VIET_LAI (đọc từ profile_fields).
-  const chieu2 = { viet_lai: [] as any[], phai_hoc: missing.map((r) => ({ code: r.code })) };
-  return { score, checklist, chieu2 };
+  const chieu2 = {
+    viet_lai: [] as any[],
+    phai_hoc: missing.map((r) => ({ code: r.code, nhan: nhanCua(r.code) })),
+    nang_cao: partial.map((r) => ({ code: r.code, nhan: nhanCua(r.code) })),
+  };
+  return { score, checklist, chieu2, missing, partial };
+}
+
+// ── AI viết khuyến nghị hoàn thiện hồ sơ (giọng đời thường, cho U40–60) ──
+async function goiYHoanThien(title: string | null, missing: any[], partial: any[]): Promise<string> {
+  const thieu = missing.map((r) => nhanCua(r.code));
+  const bietit = partial.map((r) => nhanCua(r.code));
+  if (!thieu.length && !bietit.length) return 'Hồ sơ đã khớp tốt với vị trí này. Anh/chị có thể nộp và viết thư ứng tuyển.';
+  try {
+    const prompt = `Bạn là cố vấn nghề nghiệp thân thiện cho người 40–60 tuổi ở Việt Nam. Viết lời khuyên NGẮN GỌN, đời thường (xưng "anh/chị"), giúp họ hoàn thiện hồ sơ cho vị trí "${title || 'này'}".
+- Kỹ năng họ CHƯA CÓ (cần học/né): ${thieu.join(', ') || 'không'}.
+- Kỹ năng họ BIẾT MỘT ÍT (cần làm rõ/nâng): ${bietit.join(', ') || 'không'}.
+YÊU CẦU:
+- Mỗi kỹ năng 1 câu: cách bổ sung nhanh hoặc học ở đâu, thực tế, không sáo rỗng.
+- Không dùng thuật ngữ Tây khó hiểu. Không markdown, không tiêu đề. Trả về 2–5 câu, xuống dòng giữa các ý.`;
+    const t = (await _ai(prompt)).trim();
+    if (t) return t;
+  } catch (e) { console.error('[goiYHoanThien] AI lỗi:', (e as any)?.message); }
+  // dự phòng tĩnh
+  const parts: string[] = [];
+  if (bietit.length) parts.push(`Anh/chị nêu 1–2 ví dụ cụ thể cho: ${bietit.join(', ')} để nâng thành thạo.`);
+  if (thieu.length) parts.push(`Nên bổ sung hoặc học thêm: ${thieu.join(', ')}. Nếu không hợp, cân nhắc chọn việc khác gần với thế mạnh hơn.`);
+  return parts.join('\n');
 }
 
 async function getProfile(userId: string) {
@@ -147,13 +185,57 @@ jobTargetRouter.post('/target/:id/run', async (req: any, res, next) => {
     const p = await getProfile(req.user.userId);
     const target = await prisma.jobTarget.findFirst({ where: { id: req.params.id, profileId: p.id }, include: { runs: { orderBy: { createdAt: 'asc' }, take: 1 } } });
     if (!target) throw new AppError(404, 'Không thấy hồ sơ mục tiêu');
-    const have = new Set(p.skills.map((s) => s.skillCode));
+    const haveLevel = new Map<string, string | null | undefined>(p.skills.map((s: any) => [s.skillCode, s.mucDo]));
     const sonamField = p.fields.find((f) => f.fieldCode === 'K1.sonam');
     const sonam = sonamField?.value ? parseInt(sonamField.value, 10) : undefined;
-    const { score, checklist, chieu2 } = scoreProfile(have, target.required as any, sonam);
+    const { score, checklist, chieu2, missing, partial } = scoreProfile(haveLevel, target.required as any, sonam);
+    (chieu2 as any).khuyen_nghi = await goiYHoanThien(target.title, missing, partial);
     const scoreFirst = target.runs[0]?.scoreFirst ?? score; // giữ số lần đầu
     const run = await prisma.matchRun.create({ data: { targetId: target.id, scoreFirst, scoreNow: score, checklist, chieu2 } });
-    res.json(run); // FE hiện "lần đầu {scoreFirst} · giờ {scoreNow}" + checklist + chiều 2
+    res.json(run); // FE hiện "lần đầu {scoreFirst} · giờ {scoreNow}" + checklist + chiều 2 + khuyến nghị
+  } catch (e) { next(e); }
+});
+
+// ── POST /api/profile/target/:id/hoan-thien ─ khách tự khai mục JD cần mà chưa có ──
+// body: { answers: [{ code, muc_do: 'DA_CO' | 'BIET_IT' | 'CHUA_BIET' }] }
+//   DA_CO   → thêm kỹ năng (đủ điểm)   BIET_IT → thêm (nửa điểm)   CHUA_BIET → bỏ (giữ là phải học)
+const hoanThienSchema = z.object({
+  answers: z.array(z.object({
+    code: z.string().min(2),
+    muc_do: z.enum(['DA_CO', 'BIET_IT', 'CHUA_BIET']),
+  })).min(1),
+});
+jobTargetRouter.post('/target/:id/hoan-thien', async (req: any, res, next) => {
+  try {
+    const b = hoanThienSchema.parse(req.body);
+    const p = await getProfile(req.user.userId);
+    const target = await prisma.jobTarget.findFirst({ where: { id: req.params.id, profileId: p.id }, include: { runs: { orderBy: { createdAt: 'asc' }, take: 1 } } });
+    if (!target) throw new AppError(404, 'Không thấy hồ sơ mục tiêu');
+
+    // 1) ghi kỹ năng khách tự khai (chỉ mã hợp lệ)
+    let added = 0;
+    for (const a of b.answers) {
+      if (a.muc_do === 'CHUA_BIET') continue;      // chưa biết → không thêm vào hồ sơ
+      if (!VALIDK.has(a.code)) continue;
+      const mucDo = a.muc_do === 'BIET_IT' ? 'CO_BAN' : null; // DA_CO = thành thạo (null)
+      await prisma.profileSkill.upsert({
+        where: { profileId_skillCode: { profileId: p.id, skillCode: a.code } },
+        update: { mucDo, source: 'KHACH_KHAI', status: 'DA_XAC_NHAN' },
+        create: { profileId: p.id, skillCode: a.code, mucDo, source: 'KHACH_KHAI', status: 'DA_XAC_NHAN' },
+      });
+      added++;
+    }
+
+    // 2) chấm lại (đọc hồ sơ mới) → tạo phiên bản mới
+    const p2 = await getProfile(req.user.userId);
+    const haveLevel = new Map<string, string | null | undefined>(p2.skills.map((s: any) => [s.skillCode, s.mucDo]));
+    const sonamField = p2.fields.find((f) => f.fieldCode === 'K1.sonam');
+    const sonam = sonamField?.value ? parseInt(sonamField.value, 10) : undefined;
+    const { score, checklist, chieu2, missing, partial } = scoreProfile(haveLevel, target.required as any, sonam);
+    (chieu2 as any).khuyen_nghi = await goiYHoanThien(target.title, missing, partial);
+    const scoreFirst = target.runs[0]?.scoreFirst ?? score;
+    const run = await prisma.matchRun.create({ data: { targetId: target.id, scoreFirst, scoreNow: score, checklist, chieu2 } });
+    res.json({ ...run, added });
   } catch (e) { next(e); }
 });
 
