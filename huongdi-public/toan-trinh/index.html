@@ -107,9 +107,11 @@ function render(){
 /* ---- LÁT 1 ---- */
 function fRows(arr){ if(!arr||!arr.length) return '<div class="row"><span class="k" style="color:#94A3B8">— chưa có ô nào —</span></div>';
   return arr.map(function(f){
+    var hasVal = f.value!=null && String(f.value).trim()!=='';
     var b = f.status==='CON_TRONG' ? '<span class="badge b-empty">còn trống</span>'
-      : (f.source?'<span class="badge b-src">'+esc(f.source)+'</span> ':'')+'<span class="badge b-ok">đã có</span>';
-    return '<div class="row"><span class="k">'+esc(f.fieldCode)+'</span><span class="v">'+esc(f.value||'—')+' &nbsp;'+b+'</span></div>';
+      : (hasVal ? (f.source?'<span class="badge b-src">'+esc(f.source)+'</span> ':'')+'<span class="badge b-ok">đã có</span>'
+                : '<span class="badge b-empty" style="background:#FEF3C7;color:#B45309">cần điền</span>');
+    return '<div class="row"><span class="k">'+esc(f.fieldCode)+'</span><span class="v">'+esc(hasVal?f.value:'—')+' &nbsp;'+b+'</span></div>';
   }).join('');
 }
 function scrHoSo(){
