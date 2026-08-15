@@ -344,6 +344,46 @@ await t.sendMail({
 
 **Lý do**: VN không quen subscription. Trust với "Khang KHÔNG tự rút tiền lần 2" cao hơn.
 
+### 2026-08-10 — URL trang mô hình (SEO 64 hướng đi) — CHỐT, KHÔNG ĐỔI
+
+**Quyết định**: URL trang mô hình = **`sol.vn/mo-hinh/<slug>/`**
+- **Có dấu gạch chéo cuối** (chuẩn WordPress — nhà chính). `/mo-hinh/abc` và `/mo-hinh/abc/` là 2 URL khác nhau với Google → ép CẢ hệ thống theo kiểu có `/`.
+- Slug = **tên mô hình, hết**. VD `/mo-hinh/tu-van-theo-gio/`.
+  - KHÔNG lặp "mo-hinh" trong slug (không `mo-hinh-tu-van-theo-gio`).
+  - KHÔNG nhồi từ khoá/tuổi vào slug (không `tu-van-theo-gio-cho-nguoi-40-60`) — nhồi không giúp SEO, mà đổi góc nhìn sau này thì kẹt.
+
+**Kiến trúc**: Nội dung mô hình (SEO công khai) đặt trên **sol.vn (WordPress, SSR, index)**; **huongdi.sol.vn** giữ phần app tương tác.
+- Ranh giới là **CHUNG / RIÊNG**, KHÔNG phải nông/sâu. Bài công khai phải **càng DÀY càng tốt** — "tóm lược" = trang mỏng = trang mồi, Google phạt.
+  - **Công khai hết (dày):** mô hình là gì · chết ở đâu · ai hợp / ai không hợp · cần bao nhiêu vốn, bao nhiêu giờ · câu phải tự hỏi trước khi xuống tiền. + video/reel cho mô hình cờ đầu.
+  - **Sau tường phí (riêng):** anh có hợp không · với vốn & giờ của anh thì còn lại mấy hướng · thứ tự làm cho riêng anh. = chính **La Bàn** (chấm cá nhân theo hồ sơ), thứ KHÔNG viết vào bài được dù dài đến đâu.
+- **Mức công khai = PHƯƠNG ÁN A (chốt 2026-08-10).** Phép thử MỘT CÂU: **nội dung đúng với MỌI người → công khai; đúng với MỘT người → đóng.** Ranh giới thực chất = **QUYẾT ĐỊNH (công khai) vs LÀM-CHO-RIÊNG-ANH (trả phí)**.
+  - **Công khai (10/11 section, càng dày càng tốt):** là gì / không phải là gì · vì sao hợp 40–60 · thị trường VN · xu hướng + AI · **con số thực (vốn/giờ/hoà vốn)** · bộ công cụ chi phí thấp · **pháp lý & rủi ro VN** · **6–8 chỗ chết cụ thể** · case THẬT · checklist "có nên làm không".
+  - **Sau tường:** **Lộ trình 90 ngày CHI TIẾT** (playbook thực thi) + case chưa thật + **La Bàn cá nhân hoá** (anh có hợp không · với hồ sơ anh còn mấy hướng · thứ tự & mốc riêng).
+  - **Quy tắc vàng:** bài công khai phải **đứng một mình như một bài đáng đọc** kể cả người đọc KHÔNG bao giờ bấm La Bàn. Bài chỉ có nghĩa khi kèm lời mời "mở hồ sơ" = mồi = KHÔNG đạt A.
+  - **Kéo theo (monetization):** app phải MỞ con số + pháp lý cho user free (không bán thứ mà sol.vn cho không); tường phí app dịch về đúng phần cá nhân hoá + lộ trình chi tiết.
+- Nút "Mở hồ sơ mô hình này →" **deep-link kèm ID** sang app để chấm cá nhân + hoàn thiện Bước 4–5. Nghịch lý: công khai càng dày → người đọc càng thấy rõ "mình không tự trả lời được câu vậy-tôi-thì-sao" → đó mới là lực đẩy vào La Bàn.
+- Trang chi tiết trong app → **canonical trỏ về bài sol.vn** (hoặc noindex) để Sol không tự đấu SEO với chính mình.
+- KHÔNG index cả 64 ngay: chỉ index mô hình đã đủ dày (🟢) + khớp cụm có hiển thị GSC; mô hình mỏng → noindex tới khi biên tập xong.
+
+**Lý do**: Gỡ nút render (app render client-side, bot Google/AI không đọc được chữ) mà không phải đụng code app; đúng ADR "sol.vn = nội dung/uy tín · huongdi = sản phẩm". Chốt bằng văn bản vì việc đi qua AI coding team + nhiều phiên — không viết ra thì lần sau sẽ bị đề xuất lại kiểu khác.
+
+### 2026-08-10 — Generator trang mô hình: nguồn gốc & 4 bất biến
+
+**Nguyên tắc MỘT CÂU:** Dữ liệu mô hình trong hệ thống (DB app) là **bản GỐC**. Trang WordPress `sol.vn/mo-hinh/…` là **bản IN**. **KHÔNG BAO GIỜ sửa bản in.** Muốn đổi 1 chữ trên trang → sửa ở nguồn → chạy lại generator. Không mở WordPress gõ tay. (Chỗ kỷ luật vỡ đầu tiên — phải giữ.)
+
+**3 loại cập nhật, 3 lệnh khác nhau:**
+- Nội dung 1 mô hình (thêm chỗ chết, sửa số) → chạy lại **1 slug** (thường xuyên).
+- Bản mẫu (thêm hộp nguồn/tác giả/khối link) → chạy lại **cả 58** (hiếm).
+- Dữ liệu chung (thuế, pháp lý) → chạy lại **các slug có tham chiếu** (khi luật đổi).
+
+**4 bất biến generator — KHOÁ TRONG CODE, không khoá trong đầu:**
+1. Chạy lại **GHI ĐÈ theo ánh xạ slug → WP page ID cố định**, KHÔNG đẻ trang mới (không sinh `-2`).
+2. **Dấu phiên bản** ẩn trong mỗi trang: `<!-- sol:gen data=<hash nguồn> tpl=<phiên bản mẫu> built=<ngày> -->`.
+3. **Chỉ sinh lại trang có nội dung THẬT SỰ đổi** (so hash nguồn; giống thì bỏ qua — đỡ phí crawl + không phát tín hiệu nhiễu). Đổi bản mẫu là ngoại lệ → chạy hết.
+4. **Slug KHÔNG đổi khi sinh lại.** Mô hình bị gỡ khỏi hệ thống → generator **BÁO LÊN**, KHÔNG tự xoá; quyết định 301 hay giữ là của Khang.
+
+**Trước mỗi lần chạy loạt:** generator **xuất backup toàn bộ trang cũ** trước khi ghi đè (luôn có đường lùi).
+
 ---
 
 ## Anti-decisions — Cái KHÔNG làm + lý do
@@ -368,5 +408,5 @@ await t.sendMail({
 
 ---
 
-**Last updated**: 2026-05-22
+**Last updated**: 2026-08-10
 **Maintainer**: Khang Sol

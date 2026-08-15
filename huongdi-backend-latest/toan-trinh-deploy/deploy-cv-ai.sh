@@ -9,8 +9,9 @@ HERE="$(cd "$(dirname "$0")" && pwd)"       # .../huongdi-backend-latest/toan-tr
 SRC="$(cd "$HERE/.." && pwd)"                # .../huongdi-backend-latest (clone)
 ROOT="$(cd "$SRC/.." && pwd)"                # .../sol-widget (clone)
 
-echo "▶ 1) Copy route AI bóc tách CV"
-cp "$SRC/src/routes/profile-cv.ts" "$BE/src/routes/profile-cv.ts"
+echo "▶ 1) Copy route AI bóc tách CV + AI đọc JD"
+cp "$SRC/src/routes/profile-cv.ts"     "$BE/src/routes/profile-cv.ts"
+cp "$SRC/src/routes/profile-target.ts" "$BE/src/routes/profile-target.ts"
 
 echo "▶ 2) Đăng ký route vào index.ts (nếu chưa)"
 python3 - "$BE/src/index.ts" <<'PY'

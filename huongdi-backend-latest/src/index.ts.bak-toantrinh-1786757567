@@ -1,0 +1,112 @@
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import rateLimit from 'express-rate-limit';
+
+import { authRouter } from './routes/auth';
+import { p1Router } from './routes/p1';
+import { p2Router } from './routes/p2';
+import { eventsRouter } from './routes/events';
+import { savedRouter } from './routes/saved';
+import { directionsRouter } from './routes/directions';
+import { adminRouter } from './routes/admin';
+import { errorHandler } from './middleware/errorHandler';
+import { prisma } from './utils/db';
+import leadsRouter from './routes/leads';
+import userAuthRoutes from './routes/user-auth';
+import dashboardRoutes from './routes/dashboard';
+import matchV2Routes from './routes/match-v2';
+import journeyRoutes from './routes/journey';
+import solDongHanhRoutes from './routes/sol-dong-hanh';
+import passwordResetRoutes from './routes/password-reset';
+
+const app = express();
+app.set('trust proxy', 1);  // behind nginx
+const PORT = process.env.PORT || 4001;
+
+// ── Security ──────────────────────────────────────────────
+app.use(helmet());
+app.use(cors({
+  origin: function(origin, cb) {
+    if (!origin) return cb(null, true);
+    const envList = (process.env.CORS_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
+    const hardcoded = [
+      'https://sol.vn',
+      'https://www.sol.vn',
+      'https://huongdi.sol.vn',
+      'https://adminhuongdi.sol.vn',
+      'http://localhost:5173',
+      'http://localhost:3000',
+    ];
+    const allowed = Array.from(new Set([...hardcoded, ...envList]));
+    cb(null, allowed.includes(origin));
+  },
+  credentials: true,
+}));
+
+// ── Rate limiting ─────────────────────────────────────────
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 min
+  max: 200,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use(limiter);
+
+// Auth endpoints get tighter limit
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+});
+
+// ── Body parsing ──────────────────────────────────────────
+app.use(express.json({ limit: '1mb' }));
+app.use(morgan('combined'));
+
+// ── Health check ──────────────────────────────────────────
+app.get('/health', (_req, res) => {
+  res.json({ status: 'ok', service: 'huongdi-api', ts: new Date() });
+});
+
+// ── Routes ────────────────────────────────────────────────
+app.use('/api/auth', authLimiter, authRouter);
+app.use('/api/auth', passwordResetRoutes);
+app.use('/api/user', userAuthRoutes);
+app.use('/api/journey', journeyRoutes);
+app.use('/api/sol-dong-hanh', solDongHanhRoutes);
+app.use('/api/user', dashboardRoutes);
+app.use('/api/directions', matchV2Routes);
+app.use('/api/p1', p1Router);
+app.use('/api/p2', p2Router);
+app.use('/api/events', eventsRouter);
+app.use('/api/saved', savedRouter);
+app.use('/api/directions', directionsRouter);
+app.use('/api/admin', adminRouter);
+
+// ── Error handler ─────────────────────────────────────────
+app.use(errorHandler);
+
+// ── Start ─────────────────────────────────────────────────
+async function main() {
+  try {
+    await prisma.$connect();
+    console.log('✅ PostgreSQL connected');
+app.use('/api', leadsRouter);
+    app.listen(PORT, () => {
+      console.log(`🚀 huongdi-api running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error('❌ DB connection failed:', err);
+    process.exit(1);
+  }
+}
+
+main();
+
+// Graceful shutdown
+process.on('SIGTERM', async () => {
+  await prisma.$disconnect();
+  process.exit(0);
+});
