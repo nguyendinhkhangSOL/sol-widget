@@ -296,14 +296,7 @@
   console.log('[sol-welcome] Activated: ' + ten + ' — ' + tierLabel + ' (exp: ' + expDate + ')');
 })();
 
-// Load V1.2 avatar icon
-(function(){
-  if (window.__solAvatarReq) return; window.__solAvatarReq = 1;
-  var s = document.createElement('script');
-  s.src = '/sol-avatar-icon.js';
-  s.defer = true;
-  document.head.appendChild(s);
-})();
+// (Đã bỏ ổ khoá góc dưới sol-avatar-icon.js — trùng với chip tài khoản góc trên. Chỉ dùng 1.)
 
 // Chip tài khoản (tên + hạng) — nạp nếu trang CHƯA có sẵn để trang nào cũng có tài khoản
 (function(){
