@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Toàn Trình U40–60 · Đi Cùng Sol</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#F59E0B;--amber-d:#B45309;--navy:#0F172A;--slate:#475569;--line:#E2E8F0;--bg:#F8FAFC;--green:#16A34A;--red:#DC2626}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--navy);line-height:1.55}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px 90px}
+  header{background:var(--navy);color:#fff;padding:14px 0;position:sticky;top:0;z-index:20}
+  .hd{max-width:720px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:11px}
+  .hd img{height:32px;border-radius:8px}
+  .hd .t{font-family:Lora,serif;font-weight:700;font-size:18px}
+  .hd .s{font-size:12px;color:#CBD5E1}
+  .amber{color:var(--amber)}
+  .stepper{display:flex;gap:6px;overflow-x:auto;padding:14px 0 2px;scrollbar-width:none}
+  .stepper::-webkit-scrollbar{display:none}
+  .step{flex:0 0 auto;font-size:12.5px;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--slate);white-space:nowrap;cursor:pointer;font-weight:600}
+  .step.on{background:var(--amber);border-color:var(--amber);color:#fff}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:16px}
+  h2{font-family:Lora,serif;font-size:21px;margin-bottom:4px}
+  .lead{color:var(--slate);font-size:14px;margin-bottom:14px}
+  .blk{border:1px solid var(--line);border-radius:12px;padding:13px;margin:10px 0}
+  .blk h3{font-size:14px;margin-bottom:8px;display:flex;gap:7px;align-items:center}
+  .row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed #EEF2F7;font-size:14px}
+  .row:last-child{border:0}.row .k{color:var(--slate)}.row .v{font-weight:600;text-align:right}
+  .badge{font-size:11px;padding:2px 8px;border-radius:999px;font-weight:700;display:inline-block}
+  .b-ok{background:#DCFCE7;color:#166534}.b-empty{background:#FEE2E2;color:#991B1B}.b-src{background:#E0F2FE;color:#075985}
+  .chip{display:inline-block;font-size:12.5px;background:#FEF3C7;color:var(--amber-d);border:1px solid #FDE68A;border-radius:999px;padding:5px 11px;margin:3px 4px 3px 0;font-weight:600}
+  .chip .x{margin-left:6px;cursor:pointer;opacity:.6}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--amber);color:#fff;border:0;border-radius:12px;padding:12px 18px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;width:100%;margin-top:8px}
+  .btn:disabled{opacity:.5}.btn.sec{background:#fff;color:var(--navy);border:1.5px solid var(--line)}.btn.mini{width:auto;padding:9px 15px;font-size:13.5px}
+  .in{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:11px;font-size:15px;font-family:inherit;margin:4px 0}
+  textarea.in{min-height:120px;resize:vertical}
+  .score{text-align:center;padding:6px 0}.score .big{font-family:Lora,serif;font-size:50px;font-weight:700;color:var(--amber);line-height:1}
+  .bar{height:12px;border-radius:999px;background:#F1F5F9;overflow:hidden;margin:8px 0}.bar>i{display:block;height:100%;background:var(--amber)}
+  .cmp{display:flex;justify-content:center;gap:20px;font-size:14px;margin-top:5px}.cmp b{font-family:Lora,serif;font-size:20px}
+  .ck{display:flex;gap:9px;padding:8px 0;border-bottom:1px dashed #EEF2F7;font-size:14px}
+  .ck .ic{width:20px;height:20px;border-radius:50%;flex:0 0 20px;display:grid;place-items:center;color:#fff;font-size:12px;font-weight:700}
+  .ck.have .ic{background:var(--green)}.ck.miss .ic{background:var(--red)}
+  .mh{border:1px solid var(--line);border-radius:12px;padding:12px;margin:9px 0}
+  .mh .top{display:flex;justify-content:space-between;align-items:center}.mh .nm{font-weight:700;font-size:15px}.mh .pc{font-family:Lora,serif;font-weight:700;color:var(--amber);font-size:18px}
+  .mh .meta{font-size:12.5px;color:var(--slate);margin-top:5px}
+  .note{font-size:12.5px;color:var(--slate);background:#F8FAFC;border-left:3px solid var(--amber);padding:9px 12px;border-radius:0 8px 8px 0;margin:8px 0}
+  .nav{display:flex;gap:10px;margin-top:16px}
+  .pill{font-size:11.5px;font-weight:700;color:var(--amber-d);background:#FEF3C7;border-radius:999px;padding:3px 10px}
+  .ac{position:relative}.aclist{position:absolute;left:0;right:0;top:100%;background:#fff;border:1px solid var(--line);border-radius:12px;max-height:220px;overflow:auto;z-index:5;box-shadow:0 8px 24px rgba(15,23,42,.1)}
+  .acitem{padding:10px 12px;font-size:14px;cursor:pointer;border-bottom:1px solid #F1F5F9}.acitem:hover{background:#FEF3C7}
+  .msg{font-size:13px;padding:9px 12px;border-radius:10px;margin:8px 0;display:none}.msg.err{background:#FEE2E2;color:#991B1B;display:block}.msg.ok{background:#DCFCE7;color:#166534;display:block}
+  .center{text-align:center;padding:40px 16px}
+</style>
+</head>
+<body>
+<header><div class="hd">
+  <img src="https://sol.vn/wp-content/uploads/2025/05/Icon_2.png" alt="Sol">
+  <div><div class="t">Đi Cùng <span class="amber">Sol</span> · Toàn Trình</div><div class="s">Đi làm lại — hồ sơ · chấm việc · hướng đi</div></div>
+</div></header>
+<div class="wrap">
+  <div id="gate"></div>
+  <div id="app" style="display:none">
+    <div class="stepper" id="stepper"></div>
+    <div id="screen"></div>
+  </div>
+</div>
+<script>
+var API = (window.SOL_API_BASE || 'https://huongdi.sol.vn/api');
+var TOKEN = localStorage.getItem('sol_jwt');
+var SKILLS = [{"ma": "KN.ban.b2b", "nhan": "Bán hàng doanh nghiệp (B2B)"}, {"ma": "KN.ban.le", "nhan": "Bán lẻ (B2C)"}, {"ma": "KN.ban.kenh", "nhan": "Xây & quản lý kênh phân phối"}, {"ma": "KN.ban.cskh", "nhan": "Chăm sóc khách hàng"}, {"ma": "KN.ban.telesale", "nhan": "Bán qua điện thoại (telesale)"}, {"ma": "KN.ban.online", "nhan": "Bán hàng online"}, {"ma": "KN.ql.doingu", "nhan": "Quản lý đội ngũ"}, {"ma": "KN.ql.vanhanh", "nhan": "Quản lý vận hành"}, {"ma": "KN.ql.ngansach", "nhan": "Quản lý ngân sách / doanh thu-chi phí"}, {"ma": "KN.ql.duan", "nhan": "Quản lý dự án"}, {"ma": "KN.ql.quytrinh", "nhan": "Xây dựng quy trình"}, {"ma": "KN.tc.sosach", "nhan": "Kế toán sổ sách"}, {"ma": "KN.tc.thue", "nhan": "Kê khai thuế"}, {"ma": "KN.tc.baocao", "nhan": "Báo cáo tài chính"}, {"ma": "KN.tc.congno", "nhan": "Quản lý công nợ"}, {"ma": "KN.tc.luong", "nhan": "Tính lương"}, {"ma": "KN.tc.phanmem", "nhan": "Phần mềm kế toán"}, {"ma": "KN.kt.suachua", "nhan": "Sửa chữa – bảo trì"}, {"ma": "KN.kt.dien", "nhan": "Điện – điện lạnh"}, {"ma": "KN.kt.cokhi", "nhan": "Cơ khí"}, {"ma": "KN.kt.xaydung", "nhan": "Xây dựng – hoàn thiện"}, {"ma": "KN.kt.vanhanhmay", "nhan": "Vận hành máy móc"}, {"ma": "KN.so.excel", "nhan": "Excel / bảng tính"}, {"ma": "KN.so.word", "nhan": "Soạn thảo văn bản"}, {"ma": "KN.so.crm", "nhan": "Phần mềm CRM"}, {"ma": "KN.so.canva", "nhan": "Thiết kế cơ bản (Canva)"}, {"ma": "KN.so.ai", "nhan": "Dùng công cụ AI"}, {"ma": "KN.so.mxh", "nhan": "Quản lý mạng xã hội"}, {"ma": "KN.dt.kem", "nhan": "Kèm / dạy 1-1"}, {"ma": "KN.dt.tuvan", "nhan": "Tư vấn chuyên môn"}, {"ma": "KN.dt.giangday", "nhan": "Giảng dạy / đứng lớp"}, {"ma": "KN.dv.amthuc", "nhan": "Ẩm thực / bếp"}, {"ma": "KN.dv.chamsoc", "nhan": "Chăm sóc (người/bệnh/trẻ)"}, {"ma": "KN.dv.lamdep", "nhan": "Làm đẹp / spa"}, {"ma": "KN.dv.vanchuyen", "nhan": "Vận chuyển / giao nhận"}, {"ma": "KN.hc.vanthu", "nhan": "Văn thư – hành chính"}, {"ma": "KN.hc.lettan", "nhan": "Lễ tân – tiếp đón"}, {"ma": "KN.hc.dulieu", "nhan": "Nhập & quản lý dữ liệu"}, {"ma": "KN.hc.muahang", "nhan": "Mua hàng – thu mua"}, {"ma": "KN.ns.tuyendung", "nhan": "Tuyển dụng"}, {"ma": "KN.ns.cb", "nhan": "Lương thưởng – phúc lợi (C&B)"}, {"ma": "KN.ns.daotao", "nhan": "Đào tạo & phát triển nhân sự"}, {"ma": "KN.sx.qc", "nhan": "Kiểm soát chất lượng (QC)"}, {"ma": "KN.sx.kho", "nhan": "Quản lý kho"}, {"ma": "KN.sx.cungung", "nhan": "Chuỗi cung ứng"}, {"ma": "KN.sx.dieudo", "nhan": "Điều độ sản xuất"}, {"ma": "KN.mkt.noidung", "nhan": "Sáng tạo nội dung"}, {"ma": "KN.mkt.quangcao", "nhan": "Chạy quảng cáo"}, {"ma": "KN.mkt.thuonghieu", "nhan": "Xây thương hiệu"}, {"ma": "KN.mkt.sukien", "nhan": "Tổ chức sự kiện"}, {"ma": "KN.nn.anh", "nhan": "Tiếng Anh"}, {"ma": "KN.nn.trung", "nhan": "Tiếng Trung"}, {"ma": "KN.nn.han", "nhan": "Tiếng Hàn"}, {"ma": "KN.nn.nhat", "nhan": "Tiếng Nhật"}];
+var LABEL = {}; SKILLS.forEach(function(s){LABEL[s.ma]=s.nhan});
+var STEPS=["1 · Hồ sơ","2 · Chấm CV×JD","3 · La Bàn","4 · Thư"];
+var cur=0, PROFILE=null, TARGET=null, RUN=null;
+
+function api(path, opts){
+  opts=opts||{}; opts.headers=Object.assign({'Content-Type':'application/json','Authorization':'Bearer '+TOKEN}, opts.headers||{});
+  return fetch(API+path, opts).then(function(r){ return r.json().then(function(j){ if(!r.ok) throw new Error(j.message||j.error||('Lỗi '+r.status)); return j; }); });
+}
+function esc(s){return (s==null?'':String(s)).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+
+if(!TOKEN){
+  document.getElementById('gate').innerHTML='<div class="card center"><h2>Đăng nhập để dùng</h2>'
+    +'<p class="lead">Toàn Trình U40–60 cần tài khoản để lưu hồ sơ của anh chị.</p>'
+    +'<a class="btn" href="/dang-nhap/?next=/toan-trinh/" style="text-decoration:none;max-width:260px;margin:0 auto">Đăng nhập</a></div>';
+}else{
+  document.getElementById('app').style.display='block';
+  loadProfile();
+}
+
+function stepper(){document.getElementById('stepper').innerHTML=STEPS.map(function(s,i){return '<div class="'+(i===cur?'step on':'step')+'" onclick="go('+i+')">'+s+'</div>'}).join('')}
+function go(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'})}
+function loadProfile(){ api('/profile').then(function(p){PROFILE=p;render()}).catch(function(e){
+  document.getElementById('app').innerHTML='<div class="card center"><h2>Không tải được hồ sơ</h2><p class="lead">'+esc(e.message)+'</p><a class="btn" href="/dang-nhap/">Đăng nhập lại</a></div>';
+});}
+
+function render(){
+  if(!PROFILE)return; stepper();
+  var s=document.getElementById('screen');
+  if(cur===0) s.innerHTML=scrHoSo();
+  else if(cur===1) s.innerHTML=scrCham();
+  else if(cur===2) s.innerHTML=scrLaBan();
+  else if(cur===3) s.innerHTML=scrThu();
+}
+
+/* ---- LÁT 1 ---- */
+function fRows(arr){ if(!arr||!arr.length) return '<div class="row"><span class="k" style="color:#94A3B8">— chưa có ô nào —</span></div>';
+  return arr.map(function(f){
+    var b = f.status==='CON_TRONG' ? '<span class="badge b-empty">còn trống</span>'
+      : (f.source?'<span class="badge b-src">'+esc(f.source)+'</span> ':'')+'<span class="badge b-ok">đã có</span>';
+    return '<div class="row"><span class="k">'+esc(f.fieldCode)+'</span><span class="v">'+esc(f.value||'—')+' &nbsp;'+b+'</span></div>';
+  }).join('');
+}
+function scrHoSo(){
+  var k=PROFILE.khoi||{};
+  var sk=(PROFILE.skills||[]).map(function(s){return '<span class="chip">'+esc(LABEL[s.skillCode]||s.skillCode)+'<span class="x" onclick="delSkill(\''+s.skillCode+'\')">✕</span></span>'}).join('') || '<span style="color:#94A3B8;font-size:13px">Chưa có kỹ năng — thêm bên dưới ↓</span>';
+  return '<div class="card"><span class="pill">LÁT 1</span><h2 style="margin-top:8px">Hồ sơ chung của anh chị</h2>'
+   +'<p class="lead">Khai một lần — dùng cho cả chấm việc (Hướng 1) và La Bàn hướng đi (Hướng 2). Dữ liệu lưu thật vào tài khoản.</p>'
+   +'<div class="blk"><h3>🧰 Khối 1 · Đã làm gì</h3>'+fRows(k[1])+'</div>'
+   +'<div class="blk"><h3>📍 Khối 3 · Ở đâu</h3>'+fRows(k[3])+'</div>'
+   +'<div class="blk"><h3>🎒 Khối 2 · Còn sẵn gì <span class="badge b-empty">CV không chứa</span></h3>'+fRows(k[2])+'</div>'
+   +'<div class="blk"><h3>🤝 Khối 4 · Quen ai <span class="badge b-empty">CV không chứa</span></h3>'+fRows(k[4])+'</div>'
+   +'<div class="blk"><h3>⭐ Kỹ năng của tôi</h3><div id="skchips">'+sk+'</div>'
+   +'<div class="ac"><input class="in" id="skin" placeholder="Gõ để tìm kỹ năng… (vd: bán hàng, kế toán)" oninput="acSkill(this.value)" autocomplete="off"><div id="acbox"></div></div>'
+   +'<div class="msg" id="m1"></div></div>'
+   +'<div class="note">Thêm kỹ năng xong, sang bước 2 dán tin tuyển dụng để máy chấm mức khớp thật.</div>'
+   +'<button class="btn" onclick="go(1)">Tiếp: Chấm CV × JD →</button></div>';
+}
+function acSkill(q){
+  q=(q||'').toLowerCase().trim(); var box=document.getElementById('acbox');
+  if(!q){box.innerHTML='';return}
+  var have={}; (PROFILE.skills||[]).forEach(function(s){have[s.skillCode]=1});
+  var hit=SKILLS.filter(function(s){return !have[s.ma] && s.nhan.toLowerCase().indexOf(q)>=0}).slice(0,8);
+  box.innerHTML = hit.length? '<div class="aclist">'+hit.map(function(s){return '<div class="acitem" onclick="addSkill(\''+s.ma+'\')">'+esc(s.nhan)+'</div>'}).join('')+'</div>' : '';
+}
+function addSkill(ma){
+  document.getElementById('acbox').innerHTML=''; document.getElementById('skin').value='';
+  api('/profile/skill',{method:'POST',body:JSON.stringify({skillCode:ma})}).then(function(){ return api('/profile'); })
+   .then(function(p){PROFILE=p;render();}).catch(function(e){msg('m1','err',e.message)});
+}
+function delSkill(ma){ /* xoá mềm: hiện chưa có endpoint xoá skill — bỏ qua nhẹ nhàng */
+  msg('m1','ok','(Bản này chưa có nút xoá kỹ năng — sẽ bổ sung sau)');
+}
+
+/* ---- LÁT 2 ---- */
+function scrCham(){
+  var body='<div class="card"><span class="pill">LÁT 2 · CỬA A</span><h2 style="margin-top:8px">Chấm CV × JD</h2>'
+   +'<p class="lead">Dán nguyên văn tin tuyển dụng. Máy tách thành mã kỹ năng rồi so với hồ sơ của anh chị.</p>'
+   +'<input class="in" id="jdTitle" placeholder="Tên vị trí (vd: Trưởng phòng Kinh doanh)">'
+   +'<textarea class="in" id="jdText" placeholder="Dán mô tả công việc / yêu cầu tuyển dụng vào đây…"></textarea>'
+   +'<div class="msg" id="m2"></div>'
+   +'<button class="btn" id="btnCham" onclick="doCham()">⚙️ Chấm điểm khớp</button>'
+   +'<div id="chamKq"></div></div>';
+  return body;
+}
+function doCham(){
+  var t=document.getElementById('jdText').value.trim(); if(t.length<10){msg('m2','err','Dán mô tả công việc dài hơn chút nhé.');return}
+  var title=document.getElementById('jdTitle').value.trim();
+  var b=document.getElementById('btnCham'); b.disabled=true; b.textContent='Đang chấm…';
+  api('/profile/target',{method:'POST',body:JSON.stringify({title:title,jdRaw:t})})
+   .then(function(tg){TARGET=tg; return api('/profile/target/'+tg.id+'/run',{method:'POST',body:JSON.stringify({})});})
+   .then(function(run){RUN=run; renderCham(run); b.disabled=false; b.textContent='⚙️ Chấm lại';})
+   .catch(function(e){msg('m2','err',e.message); b.disabled=false; b.textContent='⚙️ Chấm điểm khớp';});
+}
+function renderCham(run){
+  var ck=(run.checklist||[]).map(function(c){
+    var lab=LABEL[c.code]|| (String(c.code).indexOf('ATTR.sonam')>=0?('Kinh nghiệm '+String(c.code).split('>=')[1]+'+ năm'):c.code);
+    var ok=c.state==='DA_CO';
+    return '<div class="ck '+(ok?'have':'miss')+'"><span class="ic">'+(ok?'✓':'!')+'</span><span>'+esc(lab)+' — <b>'+(ok?'đã có':'còn thiếu')+'</b></span></div>';
+  }).join('') || '<div class="note">JD này không tách được mã nào — thử dán chi tiết hơn.</div>';
+  var hoc=((run.chieu2&&run.chieu2.phai_hoc)||[]).map(function(x){return '<div class="row"><span class="k">📚 Phải học</span><span class="v" style="max-width:62%">'+esc(LABEL[x.code]||x.code)+'</span></div>'}).join('');
+  document.getElementById('chamKq').innerHTML=
+     '<div class="blk"><div class="score"><div class="big">'+run.scoreNow+'%</div><div style="font-size:13px;color:var(--slate)">mức khớp</div></div>'
+    +'<div class="bar"><i style="width:'+run.scoreNow+'%"></i></div>'
+    +'<div class="cmp"><span>lần đầu <b style="color:var(--slate)">'+run.scoreFirst+'%</b></span><span>→</span><span>giờ <b class="amber">'+run.scoreNow+'%</b></span></div></div>'
+    +'<div class="blk"><h3>✅ Đối chiếu yêu cầu</h3>'+ck+'</div>'
+    +(hoc?'<div class="blk"><h3>🛠️ Chiều 2 — cần bổ sung</h3>'+hoc+'</div>':'')
+    +'<button class="btn" onclick="go(2)">Xem La Bàn hướng đi →</button>';
+}
+
+/* ---- LÁT 3 (La Bàn) ---- */
+function scrLaBan(){
+  return '<div class="card"><span class="pill">LÁT 6</span><h2 style="margin-top:8px">La Bàn — hướng tự khởi nghiệp</h2>'
+   +'<p class="lead">Cùng hồ sơ đã khai (không hỏi lại) → gợi ý mô hình hợp nhất trong kho mô hình của Sol.</p>'
+   +'<div class="msg" id="m3"></div>'
+   +'<button class="btn" id="btnLb" onclick="doLaBan()">🧭 Gợi ý hướng đi cho tôi</button>'
+   +'<div id="lbKq"></div></div>';
+}
+function doLaBan(){
+  var b=document.getElementById('btnLb');b.disabled=true;b.textContent='Đang tìm…';
+  api('/profile/laban/run',{method:'POST',body:JSON.stringify({})}).then(function(r){
+    var top=r.top||[];
+    document.getElementById('lbKq').innerHTML = top.length? top.map(function(m){
+      return '<div class="mh"><div class="top"><span class="nm">'+esc(m.ten||m.mh_id)+'</span><span class="pc">'+m.diem+'%</span></div>'
+        +'<div class="meta">Kỹ năng khớp: '+((m.ky_nang_khop||[]).map(function(c){return '<span class="chip" style="margin:2px 3px 0 0">'+esc(LABEL[c]||c)+'</span>'}).join('')||'—')+'</div>'
+        +(m.von_can?'<div class="meta">💰 Vốn: '+esc(m.von_can)+(m.dia_ban?' · 📍 '+esc(m.dia_ban):'')+'</div>':'')+'</div>';
+    }).join('') : '<div class="note">Chưa gợi ý được — hãy thêm vài kỹ năng ở bước 1 rồi thử lại.</div>';
+    b.disabled=false;b.textContent='🧭 Tìm lại';
+  }).catch(function(e){msg('m3','err',e.message);b.disabled=false;b.textContent='🧭 Gợi ý hướng đi cho tôi';});
+}
+
+/* ---- LÁT 4 (Thư) ---- */
+function scrThu(){
+  if(!TARGET) return '<div class="card"><h2>Thư ứng tuyển</h2><p class="lead">Hãy chấm 1 tin tuyển dụng ở bước 2 trước, rồi quay lại đây để tạo thư.</p><button class="btn sec" onclick="go(1)">← Về bước Chấm</button></div>';
+  return '<div class="card"><span class="pill">LÁT 5</span><h2 style="margin-top:8px">Thư ứng tuyển</h2>'
+   +'<p class="lead">Máy soạn từ hồ sơ + kỹ năng khớp JD "'+esc(TARGET.title||'vị trí')+'". Sửa vài chữ rồi gửi kèm CV.</p>'
+   +'<div class="msg" id="m4"></div>'
+   +'<button class="btn" id="btnThu" onclick="doThu()">✍️ Soạn thư cho tôi</button>'
+   +'<div id="thuKq"></div></div>';
+}
+function doThu(){
+  var b=document.getElementById('btnThu');b.disabled=true;b.textContent='Đang soạn…';
+  api('/profile/letter',{method:'POST',body:JSON.stringify({targetId:TARGET.id})}).then(function(l){
+    document.getElementById('thuKq').innerHTML='<textarea class="in" style="min-height:280px;background:#fffdf7">'+esc(l.body)+'</textarea>'
+      +'<div class="note">Thư chỉ nêu kỹ năng anh chị thật sự có mà JD cần → qua máy quét ATS. Copy dán vào cổng việc làm hoặc email.</div>';
+    b.disabled=false;b.textContent='✍️ Soạn lại';
+  }).catch(function(e){msg('m4','err',e.message);b.disabled=false;b.textContent='✍️ Soạn thư cho tôi';});
+}
+
+function msg(id,cls,t){var e=document.getElementById(id);if(!e)return;e.className='msg '+cls;e.textContent=t;}
+</script>
+</body>
+</html>
