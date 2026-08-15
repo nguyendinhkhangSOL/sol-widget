@@ -12,7 +12,7 @@
   var TOKEN = null; try { TOKEN = localStorage.getItem('sol_jwt') || localStorage.getItem('sol_token'); } catch (e) {}
 
   var NAV = {
-    brand: { name: 'Đi Cùng Sol', logo: 'https://sol.vn/wp-content/uploads/2025/05/Icon_2.png', home: 'https://sol.vn/' },
+    brand: { name: 'Đi Cùng Sol', logo: 'https://huongdi.sol.vn/brand/sol-compass.svg', home: 'https://sol.vn/' },
     menu: [
       { label: 'Hồ sơ & Việc làm', icon: '💼', children: [
         { label: '📄 Tạo lập CV chuẩn ATS', url: 'https://huongdi.sol.vn/ho-so-viec-lam/tao-cv/' },

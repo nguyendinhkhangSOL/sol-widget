@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="La bàn Sol">
+  <!-- vòng la bàn -->
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#0F172A" stroke-width="3.5"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#F59E0B" stroke-width="1.2" opacity="0.5"/>
+  <!-- 4 vạch hướng -->
+  <g stroke="#0F172A" stroke-width="2.2" stroke-linecap="round">
+    <line x1="32" y1="7"  x2="32" y2="12"/>
+    <line x1="32" y1="52" x2="32" y2="57"/>
+    <line x1="7"  y1="32" x2="12" y2="32"/>
+    <line x1="52" y1="32" x2="57" y2="32"/>
+  </g>
+  <!-- kim la bàn: nửa Bắc amber, nửa Nam navy -->
+  <polygon points="32,14 37.5,32 26.5,32" fill="#F59E0B"/>
+  <polygon points="32,50 37.5,32 26.5,32" fill="#334155"/>
+  <!-- tâm -->
+  <circle cx="32" cy="32" r="3.4" fill="#0F172A"/>
+  <circle cx="32" cy="32" r="1.4" fill="#F59E0B"/>
+</svg>
