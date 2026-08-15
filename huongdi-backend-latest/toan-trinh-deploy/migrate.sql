@@ -3,7 +3,7 @@
 -- LÁT 1 — HỒ SƠ CHUNG · migration thô (tương đương LAT1-ho-so-chung.prisma)
 -- Idempotent: chạy lại nhiều lần không lỗi. CHẠY SAU KHI BACKUP.
 -- Dev có thể dùng `prisma migrate` (khuyến nghị) HOẶC chạy file này.
--- DB: huongdi_prod (PostgreSQL 16). Bảng users đã tồn tại (id uuid).
+-- DB: huongdi_prod (PostgreSQL 16). Bảng users đã tồn tại (id text).
 -- ============================================================
 
 
@@ -22,8 +22,8 @@ EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
 -- ─── job_profiles ──────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS job_profiles (
-  id           uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id      uuid NOT NULL UNIQUE REFERENCES users(id) ON DELETE CASCADE,
+  id           text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  user_id      text NOT NULL UNIQUE REFERENCES users(id) ON DELETE CASCADE,
   target_title text,
   created_at   timestamptz NOT NULL DEFAULT now(),
   updated_at   timestamptz NOT NULL DEFAULT now()
@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS job_profiles (
 
 -- ─── profile_fields (4 khối, có nhãn nguồn/trạng thái) ──────
 CREATE TABLE IF NOT EXISTS profile_fields (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  profile_id  uuid NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  profile_id  text NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
   field_code  text NOT NULL,
   block_no    integer NOT NULL,
   value       text,
@@ -45,8 +45,8 @@ CREATE INDEX IF NOT EXISTS idx_profile_fields_status ON profile_fields (profile_
 
 -- ─── profile_skills (gắn mã KN.*) ──────────────────────────
 CREATE TABLE IF NOT EXISTS profile_skills (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  profile_id  uuid NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  profile_id  text NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
   skill_code  text NOT NULL,
   source      "ProfileFieldSource",
   status      "ProfileFieldStatus" NOT NULL DEFAULT 'CHUA_XAC_NHAN',
@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS profile_skills (
 
 -- ─── data_consents (mục 6 + Luật 91/2025) ──────────────────
 CREATE TABLE IF NOT EXISTS data_consents (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id     uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  user_id     text NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   kind        "ConsentKind" NOT NULL,
   granted     boolean NOT NULL DEFAULT false,
   granted_at  timestamptz,
@@ -84,8 +84,8 @@ DO $$ BEGIN
 EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
 CREATE TABLE IF NOT EXISTS cv_documents (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  profile_id  uuid NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  profile_id  text NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
   label       text,
   is_original boolean NOT NULL DEFAULT false,
   file_url    text,
@@ -95,8 +95,8 @@ CREATE TABLE IF NOT EXISTS cv_documents (
 CREATE INDEX IF NOT EXISTS idx_cv_documents_original ON cv_documents (profile_id, is_original);
 
 CREATE TABLE IF NOT EXISTS job_targets (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  profile_id  uuid NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  profile_id  text NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
   title       text,
   jd_raw      text NOT NULL,
   apply_via   "ApplyVia",
@@ -105,8 +105,8 @@ CREATE TABLE IF NOT EXISTS job_targets (
 );
 
 CREATE TABLE IF NOT EXISTS match_runs (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  target_id   uuid NOT NULL REFERENCES job_targets(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  target_id   text NOT NULL REFERENCES job_targets(id) ON DELETE CASCADE,
   score_first integer NOT NULL,
   score_now   integer NOT NULL,
   checklist   jsonb NOT NULL DEFAULT '[]'::jsonb,
@@ -131,8 +131,8 @@ DO $$ BEGIN
 EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
 CREATE TABLE IF NOT EXISTS build_sessions (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  profile_id  uuid NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  profile_id  text NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
   status      "BuildStatus" NOT NULL DEFAULT 'DANG_LAM',
   step_no     integer NOT NULL DEFAULT 0,
   created_at  timestamptz NOT NULL DEFAULT now(),
@@ -141,8 +141,8 @@ CREATE TABLE IF NOT EXISTS build_sessions (
 CREATE INDEX IF NOT EXISTS idx_build_sessions_profile ON build_sessions (profile_id, status);
 
 CREATE TABLE IF NOT EXISTS build_answers (
-  id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  session_id    uuid NOT NULL REFERENCES build_sessions(id) ON DELETE CASCADE,
+  id            text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  session_id    text NOT NULL REFERENCES build_sessions(id) ON DELETE CASCADE,
   question_code text NOT NULL,
   field_code    text,
   answer_text   text NOT NULL,
@@ -168,17 +168,17 @@ DO $$ BEGIN
 EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
 CREATE TABLE IF NOT EXISTS interview_sessions (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  profile_id  uuid NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
-  target_id   uuid REFERENCES job_targets(id) ON DELETE SET NULL,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  profile_id  text NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
+  target_id   text REFERENCES job_targets(id) ON DELETE SET NULL,
   status      "InterviewStatus" NOT NULL DEFAULT 'DANG_TAP',
   created_at  timestamptz NOT NULL DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS idx_interview_sessions_profile ON interview_sessions (profile_id, status);
 
 CREATE TABLE IF NOT EXISTS interview_questions (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  session_id  uuid NOT NULL REFERENCES interview_sessions(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  session_id  text NOT NULL REFERENCES interview_sessions(id) ON DELETE CASCADE,
   order_no    integer NOT NULL,
   q_source    "QSource" NOT NULL,
   ref_code    text,
@@ -188,8 +188,8 @@ CREATE TABLE IF NOT EXISTS interview_questions (
 CREATE INDEX IF NOT EXISTS idx_interview_questions_session ON interview_questions (session_id, order_no);
 
 CREATE TABLE IF NOT EXISTS interview_answers (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  question_id uuid NOT NULL UNIQUE REFERENCES interview_questions(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  question_id text NOT NULL UNIQUE REFERENCES interview_questions(id) ON DELETE CASCADE,
   audio_url   text,
   transcript  text,
   seconds     integer,
@@ -206,9 +206,9 @@ CREATE TABLE IF NOT EXISTS interview_answers (
 -- ============================================================
 
 CREATE TABLE IF NOT EXISTS cover_letters (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  profile_id  uuid NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
-  target_id   uuid NOT NULL REFERENCES job_targets(id)  ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  profile_id  text NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
+  target_id   text NOT NULL REFERENCES job_targets(id)  ON DELETE CASCADE,
   to_name     text,
   body        text NOT NULL,
   edited      boolean NOT NULL DEFAULT false,
@@ -226,8 +226,8 @@ CREATE INDEX IF NOT EXISTS idx_cover_letters_profile_target ON cover_letters (pr
 -- ============================================================
 
 CREATE TABLE IF NOT EXISTS model_match_runs (
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  profile_id  uuid NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
+  id          text PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  profile_id  text NOT NULL REFERENCES job_profiles(id) ON DELETE CASCADE,
   results     jsonb NOT NULL DEFAULT '[]'::jsonb,
   top_mh_id   text,
   created_at  timestamptz NOT NULL DEFAULT now()
