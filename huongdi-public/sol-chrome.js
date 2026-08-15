@@ -181,6 +181,11 @@
   });
 
   function mount() {
+    if (window.__solcMounted) return; window.__solcMounted = true;   // chống nạp 2 lần (nếu vừa nhúng tay vừa nginx chèn)
+    // Ẩn header/footer CŨ của trang (chỉ con trực tiếp của body) để không chồng 2 thanh
+    Array.prototype.slice.call(document.body.children).forEach(function (el) {
+      var t = el.tagName; if ((t === 'HEADER' || t === 'FOOTER') && (el.className || '').indexOf('solc-') < 0) el.style.display = 'none';
+    });
     var st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
     var h = document.createElement('div'); h.innerHTML = headerHtml(); document.body.insertBefore(h.firstChild, document.body.firstChild);
     if (!CFG.slim) { var f = document.createElement('div'); f.innerHTML = footerHtml(); document.body.appendChild(f.firstChild); }
